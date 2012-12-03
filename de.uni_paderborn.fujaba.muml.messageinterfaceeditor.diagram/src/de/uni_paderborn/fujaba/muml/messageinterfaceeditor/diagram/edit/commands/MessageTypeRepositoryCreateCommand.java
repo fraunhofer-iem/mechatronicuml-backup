@@ -52,7 +52,7 @@ public class MessageTypeRepositoryCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository newElement = de.uni_paderborn.fujaba.muml.model.msgiface.MsgifaceFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.msgtype.MessageTypeRepository newElement = de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypeFactory.eINSTANCE
 				.createMessageTypeRepository();
 
 		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
@@ -71,7 +71,7 @@ public class MessageTypeRepositoryCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository newElement,
+			de.uni_paderborn.fujaba.muml.model.msgtype.MessageTypeRepository newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

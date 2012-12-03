@@ -28,19 +28,17 @@ public class MumlDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return getRealtimeStatechart_1000SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			return getState_3017SemanticChildren(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
-			return getRealtimeStatechart_3024SemanticChildren(view);
+			return getState_3029SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
 			return getRealtimeStatechartStatechartContentsCompartment_7019SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateActionCompartmentEditPart.VISUAL_ID:
-			return getStateActionCompartment_7020SemanticChildren(view);
+			return getStateActionCompartment_7026SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateRegionCompartmentEditPart.VISUAL_ID:
-			return getStateRegionCompartment_7021SemanticChildren(view);
+			return getStateRegionCompartment_7027SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateChannelCompartmentEditPart.VISUAL_ID:
-			return getStateChannelCompartment_7022SemanticChildren(view);
+			return getStateChannelCompartment_7028SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateInvariantCompartmentEditPart.VISUAL_ID:
-			return getStateInvariantCompartment_7023SemanticChildren(view);
+			return getStateInvariantCompartment_7029SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart.VISUAL_ID:
 			return getRegionRegionContentsCompartment_7024SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
@@ -74,7 +72,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> getState_3017SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> getState_3029SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
@@ -82,48 +80,9 @@ public class MumlDiagramUpdater {
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getStateEntryPoints().iterator(); it
+		for (Iterator<?> it = modelElement.getEntryPoints().iterator(); it
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint childElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint) it
-					.next();
-			int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
-				continue;
-			}
-		}
-		for (Iterator<?> it = modelElement.getStateExitPoints().iterator(); it
-				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint childElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint) it
-					.next();
-			int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
-				continue;
-			}
-		}
-
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> getRealtimeStatechart_3024SemanticChildren(
-			View view) {
-		if (!view.isSetElement()) {
-			return Collections.emptyList();
-		}
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) view
-				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getVertices().iterator(); it
-				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex childElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) it
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint childElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -132,6 +91,13 @@ public class MumlDiagramUpdater {
 						childElement, visualID));
 				continue;
 			}
+		}
+		for (Iterator<?> it = modelElement.getExitPoints().iterator(); it
+				.hasNext();) {
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint childElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint) it
+					.next();
+			int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID) {
 				result.add(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
@@ -157,9 +123,8 @@ public class MumlDiagramUpdater {
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getVertices().iterator(); it
-				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex childElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) it
+		for (Iterator<?> it = modelElement.getStates().iterator(); it.hasNext();) {
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.State childElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -176,7 +141,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> getStateActionCompartment_7020SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> getStateActionCompartment_7026SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -225,7 +190,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> getStateRegionCompartment_7021SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> getStateRegionCompartment_7027SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -256,7 +221,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> getStateChannelCompartment_7022SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> getStateChannelCompartment_7028SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -287,7 +252,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> getStateInvariantCompartment_7023SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> getStateInvariantCompartment_7029SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -359,9 +324,8 @@ public class MumlDiagramUpdater {
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getVertices().iterator(); it
-				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex childElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) it
+		for (Iterator<?> it = modelElement.getStates().iterator(); it.hasNext();) {
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.State childElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -394,7 +358,7 @@ public class MumlDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
 			return getRealtimeStatechart_2006ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			return getState_3017ContainedLinks(view);
+			return getState_3029ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
 			return getEntryEvent_3018ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
@@ -410,13 +374,9 @@ public class MumlDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
 			return getRealtimeStatechart_3024ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
-			return getEntryPoint_3025ContainedLinks(view);
+			return getEntryPoint_3030ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
-			return getExitPoint_3026ContainedLinks(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID:
-			return getStateEntryPoint_3027ContainedLinks(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID:
-			return getStateExitPoint_3028ContainedLinks(view);
+			return getExitPoint_3031ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return getTransition_4002ContainedLinks(view);
 		}
@@ -433,7 +393,7 @@ public class MumlDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
 			return getRealtimeStatechart_2006IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			return getState_3017IncomingLinks(view);
+			return getState_3029IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
 			return getEntryEvent_3018IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
@@ -449,13 +409,9 @@ public class MumlDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
 			return getRealtimeStatechart_3024IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
-			return getEntryPoint_3025IncomingLinks(view);
+			return getEntryPoint_3030IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
-			return getExitPoint_3026IncomingLinks(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID:
-			return getStateEntryPoint_3027IncomingLinks(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID:
-			return getStateExitPoint_3028IncomingLinks(view);
+			return getExitPoint_3031IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return getTransition_4002IncomingLinks(view);
 		}
@@ -472,7 +428,7 @@ public class MumlDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
 			return getRealtimeStatechart_2006OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			return getState_3017OutgoingLinks(view);
+			return getState_3029OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
 			return getEntryEvent_3018OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
@@ -488,13 +444,9 @@ public class MumlDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
 			return getRealtimeStatechart_3024OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
-			return getEntryPoint_3025OutgoingLinks(view);
+			return getEntryPoint_3030OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
-			return getExitPoint_3026OutgoingLinks(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEntryPointEditPart.VISUAL_ID:
-			return getStateEntryPoint_3027OutgoingLinks(view);
-		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateExitPointEditPart.VISUAL_ID:
-			return getStateExitPoint_3028OutgoingLinks(view);
+			return getExitPoint_3031OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return getTransition_4002OutgoingLinks(view);
 		}
@@ -528,7 +480,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getState_3017ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getState_3029ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -596,7 +548,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getEntryPoint_3025ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getEntryPoint_3030ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -604,23 +556,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getExitPoint_3026ContainedLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getStateEntryPoint_3027ContainedLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getStateExitPoint_3028ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getExitPoint_3031ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -644,7 +580,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getState_3017IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getState_3029IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) view
 				.getElement();
@@ -715,7 +651,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getEntryPoint_3025IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getEntryPoint_3030IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint) view
 				.getElement();
@@ -730,39 +666,9 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getExitPoint_3026IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getExitPoint_3031IncomingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint) view
-				.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Transition_4002(
-				modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getStateEntryPoint_3027IncomingLinks(
-			View view) {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint) view
-				.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Transition_4002(
-				modelElement, crossReferences));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getStateExitPoint_3028IncomingLinks(
-			View view) {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -791,7 +697,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getState_3017OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getState_3029OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) view
 				.getElement();
@@ -859,7 +765,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getEntryPoint_3025OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getEntryPoint_3030OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint) view
 				.getElement();
@@ -871,33 +777,9 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getExitPoint_3026OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getExitPoint_3031OutgoingLinks(
 			View view) {
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint) view
-				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_Transition_4002(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getStateEntryPoint_3027OutgoingLinks(
-			View view) {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEntryPoint) view
-				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_Transition_4002(modelElement));
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> getStateExitPoint_3028OutgoingLinks(
-			View view) {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint modelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateExitPoint) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Transition_4002(modelElement));

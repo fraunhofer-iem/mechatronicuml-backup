@@ -50,10 +50,10 @@ public class MessageTypeCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.msgiface.MessageType newElement = de.uni_paderborn.fujaba.muml.model.msgiface.MsgifaceFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.model.msgtype.MessageType newElement = de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypeFactory.eINSTANCE
 				.createMessageType();
 
-		de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository owner = (de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.model.msgtype.MessageTypeRepository owner = (de.uni_paderborn.fujaba.muml.model.msgtype.MessageTypeRepository) getElementToEdit();
 		owner.getMessageTypes().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.ElementInitializers
@@ -69,7 +69,7 @@ public class MessageTypeCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.msgiface.MessageType newElement,
+			de.uni_paderborn.fujaba.muml.model.msgtype.MessageType newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

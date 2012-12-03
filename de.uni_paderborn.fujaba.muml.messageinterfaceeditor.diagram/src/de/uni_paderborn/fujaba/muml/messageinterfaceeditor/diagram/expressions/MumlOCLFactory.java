@@ -38,10 +38,10 @@ public class MumlOCLFactory {
 	 */
 	public static de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlAbstractExpression getExpression(
 			int index, EClassifier context, Map<String, EClassifier> environment) {
-		MumlOCLFactory cached = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+		MumlOCLFactory cached = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 				.getInstance().getMumlOCLFactory();
 		if (cached == null) {
-			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 					.getInstance().setMumlOCLFactory(
 							cached = new MumlOCLFactory());
 		}

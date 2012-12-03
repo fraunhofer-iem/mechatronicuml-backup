@@ -25,7 +25,7 @@ public class ExitPointItemSemanticEditPolicy
 	 */
 	public ExitPointItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitPoint_3026);
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitPoint_3031);
 	}
 
 	/**

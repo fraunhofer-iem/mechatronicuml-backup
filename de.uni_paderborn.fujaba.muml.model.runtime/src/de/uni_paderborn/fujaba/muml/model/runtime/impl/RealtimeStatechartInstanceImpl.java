@@ -10,7 +10,7 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -22,7 +22,6 @@ import org.storydriven.core.impl.ExtendableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
 import de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
@@ -193,15 +192,22 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 * to improve the run-time performance.
 	 */
 	public EList<State> getStates() {
-		
-		EList<State> states = new BasicEList<State>(this.getInstanceOf().getVertices().size());
-		for(Vertex curObject : this.getInstanceOf().getVertices()){
-			if (curObject instanceof State){
-				states.add((State)curObject);
-			}
+		// BEGIN: Deactivated because RealtimeStatechart does not have a reference to vertices anymore 
+//		EList<State> states = new BasicEList<State>(this.getInstanceOf().getVertices().size());
+//		for(Vertex curObject : this.getInstanceOf().getVertices()){
+//			if (curObject instanceof State){
+//				states.add((State)curObject);
+//			}
+//		}
+		// END Deactivated
+
+		// The following code replaces it:
+
+		RealtimeStatechart statechart = getInstanceOf();
+		if (statechart != null) {
+			return statechart.getStates();
 		}
-		
-		return states;
+		return ECollections.emptyEList();
 	}
 
 	/**

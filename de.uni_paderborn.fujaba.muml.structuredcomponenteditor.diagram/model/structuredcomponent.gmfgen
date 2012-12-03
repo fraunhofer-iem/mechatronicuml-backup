@@ -965,7 +965,7 @@
       <expressions
           body="1"/>
       <expressions
-          body="let partName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;let compName : String = if self.componentType.oclIsUndefined() then 'null' else self.componentType.name endif in&#xD;&#xA;partName.concat(' : '.concat(compName))"/>
+          body="let partName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;let compName : String = if self.componentType.oclIsUndefined() then 'null' else self.componentType.name endif in&#xA;let lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then 'null' else cardinality.lowerBound.toString() endif in&#xA;let upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then 'null' else cardinality.upperBound.toString() endif in&#xD;&#xA;partName.concat(' : ').concat(compName).concat(' [').concat(lowerBound).concat('..').concat(upperBound).concat(']')"/>
     </providers>
   </expressionProviders>
   <labelParsers

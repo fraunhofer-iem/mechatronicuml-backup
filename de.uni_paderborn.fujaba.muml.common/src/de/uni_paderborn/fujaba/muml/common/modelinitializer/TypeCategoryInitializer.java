@@ -4,9 +4,9 @@ import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.modelinstance.ModelinstanceFactory;
 import de.fujaba.modelinstance.RootNode;
 import de.fujaba.newwizard.initializer.IModelInitializer;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.muml.model.core.PrimitiveDataType;
-import de.uni_paderborn.fujaba.muml.model.core.PrimitiveTypes;
+import de.uni_paderborn.fujaba.muml.model.types.PrimitiveDataType;
+import de.uni_paderborn.fujaba.muml.model.types.PrimitiveTypes;
+import de.uni_paderborn.fujaba.muml.model.types.TypesFactory;
 
 public class TypeCategoryInitializer implements IModelInitializer {
 	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
@@ -20,7 +20,7 @@ public class TypeCategoryInitializer implements IModelInitializer {
 		typesCategory.setKey(TYPES_CATEGORY_KEY);
 
 		for (PrimitiveTypes type : PrimitiveTypes.VALUES) {
-			PrimitiveDataType primitiveDataType = CoreFactory.eINSTANCE
+			PrimitiveDataType primitiveDataType = TypesFactory.eINSTANCE
 					.createPrimitiveDataType();
 			primitiveDataType.setPrimitiveType(type);
 			primitiveDataType.setName(type.getName());

@@ -13,17 +13,17 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public void init_MessageTypeRepository_2007(
-			de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository instance) {
+			de.uni_paderborn.fujaba.muml.model.msgtype.MessageTypeRepository instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							0,
-							de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
+							de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage.eINSTANCE
 									.getMessageTypeRepository(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -32,16 +32,16 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public void init_MessageType_3007(
-			de.uni_paderborn.fujaba.muml.model.msgiface.MessageType instance) {
+			de.uni_paderborn.fujaba.muml.model.msgtype.MessageType instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							1,
-							de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
+							de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage.eINSTANCE
 									.getMessageType(), null).evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -59,7 +59,7 @@ public class ElementInitializers {
 									.getParameter(), null).evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -68,10 +68,10 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public static ElementInitializers getInstance() {
-		ElementInitializers cached = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+		ElementInitializers cached = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 				.getInstance().getElementInitializers();
 		if (cached == null) {
-			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 					.getInstance().setElementInitializers(
 							cached = new ElementInitializers());
 		}

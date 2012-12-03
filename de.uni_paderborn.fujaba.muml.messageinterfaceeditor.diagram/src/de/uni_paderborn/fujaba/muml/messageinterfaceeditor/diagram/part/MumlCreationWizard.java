@@ -17,7 +17,7 @@ public class MumlCreationWizard extends AbstractFujabaDiagramNewWizard {
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 
-		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 				.getBundledImageDescriptor("icons/wizban/NewModelinstanceWizard.gif")); //$NON-NLS-1$
 
 	}
@@ -27,7 +27,7 @@ public class MumlCreationWizard extends AbstractFujabaDiagramNewWizard {
 	 */
 	@Override
 	public String getEditorId() {
-		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor.ID;
+		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramEditor.ID;
 
 	}
 
@@ -36,7 +36,7 @@ public class MumlCreationWizard extends AbstractFujabaDiagramNewWizard {
 	 */
 	@Override
 	public AdapterFactory getItemProvidersAdapterFactory() {
-		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 				.getInstance().getItemProvidersAdapterFactory();
 	}
 

@@ -34,7 +34,7 @@ public class MumlInitDiagramFileAction extends AbstractCreateDiagramFileCommand 
 	 */
 	@Override
 	public String getEditorId() {
-		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor.ID;
+		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramEditor.ID;
 
 	}
 }

@@ -29,7 +29,7 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State"/>
@@ -275,71 +275,7 @@
                       compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@compartments.0"
                       referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
                     <containmentFeature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
-                  </children>
-                  <children
-                      referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.6/@ownedChild">
-                    <containmentFeature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
-                    <ownedChild>
-                      <domainMetaElement
-                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/EntryPoint"/>
-                      <domainInitializer
-                          xsi:type="gmfmap:FeatureSeqInitializer">
-                        <initializers
-                            xsi:type="gmfmap:FeatureValueSpec">
-                          <feature
-                              xsi:type="ecore:EAttribute"
-                              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                          <value
-                              body="'entrypoint'"/>
-                        </initializers>
-                      </domainInitializer>
-                      <labelMappings
-                          xsi:type="gmfmap:FeatureLabelMapping">
-                        <diagramLabel
-                            href="realtimeStatechart.gmfgraph#EntryExitPointExternalLabel"/>
-                        <features
-                            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                      </labelMappings>
-                      <tool
-                          xsi:type="gmftool:CreationTool"
-                          href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.2"/>
-                      <diagramNode
-                          href="realtimeStatechart.gmfgraph#EntryPoint"/>
-                    </ownedChild>
-                  </children>
-                  <children
-                      referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.7/@ownedChild">
-                    <containmentFeature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/vertices"/>
-                    <ownedChild>
-                      <domainMetaElement
-                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ExitPoint"/>
-                      <domainInitializer
-                          xsi:type="gmfmap:FeatureSeqInitializer">
-                        <initializers
-                            xsi:type="gmfmap:FeatureValueSpec">
-                          <feature
-                              xsi:type="ecore:EAttribute"
-                              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                          <value
-                              body="'exitpoint'"/>
-                        </initializers>
-                      </domainInitializer>
-                      <labelMappings
-                          xsi:type="gmfmap:FeatureLabelMapping">
-                        <diagramLabel
-                            href="realtimeStatechart.gmfgraph#EntryExitPointExternalLabel"/>
-                        <features
-                            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                      </labelMappings>
-                      <tool
-                          xsi:type="gmftool:CreationTool"
-                          href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.3"/>
-                      <diagramNode
-                          href="realtimeStatechart.gmfgraph#ExitPoint"/>
-                    </ownedChild>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"/>
                   </children>
                   <compartments
                       children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@children.0">
@@ -357,10 +293,10 @@
           </children>
           <children>
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/stateEntryPoints"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/entryPoints"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/StateEntryPoint"/>
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/EntryPoint"/>
               <domainInitializer
                   xsi:type="gmfmap:FeatureSeqInitializer">
                 <initializers
@@ -388,10 +324,10 @@
           </children>
           <children>
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/stateExitPoints"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/exitPoints"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/StateExitPoint"/>
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ExitPoint"/>
               <domainInitializer
                   xsi:type="gmfmap:FeatureSeqInitializer">
                 <initializers
@@ -491,7 +427,7 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition/target"/>
     <creationConstraints>
       <sourceEnd
-          body="not (self.oclIsKindOf(EntryPoint) and (not oppositeEnd.oclIsKindOf(State) and not oppositeEnd.oclIsKindOf(StateEntryPoint))) and&#xA;not (self.oclIsKindOf(ExitPoint) and (not oppositeEnd.oclIsKindOf(State) and not oppositeEnd.oclIsKindOf(StateExitPoint)))"/>
+          body="not (self.oclIsKindOf(EntryPoint) and (not oppositeEnd.oclIsKindOf(State))) and&#xA;not (self.oclIsKindOf(ExitPoint) and (not oppositeEnd.oclIsKindOf(State)))"/>
     </creationConstraints>
   </links>
   <diagram>

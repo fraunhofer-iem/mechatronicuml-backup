@@ -175,7 +175,7 @@ public class MessageFormatParser
 		Object[] values = getEditProcessor().parse(editString, pos);
 		if (values == null) {
 			return new ParserEditStatus(
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin.ID,
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin.ID,
 					IParserEditStatus.UNEDITABLE,
 					NLS.bind(
 							de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.Messages.MessageFormatParser_InvalidInputError,

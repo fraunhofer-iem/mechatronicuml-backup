@@ -38,6 +38,7 @@
         visualID="3007"
         editPartClassName="MessageTypeEditPart"
         itemSemanticEditPolicyClassName="MessageTypeItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageTypeViewFactory"
         canonicalEditPolicyClassName="MessageTypeCanonicalEditPolicy"
         compartments="//@diagram/@compartments.1"
         graphicalNodeEditPolicyClassName="MessageTypeGraphicalNodeEditPolicy"
@@ -60,11 +61,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageType"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgtype/MessageType"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageTypeRepository/messageTypes"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgtype/MessageTypeRepository/messageTypes"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageTypeRepository/messageTypes"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgtype/MessageTypeRepository/messageTypes"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -78,7 +79,8 @@
       <labels
           visualID="5014"
           editPartClassName="MessageTypeNameEditPart"
-          itemSemanticEditPolicyClassName="MessageTypeNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="MessageTypeNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="MessageTypeNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -97,6 +99,7 @@
         visualID="3008"
         editPartClassName="ParameterEditPart"
         itemSemanticEditPolicyClassName="ParameterItemSemanticEditPolicy"
+        notationViewFactoryClassName="ParameterViewFactory"
         canonicalEditPolicyClassName="ParameterCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ParameterGraphicalNodeEditPolicy"
         createCommandClassName="ParameterCreateCommand"
@@ -121,9 +124,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Parameter"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageType/parameters"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgtype/MessageType/parameters"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageType/parameters"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgtype/MessageType/parameters"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -137,7 +140,8 @@
       <labels
           visualID="5013"
           editPartClassName="WrappingLabelEditPart"
-          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
+          notationViewFactoryClassName="ParameterLabelViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -153,6 +157,7 @@
         visualID="2007"
         editPartClassName="MessageTypeRepositoryEditPart"
         itemSemanticEditPolicyClassName="MessageTypeRepositoryItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageTypeRepositoryViewFactory"
         canonicalEditPolicyClassName="MessageTypeRepositoryCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="MessageTypeRepositoryGraphicalNodeEditPolicy"
@@ -173,7 +178,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgiface/MessageTypeRepository"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgtype/MessageTypeRepository"/>
         <containmentMetaFeature
             href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
@@ -191,7 +196,8 @@
       <labels
           visualID="5015"
           editPartClassName="MessageTypeRepositoryNameEditPart"
-          itemSemanticEditPolicyClassName="MessageTypeRepositoryNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="MessageTypeRepositoryNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="MessageTypeRepositoryNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -214,28 +220,29 @@
         visualID="7008"
         editPartClassName="MessageTypeRepositoryMessageTypesCompartmentEditPart"
         itemSemanticEditPolicyClassName="MessageTypeRepositoryMessageTypesCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageTypeRepositoryMessageTypesCompartmentViewFactory"
         canonicalEditPolicyClassName="MessageTypeRepositoryMessageTypesCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="MessageTypesCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.0">
+        node="//@diagram/@topLevelNodes.0"
+        listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureMessageTypesCompartmentFigure"
-          setterName=""
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
         visualID="7009"
         editPartClassName="MessageTypeParametersCompartmentEditPart"
         itemSemanticEditPolicyClassName="MessageTypeParametersCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageTypeParametersCompartmentViewFactory"
         canonicalEditPolicyClassName="MessageTypeParametersCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.1"
         title="ParametersCompartment"
-        canCollapse="false"
         needsTitle="false"
         node="//@diagram/@childNodes.0">
       <diagramRunTimeClass
@@ -268,54 +275,40 @@
     </palette>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.general"
-        name="Messageinterface Diagram">
+        iD="messagetype.diagram.general"
+        name="MessageType Diagram">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.appearance"
+          iD="design.diagram.appearance"
           name="Appearance"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.connections"
+          iD="design.diagram.connections"
           name="Connections"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.printing"
+          iD="design.diagram.printing"
           name="Printing"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.rulersAndGrid"
+          iD="design.diagram.rulersAndGrid"
           name="Rulers And Grid"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
   <plugin
       iD="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram"
-      name="Messageinterface Diagram-Editor"
+      name="Message Type Diagram-Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.3.1.qualifier"
-      activatorClassName="MessageinterfaceDiagramEditorPlugin">
+      activatorClassName="MessageTypeDiagramEditorPlugin">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
-    <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
   </plugin>
-  <editor
-      className="MessageinterfaceDiagramEditor"/>
-  <navigator
-      domainContentProviderClassName="MessageinterfaceDomainNavigatorContentProvider"
-      domainLabelProviderClassName="MessageinterfaceDomainNavigatorLabelProvider"
-      domainNavigatorItemClassName="MessageinterfaceDomainNavigatorItem"
-      contentProviderClassName="MessageinterfaceNavigatorContentProvider"
-      labelProviderClassName="MessageinterfaceNavigatorLabelProvider"
-      linkHelperClassName="MessageinterfaceNavigatorLinkHelper"
-      sorterClassName="MessageinterfaceNavigatorSorter"
-      actionProviderClassName="MessageinterfaceNavigatorActionProvider"
-      abstractNavigatorItemClassName="MessageinterfaceAbstractNavigatorItem"
-      navigatorGroupClassName="MessageinterfaceNavigatorGroup"
-      navigatorItemClassName="MessageinterfaceNavigatorItem"
-      uriInputTesterClassName="MessageinterfaceUriEditorInputTester">
+  <editor/>
+  <navigator>
     <childReferences
         child="//@diagram"/>
     <childReferences
@@ -329,8 +322,7 @@
         child="//@diagram/@topLevelNodes.0"/>
   </navigator>
   <diagramUpdater/>
-  <propertySheet
-      labelProviderClassName="MessageinterfaceSheetLabelProvider">
+  <propertySheet>
     <tabs
         xsi:type="gmfgen:GenStandardPropertyTab"
         iD="appearance"/>
@@ -340,8 +332,7 @@
     <tabs
         xsi:type="gmfgen:GenCustomPropertyTab"
         iD="domain"
-        label="Core"
-        className="MessageinterfacePropertySection">
+        label="Core">
       <filter
           xsi:type="gmfgen:TypeTabFilter">
         <types>org.eclipse.gmf.runtime.notation.View</types>
@@ -368,11 +359,11 @@
     </providers>
   </expressionProviders>
   <labelParsers
-      className="MessageinterfaceParserProvider"
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.1/@labels.0/@modelFacet"
+        className="ParameterLabelExpressionLabelParser5013"
         viewExpression="//@expressionProviders/@providers.0/@expressions.3"
         editExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext

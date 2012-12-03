@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.util;
 
+import de.uni_paderborn.fujaba.muml.model.deployment.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;

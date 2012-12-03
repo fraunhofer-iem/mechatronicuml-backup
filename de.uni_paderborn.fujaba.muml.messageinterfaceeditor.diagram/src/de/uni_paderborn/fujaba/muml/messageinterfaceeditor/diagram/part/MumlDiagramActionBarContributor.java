@@ -18,14 +18,14 @@ public class MumlDiagramActionBarContributor extends
 	 * @generated
 	 */
 	protected Class getEditorClass() {
-		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor.class;
+		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramEditor.class;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected String getEditorId() {
-		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor.ID;
+		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramEditor.ID;
 	}
 
 	/**

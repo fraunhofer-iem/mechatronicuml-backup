@@ -42,18 +42,15 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertySheetDialog
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.SimpleTextualDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.UseParserDialogExtension;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.common.emf.edit.provider.ParameterBindingPropertySourceProvider.IParameterBindingElement;
 import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.model.msgiface.MessageType;
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 public class CustomPropertyDescriptor extends PropertyDescriptor {

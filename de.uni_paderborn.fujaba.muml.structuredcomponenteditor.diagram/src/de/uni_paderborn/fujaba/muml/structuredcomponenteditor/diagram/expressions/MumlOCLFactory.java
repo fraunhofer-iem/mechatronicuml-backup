@@ -61,7 +61,7 @@ public class MumlOCLFactory {
 					"\'port\'", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
-					"let partName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nlet compName : String = if self.componentType.oclIsUndefined() then \'null\' else self.componentType.name endif in\r\npartName.concat(\' : \'.concat(compName))", //$NON-NLS-1$
+					"let partName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nlet compName : String = if self.componentType.oclIsUndefined() then \'null\' else self.componentType.name endif in\nlet lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then \'null\' else cardinality.lowerBound.toString() endif in\nlet upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then \'null\' else cardinality.upperBound.toString() endif in\r\npartName.concat(\' : \').concat(compName).concat(\' [\').concat(lowerBound).concat(\'..\').concat(upperBound).concat(\']\')", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

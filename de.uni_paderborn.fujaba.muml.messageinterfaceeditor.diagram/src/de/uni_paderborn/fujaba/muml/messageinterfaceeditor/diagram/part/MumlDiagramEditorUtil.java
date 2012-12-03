@@ -82,7 +82,7 @@ public class MumlDiagramEditorUtil {
 			return null != page
 					.openEditor(
 							new FileEditorInput((IFile) workspaceResource),
-							de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor.ID);
+							de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramEditor.ID);
 		}
 		return false;
 	}
@@ -97,7 +97,7 @@ public class MumlDiagramEditorUtil {
 		try {
 			file.setCharset("UTF-8", new NullProgressMonitor()); //$NON-NLS-1$
 		} catch (CoreException e) {
-			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 					.getInstance()
 					.logError(
 							"Unable to set charset for file " + file.getFullPath(), e); //$NON-NLS-1$
@@ -138,7 +138,7 @@ public class MumlDiagramEditorUtil {
 	 * @generated
 	 */
 	public static void runWizard(Shell shell, Wizard wizard, String settingsKey) {
-		IDialogSettings pluginDialogSettings = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+		IDialogSettings pluginDialogSettings = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 				.getInstance().getDialogSettings();
 		IDialogSettings wizardDialogSettings = pluginDialogSettings
 				.getSection(settingsKey);
@@ -185,7 +185,7 @@ public class MumlDiagramEditorUtil {
 						.createDiagram(
 								model,
 								de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.MODEL_ID,
-								de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+								de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);
 					diagram.setName(diagramName);
@@ -201,7 +201,7 @@ public class MumlDiagramEditorUtil {
 									.getSaveOptions());
 				} catch (IOException e) {
 
-					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+					de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 							.getInstance()
 							.logError(
 									"Unable to store model and diagram resources", e); //$NON-NLS-1$
@@ -213,7 +213,7 @@ public class MumlDiagramEditorUtil {
 			OperationHistoryFactory.getOperationHistory().execute(command,
 					new SubProgressMonitor(progressMonitor, 1), null);
 		} catch (ExecutionException e) {
-			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 					.getInstance().logError(
 							"Unable to create model and diagram", e); //$NON-NLS-1$
 		}

@@ -12,6 +12,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.Label;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.EditDomain;
@@ -127,22 +128,25 @@ public class StructuredcomponentValidationDecoratorProvider extends
 
 			public void run() {
 				try {
-					TransactionUtil.getEditingDomain(fdiagram).runExclusive(
-							new Runnable() {
+					// BEGIN Added null checks
+					TransactionalEditingDomain editingDomain = TransactionUtil
+							.getEditingDomain(fdiagram);
+					if (editingDomain != null) {
+						editingDomain.runExclusive(new Runnable() {
 
-								public void run() {
-									for (Iterator it = decorators.iterator(); it
-											.hasNext();) {
-										IDecorator decorator = (IDecorator) it
-												.next();
-										// BEGIN Changed
-										if (decorator != null) {
-											decorator.refresh();
-										}
-										// END Changed
+							public void run() {
+								for (Iterator it = decorators.iterator(); it
+										.hasNext();) {
+									IDecorator decorator = (IDecorator) it
+											.next();
+									if (decorator != null) {
+										decorator.refresh();
 									}
 								}
-							});
+							}
+						});
+					}
+					// END Added null checks
 				} catch (Exception e) {
 					de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
 							.getInstance().logError(

@@ -53,7 +53,7 @@ public class RealtimeStatechartStatechartContentsCompartment2CanonicalEditPolicy
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-				.getRealtimeStatechart_Vertices();
+				.getRealtimeStatechart_States();
 	}
 
 	/**

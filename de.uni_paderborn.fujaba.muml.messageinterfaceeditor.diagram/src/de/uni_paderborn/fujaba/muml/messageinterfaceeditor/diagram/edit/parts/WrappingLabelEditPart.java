@@ -288,7 +288,7 @@ public class WrappingLabelEditPart extends CompartmentEditPart implements
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MessageinterfaceParserProvider
+			parser = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlParserProvider
 					.getParser(
 							de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.Parameter_3008,
 							getParserElement(),

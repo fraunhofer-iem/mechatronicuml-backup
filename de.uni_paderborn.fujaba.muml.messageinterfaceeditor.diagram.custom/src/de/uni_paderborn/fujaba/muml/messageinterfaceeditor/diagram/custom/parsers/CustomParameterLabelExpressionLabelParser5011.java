@@ -6,13 +6,13 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.ParameterLabelExpressionLabelParser;
+import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.ParameterLabelExpressionLabelParser5013;
 
 /**
  * @generated
  */
 public class CustomParameterLabelExpressionLabelParser5011 extends
-		ParameterLabelExpressionLabelParser {
+		ParameterLabelExpressionLabelParser5013 {
 
 	@Override
 	protected IStatus updateValues(EObject target, String newString)

@@ -52,12 +52,10 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType MessageTypeRepository_2007 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageTypeRepository_2007"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType MessageType_3007 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageType_3007"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
@@ -99,7 +97,7 @@ public class MumlElementTypes {
 		if (element instanceof EClass) {
 			EClass eClass = (EClass) element;
 			if (!eClass.isAbstract()) {
-				return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+				return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 						.getInstance().getItemImageDescriptor(
 								eClass.getEPackage().getEFactoryInstance()
 										.create(eClass));
@@ -179,12 +177,12 @@ public class MumlElementTypes {
 
 			elements.put(
 					MessageTypeRepository_2007,
-					de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage.eINSTANCE
 							.getMessageTypeRepository());
 
 			elements.put(
 					MessageType_3007,
-					de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage.eINSTANCE
 							.getMessageType());
 
 			elements.put(

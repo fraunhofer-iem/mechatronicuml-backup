@@ -52,7 +52,7 @@ public class MessageTypeParametersCompartmentCanonicalEditPolicy extends
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
+		return de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage.eINSTANCE
 				.getMessageType_Parameters();
 	}
 

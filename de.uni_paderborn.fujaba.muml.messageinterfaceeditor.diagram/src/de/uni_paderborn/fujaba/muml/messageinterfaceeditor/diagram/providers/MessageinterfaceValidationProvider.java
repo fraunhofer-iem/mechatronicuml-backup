@@ -40,7 +40,7 @@ public class MessageinterfaceValidationProvider {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 						.getInstance().logError("Validation failed", e); //$NON-NLS-1$
 			}
 		} else {

@@ -23,12 +23,12 @@
 	<extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="true"?>
       <editor
-         id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID"
+         id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/MessageinterfaceDiagramFile.gif"
          extensions="messageinterface_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditor"
+         class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramEditor"
          matchingStrategy="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlMatchingStrategy"
          contributorClass="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramActionBarContributor">
       </editor>
@@ -93,12 +93,12 @@
          point="de.fujaba.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="de.uni_paderborn.fujaba.muml.messageinterface.category"
-            name="msgiface">
+            key="de.uni_paderborn.fujaba.muml.msgtype.category"
+            name="msgtype">
          
          <child
                class="MessageTypeRepository"
-               packageNsUri="http://www.fujaba.de/muml/model/msgiface/0.3.2">
+               packageNsUri="http://www.fujaba.de/muml/model/msgtype/0.3.6">
          </child>
          
       </category>
@@ -110,13 +110,13 @@
       <?gmfgen generated="true"?>
       <editor
             preferencesHint="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram"
-            editorId="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID"
+            editorId="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramEditorID"
             editorName="Messageinterface Editor"
             fileExtension="messageinterface_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.messageinterface.category"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.msgtype.category"
             modelId="Messageinterface">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/modelinstance/0.3.3"
+               packageNsURI="http://www.fujaba.de/modelinstance/0.3.6"
                className="ModelElementCategory">
          </diagramElement>
          
@@ -135,7 +135,7 @@
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
          id="MessageinterfacePresentation">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID">
+         <ViewId id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="delete"/>
             </ElementType>
@@ -152,7 +152,7 @@
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
          id="MessageinterfacePresentationIDE">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID">
+         <ViewId id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="bookmark"/>
             </ElementType>
@@ -162,7 +162,7 @@
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
             id="MessageinterfaceRender">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID">
+         <ViewId id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="cut"/>
                <GlobalActionId actionId="copy"/>
@@ -181,7 +181,7 @@
       </MarkerNavigationProvider>
    </extension>
 
-   <extension id="diagnostic" name="Messageinterface Diagram-Editor problems" point="org.eclipse.core.resources.markers">
+   <extension id="diagnostic" name="Message Type Diagram-Editor problems" point="org.eclipse.core.resources.markers">
       <?gmfgen generated="true"?>
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
@@ -205,32 +205,32 @@
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
-            id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.general"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.general"
+            id="messagetype.diagram.general"
+            name="%prefpage.messagetype.diagram.general"
             class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.appearance"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.appearance"
-            category="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.general"
+            id="design.diagram.appearance"
+            name="%prefpage.design.diagram.appearance"
+            category="messagetype.diagram.general"
             class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.connections"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.connections"
-            category="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.general"
+            id="design.diagram.connections"
+            name="%prefpage.design.diagram.connections"
+            category="messagetype.diagram.general"
             class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.printing"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.printing"
-            category="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.general"
+            id="design.diagram.printing"
+            name="%prefpage.design.diagram.printing"
+            category="messagetype.diagram.general"
             class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.rulersAndGrid"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.rulersAndGrid"
-            category="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.general"
+            id="design.diagram.rulersAndGrid"
+            name="%prefpage.design.diagram.rulersAndGrid"
+            category="messagetype.diagram.general"
             class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
@@ -239,7 +239,7 @@
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram"
-            labelProvider="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.sheet.MessageinterfaceSheetLabelProvider">
+            labelProvider="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.sheet.MumlSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -291,10 +291,10 @@
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.sheet.MessageinterfacePropertySection">
+            class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.sheet.MumlPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceAbstractNavigatorItem"/>
+            <input type="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MumlAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
    </extension>
@@ -370,14 +370,14 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MessageinterfaceParserProvider">
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/modelinstance/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/modelinstance/0.3.6">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.ModelElementCategory_1000"
                name="%metatype.name.ModelElementCategory_1000"
@@ -387,7 +387,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/msgiface/0.3.2">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/msgtype/0.3.6">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageTypeRepository_2007"
                name="%metatype.name.MessageTypeRepository_2007"
@@ -397,7 +397,7 @@
             <param name="semanticHint" value="2007"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/msgiface/0.3.2">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/msgtype/0.3.6">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageType_3007"
                name="%metatype.name.MessageType_3007"
@@ -407,7 +407,7 @@
             <param name="semanticHint" value="3007"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/core/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/core/0.3.6">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.Parameter_3008"
                name="%metatype.name.Parameter_3008"
@@ -443,7 +443,7 @@
            type="org.eclipse.emf.common.ui.URIEditorInput"
            namespace="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram"
            properties="isURIEditorInput"
-           class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceUriEditorInputTester">
+           class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlUriEditorInputTester">
        </propertyTester>
    </extension>
 
@@ -469,8 +469,8 @@
             id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorLabelProvider"
+            contentProvider="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MumlNavigatorContentProvider" 
+            labelProvider="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MumlNavigatorLabelProvider"
             icon="icons/obj16/MessageinterfaceDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -479,24 +479,24 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="messageinterface_diagram"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceAbstractNavigatorItem"/>
+               <instanceof value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MumlAbstractNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceAbstractNavigatorItem"/>
+         	   <instanceof value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MumlAbstractNavigatorItem"/>
             </or>
          </possibleChildren>
          <commonSorter 
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigatorSorter" 
-               class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorSorter">
+               class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MumlNavigatorSorter">
             <parentExpression>
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
         	         <test property="org.eclipse.core.resources.extension" value="messageinterface_diagram"/>
                   </and>
-                  <instanceof value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceAbstractNavigatorItem"/>
+                  <instanceof value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MumlAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
@@ -505,8 +505,8 @@
             id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.domainResourceContent" 
             name="%domainNavigatorContentName" 
             priority="normal" 
-            contentProvider="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceDomainNavigatorContentProvider" 
-            labelProvider="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceDomainNavigatorLabelProvider"
+            contentProvider="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MumlDomainNavigatorContentProvider" 
+            labelProvider="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MumlDomainNavigatorLabelProvider"
             icon="icons/obj16/MessageinterfaceDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -515,19 +515,19 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="fujaba"/>
                </and>
-               <instanceof value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceDomainNavigatorItem"/>
+               <instanceof value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MumlDomainNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
-            <instanceof value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceDomainNavigatorItem"/>
+            <instanceof value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MumlDomainNavigatorItem"/>
          </possibleChildren>
       </navigatorContent>
       <actionProvider
             id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigatorActionProvider"
-            class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorActionProvider">
+            class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MumlNavigatorActionProvider">
          <enablement>
             <or>
-               <instanceof value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceAbstractNavigatorItem"/>
+               <instanceof value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MumlAbstractNavigatorItem"/>
             </or>
          </enablement>
       </actionProvider>
@@ -537,7 +537,7 @@
       <?gmfgen generated="true"?>
       <linkHelper
             id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigatorLinkHelper"
-            class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceNavigatorLinkHelper">
+            class="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MumlNavigatorLinkHelper">
          <editorInputEnablement>
             <and>
                <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
@@ -545,7 +545,7 @@
             </and>
          </editorInputEnablement>
          <selectionEnablement>
-            <instanceof value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MessageinterfaceAbstractNavigatorItem"/>
+            <instanceof value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.navigator.MumlAbstractNavigatorItem"/>
          </selectionEnablement>
       </linkHelper>
    </extension>
@@ -578,7 +578,7 @@
          <command commandId="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.LoadResourceAction">
             <visibleWhen>
                <and>
-                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
                      <instanceof value="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart"/>
                   </iterate></with>
@@ -590,10 +590,10 @@
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
-      <category id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <category id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
       <command id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.LoadResourceAction"
          name="Load Resource"
-         categoryId="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorID"
+         categoryId="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramEditorID"
          defaultHandler="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.LoadResourceAction"/>
    </extension>
 

@@ -98,7 +98,7 @@
          
          <child
                class="AtomicComponent"
-               packageNsUri="http://www.fujaba.de/muml/model/component/0.3.1">
+               packageNsUri="http://www.fujaba.de/muml/model/component/0.3.6">
          </child>
          
       </category>
@@ -116,7 +116,7 @@
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.components.category"
             modelId="Atomiccomponent">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/modelinstance/0.3.2"
+               packageNsURI="http://www.fujaba.de/modelinstance/0.3.6"
                className="ModelElementCategory">
          </diagramElement>
          
@@ -377,7 +377,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/modelinstance/0.3.2">
+      <metamodel nsURI="http://www.fujaba.de/modelinstance/0.3.6">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.ModelElementCategory_1000"
                name="%metatype.name.ModelElementCategory_1000"
@@ -387,7 +387,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.1">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.6">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.AtomicComponent_2005"
                name="%metatype.name.AtomicComponent_2005"
@@ -397,7 +397,7 @@
             <param name="semanticHint" value="2005"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.1">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.6">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.HybridPort_3005"
                name="%metatype.name.HybridPort_3005"
@@ -407,7 +407,7 @@
             <param name="semanticHint" value="3005"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.1">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.6">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.DiscretePort_3006"
                name="%metatype.name.DiscretePort_3006"
@@ -417,7 +417,7 @@
             <param name="semanticHint" value="3006"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.1">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.6">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.ContinuousPort_3007"
                name="%metatype.name.ContinuousPort_3007"

@@ -63,7 +63,7 @@ public class MumlVisualIDRegistry {
 		} catch (NumberFormatException e) {
 			if (Boolean.TRUE.toString().equalsIgnoreCase(
 					Platform.getDebugOption(DEBUG_KEY))) {
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 						.getInstance().logError(
 								"Unable to parse view type as a visualID number: "
 										+ type);
@@ -121,14 +121,14 @@ public class MumlVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage.eINSTANCE
 					.getMessageTypeRepository().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage.eINSTANCE
 					.getMessageType().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID;
 			}

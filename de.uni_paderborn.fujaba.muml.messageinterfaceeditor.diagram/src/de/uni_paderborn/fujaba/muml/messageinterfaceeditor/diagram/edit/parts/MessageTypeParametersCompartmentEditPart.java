@@ -72,6 +72,8 @@ public class MessageTypeParametersCompartmentEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
+				new ResizableCompartmentEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.policies.MessageTypeParametersCompartmentItemSemanticEditPolicy());

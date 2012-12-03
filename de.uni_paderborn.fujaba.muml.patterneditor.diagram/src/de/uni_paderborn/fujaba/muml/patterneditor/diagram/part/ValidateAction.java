@@ -137,7 +137,13 @@ public class ValidateAction extends Action {
 			return new Diagnostician() {
 
 				public String getObjectLabel(EObject eObject) {
-					return EMFCoreUtil.getQualifiedName(eObject, true);
+					// BEGIN Fix for muml bug #341:
+					try {
+						return EMFCoreUtil.getQualifiedName(eObject, true);
+					} catch (NullPointerException e) {
+						return "null";
+					}
+					// END Fix
 				}
 			}.validate(target.getElement());
 		}

@@ -37,70 +37,76 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		DiscretePort port = this.getPort(event);
-		
-		if(port.getRefines() == null)
+
+		if (port.getRefines() == null)
 			return null;
-		
-		//Single port
-		if(port.getCardinality().getUpperBound().getValue() == 1)
-		{	RealtimeStatechart transformedBehavior = this.copyRealtimeStatechart((RealtimeStatechart) port.getRefines().getBehavior());
-					
-			if(transformedBehavior != null)
-			{
-				ICommandProxy a = new ICommandProxy(new SinglePortChangeCommand(this.getEditPart(event).getEditingDomain(),port,transformedBehavior));
-				a.execute();	
-			}		
+
+		// Single port
+		if (port.getCardinality().getUpperBound().getValue() == 1) {
+			RealtimeStatechart transformedBehavior = this
+					.copyRealtimeStatechart((RealtimeStatechart) port
+							.getRefines().getBehavior());
+
+			if (transformedBehavior != null) {
+				ICommandProxy a = new ICommandProxy(
+						new SinglePortChangeCommand(this.getEditPart(event)
+								.getEditingDomain(), port, transformedBehavior));
+				a.execute();
+			}
 		}
-		//Multi port
-		else
-		{
-			RealtimeStatechart roleAndAdaptation = (RealtimeStatechart) port.getRefines().getRoleAndAdaptationBehavior();
-			RealtimeStatechart transformedRoleAndAdaptation = this.copyRealtimeStatechart(roleAndAdaptation);
+		// Multi port
+		else {
+			RealtimeStatechart roleAndAdaptation = (RealtimeStatechart) port
+					.getRefines().getRoleAndAdaptationBehavior();
+			RealtimeStatechart transformedRoleAndAdaptation = this
+					.copyRealtimeStatechart(roleAndAdaptation);
 			String behaviorName = null;
-			if(port.getRefines().getBehavior() != null)
-				behaviorName = ((RealtimeStatechart)port.getRefines().getBehavior()).getName();
+			if (port.getRefines().getBehavior() != null)
+				behaviorName = ((RealtimeStatechart) port.getRefines()
+						.getBehavior()).getName();
 			String adaptationName = null;
-			if(port.getRefines().getAdaptationBehavior() != null)
-				adaptationName = ((RealtimeStatechart)port.getRefines().getAdaptationBehavior()).getName();
-			if(transformedRoleAndAdaptation != null)
-			{
-				ICommandProxy a = new ICommandProxy(new MultiPortChangeCommand(this.getEditPart(event).getEditingDomain(),port,transformedRoleAndAdaptation, behaviorName, adaptationName));
+			if (port.getRefines().getAdaptationBehavior() != null)
+				adaptationName = ((RealtimeStatechart) port.getRefines()
+						.getAdaptationBehavior()).getName();
+			if (transformedRoleAndAdaptation != null) {
+				ICommandProxy a = new ICommandProxy(new MultiPortChangeCommand(
+						this.getEditPart(event).getEditingDomain(), port,
+						transformedRoleAndAdaptation, behaviorName,
+						adaptationName));
 				a.execute();
 			}
 		}
 
 		return null;
 	}
-	
+
 	/**
 	 * Returns the selected discrete port
 	 */
-	public DiscretePort getPort(ExecutionEvent event)
-	{		
+	public DiscretePort getPort(ExecutionEvent event) {
 		CustomDiscretePortEditPart editPart = this.getEditPart(event);
-		return (DiscretePort) ((Node)editPart.getModel()).getElement();		
+		return (DiscretePort) ((Node) editPart.getModel()).getElement();
 	}
-	
+
 	/**
 	 * Returns the selected editpart
 	 */
-	public CustomDiscretePortEditPart getEditPart(ExecutionEvent event)
-	{
-		EvaluationContext evalCtx = (EvaluationContext) event.getApplicationContext();
+	public CustomDiscretePortEditPart getEditPart(ExecutionEvent event) {
+		EvaluationContext evalCtx = (EvaluationContext) event
+				.getApplicationContext();
 		@SuppressWarnings("unchecked")
-		Collection<CustomDiscretePortEditPart> defVar = (Collection<CustomDiscretePortEditPart>) evalCtx.getDefaultVariable();
+		Collection<CustomDiscretePortEditPart> defVar = (Collection<CustomDiscretePortEditPart>) evalCtx
+				.getDefaultVariable();
 		return defVar.iterator().next();
 	}
-	
-	
+
 	/**
 	 * Copies the given rtsc by using a qvto transformation
 	 */
-	public RealtimeStatechart copyRealtimeStatechart(RealtimeStatechart source)
-	{
-		if(source == null)
+	public RealtimeStatechart copyRealtimeStatechart(RealtimeStatechart source) {
+		if (source == null)
 			return null;
-		
+
 		URI transformationURI = URI
 				.createPlatformPluginURI(
 						"/de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom/transforms/CopyRealtimeStatechart.qvto",
@@ -113,10 +119,9 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 		// create input extend containing the activities
 		// create empty output extend
 
-
 		BasicModelExtent input = new BasicModelExtent();
 		input.add(source);
-		
+
 		ModelExtent output = new BasicModelExtent();
 
 		// execute transformation
@@ -133,110 +138,110 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 			if (curObject instanceof RealtimeStatechart) {
 				return (RealtimeStatechart) curObject;
 			}
-		}		
+		}
 		return null;
 	}
-	
+
 	/**
 	 * Helper class to edit the resource/model.
 	 * 
-	 * Direct manipulation would lead to a "java.lang.IllegalStateException: 
+	 * Direct manipulation would lead to a "java.lang.IllegalStateException:
 	 * Cannot modify resource set without a write transaction"
-	 *
+	 * 
 	 */
-	class SinglePortChangeCommand extends AbstractTransactionalCommand
-	{
+	class SinglePortChangeCommand extends AbstractTransactionalCommand {
 		DiscretePort source = null;
 		RealtimeStatechart behavior = null;
-				
-		public SinglePortChangeCommand(TransactionalEditingDomain editingDomain, DiscretePort source, RealtimeStatechart behavior)
-		{
-		    super(editingDomain, "Copy role properties to port", null);
-		    this.source = source;
-		    this.behavior = behavior;
+
+		public SinglePortChangeCommand(
+				TransactionalEditingDomain editingDomain, DiscretePort source,
+				RealtimeStatechart behavior) {
+			super(editingDomain, "Copy role properties to port", null);
+			this.source = source;
+			this.behavior = behavior;
 		}
 
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 				IAdaptable info) throws ExecutionException {
-			
-			//Step 1: Set message interfaces
-			source.getReceiverMessageTypes().addAll(source.getRefines().getReceiverMessageTypes());
-			source.getSenderMessageTypes().addAll(source.getRefines().getSenderMessageTypes());
-			
-			//Step 2: Copy statechart
+
+			// Step 1: Set message interfaces
+			source.getReceiverMessageTypes().addAll(
+					source.getRefines().getReceiverMessageTypes());
+			source.getSenderMessageTypes().addAll(
+					source.getRefines().getSenderMessageTypes());
+
+			// Step 2: Copy statechart
 			source.setBehavior(behavior);
-			
-			//Add to resource
-			ModelElementCategory category = (ModelElementCategory) source.getRefines().getBehavior().eContainer();
-			category.getModelElements().add(behavior);		
-			
-			
+
+			// Add to resource
+			ModelElementCategory category = (ModelElementCategory) source
+					.getRefines().getBehavior().eContainer();
+			category.getModelElements().add(behavior);
+
 			return CommandResult.newOKCommandResult();
-		}		
+		}
 	}
-	
-	class MultiPortChangeCommand extends AbstractTransactionalCommand
-	{
+
+	class MultiPortChangeCommand extends AbstractTransactionalCommand {
 		DiscretePort source = null;
 		RealtimeStatechart roleAndAdaptation = null;
 		String behaviorName = null;
 		String adaptationName = null;
-				
-		public MultiPortChangeCommand(TransactionalEditingDomain editingDomain, DiscretePort source, RealtimeStatechart roleAndAdaptation, String behaviorName, String adaptationName)
-		{
-		    super(editingDomain, "Copy role properties to port", null);
-		    this.source = source;
-		    this.roleAndAdaptation = roleAndAdaptation;
-		    this.behaviorName = behaviorName;
-		    this.adaptationName = adaptationName;
+
+		public MultiPortChangeCommand(TransactionalEditingDomain editingDomain,
+				DiscretePort source, RealtimeStatechart roleAndAdaptation,
+				String behaviorName, String adaptationName) {
+			super(editingDomain, "Copy role properties to port", null);
+			this.source = source;
+			this.roleAndAdaptation = roleAndAdaptation;
+			this.behaviorName = behaviorName;
+			this.adaptationName = adaptationName;
 		}
 
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 				IAdaptable info) throws ExecutionException {
-			
-			//Step 1: Set message interfaces
-			source.getReceiverMessageTypes().addAll(source.getRefines().getReceiverMessageTypes());
-			source.getSenderMessageTypes().addAll(source.getRefines().getSenderMessageTypes());
-			
-			//Step 2: Copy statechart
+
+			// Step 1: Set message interfaces
+			source.getReceiverMessageTypes().addAll(
+					source.getRefines().getReceiverMessageTypes());
+			source.getSenderMessageTypes().addAll(
+					source.getRefines().getSenderMessageTypes());
+
+			// Step 2: Copy statechart
 			source.setRoleAndAdaptationBehavior(roleAndAdaptation);
-			source.setBehavior(this.getSubChartByName(this.roleAndAdaptation, this.behaviorName));
-			source.setAdaptationBehavior(this.getSubChartByName(this.roleAndAdaptation, this.adaptationName));
-			
-			//Add to resource
-			ModelElementCategory category = (ModelElementCategory) source.getRefines().getRoleAndAdaptationBehavior().eContainer();
-			category.getModelElements().add(roleAndAdaptation);		
-			
-			
+			source.setBehavior(this.getSubChartByName(this.roleAndAdaptation,
+					this.behaviorName));
+			source.setAdaptationBehavior(this.getSubChartByName(
+					this.roleAndAdaptation, this.adaptationName));
+
+			// Add to resource
+			ModelElementCategory category = (ModelElementCategory) source
+					.getRefines().getRoleAndAdaptationBehavior().eContainer();
+			category.getModelElements().add(roleAndAdaptation);
+
 			return CommandResult.newOKCommandResult();
 		}
-		
-		public RealtimeStatechart getSubChartByName(RealtimeStatechart chart, String name)
-		{
-			if(name == null)
+
+		public RealtimeStatechart getSubChartByName(RealtimeStatechart chart,
+				String name) {
+			if (name == null)
 				return null;
-			if(name.equals(chart.getName()))
-					return chart;
-			for(Vertex v: chart.getVertices())
-			{
-				if(v instanceof State)
-				{
-					State s = (State)v;
-					for(Region r: s.getRegions())
-					{
-						if(r.getStatechart() != null)
-						{
-							RealtimeStatechart t = this.getSubChartByName(r.getStatechart(), name);
-							if(t != null)
-								return t;									
-						}
+			if (name.equals(chart.getName()))
+				return chart;
+			for (State s : chart.getStates()) {
+				for (Region r : s.getRegions()) {
+					if (r.getStatechart() != null) {
+						RealtimeStatechart t = this.getSubChartByName(
+								r.getStatechart(), name);
+						if (t != null)
+							return t;
 					}
 				}
 			}
 			return null;
-		}		
-	}	
+		}
+	}
 
 }

@@ -72,7 +72,7 @@ public class ValidateAction extends Action {
 							}
 						}).run(new NullProgressMonitor());
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 						.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
 			}
 		}
@@ -98,7 +98,7 @@ public class ValidateAction extends Action {
 				}
 			}
 		} catch (Exception e) {
-			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageinterfaceDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MessageTypeDiagramEditorPlugin
 					.getInstance().logError("Validation action failed", e); //$NON-NLS-1$
 		}
 	}
@@ -137,7 +137,13 @@ public class ValidateAction extends Action {
 			return new Diagnostician() {
 
 				public String getObjectLabel(EObject eObject) {
-					return EMFCoreUtil.getQualifiedName(eObject, true);
+					// BEGIN Fix for muml bug #341:
+					try {
+						return EMFCoreUtil.getQualifiedName(eObject, true);
+					} catch (NullPointerException e) {
+						return "null";
+					}
+					// END Fix
 				}
 			}.validate(target.getElement());
 		}

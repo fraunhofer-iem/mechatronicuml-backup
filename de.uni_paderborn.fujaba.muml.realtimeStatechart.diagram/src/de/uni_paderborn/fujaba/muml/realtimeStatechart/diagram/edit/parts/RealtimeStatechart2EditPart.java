@@ -18,6 +18,7 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
@@ -32,7 +33,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class RealtimeStatechart2EditPart extends AbstractBorderedShapeEditPart {
+public class RealtimeStatechart2EditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
@@ -60,17 +61,10 @@ public class RealtimeStatechart2EditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.RealtimeStatechart2ItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.RealtimeStatechart2CanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -83,13 +77,6 @@ public class RealtimeStatechart2EditPart extends AbstractBorderedShapeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				View childView = (View) child.getModel();
-				switch (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
-					return new BorderItemSelectionEditPolicy();
-				}
 				EditPolicy result = child
 						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -135,24 +122,6 @@ public class RealtimeStatechart2EditPart extends AbstractBorderedShapeEditPart {
 					.getFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.WEST);
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart) childEditPart)
-							.getFigure(), locator);
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.EAST);
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart) childEditPart)
-							.getFigure(), locator);
-			return true;
-		}
 		return false;
 	}
 
@@ -166,20 +135,6 @@ public class RealtimeStatechart2EditPart extends AbstractBorderedShapeEditPart {
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartment2EditPart) childEditPart)
 					.getFigure());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart) childEditPart)
-							.getFigure());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart) childEditPart)
-							.getFigure());
 			return true;
 		}
 		return false;
@@ -212,9 +167,6 @@ public class RealtimeStatechart2EditPart extends AbstractBorderedShapeEditPart {
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartment2EditPart) {
 			return getPrimaryShape().getFigureStatechartContentsCompartment();
 		}
-		if (editPart instanceof IBorderItemEditPart) {
-			return getBorderedFigure().getBorderItemContainer();
-		}
 		return getContentPane();
 	}
 
@@ -238,7 +190,7 @@ public class RealtimeStatechart2EditPart extends AbstractBorderedShapeEditPart {
 	 * 
 	 * @generated
 	 */
-	protected NodeFigure createMainFigure() {
+	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();

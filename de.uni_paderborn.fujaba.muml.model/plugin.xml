@@ -12,20 +12,6 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/0.2.2"
-            class="de.uni_paderborn.fujaba.muml.MumlPackage"
-            genModel="model/muml.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <package
-            uri="http://www.fujaba.de/muml/model/0.2.2"
-            class="de.uni_paderborn.fujaba.muml.model.ModelPackage"
-            genModel="model/muml.genmodel"/>
-   </extension>
-   
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <package
             uri="http://www.fujaba.de/muml/model/component/0.3.6"
             class="de.uni_paderborn.fujaba.muml.model.component.ComponentPackage"
             genModel="model/muml.genmodel"/>
@@ -61,7 +47,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/realtimestatechart/0.3.5"
+            uri="http://www.fujaba.de/muml/model/realtimestatechart/0.3.6"
             class="de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage"
             genModel="model/muml.genmodel"/>
    </extension>
@@ -79,13 +65,15 @@
             class="de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage"
             genModel="model/muml.genmodel"/>
    </extension>
-   
-	<extension point="org.eclipse.emf.ecore.generated_package">
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.fujaba.de/muml/model/types/0.3.6"
             class="de.uni_paderborn.fujaba.muml.model.types.TypesPackage"
             genModel="model/muml.genmodel"/>
    </extension>
+
+
 
    <extension
          point="org.eclipse.emf.edapt.migrators">
@@ -99,6 +87,4 @@
             path="model/muml.history">
       </migrator>
    </extension>
-
-
 </plugin>

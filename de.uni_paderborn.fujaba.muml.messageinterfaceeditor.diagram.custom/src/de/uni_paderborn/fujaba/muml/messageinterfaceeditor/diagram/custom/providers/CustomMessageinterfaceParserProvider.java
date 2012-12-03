@@ -3,13 +3,13 @@ package de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.provi
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 
 import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom.parsers.CustomParameterLabelExpressionLabelParser5011;
-import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MessageinterfaceParserProvider;
+import de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlParserProvider;
 
 /**
  * @generated
  */
 public class CustomMessageinterfaceParserProvider extends
-		MessageinterfaceParserProvider {
+		MumlParserProvider {
 
 	@Override
 	protected IParser getParameterLabel_5013Parser() {

@@ -10,7 +10,7 @@
         href="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageTypeRepository"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgtype/MessageTypeRepository"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers
@@ -37,10 +37,10 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageTypeRepository/messageTypes"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgtype/MessageTypeRepository/messageTypes"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageType"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgtype/MessageType"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -67,7 +67,7 @@
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface/MessageType/parameters"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgtype/MessageType/parameters"/>
             <ownedChild>
               <domainMetaElement
                   href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Parameter"/>
@@ -116,7 +116,7 @@
     <diagramCanvas
         href="messageinterface.gmfgraph#messageinterfaceeditor"/>
     <domainModel
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgtype"/>
     <domainMetaElement
         href="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
     <palette

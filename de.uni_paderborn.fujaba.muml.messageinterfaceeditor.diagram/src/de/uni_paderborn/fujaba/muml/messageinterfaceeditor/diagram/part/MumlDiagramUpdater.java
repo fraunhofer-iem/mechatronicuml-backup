@@ -1,15 +1,10 @@
 package de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.core.ExtendableElement;
 
@@ -75,12 +70,12 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository modelElement = (de.uni_paderborn.fujaba.muml.model.msgiface.MessageTypeRepository) containerView
+		de.uni_paderborn.fujaba.muml.model.msgtype.MessageTypeRepository modelElement = (de.uni_paderborn.fujaba.muml.model.msgtype.MessageTypeRepository) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getMessageTypes().iterator(); it
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.msgiface.MessageType childElement = (de.uni_paderborn.fujaba.muml.model.msgiface.MessageType) it
+			de.uni_paderborn.fujaba.muml.model.msgtype.MessageType childElement = (de.uni_paderborn.fujaba.muml.model.msgtype.MessageType) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -106,7 +101,7 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.msgiface.MessageType modelElement = (de.uni_paderborn.fujaba.muml.model.msgiface.MessageType) containerView
+		de.uni_paderborn.fujaba.muml.model.msgtype.MessageType modelElement = (de.uni_paderborn.fujaba.muml.model.msgtype.MessageType) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getParameters().iterator(); it

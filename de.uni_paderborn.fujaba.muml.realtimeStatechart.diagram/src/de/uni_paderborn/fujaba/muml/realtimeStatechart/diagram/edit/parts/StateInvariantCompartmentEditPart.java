@@ -19,7 +19,7 @@ public class StateInvariantCompartmentEditPart extends ListCompartmentEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7023;
+	public static final int VISUAL_ID = 7029;
 
 	/**
 	 * @generated
