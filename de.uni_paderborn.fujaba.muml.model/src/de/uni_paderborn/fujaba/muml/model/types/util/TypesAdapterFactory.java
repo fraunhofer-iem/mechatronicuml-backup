@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.types.util;
 
-import de.uni_paderborn.fujaba.muml.model.types.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -17,9 +16,7 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.types.ArrayDataType;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
-import de.uni_paderborn.fujaba.muml.model.types.PartDataType;
 import de.uni_paderborn.fujaba.muml.model.types.PrimitiveDataType;
-import de.uni_paderborn.fujaba.muml.model.types.RoleOrDiscretePortDataType;
 import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
 
 /**
@@ -79,10 +76,6 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 	protected TypesSwitch<Adapter> modelSwitch =
 		new TypesSwitch<Adapter>() {
 			@Override
-			public Adapter caseRoleOrDiscretePortDataType(RoleOrDiscretePortDataType object) {
-				return createRoleOrDiscretePortDataTypeAdapter();
-			}
-			@Override
 			public Adapter caseArrayDataType(ArrayDataType object) {
 				return createArrayDataTypeAdapter();
 			}
@@ -93,10 +86,6 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDataType(DataType object) {
 				return createDataTypeAdapter();
-			}
-			@Override
-			public Adapter casePartDataType(PartDataType object) {
-				return createPartDataTypeAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -129,20 +118,6 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.types.RoleOrDiscretePortDataType <em>Role Or Discrete Port Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.types.RoleOrDiscretePortDataType
-	 * @generated
-	 */
-	public Adapter createRoleOrDiscretePortDataTypeAdapter() {
-		return null;
-	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.types.ArrayDataType <em>Array Data Type</em>}'.
@@ -183,20 +158,6 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDataTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.types.PartDataType <em>Part Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.types.PartDataType
-	 * @generated
-	 */
-	public Adapter createPartDataTypeAdapter() {
 		return null;
 	}
 

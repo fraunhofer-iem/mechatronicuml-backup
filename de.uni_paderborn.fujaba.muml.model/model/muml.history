@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<history:History xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<history:History xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:history="http://www.eclipse.org/emf/edapt/history/0.3">
   <releases date="2012-11-07T14:51:41.065+0100" label="0.3.2">
     <changes xsi:type="history:CompositeChange">
@@ -15803,29 +15804,29 @@
   </releases>
   <releases date="2012-11-23T17:09:06.803+0100" label="0.3.5">
     <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
-        element="muml.ecore#//model/types/RoleOrDiscretePortDataType"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/types/RoleOrDiscretePortDataType"
+        element="#//@releases.4/@changes.76/@element"/>
+    <changes xsi:type="history:Set" element="#//@releases.4/@changes.76/@element"
         featureName="name" dataValue="DiscreteInteractionEndpointType"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/types/RoleOrDiscretePortDataType"
+    <changes xsi:type="history:Set" element="#//@releases.4/@changes.76/@element"
         featureName="abstract" dataValue="true" oldDataValue="false"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/types/RoleOrDiscretePortDataType"
+    <changes xsi:type="history:Set" element="#//@releases.4/@changes.76/@element"
         featureName="abstract" dataValue="false" oldDataValue="true"/>
-    <changes xsi:type="history:Add" element="muml.ecore#//model/types/RoleOrDiscretePortDataType"
+    <changes xsi:type="history:Add" element="#//@releases.4/@changes.76/@element"
         featureName="eSuperTypes" referenceValue="muml.ecore#//model/types/DataType"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/types/RoleOrDiscretePortDataType"
+    <changes xsi:type="history:Set" element="#//@releases.4/@changes.76/@element"
         featureName="abstract" dataValue="true" oldDataValue="false"/>
     <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
         element="#//@releases.4/@changes.5/@element"/>
     <changes xsi:type="history:Set" element="#//@releases.4/@changes.5/@element" featureName="name"
         dataValue="PortDataType"/>
     <changes xsi:type="history:Add" element="#//@releases.4/@changes.5/@element" featureName="eSuperTypes"
-        referenceValue="muml.ecore#//model/types/RoleOrDiscretePortDataType"/>
+        referenceValue="#//@releases.4/@changes.76/@element"/>
     <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
         element="#//@releases.4/@changes.4/@element"/>
     <changes xsi:type="history:Set" element="#//@releases.4/@changes.4/@element" featureName="name"
         dataValue="RoleDataType"/>
     <changes xsi:type="history:Add" element="#//@releases.4/@changes.4/@element" featureName="eSuperTypes"
-        referenceValue="muml.ecore#//model/types/RoleOrDiscretePortDataType"/>
+        referenceValue="#//@releases.4/@changes.76/@element"/>
     <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/SynchronizationChannel"
         referenceName="eStructuralFeatures">
       <element xsi:type="ecore:EReference" name="parameters" upperBound="-1" eType="ecore:EClass muml.ecore#//model/core/Parameter"
@@ -15858,7 +15859,7 @@
         featureName="eType" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Synchronization/selectorExpression"
         featureName="name" dataValue="selectorExpression"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/types/RoleOrDiscretePortDataType"
+    <changes xsi:type="history:Set" element="#//@releases.4/@changes.76/@element"
         featureName="name" dataValue="DiscreteInteractionEndpointDataType" oldDataValue="DiscreteInteractionEndpointType"/>
     <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"
         referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference"/>
@@ -15962,7 +15963,7 @@
     <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.5" oldDataValue="http://www.fujaba.de/modelinstance/0.3.4"/>
   </releases>
-  <releases>
+  <releases date="2012-12-04T13:08:46.915+0100" label="0.3.6">
     <changes xsi:type="history:Create" target="muml.ecore#//model" referenceName="eSubpackages"
         element="muml.ecore#//model/types"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/types" featureName="name"
@@ -15972,17 +15973,17 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/types" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/types/0.3.6"/>
     <changes xsi:type="history:Delete" target="muml.ecore#//model/core" referenceName="eClassifiers">
-      <element xsi:type="ecore:EClass" name="RoleDataType" eSuperTypes="muml.ecore#//model/types/RoleOrDiscretePortDataType"/>
+      <element xsi:type="ecore:EClass" name="RoleDataType"/>
     </changes>
     <changes xsi:type="history:Delete" target="muml.ecore#//model/core" referenceName="eClassifiers">
-      <element xsi:type="ecore:EClass" name="PortDataType" eSuperTypes="muml.ecore#//model/types/RoleOrDiscretePortDataType"/>
+      <element xsi:type="ecore:EClass" name="PortDataType"/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/types/RoleOrDiscretePortDataType"
+    <changes xsi:type="history:Set" element="#//@releases.4/@changes.76/@element"
         featureName="abstract" dataValue="false" oldDataValue="true"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/types/RoleOrDiscretePortDataType"
+    <changes xsi:type="history:Set" element="#//@releases.4/@changes.76/@element"
         featureName="name" dataValue="RoleOrDiscretePortDataType" oldDataValue="DiscreteInteractionEndpointDataType"/>
     <changes xsi:type="history:Move" target="muml.ecore#//model/types" referenceName="eClassifiers"
-        element="muml.ecore#//model/types/RoleOrDiscretePortDataType" source="muml.ecore#//model/core"/>
+        element="#//@releases.4/@changes.76/@element" source="muml.ecore#//model/core"/>
     <changes xsi:type="history:Move" target="muml.ecore#//model/types" referenceName="eClassifiers"
         element="muml.ecore#//model/types/ArrayDataType" source="muml.ecore#//model/core"/>
     <changes xsi:type="history:Move" target="muml.ecore#//model/types" referenceName="eClassifiers"
@@ -16065,10 +16066,10 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/msgtype" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/msgtype/0.3.6" oldDataValue="http://www.fujaba.de/muml/model/msgiface/0.3.2"/>
     <changes xsi:type="history:Create" target="muml.ecore#//model/types" referenceName="eClassifiers"
-        element="muml.ecore#//model/types/PartDataType"/>
-    <changes xsi:type="history:Add" element="muml.ecore#//model/types/PartDataType"
+        element="#//@releases.4/@changes.75/@element"/>
+    <changes xsi:type="history:Add" element="#//@releases.4/@changes.75/@element"
         featureName="eSuperTypes" referenceValue="muml.ecore#//model/types/DataType"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/types/PartDataType"
+    <changes xsi:type="history:Set" element="#//@releases.4/@changes.75/@element"
         featureName="name" dataValue="PartDataType"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/Delegation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
         featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;(not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridInPort)&#xD;&#xA;&#x9;)"
@@ -16372,5 +16373,20 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="-- all regions of the parent state have at least one state that connects to the ExitPoint&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states->exists(s |&#xD;&#xA;&#x9;&#x9;s.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.exitPoints.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;)&#xD;&#xA;)"
         oldDataValue="-- all regions of the parent state have at least one state that connects to the ExitPoint&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;)"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/types" referenceName="eClassifiers">
+      <element xsi:type="ecore:EClass" name="PartDataType" eSuperTypes="muml.ecore#//model/types/DataType"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/types" referenceName="eClassifiers">
+      <element xsi:type="ecore:EClass" name="RoleOrDiscretePortDataType" eSuperTypes="muml.ecore#//model/types/DataType"/>
+    </changes>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/component/Port" featureName="eSuperTypes"
+        referenceValue="muml.ecore#//model/types/DataType"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/component/ComponentPart"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/types/DataType"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/pattern/Role" featureName="eSuperTypes"
+        referenceValue="muml.ecore#//model/types/DataType"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/pattern" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/pattern/0.3.6" oldDataValue="http://www.fujaba.de/muml/model/pattern/0.3.3"/>
   </releases>
+  <releases/>
 </history:History>

@@ -44,7 +44,7 @@ public interface PatternPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/pattern/0.3.3";
+	String eNS_URI = "http://www.fujaba.de/muml/model/pattern/0.3.6";
 
 	/**
 	 * The package namespace name.
@@ -400,13 +400,22 @@ public interface PatternPackage extends EPackage {
 	int ROLE__ROLE_AND_ADAPTATION_BEHAVIOR = DISCRETE_INTERACTION_POINT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__COMMENT = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Incoming Role Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__INCOMING_ROLE_CONNECTOR = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 0;
+	int ROLE__INCOMING_ROLE_CONNECTOR = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Coordination Pattern</b></em>' container reference.
@@ -415,7 +424,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__COORDINATION_PATTERN = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 1;
+	int ROLE__COORDINATION_PATTERN = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -424,7 +433,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__CARDINALITY = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 2;
+	int ROLE__CARDINALITY = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
@@ -433,7 +442,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__PORT = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 3;
+	int ROLE__PORT = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Role Connector</b></em>' reference.
@@ -442,7 +451,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__OUTGOING_ROLE_CONNECTOR = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 4;
+	int ROLE__OUTGOING_ROLE_CONNECTOR = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Role Connector</b></em>' reference.
@@ -451,7 +460,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ROLE_CONNECTOR = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 5;
+	int ROLE__ROLE_CONNECTOR = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Is Multi Role</b></em>' attribute.
@@ -460,7 +469,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__IS_MULTI_ROLE = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 6;
+	int ROLE__IS_MULTI_ROLE = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
@@ -469,7 +478,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__RECEIVER_MESSAGE_BUFFER = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 7;
+	int ROLE__RECEIVER_MESSAGE_BUFFER = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -478,7 +487,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 8;
+	int ROLE_FEATURE_COUNT = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 9;
 
 
 	/**

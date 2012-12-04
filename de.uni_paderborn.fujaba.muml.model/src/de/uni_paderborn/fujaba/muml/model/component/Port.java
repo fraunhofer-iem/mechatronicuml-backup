@@ -12,6 +12,7 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +39,7 @@ import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
  * @model abstract="true"
  * @generated
  */
-public interface Port extends NamedElement, CommentableElement, ConstrainableElement {
+public interface Port extends NamedElement, CommentableElement, ConstrainableElement, DataType {
 	/**
 	 * Returns the value of the '<em><b>Component</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getPorts <em>Ports</em>}'.

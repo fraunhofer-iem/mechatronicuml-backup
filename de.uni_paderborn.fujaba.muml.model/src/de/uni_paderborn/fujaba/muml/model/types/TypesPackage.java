@@ -69,7 +69,7 @@ public interface TypesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl#getDataType()
 	 * @generated
 	 */
-	int DATA_TYPE = 3;
+	int DATA_TYPE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -117,61 +117,6 @@ public interface TypesPackage extends EPackage {
 	int DATA_TYPE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.types.impl.RoleOrDiscretePortDataTypeImpl <em>Role Or Discrete Port Data Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.types.impl.RoleOrDiscretePortDataTypeImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl#getRoleOrDiscretePortDataType()
-	 * @generated
-	 */
-	int ROLE_OR_DISCRETE_PORT_DATA_TYPE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_OR_DISCRETE_PORT_DATA_TYPE__ANNOTATION = DATA_TYPE__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_OR_DISCRETE_PORT_DATA_TYPE__EXTENSION = DATA_TYPE__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_OR_DISCRETE_PORT_DATA_TYPE__NAME = DATA_TYPE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_OR_DISCRETE_PORT_DATA_TYPE__COMMENT = DATA_TYPE__COMMENT;
-
-	/**
-	 * The number of structural features of the '<em>Role Or Discrete Port Data Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_OR_DISCRETE_PORT_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.types.impl.ArrayDataTypeImpl <em>Array Data Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -179,7 +124,7 @@ public interface TypesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl#getArrayDataType()
 	 * @generated
 	 */
-	int ARRAY_DATA_TYPE = 1;
+	int ARRAY_DATA_TYPE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -252,7 +197,7 @@ public interface TypesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl#getPrimitiveDataType()
 	 * @generated
 	 */
-	int PRIMITIVE_DATA_TYPE = 2;
+	int PRIMITIVE_DATA_TYPE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -309,61 +254,6 @@ public interface TypesPackage extends EPackage {
 	int PRIMITIVE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.types.impl.PartDataTypeImpl <em>Part Data Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.types.impl.PartDataTypeImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl#getPartDataType()
-	 * @generated
-	 */
-	int PART_DATA_TYPE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART_DATA_TYPE__ANNOTATION = DATA_TYPE__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART_DATA_TYPE__EXTENSION = DATA_TYPE__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART_DATA_TYPE__NAME = DATA_TYPE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART_DATA_TYPE__COMMENT = DATA_TYPE__COMMENT;
-
-	/**
-	 * The number of structural features of the '<em>Part Data Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.types.PrimitiveTypes <em>Primitive Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -371,18 +261,8 @@ public interface TypesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl#getPrimitiveTypes()
 	 * @generated
 	 */
-	int PRIMITIVE_TYPES = 5;
+	int PRIMITIVE_TYPES = 3;
 
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.types.RoleOrDiscretePortDataType <em>Role Or Discrete Port Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Role Or Discrete Port Data Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.types.RoleOrDiscretePortDataType
-	 * @generated
-	 */
-	EClass getRoleOrDiscretePortDataType();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.types.ArrayDataType <em>Array Data Type</em>}'.
@@ -448,16 +328,6 @@ public interface TypesPackage extends EPackage {
 	EClass getDataType();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.types.PartDataType <em>Part Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Part Data Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.types.PartDataType
-	 * @generated
-	 */
-	EClass getPartDataType();
-
-	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.types.PrimitiveTypes <em>Primitive Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -489,16 +359,6 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.types.impl.RoleOrDiscretePortDataTypeImpl <em>Role Or Discrete Port Data Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.types.impl.RoleOrDiscretePortDataTypeImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl#getRoleOrDiscretePortDataType()
-		 * @generated
-		 */
-		EClass ROLE_OR_DISCRETE_PORT_DATA_TYPE = eINSTANCE.getRoleOrDiscretePortDataType();
-
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.types.impl.ArrayDataTypeImpl <em>Array Data Type</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -552,16 +412,6 @@ public interface TypesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DATA_TYPE = eINSTANCE.getDataType();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.types.impl.PartDataTypeImpl <em>Part Data Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.types.impl.PartDataTypeImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl#getPartDataType()
-		 * @generated
-		 */
-		EClass PART_DATA_TYPE = eINSTANCE.getPartDataType();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.types.PrimitiveTypes <em>Primitive Types</em>}' enum.

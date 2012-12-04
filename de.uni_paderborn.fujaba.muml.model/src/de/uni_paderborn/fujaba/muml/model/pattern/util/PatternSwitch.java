@@ -16,6 +16,7 @@ import org.storydriven.core.NamedElement;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.pattern.*;
+import de.uni_paderborn.fujaba.muml.model.types.DataType;
 import de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
 import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
@@ -101,9 +102,11 @@ public class PatternSwitch<T> extends Switch<T> {
 				Role role = (Role)theEObject;
 				T result = caseRole(role);
 				if (result == null) result = caseDiscreteInteractionPoint(role);
+				if (result == null) result = caseDataType(role);
 				if (result == null) result = caseBehavioralElement(role);
 				if (result == null) result = caseConstrainableElement(role);
 				if (result == null) result = caseNamedElement(role);
+				if (result == null) result = caseCommentableElement(role);
 				if (result == null) result = caseExtendableElement(role);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -302,6 +305,21 @@ public class PatternSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommentableElement(CommentableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataType(DataType object) {
 		return null;
 	}
 

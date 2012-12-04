@@ -31,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -522,6 +523,11 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 				default: return -1;
 			}
 		}
+		if (baseClass == DataType.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -541,6 +547,11 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 		if (baseClass == ConstrainableElement.class) {
 			switch (baseFeatureID) {
 				case de.uni_paderborn.fujaba.muml.model.core.CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ComponentPackage.PORT__CONSTRAINT;
+				default: return -1;
+			}
+		}
+		if (baseClass == DataType.class) {
+			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}

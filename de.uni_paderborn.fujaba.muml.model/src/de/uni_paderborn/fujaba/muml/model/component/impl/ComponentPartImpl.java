@@ -32,6 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
+import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -664,6 +665,11 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 				default: return -1;
 			}
 		}
+		if (baseClass == DataType.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -677,6 +683,11 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 		if (baseClass == NamedElement.class) {
 			switch (baseFeatureID) {
 				case CorePackage.NAMED_ELEMENT__NAME: return ComponentPackage.COMPONENT_PART__NAME;
+				default: return -1;
+			}
+		}
+		if (baseClass == DataType.class) {
+			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}

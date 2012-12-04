@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.types.impl;
 
-import de.uni_paderborn.fujaba.muml.model.types.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -15,10 +14,8 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.uni_paderborn.fujaba.muml.model.types.ArrayDataType;
-import de.uni_paderborn.fujaba.muml.model.types.PartDataType;
 import de.uni_paderborn.fujaba.muml.model.types.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.model.types.PrimitiveTypes;
-import de.uni_paderborn.fujaba.muml.model.types.RoleOrDiscretePortDataType;
 import de.uni_paderborn.fujaba.muml.model.types.TypesFactory;
 import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
 
@@ -66,10 +63,8 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case TypesPackage.ROLE_OR_DISCRETE_PORT_DATA_TYPE: return createRoleOrDiscretePortDataType();
 			case TypesPackage.ARRAY_DATA_TYPE: return createArrayDataType();
 			case TypesPackage.PRIMITIVE_DATA_TYPE: return createPrimitiveDataType();
-			case TypesPackage.PART_DATA_TYPE: return createPartDataType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -110,16 +105,6 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleOrDiscretePortDataType createRoleOrDiscretePortDataType() {
-		RoleOrDiscretePortDataTypeImpl roleOrDiscretePortDataType = new RoleOrDiscretePortDataTypeImpl();
-		return roleOrDiscretePortDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ArrayDataType createArrayDataType() {
 		ArrayDataTypeImpl arrayDataType = new ArrayDataTypeImpl();
 		return arrayDataType;
@@ -133,16 +118,6 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	public PrimitiveDataType createPrimitiveDataType() {
 		PrimitiveDataTypeImpl primitiveDataType = new PrimitiveDataTypeImpl();
 		return primitiveDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PartDataType createPartDataType() {
-		PartDataTypeImpl partDataType = new PartDataTypeImpl();
-		return partDataType;
 	}
 
 	/**

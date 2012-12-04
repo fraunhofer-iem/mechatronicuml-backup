@@ -26,15 +26,6 @@ public interface TypesFactory extends EFactory {
 	TypesFactory eINSTANCE = de.uni_paderborn.fujaba.muml.model.types.impl.TypesFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Role Or Discrete Port Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Role Or Discrete Port Data Type</em>'.
-	 * @generated
-	 */
-	RoleOrDiscretePortDataType createRoleOrDiscretePortDataType();
-
-	/**
 	 * Returns a new object of class '<em>Array Data Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,15 +42,6 @@ public interface TypesFactory extends EFactory {
 	 * @generated
 	 */
 	PrimitiveDataType createPrimitiveDataType();
-
-	/**
-	 * Returns a new object of class '<em>Part Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Part Data Type</em>'.
-	 * @generated
-	 */
-	PartDataType createPartDataType();
 
 	/**
 	 * Returns the package supported by this factory.

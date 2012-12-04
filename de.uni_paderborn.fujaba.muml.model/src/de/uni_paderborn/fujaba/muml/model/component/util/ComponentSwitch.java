@@ -33,6 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
+import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -104,10 +105,11 @@ public class ComponentSwitch<T> extends Switch<T> {
 			case ComponentPackage.PORT: {
 				Port port = (Port)theEObject;
 				T result = casePort(port);
-				if (result == null) result = caseNamedElement(port);
-				if (result == null) result = caseCommentableElement(port);
 				if (result == null) result = caseConstrainableElement(port);
+				if (result == null) result = caseDataType(port);
+				if (result == null) result = caseNamedElement(port);
 				if (result == null) result = caseExtendableElement(port);
+				if (result == null) result = caseCommentableElement(port);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -116,10 +118,11 @@ public class ComponentSwitch<T> extends Switch<T> {
 				T result = caseContinuousPort(continuousPort);
 				if (result == null) result = caseDirectedTypedPort(continuousPort);
 				if (result == null) result = casePort(continuousPort);
-				if (result == null) result = caseNamedElement(continuousPort);
-				if (result == null) result = caseCommentableElement(continuousPort);
 				if (result == null) result = caseConstrainableElement(continuousPort);
+				if (result == null) result = caseDataType(continuousPort);
+				if (result == null) result = caseNamedElement(continuousPort);
 				if (result == null) result = caseExtendableElement(continuousPort);
+				if (result == null) result = caseCommentableElement(continuousPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -128,20 +131,22 @@ public class ComponentSwitch<T> extends Switch<T> {
 				T result = caseDiscretePort(discretePort);
 				if (result == null) result = casePort(discretePort);
 				if (result == null) result = caseDiscreteInteractionPoint(discretePort);
-				if (result == null) result = caseNamedElement(discretePort);
-				if (result == null) result = caseCommentableElement(discretePort);
 				if (result == null) result = caseConstrainableElement(discretePort);
+				if (result == null) result = caseDataType(discretePort);
 				if (result == null) result = caseBehavioralElement(discretePort);
+				if (result == null) result = caseNamedElement(discretePort);
 				if (result == null) result = caseExtendableElement(discretePort);
+				if (result == null) result = caseCommentableElement(discretePort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ComponentPackage.COMPONENT_PART: {
 				ComponentPart componentPart = (ComponentPart)theEObject;
 				T result = caseComponentPart(componentPart);
+				if (result == null) result = caseDataType(componentPart);
 				if (result == null) result = caseCommentableElement(componentPart);
-				if (result == null) result = caseNamedElement(componentPart);
 				if (result == null) result = caseExtendableElement(componentPart);
+				if (result == null) result = caseNamedElement(componentPart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -208,10 +213,11 @@ public class ComponentSwitch<T> extends Switch<T> {
 				T result = caseHybridPort(hybridPort);
 				if (result == null) result = caseDirectedTypedPort(hybridPort);
 				if (result == null) result = casePort(hybridPort);
-				if (result == null) result = caseNamedElement(hybridPort);
-				if (result == null) result = caseCommentableElement(hybridPort);
 				if (result == null) result = caseConstrainableElement(hybridPort);
+				if (result == null) result = caseDataType(hybridPort);
+				if (result == null) result = caseNamedElement(hybridPort);
 				if (result == null) result = caseExtendableElement(hybridPort);
+				if (result == null) result = caseCommentableElement(hybridPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -237,10 +243,11 @@ public class ComponentSwitch<T> extends Switch<T> {
 				DirectedTypedPort directedTypedPort = (DirectedTypedPort)theEObject;
 				T result = caseDirectedTypedPort(directedTypedPort);
 				if (result == null) result = casePort(directedTypedPort);
-				if (result == null) result = caseNamedElement(directedTypedPort);
-				if (result == null) result = caseCommentableElement(directedTypedPort);
 				if (result == null) result = caseConstrainableElement(directedTypedPort);
+				if (result == null) result = caseDataType(directedTypedPort);
+				if (result == null) result = caseNamedElement(directedTypedPort);
 				if (result == null) result = caseExtendableElement(directedTypedPort);
+				if (result == null) result = caseCommentableElement(directedTypedPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -530,6 +537,21 @@ public class ComponentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConstrainableElement(ConstrainableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDataType(DataType object) {
 		return null;
 	}
 

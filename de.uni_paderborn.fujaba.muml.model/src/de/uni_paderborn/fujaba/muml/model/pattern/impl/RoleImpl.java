@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
@@ -28,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
+import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,6 +39,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getIncomingRoleConnector <em>Incoming Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getCoordinationPattern <em>Coordination Pattern</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl#getCardinality <em>Cardinality</em>}</li>
@@ -50,6 +54,26 @@ import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
  * @generated
  */
 public class RoleImpl extends DiscreteInteractionPointImpl implements Role {
+	/**
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
+
+	/**
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String comment = COMMENT_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getIncomingRoleConnector() <em>Incoming Role Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -137,6 +161,27 @@ public class RoleImpl extends DiscreteInteractionPointImpl implements Role {
 	@Override
 	protected EClass eStaticClass() {
 		return PatternPackage.Literals.ROLE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.ROLE__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -469,6 +514,8 @@ public class RoleImpl extends DiscreteInteractionPointImpl implements Role {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case PatternPackage.ROLE__COMMENT:
+				return getComment();
 			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
 				if (resolve) return getIncomingRoleConnector();
 				return basicGetIncomingRoleConnector();
@@ -501,6 +548,9 @@ public class RoleImpl extends DiscreteInteractionPointImpl implements Role {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case PatternPackage.ROLE__COMMENT:
+				setComment((String)newValue);
+				return;
 			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
 				setIncomingRoleConnector((RoleConnector)newValue);
 				return;
@@ -533,6 +583,9 @@ public class RoleImpl extends DiscreteInteractionPointImpl implements Role {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case PatternPackage.ROLE__COMMENT:
+				setComment(COMMENT_EDEFAULT);
+				return;
 			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
 				setIncomingRoleConnector((RoleConnector)null);
 				return;
@@ -563,6 +616,8 @@ public class RoleImpl extends DiscreteInteractionPointImpl implements Role {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case PatternPackage.ROLE__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case PatternPackage.ROLE__INCOMING_ROLE_CONNECTOR:
 				return incomingRoleConnector != null;
 			case PatternPackage.ROLE__COORDINATION_PATTERN:
@@ -581,6 +636,64 @@ public class RoleImpl extends DiscreteInteractionPointImpl implements Role {
 				return receiverMessageBuffer != null && !receiverMessageBuffer.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == CommentableElement.class) {
+			switch (derivedFeatureID) {
+				case PatternPackage.ROLE__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+				default: return -1;
+			}
+		}
+		if (baseClass == DataType.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == CommentableElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return PatternPackage.ROLE__COMMENT;
+				default: return -1;
+			}
+		}
+		if (baseClass == DataType.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (comment: ");
+		result.append(comment);
+		result.append(')');
+		return result.toString();
 	}
 
 } //RoleImpl

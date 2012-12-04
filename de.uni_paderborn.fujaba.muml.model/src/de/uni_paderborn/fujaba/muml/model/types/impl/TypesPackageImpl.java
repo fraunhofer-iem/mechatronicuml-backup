@@ -33,10 +33,8 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.types.ArrayDataType;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
-import de.uni_paderborn.fujaba.muml.model.types.PartDataType;
 import de.uni_paderborn.fujaba.muml.model.types.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.model.types.PrimitiveTypes;
-import de.uni_paderborn.fujaba.muml.model.types.RoleOrDiscretePortDataType;
 import de.uni_paderborn.fujaba.muml.model.types.TypesFactory;
 import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
 
@@ -47,13 +45,6 @@ import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
  * @generated
  */
 public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass roleOrDiscretePortDataTypeEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,13 +65,6 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * @generated
 	 */
 	private EClass dataTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass partDataTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,15 +169,6 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRoleOrDiscretePortDataType() {
-		return roleOrDiscretePortDataTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getArrayDataType() {
 		return arrayDataTypeEClass;
 	}
@@ -248,15 +223,6 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPartDataType() {
-		return partDataTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getPrimitiveTypes() {
 		return primitiveTypesEEnum;
 	}
@@ -289,8 +255,6 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		roleOrDiscretePortDataTypeEClass = createEClass(ROLE_OR_DISCRETE_PORT_DATA_TYPE);
-
 		arrayDataTypeEClass = createEClass(ARRAY_DATA_TYPE);
 		createEReference(arrayDataTypeEClass, ARRAY_DATA_TYPE__TYPE);
 		createEReference(arrayDataTypeEClass, ARRAY_DATA_TYPE__CARDINALITY);
@@ -299,8 +263,6 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		createEAttribute(primitiveDataTypeEClass, PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE);
 
 		dataTypeEClass = createEClass(DATA_TYPE);
-
-		partDataTypeEClass = createEClass(PART_DATA_TYPE);
 
 		// Create enums
 		primitiveTypesEEnum = createEEnum(PRIMITIVE_TYPES);
@@ -338,16 +300,12 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		roleOrDiscretePortDataTypeEClass.getESuperTypes().add(this.getDataType());
 		arrayDataTypeEClass.getESuperTypes().add(this.getDataType());
 		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
 		dataTypeEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		dataTypeEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		partDataTypeEClass.getESuperTypes().add(this.getDataType());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(roleOrDiscretePortDataTypeEClass, RoleOrDiscretePortDataType.class, "RoleOrDiscretePortDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(arrayDataTypeEClass, ArrayDataType.class, "ArrayDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getArrayDataType_Type(), this.getDataType(), null, "type", null, 1, 1, ArrayDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArrayDataType_Cardinality(), theCorePackage.getNaturalNumber(), null, "cardinality", null, 1, 1, ArrayDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -356,8 +314,6 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		initEAttribute(getPrimitiveDataType_PrimitiveType(), this.getPrimitiveTypes(), "primitiveType", "PrimitiveTypes.VOID", 1, 1, PrimitiveDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(partDataTypeEClass, PartDataType.class, "PartDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(primitiveTypesEEnum, PrimitiveTypes.class, "PrimitiveTypes");

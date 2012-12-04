@@ -1002,9 +1002,9 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		// Obtain other dependent packages
 		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		PatternPackage thePatternPackage = (PatternPackage)EPackage.Registry.INSTANCE.getEPackage(PatternPackage.eNS_URI);
-		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1017,11 +1017,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		portEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		portEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		portEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
+		portEClass.getESuperTypes().add(theTypesPackage.getDataType());
 		continuousPortEClass.getESuperTypes().add(this.getDirectedTypedPort());
 		discretePortEClass.getESuperTypes().add(this.getPort());
 		discretePortEClass.getESuperTypes().add(thePatternPackage.getDiscreteInteractionPoint());
 		componentPartEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		componentPartEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		componentPartEClass.getESuperTypes().add(theTypesPackage.getDataType());
 		staticStructuredComponentEClass.getESuperTypes().add(this.getStructuredComponent());
 		atomicComponentEClass.getESuperTypes().add(this.getComponent());
 		atomicComponentEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());

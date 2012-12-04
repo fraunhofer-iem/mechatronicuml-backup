@@ -562,6 +562,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
@@ -575,6 +576,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		coordinationPatternEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		coordinationPatternEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
 		roleEClass.getESuperTypes().add(this.getDiscreteInteractionPoint());
+		roleEClass.getESuperTypes().add(theTypesPackage.getDataType());
 		messageBufferEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		messageBufferEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		connectorQualityOfServiceAssumptionsEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
