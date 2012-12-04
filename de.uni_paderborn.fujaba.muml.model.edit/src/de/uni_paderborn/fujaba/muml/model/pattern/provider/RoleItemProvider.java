@@ -22,11 +22,11 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
@@ -67,6 +67,7 @@ public class RoleItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addCommentPropertyDescriptor(object);
 			addIncomingRoleConnectorPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addPortPropertyDescriptor(object);
@@ -75,6 +76,28 @@ public class RoleItemProvider
 			addIsMultiRolePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Comment feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CommentableElement_comment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -168,8 +191,8 @@ public class RoleItemProvider
 				getString("_UI_Cardinality_lowerBound_feature"), getString(
 						"_UI_PropertyDescriptor_description",
 						"_UI_Cardinality_lowerBound_feature",
-						"_UI_Cardinality_type"),
-				CorePackage.Literals.CARDINALITY__LOWER_BOUND, true, false,
+						"_UI_Cardinality_type"), 
+						de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CARDINALITY__LOWER_BOUND, true, false, 
 				false, null, getString("_UI_CardinalityPropertyCategory"),
 				null, rootPropertyDescriptor));
 
@@ -180,7 +203,7 @@ public class RoleItemProvider
 						"_UI_PropertyDescriptor_description",
 						"_UI_Cardinality_upperBound_feature",
 						"_UI_Cardinality_type"),
-				CorePackage.Literals.CARDINALITY__UPPER_BOUND, true, false,
+						de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CARDINALITY__UPPER_BOUND, true, false,
 				false, null, getString("_UI_CardinalityPropertyCategory"),
 				null, rootPropertyDescriptor));
 	}
@@ -305,6 +328,7 @@ public class RoleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Role.class)) {
+			case PatternPackage.ROLE__COMMENT:
 			case PatternPackage.ROLE__ROLE_CONNECTOR:
 			case PatternPackage.ROLE__IS_MULTI_ROLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

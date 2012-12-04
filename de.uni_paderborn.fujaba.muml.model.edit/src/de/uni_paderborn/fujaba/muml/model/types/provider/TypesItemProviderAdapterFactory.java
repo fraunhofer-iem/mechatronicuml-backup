@@ -75,29 +75,6 @@ public class TypesItemProviderAdapterFactory extends TypesAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.types.RoleOrDiscretePortDataType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RoleOrDiscretePortDataTypeItemProvider roleOrDiscretePortDataTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.types.RoleOrDiscretePortDataType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRoleOrDiscretePortDataTypeAdapter() {
-		if (roleOrDiscretePortDataTypeItemProvider == null) {
-			roleOrDiscretePortDataTypeItemProvider = new RoleOrDiscretePortDataTypeItemProvider(this);
-		}
-
-		return roleOrDiscretePortDataTypeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.types.ArrayDataType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,29 +118,6 @@ public class TypesItemProviderAdapterFactory extends TypesAdapterFactory impleme
 		}
 
 		return primitiveDataTypeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.types.PartDataType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PartDataTypeItemProvider partDataTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.types.PartDataType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPartDataTypeAdapter() {
-		if (partDataTypeItemProvider == null) {
-			partDataTypeItemProvider = new PartDataTypeItemProvider(this);
-		}
-
-		return partDataTypeItemProvider;
 	}
 
 	/**
@@ -265,10 +219,8 @@ public class TypesItemProviderAdapterFactory extends TypesAdapterFactory impleme
 	 * @generated
 	 */
 	public void dispose() {
-		if (roleOrDiscretePortDataTypeItemProvider != null) roleOrDiscretePortDataTypeItemProvider.dispose();
 		if (arrayDataTypeItemProvider != null) arrayDataTypeItemProvider.dispose();
 		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
-		if (partDataTypeItemProvider != null) partDataTypeItemProvider.dispose();
 	}
 
 }
