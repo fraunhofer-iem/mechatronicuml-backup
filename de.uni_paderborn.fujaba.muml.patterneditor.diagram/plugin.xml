@@ -98,7 +98,7 @@
          
          <child
                class="CoordinationPattern"
-               packageNsUri="http://www.fujaba.de/muml/model/pattern/0.3.3">
+               packageNsUri="http://www.fujaba.de/muml/model/pattern/0.3.6">
          </child>
          
       </category>
@@ -389,7 +389,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/pattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/pattern/0.3.6">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationPattern_2005"
                name="%metatype.name.CoordinationPattern_2005"
@@ -399,7 +399,7 @@
             <param name="semanticHint" value="2005"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/pattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/pattern/0.3.6">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationPattern_3005"
                name="%metatype.name.CoordinationPattern_3005"
@@ -408,7 +408,7 @@
             <param name="semanticHint" value="3005"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/pattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/pattern/0.3.6">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.Role_3006"
                name="%metatype.name.Role_3006"
@@ -418,7 +418,7 @@
             <param name="semanticHint" value="3006"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/pattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/pattern/0.3.6">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationPatternRoles_4005"
                name="%metatype.name.CoordinationPatternRoles_4005"
@@ -427,7 +427,7 @@
             <param name="semanticHint" value="4005"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/pattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/pattern/0.3.6">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.RoleConnector_4006"
                name="%metatype.name.RoleConnector_4006"
