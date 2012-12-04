@@ -60,8 +60,6 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -231,28 +229,6 @@ public class CoordinationPatternEditPart extends ShapeNodeEditPart {
 			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_3006);
 		}
 		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public EditPart getTargetEditPart(Request request) {
-		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
-					.getViewAndElementDescriptor()
-					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter
-					.getAdapter(IElementType.class);
-			if (type == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_3005) {
-				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternCoordinationPatternContainerCompartmentEditPart.VISUAL_ID));
-			}
-			if (type == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_3006) {
-				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternCoordinationPatternContainerCompartmentEditPart.VISUAL_ID));
-			}
-		}
-		return super.getTargetEditPart(request);
 	}
 
 }
