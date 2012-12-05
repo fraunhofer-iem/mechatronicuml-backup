@@ -16,7 +16,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
 
 /**
- * An EditHelperAdvice for the DiscreteMultiPortInstance.
+ * An EditHelperAdvice for the DiscreteSinglePortInstance.
  * 
  * @author bingo
  * 
