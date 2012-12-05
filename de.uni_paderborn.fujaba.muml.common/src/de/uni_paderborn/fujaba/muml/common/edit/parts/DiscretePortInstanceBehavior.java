@@ -19,15 +19,11 @@ public class DiscretePortInstanceBehavior extends AbstractPortInstanceBehavior {
 
 	@Override
 	public void handleNotificationEvent(Notification notification) {
-		Object featureObject = notification.getFeature();
-		if (featureObject instanceof EStructuralFeature) {
-			EStructuralFeature feature = (EStructuralFeature) featureObject;
-			if (InstancePackage.Literals.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES
-					.equals(feature)
-					|| InstancePackage.Literals.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES
-							.equals(feature)) {
-				updatePortType();
-			}
+		if (InstancePackage.Literals.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES
+				.equals(notification.getFeature())
+				|| InstancePackage.Literals.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES
+						.equals(notification.getFeature())) {
+			updatePortType();
 		}
 	}
 
@@ -40,9 +36,9 @@ public class DiscretePortInstanceBehavior extends AbstractPortInstanceBehavior {
 	public PortType getPortType() {
 		boolean receiverMessageInterfaceSet = false;
 		boolean senderMessageInterfaceSet = false;
-		
+
 		PortInstance portInstance = getPortInstance();
-		
+
 		if (portInstance != null
 				&& portInstance instanceof DiscretePortInstance) {
 

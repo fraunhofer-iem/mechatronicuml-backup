@@ -129,25 +129,6 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser discreteSinglePortInstanceName_5032Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getDiscreteSinglePortInstanceName_5032Parser() {
-		if (discreteSinglePortInstanceName_5032Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.MessageFormatParser(
-					features);
-			discreteSinglePortInstanceName_5032Parser = parser;
-		}
-		return discreteSinglePortInstanceName_5032Parser;
-	}
-
-	/**
-	 * @generated
-	 */
 	protected IParser hybridPortInstanceName_5043Parser;
 
 	/**
@@ -268,8 +249,6 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getAtomicComponentInstanceLabel_5027Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
 			return getStructuredComponentInstanceLabel_5026Parser();
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceName2EditPart.VISUAL_ID:
-			return getDiscreteSinglePortInstanceName_5032Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceName2EditPart.VISUAL_ID:
 			return getHybridPortInstanceName_5043Parser();
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceName3EditPart.VISUAL_ID:

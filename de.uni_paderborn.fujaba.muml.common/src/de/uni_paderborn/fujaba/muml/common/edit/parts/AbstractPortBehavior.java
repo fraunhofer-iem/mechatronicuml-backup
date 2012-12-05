@@ -88,6 +88,10 @@ public abstract class AbstractPortBehavior {
 			figure.setPortKindAndPortType(getPortKind(), getPortType());
 		}
 	}
+	
+	protected AbstractBorderItemEditPart getBorderItemEditPart() {
+		return (AbstractBorderItemEditPart) editPart;
+	}
 
 	/**
 	 * Gets and lazily creates the container layout listener.
@@ -122,10 +126,10 @@ public abstract class AbstractPortBehavior {
 			 */
 			@Override
 			public void postLayout(IFigure container) {
-				IBorderItemLocator borderItemLocator = ((AbstractBorderItemEditPart) editPart)
+				IBorderItemLocator borderItemLocator = getBorderItemEditPart()
 						.getBorderItemLocator();
 				if (borderItemLocator != null) {
-					borderItemLocator.relocate(editPart.getFigure());
+					borderItemLocator.relocate(getBorderItemEditPart().getFigure());
 					int side = borderItemLocator.getCurrentSideOfParent();
 					figure.setPortSide(side);
 				}
@@ -154,7 +158,7 @@ public abstract class AbstractPortBehavior {
 	 * @param containerFigure
 	 *            The port's container figure.
 	 */
-	public void removeContainerLayoutListener(IFigure containerFigure) {
+	public void removeLayoutListener(IFigure containerFigure) {
 		if (containerLayoutListener != null) {
 			containerFigure.removeLayoutListener(containerLayoutListener);
 		}

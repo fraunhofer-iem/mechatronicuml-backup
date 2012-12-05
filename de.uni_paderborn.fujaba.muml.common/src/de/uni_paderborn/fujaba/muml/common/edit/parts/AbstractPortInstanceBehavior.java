@@ -24,21 +24,16 @@ public abstract class AbstractPortInstanceBehavior extends AbstractPortBehavior 
 	public void activate() {
 		EObject element = editPart.getNotationView().getElement();
 		if (element instanceof PortInstance) {
-			portInstance = (PortInstance) editPart.getNotationView().getElement();
+			portInstance = (PortInstance) editPart.getNotationView()
+					.getElement();
 		}
 
-		GraphicalEditPart parentEditPart = (GraphicalEditPart) editPart.getParent();
-		if (parentEditPart.getFigure() instanceof BorderedNodeFigure) {
-			BorderedNodeFigure bnf = (BorderedNodeFigure) parentEditPart.getFigure();
-			IFigure portContainerFigure = bnf.getBorderItemContainer();
+		IFigure portContainerFigure = getPortContainerFigure();
+		if (portContainerFigure != null) {
 			addLayoutListener(portContainerFigure);
 		}
 
 		super.activate();
-	}
-
-	public PortInstance getPortInstance() {
-		return portInstance;
 	}
 
 	/**
@@ -49,15 +44,9 @@ public abstract class AbstractPortInstanceBehavior extends AbstractPortBehavior 
 	public void deactivate() {
 		portInstance = null;
 
-		EditPart parentEditPart = editPart.getParent();
-		IFigure figure = null;
-		if (parentEditPart instanceof GraphicalEditPart) {
-			figure = ((GraphicalEditPart) parentEditPart).getFigure();
-		}
-		if (figure instanceof BorderedNodeFigure) {
-			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
-			IFigure portContainerFigure = bnf.getBorderItemContainer();
-			removeContainerLayoutListener(portContainerFigure);
+		IFigure portContainerFigure = getPortContainerFigure();
+		if (portContainerFigure != null) {
+			removeLayoutListener(portContainerFigure);
 		}
 
 		super.deactivate();
@@ -67,10 +56,25 @@ public abstract class AbstractPortInstanceBehavior extends AbstractPortBehavior 
 	public boolean isMulti() {
 		return false;
 	}
-	
+
 	@Override
 	public boolean isMandatory() {
 		return true;
+	}
+
+	protected IFigure getPortContainerFigure() {
+		GraphicalEditPart parentEditPart = (GraphicalEditPart) editPart
+				.getParent();
+		if (parentEditPart.getFigure() instanceof BorderedNodeFigure) {
+			BorderedNodeFigure bnf = (BorderedNodeFigure) parentEditPart
+					.getFigure();
+			return bnf.getBorderItemContainer();
+		}
+		return null;
+	}
+
+	public PortInstance getPortInstance() {
+		return portInstance;
 	}
 
 }

@@ -65,7 +65,7 @@ public class RoleBehavior extends AbstractPortBehavior {
 		if (figure instanceof BorderedNodeFigure) {
 			BorderedNodeFigure bnf = (BorderedNodeFigure) figure;
 			IFigure portContainerFigure = bnf.getBorderItemContainer();
-			removeContainerLayoutListener(portContainerFigure);
+			removeLayoutListener(portContainerFigure);
 		}
 
 		super.deactivate();

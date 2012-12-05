@@ -3,7 +3,10 @@ package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagra
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
@@ -67,7 +70,24 @@ public class CustomDiscreteSinglePortInstance2EditPart extends DiscreteSinglePor
 	 */
 	private DiscretePortInstanceBehavior getDelegation() {
 		if (delegation == null) {
-			delegation = new DiscretePortInstanceBehavior(this);
+			delegation = new DiscretePortInstanceBehavior(this) {
+				@Override
+				protected IFigure getPortContainerFigure() {
+					GraphicalEditPart parentEditPart = (GraphicalEditPart) editPart
+							.getParent().getParent().getParent();
+					if (parentEditPart.getFigure() instanceof BorderedNodeFigure) {
+						BorderedNodeFigure bnf = (BorderedNodeFigure) parentEditPart
+								.getFigure();
+						return bnf.getBorderItemContainer();
+					}
+					return null;
+				}
+				
+				@Override
+				protected AbstractBorderItemEditPart getBorderItemEditPart() {
+					return (AbstractBorderItemEditPart) editPart.getParent().getParent();
+				}
+			};
 		}
 		return delegation;
 	}

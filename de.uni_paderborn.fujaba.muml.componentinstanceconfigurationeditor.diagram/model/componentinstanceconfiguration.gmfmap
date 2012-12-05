@@ -124,13 +124,6 @@
                   body="self.multiPortInstance.componentInstance"/>
             </initializers>
           </domainInitializer>
-          <labelMappings
-              xsi:type="gmfmap:FeatureLabelMapping">
-            <diagramLabel
-                href="componentinstanceconfiguration.gmfgraph#PortInstanceLabel"/>
-            <features
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.4"/>
