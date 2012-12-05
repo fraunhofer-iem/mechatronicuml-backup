@@ -8,6 +8,8 @@ import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
+import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
+import de.uni_paderborn.fujaba.muml.model.component.Port;
 
 public class ContinuousPortBehavior extends AbstractPortTypeBehavior {
 
@@ -23,8 +25,13 @@ public class ContinuousPortBehavior extends AbstractPortTypeBehavior {
 	@Override
 	public CustomPortFigure.PortType getPortType() {
 		CustomPortFigure.PortType type;
-		ContinuousPort continuousPort = (ContinuousPort) getPort();
-		switch (continuousPort.getKind()) {
+		Port port = getPort();
+		
+		ContinuousPortDirectionKind direction = null;
+		if (port != null) {
+			direction = (ContinuousPortDirectionKind) port.eGet(ComponentPackage.Literals.DIRECTED_TYPED_PORT__KIND);
+		}
+		switch (direction) {
 		case IN:
 			type = CustomPortFigure.PortType.IN_PORT;
 			break;
