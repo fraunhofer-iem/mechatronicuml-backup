@@ -21,11 +21,16 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.core.descriptor.EnumerationPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Deadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -78,18 +83,48 @@ public class DeadlineItemProvider
 	 * @generated NOT
 	 */
 	protected void addUpperBoundPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_Deadline_upperBound_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_Deadline_upperBound_feature", "_UI_Deadline_type"),
-			RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND,
-			true,
-			false,
-			false,
-			null,
-			null,
-			null));
+		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Deadline_upperBound_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Deadline_upperBound_feature", "_UI_Deadline_type"),
+				 RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null);
+		
+		itemPropertyDescriptors.add
+			(new NaturalNumberPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeValue_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
+				 CorePackage.Literals.TIME_VALUE__VALUE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 "Upper Bound",
+				 null,
+				 rootPropertyDescriptor));
+	
+		itemPropertyDescriptors.add
+			(new EnumerationPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeValue_unit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
+				 CorePackage.Literals.TIME_VALUE__UNIT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 "Upper Bound",
+				 null,
+				 rootPropertyDescriptor));
 	}
 
 	/**
@@ -99,18 +134,49 @@ public class DeadlineItemProvider
 	 * @generated NOT
 	 */
 	protected void addLowerBoundPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
-			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			getResourceLocator(),
-			getString("_UI_Deadline_lowerBound_feature"),
-			getString("_UI_PropertyDescriptor_description", "_UI_Deadline_lowerBound_feature", "_UI_Deadline_type"),
-			RealtimestatechartPackage.Literals.DEADLINE__LOWER_BOUND,
-			true,
-			false,
-			false,
-			null,
-			null,
-			null));
+		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Deadline_lowerBound_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Deadline_lowerBound_feature", "_UI_Deadline_type"),
+				 RealtimestatechartPackage.Literals.DEADLINE__LOWER_BOUND,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null);
+	
+		itemPropertyDescriptors.add
+			(new NaturalNumberPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeValue_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
+				 CorePackage.Literals.TIME_VALUE__VALUE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 "Lower Bound",
+				 null,
+				 rootPropertyDescriptor));
+	
+		itemPropertyDescriptors.add
+			(new EnumerationPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeValue_unit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
+				 CorePackage.Literals.TIME_VALUE__UNIT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 "Lower Bound",
+				 null,
+				 rootPropertyDescriptor));
+		
 	}
 
 	/**

@@ -43,6 +43,7 @@ import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.core.descriptor.EnumerationPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
@@ -524,8 +525,8 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 				false, false, false, null,
 				getString("_UI_RelativeDeadlinePropertyCategory"), null);
 
-		itemPropertyDescriptors
-				.add(new NaturalNumberPropertyDescriptor(
+		
+		IChainedPropertyDescriptor lowerBoundPropertyDescriptor = new DefaultChainedPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
@@ -536,10 +537,39 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 						RealtimestatechartPackage.Literals.DEADLINE__LOWER_BOUND,
 						true, false, true, null,
 						getString("_UI_RelativeDeadlinePropertyCategory"),
-						null, rootPropertyDescriptor));
+						null, rootPropertyDescriptor);
+		
+		itemPropertyDescriptors.add
+			(new NaturalNumberPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeValue_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
+				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.TIME_VALUE__VALUE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 "Relative Deadline - Lower Bound",
+				 null,
+				 lowerBoundPropertyDescriptor));
 
-		itemPropertyDescriptors
-				.add(new NaturalNumberPropertyDescriptor(
+		itemPropertyDescriptors.add
+			(new EnumerationPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeValue_unit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
+				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.TIME_VALUE__UNIT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 "Relative Deadline - Lower Bound",
+				 null,
+				 lowerBoundPropertyDescriptor));
+
+		IChainedPropertyDescriptor upperBoundPropertyDescriptor = new DefaultChainedPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
@@ -550,7 +580,37 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 						RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND,
 						true, false, true, null,
 						getString("_UI_RelativeDeadlinePropertyCategory"),
-						null, rootPropertyDescriptor));
+						null, rootPropertyDescriptor);
+		
+		itemPropertyDescriptors.add
+			(new NaturalNumberPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeValue_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
+				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.TIME_VALUE__VALUE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 "Relative Deadline - Upper Bound",
+				 null,
+				 upperBoundPropertyDescriptor));
+
+		itemPropertyDescriptors.add
+			(new EnumerationPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeValue_unit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
+				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.TIME_VALUE__UNIT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 "Relative Deadline - Upper Bound",
+				 null,
+				 upperBoundPropertyDescriptor));
 
 	}
 
