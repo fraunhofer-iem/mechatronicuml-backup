@@ -81,11 +81,6 @@ public class MumlDiagramUpdater {
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID) {
-				result.add(new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlNodeDescriptor(
-						childElement, visualID));
-				continue;
-			}
 			if (visualID == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID) {
 				result.add(new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
@@ -180,8 +175,6 @@ public class MumlDiagramUpdater {
 			return getModelElementCategory_1000ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
 			return getStaticStructuredComponent_2005ContainedLinks(view);
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
-			return getHybridPort_3009ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 			return getDiscretePort_3010ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
@@ -211,8 +204,6 @@ public class MumlDiagramUpdater {
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
 			return getStaticStructuredComponent_2005IncomingLinks(view);
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
-			return getHybridPort_3009IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 			return getDiscretePort_3010IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
@@ -242,8 +233,6 @@ public class MumlDiagramUpdater {
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
 			return getStaticStructuredComponent_2005OutgoingLinks(view);
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
-			return getHybridPort_3009OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 			return getDiscretePort_3010OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
@@ -283,14 +272,6 @@ public class MumlDiagramUpdater {
 		result.addAll(getContainedTypeModelFacetLinks_Delegation_4003(modelElement));
 		result.addAll(getContainedTypeModelFacetLinks_Assembly_4004(modelElement));
 		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlLinkDescriptor> getHybridPort_3009ContainedLinks(
-			View view) {
-		return Collections.emptyList();
 	}
 
 	/**
@@ -363,23 +344,6 @@ public class MumlDiagramUpdater {
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlLinkDescriptor> getStaticStructuredComponent_2005IncomingLinks(
 			View view) {
 		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlLinkDescriptor> getHybridPort_3009IncomingLinks(
-			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.HybridPort modelElement = (de.uni_paderborn.fujaba.muml.model.component.HybridPort) view
-				.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Delegation_4003(
-				modelElement, crossReferences));
-		result.addAll(getIncomingTypeModelFacetLinks_Assembly_4004(
-				modelElement, crossReferences));
-		return result;
 	}
 
 	/**
@@ -497,19 +461,6 @@ public class MumlDiagramUpdater {
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlLinkDescriptor> getStaticStructuredComponent_2005OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlLinkDescriptor> getHybridPort_3009OutgoingLinks(
-			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.HybridPort modelElement = (de.uni_paderborn.fujaba.muml.model.component.HybridPort) view
-				.getElement();
-		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_Delegation_4003(modelElement));
-		result.addAll(getOutgoingTypeModelFacetLinks_Assembly_4004(modelElement));
-		return result;
 	}
 
 	/**

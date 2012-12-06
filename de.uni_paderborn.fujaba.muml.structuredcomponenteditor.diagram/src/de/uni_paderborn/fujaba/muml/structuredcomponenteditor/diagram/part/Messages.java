@@ -303,16 +303,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String HybridPort3CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String HybridPort3CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
 	public static String Assembly1CreationTool_title;
 
 	/**

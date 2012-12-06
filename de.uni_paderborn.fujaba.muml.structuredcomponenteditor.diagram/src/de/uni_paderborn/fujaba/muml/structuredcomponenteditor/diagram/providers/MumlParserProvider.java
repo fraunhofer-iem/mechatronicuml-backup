@@ -42,25 +42,6 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser hybridPortName_5011Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getHybridPortName_5011Parser() {
-		if (hybridPortName_5011Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
-					features);
-			hybridPortName_5011Parser = parser;
-		}
-		return hybridPortName_5011Parser;
-	}
-
-	/**
-	 * @generated
-	 */
 	protected IParser discretePortName_5012Parser;
 
 	/**
@@ -175,8 +156,6 @@ public class MumlParserProvider extends AbstractProvider implements
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID:
 			return getStaticStructuredComponentName_5021Parser();
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortNameEditPart.VISUAL_ID:
-			return getHybridPortName_5011Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID:
 			return getDiscretePortName_5012Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID:
