@@ -27,9 +27,12 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.storydriven.core.expressions.common.ComparingOperator;
+import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.core.descriptor.EnumerationPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -79,21 +82,7 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 	 * @generated NOT
 	 */
 	protected void addBoundPropertyDescriptor(Object object) {
-		// itemPropertyDescriptors.add
-		// (createItemPropertyDescriptor
-		// (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-		// getResourceLocator(),
-		// getString("_UI_ClockConstraint_bound_feature"),
-		// getString("_UI_PropertyDescriptor_description",
-		// "_UI_ClockConstraint_bound_feature", "_UI_ClockConstraint_type"),
-		// RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND,
-		// true,
-		// false,
-		// false,
-		// null,
-		// null,
-		// null));
-		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
+		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_ClockConstraint_bound_feature"), getString(
@@ -101,7 +90,38 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 						"_UI_ClockConstraint_bound_feature",
 						"_UI_ClockConstraint_type"),
 				RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND,
-				true, false, true, null, null, null));
+				true, false, true, null, null, null);
+		
+
+		itemPropertyDescriptors.add
+			(new NaturalNumberPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeValue_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
+				 CorePackage.Literals.TIME_VALUE__VALUE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 "Bound",
+				 null,
+				 rootPropertyDescriptor));
+	
+		itemPropertyDescriptors.add
+			(new EnumerationPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeValue_unit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
+				 CorePackage.Literals.TIME_VALUE__UNIT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 "Bound",
+				 null,
+				 rootPropertyDescriptor));
 
 	}
 
