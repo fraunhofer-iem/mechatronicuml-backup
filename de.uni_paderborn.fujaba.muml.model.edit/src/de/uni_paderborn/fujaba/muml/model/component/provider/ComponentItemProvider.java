@@ -7,12 +7,15 @@
 package de.uni_paderborn.fujaba.muml.model.component.provider;
 
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -30,6 +33,7 @@ import org.storydriven.storydiagrams.calls.CallsFactory;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentFactory;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
 
@@ -169,11 +173,11 @@ public class ComponentItemProvider
 	 * This adds a property descriptor for the Component Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addComponentTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Component_componentType_feature"),
@@ -184,7 +188,32 @@ public class ComponentItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 getString("_UI_GeneralPropertyCategory"),
-				 null));
+				 null) {
+
+					@Override
+					public Collection<?> getChoiceOfValues(Object object) {
+						// MUML Bugs #233, #373
+						if (object instanceof EObject) {
+							EClass eClass = ((EObject) object).eClass();
+							
+							// TODO: Instead of subtracting invalid choices, I explicitly add valid choices.
+							// This is done analogously to the OCL-Constraint implementation "ValidComponentType".
+							// We should find out, which way is more extensible if new enum constants are added (substractive blacklist, additive whitelist).
+							if (ComponentPackage.Literals.ATOMIC_COMPONENT.isSuperTypeOf(eClass)) {
+								return Arrays.asList(new ComponentKind[] {
+										ComponentKind.SOFTWARE_COMPONENT,
+										ComponentKind.CONTINUOUS_COMPONENT,
+										null /* lower bound of zero */});
+							} else if (ComponentPackage.Literals.STRUCTURED_COMPONENT.isSuperTypeOf(eClass)) {
+								return Arrays.asList(new ComponentKind[] {
+										ComponentKind.SOFTWARE_COMPONENT,
+										ComponentKind.HYBRID_COMPONENT,
+										null /* lower bound of zero */});
+							}
+						}
+						return super.getChoiceOfValues(object);
+					}
+			});
 	}
 
 	/**
