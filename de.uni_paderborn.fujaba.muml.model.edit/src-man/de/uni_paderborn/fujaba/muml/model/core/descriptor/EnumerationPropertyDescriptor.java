@@ -1,8 +1,8 @@
 package de.uni_paderborn.fujaba.muml.model.core.descriptor;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -38,8 +38,15 @@ public class EnumerationPropertyDescriptor extends
 	@Override
 	public Collection<?> getChoiceOfValues(Object object) {
 		if (feature.getEType().getInstanceClass().isEnum()) {
-			return Arrays.asList(feature.getEType().getInstanceClass()
+			Collection<?> unmodifiableConstants = Arrays.asList(feature.getEType().getInstanceClass()
 					.getEnumConstants());
+			if (feature.getLowerBound() > 0 || !feature.isRequired()) { // TODO: Is this okay? Maybe connect using boolean AND? 
+				// Get a modifiable list and append the value "null" to make it unsettable
+				Collection<?> constants = new ArrayList<Object>(unmodifiableConstants);
+				constants.add(null);
+				return constants;
+			}
+			return unmodifiableConstants;
 		}
 		return super.getChoiceOfValues(object);
 
