@@ -93,7 +93,7 @@
          point="de.fujaba.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
-            key="de.uni_paderborn.fujaba.muml.msgtype.category"
+            key="de.uni_paderborn.fujaba.muml.messagetype.category"
             name="msgtype">
          
          <child
@@ -113,7 +113,7 @@
             editorId="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramEditorID"
             editorName="Messageinterface Editor"
             fileExtension="messageinterface_diagram"
-            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.msgtype.category"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.messagetype.category"
             modelId="Messageinterface">
          <diagramElement
                packageNsURI="http://www.fujaba.de/modelinstance/0.3.6"

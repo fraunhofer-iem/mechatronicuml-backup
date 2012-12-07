@@ -92,7 +92,7 @@
          point="de.fujaba.modelinstance.modelelementcategory">
       «EXPAND xpt::Common::xmlGeneratedTag»  
       <category
-            key="«getReflectionPackageName(diagram.topLevelNodes->first().getDomainMetaClass().genPackage).xpandReplaceAll('\\.model', '').xpandReplaceAll('\\.component', '\\.components').xpandReplaceAll('\\.msgiface', '\\.messageinterface')».category"
+            key="«modelElementCategoryKey(diagram)»"
             name="«diagram.topLevelNodes->first().getDomainMetaClass().genPackage.ecorePackage.name»">
          «FOREACH diagram.topLevelNodes.getDomainMetaClass() AS node»
          <child

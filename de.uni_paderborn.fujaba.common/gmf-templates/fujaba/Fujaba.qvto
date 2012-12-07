@@ -20,5 +20,5 @@ helper usesModelElementCategory(genDiagram : gmfgen::GenDiagram) : Boolean {
 }
 
 helper modelElementCategoryKey(genDiagram : gmfgen::GenDiagram) : String {
-	return getReflectionPackageName(genDiagram.topLevelNodes->first().getDomainMetaClass().genPackage).xpandReplaceAll('\\.model', '').xpandReplaceAll('\\.component', '\\.components').xpandReplaceAll('\\.msgiface', '\\.messageinterface') + ".category";
+	return getReflectionPackageName(genDiagram.topLevelNodes->first().getDomainMetaClass().genPackage).xpandReplaceAll('\\.model', '').xpandReplaceAll('\\.component', '\\.components').xpandReplaceAll('\\.msgtype', '\\.messagetype') + ".category";
 }
