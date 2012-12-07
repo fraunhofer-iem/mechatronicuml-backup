@@ -113,7 +113,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.11">
+              value="//@expressionProviders/@providers.0/@expressions.12">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -129,7 +129,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.12">
+                      value="//@expressionProviders/@providers.0/@expressions.13">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
@@ -142,7 +142,7 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.13">
+                      value="//@expressionProviders/@providers.0/@expressions.14">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
                   </initializers>
@@ -323,6 +323,19 @@
                 <feature
                     href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/RoleConnector/target"/>
               </initializers>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/RoleConnector/connectorQualityOfServiceAssumptions"/>
+                <newElementInitializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.11">
+                    <feature
+                        href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                  </initializers>
+                </newElementInitializers>
+              </initializers>
             </newElementInitializers>
           </initializers>
         </modelElementInitializer>
@@ -372,13 +385,29 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/CoordinationPattern/connector"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/CoordinationPattern/connector"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenReferenceNewElementSpec">
+            <feature
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/RoleConnector/connectorQualityOfServiceAssumptions"/>
+            <newElementInitializers>
+              <initializers
+                  xsi:type="gmfgen:GenFeatureValueSpec"
+                  value="//@expressionProviders/@providers.0/@expressions.15">
+                <feature
+                    href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              </initializers>
+            </newElementInitializers>
+          </initializers>
+        </modelElementInitializer>
         <sourceMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/RoleConnector/source"/>
         <targetMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/pattern/RoleConnector/target"/>
       </modelFacet>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.14"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.16"/>
     </links>
     <compartments
         visualID="7005"
@@ -587,11 +616,15 @@
       <expressions
           body="self.coordinationPattern.roles->last()"/>
       <expressions
+          body="'QoS Assumption'"/>
+      <expressions
           body="'role'"/>
       <expressions
           body="1"/>
       <expressions
           body="1"/>
+      <expressions
+          body="'QoS Assumption'"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.coordinationPattern = oppositeEnd.coordinationPattern"/>

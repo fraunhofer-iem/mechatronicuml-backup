@@ -169,6 +169,22 @@
               <value
                   body="self.coordinationPattern.roles->last()"/>
             </initializers>
+            <initializers
+                xsi:type="gmfmap:ReferenceNewElementSpec">
+              <feature
+                  xsi:type="ecore:EReference"
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions"/>
+              <newElementInitializers>
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                  <value
+                      body="'QoS Assumption'"/>
+                </initializers>
+              </newElementInitializers>
+            </initializers>
           </newElementInitializers>
         </initializers>
       </domainInitializer>
@@ -287,6 +303,25 @@
   <links>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector"/>
+    <domainInitializer
+        xsi:type="gmfmap:FeatureSeqInitializer">
+      <initializers
+          xsi:type="gmfmap:ReferenceNewElementSpec">
+        <feature
+            xsi:type="ecore:EReference"
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions"/>
+        <newElementInitializers>
+          <initializers
+              xsi:type="gmfmap:FeatureValueSpec">
+            <feature
+                xsi:type="ecore:EAttribute"
+                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+            <value
+                body="'QoS Assumption'"/>
+          </initializers>
+        </newElementInitializers>
+      </initializers>
+    </domainInitializer>
     <containmentFeature
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern/connector"/>
     <tool

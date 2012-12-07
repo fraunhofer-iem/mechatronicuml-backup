@@ -21,9 +21,14 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.CorePackage;
 
+import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.core.provider.BehavioralElementItemProvider;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
@@ -66,6 +71,7 @@ public class RoleConnectorItemProvider
 
 			addSourcePropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
+			addConnectorQualityOfServiceAssumptionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -112,6 +118,102 @@ public class RoleConnectorItemProvider
 				 null,
 				 null,
 				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Connector Quality Of Service Assumptions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addConnectorQualityOfServiceAssumptionsPropertyDescriptor(Object object) {
+		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RoleConnector_connectorQualityOfServiceAssumptions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RoleConnector_connectorQualityOfServiceAssumptions_feature", "_UI_RoleConnector_type"),
+				 PatternPackage.Literals.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null);
+		
+		itemPropertyDescriptors.add
+			(new DefaultChainedPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CommentableElement_comment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 "QoS Assumptions",
+				 null,
+				 rootPropertyDescriptor));
+	
+		itemPropertyDescriptors.add
+			(new NaturalNumberPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConnectorQualityOfServiceAssumptions_minMessageDelay_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorQualityOfServiceAssumptions_minMessageDelay_feature", "_UI_ConnectorQualityOfServiceAssumptions_type"),
+				 PatternPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY,
+				 true,
+				 false,
+				 false,
+				 null,
+				 "QoS Assumptions",
+				 null,
+				 rootPropertyDescriptor));
+
+		itemPropertyDescriptors.add
+			(new NaturalNumberPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConnectorQualityOfServiceAssumptions_maxMessageDelay_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorQualityOfServiceAssumptions_maxMessageDelay_feature", "_UI_ConnectorQualityOfServiceAssumptions_type"),
+				 PatternPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY,
+				 true,
+				 false,
+				 false,
+				 null,
+				 "QoS Assumptions",
+				 null,
+				 rootPropertyDescriptor));
+	
+		itemPropertyDescriptors.add
+			(new DefaultChainedPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConnectorQualityOfServiceAssumptions_messageLossPossible_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorQualityOfServiceAssumptions_messageLossPossible_feature", "_UI_ConnectorQualityOfServiceAssumptions_type"),
+				 PatternPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 "QoS Assumptions",
+				 null,
+				 rootPropertyDescriptor));
+		
+		itemPropertyDescriptors.add
+			(new DefaultChainedPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_NamedElement_name_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				CorePackage.Literals.NAMED_ELEMENT__NAME,
+				true,
+				false,
+				false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				"QoS Assumptions",
+				null,
+				rootPropertyDescriptor));
 	}
 
 	/**

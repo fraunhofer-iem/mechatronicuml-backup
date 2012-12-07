@@ -85,6 +85,8 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 		getContainer().setConnector(newElement);
 		newElement.setSource(getSource());
 		newElement.setTarget(getTarget());
+		de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.ElementInitializers
+				.getInstance().init_RoleConnector_4006(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
