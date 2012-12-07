@@ -60,7 +60,7 @@ public class PropertySheetDialogExtension extends AbstractDialogExtension {
 		composite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		
 		
-		page = new PropertySheetPage();
+		page = createPropertySheetPage();
 		page.setPropertySourceProvider(propertySourceProvider);
 		page.createControl(composite);
 	
@@ -79,6 +79,11 @@ public class PropertySheetDialogExtension extends AbstractDialogExtension {
 		
 		tree.getColumn(0).setWidth(200);
 		tree.getColumn(1).setWidth(40);
+	}
+
+	protected PropertySheetPage createPropertySheetPage() {
+		// By default we create a normal PropertySheetPage; can be overriden to support own implementations.
+		return new PropertySheetPage();
 	}
 
 	public void setInput(ISelection selection) {
