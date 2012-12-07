@@ -230,6 +230,8 @@ public class ParameterBindingPropertySourceProvider implements
 		public Object getPropertyValue(Object object) {
 			ParameterBinding binding = getParameterBinding(parameter);
 			if (binding != null) {
+				// XXX: bingo: Does the second case also work for the first case? (Can LanguageResource also serialize LiteralExpression using its value?)
+				// Then we could delete the first case completely. 
 				if (binding.getValue() instanceof LiteralExpression) {
 					LiteralExpression literalExpression = (LiteralExpression) binding
 							.getValue();

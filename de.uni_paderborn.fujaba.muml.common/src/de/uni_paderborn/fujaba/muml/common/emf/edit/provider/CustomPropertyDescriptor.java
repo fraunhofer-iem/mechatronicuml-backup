@@ -31,7 +31,10 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.views.properties.IPropertySheetEntry;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
+import org.eclipse.ui.views.properties.PropertySheetPage;
+import org.eclipse.ui.views.properties.PropertySheetSorter;
 
 import de.uni_paderborn.fujaba.common.descriptor.IDifferentObjectItemPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
@@ -42,16 +45,12 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertySheetDialog
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.SimpleTextualDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.UseParserDialogExtension;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 public class CustomPropertyDescriptor extends PropertyDescriptor {
 
@@ -226,18 +225,6 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			super(composite, feature);
 		}
 
-		private List<Attribute> getAllAvailableAttributes() {
-			EObject containerObject = dialog.getContainerObject();
-			if (containerObject instanceof StateEvent) {
-				return ((RealtimeStatechart) containerObject.eContainer()
-						.eContainer()).getAllAvailableAttributes();
-			} else if (containerObject instanceof Transition) {
-				return ((Transition) containerObject).getStatechart()
-						.getAllAvailableAttributes();
-			}
-			return null;
-		}
-
 		@Override
 		protected void addExtensions() {
 			// store old values because if OK is pressed the old property value
@@ -335,6 +322,91 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 	public abstract class ParameterBindingCreationCellEditor extends
 			AbstractCreationCellEditor implements
 			ParameterBindingPropertySourceProvider.IParameterBindingElement {
+		private final class ParameterBindingPropertySheetDialogExtension extends
+				PropertySheetDialogExtension {
+			private ParameterBindingPropertySheetDialogExtension(
+					IPropertySourceProvider propertySourceProvider,
+					ExtensibleCreationDialog creationDialog) {
+				super(propertySourceProvider, creationDialog);
+			}
+
+			@Override
+			public void createMainArea(Composite parent) {
+				super.createMainArea(parent);
+				StatusLineManager statusLineManager = new StatusLineManager();
+				statusLineManager.createControl(parent);
+				statusLineManager.getControl().setLayoutData(
+						new GridData(SWT.FILL, SWT.FILL, true, false));
+				// the MenuManager and ToolBarManager are just "dummies"
+				page.makeContributions(new MenuManager(),
+						new ToolBarManager(), statusLineManager);
+			}
+
+			@Override
+			public void okPressed() {
+				super.okPressed();
+				
+				// Prevent NullPointerException; if the object is null, we do not need to set anything
+				if (parameterBindingsObject != null) {
+					@SuppressWarnings("unchecked")
+					Collection<ParameterBinding> parameterBindings = (Collection<ParameterBinding>) parameterBindingsObject
+							.eGet(feature);
+					Collection<ParameterBinding> filteredParameterBindings = new ArrayList<ParameterBinding>();
+	
+					// Filter ParameterBindings (remove those that have no valid
+					// Parameter associated) and sort them so that the order of
+					// ParameterBindings
+					// is only depending on the order of Parameters and not on
+					// the order in which they were created.
+					Collection<Parameter> allParameters = ParameterBindingCreationCellEditor.this
+							.getParameters(parameterBindingsObject);
+	
+					for (Parameter parameter : allParameters) {
+						for (ParameterBinding parameterBinding : parameterBindings) {
+							if (parameter == parameterBinding.getParameter()
+									&& !filteredParameterBindings
+											.contains(parameterBinding)) {
+								filteredParameterBindings.add(parameterBinding);
+							}
+						}
+					}
+	
+					Command setCommand = SetCommand.create(editingDomain,
+							parameterBindingsObject, feature,
+							filteredParameterBindings);
+					editingDomain.getCommandStack().execute(setCommand);
+				}
+			}
+
+			class UnsortedPropertySheetPage extends PropertySheetPage {
+				class MyPropertySheetSorter extends PropertySheetSorter {
+
+					@Override
+					public void sort(IPropertySheetEntry[] entries) {
+						// do nothing
+					}
+				}
+
+				public UnsortedPropertySheetPage() {
+					setSorter(new MyPropertySheetSorter());
+				}
+
+				@Override
+				protected void setSorter(PropertySheetSorter sorter) {
+					if (!(sorter instanceof MyPropertySheetSorter)) {
+						sorter = new MyPropertySheetSorter();
+					}
+					super.setSorter(sorter);
+				}
+
+			}
+
+			@Override
+			protected PropertySheetPage createPropertySheetPage() {
+				return new UnsortedPropertySheetPage();
+			}
+		}
+
 		private EObject parameterBindingsObject;
 		private PropertySheetDialogExtension propertySheetDialogExtension;
 
@@ -350,51 +422,8 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			provider = new ParameterBindingPropertySourceProvider(
 					editingDomain, this);
 
-			propertySheetDialogExtension = new PropertySheetDialogExtension(
-					provider, dialog) {
-				
-				@Override
-				public void createMainArea(Composite parent) {
-					super.createMainArea(parent);
-					StatusLineManager statusLineManager = new StatusLineManager();
-					statusLineManager.createControl(parent);
-					statusLineManager.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
-					// the MenuManager and ToolBarManager are just "dummies"
-					page.makeContributions(new MenuManager(), new ToolBarManager(), statusLineManager);
-				}
-
-				@Override
-				public void okPressed() {
-					super.okPressed();
-
-					@SuppressWarnings("unchecked")
-					Collection<ParameterBinding> parameterBindings = (Collection<ParameterBinding>) parameterBindingsObject
-							.eGet(feature);
-					Collection<ParameterBinding> filteredParameterBindings = new ArrayList<ParameterBinding>();
-
-					// Filter ParameterBindings (remove those that have no valid
-					// Parameter associated).
-					Collection<Parameter> allParameters = ParameterBindingCreationCellEditor.this
-							.getParameters(parameterBindingsObject);
-					Collection<Parameter> usedParameters = new ArrayList<Parameter>();
-
-					for (ParameterBinding parameterBinding : parameterBindings) {
-						Parameter parameter = parameterBinding.getParameter();
-						if (parameter != null
-								&& allParameters.contains(parameter)
-								&& !usedParameters.contains(parameter)) {
-							usedParameters.add(parameter);
-							filteredParameterBindings.add(parameterBinding);
-						}
-					}
-
-					Command setCommand = SetCommand.create(editingDomain,
-							parameterBindingsObject, feature,
-							filteredParameterBindings);
-					editingDomain.getCommandStack().execute(setCommand);
-				}
-
-			};
+			propertySheetDialogExtension = new ParameterBindingPropertySheetDialogExtension(provider, dialog);
+			
 			Object actualObject = object;
 			if (itemPropertyDescriptor instanceof IDifferentObjectItemPropertyDescriptor) {
 				actualObject = ((IDifferentObjectItemPropertyDescriptor) itemPropertyDescriptor)
@@ -410,6 +439,10 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 
 		@Override
 		protected Object getResult() {
+			// Prevent NullPointerException
+			if (parameterBindingsObject == null) {
+				return null;
+			}
 			return parameterBindingsObject.eGet(feature);
 		}
 
@@ -417,5 +450,6 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 		public EStructuralFeature getParameterBindingFeature() {
 			return feature;
 		}
+
 	}
 }
