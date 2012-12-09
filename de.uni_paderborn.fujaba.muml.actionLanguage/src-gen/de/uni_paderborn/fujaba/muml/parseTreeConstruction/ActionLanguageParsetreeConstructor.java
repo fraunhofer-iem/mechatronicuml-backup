@@ -5312,11 +5312,11 @@ protected class ParamaterBinding_ValueAssignment_3 extends AssignmentToken  {
  *
  * // TriggerMessageExpression
  * TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
- * 	messageType=[msgiface::MessageType] "." parameter=[core::Parameter];
+ * 	messageType=[msgtype::MessageType] "." parameter=[core::Parameter];
  *
  **/
 
-// messageType=[msgiface::MessageType] "." parameter=[core::Parameter]
+// messageType=[msgtype::MessageType] "." parameter=[core::Parameter]
 protected class TriggerMessageExpression_Group extends GroupToken {
 	
 	public TriggerMessageExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5345,7 +5345,7 @@ protected class TriggerMessageExpression_Group extends GroupToken {
 
 }
 
-// messageType=[msgiface::MessageType]
+// messageType=[msgtype::MessageType]
 protected class TriggerMessageExpression_MessageTypeAssignment_0 extends AssignmentToken  {
 	
 	public TriggerMessageExpression_MessageTypeAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {

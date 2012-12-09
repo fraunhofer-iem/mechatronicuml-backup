@@ -2,7 +2,7 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xtext="http://www.eclipse.org/2008/Xtext">
   <xtext:Grammar name="de.uni_paderborn.fujaba.muml.ActionLanguage" usedGrammars="/1">
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="actionLanguage">
-      <ePackage href="http://www.fujaba.de/muml/actionlanguage/0.2.0#/"/>
+      <ePackage href="http://www.fujaba.de/muml/actionlanguage/0.3.5#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="ecore">
       <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
@@ -11,13 +11,13 @@
       <ePackage href="http://www.storydriven.org/core/0.3.1#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="rtsc">
-      <ePackage href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.1#/"/>
+      <ePackage href="http://www.fujaba.de/muml/model/realtimestatechart/0.3.6#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="core">
-      <ePackage href="http://www.fujaba.de/muml/model/core/0.3.1#/"/>
+      <ePackage href="http://www.fujaba.de/muml/model/core/0.3.6#/"/>
     </metamodelDeclarations>
-    <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="msgiface">
-      <ePackage href="http://www.fujaba.de/muml/model/msgiface/0.3.1#/"/>
+    <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="msgtype">
+      <ePackage href="http://www.fujaba.de/muml/model/msgtype/0.3.6#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="expressions">
       <ePackage href="http://www.storydriven.org/core/0.3.1#//expressions"/>
@@ -27,13 +27,13 @@
     </metamodelDeclarations>
     <rules xsi:type="xtext:ParserRule" name="Block" definesHiddenTokens="true" hiddenTokens="/1/@rules.5 /1/@rules.3 /1/@rules.4">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//Block"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//Block"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:Group">
           <elements xsi:type="xtext:Action">
             <type metamodel="/0/@metamodelDeclarations.0">
-              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//Block"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//Block"/>
             </type>
           </elements>
           <elements xsi:type="xtext:Keyword" value="{"/>
@@ -49,7 +49,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ForLoop">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ForLoop"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//ForLoop"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="for"/>
@@ -72,7 +72,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ForLoopCountingExpression">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//Assignment"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//Assignment"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="lhs_attributeExpression" operator="=">
@@ -95,7 +95,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="WhileLoop">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//WhileLoop"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//WhileLoop"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="while"/>
@@ -111,7 +111,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="DoWhileLoop">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//DoWhileLoop"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//DoWhileLoop"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="do"/>
@@ -128,7 +128,7 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="IfStatement">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//IfStatement"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//IfStatement"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="if"/>
@@ -161,12 +161,12 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ReturnStatement">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ReturnStatement"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//ReturnStatement"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
           <type metamodel="/0/@metamodelDeclarations.0">
-            <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//ReturnStatement"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//ReturnStatement"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Keyword" value="return"/>
@@ -191,22 +191,22 @@
     </rules>
     <rules xsi:type="xtext:EnumRule" name="IncrementDecrementOperator">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//IncrementDecrementOperator"/>
+        <classifier xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//IncrementDecrementOperator"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//IncrementDecrementOperator/INCREMENT"/>
+          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//IncrementDecrementOperator/INCREMENT"/>
           <literal value="++"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//IncrementDecrementOperator/DECREMENT"/>
+          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//IncrementDecrementOperator/DECREMENT"/>
           <literal value="--"/>
         </elements>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Assignment">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//Assignment"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//Assignment"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="lhs_attributeExpression" operator="=">
@@ -223,27 +223,27 @@
     </rules>
     <rules xsi:type="xtext:EnumRule" name="AssignOperator">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//AssignOperator"/>
+        <classifier xsi:type="ecore:EEnum" href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//AssignOperator"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//AssignOperator/ASSIGN"/>
+          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//AssignOperator/ASSIGN"/>
           <literal value=":="/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//AssignOperator/PLUS_EQUAL"/>
+          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//AssignOperator/PLUS_EQUAL"/>
           <literal value="+="/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//AssignOperator/EQUAL_PLUS"/>
+          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//AssignOperator/EQUAL_PLUS"/>
           <literal value="=+"/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//AssignOperator/MINUS_EQUAL"/>
+          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//AssignOperator/MINUS_EQUAL"/>
           <literal value="-="/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//AssignOperator/EQUAL_MINUS"/>
+          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//AssignOperator/EQUAL_MINUS"/>
           <literal value="=-"/>
         </elements>
       </alternatives>
@@ -598,13 +598,13 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="AttributeExpression">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//AttributeExpression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//AttributeExpression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="attribute" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.4">
-              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.1#//Attribute"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.6#//Attribute"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>
@@ -620,13 +620,13 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="OperationCall">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//OperationCall"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//OperationCall"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="operation" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.4">
-              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.1#//Operation"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.6#//Operation"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>
@@ -648,18 +648,18 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="ParamaterBinding">
       <type metamodel="/0/@metamodelDeclarations.4">
-        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.1#//ParameterBinding"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.6#//ParameterBinding"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Action">
           <type metamodel="/0/@metamodelDeclarations.4">
-            <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.1#//ParameterBinding"/>
+            <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.6#//ParameterBinding"/>
           </type>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="parameter" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.4">
-              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.1#//Parameter"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.6#//Parameter"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>
@@ -672,13 +672,13 @@
     </rules>
     <rules xsi:type="xtext:ParserRule" name="TriggerMessageExpression">
       <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.2.0#//TriggerMessageExpression"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.5#//TriggerMessageExpression"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="messageType" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.5">
-              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/msgiface/0.3.1#//MessageType"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/msgtype/0.3.6#//MessageType"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>
@@ -687,7 +687,7 @@
         <elements xsi:type="xtext:Assignment" feature="parameter" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.4">
-              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.1#//Parameter"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/model/core/0.3.6#//Parameter"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>

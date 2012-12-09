@@ -11,7 +11,7 @@ import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#/
 
 import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core" as core
 
-import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgiface" as msgiface
+import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgtype" as msgtype
 
 import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions" as expressions
 
@@ -244,7 +244,7 @@ ParamaterBinding returns core::ParameterBinding:
 // TriggerMessageExpression
 
 TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
-	messageType=[msgiface::MessageType] '.' parameter=[core::Parameter]
+	messageType=[msgtype::MessageType] '.' parameter=[core::Parameter]
 ;
 
 // end of TriggerMessageExpression

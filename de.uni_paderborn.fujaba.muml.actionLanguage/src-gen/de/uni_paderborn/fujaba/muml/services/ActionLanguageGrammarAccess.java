@@ -1103,16 +1103,16 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//// TriggerMessageExpression
 		//TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
-		//	messageType=[msgiface::MessageType] "." parameter=[core::Parameter];
+		//	messageType=[msgtype::MessageType] "." parameter=[core::Parameter];
 		public ParserRule getRule() { return rule; }
 
-		//messageType=[msgiface::MessageType] "." parameter=[core::Parameter]
+		//messageType=[msgtype::MessageType] "." parameter=[core::Parameter]
 		public Group getGroup() { return cGroup; }
 
-		//messageType=[msgiface::MessageType]
+		//messageType=[msgtype::MessageType]
 		public Assignment getMessageTypeAssignment_0() { return cMessageTypeAssignment_0; }
 
-		//[msgiface::MessageType]
+		//[msgtype::MessageType]
 		public CrossReference getMessageTypeMessageTypeCrossReference_0_0() { return cMessageTypeMessageTypeCrossReference_0_0; }
 
 		//ID
@@ -1914,7 +1914,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// TriggerMessageExpression
 	//TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
-	//	messageType=[msgiface::MessageType] "." parameter=[core::Parameter];
+	//	messageType=[msgtype::MessageType] "." parameter=[core::Parameter];
 	public TriggerMessageExpressionElements getTriggerMessageExpressionAccess() {
 		return (pTriggerMessageExpression != null) ? pTriggerMessageExpression : (pTriggerMessageExpression = new TriggerMessageExpressionElements());
 	}
