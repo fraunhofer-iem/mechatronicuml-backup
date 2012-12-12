@@ -47,48 +47,47 @@ public class ElementInitializers {
 									.getComponentStoryPattern(), null)
 					.evaluate(newInstance_0_0);
 			newInstance_0_0.setName((String) value_0_0_0);
-
-			Object value_1 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
+			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
+					.createComponentVariable();
+			newInstance_0_0.setThisVariable(newInstance_0_0_1_0);
+			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
 					.getExpression(
 							2,
-							de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage.eINSTANCE
-									.getComponentStoryNode(), null).evaluate(
-							instance);
-			instance.setName((String) value_1);
-		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	public void init_ComponentVariable_3003(
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable instance) {
-		try {
-			Object value_0 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
+							de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+									.getComponentVariable(), null).evaluate(
+							newInstance_0_0_1_0);
+			newInstance_0_0_1_0.setName((String) value_0_0_1_0_0);
+			Object value_0_0_1_0_1 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
 					.getExpression(
 							3,
 							de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 									.getComponentVariable(), null).evaluate(
-							instance);
+							newInstance_0_0_1_0);
 
-			value_0 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramAbstractExpression
-					.performCast(value_0,
+			value_0_0_1_0_1 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramAbstractExpression
+					.performCast(value_0_0_1_0_1,
 							PatternsPackage.eINSTANCE.getBindingState());
-			instance.setBindingState((BindingState) value_0);
-			Object value_1 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
+			newInstance_0_0_1_0.setBindingState((BindingState) value_0_0_1_0_1);
+			Object value_0_0_1_0_2 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
 					.getExpression(
 							4,
 							de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 									.getComponentVariable(), null).evaluate(
-							instance);
+							newInstance_0_0_1_0);
 
-			value_1 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramAbstractExpression
-					.performCast(value_1,
+			value_0_0_1_0_2 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramAbstractExpression
+					.performCast(value_0_0_1_0_2,
 							PatternsPackage.eINSTANCE.getBindingSemantics());
-			instance.setBindingSemantics((BindingSemantics) value_1);
+			newInstance_0_0_1_0
+					.setBindingSemantics((BindingSemantics) value_0_0_1_0_2);
+
+			Object value_1 = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
+					.getExpression(
+							5,
+							de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage.eINSTANCE
+									.getComponentStoryNode(), null).evaluate(
+							instance);
+			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						

@@ -60,9 +60,6 @@ public class ComponentVariableCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern owner = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern) getElementToEdit();
 		owner.setThisVariable(newElement);
 
-		de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ElementInitializers
-				.getInstance().init_ComponentVariable_3003(newElement);
-
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

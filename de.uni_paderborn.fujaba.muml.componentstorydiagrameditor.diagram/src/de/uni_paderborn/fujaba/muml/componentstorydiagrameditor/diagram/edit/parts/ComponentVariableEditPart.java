@@ -255,6 +255,12 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableNameEditPart) {
+			((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureComponentVariableNameFigure());
+			return true;
+		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableComponentVariableCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureChildren();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
@@ -278,6 +284,9 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableNameEditPart) {
+			return true;
+		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableComponentVariableCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureChildren();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 

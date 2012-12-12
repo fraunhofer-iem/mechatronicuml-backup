@@ -727,7 +727,7 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_RULE__PARAMETERS = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Return Parameters</b></em>' reference list.
+	 * The feature id for the '<em><b>Return Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2297,10 +2297,10 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getReconfigurationRule_Parameters();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getReturnParameters <em>Return Parameters</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getReturnParameters <em>Return Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Return Parameters</em>'.
+	 * @return the meta object for the containment reference list '<em>Return Parameters</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getReturnParameters()
 	 * @see #getReconfigurationRule()
 	 * @generated
@@ -2733,7 +2733,7 @@ public interface ReconfigurationPackage extends EPackage {
 		EReference RECONFIGURATION_RULE__PARAMETERS = eINSTANCE.getReconfigurationRule_Parameters();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Parameters</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Return Parameters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

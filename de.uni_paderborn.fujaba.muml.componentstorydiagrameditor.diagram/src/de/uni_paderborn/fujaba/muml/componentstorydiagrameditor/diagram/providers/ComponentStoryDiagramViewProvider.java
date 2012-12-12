@@ -504,6 +504,10 @@ public class ComponentStoryDiagramViewProvider extends AbstractProvider
 		Location location5002 = (Location) label5002.getLayoutConstraint();
 		location5002.setX(0);
 		location5002.setY(5);
+		Node label5012 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableNameEditPart.VISUAL_ID));
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry

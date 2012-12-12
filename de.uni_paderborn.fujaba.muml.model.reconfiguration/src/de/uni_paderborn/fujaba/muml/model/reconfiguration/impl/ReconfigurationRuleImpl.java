@@ -72,7 +72,7 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	protected EList<Parameter> parameters;
 
 	/**
-	 * The cached value of the '{@link #getReturnParameters() <em>Return Parameters</em>}' reference list.
+	 * The cached value of the '{@link #getReturnParameters() <em>Return Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReturnParameters()
@@ -140,7 +140,7 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	 */
 	public EList<Parameter> getReturnParameters() {
 		if (returnParameters == null) {
-			returnParameters = new EObjectResolvingEList<Parameter>(Parameter.class, this, ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS);
+			returnParameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS);
 		}
 		return returnParameters;
 	}
@@ -155,6 +155,8 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS:
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+			case ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS:
+				return ((InternalEList<?>)getReturnParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

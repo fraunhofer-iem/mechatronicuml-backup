@@ -386,7 +386,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE.getPortVariable()); //$NON-NLS-1$
 					Object sourceVal = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									6,
+									7,
 									de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 											.getPortVariable(), env).evaluate(
 									source,
@@ -405,7 +405,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE.getPortVariable()); //$NON-NLS-1$
 					Object targetVal = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									7,
+									8,
 									de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 											.getPortVariable(), env).evaluate(
 									target,
@@ -442,7 +442,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE.getPortVariable()); //$NON-NLS-1$
 					Object sourceVal = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									8,
+									9,
 									de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 											.getPortVariable(), env).evaluate(
 									source,
@@ -461,7 +461,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE.getPortVariable()); //$NON-NLS-1$
 					Object targetVal = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									9,
+									10,
 									de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 											.getPortVariable(), env).evaluate(
 									target,

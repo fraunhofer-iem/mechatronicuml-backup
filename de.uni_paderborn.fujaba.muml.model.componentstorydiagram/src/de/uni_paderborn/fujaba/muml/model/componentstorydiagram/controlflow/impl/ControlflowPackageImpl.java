@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 
@@ -22,6 +23,7 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.Cont
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeStrategy;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.util.ControlflowValidator;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 
@@ -119,6 +121,15 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 		// Initialize created meta-data
 		theControlflowPackage.initializePackageContents();
 		theComponentstorypatternPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theControlflowPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return ControlflowValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theControlflowPackage.freeze();
@@ -322,6 +333,52 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });				
+		addAnnotation
+		  (componentStoryRuleEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "AllThisVariablesHaveSameType"
+		   });				
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";				
+		addAnnotation
+		  (componentStoryRuleEClass, 
+		   source, 
+		   new String[] {
+			 "AllThisVariablesHaveSameType", "if not self.activity.oclIsUndefined() then\r\n\tself.activity.oclAsType(storydiagrams::activities::Activity).ownedActivityNode->collect(oclAsType(ComponentStoryNode).componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type)->asSet()->size() = 1\r\nelse\r\n\tfalse\r\nendif"
+		   });					
 	}
 
 } //ControlflowPackageImpl

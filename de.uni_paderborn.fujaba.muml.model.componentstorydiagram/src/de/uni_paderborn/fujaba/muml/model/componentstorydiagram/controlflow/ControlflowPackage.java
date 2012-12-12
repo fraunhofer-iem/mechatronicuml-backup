@@ -28,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage
  * <!-- end-user-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface ControlflowPackage extends EPackage {
@@ -119,7 +120,7 @@ public interface ControlflowPackage extends EPackage {
 	int COMPONENT_STORY_RULE__PARAMETERS = ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS;
 
 	/**
-	 * The feature id for the '<em><b>Return Parameters</b></em>' reference list.
+	 * The feature id for the '<em><b>Return Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

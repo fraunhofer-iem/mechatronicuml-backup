@@ -1,19 +1,19 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.RGB;
+import org.storydriven.storydiagrams.activities.Activity;
 
+import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.PartDataType;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.PortDataType;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
 
 public class CsdmUtility {
 
@@ -35,15 +35,15 @@ public class CsdmUtility {
 				.getModel()).getElement();
 
 		switch (cspVar.getBindingOperator()) {
-			case CREATE: {
-				return STEREOTYPE_PREFIX + "create" + STEREOTYPE_SUFFIX;
-			}
-			case DESTROY: {
-				return STEREOTYPE_PREFIX + "destroy" + STEREOTYPE_SUFFIX;
-			}
-			default: {
-				return EMPTY;
-			}
+		case CREATE: {
+			return STEREOTYPE_PREFIX + "create" + STEREOTYPE_SUFFIX;
+		}
+		case DESTROY: {
+			return STEREOTYPE_PREFIX + "destroy" + STEREOTYPE_SUFFIX;
+		}
+		default: {
+			return EMPTY;
+		}
 		}
 	}
 
@@ -74,43 +74,62 @@ public class CsdmUtility {
 								.RGBToInteger(lineRGB));
 
 	}
-	
-	public static String getSignature(ReconfigurationRule reconfigurationRule){
+
+	private static Component getComponentFromComponentStoryRule(
+			ComponentStoryRule componentStoryRule) {
+		if (componentStoryRule.getActivity() != null) {
+			Activity activity = componentStoryRule.getActivity();
+			if (!activity.getOwnedActivityNodes().isEmpty()) {
+				for (int i = 0; i < activity.getOwnedActivityNodes().size(); i++) {
+					ComponentStoryNode componentStoryNode = (ComponentStoryNode) activity
+							.getOwnedActivityNodes().get(i);
+					if (componentStoryNode.getComponentStoryPattern() != null) {
+						ComponentStoryPattern componentStoryPattern = componentStoryNode
+								.getComponentStoryPattern();
+						if (componentStoryPattern.getThisVariable() != null) {
+							ComponentVariable componentVariable = componentStoryPattern
+									.getThisVariable();
+							if (componentVariable.getType() != null) {
+								return componentVariable.getType();
+							}
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	public static String getSignature(ComponentStoryRule componentStoryRule) {
+
+		Component component = CsdmUtility
+				.getComponentFromComponentStoryRule(componentStoryRule);
+
 		String type = "";
 		String name = "";
 		String parameters = "";
 		String resultParameters = "";
 
-		PortDataType tmpPortType = null;
-		PartDataType tmpPartType = null;
-
 		Port tmpPort = null;
 		ComponentPart tmpPart = null;
-
-		List<Parameter> returnParameterList = new ArrayList<Parameter>();
+		Component tmpComponent = null;
 
 		// build list of Return Parameters and build String to Display
-		for (Parameter returnParameter : reconfigurationRule
+		for (Parameter returnParameter : componentStoryRule
 				.getReturnParameters()) {
-			returnParameterList.add(returnParameter);
-			if (returnParameter.getType() instanceof PortDataType) {
-				tmpPortType = ((PortDataType) returnParameter.getType());
-				tmpPort = ((Port) tmpPortType.getPort());
-				resultParameters = resultParameters.concat(returnParameter
-						.getName()
-						+ " / "
-						+ tmpPort.getName()
-						+ " : "
-						+ tmpPortType.getName() + ", ");
-			} else if (returnParameter.getType() instanceof PartDataType) {
-				tmpPartType = ((PartDataType) returnParameter.getType());
-				tmpPart = ((ComponentPart) tmpPartType.getComponentPart());
+			if (returnParameter.getType() instanceof Port) {
+				tmpPort = ((Port) returnParameter.getType());
+				resultParameters = resultParameters.concat(tmpPort.getName()
+						+ " " + returnParameter.getName() + ", ");
+			} else if (returnParameter.getType() instanceof ComponentPart) {
+				tmpPart = ((ComponentPart) returnParameter.getType());
+				tmpComponent = ((Component) tmpPart.getComponentType());
 				resultParameters = resultParameters.concat(returnParameter
 						.getName()
 						+ " / "
 						+ tmpPart.getName()
 						+ " : "
-						+ tmpPartType.getName() + ", ");
+						+ tmpComponent.getName() + ", ");
 			}
 		}
 
@@ -119,23 +138,18 @@ public class CsdmUtility {
 					resultParameters.length() - 2);
 		}
 
-		// only Parameters not in ReturnParameters need to be displayed
-		for (Parameter parameter : reconfigurationRule.getParameters()) {
-			if (!returnParameterList.contains(parameter)) {
-				if (parameter.getType() instanceof PortDataType) {
-					tmpPortType = ((PortDataType) parameter.getType());
-					tmpPort = ((Port) tmpPortType.getPort());
-					parameters = parameters.concat(parameter.getName()
-							+ " / " + tmpPort.getName() + " : "
-							+ tmpPortType.getName() + ", ");
-				} else if (parameter.getType() instanceof PartDataType) {
-					tmpPartType = ((PartDataType) parameter.getType());
-					tmpPart = ((ComponentPart) tmpPartType
-							.getComponentPart());
-					parameters = parameters.concat(parameter.getName()
-							+ " / " + tmpPart.getName() + " : "
-							+ tmpPartType.getName() + ", ");
-				}
+		for (Parameter parameter : componentStoryRule.getParameters()) {
+			if (parameter.getType() instanceof Port) {
+				tmpPort = ((Port) parameter.getType());
+				parameters = parameters.concat(parameter.getName() + " / "
+						+ tmpPort.getName() /* + " : " + tmpPortType.getName() */
+						+ ", ");
+			} else if (parameter.getType() instanceof ComponentPart) {
+				tmpPart = ((ComponentPart) parameter.getType());
+				tmpComponent = ((Component) tmpPart.getComponentType());
+				parameters = parameters.concat(parameter.getName() + " / "
+						+ tmpPart.getName() + " : " + tmpComponent.getName()
+						+ ", ");
 			}
 		}
 
@@ -143,13 +157,18 @@ public class CsdmUtility {
 			parameters = parameters.substring(0, parameters.length() - 2);
 		}
 
-		if (reconfigurationRule.getName() != null) {
-			name = reconfigurationRule.getName();
-			type = reconfigurationRule.getName();
+		if (componentStoryRule.getName() != null) {
+			name = componentStoryRule.getName();
 		}
-		
-		return type + "::" + name + "(" + parameters
-				+ ") : (" + resultParameters + ")";
+
+		if (component != null){
+			if (component.getName() != null) {
+				type = component.getName();
+			}
+		}
+
+		return type + "::" + name + "(" + parameters + ") : ("
+				+ resultParameters + ")";
 	}
 
 }

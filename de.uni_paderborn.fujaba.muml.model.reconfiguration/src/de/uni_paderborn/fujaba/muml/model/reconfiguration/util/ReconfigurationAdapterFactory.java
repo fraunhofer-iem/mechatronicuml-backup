@@ -22,6 +22,8 @@ import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.*;
+import de.uni_paderborn.fujaba.muml.model.types.DataType;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry;
@@ -188,6 +190,10 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseStructuredComponent(StructuredComponent object) {
 				return createStructuredComponentAdapter();
+			}
+			@Override
+			public Adapter caseDataType(DataType object) {
+				return createDataTypeAdapter();
 			}
 			@Override
 			public Adapter casePort(Port object) {
@@ -548,6 +554,20 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStructuredComponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.types.DataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.types.DataType
+	 * @generated
+	 */
+	public Adapter createDataTypeAdapter() {
 		return null;
 	}
 

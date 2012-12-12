@@ -3,12 +3,14 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
+import org.storydriven.storydiagrams.activities.Activity;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityEditPart.ActivityFigure;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryRuleEditPart;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
 
 public class CustomComponentStoryRuleEditPart extends
 		ComponentStoryRuleEditPart {
@@ -36,7 +38,10 @@ public class CustomComponentStoryRuleEditPart extends
 					.get(0);
 			WrappingLabel activityNameLabel = ((ActivityFigure) activityEditPart
 					.getPrimaryShape()).getFigureActivityName();
-			activityNameLabel.setText(CsdmUtility.getSignature((ReconfigurationRule)((View)getModel()).getElement()));
+			
+			ComponentStoryRule componentStoryRule = (ComponentStoryRule) ((View) getModel()).getElement();
+			
+			activityNameLabel.setText(CsdmUtility.getSignature(componentStoryRule));
 		}
 
 	}

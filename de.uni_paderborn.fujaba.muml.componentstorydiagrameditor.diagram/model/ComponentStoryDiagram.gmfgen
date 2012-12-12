@@ -65,11 +65,36 @@
                 <feature
                     href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
               </initializers>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentStoryPattern/thisVariable"/>
+                <newElementInitializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.2">
+                    <feature
+                        href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                  </initializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.3">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
+                  </initializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.4">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
+                  </initializers>
+                </newElementInitializers>
+              </initializers>
             </newElementInitializers>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.2">
+              value="//@expressionProviders/@providers.0/@expressions.5">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -149,21 +174,6 @@
             href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentStoryPattern/thisVariable"/>
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentStoryPattern/thisVariable"/>
-        <modelElementInitializer
-            xsi:type="gmfgen:GenFeatureSeqInitializer">
-          <initializers
-              xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.3">
-            <feature
-                href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
-          </initializers>
-          <initializers
-              xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.4">
-            <feature
-                href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
-          </initializers>
-        </modelElementInitializer>
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
@@ -184,6 +194,28 @@
         </viewmap>
         <modelFacet
             parser="//@labelParsers/@implementations.0"/>
+      </labels>
+      <labels
+          visualID="5012"
+          editPartClassName="ComponentVariableNameEditPart"
+          itemSemanticEditPolicyClassName="ComponentVariableNameItemSemanticEditPolicy"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureComponentVariableNameFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+        </modelFacet>
       </labels>
     </childNodes>
     <childNodes
@@ -664,8 +696,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.6"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.7"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.7"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.8"/>
     </links>
     <links
         visualID="4003"
@@ -721,8 +753,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.8"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.9"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.9"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.10"/>
     </links>
     <compartments
         visualID="7001"
@@ -926,11 +958,13 @@
       <expressions
           body="'componentStoryPattern'"/>
       <expressions
-          body="'componentStoryNode'"/>
+          body="'this'"/>
       <expressions
           body="storydiagrams::patterns::BindingState::BOUND"/>
       <expressions
           body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+      <expressions
+          body="'componentStoryNode'"/>
       <expressions
           body="let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
       <expressions
@@ -938,13 +972,13 @@
           body="self.eContainer().oclIsKindOf(PartVariable)"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="self.eContainer().oclIsKindOf(PartVariable) and self &lt;> oppositeEnd"/>
+          body="self.eContainer().oclIsKindOf(PartVariable) and self &lt;> oppositeEnd and self.eContainer().eContainer() =oppositeEnd.eContainer().eContainer()"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.eContainer().oclIsKindOf(ComponentVariable)"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="self.eContainer().oclIsKindOf(PartVariable)"/>
+          body="self.eContainer().oclIsKindOf(PartVariable) and self.eContainer().eContainer() = oppositeEnd.eContainer()"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -954,12 +988,12 @@
         uses="//@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.3/@labels.1/@modelFacet //@diagram/@childNodes.5/@labels.1/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.3/@labels.1/@modelFacet //@diagram/@childNodes.5/@labels.1/@modelFacet //@diagram/@childNodes.2/@labels.1/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.4/@labels.1/@modelFacet"
         className="PartVariableLabelExpressionLabelParser5009"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.5">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.6">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/PartVariable"/>
     </implementations>

@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
@@ -27,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.util.ComponentstorypatternValidator;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.impl.ControlflowPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
@@ -159,6 +161,15 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		// Initialize created meta-data
 		theComponentstorypatternPackage.initializePackageContents();
 		theControlflowPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theComponentstorypatternPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return ComponentstorypatternValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theComponentstorypatternPackage.freeze();
@@ -622,6 +633,94 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });			
+		addAnnotation
+		  (componentVariableEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "AtLeastOnePartVariableOrPortVariable OnlyPartVariablesIfTypeIsStructuredComponent"
+		   });			
+		addAnnotation
+		  (portVariableEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "SameBindingOperatorAsParent SameBindingSemanticsAsParent ValidTypeOfPortVariable"
+		   });			
+		addAnnotation
+		  (partVariableEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "SameBindingOperatorAsComponentVariable ValidTypeOfPartVariable"
+		   });			
+		addAnnotation
+		  (connectorVariableEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "MustNotConnectCreateAndDestroyPorts SameBindingOperatorAsPortVariable ExistingConnectorBetweenPortVariableTypes"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";			
+		addAnnotation
+		  (componentVariableEClass, 
+		   source, 
+		   new String[] {
+			 "AtLeastOnePartVariableOrPortVariable", "self.portVariables->size() > 0 or self.partVariables->size() > 0",
+			 "OnlyPartVariablesIfTypeIsStructuredComponent", "self.type.oclIsKindOf(muml::model::component::StructuredComponent) or self.partVariables->size()=0\r\n"
+		   });			
+		addAnnotation
+		  (portVariableEClass, 
+		   source, 
+		   new String[] {
+			 "SameBindingOperatorAsParent", "if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n\tself.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\nelse\r\n\ttrue\r\nendif",
+			 "SameBindingSemanticsAsParent", "if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics=storydiagrams::patterns::BindingSemantics::OPTIONAL then\r\n\tself.bindingSemantics = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics\r\nelse\r\n\ttrue\r\nendif",
+			 "ValidTypeOfPortVariable", "if self.eContainer().oclIsKindOf(ComponentVariable) then\r\n\tif not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::model::component::Component).ports->includes(self.type.oclAsType(muml::model::component::Port))\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tif self.eContainer().oclIsKindOf(PartVariable) then\r\n\t\tif not self.eContainer().oclAsType(PartVariable).type.oclIsUndefined() then\r\n\t\t\tself.eContainer().oclAsType(PartVariable).type.oclAsType(muml::model::component::ComponentPart).componentType.oclAsType(muml::model::component::Component).ports->includes(self.type.oclAsType(muml::model::component::Port))\r\n\t\telse\r\n\t\t\tfalse\r\n\t\tendif\r\n\telse\r\n\t\ttrue\r\n\tendif\r\nendif"
+		   });			
+		addAnnotation
+		  (partVariableEClass, 
+		   source, 
+		   new String[] {
+			 "SameBindingOperatorAsComponentVariable", "if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n\tself.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\nelse\r\n\ttrue\r\nendif",
+			 "ValidTypeOfPartVariable", "if not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n\tif self.eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(muml::model::component::StructuredComponent) then\r\n\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::model::component::StructuredComponent).embeddedParts->includes(self.type.oclAsType(muml::model::component::ComponentPart))\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tfalse\r\nendif"
+		   });			
+		addAnnotation
+		  (connectorVariableEClass, 
+		   source, 
+		   new String[] {
+			 "MustNotConnectCreateAndDestroyPorts", "if self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::CREATE then\r\n\tself.target.oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::DESTROY\r\nelse\r\n\tif self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::DESTROY then\r\n\t\tself.target.oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CREATE\r\n\telse\r\n\t\ttrue\r\n\tendif\r\nendif",
+			 "SameBindingOperatorAsPortVariable", "if self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n\tself.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator\r\nelse\r\n\tif self.target.oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n\t\tself.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.target.oclAsType(ComponentStoryPatternVariable).bindingOperator\r\n\telse\r\n\t\ttrue\r\n\tendif\r\nendif",
+			 "ExistingConnectorBetweenPortVariableTypes", "if self.oclIsKindOf(AssemblyVariable) then\r\n\tif not self.oclAsType(AssemblyVariable).type.oclIsUndefined() then\r\n\t\t(self.oclAsType(AssemblyVariable).type.oclAsType(muml::model::component::ConnectorType).fromPort = self.source.oclAsType(PortVariable).type and\r\n\t\tself.oclAsType(AssemblyVariable).type.oclAsType(muml::model::component::ConnectorType).toPort = self.target.oclAsType(PortVariable).type) or\r\n\t\t(self.oclAsType(AssemblyVariable).type.oclAsType(muml::model::component::ConnectorType).toPort = self.source.oclAsType(PortVariable).type and\r\n\t\tself.oclAsType(AssemblyVariable).type.oclAsType(muml::model::component::ConnectorType).fromPort = self.target.oclAsType(PortVariable).type)\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tif self.oclIsKindOf(DelegationVariable) then\r\n\t\tif not self.oclAsType(DelegationVariable).type.oclIsUndefined() then\r\n\t\t\t(self.oclAsType(DelegationVariable).type.oclAsType(muml::model::component::ConnectorType).fromPort = self.source.oclAsType(PortVariable).type and\r\n\t\t\tself.oclAsType(DelegationVariable).type.oclAsType(muml::model::component::ConnectorType).toPort = self.target.oclAsType(PortVariable).type) or\r\n\t\t\t(self.oclAsType(DelegationVariable).type.oclAsType(muml::model::component::ConnectorType).toPort = self.source.oclAsType(PortVariable).type and\r\n\t\t\tself.oclAsType(DelegationVariable).type.oclAsType(muml::model::component::ConnectorType).fromPort = self.target.oclAsType(PortVariable).type)\r\n\t\telse\r\n\t\t\tfalse\r\n\t\tendif\t\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nendif"
+		   });	
 	}
 
 } //ComponentstorypatternPackageImpl

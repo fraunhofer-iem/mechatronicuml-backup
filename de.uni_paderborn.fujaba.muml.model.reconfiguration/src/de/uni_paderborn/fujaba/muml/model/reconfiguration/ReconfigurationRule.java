@@ -51,7 +51,7 @@ public interface ReconfigurationRule extends NamedElement, CommentableElement {
 	EList<Parameter> getParameters();
 
 	/**
-	 * Returns the value of the '<em><b>Return Parameters</b></em>' reference list.
+	 * Returns the value of the '<em><b>Return Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -59,9 +59,9 @@ public interface ReconfigurationRule extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Return Parameters</em>' reference list.
+	 * @return the value of the '<em>Return Parameters</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getReconfigurationRule_ReturnParameters()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Parameter> getReturnParameters();

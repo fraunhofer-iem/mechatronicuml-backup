@@ -7,7 +7,10 @@ import org.storydriven.storydiagrams.activities.Activity;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityNameEditPart;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
 
 public class CustomActivityNameEditPart extends ActivityNameEditPart {
 
@@ -29,6 +32,8 @@ public class CustomActivityNameEditPart extends ActivityNameEditPart {
 
 	private void updateActivityNameLabel() {
 		WrappingLabel activityNameLabel = (WrappingLabel)getFigure();
-		activityNameLabel.setText(CsdmUtility.getSignature(((ReconfigurationRule)((Activity)((View)getModel()).getElement()).eContainer())));
+		Activity activity = (Activity)((View)getModel()).getElement();
+		ComponentStoryRule componentStoryRule = (ComponentStoryRule)(activity.eContainer());
+		activityNameLabel.setText(CsdmUtility.getSignature(componentStoryRule));
 	}
 }

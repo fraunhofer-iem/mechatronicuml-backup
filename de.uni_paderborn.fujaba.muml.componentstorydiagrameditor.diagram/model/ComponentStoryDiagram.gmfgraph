@@ -556,6 +556,11 @@
         href="../../org.storydriven.storydiagrams/model/storydiagrams.gmfgraph#//@figures.0/@descriptors.6/@accessors.0"/>
   </labels>
   <labels
+      name="ComponentNameLabel"
+      figure="ComponentVariableFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels
       name="ComponentOperatorLabel"
       figure="ComponentVariableOperatorFigure"
       elementIcon="false"/>
