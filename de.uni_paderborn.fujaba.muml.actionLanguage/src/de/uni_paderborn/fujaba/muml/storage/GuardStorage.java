@@ -23,20 +23,6 @@ public class GuardStorage extends ModelStorage<Transition> {
 	}
 
 	@Override
-	public void save(String text) throws CoreException {
-		Expression expression = parseExpression(text);
-		//TextualExpression textualExpression = ExpressionsFactory.eINSTANCE.createTextualExpression();
-		//textualExpression.setExpressionText(text);
-		setFeature(getModel(), "guard", expression);
-	}
-	
-	@Override
-	public void save(EObject object) throws CoreException {
-		String text = serializeExpression(object);
-		save(text);
-	}
-
-	@Override
 	public InputStream getContents() throws CoreException {
 		String text = "";
 		Expression expression = getModel().getGuard();
@@ -53,6 +39,11 @@ public class GuardStorage extends ModelStorage<Transition> {
 
 	@Override
 	public String getName() {
+		return getFeatureName();
+	}
+
+	@Override
+	protected String getFeatureName() {
 		return "guard";
 	}
 

@@ -59,7 +59,6 @@ ReturnStatement returns actionLanguage::ReturnStatement:
 	{actionLanguage::ReturnStatement}
 	'return' expression=Expression ';'
 ;
-
 	
 ExpressionStartRule returns expressions::Expression:
 	Assignment |  ForLoop | 
@@ -214,7 +213,8 @@ enum UnaryPostOperator returns commonExpressions::UnaryOperator:
 // Operand
 
 Operand returns expressions::Expression:
-	'(' Expression ')' | LiteralExpression | AttributeExpression | OperationCall | TriggerMessageExpression
+	'(' Expression ')' | LiteralExpression | ExtendedAttributeExpression | OperationCall | TriggerMessageExpression
+	| NoAttributeSelectorExpression
 ;
 
 // end of Operand
@@ -227,8 +227,28 @@ Literal returns ecore::EString:
 	NUMBER | BOOLEAN | INT | STRING
 ;
 
+ExtendedAttributeExpression returns expressions::Expression:
+	AttributeExpression
+	(
+		{actionLanguage::DiscreteInteractionEndpointReference.attribute = current}
+		'.' position=PositionSelectorExpression
+	)?
+;
+
 AttributeExpression returns actionLanguage::AttributeExpression:
-	attribute=[core::Attribute] ('['indices+=ArithmeticExpression']')*
+	attribute=[core::Attribute]('['indices+=ArithmeticExpression']')*
+;
+
+NoAttributeSelectorExpression returns actionLanguage::DiscreteInteractionEndpointReference:
+	position=PositionSelectorExpression
+;
+
+PositionSelectorExpression returns actionLanguage::PositionSelector:
+	kind=PositionSelectorKind ('.' successor=PositionSelectorExpression)?
+;
+
+enum PositionSelectorKind returns actionLanguage::PositionSelectorKind:
+	SELF='self' | FIRST='first' | LAST='last' | PREV='prev' | NEXT='next'
 ;
 
 OperationCall returns actionLanguage::OperationCall:

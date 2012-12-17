@@ -212,6 +212,19 @@
       </objectContribution>
    </extension>
    <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="de.uni_paderborn.fujaba.muml.actionLanguage.ui.objectContribution6"
+            objectClass="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart">
+         <action
+               class="de.uni_paderborn.fujaba.muml.ui.popup.actions.OpenEditorSynchronization"
+               id="de.uni_paderborn.fujaba.muml.actionLanguage.ui.action6"
+               label="open Synchronization Editor">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension
          point="org.eclipse.ui.views">
       <view
             category="de.uni_paderborn.fujaba.muml.actionLanguage.ui.Fujaba"

@@ -18,7 +18,7 @@ import org.storydriven.core.expressions.Expression;
 import de.uni_paderborn.fujaba.muml.common.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 
-public abstract class ModelStorage<T> implements IModelStorage {
+public abstract class ModelStorage<T extends EObject> implements IModelStorage {
 	private EObject container;
 	private T model;
 	
@@ -98,6 +98,23 @@ public abstract class ModelStorage<T> implements IModelStorage {
 		}
 		return text;
 	}
+	
+
+	@Override
+	public void save(String text) throws CoreException {
+		Expression expression = parseExpression(text);
+		//TextualExpression textualExpression = ExpressionsFactory.eINSTANCE.createTextualExpression();
+		//textualExpression.setExpressionText(text);
+		setFeature(getModel(), getFeatureName(), expression);
+	}
+	
+	@Override
+	public void save(EObject object) throws CoreException {
+		String text = serializeExpression(object);
+		save(text);
+	}
+	
+	protected abstract String getFeatureName();
 
 	protected static EStructuralFeature getFeatureByName(EObject object, String name) {
 		EStructuralFeature feature = null;

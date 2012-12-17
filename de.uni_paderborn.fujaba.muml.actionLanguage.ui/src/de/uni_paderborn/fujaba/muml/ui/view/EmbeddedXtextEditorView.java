@@ -6,10 +6,17 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.action.IMenuCreator;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Menu;
+import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.part.ViewPart;
@@ -22,6 +29,7 @@ import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.storage.ActionStorage;
 import de.uni_paderborn.fujaba.muml.storage.GuardStorage;
 import de.uni_paderborn.fujaba.muml.storage.IModelStorage;
+import de.uni_paderborn.fujaba.muml.storage.SynchronizationStorage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
@@ -38,28 +46,87 @@ public class EmbeddedXtextEditorView extends ViewPart implements ISelectionListe
 	
 	private EmbeddedXtextEditor editor;
 	private IModelStorage modelStorage;
-	private IAction guardAction;
+	private TransitionExpressionSelector transitionExpressionSelector;
 	private SaveModelListener saveModelListener;
 	
-	class GuardAction extends Action {
-		public GuardAction() {
-			super("guard expression", IAction.AS_CHECK_BOX);
-			setEnabled(false);
-		}
+	class TransitionExpressionSelector extends Action implements SelectionListener {
+		private static final String actionSelection = "action expr";
+		private static final String guardSelection = "guard expr";
+		private static final String selectorSelection = "selector";
+		private String currentSelection = actionSelection;
 		
-		public void run() {
+		public TransitionExpressionSelector() {
+			super(selectorSelection, IAction.AS_DROP_DOWN_MENU);
+			//setEnabled(false);
+			setMenuCreator(new IMenuCreator() {
+				private Menu menu;
+
+				@Override
+				public void dispose() {
+					if (menu != null) {
+						for (MenuItem menuItem : menu.getItems()) {
+							menuItem.dispose();
+						}
+						menu.dispose();
+					}
+				}
+
+				@Override
+				public Menu getMenu(Control parent) {
+					if (menu != null) {
+						menu.dispose();
+					}
+					menu = new Menu(parent);
+					addMenuItem(actionSelection);
+					addMenuItem(guardSelection);
+					addMenuItem(selectorSelection);
+					return menu;
+				}
+				
+				private void addMenuItem(String name) {
+					MenuItem menuItem = new MenuItem(menu, SWT.RADIO);
+					menuItem.setText(name);
+					menuItem.addSelectionListener(TransitionExpressionSelector.this);
+				}
+
+				@Override
+				public Menu getMenu(Menu parent) {
+					// TODO Auto-generated method stub
+					return null;
+				}
+				
+			});
+			setText(actionSelection);
+		}
+
+		@Override
+		public void widgetSelected(SelectionEvent e) {
+			currentSelection = ((MenuItem) e.widget).getText();
+			setText(currentSelection);
 			if (modelStorage != null) {
 				Injector injector = ActionLanguageActivator.getInstance().getInjector(languageName);
-				if (isChecked()) {
-					modelStorage = new GuardStorage(modelStorage.getContainer());
-					//injector = GuardLanguageUiModule.getInjector();
-				} else {
-					modelStorage = new ActionStorage(modelStorage.getContainer());
-					//injector = ActionLanguageActivator.getInstance().getInjector(languageName);
-				}
 				LanguageResource.setInjector(injector);
+				setSelectedModelStorage(modelStorage.getContainer());
 				//editor.changeLanguage(injector);
  				editor.update(modelStorage.serialize());
+			}
+		}
+
+		@Override
+		public void widgetDefaultSelected(SelectionEvent e) {
+			// TODO Auto-generated method stub
+			System.out.println("default: " + e);
+		}
+		
+		public void setSelectedModelStorage(EObject object) {
+			if (currentSelection.equals(actionSelection)) {
+				modelStorage = new ActionStorage(object);
+				//injector = GuardLanguageUiModule.getInjector();
+			} else if (currentSelection.equals(guardSelection)) {
+				modelStorage = new GuardStorage(object);
+				//injector = ActionLanguageActivator.getInstance().getInjector(languageName);
+			} else {
+				modelStorage = new SynchronizationStorage(object);
 			}
 		}
 	}
@@ -95,8 +162,8 @@ public class EmbeddedXtextEditorView extends ViewPart implements ISelectionListe
 	
 	private void createActions() {
 		IToolBarManager manager = getViewSite().getActionBars().getToolBarManager();
-		guardAction = new GuardAction();
-		manager.add(guardAction);
+		transitionExpressionSelector = new TransitionExpressionSelector();
+		manager.add(transitionExpressionSelector);
 	}
 
 	@Override
@@ -147,11 +214,7 @@ public class EmbeddedXtextEditorView extends ViewPart implements ISelectionListe
 			modelStorage = new ActionStorage((EObject) object);
 		} else if (object instanceof TransitionEditPart) {
 			EObject model = (EObject) ((ConnectionEditPart) object).getAdapter(EObject.class);
-			if (guardAction.isChecked()) {
-				modelStorage = new GuardStorage(model);
-			} else {
-				modelStorage = new ActionStorage(model);
-			}
+			transitionExpressionSelector.setSelectedModelStorage(model);
 			enableSwitchAction = true;
 		} else {
 			// invalid selection
@@ -167,7 +230,7 @@ public class EmbeddedXtextEditorView extends ViewPart implements ISelectionListe
 			ActionLanguageResource.setInjector(injector);
 			editor.changeLanguage(injector);
 		}*/
-		guardAction.setEnabled(enableSwitchAction);
+		transitionExpressionSelector.setEnabled(enableSwitchAction);
 	}
 
 }

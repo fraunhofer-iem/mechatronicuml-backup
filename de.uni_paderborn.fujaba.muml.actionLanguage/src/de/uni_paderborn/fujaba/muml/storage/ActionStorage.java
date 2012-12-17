@@ -75,13 +75,7 @@ public class ActionStorage extends ModelStorage<Action> {
 		}
 		list.add(index, expression);
 		currentExpression = expression;
-		setFeature(getModel(), "expressions", list);
-	}
-	
-	@Override
-	public void save(EObject object) throws CoreException {
-		String text = serializeExpression(object);
-		save(text);
+		setFeature(getModel(), getFeatureName(), list);
 	}
 
 	@Override
@@ -90,6 +84,11 @@ public class ActionStorage extends ModelStorage<Action> {
 			return "action";
 		}
 		return getModel().getName();
+	}
+	
+	@Override
+	public String getFeatureName() {
+		return "expressions";
 	}
 	
 }

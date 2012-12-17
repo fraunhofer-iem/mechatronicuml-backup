@@ -855,17 +855,20 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpressionParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
 		private final RuleCall cLiteralExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cAttributeExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cExtendedAttributeExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cOperationCallParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cTriggerMessageExpressionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cNoAttributeSelectorExpressionParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
 		//// end of UnaryPostExpression
 		//// Operand
 		//Operand returns expressions::Expression:
-		//	"(" Expression ")" | LiteralExpression | AttributeExpression | OperationCall | TriggerMessageExpression;
+		//	"(" Expression ")" | LiteralExpression | ExtendedAttributeExpression | OperationCall | TriggerMessageExpression |
+		//	NoAttributeSelectorExpression;
 		public ParserRule getRule() { return rule; }
 
-		//"(" Expression ")" | LiteralExpression | AttributeExpression | OperationCall | TriggerMessageExpression
+		//"(" Expression ")" | LiteralExpression | ExtendedAttributeExpression | OperationCall | TriggerMessageExpression |
+		//NoAttributeSelectorExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"(" Expression ")"
@@ -883,14 +886,17 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//LiteralExpression
 		public RuleCall getLiteralExpressionParserRuleCall_1() { return cLiteralExpressionParserRuleCall_1; }
 
-		//AttributeExpression
-		public RuleCall getAttributeExpressionParserRuleCall_2() { return cAttributeExpressionParserRuleCall_2; }
+		//ExtendedAttributeExpression
+		public RuleCall getExtendedAttributeExpressionParserRuleCall_2() { return cExtendedAttributeExpressionParserRuleCall_2; }
 
 		//OperationCall
 		public RuleCall getOperationCallParserRuleCall_3() { return cOperationCallParserRuleCall_3; }
 
 		//TriggerMessageExpression
 		public RuleCall getTriggerMessageExpressionParserRuleCall_4() { return cTriggerMessageExpressionParserRuleCall_4; }
+
+		//NoAttributeSelectorExpression
+		public RuleCall getNoAttributeSelectorExpressionParserRuleCall_5() { return cNoAttributeSelectorExpressionParserRuleCall_5; }
 	}
 
 	public class LiteralExpressionElements extends AbstractParserRuleElementFinder {
@@ -946,6 +952,44 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getSTRINGTerminalRuleCall_3() { return cSTRINGTerminalRuleCall_3; }
 	}
 
+	public class ExtendedAttributeExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExtendedAttributeExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cAttributeExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cDiscreteInteractionEndpointReferenceAttributeAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cFullStopKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cPositionAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cPositionPositionSelectorExpressionParserRuleCall_1_2_0 = (RuleCall)cPositionAssignment_1_2.eContents().get(0);
+		
+		//ExtendedAttributeExpression returns expressions::Expression:
+		//	AttributeExpression ({actionLanguage::DiscreteInteractionEndpointReference.attribute=current} "."
+		//	position=PositionSelectorExpression)?;
+		public ParserRule getRule() { return rule; }
+
+		//AttributeExpression ({actionLanguage::DiscreteInteractionEndpointReference.attribute=current} "."
+		//position=PositionSelectorExpression)?
+		public Group getGroup() { return cGroup; }
+
+		//AttributeExpression
+		public RuleCall getAttributeExpressionParserRuleCall_0() { return cAttributeExpressionParserRuleCall_0; }
+
+		//({actionLanguage::DiscreteInteractionEndpointReference.attribute=current} "." position=PositionSelectorExpression)?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{actionLanguage::DiscreteInteractionEndpointReference.attribute=current}
+		public Action getDiscreteInteractionEndpointReferenceAttributeAction_1_0() { return cDiscreteInteractionEndpointReferenceAttributeAction_1_0; }
+
+		//"."
+		public Keyword getFullStopKeyword_1_1() { return cFullStopKeyword_1_1; }
+
+		//position=PositionSelectorExpression
+		public Assignment getPositionAssignment_1_2() { return cPositionAssignment_1_2; }
+
+		//PositionSelectorExpression
+		public RuleCall getPositionPositionSelectorExpressionParserRuleCall_1_2_0() { return cPositionPositionSelectorExpressionParserRuleCall_1_2_0; }
+	}
+
 	public class AttributeExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AttributeExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -988,6 +1032,58 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"]"
 		public Keyword getRightSquareBracketKeyword_1_2() { return cRightSquareBracketKeyword_1_2; }
+	}
+
+	public class NoAttributeSelectorExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NoAttributeSelectorExpression");
+		private final Assignment cPositionAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cPositionPositionSelectorExpressionParserRuleCall_0 = (RuleCall)cPositionAssignment.eContents().get(0);
+		
+		//NoAttributeSelectorExpression returns actionLanguage::DiscreteInteractionEndpointReference:
+		//	position=PositionSelectorExpression;
+		public ParserRule getRule() { return rule; }
+
+		//position=PositionSelectorExpression
+		public Assignment getPositionAssignment() { return cPositionAssignment; }
+
+		//PositionSelectorExpression
+		public RuleCall getPositionPositionSelectorExpressionParserRuleCall_0() { return cPositionPositionSelectorExpressionParserRuleCall_0; }
+	}
+
+	public class PositionSelectorExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PositionSelectorExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cKindAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cKindPositionSelectorKindEnumRuleCall_0_0 = (RuleCall)cKindAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cSuccessorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cSuccessorPositionSelectorExpressionParserRuleCall_1_1_0 = (RuleCall)cSuccessorAssignment_1_1.eContents().get(0);
+		
+		//PositionSelectorExpression returns actionLanguage::PositionSelector:
+		//	kind=PositionSelectorKind ("." successor=PositionSelectorExpression)?;
+		public ParserRule getRule() { return rule; }
+
+		//kind=PositionSelectorKind ("." successor=PositionSelectorExpression)?
+		public Group getGroup() { return cGroup; }
+
+		//kind=PositionSelectorKind
+		public Assignment getKindAssignment_0() { return cKindAssignment_0; }
+
+		//PositionSelectorKind
+		public RuleCall getKindPositionSelectorKindEnumRuleCall_0_0() { return cKindPositionSelectorKindEnumRuleCall_0_0; }
+
+		//("." successor=PositionSelectorExpression)?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"."
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+
+		//successor=PositionSelectorExpression
+		public Assignment getSuccessorAssignment_1_1() { return cSuccessorAssignment_1_1; }
+
+		//PositionSelectorExpression
+		public RuleCall getSuccessorPositionSelectorExpressionParserRuleCall_1_1_0() { return cSuccessorPositionSelectorExpressionParserRuleCall_1_1_0; }
 	}
 
 	public class OperationCallElements extends AbstractParserRuleElementFinder {
@@ -1464,6 +1560,58 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//"--"
 		public Keyword getDECREMENTHyphenMinusHyphenMinusKeyword_1_0() { return cDECREMENTHyphenMinusHyphenMinusKeyword_1_0; }
 	}
+
+	public class PositionSelectorKindElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "PositionSelectorKind");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cSELFEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cSELFSelfKeyword_0_0 = (Keyword)cSELFEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cFIRSTEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cFIRSTFirstKeyword_1_0 = (Keyword)cFIRSTEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cLASTEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cLASTLastKeyword_2_0 = (Keyword)cLASTEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cPREVEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cPREVPrevKeyword_3_0 = (Keyword)cPREVEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cNEXTEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cNEXTNextKeyword_4_0 = (Keyword)cNEXTEnumLiteralDeclaration_4.eContents().get(0);
+		
+		//enum PositionSelectorKind returns actionLanguage::PositionSelectorKind:
+		//	SELF="self" | FIRST="first" | LAST="last" | PREV="prev" | NEXT="next";
+		public EnumRule getRule() { return rule; }
+
+		//SELF="self" | FIRST="first" | LAST="last" | PREV="prev" | NEXT="next"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//SELF="self"
+		public EnumLiteralDeclaration getSELFEnumLiteralDeclaration_0() { return cSELFEnumLiteralDeclaration_0; }
+
+		//"self"
+		public Keyword getSELFSelfKeyword_0_0() { return cSELFSelfKeyword_0_0; }
+
+		//FIRST="first"
+		public EnumLiteralDeclaration getFIRSTEnumLiteralDeclaration_1() { return cFIRSTEnumLiteralDeclaration_1; }
+
+		//"first"
+		public Keyword getFIRSTFirstKeyword_1_0() { return cFIRSTFirstKeyword_1_0; }
+
+		//LAST="last"
+		public EnumLiteralDeclaration getLASTEnumLiteralDeclaration_2() { return cLASTEnumLiteralDeclaration_2; }
+
+		//"last"
+		public Keyword getLASTLastKeyword_2_0() { return cLASTLastKeyword_2_0; }
+
+		//PREV="prev"
+		public EnumLiteralDeclaration getPREVEnumLiteralDeclaration_3() { return cPREVEnumLiteralDeclaration_3; }
+
+		//"prev"
+		public Keyword getPREVPrevKeyword_3_0() { return cPREVPrevKeyword_3_0; }
+
+		//NEXT="next"
+		public EnumLiteralDeclaration getNEXTEnumLiteralDeclaration_4() { return cNEXTEnumLiteralDeclaration_4; }
+
+		//"next"
+		public Keyword getNEXTNextKeyword_4_0() { return cNEXTNextKeyword_4_0; }
+	}
 	
 	private BlockElements pBlock;
 	private ForLoopElements pForLoop;
@@ -1498,7 +1646,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private OperandElements pOperand;
 	private LiteralExpressionElements pLiteralExpression;
 	private LiteralElements pLiteral;
+	private ExtendedAttributeExpressionElements pExtendedAttributeExpression;
 	private AttributeExpressionElements pAttributeExpression;
+	private NoAttributeSelectorExpressionElements pNoAttributeSelectorExpression;
+	private PositionSelectorExpressionElements pPositionSelectorExpression;
+	private PositionSelectorKindElements unknownRulePositionSelectorKind;
 	private OperationCallElements pOperationCall;
 	private ParamaterBindingElements pParamaterBinding;
 	private TriggerMessageExpressionElements pTriggerMessageExpression;
@@ -1852,7 +2004,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	//// end of UnaryPostExpression
 	//// Operand
 	//Operand returns expressions::Expression:
-	//	"(" Expression ")" | LiteralExpression | AttributeExpression | OperationCall | TriggerMessageExpression;
+	//	"(" Expression ")" | LiteralExpression | ExtendedAttributeExpression | OperationCall | TriggerMessageExpression |
+	//	NoAttributeSelectorExpression;
 	public OperandElements getOperandAccess() {
 		return (pOperand != null) ? pOperand : (pOperand = new OperandElements());
 	}
@@ -1882,6 +2035,17 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		return getLiteralAccess().getRule();
 	}
 
+	//ExtendedAttributeExpression returns expressions::Expression:
+	//	AttributeExpression ({actionLanguage::DiscreteInteractionEndpointReference.attribute=current} "."
+	//	position=PositionSelectorExpression)?;
+	public ExtendedAttributeExpressionElements getExtendedAttributeExpressionAccess() {
+		return (pExtendedAttributeExpression != null) ? pExtendedAttributeExpression : (pExtendedAttributeExpression = new ExtendedAttributeExpressionElements());
+	}
+	
+	public ParserRule getExtendedAttributeExpressionRule() {
+		return getExtendedAttributeExpressionAccess().getRule();
+	}
+
 	//AttributeExpression returns actionLanguage::AttributeExpression:
 	//	attribute=[core::Attribute] ("[" indices+=ArithmeticExpression "]")*;
 	public AttributeExpressionElements getAttributeExpressionAccess() {
@@ -1890,6 +2054,36 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getAttributeExpressionRule() {
 		return getAttributeExpressionAccess().getRule();
+	}
+
+	//NoAttributeSelectorExpression returns actionLanguage::DiscreteInteractionEndpointReference:
+	//	position=PositionSelectorExpression;
+	public NoAttributeSelectorExpressionElements getNoAttributeSelectorExpressionAccess() {
+		return (pNoAttributeSelectorExpression != null) ? pNoAttributeSelectorExpression : (pNoAttributeSelectorExpression = new NoAttributeSelectorExpressionElements());
+	}
+	
+	public ParserRule getNoAttributeSelectorExpressionRule() {
+		return getNoAttributeSelectorExpressionAccess().getRule();
+	}
+
+	//PositionSelectorExpression returns actionLanguage::PositionSelector:
+	//	kind=PositionSelectorKind ("." successor=PositionSelectorExpression)?;
+	public PositionSelectorExpressionElements getPositionSelectorExpressionAccess() {
+		return (pPositionSelectorExpression != null) ? pPositionSelectorExpression : (pPositionSelectorExpression = new PositionSelectorExpressionElements());
+	}
+	
+	public ParserRule getPositionSelectorExpressionRule() {
+		return getPositionSelectorExpressionAccess().getRule();
+	}
+
+	//enum PositionSelectorKind returns actionLanguage::PositionSelectorKind:
+	//	SELF="self" | FIRST="first" | LAST="last" | PREV="prev" | NEXT="next";
+	public PositionSelectorKindElements getPositionSelectorKindAccess() {
+		return (unknownRulePositionSelectorKind != null) ? unknownRulePositionSelectorKind : (unknownRulePositionSelectorKind = new PositionSelectorKindElements());
+	}
+	
+	public EnumRule getPositionSelectorKindRule() {
+		return getPositionSelectorKindAccess().getRule();
 	}
 
 	//OperationCall returns actionLanguage::OperationCall:
