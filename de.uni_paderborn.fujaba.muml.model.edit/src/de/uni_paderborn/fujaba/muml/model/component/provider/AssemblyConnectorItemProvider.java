@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.connector.provider;
+package de.uni_paderborn.fujaba.muml.model.component.provider;
 
 
 import java.util.Collection;
@@ -12,7 +12,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -20,25 +19,18 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.provider.NamedElementItemProvider;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConnectorEndpointItemProvider
-	extends NamedElementItemProvider
+public class AssemblyConnectorItemProvider
+	extends PortConnectorItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -51,7 +43,7 @@ public class ConnectorEndpointItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConnectorEndpointItemProvider(AdapterFactory adapterFactory) {
+	public AssemblyConnectorItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -66,54 +58,65 @@ public class ConnectorEndpointItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
-			addConnectorsPropertyDescriptor(object);
+			addCoordinationProtocolPropertyDescriptor(object);
+			addComponentPartsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Comment feature.
+	 * This adds a property descriptor for the Coordination Protocol feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommentPropertyDescriptor(Object object) {
+	protected void addCoordinationProtocolPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 getString("_UI_AssemblyConnector_coordinationProtocol_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnector_coordinationProtocol_feature", "_UI_AssemblyConnector_type"),
+				 ComponentPackage.Literals.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL,
 				 true,
 				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Component Parts feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addComponentPartsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssemblyConnector_componentParts_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnector_componentParts_feature", "_UI_AssemblyConnector_type"),
+				 ComponentPackage.Literals.ASSEMBLY_CONNECTOR__COMPONENT_PARTS,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Connectors feature.
+	 * This returns AssemblyConnector.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addConnectorsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConnectorEndpoint_connectors_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorEndpoint_connectors_feature", "_UI_ConnectorEndpoint_type"),
-				 ConnectorPackage.Literals.CONNECTOR_ENDPOINT__CONNECTORS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/AssemblyConnector"));
 	}
 
 	/**
@@ -124,10 +127,10 @@ public class ConnectorEndpointItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ConnectorEndpoint)object).getName();
+		String label = ((AssemblyConnector)object).getComment();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ConnectorEndpoint_type") :
-			getString("_UI_ConnectorEndpoint_type") + " " + label;
+			getString("_UI_AssemblyConnector_type") :
+			getString("_UI_AssemblyConnector_type") + " " + label;
 	}
 
 	/**
@@ -140,12 +143,6 @@ public class ConnectorEndpointItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(ConnectorEndpoint.class)) {
-			case ConnectorPackage.CONNECTOR_ENDPOINT__COMMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -159,27 +156,6 @@ public class ConnectorEndpointItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return MumlEditPlugin.INSTANCE;
 	}
 
 }

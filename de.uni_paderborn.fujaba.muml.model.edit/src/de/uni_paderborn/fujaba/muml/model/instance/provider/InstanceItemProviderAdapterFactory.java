@@ -75,49 +75,49 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AssemblyInstanceItemProvider assemblyInstanceItemProvider;
+	protected AssemblyConnectorInstanceItemProvider assemblyConnectorInstanceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAssemblyInstanceAdapter() {
-		if (assemblyInstanceItemProvider == null) {
-			assemblyInstanceItemProvider = new AssemblyInstanceItemProvider(this);
+	public Adapter createAssemblyConnectorInstanceAdapter() {
+		if (assemblyConnectorInstanceItemProvider == null) {
+			assemblyConnectorInstanceItemProvider = new AssemblyConnectorInstanceItemProvider(this);
 		}
 
-		return assemblyInstanceItemProvider;
+		return assemblyConnectorInstanceItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DelegationInstanceItemProvider delegationInstanceItemProvider;
+	protected DelegationConnectorInstanceItemProvider delegationConnectorInstanceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDelegationInstanceAdapter() {
-		if (delegationInstanceItemProvider == null) {
-			delegationInstanceItemProvider = new DelegationInstanceItemProvider(this);
+	public Adapter createDelegationConnectorInstanceAdapter() {
+		if (delegationConnectorInstanceItemProvider == null) {
+			delegationConnectorInstanceItemProvider = new DelegationConnectorInstanceItemProvider(this);
 		}
 
-		return delegationInstanceItemProvider;
+		return delegationConnectorInstanceItemProvider;
 	}
 
 	/**
@@ -403,8 +403,8 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	 * @generated
 	 */
 	public void dispose() {
-		if (assemblyInstanceItemProvider != null) assemblyInstanceItemProvider.dispose();
-		if (delegationInstanceItemProvider != null) delegationInstanceItemProvider.dispose();
+		if (assemblyConnectorInstanceItemProvider != null) assemblyConnectorInstanceItemProvider.dispose();
+		if (delegationConnectorInstanceItemProvider != null) delegationConnectorInstanceItemProvider.dispose();
 		if (componentInstanceConfigurationItemProvider != null) componentInstanceConfigurationItemProvider.dispose();
 		if (continuousPortInstanceItemProvider != null) continuousPortInstanceItemProvider.dispose();
 		if (hybridPortInstanceItemProvider != null) hybridPortInstanceItemProvider.dispose();

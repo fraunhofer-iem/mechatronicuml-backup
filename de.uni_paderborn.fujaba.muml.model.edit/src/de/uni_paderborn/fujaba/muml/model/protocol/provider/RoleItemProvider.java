@@ -6,9 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.protocol.provider;
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.model.connector.provider.DiscreteInteractionEndpointItemProvider;
 import java.util.Collection;
 import java.util.List;
 
@@ -29,7 +26,9 @@ import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.model.connector.provider.DiscreteInteractionEndpointItemProvider;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolFactory;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
@@ -67,9 +66,7 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
-			addIncomingRoleConnectorPropertyDescriptor(object);
 			addPortPropertyDescriptor(object);
-			addOutgoingRoleConnectorPropertyDescriptor(object);
 			addRoleConnectorPropertyDescriptor(object);
 			addMultiRolePropertyDescriptor(object);
 		}
@@ -94,27 +91,6 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Incoming Role Connector feature.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIncomingRoleConnectorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_incomingRoleConnector_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_incomingRoleConnector_feature", "_UI_Role_type"),
-				 ProtocolPackage.Literals.ROLE__INCOMING_ROLE_CONNECTOR,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
@@ -179,27 +155,6 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 				 getString("_UI_Role_port_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Role_port_feature", "_UI_Role_type"),
 				 ProtocolPackage.Literals.ROLE__PORT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Outgoing Role Connector feature.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOutgoingRoleConnectorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_outgoingRoleConnector_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_outgoingRoleConnector_feature", "_UI_Role_type"),
-				 ProtocolPackage.Literals.ROLE__OUTGOING_ROLE_CONNECTOR,
 				 true,
 				 false,
 				 true,

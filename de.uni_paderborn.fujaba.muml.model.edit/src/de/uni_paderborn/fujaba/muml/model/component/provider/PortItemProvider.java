@@ -21,21 +21,18 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.provider.NamedElementItemProvider;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.model.connector.provider.ConnectorEndpointItemProvider;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.Port} object.
@@ -44,7 +41,7 @@ import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyD
  * @generated
  */
 public class PortItemProvider
-	extends NamedElementItemProvider
+	extends ConnectorEndpointItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -72,34 +69,11 @@ public class PortItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
 			addConstraintPropertyDescriptor(object);
 			addComponentPropertyDescriptor(object);
-			addConnectorsPropertyDescriptor(object);
+			addPortConnectorsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Comment feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -115,7 +89,7 @@ public class PortItemProvider
 				 getResourceLocator(),
 				 getString("_UI_ConstrainableElement_constraint_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
-				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				 CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
 				 true,
 				 false,
 				 true,
@@ -193,19 +167,19 @@ public class PortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Connectors feature.
+	 * This adds a property descriptor for the Port Connectors feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addConnectorsPropertyDescriptor(Object object) {
+	protected void addPortConnectorsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Port_connectors_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_connectors_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__CONNECTORS,
+				 getString("_UI_Port_portConnectors_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_portConnectors_feature", "_UI_Port_type"),
+				 ComponentPackage.Literals.PORT__PORT_CONNECTORS,
 				 false,
 				 false,
 				 false,
@@ -226,7 +200,7 @@ public class PortItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
+			childrenFeatures.add(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 		}
 		return childrenFeatures;
 	}
@@ -281,10 +255,6 @@ public class PortItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Port.class)) {
-			case ComponentPackage.PORT__COMMENT:
-			case ComponentPackage.PORT__CONNECTORS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case ComponentPackage.PORT__CONSTRAINT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -305,17 +275,7 @@ public class PortItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
 				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
 	}
 

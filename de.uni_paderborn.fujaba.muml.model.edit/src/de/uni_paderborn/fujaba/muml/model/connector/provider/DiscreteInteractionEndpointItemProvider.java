@@ -7,29 +7,14 @@
 package de.uni_paderborn.fujaba.muml.model.connector.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
-
-import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
-
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-
-import de.uni_paderborn.fujaba.muml.model.core.provider.BehavioralElementItemProvider;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -39,10 +24,16 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
+import org.storydriven.core.CorePackage;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-
 import org.storydriven.storydiagrams.calls.CallsFactory;
+
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.core.provider.BehavioralElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint} object.
@@ -79,8 +70,8 @@ public class DiscreteInteractionEndpointItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addConstraintPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addConstraintPropertyDescriptor(object);
 			addSenderMessageTypesPropertyDescriptor(object);
 			addReceiverMessageTypesPropertyDescriptor(object);
 			addAdaptationBehaviorPropertyDescriptor(object);
@@ -102,7 +93,7 @@ public class DiscreteInteractionEndpointItemProvider
 				 getResourceLocator(),
 				 getString("_UI_ConstrainableElement_constraint_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
-				 CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
 				 true,
 				 false,
 				 true,
@@ -124,7 +115,7 @@ public class DiscreteInteractionEndpointItemProvider
 				 getResourceLocator(),
 				 getString("_UI_NamedElement_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				 org.storydriven.core.CorePackage.Literals.NAMED_ELEMENT__NAME,
+				 CorePackage.Literals.NAMED_ELEMENT__NAME,
 				 true,
 				 false,
 				 false,
@@ -233,9 +224,9 @@ public class DiscreteInteractionEndpointItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
-			childrenFeatures.add(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
-			childrenFeatures.add(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
+			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
+			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
+			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 			childrenFeatures.add(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY);
 		}
 		return childrenFeatures;
@@ -283,9 +274,9 @@ public class DiscreteInteractionEndpointItemProvider
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -306,23 +297,23 @@ public class DiscreteInteractionEndpointItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
-				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION,
 				 EcoreFactory.eINSTANCE.createEAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -187,12 +187,12 @@ public class StructuredComponentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentPackage.Literals.STRUCTURED_COMPONENT__CONNECTORS,
-				 ComponentFactory.eINSTANCE.createAssembly()));
+				 ComponentFactory.eINSTANCE.createAssemblyConnector()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentPackage.Literals.STRUCTURED_COMPONENT__CONNECTORS,
-				 ComponentFactory.eINSTANCE.createDelegation()));
+				 ComponentFactory.eINSTANCE.createDelegationConnector()));
 	}
 
 }

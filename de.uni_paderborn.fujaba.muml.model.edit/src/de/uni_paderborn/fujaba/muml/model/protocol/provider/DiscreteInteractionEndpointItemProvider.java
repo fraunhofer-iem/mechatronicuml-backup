@@ -33,7 +33,6 @@ import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.provider.BehavioralElementItemProvider;
 import de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint} object.

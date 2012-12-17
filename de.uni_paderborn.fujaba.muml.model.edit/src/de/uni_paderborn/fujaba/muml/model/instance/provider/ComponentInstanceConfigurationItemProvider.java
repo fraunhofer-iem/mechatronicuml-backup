@@ -24,7 +24,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
-import org.storydriven.core.provider.CommentableElementItemProvider;
+import org.storydriven.core.provider.NamedElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
@@ -40,7 +40,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
  * @generated
  */
 public class ComponentInstanceConfigurationItemProvider
-	extends CommentableElementItemProvider
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -68,27 +68,26 @@ public class ComponentInstanceConfigurationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addCommentPropertyDescriptor(object);
 			addComponentInstancesPropertyDescriptor(object);
-			addConnectorInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Comment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addCommentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_NamedElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				 CorePackage.Literals.NAMED_ELEMENT__NAME,
+				 getString("_UI_CommentableElement_comment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
 				 true,
 				 false,
 				 false,
@@ -120,28 +119,6 @@ public class ComponentInstanceConfigurationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Connector Instances feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConnectorInstancesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentInstanceConfiguration_connectorInstances_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstanceConfiguration_connectorInstances_feature", "_UI_ComponentInstanceConfiguration_type"),
-				 InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -154,7 +131,7 @@ public class ComponentInstanceConfigurationItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES);
-			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES);
+			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES);
 			childrenFeatures.add(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES);
 		}
 		return childrenFeatures;
@@ -210,11 +187,11 @@ public class ComponentInstanceConfigurationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentInstanceConfiguration.class)) {
-			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME:
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
-			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES:
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES:
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -255,13 +232,13 @@ public class ComponentInstanceConfigurationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES,
-				 InstanceFactory.eINSTANCE.createAssemblyInstance()));
+				(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES,
+				 InstanceFactory.eINSTANCE.createAssemblyConnectorInstance()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES,
-				 InstanceFactory.eINSTANCE.createDelegationInstance()));
+				(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES,
+				 InstanceFactory.eINSTANCE.createDelegationConnectorInstance()));
 	}
 
 	/**

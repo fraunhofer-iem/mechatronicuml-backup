@@ -22,15 +22,11 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.provider.NamedElementItemProvider;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.connector.provider.ConnectorEndpointInstanceItemProvider;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
@@ -41,7 +37,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * @generated
  */
 public class PortInstanceItemProvider
-	extends NamedElementItemProvider
+	extends ConnectorEndpointInstanceItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -69,35 +65,10 @@ public class PortInstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
 			addPortTypePropertyDescriptor(object);
-			addIncomingConnectorInstancesPropertyDescriptor(object);
-			addOutgoingConnectorInstancesPropertyDescriptor(object);
-			addConnectorInstancesPropertyDescriptor(object);
+			addPortConnectorInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Comment feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -145,66 +116,22 @@ public class PortInstanceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Incoming Connector Instances feature.
+	 * This adds a property descriptor for the Port Connector Instances feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIncomingConnectorInstancesPropertyDescriptor(Object object) {
+	protected void addPortConnectorInstancesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PortInstance_incomingConnectorInstances_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_incomingConnectorInstances_feature", "_UI_PortInstance_type"),
-				 InstancePackage.Literals.PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES,
+				 getString("_UI_PortInstance_portConnectorInstances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_portConnectorInstances_feature", "_UI_PortInstance_type"),
+				 InstancePackage.Literals.PORT_INSTANCE__PORT_CONNECTOR_INSTANCES,
 				 false,
 				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Outgoing Connector Instances feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOutgoingConnectorInstancesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PortInstance_outgoingConnectorInstances_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_outgoingConnectorInstances_feature", "_UI_PortInstance_type"),
-				 InstancePackage.Literals.PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES,
 				 false,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Connector Instances feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConnectorInstancesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PortInstance_connectorInstances_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_connectorInstances_feature", "_UI_PortInstance_type"),
-				 InstancePackage.Literals.PORT_INSTANCE__CONNECTOR_INSTANCES,
-				 true,
-				 false,
-				 true,
 				 null,
 				 null,
 				 null));
@@ -245,13 +172,6 @@ public class PortInstanceItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(PortInstance.class)) {
-			case InstancePackage.PORT_INSTANCE__COMMENT:
-			case InstancePackage.PORT_INSTANCE__CONNECTOR_INSTANCES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -265,16 +185,6 @@ public class PortInstanceItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 
 	/**

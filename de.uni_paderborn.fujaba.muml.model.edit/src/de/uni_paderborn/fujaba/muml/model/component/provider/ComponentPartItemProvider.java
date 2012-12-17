@@ -74,6 +74,8 @@ public class ComponentPartItemProvider
 			addNamePropertyDescriptor(object);
 			addComponentTypePropertyDescriptor(object);
 			addParentComponentPropertyDescriptor(object);
+			addAssemblyConnectorsPropertyDescriptor(object);
+			addDelegationConnectorsPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addMultiPartPropertyDescriptor(object);
 		}
@@ -143,6 +145,50 @@ public class ComponentPartItemProvider
 				 false,
 				 null,
 				 getString("_UI_GeneralPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Assembly Connectors feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssemblyConnectorsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentPart_assemblyConnectors_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_assemblyConnectors_feature", "_UI_ComponentPart_type"),
+				 ComponentPackage.Literals.COMPONENT_PART__ASSEMBLY_CONNECTORS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Delegation Connectors feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDelegationConnectorsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentPart_delegationConnectors_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_delegationConnectors_feature", "_UI_ComponentPart_type"),
+				 ComponentPackage.Literals.COMPONENT_PART__DELEGATION_CONNECTORS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
 				 null));
 	}
 

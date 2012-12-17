@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.connector.provider;
+package de.uni_paderborn.fujaba.muml.model.component.provider;
 
 
 import java.util.Collection;
@@ -13,30 +13,24 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.provider.CommentableElementItemProvider;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.connector.Connector;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.model.component.PortConnector;
+import de.uni_paderborn.fujaba.muml.model.connector.provider.ConnectorItemProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.connector.Connector} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.PortConnector} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConnectorItemProvider
-	extends CommentableElementItemProvider
+public class PortConnectorItemProvider
+	extends ConnectorItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -49,7 +43,7 @@ public class ConnectorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConnectorItemProvider(AdapterFactory adapterFactory) {
+	public PortConnectorItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -64,31 +58,8 @@ public class ConnectorItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addConnectorEndpointsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Connector Endpoints feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConnectorEndpointsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Connector_connectorEndpoints_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Connector_connectorEndpoints_feature", "_UI_Connector_type"),
-				 ConnectorPackage.Literals.CONNECTOR__CONNECTOR_ENDPOINTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -99,10 +70,10 @@ public class ConnectorItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Connector)object).getComment();
+		String label = ((PortConnector)object).getComment();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Connector_type") :
-			getString("_UI_Connector_type") + " " + label;
+			getString("_UI_PortConnector_type") :
+			getString("_UI_PortConnector_type") + " " + label;
 	}
 
 	/**
@@ -128,16 +99,6 @@ public class ConnectorItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 
 	/**

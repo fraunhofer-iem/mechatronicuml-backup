@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.connector.provider;
+package de.uni_paderborn.fujaba.muml.model.instance.provider;
 
 
 import java.util.Collection;
@@ -20,25 +20,20 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.provider.NamedElementItemProvider;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.model.connector.provider.ConnectorInstanceItemProvider;
+import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConnectorEndpointItemProvider
-	extends NamedElementItemProvider
+public class PortConnectorInstanceItemProvider
+	extends ConnectorInstanceItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -51,7 +46,7 @@ public class ConnectorEndpointItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConnectorEndpointItemProvider(AdapterFactory adapterFactory) {
+	public PortConnectorInstanceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -66,51 +61,74 @@ public class ConnectorEndpointItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
-			addConnectorsPropertyDescriptor(object);
+			addSourcePropertyDescriptor(object);
+			addTargetPropertyDescriptor(object);
+			addPortConnectorTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Comment feature.
+	 * This adds a property descriptor for the Source feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommentPropertyDescriptor(Object object) {
+	protected void addSourcePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 getString("_UI_PortConnectorInstance_source_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortConnectorInstance_source_feature", "_UI_PortConnectorInstance_type"),
+				 InstancePackage.Literals.PORT_CONNECTOR_INSTANCE__SOURCE,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Connectors feature.
+	 * This adds a property descriptor for the Target feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addConnectorsPropertyDescriptor(Object object) {
+	protected void addTargetPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ConnectorEndpoint_connectors_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorEndpoint_connectors_feature", "_UI_ConnectorEndpoint_type"),
-				 ConnectorPackage.Literals.CONNECTOR_ENDPOINT__CONNECTORS,
+				 getString("_UI_PortConnectorInstance_target_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortConnectorInstance_target_feature", "_UI_PortConnectorInstance_type"),
+				 InstancePackage.Literals.PORT_CONNECTOR_INSTANCE__TARGET,
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Port Connector Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPortConnectorTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortConnectorInstance_portConnectorType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortConnectorInstance_portConnectorType_feature", "_UI_PortConnectorInstance_type"),
+				 InstancePackage.Literals.PORT_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
@@ -124,10 +142,10 @@ public class ConnectorEndpointItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ConnectorEndpoint)object).getName();
+		String label = ((PortConnectorInstance)object).getComment();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ConnectorEndpoint_type") :
-			getString("_UI_ConnectorEndpoint_type") + " " + label;
+			getString("_UI_PortConnectorInstance_type") :
+			getString("_UI_PortConnectorInstance_type") + " " + label;
 	}
 
 	/**
@@ -140,12 +158,6 @@ public class ConnectorEndpointItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(ConnectorEndpoint.class)) {
-			case ConnectorPackage.CONNECTOR_ENDPOINT__COMMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -159,16 +171,6 @@ public class ConnectorEndpointItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 
 	/**

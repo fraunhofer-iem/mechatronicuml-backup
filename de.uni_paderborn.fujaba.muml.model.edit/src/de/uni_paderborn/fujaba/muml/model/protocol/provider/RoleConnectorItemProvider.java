@@ -28,8 +28,8 @@ import org.storydriven.core.CorePackage;
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.connector.provider.ConnectorItemProvider;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.model.core.provider.BehavioralElementItemProvider;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolFactory;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector;
@@ -41,7 +41,7 @@ import de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector;
  * @generated
  */
 public class RoleConnectorItemProvider
-	extends BehavioralElementItemProvider
+	extends ConnectorItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -69,56 +69,33 @@ public class RoleConnectorItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSourcePropertyDescriptor(object);
-			addTargetPropertyDescriptor(object);
+			addRolesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Source feature.
+	 * This adds a property descriptor for the Roles feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSourcePropertyDescriptor(Object object) {
+	protected void addRolesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RoleConnector_source_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RoleConnector_source_feature", "_UI_RoleConnector_type"),
-				 ProtocolPackage.Literals.ROLE_CONNECTOR__SOURCE,
-				 true,
+				 getString("_UI_RoleConnector_roles_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RoleConnector_roles_feature", "_UI_RoleConnector_type"),
+				 ProtocolPackage.Literals.ROLE_CONNECTOR__ROLES,
 				 false,
-				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
 	}
 
-	/**
-	 * This adds a property descriptor for the Target feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTargetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RoleConnector_target_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RoleConnector_target_feature", "_UI_RoleConnector_type"),
-				 ProtocolPackage.Literals.ROLE_CONNECTOR__TARGET,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-	
 	/**
 	 * This adds a property descriptor for the Connector Quality Of Service Assumptions feature.
 	 * <!-- begin-user-doc -->
@@ -264,7 +241,10 @@ public class RoleConnectorItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_RoleConnector_type");
+		String label = ((RoleConnector)object).getComment();
+		return label == null || label.length() == 0 ?
+			getString("_UI_RoleConnector_type") :
+			getString("_UI_RoleConnector_type") + " " + label;
 	}
 
 	/**

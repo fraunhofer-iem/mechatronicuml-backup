@@ -190,49 +190,49 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.Assembly} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AssemblyItemProvider assemblyItemProvider;
+	protected AssemblyConnectorItemProvider assemblyConnectorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.Assembly}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAssemblyAdapter() {
-		if (assemblyItemProvider == null) {
-			assemblyItemProvider = new AssemblyItemProvider(this);
+	public Adapter createAssemblyConnectorAdapter() {
+		if (assemblyConnectorItemProvider == null) {
+			assemblyConnectorItemProvider = new AssemblyConnectorItemProvider(this);
 		}
 
-		return assemblyItemProvider;
+		return assemblyConnectorItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.Delegation} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.DelegationConnector} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DelegationItemProvider delegationItemProvider;
+	protected DelegationConnectorItemProvider delegationConnectorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.Delegation}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.DelegationConnector}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDelegationAdapter() {
-		if (delegationItemProvider == null) {
-			delegationItemProvider = new DelegationItemProvider(this);
+	public Adapter createDelegationConnectorAdapter() {
+		if (delegationConnectorItemProvider == null) {
+			delegationConnectorItemProvider = new DelegationConnectorItemProvider(this);
 		}
 
-		return delegationItemProvider;
+		return delegationConnectorItemProvider;
 	}
 
 	/**
@@ -385,8 +385,8 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 		if (componentPartItemProvider != null) componentPartItemProvider.dispose();
 		if (staticStructuredComponentItemProvider != null) staticStructuredComponentItemProvider.dispose();
 		if (atomicComponentItemProvider != null) atomicComponentItemProvider.dispose();
-		if (assemblyItemProvider != null) assemblyItemProvider.dispose();
-		if (delegationItemProvider != null) delegationItemProvider.dispose();
+		if (assemblyConnectorItemProvider != null) assemblyConnectorItemProvider.dispose();
+		if (delegationConnectorItemProvider != null) delegationConnectorItemProvider.dispose();
 		if (hybridPortItemProvider != null) hybridPortItemProvider.dispose();
 		if (coordinationProtocolOccurrenceItemProvider != null) coordinationProtocolOccurrenceItemProvider.dispose();
 	}
