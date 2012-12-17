@@ -42,7 +42,7 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 */
 	public static ComponentFactory init() {
 		try {
-			ComponentFactory theComponentFactory = (ComponentFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/component/0.3.6"); 
+			ComponentFactory theComponentFactory = (ComponentFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/component/0.3.7"); 
 			if (theComponentFactory != null) {
 				return theComponentFactory;
 			}

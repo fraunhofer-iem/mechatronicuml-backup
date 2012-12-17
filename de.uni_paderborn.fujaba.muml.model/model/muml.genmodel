@@ -66,7 +66,7 @@
           <genFeatures children="true" createChild="true" propertyCategory="Cardinality"
               ecoreFeature="ecore:EReference muml.ecore#//model/component/ComponentPart/cardinality"/>
           <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/ComponentPart/portsDerived"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/ComponentPart/isMultiPart"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/ComponentPart/multiPart"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/StaticStructuredComponent"/>
         <genClasses ecoreClass="muml.ecore#//model/component/AtomicComponent"/>

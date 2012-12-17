@@ -48,7 +48,7 @@ public interface ComponentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/component/0.3.6";
+	String eNS_URI = "http://www.fujaba.de/muml/model/component/0.3.7";
 
 	/**
 	 * The package namespace name.
@@ -883,13 +883,13 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT_PART__PORTS_DERIVED = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Is Multi Part</b></em>' attribute.
+	 * The feature id for the '<em><b>Multi Part</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__IS_MULTI_PART = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 8;
+	int COMPONENT_PART__MULTI_PART = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Part</em>' class.
@@ -2311,15 +2311,15 @@ public interface ComponentPackage extends EPackage {
 	EReference getComponentPart_PortsDerived();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#isIsMultiPart <em>Is Multi Part</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#isMultiPart <em>Multi Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Multi Part</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPart#isIsMultiPart()
+	 * @return the meta object for the attribute '<em>Multi Part</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPart#isMultiPart()
 	 * @see #getComponentPart()
 	 * @generated
 	 */
-	EAttribute getComponentPart_IsMultiPart();
+	EAttribute getComponentPart_MultiPart();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent <em>Static Structured Component</em>}'.
@@ -2965,12 +2965,12 @@ public interface ComponentPackage extends EPackage {
 		EReference COMPONENT_PART__PORTS_DERIVED = eINSTANCE.getComponentPart_PortsDerived();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Multi Part</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Multi Part</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPONENT_PART__IS_MULTI_PART = eINSTANCE.getComponentPart_IsMultiPart();
+		EAttribute COMPONENT_PART__MULTI_PART = eINSTANCE.getComponentPart_MultiPart();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.StaticStructuredComponentImpl <em>Static Structured Component</em>}' class.

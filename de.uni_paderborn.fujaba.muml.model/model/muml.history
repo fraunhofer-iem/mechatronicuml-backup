@@ -3971,44 +3971,44 @@
             featureName="value" dataValue="The ports of this part. They are derived from the ports of the&#xD;&#xA;componentType of this component part. It is a containment&#xD;&#xA;reference, so that GMF is able to let them flow around the&#xD;&#xA;component.&#xD;&#xA;Because this feature is derived, transient, volatile the model file&#xD;&#xA;will not store the ports in this feature."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/ComponentPart/isMultiPart">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/ComponentPart/multiPart">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart"
             featureName="name" dataValue="isMultiPart"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart"
             featureName="volatile" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart"
             featureName="transient" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart"
             featureName="defaultValueLiteral" dataValue=""/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart"
             featureName="unsettable" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart"
             featureName="derived" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart"
             featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart/isMultiPart"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart/multiPart"
+          referenceName="eAnnotations" element="muml.ecore#//model/component/ComponentPart/multiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart/multiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/component/ComponentPart/multiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="This derived attribute indicates if the part is a multi part.&#xD;&#xA;It is only used to simplify OCL constraints."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart/isMultiPart"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart/multiPart"
+          referenceName="eAnnotations" element="muml.ecore#//model/component/ComponentPart/multiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ComponentPart/multiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="muml.ecore#//model/component/ComponentPart/multiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="derivation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/isMultiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component" referenceName="eClassifiers"
@@ -16399,5 +16399,31 @@
         dataValue="http://www.fujaba.de/muml/model/pattern/0.3.7" oldDataValue="http://www.fujaba.de/muml/model/pattern/0.3.6"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/pattern/DiscreteInteractionEndpoint"
         featureName="name" dataValue="DiscreteInteractionEndpoint" oldDataValue="DiscreteInteractionPoint"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/component/0.3.7" oldDataValue="http://www.fujaba.de/muml/model/component/0.3.6"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart"
+        featureName="name" dataValue="multiPart" oldDataValue="isMultiPart"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart"
+        featureName="volatile" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart"
+          featureName="volatile" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/ComponentPart/multiPart"
+          featureName="changeable" dataValue="false" oldDataValue="true"/>
+      <operation name="makeFeatureVolatile">
+        <parameters name="feature">
+          <referenceValue element="muml.ecore#//model/component/ComponentPart/multiPart"/>
+        </parameters>
+        <parameters name="trans">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="derived">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="changeable">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
   </releases>
 </history:History>

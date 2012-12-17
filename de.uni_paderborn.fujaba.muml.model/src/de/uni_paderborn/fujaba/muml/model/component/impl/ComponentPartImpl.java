@@ -49,7 +49,7 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getDelegation <em>Delegation</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getPortsDerived <em>Ports Derived</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#isIsMultiPart <em>Is Multi Part</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#isMultiPart <em>Multi Part</em>}</li>
  * </ul>
  * </p>
  *
@@ -137,14 +137,14 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	protected EStructuralFeature.Internal.SettingDelegate PORTS_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED).getSettingDelegate();
 
 	/**
-	 * The cached setting delegate for the '{@link #isIsMultiPart() <em>Is Multi Part</em>}' attribute.
+	 * The cached setting delegate for the '{@link #isMultiPart() <em>Multi Part</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsMultiPart()
+	 * @see #isMultiPart()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate IS_MULTI_PART__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__IS_MULTI_PART).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate MULTI_PART__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__MULTI_PART).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -374,8 +374,8 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isIsMultiPart() {
-		return (Boolean)IS_MULTI_PART__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public boolean isMultiPart() {
+		return (Boolean)MULTI_PART__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -383,26 +383,8 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIsMultiPart(boolean newIsMultiPart) {
-		IS_MULTI_PART__ESETTING_DELEGATE.dynamicSet(this, null, 0, newIsMultiPart);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void unsetIsMultiPart() {
-		IS_MULTI_PART__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetIsMultiPart() {
-		return IS_MULTI_PART__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	public boolean isSetMultiPart() {
+		return MULTI_PART__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
 
 	/**
@@ -540,8 +522,8 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 				return getCardinality();
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
 				return getPortsDerived();
-			case ComponentPackage.COMPONENT_PART__IS_MULTI_PART:
-				return isIsMultiPart();
+			case ComponentPackage.COMPONENT_PART__MULTI_PART:
+				return isMultiPart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -579,9 +561,6 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				setCardinality((Cardinality)newValue);
 				return;
-			case ComponentPackage.COMPONENT_PART__IS_MULTI_PART:
-				setIsMultiPart((Boolean)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -615,9 +594,6 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				setCardinality((Cardinality)null);
 				return;
-			case ComponentPackage.COMPONENT_PART__IS_MULTI_PART:
-				unsetIsMultiPart();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -646,8 +622,8 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 				return cardinality != null;
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
 				return isSetPortsDerived();
-			case ComponentPackage.COMPONENT_PART__IS_MULTI_PART:
-				return isSetIsMultiPart();
+			case ComponentPackage.COMPONENT_PART__MULTI_PART:
+				return isSetMultiPart();
 		}
 		return super.eIsSet(featureID);
 	}
