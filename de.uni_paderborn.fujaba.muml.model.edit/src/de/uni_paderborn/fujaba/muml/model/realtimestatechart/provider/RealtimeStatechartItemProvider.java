@@ -72,13 +72,12 @@ public class RealtimeStatechartItemProvider
 			addCommentPropertyDescriptor(object);
 			addBehavioralElementPropertyDescriptor(object);
 			addOperationsPropertyDescriptor(object);
-			addAttributesPropertyDescriptor(object);
 			addClocksPropertyDescriptor(object);
 			addHistoryPropertyDescriptor(object);
 			addEventQueueSizePropertyDescriptor(object);
 			addFlatPropertyDescriptor(object);
 			addEmbeddedPropertyDescriptor(object);
-			addAllAvailableAttributesPropertyDescriptor(object);
+			addAllAvailableVariablesPropertyDescriptor(object);
 			addAllAvailableOperationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -142,28 +141,6 @@ public class RealtimeStatechartItemProvider
 				 getString("_UI_Behavior_operations_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Behavior_operations_feature", "_UI_Behavior_type"),
 				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__OPERATIONS,
-				 true,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_GeneralPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Attributes feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAttributesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Behavior_attributes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Behavior_attributes_feature", "_UI_Behavior_type"),
-				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__ATTRIBUTES,
 				 true,
 				 false,
 				 false,
@@ -283,19 +260,19 @@ public class RealtimeStatechartItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the All Available Attributes feature.
+	 * This adds a property descriptor for the All Available Variables feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAllAvailableAttributesPropertyDescriptor(Object object) {
+	protected void addAllAvailableVariablesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RealtimeStatechart_allAvailableAttributes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_allAvailableAttributes_feature", "_UI_RealtimeStatechart_type"),
-				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES,
+				 getString("_UI_RealtimeStatechart_allAvailableVariables_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_allAvailableVariables_feature", "_UI_RealtimeStatechart_type"),
+				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__ALL_AVAILABLE_VARIABLES,
 				 false,
 				 false,
 				 false,
@@ -339,7 +316,7 @@ public class RealtimeStatechartItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__OPERATIONS);
-			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__ATTRIBUTES);
+			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__VARIABLES);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__TRANSITIONS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__STATES);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__CLOCKS);
@@ -403,12 +380,11 @@ public class RealtimeStatechartItemProvider
 			case RealtimestatechartPackage.REALTIME_STATECHART__FLAT:
 			case RealtimestatechartPackage.REALTIME_STATECHART__AVAILABLE_CLOCKS:
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDED:
-			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES:
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS:
-			case RealtimestatechartPackage.REALTIME_STATECHART__ATTRIBUTES:
+			case RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES:
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
 			case RealtimestatechartPackage.REALTIME_STATECHART__STATES:
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
@@ -446,8 +422,8 @@ public class RealtimeStatechartItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__ATTRIBUTES,
-				 CoreFactory.eINSTANCE.createAttribute()));
+				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__VARIABLES,
+				 CoreFactory.eINSTANCE.createVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter

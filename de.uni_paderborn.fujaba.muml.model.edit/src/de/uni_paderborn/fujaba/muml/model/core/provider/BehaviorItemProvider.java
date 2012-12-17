@@ -66,7 +66,6 @@ public class BehaviorItemProvider
 
 			addBehavioralElementPropertyDescriptor(object);
 			addOperationsPropertyDescriptor(object);
-			addAttributesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -116,28 +115,6 @@ public class BehaviorItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Attributes feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAttributesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Behavior_attributes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Behavior_attributes_feature", "_UI_Behavior_type"),
-				 CorePackage.Literals.BEHAVIOR__ATTRIBUTES,
-				 true,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_GeneralPropertyCategory"),
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -150,7 +127,7 @@ public class BehaviorItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(CorePackage.Literals.BEHAVIOR__OPERATIONS);
-			childrenFeatures.add(CorePackage.Literals.BEHAVIOR__ATTRIBUTES);
+			childrenFeatures.add(CorePackage.Literals.BEHAVIOR__VARIABLES);
 		}
 		return childrenFeatures;
 	}
@@ -192,7 +169,7 @@ public class BehaviorItemProvider
 
 		switch (notification.getFeatureID(Behavior.class)) {
 			case CorePackage.BEHAVIOR__OPERATIONS:
-			case CorePackage.BEHAVIOR__ATTRIBUTES:
+			case CorePackage.BEHAVIOR__VARIABLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -217,8 +194,8 @@ public class BehaviorItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.BEHAVIOR__ATTRIBUTES,
-				 CoreFactory.eINSTANCE.createAttribute()));
+				(CorePackage.Literals.BEHAVIOR__VARIABLES,
+				 CoreFactory.eINSTANCE.createVariable()));
 	}
 
 	/**
