@@ -75,7 +75,7 @@ public class ComponentPartItemProvider
 			addComponentTypePropertyDescriptor(object);
 			addParentComponentPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
-			addIsMultiPartPropertyDescriptor(object);
+			addMultiPartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -192,20 +192,20 @@ public class ComponentPartItemProvider
 
 
 	/**
-	 * This adds a property descriptor for the Is Multi Part feature.
+	 * This adds a property descriptor for the Multi Part feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIsMultiPartPropertyDescriptor(Object object) {
+	protected void addMultiPartPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ComponentPart_isMultiPart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_isMultiPart_feature", "_UI_ComponentPart_type"),
-				 ComponentPackage.Literals.COMPONENT_PART__IS_MULTI_PART,
-				 true,
+				 getString("_UI_ComponentPart_multiPart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_multiPart_feature", "_UI_ComponentPart_type"),
+				 ComponentPackage.Literals.COMPONENT_PART__MULTI_PART,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
@@ -284,7 +284,7 @@ public class ComponentPartItemProvider
 		switch (notification.getFeatureID(ComponentPart.class)) {
 			case ComponentPackage.COMPONENT_PART__NAME:
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
-			case ComponentPackage.COMPONENT_PART__IS_MULTI_PART:
+			case ComponentPackage.COMPONENT_PART__MULTI_PART:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
