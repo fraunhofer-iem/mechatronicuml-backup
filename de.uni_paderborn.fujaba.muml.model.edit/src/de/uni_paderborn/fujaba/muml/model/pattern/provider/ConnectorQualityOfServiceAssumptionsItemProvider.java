@@ -24,6 +24,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.provider.CommentableElementItemProvider;
 import org.storydriven.core.provider.NamedElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
@@ -40,7 +41,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
  * @generated
  */
 public class ConnectorQualityOfServiceAssumptionsItemProvider
-	extends NamedElementItemProvider
+	extends CommentableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -68,34 +69,11 @@ public class ConnectorQualityOfServiceAssumptionsItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
 			addMinMessageDelayPropertyDescriptor(object);
 			addMaxMessageDelayPropertyDescriptor(object);
 			addMessageLossPossiblePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Comment feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -214,7 +192,7 @@ public class ConnectorQualityOfServiceAssumptionsItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ConnectorQualityOfServiceAssumptions)object).getName();
+		String label = ((ConnectorQualityOfServiceAssumptions)object).getComment();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ConnectorQualityOfServiceAssumptions_type") :
 			getString("_UI_ConnectorQualityOfServiceAssumptions_type") + " " + label;
@@ -232,7 +210,6 @@ public class ConnectorQualityOfServiceAssumptionsItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ConnectorQualityOfServiceAssumptions.class)) {
-			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__COMMENT:
 			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
