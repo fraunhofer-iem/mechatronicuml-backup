@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.pattern;
+package de.uni_paderborn.fujaba.muml.model.protocol;
 
 import org.storydriven.core.CommentableElement;
 
@@ -22,13 +22,13 @@ import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions#getMinMessageDelay <em>Min Message Delay</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions#getMaxMessageDelay <em>Max Message Delay</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions#isMessageLossPossible <em>Message Loss Possible</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions#getMinMessageDelay <em>Min Message Delay</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions#getMaxMessageDelay <em>Max Message Delay</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions#isMessageLossPossible <em>Message Loss Possible</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getConnectorQualityOfServiceAssumptions()
+ * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getConnectorQualityOfServiceAssumptions()
  * @model
  * @generated
  */
@@ -42,14 +42,14 @@ public interface ConnectorQualityOfServiceAssumptions extends CommentableElement
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Min Message Delay</em>' containment reference.
 	 * @see #setMinMessageDelay(NaturalNumber)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getConnectorQualityOfServiceAssumptions_MinMessageDelay()
+	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getConnectorQualityOfServiceAssumptions_MinMessageDelay()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	NaturalNumber getMinMessageDelay();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions#getMinMessageDelay <em>Min Message Delay</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions#getMinMessageDelay <em>Min Message Delay</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Min Message Delay</em>' containment reference.
@@ -67,14 +67,14 @@ public interface ConnectorQualityOfServiceAssumptions extends CommentableElement
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Max Message Delay</em>' containment reference.
 	 * @see #setMaxMessageDelay(NaturalNumber)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getConnectorQualityOfServiceAssumptions_MaxMessageDelay()
+	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getConnectorQualityOfServiceAssumptions_MaxMessageDelay()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	NaturalNumber getMaxMessageDelay();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions#getMaxMessageDelay <em>Max Message Delay</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions#getMaxMessageDelay <em>Max Message Delay</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Max Message Delay</em>' containment reference.
@@ -93,14 +93,14 @@ public interface ConnectorQualityOfServiceAssumptions extends CommentableElement
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Message Loss Possible</em>' attribute.
 	 * @see #setMessageLossPossible(boolean)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getConnectorQualityOfServiceAssumptions_MessageLossPossible()
+	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getConnectorQualityOfServiceAssumptions_MessageLossPossible()
 	 * @model default="false" required="true"
 	 * @generated
 	 */
 	boolean isMessageLossPossible();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions#isMessageLossPossible <em>Message Loss Possible</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions#isMessageLossPossible <em>Message Loss Possible</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Message Loss Possible</em>' attribute.

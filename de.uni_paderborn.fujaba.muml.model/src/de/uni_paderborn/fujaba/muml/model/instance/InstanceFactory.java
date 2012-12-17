@@ -89,13 +89,13 @@ public interface InstanceFactory extends EFactory {
 	DiscreteMultiPortInstance createDiscreteMultiPortInstance();
 
 	/**
-	 * Returns a new object of class '<em>Pattern Instance</em>'.
+	 * Returns a new object of class '<em>Coordination Protocol Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Pattern Instance</em>'.
+	 * @return a new object of class '<em>Coordination Protocol Instance</em>'.
 	 * @generated
 	 */
-	PatternInstance createPatternInstance();
+	CoordinationProtocolInstance createCoordinationProtocolInstance();
 
 	/**
 	 * Returns a new object of class '<em>Structured Component Instance</em>'.

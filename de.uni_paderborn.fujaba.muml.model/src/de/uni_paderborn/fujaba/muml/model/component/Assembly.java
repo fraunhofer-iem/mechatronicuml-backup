@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
-import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
+import de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol;
 
 
 /**
@@ -23,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getTo <em>To</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getFrom <em>From</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getCoordinationPattern <em>Coordination Pattern</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  * </ul>
  * </p>
  *
@@ -88,7 +88,7 @@ public interface Assembly extends BehavioralConnector {
 	void setFrom(ComponentPart value);
 
 	/**
-	 * Returns the value of the '<em><b>Coordination Pattern</b></em>' reference.
+	 * Returns the value of the '<em><b>Coordination Protocol</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -96,22 +96,22 @@ public interface Assembly extends BehavioralConnector {
 	 * 
 	 * \todosd{Why does it reference the CoordinationPattern and not the PatternOccurence?}
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Coordination Pattern</em>' reference.
-	 * @see #setCoordinationPattern(CoordinationPattern)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getAssembly_CoordinationPattern()
+	 * @return the value of the '<em>Coordination Protocol</em>' reference.
+	 * @see #setCoordinationProtocol(CoordinationProtocol)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getAssembly_CoordinationProtocol()
 	 * @model
 	 * @generated
 	 */
-	CoordinationPattern getCoordinationPattern();
+	CoordinationProtocol getCoordinationProtocol();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getCoordinationPattern <em>Coordination Pattern</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getCoordinationProtocol <em>Coordination Protocol</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Coordination Pattern</em>' reference.
-	 * @see #getCoordinationPattern()
+	 * @param value the new value of the '<em>Coordination Protocol</em>' reference.
+	 * @see #getCoordinationProtocol()
 	 * @generated
 	 */
-	void setCoordinationPattern(CoordinationPattern value);
+	void setCoordinationProtocol(CoordinationProtocol value);
 
 } // Assembly

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.util;
 
+import de.uni_paderborn.fujaba.muml.model.instance.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -20,13 +21,13 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.instance.PatternInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance;
 
@@ -131,8 +132,8 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 				return createDiscreteMultiPortInstanceAdapter();
 			}
 			@Override
-			public Adapter casePatternInstance(PatternInstance object) {
-				return createPatternInstanceAdapter();
+			public Adapter caseCoordinationProtocolInstance(CoordinationProtocolInstance object) {
+				return createCoordinationProtocolInstanceAdapter();
 			}
 			@Override
 			public Adapter caseStructuredComponentInstance(StructuredComponentInstance object) {
@@ -329,16 +330,16 @@ public class InstanceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.PatternInstance <em>Pattern Instance</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance <em>Coordination Protocol Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PatternInstance
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance
 	 * @generated
 	 */
-	public Adapter createPatternInstanceAdapter() {
+	public Adapter createCoordinationProtocolInstanceAdapter() {
 		return null;
 	}
 

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.util;
 
+import de.uni_paderborn.fujaba.muml.model.component.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -22,17 +23,17 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
+import de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
-import de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
@@ -140,8 +141,8 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 				return createHybridPortAdapter();
 			}
 			@Override
-			public Adapter casePatternOccurrence(PatternOccurrence object) {
-				return createPatternOccurrenceAdapter();
+			public Adapter caseCoordinationProtocolOccurrence(CoordinationProtocolOccurrence object) {
+				return createCoordinationProtocolOccurrenceAdapter();
 			}
 			@Override
 			public Adapter caseStructuredComponent(StructuredComponent object) {
@@ -396,16 +397,16 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence <em>Pattern Occurrence</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence <em>Coordination Protocol Occurrence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence
+	 * @see de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence
 	 * @generated
 	 */
-	public Adapter createPatternOccurrenceAdapter() {
+	public Adapter createCoordinationProtocolOccurrenceAdapter() {
 		return null;
 	}
 
@@ -494,13 +495,13 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint <em>Discrete Interaction Endpoint</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint <em>Discrete Interaction Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint
+	 * @see de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint
 	 * @generated
 	 */
 	public Adapter createDiscreteInteractionEndpointAdapter() {

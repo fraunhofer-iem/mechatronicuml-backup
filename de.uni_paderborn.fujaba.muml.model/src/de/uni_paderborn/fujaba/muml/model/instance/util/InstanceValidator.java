@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.util;
 
+import de.uni_paderborn.fujaba.muml.model.instance.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -20,13 +21,13 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.instance.PatternInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance;
 
@@ -124,8 +125,8 @@ public class InstanceValidator extends EObjectValidator {
 				return validateDiscreteSinglePortInstance((DiscreteSinglePortInstance)value, diagnostics, context);
 			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE:
 				return validateDiscreteMultiPortInstance((DiscreteMultiPortInstance)value, diagnostics, context);
-			case InstancePackage.PATTERN_INSTANCE:
-				return validatePatternInstance((PatternInstance)value, diagnostics, context);
+			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE:
+				return validateCoordinationProtocolInstance((CoordinationProtocolInstance)value, diagnostics, context);
 			case InstancePackage.STRUCTURED_COMPONENT_INSTANCE:
 				return validateStructuredComponentInstance((StructuredComponentInstance)value, diagnostics, context);
 			case InstancePackage.ATOMIC_COMPONENT_INSTANCE:
@@ -278,8 +279,8 @@ public class InstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePatternInstance(PatternInstance patternInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(patternInstance, diagnostics, context);
+	public boolean validateCoordinationProtocolInstance(CoordinationProtocolInstance coordinationProtocolInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(coordinationProtocolInstance, diagnostics, context);
 	}
 
 	/**

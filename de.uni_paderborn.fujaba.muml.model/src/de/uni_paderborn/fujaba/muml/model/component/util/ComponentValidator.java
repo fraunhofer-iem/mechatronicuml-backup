@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.util;
 
+import de.uni_paderborn.fujaba.muml.model.component.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -24,11 +25,11 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
+import de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
-import de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
@@ -129,8 +130,8 @@ public class ComponentValidator extends EObjectValidator {
 				return validateBehavioralConnector((BehavioralConnector)value, diagnostics, context);
 			case ComponentPackage.HYBRID_PORT:
 				return validateHybridPort((HybridPort)value, diagnostics, context);
-			case ComponentPackage.PATTERN_OCCURRENCE:
-				return validatePatternOccurrence((PatternOccurrence)value, diagnostics, context);
+			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE:
+				return validateCoordinationProtocolOccurrence((CoordinationProtocolOccurrence)value, diagnostics, context);
 			case ComponentPackage.STRUCTURED_COMPONENT:
 				return validateStructuredComponent((StructuredComponent)value, diagnostics, context);
 			case ComponentPackage.DIRECTED_TYPED_PORT:
@@ -2064,8 +2065,8 @@ public class ComponentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePatternOccurrence(PatternOccurrence patternOccurrence, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(patternOccurrence, diagnostics, context);
+	public boolean validateCoordinationProtocolOccurrence(CoordinationProtocolOccurrence coordinationProtocolOccurrence, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(coordinationProtocolOccurrence, diagnostics, context);
 	}
 
 	/**

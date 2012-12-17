@@ -1646,13 +1646,13 @@ public interface ComponentPackage extends EPackage {
 	int ASSEMBLY__FROM = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Coordination Pattern</b></em>' reference.
+	 * The feature id for the '<em><b>Coordination Protocol</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY__COORDINATION_PATTERN = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 2;
+	int ASSEMBLY__COORDINATION_PROTOCOL = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Assembly</em>' class.
@@ -1944,14 +1944,14 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT_FEATURE_COUNT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.PatternOccurrenceImpl <em>Pattern Occurrence</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.CoordinationProtocolOccurrenceImpl <em>Coordination Protocol Occurrence</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.PatternOccurrenceImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getPatternOccurrence()
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.CoordinationProtocolOccurrenceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getCoordinationProtocolOccurrence()
 	 * @generated
 	 */
-	int PATTERN_OCCURRENCE = 12;
+	int COORDINATION_PROTOCOL_OCCURRENCE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1960,7 +1960,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_OCCURRENCE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int COORDINATION_PROTOCOL_OCCURRENCE__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1969,16 +1969,25 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_OCCURRENCE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int COORDINATION_PROTOCOL_OCCURRENCE__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Pattern</b></em>' reference.
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_OCCURRENCE__PATTERN = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int COORDINATION_PROTOCOL_OCCURRENCE__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Coordination Protocol</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Ports</b></em>' reference list.
@@ -1987,16 +1996,16 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_OCCURRENCE__PORTS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int COORDINATION_PROTOCOL_OCCURRENCE__PORTS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Pattern Occurrence</em>' class.
+	 * The number of structural features of the '<em>Coordination Protocol Occurrence</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_OCCURRENCE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int COORDINATION_PROTOCOL_OCCURRENCE_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentKind <em>Kind</em>}' enum.
@@ -2580,15 +2589,15 @@ public interface ComponentPackage extends EPackage {
 	EReference getAssembly_From();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getCoordinationPattern <em>Coordination Pattern</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getCoordinationProtocol <em>Coordination Protocol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Coordination Pattern</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Assembly#getCoordinationPattern()
+	 * @return the meta object for the reference '<em>Coordination Protocol</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.Assembly#getCoordinationProtocol()
 	 * @see #getAssembly()
 	 * @generated
 	 */
-	EReference getAssembly_CoordinationPattern();
+	EReference getAssembly_CoordinationProtocol();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.Delegation <em>Delegation</em>}'.
@@ -2665,36 +2674,36 @@ public interface ComponentPackage extends EPackage {
 	EReference getHybridPort_SamplingInterval();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence <em>Pattern Occurrence</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence <em>Coordination Protocol Occurrence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pattern Occurrence</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence
+	 * @return the meta object for class '<em>Coordination Protocol Occurrence</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence
 	 * @generated
 	 */
-	EClass getPatternOccurrence();
+	EClass getCoordinationProtocolOccurrence();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence#getPattern <em>Pattern</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence#getCoordinationProtocol <em>Coordination Protocol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Pattern</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence#getPattern()
-	 * @see #getPatternOccurrence()
+	 * @return the meta object for the reference '<em>Coordination Protocol</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence#getCoordinationProtocol()
+	 * @see #getCoordinationProtocolOccurrence()
 	 * @generated
 	 */
-	EReference getPatternOccurrence_Pattern();
+	EReference getCoordinationProtocolOccurrence_CoordinationProtocol();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence#getPorts <em>Ports</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence#getPorts <em>Ports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Ports</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence#getPorts()
-	 * @see #getPatternOccurrence()
+	 * @see de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence#getPorts()
+	 * @see #getCoordinationProtocolOccurrence()
 	 * @generated
 	 */
-	EReference getPatternOccurrence_Ports();
+	EReference getCoordinationProtocolOccurrence_Ports();
 
 	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentKind <em>Kind</em>}'.
@@ -3177,12 +3186,12 @@ public interface ComponentPackage extends EPackage {
 		EReference ASSEMBLY__FROM = eINSTANCE.getAssembly_From();
 
 		/**
-		 * The meta object literal for the '<em><b>Coordination Pattern</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Coordination Protocol</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ASSEMBLY__COORDINATION_PATTERN = eINSTANCE.getAssembly_CoordinationPattern();
+		EReference ASSEMBLY__COORDINATION_PROTOCOL = eINSTANCE.getAssembly_CoordinationProtocol();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DelegationImpl <em>Delegation</em>}' class.
@@ -3247,22 +3256,22 @@ public interface ComponentPackage extends EPackage {
 		EReference HYBRID_PORT__SAMPLING_INTERVAL = eINSTANCE.getHybridPort_SamplingInterval();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.PatternOccurrenceImpl <em>Pattern Occurrence</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.CoordinationProtocolOccurrenceImpl <em>Coordination Protocol Occurrence</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.PatternOccurrenceImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getPatternOccurrence()
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.CoordinationProtocolOccurrenceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getCoordinationProtocolOccurrence()
 		 * @generated
 		 */
-		EClass PATTERN_OCCURRENCE = eINSTANCE.getPatternOccurrence();
+		EClass COORDINATION_PROTOCOL_OCCURRENCE = eINSTANCE.getCoordinationProtocolOccurrence();
 
 		/**
-		 * The meta object literal for the '<em><b>Pattern</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Coordination Protocol</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PATTERN_OCCURRENCE__PATTERN = eINSTANCE.getPatternOccurrence_Pattern();
+		EReference COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL = eINSTANCE.getCoordinationProtocolOccurrence_CoordinationProtocol();
 
 		/**
 		 * The meta object literal for the '<em><b>Ports</b></em>' reference list feature.
@@ -3270,7 +3279,7 @@ public interface ComponentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PATTERN_OCCURRENCE__PORTS = eINSTANCE.getPatternOccurrence_Ports();
+		EReference COORDINATION_PROTOCOL_OCCURRENCE__PORTS = eINSTANCE.getCoordinationProtocolOccurrence_Ports();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentKind <em>Kind</em>}' enum.

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.util;
 
+import de.uni_paderborn.fujaba.muml.model.component.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -21,17 +22,17 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
+import de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
-import de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
@@ -220,10 +221,11 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentPackage.PATTERN_OCCURRENCE: {
-				PatternOccurrence patternOccurrence = (PatternOccurrence)theEObject;
-				T result = casePatternOccurrence(patternOccurrence);
-				if (result == null) result = caseExtendableElement(patternOccurrence);
+			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE: {
+				CoordinationProtocolOccurrence coordinationProtocolOccurrence = (CoordinationProtocolOccurrence)theEObject;
+				T result = caseCoordinationProtocolOccurrence(coordinationProtocolOccurrence);
+				if (result == null) result = caseCommentableElement(coordinationProtocolOccurrence);
+				if (result == null) result = caseExtendableElement(coordinationProtocolOccurrence);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -465,17 +467,17 @@ public class ComponentSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Pattern Occurrence</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Coordination Protocol Occurrence</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Pattern Occurrence</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Coordination Protocol Occurrence</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePatternOccurrence(PatternOccurrence object) {
+	public T caseCoordinationProtocolOccurrence(CoordinationProtocolOccurrence object) {
 		return null;
 	}
 

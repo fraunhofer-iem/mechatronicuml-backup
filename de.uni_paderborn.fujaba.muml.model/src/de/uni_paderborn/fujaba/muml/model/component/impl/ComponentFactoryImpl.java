@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
+import de.uni_paderborn.fujaba.muml.model.component.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -21,10 +22,10 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
+import de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
-import de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence;
 import de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent;
 
 /**
@@ -79,7 +80,7 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 			case ComponentPackage.ASSEMBLY: return createAssembly();
 			case ComponentPackage.DELEGATION: return createDelegation();
 			case ComponentPackage.HYBRID_PORT: return createHybridPort();
-			case ComponentPackage.PATTERN_OCCURRENCE: return createPatternOccurrence();
+			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE: return createCoordinationProtocolOccurrence();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -204,9 +205,9 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PatternOccurrence createPatternOccurrence() {
-		PatternOccurrenceImpl patternOccurrence = new PatternOccurrenceImpl();
-		return patternOccurrence;
+	public CoordinationProtocolOccurrence createCoordinationProtocolOccurrence() {
+		CoordinationProtocolOccurrenceImpl coordinationProtocolOccurrence = new CoordinationProtocolOccurrenceImpl();
+		return coordinationProtocolOccurrence;
 	}
 
 	/**

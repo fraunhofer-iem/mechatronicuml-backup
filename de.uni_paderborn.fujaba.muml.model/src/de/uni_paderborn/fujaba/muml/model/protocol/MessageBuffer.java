@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.pattern;
+package de.uni_paderborn.fujaba.muml.model.protocol;
 
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
@@ -25,13 +25,13 @@ import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer#getBufferSize <em>Buffer Size</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer#getMessageType <em>Message Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer#getRole <em>Role</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer#getBufferSize <em>Buffer Size</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer#getMessageType <em>Message Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer#getRole <em>Role</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getMessageBuffer()
+ * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getMessageBuffer()
  * @model
  * @generated
  */
@@ -45,14 +45,14 @@ public interface MessageBuffer extends NamedElement, CommentableElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Buffer Size</em>' containment reference.
 	 * @see #setBufferSize(NaturalNumber)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getMessageBuffer_BufferSize()
+	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getMessageBuffer_BufferSize()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	NaturalNumber getBufferSize();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer#getBufferSize <em>Buffer Size</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer#getBufferSize <em>Buffer Size</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Buffer Size</em>' containment reference.
@@ -70,7 +70,7 @@ public interface MessageBuffer extends NamedElement, CommentableElement {
 	 * The message types this message buffer can store.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Message Type</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getMessageBuffer_MessageType()
+	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getMessageBuffer_MessageType()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface MessageBuffer extends NamedElement, CommentableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Role</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -86,15 +86,15 @@ public interface MessageBuffer extends NamedElement, CommentableElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Role</em>' container reference.
 	 * @see #setRole(Role)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getMessageBuffer_Role()
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getReceiverMessageBuffer
+	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getMessageBuffer_Role()
+	 * @see de.uni_paderborn.fujaba.muml.model.protocol.Role#getReceiverMessageBuffer
 	 * @model opposite="receiverMessageBuffer" required="true" transient="false"
 	 * @generated
 	 */
 	Role getRole();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer#getRole <em>Role</em>}' container reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer#getRole <em>Role</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Role</em>' container reference.

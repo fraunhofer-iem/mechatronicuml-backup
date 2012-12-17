@@ -8,9 +8,9 @@ package de.uni_paderborn.fujaba.muml.model.component;
 
 import org.eclipse.emf.common.util.EList;
 
-import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer;
-import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.model.protocol.Role;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +40,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 	/**
 	 * Returns the value of the '<em><b>Refines</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getPort <em>Port</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -49,7 +49,7 @@ public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 	 * @return the value of the '<em>Refines</em>' reference.
 	 * @see #setRefines(Role)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort_Refines()
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.Role#getPort
+	 * @see de.uni_paderborn.fujaba.muml.model.protocol.Role#getPort
 	 * @model opposite="port"
 	 * @generated
 	 */
@@ -115,7 +115,7 @@ public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 
 	/**
 	 * Returns the value of the '<em><b>Receiver Message Buffer</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

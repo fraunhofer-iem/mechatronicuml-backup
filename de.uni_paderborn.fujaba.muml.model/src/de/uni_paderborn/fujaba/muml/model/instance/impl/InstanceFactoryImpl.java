@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.impl;
 
+import de.uni_paderborn.fujaba.muml.model.instance.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -16,13 +17,13 @@ import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.instance.PatternInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance;
 
 /**
@@ -40,7 +41,7 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	 */
 	public static InstanceFactory init() {
 		try {
-			InstanceFactory theInstanceFactory = (InstanceFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/instance/0.3.3"); 
+			InstanceFactory theInstanceFactory = (InstanceFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/instance/0.3.7"); 
 			if (theInstanceFactory != null) {
 				return theInstanceFactory;
 			}
@@ -76,7 +77,7 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 			case InstancePackage.HYBRID_PORT_INSTANCE: return createHybridPortInstance();
 			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE: return createDiscreteSinglePortInstance();
 			case InstancePackage.DISCRETE_MULTI_PORT_INSTANCE: return createDiscreteMultiPortInstance();
-			case InstancePackage.PATTERN_INSTANCE: return createPatternInstance();
+			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE: return createCoordinationProtocolInstance();
 			case InstancePackage.STRUCTURED_COMPONENT_INSTANCE: return createStructuredComponentInstance();
 			case InstancePackage.ATOMIC_COMPONENT_INSTANCE: return createAtomicComponentInstance();
 			default:
@@ -159,9 +160,9 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PatternInstance createPatternInstance() {
-		PatternInstanceImpl patternInstance = new PatternInstanceImpl();
-		return patternInstance;
+	public CoordinationProtocolInstance createCoordinationProtocolInstance() {
+		CoordinationProtocolInstanceImpl coordinationProtocolInstance = new CoordinationProtocolInstanceImpl();
+		return coordinationProtocolInstance;
 	}
 
 	/**

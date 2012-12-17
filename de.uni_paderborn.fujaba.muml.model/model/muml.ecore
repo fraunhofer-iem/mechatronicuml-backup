@@ -3,9 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="muml"
     nsURI="http://www.fujaba.de/muml/0.2.2" nsPrefix="muml">
-  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-    <details key="documentation" value="This package is the base package for all MechatronicUML models, editors &#xD;&#xA;and algorithms. Plugins contributing to MechatronicUML should use &#xD;&#xA;de.uni_paderborn.fujaba.muml as a base package."/>
-  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel"/>
   <eSubpackages name="model" nsURI="http://www.fujaba.de/muml/model/0.2.2" nsPrefix="model">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The model package contains the core meta-model of MechatronicUML. The&#xD;&#xA;subpackages define the base classes for the component model, real-time &#xD;&#xA;statecharts, message interfaces and coordination pattern."/>
@@ -128,7 +126,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="DiscretePort" eSuperTypes="#//model/component/Port #//model/pattern/DiscreteInteractionEndpoint">
+      <eClassifiers xsi:type="ecore:EClass" name="DiscretePort" eSuperTypes="#//model/component/Port #//model/protocol/DiscreteInteractionEndpoint">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a concrete port specification which provides the discrete functionality of a port."/>
         </eAnnotations>
@@ -143,8 +141,8 @@
           <details key="DiscretePortAndRoleSameMessageInterface" value="not self.refines.oclIsUndefined() implies&#xA;&#x9;(self.senderMessageInterface = self.refines.senderMessageInterface&#xA;&#x9; and&#xA;&#x9; self.receiverMessageInterface = self.refines.receiverMessageInterface&#xA;&#x9;)"/>
           <details key="MultiPortMustRefineMultiRole" value="if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then&#xD;&#xA;       self.isMultiPort implies self.refines.isMultiRole&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//model/pattern/Role"
-            eOpposite="#//model/pattern/Role/port">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//model/protocol/Role"
+            eOpposite="#//model/protocol/Role/port">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The role of a coordination pattern that this port refines."/>
           </eAnnotations>
@@ -182,7 +180,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageBuffer"
-            upperBound="-1" eType="#//model/pattern/MessageBuffer" changeable="false"
+            upperBound="-1" eType="#//model/protocol/MessageBuffer" changeable="false"
             volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self.refines.receiverMessageBuffer"/>
@@ -399,8 +397,8 @@
             <details key="documentation" value="The component part of the port part from which this assembly originates."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
-            eType="#//model/pattern/CoordinationPattern">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
+            eType="#//model/protocol/CoordinationProtocol">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The coordination pattern that defines the protocol of this assembly.&#xD;&#xA;&#xD;&#xA;\todosd{Why does it reference the CoordinationPattern and not the PatternOccurence?}"/>
           </eAnnotations>
@@ -508,12 +506,13 @@
           </eAnnotations>
         </eLiterals>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PatternOccurrence" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocolOccurrence"
+          eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A coordination protocol (pattern) can occur within a structured component. It defines the communication behavior of an assembly connection that connects discrete ports with each other."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
-            eType="#//model/pattern/CoordinationPattern">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
+            lowerBound="1" eType="#//model/protocol/CoordinationProtocol">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The coordination protocol (pattern) of this PatternOccurence."/>
           </eAnnotations>
@@ -856,7 +855,7 @@
             unsettable="true"/>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/model/instance/0.3.3"
+    <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/model/instance/0.3.7"
         nsPrefix="instance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1042,7 +1041,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageBuffer"
-            upperBound="-1" eType="#//model/pattern/MessageBuffer" changeable="false"
+            upperBound="-1" eType="#//model/protocol/MessageBuffer" changeable="false"
             volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self.portType.refines.receiverMessageBuffer"/>
@@ -1051,7 +1050,7 @@
             <details key="documentation" value="The derived properties of the refined role regarding the receiver message buffers."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//model/pattern/Role"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//model/protocol/Role"
             changeable="false" volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self.portType.refines"/>
@@ -1089,7 +1088,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PatternInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocolInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An instance of a pattern occurence. It specifies the behavior of discrete (single/multi) port instances that are connected with each other."/>
         </eAnnotations>
@@ -1099,8 +1098,8 @@
             <details key="documentation" value="The port instance that uses this pattern instance.&#xD;&#xA;&#xD;&#xA;\todosd{I suggest to change this reference so that it references a DiscretePortInstance.}"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="patternOccurrence"
-            lowerBound="1" eType="#//model/component/PatternOccurrence">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="protocolOccurrence"
+            lowerBound="1" eType="#//model/component/CoordinationProtocolOccurrence">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The PatternOccurence of that instance."/>
           </eAnnotations>
@@ -1123,8 +1122,8 @@
         </eAnnotations>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="pattern" nsURI="http://www.fujaba.de/muml/model/pattern/0.3.7"
-        nsPrefix="pattern">
+    <eSubpackages name="protocol" nsURI="http://www.fujaba.de/muml/model/protocol/0.3.7"
+        nsPrefix="protocol">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
         <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1141,32 +1140,32 @@
           <details key="OnlyRolesOfSameCoordinationPattern" value="(not source.oclIsUndefined() and not target.oclIsUndefined()) implies source.coordinationPattern = target.coordinationPattern"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-            eType="#//model/pattern/Role" eOpposite="#//model/pattern/Role/outgoingRoleConnector">
+            eType="#//model/protocol/Role" eOpposite="#//model/protocol/Role/outgoingRoleConnector">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The roles connected by this channel. At the moment an arbitrary number of roles are allow. This probably should be discussed."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-            eType="#//model/pattern/Role" eOpposite="#//model/pattern/Role/incomingRoleConnector">
+            eType="#//model/protocol/Role" eOpposite="#//model/protocol/Role/incomingRoleConnector">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The roles connected by this channel. At the moment an arbitrary number of roles are allow. This probably should be discussed."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
-            lowerBound="1" eType="#//model/pattern/CoordinationPattern" eOpposite="#//model/pattern/CoordinationPattern/connector">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
+            lowerBound="1" eType="#//model/protocol/CoordinationProtocol" eOpposite="#//model/protocol/CoordinationProtocol/roleConnector">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The coordination pattern this role connector is part of."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="connectorQualityOfServiceAssumptions"
-            lowerBound="1" eType="#//model/pattern/ConnectorQualityOfServiceAssumptions"
+            lowerBound="1" eType="#//model/protocol/ConnectorQualityOfServiceAssumptions"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="A role connector has exactly one reference for defining its quality of service assumptions like message delay and message loss."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="CoordinationPattern" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement #//model/core/ConstrainableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocol" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement #//model/core/ConstrainableElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A coordination protocol specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination patterns. Constraints specify certain properties the coordination specified by the pattern has to fullfill."/>
         </eAnnotations>
@@ -1178,19 +1177,20 @@
           <details key="CoordinationPatternNamesMustBeUnique" value="CoordinationPattern.allInstances().name->count(self.name) = 1"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="1"
-            upperBound="2" eType="#//model/pattern/Role" containment="true" eOpposite="#//model/pattern/Role/coordinationPattern">
+            upperBound="2" eType="#//model/protocol/Role" containment="true" eOpposite="#//model/protocol/Role/coordinationProtocol">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The roles belonging to this pattern."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="connector" lowerBound="1"
-            eType="#//model/pattern/RoleConnector" containment="true" eOpposite="#//model/pattern/RoleConnector/coordinationPattern">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" lowerBound="1"
+            eType="#//model/protocol/RoleConnector" containment="true" eOpposite="#//model/protocol/RoleConnector/coordinationProtocol">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Each coordination pattern has exactly one role connector.&#xD;&#xA;Cardinality is 1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, than change cardinality to 1..*"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" eType="#//model/pattern/CoordinationPattern"
-            volatile="true" transient="true" derived="true" containment="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
+            eType="#//model/protocol/CoordinationProtocol" volatile="true" transient="true"
+            derived="true" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self"/>
           </eAnnotations>
@@ -1199,7 +1199,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//model/pattern/DiscreteInteractionEndpoint #//model/types/DataType">
+      <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//model/protocol/DiscreteInteractionEndpoint #//model/types/DataType">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a role of a coordination pattern."/>
         </eAnnotations>
@@ -1214,13 +1214,13 @@
           <details key="RoleRequiresInterface" value="not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="incomingRoleConnector"
-            eType="#//model/pattern/RoleConnector" eOpposite="#//model/pattern/RoleConnector/target">
+            eType="#//model/protocol/RoleConnector" eOpposite="#//model/protocol/RoleConnector/target">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The incoming RoleConnector, which connects this role with another role.&#xA;Either incomingRoleConnector or outgoingRoleConnector (or both) must be set."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationPattern"
-            lowerBound="1" eType="#//model/pattern/CoordinationPattern" eOpposite="#//model/pattern/CoordinationPattern/roles">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
+            lowerBound="1" eType="#//model/protocol/CoordinationProtocol" eOpposite="#//model/protocol/CoordinationProtocol/roles">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The coordination pattern this role belongs to."/>
           </eAnnotations>
@@ -1238,18 +1238,18 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingRoleConnector"
-            eType="#//model/pattern/RoleConnector" eOpposite="#//model/pattern/RoleConnector/source">
+            eType="#//model/protocol/RoleConnector" eOpposite="#//model/protocol/RoleConnector/source">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The outgoing RoleConnector, which connects this role with another role.&#xA;Either incomingRoleConnector or outgoingRoleConnector (or both) must be set."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" eType="#//model/pattern/RoleConnector"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" eType="#//model/protocol/RoleConnector"
             changeable="false" volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="if self.incomingConnector -> notEmpty() then&#xD;&#xA;&#x9;self.incomingConnector&#xD;&#xA;else&#xD;&#xA;&#x9;self.outgoingConnector&#xD;&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMultiRole" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiRole" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
             changeable="false" volatile="true" transient="true" defaultValueLiteral=""
             derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1260,8 +1260,8 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageBuffer"
-            upperBound="-1" eType="#//model/pattern/MessageBuffer" containment="true"
-            eOpposite="#//model/pattern/MessageBuffer/role">
+            upperBound="-1" eType="#//model/protocol/MessageBuffer" containment="true"
+            eOpposite="#//model/protocol/MessageBuffer/role">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive."/>
           </eAnnotations>
@@ -1284,7 +1284,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1"
-            eType="#//model/pattern/Role" eOpposite="#//model/pattern/Role/receiverMessageBuffer">
+            eType="#//model/protocol/Role" eOpposite="#//model/protocol/Role/receiverMessageBuffer">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The role that contains this message buffer."/>
           </eAnnotations>

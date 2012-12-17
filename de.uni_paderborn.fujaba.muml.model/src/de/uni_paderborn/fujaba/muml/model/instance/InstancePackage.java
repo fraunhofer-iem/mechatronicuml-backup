@@ -47,7 +47,7 @@ public interface InstancePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/instance/0.3.3";
+	String eNS_URI = "http://www.fujaba.de/muml/model/instance/0.3.7";
 
 	/**
 	 * The package namespace name.
@@ -1203,14 +1203,14 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_MULTI_PORT_INSTANCE_FEATURE_COUNT = DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PatternInstanceImpl <em>Pattern Instance</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.CoordinationProtocolInstanceImpl <em>Coordination Protocol Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.PatternInstanceImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getPatternInstance()
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.CoordinationProtocolInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getCoordinationProtocolInstance()
 	 * @generated
 	 */
-	int PATTERN_INSTANCE = 11;
+	int COORDINATION_PROTOCOL_INSTANCE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1219,7 +1219,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_INSTANCE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int COORDINATION_PROTOCOL_INSTANCE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1228,7 +1228,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_INSTANCE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int COORDINATION_PROTOCOL_INSTANCE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1237,7 +1237,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_INSTANCE__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int COORDINATION_PROTOCOL_INSTANCE__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Port Instances</b></em>' reference list.
@@ -1246,25 +1246,25 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_INSTANCE__PORT_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int COORDINATION_PROTOCOL_INSTANCE__PORT_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Pattern Occurrence</b></em>' reference.
+	 * The feature id for the '<em><b>Protocol Occurrence</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_INSTANCE__PATTERN_OCCURRENCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int COORDINATION_PROTOCOL_INSTANCE__PROTOCOL_OCCURRENCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Pattern Instance</em>' class.
+	 * The number of structural features of the '<em>Coordination Protocol Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PATTERN_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int COORDINATION_PROTOCOL_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.StructuredComponentInstanceImpl <em>Structured Component Instance</em>}' class.
@@ -1785,36 +1785,36 @@ public interface InstancePackage extends EPackage {
 	EReference getDiscreteMultiPortInstance_GmfSubPortInstances();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.PatternInstance <em>Pattern Instance</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance <em>Coordination Protocol Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pattern Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PatternInstance
+	 * @return the meta object for class '<em>Coordination Protocol Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance
 	 * @generated
 	 */
-	EClass getPatternInstance();
+	EClass getCoordinationProtocolInstance();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.PatternInstance#getPortInstances <em>Port Instances</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance#getPortInstances <em>Port Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Port Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PatternInstance#getPortInstances()
-	 * @see #getPatternInstance()
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance#getPortInstances()
+	 * @see #getCoordinationProtocolInstance()
 	 * @generated
 	 */
-	EReference getPatternInstance_PortInstances();
+	EReference getCoordinationProtocolInstance_PortInstances();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.PatternInstance#getPatternOccurrence <em>Pattern Occurrence</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance#getProtocolOccurrence <em>Protocol Occurrence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Pattern Occurrence</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PatternInstance#getPatternOccurrence()
-	 * @see #getPatternInstance()
+	 * @return the meta object for the reference '<em>Protocol Occurrence</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance#getProtocolOccurrence()
+	 * @see #getCoordinationProtocolInstance()
 	 * @generated
 	 */
-	EReference getPatternInstance_PatternOccurrence();
+	EReference getCoordinationProtocolInstance_ProtocolOccurrence();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance <em>Structured Component Instance</em>}'.
@@ -2164,14 +2164,14 @@ public interface InstancePackage extends EPackage {
 		EReference DISCRETE_MULTI_PORT_INSTANCE__GMF_SUB_PORT_INSTANCES = eINSTANCE.getDiscreteMultiPortInstance_GmfSubPortInstances();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PatternInstanceImpl <em>Pattern Instance</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.CoordinationProtocolInstanceImpl <em>Coordination Protocol Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.PatternInstanceImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getPatternInstance()
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.CoordinationProtocolInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getCoordinationProtocolInstance()
 		 * @generated
 		 */
-		EClass PATTERN_INSTANCE = eINSTANCE.getPatternInstance();
+		EClass COORDINATION_PROTOCOL_INSTANCE = eINSTANCE.getCoordinationProtocolInstance();
 
 		/**
 		 * The meta object literal for the '<em><b>Port Instances</b></em>' reference list feature.
@@ -2179,15 +2179,15 @@ public interface InstancePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PATTERN_INSTANCE__PORT_INSTANCES = eINSTANCE.getPatternInstance_PortInstances();
+		EReference COORDINATION_PROTOCOL_INSTANCE__PORT_INSTANCES = eINSTANCE.getCoordinationProtocolInstance_PortInstances();
 
 		/**
-		 * The meta object literal for the '<em><b>Pattern Occurrence</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Protocol Occurrence</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PATTERN_INSTANCE__PATTERN_OCCURRENCE = eINSTANCE.getPatternInstance_PatternOccurrence();
+		EReference COORDINATION_PROTOCOL_INSTANCE__PROTOCOL_OCCURRENCE = eINSTANCE.getCoordinationProtocolInstance_ProtocolOccurrence();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.StructuredComponentInstanceImpl <em>Structured Component Instance</em>}' class.

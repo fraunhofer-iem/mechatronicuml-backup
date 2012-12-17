@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.pattern;
+package de.uni_paderborn.fujaba.muml.model.protocol;
 
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.NamedElement;
@@ -16,7 +16,7 @@ import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Discrete Interaction Point</b></em>'.
+ * A representation of the model object '<em><b>Discrete Interaction Endpoint</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
@@ -26,18 +26,18 @@ import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getSenderMessageTypes <em>Sender Message Types</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint#getSenderMessageTypes <em>Sender Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getDiscreteInteractionPoint()
+ * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getDiscreteInteractionEndpoint()
  * @model abstract="true"
  * @generated
  */
-public interface DiscreteInteractionPoint extends BehavioralElement, ConstrainableElement, NamedElement {
+public interface DiscreteInteractionEndpoint extends BehavioralElement, ConstrainableElement, NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Sender Message Types</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgtype.MessageType}.
@@ -47,7 +47,7 @@ public interface DiscreteInteractionPoint extends BehavioralElement, Constrainab
 	 * The sender message interface defines which messages this discrete port specification sends.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sender Message Types</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getDiscreteInteractionPoint_SenderMessageTypes()
+	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getDiscreteInteractionEndpoint_SenderMessageTypes()
 	 * @model
 	 * @generated
 	 */
@@ -62,7 +62,7 @@ public interface DiscreteInteractionPoint extends BehavioralElement, Constrainab
 	 * The receiver message interface defines which messages this discrete port specification receives.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Receiver Message Types</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getDiscreteInteractionPoint_ReceiverMessageTypes()
+	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getDiscreteInteractionEndpoint_ReceiverMessageTypes()
 	 * @model
 	 * @generated
 	 */
@@ -81,14 +81,14 @@ public interface DiscreteInteractionPoint extends BehavioralElement, Constrainab
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Adaptation Behavior</em>' reference.
 	 * @see #setAdaptationBehavior(Behavior)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getDiscreteInteractionPoint_AdaptationBehavior()
+	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getDiscreteInteractionEndpoint_AdaptationBehavior()
 	 * @model
 	 * @generated
 	 */
 	Behavior getAdaptationBehavior();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getAdaptationBehavior <em>Adaptation Behavior</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint#getAdaptationBehavior <em>Adaptation Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Adaptation Behavior</em>' reference.
@@ -109,14 +109,14 @@ public interface DiscreteInteractionPoint extends BehavioralElement, Constrainab
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Role And Adaptation Behavior</em>' reference.
 	 * @see #setRoleAndAdaptationBehavior(Behavior)
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage#getDiscreteInteractionPoint_RoleAndAdaptationBehavior()
+	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior()
 	 * @model
 	 * @generated
 	 */
 	Behavior getRoleAndAdaptationBehavior();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Role And Adaptation Behavior</em>' reference.
@@ -125,4 +125,4 @@ public interface DiscreteInteractionPoint extends BehavioralElement, Constrainab
 	 */
 	void setRoleAndAdaptationBehavior(Behavior value);
 
-} // DiscreteInteractionPoint
+} // DiscreteInteractionEndpoint

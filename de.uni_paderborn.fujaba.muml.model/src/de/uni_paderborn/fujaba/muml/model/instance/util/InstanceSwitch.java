@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.util;
 
+import de.uni_paderborn.fujaba.muml.model.instance.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -19,13 +20,13 @@ import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.instance.PatternInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance;
 
@@ -189,11 +190,11 @@ public class InstanceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case InstancePackage.PATTERN_INSTANCE: {
-				PatternInstance patternInstance = (PatternInstance)theEObject;
-				T result = casePatternInstance(patternInstance);
-				if (result == null) result = caseNamedElement(patternInstance);
-				if (result == null) result = caseExtendableElement(patternInstance);
+			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE: {
+				CoordinationProtocolInstance coordinationProtocolInstance = (CoordinationProtocolInstance)theEObject;
+				T result = caseCoordinationProtocolInstance(coordinationProtocolInstance);
+				if (result == null) result = caseNamedElement(coordinationProtocolInstance);
+				if (result == null) result = caseExtendableElement(coordinationProtocolInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -385,17 +386,17 @@ public class InstanceSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Pattern Instance</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Coordination Protocol Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Pattern Instance</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Coordination Protocol Instance</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePatternInstance(PatternInstance object) {
+	public T caseCoordinationProtocolInstance(CoordinationProtocolInstance object) {
 		return null;
 	}
 

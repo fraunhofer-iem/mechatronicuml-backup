@@ -23,10 +23,10 @@ import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer;
-import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
-import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
+import de.uni_paderborn.fujaba.muml.model.protocol.Role;
 
 /**
  * <!-- begin-user-doc -->
@@ -280,9 +280,9 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 		if (newRefines != refines) {
 			NotificationChain msgs = null;
 			if (refines != null)
-				msgs = ((InternalEObject)refines).eInverseRemove(this, PatternPackage.ROLE__PORT, Role.class, msgs);
+				msgs = ((InternalEObject)refines).eInverseRemove(this, ProtocolPackage.ROLE__PORT, Role.class, msgs);
 			if (newRefines != null)
-				msgs = ((InternalEObject)newRefines).eInverseAdd(this, PatternPackage.ROLE__PORT, Role.class, msgs);
+				msgs = ((InternalEObject)newRefines).eInverseAdd(this, ProtocolPackage.ROLE__PORT, Role.class, msgs);
 			msgs = basicSetRefines(newRefines, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -442,7 +442,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return basicSetBehavior((Behavior)otherEnd, msgs);
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				if (refines != null)
-					msgs = ((InternalEObject)refines).eInverseRemove(this, PatternPackage.ROLE__PORT, Role.class, msgs);
+					msgs = ((InternalEObject)refines).eInverseRemove(this, ProtocolPackage.ROLE__PORT, Role.class, msgs);
 				return basicSetRefines((Role)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -610,10 +610,10 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 		}
 		if (baseClass == DiscreteInteractionEndpoint.class) {
 			switch (derivedFeatureID) {
-				case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES: return PatternPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES;
-				case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES: return PatternPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES;
-				case ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR: return PatternPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR;
-				case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR: return PatternPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR;
+				case ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES: return ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES;
+				case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES: return ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES;
+				case ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR: return ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR;
+				case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR: return ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR;
 				default: return -1;
 			}
 		}
@@ -635,10 +635,10 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 		}
 		if (baseClass == DiscreteInteractionEndpoint.class) {
 			switch (baseFeatureID) {
-				case PatternPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES: return ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES;
-				case PatternPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES: return ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES;
-				case PatternPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR: return ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR;
-				case PatternPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR: return ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
+				case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES: return ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES;
+				case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES: return ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES;
+				case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR: return ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR;
+				case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR: return ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 				default: return -1;
 			}
 		}
