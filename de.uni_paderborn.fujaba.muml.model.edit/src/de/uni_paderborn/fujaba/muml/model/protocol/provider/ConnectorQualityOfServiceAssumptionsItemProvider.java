@@ -198,12 +198,12 @@ public class ConnectorQualityOfServiceAssumptionsItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY,
-				 CoreFactory.eINSTANCE.createNaturalNumber()));
+				 CoreFactory.eINSTANCE.createTimeValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY,
-				 CoreFactory.eINSTANCE.createNaturalNumber()));
+				 CoreFactory.eINSTANCE.createTimeValue()));
 	}
 
 	/**

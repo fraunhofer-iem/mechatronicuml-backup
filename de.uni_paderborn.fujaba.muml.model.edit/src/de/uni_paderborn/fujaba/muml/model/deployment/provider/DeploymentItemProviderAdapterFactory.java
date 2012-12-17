@@ -167,26 +167,26 @@ public class DeploymentItemProviderAdapterFactory extends DeploymentAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected QualityOfLinkServiceItemProvider qualityOfLinkServiceItemProvider;
+	protected LinkQualityOfServiceItemProvider linkQualityOfServiceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createQualityOfLinkServiceAdapter() {
-		if (qualityOfLinkServiceItemProvider == null) {
-			qualityOfLinkServiceItemProvider = new QualityOfLinkServiceItemProvider(this);
+	public Adapter createLinkQualityOfServiceAdapter() {
+		if (linkQualityOfServiceItemProvider == null) {
+			linkQualityOfServiceItemProvider = new LinkQualityOfServiceItemProvider(this);
 		}
 
-		return qualityOfLinkServiceItemProvider;
+		return linkQualityOfServiceItemProvider;
 	}
 
 	/**
@@ -292,7 +292,7 @@ public class DeploymentItemProviderAdapterFactory extends DeploymentAdapterFacto
 		if (hardwareNodeItemProvider != null) hardwareNodeItemProvider.dispose();
 		if (hardwarePortItemProvider != null) hardwarePortItemProvider.dispose();
 		if (communicationLinkItemProvider != null) communicationLinkItemProvider.dispose();
-		if (qualityOfLinkServiceItemProvider != null) qualityOfLinkServiceItemProvider.dispose();
+		if (linkQualityOfServiceItemProvider != null) linkQualityOfServiceItemProvider.dispose();
 	}
 
 }

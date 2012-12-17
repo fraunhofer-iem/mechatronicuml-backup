@@ -7,13 +7,23 @@
 package de.uni_paderborn.fujaba.muml.model.deployment.provider;
 
 
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+
+import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
+import de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -23,23 +33,22 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.storydriven.core.CorePackage;
+
 import org.storydriven.core.provider.CommentableElementItemProvider;
+
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
-import de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class QualityOfLinkServiceItemProvider
+public class LinkQualityOfServiceItemProvider
 	extends CommentableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -53,7 +62,7 @@ public class QualityOfLinkServiceItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public QualityOfLinkServiceItemProvider(AdapterFactory adapterFactory) {
+	public LinkQualityOfServiceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -107,8 +116,8 @@ public class QualityOfLinkServiceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DeploymentPackage.Literals.QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION);
-			childrenFeatures.add(DeploymentPackage.Literals.QUALITY_OF_LINK_SERVICE__LATENCY);
+			childrenFeatures.add(DeploymentPackage.Literals.LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION);
+			childrenFeatures.add(DeploymentPackage.Literals.LINK_QUALITY_OF_SERVICE__LATENCY);
 		}
 		return childrenFeatures;
 	}
@@ -127,14 +136,14 @@ public class QualityOfLinkServiceItemProvider
 	}
 
 	/**
-	 * This returns QualityOfLinkService.gif.
+	 * This returns LinkQualityOfService.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/QualityOfLinkService"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/LinkQualityOfService"));
 	}
 
 	/**
@@ -145,10 +154,10 @@ public class QualityOfLinkServiceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((QualityOfLinkService)object).getName();
+		String label = ((LinkQualityOfService)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_QualityOfLinkService_type") :
-			getString("_UI_QualityOfLinkService_type") + " " + label;
+			getString("_UI_LinkQualityOfService_type") :
+			getString("_UI_LinkQualityOfService_type") + " " + label;
 	}
 
 	/**
@@ -162,12 +171,12 @@ public class QualityOfLinkServiceItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(QualityOfLinkService.class)) {
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__NAME:
+		switch (notification.getFeatureID(LinkQualityOfService.class)) {
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION:
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__LATENCY:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__LATENCY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -197,13 +206,13 @@ public class QualityOfLinkServiceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(DeploymentPackage.Literals.QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION,
-				 CoreFactory.eINSTANCE.createNaturalNumber()));
+				(DeploymentPackage.Literals.LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION,
+				 CoreFactory.eINSTANCE.createTimeValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(DeploymentPackage.Literals.QUALITY_OF_LINK_SERVICE__LATENCY,
-				 CoreFactory.eINSTANCE.createNaturalNumber()));
+				(DeploymentPackage.Literals.LINK_QUALITY_OF_SERVICE__LATENCY,
+				 CoreFactory.eINSTANCE.createTimeValue()));
 	}
 
 	/**
@@ -218,8 +227,8 @@ public class QualityOfLinkServiceItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == DeploymentPackage.Literals.QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION ||
-			childFeature == DeploymentPackage.Literals.QUALITY_OF_LINK_SERVICE__LATENCY;
+			childFeature == DeploymentPackage.Literals.LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION ||
+			childFeature == DeploymentPackage.Literals.LINK_QUALITY_OF_SERVICE__LATENCY;
 
 		if (qualify) {
 			return getString

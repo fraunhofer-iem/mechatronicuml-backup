@@ -233,7 +233,7 @@ public class DeploymentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(DeploymentPackage.Literals.DEPLOYMENT__QUALITY_OF_LINK_SERVICES,
-				 DeploymentFactory.eINSTANCE.createQualityOfLinkService()));
+				 DeploymentFactory.eINSTANCE.createLinkQualityOfService()));
 	}
 
 	/**
