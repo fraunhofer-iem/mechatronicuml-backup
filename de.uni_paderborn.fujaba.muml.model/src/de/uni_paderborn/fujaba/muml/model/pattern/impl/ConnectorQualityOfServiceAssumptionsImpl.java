@@ -11,9 +11,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.impl.NamedElementImpl;
+import org.storydriven.core.impl.CommentableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions;
@@ -26,7 +24,6 @@ import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.ConnectorQualityOfServiceAssumptionsImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.ConnectorQualityOfServiceAssumptionsImpl#getMinMessageDelay <em>Min Message Delay</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.ConnectorQualityOfServiceAssumptionsImpl#getMaxMessageDelay <em>Max Message Delay</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.ConnectorQualityOfServiceAssumptionsImpl#isMessageLossPossible <em>Message Loss Possible</em>}</li>
@@ -35,27 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
  *
  * @generated
  */
-public class ConnectorQualityOfServiceAssumptionsImpl extends NamedElementImpl implements ConnectorQualityOfServiceAssumptions {
-	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
-
-	/**
-	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comment = COMMENT_EDEFAULT;
-
+public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElementImpl implements ConnectorQualityOfServiceAssumptions {
 	/**
 	 * The cached value of the '{@link #getMinMessageDelay() <em>Min Message Delay</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -113,27 +90,6 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends NamedElementImpl i
 	@Override
 	protected EClass eStaticClass() {
 		return PatternPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getComment() {
-		return comment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComment(String newComment) {
-		String oldComment = comment;
-		comment = newComment;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -267,8 +223,6 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends NamedElementImpl i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__COMMENT:
-				return getComment();
 			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY:
 				return getMinMessageDelay();
 			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY:
@@ -287,9 +241,6 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends NamedElementImpl i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__COMMENT:
-				setComment((String)newValue);
-				return;
 			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY:
 				setMinMessageDelay((NaturalNumber)newValue);
 				return;
@@ -311,9 +262,6 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends NamedElementImpl i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
 			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY:
 				setMinMessageDelay((NaturalNumber)null);
 				return;
@@ -335,8 +283,6 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends NamedElementImpl i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY:
 				return minMessageDelay != null;
 			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY:
@@ -353,45 +299,11 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends NamedElementImpl i
 	 * @generated
 	 */
 	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (derivedFeatureID) {
-				case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (baseFeatureID) {
-				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__COMMENT;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (comment: ");
-		result.append(comment);
-		result.append(", messageLossPossible: ");
+		result.append(" (messageLossPossible: ");
 		result.append(messageLossPossible);
 		result.append(')');
 		return result.toString();

@@ -122,7 +122,6 @@ public class PatternSwitch<T> extends Switch<T> {
 			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS: {
 				ConnectorQualityOfServiceAssumptions connectorQualityOfServiceAssumptions = (ConnectorQualityOfServiceAssumptions)theEObject;
 				T result = caseConnectorQualityOfServiceAssumptions(connectorQualityOfServiceAssumptions);
-				if (result == null) result = caseNamedElement(connectorQualityOfServiceAssumptions);
 				if (result == null) result = caseCommentableElement(connectorQualityOfServiceAssumptions);
 				if (result == null) result = caseExtendableElement(connectorQualityOfServiceAssumptions);
 				if (result == null) result = defaultCase(theEObject);

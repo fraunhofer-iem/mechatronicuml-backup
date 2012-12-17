@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.model.pattern;
 
 import org.storydriven.core.CommentableElement;
-import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 
@@ -33,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
  * @model
  * @generated
  */
-public interface ConnectorQualityOfServiceAssumptions extends NamedElement, CommentableElement {
+public interface ConnectorQualityOfServiceAssumptions extends CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Min Message Delay</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

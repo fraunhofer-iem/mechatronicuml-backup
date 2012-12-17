@@ -54,7 +54,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/pattern/0.3.6"
+            uri="http://www.fujaba.de/muml/model/pattern/0.3.7"
             class="de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage"
             genModel="model/muml.genmodel"/>
    </extension>

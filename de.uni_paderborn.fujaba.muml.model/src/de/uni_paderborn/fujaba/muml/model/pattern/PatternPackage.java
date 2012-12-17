@@ -44,7 +44,7 @@ public interface PatternPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/pattern/0.3.6";
+	String eNS_URI = "http://www.fujaba.de/muml/model/pattern/0.3.7";
 
 	/**
 	 * The package namespace name.
@@ -589,7 +589,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__ANNOTATION = org.storydriven.core.CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__ANNOTATION = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -598,16 +598,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__EXTENSION = org.storydriven.core.CorePackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__NAME = org.storydriven.core.CorePackage.NAMED_ELEMENT__NAME;
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__EXTENSION = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -616,7 +607,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__COMMENT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__COMMENT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Min Message Delay</b></em>' containment reference.
@@ -625,7 +616,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Max Message Delay</b></em>' containment reference.
@@ -634,7 +625,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Message Loss Possible</b></em>' attribute.
@@ -643,7 +634,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Connector Quality Of Service Assumptions</em>' class.
@@ -652,7 +643,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS_FEATURE_COUNT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
 
 	/**

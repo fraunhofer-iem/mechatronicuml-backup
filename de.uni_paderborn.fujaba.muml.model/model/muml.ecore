@@ -1123,7 +1123,7 @@
         </eAnnotations>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="pattern" nsURI="http://www.fujaba.de/muml/model/pattern/0.3.6"
+    <eSubpackages name="pattern" nsURI="http://www.fujaba.de/muml/model/pattern/0.3.7"
         nsPrefix="pattern">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1291,7 +1291,7 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ConnectorQualityOfServiceAssumptions"
-          eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+          eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The list of quality of service assumptions for this connector. A developer defines these properties before modeling the role statecharts, because the statecharts depend on these assumptions. Software layers under the MechatronicUML layer respectively the hardware itself have to ensure that these assumptions are correct."/>
         </eAnnotations>

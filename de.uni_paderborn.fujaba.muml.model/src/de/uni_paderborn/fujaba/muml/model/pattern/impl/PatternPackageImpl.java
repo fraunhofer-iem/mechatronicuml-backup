@@ -579,7 +579,6 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		roleEClass.getESuperTypes().add(theTypesPackage.getDataType());
 		messageBufferEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		messageBufferEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		connectorQualityOfServiceAssumptionsEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		connectorQualityOfServiceAssumptionsEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		discreteInteractionPointEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
 		discreteInteractionPointEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
