@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.protocol.impl;
+package de.uni_paderborn.fujaba.muml.model.connector.impl;
 
 import java.util.Collection;
 
@@ -25,14 +25,15 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.Extension;
 import org.storydriven.core.NamedElement;
 
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
+import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.impl.BehavioralElementImpl;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,14 +42,15 @@ import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.DiscreteInteractionEndpointImpl#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.DiscreteInteractionEndpointImpl#getAnnotations <em>Annotation</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.DiscreteInteractionEndpointImpl#getExtensions <em>Extension</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.DiscreteInteractionEndpointImpl#getName <em>Name</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.DiscreteInteractionEndpointImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.DiscreteInteractionEndpointImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.DiscreteInteractionEndpointImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.DiscreteInteractionEndpointImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getAnnotations <em>Annotation</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getExtensions <em>Extension</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getCardinality <em>Cardinality</em>}</li>
  * </ul>
  * </p>
  *
@@ -146,6 +148,16 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	protected Behavior roleAndAdaptationBehavior;
 
 	/**
+	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCardinality()
+	 * @generated
+	 * @ordered
+	 */
+	protected Cardinality cardinality;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -161,7 +173,7 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ProtocolPackage.Literals.DISCRETE_INTERACTION_ENDPOINT;
+		return ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT;
 	}
 
 	/**
@@ -171,7 +183,7 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	 */
 	public EList<Constraint> getConstraint() {
 		if (constraint == null) {
-			constraint = new EObjectContainmentWithInverseEList<Constraint>(Constraint.class, this, ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT);
+			constraint = new EObjectContainmentWithInverseEList<Constraint>(Constraint.class, this, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT);
 		}
 		return constraint;
 	}
@@ -183,7 +195,7 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	 */
 	public EList<EAnnotation> getAnnotations() {
 		if (annotations == null) {
-			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this, ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION);
+			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION);
 		}
 		return annotations;
 	}
@@ -195,7 +207,7 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	 */
 	public EList<Extension> getExtensions() {
 		if (extensions == null) {
-			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION, CorePackage.EXTENSION__EXTENDABLE_BASE);
+			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION, CorePackage.EXTENSION__EXTENDABLE_BASE);
 		}
 		return extensions;
 	}
@@ -218,7 +230,7 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME, oldName, name));
 	}
 
 	/**
@@ -228,7 +240,7 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	 */
 	public EList<MessageType> getSenderMessageTypes() {
 		if (senderMessageTypes == null) {
-			senderMessageTypes = new EObjectResolvingEList<MessageType>(MessageType.class, this, ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES);
+			senderMessageTypes = new EObjectResolvingEList<MessageType>(MessageType.class, this, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES);
 		}
 		return senderMessageTypes;
 	}
@@ -240,7 +252,7 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	 */
 	public EList<MessageType> getReceiverMessageTypes() {
 		if (receiverMessageTypes == null) {
-			receiverMessageTypes = new EObjectResolvingEList<MessageType>(MessageType.class, this, ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES);
+			receiverMessageTypes = new EObjectResolvingEList<MessageType>(MessageType.class, this, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES);
 		}
 		return receiverMessageTypes;
 	}
@@ -256,7 +268,7 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 			adaptationBehavior = (Behavior)eResolveProxy(oldAdaptationBehavior);
 			if (adaptationBehavior != oldAdaptationBehavior) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
 			}
 		}
 		return adaptationBehavior;
@@ -280,7 +292,7 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 		Behavior oldAdaptationBehavior = adaptationBehavior;
 		adaptationBehavior = newAdaptationBehavior;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
+			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
 	}
 
 	/**
@@ -294,7 +306,7 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 			roleAndAdaptationBehavior = (Behavior)eResolveProxy(oldRoleAndAdaptationBehavior);
 			if (roleAndAdaptationBehavior != oldRoleAndAdaptationBehavior) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
 			}
 		}
 		return roleAndAdaptationBehavior;
@@ -318,7 +330,50 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 		Behavior oldRoleAndAdaptationBehavior = roleAndAdaptationBehavior;
 		roleAndAdaptationBehavior = newRoleAndAdaptationBehavior;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
+			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cardinality getCardinality() {
+		return cardinality;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
+		Cardinality oldCardinality = cardinality;
+		cardinality = newCardinality;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY, oldCardinality, newCardinality);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCardinality(Cardinality newCardinality) {
+		if (newCardinality != cardinality) {
+			NotificationChain msgs = null;
+			if (cardinality != null)
+				msgs = ((InternalEObject)cardinality).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY, null, msgs);
+			if (newCardinality != null)
+				msgs = ((InternalEObject)newCardinality).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY, null, msgs);
+			msgs = basicSetCardinality(newCardinality, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY, newCardinality, newCardinality));
 	}
 
 	/**
@@ -374,9 +429,9 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtensions()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -390,12 +445,14 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
 				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
 				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
+				return basicSetCardinality(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -408,24 +465,26 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				return getConstraint();
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
 				return getAnnotations();
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
 				return getExtensions();
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
 				return getName();
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
 				return getSenderMessageTypes();
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES:
 				return getReceiverMessageTypes();
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR:
 				if (resolve) return getAdaptationBehavior();
 				return basicGetAdaptationBehavior();
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				if (resolve) return getRoleAndAdaptationBehavior();
 				return basicGetRoleAndAdaptationBehavior();
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
+				return getCardinality();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -439,34 +498,37 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				getConstraint().clear();
 				getConstraint().addAll((Collection<? extends Constraint>)newValue);
 				return;
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
 				getAnnotations().clear();
 				getAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
 				return;
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
 				getExtensions().clear();
 				getExtensions().addAll((Collection<? extends Extension>)newValue);
 				return;
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
 				setName((String)newValue);
 				return;
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
 				getSenderMessageTypes().clear();
 				getSenderMessageTypes().addAll((Collection<? extends MessageType>)newValue);
 				return;
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES:
 				getReceiverMessageTypes().clear();
 				getReceiverMessageTypes().addAll((Collection<? extends MessageType>)newValue);
 				return;
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR:
 				setAdaptationBehavior((Behavior)newValue);
 				return;
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				setRoleAndAdaptationBehavior((Behavior)newValue);
+				return;
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
+				setCardinality((Cardinality)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -480,29 +542,32 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				getConstraint().clear();
 				return;
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
 				getAnnotations().clear();
 				return;
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
 				getExtensions().clear();
 				return;
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
 				getSenderMessageTypes().clear();
 				return;
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES:
 				getReceiverMessageTypes().clear();
 				return;
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR:
 				setAdaptationBehavior((Behavior)null);
 				return;
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				setRoleAndAdaptationBehavior((Behavior)null);
+				return;
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
+				setCardinality((Cardinality)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -516,22 +581,24 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				return constraint != null && !constraint.isEmpty();
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
 				return annotations != null && !annotations.isEmpty();
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
 				return extensions != null && !extensions.isEmpty();
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
 				return senderMessageTypes != null && !senderMessageTypes.isEmpty();
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES:
 				return receiverMessageTypes != null && !receiverMessageTypes.isEmpty();
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR:
 				return adaptationBehavior != null;
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR:
 				return roleAndAdaptationBehavior != null;
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
+				return cardinality != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -545,7 +612,7 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == ConstrainableElement.class) {
 			switch (derivedFeatureID) {
-				case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT: return de.uni_paderborn.fujaba.muml.model.core.CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT: return de.uni_paderborn.fujaba.muml.model.core.CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
 				default: return -1;
 			}
 		}
@@ -556,14 +623,14 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 		}
 		if (baseClass == ExtendableElement.class) {
 			switch (derivedFeatureID) {
-				case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION: return CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
-				case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION: return CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION: return CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION: return CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 				default: return -1;
 			}
 		}
 		if (baseClass == NamedElement.class) {
 			switch (derivedFeatureID) {
-				case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__NAME: return CorePackage.NAMED_ELEMENT__NAME;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME: return CorePackage.NAMED_ELEMENT__NAME;
 				default: return -1;
 			}
 		}
@@ -579,7 +646,7 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == ConstrainableElement.class) {
 			switch (baseFeatureID) {
-				case de.uni_paderborn.fujaba.muml.model.core.CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT;
+				case de.uni_paderborn.fujaba.muml.model.core.CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT;
 				default: return -1;
 			}
 		}
@@ -590,14 +657,14 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 		}
 		if (baseClass == ExtendableElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION: return ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION;
-				case CorePackage.EXTENDABLE_ELEMENT__EXTENSION: return ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION;
+				case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION;
+				case CorePackage.EXTENDABLE_ELEMENT__EXTENSION: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION;
 				default: return -1;
 			}
 		}
 		if (baseClass == NamedElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.NAMED_ELEMENT__NAME: return ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT__NAME;
+				case CorePackage.NAMED_ELEMENT__NAME: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME;
 				default: return -1;
 			}
 		}

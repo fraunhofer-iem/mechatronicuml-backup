@@ -29,7 +29,6 @@ import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
@@ -42,12 +41,10 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getIncomingConnectors <em>Incoming Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getConnectors <em>Connectors</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#isIsMultiPort <em>Is Multi Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -85,16 +82,6 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 	protected EList<Constraint> constraint;
 
 	/**
-	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected Cardinality cardinality;
-
-	/**
 	 * The cached value of the '{@link #getIncomingConnectors() <em>Incoming Connectors</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -123,16 +110,6 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate CONNECTORS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__CONNECTORS).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #isIsMultiPort() <em>Is Multi Port</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsMultiPort()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate IS_MULTI_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__IS_MULTI_PORT).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,58 +231,6 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isIsMultiPort() {
-		return (Boolean)IS_MULTI_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Cardinality getCardinality() {
-		return cardinality;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
-		Cardinality oldCardinality = cardinality;
-		cardinality = newCardinality;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT__CARDINALITY, oldCardinality, newCardinality);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCardinality(Cardinality newCardinality) {
-		if (newCardinality != cardinality) {
-			NotificationChain msgs = null;
-			if (cardinality != null)
-				msgs = ((InternalEObject)cardinality).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.PORT__CARDINALITY, null, msgs);
-			if (newCardinality != null)
-				msgs = ((InternalEObject)newCardinality).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.PORT__CARDINALITY, null, msgs);
-			msgs = basicSetCardinality(newCardinality, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT__CARDINALITY, newCardinality, newCardinality));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<ConnectorType> getIncomingConnectors() {
 		if (incomingConnectors == null) {
 			incomingConnectors = new EObjectWithInverseResolvingEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.PORT__INCOMING_CONNECTORS, ComponentPackage.CONNECTOR_TYPE__TO_PORT);
@@ -358,8 +283,6 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 		switch (featureID) {
 			case ComponentPackage.PORT__CONSTRAINT:
 				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
-			case ComponentPackage.PORT__CARDINALITY:
-				return basicSetCardinality(null, msgs);
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
 				return ((InternalEList<?>)getIncomingConnectors()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
@@ -396,8 +319,6 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 				return getComment();
 			case ComponentPackage.PORT__CONSTRAINT:
 				return getConstraint();
-			case ComponentPackage.PORT__CARDINALITY:
-				return getCardinality();
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
 				return getIncomingConnectors();
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
@@ -406,8 +327,6 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 				return getComponent();
 			case ComponentPackage.PORT__CONNECTORS:
 				return getConnectors();
-			case ComponentPackage.PORT__IS_MULTI_PORT:
-				return isIsMultiPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -427,9 +346,6 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__CONSTRAINT:
 				getConstraint().clear();
 				getConstraint().addAll((Collection<? extends Constraint>)newValue);
-				return;
-			case ComponentPackage.PORT__CARDINALITY:
-				setCardinality((Cardinality)newValue);
 				return;
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
 				getIncomingConnectors().clear();
@@ -460,9 +376,6 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 			case ComponentPackage.PORT__CONSTRAINT:
 				getConstraint().clear();
 				return;
-			case ComponentPackage.PORT__CARDINALITY:
-				setCardinality((Cardinality)null);
-				return;
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
 				getIncomingConnectors().clear();
 				return;
@@ -488,8 +401,6 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case ComponentPackage.PORT__CONSTRAINT:
 				return constraint != null && !constraint.isEmpty();
-			case ComponentPackage.PORT__CARDINALITY:
-				return cardinality != null;
 			case ComponentPackage.PORT__INCOMING_CONNECTORS:
 				return incomingConnectors != null && !incomingConnectors.isEmpty();
 			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
@@ -498,8 +409,6 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 				return getComponent() != null;
 			case ComponentPackage.PORT__CONNECTORS:
 				return CONNECTORS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case ComponentPackage.PORT__IS_MULTI_PORT:
-				return IS_MULTI_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

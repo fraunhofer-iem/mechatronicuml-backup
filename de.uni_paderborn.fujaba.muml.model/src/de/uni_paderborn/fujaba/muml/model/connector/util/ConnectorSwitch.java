@@ -4,8 +4,9 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.protocol.util;
+package de.uni_paderborn.fujaba.muml.model.connector.util;
 
+import de.uni_paderborn.fujaba.muml.model.connector.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -13,17 +14,14 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
+import de.uni_paderborn.fujaba.muml.model.connector.Connector;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.protocol.*;
-import de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions;
-import de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer;
-import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
-import de.uni_paderborn.fujaba.muml.model.protocol.Role;
-import de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector;
-import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,17 +33,17 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage
+ * @see de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage
  * @generated
  */
-public class ProtocolSwitch<T> extends Switch<T> {
+public class ConnectorSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static ProtocolPackage modelPackage;
+	protected static ConnectorPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -53,9 +51,9 @@ public class ProtocolSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProtocolSwitch() {
+	public ConnectorSwitch() {
 		if (modelPackage == null) {
-			modelPackage = ProtocolPackage.eINSTANCE;
+			modelPackage = ConnectorPackage.eINSTANCE;
 		}
 	}
 
@@ -82,50 +80,49 @@ public class ProtocolSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ProtocolPackage.ROLE_CONNECTOR: {
-				RoleConnector roleConnector = (RoleConnector)theEObject;
-				T result = caseRoleConnector(roleConnector);
-				if (result == null) result = caseBehavioralElement(roleConnector);
+			case ConnectorPackage.CONNECTOR_ENDPOINT: {
+				ConnectorEndpoint connectorEndpoint = (ConnectorEndpoint)theEObject;
+				T result = caseConnectorEndpoint(connectorEndpoint);
+				if (result == null) result = caseNamedElement(connectorEndpoint);
+				if (result == null) result = caseCommentableElement(connectorEndpoint);
+				if (result == null) result = caseExtendableElement(connectorEndpoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ProtocolPackage.COORDINATION_PROTOCOL: {
-				CoordinationProtocol coordinationProtocol = (CoordinationProtocol)theEObject;
-				T result = caseCoordinationProtocol(coordinationProtocol);
-				if (result == null) result = caseNamedElement(coordinationProtocol);
-				if (result == null) result = caseConstrainableElement(coordinationProtocol);
-				if (result == null) result = caseCommentableElement(coordinationProtocol);
-				if (result == null) result = caseExtendableElement(coordinationProtocol);
+			case ConnectorPackage.CONNECTOR: {
+				Connector connector = (Connector)theEObject;
+				T result = caseConnector(connector);
+				if (result == null) result = caseNamedElement(connector);
+				if (result == null) result = caseCommentableElement(connector);
+				if (result == null) result = caseExtendableElement(connector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ProtocolPackage.ROLE: {
-				Role role = (Role)theEObject;
-				T result = caseRole(role);
-				if (result == null) result = caseDiscreteInteractionEndpoint(role);
-				if (result == null) result = caseDataType(role);
-				if (result == null) result = caseBehavioralElement(role);
-				if (result == null) result = caseConstrainableElement(role);
-				if (result == null) result = caseNamedElement(role);
-				if (result == null) result = caseCommentableElement(role);
-				if (result == null) result = caseExtendableElement(role);
+			case ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE: {
+				ConnectorEndpointInstance connectorEndpointInstance = (ConnectorEndpointInstance)theEObject;
+				T result = caseConnectorEndpointInstance(connectorEndpointInstance);
+				if (result == null) result = caseNamedElement(connectorEndpointInstance);
+				if (result == null) result = caseCommentableElement(connectorEndpointInstance);
+				if (result == null) result = caseExtendableElement(connectorEndpointInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ProtocolPackage.MESSAGE_BUFFER: {
-				MessageBuffer messageBuffer = (MessageBuffer)theEObject;
-				T result = caseMessageBuffer(messageBuffer);
-				if (result == null) result = caseNamedElement(messageBuffer);
-				if (result == null) result = caseCommentableElement(messageBuffer);
-				if (result == null) result = caseExtendableElement(messageBuffer);
+			case ConnectorPackage.CONNECTOR_INSTANCE: {
+				ConnectorInstance connectorInstance = (ConnectorInstance)theEObject;
+				T result = caseConnectorInstance(connectorInstance);
+				if (result == null) result = caseNamedElement(connectorInstance);
+				if (result == null) result = caseCommentableElement(connectorInstance);
+				if (result == null) result = caseExtendableElement(connectorInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS: {
-				ConnectorQualityOfServiceAssumptions connectorQualityOfServiceAssumptions = (ConnectorQualityOfServiceAssumptions)theEObject;
-				T result = caseConnectorQualityOfServiceAssumptions(connectorQualityOfServiceAssumptions);
-				if (result == null) result = caseCommentableElement(connectorQualityOfServiceAssumptions);
-				if (result == null) result = caseExtendableElement(connectorQualityOfServiceAssumptions);
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT: {
+				DiscreteInteractionEndpoint discreteInteractionEndpoint = (DiscreteInteractionEndpoint)theEObject;
+				T result = caseDiscreteInteractionEndpoint(discreteInteractionEndpoint);
+				if (result == null) result = caseBehavioralElement(discreteInteractionEndpoint);
+				if (result == null) result = caseConstrainableElement(discreteInteractionEndpoint);
+				if (result == null) result = caseNamedElement(discreteInteractionEndpoint);
+				if (result == null) result = caseExtendableElement(discreteInteractionEndpoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -134,77 +131,62 @@ public class ProtocolSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Role Connector</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Endpoint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Role Connector</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Endpoint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRoleConnector(RoleConnector object) {
+	public T caseConnectorEndpoint(ConnectorEndpoint object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Coordination Protocol</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Coordination Protocol</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Connector</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCoordinationProtocol(CoordinationProtocol object) {
+	public T caseConnector(Connector object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Endpoint Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Endpoint Instance</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRole(Role object) {
+	public T caseConnectorEndpointInstance(ConnectorEndpointInstance object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Message Buffer</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Message Buffer</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Instance</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMessageBuffer(MessageBuffer object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Connector Quality Of Service Assumptions</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Connector Quality Of Service Assumptions</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions object) {
+	public T caseConnectorInstance(ConnectorInstance object) {
 		return null;
 	}
 
@@ -220,21 +202,6 @@ public class ProtocolSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDiscreteInteractionEndpoint(DiscreteInteractionEndpoint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBehavioralElement(BehavioralElement object) {
 		return null;
 	}
 
@@ -269,21 +236,6 @@ public class ProtocolSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConstrainableElement(ConstrainableElement object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -299,17 +251,32 @@ public class ProtocolSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDataType(DataType object) {
+	public T caseBehavioralElement(BehavioralElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConstrainableElement(ConstrainableElement object) {
 		return null;
 	}
 
@@ -329,4 +296,4 @@ public class ProtocolSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //ProtocolSwitch
+} //ConnectorSwitch

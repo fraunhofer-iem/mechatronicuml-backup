@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.model.protocol.Role;
@@ -105,8 +104,6 @@ public class ProtocolValidator extends EObjectValidator {
 				return validateMessageBuffer((MessageBuffer)value, diagnostics, context);
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				return validateConnectorQualityOfServiceAssumptions((ConnectorQualityOfServiceAssumptions)value, diagnostics, context);
-			case ProtocolPackage.DISCRETE_INTERACTION_ENDPOINT:
-				return validateDiscreteInteractionEndpoint((DiscreteInteractionEndpoint)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -392,15 +389,6 @@ public class ProtocolValidator extends EObjectValidator {
 	 */
 	public boolean validateConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions connectorQualityOfServiceAssumptions, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(connectorQualityOfServiceAssumptions, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDiscreteInteractionEndpoint(DiscreteInteractionEndpoint discreteInteractionEndpoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(discreteInteractionEndpoint, diagnostics, context);
 	}
 
 	/**

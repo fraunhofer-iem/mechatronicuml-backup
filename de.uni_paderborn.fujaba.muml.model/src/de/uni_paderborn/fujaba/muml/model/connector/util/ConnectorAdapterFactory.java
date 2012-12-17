@@ -4,8 +4,9 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.protocol.util;
+package de.uni_paderborn.fujaba.muml.model.connector.util;
 
+import de.uni_paderborn.fujaba.muml.model.connector.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -14,34 +15,31 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
+import de.uni_paderborn.fujaba.muml.model.connector.Connector;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.protocol.*;
-import de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions;
-import de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer;
-import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
-import de.uni_paderborn.fujaba.muml.model.protocol.Role;
-import de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector;
-import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage
+ * @see de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage
  * @generated
  */
-public class ProtocolAdapterFactory extends AdapterFactoryImpl {
+public class ConnectorAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static ProtocolPackage modelPackage;
+	protected static ConnectorPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -49,9 +47,9 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProtocolAdapterFactory() {
+	public ConnectorAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = ProtocolPackage.eINSTANCE;
+			modelPackage = ConnectorPackage.eINSTANCE;
 		}
 	}
 
@@ -80,31 +78,27 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProtocolSwitch<Adapter> modelSwitch =
-		new ProtocolSwitch<Adapter>() {
+	protected ConnectorSwitch<Adapter> modelSwitch =
+		new ConnectorSwitch<Adapter>() {
 			@Override
-			public Adapter caseRoleConnector(RoleConnector object) {
-				return createRoleConnectorAdapter();
+			public Adapter caseConnectorEndpoint(ConnectorEndpoint object) {
+				return createConnectorEndpointAdapter();
 			}
 			@Override
-			public Adapter caseCoordinationProtocol(CoordinationProtocol object) {
-				return createCoordinationProtocolAdapter();
+			public Adapter caseConnector(Connector object) {
+				return createConnectorAdapter();
 			}
 			@Override
-			public Adapter caseRole(Role object) {
-				return createRoleAdapter();
+			public Adapter caseConnectorEndpointInstance(ConnectorEndpointInstance object) {
+				return createConnectorEndpointInstanceAdapter();
 			}
 			@Override
-			public Adapter caseMessageBuffer(MessageBuffer object) {
-				return createMessageBufferAdapter();
+			public Adapter caseConnectorInstance(ConnectorInstance object) {
+				return createConnectorInstanceAdapter();
 			}
 			@Override
-			public Adapter caseConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions object) {
-				return createConnectorQualityOfServiceAssumptionsAdapter();
-			}
-			@Override
-			public Adapter caseBehavioralElement(BehavioralElement object) {
-				return createBehavioralElementAdapter();
+			public Adapter caseDiscreteInteractionEndpoint(DiscreteInteractionEndpoint object) {
+				return createDiscreteInteractionEndpointAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -115,20 +109,16 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseConstrainableElement(ConstrainableElement object) {
-				return createConstrainableElementAdapter();
-			}
-			@Override
 			public Adapter caseCommentableElement(CommentableElement object) {
 				return createCommentableElementAdapter();
 			}
 			@Override
-			public Adapter caseDiscreteInteractionEndpoint(DiscreteInteractionEndpoint object) {
-				return createDiscreteInteractionEndpointAdapter();
+			public Adapter caseBehavioralElement(BehavioralElement object) {
+				return createBehavioralElementAdapter();
 			}
 			@Override
-			public Adapter caseDataType(DataType object) {
-				return createDataTypeAdapter();
+			public Adapter caseConstrainableElement(ConstrainableElement object) {
+				return createConstrainableElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -151,72 +141,58 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector <em>Role Connector</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint <em>Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint
 	 * @generated
 	 */
-	public Adapter createRoleConnectorAdapter() {
+	public Adapter createConnectorEndpointAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol <em>Coordination Protocol</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.connector.Connector <em>Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.Connector
 	 * @generated
 	 */
-	public Adapter createCoordinationProtocolAdapter() {
+	public Adapter createConnectorAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.protocol.Role <em>Role</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance <em>Endpoint Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.protocol.Role
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance
 	 * @generated
 	 */
-	public Adapter createRoleAdapter() {
+	public Adapter createConnectorEndpointInstanceAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer <em>Message Buffer</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.connector.ConnectorInstance <em>Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.ConnectorInstance
 	 * @generated
 	 */
-	public Adapter createMessageBufferAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions <em>Connector Quality Of Service Assumptions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions
-	 * @generated
-	 */
-	public Adapter createConnectorQualityOfServiceAssumptionsAdapter() {
+	public Adapter createConnectorInstanceAdapter() {
 		return null;
 	}
 
@@ -231,20 +207,6 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiscreteInteractionEndpointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement <em>Behavioral Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.BehavioralElement
-	 * @generated
-	 */
-	public Adapter createBehavioralElementAdapter() {
 		return null;
 	}
 
@@ -277,20 +239,6 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement <em>Constrainable Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement
-	 * @generated
-	 */
-	public Adapter createConstrainableElementAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.core.CommentableElement <em>Commentable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -305,16 +253,30 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.types.DataType <em>Data Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement <em>Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.types.DataType
+	 * @see de.uni_paderborn.fujaba.muml.model.core.BehavioralElement
 	 * @generated
 	 */
-	public Adapter createDataTypeAdapter() {
+	public Adapter createBehavioralElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement <em>Constrainable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement
+	 * @generated
+	 */
+	public Adapter createConstrainableElementAdapter() {
 		return null;
 	}
 
@@ -330,4 +292,4 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //ProtocolAdapterFactory
+} //ConnectorAdapterFactory

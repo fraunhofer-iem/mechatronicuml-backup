@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.component;
 
 import org.eclipse.emf.common.util.EList;
 
-import de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.protocol.Role;
 
@@ -29,6 +29,7 @@ import de.uni_paderborn.fujaba.muml.model.protocol.Role;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#isIsDiscreteOutPort <em>Is Discrete Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#isIsDiscreteInOutPort <em>Is Discrete In Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#isMultiPort <em>Multi Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -128,5 +129,21 @@ public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 	 * @generated
 	 */
 	EList<MessageBuffer> getReceiverMessageBuffer();
+
+	/**
+	 * Returns the value of the '<em><b>Multi Port</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived attribute indicates if the port is a multi port.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Multi Port</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort_MultiPort()
+	 * @model default="" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not (self.cardinality.oclIsUndefined()) then\r\n\t(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity\r\nelse\r\n\tfalse\r\nendif\r\n\r\n'"
+	 * @generated
+	 */
+	boolean isMultiPort();
 
 } // DiscretePort

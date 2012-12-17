@@ -3267,26 +3267,26 @@
             featureName="value" dataValue="Ports represent the interaction points between a component and the components environment."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/Port"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/Port/cardinality">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/cardinality"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality"
             featureName="name" dataValue="cardinality"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/cardinality"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/cardinality"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/cardinality"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality"
             featureName="eType" referenceValue="muml.ecore#//model/core/Cardinality"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/Port/cardinality"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/Port/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality"
+          referenceName="eAnnotations" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/Port/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/component/Port/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The cardinality of a port specifies how many instances of a port are allowed to exist at runtime."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/Port"
@@ -3342,44 +3342,44 @@
             featureName="value" dataValue="self.incomingConnectors -> union(self.outgoingConnectors)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/Port"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/Port/isMultiPort">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/DiscretePort/multiPort">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/multiPort"
             featureName="name" dataValue="isMultiPort"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/multiPort"
             featureName="changeable" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/multiPort"
             featureName="volatile" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/multiPort"
             featureName="transient" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/multiPort"
             featureName="defaultValueLiteral" dataValue=""/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/multiPort"
             featureName="derived" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/multiPort"
             featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/Port/isMultiPort"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/multiPort"
+          referenceName="eAnnotations" element="muml.ecore#//model/component/DiscretePort/multiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/multiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/multiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/component/DiscretePort/multiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/multiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/multiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="This derived attribute indicates if the port is a multi port."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/Port/isMultiPort"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/multiPort"
+          referenceName="eAnnotations" element="muml.ecore#//model/component/DiscretePort/multiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/multiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/multiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="muml.ecore#//model/component/DiscretePort/multiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/multiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="derivation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/Port/isMultiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/multiPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="if not (self.cardinality.oclIsUndefined()) then&#xD;&#xA;&#x9;(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity&#xD;&#xA;else&#xD;&#xA;&#x9;false&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component" referenceName="eClassifiers"
@@ -3616,41 +3616,41 @@
             featureName="value" dataValue="if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then&#xD;&#xA;       self.isMultiPort implies self.refines.isMultiRole&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/adaptationBehavior">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/adaptationBehavior"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/adaptationBehavior">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/adaptationBehavior"
             featureName="name" dataValue="adaptationBehavior"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/adaptationBehavior"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/adaptationBehavior"
             featureName="eType" referenceValue="muml.ecore#//model/core/Behavior"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/adaptationBehavior"
-          referenceName="eAnnotations" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/adaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/adaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint/adaptationBehavior"
+          referenceName="eAnnotations" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/adaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/adaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/adaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/adaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/adaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint/adaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/adaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/adaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/adaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/adaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="If this port is a multi-port, this reference points to the real-time statechart that&#xD;&#xA;contains the adaptation behavior of the multi-port.  Then, this real-time statechart &#xD;&#xA;is contained in the only state of the real-time statechart we is obtained by the&#xD;&#xA;reference roleAndAdaptationBehavior.&#xD;&#xA;If this port is a single-port, this reference will be undefined."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/roleAndAdaptationBehavior">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"
             featureName="name" dataValue="roleAndAdaptationBehavior"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"
             featureName="eType" referenceValue="muml.ecore#//model/core/Behavior"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"
-          referenceName="eAnnotations" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/roleAndAdaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/roleAndAdaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"
+          referenceName="eAnnotations" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/roleAndAdaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/roleAndAdaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/roleAndAdaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/roleAndAdaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="If this port is a multi-port, this reference points to the real-time statechart that&#xD;&#xA;contains the adaptation behavior and the sub-port behavior. Thus, this real-time&#xD;&#xA;statechart only contains one state which embeds the real-time statecharts&#xD;&#xA;specifying the adaptation behavior and the sub-port behavior."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort"
@@ -6379,26 +6379,26 @@
             featureName="value" dataValue="The coordination pattern this role belongs to."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/Role"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/protocol/Role/cardinality">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/cardinality"
+          referenceName="eStructuralFeatures" element="#//@releases.5/@changes.74/@changes.1/@element">
+        <changes xsi:type="history:Set" element="#//@releases.5/@changes.74/@changes.1/@element"
             featureName="name" dataValue="cardinality"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/cardinality"
+        <changes xsi:type="history:Set" element="#//@releases.5/@changes.74/@changes.1/@element"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/cardinality"
+        <changes xsi:type="history:Set" element="#//@releases.5/@changes.74/@changes.1/@element"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/cardinality"
+        <changes xsi:type="history:Set" element="#//@releases.5/@changes.74/@changes.1/@element"
             featureName="eType" referenceValue="muml.ecore#//model/core/Cardinality"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/Role/cardinality"
-          referenceName="eAnnotations" element="muml.ecore#//model/protocol/Role/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.5/@changes.74/@changes.1/@element"
+          referenceName="eAnnotations" element="#//@releases.5/@changes.74/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.5/@changes.74/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/Role/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/protocol/Role/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.5/@changes.74/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.5/@changes.74/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.5/@changes.74/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.5/@changes.74/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="A role has a cardinality."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/Role"
@@ -8688,45 +8688,45 @@
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/senderMessageTypes">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/senderMessageTypes"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/senderMessageTypes">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/senderMessageTypes"
             featureName="name" dataValue="senderMessageTypes"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/senderMessageTypes"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/senderMessageTypes"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/senderMessageTypes"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/senderMessageTypes"
             featureName="eType" referenceValue="muml.ecore#//model/msgtype/MessageType"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/senderMessageTypes"
-          referenceName="eAnnotations" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint/senderMessageTypes"
+          referenceName="eAnnotations" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The sender message interface defines which messages this discrete port specification sends."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/receiverMessageTypes">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/receiverMessageTypes"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/receiverMessageTypes">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/receiverMessageTypes"
             featureName="name" dataValue="receiverMessageTypes"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/receiverMessageTypes"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/receiverMessageTypes"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/receiverMessageTypes"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/receiverMessageTypes"
             featureName="eType" referenceValue="muml.ecore#//model/msgtype/MessageType"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/receiverMessageTypes"
-          referenceName="eAnnotations" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint/receiverMessageTypes"
+          referenceName="eAnnotations" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The receiver message interface defines which messages this discrete port specification receives."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscretePortInstance"
@@ -15240,20 +15240,20 @@
         featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Create" target="muml.ecore#//model/protocol" referenceName="eClassifiers"
-          element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"
+          element="muml.ecore#//model/connector/DiscreteInteractionEndpoint">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
             featureName="name" dataValue="DiscreteInteractionPoint"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
             featureName="abstract" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"
+        <changes xsi:type="history:Add" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
             featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/BehavioralElement"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"
+        <changes xsi:type="history:Add" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
             featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/ConstrainableElement"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"
+        <changes xsi:type="history:Add" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
       </changes>
       <changes xsi:type="history:Add" element="muml.ecore#//model/protocol/Role" featureName="eSuperTypes"
-          referenceValue="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"/>
+          referenceValue="muml.ecore#//model/connector/DiscreteInteractionEndpoint"/>
       <changes xsi:type="history:Remove" element="muml.ecore#//model/protocol/Role"
           featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/BehavioralElement"/>
       <changes xsi:type="history:Remove" element="muml.ecore#//model/protocol/Role"
@@ -15285,7 +15285,7 @@
       <changes xsi:type="history:Remove" element="muml.ecore#//model/component/DiscretePort"
           featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/BehavioralElement"/>
       <changes xsi:type="history:Add" element="muml.ecore#//model/component/DiscretePort"
-          featureName="eSuperTypes" referenceValue="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"/>
+          featureName="eSuperTypes" referenceValue="muml.ecore#//model/connector/DiscreteInteractionEndpoint"/>
       <operation name="specializeSuperType">
         <parameters name="eClass">
           <referenceValue element="muml.ecore#//model/component/DiscretePort"/>
@@ -15294,13 +15294,13 @@
           <referenceValue element="muml.ecore#//model/core/BehavioralElement"/>
         </parameters>
         <parameters name="replaceBy">
-          <referenceValue element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"/>
+          <referenceValue element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"/>
         </parameters>
       </operation>
     </changes>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Move" target="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/senderMessageTypes"
+      <changes xsi:type="history:Move" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/senderMessageTypes"
           source="muml.ecore#//model/component/DiscretePort"/>
       <changes xsi:type="history:Delete" target="muml.ecore#//model/protocol/Role"
           referenceName="eStructuralFeatures">
@@ -15313,17 +15313,17 @@
       </changes>
       <operation name="pullFeature">
         <parameters name="features">
-          <referenceValue element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/senderMessageTypes"/>
+          <referenceValue element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/senderMessageTypes"/>
           <referenceValue element="#//@releases.1/@changes.3/@changes.1/@element"/>
         </parameters>
         <parameters name="targetClass">
-          <referenceValue element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"/>
+          <referenceValue element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"/>
         </parameters>
       </operation>
     </changes>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Move" target="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/receiverMessageTypes"
+      <changes xsi:type="history:Move" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/receiverMessageTypes"
           source="muml.ecore#//model/component/DiscretePort"/>
       <changes xsi:type="history:Delete" target="muml.ecore#//model/protocol/Role"
           referenceName="eStructuralFeatures">
@@ -15336,17 +15336,17 @@
       </changes>
       <operation name="pullFeature">
         <parameters name="features">
-          <referenceValue element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/receiverMessageTypes"/>
+          <referenceValue element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/receiverMessageTypes"/>
           <referenceValue element="#//@releases.1/@changes.4/@changes.1/@element"/>
         </parameters>
         <parameters name="targetClass">
-          <referenceValue element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"/>
+          <referenceValue element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"/>
         </parameters>
       </operation>
     </changes>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Move" target="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/adaptationBehavior"
+      <changes xsi:type="history:Move" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/adaptationBehavior"
           source="muml.ecore#//model/component/DiscretePort"/>
       <changes xsi:type="history:Delete" target="muml.ecore#//model/protocol/Role"
           referenceName="eStructuralFeatures">
@@ -15358,17 +15358,17 @@
       </changes>
       <operation name="pullFeature">
         <parameters name="features">
-          <referenceValue element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/adaptationBehavior"/>
+          <referenceValue element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/adaptationBehavior"/>
           <referenceValue element="#//@releases.1/@changes.5/@changes.1/@element"/>
         </parameters>
         <parameters name="targetClass">
-          <referenceValue element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"/>
+          <referenceValue element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"/>
         </parameters>
       </operation>
     </changes>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Move" target="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"
+      <changes xsi:type="history:Move" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"
           source="muml.ecore#//model/component/DiscretePort"/>
       <changes xsi:type="history:Delete" target="muml.ecore#//model/protocol/Role"
           referenceName="eStructuralFeatures">
@@ -15380,11 +15380,11 @@
       </changes>
       <operation name="pullFeature">
         <parameters name="features">
-          <referenceValue element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"/>
+          <referenceValue element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"/>
           <referenceValue element="#//@releases.1/@changes.6/@changes.1/@element"/>
         </parameters>
         <parameters name="targetClass">
-          <referenceValue element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"/>
+          <referenceValue element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"/>
         </parameters>
       </operation>
     </changes>
@@ -15459,21 +15459,21 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="self.refines.receiverMessageBuffer" oldDataValue="self.receiverMessageTypes ->size() >= 1 and self.senderMessageTypes ->size() >= 1"/>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"
-          referenceName="eAnnotations" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
+          referenceName="eAnnotations" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="An interaction point for discrete communication via asynchronous messages. This class generalizes concepts of classes DiscretePort and Role."/>
       </changes>
       <operation name="document">
         <parameters name="element">
-          <referenceValue element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"/>
+          <referenceValue element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"/>
         </parameters>
         <parameters name="documentation">
           <dataValue>An interaction point for discrete communication via asynchronous messages. This class generalizes concepts of classes DiscretePort and Role.</dataValue>
@@ -16397,7 +16397,7 @@
         featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/protocol" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/pattern/0.3.7" oldDataValue="http://www.fujaba.de/muml/model/pattern/0.3.6"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/DiscreteInteractionEndpoint"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
         featureName="name" dataValue="DiscreteInteractionEndpoint" oldDataValue="DiscreteInteractionPoint"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/component/0.3.7" oldDataValue="http://www.fujaba.de/muml/model/component/0.3.6"/>
@@ -16465,5 +16465,173 @@
         featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
     <changes xsi:type="history:Add" element="muml.ecore#//model/protocol/CoordinationProtocol"
         featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model" referenceName="eSubpackages"
+        element="muml.ecore#//model/connector"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector" featureName="name"
+        dataValue="connector"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/connector/0.3.7"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector" featureName="nsPrefix"
+        dataValue="connector"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector" referenceName="eClassifiers"
+        element="muml.ecore#//model/connector/ConnectorEndpoint"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpoint"
+        featureName="name" dataValue="ConnectorEndpoint"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/connector/ConnectorEndpoint"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/connector/ConnectorEndpoint"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpoint"
+        featureName="abstract" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector" referenceName="eClassifiers"
+        element="muml.ecore#//model/connector/Connector">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/Connector"
+          featureName="name" dataValue="ConnectorEndpoint"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/Connector"
+          featureName="abstract" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Add" element="muml.ecore#//model/connector/Connector"
+          featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+      <changes xsi:type="history:Add" element="muml.ecore#//model/connector/Connector"
+          featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector" referenceName="eClassifiers"
+        element="muml.ecore#//model/connector/ConnectorEndpointInstance">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpointInstance"
+          featureName="name" dataValue="ConnectorEndpoint"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpointInstance"
+          featureName="abstract" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Add" element="muml.ecore#//model/connector/ConnectorEndpointInstance"
+          featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+      <changes xsi:type="history:Add" element="muml.ecore#//model/connector/ConnectorEndpointInstance"
+          featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector" referenceName="eClassifiers"
+        element="muml.ecore#//model/connector/ConnectorInstance">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorInstance"
+          featureName="name" dataValue="ConnectorEndpoint"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorInstance"
+          featureName="abstract" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Add" element="muml.ecore#//model/connector/ConnectorInstance"
+          featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+      <changes xsi:type="history:Add" element="muml.ecore#//model/connector/ConnectorInstance"
+          featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorInstance"
+        featureName="name" dataValue="ConnectorEndpointInstances" oldDataValue="ConnectorEndpoint"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpointInstance"
+        featureName="name" dataValue="ConnectorEndpointInstances" oldDataValue="ConnectorEndpoint"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorInstance"
+        featureName="name" dataValue="ConnectorInstances" oldDataValue="ConnectorEndpointInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpointInstance"
+        featureName="name" dataValue="ConnectorEndpointInstance" oldDataValue="ConnectorEndpointInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorInstance"
+        featureName="name" dataValue="ConnectorInstance" oldDataValue="ConnectorInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/Connector"
+        featureName="name" dataValue="Connector" oldDataValue="ConnectorEndpoint"/>
+    <changes xsi:type="history:Move" target="muml.ecore#//model/connector" referenceName="eClassifiers"
+        element="muml.ecore#//model/connector/DiscreteInteractionEndpoint" source="muml.ecore#//model/protocol"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector/ConnectorEndpoint"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/ConnectorEndpoint/connectors"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpoint/connectors"
+        featureName="name" dataValue="connectors"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpoint/connectors"
+        featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector/ConnectorEndpointInstance"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/ConnectorEndpointInstance/connectorInstances">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpointInstance/connectorInstances"
+          featureName="name" dataValue="connectors"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpointInstance/connectorInstances"
+          featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpointInstance/connectorInstances"
+        featureName="name" dataValue="connectorInstances" oldDataValue="connectors"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector/Connector"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/ConnectorInstance/type"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorInstance/type"
+        featureName="name" dataValue="type"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorInstance/type"
+        featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorInstance/type"
+        featureName="eType" referenceValue="muml.ecore#//model/connector/Connector"/>
+    <changes xsi:type="history:Move" target="muml.ecore#//model/connector/ConnectorInstance"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/ConnectorInstance/type"
+        source="muml.ecore#//model/connector/Connector"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector/ConnectorEndpointInstance"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/ConnectorEndpointInstance/type">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpointInstance/type"
+          featureName="name" dataValue="type"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpointInstance/type"
+          featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpointInstance/type"
+          featureName="eType" referenceValue="muml.ecore#//model/connector/Connector"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpointInstance/type"
+        featureName="eType" referenceValue="muml.ecore#//model/connector/ConnectorEndpoint"
+        oldReferenceValue="muml.ecore#//model/connector/Connector"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector/Connector"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/Connector/connectorEndpoints">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/Connector/connectorEndpoints"
+          featureName="name" dataValue="connectors"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/Connector/connectorEndpoints"
+          featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/Connector/connectorEndpoints"
+        featureName="name" dataValue="connectorEndpoints" oldDataValue="connectors"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/Connector/connectorEndpoints"
+        featureName="lowerBound" dataValue="2" oldDataValue="0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/Connector/connectorEndpoints"
+        featureName="upperBound" dataValue="2" oldDataValue="-1"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector/ConnectorInstance"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/ConnectorInstance/connectorEndpointInstances">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorInstance/connectorEndpointInstances"
+          featureName="name" dataValue="connectorEndpoints"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorInstance/connectorEndpointInstances"
+          featureName="lowerBound" dataValue="2" oldDataValue="0"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorInstance/connectorEndpointInstances"
+          featureName="upperBound" dataValue="2" oldDataValue="1"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorInstance/connectorEndpointInstances"
+        featureName="name" dataValue="connectorEndpointInstances" oldDataValue="connectorEndpoints"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpoint/connectors"
+        featureName="eType" referenceValue="muml.ecore#//model/connector/Connector"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/Connector/connectorEndpoints"
+        featureName="eType" referenceValue="muml.ecore#//model/connector/ConnectorEndpoint"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpointInstance/connectorInstances"
+        featureName="eType" referenceValue="muml.ecore#//model/connector/ConnectorInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorInstance/connectorEndpointInstances"
+        featureName="eType" referenceValue="muml.ecore#//model/connector/ConnectorEndpointInstance"/>
+    <changes xsi:type="history:Move" target="muml.ecore#//model/component/DiscretePort"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/DiscretePort/multiPort"
+        source="muml.ecore#//model/component/Port"/>
+    <changes xsi:type="history:Move" target="muml.ecore#//model/component/DiscretePort"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality"
+        source="muml.ecore#//model/component/Port"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/multiPort"
+        featureName="name" dataValue="multiInteractionEndpoit" oldDataValue="isMultiPort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/multiPort"
+        featureName="name" dataValue="multiPort" oldDataValue="multiInteractionEndpoit"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Move" target="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality"
+          source="muml.ecore#//model/component/DiscretePort"/>
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/protocol/Role"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="cardinality" lowerBound="1" eType="ecore:EClass muml.ecore#//model/core/Cardinality"
+            containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A role has a cardinality."/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="pullFeature">
+        <parameters name="features">
+          <referenceValue element="muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality"/>
+          <referenceValue element="#//@releases.5/@changes.74/@changes.1/@element"/>
+        </parameters>
+        <parameters name="targetClass">
+          <referenceValue element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"/>
+        </parameters>
+      </operation>
+    </changes>
   </releases>
 </history:History>

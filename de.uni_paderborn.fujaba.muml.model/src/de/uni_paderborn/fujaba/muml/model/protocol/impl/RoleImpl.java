@@ -24,7 +24,7 @@ import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
+import de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl;
 import de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
@@ -42,7 +42,6 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getIncomingRoleConnector <em>Incoming Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getPort <em>Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getRoleConnector <em>Role Connector</em>}</li>
@@ -83,16 +82,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	 * @ordered
 	 */
 	protected RoleConnector incomingRoleConnector;
-
-	/**
-	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCardinality()
-	 * @generated
-	 * @ordered
-	 */
-	protected Cardinality cardinality;
 
 	/**
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' reference list.
@@ -290,49 +279,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Cardinality getCardinality() {
-		return cardinality;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
-		Cardinality oldCardinality = cardinality;
-		cardinality = newCardinality;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProtocolPackage.ROLE__CARDINALITY, oldCardinality, newCardinality);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCardinality(Cardinality newCardinality) {
-		if (newCardinality != cardinality) {
-			NotificationChain msgs = null;
-			if (cardinality != null)
-				msgs = ((InternalEObject)cardinality).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProtocolPackage.ROLE__CARDINALITY, null, msgs);
-			if (newCardinality != null)
-				msgs = ((InternalEObject)newCardinality).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProtocolPackage.ROLE__CARDINALITY, null, msgs);
-			msgs = basicSetCardinality(newCardinality, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.ROLE__CARDINALITY, newCardinality, newCardinality));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<DiscretePort> getPort() {
 		if (port == null) {
 			port = new EObjectWithInverseResolvingEList<DiscretePort>(DiscretePort.class, this, ProtocolPackage.ROLE__PORT, ComponentPackage.DISCRETE_PORT__REFINES);
@@ -480,8 +426,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 				return basicSetIncomingRoleConnector(null, msgs);
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				return basicSetCoordinationProtocol(null, msgs);
-			case ProtocolPackage.ROLE__CARDINALITY:
-				return basicSetCardinality(null, msgs);
 			case ProtocolPackage.ROLE__PORT:
 				return ((InternalEList<?>)getPort()).basicRemove(otherEnd, msgs);
 			case ProtocolPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
@@ -521,8 +465,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 				return basicGetIncomingRoleConnector();
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				return getCoordinationProtocol();
-			case ProtocolPackage.ROLE__CARDINALITY:
-				return getCardinality();
 			case ProtocolPackage.ROLE__PORT:
 				return getPort();
 			case ProtocolPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
@@ -557,9 +499,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((CoordinationProtocol)newValue);
 				return;
-			case ProtocolPackage.ROLE__CARDINALITY:
-				setCardinality((Cardinality)newValue);
-				return;
 			case ProtocolPackage.ROLE__PORT:
 				getPort().clear();
 				getPort().addAll((Collection<? extends DiscretePort>)newValue);
@@ -592,9 +531,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((CoordinationProtocol)null);
 				return;
-			case ProtocolPackage.ROLE__CARDINALITY:
-				setCardinality((Cardinality)null);
-				return;
 			case ProtocolPackage.ROLE__PORT:
 				getPort().clear();
 				return;
@@ -622,8 +558,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 				return incomingRoleConnector != null;
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				return getCoordinationProtocol() != null;
-			case ProtocolPackage.ROLE__CARDINALITY:
-				return cardinality != null;
 			case ProtocolPackage.ROLE__PORT:
 				return port != null && !port.isEmpty();
 			case ProtocolPackage.ROLE__OUTGOING_ROLE_CONNECTOR:

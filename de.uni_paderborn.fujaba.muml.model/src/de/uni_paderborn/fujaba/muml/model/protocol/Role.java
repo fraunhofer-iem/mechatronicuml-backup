@@ -9,7 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.protocol;
 import org.eclipse.emf.common.util.EList;
 
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
@@ -26,7 +26,6 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getIncomingRoleConnector <em>Incoming Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getPort <em>Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getRoleConnector <em>Role Connector</em>}</li>
@@ -95,31 +94,6 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	 * @generated
 	 */
 	void setCoordinationProtocol(CoordinationProtocol value);
-
-	/**
-	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * A role has a cardinality.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Cardinality</em>' containment reference.
-	 * @see #setCardinality(Cardinality)
-	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getRole_Cardinality()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	Cardinality getCardinality();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getCardinality <em>Cardinality</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cardinality</em>' containment reference.
-	 * @see #getCardinality()
-	 * @generated
-	 */
-	void setCardinality(Cardinality value);
 
 	/**
 	 * Returns the value of the '<em><b>Port</b></em>' reference list.

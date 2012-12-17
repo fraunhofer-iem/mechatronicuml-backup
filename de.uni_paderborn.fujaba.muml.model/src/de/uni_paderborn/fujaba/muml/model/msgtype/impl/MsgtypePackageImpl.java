@@ -16,6 +16,8 @@ import org.storydriven.storydiagrams.StorydiagramsPackage;
 import de.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.model.connector.impl.ConnectorPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
@@ -116,6 +118,7 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
 		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
+		ConnectorPackageImpl theConnectorPackage = (ConnectorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) instanceof ConnectorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) : ConnectorPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theMsgtypePackage.createPackageContents();
@@ -127,6 +130,7 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		theRealtimestatechartPackage.createPackageContents();
 		theDeploymentPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
+		theConnectorPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theMsgtypePackage.initializePackageContents();
@@ -138,6 +142,7 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		theRealtimestatechartPackage.initializePackageContents();
 		theDeploymentPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
+		theConnectorPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
