@@ -10,9 +10,9 @@ import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
+import de.uni_paderborn.fujaba.muml.model.core.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Operation;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#isFlat <em>Flat</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#isEmbedded <em>Embedded</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAllAvailableAttributes <em>All Available Attributes</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAllAvailableVariables <em>All Available Variables</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAllAvailableOperations <em>All Available Operations</em>}</li>
  * </ul>
  * </p>
@@ -232,21 +232,21 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	boolean isEmbedded();
 
 	/**
-	 * Returns the value of the '<em><b>All Available Attributes</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Attribute}.
+	 * Returns the value of the '<em><b>All Available Variables</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Variable}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>All Available Attributes</em>' reference list isn't clear,
+	 * If the meaning of the '<em>All Available Variables</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>All Available Attributes</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_AllAvailableAttributes()
+	 * @return the value of the '<em>All Available Variables</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_AllAvailableVariables()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).attributes->asOrderedSet()'"
 	 * @generated
 	 */
-	EList<Attribute> getAllAvailableAttributes();
+	EList<Variable> getAllAvailableVariables();
 
 	/**
 	 * Returns the value of the '<em><b>All Available Operations</b></em>' reference list.

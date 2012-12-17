@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
+import de.uni_paderborn.fujaba.muml.model.core.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Operation;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehaviorImpl#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehaviorImpl#getOperations <em>Operations</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehaviorImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehaviorImpl#getVariables <em>Variables</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,14 +60,14 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 	 */
 	protected EList<Operation> operations;
 	/**
-	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
+	 * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttributes()
+	 * @see #getVariables()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Attribute> attributes;
+	protected EList<Variable> variables;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,11 +165,11 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Attribute> getAttributes() {
-		if (attributes == null) {
-			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, CorePackage.BEHAVIOR__ATTRIBUTES);
+	public EList<Variable> getVariables() {
+		if (variables == null) {
+			variables = new EObjectContainmentEList<Variable>(Variable.class, this, CorePackage.BEHAVIOR__VARIABLES);
 		}
-		return attributes;
+		return variables;
 	}
 
 	/**
@@ -200,8 +200,8 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 				return basicSetBehavioralElement(null, msgs);
 			case CorePackage.BEHAVIOR__OPERATIONS:
 				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
-			case CorePackage.BEHAVIOR__ATTRIBUTES:
-				return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
+			case CorePackage.BEHAVIOR__VARIABLES:
+				return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -219,8 +219,8 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 				return basicGetBehavioralElement();
 			case CorePackage.BEHAVIOR__OPERATIONS:
 				return getOperations();
-			case CorePackage.BEHAVIOR__ATTRIBUTES:
-				return getAttributes();
+			case CorePackage.BEHAVIOR__VARIABLES:
+				return getVariables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -241,9 +241,9 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 				getOperations().clear();
 				getOperations().addAll((Collection<? extends Operation>)newValue);
 				return;
-			case CorePackage.BEHAVIOR__ATTRIBUTES:
-				getAttributes().clear();
-				getAttributes().addAll((Collection<? extends Attribute>)newValue);
+			case CorePackage.BEHAVIOR__VARIABLES:
+				getVariables().clear();
+				getVariables().addAll((Collection<? extends Variable>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -263,8 +263,8 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 			case CorePackage.BEHAVIOR__OPERATIONS:
 				getOperations().clear();
 				return;
-			case CorePackage.BEHAVIOR__ATTRIBUTES:
-				getAttributes().clear();
+			case CorePackage.BEHAVIOR__VARIABLES:
+				getVariables().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -282,8 +282,8 @@ public abstract class BehaviorImpl extends EObjectImpl implements Behavior {
 				return behavioralElement != null;
 			case CorePackage.BEHAVIOR__OPERATIONS:
 				return operations != null && !operations.isEmpty();
-			case CorePackage.BEHAVIOR__ATTRIBUTES:
-				return attributes != null && !attributes.isEmpty();
+			case CorePackage.BEHAVIOR__VARIABLES:
+				return variables != null && !variables.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

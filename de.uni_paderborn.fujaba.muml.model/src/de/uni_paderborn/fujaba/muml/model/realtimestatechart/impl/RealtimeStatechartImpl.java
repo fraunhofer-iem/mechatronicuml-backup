@@ -28,11 +28,11 @@ import org.storydriven.core.impl.NamedElementImpl;
 import de.uni_paderborn.fujaba.common.algorithm.BreadthFirstSearchAlgorithm;
 import de.uni_paderborn.fujaba.common.algorithm.ISearchVisitor;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
+import de.uni_paderborn.fujaba.muml.model.core.Variable;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
@@ -51,7 +51,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getOperations <em>Operations</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getVariables <em>Variables</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getEmbeddingRegion <em>Embedding Region</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getStates <em>States</em>}</li>
@@ -61,7 +61,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#isFlat <em>Flat</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#isEmbedded <em>Embedded</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getAllAvailableAttributes <em>All Available Attributes</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getAllAvailableVariables <em>All Available Variables</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl#getAllAvailableOperations <em>All Available Operations</em>}</li>
  * </ul>
  * </p>
@@ -110,14 +110,14 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	protected EList<Operation> operations;
 
 	/**
-	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
+	 * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttributes()
+	 * @see #getVariables()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Attribute> attributes;
+	protected EList<Variable> variables;
 
 	/**
 	 * The cached value of the '{@link #getTransitions() <em>Transitions</em>}' containment reference list.
@@ -220,14 +220,14 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	protected EStructuralFeature.Internal.SettingDelegate EMBEDDED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REALTIME_STATECHART__EMBEDDED).getSettingDelegate();
 
 	/**
-	 * The cached setting delegate for the '{@link #getAllAvailableAttributes() <em>All Available Attributes</em>}' reference list.
+	 * The cached setting delegate for the '{@link #getAllAvailableVariables() <em>All Available Variables</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAllAvailableAttributes()
+	 * @see #getAllAvailableVariables()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate ALL_AVAILABLE_ATTRIBUTES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate ALL_AVAILABLE_VARIABLES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REALTIME_STATECHART__ALL_AVAILABLE_VARIABLES).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getAllAvailableOperations() <em>All Available Operations</em>}' reference list.
@@ -356,11 +356,11 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Attribute> getAttributes() {
-		if (attributes == null) {
-			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, RealtimestatechartPackage.REALTIME_STATECHART__ATTRIBUTES);
+	public EList<Variable> getVariables() {
+		if (variables == null) {
+			variables = new EObjectContainmentEList<Variable>(Variable.class, this, RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES);
 		}
-		return attributes;
+		return variables;
 	}
 
 	/**
@@ -518,8 +518,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<Attribute> getAllAvailableAttributes() {
-		return (EList<Attribute>)ALL_AVAILABLE_ATTRIBUTES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public EList<Variable> getAllAvailableVariables() {
+		return (EList<Variable>)ALL_AVAILABLE_VARIABLES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -642,8 +642,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return basicSetBehavioralElement(null, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS:
 				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.REALTIME_STATECHART__ATTRIBUTES:
-				return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES:
+				return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION:
 				return basicSetEmbeddingRegion(null, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
@@ -685,8 +685,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return basicGetBehavioralElement();
 			case RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS:
 				return getOperations();
-			case RealtimestatechartPackage.REALTIME_STATECHART__ATTRIBUTES:
-				return getAttributes();
+			case RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES:
+				return getVariables();
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION:
 				return getEmbeddingRegion();
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
@@ -705,8 +705,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return getAvailableClocks();
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDED:
 				return isEmbedded();
-			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES:
-				return getAllAvailableAttributes();
+			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_VARIABLES:
+				return getAllAvailableVariables();
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS:
 				return getAllAvailableOperations();
 		}
@@ -732,9 +732,9 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				getOperations().clear();
 				getOperations().addAll((Collection<? extends Operation>)newValue);
 				return;
-			case RealtimestatechartPackage.REALTIME_STATECHART__ATTRIBUTES:
-				getAttributes().clear();
-				getAttributes().addAll((Collection<? extends Attribute>)newValue);
+			case RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES:
+				getVariables().clear();
+				getVariables().addAll((Collection<? extends Variable>)newValue);
 				return;
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION:
 				setEmbeddingRegion((Region)newValue);
@@ -778,8 +778,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			case RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS:
 				getOperations().clear();
 				return;
-			case RealtimestatechartPackage.REALTIME_STATECHART__ATTRIBUTES:
-				getAttributes().clear();
+			case RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES:
+				getVariables().clear();
 				return;
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION:
 				setEmbeddingRegion((Region)null);
@@ -817,8 +817,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return behavioralElement != null;
 			case RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS:
 				return operations != null && !operations.isEmpty();
-			case RealtimestatechartPackage.REALTIME_STATECHART__ATTRIBUTES:
-				return attributes != null && !attributes.isEmpty();
+			case RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES:
+				return variables != null && !variables.isEmpty();
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION:
 				return getEmbeddingRegion() != null;
 			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
@@ -837,8 +837,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return AVAILABLE_CLOCKS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDED:
 				return EMBEDDED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES:
-				return ALL_AVAILABLE_ATTRIBUTES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_VARIABLES:
+				return ALL_AVAILABLE_VARIABLES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS:
 				return ALL_AVAILABLE_OPERATIONS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
@@ -862,7 +862,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			switch (derivedFeatureID) {
 				case RealtimestatechartPackage.REALTIME_STATECHART__BEHAVIORAL_ELEMENT: return CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT;
 				case RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS: return CorePackage.BEHAVIOR__OPERATIONS;
-				case RealtimestatechartPackage.REALTIME_STATECHART__ATTRIBUTES: return CorePackage.BEHAVIOR__ATTRIBUTES;
+				case RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES: return CorePackage.BEHAVIOR__VARIABLES;
 				default: return -1;
 			}
 		}
@@ -886,7 +886,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			switch (baseFeatureID) {
 				case CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT: return RealtimestatechartPackage.REALTIME_STATECHART__BEHAVIORAL_ELEMENT;
 				case CorePackage.BEHAVIOR__OPERATIONS: return RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS;
-				case CorePackage.BEHAVIOR__ATTRIBUTES: return RealtimestatechartPackage.REALTIME_STATECHART__ATTRIBUTES;
+				case CorePackage.BEHAVIOR__VARIABLES: return RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES;
 				default: return -1;
 			}
 		}

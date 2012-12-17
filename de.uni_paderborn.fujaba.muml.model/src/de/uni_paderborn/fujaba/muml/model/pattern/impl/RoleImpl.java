@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
+
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;

@@ -1079,7 +1079,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRealtimeStatechart_AllAvailableAttributes() {
+	public EReference getRealtimeStatechart_AllAvailableVariables() {
 		return (EReference)realtimeStatechartEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -1350,7 +1350,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEAttribute(realtimeStatechartEClass, REALTIME_STATECHART__FLAT);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__AVAILABLE_CLOCKS);
 		createEAttribute(realtimeStatechartEClass, REALTIME_STATECHART__EMBEDDED);
-		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES);
+		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__ALL_AVAILABLE_VARIABLES);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS);
 
 		eventEClass = createEClass(EVENT);
@@ -1555,7 +1555,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getRealtimeStatechart_Flat(), theEcorePackage.getEBoolean(), "flat", "false", 0, 1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_AvailableClocks(), this.getClock(), null, "availableClocks", null, 0, -1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRealtimeStatechart_Embedded(), ecorePackage.getEBoolean(), "embedded", "false", 0, 1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getRealtimeStatechart_AllAvailableAttributes(), theCorePackage.getAttribute(), null, "allAvailableAttributes", null, 0, -1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getRealtimeStatechart_AllAvailableVariables(), theCorePackage.getVariable(), null, "allAvailableVariables", null, 0, -1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_AllAvailableOperations(), theCorePackage.getOperation(), null, "allAvailableOperations", null, 0, -1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(realtimeStatechartEClass, ecorePackage.getEBoolean(), "isSuperStatechartOf", 1, 1, IS_UNIQUE, IS_ORDERED);
@@ -1757,7 +1757,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "derivation", "not self.embeddingRegion.oclIsUndefined()"
 		   });		
 		addAnnotation
-		  (getRealtimeStatechart_AllAvailableAttributes(), 
+		  (getRealtimeStatechart_AllAvailableVariables(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).attributes->asOrderedSet()"

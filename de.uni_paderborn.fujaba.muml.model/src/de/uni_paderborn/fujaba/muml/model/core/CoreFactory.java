@@ -53,13 +53,13 @@ public interface CoreFactory extends EFactory {
 	ActivityCallExpression createActivityCallExpression();
 
 	/**
-	 * Returns a new object of class '<em>Attribute</em>'.
+	 * Returns a new object of class '<em>Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Attribute</em>'.
+	 * @return a new object of class '<em>Variable</em>'.
 	 * @generated
 	 */
-	Attribute createAttribute();
+	Variable createVariable();
 
 	/**
 	 * Returns a new object of class '<em>Operation</em>'.

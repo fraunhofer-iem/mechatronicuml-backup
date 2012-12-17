@@ -13,25 +13,25 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.impl.NamedElementImpl;
 
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.core.Variable;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Attribute</b></em>'.
+ * An implementation of the model object '<em><b>Variable</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AttributeImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.AttributeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.VariableImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.impl.VariableImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class AttributeImpl extends NamedElementImpl implements Attribute {
+public class VariableImpl extends NamedElementImpl implements Variable {
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -67,7 +67,7 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AttributeImpl() {
+	protected VariableImpl() {
 		super();
 	}
 
@@ -78,7 +78,7 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CorePackage.Literals.ATTRIBUTE;
+		return CorePackage.Literals.VARIABLE;
 	}
 
 	/**
@@ -99,7 +99,7 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 		String oldComment = comment;
 		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ATTRIBUTE__COMMENT, oldComment, comment));
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.VARIABLE__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -113,7 +113,7 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 			type = (DataType)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.ATTRIBUTE__TYPE, oldType, type));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CorePackage.VARIABLE__TYPE, oldType, type));
 			}
 		}
 		return type;
@@ -137,7 +137,7 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 		DataType oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.ATTRIBUTE__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, CorePackage.VARIABLE__TYPE, oldType, type));
 	}
 
 	/**
@@ -148,9 +148,9 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CorePackage.ATTRIBUTE__COMMENT:
+			case CorePackage.VARIABLE__COMMENT:
 				return getComment();
-			case CorePackage.ATTRIBUTE__TYPE:
+			case CorePackage.VARIABLE__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
 		}
@@ -165,10 +165,10 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CorePackage.ATTRIBUTE__COMMENT:
+			case CorePackage.VARIABLE__COMMENT:
 				setComment((String)newValue);
 				return;
-			case CorePackage.ATTRIBUTE__TYPE:
+			case CorePackage.VARIABLE__TYPE:
 				setType((DataType)newValue);
 				return;
 		}
@@ -183,10 +183,10 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CorePackage.ATTRIBUTE__COMMENT:
+			case CorePackage.VARIABLE__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case CorePackage.ATTRIBUTE__TYPE:
+			case CorePackage.VARIABLE__TYPE:
 				setType((DataType)null);
 				return;
 		}
@@ -201,9 +201,9 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CorePackage.ATTRIBUTE__COMMENT:
+			case CorePackage.VARIABLE__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case CorePackage.ATTRIBUTE__TYPE:
+			case CorePackage.VARIABLE__TYPE:
 				return type != null;
 		}
 		return super.eIsSet(featureID);
@@ -218,7 +218,7 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
-				case CorePackage.ATTRIBUTE__COMMENT: return org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+				case CorePackage.VARIABLE__COMMENT: return org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 				default: return -1;
 			}
 		}
@@ -234,7 +234,7 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
-				case org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT: return CorePackage.ATTRIBUTE__COMMENT;
+				case org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT: return CorePackage.VARIABLE__COMMENT;
 				default: return -1;
 			}
 		}
@@ -257,4 +257,4 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 		return result.toString();
 	}
 
-} //AttributeImpl
+} //VariableImpl

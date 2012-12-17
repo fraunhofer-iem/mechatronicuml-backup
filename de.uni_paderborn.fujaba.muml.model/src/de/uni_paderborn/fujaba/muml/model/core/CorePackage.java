@@ -51,7 +51,7 @@ public interface CorePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/core/0.3.6";
+	String eNS_URI = "http://www.fujaba.de/muml/model/core/0.3.7";
 
 	/**
 	 * The package namespace name.
@@ -228,13 +228,13 @@ public interface CorePackage extends EPackage {
 	int BEHAVIOR__OPERATIONS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Variables</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR__ATTRIBUTES = 2;
+	int BEHAVIOR__VARIABLES = 2;
 
 	/**
 	 * The number of structural features of the '<em>Behavior</em>' class.
@@ -319,14 +319,14 @@ public interface CorePackage extends EPackage {
 	int ACTIVITY_CALL_EXPRESSION_FEATURE_COUNT = CallsPackage.INVOCATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.AttributeImpl <em>Attribute</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.VariableImpl <em>Variable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.AttributeImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getAttribute()
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.VariableImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getVariable()
 	 * @generated
 	 */
-	int ATTRIBUTE = 6;
+	int VARIABLE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -335,7 +335,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__ANNOTATION = org.storydriven.core.CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int VARIABLE__ANNOTATION = org.storydriven.core.CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -344,7 +344,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__EXTENSION = org.storydriven.core.CorePackage.NAMED_ELEMENT__EXTENSION;
+	int VARIABLE__EXTENSION = org.storydriven.core.CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -353,7 +353,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__NAME = org.storydriven.core.CorePackage.NAMED_ELEMENT__NAME;
+	int VARIABLE__NAME = org.storydriven.core.CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -362,7 +362,7 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__COMMENT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int VARIABLE__COMMENT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -371,16 +371,16 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__TYPE = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int VARIABLE__TYPE = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Attribute</em>' class.
+	 * The number of structural features of the '<em>Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int VARIABLE_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.OperationImpl <em>Operation</em>}' class.
@@ -787,15 +787,15 @@ public interface CorePackage extends EPackage {
 	EReference getBehavior_Operations();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.core.Behavior#getAttributes <em>Attributes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.core.Behavior#getVariables <em>Variables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.Behavior#getAttributes()
+	 * @return the meta object for the containment reference list '<em>Variables</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.Behavior#getVariables()
 	 * @see #getBehavior()
 	 * @generated
 	 */
-	EReference getBehavior_Attributes();
+	EReference getBehavior_Variables();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression <em>Activity Call Expression</em>}'.
@@ -819,25 +819,25 @@ public interface CorePackage extends EPackage {
 	EReference getActivityCallExpression_Activity();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.Attribute <em>Attribute</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.Variable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Attribute</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.Attribute
+	 * @return the meta object for class '<em>Variable</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.Variable
 	 * @generated
 	 */
-	EClass getAttribute();
+	EClass getVariable();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.core.Attribute#getType <em>Type</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.core.Variable#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.Attribute#getType()
-	 * @see #getAttribute()
+	 * @see de.uni_paderborn.fujaba.muml.model.core.Variable#getType()
+	 * @see #getVariable()
 	 * @generated
 	 */
-	EReference getAttribute_Type();
+	EReference getVariable_Type();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.Operation <em>Operation</em>}'.
@@ -1115,12 +1115,12 @@ public interface CorePackage extends EPackage {
 		EReference BEHAVIOR__OPERATIONS = eINSTANCE.getBehavior_Operations();
 
 		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BEHAVIOR__ATTRIBUTES = eINSTANCE.getBehavior_Attributes();
+		EReference BEHAVIOR__VARIABLES = eINSTANCE.getBehavior_Variables();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.ActivityCallExpressionImpl <em>Activity Call Expression</em>}' class.
@@ -1141,14 +1141,14 @@ public interface CorePackage extends EPackage {
 		EReference ACTIVITY_CALL_EXPRESSION__ACTIVITY = eINSTANCE.getActivityCallExpression_Activity();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.AttributeImpl <em>Attribute</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.VariableImpl <em>Variable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.AttributeImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getAttribute()
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.VariableImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getVariable()
 		 * @generated
 		 */
-		EClass ATTRIBUTE = eINSTANCE.getAttribute();
+		EClass VARIABLE = eINSTANCE.getVariable();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
@@ -1156,7 +1156,7 @@ public interface CorePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE__TYPE = eINSTANCE.getAttribute_Type();
+		EReference VARIABLE__TYPE = eINSTANCE.getVariable_Type();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.OperationImpl <em>Operation</em>}' class.

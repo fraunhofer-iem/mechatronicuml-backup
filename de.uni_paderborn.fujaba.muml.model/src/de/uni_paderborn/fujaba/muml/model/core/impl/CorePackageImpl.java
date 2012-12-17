@@ -27,7 +27,6 @@ import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
@@ -39,6 +38,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
+import de.uni_paderborn.fujaba.muml.model.core.Variable;
 import de.uni_paderborn.fujaba.muml.model.core.util.CoreValidator;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
@@ -107,7 +107,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass attributeEClass = null;
+	private EClass variableEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -366,7 +366,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBehavior_Attributes() {
+	public EReference getBehavior_Variables() {
 		return (EReference)behaviorEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -393,8 +393,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAttribute() {
-		return attributeEClass;
+	public EClass getVariable() {
+		return variableEClass;
 	}
 
 	/**
@@ -402,8 +402,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAttribute_Type() {
-		return (EReference)attributeEClass.getEStructuralFeatures().get(0);
+	public EReference getVariable_Type() {
+		return (EReference)variableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -568,13 +568,13 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		behaviorEClass = createEClass(BEHAVIOR);
 		createEReference(behaviorEClass, BEHAVIOR__BEHAVIORAL_ELEMENT);
 		createEReference(behaviorEClass, BEHAVIOR__OPERATIONS);
-		createEReference(behaviorEClass, BEHAVIOR__ATTRIBUTES);
+		createEReference(behaviorEClass, BEHAVIOR__VARIABLES);
 
 		activityCallExpressionEClass = createEClass(ACTIVITY_CALL_EXPRESSION);
 		createEReference(activityCallExpressionEClass, ACTIVITY_CALL_EXPRESSION__ACTIVITY);
 
-		attributeEClass = createEClass(ATTRIBUTE);
-		createEReference(attributeEClass, ATTRIBUTE__TYPE);
+		variableEClass = createEClass(VARIABLE);
+		createEReference(variableEClass, VARIABLE__TYPE);
 
 		operationEClass = createEClass(OPERATION);
 		createEReference(operationEClass, OPERATION__RETURN_TYPE);
@@ -634,8 +634,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Add supertypes to classes
 		activityCallExpressionEClass.getESuperTypes().add(theCallsPackage.getInvocation());
 		activityCallExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
-		attributeEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		attributeEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
+		variableEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		variableEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		operationEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		operationEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		parameterEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
@@ -671,13 +671,13 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEClass(behaviorEClass, Behavior.class, "Behavior", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehavior_BehavioralElement(), this.getBehavioralElement(), this.getBehavioralElement_Behavior(), "behavioralElement", null, 0, 1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBehavior_Operations(), this.getOperation(), null, "operations", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBehavior_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBehavior_Variables(), this.getVariable(), null, "variables", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(activityCallExpressionEClass, ActivityCallExpression.class, "ActivityCallExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActivityCallExpression_Activity(), theActivitiesPackage.getActivity(), null, "activity", null, 1, 1, ActivityCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAttribute_Type(), theTypesPackage.getDataType(), null, "type", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVariable_Type(), theTypesPackage.getDataType(), null, "type", null, 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperation_ReturnType(), theTypesPackage.getDataType(), null, "returnType", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

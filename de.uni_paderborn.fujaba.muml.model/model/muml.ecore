@@ -658,7 +658,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="core" nsURI="http://www.fujaba.de/muml/model/core/0.3.6" nsPrefix="core">
+    <eSubpackages name="core" nsURI="http://www.fujaba.de/muml/model/core/0.3.7" nsPrefix="core">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This package contains several core classes that are used by classes from several other packages.&#xD;&#xA;It provides abstract base classes for Statecharts, meta-model elements that use a statechart to&#xD;&#xA;define their behavior and meta-model elements that may carry a constraint.&#xD;&#xA;Additionally, the package provides classes for modeling cardinalites as natural numbers including&#xD;&#xA;infinity."/>
       </eAnnotations>
@@ -770,8 +770,8 @@
             <details key="documentation" value="A behavior may define a set of Operations as signatures of helper functions. These operations&#xD;&#xA;may be called by the behavior specification and may access the attributes of&#xD;&#xA;the behavior specification. The Operations are contained in the behavior."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-            eType="#//model/core/Attribute" containment="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
+            eType="#//model/core/Variable" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="A behavior may define a set of Attributes in order to store data. The attributes&#xD;&#xA;may be used by the operations of the behavior and the behavior specification itself.&#xD;&#xA;The attributes are contained in the behavior."/>
           </eAnnotations>
@@ -788,7 +788,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Implementation of an Attribute of a behavior which has a certain type."/>
         </eAnnotations>
@@ -1917,8 +1917,8 @@
             <details key="derivation" value="not self.embeddingRegion.oclIsUndefined()"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="allAvailableAttributes"
-            upperBound="-1" eType="#//model/core/Attribute" changeable="false" volatile="true"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="allAvailableVariables"
+            upperBound="-1" eType="#//model/core/Variable" changeable="false" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).attributes->asOrderedSet()"/>

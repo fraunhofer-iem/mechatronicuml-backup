@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.util;
 
-import de.uni_paderborn.fujaba.muml.model.component.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;

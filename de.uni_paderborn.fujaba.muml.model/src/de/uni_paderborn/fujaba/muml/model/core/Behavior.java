@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.Behavior#getBehavioralElement <em>Behavioral Element</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.Behavior#getOperations <em>Operations</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.Behavior#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.core.Behavior#getVariables <em>Variables</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,8 +78,8 @@ public interface Behavior extends EObject {
 	EList<Operation> getOperations();
 
 	/**
-	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Attribute}.
+	 * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Variable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -87,11 +87,11 @@ public interface Behavior extends EObject {
 	 * may be used by the operations of the behavior and the behavior specification itself.
 	 * The attributes are contained in the behavior.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Attributes</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getBehavior_Attributes()
+	 * @return the value of the '<em>Variables</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.core.CorePackage#getBehavior_Variables()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Attribute> getAttributes();
+	EList<Variable> getVariables();
 
 } // Behavior

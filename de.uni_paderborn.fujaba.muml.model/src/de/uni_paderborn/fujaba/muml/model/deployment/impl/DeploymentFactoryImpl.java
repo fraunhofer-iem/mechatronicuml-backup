@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.impl;
 
-import de.uni_paderborn.fujaba.muml.model.deployment.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;

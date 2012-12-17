@@ -1307,13 +1307,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REALTIME_STATECHART__OPERATIONS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Variables</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__ATTRIBUTES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int REALTIME_STATECHART__VARIABLES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Embedding Region</b></em>' container reference.
@@ -1397,13 +1397,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REALTIME_STATECHART__EMBEDDED = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
-	 * The feature id for the '<em><b>All Available Attributes</b></em>' reference list.
+	 * The feature id for the '<em><b>All Available Variables</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+	int REALTIME_STATECHART__ALL_AVAILABLE_VARIABLES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>All Available Operations</b></em>' reference list.
@@ -2589,15 +2589,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getRealtimeStatechart_Embedded();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAllAvailableAttributes <em>All Available Attributes</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAllAvailableVariables <em>All Available Variables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>All Available Attributes</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAllAvailableAttributes()
+	 * @return the meta object for the reference list '<em>All Available Variables</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAllAvailableVariables()
 	 * @see #getRealtimeStatechart()
 	 * @generated
 	 */
-	EReference getRealtimeStatechart_AllAvailableAttributes();
+	EReference getRealtimeStatechart_AllAvailableVariables();
 
 	/**
 	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getAllAvailableOperations <em>All Available Operations</em>}'.
@@ -3454,12 +3454,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute REALTIME_STATECHART__EMBEDDED = eINSTANCE.getRealtimeStatechart_Embedded();
 
 		/**
-		 * The meta object literal for the '<em><b>All Available Attributes</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>All Available Variables</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REALTIME_STATECHART__ALL_AVAILABLE_ATTRIBUTES = eINSTANCE.getRealtimeStatechart_AllAvailableAttributes();
+		EReference REALTIME_STATECHART__ALL_AVAILABLE_VARIABLES = eINSTANCE.getRealtimeStatechart_AllAvailableVariables();
 
 		/**
 		 * The meta object literal for the '<em><b>All Available Operations</b></em>' reference list feature.

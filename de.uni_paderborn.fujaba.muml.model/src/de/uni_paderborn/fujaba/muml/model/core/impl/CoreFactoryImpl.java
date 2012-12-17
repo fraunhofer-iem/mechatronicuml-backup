@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.impl;
 
-import de.uni_paderborn.fujaba.muml.model.core.*;
 import java.util.concurrent.TimeUnit;
 
 import org.eclipse.emf.ecore.EClass;
@@ -17,7 +16,6 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
@@ -26,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
+import de.uni_paderborn.fujaba.muml.model.core.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +41,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	 */
 	public static CoreFactory init() {
 		try {
-			CoreFactory theCoreFactory = (CoreFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/core/0.3.6"); 
+			CoreFactory theCoreFactory = (CoreFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/core/0.3.7"); 
 			if (theCoreFactory != null) {
 				return theCoreFactory;
 			}
@@ -74,7 +73,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 			case CorePackage.NATURAL_NUMBER: return createNaturalNumber();
 			case CorePackage.CARDINALITY: return createCardinality();
 			case CorePackage.ACTIVITY_CALL_EXPRESSION: return createActivityCallExpression();
-			case CorePackage.ATTRIBUTE: return createAttribute();
+			case CorePackage.VARIABLE: return createVariable();
 			case CorePackage.OPERATION: return createOperation();
 			case CorePackage.PARAMETER: return createParameter();
 			case CorePackage.PARAMETER_BINDING: return createParameterBinding();
@@ -149,9 +148,9 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute createAttribute() {
-		AttributeImpl attribute = new AttributeImpl();
-		return attribute;
+	public Variable createVariable() {
+		VariableImpl variable = new VariableImpl();
+		return variable;
 	}
 
 	/**

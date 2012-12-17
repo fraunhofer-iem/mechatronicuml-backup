@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
-import de.uni_paderborn.fujaba.muml.model.core.*;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -17,7 +16,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
@@ -28,6 +26,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
+import de.uni_paderborn.fujaba.muml.model.core.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -113,8 +112,8 @@ public class CoreValidator extends EObjectValidator {
 				return validateBehavior((Behavior)value, diagnostics, context);
 			case CorePackage.ACTIVITY_CALL_EXPRESSION:
 				return validateActivityCallExpression((ActivityCallExpression)value, diagnostics, context);
-			case CorePackage.ATTRIBUTE:
-				return validateAttribute((Attribute)value, diagnostics, context);
+			case CorePackage.VARIABLE:
+				return validateVariable((Variable)value, diagnostics, context);
 			case CorePackage.OPERATION:
 				return validateOperation((Operation)value, diagnostics, context);
 			case CorePackage.PARAMETER:
@@ -268,8 +267,8 @@ public class CoreValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAttribute(Attribute attribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(attribute, diagnostics, context);
+	public boolean validateVariable(Variable variable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(variable, diagnostics, context);
 	}
 
 	/**

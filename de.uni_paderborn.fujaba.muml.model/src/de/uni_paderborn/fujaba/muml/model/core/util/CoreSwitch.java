@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
-import de.uni_paderborn.fujaba.muml.model.core.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -17,7 +16,6 @@ import org.storydriven.core.expressions.Expression;
 import org.storydriven.storydiagrams.calls.Invocation;
 
 import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
@@ -28,6 +26,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
+import de.uni_paderborn.fujaba.muml.model.core.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -126,12 +125,12 @@ public class CoreSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CorePackage.ATTRIBUTE: {
-				Attribute attribute = (Attribute)theEObject;
-				T result = caseAttribute(attribute);
-				if (result == null) result = caseNamedElement(attribute);
-				if (result == null) result = caseCommentableElement(attribute);
-				if (result == null) result = caseExtendableElement(attribute);
+			case CorePackage.VARIABLE: {
+				Variable variable = (Variable)theEObject;
+				T result = caseVariable(variable);
+				if (result == null) result = caseNamedElement(variable);
+				if (result == null) result = caseCommentableElement(variable);
+				if (result == null) result = caseExtendableElement(variable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -262,17 +261,17 @@ public class CoreSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAttribute(Attribute object) {
+	public T caseVariable(Variable object) {
 		return null;
 	}
 

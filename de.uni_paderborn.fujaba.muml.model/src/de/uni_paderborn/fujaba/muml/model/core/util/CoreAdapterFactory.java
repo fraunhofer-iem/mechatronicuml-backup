@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
-import de.uni_paderborn.fujaba.muml.model.core.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -18,7 +17,6 @@ import org.storydriven.core.expressions.Expression;
 import org.storydriven.storydiagrams.calls.Invocation;
 
 import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
@@ -29,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
+import de.uni_paderborn.fujaba.muml.model.core.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -111,8 +110,8 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 				return createActivityCallExpressionAdapter();
 			}
 			@Override
-			public Adapter caseAttribute(Attribute object) {
-				return createAttributeAdapter();
+			public Adapter caseVariable(Variable object) {
+				return createVariableAdapter();
 			}
 			@Override
 			public Adapter caseOperation(Operation object) {
@@ -255,16 +254,16 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.Attribute <em>Attribute</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.Variable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.Attribute
+	 * @see de.uni_paderborn.fujaba.muml.model.core.Variable
 	 * @generated
 	 */
-	public Adapter createAttributeAdapter() {
+	public Adapter createVariableAdapter() {
 		return null;
 	}
 
