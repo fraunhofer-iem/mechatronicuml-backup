@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.protocol.impl;
 
+import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -41,7 +42,7 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	 * @generated
 	 * @ordered
 	 */
-	protected NaturalNumber minMessageDelay;
+	protected TimeValue minMessageDelay;
 
 	/**
 	 * The cached value of the '{@link #getMaxMessageDelay() <em>Max Message Delay</em>}' containment reference.
@@ -51,7 +52,7 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	 * @generated
 	 * @ordered
 	 */
-	protected NaturalNumber maxMessageDelay;
+	protected TimeValue maxMessageDelay;
 
 	/**
 	 * The default value of the '{@link #isMessageLossPossible() <em>Message Loss Possible</em>}' attribute.
@@ -97,7 +98,7 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NaturalNumber getMinMessageDelay() {
+	public TimeValue getMinMessageDelay() {
 		return minMessageDelay;
 	}
 
@@ -106,8 +107,8 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMinMessageDelay(NaturalNumber newMinMessageDelay, NotificationChain msgs) {
-		NaturalNumber oldMinMessageDelay = minMessageDelay;
+	public NotificationChain basicSetMinMessageDelay(TimeValue newMinMessageDelay, NotificationChain msgs) {
+		TimeValue oldMinMessageDelay = minMessageDelay;
 		minMessageDelay = newMinMessageDelay;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY, oldMinMessageDelay, newMinMessageDelay);
@@ -121,7 +122,7 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMinMessageDelay(NaturalNumber newMinMessageDelay) {
+	public void setMinMessageDelay(TimeValue newMinMessageDelay) {
 		if (newMinMessageDelay != minMessageDelay) {
 			NotificationChain msgs = null;
 			if (minMessageDelay != null)
@@ -140,7 +141,7 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NaturalNumber getMaxMessageDelay() {
+	public TimeValue getMaxMessageDelay() {
 		return maxMessageDelay;
 	}
 
@@ -149,8 +150,8 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMaxMessageDelay(NaturalNumber newMaxMessageDelay, NotificationChain msgs) {
-		NaturalNumber oldMaxMessageDelay = maxMessageDelay;
+	public NotificationChain basicSetMaxMessageDelay(TimeValue newMaxMessageDelay, NotificationChain msgs) {
+		TimeValue oldMaxMessageDelay = maxMessageDelay;
 		maxMessageDelay = newMaxMessageDelay;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY, oldMaxMessageDelay, newMaxMessageDelay);
@@ -164,7 +165,7 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMaxMessageDelay(NaturalNumber newMaxMessageDelay) {
+	public void setMaxMessageDelay(TimeValue newMaxMessageDelay) {
 		if (newMaxMessageDelay != maxMessageDelay) {
 			NotificationChain msgs = null;
 			if (maxMessageDelay != null)
@@ -242,10 +243,10 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY:
-				setMinMessageDelay((NaturalNumber)newValue);
+				setMinMessageDelay((TimeValue)newValue);
 				return;
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY:
-				setMaxMessageDelay((NaturalNumber)newValue);
+				setMaxMessageDelay((TimeValue)newValue);
 				return;
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE:
 				setMessageLossPossible((Boolean)newValue);
@@ -263,10 +264,10 @@ public class ConnectorQualityOfServiceAssumptionsImpl extends CommentableElement
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY:
-				setMinMessageDelay((NaturalNumber)null);
+				setMinMessageDelay((TimeValue)null);
 				return;
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY:
-				setMaxMessageDelay((NaturalNumber)null);
+				setMaxMessageDelay((TimeValue)null);
 				return;
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE:
 				setMessageLossPossible(MESSAGE_LOSS_POSSIBLE_EDEFAULT);

@@ -62,13 +62,13 @@ public interface DeploymentFactory extends EFactory {
 	CommunicationLink createCommunicationLink();
 
 	/**
-	 * Returns a new object of class '<em>Quality Of Link Service</em>'.
+	 * Returns a new object of class '<em>Link Quality Of Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Quality Of Link Service</em>'.
+	 * @return a new object of class '<em>Link Quality Of Service</em>'.
 	 * @generated
 	 */
-	QualityOfLinkService createQualityOfLinkService();
+	LinkQualityOfService createLinkQualityOfService();
 
 	/**
 	 * Returns the package supported by this factory.

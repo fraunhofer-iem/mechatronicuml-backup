@@ -6,38 +6,44 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.NamedElement;
-import org.storydriven.core.impl.CommentableElementImpl;
+import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
-import de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService;
+import de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.NamedElement;
+
+import org.storydriven.core.impl.CommentableElementImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Quality Of Link Service</b></em>'.
+ * An implementation of the model object '<em><b>Link Quality Of Service</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl#getName <em>Name</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl#getPacketDelayVariation <em>Packet Delay Variation</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl#getLatency <em>Latency</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl#getDeployment <em>Deployment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.LinkQualityOfServiceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.LinkQualityOfServiceImpl#getPacketDelayVariation <em>Packet Delay Variation</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.LinkQualityOfServiceImpl#getLatency <em>Latency</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.LinkQualityOfServiceImpl#getDeployment <em>Deployment</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class QualityOfLinkServiceImpl extends CommentableElementImpl implements QualityOfLinkService {
+public class LinkQualityOfServiceImpl extends CommentableElementImpl implements LinkQualityOfService {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,7 +72,7 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected NaturalNumber packetDelayVariation;
+	protected TimeValue packetDelayVariation;
 
 	/**
 	 * The cached value of the '{@link #getLatency() <em>Latency</em>}' containment reference.
@@ -76,14 +82,14 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	 * @generated
 	 * @ordered
 	 */
-	protected NaturalNumber latency;
+	protected TimeValue latency;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected QualityOfLinkServiceImpl() {
+	protected LinkQualityOfServiceImpl() {
 		super();
 	}
 
@@ -94,7 +100,7 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DeploymentPackage.Literals.QUALITY_OF_LINK_SERVICE;
+		return DeploymentPackage.Literals.LINK_QUALITY_OF_SERVICE;
 	}
 
 	/**
@@ -115,7 +121,7 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.QUALITY_OF_LINK_SERVICE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.LINK_QUALITY_OF_SERVICE__NAME, oldName, name));
 	}
 
 	/**
@@ -123,7 +129,7 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NaturalNumber getPacketDelayVariation() {
+	public TimeValue getPacketDelayVariation() {
 		return packetDelayVariation;
 	}
 
@@ -132,11 +138,11 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPacketDelayVariation(NaturalNumber newPacketDelayVariation, NotificationChain msgs) {
-		NaturalNumber oldPacketDelayVariation = packetDelayVariation;
+	public NotificationChain basicSetPacketDelayVariation(TimeValue newPacketDelayVariation, NotificationChain msgs) {
+		TimeValue oldPacketDelayVariation = packetDelayVariation;
 		packetDelayVariation = newPacketDelayVariation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeploymentPackage.QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION, oldPacketDelayVariation, newPacketDelayVariation);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeploymentPackage.LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION, oldPacketDelayVariation, newPacketDelayVariation);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -147,18 +153,18 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPacketDelayVariation(NaturalNumber newPacketDelayVariation) {
+	public void setPacketDelayVariation(TimeValue newPacketDelayVariation) {
 		if (newPacketDelayVariation != packetDelayVariation) {
 			NotificationChain msgs = null;
 			if (packetDelayVariation != null)
-				msgs = ((InternalEObject)packetDelayVariation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeploymentPackage.QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION, null, msgs);
+				msgs = ((InternalEObject)packetDelayVariation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeploymentPackage.LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION, null, msgs);
 			if (newPacketDelayVariation != null)
-				msgs = ((InternalEObject)newPacketDelayVariation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeploymentPackage.QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION, null, msgs);
+				msgs = ((InternalEObject)newPacketDelayVariation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeploymentPackage.LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION, null, msgs);
 			msgs = basicSetPacketDelayVariation(newPacketDelayVariation, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION, newPacketDelayVariation, newPacketDelayVariation));
+			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION, newPacketDelayVariation, newPacketDelayVariation));
 	}
 
 	/**
@@ -166,7 +172,7 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NaturalNumber getLatency() {
+	public TimeValue getLatency() {
 		return latency;
 	}
 
@@ -175,11 +181,11 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLatency(NaturalNumber newLatency, NotificationChain msgs) {
-		NaturalNumber oldLatency = latency;
+	public NotificationChain basicSetLatency(TimeValue newLatency, NotificationChain msgs) {
+		TimeValue oldLatency = latency;
 		latency = newLatency;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeploymentPackage.QUALITY_OF_LINK_SERVICE__LATENCY, oldLatency, newLatency);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeploymentPackage.LINK_QUALITY_OF_SERVICE__LATENCY, oldLatency, newLatency);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -190,18 +196,18 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLatency(NaturalNumber newLatency) {
+	public void setLatency(TimeValue newLatency) {
 		if (newLatency != latency) {
 			NotificationChain msgs = null;
 			if (latency != null)
-				msgs = ((InternalEObject)latency).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeploymentPackage.QUALITY_OF_LINK_SERVICE__LATENCY, null, msgs);
+				msgs = ((InternalEObject)latency).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeploymentPackage.LINK_QUALITY_OF_SERVICE__LATENCY, null, msgs);
 			if (newLatency != null)
-				msgs = ((InternalEObject)newLatency).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeploymentPackage.QUALITY_OF_LINK_SERVICE__LATENCY, null, msgs);
+				msgs = ((InternalEObject)newLatency).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DeploymentPackage.LINK_QUALITY_OF_SERVICE__LATENCY, null, msgs);
 			msgs = basicSetLatency(newLatency, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.QUALITY_OF_LINK_SERVICE__LATENCY, newLatency, newLatency));
+			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.LINK_QUALITY_OF_SERVICE__LATENCY, newLatency, newLatency));
 	}
 
 	/**
@@ -210,7 +216,7 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	 * @generated
 	 */
 	public Deployment getDeployment() {
-		if (eContainerFeatureID() != DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT) return null;
+		if (eContainerFeatureID() != DeploymentPackage.LINK_QUALITY_OF_SERVICE__DEPLOYMENT) return null;
 		return (Deployment)eContainer();
 	}
 
@@ -220,7 +226,7 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	 * @generated
 	 */
 	public NotificationChain basicSetDeployment(Deployment newDeployment, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newDeployment, DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newDeployment, DeploymentPackage.LINK_QUALITY_OF_SERVICE__DEPLOYMENT, msgs);
 		return msgs;
 	}
 
@@ -230,7 +236,7 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	 * @generated
 	 */
 	public void setDeployment(Deployment newDeployment) {
-		if (newDeployment != eInternalContainer() || (eContainerFeatureID() != DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT && newDeployment != null)) {
+		if (newDeployment != eInternalContainer() || (eContainerFeatureID() != DeploymentPackage.LINK_QUALITY_OF_SERVICE__DEPLOYMENT && newDeployment != null)) {
 			if (EcoreUtil.isAncestor(this, newDeployment))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -242,7 +248,7 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT, newDeployment, newDeployment));
+			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.LINK_QUALITY_OF_SERVICE__DEPLOYMENT, newDeployment, newDeployment));
 	}
 
 	/**
@@ -253,7 +259,7 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__DEPLOYMENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetDeployment((Deployment)otherEnd, msgs);
@@ -269,11 +275,11 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION:
 				return basicSetPacketDelayVariation(null, msgs);
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__LATENCY:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__LATENCY:
 				return basicSetLatency(null, msgs);
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__DEPLOYMENT:
 				return basicSetDeployment(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -287,7 +293,7 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__DEPLOYMENT:
 				return eInternalContainer().eInverseRemove(this, DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES, Deployment.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -301,13 +307,13 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__NAME:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__NAME:
 				return getName();
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION:
 				return getPacketDelayVariation();
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__LATENCY:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__LATENCY:
 				return getLatency();
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__DEPLOYMENT:
 				return getDeployment();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -321,16 +327,16 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__NAME:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__NAME:
 				setName((String)newValue);
 				return;
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION:
-				setPacketDelayVariation((NaturalNumber)newValue);
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION:
+				setPacketDelayVariation((TimeValue)newValue);
 				return;
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__LATENCY:
-				setLatency((NaturalNumber)newValue);
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__LATENCY:
+				setLatency((TimeValue)newValue);
 				return;
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__DEPLOYMENT:
 				setDeployment((Deployment)newValue);
 				return;
 		}
@@ -345,16 +351,16 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__NAME:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION:
-				setPacketDelayVariation((NaturalNumber)null);
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION:
+				setPacketDelayVariation((TimeValue)null);
 				return;
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__LATENCY:
-				setLatency((NaturalNumber)null);
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__LATENCY:
+				setLatency((TimeValue)null);
 				return;
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__DEPLOYMENT:
 				setDeployment((Deployment)null);
 				return;
 		}
@@ -369,13 +375,13 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__NAME:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION:
 				return packetDelayVariation != null;
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__LATENCY:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__LATENCY:
 				return latency != null;
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT:
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE__DEPLOYMENT:
 				return getDeployment() != null;
 		}
 		return super.eIsSet(featureID);
@@ -390,7 +396,7 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == NamedElement.class) {
 			switch (derivedFeatureID) {
-				case DeploymentPackage.QUALITY_OF_LINK_SERVICE__NAME: return CorePackage.NAMED_ELEMENT__NAME;
+				case DeploymentPackage.LINK_QUALITY_OF_SERVICE__NAME: return CorePackage.NAMED_ELEMENT__NAME;
 				default: return -1;
 			}
 		}
@@ -406,7 +412,7 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == NamedElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.NAMED_ELEMENT__NAME: return DeploymentPackage.QUALITY_OF_LINK_SERVICE__NAME;
+				case CorePackage.NAMED_ELEMENT__NAME: return DeploymentPackage.LINK_QUALITY_OF_SERVICE__NAME;
 				default: return -1;
 			}
 		}
@@ -429,4 +435,4 @@ public class QualityOfLinkServiceImpl extends CommentableElementImpl implements 
 		return result.toString();
 	}
 
-} //QualityOfLinkServiceImpl
+} //LinkQualityOfServiceImpl

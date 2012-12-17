@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.util;
 
+import de.uni_paderborn.fujaba.muml.model.deployment.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -111,12 +112,12 @@ public class DeploymentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE: {
-				QualityOfLinkService qualityOfLinkService = (QualityOfLinkService)theEObject;
-				T result = caseQualityOfLinkService(qualityOfLinkService);
-				if (result == null) result = caseCommentableElement(qualityOfLinkService);
-				if (result == null) result = caseNamedElement(qualityOfLinkService);
-				if (result == null) result = caseExtendableElement(qualityOfLinkService);
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE: {
+				LinkQualityOfService linkQualityOfService = (LinkQualityOfService)theEObject;
+				T result = caseLinkQualityOfService(linkQualityOfService);
+				if (result == null) result = caseCommentableElement(linkQualityOfService);
+				if (result == null) result = caseNamedElement(linkQualityOfService);
+				if (result == null) result = caseExtendableElement(linkQualityOfService);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -185,17 +186,17 @@ public class DeploymentSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Quality Of Link Service</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Link Quality Of Service</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Quality Of Link Service</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Link Quality Of Service</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseQualityOfLinkService(QualityOfLinkService object) {
+	public T caseLinkQualityOfService(LinkQualityOfService object) {
 		return null;
 	}
 

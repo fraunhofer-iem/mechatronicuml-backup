@@ -24,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink;
 import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode;
+import de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService;
 import de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 
@@ -103,7 +104,7 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 	 * @generated
 	 * @ordered
 	 */
-	protected QualityOfLinkService qualityOfLinkServices;
+	protected LinkQualityOfService qualityOfLinkServices;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +213,7 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public QualityOfLinkService getQualityOfLinkServices() {
+	public LinkQualityOfService getQualityOfLinkServices() {
 		return qualityOfLinkServices;
 	}
 
@@ -221,8 +222,8 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetQualityOfLinkServices(QualityOfLinkService newQualityOfLinkServices, NotificationChain msgs) {
-		QualityOfLinkService oldQualityOfLinkServices = qualityOfLinkServices;
+	public NotificationChain basicSetQualityOfLinkServices(LinkQualityOfService newQualityOfLinkServices, NotificationChain msgs) {
+		LinkQualityOfService oldQualityOfLinkServices = qualityOfLinkServices;
 		qualityOfLinkServices = newQualityOfLinkServices;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES, oldQualityOfLinkServices, newQualityOfLinkServices);
@@ -236,13 +237,13 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setQualityOfLinkServices(QualityOfLinkService newQualityOfLinkServices) {
+	public void setQualityOfLinkServices(LinkQualityOfService newQualityOfLinkServices) {
 		if (newQualityOfLinkServices != qualityOfLinkServices) {
 			NotificationChain msgs = null;
 			if (qualityOfLinkServices != null)
-				msgs = ((InternalEObject)qualityOfLinkServices).eInverseRemove(this, DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT, QualityOfLinkService.class, msgs);
+				msgs = ((InternalEObject)qualityOfLinkServices).eInverseRemove(this, DeploymentPackage.LINK_QUALITY_OF_SERVICE__DEPLOYMENT, LinkQualityOfService.class, msgs);
 			if (newQualityOfLinkServices != null)
-				msgs = ((InternalEObject)newQualityOfLinkServices).eInverseAdd(this, DeploymentPackage.QUALITY_OF_LINK_SERVICE__DEPLOYMENT, QualityOfLinkService.class, msgs);
+				msgs = ((InternalEObject)newQualityOfLinkServices).eInverseAdd(this, DeploymentPackage.LINK_QUALITY_OF_SERVICE__DEPLOYMENT, LinkQualityOfService.class, msgs);
 			msgs = basicSetQualityOfLinkServices(newQualityOfLinkServices, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -266,7 +267,7 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 			case DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES:
 				if (qualityOfLinkServices != null)
 					msgs = ((InternalEObject)qualityOfLinkServices).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES, null, msgs);
-				return basicSetQualityOfLinkServices((QualityOfLinkService)otherEnd, msgs);
+				return basicSetQualityOfLinkServices((LinkQualityOfService)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -336,7 +337,7 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 				setComponentInstanceConfiguration((ComponentInstanceConfiguration)newValue);
 				return;
 			case DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES:
-				setQualityOfLinkServices((QualityOfLinkService)newValue);
+				setQualityOfLinkServices((LinkQualityOfService)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -363,7 +364,7 @@ public class DeploymentImpl extends NamedElementImpl implements Deployment {
 				setComponentInstanceConfiguration((ComponentInstanceConfiguration)null);
 				return;
 			case DeploymentPackage.DEPLOYMENT__QUALITY_OF_LINK_SERVICES:
-				setQualityOfLinkServices((QualityOfLinkService)null);
+				setQualityOfLinkServices((LinkQualityOfService)null);
 				return;
 		}
 		super.eUnset(featureID);

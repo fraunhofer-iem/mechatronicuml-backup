@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.protocol;
 
+import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 import org.storydriven.core.CommentableElement;
 
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
@@ -41,12 +42,12 @@ public interface ConnectorQualityOfServiceAssumptions extends CommentableElement
 	 * The minimal time a message needs from the sender to the receiver using this connector.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Min Message Delay</em>' containment reference.
-	 * @see #setMinMessageDelay(NaturalNumber)
+	 * @see #setMinMessageDelay(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getConnectorQualityOfServiceAssumptions_MinMessageDelay()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	NaturalNumber getMinMessageDelay();
+	TimeValue getMinMessageDelay();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions#getMinMessageDelay <em>Min Message Delay</em>}' containment reference.
@@ -56,7 +57,7 @@ public interface ConnectorQualityOfServiceAssumptions extends CommentableElement
 	 * @see #getMinMessageDelay()
 	 * @generated
 	 */
-	void setMinMessageDelay(NaturalNumber value);
+	void setMinMessageDelay(TimeValue value);
 
 	/**
 	 * Returns the value of the '<em><b>Max Message Delay</b></em>' containment reference.
@@ -66,12 +67,12 @@ public interface ConnectorQualityOfServiceAssumptions extends CommentableElement
 	 * The maximal time a message needs from the sender to the receiver using this connector.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Max Message Delay</em>' containment reference.
-	 * @see #setMaxMessageDelay(NaturalNumber)
+	 * @see #setMaxMessageDelay(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getConnectorQualityOfServiceAssumptions_MaxMessageDelay()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	NaturalNumber getMaxMessageDelay();
+	TimeValue getMaxMessageDelay();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions#getMaxMessageDelay <em>Max Message Delay</em>}' containment reference.
@@ -81,7 +82,7 @@ public interface ConnectorQualityOfServiceAssumptions extends CommentableElement
 	 * @see #getMaxMessageDelay()
 	 * @generated
 	 */
-	void setMaxMessageDelay(NaturalNumber value);
+	void setMaxMessageDelay(TimeValue value);
 
 	/**
 	 * Returns the value of the '<em><b>Message Loss Possible</b></em>' attribute.

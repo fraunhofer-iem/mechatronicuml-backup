@@ -141,12 +141,12 @@ public interface CommunicationLink extends ExtendableElement {
 	 * The quality of service which the link fullfills. 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Quality Of Service</em>' reference.
-	 * @see #setQualityOfService(QualityOfLinkService)
+	 * @see #setQualityOfService(LinkQualityOfService)
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getCommunicationLink_QualityOfService()
 	 * @model
 	 * @generated
 	 */
-	QualityOfLinkService getQualityOfService();
+	LinkQualityOfService getQualityOfService();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getQualityOfService <em>Quality Of Service</em>}' reference.
@@ -156,7 +156,7 @@ public interface CommunicationLink extends ExtendableElement {
 	 * @see #getQualityOfService()
 	 * @generated
 	 */
-	void setQualityOfService(QualityOfLinkService value);
+	void setQualityOfService(LinkQualityOfService value);
 
 	/**
 	 * Returns the value of the '<em><b>Deployed Assembly Instances</b></em>' reference list.

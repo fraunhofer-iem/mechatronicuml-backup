@@ -493,10 +493,10 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/deployment/CommunicationLink/deployedAssemblyInstances"/>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/deployment/QualityOfLinkService">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/deployment/QualityOfLinkService/packetDelayVariation"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/deployment/QualityOfLinkService/latency"/>
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/deployment/QualityOfLinkService/deployment"/>
+        <genClasses ecoreClass="muml.ecore#//model/deployment/LinkQualityOfService">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/deployment/LinkQualityOfService/packetDelayVariation"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/deployment/LinkQualityOfService/latency"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/deployment/LinkQualityOfService/deployment"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Types" basePackage="de.uni_paderborn.fujaba.muml.model"

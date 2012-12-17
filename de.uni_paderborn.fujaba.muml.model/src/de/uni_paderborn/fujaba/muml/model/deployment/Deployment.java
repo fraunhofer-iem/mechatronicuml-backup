@@ -109,7 +109,7 @@ public interface Deployment extends NamedElement, CommentableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Quality Of Link Services</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeployment <em>Deployment</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService#getDeployment <em>Deployment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Quality Of Link Services</em>' containment reference isn't clear,
@@ -120,13 +120,13 @@ public interface Deployment extends NamedElement, CommentableElement {
 	 * Reference to all contained quality of services.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Quality Of Link Services</em>' containment reference.
-	 * @see #setQualityOfLinkServices(QualityOfLinkService)
+	 * @see #setQualityOfLinkServices(LinkQualityOfService)
 	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getDeployment_QualityOfLinkServices()
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeployment
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService#getDeployment
 	 * @model opposite="deployment" containment="true"
 	 * @generated
 	 */
-	QualityOfLinkService getQualityOfLinkServices();
+	LinkQualityOfService getQualityOfLinkServices();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.deployment.Deployment#getQualityOfLinkServices <em>Quality Of Link Services</em>}' containment reference.
@@ -136,6 +136,6 @@ public interface Deployment extends NamedElement, CommentableElement {
 	 * @see #getQualityOfLinkServices()
 	 * @generated
 	 */
-	void setQualityOfLinkServices(QualityOfLinkService value);
+	void setQualityOfLinkServices(LinkQualityOfService value);
 
 } // Deployment

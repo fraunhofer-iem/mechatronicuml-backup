@@ -1156,13 +1156,13 @@
           <details key="documentation" value="The list of quality of service assumptions for this connector. A developer defines these properties before modeling the role statecharts, because the statecharts depend on these assumptions. Software layers under the MechatronicUML layer respectively the hardware itself have to ensure that these assumptions are correct."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="minMessageDelay" lowerBound="1"
-            eType="#//model/core/NaturalNumber" containment="true">
+            eType="#//model/core/TimeValue" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The minimal time a message needs from the sender to the receiver using this connector."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="maxMessageDelay" lowerBound="1"
-            eType="#//model/core/NaturalNumber" containment="true">
+            eType="#//model/core/TimeValue" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The maximal time a message needs from the sender to the receiver using this connector."/>
           </eAnnotations>
@@ -1912,7 +1912,7 @@
             eOpposite="#//model/msgtype/MessageType/repository"/>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="deployment" nsURI="http://www.fujaba.de/muml/model/deployment/0.3.1"
+    <eSubpackages name="deployment" nsURI="http://www.fujaba.de/muml/model/deployment/0.3.7"
         nsPrefix="deployment">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1944,7 +1944,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="qualityOfLinkServices"
-            eType="#//model/deployment/QualityOfLinkService" containment="true" eOpposite="#//model/deployment/QualityOfLinkService/deployment">
+            eType="#//model/deployment/LinkQualityOfService" containment="true" eOpposite="#//model/deployment/LinkQualityOfService/deployment">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Reference to all contained quality of services."/>
           </eAnnotations>
@@ -2053,7 +2053,7 @@
             <details key="documentation" value="Target HardwarePort of the link."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="qualityOfService" eType="#//model/deployment/QualityOfLinkService">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="qualityOfService" eType="#//model/deployment/LinkQualityOfService">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The quality of service which the link fullfills. "/>
           </eAnnotations>
@@ -2073,17 +2073,17 @@
         <eLiterals name="OUT" value="1"/>
         <eLiterals name="IN_OUT" value="2"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="QualityOfLinkService" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
+      <eClassifiers xsi:type="ecore:EClass" name="LinkQualityOfService" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Quality of Service of a communication link. "/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="packetDelayVariation"
-            eType="#//model/core/NaturalNumber" containment="true">
+            eType="#//model/core/TimeValue" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Difference in end-to-end one-way delay between selected messages without lost messages."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="latency" eType="#//model/core/NaturalNumber"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="latency" eType="#//model/core/TimeValue"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The time from the source port sending a message to the destination port receiving it."/>

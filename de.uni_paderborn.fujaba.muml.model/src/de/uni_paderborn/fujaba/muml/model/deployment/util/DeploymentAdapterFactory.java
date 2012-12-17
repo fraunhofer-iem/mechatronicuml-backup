@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.util;
 
+import de.uni_paderborn.fujaba.muml.model.deployment.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -94,8 +95,8 @@ public class DeploymentAdapterFactory extends AdapterFactoryImpl {
 				return createCommunicationLinkAdapter();
 			}
 			@Override
-			public Adapter caseQualityOfLinkService(QualityOfLinkService object) {
-				return createQualityOfLinkServiceAdapter();
+			public Adapter caseLinkQualityOfService(LinkQualityOfService object) {
+				return createLinkQualityOfServiceAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -186,16 +187,16 @@ public class DeploymentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService <em>Quality Of Link Service</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService <em>Link Quality Of Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService
 	 * @generated
 	 */
-	public Adapter createQualityOfLinkServiceAdapter() {
+	public Adapter createLinkQualityOfServiceAdapter() {
 		return null;
 	}
 

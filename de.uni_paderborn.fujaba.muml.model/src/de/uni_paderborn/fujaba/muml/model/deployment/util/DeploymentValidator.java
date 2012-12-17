@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.util;
 
+import de.uni_paderborn.fujaba.muml.model.deployment.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -103,8 +104,8 @@ public class DeploymentValidator extends EObjectValidator {
 				return validateHardwarePort((HardwarePort)value, diagnostics, context);
 			case DeploymentPackage.COMMUNICATION_LINK:
 				return validateCommunicationLink((CommunicationLink)value, diagnostics, context);
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE:
-				return validateQualityOfLinkService((QualityOfLinkService)value, diagnostics, context);
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE:
+				return validateLinkQualityOfService((LinkQualityOfService)value, diagnostics, context);
 			case DeploymentPackage.HARDWARE_NODE_KIND:
 				return validateHardwareNodeKind((HardwareNodeKind)value, diagnostics, context);
 			case DeploymentPackage.HARDWARE_PORT_DIRECTION_KIND:
@@ -194,8 +195,8 @@ public class DeploymentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateQualityOfLinkService(QualityOfLinkService qualityOfLinkService, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(qualityOfLinkService, diagnostics, context);
+	public boolean validateLinkQualityOfService(LinkQualityOfService linkQualityOfService, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(linkQualityOfService, diagnostics, context);
 	}
 
 	/**

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.impl;
 
+import de.uni_paderborn.fujaba.muml.model.deployment.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -38,7 +39,7 @@ public class DeploymentFactoryImpl extends EFactoryImpl implements DeploymentFac
 	 */
 	public static DeploymentFactory init() {
 		try {
-			DeploymentFactory theDeploymentFactory = (DeploymentFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/deployment/0.3.1"); 
+			DeploymentFactory theDeploymentFactory = (DeploymentFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/deployment/0.3.7"); 
 			if (theDeploymentFactory != null) {
 				return theDeploymentFactory;
 			}
@@ -71,7 +72,7 @@ public class DeploymentFactoryImpl extends EFactoryImpl implements DeploymentFac
 			case DeploymentPackage.HARDWARE_NODE: return createHardwareNode();
 			case DeploymentPackage.HARDWARE_PORT: return createHardwarePort();
 			case DeploymentPackage.COMMUNICATION_LINK: return createCommunicationLink();
-			case DeploymentPackage.QUALITY_OF_LINK_SERVICE: return createQualityOfLinkService();
+			case DeploymentPackage.LINK_QUALITY_OF_SERVICE: return createLinkQualityOfService();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -156,9 +157,9 @@ public class DeploymentFactoryImpl extends EFactoryImpl implements DeploymentFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public QualityOfLinkService createQualityOfLinkService() {
-		QualityOfLinkServiceImpl qualityOfLinkService = new QualityOfLinkServiceImpl();
-		return qualityOfLinkService;
+	public LinkQualityOfService createLinkQualityOfService() {
+		LinkQualityOfServiceImpl linkQualityOfService = new LinkQualityOfServiceImpl();
+		return linkQualityOfService;
 	}
 
 	/**

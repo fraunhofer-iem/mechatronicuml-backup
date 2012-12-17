@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.protocol.impl;
 
+import de.uni_paderborn.fujaba.muml.model.protocol.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;

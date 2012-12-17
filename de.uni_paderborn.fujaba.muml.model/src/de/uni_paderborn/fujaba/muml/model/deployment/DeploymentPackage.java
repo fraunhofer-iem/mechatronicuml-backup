@@ -44,7 +44,7 @@ public interface DeploymentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/deployment/0.3.1";
+	String eNS_URI = "http://www.fujaba.de/muml/model/deployment/0.3.7";
 
 	/**
 	 * The package namespace name.
@@ -428,14 +428,14 @@ public interface DeploymentPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl <em>Quality Of Link Service</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.LinkQualityOfServiceImpl <em>Link Quality Of Service</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl#getQualityOfLinkService()
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.LinkQualityOfServiceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl#getLinkQualityOfService()
 	 * @generated
 	 */
-	int QUALITY_OF_LINK_SERVICE = 4;
+	int LINK_QUALITY_OF_SERVICE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -444,7 +444,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITY_OF_LINK_SERVICE__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int LINK_QUALITY_OF_SERVICE__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -453,7 +453,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITY_OF_LINK_SERVICE__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int LINK_QUALITY_OF_SERVICE__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -462,7 +462,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITY_OF_LINK_SERVICE__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+	int LINK_QUALITY_OF_SERVICE__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -471,7 +471,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITY_OF_LINK_SERVICE__NAME = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int LINK_QUALITY_OF_SERVICE__NAME = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Packet Delay Variation</b></em>' containment reference.
@@ -480,7 +480,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Latency</b></em>' containment reference.
@@ -489,7 +489,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITY_OF_LINK_SERVICE__LATENCY = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int LINK_QUALITY_OF_SERVICE__LATENCY = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Deployment</b></em>' container reference.
@@ -498,16 +498,16 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITY_OF_LINK_SERVICE__DEPLOYMENT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int LINK_QUALITY_OF_SERVICE__DEPLOYMENT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>Quality Of Link Service</em>' class.
+	 * The number of structural features of the '<em>Link Quality Of Service</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUALITY_OF_LINK_SERVICE_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
+	int LINK_QUALITY_OF_SERVICE_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind <em>Hardware Node Kind</em>}' enum.
@@ -769,47 +769,47 @@ public interface DeploymentPackage extends EPackage {
 	EReference getCommunicationLink_DeployedAssemblyInstances();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService <em>Quality Of Link Service</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService <em>Link Quality Of Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Quality Of Link Service</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService
+	 * @return the meta object for class '<em>Link Quality Of Service</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService
 	 * @generated
 	 */
-	EClass getQualityOfLinkService();
+	EClass getLinkQualityOfService();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getPacketDelayVariation <em>Packet Delay Variation</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService#getPacketDelayVariation <em>Packet Delay Variation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Packet Delay Variation</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getPacketDelayVariation()
-	 * @see #getQualityOfLinkService()
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService#getPacketDelayVariation()
+	 * @see #getLinkQualityOfService()
 	 * @generated
 	 */
-	EReference getQualityOfLinkService_PacketDelayVariation();
+	EReference getLinkQualityOfService_PacketDelayVariation();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getLatency <em>Latency</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService#getLatency <em>Latency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Latency</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getLatency()
-	 * @see #getQualityOfLinkService()
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService#getLatency()
+	 * @see #getLinkQualityOfService()
 	 * @generated
 	 */
-	EReference getQualityOfLinkService_Latency();
+	EReference getLinkQualityOfService_Latency();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeployment <em>Deployment</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService#getDeployment <em>Deployment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the container reference '<em>Deployment</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService#getDeployment()
-	 * @see #getQualityOfLinkService()
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService#getDeployment()
+	 * @see #getLinkQualityOfService()
 	 * @generated
 	 */
-	EReference getQualityOfLinkService_Deployment();
+	EReference getLinkQualityOfService_Deployment();
 
 	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind <em>Hardware Node Kind</em>}'.
@@ -1038,14 +1038,14 @@ public interface DeploymentPackage extends EPackage {
 		EReference COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES = eINSTANCE.getCommunicationLink_DeployedAssemblyInstances();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl <em>Quality Of Link Service</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.LinkQualityOfServiceImpl <em>Link Quality Of Service</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.QualityOfLinkServiceImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl#getQualityOfLinkService()
+		 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.LinkQualityOfServiceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl#getLinkQualityOfService()
 		 * @generated
 		 */
-		EClass QUALITY_OF_LINK_SERVICE = eINSTANCE.getQualityOfLinkService();
+		EClass LINK_QUALITY_OF_SERVICE = eINSTANCE.getLinkQualityOfService();
 
 		/**
 		 * The meta object literal for the '<em><b>Packet Delay Variation</b></em>' containment reference feature.
@@ -1053,7 +1053,7 @@ public interface DeploymentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUALITY_OF_LINK_SERVICE__PACKET_DELAY_VARIATION = eINSTANCE.getQualityOfLinkService_PacketDelayVariation();
+		EReference LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION = eINSTANCE.getLinkQualityOfService_PacketDelayVariation();
 
 		/**
 		 * The meta object literal for the '<em><b>Latency</b></em>' containment reference feature.
@@ -1061,7 +1061,7 @@ public interface DeploymentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUALITY_OF_LINK_SERVICE__LATENCY = eINSTANCE.getQualityOfLinkService_Latency();
+		EReference LINK_QUALITY_OF_SERVICE__LATENCY = eINSTANCE.getLinkQualityOfService_Latency();
 
 		/**
 		 * The meta object literal for the '<em><b>Deployment</b></em>' container reference feature.
@@ -1069,7 +1069,7 @@ public interface DeploymentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUALITY_OF_LINK_SERVICE__DEPLOYMENT = eINSTANCE.getQualityOfLinkService_Deployment();
+		EReference LINK_QUALITY_OF_SERVICE__DEPLOYMENT = eINSTANCE.getLinkQualityOfService_Deployment();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind <em>Hardware Node Kind</em>}' enum.
