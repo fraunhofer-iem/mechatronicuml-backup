@@ -21,20 +21,21 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.storydriven.core.CorePackage;
-import org.storydriven.core.provider.ExtendableElementItemProvider;
+import org.storydriven.core.provider.CommentableElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PatternOccurrenceItemProvider
-	extends ExtendableElementItemProvider
+public class CoordinationProtocolOccurrenceItemProvider
+	extends CommentableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -47,7 +48,7 @@ public class PatternOccurrenceItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PatternOccurrenceItemProvider(AdapterFactory adapterFactory) {
+	public CoordinationProtocolOccurrenceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,26 +63,26 @@ public class PatternOccurrenceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPatternPropertyDescriptor(object);
+			addCoordinationProtocolPropertyDescriptor(object);
 			addPortsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Pattern feature.
+	 * This adds a property descriptor for the Coordination Protocol feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPatternPropertyDescriptor(Object object) {
+	protected void addCoordinationProtocolPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PatternOccurrence_pattern_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PatternOccurrence_pattern_feature", "_UI_PatternOccurrence_type"),
-				 ComponentPackage.Literals.PATTERN_OCCURRENCE__PATTERN,
+				 getString("_UI_CoordinationProtocolOccurrence_coordinationProtocol_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationProtocolOccurrence_coordinationProtocol_feature", "_UI_CoordinationProtocolOccurrence_type"),
+				 ComponentPackage.Literals.COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL,
 				 true,
 				 false,
 				 true,
@@ -101,9 +102,9 @@ public class PatternOccurrenceItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PatternOccurrence_ports_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PatternOccurrence_ports_feature", "_UI_PatternOccurrence_type"),
-				 ComponentPackage.Literals.PATTERN_OCCURRENCE__PORTS,
+				 getString("_UI_CoordinationProtocolOccurrence_ports_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationProtocolOccurrence_ports_feature", "_UI_CoordinationProtocolOccurrence_type"),
+				 ComponentPackage.Literals.COORDINATION_PROTOCOL_OCCURRENCE__PORTS,
 				 true,
 				 false,
 				 true,
@@ -113,14 +114,14 @@ public class PatternOccurrenceItemProvider
 	}
 
 	/**
-	 * This returns PatternOccurrence.gif.
+	 * This returns CoordinationProtocolOccurrence.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PatternOccurrence"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/CoordinationProtocolOccurrence"));
 	}
 
 	/**
@@ -131,7 +132,10 @@ public class PatternOccurrenceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_PatternOccurrence_type");
+		String label = ((CoordinationProtocolOccurrence)object).getComment();
+		return label == null || label.length() == 0 ?
+			getString("_UI_CoordinationProtocolOccurrence_type") :
+			getString("_UI_CoordinationProtocolOccurrence_type") + " " + label;
 	}
 
 	/**

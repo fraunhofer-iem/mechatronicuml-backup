@@ -259,26 +259,26 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PatternOccurrenceItemProvider patternOccurrenceItemProvider;
+	protected CoordinationProtocolOccurrenceItemProvider coordinationProtocolOccurrenceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.PatternOccurrence}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPatternOccurrenceAdapter() {
-		if (patternOccurrenceItemProvider == null) {
-			patternOccurrenceItemProvider = new PatternOccurrenceItemProvider(this);
+	public Adapter createCoordinationProtocolOccurrenceAdapter() {
+		if (coordinationProtocolOccurrenceItemProvider == null) {
+			coordinationProtocolOccurrenceItemProvider = new CoordinationProtocolOccurrenceItemProvider(this);
 		}
 
-		return patternOccurrenceItemProvider;
+		return coordinationProtocolOccurrenceItemProvider;
 	}
 
 	/**
@@ -388,7 +388,7 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 		if (assemblyItemProvider != null) assemblyItemProvider.dispose();
 		if (delegationItemProvider != null) delegationItemProvider.dispose();
 		if (hybridPortItemProvider != null) hybridPortItemProvider.dispose();
-		if (patternOccurrenceItemProvider != null) patternOccurrenceItemProvider.dispose();
+		if (coordinationProtocolOccurrenceItemProvider != null) coordinationProtocolOccurrenceItemProvider.dispose();
 	}
 
 }

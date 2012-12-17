@@ -46,7 +46,7 @@ import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.EnumerationPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.protocol.Role;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;

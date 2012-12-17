@@ -236,26 +236,26 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.PatternInstance} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PatternInstanceItemProvider patternInstanceItemProvider;
+	protected CoordinationProtocolInstanceItemProvider coordinationProtocolInstanceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.PatternInstance}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPatternInstanceAdapter() {
-		if (patternInstanceItemProvider == null) {
-			patternInstanceItemProvider = new PatternInstanceItemProvider(this);
+	public Adapter createCoordinationProtocolInstanceAdapter() {
+		if (coordinationProtocolInstanceItemProvider == null) {
+			coordinationProtocolInstanceItemProvider = new CoordinationProtocolInstanceItemProvider(this);
 		}
 
-		return patternInstanceItemProvider;
+		return coordinationProtocolInstanceItemProvider;
 	}
 
 	/**
@@ -410,7 +410,7 @@ public class InstanceItemProviderAdapterFactory extends InstanceAdapterFactory i
 		if (hybridPortInstanceItemProvider != null) hybridPortInstanceItemProvider.dispose();
 		if (discreteSinglePortInstanceItemProvider != null) discreteSinglePortInstanceItemProvider.dispose();
 		if (discreteMultiPortInstanceItemProvider != null) discreteMultiPortInstanceItemProvider.dispose();
-		if (patternInstanceItemProvider != null) patternInstanceItemProvider.dispose();
+		if (coordinationProtocolInstanceItemProvider != null) coordinationProtocolInstanceItemProvider.dispose();
 		if (structuredComponentInstanceItemProvider != null) structuredComponentInstanceItemProvider.dispose();
 		if (atomicComponentInstanceItemProvider != null) atomicComponentInstanceItemProvider.dispose();
 	}

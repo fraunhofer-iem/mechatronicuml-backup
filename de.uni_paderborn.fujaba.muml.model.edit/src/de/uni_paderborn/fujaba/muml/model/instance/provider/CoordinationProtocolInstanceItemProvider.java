@@ -26,16 +26,16 @@ import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.instance.PatternInstance;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.PatternInstance} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PatternInstanceItemProvider
+public class CoordinationProtocolInstanceItemProvider
 	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -49,7 +49,7 @@ public class PatternInstanceItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PatternInstanceItemProvider(AdapterFactory adapterFactory) {
+	public CoordinationProtocolInstanceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -65,7 +65,7 @@ public class PatternInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPortInstancesPropertyDescriptor(object);
-			addPatternOccurrencePropertyDescriptor(object);
+			addProtocolOccurrencePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -81,9 +81,9 @@ public class PatternInstanceItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PatternInstance_portInstances_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PatternInstance_portInstances_feature", "_UI_PatternInstance_type"),
-				 InstancePackage.Literals.PATTERN_INSTANCE__PORT_INSTANCES,
+				 getString("_UI_CoordinationProtocolInstance_portInstances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationProtocolInstance_portInstances_feature", "_UI_CoordinationProtocolInstance_type"),
+				 InstancePackage.Literals.COORDINATION_PROTOCOL_INSTANCE__PORT_INSTANCES,
 				 true,
 				 false,
 				 true,
@@ -93,19 +93,19 @@ public class PatternInstanceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Pattern Occurrence feature.
+	 * This adds a property descriptor for the Protocol Occurrence feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPatternOccurrencePropertyDescriptor(Object object) {
+	protected void addProtocolOccurrencePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PatternInstance_patternOccurrence_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PatternInstance_patternOccurrence_feature", "_UI_PatternInstance_type"),
-				 InstancePackage.Literals.PATTERN_INSTANCE__PATTERN_OCCURRENCE,
+				 getString("_UI_CoordinationProtocolInstance_protocolOccurrence_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationProtocolInstance_protocolOccurrence_feature", "_UI_CoordinationProtocolInstance_type"),
+				 InstancePackage.Literals.COORDINATION_PROTOCOL_INSTANCE__PROTOCOL_OCCURRENCE,
 				 true,
 				 false,
 				 true,
@@ -115,14 +115,14 @@ public class PatternInstanceItemProvider
 	}
 
 	/**
-	 * This returns PatternInstance.gif.
+	 * This returns CoordinationProtocolInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PatternInstance"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/CoordinationProtocolInstance"));
 	}
 
 	/**
@@ -133,10 +133,10 @@ public class PatternInstanceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PatternInstance)object).getName();
+		String label = ((CoordinationProtocolInstance)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_PatternInstance_type") :
-			getString("_UI_PatternInstance_type") + " " + label;
+			getString("_UI_CoordinationProtocolInstance_type") :
+			getString("_UI_CoordinationProtocolInstance_type") + " " + label;
 	}
 
 	/**

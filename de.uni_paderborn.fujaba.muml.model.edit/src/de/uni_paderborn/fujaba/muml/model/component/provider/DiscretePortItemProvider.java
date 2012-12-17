@@ -25,7 +25,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
+import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort} object.
@@ -133,7 +133,7 @@ public class DiscretePortItemProvider
 				 getResourceLocator(),
 				 getString("_UI_DiscreteInteractionEndpoint_senderMessageTypes_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_senderMessageTypes_feature", "_UI_DiscreteInteractionEndpoint_type"),
-				 PatternPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES,
+				 ProtocolPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES,
 				 true,
 				 false,
 				 true,
@@ -155,7 +155,7 @@ public class DiscretePortItemProvider
 				 getResourceLocator(),
 				 getString("_UI_DiscreteInteractionEndpoint_receiverMessageTypes_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_receiverMessageTypes_feature", "_UI_DiscreteInteractionEndpoint_type"),
-				 PatternPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES,
+				 ProtocolPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES,
 				 true,
 				 false,
 				 true,
@@ -177,7 +177,7 @@ public class DiscretePortItemProvider
 				 getResourceLocator(),
 				 getString("_UI_DiscreteInteractionEndpoint_adaptationBehavior_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_adaptationBehavior_feature", "_UI_DiscreteInteractionEndpoint_type"),
-				 PatternPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR,
+				 ProtocolPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR,
 				 true,
 				 false,
 				 true,
@@ -199,7 +199,7 @@ public class DiscretePortItemProvider
 				 getResourceLocator(),
 				 getString("_UI_DiscreteInteractionEndpoint_roleAndAdaptationBehavior_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_roleAndAdaptationBehavior_feature", "_UI_DiscreteInteractionEndpoint_type"),
-				 PatternPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR,
+				 ProtocolPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR,
 				 true,
 				 false,
 				 true,
