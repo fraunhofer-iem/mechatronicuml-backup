@@ -8,7 +8,6 @@ package de.uni_paderborn.fujaba.muml.model.connector;
 
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
-import org.storydriven.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +25,7 @@ import org.storydriven.core.NamedElement;
  * @model abstract="true"
  * @generated
  */
-public interface Connector extends NamedElement, CommentableElement {
+public interface Connector extends CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Connector Endpoints</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint}.

@@ -71,22 +71,22 @@ public interface ComponentFactory extends EFactory {
 	AtomicComponent createAtomicComponent();
 
 	/**
-	 * Returns a new object of class '<em>Assembly</em>'.
+	 * Returns a new object of class '<em>Assembly Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Assembly</em>'.
+	 * @return a new object of class '<em>Assembly Connector</em>'.
 	 * @generated
 	 */
-	Assembly createAssembly();
+	AssemblyConnector createAssemblyConnector();
 
 	/**
-	 * Returns a new object of class '<em>Delegation</em>'.
+	 * Returns a new object of class '<em>Delegation Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Delegation</em>'.
+	 * @return a new object of class '<em>Delegation Connector</em>'.
 	 * @generated
 	 */
-	Delegation createDelegation();
+	DelegationConnector createDelegationConnector();
 
 	/**
 	 * Returns a new object of class '<em>Hybrid Port</em>'.

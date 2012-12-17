@@ -53,8 +53,8 @@ public interface StructuredComponent extends Component {
 
 	/**
 	 * Returns the value of the '<em><b>Connectors</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getParentComponent <em>Parent Component</em>}'.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.PortConnector}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.PortConnector#getParentComponent <em>Parent Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -62,11 +62,11 @@ public interface StructuredComponent extends Component {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Connectors</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getStructuredComponent_Connectors()
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getParentComponent
+	 * @see de.uni_paderborn.fujaba.muml.model.component.PortConnector#getParentComponent
 	 * @model opposite="parentComponent" containment="true"
 	 * @generated
 	 */
-	EList<ConnectorType> getConnectors();
+	EList<PortConnector> getConnectors();
 
 	/**
 	 * Returns the value of the '<em><b>All Structured Components</b></em>' containment reference list.

@@ -13,10 +13,10 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
+import de.uni_paderborn.fujaba.muml.model.connector.Connector;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.protocol.*;
 import de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer;
@@ -85,7 +85,9 @@ public class ProtocolSwitch<T> extends Switch<T> {
 			case ProtocolPackage.ROLE_CONNECTOR: {
 				RoleConnector roleConnector = (RoleConnector)theEObject;
 				T result = caseRoleConnector(roleConnector);
-				if (result == null) result = caseBehavioralElement(roleConnector);
+				if (result == null) result = caseConnector(roleConnector);
+				if (result == null) result = caseCommentableElement(roleConnector);
+				if (result == null) result = caseExtendableElement(roleConnector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -105,8 +107,8 @@ public class ProtocolSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDiscreteInteractionEndpoint(role);
 				if (result == null) result = caseDataType(role);
 				if (result == null) result = caseBehavioralElement(role);
-				if (result == null) result = caseConstrainableElement(role);
 				if (result == null) result = caseNamedElement(role);
+				if (result == null) result = caseConstrainableElement(role);
 				if (result == null) result = caseCommentableElement(role);
 				if (result == null) result = caseExtendableElement(role);
 				if (result == null) result = defaultCase(theEObject);
@@ -295,6 +297,21 @@ public class ProtocolSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommentableElement(CommentableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Connector</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnector(Connector object) {
 		return null;
 	}
 

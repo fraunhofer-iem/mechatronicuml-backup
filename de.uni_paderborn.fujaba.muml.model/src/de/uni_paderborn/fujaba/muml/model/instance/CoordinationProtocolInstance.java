@@ -24,7 +24,7 @@ import de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurren
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance#getPortInstances <em>Port Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance#getProtocolOccurrence <em>Protocol Occurrence</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance#getCoordinationProtocolOccurrence <em>Coordination Protocol Occurrence</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,28 +51,28 @@ public interface CoordinationProtocolInstance extends NamedElement {
 	EList<PortInstance> getPortInstances();
 
 	/**
-	 * Returns the value of the '<em><b>Protocol Occurrence</b></em>' reference.
+	 * Returns the value of the '<em><b>Coordination Protocol Occurrence</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The PatternOccurence of that instance.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Protocol Occurrence</em>' reference.
-	 * @see #setProtocolOccurrence(CoordinationProtocolOccurrence)
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getCoordinationProtocolInstance_ProtocolOccurrence()
+	 * @return the value of the '<em>Coordination Protocol Occurrence</em>' reference.
+	 * @see #setCoordinationProtocolOccurrence(CoordinationProtocolOccurrence)
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getCoordinationProtocolInstance_CoordinationProtocolOccurrence()
 	 * @model required="true"
 	 * @generated
 	 */
-	CoordinationProtocolOccurrence getProtocolOccurrence();
+	CoordinationProtocolOccurrence getCoordinationProtocolOccurrence();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance#getProtocolOccurrence <em>Protocol Occurrence</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance#getCoordinationProtocolOccurrence <em>Coordination Protocol Occurrence</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Protocol Occurrence</em>' reference.
-	 * @see #getProtocolOccurrence()
+	 * @param value the new value of the '<em>Coordination Protocol Occurrence</em>' reference.
+	 * @see #getCoordinationProtocolOccurrence()
 	 * @generated
 	 */
-	void setProtocolOccurrence(CoordinationProtocolOccurrence value);
+	void setCoordinationProtocolOccurrence(CoordinationProtocolOccurrence value);
 
 } // CoordinationProtocolInstance

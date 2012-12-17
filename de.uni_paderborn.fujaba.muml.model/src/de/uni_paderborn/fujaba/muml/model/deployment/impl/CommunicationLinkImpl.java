@@ -23,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
 import de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService;
-import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -81,7 +81,7 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AssemblyInstance> deployedAssemblyInstances;
+	protected EList<AssemblyConnectorInstance> deployedAssemblyInstances;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -306,9 +306,9 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AssemblyInstance> getDeployedAssemblyInstances() {
+	public EList<AssemblyConnectorInstance> getDeployedAssemblyInstances() {
 		if (deployedAssemblyInstances == null) {
-			deployedAssemblyInstances = new EObjectResolvingEList<AssemblyInstance>(AssemblyInstance.class, this, DeploymentPackage.COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES);
+			deployedAssemblyInstances = new EObjectResolvingEList<AssemblyConnectorInstance>(AssemblyConnectorInstance.class, this, DeploymentPackage.COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES);
 		}
 		return deployedAssemblyInstances;
 	}
@@ -417,7 +417,7 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 				return;
 			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES:
 				getDeployedAssemblyInstances().clear();
-				getDeployedAssemblyInstances().addAll((Collection<? extends AssemblyInstance>)newValue);
+				getDeployedAssemblyInstances().addAll((Collection<? extends AssemblyConnectorInstance>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

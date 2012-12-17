@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.util;
 
-import de.uni_paderborn.fujaba.muml.model.component.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -14,22 +13,23 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.component.Assembly;
+import de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.model.component.AtomicComponent;
-import de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector;
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence;
-import de.uni_paderborn.fujaba.muml.model.component.Delegation;
+import de.uni_paderborn.fujaba.muml.model.component.DelegationConnector;
 import de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.connector.Connector;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
@@ -105,11 +105,12 @@ public class ComponentSwitch<T> extends Switch<T> {
 			case ComponentPackage.PORT: {
 				Port port = (Port)theEObject;
 				T result = casePort(port);
+				if (result == null) result = caseConnectorEndpoint(port);
 				if (result == null) result = caseConstrainableElement(port);
 				if (result == null) result = caseDataType(port);
 				if (result == null) result = caseNamedElement(port);
-				if (result == null) result = caseExtendableElement(port);
 				if (result == null) result = caseCommentableElement(port);
+				if (result == null) result = caseExtendableElement(port);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -118,11 +119,12 @@ public class ComponentSwitch<T> extends Switch<T> {
 				T result = caseContinuousPort(continuousPort);
 				if (result == null) result = caseDirectedTypedPort(continuousPort);
 				if (result == null) result = casePort(continuousPort);
+				if (result == null) result = caseConnectorEndpoint(continuousPort);
 				if (result == null) result = caseConstrainableElement(continuousPort);
 				if (result == null) result = caseDataType(continuousPort);
 				if (result == null) result = caseNamedElement(continuousPort);
-				if (result == null) result = caseExtendableElement(continuousPort);
 				if (result == null) result = caseCommentableElement(continuousPort);
+				if (result == null) result = caseExtendableElement(continuousPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -131,12 +133,13 @@ public class ComponentSwitch<T> extends Switch<T> {
 				T result = caseDiscretePort(discretePort);
 				if (result == null) result = casePort(discretePort);
 				if (result == null) result = caseDiscreteInteractionEndpoint(discretePort);
+				if (result == null) result = caseConnectorEndpoint(discretePort);
 				if (result == null) result = caseConstrainableElement(discretePort);
 				if (result == null) result = caseDataType(discretePort);
 				if (result == null) result = caseBehavioralElement(discretePort);
 				if (result == null) result = caseNamedElement(discretePort);
-				if (result == null) result = caseExtendableElement(discretePort);
 				if (result == null) result = caseCommentableElement(discretePort);
+				if (result == null) result = caseExtendableElement(discretePort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -174,37 +177,32 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentPackage.CONNECTOR_TYPE: {
-				ConnectorType connectorType = (ConnectorType)theEObject;
-				T result = caseConnectorType(connectorType);
-				if (result == null) result = caseExtendableElement(connectorType);
+			case ComponentPackage.PORT_CONNECTOR: {
+				PortConnector portConnector = (PortConnector)theEObject;
+				T result = casePortConnector(portConnector);
+				if (result == null) result = caseConnector(portConnector);
+				if (result == null) result = caseCommentableElement(portConnector);
+				if (result == null) result = caseExtendableElement(portConnector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentPackage.ASSEMBLY: {
-				Assembly assembly = (Assembly)theEObject;
-				T result = caseAssembly(assembly);
-				if (result == null) result = caseBehavioralConnector(assembly);
-				if (result == null) result = caseConnectorType(assembly);
-				if (result == null) result = caseBehavioralElement(assembly);
-				if (result == null) result = caseExtendableElement(assembly);
+			case ComponentPackage.ASSEMBLY_CONNECTOR: {
+				AssemblyConnector assemblyConnector = (AssemblyConnector)theEObject;
+				T result = caseAssemblyConnector(assemblyConnector);
+				if (result == null) result = casePortConnector(assemblyConnector);
+				if (result == null) result = caseConnector(assemblyConnector);
+				if (result == null) result = caseCommentableElement(assemblyConnector);
+				if (result == null) result = caseExtendableElement(assemblyConnector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentPackage.DELEGATION: {
-				Delegation delegation = (Delegation)theEObject;
-				T result = caseDelegation(delegation);
-				if (result == null) result = caseConnectorType(delegation);
-				if (result == null) result = caseExtendableElement(delegation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentPackage.BEHAVIORAL_CONNECTOR: {
-				BehavioralConnector behavioralConnector = (BehavioralConnector)theEObject;
-				T result = caseBehavioralConnector(behavioralConnector);
-				if (result == null) result = caseConnectorType(behavioralConnector);
-				if (result == null) result = caseBehavioralElement(behavioralConnector);
-				if (result == null) result = caseExtendableElement(behavioralConnector);
+			case ComponentPackage.DELEGATION_CONNECTOR: {
+				DelegationConnector delegationConnector = (DelegationConnector)theEObject;
+				T result = caseDelegationConnector(delegationConnector);
+				if (result == null) result = casePortConnector(delegationConnector);
+				if (result == null) result = caseConnector(delegationConnector);
+				if (result == null) result = caseCommentableElement(delegationConnector);
+				if (result == null) result = caseExtendableElement(delegationConnector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -213,11 +211,12 @@ public class ComponentSwitch<T> extends Switch<T> {
 				T result = caseHybridPort(hybridPort);
 				if (result == null) result = caseDirectedTypedPort(hybridPort);
 				if (result == null) result = casePort(hybridPort);
+				if (result == null) result = caseConnectorEndpoint(hybridPort);
 				if (result == null) result = caseConstrainableElement(hybridPort);
 				if (result == null) result = caseDataType(hybridPort);
 				if (result == null) result = caseNamedElement(hybridPort);
-				if (result == null) result = caseExtendableElement(hybridPort);
 				if (result == null) result = caseCommentableElement(hybridPort);
+				if (result == null) result = caseExtendableElement(hybridPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -244,11 +243,12 @@ public class ComponentSwitch<T> extends Switch<T> {
 				DirectedTypedPort directedTypedPort = (DirectedTypedPort)theEObject;
 				T result = caseDirectedTypedPort(directedTypedPort);
 				if (result == null) result = casePort(directedTypedPort);
+				if (result == null) result = caseConnectorEndpoint(directedTypedPort);
 				if (result == null) result = caseConstrainableElement(directedTypedPort);
 				if (result == null) result = caseDataType(directedTypedPort);
 				if (result == null) result = caseNamedElement(directedTypedPort);
-				if (result == null) result = caseExtendableElement(directedTypedPort);
 				if (result == null) result = caseCommentableElement(directedTypedPort);
+				if (result == null) result = caseExtendableElement(directedTypedPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -392,62 +392,47 @@ public class ComponentSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Connector Type</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Port Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Connector Type</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Port Connector</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConnectorType(ConnectorType object) {
+	public T casePortConnector(PortConnector object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Assembly</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Assembly Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Assembly</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Assembly Connector</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAssembly(Assembly object) {
+	public T caseAssemblyConnector(AssemblyConnector object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Delegation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Delegation Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Delegation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Delegation Connector</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDelegation(Delegation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Behavioral Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Behavioral Connector</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBehavioralConnector(BehavioralConnector object) {
+	public T caseDelegationConnector(DelegationConnector object) {
 		return null;
 	}
 
@@ -542,6 +527,21 @@ public class ComponentSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Endpoint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Endpoint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnectorEndpoint(ConnectorEndpoint object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -583,6 +583,21 @@ public class ComponentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDiscreteInteractionEndpoint(DiscreteInteractionEndpoint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Connector</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnector(Connector object) {
 		return null;
 	}
 

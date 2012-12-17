@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import de.uni_paderborn.fujaba.muml.model.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
+import de.uni_paderborn.fujaba.muml.model.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 
 /**
@@ -57,7 +57,7 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ConnectorType> connectors;
+	protected EList<PortConnector> connectors;
 
 	/**
 	 * The cached setting delegate for the '{@link #getAllStructuredComponents() <em>All Structured Components</em>}' containment reference list.
@@ -115,9 +115,9 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ConnectorType> getConnectors() {
+	public EList<PortConnector> getConnectors() {
 		if (connectors == null) {
-			connectors = new EObjectContainmentWithInverseEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.STRUCTURED_COMPONENT__CONNECTORS, ComponentPackage.CONNECTOR_TYPE__PARENT_COMPONENT);
+			connectors = new EObjectContainmentWithInverseEList<PortConnector>(PortConnector.class, this, ComponentPackage.STRUCTURED_COMPONENT__CONNECTORS, ComponentPackage.PORT_CONNECTOR__PARENT_COMPONENT);
 		}
 		return connectors;
 	}
@@ -232,7 +232,7 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 				return;
 			case ComponentPackage.STRUCTURED_COMPONENT__CONNECTORS:
 				getConnectors().clear();
-				getConnectors().addAll((Collection<? extends ConnectorType>)newValue);
+				getConnectors().addAll((Collection<? extends PortConnector>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

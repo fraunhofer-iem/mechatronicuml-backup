@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.util;
 
-import de.uni_paderborn.fujaba.muml.model.instance.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -14,19 +13,21 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
-import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance;
 
@@ -95,43 +96,50 @@ public class InstanceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case InstancePackage.CONNECTOR_INSTANCE: {
-				ConnectorInstance connectorInstance = (ConnectorInstance)theEObject;
-				T result = caseConnectorInstance(connectorInstance);
-				if (result == null) result = caseExtendableElement(connectorInstance);
+			case InstancePackage.PORT_CONNECTOR_INSTANCE: {
+				PortConnectorInstance portConnectorInstance = (PortConnectorInstance)theEObject;
+				T result = casePortConnectorInstance(portConnectorInstance);
+				if (result == null) result = caseConnectorInstance(portConnectorInstance);
+				if (result == null) result = caseCommentableElement(portConnectorInstance);
+				if (result == null) result = caseExtendableElement(portConnectorInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case InstancePackage.PORT_INSTANCE: {
 				PortInstance portInstance = (PortInstance)theEObject;
 				T result = casePortInstance(portInstance);
+				if (result == null) result = caseConnectorEndpointInstance(portInstance);
 				if (result == null) result = caseNamedElement(portInstance);
 				if (result == null) result = caseCommentableElement(portInstance);
 				if (result == null) result = caseExtendableElement(portInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case InstancePackage.ASSEMBLY_INSTANCE: {
-				AssemblyInstance assemblyInstance = (AssemblyInstance)theEObject;
-				T result = caseAssemblyInstance(assemblyInstance);
-				if (result == null) result = caseConnectorInstance(assemblyInstance);
-				if (result == null) result = caseExtendableElement(assemblyInstance);
+			case InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE: {
+				AssemblyConnectorInstance assemblyConnectorInstance = (AssemblyConnectorInstance)theEObject;
+				T result = caseAssemblyConnectorInstance(assemblyConnectorInstance);
+				if (result == null) result = casePortConnectorInstance(assemblyConnectorInstance);
+				if (result == null) result = caseConnectorInstance(assemblyConnectorInstance);
+				if (result == null) result = caseCommentableElement(assemblyConnectorInstance);
+				if (result == null) result = caseExtendableElement(assemblyConnectorInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case InstancePackage.DELEGATION_INSTANCE: {
-				DelegationInstance delegationInstance = (DelegationInstance)theEObject;
-				T result = caseDelegationInstance(delegationInstance);
-				if (result == null) result = caseConnectorInstance(delegationInstance);
-				if (result == null) result = caseExtendableElement(delegationInstance);
+			case InstancePackage.DELEGATION_CONNECTOR_INSTANCE: {
+				DelegationConnectorInstance delegationConnectorInstance = (DelegationConnectorInstance)theEObject;
+				T result = caseDelegationConnectorInstance(delegationConnectorInstance);
+				if (result == null) result = casePortConnectorInstance(delegationConnectorInstance);
+				if (result == null) result = caseConnectorInstance(delegationConnectorInstance);
+				if (result == null) result = caseCommentableElement(delegationConnectorInstance);
+				if (result == null) result = caseExtendableElement(delegationConnectorInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION: {
 				ComponentInstanceConfiguration componentInstanceConfiguration = (ComponentInstanceConfiguration)theEObject;
 				T result = caseComponentInstanceConfiguration(componentInstanceConfiguration);
-				if (result == null) result = caseCommentableElement(componentInstanceConfiguration);
 				if (result == null) result = caseNamedElement(componentInstanceConfiguration);
+				if (result == null) result = caseCommentableElement(componentInstanceConfiguration);
 				if (result == null) result = caseExtendableElement(componentInstanceConfiguration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -140,6 +148,7 @@ public class InstanceSwitch<T> extends Switch<T> {
 				ContinuousPortInstance continuousPortInstance = (ContinuousPortInstance)theEObject;
 				T result = caseContinuousPortInstance(continuousPortInstance);
 				if (result == null) result = casePortInstance(continuousPortInstance);
+				if (result == null) result = caseConnectorEndpointInstance(continuousPortInstance);
 				if (result == null) result = caseNamedElement(continuousPortInstance);
 				if (result == null) result = caseCommentableElement(continuousPortInstance);
 				if (result == null) result = caseExtendableElement(continuousPortInstance);
@@ -152,6 +161,7 @@ public class InstanceSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDiscretePortInstance(hybridPortInstance);
 				if (result == null) result = caseContinuousPortInstance(hybridPortInstance);
 				if (result == null) result = casePortInstance(hybridPortInstance);
+				if (result == null) result = caseConnectorEndpointInstance(hybridPortInstance);
 				if (result == null) result = caseNamedElement(hybridPortInstance);
 				if (result == null) result = caseCommentableElement(hybridPortInstance);
 				if (result == null) result = caseExtendableElement(hybridPortInstance);
@@ -162,6 +172,7 @@ public class InstanceSwitch<T> extends Switch<T> {
 				DiscretePortInstance discretePortInstance = (DiscretePortInstance)theEObject;
 				T result = caseDiscretePortInstance(discretePortInstance);
 				if (result == null) result = casePortInstance(discretePortInstance);
+				if (result == null) result = caseConnectorEndpointInstance(discretePortInstance);
 				if (result == null) result = caseNamedElement(discretePortInstance);
 				if (result == null) result = caseCommentableElement(discretePortInstance);
 				if (result == null) result = caseExtendableElement(discretePortInstance);
@@ -173,6 +184,7 @@ public class InstanceSwitch<T> extends Switch<T> {
 				T result = caseDiscreteSinglePortInstance(discreteSinglePortInstance);
 				if (result == null) result = caseDiscretePortInstance(discreteSinglePortInstance);
 				if (result == null) result = casePortInstance(discreteSinglePortInstance);
+				if (result == null) result = caseConnectorEndpointInstance(discreteSinglePortInstance);
 				if (result == null) result = caseNamedElement(discreteSinglePortInstance);
 				if (result == null) result = caseCommentableElement(discreteSinglePortInstance);
 				if (result == null) result = caseExtendableElement(discreteSinglePortInstance);
@@ -184,6 +196,7 @@ public class InstanceSwitch<T> extends Switch<T> {
 				T result = caseDiscreteMultiPortInstance(discreteMultiPortInstance);
 				if (result == null) result = caseDiscretePortInstance(discreteMultiPortInstance);
 				if (result == null) result = casePortInstance(discreteMultiPortInstance);
+				if (result == null) result = caseConnectorEndpointInstance(discreteMultiPortInstance);
 				if (result == null) result = caseNamedElement(discreteMultiPortInstance);
 				if (result == null) result = caseCommentableElement(discreteMultiPortInstance);
 				if (result == null) result = caseExtendableElement(discreteMultiPortInstance);
@@ -236,17 +249,47 @@ public class InstanceSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Connector Instance</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Port Connector Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Connector Instance</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Port Connector Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePortConnectorInstance(PortConnectorInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Instance</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
 	public T caseConnectorInstance(ConnectorInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Endpoint Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnectorEndpointInstance(ConnectorEndpointInstance object) {
 		return null;
 	}
 
@@ -266,32 +309,32 @@ public class InstanceSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Assembly Instance</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Assembly Connector Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Assembly Instance</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Assembly Connector Instance</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAssemblyInstance(AssemblyInstance object) {
+	public T caseAssemblyConnectorInstance(AssemblyConnectorInstance object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Delegation Instance</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Delegation Connector Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Delegation Instance</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Delegation Connector Instance</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDelegationInstance(DelegationInstance object) {
+	public T caseDelegationConnectorInstance(DelegationConnectorInstance object) {
 		return null;
 	}
 

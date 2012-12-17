@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
-import de.uni_paderborn.fujaba.muml.model.component.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -14,7 +13,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.fujaba.muml.model.component.Assembly;
+import de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.model.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentFactory;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentKind;
@@ -23,7 +22,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPort;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.CoordinationProtocolOccurrence;
-import de.uni_paderborn.fujaba.muml.model.component.Delegation;
+import de.uni_paderborn.fujaba.muml.model.component.DelegationConnector;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent;
@@ -77,8 +76,8 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 			case ComponentPackage.COMPONENT_PART: return createComponentPart();
 			case ComponentPackage.STATIC_STRUCTURED_COMPONENT: return createStaticStructuredComponent();
 			case ComponentPackage.ATOMIC_COMPONENT: return createAtomicComponent();
-			case ComponentPackage.ASSEMBLY: return createAssembly();
-			case ComponentPackage.DELEGATION: return createDelegation();
+			case ComponentPackage.ASSEMBLY_CONNECTOR: return createAssemblyConnector();
+			case ComponentPackage.DELEGATION_CONNECTOR: return createDelegationConnector();
 			case ComponentPackage.HYBRID_PORT: return createHybridPort();
 			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE: return createCoordinationProtocolOccurrence();
 			default:
@@ -175,9 +174,9 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Assembly createAssembly() {
-		AssemblyImpl assembly = new AssemblyImpl();
-		return assembly;
+	public AssemblyConnector createAssemblyConnector() {
+		AssemblyConnectorImpl assemblyConnector = new AssemblyConnectorImpl();
+		return assemblyConnector;
 	}
 
 	/**
@@ -185,9 +184,9 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Delegation createDelegation() {
-		DelegationImpl delegation = new DelegationImpl();
-		return delegation;
+	public DelegationConnector createDelegationConnector() {
+		DelegationConnectorImpl delegationConnector = new DelegationConnectorImpl();
+		return delegationConnector;
 	}
 
 	/**

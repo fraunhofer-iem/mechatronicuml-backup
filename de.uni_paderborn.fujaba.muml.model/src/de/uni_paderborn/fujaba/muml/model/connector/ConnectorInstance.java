@@ -8,7 +8,6 @@ package de.uni_paderborn.fujaba.muml.model.connector;
 
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
-import org.storydriven.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +26,7 @@ import org.storydriven.core.NamedElement;
  * @model abstract="true"
  * @generated
  */
-public interface ConnectorInstance extends NamedElement, CommentableElement {
+public interface ConnectorInstance extends CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

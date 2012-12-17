@@ -39,7 +39,7 @@ import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
  * @model abstract="true"
  * @generated
  */
-public interface DiscreteInteractionEndpoint extends BehavioralElement, ConstrainableElement, NamedElement {
+public interface DiscreteInteractionEndpoint extends BehavioralElement, NamedElement, ConstrainableElement {
 	/**
 	 * Returns the value of the '<em><b>Sender Message Types</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgtype.MessageType}.

@@ -202,7 +202,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoleConnector_Source() {
+	public EReference getRoleConnector_CoordinationProtocol() {
 		return (EReference)roleConnectorEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -211,7 +211,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoleConnector_Target() {
+	public EReference getRoleConnector_ConnectorQualityOfServiceAssumptions() {
 		return (EReference)roleConnectorEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -220,17 +220,8 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoleConnector_CoordinationProtocol() {
+	public EReference getRoleConnector_Roles() {
 		return (EReference)roleConnectorEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRoleConnector_ConnectorQualityOfServiceAssumptions() {
-		return (EReference)roleConnectorEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -283,7 +274,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_IncomingRoleConnector() {
+	public EReference getRole_CoordinationProtocol() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -292,7 +283,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_CoordinationProtocol() {
+	public EReference getRole_Port() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -301,7 +292,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_Port() {
+	public EReference getRole_RoleConnector() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -310,26 +301,8 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_OutgoingRoleConnector() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRole_RoleConnector() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getRole_MultiRole() {
-		return (EAttribute)roleEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)roleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -338,7 +311,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * @generated
 	 */
 	public EReference getRole_ReceiverMessageBuffer() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(6);
+		return (EReference)roleEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -442,10 +415,9 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 
 		// Create classes and their features
 		roleConnectorEClass = createEClass(ROLE_CONNECTOR);
-		createEReference(roleConnectorEClass, ROLE_CONNECTOR__SOURCE);
-		createEReference(roleConnectorEClass, ROLE_CONNECTOR__TARGET);
 		createEReference(roleConnectorEClass, ROLE_CONNECTOR__COORDINATION_PROTOCOL);
 		createEReference(roleConnectorEClass, ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS);
+		createEReference(roleConnectorEClass, ROLE_CONNECTOR__ROLES);
 
 		coordinationProtocolEClass = createEClass(COORDINATION_PROTOCOL);
 		createEReference(coordinationProtocolEClass, COORDINATION_PROTOCOL__ROLES);
@@ -453,10 +425,8 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		createEReference(coordinationProtocolEClass, COORDINATION_PROTOCOL__COORDINATION_PROTOCOL);
 
 		roleEClass = createEClass(ROLE);
-		createEReference(roleEClass, ROLE__INCOMING_ROLE_CONNECTOR);
 		createEReference(roleEClass, ROLE__COORDINATION_PROTOCOL);
 		createEReference(roleEClass, ROLE__PORT);
-		createEReference(roleEClass, ROLE__OUTGOING_ROLE_CONNECTOR);
 		createEReference(roleEClass, ROLE__ROLE_CONNECTOR);
 		createEAttribute(roleEClass, ROLE__MULTI_ROLE);
 		createEReference(roleEClass, ROLE__RECEIVER_MESSAGE_BUFFER);
@@ -496,9 +466,9 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
-		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
+		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
@@ -509,7 +479,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		roleConnectorEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
+		roleConnectorEClass.getESuperTypes().add(theConnectorPackage.getConnector());
 		coordinationProtocolEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		coordinationProtocolEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
 		coordinationProtocolEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
@@ -521,10 +491,9 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(roleConnectorEClass, RoleConnector.class, "RoleConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRoleConnector_Source(), this.getRole(), this.getRole_OutgoingRoleConnector(), "source", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRoleConnector_Target(), this.getRole(), this.getRole_IncomingRoleConnector(), "target", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoleConnector_CoordinationProtocol(), this.getCoordinationProtocol(), this.getCoordinationProtocol_RoleConnector(), "coordinationProtocol", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoleConnector_ConnectorQualityOfServiceAssumptions(), this.getConnectorQualityOfServiceAssumptions(), null, "connectorQualityOfServiceAssumptions", null, 1, 1, RoleConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoleConnector_Roles(), this.getRole(), null, "roles", null, 2, 2, RoleConnector.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(coordinationProtocolEClass, CoordinationProtocol.class, "CoordinationProtocol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCoordinationProtocol_Roles(), this.getRole(), this.getRole_CoordinationProtocol(), "roles", null, 1, 2, CoordinationProtocol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -532,12 +501,10 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		initEReference(getCoordinationProtocol_CoordinationProtocol(), this.getCoordinationProtocol(), null, "coordinationProtocol", null, 0, 1, CoordinationProtocol.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRole_IncomingRoleConnector(), this.getRoleConnector(), this.getRoleConnector_Target(), "incomingRoleConnector", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_CoordinationProtocol(), this.getCoordinationProtocol(), this.getCoordinationProtocol_Roles(), "coordinationProtocol", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_Port(), theComponentPackage.getDiscretePort(), theComponentPackage.getDiscretePort_Refines(), "port", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRole_OutgoingRoleConnector(), this.getRoleConnector(), this.getRoleConnector_Source(), "outgoingRoleConnector", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRole_RoleConnector(), this.getRoleConnector(), null, "roleConnector", null, 0, 1, Role.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRole_MultiRole(), theEcorePackage.getEBoolean(), "multiRole", "", 0, 1, Role.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getRole_RoleConnector(), this.getRoleConnector(), null, "roleConnector", null, 1, 1, Role.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRole_MultiRole(), theEcorePackage.getEBoolean(), "multiRole", "", 1, 1, Role.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_ReceiverMessageBuffer(), this.getMessageBuffer(), this.getMessageBuffer_Role(), "receiverMessageBuffer", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageBufferEClass, MessageBuffer.class, "MessageBuffer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -581,7 +548,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		   source, 
 		   new String[] {
 			 "constraints", "OnlyRolesOfSameCoordinationPattern"
-		   });								
+		   });						
 		addAnnotation
 		  (coordinationProtocolEClass, 
 		   source, 
@@ -593,7 +560,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		   source, 
 		   new String[] {
 			 "constraints", "MultiPortRequiresDefinedOrder RoleHasConnector RoleRequiresBehavior RoleRequiresInterface"
-		   });																	
+		   });															
 	}
 
 	/**
@@ -609,7 +576,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		   source, 
 		   new String[] {
 			 "OnlyRolesOfSameCoordinationPattern", "(not source.oclIsUndefined() and not target.oclIsUndefined()) implies source.coordinationPattern = target.coordinationPattern"
-		   });								
+		   });						
 		addAnnotation
 		  (coordinationProtocolEClass, 
 		   source, 
@@ -632,7 +599,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 			 "RoleHasConnector", "self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()",
 			 "RoleRequiresBehavior", "not self.behavior.oclIsUndefined()",
 			 "RoleRequiresInterface", "not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())"
-		   });						
+		   });				
 		addAnnotation
 		  (getRole_RoleConnector(), 
 		   source, 

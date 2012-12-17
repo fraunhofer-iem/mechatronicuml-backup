@@ -31,9 +31,8 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getParentComponent <em>Parent Component</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getFromRev <em>From Rev</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getToRev <em>To Rev</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getDelegation <em>Delegation</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getAssemblyConnectors <em>Assembly Connectors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getDelegationConnectors <em>Delegation Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getPortsDerived <em>Ports Derived</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#isMultiPart <em>Multi Part</em>}</li>
@@ -101,55 +100,34 @@ public interface ComponentPart extends CommentableElement, NamedElement, DataTyp
 	void setParentComponent(StructuredComponent value);
 
 	/**
-	 * Returns the value of the '<em><b>From Rev</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.Assembly}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getFrom <em>From</em>}'.
+	 * Returns the value of the '<em><b>Assembly Connectors</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The assemblies originating in port parts of this component part.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>From Rev</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponentPart_FromRev()
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Assembly#getFrom
-	 * @model opposite="from"
+	 * @return the value of the '<em>Assembly Connectors</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponentPart_AssemblyConnectors()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
-	EList<Assembly> getFromRev();
+	EList<AssemblyConnector> getAssemblyConnectors();
 
 	/**
-	 * Returns the value of the '<em><b>To Rev</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.Assembly}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getTo <em>To</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The assemblies leading to port parts of this component part.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>To Rev</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponentPart_ToRev()
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Assembly#getTo
-	 * @model opposite="to"
-	 * @generated
-	 */
-	EList<Assembly> getToRev();
-
-	/**
-	 * Returns the value of the '<em><b>Delegation</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.Delegation}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.Delegation#getComponentPart <em>Component Part</em>}'.
+	 * Returns the value of the '<em><b>Delegation Connectors</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.DelegationConnector}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The delegations connecting a port part of this component part with a port of the parent component type.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Delegation</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponentPart_Delegation()
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Delegation#getComponentPart
-	 * @model opposite="componentPart"
+	 * @return the value of the '<em>Delegation Connectors</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponentPart_DelegationConnectors()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
-	EList<Delegation> getDelegation();
+	EList<DelegationConnector> getDelegationConnectors();
 
 	/**
 	 * Returns the value of the '<em><b>Ports Derived</b></em>' containment reference list.

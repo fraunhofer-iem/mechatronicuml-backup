@@ -17,14 +17,14 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
-import org.storydriven.core.NamedElement;
-import org.storydriven.core.impl.CommentableElementImpl;
+import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
-import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 
 /**
@@ -34,35 +34,35 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getComponentInstances <em>Component Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getConnectorInstances <em>Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getPortConnectorInstances <em>Port Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl#getParentPortInstances <em>Parent Port Instances</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ComponentInstanceConfigurationImpl extends CommentableElementImpl implements ComponentInstanceConfiguration {
+public class ComponentInstanceConfigurationImpl extends NamedElementImpl implements ComponentInstanceConfiguration {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getComment()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getComment()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String comment = COMMENT_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getComponentInstances() <em>Component Instances</em>}' containment reference list.
@@ -75,14 +75,14 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 	protected EList<ComponentInstance> componentInstances;
 
 	/**
-	 * The cached value of the '{@link #getConnectorInstances() <em>Connector Instances</em>}' containment reference list.
+	 * The cached value of the '{@link #getPortConnectorInstances() <em>Port Connector Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConnectorInstances()
+	 * @see #getPortConnectorInstances()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ConnectorInstance> connectorInstances;
+	protected EList<PortConnectorInstance> portConnectorInstances;
 
 	/**
 	 * The cached setting delegate for the '{@link #getParentPortInstances() <em>Parent Port Instances</em>}' containment reference list.
@@ -118,8 +118,8 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getComment() {
+		return comment;
 	}
 
 	/**
@@ -127,11 +127,11 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -151,11 +151,11 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ConnectorInstance> getConnectorInstances() {
-		if (connectorInstances == null) {
-			connectorInstances = new EObjectContainmentEList<ConnectorInstance>(ConnectorInstance.class, this, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES);
+	public EList<PortConnectorInstance> getPortConnectorInstances() {
+		if (portConnectorInstances == null) {
+			portConnectorInstances = new EObjectContainmentEList<PortConnectorInstance>(PortConnectorInstance.class, this, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES);
 		}
-		return connectorInstances;
+		return portConnectorInstances;
 	}
 
 	/**
@@ -187,8 +187,8 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 		switch (featureID) {
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				return ((InternalEList<?>)getComponentInstances()).basicRemove(otherEnd, msgs);
-			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES:
-				return ((InternalEList<?>)getConnectorInstances()).basicRemove(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES:
+				return ((InternalEList<?>)getPortConnectorInstances()).basicRemove(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES:
 				return ((InternalEList<?>)getParentPortInstances()).basicRemove(otherEnd, msgs);
 		}
@@ -203,12 +203,12 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME:
-				return getName();
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMMENT:
+				return getComment();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				return getComponentInstances();
-			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES:
-				return getConnectorInstances();
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES:
+				return getPortConnectorInstances();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES:
 				return getParentPortInstances();
 		}
@@ -224,16 +224,16 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME:
-				setName((String)newValue);
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMMENT:
+				setComment((String)newValue);
 				return;
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				getComponentInstances().clear();
 				getComponentInstances().addAll((Collection<? extends ComponentInstance>)newValue);
 				return;
-			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES:
-				getConnectorInstances().clear();
-				getConnectorInstances().addAll((Collection<? extends ConnectorInstance>)newValue);
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES:
+				getPortConnectorInstances().clear();
+				getPortConnectorInstances().addAll((Collection<? extends PortConnectorInstance>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -247,14 +247,14 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME:
-				setName(NAME_EDEFAULT);
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMMENT:
+				setComment(COMMENT_EDEFAULT);
 				return;
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				getComponentInstances().clear();
 				return;
-			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES:
-				getConnectorInstances().clear();
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES:
+				getPortConnectorInstances().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -268,12 +268,12 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
 				return componentInstances != null && !componentInstances.isEmpty();
-			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES:
-				return connectorInstances != null && !connectorInstances.isEmpty();
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES:
+				return portConnectorInstances != null && !portConnectorInstances.isEmpty();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES:
 				return isSetParentPortInstances();
 		}
@@ -287,9 +287,9 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == NamedElement.class) {
+		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
-				case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME: return CorePackage.NAMED_ELEMENT__NAME;
+				case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 				default: return -1;
 			}
 		}
@@ -303,9 +303,9 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == NamedElement.class) {
+		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.NAMED_ELEMENT__NAME: return InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__NAME;
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMMENT;
 				default: return -1;
 			}
 		}
@@ -322,8 +322,8 @@ public class ComponentInstanceConfigurationImpl extends CommentableElementImpl i
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (comment: ");
+		result.append(comment);
 		result.append(')');
 		return result.toString();
 	}

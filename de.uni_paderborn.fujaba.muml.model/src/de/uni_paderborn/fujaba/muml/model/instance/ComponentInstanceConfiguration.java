@@ -23,7 +23,7 @@ import org.storydriven.core.NamedElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getComponentInstances <em>Component Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getConnectorInstances <em>Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getPortConnectorInstances <em>Port Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getParentPortInstances <em>Parent Port Instances</em>}</li>
  * </ul>
  * </p>
@@ -32,7 +32,7 @@ import org.storydriven.core.NamedElement;
  * @model
  * @generated
  */
-public interface ComponentInstanceConfiguration extends CommentableElement, NamedElement {
+public interface ComponentInstanceConfiguration extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Component Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance}.
@@ -49,19 +49,19 @@ public interface ComponentInstanceConfiguration extends CommentableElement, Name
 	EList<ComponentInstance> getComponentInstances();
 
 	/**
-	 * Returns the value of the '<em><b>Connector Instances</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance}.
+	 * Returns the value of the '<em><b>Port Connector Instances</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The set of connector instances of a component instance configuration.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Connector Instances</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstanceConfiguration_ConnectorInstances()
+	 * @return the value of the '<em>Port Connector Instances</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getComponentInstanceConfiguration_PortConnectorInstances()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ConnectorInstance> getConnectorInstances();
+	EList<PortConnectorInstance> getPortConnectorInstances();
 
 	/**
 	 * Returns the value of the '<em><b>Parent Port Instances</b></em>' containment reference list.

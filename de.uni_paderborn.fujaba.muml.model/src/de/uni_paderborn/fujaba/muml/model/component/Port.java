@@ -7,9 +7,8 @@
 package de.uni_paderborn.fujaba.muml.model.component;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.NamedElement;
 
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
@@ -25,10 +24,8 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getIncomingConnectors <em>Incoming Connectors</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getComponent <em>Component</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getConnectors <em>Connectors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.Port#getPortConnectors <em>Port Connectors</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * @model abstract="true"
  * @generated
  */
-public interface Port extends NamedElement, CommentableElement, ConstrainableElement, DataType {
+public interface Port extends ConnectorEndpoint, ConstrainableElement, DataType {
 	/**
 	 * Returns the value of the '<em><b>Component</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getPorts <em>Ports</em>}'.
@@ -68,54 +65,20 @@ public interface Port extends NamedElement, CommentableElement, ConstrainableEle
 	void setComponent(Component value);
 
 	/**
-	 * Returns the value of the '<em><b>Connectors</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType}.
+	 * Returns the value of the '<em><b>Port Connectors</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.PortConnector}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Connectors</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Port Connectors</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Connectors</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_Connectors()
+	 * @return the value of the '<em>Port Connectors</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_PortConnectors()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.incomingConnectors -> union(self.outgoingConnectors)'"
 	 * @generated
 	 */
-	EList<ConnectorType> getConnectors();
-
-	/**
-	 * Returns the value of the '<em><b>Incoming Connectors</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getToPort <em>To Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The connectors which lead into this port.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Incoming Connectors</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_IncomingConnectors()
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getToPort
-	 * @model opposite="toPort"
-	 * @generated
-	 */
-	EList<ConnectorType> getIncomingConnectors();
-
-	/**
-	 * Returns the value of the '<em><b>Outgoing Connectors</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getFromPort <em>From Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The connectors which originate from this port.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Outgoing Connectors</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_OutgoingConnectors()
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getFromPort
-	 * @model opposite="fromPort"
-	 * @generated
-	 */
-	EList<ConnectorType> getOutgoingConnectors();
+	EList<PortConnector> getPortConnectors();
 
 } // Port

@@ -16,20 +16,18 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.component.ConnectorType;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.component.PortConnector;
+import de.uni_paderborn.fujaba.muml.model.connector.impl.ConnectorEndpointImpl;
 import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
@@ -39,38 +37,15 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getIncomingConnectors <em>Incoming Connectors</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getOutgoingConnectors <em>Outgoing Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getComponent <em>Component</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getConnectors <em>Connectors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortImpl#getPortConnectors <em>Port Connectors</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class PortImpl extends NamedElementImpl implements Port {
-	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
-
-	/**
-	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comment = COMMENT_EDEFAULT;
-
+public abstract class PortImpl extends ConnectorEndpointImpl implements Port {
 	/**
 	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -82,34 +57,14 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 	protected EList<Constraint> constraint;
 
 	/**
-	 * The cached value of the '{@link #getIncomingConnectors() <em>Incoming Connectors</em>}' reference list.
+	 * The cached setting delegate for the '{@link #getPortConnectors() <em>Port Connectors</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIncomingConnectors()
+	 * @see #getPortConnectors()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ConnectorType> incomingConnectors;
-
-	/**
-	 * The cached value of the '{@link #getOutgoingConnectors() <em>Outgoing Connectors</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOutgoingConnectors()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ConnectorType> outgoingConnectors;
-
-	/**
-	 * The cached setting delegate for the '{@link #getConnectors() <em>Connectors</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConnectors()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate CONNECTORS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__CONNECTORS).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate PORT_CONNECTORS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__PORT_CONNECTORS).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,27 +95,6 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 	@Override
 	protected EClass eStaticClass() {
 		return ComponentPackage.Literals.PORT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getComment() {
-		return comment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComment(String newComment) {
-		String oldComment = comment;
-		comment = newComment;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -222,32 +156,8 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<ConnectorType> getConnectors() {
-		return (EList<ConnectorType>)CONNECTORS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ConnectorType> getIncomingConnectors() {
-		if (incomingConnectors == null) {
-			incomingConnectors = new EObjectWithInverseResolvingEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.PORT__INCOMING_CONNECTORS, ComponentPackage.CONNECTOR_TYPE__TO_PORT);
-		}
-		return incomingConnectors;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ConnectorType> getOutgoingConnectors() {
-		if (outgoingConnectors == null) {
-			outgoingConnectors = new EObjectWithInverseResolvingEList<ConnectorType>(ConnectorType.class, this, ComponentPackage.PORT__OUTGOING_CONNECTORS, ComponentPackage.CONNECTOR_TYPE__FROM_PORT);
-		}
-		return outgoingConnectors;
+	public EList<PortConnector> getPortConnectors() {
+		return (EList<PortConnector>)PORT_CONNECTORS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -261,10 +171,6 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 		switch (featureID) {
 			case ComponentPackage.PORT__CONSTRAINT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
-			case ComponentPackage.PORT__INCOMING_CONNECTORS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingConnectors()).basicAdd(otherEnd, msgs);
-			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingConnectors()).basicAdd(otherEnd, msgs);
 			case ComponentPackage.PORT__COMPONENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -283,10 +189,6 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 		switch (featureID) {
 			case ComponentPackage.PORT__CONSTRAINT:
 				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
-			case ComponentPackage.PORT__INCOMING_CONNECTORS:
-				return ((InternalEList<?>)getIncomingConnectors()).basicRemove(otherEnd, msgs);
-			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
-				return ((InternalEList<?>)getOutgoingConnectors()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.PORT__COMPONENT:
 				return basicSetComponent(null, msgs);
 		}
@@ -315,18 +217,12 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentPackage.PORT__COMMENT:
-				return getComment();
 			case ComponentPackage.PORT__CONSTRAINT:
 				return getConstraint();
-			case ComponentPackage.PORT__INCOMING_CONNECTORS:
-				return getIncomingConnectors();
-			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
-				return getOutgoingConnectors();
 			case ComponentPackage.PORT__COMPONENT:
 				return getComponent();
-			case ComponentPackage.PORT__CONNECTORS:
-				return getConnectors();
+			case ComponentPackage.PORT__PORT_CONNECTORS:
+				return getPortConnectors();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -340,20 +236,9 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentPackage.PORT__COMMENT:
-				setComment((String)newValue);
-				return;
 			case ComponentPackage.PORT__CONSTRAINT:
 				getConstraint().clear();
 				getConstraint().addAll((Collection<? extends Constraint>)newValue);
-				return;
-			case ComponentPackage.PORT__INCOMING_CONNECTORS:
-				getIncomingConnectors().clear();
-				getIncomingConnectors().addAll((Collection<? extends ConnectorType>)newValue);
-				return;
-			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
-				getOutgoingConnectors().clear();
-				getOutgoingConnectors().addAll((Collection<? extends ConnectorType>)newValue);
 				return;
 			case ComponentPackage.PORT__COMPONENT:
 				setComponent((Component)newValue);
@@ -370,17 +255,8 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.PORT__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
 			case ComponentPackage.PORT__CONSTRAINT:
 				getConstraint().clear();
-				return;
-			case ComponentPackage.PORT__INCOMING_CONNECTORS:
-				getIncomingConnectors().clear();
-				return;
-			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
-				getOutgoingConnectors().clear();
 				return;
 			case ComponentPackage.PORT__COMPONENT:
 				setComponent((Component)null);
@@ -397,18 +273,12 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.PORT__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case ComponentPackage.PORT__CONSTRAINT:
 				return constraint != null && !constraint.isEmpty();
-			case ComponentPackage.PORT__INCOMING_CONNECTORS:
-				return incomingConnectors != null && !incomingConnectors.isEmpty();
-			case ComponentPackage.PORT__OUTGOING_CONNECTORS:
-				return outgoingConnectors != null && !outgoingConnectors.isEmpty();
 			case ComponentPackage.PORT__COMPONENT:
 				return getComponent() != null;
-			case ComponentPackage.PORT__CONNECTORS:
-				return CONNECTORS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.PORT__PORT_CONNECTORS:
+				return PORT_CONNECTORS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -420,15 +290,9 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (derivedFeatureID) {
-				case ComponentPackage.PORT__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
-				default: return -1;
-			}
-		}
 		if (baseClass == ConstrainableElement.class) {
 			switch (derivedFeatureID) {
-				case ComponentPackage.PORT__CONSTRAINT: return de.uni_paderborn.fujaba.muml.model.core.CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
+				case ComponentPackage.PORT__CONSTRAINT: return CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
 				default: return -1;
 			}
 		}
@@ -447,15 +311,9 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (baseFeatureID) {
-				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return ComponentPackage.PORT__COMMENT;
-				default: return -1;
-			}
-		}
 		if (baseClass == ConstrainableElement.class) {
 			switch (baseFeatureID) {
-				case de.uni_paderborn.fujaba.muml.model.core.CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ComponentPackage.PORT__CONSTRAINT;
+				case CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ComponentPackage.PORT__CONSTRAINT;
 				default: return -1;
 			}
 		}
@@ -465,22 +323,6 @@ public abstract class PortImpl extends NamedElementImpl implements Port {
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (comment: ");
-		result.append(comment);
-		result.append(')');
-		return result.toString();
 	}
 
 } //PortImpl

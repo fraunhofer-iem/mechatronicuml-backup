@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.connector.util;
 
-import de.uni_paderborn.fujaba.muml.model.connector.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -92,7 +91,6 @@ public class ConnectorSwitch<T> extends Switch<T> {
 			case ConnectorPackage.CONNECTOR: {
 				Connector connector = (Connector)theEObject;
 				T result = caseConnector(connector);
-				if (result == null) result = caseNamedElement(connector);
 				if (result == null) result = caseCommentableElement(connector);
 				if (result == null) result = caseExtendableElement(connector);
 				if (result == null) result = defaultCase(theEObject);
@@ -110,7 +108,6 @@ public class ConnectorSwitch<T> extends Switch<T> {
 			case ConnectorPackage.CONNECTOR_INSTANCE: {
 				ConnectorInstance connectorInstance = (ConnectorInstance)theEObject;
 				T result = caseConnectorInstance(connectorInstance);
-				if (result == null) result = caseNamedElement(connectorInstance);
 				if (result == null) result = caseCommentableElement(connectorInstance);
 				if (result == null) result = caseExtendableElement(connectorInstance);
 				if (result == null) result = defaultCase(theEObject);
@@ -120,8 +117,8 @@ public class ConnectorSwitch<T> extends Switch<T> {
 				DiscreteInteractionEndpoint discreteInteractionEndpoint = (DiscreteInteractionEndpoint)theEObject;
 				T result = caseDiscreteInteractionEndpoint(discreteInteractionEndpoint);
 				if (result == null) result = caseBehavioralElement(discreteInteractionEndpoint);
-				if (result == null) result = caseConstrainableElement(discreteInteractionEndpoint);
 				if (result == null) result = caseNamedElement(discreteInteractionEndpoint);
+				if (result == null) result = caseConstrainableElement(discreteInteractionEndpoint);
 				if (result == null) result = caseExtendableElement(discreteInteractionEndpoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.impl;
 
-import de.uni_paderborn.fujaba.muml.model.core.*;
 import java.util.concurrent.TimeUnit;
 
 import org.eclipse.emf.ecore.EClass;

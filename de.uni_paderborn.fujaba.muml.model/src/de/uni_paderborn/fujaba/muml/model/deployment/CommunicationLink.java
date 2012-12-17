@@ -9,7 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.deployment;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.ExtendableElement;
 
-import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -160,7 +160,7 @@ public interface CommunicationLink extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Deployed Assembly Instances</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -171,6 +171,6 @@ public interface CommunicationLink extends ExtendableElement {
 	 * @model
 	 * @generated
 	 */
-	EList<AssemblyInstance> getDeployedAssemblyInstances();
+	EList<AssemblyConnectorInstance> getDeployedAssemblyInstances();
 
 } // CommunicationLink

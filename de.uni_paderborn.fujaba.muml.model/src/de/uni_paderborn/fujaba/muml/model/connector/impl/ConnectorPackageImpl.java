@@ -404,15 +404,13 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		// Add supertypes to classes
 		connectorEndpointEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		connectorEndpointEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		connectorEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		connectorEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		connectorEndpointInstanceEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		connectorEndpointInstanceEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		connectorInstanceEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		connectorInstanceEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		discreteInteractionEndpointEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
-		discreteInteractionEndpointEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
 		discreteInteractionEndpointEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		discreteInteractionEndpointEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(connectorEndpointEClass, ConnectorEndpoint.class, "ConnectorEndpoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

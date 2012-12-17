@@ -6,8 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.ECollections;
@@ -16,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CorePackage;
@@ -24,11 +21,11 @@ import org.storydriven.core.NamedElement;
 import org.storydriven.core.impl.CommentableElementImpl;
 
 import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
-import de.uni_paderborn.fujaba.muml.model.component.Assembly;
+import de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.model.component.Delegation;
+import de.uni_paderborn.fujaba.muml.model.component.DelegationConnector;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
@@ -44,9 +41,8 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getParentComponent <em>Parent Component</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getFromRev <em>From Rev</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getToRev <em>To Rev</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getDelegation <em>Delegation</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getAssemblyConnectors <em>Assembly Connectors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getDelegationConnectors <em>Delegation Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getPortsDerived <em>Ports Derived</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#isMultiPart <em>Multi Part</em>}</li>
@@ -85,36 +81,6 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 * @ordered
 	 */
 	protected Component componentType;
-
-	/**
-	 * The cached value of the '{@link #getFromRev() <em>From Rev</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFromRev()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Assembly> fromRev;
-
-	/**
-	 * The cached value of the '{@link #getToRev() <em>To Rev</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getToRev()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Assembly> toRev;
-
-	/**
-	 * The cached value of the '{@link #getDelegation() <em>Delegation</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDelegation()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Delegation> delegation;
 
 	/**
 	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
@@ -298,11 +264,12 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Assembly> getFromRev() {
-		if (fromRev == null) {
-			fromRev = new EObjectWithInverseResolvingEList<Assembly>(Assembly.class, this, ComponentPackage.COMPONENT_PART__FROM_REV, ComponentPackage.ASSEMBLY__FROM);
-		}
-		return fromRev;
+	public EList<AssemblyConnector> getAssemblyConnectors() {
+		// TODO: implement this method to return the 'Assembly Connectors' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
+		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -310,23 +277,12 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Assembly> getToRev() {
-		if (toRev == null) {
-			toRev = new EObjectWithInverseResolvingEList<Assembly>(Assembly.class, this, ComponentPackage.COMPONENT_PART__TO_REV, ComponentPackage.ASSEMBLY__TO);
-		}
-		return toRev;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Delegation> getDelegation() {
-		if (delegation == null) {
-			delegation = new EObjectWithInverseResolvingEList<Delegation>(Delegation.class, this, ComponentPackage.COMPONENT_PART__DELEGATION, ComponentPackage.DELEGATION__COMPONENT_PART);
-		}
-		return delegation;
+	public EList<DelegationConnector> getDelegationConnectors() {
+		// TODO: implement this method to return the 'Delegation Connectors' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
+		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -447,12 +403,6 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetParentComponent((StructuredComponent)otherEnd, msgs);
-			case ComponentPackage.COMPONENT_PART__FROM_REV:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFromRev()).basicAdd(otherEnd, msgs);
-			case ComponentPackage.COMPONENT_PART__TO_REV:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getToRev()).basicAdd(otherEnd, msgs);
-			case ComponentPackage.COMPONENT_PART__DELEGATION:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDelegation()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -469,12 +419,6 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 				return basicSetComponentType(null, msgs);
 			case ComponentPackage.COMPONENT_PART__PARENT_COMPONENT:
 				return basicSetParentComponent(null, msgs);
-			case ComponentPackage.COMPONENT_PART__FROM_REV:
-				return ((InternalEList<?>)getFromRev()).basicRemove(otherEnd, msgs);
-			case ComponentPackage.COMPONENT_PART__TO_REV:
-				return ((InternalEList<?>)getToRev()).basicRemove(otherEnd, msgs);
-			case ComponentPackage.COMPONENT_PART__DELEGATION:
-				return ((InternalEList<?>)getDelegation()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				return basicSetCardinality(null, msgs);
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
@@ -512,12 +456,10 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 				return basicGetComponentType();
 			case ComponentPackage.COMPONENT_PART__PARENT_COMPONENT:
 				return getParentComponent();
-			case ComponentPackage.COMPONENT_PART__FROM_REV:
-				return getFromRev();
-			case ComponentPackage.COMPONENT_PART__TO_REV:
-				return getToRev();
-			case ComponentPackage.COMPONENT_PART__DELEGATION:
-				return getDelegation();
+			case ComponentPackage.COMPONENT_PART__ASSEMBLY_CONNECTORS:
+				return getAssemblyConnectors();
+			case ComponentPackage.COMPONENT_PART__DELEGATION_CONNECTORS:
+				return getDelegationConnectors();
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				return getCardinality();
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
@@ -546,18 +488,6 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 			case ComponentPackage.COMPONENT_PART__PARENT_COMPONENT:
 				setParentComponent((StructuredComponent)newValue);
 				return;
-			case ComponentPackage.COMPONENT_PART__FROM_REV:
-				getFromRev().clear();
-				getFromRev().addAll((Collection<? extends Assembly>)newValue);
-				return;
-			case ComponentPackage.COMPONENT_PART__TO_REV:
-				getToRev().clear();
-				getToRev().addAll((Collection<? extends Assembly>)newValue);
-				return;
-			case ComponentPackage.COMPONENT_PART__DELEGATION:
-				getDelegation().clear();
-				getDelegation().addAll((Collection<? extends Delegation>)newValue);
-				return;
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				setCardinality((Cardinality)newValue);
 				return;
@@ -582,15 +512,6 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 			case ComponentPackage.COMPONENT_PART__PARENT_COMPONENT:
 				setParentComponent((StructuredComponent)null);
 				return;
-			case ComponentPackage.COMPONENT_PART__FROM_REV:
-				getFromRev().clear();
-				return;
-			case ComponentPackage.COMPONENT_PART__TO_REV:
-				getToRev().clear();
-				return;
-			case ComponentPackage.COMPONENT_PART__DELEGATION:
-				getDelegation().clear();
-				return;
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				setCardinality((Cardinality)null);
 				return;
@@ -612,12 +533,10 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 				return componentType != null;
 			case ComponentPackage.COMPONENT_PART__PARENT_COMPONENT:
 				return getParentComponent() != null;
-			case ComponentPackage.COMPONENT_PART__FROM_REV:
-				return fromRev != null && !fromRev.isEmpty();
-			case ComponentPackage.COMPONENT_PART__TO_REV:
-				return toRev != null && !toRev.isEmpty();
-			case ComponentPackage.COMPONENT_PART__DELEGATION:
-				return delegation != null && !delegation.isEmpty();
+			case ComponentPackage.COMPONENT_PART__ASSEMBLY_CONNECTORS:
+				return !getAssemblyConnectors().isEmpty();
+			case ComponentPackage.COMPONENT_PART__DELEGATION_CONNECTORS:
+				return !getDelegationConnectors().isEmpty();
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				return cardinality != null;
 			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:

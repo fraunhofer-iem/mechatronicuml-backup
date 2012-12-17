@@ -40,10 +40,8 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getIncomingRoleConnector <em>Incoming Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getPort <em>Port</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#isMultiRole <em>Multi Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
@@ -74,16 +72,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	protected String comment = COMMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getIncomingRoleConnector() <em>Incoming Role Connector</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIncomingRoleConnector()
-	 * @generated
-	 * @ordered
-	 */
-	protected RoleConnector incomingRoleConnector;
-
-	/**
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,16 +80,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	 * @ordered
 	 */
 	protected EList<DiscretePort> port;
-
-	/**
-	 * The cached value of the '{@link #getOutgoingRoleConnector() <em>Outgoing Role Connector</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOutgoingRoleConnector()
-	 * @generated
-	 * @ordered
-	 */
-	protected RoleConnector outgoingRoleConnector;
 
 	/**
 	 * The cached setting delegate for the '{@link #getRoleConnector() <em>Role Connector</em>}' reference.
@@ -178,66 +156,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleConnector getIncomingRoleConnector() {
-		if (incomingRoleConnector != null && incomingRoleConnector.eIsProxy()) {
-			InternalEObject oldIncomingRoleConnector = (InternalEObject)incomingRoleConnector;
-			incomingRoleConnector = (RoleConnector)eResolveProxy(oldIncomingRoleConnector);
-			if (incomingRoleConnector != oldIncomingRoleConnector) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProtocolPackage.ROLE__INCOMING_ROLE_CONNECTOR, oldIncomingRoleConnector, incomingRoleConnector));
-			}
-		}
-		return incomingRoleConnector;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoleConnector basicGetIncomingRoleConnector() {
-		return incomingRoleConnector;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetIncomingRoleConnector(RoleConnector newIncomingRoleConnector, NotificationChain msgs) {
-		RoleConnector oldIncomingRoleConnector = incomingRoleConnector;
-		incomingRoleConnector = newIncomingRoleConnector;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProtocolPackage.ROLE__INCOMING_ROLE_CONNECTOR, oldIncomingRoleConnector, newIncomingRoleConnector);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIncomingRoleConnector(RoleConnector newIncomingRoleConnector) {
-		if (newIncomingRoleConnector != incomingRoleConnector) {
-			NotificationChain msgs = null;
-			if (incomingRoleConnector != null)
-				msgs = ((InternalEObject)incomingRoleConnector).eInverseRemove(this, ProtocolPackage.ROLE_CONNECTOR__TARGET, RoleConnector.class, msgs);
-			if (newIncomingRoleConnector != null)
-				msgs = ((InternalEObject)newIncomingRoleConnector).eInverseAdd(this, ProtocolPackage.ROLE_CONNECTOR__TARGET, RoleConnector.class, msgs);
-			msgs = basicSetIncomingRoleConnector(newIncomingRoleConnector, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.ROLE__INCOMING_ROLE_CONNECTOR, newIncomingRoleConnector, newIncomingRoleConnector));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public CoordinationProtocol getCoordinationProtocol() {
 		if (eContainerFeatureID() != ProtocolPackage.ROLE__COORDINATION_PROTOCOL) return null;
 		return (CoordinationProtocol)eContainer();
@@ -291,66 +209,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleConnector getOutgoingRoleConnector() {
-		if (outgoingRoleConnector != null && outgoingRoleConnector.eIsProxy()) {
-			InternalEObject oldOutgoingRoleConnector = (InternalEObject)outgoingRoleConnector;
-			outgoingRoleConnector = (RoleConnector)eResolveProxy(oldOutgoingRoleConnector);
-			if (outgoingRoleConnector != oldOutgoingRoleConnector) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProtocolPackage.ROLE__OUTGOING_ROLE_CONNECTOR, oldOutgoingRoleConnector, outgoingRoleConnector));
-			}
-		}
-		return outgoingRoleConnector;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoleConnector basicGetOutgoingRoleConnector() {
-		return outgoingRoleConnector;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetOutgoingRoleConnector(RoleConnector newOutgoingRoleConnector, NotificationChain msgs) {
-		RoleConnector oldOutgoingRoleConnector = outgoingRoleConnector;
-		outgoingRoleConnector = newOutgoingRoleConnector;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProtocolPackage.ROLE__OUTGOING_ROLE_CONNECTOR, oldOutgoingRoleConnector, newOutgoingRoleConnector);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOutgoingRoleConnector(RoleConnector newOutgoingRoleConnector) {
-		if (newOutgoingRoleConnector != outgoingRoleConnector) {
-			NotificationChain msgs = null;
-			if (outgoingRoleConnector != null)
-				msgs = ((InternalEObject)outgoingRoleConnector).eInverseRemove(this, ProtocolPackage.ROLE_CONNECTOR__SOURCE, RoleConnector.class, msgs);
-			if (newOutgoingRoleConnector != null)
-				msgs = ((InternalEObject)newOutgoingRoleConnector).eInverseAdd(this, ProtocolPackage.ROLE_CONNECTOR__SOURCE, RoleConnector.class, msgs);
-			msgs = basicSetOutgoingRoleConnector(newOutgoingRoleConnector, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.ROLE__OUTGOING_ROLE_CONNECTOR, newOutgoingRoleConnector, newOutgoingRoleConnector));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public RoleConnector getRoleConnector() {
 		return (RoleConnector)ROLE_CONNECTOR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -394,20 +252,12 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProtocolPackage.ROLE__INCOMING_ROLE_CONNECTOR:
-				if (incomingRoleConnector != null)
-					msgs = ((InternalEObject)incomingRoleConnector).eInverseRemove(this, ProtocolPackage.ROLE_CONNECTOR__TARGET, RoleConnector.class, msgs);
-				return basicSetIncomingRoleConnector((RoleConnector)otherEnd, msgs);
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetCoordinationProtocol((CoordinationProtocol)otherEnd, msgs);
 			case ProtocolPackage.ROLE__PORT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPort()).basicAdd(otherEnd, msgs);
-			case ProtocolPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
-				if (outgoingRoleConnector != null)
-					msgs = ((InternalEObject)outgoingRoleConnector).eInverseRemove(this, ProtocolPackage.ROLE_CONNECTOR__SOURCE, RoleConnector.class, msgs);
-				return basicSetOutgoingRoleConnector((RoleConnector)otherEnd, msgs);
 			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReceiverMessageBuffer()).basicAdd(otherEnd, msgs);
 		}
@@ -422,14 +272,10 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProtocolPackage.ROLE__INCOMING_ROLE_CONNECTOR:
-				return basicSetIncomingRoleConnector(null, msgs);
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				return basicSetCoordinationProtocol(null, msgs);
 			case ProtocolPackage.ROLE__PORT:
 				return ((InternalEList<?>)getPort()).basicRemove(otherEnd, msgs);
-			case ProtocolPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
-				return basicSetOutgoingRoleConnector(null, msgs);
 			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
 				return ((InternalEList<?>)getReceiverMessageBuffer()).basicRemove(otherEnd, msgs);
 		}
@@ -460,16 +306,10 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 		switch (featureID) {
 			case ProtocolPackage.ROLE__COMMENT:
 				return getComment();
-			case ProtocolPackage.ROLE__INCOMING_ROLE_CONNECTOR:
-				if (resolve) return getIncomingRoleConnector();
-				return basicGetIncomingRoleConnector();
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				return getCoordinationProtocol();
 			case ProtocolPackage.ROLE__PORT:
 				return getPort();
-			case ProtocolPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
-				if (resolve) return getOutgoingRoleConnector();
-				return basicGetOutgoingRoleConnector();
 			case ProtocolPackage.ROLE__ROLE_CONNECTOR:
 				if (resolve) return getRoleConnector();
 				return basicGetRoleConnector();
@@ -493,18 +333,12 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 			case ProtocolPackage.ROLE__COMMENT:
 				setComment((String)newValue);
 				return;
-			case ProtocolPackage.ROLE__INCOMING_ROLE_CONNECTOR:
-				setIncomingRoleConnector((RoleConnector)newValue);
-				return;
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((CoordinationProtocol)newValue);
 				return;
 			case ProtocolPackage.ROLE__PORT:
 				getPort().clear();
 				getPort().addAll((Collection<? extends DiscretePort>)newValue);
-				return;
-			case ProtocolPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
-				setOutgoingRoleConnector((RoleConnector)newValue);
 				return;
 			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
 				getReceiverMessageBuffer().clear();
@@ -525,17 +359,11 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 			case ProtocolPackage.ROLE__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case ProtocolPackage.ROLE__INCOMING_ROLE_CONNECTOR:
-				setIncomingRoleConnector((RoleConnector)null);
-				return;
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((CoordinationProtocol)null);
 				return;
 			case ProtocolPackage.ROLE__PORT:
 				getPort().clear();
-				return;
-			case ProtocolPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
-				setOutgoingRoleConnector((RoleConnector)null);
 				return;
 			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
 				getReceiverMessageBuffer().clear();
@@ -554,14 +382,10 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 		switch (featureID) {
 			case ProtocolPackage.ROLE__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case ProtocolPackage.ROLE__INCOMING_ROLE_CONNECTOR:
-				return incomingRoleConnector != null;
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				return getCoordinationProtocol() != null;
 			case ProtocolPackage.ROLE__PORT:
 				return port != null && !port.isEmpty();
-			case ProtocolPackage.ROLE__OUTGOING_ROLE_CONNECTOR:
-				return outgoingRoleConnector != null;
 			case ProtocolPackage.ROLE__ROLE_CONNECTOR:
 				return ROLE_CONNECTOR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ProtocolPackage.ROLE__MULTI_ROLE:

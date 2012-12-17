@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.util;
 
-import de.uni_paderborn.fujaba.muml.model.instance.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -15,19 +14,19 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
-import de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance;
 
@@ -105,14 +104,14 @@ public class InstanceValidator extends EObjectValidator {
 		switch (classifierID) {
 			case InstancePackage.COMPONENT_INSTANCE:
 				return validateComponentInstance((ComponentInstance)value, diagnostics, context);
-			case InstancePackage.CONNECTOR_INSTANCE:
-				return validateConnectorInstance((ConnectorInstance)value, diagnostics, context);
+			case InstancePackage.PORT_CONNECTOR_INSTANCE:
+				return validatePortConnectorInstance((PortConnectorInstance)value, diagnostics, context);
 			case InstancePackage.PORT_INSTANCE:
 				return validatePortInstance((PortInstance)value, diagnostics, context);
-			case InstancePackage.ASSEMBLY_INSTANCE:
-				return validateAssemblyInstance((AssemblyInstance)value, diagnostics, context);
-			case InstancePackage.DELEGATION_INSTANCE:
-				return validateDelegationInstance((DelegationInstance)value, diagnostics, context);
+			case InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE:
+				return validateAssemblyConnectorInstance((AssemblyConnectorInstance)value, diagnostics, context);
+			case InstancePackage.DELEGATION_CONNECTOR_INSTANCE:
+				return validateDelegationConnectorInstance((DelegationConnectorInstance)value, diagnostics, context);
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION:
 				return validateComponentInstanceConfiguration((ComponentInstanceConfiguration)value, diagnostics, context);
 			case InstancePackage.CONTINUOUS_PORT_INSTANCE:
@@ -150,8 +149,8 @@ public class InstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConnectorInstance(ConnectorInstance connectorInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(connectorInstance, diagnostics, context);
+	public boolean validatePortConnectorInstance(PortConnectorInstance portConnectorInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(portConnectorInstance, diagnostics, context);
 	}
 
 	/**
@@ -168,8 +167,8 @@ public class InstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAssemblyInstance(AssemblyInstance assemblyInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(assemblyInstance, diagnostics, context);
+	public boolean validateAssemblyConnectorInstance(AssemblyConnectorInstance assemblyConnectorInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(assemblyConnectorInstance, diagnostics, context);
 	}
 
 	/**
@@ -177,44 +176,44 @@ public class InstanceValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDelegationInstance(DelegationInstance delegationInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(delegationInstance, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(delegationInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(delegationInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(delegationInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(delegationInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(delegationInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(delegationInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(delegationInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegationInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationInstance_OneDelegationInstancePerPortInstance(delegationInstance, diagnostics, context);
+	public boolean validateDelegationConnectorInstance(DelegationConnectorInstance delegationConnectorInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(delegationConnectorInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegationConnectorInstance_OneDelegationInstancePerPortInstance(delegationConnectorInstance, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the OneDelegationInstancePerPortInstance constraint of '<em>Delegation Instance</em>'.
+	 * The cached validation expression for the OneDelegationInstancePerPortInstance constraint of '<em>Delegation Connector Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DELEGATION_INSTANCE__ONE_DELEGATION_INSTANCE_PER_PORT_INSTANCE__EEXPRESSION = "not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1";
+	protected static final String DELEGATION_CONNECTOR_INSTANCE__ONE_DELEGATION_INSTANCE_PER_PORT_INSTANCE__EEXPRESSION = "not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1";
 
 	/**
-	 * Validates the OneDelegationInstancePerPortInstance constraint of '<em>Delegation Instance</em>'.
+	 * Validates the OneDelegationInstancePerPortInstance constraint of '<em>Delegation Connector Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDelegationInstance_OneDelegationInstancePerPortInstance(DelegationInstance delegationInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDelegationConnectorInstance_OneDelegationInstancePerPortInstance(DelegationConnectorInstance delegationConnectorInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(InstancePackage.Literals.DELEGATION_INSTANCE,
-				 delegationInstance,
+				(InstancePackage.Literals.DELEGATION_CONNECTOR_INSTANCE,
+				 delegationConnectorInstance,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "OneDelegationInstancePerPortInstance",
-				 DELEGATION_INSTANCE__ONE_DELEGATION_INSTANCE_PER_PORT_INSTANCE__EEXPRESSION,
+				 DELEGATION_CONNECTOR_INSTANCE__ONE_DELEGATION_INSTANCE_PER_PORT_INSTANCE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

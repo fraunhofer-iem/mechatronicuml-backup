@@ -11,6 +11,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
 
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
@@ -139,14 +141,14 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl <em>Connector Instance</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortConnectorInstanceImpl <em>Port Connector Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getConnectorInstance()
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.PortConnectorInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getPortConnectorInstance()
 	 * @generated
 	 */
-	int CONNECTOR_INSTANCE = 1;
+	int PORT_CONNECTOR_INSTANCE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -155,7 +157,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int PORT_CONNECTOR_INSTANCE__ANNOTATION = ConnectorPackage.CONNECTOR_INSTANCE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -164,7 +166,34 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int PORT_CONNECTOR_INSTANCE__EXTENSION = ConnectorPackage.CONNECTOR_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_CONNECTOR_INSTANCE__COMMENT = ConnectorPackage.CONNECTOR_INSTANCE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_CONNECTOR_INSTANCE__TYPE = ConnectorPackage.CONNECTOR_INSTANCE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Connector Endpoint Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES = ConnectorPackage.CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -173,7 +202,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__SOURCE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int PORT_CONNECTOR_INSTANCE__SOURCE = ConnectorPackage.CONNECTOR_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -182,25 +211,25 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__TARGET = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int PORT_CONNECTOR_INSTANCE__TARGET = ConnectorPackage.CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Connector Type</b></em>' reference.
+	 * The feature id for the '<em><b>Port Connector Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE__CONNECTOR_TYPE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int PORT_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE = ConnectorPackage.CONNECTOR_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Connector Instance</em>' class.
+	 * The number of structural features of the '<em>Port Connector Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int PORT_CONNECTOR_INSTANCE_FEATURE_COUNT = ConnectorPackage.CONNECTOR_INSTANCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl <em>Port Instance</em>}' class.
@@ -219,7 +248,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int PORT_INSTANCE__ANNOTATION = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -228,7 +257,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int PORT_INSTANCE__EXTENSION = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -237,7 +266,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int PORT_INSTANCE__NAME = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -246,43 +275,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Port Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_INSTANCE__PORT_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_INSTANCE__COMPONENT_INSTANCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int PORT_INSTANCE__COMMENT = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
@@ -291,7 +284,43 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE__CONNECTOR_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int PORT_INSTANCE__CONNECTOR_INSTANCES = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE__TYPE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Port Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE__PORT_TYPE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE__COMPONENT_INSTANCE = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Port Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Port Instance</em>' class.
@@ -300,90 +329,17 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int PORT_INSTANCE_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyInstanceImpl <em>Assembly Instance</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyConnectorInstanceImpl <em>Assembly Connector Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyInstanceImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getAssemblyInstance()
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyConnectorInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getAssemblyConnectorInstance()
 	 * @generated
 	 */
-	int ASSEMBLY_INSTANCE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_INSTANCE__ANNOTATION = CONNECTOR_INSTANCE__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_INSTANCE__EXTENSION = CONNECTOR_INSTANCE__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_INSTANCE__SOURCE = CONNECTOR_INSTANCE__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_INSTANCE__TARGET = CONNECTOR_INSTANCE__TARGET;
-
-	/**
-	 * The feature id for the '<em><b>Connector Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_INSTANCE__CONNECTOR_TYPE = CONNECTOR_INSTANCE__CONNECTOR_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Assembly Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_INSTANCE__ASSEMBLY_TYPE = CONNECTOR_INSTANCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Assembly Instance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_INSTANCE_FEATURE_COUNT = CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DelegationInstanceImpl <em>Delegation Instance</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.DelegationInstanceImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getDelegationInstance()
-	 * @generated
-	 */
-	int DELEGATION_INSTANCE = 4;
+	int ASSEMBLY_CONNECTOR_INSTANCE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -392,7 +348,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_INSTANCE__ANNOTATION = CONNECTOR_INSTANCE__ANNOTATION;
+	int ASSEMBLY_CONNECTOR_INSTANCE__ANNOTATION = PORT_CONNECTOR_INSTANCE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -401,7 +357,34 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_INSTANCE__EXTENSION = CONNECTOR_INSTANCE__EXTENSION;
+	int ASSEMBLY_CONNECTOR_INSTANCE__EXTENSION = PORT_CONNECTOR_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONNECTOR_INSTANCE__COMMENT = PORT_CONNECTOR_INSTANCE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONNECTOR_INSTANCE__TYPE = PORT_CONNECTOR_INSTANCE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Connector Endpoint Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES = PORT_CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -410,7 +393,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_INSTANCE__SOURCE = CONNECTOR_INSTANCE__SOURCE;
+	int ASSEMBLY_CONNECTOR_INSTANCE__SOURCE = PORT_CONNECTOR_INSTANCE__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -419,34 +402,134 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_INSTANCE__TARGET = CONNECTOR_INSTANCE__TARGET;
+	int ASSEMBLY_CONNECTOR_INSTANCE__TARGET = PORT_CONNECTOR_INSTANCE__TARGET;
 
 	/**
-	 * The feature id for the '<em><b>Connector Type</b></em>' reference.
+	 * The feature id for the '<em><b>Port Connector Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_INSTANCE__CONNECTOR_TYPE = CONNECTOR_INSTANCE__CONNECTOR_TYPE;
+	int ASSEMBLY_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE = PORT_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Delegation Type</b></em>' reference.
+	 * The feature id for the '<em><b>Assembly Connector Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_INSTANCE__DELEGATION_TYPE = CONNECTOR_INSTANCE_FEATURE_COUNT + 0;
+	int ASSEMBLY_CONNECTOR_INSTANCE__ASSEMBLY_CONNECTOR_TYPE = PORT_CONNECTOR_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Delegation Instance</em>' class.
+	 * The number of structural features of the '<em>Assembly Connector Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_INSTANCE_FEATURE_COUNT = CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
+	int ASSEMBLY_CONNECTOR_INSTANCE_FEATURE_COUNT = PORT_CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DelegationConnectorInstanceImpl <em>Delegation Connector Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.DelegationConnectorInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getDelegationConnectorInstance()
+	 * @generated
+	 */
+	int DELEGATION_CONNECTOR_INSTANCE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_CONNECTOR_INSTANCE__ANNOTATION = PORT_CONNECTOR_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_CONNECTOR_INSTANCE__EXTENSION = PORT_CONNECTOR_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_CONNECTOR_INSTANCE__COMMENT = PORT_CONNECTOR_INSTANCE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_CONNECTOR_INSTANCE__TYPE = PORT_CONNECTOR_INSTANCE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Connector Endpoint Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES = PORT_CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_CONNECTOR_INSTANCE__SOURCE = PORT_CONNECTOR_INSTANCE__SOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_CONNECTOR_INSTANCE__TARGET = PORT_CONNECTOR_INSTANCE__TARGET;
+
+	/**
+	 * The feature id for the '<em><b>Port Connector Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE = PORT_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Delegation Connector Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_CONNECTOR_INSTANCE__DELEGATION_CONNECTOR_TYPE = PORT_CONNECTOR_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Delegation Connector Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_CONNECTOR_INSTANCE_FEATURE_COUNT = PORT_CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl <em>Component Instance Configuration</em>}' class.
@@ -465,7 +548,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int COMPONENT_INSTANCE_CONFIGURATION__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -474,16 +557,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_INSTANCE_CONFIGURATION__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+	int COMPONENT_INSTANCE_CONFIGURATION__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -492,7 +566,16 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION__NAME = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int COMPONENT_INSTANCE_CONFIGURATION__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE_CONFIGURATION__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Component Instances</b></em>' containment reference list.
@@ -501,16 +584,16 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Connector Instances</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Port Connector Instances</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Parent Port Instances</b></em>' containment reference list.
@@ -519,7 +602,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Component Instance Configuration</em>' class.
@@ -528,7 +611,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
+	int COMPONENT_INSTANCE_CONFIGURATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 
 	/**
@@ -578,6 +661,24 @@ public interface InstancePackage extends EPackage {
 	int CONTINUOUS_PORT_INSTANCE__COMMENT = PORT_INSTANCE__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__CONNECTOR_INSTANCES = PORT_INSTANCE__CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__TYPE = PORT_INSTANCE__TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Port Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -596,31 +697,13 @@ public interface InstancePackage extends EPackage {
 	int CONTINUOUS_PORT_INSTANCE__COMPONENT_INSTANCE = PORT_INSTANCE__COMPONENT_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
+	 * The feature id for the '<em><b>Port Connector Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_PORT_INSTANCE__CONNECTOR_INSTANCES = PORT_INSTANCE__CONNECTOR_INSTANCES;
+	int CONTINUOUS_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
 
 	/**
 	 * The number of structural features of the '<em>Continuous Port Instance</em>' class.
@@ -678,6 +761,24 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_PORT_INSTANCE__COMMENT = PORT_INSTANCE__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES = PORT_INSTANCE__CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__TYPE = PORT_INSTANCE__TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Port Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -696,31 +797,13 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE = PORT_INSTANCE__COMPONENT_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
+	 * The feature id for the '<em><b>Port Connector Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES = PORT_INSTANCE__CONNECTOR_INSTANCES;
+	int DISCRETE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -814,6 +897,24 @@ public interface InstancePackage extends EPackage {
 	int HYBRID_PORT_INSTANCE__COMMENT = DISCRETE_PORT_INSTANCE__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__TYPE = DISCRETE_PORT_INSTANCE__TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Port Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -832,31 +933,13 @@ public interface InstancePackage extends EPackage {
 	int HYBRID_PORT_INSTANCE__COMPONENT_INSTANCE = DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
+	 * The feature id for the '<em><b>Port Connector Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES;
+	int HYBRID_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -950,6 +1033,24 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_SINGLE_PORT_INSTANCE__COMMENT = DISCRETE_PORT_INSTANCE__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__TYPE = DISCRETE_PORT_INSTANCE__TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Port Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -968,31 +1069,13 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_SINGLE_PORT_INSTANCE__COMPONENT_INSTANCE = DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
+	 * The feature id for the '<em><b>Port Connector Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_SINGLE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_SINGLE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_SINGLE_PORT_INSTANCE__CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES;
+	int DISCRETE_SINGLE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -1095,6 +1178,24 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_MULTI_PORT_INSTANCE__COMMENT = DISCRETE_PORT_INSTANCE__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__TYPE = DISCRETE_PORT_INSTANCE__TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Port Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1113,31 +1214,13 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_MULTI_PORT_INSTANCE__COMPONENT_INSTANCE = DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
+	 * The feature id for the '<em><b>Port Connector Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_MULTI_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_MULTI_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_MULTI_PORT_INSTANCE__CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES;
+	int DISCRETE_MULTI_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -1249,13 +1332,13 @@ public interface InstancePackage extends EPackage {
 	int COORDINATION_PROTOCOL_INSTANCE__PORT_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Protocol Occurrence</b></em>' reference.
+	 * The feature id for the '<em><b>Coordination Protocol Occurrence</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_INSTANCE__PROTOCOL_OCCURRENCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Coordination Protocol Instance</em>' class.
@@ -1465,47 +1548,47 @@ public interface InstancePackage extends EPackage {
 	EReference getComponentInstance_ComponentPart();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance <em>Connector Instance</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance <em>Port Connector Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Connector Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance
+	 * @return the meta object for class '<em>Port Connector Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance
 	 * @generated
 	 */
-	EClass getConnectorInstance();
+	EClass getPortConnectorInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getSource <em>Source</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getSource()
-	 * @see #getConnectorInstance()
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance#getSource()
+	 * @see #getPortConnectorInstance()
 	 * @generated
 	 */
-	EReference getConnectorInstance_Source();
+	EReference getPortConnectorInstance_Source();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getTarget <em>Target</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getTarget()
-	 * @see #getConnectorInstance()
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance#getTarget()
+	 * @see #getPortConnectorInstance()
 	 * @generated
 	 */
-	EReference getConnectorInstance_Target();
+	EReference getPortConnectorInstance_Target();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getConnectorType <em>Connector Type</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance#getPortConnectorType <em>Port Connector Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Connector Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.ConnectorInstance#getConnectorType()
-	 * @see #getConnectorInstance()
+	 * @return the meta object for the reference '<em>Port Connector Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance#getPortConnectorType()
+	 * @see #getPortConnectorInstance()
 	 * @generated
 	 */
-	EReference getConnectorInstance_ConnectorType();
+	EReference getPortConnectorInstance_PortConnectorType();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance <em>Port Instance</em>}'.
@@ -1540,79 +1623,57 @@ public interface InstancePackage extends EPackage {
 	EReference getPortInstance_ComponentInstance();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getIncomingConnectorInstances <em>Incoming Connector Instances</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getPortConnectorInstances <em>Port Connector Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Incoming Connector Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getIncomingConnectorInstances()
+	 * @return the meta object for the reference list '<em>Port Connector Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getPortConnectorInstances()
 	 * @see #getPortInstance()
 	 * @generated
 	 */
-	EReference getPortInstance_IncomingConnectorInstances();
+	EReference getPortInstance_PortConnectorInstances();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getOutgoingConnectorInstances <em>Outgoing Connector Instances</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance <em>Assembly Connector Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Outgoing Connector Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getOutgoingConnectorInstances()
-	 * @see #getPortInstance()
+	 * @return the meta object for class '<em>Assembly Connector Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance
 	 * @generated
 	 */
-	EReference getPortInstance_OutgoingConnectorInstances();
+	EClass getAssemblyConnectorInstance();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getConnectorInstances <em>Connector Instances</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance#getAssemblyConnectorType <em>Assembly Connector Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Connector Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortInstance#getConnectorInstances()
-	 * @see #getPortInstance()
+	 * @return the meta object for the reference '<em>Assembly Connector Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance#getAssemblyConnectorType()
+	 * @see #getAssemblyConnectorInstance()
 	 * @generated
 	 */
-	EReference getPortInstance_ConnectorInstances();
+	EReference getAssemblyConnectorInstance_AssemblyConnectorType();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance <em>Assembly Instance</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance <em>Delegation Connector Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Assembly Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance
+	 * @return the meta object for class '<em>Delegation Connector Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance
 	 * @generated
 	 */
-	EClass getAssemblyInstance();
+	EClass getDelegationConnectorInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getAssemblyType <em>Assembly Type</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance#getDelegationConnectorType <em>Delegation Connector Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Assembly Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance#getAssemblyType()
-	 * @see #getAssemblyInstance()
+	 * @return the meta object for the reference '<em>Delegation Connector Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance#getDelegationConnectorType()
+	 * @see #getDelegationConnectorInstance()
 	 * @generated
 	 */
-	EReference getAssemblyInstance_AssemblyType();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance <em>Delegation Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Delegation Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance
-	 * @generated
-	 */
-	EClass getDelegationInstance();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance#getDelegationType <em>Delegation Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Delegation Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance#getDelegationType()
-	 * @see #getDelegationInstance()
-	 * @generated
-	 */
-	EReference getDelegationInstance_DelegationType();
+	EReference getDelegationConnectorInstance_DelegationConnectorType();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration <em>Component Instance Configuration</em>}'.
@@ -1636,15 +1697,15 @@ public interface InstancePackage extends EPackage {
 	EReference getComponentInstanceConfiguration_ComponentInstances();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getConnectorInstances <em>Connector Instances</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getPortConnectorInstances <em>Port Connector Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Connector Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getConnectorInstances()
+	 * @return the meta object for the containment reference list '<em>Port Connector Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getPortConnectorInstances()
 	 * @see #getComponentInstanceConfiguration()
 	 * @generated
 	 */
-	EReference getComponentInstanceConfiguration_ConnectorInstances();
+	EReference getComponentInstanceConfiguration_PortConnectorInstances();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration#getParentPortInstances <em>Parent Port Instances</em>}'.
@@ -1806,15 +1867,15 @@ public interface InstancePackage extends EPackage {
 	EReference getCoordinationProtocolInstance_PortInstances();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance#getProtocolOccurrence <em>Protocol Occurrence</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance#getCoordinationProtocolOccurrence <em>Coordination Protocol Occurrence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Protocol Occurrence</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance#getProtocolOccurrence()
+	 * @return the meta object for the reference '<em>Coordination Protocol Occurrence</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance#getCoordinationProtocolOccurrence()
 	 * @see #getCoordinationProtocolInstance()
 	 * @generated
 	 */
-	EReference getCoordinationProtocolInstance_ProtocolOccurrence();
+	EReference getCoordinationProtocolInstance_CoordinationProtocolOccurrence();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance <em>Structured Component Instance</em>}'.
@@ -1904,14 +1965,14 @@ public interface InstancePackage extends EPackage {
 		EReference COMPONENT_INSTANCE__COMPONENT_PART = eINSTANCE.getComponentInstance_ComponentPart();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl <em>Connector Instance</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortConnectorInstanceImpl <em>Port Connector Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.ConnectorInstanceImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getConnectorInstance()
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.PortConnectorInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getPortConnectorInstance()
 		 * @generated
 		 */
-		EClass CONNECTOR_INSTANCE = eINSTANCE.getConnectorInstance();
+		EClass PORT_CONNECTOR_INSTANCE = eINSTANCE.getPortConnectorInstance();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
@@ -1919,7 +1980,7 @@ public interface InstancePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTOR_INSTANCE__SOURCE = eINSTANCE.getConnectorInstance_Source();
+		EReference PORT_CONNECTOR_INSTANCE__SOURCE = eINSTANCE.getPortConnectorInstance_Source();
 
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -1927,15 +1988,15 @@ public interface InstancePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTOR_INSTANCE__TARGET = eINSTANCE.getConnectorInstance_Target();
+		EReference PORT_CONNECTOR_INSTANCE__TARGET = eINSTANCE.getPortConnectorInstance_Target();
 
 		/**
-		 * The meta object literal for the '<em><b>Connector Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Port Connector Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTOR_INSTANCE__CONNECTOR_TYPE = eINSTANCE.getConnectorInstance_ConnectorType();
+		EReference PORT_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE = eINSTANCE.getPortConnectorInstance_PortConnectorType();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl <em>Port Instance</em>}' class.
@@ -1964,64 +2025,48 @@ public interface InstancePackage extends EPackage {
 		EReference PORT_INSTANCE__COMPONENT_INSTANCE = eINSTANCE.getPortInstance_ComponentInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Incoming Connector Instances</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Port Connector Instances</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = eINSTANCE.getPortInstance_IncomingConnectorInstances();
+		EReference PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = eINSTANCE.getPortInstance_PortConnectorInstances();
 
 		/**
-		 * The meta object literal for the '<em><b>Outgoing Connector Instances</b></em>' reference list feature.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyConnectorInstanceImpl <em>Assembly Connector Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyConnectorInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getAssemblyConnectorInstance()
 		 * @generated
 		 */
-		EReference PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = eINSTANCE.getPortInstance_OutgoingConnectorInstances();
+		EClass ASSEMBLY_CONNECTOR_INSTANCE = eINSTANCE.getAssemblyConnectorInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Connector Instances</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Assembly Connector Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PORT_INSTANCE__CONNECTOR_INSTANCES = eINSTANCE.getPortInstance_ConnectorInstances();
+		EReference ASSEMBLY_CONNECTOR_INSTANCE__ASSEMBLY_CONNECTOR_TYPE = eINSTANCE.getAssemblyConnectorInstance_AssemblyConnectorType();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyInstanceImpl <em>Assembly Instance</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DelegationConnectorInstanceImpl <em>Delegation Connector Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyInstanceImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getAssemblyInstance()
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.DelegationConnectorInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getDelegationConnectorInstance()
 		 * @generated
 		 */
-		EClass ASSEMBLY_INSTANCE = eINSTANCE.getAssemblyInstance();
+		EClass DELEGATION_CONNECTOR_INSTANCE = eINSTANCE.getDelegationConnectorInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Assembly Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Delegation Connector Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ASSEMBLY_INSTANCE__ASSEMBLY_TYPE = eINSTANCE.getAssemblyInstance_AssemblyType();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DelegationInstanceImpl <em>Delegation Instance</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.DelegationInstanceImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl#getDelegationInstance()
-		 * @generated
-		 */
-		EClass DELEGATION_INSTANCE = eINSTANCE.getDelegationInstance();
-
-		/**
-		 * The meta object literal for the '<em><b>Delegation Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DELEGATION_INSTANCE__DELEGATION_TYPE = eINSTANCE.getDelegationInstance_DelegationType();
+		EReference DELEGATION_CONNECTOR_INSTANCE__DELEGATION_CONNECTOR_TYPE = eINSTANCE.getDelegationConnectorInstance_DelegationConnectorType();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceConfigurationImpl <em>Component Instance Configuration</em>}' class.
@@ -2042,12 +2087,12 @@ public interface InstancePackage extends EPackage {
 		EReference COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES = eINSTANCE.getComponentInstanceConfiguration_ComponentInstances();
 
 		/**
-		 * The meta object literal for the '<em><b>Connector Instances</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Port Connector Instances</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_INSTANCE_CONFIGURATION__CONNECTOR_INSTANCES = eINSTANCE.getComponentInstanceConfiguration_ConnectorInstances();
+		EReference COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES = eINSTANCE.getComponentInstanceConfiguration_PortConnectorInstances();
 
 		/**
 		 * The meta object literal for the '<em><b>Parent Port Instances</b></em>' containment reference list feature.
@@ -2182,12 +2227,12 @@ public interface InstancePackage extends EPackage {
 		EReference COORDINATION_PROTOCOL_INSTANCE__PORT_INSTANCES = eINSTANCE.getCoordinationProtocolInstance_PortInstances();
 
 		/**
-		 * The meta object literal for the '<em><b>Protocol Occurrence</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Coordination Protocol Occurrence</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COORDINATION_PROTOCOL_INSTANCE__PROTOCOL_OCCURRENCE = eINSTANCE.getCoordinationProtocolInstance_ProtocolOccurrence();
+		EReference COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE = eINSTANCE.getCoordinationProtocolInstance_CoordinationProtocolOccurrence();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.StructuredComponentInstanceImpl <em>Structured Component Instance</em>}' class.

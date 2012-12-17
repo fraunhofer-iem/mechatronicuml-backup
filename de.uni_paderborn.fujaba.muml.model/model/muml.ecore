@@ -46,30 +46,18 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//model/core/ConstrainableElement #//model/types/DataType">
+      <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true" eSuperTypes="#//model/connector/ConnectorEndpoint #//model/core/ConstrainableElement #//model/types/DataType">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Ports represent the interaction points between a component and the components environment."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnectors"
-            upperBound="-1" eType="#//model/component/ConnectorType" eOpposite="#//model/component/ConnectorType/toPort">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The connectors which lead into this port."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingConnectors"
-            upperBound="-1" eType="#//model/component/ConnectorType" eOpposite="#//model/component/ConnectorType/fromPort">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The connectors which originate from this port."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="component" eType="#//model/component/Component"
             eOpposite="#//model/component/Component/ports">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The component, this port belongs to. Theoretically the bounds&#xA;should be 1..1, but that would prevent the possibility for&#xA;ComponentPart.portsDerived to be a containment reference&#xA;(see ComponentPart.portsDerived)"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
-            eType="#//model/component/ConnectorType" changeable="false" volatile="true"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="portConnectors" upperBound="-1"
+            eType="#//model/component/PortConnector" changeable="false" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self.incomingConnectors -> union(self.outgoingConnectors)"/>
@@ -208,20 +196,16 @@
             <details key="documentation" value="The structured component type containing this component part."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="fromRev" upperBound="-1"
-            eType="#//model/component/Assembly" eOpposite="#//model/component/Assembly/from">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyConnectors"
+            upperBound="-1" eType="#//model/component/AssemblyConnector" changeable="false"
+            volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The assemblies originating in port parts of this component part."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="toRev" upperBound="-1"
-            eType="#//model/component/Assembly" eOpposite="#//model/component/Assembly/to">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The assemblies leading to port parts of this component part."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="delegation" upperBound="-1"
-            eType="#//model/component/Delegation" eOpposite="#//model/component/Delegation/componentPart">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="delegationConnectors"
+            upperBound="-1" eType="#//model/component/DelegationConnector" changeable="false"
+            volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The delegations connecting a port part of this component part with a port of the parent component type."/>
           </eAnnotations>
@@ -273,90 +257,18 @@
           <details key="constraints" value="SoftwareComponentRequiresBehavior ValidComponentType SoftwareComponentValidPorts ContinuousComponentValidPorts AtomicComponentsNamesMustBeUnique"/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ConnectorType" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="PortConnector" abstract="true" eSuperTypes="#//model/connector/Connector">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This abstract class is the common super class of delegations and assemblies between two ports."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="fromPort" lowerBound="1"
-            eType="#//model/component/Port" eOpposite="#//model/component/Port/outgoingConnectors">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The port this connector originates from."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="toPort" lowerBound="1"
-            eType="#//model/component/Port" eOpposite="#//model/component/Port/incomingConnectors">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The port this connector leads to."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="parentComponent" eType="#//model/component/StructuredComponent"
             eOpposite="#//model/component/StructuredComponent/connectors">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The structured component this connector belongs to."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="toDiscretePort" ordered="false"
-            eType="#//model/component/DiscretePort" changeable="false" volatile="true"
-            transient="true" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Return the toPort as a DiscretePort if possible"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if not self.toPort.oclIsUndefined() and self.toPort.oclIsTypeOf(component::DiscretePort) then&#xA;&#x9;self.toPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="fromDiscretePort" ordered="false"
-            eType="#//model/component/DiscretePort" changeable="false" volatile="true"
-            transient="true" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Return the fromPort as a DiscretePort if possible"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsTypeOf(component::DiscretePort) then&#xA;&#x9;self.fromPort.oclAsType(component::DiscretePort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="toContinuousPort" ordered="false"
-            eType="#//model/component/ContinuousPort" changeable="false" volatile="true"
-            transient="true" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Return the toPort as a ContinuesPort if possible"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if not self.toPort.oclIsUndefined() and self.toPort.oclIsTypeOf(component::ContinuousPort) then&#xA;&#x9;self.toPort.oclAsType(component::ContinuousPort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="fromContinuousPort"
-            ordered="false" eType="#//model/component/ContinuousPort" changeable="false"
-            volatile="true" transient="true" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Return the fromPort as a ContinuousPort if possible"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsTypeOf(component::ContinuousPort) then&#xA;&#x9;self.fromPort.oclAsType(component::ContinuousPort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="toHybridPort" ordered="false"
-            eType="#//model/component/HybridPort" changeable="false" volatile="true"
-            transient="true" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Return the toPort as a HybridPort if possible"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if not self.toPort.oclIsUndefined() and self.toPort.oclIsTypeOf(component::HybridPort) then&#xA;&#x9;self.toPort.oclAsType(component::HybridPort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="fromHybridPort" ordered="false"
-            eType="#//model/component/HybridPort" changeable="false" volatile="true"
-            transient="true" derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Return the fromPort as a HybridPort if possible"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if not self.fromPort.oclIsUndefined() and self.fromPort.oclIsTypeOf(component::HybridPort) then&#xA;&#x9;self.fromPort.oclAsType(component::HybridPort)&#xA;else&#xA;&#x9;null&#xA;endif"/>
-          </eAnnotations>
-        </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Assembly" eSuperTypes="#//model/component/BehavioralConnector">
+      <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector" eSuperTypes="#//model/component/PortConnector">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
         </eAnnotations>
@@ -379,26 +291,17 @@
           <details key="ValidHybridInPortCombination" value="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;)"/>
           <details key="ValidHybridOutPortCombination" value="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;)"/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1"
-            eType="#//model/component/ComponentPart" eOpposite="#//model/component/ComponentPart/toRev">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The component part of the port part to which this assembly leads."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1"
-            eType="#//model/component/ComponentPart" eOpposite="#//model/component/ComponentPart/fromRev">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The component part of the port part from which this assembly originates."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
             eType="#//model/protocol/CoordinationProtocol">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The coordination pattern that defines the protocol of this assembly.&#xD;&#xA;&#xD;&#xA;\todosd{Why does it reference the CoordinationPattern and not the PatternOccurence?}"/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="componentParts" lowerBound="2"
+            upperBound="2" eType="#//model/component/ComponentPart" changeable="false"
+            volatile="true" transient="true" derived="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Delegation" eSuperTypes="#//model/component/ConnectorType">
+      <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" eSuperTypes="#//model/component/PortConnector">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a delegation connector. A delegation connector &#xD;&#xA;connects a port of a structured component type and a port part of &#xD;&#xA;component part the structured component contains.&#xD;&#xA;The delegation has no behavior. In a running system, the port of the structured&#xD;&#xA;component and the port of the component part will be the same object like &#xD;&#xA;interfaces of classes where interface and class are the same object at runtime."/>
         </eAnnotations>
@@ -422,7 +325,8 @@
           <details key="ValidHybridOutPortCombination" value="not self.fromHybridPort.oclIsUndefined() &#xD;&#xA;and &#xD;&#xA;self.fromHybridPort.isHybridOutPort &#xD;&#xA;implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) "/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart" lowerBound="1"
-            eType="#//model/component/ComponentPart" eOpposite="#//model/component/ComponentPart/delegation">
+            eType="#//model/component/ComponentPart" changeable="false" volatile="true"
+            transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The component part of the port part which is connected by this delegation."/>
           </eAnnotations>
@@ -447,12 +351,6 @@
             <details key="documentation" value="A hybrid component bridges the gap between discrete software components and continuous control components. A hybrid component may be considered as a discrete software component which has special ports for reading and writing continuous signals from and to continuous components, e.g., for setting a new reference value to a controller."/>
           </eAnnotations>
         </eLiterals>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="BehavioralConnector" abstract="true"
-          eSuperTypes="#//model/component/ConnectorType #//model/core/BehavioralElement">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Abstract super class for all connectors that have an associated behavior. The &#xD;&#xA;behavior is specified as a real-time statechart.&#xD;&#xA;&#xD;&#xA;\todosd{Do we really need this class? Do we really want to specify the behavior with a RTSC?}"/>
-        </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="HybridPort" eSuperTypes="#//model/component/DirectedTypedPort">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -544,7 +442,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
-            eType="#//model/component/ConnectorType" containment="true" eOpposite="#//model/component/ConnectorType/parentComponent">
+            eType="#//model/component/PortConnector" containment="true" eOpposite="#//model/component/PortConnector/parentComponent">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The connectors this structured component contains. These can either be delegations or assemblies."/>
           </eAnnotations>
@@ -878,35 +776,38 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart" eType="#//model/component/ComponentPart"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" abstract="true"
-          eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="PortConnectorInstance" abstract="true"
+          eSuperTypes="#//model/connector/ConnectorInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class is the common super class of delegation instances and assemly instances."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-            eType="#//model/instance/PortInstance" eOpposite="#//model/instance/PortInstance/outgoingConnectorInstances">
+            eType="#//model/instance/PortInstance">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The port instance this connector instance originates from."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-            eType="#//model/instance/PortInstance" eOpposite="#//model/instance/PortInstance/incomingConnectorInstances">
+            eType="#//model/instance/PortInstance">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The port instance this connector instance leads to."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="connectorType" eType="#//model/component/ConnectorType">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="portConnectorType"
+            lowerBound="1" eType="#//model/component/PortConnector" changeable="false"
+            volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The connector type of this connector instance."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="PortInstance" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="PortInstance" abstract="true" eSuperTypes="#//model/connector/ConnectorEndpointInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A port instance is a port of a component at instance level."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
-            eType="#//model/component/Port">
+            eType="#//model/component/Port" changeable="false" volatile="true" transient="true"
+            derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The port type of which this port instance is built from."/>
           </eAnnotations>
@@ -917,32 +818,21 @@
             <details key="documentation" value="The component instance this port instance belongs to."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnectorInstances"
-            upperBound="-1" eType="#//model/instance/ConnectorInstance" eOpposite="#//model/instance/ConnectorInstance/target">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The connector instances that lead into this port instance."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingConnectorInstances"
-            upperBound="-1" eType="#//model/instance/ConnectorInstance" eOpposite="#//model/instance/ConnectorInstance/source">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The connector instances that origin from this port instance."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="connectorInstances"
-            upperBound="-1" eType="#//model/instance/ConnectorInstance" volatile="true"
-            transient="true" derived="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="portConnectorInstances"
+            upperBound="-1" eType="#//model/instance/PortConnectorInstance" changeable="false"
+            volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self.incomingConnectorInstances -> union(self.outgoingConnectorInstances )"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="AssemblyInstance" eSuperTypes="#//model/instance/ConnectorInstance">
+      <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnectorInstance" eSuperTypes="#//model/instance/PortConnectorInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents an assembly connector at instance level.&#xD;&#xA;&#xD;&#xA;\todosd{Why does the AssemblyInstance has a lower and upper bound for the propagation delay and the Assembly not?}"/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyType" eType="#//model/component/Assembly"
-            changeable="false" derived="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyConnectorType"
+            lowerBound="1" eType="#//model/component/AssemblyConnector" changeable="false"
+            volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The assembly that this assembly instance is built from."/>
           </eAnnotations>
@@ -951,7 +841,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="DelegationInstance" eSuperTypes="#//model/instance/ConnectorInstance">
+      <eClassifiers xsi:type="ecore:EClass" name="DelegationConnectorInstance" eSuperTypes="#//model/instance/PortConnectorInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a delegation connector at instance level."/>
         </eAnnotations>
@@ -961,8 +851,9 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="OneDelegationInstancePerPortInstance" value="not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1"/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="delegationType" eType="#//model/component/Delegation"
-            changeable="false" derived="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="delegationConnectorType"
+            lowerBound="1" eType="#//model/component/DelegationConnector" changeable="false"
+            volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The delegation type of this delegation instance."/>
           </eAnnotations>
@@ -972,7 +863,7 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceConfiguration"
-          eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
+          eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class encapsules represents a configuration. It contains all component instances and connector instances that belong to a concrete configuration."/>
         </eAnnotations>
@@ -982,8 +873,8 @@
             <details key="documentation" value="The set of component instances of a component instance configuration."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="connectorInstances"
-            upperBound="-1" eType="#//model/instance/ConnectorInstance" containment="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="portConnectorInstances"
+            upperBound="-1" eType="#//model/instance/PortConnectorInstance" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The set of connector instances of a component instance configuration."/>
           </eAnnotations>
@@ -1092,7 +983,7 @@
             <details key="documentation" value="The port instance that uses this pattern instance.&#xD;&#xA;&#xD;&#xA;\todosd{I suggest to change this reference so that it references a DiscretePortInstance.}"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="protocolOccurrence"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolOccurrence"
             lowerBound="1" eType="#//model/component/CoordinationProtocolOccurrence">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The PatternOccurence of that instance."/>
@@ -1123,7 +1014,7 @@
         <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
         <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </eAnnotations>
-      <eClassifiers xsi:type="ecore:EClass" name="RoleConnector" eSuperTypes="#//model/core/BehavioralElement">
+      <eClassifiers xsi:type="ecore:EClass" name="RoleConnector" eSuperTypes="#//model/connector/Connector">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a communication channel connecting two roles of a coordination pattern."/>
         </eAnnotations>
@@ -1133,18 +1024,6 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="OnlyRolesOfSameCoordinationPattern" value="(not source.oclIsUndefined() and not target.oclIsUndefined()) implies source.coordinationPattern = target.coordinationPattern"/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-            eType="#//model/protocol/Role" eOpposite="#//model/protocol/Role/outgoingRoleConnector">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The roles connected by this channel. At the moment an arbitrary number of roles are allow. This probably should be discussed."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-            eType="#//model/protocol/Role" eOpposite="#//model/protocol/Role/incomingRoleConnector">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The roles connected by this channel. At the moment an arbitrary number of roles are allow. This probably should be discussed."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
             lowerBound="1" eType="#//model/protocol/CoordinationProtocol" eOpposite="#//model/protocol/CoordinationProtocol/roleConnector">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1158,6 +1037,9 @@
             <details key="documentation" value="A role connector has exactly one reference for defining its quality of service assumptions like message delay and message loss."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="2"
+            upperBound="2" eType="#//model/protocol/Role" changeable="false" volatile="true"
+            transient="true" derived="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocol" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement #//model/core/ConstrainableElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1207,12 +1089,6 @@
           <details key="RoleRequiresBehavior" value="not self.behavior.oclIsUndefined()"/>
           <details key="RoleRequiresInterface" value="not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())"/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="incomingRoleConnector"
-            eType="#//model/protocol/RoleConnector" eOpposite="#//model/protocol/RoleConnector/target">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The incoming RoleConnector, which connects this role with another role.&#xA;Either incomingRoleConnector or outgoingRoleConnector (or both) must be set."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
             lowerBound="1" eType="#//model/protocol/CoordinationProtocol" eOpposite="#//model/protocol/CoordinationProtocol/roles">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1225,19 +1101,15 @@
             <details key="documentation" value="The ports this role is assigned to."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingRoleConnector"
-            eType="#//model/protocol/RoleConnector" eOpposite="#//model/protocol/RoleConnector/source">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The outgoing RoleConnector, which connects this role with another role.&#xA;Either incomingRoleConnector or outgoingRoleConnector (or both) must be set."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" eType="#//model/protocol/RoleConnector"
-            changeable="false" volatile="true" transient="true" derived="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" lowerBound="1"
+            eType="#//model/protocol/RoleConnector" changeable="false" volatile="true"
+            transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="if self.incomingConnector -> notEmpty() then&#xD;&#xA;&#x9;self.incomingConnector&#xD;&#xA;else&#xD;&#xA;&#x9;self.outgoingConnector&#xD;&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiRole" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiRole" lowerBound="1"
+            eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
             changeable="false" volatile="true" transient="true" defaultValueLiteral=""
             derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2187,7 +2059,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deployedAssemblyInstances"
-            upperBound="-1" eType="#//model/instance/AssemblyInstance">
+            upperBound="-1" eType="#//model/instance/AssemblyConnectorInstance">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Used for the deployment of connectors between component instances."/>
           </eAnnotations>
@@ -2277,7 +2149,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
             eType="#//model/connector/Connector"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="connectorEndpoints"
             lowerBound="2" upperBound="2" eType="#//model/connector/ConnectorEndpoint"/>
       </eClassifiers>
@@ -2289,14 +2161,14 @@
             eType="#//model/connector/ConnectorEndpoint"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" abstract="true"
-          eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+          eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
             eType="#//model/connector/Connector"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="connectorEndpointInstances"
             lowerBound="2" upperBound="2" eType="#//model/connector/ConnectorEndpointInstance"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpoint" abstract="true"
-          eSuperTypes="#//model/core/BehavioralElement #//model/core/ConstrainableElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
+          eSuperTypes="#//model/core/BehavioralElement ../../org.storydriven.core/model/core.ecore#//NamedElement #//model/core/ConstrainableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An interaction point for discrete communication via asynchronous messages. This class generalizes concepts of classes DiscretePort and Role."/>
         </eAnnotations>

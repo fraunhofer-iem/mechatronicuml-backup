@@ -8,12 +8,13 @@ package de.uni_paderborn.fujaba.muml.model.protocol.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-import de.uni_paderborn.fujaba.muml.model.core.impl.BehavioralElementImpl;
+import de.uni_paderborn.fujaba.muml.model.connector.impl.ConnectorImpl;
 import de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
@@ -27,36 +28,15 @@ import de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleConnectorImpl#getSource <em>Source</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleConnectorImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleConnectorImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleConnectorImpl#getConnectorQualityOfServiceAssumptions <em>Connector Quality Of Service Assumptions</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleConnectorImpl#getRoles <em>Roles</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConnector {
-	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected Role source;
-
-	/**
-	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTarget()
-	 * @generated
-	 * @ordered
-	 */
-	protected Role target;
-
+public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 	/**
 	 * The cached value of the '{@link #getConnectorQualityOfServiceAssumptions() <em>Connector Quality Of Service Assumptions</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -84,126 +64,6 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 	@Override
 	protected EClass eStaticClass() {
 		return ProtocolPackage.Literals.ROLE_CONNECTOR;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Role getSource() {
-		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)source;
-			source = (Role)eResolveProxy(oldSource);
-			if (source != oldSource) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProtocolPackage.ROLE_CONNECTOR__SOURCE, oldSource, source));
-			}
-		}
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Role basicGetSource() {
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSource(Role newSource, NotificationChain msgs) {
-		Role oldSource = source;
-		source = newSource;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProtocolPackage.ROLE_CONNECTOR__SOURCE, oldSource, newSource);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSource(Role newSource) {
-		if (newSource != source) {
-			NotificationChain msgs = null;
-			if (source != null)
-				msgs = ((InternalEObject)source).eInverseRemove(this, ProtocolPackage.ROLE__OUTGOING_ROLE_CONNECTOR, Role.class, msgs);
-			if (newSource != null)
-				msgs = ((InternalEObject)newSource).eInverseAdd(this, ProtocolPackage.ROLE__OUTGOING_ROLE_CONNECTOR, Role.class, msgs);
-			msgs = basicSetSource(newSource, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.ROLE_CONNECTOR__SOURCE, newSource, newSource));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Role getTarget() {
-		if (target != null && target.eIsProxy()) {
-			InternalEObject oldTarget = (InternalEObject)target;
-			target = (Role)eResolveProxy(oldTarget);
-			if (target != oldTarget) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProtocolPackage.ROLE_CONNECTOR__TARGET, oldTarget, target));
-			}
-		}
-		return target;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Role basicGetTarget() {
-		return target;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetTarget(Role newTarget, NotificationChain msgs) {
-		Role oldTarget = target;
-		target = newTarget;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProtocolPackage.ROLE_CONNECTOR__TARGET, oldTarget, newTarget);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTarget(Role newTarget) {
-		if (newTarget != target) {
-			NotificationChain msgs = null;
-			if (target != null)
-				msgs = ((InternalEObject)target).eInverseRemove(this, ProtocolPackage.ROLE__INCOMING_ROLE_CONNECTOR, Role.class, msgs);
-			if (newTarget != null)
-				msgs = ((InternalEObject)newTarget).eInverseAdd(this, ProtocolPackage.ROLE__INCOMING_ROLE_CONNECTOR, Role.class, msgs);
-			msgs = basicSetTarget(newTarget, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.ROLE_CONNECTOR__TARGET, newTarget, newTarget));
 	}
 
 	/**
@@ -295,17 +155,22 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Role> getRoles() {
+		// TODO: implement this method to return the 'Roles' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
+		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProtocolPackage.ROLE_CONNECTOR__SOURCE:
-				if (source != null)
-					msgs = ((InternalEObject)source).eInverseRemove(this, ProtocolPackage.ROLE__OUTGOING_ROLE_CONNECTOR, Role.class, msgs);
-				return basicSetSource((Role)otherEnd, msgs);
-			case ProtocolPackage.ROLE_CONNECTOR__TARGET:
-				if (target != null)
-					msgs = ((InternalEObject)target).eInverseRemove(this, ProtocolPackage.ROLE__INCOMING_ROLE_CONNECTOR, Role.class, msgs);
-				return basicSetTarget((Role)otherEnd, msgs);
 			case ProtocolPackage.ROLE_CONNECTOR__COORDINATION_PROTOCOL:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -322,10 +187,6 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProtocolPackage.ROLE_CONNECTOR__SOURCE:
-				return basicSetSource(null, msgs);
-			case ProtocolPackage.ROLE_CONNECTOR__TARGET:
-				return basicSetTarget(null, msgs);
 			case ProtocolPackage.ROLE_CONNECTOR__COORDINATION_PROTOCOL:
 				return basicSetCoordinationProtocol(null, msgs);
 			case ProtocolPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
@@ -356,16 +217,12 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProtocolPackage.ROLE_CONNECTOR__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
-			case ProtocolPackage.ROLE_CONNECTOR__TARGET:
-				if (resolve) return getTarget();
-				return basicGetTarget();
 			case ProtocolPackage.ROLE_CONNECTOR__COORDINATION_PROTOCOL:
 				return getCoordinationProtocol();
 			case ProtocolPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				return getConnectorQualityOfServiceAssumptions();
+			case ProtocolPackage.ROLE_CONNECTOR__ROLES:
+				return getRoles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -378,12 +235,6 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProtocolPackage.ROLE_CONNECTOR__SOURCE:
-				setSource((Role)newValue);
-				return;
-			case ProtocolPackage.ROLE_CONNECTOR__TARGET:
-				setTarget((Role)newValue);
-				return;
 			case ProtocolPackage.ROLE_CONNECTOR__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((CoordinationProtocol)newValue);
 				return;
@@ -402,12 +253,6 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProtocolPackage.ROLE_CONNECTOR__SOURCE:
-				setSource((Role)null);
-				return;
-			case ProtocolPackage.ROLE_CONNECTOR__TARGET:
-				setTarget((Role)null);
-				return;
 			case ProtocolPackage.ROLE_CONNECTOR__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((CoordinationProtocol)null);
 				return;
@@ -426,14 +271,12 @@ public class RoleConnectorImpl extends BehavioralElementImpl implements RoleConn
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProtocolPackage.ROLE_CONNECTOR__SOURCE:
-				return source != null;
-			case ProtocolPackage.ROLE_CONNECTOR__TARGET:
-				return target != null;
 			case ProtocolPackage.ROLE_CONNECTOR__COORDINATION_PROTOCOL:
 				return getCoordinationProtocol() != null;
 			case ProtocolPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				return connectorQualityOfServiceAssumptions != null;
+			case ProtocolPackage.ROLE_CONNECTOR__ROLES:
+				return !getRoles().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -6,19 +6,18 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.impl;
 
-import de.uni_paderborn.fujaba.muml.model.instance.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.model.instance.ContinuousPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.CoordinationProtocolInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.DelegationInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.HybridPortInstance;
@@ -70,8 +69,8 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case InstancePackage.ASSEMBLY_INSTANCE: return createAssemblyInstance();
-			case InstancePackage.DELEGATION_INSTANCE: return createDelegationInstance();
+			case InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE: return createAssemblyConnectorInstance();
+			case InstancePackage.DELEGATION_CONNECTOR_INSTANCE: return createDelegationConnectorInstance();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION: return createComponentInstanceConfiguration();
 			case InstancePackage.CONTINUOUS_PORT_INSTANCE: return createContinuousPortInstance();
 			case InstancePackage.HYBRID_PORT_INSTANCE: return createHybridPortInstance();
@@ -90,9 +89,9 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AssemblyInstance createAssemblyInstance() {
-		AssemblyInstanceImpl assemblyInstance = new AssemblyInstanceImpl();
-		return assemblyInstance;
+	public AssemblyConnectorInstance createAssemblyConnectorInstance() {
+		AssemblyConnectorInstanceImpl assemblyConnectorInstance = new AssemblyConnectorInstanceImpl();
+		return assemblyConnectorInstance;
 	}
 
 	/**
@@ -100,9 +99,9 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DelegationInstance createDelegationInstance() {
-		DelegationInstanceImpl delegationInstance = new DelegationInstanceImpl();
-		return delegationInstance;
+	public DelegationConnectorInstance createDelegationConnectorInstance() {
+		DelegationConnectorInstanceImpl delegationConnectorInstance = new DelegationConnectorInstanceImpl();
+		return delegationConnectorInstance;
 	}
 
 	/**

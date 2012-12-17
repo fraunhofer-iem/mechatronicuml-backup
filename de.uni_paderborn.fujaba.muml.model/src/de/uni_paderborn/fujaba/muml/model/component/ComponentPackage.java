@@ -13,6 +13,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
 
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
@@ -174,7 +176,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int PORT__ANNOTATION = ConnectorPackage.CONNECTOR_ENDPOINT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -183,7 +185,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int PORT__EXTENSION = ConnectorPackage.CONNECTOR_ENDPOINT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -192,7 +194,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int PORT__NAME = ConnectorPackage.CONNECTOR_ENDPOINT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -201,43 +203,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__CONSTRAINT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__INCOMING_CONNECTORS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__OUTGOING_CONNECTORS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Component</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__COMPONENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int PORT__COMMENT = ConnectorPackage.CONNECTOR_ENDPOINT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
@@ -246,7 +212,34 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__CONNECTORS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int PORT__CONNECTORS = ConnectorPackage.CONNECTOR_ENDPOINT__CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__CONSTRAINT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__COMPONENT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__PORT_CONNECTORS = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -255,7 +248,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int PORT_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl <em>Directed Typed Port</em>}' class.
@@ -265,7 +258,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getDirectedTypedPort()
 	 * @generated
 	 */
-	int DIRECTED_TYPED_PORT = 14;
+	int DIRECTED_TYPED_PORT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -304,6 +297,15 @@ public interface ComponentPackage extends EPackage {
 	int DIRECTED_TYPED_PORT__COMMENT = PORT__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__CONNECTORS = PORT__CONNECTORS;
+
+	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -311,24 +313,6 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DIRECTED_TYPED_PORT__CONSTRAINT = PORT__CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_TYPED_PORT__INCOMING_CONNECTORS = PORT__INCOMING_CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_TYPED_PORT__OUTGOING_CONNECTORS = PORT__OUTGOING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -340,13 +324,13 @@ public interface ComponentPackage extends EPackage {
 	int DIRECTED_TYPED_PORT__COMPONENT = PORT__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_TYPED_PORT__CONNECTORS = PORT__CONNECTORS;
+	int DIRECTED_TYPED_PORT__PORT_CONNECTORS = PORT__PORT_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -422,6 +406,15 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_PORT__COMMENT = DIRECTED_TYPED_PORT__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__CONNECTORS = DIRECTED_TYPED_PORT__CONNECTORS;
+
+	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -429,24 +422,6 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTINUOUS_PORT__CONSTRAINT = DIRECTED_TYPED_PORT__CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_PORT__INCOMING_CONNECTORS = DIRECTED_TYPED_PORT__INCOMING_CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_PORT__OUTGOING_CONNECTORS = DIRECTED_TYPED_PORT__OUTGOING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -458,13 +433,13 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_PORT__COMPONENT = DIRECTED_TYPED_PORT__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__CONNECTORS = DIRECTED_TYPED_PORT__CONNECTORS;
+	int CONTINUOUS_PORT__PORT_CONNECTORS = DIRECTED_TYPED_PORT__PORT_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -558,6 +533,15 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__COMMENT = PORT__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__CONNECTORS = PORT__CONNECTORS;
+
+	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -565,24 +549,6 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_PORT__CONSTRAINT = PORT__CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_PORT__INCOMING_CONNECTORS = PORT__INCOMING_CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_PORT__OUTGOING_CONNECTORS = PORT__OUTGOING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -594,13 +560,13 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__COMPONENT = PORT__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__CONNECTORS = PORT__CONNECTORS;
+	int DISCRETE_PORT__PORT_CONNECTORS = PORT__PORT_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -784,31 +750,22 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT_PART__PARENT_COMPONENT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>From Rev</b></em>' reference list.
+	 * The feature id for the '<em><b>Assembly Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__FROM_REV = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int COMPONENT_PART__ASSEMBLY_CONNECTORS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>To Rev</b></em>' reference list.
+	 * The feature id for the '<em><b>Delegation Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__TO_REV = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Delegation</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_PART__DELEGATION = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
+	int COMPONENT_PART__DELEGATION_CONNECTORS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -817,7 +774,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__CARDINALITY = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 6;
+	int COMPONENT_PART__CARDINALITY = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Ports Derived</b></em>' containment reference list.
@@ -826,7 +783,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__PORTS_DERIVED = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 7;
+	int COMPONENT_PART__PORTS_DERIVED = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Multi Part</b></em>' attribute.
@@ -835,7 +792,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__MULTI_PART = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 8;
+	int COMPONENT_PART__MULTI_PART = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Part</em>' class.
@@ -844,7 +801,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 9;
+	int COMPONENT_PART_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.StructuredComponentImpl <em>Structured Component</em>}' class.
@@ -854,7 +811,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getStructuredComponent()
 	 * @generated
 	 */
-	int STRUCTURED_COMPONENT = 13;
+	int STRUCTURED_COMPONENT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1201,24 +1158,14 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.BehavioralConnectorImpl <em>Behavioral Connector</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortConnectorImpl <em>Port Connector</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.BehavioralConnectorImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getBehavioralConnector()
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.PortConnectorImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getPortConnector()
 	 * @generated
 	 */
-	int BEHAVIORAL_CONNECTOR = 10;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl <em>Connector Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getConnectorType()
-	 * @generated
-	 */
-	int CONNECTOR_TYPE = 7;
+	int PORT_CONNECTOR = 7;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1227,7 +1174,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int PORT_CONNECTOR__ANNOTATION = ConnectorPackage.CONNECTOR__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1236,25 +1183,25 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int PORT_CONNECTOR__EXTENSION = ConnectorPackage.CONNECTOR__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>From Port</b></em>' reference.
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__FROM_PORT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int PORT_CONNECTOR__COMMENT = ConnectorPackage.CONNECTOR__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>To Port</b></em>' reference.
+	 * The feature id for the '<em><b>Connector Endpoints</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__TO_PORT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int PORT_CONNECTOR__CONNECTOR_ENDPOINTS = ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS;
 
 	/**
 	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.
@@ -1263,70 +1210,26 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__PARENT_COMPONENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int PORT_CONNECTOR__PARENT_COMPONENT = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>To Discrete Port</b></em>' reference.
+	 * The number of structural features of the '<em>Port Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_TYPE__TO_DISCRETE_PORT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int PORT_CONNECTOR_FEATURE_COUNT = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>From Discrete Port</b></em>' reference.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyConnectorImpl <em>Assembly Connector</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyConnectorImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getAssemblyConnector()
 	 * @generated
-	 * @ordered
 	 */
-	int CONNECTOR_TYPE__FROM_DISCRETE_PORT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>To Continuous Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR_TYPE__TO_CONTINUOUS_PORT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>From Continuous Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR_TYPE__FROM_CONTINUOUS_PORT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>To Hybrid Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR_TYPE__TO_HYBRID_PORT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 7;
-
-	/**
-	 * The feature id for the '<em><b>From Hybrid Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR_TYPE__FROM_HYBRID_PORT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 8;
-
-	/**
-	 * The number of structural features of the '<em>Connector Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR_TYPE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 9;
+	int ASSEMBLY_CONNECTOR = 8;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1335,7 +1238,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIORAL_CONNECTOR__ANNOTATION = CONNECTOR_TYPE__ANNOTATION;
+	int ASSEMBLY_CONNECTOR__ANNOTATION = PORT_CONNECTOR__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1344,25 +1247,25 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIORAL_CONNECTOR__EXTENSION = CONNECTOR_TYPE__EXTENSION;
+	int ASSEMBLY_CONNECTOR__EXTENSION = PORT_CONNECTOR__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>From Port</b></em>' reference.
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIORAL_CONNECTOR__FROM_PORT = CONNECTOR_TYPE__FROM_PORT;
+	int ASSEMBLY_CONNECTOR__COMMENT = PORT_CONNECTOR__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>To Port</b></em>' reference.
+	 * The feature id for the '<em><b>Connector Endpoints</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIORAL_CONNECTOR__TO_PORT = CONNECTOR_TYPE__TO_PORT;
+	int ASSEMBLY_CONNECTOR__CONNECTOR_ENDPOINTS = PORT_CONNECTOR__CONNECTOR_ENDPOINTS;
 
 	/**
 	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.
@@ -1371,225 +1274,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIORAL_CONNECTOR__PARENT_COMPONENT = CONNECTOR_TYPE__PARENT_COMPONENT;
-
-	/**
-	 * The feature id for the '<em><b>To Discrete Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIORAL_CONNECTOR__TO_DISCRETE_PORT = CONNECTOR_TYPE__TO_DISCRETE_PORT;
-
-	/**
-	 * The feature id for the '<em><b>From Discrete Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIORAL_CONNECTOR__FROM_DISCRETE_PORT = CONNECTOR_TYPE__FROM_DISCRETE_PORT;
-
-	/**
-	 * The feature id for the '<em><b>To Continuous Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIORAL_CONNECTOR__TO_CONTINUOUS_PORT = CONNECTOR_TYPE__TO_CONTINUOUS_PORT;
-
-	/**
-	 * The feature id for the '<em><b>From Continuous Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIORAL_CONNECTOR__FROM_CONTINUOUS_PORT = CONNECTOR_TYPE__FROM_CONTINUOUS_PORT;
-
-	/**
-	 * The feature id for the '<em><b>To Hybrid Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIORAL_CONNECTOR__TO_HYBRID_PORT = CONNECTOR_TYPE__TO_HYBRID_PORT;
-
-	/**
-	 * The feature id for the '<em><b>From Hybrid Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIORAL_CONNECTOR__FROM_HYBRID_PORT = CONNECTOR_TYPE__FROM_HYBRID_PORT;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyImpl <em>Assembly</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getAssembly()
-	 * @generated
-	 */
-	int ASSEMBLY = 8;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DelegationImpl <em>Delegation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.DelegationImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getDelegation()
-	 * @generated
-	 */
-	int DELEGATION = 9;
-
-	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIORAL_CONNECTOR__BEHAVIOR = CONNECTOR_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Behavioral Connector</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEHAVIORAL_CONNECTOR_FEATURE_COUNT = CONNECTOR_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__ANNOTATION = BEHAVIORAL_CONNECTOR__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__EXTENSION = BEHAVIORAL_CONNECTOR__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>From Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__FROM_PORT = BEHAVIORAL_CONNECTOR__FROM_PORT;
-
-	/**
-	 * The feature id for the '<em><b>To Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__TO_PORT = BEHAVIORAL_CONNECTOR__TO_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__PARENT_COMPONENT = BEHAVIORAL_CONNECTOR__PARENT_COMPONENT;
-
-	/**
-	 * The feature id for the '<em><b>To Discrete Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__TO_DISCRETE_PORT = BEHAVIORAL_CONNECTOR__TO_DISCRETE_PORT;
-
-	/**
-	 * The feature id for the '<em><b>From Discrete Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__FROM_DISCRETE_PORT = BEHAVIORAL_CONNECTOR__FROM_DISCRETE_PORT;
-
-	/**
-	 * The feature id for the '<em><b>To Continuous Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__TO_CONTINUOUS_PORT = BEHAVIORAL_CONNECTOR__TO_CONTINUOUS_PORT;
-
-	/**
-	 * The feature id for the '<em><b>From Continuous Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__FROM_CONTINUOUS_PORT = BEHAVIORAL_CONNECTOR__FROM_CONTINUOUS_PORT;
-
-	/**
-	 * The feature id for the '<em><b>To Hybrid Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__TO_HYBRID_PORT = BEHAVIORAL_CONNECTOR__TO_HYBRID_PORT;
-
-	/**
-	 * The feature id for the '<em><b>From Hybrid Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__FROM_HYBRID_PORT = BEHAVIORAL_CONNECTOR__FROM_HYBRID_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__BEHAVIOR = BEHAVIORAL_CONNECTOR__BEHAVIOR;
-
-	/**
-	 * The feature id for the '<em><b>To</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__TO = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>From</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY__FROM = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 1;
+	int ASSEMBLY_CONNECTOR__PARENT_COMPONENT = PORT_CONNECTOR__PARENT_COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Coordination Protocol</b></em>' reference.
@@ -1598,16 +1283,35 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY__COORDINATION_PROTOCOL = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 2;
+	int ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL = PORT_CONNECTOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Assembly</em>' class.
+	 * The feature id for the '<em><b>Component Parts</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_FEATURE_COUNT = BEHAVIORAL_CONNECTOR_FEATURE_COUNT + 3;
+	int ASSEMBLY_CONNECTOR__COMPONENT_PARTS = PORT_CONNECTOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Assembly Connector</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONNECTOR_FEATURE_COUNT = PORT_CONNECTOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DelegationConnectorImpl <em>Delegation Connector</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.DelegationConnectorImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getDelegationConnector()
+	 * @generated
+	 */
+	int DELEGATION_CONNECTOR = 9;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1616,7 +1320,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION__ANNOTATION = CONNECTOR_TYPE__ANNOTATION;
+	int DELEGATION_CONNECTOR__ANNOTATION = PORT_CONNECTOR__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1625,25 +1329,25 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION__EXTENSION = CONNECTOR_TYPE__EXTENSION;
+	int DELEGATION_CONNECTOR__EXTENSION = PORT_CONNECTOR__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>From Port</b></em>' reference.
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION__FROM_PORT = CONNECTOR_TYPE__FROM_PORT;
+	int DELEGATION_CONNECTOR__COMMENT = PORT_CONNECTOR__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>To Port</b></em>' reference.
+	 * The feature id for the '<em><b>Connector Endpoints</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION__TO_PORT = CONNECTOR_TYPE__TO_PORT;
+	int DELEGATION_CONNECTOR__CONNECTOR_ENDPOINTS = PORT_CONNECTOR__CONNECTOR_ENDPOINTS;
 
 	/**
 	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.
@@ -1652,61 +1356,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION__PARENT_COMPONENT = CONNECTOR_TYPE__PARENT_COMPONENT;
-
-	/**
-	 * The feature id for the '<em><b>To Discrete Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION__TO_DISCRETE_PORT = CONNECTOR_TYPE__TO_DISCRETE_PORT;
-
-	/**
-	 * The feature id for the '<em><b>From Discrete Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION__FROM_DISCRETE_PORT = CONNECTOR_TYPE__FROM_DISCRETE_PORT;
-
-	/**
-	 * The feature id for the '<em><b>To Continuous Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION__TO_CONTINUOUS_PORT = CONNECTOR_TYPE__TO_CONTINUOUS_PORT;
-
-	/**
-	 * The feature id for the '<em><b>From Continuous Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION__FROM_CONTINUOUS_PORT = CONNECTOR_TYPE__FROM_CONTINUOUS_PORT;
-
-	/**
-	 * The feature id for the '<em><b>To Hybrid Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION__TO_HYBRID_PORT = CONNECTOR_TYPE__TO_HYBRID_PORT;
-
-	/**
-	 * The feature id for the '<em><b>From Hybrid Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION__FROM_HYBRID_PORT = CONNECTOR_TYPE__FROM_HYBRID_PORT;
+	int DELEGATION_CONNECTOR__PARENT_COMPONENT = PORT_CONNECTOR__PARENT_COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Component Part</b></em>' reference.
@@ -1715,16 +1365,16 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION__COMPONENT_PART = CONNECTOR_TYPE_FEATURE_COUNT + 0;
+	int DELEGATION_CONNECTOR__COMPONENT_PART = PORT_CONNECTOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Delegation</em>' class.
+	 * The number of structural features of the '<em>Delegation Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_FEATURE_COUNT = CONNECTOR_TYPE_FEATURE_COUNT + 1;
+	int DELEGATION_CONNECTOR_FEATURE_COUNT = PORT_CONNECTOR_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl <em>Hybrid Port</em>}' class.
@@ -1734,7 +1384,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getHybridPort()
 	 * @generated
 	 */
-	int HYBRID_PORT = 11;
+	int HYBRID_PORT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1773,6 +1423,15 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__COMMENT = DIRECTED_TYPED_PORT__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__CONNECTORS = DIRECTED_TYPED_PORT__CONNECTORS;
+
+	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1780,24 +1439,6 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int HYBRID_PORT__CONSTRAINT = DIRECTED_TYPED_PORT__CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__INCOMING_CONNECTORS = DIRECTED_TYPED_PORT__INCOMING_CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__OUTGOING_CONNECTORS = DIRECTED_TYPED_PORT__OUTGOING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -1809,13 +1450,13 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__COMPONENT = DIRECTED_TYPED_PORT__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__CONNECTORS = DIRECTED_TYPED_PORT__CONNECTORS;
+	int HYBRID_PORT__PORT_CONNECTORS = DIRECTED_TYPED_PORT__PORT_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -1879,7 +1520,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getCoordinationProtocolOccurrence()
 	 * @generated
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE = 12;
+	int COORDINATION_PROTOCOL_OCCURRENCE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1943,7 +1584,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getComponentKind()
 	 * @generated
 	 */
-	int COMPONENT_KIND = 15;
+	int COMPONENT_KIND = 14;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind <em>Continuous Port Direction Kind</em>}' enum.
@@ -1953,7 +1594,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getContinuousPortDirectionKind()
 	 * @generated
 	 */
-	int CONTINUOUS_PORT_DIRECTION_KIND = 16;
+	int CONTINUOUS_PORT_DIRECTION_KIND = 15;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.Component <em>Component</em>}'.
@@ -2020,15 +1661,15 @@ public interface ComponentPackage extends EPackage {
 	EReference getPort_Component();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getConnectors <em>Connectors</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getPortConnectors <em>Port Connectors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Connectors</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getConnectors()
+	 * @return the meta object for the reference list '<em>Port Connectors</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getPortConnectors()
 	 * @see #getPort()
 	 * @generated
 	 */
-	EReference getPort_Connectors();
+	EReference getPort_PortConnectors();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort <em>Continuous Port</em>}'.
@@ -2139,28 +1780,6 @@ public interface ComponentPackage extends EPackage {
 	EAttribute getDiscretePort_MultiPort();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getIncomingConnectors <em>Incoming Connectors</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Incoming Connectors</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getIncomingConnectors()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_IncomingConnectors();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.Port#getOutgoingConnectors <em>Outgoing Connectors</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Outgoing Connectors</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Port#getOutgoingConnectors()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_OutgoingConnectors();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart <em>Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2193,37 +1812,26 @@ public interface ComponentPackage extends EPackage {
 	EReference getComponentPart_ParentComponent();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getFromRev <em>From Rev</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getAssemblyConnectors <em>Assembly Connectors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>From Rev</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getFromRev()
+	 * @return the meta object for the reference list '<em>Assembly Connectors</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getAssemblyConnectors()
 	 * @see #getComponentPart()
 	 * @generated
 	 */
-	EReference getComponentPart_FromRev();
+	EReference getComponentPart_AssemblyConnectors();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getToRev <em>To Rev</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getDelegationConnectors <em>Delegation Connectors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>To Rev</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getToRev()
+	 * @return the meta object for the reference list '<em>Delegation Connectors</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getDelegationConnectors()
 	 * @see #getComponentPart()
 	 * @generated
 	 */
-	EReference getComponentPart_ToRev();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getDelegation <em>Delegation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Delegation</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getDelegation()
-	 * @see #getComponentPart()
-	 * @generated
-	 */
-	EReference getComponentPart_Delegation();
+	EReference getComponentPart_DelegationConnectors();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getPortsDerived <em>Ports Derived</em>}'.
@@ -2365,187 +1973,78 @@ public interface ComponentPackage extends EPackage {
 	EClass getAtomicComponent();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType <em>Connector Type</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.PortConnector <em>Port Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Connector Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ConnectorType
+	 * @return the meta object for class '<em>Port Connector</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.PortConnector
 	 * @generated
 	 */
-	EClass getConnectorType();
+	EClass getPortConnector();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getFromPort <em>From Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>From Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getFromPort()
-	 * @see #getConnectorType()
-	 * @generated
-	 */
-	EReference getConnectorType_FromPort();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getToPort <em>To Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>To Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getToPort()
-	 * @see #getConnectorType()
-	 * @generated
-	 */
-	EReference getConnectorType_ToPort();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getParentComponent <em>Parent Component</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.component.PortConnector#getParentComponent <em>Parent Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the container reference '<em>Parent Component</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getParentComponent()
-	 * @see #getConnectorType()
+	 * @see de.uni_paderborn.fujaba.muml.model.component.PortConnector#getParentComponent()
+	 * @see #getPortConnector()
 	 * @generated
 	 */
-	EReference getConnectorType_ParentComponent();
+	EReference getPortConnector_ParentComponent();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getToDiscretePort <em>To Discrete Port</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector <em>Assembly Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>To Discrete Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getToDiscretePort()
-	 * @see #getConnectorType()
+	 * @return the meta object for class '<em>Assembly Connector</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector
 	 * @generated
 	 */
-	EReference getConnectorType_ToDiscretePort();
+	EClass getAssemblyConnector();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getFromDiscretePort <em>From Discrete Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>From Discrete Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getFromDiscretePort()
-	 * @see #getConnectorType()
-	 * @generated
-	 */
-	EReference getConnectorType_FromDiscretePort();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getToContinuousPort <em>To Continuous Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>To Continuous Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getToContinuousPort()
-	 * @see #getConnectorType()
-	 * @generated
-	 */
-	EReference getConnectorType_ToContinuousPort();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getFromContinuousPort <em>From Continuous Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>From Continuous Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getFromContinuousPort()
-	 * @see #getConnectorType()
-	 * @generated
-	 */
-	EReference getConnectorType_FromContinuousPort();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getToHybridPort <em>To Hybrid Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>To Hybrid Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getToHybridPort()
-	 * @see #getConnectorType()
-	 * @generated
-	 */
-	EReference getConnectorType_ToHybridPort();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getFromHybridPort <em>From Hybrid Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>From Hybrid Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ConnectorType#getFromHybridPort()
-	 * @see #getConnectorType()
-	 * @generated
-	 */
-	EReference getConnectorType_FromHybridPort();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.Assembly <em>Assembly</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Assembly</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Assembly
-	 * @generated
-	 */
-	EClass getAssembly();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getTo <em>To</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>To</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Assembly#getTo()
-	 * @see #getAssembly()
-	 * @generated
-	 */
-	EReference getAssembly_To();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getFrom <em>From</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>From</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Assembly#getFrom()
-	 * @see #getAssembly()
-	 * @generated
-	 */
-	EReference getAssembly_From();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Assembly#getCoordinationProtocol <em>Coordination Protocol</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector#getCoordinationProtocol <em>Coordination Protocol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Coordination Protocol</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Assembly#getCoordinationProtocol()
-	 * @see #getAssembly()
+	 * @see de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector#getCoordinationProtocol()
+	 * @see #getAssemblyConnector()
 	 * @generated
 	 */
-	EReference getAssembly_CoordinationProtocol();
+	EReference getAssemblyConnector_CoordinationProtocol();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.Delegation <em>Delegation</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector#getComponentParts <em>Component Parts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Delegation</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Delegation
+	 * @return the meta object for the reference list '<em>Component Parts</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector#getComponentParts()
+	 * @see #getAssemblyConnector()
 	 * @generated
 	 */
-	EClass getDelegation();
+	EReference getAssemblyConnector_ComponentParts();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.Delegation#getComponentPart <em>Component Part</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.DelegationConnector <em>Delegation Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Delegation Connector</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DelegationConnector
+	 * @generated
+	 */
+	EClass getDelegationConnector();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DelegationConnector#getComponentPart <em>Component Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Component Part</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.Delegation#getComponentPart()
-	 * @see #getDelegation()
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DelegationConnector#getComponentPart()
+	 * @see #getDelegationConnector()
 	 * @generated
 	 */
-	EReference getDelegation_ComponentPart();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector <em>Behavioral Connector</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Behavioral Connector</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.BehavioralConnector
-	 * @generated
-	 */
-	EClass getBehavioralConnector();
+	EReference getDelegationConnector_ComponentPart();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort <em>Hybrid Port</em>}'.
@@ -2717,12 +2216,12 @@ public interface ComponentPackage extends EPackage {
 		EReference PORT__COMPONENT = eINSTANCE.getPort_Component();
 
 		/**
-		 * The meta object literal for the '<em><b>Connectors</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Port Connectors</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PORT__CONNECTORS = eINSTANCE.getPort_Connectors();
+		EReference PORT__PORT_CONNECTORS = eINSTANCE.getPort_PortConnectors();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl <em>Continuous Port</em>}' class.
@@ -2809,22 +2308,6 @@ public interface ComponentPackage extends EPackage {
 		EAttribute DISCRETE_PORT__MULTI_PORT = eINSTANCE.getDiscretePort_MultiPort();
 
 		/**
-		 * The meta object literal for the '<em><b>Incoming Connectors</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__INCOMING_CONNECTORS = eINSTANCE.getPort_IncomingConnectors();
-
-		/**
-		 * The meta object literal for the '<em><b>Outgoing Connectors</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__OUTGOING_CONNECTORS = eINSTANCE.getPort_OutgoingConnectors();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl <em>Part</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2851,28 +2334,20 @@ public interface ComponentPackage extends EPackage {
 		EReference COMPONENT_PART__PARENT_COMPONENT = eINSTANCE.getComponentPart_ParentComponent();
 
 		/**
-		 * The meta object literal for the '<em><b>From Rev</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Assembly Connectors</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_PART__FROM_REV = eINSTANCE.getComponentPart_FromRev();
+		EReference COMPONENT_PART__ASSEMBLY_CONNECTORS = eINSTANCE.getComponentPart_AssemblyConnectors();
 
 		/**
-		 * The meta object literal for the '<em><b>To Rev</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Delegation Connectors</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_PART__TO_REV = eINSTANCE.getComponentPart_ToRev();
-
-		/**
-		 * The meta object literal for the '<em><b>Delegation</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT_PART__DELEGATION = eINSTANCE.getComponentPart_Delegation();
+		EReference COMPONENT_PART__DELEGATION_CONNECTORS = eINSTANCE.getComponentPart_DelegationConnectors();
 
 		/**
 		 * The meta object literal for the '<em><b>Ports Derived</b></em>' containment reference list feature.
@@ -2987,30 +2462,14 @@ public interface ComponentPackage extends EPackage {
 		EClass ATOMIC_COMPONENT = eINSTANCE.getAtomicComponent();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl <em>Connector Type</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.PortConnectorImpl <em>Port Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ConnectorTypeImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getConnectorType()
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.PortConnectorImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getPortConnector()
 		 * @generated
 		 */
-		EClass CONNECTOR_TYPE = eINSTANCE.getConnectorType();
-
-		/**
-		 * The meta object literal for the '<em><b>From Port</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONNECTOR_TYPE__FROM_PORT = eINSTANCE.getConnectorType_FromPort();
-
-		/**
-		 * The meta object literal for the '<em><b>To Port</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONNECTOR_TYPE__TO_PORT = eINSTANCE.getConnectorType_ToPort();
+		EClass PORT_CONNECTOR = eINSTANCE.getPortConnector();
 
 		/**
 		 * The meta object literal for the '<em><b>Parent Component</b></em>' container reference feature.
@@ -3018,81 +2477,17 @@ public interface ComponentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTOR_TYPE__PARENT_COMPONENT = eINSTANCE.getConnectorType_ParentComponent();
+		EReference PORT_CONNECTOR__PARENT_COMPONENT = eINSTANCE.getPortConnector_ParentComponent();
 
 		/**
-		 * The meta object literal for the '<em><b>To Discrete Port</b></em>' reference feature.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyConnectorImpl <em>Assembly Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyConnectorImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getAssemblyConnector()
 		 * @generated
 		 */
-		EReference CONNECTOR_TYPE__TO_DISCRETE_PORT = eINSTANCE.getConnectorType_ToDiscretePort();
-
-		/**
-		 * The meta object literal for the '<em><b>From Discrete Port</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONNECTOR_TYPE__FROM_DISCRETE_PORT = eINSTANCE.getConnectorType_FromDiscretePort();
-
-		/**
-		 * The meta object literal for the '<em><b>To Continuous Port</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONNECTOR_TYPE__TO_CONTINUOUS_PORT = eINSTANCE.getConnectorType_ToContinuousPort();
-
-		/**
-		 * The meta object literal for the '<em><b>From Continuous Port</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONNECTOR_TYPE__FROM_CONTINUOUS_PORT = eINSTANCE.getConnectorType_FromContinuousPort();
-
-		/**
-		 * The meta object literal for the '<em><b>To Hybrid Port</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONNECTOR_TYPE__TO_HYBRID_PORT = eINSTANCE.getConnectorType_ToHybridPort();
-
-		/**
-		 * The meta object literal for the '<em><b>From Hybrid Port</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONNECTOR_TYPE__FROM_HYBRID_PORT = eINSTANCE.getConnectorType_FromHybridPort();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyImpl <em>Assembly</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.AssemblyImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getAssembly()
-		 * @generated
-		 */
-		EClass ASSEMBLY = eINSTANCE.getAssembly();
-
-		/**
-		 * The meta object literal for the '<em><b>To</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ASSEMBLY__TO = eINSTANCE.getAssembly_To();
-
-		/**
-		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ASSEMBLY__FROM = eINSTANCE.getAssembly_From();
+		EClass ASSEMBLY_CONNECTOR = eINSTANCE.getAssemblyConnector();
 
 		/**
 		 * The meta object literal for the '<em><b>Coordination Protocol</b></em>' reference feature.
@@ -3100,17 +2495,25 @@ public interface ComponentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ASSEMBLY__COORDINATION_PROTOCOL = eINSTANCE.getAssembly_CoordinationProtocol();
+		EReference ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL = eINSTANCE.getAssemblyConnector_CoordinationProtocol();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DelegationImpl <em>Delegation</em>}' class.
+		 * The meta object literal for the '<em><b>Component Parts</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.DelegationImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getDelegation()
 		 * @generated
 		 */
-		EClass DELEGATION = eINSTANCE.getDelegation();
+		EReference ASSEMBLY_CONNECTOR__COMPONENT_PARTS = eINSTANCE.getAssemblyConnector_ComponentParts();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DelegationConnectorImpl <em>Delegation Connector</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.DelegationConnectorImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getDelegationConnector()
+		 * @generated
+		 */
+		EClass DELEGATION_CONNECTOR = eINSTANCE.getDelegationConnector();
 
 		/**
 		 * The meta object literal for the '<em><b>Component Part</b></em>' reference feature.
@@ -3118,17 +2521,7 @@ public interface ComponentPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DELEGATION__COMPONENT_PART = eINSTANCE.getDelegation_ComponentPart();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.BehavioralConnectorImpl <em>Behavioral Connector</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.BehavioralConnectorImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl#getBehavioralConnector()
-		 * @generated
-		 */
-		EClass BEHAVIORAL_CONNECTOR = eINSTANCE.getBehavioralConnector();
+		EReference DELEGATION_CONNECTOR__COMPONENT_PART = eINSTANCE.getDelegationConnector_ComponentPart();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl <em>Hybrid Port</em>}' class.

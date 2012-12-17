@@ -24,10 +24,8 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getIncomingRoleConnector <em>Incoming Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getPort <em>Port</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#isMultiRole <em>Multi Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
@@ -40,34 +38,6 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * @generated
  */
 public interface Role extends DiscreteInteractionEndpoint, DataType {
-	/**
-	 * Returns the value of the '<em><b>Incoming Role Connector</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The incoming RoleConnector, which connects this role with another role.
-	 * Either incomingRoleConnector or outgoingRoleConnector (or both) must be set.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Incoming Role Connector</em>' reference.
-	 * @see #setIncomingRoleConnector(RoleConnector)
-	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getRole_IncomingRoleConnector()
-	 * @see de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector#getTarget
-	 * @model opposite="target"
-	 * @generated
-	 */
-	RoleConnector getIncomingRoleConnector();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getIncomingRoleConnector <em>Incoming Role Connector</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Incoming Role Connector</em>' reference.
-	 * @see #getIncomingRoleConnector()
-	 * @generated
-	 */
-	void setIncomingRoleConnector(RoleConnector value);
-
 	/**
 	 * Returns the value of the '<em><b>Coordination Protocol</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol#getRoles <em>Roles</em>}'.
@@ -113,34 +83,6 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	EList<DiscretePort> getPort();
 
 	/**
-	 * Returns the value of the '<em><b>Outgoing Role Connector</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The outgoing RoleConnector, which connects this role with another role.
-	 * Either incomingRoleConnector or outgoingRoleConnector (or both) must be set.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Outgoing Role Connector</em>' reference.
-	 * @see #setOutgoingRoleConnector(RoleConnector)
-	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getRole_OutgoingRoleConnector()
-	 * @see de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector#getSource
-	 * @model opposite="source"
-	 * @generated
-	 */
-	RoleConnector getOutgoingRoleConnector();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.protocol.Role#getOutgoingRoleConnector <em>Outgoing Role Connector</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Outgoing Role Connector</em>' reference.
-	 * @see #getOutgoingRoleConnector()
-	 * @generated
-	 */
-	void setOutgoingRoleConnector(RoleConnector value);
-
-	/**
 	 * Returns the value of the '<em><b>Role Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -150,7 +92,7 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Role Connector</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getRole_RoleConnector()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.incomingConnector -> notEmpty() then\r\n\tself.incomingConnector\r\nelse\r\n\tself.outgoingConnector\r\nendif'"
 	 * @generated
 	 */
@@ -166,7 +108,7 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Multi Role</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getRole_MultiRole()
-	 * @model default="" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model default="" required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not (self.cardinality.oclIsUndefined()) then\r\n\t(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity\r\nelse\r\n\tfalse\r\nendif'"
 	 * @generated
 	 */

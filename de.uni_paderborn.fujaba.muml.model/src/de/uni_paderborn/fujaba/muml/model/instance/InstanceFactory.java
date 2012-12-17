@@ -26,22 +26,22 @@ public interface InstanceFactory extends EFactory {
 	InstanceFactory eINSTANCE = de.uni_paderborn.fujaba.muml.model.instance.impl.InstanceFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Assembly Instance</em>'.
+	 * Returns a new object of class '<em>Assembly Connector Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Assembly Instance</em>'.
+	 * @return a new object of class '<em>Assembly Connector Instance</em>'.
 	 * @generated
 	 */
-	AssemblyInstance createAssemblyInstance();
+	AssemblyConnectorInstance createAssemblyConnectorInstance();
 
 	/**
-	 * Returns a new object of class '<em>Delegation Instance</em>'.
+	 * Returns a new object of class '<em>Delegation Connector Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Delegation Instance</em>'.
+	 * @return a new object of class '<em>Delegation Connector Instance</em>'.
 	 * @generated
 	 */
-	DelegationInstance createDelegationInstance();
+	DelegationConnectorInstance createDelegationConnectorInstance();
 
 	/**
 	 * Returns a new object of class '<em>Component Instance Configuration</em>'.
