@@ -17,7 +17,7 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
-import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
+import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
@@ -100,7 +100,7 @@ public class PatternSwitch<T> extends Switch<T> {
 			case PatternPackage.ROLE: {
 				Role role = (Role)theEObject;
 				T result = caseRole(role);
-				if (result == null) result = caseDiscreteInteractionPoint(role);
+				if (result == null) result = caseDiscreteInteractionEndpoint(role);
 				if (result == null) result = caseDataType(role);
 				if (result == null) result = caseBehavioralElement(role);
 				if (result == null) result = caseConstrainableElement(role);
@@ -127,13 +127,13 @@ public class PatternSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PatternPackage.DISCRETE_INTERACTION_POINT: {
-				DiscreteInteractionPoint discreteInteractionPoint = (DiscreteInteractionPoint)theEObject;
-				T result = caseDiscreteInteractionPoint(discreteInteractionPoint);
-				if (result == null) result = caseBehavioralElement(discreteInteractionPoint);
-				if (result == null) result = caseConstrainableElement(discreteInteractionPoint);
-				if (result == null) result = caseNamedElement(discreteInteractionPoint);
-				if (result == null) result = caseExtendableElement(discreteInteractionPoint);
+			case PatternPackage.DISCRETE_INTERACTION_ENDPOINT: {
+				DiscreteInteractionEndpoint discreteInteractionEndpoint = (DiscreteInteractionEndpoint)theEObject;
+				T result = caseDiscreteInteractionEndpoint(discreteInteractionEndpoint);
+				if (result == null) result = caseBehavioralElement(discreteInteractionEndpoint);
+				if (result == null) result = caseConstrainableElement(discreteInteractionEndpoint);
+				if (result == null) result = caseNamedElement(discreteInteractionEndpoint);
+				if (result == null) result = caseExtendableElement(discreteInteractionEndpoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -217,17 +217,17 @@ public class PatternSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Discrete Interaction Point</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Interaction Endpoint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Discrete Interaction Point</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Interaction Endpoint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDiscreteInteractionPoint(DiscreteInteractionPoint object) {
+	public T caseDiscreteInteractionEndpoint(DiscreteInteractionEndpoint object) {
 		return null;
 	}
 

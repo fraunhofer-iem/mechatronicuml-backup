@@ -40,7 +40,7 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL MultiPortRequiresDefinedOrder='self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)' OrderedRequiresIntegerOrderVariable='self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')' RoleHasConnector='self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()' RoleRequiresBehavior='not self.behavior.oclIsUndefined()' RoleRequiresInterface='not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())'"
  * @generated
  */
-public interface Role extends DiscreteInteractionPoint, DataType {
+public interface Role extends DiscreteInteractionEndpoint, DataType {
 	/**
 	 * Returns the value of the '<em><b>Incoming Role Connector</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector#getTarget <em>Target</em>}'.

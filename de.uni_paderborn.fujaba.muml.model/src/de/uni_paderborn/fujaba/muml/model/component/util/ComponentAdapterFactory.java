@@ -32,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
+import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
@@ -176,8 +176,8 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 				return createBehavioralElementAdapter();
 			}
 			@Override
-			public Adapter caseDiscreteInteractionPoint(DiscreteInteractionPoint object) {
-				return createDiscreteInteractionPointAdapter();
+			public Adapter caseDiscreteInteractionEndpoint(DiscreteInteractionEndpoint object) {
+				return createDiscreteInteractionEndpointAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -494,16 +494,16 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint <em>Discrete Interaction Point</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint <em>Discrete Interaction Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint
 	 * @generated
 	 */
-	public Adapter createDiscreteInteractionPointAdapter() {
+	public Adapter createDiscreteInteractionEndpointAdapter() {
 		return null;
 	}
 

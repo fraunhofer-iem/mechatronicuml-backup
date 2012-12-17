@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.component;
 
 import org.eclipse.emf.common.util.EList;
 
-import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
+import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
 
@@ -37,7 +37,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.Role;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneMessageInterface='self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))' DiscretePortRequiresBehavior='-- this also holds for a hybrid port, ports of structured components do not require a behavior\r\n(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))\r\n\timplies not self.behavior.oclIsUndefined()' DiscretePortAtStructuredComponentHasNoBehavior='(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\n\timplies self.behavior.oclIsUndefined()' DiscretePortRequiresRole='self.oclIsTypeOf(component::DiscretePort) implies not self.refines.oclIsUndefined()' DiscretePortAndRoleSameMessageInterface='not self.refines.oclIsUndefined() implies\n\t(self.senderMessageInterface = self.refines.senderMessageInterface\n\t and\n\t self.receiverMessageInterface = self.refines.receiverMessageInterface\n\t)' MultiPortMustRefineMultiRole='if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then\r\n       self.isMultiPort implies self.refines.isMultiRole\r\nelse\r\n\ttrue\r\nendif'"
  * @generated
  */
-public interface DiscretePort extends Port, DiscreteInteractionPoint {
+public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 	/**
 	 * Returns the value of the '<em><b>Refines</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getPort <em>Port</em>}'.

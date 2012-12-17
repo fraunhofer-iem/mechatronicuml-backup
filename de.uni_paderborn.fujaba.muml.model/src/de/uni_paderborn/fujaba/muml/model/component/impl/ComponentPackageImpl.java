@@ -1020,7 +1020,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		portEClass.getESuperTypes().add(theTypesPackage.getDataType());
 		continuousPortEClass.getESuperTypes().add(this.getDirectedTypedPort());
 		discretePortEClass.getESuperTypes().add(this.getPort());
-		discretePortEClass.getESuperTypes().add(thePatternPackage.getDiscreteInteractionPoint());
+		discretePortEClass.getESuperTypes().add(thePatternPackage.getDiscreteInteractionEndpoint());
 		componentPartEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		componentPartEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		componentPartEClass.getESuperTypes().add(theTypesPackage.getDataType());

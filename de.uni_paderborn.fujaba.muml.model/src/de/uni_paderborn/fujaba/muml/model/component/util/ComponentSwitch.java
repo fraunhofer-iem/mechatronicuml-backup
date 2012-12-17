@@ -31,7 +31,7 @@ import de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
+import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
@@ -129,7 +129,7 @@ public class ComponentSwitch<T> extends Switch<T> {
 				DiscretePort discretePort = (DiscretePort)theEObject;
 				T result = caseDiscretePort(discretePort);
 				if (result == null) result = casePort(discretePort);
-				if (result == null) result = caseDiscreteInteractionPoint(discretePort);
+				if (result == null) result = caseDiscreteInteractionEndpoint(discretePort);
 				if (result == null) result = caseConstrainableElement(discretePort);
 				if (result == null) result = caseDataType(discretePort);
 				if (result == null) result = caseBehavioralElement(discretePort);
@@ -570,17 +570,17 @@ public class ComponentSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Discrete Interaction Point</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Interaction Endpoint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Discrete Interaction Point</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Interaction Endpoint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDiscreteInteractionPoint(DiscreteInteractionPoint object) {
+	public T caseDiscreteInteractionEndpoint(DiscreteInteractionEndpoint object) {
 		return null;
 	}
 

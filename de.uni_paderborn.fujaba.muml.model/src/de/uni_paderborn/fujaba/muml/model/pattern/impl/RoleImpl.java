@@ -53,7 +53,7 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  *
  * @generated
  */
-public class RoleImpl extends DiscreteInteractionPointImpl implements Role {
+public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->

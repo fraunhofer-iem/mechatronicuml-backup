@@ -209,14 +209,14 @@ public interface PatternPackage extends EPackage {
 	int COORDINATION_PATTERN_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.DiscreteInteractionPointImpl <em>Discrete Interaction Point</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.DiscreteInteractionEndpointImpl <em>Discrete Interaction Endpoint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.DiscreteInteractionPointImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl#getDiscreteInteractionPoint()
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.DiscreteInteractionEndpointImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl#getDiscreteInteractionEndpoint()
 	 * @generated
 	 */
-	int DISCRETE_INTERACTION_POINT = 5;
+	int DISCRETE_INTERACTION_ENDPOINT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -225,7 +225,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_POINT__BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+	int DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -234,7 +234,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_POINT__CONSTRAINT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
+	int DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -243,7 +243,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_POINT__ANNOTATION = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
+	int DISCRETE_INTERACTION_ENDPOINT__ANNOTATION = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -252,7 +252,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_POINT__EXTENSION = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
+	int DISCRETE_INTERACTION_ENDPOINT__EXTENSION = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -261,7 +261,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_POINT__NAME = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
+	int DISCRETE_INTERACTION_ENDPOINT__NAME = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
@@ -270,7 +270,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_POINT__SENDER_MESSAGE_TYPES = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 4;
+	int DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -279,7 +279,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_POINT__RECEIVER_MESSAGE_TYPES = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 5;
+	int DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -288,7 +288,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_POINT__ADAPTATION_BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 6;
+	int DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
@@ -297,16 +297,16 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_POINT__ROLE_AND_ADAPTATION_BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 7;
+	int DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
-	 * The number of structural features of the '<em>Discrete Interaction Point</em>' class.
+	 * The number of structural features of the '<em>Discrete Interaction Endpoint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_POINT_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 8;
+	int DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.RoleImpl <em>Role</em>}' class.
@@ -325,7 +325,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__BEHAVIOR = DISCRETE_INTERACTION_POINT__BEHAVIOR;
+	int ROLE__BEHAVIOR = DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -334,7 +334,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__CONSTRAINT = DISCRETE_INTERACTION_POINT__CONSTRAINT;
+	int ROLE__CONSTRAINT = DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -343,7 +343,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ANNOTATION = DISCRETE_INTERACTION_POINT__ANNOTATION;
+	int ROLE__ANNOTATION = DISCRETE_INTERACTION_ENDPOINT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -352,7 +352,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__EXTENSION = DISCRETE_INTERACTION_POINT__EXTENSION;
+	int ROLE__EXTENSION = DISCRETE_INTERACTION_ENDPOINT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -361,7 +361,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__NAME = DISCRETE_INTERACTION_POINT__NAME;
+	int ROLE__NAME = DISCRETE_INTERACTION_ENDPOINT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
@@ -370,7 +370,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__SENDER_MESSAGE_TYPES = DISCRETE_INTERACTION_POINT__SENDER_MESSAGE_TYPES;
+	int ROLE__SENDER_MESSAGE_TYPES = DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -379,7 +379,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__RECEIVER_MESSAGE_TYPES = DISCRETE_INTERACTION_POINT__RECEIVER_MESSAGE_TYPES;
+	int ROLE__RECEIVER_MESSAGE_TYPES = DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -388,7 +388,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ADAPTATION_BEHAVIOR = DISCRETE_INTERACTION_POINT__ADAPTATION_BEHAVIOR;
+	int ROLE__ADAPTATION_BEHAVIOR = DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
@@ -397,7 +397,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ROLE_AND_ADAPTATION_BEHAVIOR = DISCRETE_INTERACTION_POINT__ROLE_AND_ADAPTATION_BEHAVIOR;
+	int ROLE__ROLE_AND_ADAPTATION_BEHAVIOR = DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -406,7 +406,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__COMMENT = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 0;
+	int ROLE__COMMENT = DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Role Connector</b></em>' reference.
@@ -415,7 +415,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__INCOMING_ROLE_CONNECTOR = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 1;
+	int ROLE__INCOMING_ROLE_CONNECTOR = DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Coordination Pattern</b></em>' container reference.
@@ -424,7 +424,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__COORDINATION_PATTERN = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 2;
+	int ROLE__COORDINATION_PATTERN = DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -433,7 +433,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__CARDINALITY = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 3;
+	int ROLE__CARDINALITY = DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
@@ -442,7 +442,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__PORT = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 4;
+	int ROLE__PORT = DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Role Connector</b></em>' reference.
@@ -451,7 +451,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__OUTGOING_ROLE_CONNECTOR = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 5;
+	int ROLE__OUTGOING_ROLE_CONNECTOR = DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Role Connector</b></em>' reference.
@@ -460,7 +460,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ROLE_CONNECTOR = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 6;
+	int ROLE__ROLE_CONNECTOR = DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Is Multi Role</b></em>' attribute.
@@ -469,7 +469,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__IS_MULTI_ROLE = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 7;
+	int ROLE__IS_MULTI_ROLE = DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
@@ -478,7 +478,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__RECEIVER_MESSAGE_BUFFER = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 8;
+	int ROLE__RECEIVER_MESSAGE_BUFFER = DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -487,7 +487,7 @@ public interface PatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = DISCRETE_INTERACTION_POINT_FEATURE_COUNT + 9;
+	int ROLE_FEATURE_COUNT = DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 9;
 
 
 	/**
@@ -884,58 +884,58 @@ public interface PatternPackage extends EPackage {
 	EAttribute getConnectorQualityOfServiceAssumptions_MessageLossPossible();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint <em>Discrete Interaction Point</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint <em>Discrete Interaction Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Discrete Interaction Point</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint
+	 * @return the meta object for class '<em>Discrete Interaction Endpoint</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint
 	 * @generated
 	 */
-	EClass getDiscreteInteractionPoint();
+	EClass getDiscreteInteractionEndpoint();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getSenderMessageTypes <em>Sender Message Types</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint#getSenderMessageTypes <em>Sender Message Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Sender Message Types</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getSenderMessageTypes()
-	 * @see #getDiscreteInteractionPoint()
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint#getSenderMessageTypes()
+	 * @see #getDiscreteInteractionEndpoint()
 	 * @generated
 	 */
-	EReference getDiscreteInteractionPoint_SenderMessageTypes();
+	EReference getDiscreteInteractionEndpoint_SenderMessageTypes();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getReceiverMessageTypes <em>Receiver Message Types</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint#getReceiverMessageTypes <em>Receiver Message Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Receiver Message Types</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getReceiverMessageTypes()
-	 * @see #getDiscreteInteractionPoint()
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint#getReceiverMessageTypes()
+	 * @see #getDiscreteInteractionEndpoint()
 	 * @generated
 	 */
-	EReference getDiscreteInteractionPoint_ReceiverMessageTypes();
+	EReference getDiscreteInteractionEndpoint_ReceiverMessageTypes();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getAdaptationBehavior <em>Adaptation Behavior</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint#getAdaptationBehavior <em>Adaptation Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Adaptation Behavior</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getAdaptationBehavior()
-	 * @see #getDiscreteInteractionPoint()
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint#getAdaptationBehavior()
+	 * @see #getDiscreteInteractionEndpoint()
 	 * @generated
 	 */
-	EReference getDiscreteInteractionPoint_AdaptationBehavior();
+	EReference getDiscreteInteractionEndpoint_AdaptationBehavior();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Role And Adaptation Behavior</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint#getRoleAndAdaptationBehavior()
-	 * @see #getDiscreteInteractionPoint()
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint#getRoleAndAdaptationBehavior()
+	 * @see #getDiscreteInteractionEndpoint()
 	 * @generated
 	 */
-	EReference getDiscreteInteractionPoint_RoleAndAdaptationBehavior();
+	EReference getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior();
 
 	/**
 	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.model.pattern.Role#getCoordinationPattern <em>Coordination Pattern</em>}'.
@@ -1190,14 +1190,14 @@ public interface PatternPackage extends EPackage {
 		EAttribute CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE = eINSTANCE.getConnectorQualityOfServiceAssumptions_MessageLossPossible();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.DiscreteInteractionPointImpl <em>Discrete Interaction Point</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.pattern.impl.DiscreteInteractionEndpointImpl <em>Discrete Interaction Endpoint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.DiscreteInteractionPointImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl#getDiscreteInteractionPoint()
+		 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.DiscreteInteractionEndpointImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.pattern.impl.PatternPackageImpl#getDiscreteInteractionEndpoint()
 		 * @generated
 		 */
-		EClass DISCRETE_INTERACTION_POINT = eINSTANCE.getDiscreteInteractionPoint();
+		EClass DISCRETE_INTERACTION_ENDPOINT = eINSTANCE.getDiscreteInteractionEndpoint();
 
 		/**
 		 * The meta object literal for the '<em><b>Sender Message Types</b></em>' reference list feature.
@@ -1205,7 +1205,7 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DISCRETE_INTERACTION_POINT__SENDER_MESSAGE_TYPES = eINSTANCE.getDiscreteInteractionPoint_SenderMessageTypes();
+		EReference DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES = eINSTANCE.getDiscreteInteractionEndpoint_SenderMessageTypes();
 
 		/**
 		 * The meta object literal for the '<em><b>Receiver Message Types</b></em>' reference list feature.
@@ -1213,7 +1213,7 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DISCRETE_INTERACTION_POINT__RECEIVER_MESSAGE_TYPES = eINSTANCE.getDiscreteInteractionPoint_ReceiverMessageTypes();
+		EReference DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES = eINSTANCE.getDiscreteInteractionEndpoint_ReceiverMessageTypes();
 
 		/**
 		 * The meta object literal for the '<em><b>Adaptation Behavior</b></em>' reference feature.
@@ -1221,7 +1221,7 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DISCRETE_INTERACTION_POINT__ADAPTATION_BEHAVIOR = eINSTANCE.getDiscreteInteractionPoint_AdaptationBehavior();
+		EReference DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR = eINSTANCE.getDiscreteInteractionEndpoint_AdaptationBehavior();
 
 		/**
 		 * The meta object literal for the '<em><b>Role And Adaptation Behavior</b></em>' reference feature.
@@ -1229,7 +1229,7 @@ public interface PatternPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DISCRETE_INTERACTION_POINT__ROLE_AND_ADAPTATION_BEHAVIOR = eINSTANCE.getDiscreteInteractionPoint_RoleAndAdaptationBehavior();
+		EReference DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR = eINSTANCE.getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior();
 
 		/**
 		 * The meta object literal for the '<em><b>Coordination Pattern</b></em>' container reference feature.

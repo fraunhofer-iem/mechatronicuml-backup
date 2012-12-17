@@ -18,7 +18,7 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
-import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
+import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
@@ -102,8 +102,8 @@ public class PatternAdapterFactory extends AdapterFactoryImpl {
 				return createConnectorQualityOfServiceAssumptionsAdapter();
 			}
 			@Override
-			public Adapter caseDiscreteInteractionPoint(DiscreteInteractionPoint object) {
-				return createDiscreteInteractionPointAdapter();
+			public Adapter caseDiscreteInteractionEndpoint(DiscreteInteractionEndpoint object) {
+				return createDiscreteInteractionEndpointAdapter();
 			}
 			@Override
 			public Adapter caseBehavioralElement(BehavioralElement object) {
@@ -220,16 +220,16 @@ public class PatternAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint <em>Discrete Interaction Point</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint <em>Discrete Interaction Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint
+	 * @see de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint
 	 * @generated
 	 */
-	public Adapter createDiscreteInteractionPointAdapter() {
+	public Adapter createDiscreteInteractionEndpointAdapter() {
 		return null;
 	}
 

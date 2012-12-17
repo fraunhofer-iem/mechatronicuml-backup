@@ -128,7 +128,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="DiscretePort" eSuperTypes="#//model/component/Port #//model/pattern/DiscreteInteractionPoint">
+      <eClassifiers xsi:type="ecore:EClass" name="DiscretePort" eSuperTypes="#//model/component/Port #//model/pattern/DiscreteInteractionEndpoint">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a concrete port specification which provides the discrete functionality of a port."/>
         </eAnnotations>
@@ -1199,7 +1199,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//model/pattern/DiscreteInteractionPoint #//model/types/DataType">
+      <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//model/pattern/DiscreteInteractionEndpoint #//model/types/DataType">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a role of a coordination pattern."/>
         </eAnnotations>
@@ -1315,7 +1315,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionPoint" abstract="true"
+      <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpoint" abstract="true"
           eSuperTypes="#//model/core/BehavioralElement #//model/core/ConstrainableElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An interaction point for discrete communication via asynchronous messages. This class generalizes concepts of classes DiscretePort and Role."/>

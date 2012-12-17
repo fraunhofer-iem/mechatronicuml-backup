@@ -30,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.model.msgtype.impl.MsgtypePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
-import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
+import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
@@ -89,7 +89,7 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass discreteInteractionPointEClass = null;
+	private EClass discreteInteractionEndpointEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -394,8 +394,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDiscreteInteractionPoint() {
-		return discreteInteractionPointEClass;
+	public EClass getDiscreteInteractionEndpoint() {
+		return discreteInteractionEndpointEClass;
 	}
 
 	/**
@@ -403,8 +403,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDiscreteInteractionPoint_SenderMessageTypes() {
-		return (EReference)discreteInteractionPointEClass.getEStructuralFeatures().get(0);
+	public EReference getDiscreteInteractionEndpoint_SenderMessageTypes() {
+		return (EReference)discreteInteractionEndpointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -412,8 +412,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDiscreteInteractionPoint_ReceiverMessageTypes() {
-		return (EReference)discreteInteractionPointEClass.getEStructuralFeatures().get(1);
+	public EReference getDiscreteInteractionEndpoint_ReceiverMessageTypes() {
+		return (EReference)discreteInteractionEndpointEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -421,8 +421,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDiscreteInteractionPoint_AdaptationBehavior() {
-		return (EReference)discreteInteractionPointEClass.getEStructuralFeatures().get(2);
+	public EReference getDiscreteInteractionEndpoint_AdaptationBehavior() {
+		return (EReference)discreteInteractionEndpointEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -430,8 +430,8 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDiscreteInteractionPoint_RoleAndAdaptationBehavior() {
-		return (EReference)discreteInteractionPointEClass.getEStructuralFeatures().get(3);
+	public EReference getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior() {
+		return (EReference)discreteInteractionEndpointEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -529,11 +529,11 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		createEReference(connectorQualityOfServiceAssumptionsEClass, CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY);
 		createEAttribute(connectorQualityOfServiceAssumptionsEClass, CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE);
 
-		discreteInteractionPointEClass = createEClass(DISCRETE_INTERACTION_POINT);
-		createEReference(discreteInteractionPointEClass, DISCRETE_INTERACTION_POINT__SENDER_MESSAGE_TYPES);
-		createEReference(discreteInteractionPointEClass, DISCRETE_INTERACTION_POINT__RECEIVER_MESSAGE_TYPES);
-		createEReference(discreteInteractionPointEClass, DISCRETE_INTERACTION_POINT__ADAPTATION_BEHAVIOR);
-		createEReference(discreteInteractionPointEClass, DISCRETE_INTERACTION_POINT__ROLE_AND_ADAPTATION_BEHAVIOR);
+		discreteInteractionEndpointEClass = createEClass(DISCRETE_INTERACTION_ENDPOINT);
+		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES);
+		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES);
+		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR);
+		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR);
 	}
 
 	/**
@@ -575,14 +575,14 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		roleConnectorEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
 		coordinationPatternEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		coordinationPatternEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
-		roleEClass.getESuperTypes().add(this.getDiscreteInteractionPoint());
+		roleEClass.getESuperTypes().add(this.getDiscreteInteractionEndpoint());
 		roleEClass.getESuperTypes().add(theTypesPackage.getDataType());
 		messageBufferEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		messageBufferEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		connectorQualityOfServiceAssumptionsEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		discreteInteractionPointEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
-		discreteInteractionPointEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
-		discreteInteractionPointEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		discreteInteractionEndpointEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
+		discreteInteractionEndpointEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
+		discreteInteractionEndpointEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(roleConnectorEClass, RoleConnector.class, "RoleConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -616,11 +616,11 @@ public class PatternPackageImpl extends EPackageImpl implements PatternPackage {
 		initEReference(getConnectorQualityOfServiceAssumptions_MaxMessageDelay(), theCorePackage.getNaturalNumber(), null, "maxMessageDelay", null, 1, 1, ConnectorQualityOfServiceAssumptions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConnectorQualityOfServiceAssumptions_MessageLossPossible(), theEcorePackage.getEBoolean(), "messageLossPossible", "false", 1, 1, ConnectorQualityOfServiceAssumptions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(discreteInteractionPointEClass, DiscreteInteractionPoint.class, "DiscreteInteractionPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDiscreteInteractionPoint_SenderMessageTypes(), theMsgtypePackage.getMessageType(), null, "senderMessageTypes", null, 0, -1, DiscreteInteractionPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDiscreteInteractionPoint_ReceiverMessageTypes(), theMsgtypePackage.getMessageType(), null, "receiverMessageTypes", null, 0, -1, DiscreteInteractionPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDiscreteInteractionPoint_AdaptationBehavior(), theCorePackage.getBehavior(), null, "adaptationBehavior", null, 0, 1, DiscreteInteractionPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDiscreteInteractionPoint_RoleAndAdaptationBehavior(), theCorePackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, DiscreteInteractionPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(discreteInteractionEndpointEClass, DiscreteInteractionEndpoint.class, "DiscreteInteractionEndpoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDiscreteInteractionEndpoint_SenderMessageTypes(), theMsgtypePackage.getMessageType(), null, "senderMessageTypes", null, 0, -1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscreteInteractionEndpoint_ReceiverMessageTypes(), theMsgtypePackage.getMessageType(), null, "receiverMessageTypes", null, 0, -1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscreteInteractionEndpoint_AdaptationBehavior(), theCorePackage.getBehavior(), null, "adaptationBehavior", null, 0, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior(), theCorePackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

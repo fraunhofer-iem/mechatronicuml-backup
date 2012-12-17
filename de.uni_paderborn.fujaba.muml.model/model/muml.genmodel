@@ -313,15 +313,15 @@
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/pattern/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
         </genClasses>
-        <genClasses image="false" ecoreClass="muml.ecore#//model/pattern/DiscreteInteractionPoint">
+        <genClasses image="false" ecoreClass="muml.ecore#//model/pattern/DiscreteInteractionEndpoint">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/DiscreteInteractionPoint/senderMessageTypes"/>
+              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/DiscreteInteractionEndpoint/senderMessageTypes"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/DiscreteInteractionPoint/receiverMessageTypes"/>
+              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/DiscreteInteractionEndpoint/receiverMessageTypes"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/DiscreteInteractionPoint/adaptationBehavior"/>
+              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/DiscreteInteractionEndpoint/adaptationBehavior"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/DiscreteInteractionPoint/roleAndAdaptationBehavior"/>
+              ecoreFeature="ecore:EReference muml.ecore#//model/pattern/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Realtimestatechart" basePackage="de.uni_paderborn.fujaba.muml.model"

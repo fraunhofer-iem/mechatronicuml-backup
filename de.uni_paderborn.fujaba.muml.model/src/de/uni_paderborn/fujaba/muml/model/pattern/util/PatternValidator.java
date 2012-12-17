@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.fujaba.muml.model.pattern.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern;
-import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
+import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.pattern.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 import de.uni_paderborn.fujaba.muml.model.pattern.Role;
@@ -104,8 +104,8 @@ public class PatternValidator extends EObjectValidator {
 				return validateMessageBuffer((MessageBuffer)value, diagnostics, context);
 			case PatternPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				return validateConnectorQualityOfServiceAssumptions((ConnectorQualityOfServiceAssumptions)value, diagnostics, context);
-			case PatternPackage.DISCRETE_INTERACTION_POINT:
-				return validateDiscreteInteractionPoint((DiscreteInteractionPoint)value, diagnostics, context);
+			case PatternPackage.DISCRETE_INTERACTION_ENDPOINT:
+				return validateDiscreteInteractionEndpoint((DiscreteInteractionEndpoint)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -398,8 +398,8 @@ public class PatternValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDiscreteInteractionPoint(DiscreteInteractionPoint discreteInteractionPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(discreteInteractionPoint, diagnostics, context);
+	public boolean validateDiscreteInteractionEndpoint(DiscreteInteractionEndpoint discreteInteractionEndpoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(discreteInteractionEndpoint, diagnostics, context);
 	}
 
 	/**
