@@ -6,11 +6,15 @@
  */
 package de.uni_paderborn.fujaba.muml.model.protocol.provider;
 
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.model.connector.provider.DiscreteInteractionEndpointItemProvider;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -129,7 +133,7 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 				getString("_UI_Role_cardinality_feature"), getString(
 						"_UI_PropertyDescriptor_description",
 						"_UI_Role_cardinality_feature", "_UI_Role_type"),
-				ProtocolPackage.Literals.ROLE__CARDINALITY, true, false, false,
+				ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY, true, false, false,
 				null, getString("_UI_CardinalityPropertyCategory"), null);
 
 		itemPropertyDescriptors
@@ -260,7 +264,6 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ProtocolPackage.Literals.ROLE__CARDINALITY);
 			childrenFeatures.add(ProtocolPackage.Literals.ROLE__RECEIVER_MESSAGE_BUFFER);
 		}
 		return childrenFeatures;
@@ -332,7 +335,6 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 			case ProtocolPackage.ROLE__MULTI_ROLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ProtocolPackage.ROLE__CARDINALITY:
 			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -354,13 +356,19 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ProtocolPackage.Literals.ROLE__CARDINALITY,
-				 CoreFactory.eINSTANCE.createCardinality()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ProtocolPackage.Literals.ROLE__RECEIVER_MESSAGE_BUFFER,
 				 ProtocolFactory.eINSTANCE.createMessageBuffer()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return MumlEditPlugin.INSTANCE;
 	}
 
 }

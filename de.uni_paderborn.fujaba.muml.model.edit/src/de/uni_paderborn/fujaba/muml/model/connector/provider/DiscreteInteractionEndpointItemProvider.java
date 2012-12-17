@@ -4,17 +4,32 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.protocol.provider;
+package de.uni_paderborn.fujaba.muml.model.connector.provider;
 
+
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
+
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
+
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+
+import de.uni_paderborn.fujaba.muml.model.core.provider.BehavioralElementItemProvider;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,19 +39,13 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.provider.BehavioralElementItemProvider;
-import de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -227,6 +236,7 @@ public class DiscreteInteractionEndpointItemProvider
 			childrenFeatures.add(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 			childrenFeatures.add(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
 			childrenFeatures.add(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
+			childrenFeatures.add(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY);
 		}
 		return childrenFeatures;
 	}
@@ -276,6 +286,7 @@ public class DiscreteInteractionEndpointItemProvider
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -312,6 +323,11 @@ public class DiscreteInteractionEndpointItemProvider
 			(createChildParameter
 				(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY,
+				 CoreFactory.eINSTANCE.createCardinality()));
 	}
 
 	/**

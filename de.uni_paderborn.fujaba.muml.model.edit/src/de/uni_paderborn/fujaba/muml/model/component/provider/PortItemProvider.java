@@ -32,6 +32,7 @@ import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescripto
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
@@ -73,10 +74,8 @@ public class PortItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addConstraintPropertyDescriptor(object);
-			addCardinalityPropertyDescriptor(object);
 			addComponentPropertyDescriptor(object);
 			addConnectorsPropertyDescriptor(object);
-			addIsMultiPortPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -137,7 +136,7 @@ public class PortItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Port_cardinality_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Port_cardinality_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__CARDINALITY,
+				 ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY,
 				 true,
 				 false,
 				 false,
@@ -216,28 +215,6 @@ public class PortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Multi Port feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsMultiPortPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_isMultiPort_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_isMultiPort_feature", "_UI_Port_type"),
-				 ComponentPackage.Literals.PORT__IS_MULTI_PORT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -250,7 +227,6 @@ public class PortItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
-			childrenFeatures.add(ComponentPackage.Literals.PORT__CARDINALITY);
 		}
 		return childrenFeatures;
 	}
@@ -307,11 +283,9 @@ public class PortItemProvider
 		switch (notification.getFeatureID(Port.class)) {
 			case ComponentPackage.PORT__COMMENT:
 			case ComponentPackage.PORT__CONNECTORS:
-			case ComponentPackage.PORT__IS_MULTI_PORT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.PORT__CONSTRAINT:
-			case ComponentPackage.PORT__CARDINALITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -343,11 +317,6 @@ public class PortItemProvider
 			(createChildParameter
 				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
 				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.PORT__CARDINALITY,
-				 CoreFactory.eINSTANCE.createCardinality()));
 	}
 
 	/**
