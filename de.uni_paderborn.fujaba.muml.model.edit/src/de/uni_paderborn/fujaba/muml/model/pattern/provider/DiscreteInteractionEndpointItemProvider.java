@@ -31,16 +31,16 @@ import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.provider.BehavioralElementItemProvider;
-import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint;
+import de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionPoint} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.pattern.DiscreteInteractionEndpoint} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DiscreteInteractionPointItemProvider
+public class DiscreteInteractionEndpointItemProvider
 	extends BehavioralElementItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -54,7 +54,7 @@ public class DiscreteInteractionPointItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DiscreteInteractionPointItemProvider(AdapterFactory adapterFactory) {
+	public DiscreteInteractionEndpointItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -134,9 +134,9 @@ public class DiscreteInteractionPointItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscreteInteractionPoint_senderMessageTypes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionPoint_senderMessageTypes_feature", "_UI_DiscreteInteractionPoint_type"),
-				 PatternPackage.Literals.DISCRETE_INTERACTION_POINT__SENDER_MESSAGE_TYPES,
+				 getString("_UI_DiscreteInteractionEndpoint_senderMessageTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_senderMessageTypes_feature", "_UI_DiscreteInteractionEndpoint_type"),
+				 PatternPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES,
 				 true,
 				 false,
 				 true,
@@ -156,9 +156,9 @@ public class DiscreteInteractionPointItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscreteInteractionPoint_receiverMessageTypes_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionPoint_receiverMessageTypes_feature", "_UI_DiscreteInteractionPoint_type"),
-				 PatternPackage.Literals.DISCRETE_INTERACTION_POINT__RECEIVER_MESSAGE_TYPES,
+				 getString("_UI_DiscreteInteractionEndpoint_receiverMessageTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_receiverMessageTypes_feature", "_UI_DiscreteInteractionEndpoint_type"),
+				 PatternPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES,
 				 true,
 				 false,
 				 true,
@@ -178,9 +178,9 @@ public class DiscreteInteractionPointItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscreteInteractionPoint_adaptationBehavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionPoint_adaptationBehavior_feature", "_UI_DiscreteInteractionPoint_type"),
-				 PatternPackage.Literals.DISCRETE_INTERACTION_POINT__ADAPTATION_BEHAVIOR,
+				 getString("_UI_DiscreteInteractionEndpoint_adaptationBehavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_adaptationBehavior_feature", "_UI_DiscreteInteractionEndpoint_type"),
+				 PatternPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR,
 				 true,
 				 false,
 				 true,
@@ -200,9 +200,9 @@ public class DiscreteInteractionPointItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscreteInteractionPoint_roleAndAdaptationBehavior_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionPoint_roleAndAdaptationBehavior_feature", "_UI_DiscreteInteractionPoint_type"),
-				 PatternPackage.Literals.DISCRETE_INTERACTION_POINT__ROLE_AND_ADAPTATION_BEHAVIOR,
+				 getString("_UI_DiscreteInteractionEndpoint_roleAndAdaptationBehavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_roleAndAdaptationBehavior_feature", "_UI_DiscreteInteractionEndpoint_type"),
+				 PatternPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR,
 				 true,
 				 false,
 				 true,
@@ -251,10 +251,10 @@ public class DiscreteInteractionPointItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DiscreteInteractionPoint)object).getName();
+		String label = ((DiscreteInteractionEndpoint)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_DiscreteInteractionPoint_type") :
-			getString("_UI_DiscreteInteractionPoint_type") + " " + label;
+			getString("_UI_DiscreteInteractionEndpoint_type") :
+			getString("_UI_DiscreteInteractionEndpoint_type") + " " + label;
 	}
 
 	/**
@@ -268,13 +268,13 @@ public class DiscreteInteractionPointItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DiscreteInteractionPoint.class)) {
-			case PatternPackage.DISCRETE_INTERACTION_POINT__NAME:
+		switch (notification.getFeatureID(DiscreteInteractionEndpoint.class)) {
+			case PatternPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case PatternPackage.DISCRETE_INTERACTION_POINT__CONSTRAINT:
-			case PatternPackage.DISCRETE_INTERACTION_POINT__ANNOTATION:
-			case PatternPackage.DISCRETE_INTERACTION_POINT__EXTENSION:
+			case PatternPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
+			case PatternPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
+			case PatternPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

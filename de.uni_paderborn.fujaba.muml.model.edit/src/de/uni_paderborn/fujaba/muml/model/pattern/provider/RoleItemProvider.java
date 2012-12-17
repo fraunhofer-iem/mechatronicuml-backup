@@ -39,7 +39,7 @@ import de.uni_paderborn.fujaba.muml.model.pattern.Role;
  * @generated
  */
 public class RoleItemProvider
-	extends DiscreteInteractionPointItemProvider
+	extends DiscreteInteractionEndpointItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
