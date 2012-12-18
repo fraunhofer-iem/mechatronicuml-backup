@@ -877,8 +877,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDoEvent_PeriodLower() {
-		return (EAttribute)doEventEClass.getEStructuralFeatures().get(1);
+	public EReference getDoEvent_PeriodLower() {
+		return (EReference)doEventEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -886,8 +886,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDoEvent_PeriodUpper() {
-		return (EAttribute)doEventEClass.getEStructuralFeatures().get(2);
+	public EReference getDoEvent_PeriodUpper() {
+		return (EReference)doEventEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1336,8 +1336,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		doEventEClass = createEClass(DO_EVENT);
 		createEReference(doEventEClass, DO_EVENT__ACTION);
-		createEAttribute(doEventEClass, DO_EVENT__PERIOD_LOWER);
-		createEAttribute(doEventEClass, DO_EVENT__PERIOD_UPPER);
+		createEReference(doEventEClass, DO_EVENT__PERIOD_LOWER);
+		createEReference(doEventEClass, DO_EVENT__PERIOD_UPPER);
 
 		entryOrExitEventEClass = createEClass(ENTRY_OR_EXIT_EVENT);
 		createEReference(entryOrExitEventEClass, ENTRY_OR_EXIT_EVENT__CLOCK_RESETS);
@@ -1542,8 +1542,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		initEClass(doEventEClass, DoEvent.class, "DoEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDoEvent_Action(), this.getAction(), null, "action", null, 1, 1, DoEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDoEvent_PeriodLower(), ecorePackage.getEInt(), "periodLower", null, 0, 1, DoEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDoEvent_PeriodUpper(), ecorePackage.getEInt(), "periodUpper", null, 0, 1, DoEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDoEvent_PeriodLower(), theCorePackage.getTimeValue(), null, "periodLower", null, 1, 1, DoEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDoEvent_PeriodUpper(), theCorePackage.getTimeValue(), null, "periodUpper", null, 1, 1, DoEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entryOrExitEventEClass, EntryOrExitEvent.class, "EntryOrExitEvent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntryOrExitEvent_ClockResets(), this.getClock(), null, "clockResets", null, 0, -1, EntryOrExitEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

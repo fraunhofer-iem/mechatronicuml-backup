@@ -1054,7 +1054,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int DO_EVENT__ACTION = STATE_EVENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Period Lower</b></em>' attribute.
+	 * The feature id for the '<em><b>Period Lower</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1063,7 +1063,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int DO_EVENT__PERIOD_LOWER = STATE_EVENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Period Upper</b></em>' attribute.
+	 * The feature id for the '<em><b>Period Upper</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2350,26 +2350,26 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getDoEvent_Action();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent#getPeriodLower <em>Period Lower</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent#getPeriodLower <em>Period Lower</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Period Lower</em>'.
+	 * @return the meta object for the containment reference '<em>Period Lower</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent#getPeriodLower()
 	 * @see #getDoEvent()
 	 * @generated
 	 */
-	EAttribute getDoEvent_PeriodLower();
+	EReference getDoEvent_PeriodLower();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent#getPeriodUpper <em>Period Upper</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent#getPeriodUpper <em>Period Upper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Period Upper</em>'.
+	 * @return the meta object for the containment reference '<em>Period Upper</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent#getPeriodUpper()
 	 * @see #getDoEvent()
 	 * @generated
 	 */
-	EAttribute getDoEvent_PeriodUpper();
+	EReference getDoEvent_PeriodUpper();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent <em>Entry Or Exit Event</em>}'.
@@ -3280,20 +3280,20 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference DO_EVENT__ACTION = eINSTANCE.getDoEvent_Action();
 
 		/**
-		 * The meta object literal for the '<em><b>Period Lower</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Period Lower</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DO_EVENT__PERIOD_LOWER = eINSTANCE.getDoEvent_PeriodLower();
+		EReference DO_EVENT__PERIOD_LOWER = eINSTANCE.getDoEvent_PeriodLower();
 
 		/**
-		 * The meta object literal for the '<em><b>Period Upper</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Period Upper</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DO_EVENT__PERIOD_UPPER = eINSTANCE.getDoEvent_PeriodUpper();
+		EReference DO_EVENT__PERIOD_UPPER = eINSTANCE.getDoEvent_PeriodUpper();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.EntryOrExitEventImpl <em>Entry Or Exit Event</em>}' class.

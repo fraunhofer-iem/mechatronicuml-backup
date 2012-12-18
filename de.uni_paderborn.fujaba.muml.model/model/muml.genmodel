@@ -378,8 +378,8 @@
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/DoEvent">
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/DoEvent/action"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/DoEvent/periodLower"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/DoEvent/periodUpper"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/DoEvent/periodLower"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/DoEvent/periodUpper"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/EntryOrExitEvent">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"

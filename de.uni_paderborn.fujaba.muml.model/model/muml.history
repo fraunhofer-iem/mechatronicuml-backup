@@ -1294,13 +1294,13 @@
             featureName="value" dataValue="ValidLowerUpperPeriod"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/DoEvent"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/DoEvent/periodLower">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/DoEvent/periodLower"
+          referenceName="eStructuralFeatures" element="#//@releases.6/@changes.8/@element">
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.8/@element"
             featureName="name" dataValue="periodLower"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/DoEvent/periodLower"
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.8/@element"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/DoEvent/periodLower"
+      <changes xsi:type="history:Create" target="#//@releases.6/@changes.8/@element"
           referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/DoEvent/periodLower/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/DoEvent/periodLower/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
@@ -1313,13 +1313,13 @@
             featureName="value" dataValue="the lower bound of the period"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/DoEvent"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/DoEvent/periodUpper">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/DoEvent/periodUpper"
+          referenceName="eStructuralFeatures" element="#//@releases.6/@changes.15/@element">
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.15/@element"
             featureName="name" dataValue="periodUpper"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/DoEvent/periodUpper"
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.15/@element"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/DoEvent/periodUpper"
+      <changes xsi:type="history:Create" target="#//@releases.6/@changes.15/@element"
           referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/DoEvent/periodUpper/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
         <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/DoEvent/periodUpper/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
@@ -17271,5 +17271,39 @@
     </changes>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/samplingInterval"
         featureName="eType" referenceValue="muml.ecore#//model/core/TimeValue" oldReferenceValue="muml.ecore#//model/core/NaturalNumber"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/DoEvent"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/DoEvent/periodLower"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/DoEvent/periodLower"
+        featureName="eType" referenceValue="muml.ecore#//model/core/TimeValue"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/DoEvent/periodLower"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/DoEvent/periodLower"
+        featureName="name" dataValue="periodLower"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/DoEvent/periodLower"
+        featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Move" target="muml.ecore#//model/realtimestatechart/DoEvent/periodLower"
+        referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/DoEvent/periodLower/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        source="#//@releases.6/@changes.8/@element"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/DoEvent"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EAttribute" name="periodLower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/DoEvent"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/DoEvent/periodUpper"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/DoEvent/periodUpper"
+        featureName="eType" referenceValue="muml.ecore#//model/core/TimeValue"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/DoEvent/periodUpper"
+        featureName="name" dataValue="periodUpper"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/DoEvent/periodUpper"
+        featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/DoEvent/periodUpper"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Move" target="muml.ecore#//model/realtimestatechart/DoEvent/periodUpper"
+        referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/DoEvent/periodUpper/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        source="#//@releases.6/@changes.15/@element"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/DoEvent"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EAttribute" name="periodUpper" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </changes>
   </releases>
 </history:History>
