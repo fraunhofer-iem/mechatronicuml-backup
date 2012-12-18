@@ -9,9 +9,10 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
-import de.uni_paderborn.fujaba.muml.model.pattern.Role;
+import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
+import de.uni_paderborn.fujaba.muml.model.protocol.Role;
 
 public class RoleBehavior extends AbstractPortBehavior {
 	/**
@@ -112,10 +113,10 @@ public class RoleBehavior extends AbstractPortBehavior {
 
 	@Override
 	public void handleNotificationEvent(Notification notification) {
-		if (notification.getFeature() == PatternPackage.Literals.ROLE__CARDINALITY) {
+		if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY) {
 			updateCardinality();
-		} else if (notification.getFeature() == PatternPackage.Literals.DISCRETE_INTERACTION_POINT__RECEIVER_MESSAGE_TYPES
-				|| notification.getFeature() == PatternPackage.Literals.DISCRETE_INTERACTION_POINT__SENDER_MESSAGE_TYPES) {
+		} else if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES
+				|| notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES) {
 			updatePortType();
 		}
 	}

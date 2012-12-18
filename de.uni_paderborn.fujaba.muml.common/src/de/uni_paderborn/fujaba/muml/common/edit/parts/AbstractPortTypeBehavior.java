@@ -7,8 +7,9 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 
 public abstract class AbstractPortTypeBehavior extends AbstractPortBehavior {
@@ -74,8 +75,8 @@ public abstract class AbstractPortTypeBehavior extends AbstractPortBehavior {
 	@Override
 	public boolean isMulti() {
 		boolean isMulti = false;
-		if (port != null && port.getCardinality() != null) {
-			NaturalNumber upperBound = port.getCardinality().getUpperBound();
+		if (port != null && port instanceof DiscretePort && ((DiscretePort) port).getCardinality() != null) {
+			NaturalNumber upperBound = ((DiscretePort) port).getCardinality().getUpperBound();
 			if (upperBound != null
 					&& (upperBound.isInfinity() || upperBound.getValue() > 1)) {
 				isMulti = true;
@@ -87,8 +88,8 @@ public abstract class AbstractPortTypeBehavior extends AbstractPortBehavior {
 	@Override
 	public boolean isMandatory() {
 		boolean mandatory = false;
-		if (port != null && port.getCardinality() != null) {
-			NaturalNumber lowerBound = port.getCardinality().getLowerBound();
+		if (port != null && port instanceof DiscretePort && ((DiscretePort) port).getCardinality() != null) {
+			NaturalNumber lowerBound = ((DiscretePort) port).getCardinality().getLowerBound();
 			if (lowerBound != null
 					&& (lowerBound.isInfinity() || lowerBound.getValue() > 0)) {
 				mandatory = true;
@@ -99,7 +100,7 @@ public abstract class AbstractPortTypeBehavior extends AbstractPortBehavior {
 	
 	@Override
 	public void handleNotificationEvent(Notification notification) {
-		if (notification.getFeature() == ComponentPackage.Literals.PORT__CARDINALITY) {
+		if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY) {
 			updateCardinality();
 		}
 	}

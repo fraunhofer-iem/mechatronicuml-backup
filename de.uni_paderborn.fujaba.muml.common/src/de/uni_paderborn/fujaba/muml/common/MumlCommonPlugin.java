@@ -18,11 +18,12 @@ import org.storydriven.storydiagrams.activities.provider.ActivitiesItemProviderA
 import org.storydriven.storydiagrams.calls.expressions.provider.CallsExpressionsItemProviderAdapterFactory;
 import org.storydriven.storydiagrams.calls.provider.CallsItemProviderAdapterFactory;
 import org.storydriven.storydiagrams.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.patterns.provider.PatternsItemProviderAdapterFactory;
 import org.storydriven.storydiagrams.provider.StorydiagramsItemProviderAdapterFactory;
 import org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAdapterFactory;
 
 import de.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
+import de.uni_paderborn.fujaba.muml.model.connector.provider.ConnectorItemProviderAdapterFactory;
+import de.uni_paderborn.fujaba.muml.model.protocol.provider.ProtocolItemProviderAdapterFactory;
 
 public class MumlCommonPlugin implements BundleActivator {
 
@@ -86,7 +87,7 @@ public class MumlCommonPlugin implements BundleActivator {
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.instance.provider.InstanceItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.pattern.provider.PatternItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.model.protocol.provider.ProtocolItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
 		factories
@@ -95,6 +96,8 @@ public class MumlCommonPlugin implements BundleActivator {
 				.add(new de.uni_paderborn.fujaba.muml.model.deployment.provider.DeploymentItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.types.provider.TypesItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.connector.provider.ConnectorItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
@@ -104,9 +107,10 @@ public class MumlCommonPlugin implements BundleActivator {
 		factories.add(new ActivitiesExpressionsItemProviderAdapterFactory());
 		factories.add(new CallsItemProviderAdapterFactory());
 		factories.add(new CallsExpressionsItemProviderAdapterFactory());
-		factories.add(new PatternsItemProviderAdapterFactory());
+		factories.add(new ProtocolItemProviderAdapterFactory());
 		factories.add(new PatternsExpressionsItemProviderAdapterFactory());
 		factories.add(new TemplatesItemProviderAdapterFactory());
+		factories.add(new ConnectorItemProviderAdapterFactory());
 
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
