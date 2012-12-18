@@ -129,6 +129,15 @@ public interface ControlflowPackage extends EPackage {
 	int COMPONENT_STORY_RULE__RETURN_PARAMETERS = ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS;
 
 	/**
+	 * The feature id for the '<em><b>Reconfigured Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_STORY_RULE__RECONFIGURED_COMPONENT = ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT;
+
+	/**
 	 * The feature id for the '<em><b>Activity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

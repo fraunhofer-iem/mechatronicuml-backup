@@ -59,7 +59,7 @@
       <eLiterals name="FLAT_SWITCHING" value="2"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="componentstorypattern" nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.1"
+  <eSubpackages name="componentstorypattern" nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.2"
       nsPrefix="componentstorypattern">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>

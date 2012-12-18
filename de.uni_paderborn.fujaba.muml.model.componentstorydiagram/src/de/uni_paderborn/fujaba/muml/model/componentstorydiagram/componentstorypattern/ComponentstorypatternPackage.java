@@ -43,7 +43,7 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.1";
+	String eNS_URI = "http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.2";
 
 	/**
 	 * The package namespace name.
