@@ -26,21 +26,21 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/component/0.3.7"
+            uri="http://www.fujaba.de/muml/model/component/0.3.8"
             class="de.uni_paderborn.fujaba.muml.model.component.ComponentPackage"
             genModel="model/muml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/constraint/0.2.2"
+            uri="http://www.fujaba.de/muml/model/constraint/0.3.8"
             class="de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage"
             genModel="model/muml.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/core/0.3.7"
+            uri="http://www.fujaba.de/muml/model/core/0.3.8"
             class="de.uni_paderborn.fujaba.muml.model.core.CorePackage"
             genModel="model/muml.genmodel"/>
    </extension>
@@ -61,7 +61,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/realtimestatechart/0.3.6"
+            uri="http://www.fujaba.de/muml/model/realtimestatechart/0.3.8"
             class="de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage"
             genModel="model/muml.genmodel"/>
    </extension>

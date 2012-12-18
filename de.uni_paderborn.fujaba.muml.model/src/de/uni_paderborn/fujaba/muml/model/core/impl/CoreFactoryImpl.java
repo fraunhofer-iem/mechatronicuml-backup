@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.impl;
 
+import de.uni_paderborn.fujaba.muml.model.core.*;
 import java.util.concurrent.TimeUnit;
 
 import org.eclipse.emf.ecore.EClass;
@@ -40,7 +41,7 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	 */
 	public static CoreFactory init() {
 		try {
-			CoreFactory theCoreFactory = (CoreFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/core/0.3.7"); 
+			CoreFactory theCoreFactory = (CoreFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/core/0.3.8"); 
 			if (theCoreFactory != null) {
 				return theCoreFactory;
 			}

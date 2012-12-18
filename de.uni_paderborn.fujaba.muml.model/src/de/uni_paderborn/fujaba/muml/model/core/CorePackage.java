@@ -50,7 +50,7 @@ public interface CorePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/core/0.3.7";
+	String eNS_URI = "http://www.fujaba.de/muml/model/core/0.3.8";
 
 	/**
 	 * The package namespace name.
