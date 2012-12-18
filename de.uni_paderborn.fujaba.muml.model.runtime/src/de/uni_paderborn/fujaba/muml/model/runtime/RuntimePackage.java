@@ -664,13 +664,13 @@ public interface RuntimePackage extends EPackage {
 	int REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Attribute Bindings</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Variable Bindings</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE__ATTRIBUTE_BINDINGS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
+	int REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Realtime Statechart Instance</em>' class.
@@ -1383,15 +1383,15 @@ public interface RuntimePackage extends EPackage {
 	EReference getRealtimeStatechartInstance_SubRealtimeStatechartInstances();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getAttributeBindings <em>Attribute Bindings</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getVariableBindings <em>Variable Bindings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attribute Bindings</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getAttributeBindings()
+	 * @return the meta object for the containment reference list '<em>Variable Bindings</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getVariableBindings()
 	 * @see #getRealtimeStatechartInstance()
 	 * @generated
 	 */
-	EReference getRealtimeStatechartInstance_AttributeBindings();
+	EReference getRealtimeStatechartInstance_VariableBindings();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage <em>Message</em>}'.
@@ -1814,12 +1814,12 @@ public interface RuntimePackage extends EPackage {
 		EReference REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES = eINSTANCE.getRealtimeStatechartInstance_SubRealtimeStatechartInstances();
 
 		/**
-		 * The meta object literal for the '<em><b>Attribute Bindings</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Variable Bindings</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REALTIME_STATECHART_INSTANCE__ATTRIBUTE_BINDINGS = eINSTANCE.getRealtimeStatechartInstance_AttributeBindings();
+		EReference REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS = eINSTANCE.getRealtimeStatechartInstance_VariableBindings();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeMessageImpl <em>Message</em>}' class.

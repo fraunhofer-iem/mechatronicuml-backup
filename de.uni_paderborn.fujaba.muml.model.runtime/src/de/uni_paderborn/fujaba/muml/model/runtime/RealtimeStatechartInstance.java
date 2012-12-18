@@ -24,7 +24,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getInstanceOf <em>Instance Of</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getActive <em>Active</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getSubRealtimeStatechartInstances <em>Sub Realtime Statechart Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getAttributeBindings <em>Attribute Bindings</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance#getVariableBindings <em>Variable Bindings</em>}</li>
  * </ul>
  * </p>
  *
@@ -130,19 +130,19 @@ public interface RealtimeStatechartInstance extends ExtendableElement {
 	EList<RealtimeStatechartInstance> getSubRealtimeStatechartInstances();
 
 	/**
-	 * Returns the value of the '<em><b>Attribute Bindings</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Variable Bindings</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Attribute Bindings</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Variable Bindings</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attribute Bindings</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getRealtimeStatechartInstance_AttributeBindings()
+	 * @return the value of the '<em>Variable Bindings</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getRealtimeStatechartInstance_VariableBindings()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<VariableBinding> getAttributeBindings();
+	EList<VariableBinding> getVariableBindings();
 
 } // RealtimeStatechartInstance
