@@ -313,7 +313,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		// Initialize simple dependencies
 		ModelinstancePackage.eINSTANCE.eClass();
-		StorydiagramsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);

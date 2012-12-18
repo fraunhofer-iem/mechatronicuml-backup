@@ -15,7 +15,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
@@ -107,8 +106,6 @@ public class CoreValidator extends EObjectValidator {
 				return validateBehavioralElement((BehavioralElement)value, diagnostics, context);
 			case CorePackage.BEHAVIOR:
 				return validateBehavior((Behavior)value, diagnostics, context);
-			case CorePackage.ACTIVITY_CALL_EXPRESSION:
-				return validateActivityCallExpression((ActivityCallExpression)value, diagnostics, context);
 			case CorePackage.VARIABLE:
 				return validateVariable((Variable)value, diagnostics, context);
 			case CorePackage.OPERATION:
@@ -239,15 +236,6 @@ public class CoreValidator extends EObjectValidator {
 	 */
 	public boolean validateBehavior(Behavior behavior, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(behavior, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateActivityCallExpression(ActivityCallExpression activityCallExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(activityCallExpression, diagnostics, context);
 	}
 
 	/**

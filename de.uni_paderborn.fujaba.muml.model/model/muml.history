@@ -11492,24 +11492,24 @@
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
-          element="muml.ecore#//model/core/ActivityCallExpression">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ActivityCallExpression"
+          element="#//@releases.6/@changes.17/@element">
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.17/@element"
             featureName="name" dataValue="ActivityCallExpression"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//model/core/ActivityCallExpression"
+        <changes xsi:type="history:Add" element="#//@releases.6/@changes.17/@element"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/Invocation"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//model/core/ActivityCallExpression"
+        <changes xsi:type="history:Add" element="#//@releases.6/@changes.17/@element"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ActivityCallExpression"
-          referenceName="eAnnotations" element="muml.ecore#//model/core/ActivityCallExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ActivityCallExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.6/@changes.17/@element"
+          referenceName="eAnnotations" element="#//@releases.6/@changes.17/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.17/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ActivityCallExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/core/ActivityCallExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ActivityCallExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.6/@changes.17/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.6/@changes.17/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.17/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ActivityCallExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.17/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="An Expression that represents an activity."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities"
@@ -11677,27 +11677,27 @@
         <changes xsi:type="history:Add" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ActivityCallExpression"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/ActivityCallExpression/activity">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ActivityCallExpression/activity"
+      <changes xsi:type="history:Create" target="#//@releases.6/@changes.17/@element"
+          referenceName="eStructuralFeatures" element="#//@releases.6/@changes.17/@element/activity">
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.17/@element/activity"
             featureName="name" dataValue="activity"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ActivityCallExpression/activity"
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.17/@element/activity"
             featureName="ordered" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ActivityCallExpression/activity"
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.17/@element/activity"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ActivityCallExpression/activity"
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.17/@element/activity"
             featureName="eType" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ActivityCallExpression/activity"
-          referenceName="eAnnotations" element="muml.ecore#//model/core/ActivityCallExpression/activity/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ActivityCallExpression/activity/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.6/@changes.17/@element/activity"
+          referenceName="eAnnotations" element="#//@releases.6/@changes.17/@element/activity/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.17/@element/activity/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ActivityCallExpression/activity/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/core/ActivityCallExpression/activity/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ActivityCallExpression/activity/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.6/@changes.17/@element/activity/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.6/@changes.17/@element/activity/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.17/@element/activity/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ActivityCallExpression/activity/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.6/@changes.17/@element/activity/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Specifies the exception variable that this expression refers to. If you have an activity edge that catches an exception e, then this expression can represent the reference e."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/ActivityNode"
@@ -17307,5 +17307,18 @@
     </changes>
     <changes xsi:type="history:Move" target="muml.ecore#//model/constraint" referenceName="eClassifiers"
         element="muml.ecore#//model/constraint/ConstrainableElement" source="muml.ecore#//model/core"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/core" referenceName="eClassifiers">
+      <element xsi:type="ecore:EClass" name="ActivityCallExpression" eSuperTypes="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/Invocation ../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An Expression that represents an activity."/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="activity" ordered="false"
+            lowerBound="1" eType="ecore:EClass ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Specifies the exception variable that this expression refers to. If you have an activity edge that catches an exception e, then this expression can represent the reference e."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </element>
+    </changes>
   </releases>
 </history:History>

@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
@@ -72,7 +71,6 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 		switch (eClass.getClassifierID()) {
 			case CorePackage.NATURAL_NUMBER: return createNaturalNumber();
 			case CorePackage.CARDINALITY: return createCardinality();
-			case CorePackage.ACTIVITY_CALL_EXPRESSION: return createActivityCallExpression();
 			case CorePackage.VARIABLE: return createVariable();
 			case CorePackage.OPERATION: return createOperation();
 			case CorePackage.PARAMETER: return createParameter();
@@ -131,16 +129,6 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public Cardinality createCardinality() {
 		CardinalityImpl cardinality = new CardinalityImpl();
 		return cardinality;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ActivityCallExpression createActivityCallExpression() {
-		ActivityCallExpressionImpl activityCallExpression = new ActivityCallExpressionImpl();
-		return activityCallExpression;
 	}
 
 	/**

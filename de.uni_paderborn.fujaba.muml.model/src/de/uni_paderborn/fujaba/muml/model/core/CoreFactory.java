@@ -44,15 +44,6 @@ public interface CoreFactory extends EFactory {
 	Cardinality createCardinality();
 
 	/**
-	 * Returns a new object of class '<em>Activity Call Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Activity Call Expression</em>'.
-	 * @generated
-	 */
-	ActivityCallExpression createActivityCallExpression();
-
-	/**
 	 * Returns a new object of class '<em>Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
