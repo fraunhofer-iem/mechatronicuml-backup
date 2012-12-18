@@ -17237,7 +17237,7 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/deployment" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/deployment/0.3.7" oldDataValue="http://www.fujaba.de/muml/model/deployment/0.3.1"/>
   </releases>
-  <releases>
+  <releases date="2012-12-18T18:46:51.291+0100" label="0.3.8">
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition"
           referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/Transition/urgent">
@@ -17332,4 +17332,5 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/constraint" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/constraint/0.3.8" oldDataValue="http://www.fujaba.de/muml/model/constraint/0.2.2"/>
   </releases>
+  <releases/>
 </history:History>
