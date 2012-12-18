@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl;
 
+import de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -37,7 +38,7 @@ public class AssemblyVariableImpl extends ConnectorVariableImpl implements Assem
 	 * @generated
 	 * @ordered
 	 */
-	protected Assembly type;
+	protected AssemblyConnector type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,10 +64,10 @@ public class AssemblyVariableImpl extends ConnectorVariableImpl implements Assem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Assembly getType() {
+	public AssemblyConnector getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
-			type = (Assembly)eResolveProxy(oldType);
+			type = (AssemblyConnector)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentstorypatternPackage.ASSEMBLY_VARIABLE__TYPE, oldType, type));
@@ -80,7 +81,7 @@ public class AssemblyVariableImpl extends ConnectorVariableImpl implements Assem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Assembly basicGetType() {
+	public AssemblyConnector basicGetType() {
 		return type;
 	}
 
@@ -89,8 +90,8 @@ public class AssemblyVariableImpl extends ConnectorVariableImpl implements Assem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(Assembly newType) {
-		Assembly oldType = type;
+	public void setType(AssemblyConnector newType) {
+		AssemblyConnector oldType = type;
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.ASSEMBLY_VARIABLE__TYPE, oldType, type));
@@ -120,7 +121,7 @@ public class AssemblyVariableImpl extends ConnectorVariableImpl implements Assem
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ComponentstorypatternPackage.ASSEMBLY_VARIABLE__TYPE:
-				setType((Assembly)newValue);
+				setType((AssemblyConnector)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,7 +136,7 @@ public class AssemblyVariableImpl extends ConnectorVariableImpl implements Assem
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ComponentstorypatternPackage.ASSEMBLY_VARIABLE__TYPE:
-				setType((Assembly)null);
+				setType((AssemblyConnector)null);
 				return;
 		}
 		super.eUnset(featureID);

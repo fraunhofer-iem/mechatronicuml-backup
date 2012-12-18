@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern;
 
+import de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.model.component.Assembly;
 
 /**
@@ -34,12 +35,12 @@ public interface AssemblyVariable extends ConnectorVariable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(Assembly)
+	 * @see #setType(AssemblyConnector)
 	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage#getAssemblyVariable_Type()
 	 * @model required="true"
 	 * @generated
 	 */
-	Assembly getType();
+	AssemblyConnector getType();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable#getType <em>Type</em>}' reference.
@@ -49,6 +50,6 @@ public interface AssemblyVariable extends ConnectorVariable {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(Assembly value);
+	void setType(AssemblyConnector value);
 
 } // AssemblyVariable

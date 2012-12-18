@@ -142,11 +142,11 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AssemblyVariable" eSuperTypes="#//componentstorypattern/ConnectorVariable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Assembly"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/AssemblyConnector"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DelegationVariable" eSuperTypes="#//componentstorypattern/ConnectorVariable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Delegation"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DelegationConnector"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Call" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="callee" lowerBound="1"

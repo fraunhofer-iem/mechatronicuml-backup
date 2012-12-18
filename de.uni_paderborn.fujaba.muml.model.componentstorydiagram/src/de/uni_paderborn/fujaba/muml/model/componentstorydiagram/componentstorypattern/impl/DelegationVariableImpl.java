@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl;
 
+import de.uni_paderborn.fujaba.muml.model.component.DelegationConnector;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -37,7 +38,7 @@ public class DelegationVariableImpl extends ConnectorVariableImpl implements Del
 	 * @generated
 	 * @ordered
 	 */
-	protected Delegation type;
+	protected DelegationConnector type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,10 +64,10 @@ public class DelegationVariableImpl extends ConnectorVariableImpl implements Del
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Delegation getType() {
+	public DelegationConnector getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
-			type = (Delegation)eResolveProxy(oldType);
+			type = (DelegationConnector)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentstorypatternPackage.DELEGATION_VARIABLE__TYPE, oldType, type));
@@ -80,7 +81,7 @@ public class DelegationVariableImpl extends ConnectorVariableImpl implements Del
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Delegation basicGetType() {
+	public DelegationConnector basicGetType() {
 		return type;
 	}
 
@@ -89,8 +90,8 @@ public class DelegationVariableImpl extends ConnectorVariableImpl implements Del
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(Delegation newType) {
-		Delegation oldType = type;
+	public void setType(DelegationConnector newType) {
+		DelegationConnector oldType = type;
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.DELEGATION_VARIABLE__TYPE, oldType, type));
@@ -120,7 +121,7 @@ public class DelegationVariableImpl extends ConnectorVariableImpl implements Del
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ComponentstorypatternPackage.DELEGATION_VARIABLE__TYPE:
-				setType((Delegation)newValue);
+				setType((DelegationConnector)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,7 +136,7 @@ public class DelegationVariableImpl extends ConnectorVariableImpl implements Del
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ComponentstorypatternPackage.DELEGATION_VARIABLE__TYPE:
-				setType((Delegation)null);
+				setType((DelegationConnector)null);
 				return;
 		}
 		super.eUnset(featureID);

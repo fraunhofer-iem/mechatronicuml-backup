@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern;
 
+import de.uni_paderborn.fujaba.muml.model.component.DelegationConnector;
 import de.uni_paderborn.fujaba.muml.model.component.Delegation;
 
 /**
@@ -34,12 +35,12 @@ public interface DelegationVariable extends ConnectorVariable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(Delegation)
+	 * @see #setType(DelegationConnector)
 	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage#getDelegationVariable_Type()
 	 * @model required="true"
 	 * @generated
 	 */
-	Delegation getType();
+	DelegationConnector getType();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable#getType <em>Type</em>}' reference.
@@ -49,6 +50,6 @@ public interface DelegationVariable extends ConnectorVariable {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(Delegation value);
+	void setType(DelegationConnector value);
 
 } // DelegationVariable
