@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.core.expressions.common.CommonExpressionsPackage;
-import org.storydriven.storydiagrams.StorydiagramsPackage;
 
 import de.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;

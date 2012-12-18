@@ -9,7 +9,6 @@ package de.uni_paderborn.fujaba.muml.model.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.storydriven.storydiagrams.StorydiagramsPackage;
 
 import de.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.MumlPackage;
@@ -97,7 +96,6 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		// Initialize simple dependencies
 		ModelinstancePackage.eINSTANCE.eClass();
-		StorydiagramsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		MumlPackageImpl theMumlPackage = (MumlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MumlPackage.eNS_URI) instanceof MumlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MumlPackage.eNS_URI) : MumlPackage.eINSTANCE);
