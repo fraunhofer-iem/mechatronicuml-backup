@@ -28,6 +28,7 @@
     <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//ReconfigurationRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationRule/parameters"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationRule/returnParameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationRule/reconfiguredComponent"/>
     </genClasses>
     <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//ReconfigurationCondition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationCondition/parameters"/>

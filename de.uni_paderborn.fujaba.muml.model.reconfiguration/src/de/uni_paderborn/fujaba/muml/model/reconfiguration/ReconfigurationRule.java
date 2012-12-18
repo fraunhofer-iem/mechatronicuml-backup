@@ -26,6 +26,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Parameter;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getReturnParameters <em>Return Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getReconfiguredComponent <em>Reconfigured Component</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,5 +66,31 @@ public interface ReconfigurationRule extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	EList<Parameter> getReturnParameters();
+
+	/**
+	 * Returns the value of the '<em><b>Reconfigured Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reconfigured Component</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reconfigured Component</em>' reference.
+	 * @see #setReconfiguredComponent(ReconfigurableComponent)
+	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage#getReconfigurationRule_ReconfiguredComponent()
+	 * @model
+	 * @generated
+	 */
+	ReconfigurableComponent getReconfiguredComponent();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule#getReconfiguredComponent <em>Reconfigured Component</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reconfigured Component</em>' reference.
+	 * @see #getReconfiguredComponent()
+	 * @generated
+	 */
+	void setReconfiguredComponent(ReconfigurableComponent value);
 
 } // ReconfigurationRule

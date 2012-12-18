@@ -21,6 +21,7 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
 
@@ -34,6 +35,7 @@ import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleImpl#getReturnParameters <em>Return Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleImpl#getReconfiguredComponent <em>Reconfigured Component</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,6 +81,16 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	 * @ordered
 	 */
 	protected EList<Parameter> returnParameters;
+
+	/**
+	 * The cached value of the '{@link #getReconfiguredComponent() <em>Reconfigured Component</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReconfiguredComponent()
+	 * @generated
+	 * @ordered
+	 */
+	protected ReconfigurableComponent reconfiguredComponent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -149,6 +161,44 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ReconfigurableComponent getReconfiguredComponent() {
+		if (reconfiguredComponent != null && reconfiguredComponent.eIsProxy()) {
+			InternalEObject oldReconfiguredComponent = (InternalEObject)reconfiguredComponent;
+			reconfiguredComponent = (ReconfigurableComponent)eResolveProxy(oldReconfiguredComponent);
+			if (reconfiguredComponent != oldReconfiguredComponent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT, oldReconfiguredComponent, reconfiguredComponent));
+			}
+		}
+		return reconfiguredComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurableComponent basicGetReconfiguredComponent() {
+		return reconfiguredComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReconfiguredComponent(ReconfigurableComponent newReconfiguredComponent) {
+		ReconfigurableComponent oldReconfiguredComponent = reconfiguredComponent;
+		reconfiguredComponent = newReconfiguredComponent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT, oldReconfiguredComponent, reconfiguredComponent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -174,6 +224,9 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 				return getParameters();
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS:
 				return getReturnParameters();
+			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
+				if (resolve) return getReconfiguredComponent();
+				return basicGetReconfiguredComponent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -198,6 +251,9 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 				getReturnParameters().clear();
 				getReturnParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
+			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
+				setReconfiguredComponent((ReconfigurableComponent)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -219,6 +275,9 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS:
 				getReturnParameters().clear();
 				return;
+			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
+				setReconfiguredComponent((ReconfigurableComponent)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -237,6 +296,8 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 				return parameters != null && !parameters.isEmpty();
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS:
 				return returnParameters != null && !returnParameters.isEmpty();
+			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
+				return reconfiguredComponent != null;
 		}
 		return super.eIsSet(featureID);
 	}
