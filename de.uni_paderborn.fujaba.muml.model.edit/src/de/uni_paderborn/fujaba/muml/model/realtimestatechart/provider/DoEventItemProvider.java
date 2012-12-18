@@ -121,7 +121,7 @@ public class DoEventItemProvider
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
 				 null,
 				 null));
 	}
@@ -143,7 +143,7 @@ public class DoEventItemProvider
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
 				 null,
 				 null));
 	}
