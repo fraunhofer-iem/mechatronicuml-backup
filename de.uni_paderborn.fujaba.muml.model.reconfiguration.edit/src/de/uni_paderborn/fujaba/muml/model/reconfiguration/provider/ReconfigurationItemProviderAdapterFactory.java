@@ -6,15 +6,12 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.provider;
 
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.util.ReconfigurationAdapterFactory;
-
 import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -26,6 +23,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.util.ReconfigurationAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -283,29 +282,6 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ReconfigurationRuleCallExpressionItemProvider reconfigurationRuleCallExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createReconfigurationRuleCallExpressionAdapter() {
-		if (reconfigurationRuleCallExpressionItemProvider == null) {
-			reconfigurationRuleCallExpressionItemProvider = new ReconfigurationRuleCallExpressionItemProvider(this);
-		}
-
-		return reconfigurationRuleCallExpressionItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -413,7 +389,6 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 		if (ruleBasedReconfigurationControllerItemProvider != null) ruleBasedReconfigurationControllerItemProvider.dispose();
 		if (externalReconfigurationExecutionPortItemProvider != null) externalReconfigurationExecutionPortItemProvider.dispose();
 		if (internalReconfigurationExecutionPortItemProvider != null) internalReconfigurationExecutionPortItemProvider.dispose();
-		if (reconfigurationRuleCallExpressionItemProvider != null) reconfigurationRuleCallExpressionItemProvider.dispose();
 	}
 
 }

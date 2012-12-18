@@ -7,25 +7,24 @@
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.DiscretePortItemProvider;
-import de.uni_paderborn.fujaba.muml.model.component.provider.PortItemProvider;
-
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.storydriven.core.CorePackage;
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+import org.storydriven.storydiagrams.calls.CallsFactory;
+
+import de.uni_paderborn.fujaba.muml.model.component.provider.DiscretePortItemProvider;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort} object.
@@ -114,6 +113,16 @@ public class ReconfigurationPortItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 CallsFactory.eINSTANCE.createParameterExtension()));
 	}
 
 	/**

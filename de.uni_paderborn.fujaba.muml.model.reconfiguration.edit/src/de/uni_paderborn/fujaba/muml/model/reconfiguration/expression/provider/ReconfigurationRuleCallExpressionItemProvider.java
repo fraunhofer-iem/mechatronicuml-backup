@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.reconfiguration.provider;
+package de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.provider;
 
 
 import java.util.Collection;
@@ -14,7 +14,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,24 +21,25 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.muml.model.core.provider.BehavioralElementItemProvider;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ExpressionPackage;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ReconfigurationRuleCallExpression;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.provider.MumlReconfigurationEditPlugin;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ReconfigurationRuleCallExpression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ControllerItemProvider
-	extends BehavioralElementItemProvider
+public class ReconfigurationRuleCallExpressionItemProvider
+	extends ExpressionItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -52,7 +52,7 @@ public class ControllerItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControllerItemProvider(AdapterFactory adapterFactory) {
+	public ReconfigurationRuleCallExpressionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -67,52 +67,29 @@ public class ControllerItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addCommentPropertyDescriptor(object);
+			addReconfigurationRulePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Reconfiguration Rule feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addReconfigurationRulePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_NamedElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				 CorePackage.Literals.NAMED_ELEMENT__NAME,
+				 getString("_UI_ReconfigurationRuleCallExpression_reconfigurationRule_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationRuleCallExpression_reconfigurationRule_feature", "_UI_ReconfigurationRuleCallExpression_type"),
+				 ExpressionPackage.Literals.RECONFIGURATION_RULE_CALL_EXPRESSION__RECONFIGURATION_RULE,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Comment feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -129,8 +106,7 @@ public class ControllerItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
+			childrenFeatures.add(ExpressionPackage.Literals.RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS);
 		}
 		return childrenFeatures;
 	}
@@ -149,6 +125,17 @@ public class ControllerItemProvider
 	}
 
 	/**
+	 * This returns ReconfigurationRuleCallExpression.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReconfigurationRuleCallExpression"));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -156,10 +143,10 @@ public class ControllerItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Controller)object).getName();
+		String label = ((ReconfigurationRuleCallExpression)object).getComment();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Controller_type") :
-			getString("_UI_Controller_type") + " " + label;
+			getString("_UI_ReconfigurationRuleCallExpression_type") :
+			getString("_UI_ReconfigurationRuleCallExpression_type") + " " + label;
 	}
 
 	/**
@@ -173,13 +160,8 @@ public class ControllerItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Controller.class)) {
-			case ReconfigurationPackage.CONTROLLER__NAME:
-			case ReconfigurationPackage.CONTROLLER__COMMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ReconfigurationPackage.CONTROLLER__ANNOTATION:
-			case ReconfigurationPackage.CONTROLLER__EXTENSION:
+		switch (notification.getFeatureID(ReconfigurationRuleCallExpression.class)) {
+			case ExpressionPackage.RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -199,11 +181,6 @@ public class ControllerItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION,
-				 EcoreFactory.eINSTANCE.createEAnnotation()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
 
@@ -211,6 +188,11 @@ public class ControllerItemProvider
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionPackage.Literals.RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS,
+				 CoreFactory.eINSTANCE.createParameterBinding()));
 	}
 
 	/**
