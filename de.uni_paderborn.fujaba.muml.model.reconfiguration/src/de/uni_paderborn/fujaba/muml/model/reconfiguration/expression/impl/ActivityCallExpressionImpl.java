@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.reconfiguration.impl;
+package de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.impl;
 
 import java.util.Collection;
 
@@ -17,36 +17,36 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
+import org.storydriven.storydiagrams.activities.Activity;
 
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ActivityCallExpression;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ExpressionPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Rule Call Expression</b></em>'.
+ * An implementation of the model object '<em><b>Activity Call Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleCallExpressionImpl#getReconfigurationRule <em>Reconfiguration Rule</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleCallExpressionImpl#getParameterBindings <em>Parameter Bindings</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.impl.ActivityCallExpressionImpl#getActivity <em>Activity</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.impl.ActivityCallExpressionImpl#getParameterBindings <em>Parameter Bindings</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ReconfigurationRuleCallExpressionImpl extends ExpressionImpl implements ReconfigurationRuleCallExpression {
+public class ActivityCallExpressionImpl extends ExpressionImpl implements ActivityCallExpression {
 	/**
-	 * The cached value of the '{@link #getReconfigurationRule() <em>Reconfiguration Rule</em>}' reference.
+	 * The cached value of the '{@link #getActivity() <em>Activity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReconfigurationRule()
+	 * @see #getActivity()
 	 * @generated
 	 * @ordered
 	 */
-	protected ReconfigurationRule reconfigurationRule;
+	protected Activity activity;
 
 	/**
 	 * The cached value of the '{@link #getParameterBindings() <em>Parameter Bindings</em>}' containment reference list.
@@ -63,7 +63,7 @@ public class ReconfigurationRuleCallExpressionImpl extends ExpressionImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ReconfigurationRuleCallExpressionImpl() {
+	protected ActivityCallExpressionImpl() {
 		super();
 	}
 
@@ -74,7 +74,7 @@ public class ReconfigurationRuleCallExpressionImpl extends ExpressionImpl implem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ReconfigurationPackage.Literals.RECONFIGURATION_RULE_CALL_EXPRESSION;
+		return ExpressionPackage.Literals.ACTIVITY_CALL_EXPRESSION;
 	}
 
 	/**
@@ -82,16 +82,16 @@ public class ReconfigurationRuleCallExpressionImpl extends ExpressionImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationRule getReconfigurationRule() {
-		if (reconfigurationRule != null && reconfigurationRule.eIsProxy()) {
-			InternalEObject oldReconfigurationRule = (InternalEObject)reconfigurationRule;
-			reconfigurationRule = (ReconfigurationRule)eResolveProxy(oldReconfigurationRule);
-			if (reconfigurationRule != oldReconfigurationRule) {
+	public Activity getActivity() {
+		if (activity != null && activity.eIsProxy()) {
+			InternalEObject oldActivity = (InternalEObject)activity;
+			activity = (Activity)eResolveProxy(oldActivity);
+			if (activity != oldActivity) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION__RECONFIGURATION_RULE, oldReconfigurationRule, reconfigurationRule));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionPackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, oldActivity, activity));
 			}
 		}
-		return reconfigurationRule;
+		return activity;
 	}
 
 	/**
@@ -99,8 +99,8 @@ public class ReconfigurationRuleCallExpressionImpl extends ExpressionImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationRule basicGetReconfigurationRule() {
-		return reconfigurationRule;
+	public Activity basicGetActivity() {
+		return activity;
 	}
 
 	/**
@@ -108,11 +108,11 @@ public class ReconfigurationRuleCallExpressionImpl extends ExpressionImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setReconfigurationRule(ReconfigurationRule newReconfigurationRule) {
-		ReconfigurationRule oldReconfigurationRule = reconfigurationRule;
-		reconfigurationRule = newReconfigurationRule;
+	public void setActivity(Activity newActivity) {
+		Activity oldActivity = activity;
+		activity = newActivity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION__RECONFIGURATION_RULE, oldReconfigurationRule, reconfigurationRule));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, oldActivity, activity));
 	}
 
 	/**
@@ -122,7 +122,7 @@ public class ReconfigurationRuleCallExpressionImpl extends ExpressionImpl implem
 	 */
 	public EList<ParameterBinding> getParameterBindings() {
 		if (parameterBindings == null) {
-			parameterBindings = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this, ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS);
+			parameterBindings = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this, ExpressionPackage.ACTIVITY_CALL_EXPRESSION__PARAMETER_BINDINGS);
 		}
 		return parameterBindings;
 	}
@@ -135,7 +135,7 @@ public class ReconfigurationRuleCallExpressionImpl extends ExpressionImpl implem
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS:
+			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION__PARAMETER_BINDINGS:
 				return ((InternalEList<?>)getParameterBindings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -149,10 +149,10 @@ public class ReconfigurationRuleCallExpressionImpl extends ExpressionImpl implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION__RECONFIGURATION_RULE:
-				if (resolve) return getReconfigurationRule();
-				return basicGetReconfigurationRule();
-			case ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS:
+			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY:
+				if (resolve) return getActivity();
+				return basicGetActivity();
+			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION__PARAMETER_BINDINGS:
 				return getParameterBindings();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -167,10 +167,10 @@ public class ReconfigurationRuleCallExpressionImpl extends ExpressionImpl implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION__RECONFIGURATION_RULE:
-				setReconfigurationRule((ReconfigurationRule)newValue);
+			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY:
+				setActivity((Activity)newValue);
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS:
+			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION__PARAMETER_BINDINGS:
 				getParameterBindings().clear();
 				getParameterBindings().addAll((Collection<? extends ParameterBinding>)newValue);
 				return;
@@ -186,10 +186,10 @@ public class ReconfigurationRuleCallExpressionImpl extends ExpressionImpl implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION__RECONFIGURATION_RULE:
-				setReconfigurationRule((ReconfigurationRule)null);
+			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY:
+				setActivity((Activity)null);
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS:
+			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION__PARAMETER_BINDINGS:
 				getParameterBindings().clear();
 				return;
 		}
@@ -204,12 +204,12 @@ public class ReconfigurationRuleCallExpressionImpl extends ExpressionImpl implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION__RECONFIGURATION_RULE:
-				return reconfigurationRule != null;
-			case ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS:
+			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY:
+				return activity != null;
+			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION__PARAMETER_BINDINGS:
 				return parameterBindings != null && !parameterBindings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ReconfigurationRuleCallExpressionImpl
+} //ActivityCallExpressionImpl

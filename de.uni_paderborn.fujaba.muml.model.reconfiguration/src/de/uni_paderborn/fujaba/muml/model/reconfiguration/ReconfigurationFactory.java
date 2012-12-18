@@ -107,15 +107,6 @@ public interface ReconfigurationFactory extends EFactory {
 	InternalReconfigurationExecutionPort createInternalReconfigurationExecutionPort();
 
 	/**
-	 * Returns a new object of class '<em>Rule Call Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Rule Call Expression</em>'.
-	 * @generated
-	 */
-	ReconfigurationRuleCallExpression createReconfigurationRuleCallExpression();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

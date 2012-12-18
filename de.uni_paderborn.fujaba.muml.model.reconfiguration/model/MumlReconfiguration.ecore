@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="reconfiguration"
-    nsURI="http://www.fujaba.de/muml/reconfiguration/0.3.6" nsPrefix="reconfiguration">
+    nsURI="http://www.fujaba.de/muml/reconfiguration/0.3.7" nsPrefix="reconfiguration">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -132,11 +132,22 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InternalReconfigurationExecutionPort"
       eSuperTypes="#//ReconfigurationExecutionPort"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationRuleCallExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationRule" lowerBound="1"
-        eType="#//ReconfigurationRule"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ParameterBinding"
-        containment="true"/>
-  </eClassifiers>
+  <eSubpackages name="expression" nsURI="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"
+      nsPrefix="expression">
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityCallExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
+          eType="ecore:EClass ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ParameterBinding"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationRuleCallExpression"
+        eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationRule"
+          lowerBound="1" eType="#//ReconfigurationRule"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ParameterBinding"
+          containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
 </ecore:EPackage>

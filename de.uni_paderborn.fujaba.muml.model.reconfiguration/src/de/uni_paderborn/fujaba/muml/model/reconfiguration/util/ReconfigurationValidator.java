@@ -31,7 +31,6 @@ import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessage
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController;
 
 /**
@@ -147,8 +146,6 @@ public class ReconfigurationValidator extends EObjectValidator {
 				return validateExternalReconfigurationExecutionPort((ExternalReconfigurationExecutionPort)value, diagnostics, context);
 			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_EXECUTION_PORT:
 				return validateInternalReconfigurationExecutionPort((InternalReconfigurationExecutionPort)value, diagnostics, context);
-			case ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION:
-				return validateReconfigurationRuleCallExpression((ReconfigurationRuleCallExpression)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -279,15 +276,6 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAndRoleSameMessageInterface(internalReconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortMustRefineMultiRole(internalReconfigurationExecutionPort, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateReconfigurationRuleCallExpression(ReconfigurationRuleCallExpression reconfigurationRuleCallExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(reconfigurationRuleCallExpression, diagnostics, context);
 	}
 
 	/**

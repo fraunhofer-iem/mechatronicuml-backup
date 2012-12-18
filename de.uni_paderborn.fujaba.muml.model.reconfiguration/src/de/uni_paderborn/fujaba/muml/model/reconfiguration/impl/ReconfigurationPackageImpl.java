@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.storydriven.core.expressions.ExpressionsPackage;
+import org.storydriven.storydiagrams.StorydiagramsPackage;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
@@ -41,8 +41,9 @@ import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessage
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ExpressionPackage;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.impl.ExpressionPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.util.ReconfigurationValidator;
 import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
 
@@ -101,13 +102,6 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * @generated
 	 */
 	private EClass internalReconfigurationExecutionPortEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass reconfigurationRuleCallExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,12 +223,18 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		DeploymentPackage.eINSTANCE.eClass();
 		TypesPackage.eINSTANCE.eClass();
 		ConnectorPackage.eINSTANCE.eClass();
+		StorydiagramsPackage.eINSTANCE.eClass();
+
+		// Obtain or create and register interdependencies
+		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) instanceof ExpressionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) : ExpressionPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theReconfigurationPackage.createPackageContents();
+		theExpressionPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theReconfigurationPackage.initializePackageContents();
+		theExpressionPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
@@ -378,33 +378,6 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 */
 	public EClass getInternalReconfigurationExecutionPort() {
 		return internalReconfigurationExecutionPortEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getReconfigurationRuleCallExpression() {
-		return reconfigurationRuleCallExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getReconfigurationRuleCallExpression_ReconfigurationRule() {
-		return (EReference)reconfigurationRuleCallExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getReconfigurationRuleCallExpression_ParameterBindings() {
-		return (EReference)reconfigurationRuleCallExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -724,10 +697,6 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		createEReference(externalReconfigurationExecutionPortEClass, EXTERNAL_RECONFIGURATION_EXECUTION_PORT__SPECIFICATION_ENTRIES);
 
 		internalReconfigurationExecutionPortEClass = createEClass(INTERNAL_RECONFIGURATION_EXECUTION_PORT);
-
-		reconfigurationRuleCallExpressionEClass = createEClass(RECONFIGURATION_RULE_CALL_EXPRESSION);
-		createEReference(reconfigurationRuleCallExpressionEClass, RECONFIGURATION_RULE_CALL_EXPRESSION__RECONFIGURATION_RULE);
-		createEReference(reconfigurationRuleCallExpressionEClass, RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS);
 	}
 
 	/**
@@ -754,12 +723,15 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
-		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theExpressionPackage);
 
 		// Create type parameters
 
@@ -786,7 +758,6 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		ruleBasedReconfigurationControllerEClass.getESuperTypes().add(this.getReconfigurationController());
 		externalReconfigurationExecutionPortEClass.getESuperTypes().add(this.getReconfigurationExecutionPort());
 		internalReconfigurationExecutionPortEClass.getESuperTypes().add(this.getReconfigurationExecutionPort());
-		reconfigurationRuleCallExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(reconfigurableStructuredComponentEClass, ReconfigurableStructuredComponent.class, "ReconfigurableStructuredComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -844,10 +815,6 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEReference(getExternalReconfigurationExecutionPort_SpecificationEntries(), this.getExecutorSpecificationEntry(), null, "specificationEntries", null, 1, -1, ExternalReconfigurationExecutionPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(internalReconfigurationExecutionPortEClass, InternalReconfigurationExecutionPort.class, "InternalReconfigurationExecutionPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(reconfigurationRuleCallExpressionEClass, ReconfigurationRuleCallExpression.class, "ReconfigurationRuleCallExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReconfigurationRuleCallExpression_ReconfigurationRule(), this.getReconfigurationRule(), null, "reconfigurationRule", null, 1, 1, ReconfigurationRuleCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getReconfigurationRuleCallExpression_ParameterBindings(), theCorePackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, ReconfigurationRuleCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

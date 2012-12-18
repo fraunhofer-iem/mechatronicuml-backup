@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import org.storydriven.core.expressions.ExpressionsPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
@@ -49,7 +48,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/reconfiguration/0.3.6";
+	String eNS_URI = "http://www.fujaba.de/muml/reconfiguration/0.3.7";
 
 	/**
 	 * The package namespace name.
@@ -1923,71 +1922,6 @@ public interface ReconfigurationPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleCallExpressionImpl <em>Rule Call Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleCallExpressionImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationRuleCallExpression()
-	 * @generated
-	 */
-	int RECONFIGURATION_RULE_CALL_EXPRESSION = 16;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_RULE_CALL_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_RULE_CALL_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_RULE_CALL_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Reconfiguration Rule</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_RULE_CALL_EXPRESSION__RECONFIGURATION_RULE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Parameter Bindings</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Rule Call Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_RULE_CALL_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
-
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent <em>Reconfigurable Structured Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2133,38 +2067,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getInternalReconfigurationExecutionPort();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression <em>Rule Call Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Rule Call Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression
-	 * @generated
-	 */
-	EClass getReconfigurationRuleCallExpression();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression#getReconfigurationRule <em>Reconfiguration Rule</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Reconfiguration Rule</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression#getReconfigurationRule()
-	 * @see #getReconfigurationRuleCallExpression()
-	 * @generated
-	 */
-	EReference getReconfigurationRuleCallExpression_ReconfigurationRule();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression#getParameterBindings <em>Parameter Bindings</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Parameter Bindings</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression#getParameterBindings()
-	 * @see #getReconfigurationRuleCallExpression()
-	 * @generated
-	 */
-	EReference getReconfigurationRuleCallExpression_ParameterBindings();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager <em>Manager</em>}'.
@@ -2590,32 +2492,6 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass INTERNAL_RECONFIGURATION_EXECUTION_PORT = eINSTANCE.getInternalReconfigurationExecutionPort();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleCallExpressionImpl <em>Rule Call Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationRuleCallExpressionImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationRuleCallExpression()
-		 * @generated
-		 */
-		EClass RECONFIGURATION_RULE_CALL_EXPRESSION = eINSTANCE.getReconfigurationRuleCallExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Reconfiguration Rule</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RECONFIGURATION_RULE_CALL_EXPRESSION__RECONFIGURATION_RULE = eINSTANCE.getReconfigurationRuleCallExpression_ReconfigurationRule();
-
-		/**
-		 * The meta object literal for the '<em><b>Parameter Bindings</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS = eINSTANCE.getReconfigurationRuleCallExpression_ParameterBindings();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ManagerImpl <em>Manager</em>}' class.

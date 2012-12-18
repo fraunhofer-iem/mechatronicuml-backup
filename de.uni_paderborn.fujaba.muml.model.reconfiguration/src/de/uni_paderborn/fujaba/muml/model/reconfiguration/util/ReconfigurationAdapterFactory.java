@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
-import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
@@ -39,7 +38,6 @@ import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessage
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
@@ -164,10 +162,6 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createInternalReconfigurationExecutionPortAdapter();
 			}
 			@Override
-			public Adapter caseReconfigurationRuleCallExpression(ReconfigurationRuleCallExpression object) {
-				return createReconfigurationRuleCallExpressionAdapter();
-			}
-			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -214,10 +208,6 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDiscretePort(DiscretePort object) {
 				return createDiscretePortAdapter();
-			}
-			@Override
-			public Adapter caseExpression(Expression object) {
-				return createExpressionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -334,20 +324,6 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInternalReconfigurationExecutionPortAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression <em>Rule Call Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression
-	 * @generated
-	 */
-	public Adapter createReconfigurationRuleCallExpressionAdapter() {
 		return null;
 	}
 
@@ -642,20 +618,6 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiscretePortAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.Expression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.expressions.Expression
-	 * @generated
-	 */
-	public Adapter createExpressionAdapter() {
 		return null;
 	}
 

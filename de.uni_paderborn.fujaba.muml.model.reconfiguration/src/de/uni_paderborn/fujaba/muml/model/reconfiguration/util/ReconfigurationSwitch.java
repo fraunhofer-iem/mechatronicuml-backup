@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
-import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
@@ -38,7 +37,6 @@ import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessage
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
@@ -286,15 +284,6 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION: {
-				ReconfigurationRuleCallExpression reconfigurationRuleCallExpression = (ReconfigurationRuleCallExpression)theEObject;
-				T result = caseReconfigurationRuleCallExpression(reconfigurationRuleCallExpression);
-				if (result == null) result = caseExpression(reconfigurationRuleCallExpression);
-				if (result == null) result = caseCommentableElement(reconfigurationRuleCallExpression);
-				if (result == null) result = caseExtendableElement(reconfigurationRuleCallExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -401,21 +390,6 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseInternalReconfigurationExecutionPort(InternalReconfigurationExecutionPort object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Rule Call Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Rule Call Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseReconfigurationRuleCallExpression(ReconfigurationRuleCallExpression object) {
 		return null;
 	}
 
@@ -731,21 +705,6 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDiscretePort(DiscretePort object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExpression(Expression object) {
 		return null;
 	}
 

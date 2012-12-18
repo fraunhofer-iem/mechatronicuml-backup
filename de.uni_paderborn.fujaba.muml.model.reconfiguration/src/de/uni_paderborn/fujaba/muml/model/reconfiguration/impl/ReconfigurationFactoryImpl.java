@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration.impl;
 
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -23,7 +22,6 @@ import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructur
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationFactory;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePort;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRuleCallExpression;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController;
 
 /**
@@ -41,7 +39,7 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	 */
 	public static ReconfigurationFactory init() {
 		try {
-			ReconfigurationFactory theReconfigurationFactory = (ReconfigurationFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/0.3.6"); 
+			ReconfigurationFactory theReconfigurationFactory = (ReconfigurationFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/0.3.7"); 
 			if (theReconfigurationFactory != null) {
 				return theReconfigurationFactory;
 			}
@@ -79,7 +77,6 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 			case ReconfigurationPackage.RULE_BASED_RECONFIGURATION_CONTROLLER: return createRuleBasedReconfigurationController();
 			case ReconfigurationPackage.EXTERNAL_RECONFIGURATION_EXECUTION_PORT: return createExternalReconfigurationExecutionPort();
 			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_EXECUTION_PORT: return createInternalReconfigurationExecutionPort();
-			case ReconfigurationPackage.RECONFIGURATION_RULE_CALL_EXPRESSION: return createReconfigurationRuleCallExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -173,16 +170,6 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	public InternalReconfigurationExecutionPort createInternalReconfigurationExecutionPort() {
 		InternalReconfigurationExecutionPortImpl internalReconfigurationExecutionPort = new InternalReconfigurationExecutionPortImpl();
 		return internalReconfigurationExecutionPort;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ReconfigurationRuleCallExpression createReconfigurationRuleCallExpression() {
-		ReconfigurationRuleCallExpressionImpl reconfigurationRuleCallExpression = new ReconfigurationRuleCallExpressionImpl();
-		return reconfigurationRuleCallExpression;
 	}
 
 	/**
