@@ -12,7 +12,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/runtime/0.2.0"
+            uri="http://www.fujaba.de/muml/model/runtime/0.3.1"
             class="de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage"
             genModel="model/RuntimeModel.genmodel"/>
    </extension>
