@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public class HybridPortImpl extends DirectedTypedPortImpl implements HybridPort 
 	 * @generated
 	 * @ordered
 	 */
-	protected NaturalNumber samplingInterval;
+	protected TimeValue samplingInterval;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,7 +105,7 @@ public class HybridPortImpl extends DirectedTypedPortImpl implements HybridPort 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NaturalNumber getSamplingInterval() {
+	public TimeValue getSamplingInterval() {
 		return samplingInterval;
 	}
 
@@ -114,8 +114,8 @@ public class HybridPortImpl extends DirectedTypedPortImpl implements HybridPort 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSamplingInterval(NaturalNumber newSamplingInterval, NotificationChain msgs) {
-		NaturalNumber oldSamplingInterval = samplingInterval;
+	public NotificationChain basicSetSamplingInterval(TimeValue newSamplingInterval, NotificationChain msgs) {
+		TimeValue oldSamplingInterval = samplingInterval;
 		samplingInterval = newSamplingInterval;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.HYBRID_PORT__SAMPLING_INTERVAL, oldSamplingInterval, newSamplingInterval);
@@ -129,7 +129,7 @@ public class HybridPortImpl extends DirectedTypedPortImpl implements HybridPort 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSamplingInterval(NaturalNumber newSamplingInterval) {
+	public void setSamplingInterval(TimeValue newSamplingInterval) {
 		if (newSamplingInterval != samplingInterval) {
 			NotificationChain msgs = null;
 			if (samplingInterval != null)
@@ -185,7 +185,7 @@ public class HybridPortImpl extends DirectedTypedPortImpl implements HybridPort 
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ComponentPackage.HYBRID_PORT__SAMPLING_INTERVAL:
-				setSamplingInterval((NaturalNumber)newValue);
+				setSamplingInterval((TimeValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -200,7 +200,7 @@ public class HybridPortImpl extends DirectedTypedPortImpl implements HybridPort 
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ComponentPackage.HYBRID_PORT__SAMPLING_INTERVAL:
-				setSamplingInterval((NaturalNumber)null);
+				setSamplingInterval((TimeValue)null);
 				return;
 		}
 		super.eUnset(featureID);

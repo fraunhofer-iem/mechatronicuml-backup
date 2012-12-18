@@ -17269,5 +17269,7 @@
         </parameters>
       </operation>
     </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/samplingInterval"
+        featureName="eType" referenceValue="muml.ecore#//model/core/TimeValue" oldReferenceValue="muml.ecore#//model/core/NaturalNumber"/>
   </releases>
 </history:History>

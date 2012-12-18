@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 
 
 /**
@@ -78,12 +78,12 @@ public interface HybridPort extends DirectedTypedPort {
 	 * The sampling interval defines the time between two updates of the continuous signal which is received or send by this hybrid port. If the port is an IN-port, the sampling interval defines how often the continuous signal is read and stored internally. If the hybrid port in an OUT-port, the sampling interval defines how often a new value is send via this port. 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sampling Interval</em>' containment reference.
-	 * @see #setSamplingInterval(NaturalNumber)
+	 * @see #setSamplingInterval(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getHybridPort_SamplingInterval()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	NaturalNumber getSamplingInterval();
+	TimeValue getSamplingInterval();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort#getSamplingInterval <em>Sampling Interval</em>}' containment reference.
@@ -93,5 +93,5 @@ public interface HybridPort extends DirectedTypedPort {
 	 * @see #getSamplingInterval()
 	 * @generated
 	 */
-	void setSamplingInterval(NaturalNumber value);
+	void setSamplingInterval(TimeValue value);
 } // HybridPort
