@@ -69,6 +69,7 @@ public class ReconfigurationRuleItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addReturnParametersPropertyDescriptor(object);
+			addReconfiguredComponentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -109,6 +110,28 @@ public class ReconfigurationRuleItemProvider
 				 getString("_UI_ReconfigurationRule_returnParameters_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationRule_returnParameters_feature", "_UI_ReconfigurationRule_type"),
 				 ReconfigurationPackage.Literals.RECONFIGURATION_RULE__RETURN_PARAMETERS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Reconfigured Component feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReconfiguredComponentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ReconfigurationRule_reconfiguredComponent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationRule_reconfiguredComponent_feature", "_UI_ReconfigurationRule_type"),
+				 ReconfigurationPackage.Literals.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT,
 				 true,
 				 false,
 				 true,
