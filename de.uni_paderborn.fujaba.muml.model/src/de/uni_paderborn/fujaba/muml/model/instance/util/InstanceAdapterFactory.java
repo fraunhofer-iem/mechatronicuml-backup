@@ -16,7 +16,6 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.*;
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;

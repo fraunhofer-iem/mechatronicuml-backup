@@ -6,10 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.model.protocol;
 
-import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 import org.storydriven.core.CommentableElement;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 
 /**
  * <!-- begin-user-doc -->

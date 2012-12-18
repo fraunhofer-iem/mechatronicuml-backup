@@ -16,9 +16,8 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.connector.Connector;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.protocol.*;
 import de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer;
@@ -282,13 +281,13 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement <em>Constrainable Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement <em>Constrainable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement
+	 * @see de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement
 	 * @generated
 	 */
 	public Adapter createConstrainableElementAdapter() {

@@ -9,7 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.component;
 import org.eclipse.emf.common.util.EList;
 
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**

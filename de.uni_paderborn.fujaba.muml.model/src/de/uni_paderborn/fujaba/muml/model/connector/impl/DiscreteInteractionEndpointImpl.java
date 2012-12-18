@@ -27,11 +27,11 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.impl.BehavioralElementImpl;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 
@@ -630,7 +630,7 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 		}
 		if (baseClass == ConstrainableElement.class) {
 			switch (derivedFeatureID) {
-				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT: return de.uni_paderborn.fujaba.muml.model.core.CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT: return ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
 				default: return -1;
 			}
 		}
@@ -664,7 +664,7 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 		}
 		if (baseClass == ConstrainableElement.class) {
 			switch (baseFeatureID) {
-				case de.uni_paderborn.fujaba.muml.model.core.CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT;
+				case ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT;
 				default: return -1;
 			}
 		}

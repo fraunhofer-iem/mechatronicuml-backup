@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.protocol.util;
 
-import de.uni_paderborn.fujaba.muml.model.protocol.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;

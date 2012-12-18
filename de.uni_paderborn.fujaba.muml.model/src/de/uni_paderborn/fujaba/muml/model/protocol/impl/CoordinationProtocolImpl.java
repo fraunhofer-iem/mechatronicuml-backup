@@ -18,12 +18,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.model.protocol.Role;
@@ -397,13 +397,13 @@ public class CoordinationProtocolImpl extends NamedElementImpl implements Coordi
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == ConstrainableElement.class) {
 			switch (derivedFeatureID) {
-				case ProtocolPackage.COORDINATION_PROTOCOL__CONSTRAINT: return CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
+				case ProtocolPackage.COORDINATION_PROTOCOL__CONSTRAINT: return ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
 				default: return -1;
 			}
 		}
 		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
-				case ProtocolPackage.COORDINATION_PROTOCOL__COMMENT: return org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+				case ProtocolPackage.COORDINATION_PROTOCOL__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 				default: return -1;
 			}
 		}
@@ -419,13 +419,13 @@ public class CoordinationProtocolImpl extends NamedElementImpl implements Coordi
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == ConstrainableElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ProtocolPackage.COORDINATION_PROTOCOL__CONSTRAINT;
+				case ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ProtocolPackage.COORDINATION_PROTOCOL__CONSTRAINT;
 				default: return -1;
 			}
 		}
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
-				case org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT: return ProtocolPackage.COORDINATION_PROTOCOL__COMMENT;
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return ProtocolPackage.COORDINATION_PROTOCOL__COMMENT;
 				default: return -1;
 			}
 		}

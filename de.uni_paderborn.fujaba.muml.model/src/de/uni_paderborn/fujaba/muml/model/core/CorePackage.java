@@ -172,34 +172,6 @@ public interface CorePackage extends EPackage {
 	int BEHAVIORAL_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.ConstrainableElementImpl <em>Constrainable Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.ConstrainableElementImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getConstrainableElement()
-	 * @generated
-	 */
-	int CONSTRAINABLE_ELEMENT = 3;
-
-	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRAINABLE_ELEMENT__CONSTRAINT = 0;
-
-	/**
-	 * The number of structural features of the '<em>Constrainable Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRAINABLE_ELEMENT_FEATURE_COUNT = 1;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehaviorImpl <em>Behavior</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -207,7 +179,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getBehavior()
 	 * @generated
 	 */
-	int BEHAVIOR = 4;
+	int BEHAVIOR = 3;
 
 	/**
 	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.
@@ -253,7 +225,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getActivityCallExpression()
 	 * @generated
 	 */
-	int ACTIVITY_CALL_EXPRESSION = 5;
+	int ACTIVITY_CALL_EXPRESSION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -326,7 +298,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getVariable()
 	 * @generated
 	 */
-	int VARIABLE = 6;
+	int VARIABLE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -390,7 +362,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getOperation()
 	 * @generated
 	 */
-	int OPERATION = 7;
+	int OPERATION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -472,7 +444,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 8;
+	int PARAMETER = 7;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -536,7 +508,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getParameterBinding()
 	 * @generated
 	 */
-	int PARAMETER_BINDING = 9;
+	int PARAMETER_BINDING = 8;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -591,7 +563,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getTimeValue()
 	 * @generated
 	 */
-	int TIME_VALUE = 10;
+	int TIME_VALUE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -646,7 +618,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getTimeUnit()
 	 * @generated
 	 */
-	int TIME_UNIT = 11;
+	int TIME_UNIT = 10;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.NaturalNumber <em>Natural Number</em>}'.
@@ -732,27 +704,6 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBehavioralElement_Behavior();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement <em>Constrainable Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Constrainable Element</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement
-	 * @generated
-	 */
-	EClass getConstrainableElement();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement#getConstraint <em>Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Constraint</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement#getConstraint()
-	 * @see #getConstrainableElement()
-	 * @generated
-	 */
-	EReference getConstrainableElement_Constraint();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.Behavior <em>Behavior</em>}'.
@@ -1069,24 +1020,6 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EReference BEHAVIORAL_ELEMENT__BEHAVIOR = eINSTANCE.getBehavioralElement_Behavior();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.ConstrainableElementImpl <em>Constrainable Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.ConstrainableElementImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getConstrainableElement()
-		 * @generated
-		 */
-		EClass CONSTRAINABLE_ELEMENT = eINSTANCE.getConstrainableElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Constraint</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONSTRAINABLE_ELEMENT__CONSTRAINT = eINSTANCE.getConstrainableElement_Constraint();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehaviorImpl <em>Behavior</em>}' class.

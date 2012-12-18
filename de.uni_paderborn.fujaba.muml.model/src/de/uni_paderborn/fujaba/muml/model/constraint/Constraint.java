@@ -8,8 +8,6 @@ package de.uni_paderborn.fujaba.muml.model.constraint;
 
 import org.storydriven.core.ExtendableElement;
 
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Constraint</b></em>'.
@@ -89,7 +87,7 @@ public interface Constraint extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Constrainable Element</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement#getConstraint <em>Constraint</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement#getConstraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -98,7 +96,7 @@ public interface Constraint extends ExtendableElement {
 	 * @return the value of the '<em>Constrainable Element</em>' container reference.
 	 * @see #setConstrainableElement(ConstrainableElement)
 	 * @see de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage#getConstraint_ConstrainableElement()
-	 * @see de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement#getConstraint
+	 * @see de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement#getConstraint
 	 * @model opposite="constraint" required="true" transient="false"
 	 * @generated
 	 */

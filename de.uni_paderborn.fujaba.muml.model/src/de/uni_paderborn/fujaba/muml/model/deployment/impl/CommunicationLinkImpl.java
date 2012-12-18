@@ -23,7 +23,6 @@ import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
 import de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService;
-import de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService;
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance;
 
 /**

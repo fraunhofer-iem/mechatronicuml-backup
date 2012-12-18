@@ -6,12 +6,12 @@
  */
 package de.uni_paderborn.fujaba.muml.model.constraint.util;
 
-import de.uni_paderborn.fujaba.muml.model.constraint.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.ExtendableElement;
 
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ModelingConstraint;
@@ -107,6 +107,12 @@ public class ConstraintSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ConstraintPackage.CONSTRAINABLE_ELEMENT: {
+				ConstrainableElement constrainableElement = (ConstrainableElement)theEObject;
+				T result = caseConstrainableElement(constrainableElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -168,6 +174,21 @@ public class ConstraintSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTextualConstraint(TextualConstraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConstrainableElement(ConstrainableElement object) {
 		return null;
 	}
 

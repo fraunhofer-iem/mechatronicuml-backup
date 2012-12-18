@@ -468,10 +468,11 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		// Obtain other dependent packages
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
 		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 
 		// Create type parameters
@@ -481,7 +482,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		// Add supertypes to classes
 		roleConnectorEClass.getESuperTypes().add(theConnectorPackage.getConnector());
 		coordinationProtocolEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		coordinationProtocolEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
+		coordinationProtocolEClass.getESuperTypes().add(theConstraintPackage.getConstrainableElement());
 		coordinationProtocolEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		roleEClass.getESuperTypes().add(theConnectorPackage.getDiscreteInteractionEndpoint());
 		roleEClass.getESuperTypes().add(theTypesPackage.getDataType());

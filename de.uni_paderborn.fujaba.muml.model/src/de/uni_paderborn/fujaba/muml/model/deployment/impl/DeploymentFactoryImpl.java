@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.impl;
 
-import de.uni_paderborn.fujaba.muml.model.deployment.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -22,7 +21,7 @@ import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind;
-import de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService;
+import de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService;
 
 /**
  * <!-- begin-user-doc -->

@@ -24,10 +24,9 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.model.connector.impl.ConnectorEndpointImpl;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
@@ -292,7 +291,7 @@ public abstract class PortImpl extends ConnectorEndpointImpl implements Port {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == ConstrainableElement.class) {
 			switch (derivedFeatureID) {
-				case ComponentPackage.PORT__CONSTRAINT: return CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
+				case ComponentPackage.PORT__CONSTRAINT: return ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
 				default: return -1;
 			}
 		}
@@ -313,7 +312,7 @@ public abstract class PortImpl extends ConnectorEndpointImpl implements Port {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == ConstrainableElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ComponentPackage.PORT__CONSTRAINT;
+				case ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ComponentPackage.PORT__CONSTRAINT;
 				default: return -1;
 			}
 		}

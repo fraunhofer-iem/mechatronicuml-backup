@@ -395,6 +395,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		// Obtain other dependent packages
 		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 
 		// Create type parameters
@@ -410,7 +411,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		connectorInstanceEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 		discreteInteractionEndpointEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
 		discreteInteractionEndpointEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		discreteInteractionEndpointEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
+		discreteInteractionEndpointEClass.getESuperTypes().add(theConstraintPackage.getConstrainableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(connectorEndpointEClass, ConnectorEndpoint.class, "ConnectorEndpoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

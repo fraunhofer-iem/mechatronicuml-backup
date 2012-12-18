@@ -857,11 +857,12 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		// Obtain other dependent packages
 		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		ProtocolPackage theProtocolPackage = (ProtocolPackage)EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -870,9 +871,9 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		// Add supertypes to classes
 		componentEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
 		componentEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		componentEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
+		componentEClass.getESuperTypes().add(theConstraintPackage.getConstrainableElement());
 		portEClass.getESuperTypes().add(theConnectorPackage.getConnectorEndpoint());
-		portEClass.getESuperTypes().add(theCorePackage.getConstrainableElement());
+		portEClass.getESuperTypes().add(theConstraintPackage.getConstrainableElement());
 		portEClass.getESuperTypes().add(theTypesPackage.getDataType());
 		continuousPortEClass.getESuperTypes().add(this.getDirectedTypedPort());
 		discretePortEClass.getESuperTypes().add(this.getPort());

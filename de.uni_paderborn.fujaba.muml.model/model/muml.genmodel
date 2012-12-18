@@ -115,6 +115,9 @@
           <genFeatures children="true" createChild="true" propertyCategory="TextualExpression"
               ecoreFeature="ecore:EReference muml.ecore#//model/constraint/TextualConstraint/textualExpression"/>
         </genClasses>
+        <genClasses image="false" ecoreClass="muml.ecore#//model/constraint/ConstrainableElement">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/constraint/ConstrainableElement/constraint"/>
+        </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Core" basePackage="de.uni_paderborn.fujaba.muml.model"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//model/core">
@@ -138,10 +141,6 @@
         <genClasses image="false" ecoreClass="muml.ecore#//model/core/BehavioralElement">
           <genFeatures notify="false" createChild="false" propertyCategory="Behavior"
               propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/BehavioralElement/behavior"/>
-        </genClasses>
-        <genClasses image="false" ecoreClass="muml.ecore#//model/core/ConstrainableElement">
-          <genFeatures children="true" createChild="true" propertyCategory="Constraint"
-              propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/ConstrainableElement/constraint"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/core/Behavior">
           <genFeatures notify="false" createChild="false" propertyCategory="General"

@@ -6,26 +6,20 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.impl;
 
-import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.NamedElement;
+import org.storydriven.core.impl.CommentableElementImpl;
 
+import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.NamedElement;
-
-import org.storydriven.core.impl.CommentableElementImpl;
 
 /**
  * <!-- begin-user-doc -->

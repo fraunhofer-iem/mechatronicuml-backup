@@ -332,6 +332,34 @@ public interface ConstraintPackage extends EPackage {
 	int TEXTUAL_CONSTRAINT_FEATURE_COUNT = VERIFIABLE_CONSTRAINT_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstrainableElementImpl <em>Constrainable Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstrainableElementImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl#getConstrainableElement()
+	 * @generated
+	 */
+	int CONSTRAINABLE_ELEMENT = 4;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINABLE_ELEMENT__CONSTRAINT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Constrainable Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINABLE_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.constraint.Correctness <em>Correctness</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -339,7 +367,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl#getCorrectness()
 	 * @generated
 	 */
-	int CORRECTNESS = 4;
+	int CORRECTNESS = 5;
 
 
 	/**
@@ -425,6 +453,27 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTextualConstraint_TextualExpression();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement <em>Constrainable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Constrainable Element</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement
+	 * @generated
+	 */
+	EClass getConstrainableElement();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement#getConstraint <em>Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Constraint</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement#getConstraint()
+	 * @see #getConstrainableElement()
+	 * @generated
+	 */
+	EReference getConstrainableElement_Constraint();
 
 	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.constraint.Correctness <em>Correctness</em>}'.
@@ -529,6 +578,24 @@ public interface ConstraintPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION = eINSTANCE.getTextualConstraint_TextualExpression();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstrainableElementImpl <em>Constrainable Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstrainableElementImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl#getConstrainableElement()
+		 * @generated
+		 */
+		EClass CONSTRAINABLE_ELEMENT = eINSTANCE.getConstrainableElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Constraint</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSTRAINABLE_ELEMENT__CONSTRAINT = eINSTANCE.getConstrainableElement_Constraint();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.constraint.Correctness <em>Correctness</em>}' enum.

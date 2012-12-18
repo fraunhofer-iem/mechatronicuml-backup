@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
-import de.uni_paderborn.fujaba.muml.model.core.*;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -20,7 +19,6 @@ import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
@@ -107,8 +105,6 @@ public class CoreValidator extends EObjectValidator {
 				return validateCardinality((Cardinality)value, diagnostics, context);
 			case CorePackage.BEHAVIORAL_ELEMENT:
 				return validateBehavioralElement((BehavioralElement)value, diagnostics, context);
-			case CorePackage.CONSTRAINABLE_ELEMENT:
-				return validateConstrainableElement((ConstrainableElement)value, diagnostics, context);
 			case CorePackage.BEHAVIOR:
 				return validateBehavior((Behavior)value, diagnostics, context);
 			case CorePackage.ACTIVITY_CALL_EXPRESSION:
@@ -234,15 +230,6 @@ public class CoreValidator extends EObjectValidator {
 	 */
 	public boolean validateBehavioralElement(BehavioralElement behavioralElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(behavioralElement, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateConstrainableElement(ConstrainableElement constrainableElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(constrainableElement, diagnostics, context);
 	}
 
 	/**

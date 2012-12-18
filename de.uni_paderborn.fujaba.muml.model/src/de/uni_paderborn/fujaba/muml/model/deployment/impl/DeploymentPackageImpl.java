@@ -33,7 +33,6 @@ import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService;
-import de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService;
 import de.uni_paderborn.fujaba.muml.model.deployment.util.DeploymentValidator;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;

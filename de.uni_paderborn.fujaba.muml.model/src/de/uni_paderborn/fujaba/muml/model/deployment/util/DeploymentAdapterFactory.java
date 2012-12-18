@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.util;
 
-import de.uni_paderborn.fujaba.muml.model.deployment.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -20,7 +19,7 @@ import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
-import de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService;
+import de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService;
 
 /**
  * <!-- begin-user-doc -->

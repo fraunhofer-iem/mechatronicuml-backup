@@ -14,11 +14,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.core.impl.ExtendableElementImpl;
 
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.Correctness;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -170,7 +169,7 @@ public abstract class ConstraintImpl extends ExtendableElementImpl implements Co
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newConstrainableElement != null)
-				msgs = ((InternalEObject)newConstrainableElement).eInverseAdd(this, CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT, ConstrainableElement.class, msgs);
+				msgs = ((InternalEObject)newConstrainableElement).eInverseAdd(this, ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT, ConstrainableElement.class, msgs);
 			msgs = basicSetConstrainableElement(newConstrainableElement, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -228,7 +227,7 @@ public abstract class ConstraintImpl extends ExtendableElementImpl implements Co
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT:
-				return eInternalContainer().eInverseRemove(this, CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT, ConstrainableElement.class, msgs);
+				return eInternalContainer().eInverseRemove(this, ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT, ConstrainableElement.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

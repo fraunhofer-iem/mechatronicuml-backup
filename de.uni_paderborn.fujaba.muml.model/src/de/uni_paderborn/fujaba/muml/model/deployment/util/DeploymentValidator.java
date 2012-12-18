@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.util;
 
-import de.uni_paderborn.fujaba.muml.model.deployment.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -22,7 +21,7 @@ import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNodeKind;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePortDirectionKind;
-import de.uni_paderborn.fujaba.muml.model.deployment.QualityOfLinkService;
+import de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService;
 
 /**
  * <!-- begin-user-doc -->

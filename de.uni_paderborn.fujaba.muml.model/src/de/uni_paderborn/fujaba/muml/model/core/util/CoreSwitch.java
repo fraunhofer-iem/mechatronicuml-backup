@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.core.util;
 
-import de.uni_paderborn.fujaba.muml.model.core.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -20,7 +19,6 @@ import de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
@@ -101,12 +99,6 @@ public class CoreSwitch<T> extends Switch<T> {
 			case CorePackage.BEHAVIORAL_ELEMENT: {
 				BehavioralElement behavioralElement = (BehavioralElement)theEObject;
 				T result = caseBehavioralElement(behavioralElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CorePackage.CONSTRAINABLE_ELEMENT: {
-				ConstrainableElement constrainableElement = (ConstrainableElement)theEObject;
-				T result = caseConstrainableElement(constrainableElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -213,21 +205,6 @@ public class CoreSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBehavioralElement(BehavioralElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConstrainableElement(ConstrainableElement object) {
 		return null;
 	}
 

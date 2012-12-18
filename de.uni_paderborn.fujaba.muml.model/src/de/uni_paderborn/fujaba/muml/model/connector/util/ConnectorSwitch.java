@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.connector.util;
 
-import de.uni_paderborn.fujaba.muml.model.connector.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -20,8 +19,8 @@ import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 
 /**
  * <!-- begin-user-doc -->

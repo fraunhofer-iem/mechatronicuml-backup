@@ -603,22 +603,22 @@
             featureName="value" dataValue="Abstract super class for all elements that have a behavior."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
-          element="muml.ecore#//model/core/ConstrainableElement">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ConstrainableElement"
+          element="muml.ecore#//model/constraint/ConstrainableElement">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/ConstrainableElement"
             featureName="name" dataValue="ConstrainableElement"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ConstrainableElement"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/ConstrainableElement"
             featureName="abstract" dataValue="true" oldDataValue="false"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ConstrainableElement"
-          referenceName="eAnnotations" element="muml.ecore#//model/core/ConstrainableElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ConstrainableElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/ConstrainableElement"
+          referenceName="eAnnotations" element="muml.ecore#//model/constraint/ConstrainableElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/ConstrainableElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ConstrainableElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/core/ConstrainableElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ConstrainableElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/ConstrainableElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/constraint/ConstrainableElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/ConstrainableElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ConstrainableElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/ConstrainableElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Abstract super class for all model elements that may carry a constraint."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
@@ -2147,15 +2147,15 @@
         <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/TextualConstraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="This class represents all verifable constraints that can be entered as a string in a predefined&#xD;&#xA;constraint language like, e.g., CTL or TCTL. Therefore, it contains a textual expression&#xD;&#xA;which is used to store the constraint text and the language."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ConstrainableElement"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/core/ConstrainableElement/constraint">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ConstrainableElement/constraint"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/ConstrainableElement"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/constraint/ConstrainableElement/constraint">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/ConstrainableElement/constraint"
             featureName="name" dataValue="constraint"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ConstrainableElement/constraint"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/ConstrainableElement/constraint"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ConstrainableElement/constraint"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/ConstrainableElement/constraint"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ConstrainableElement/constraint"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/ConstrainableElement/constraint"
             featureName="eType" referenceValue="muml.ecore#//model/constraint/Constraint"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/Constraint"
@@ -2165,10 +2165,10 @@
         <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/constrainableElement"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/constrainableElement"
-            featureName="eType" referenceValue="muml.ecore#//model/core/ConstrainableElement"/>
+            featureName="eType" referenceValue="muml.ecore#//model/constraint/ConstrainableElement"/>
         <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/constrainableElement"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/core/ConstrainableElement/constraint"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ConstrainableElement/constraint"
+            featureName="eOpposite" referenceValue="muml.ecore#//model/constraint/ConstrainableElement/constraint"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/ConstrainableElement/constraint"
             featureName="eOpposite" referenceValue="muml.ecore#//model/constraint/Constraint/constrainableElement"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/Constraint/constrainableElement"
@@ -2183,16 +2183,16 @@
         <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/constrainableElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The element this constraint applies to."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ConstrainableElement/constraint"
-          referenceName="eAnnotations" element="muml.ecore#//model/core/ConstrainableElement/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ConstrainableElement/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/ConstrainableElement/constraint"
+          referenceName="eAnnotations" element="muml.ecore#//model/constraint/ConstrainableElement/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/ConstrainableElement/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/core/ConstrainableElement/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/core/ConstrainableElement/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ConstrainableElement/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/ConstrainableElement/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/constraint/ConstrainableElement/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/ConstrainableElement/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/core/ConstrainableElement/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/ConstrainableElement/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The constraint for this element."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/core" referenceName="eClassifiers"
@@ -3161,7 +3161,7 @@
         <changes xsi:type="history:Add" element="muml.ecore#//model/component/Component"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
         <changes xsi:type="history:Add" element="muml.ecore#//model/component/Component"
-            featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/ConstrainableElement"/>
+            featureName="eSuperTypes" referenceValue="muml.ecore#//model/constraint/ConstrainableElement"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/Component"
           referenceName="eAnnotations" element="muml.ecore#//model/component/Component/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
@@ -3229,7 +3229,7 @@
         <changes xsi:type="history:Add" element="muml.ecore#//model/component/Port"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
         <changes xsi:type="history:Add" element="muml.ecore#//model/component/Port"
-            featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/ConstrainableElement"/>
+            featureName="eSuperTypes" referenceValue="muml.ecore#//model/constraint/ConstrainableElement"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/Component"
           referenceName="eStructuralFeatures" element="muml.ecore#//model/component/Component/ports">
@@ -5997,7 +5997,7 @@
         <changes xsi:type="history:Add" element="muml.ecore#//model/protocol/CoordinationProtocol"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
         <changes xsi:type="history:Add" element="muml.ecore#//model/protocol/CoordinationProtocol"
-            featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/ConstrainableElement"/>
+            featureName="eSuperTypes" referenceValue="muml.ecore#//model/constraint/ConstrainableElement"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/AssemblyConnector"
           referenceName="eStructuralFeatures" element="muml.ecore#//model/component/Assembly/coordinationPattern">
@@ -6176,7 +6176,7 @@
         <changes xsi:type="history:Add" element="muml.ecore#//model/protocol/Role"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
         <changes xsi:type="history:Add" element="muml.ecore#//model/protocol/Role"
-            featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/ConstrainableElement"/>
+            featureName="eSuperTypes" referenceValue="muml.ecore#//model/constraint/ConstrainableElement"/>
         <changes xsi:type="history:Add" element="muml.ecore#//model/protocol/Role"
             featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/BehavioralElement"/>
       </changes>
@@ -15248,7 +15248,7 @@
         <changes xsi:type="history:Add" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
             featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/BehavioralElement"/>
         <changes xsi:type="history:Add" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
-            featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/ConstrainableElement"/>
+            featureName="eSuperTypes" referenceValue="muml.ecore#//model/constraint/ConstrainableElement"/>
         <changes xsi:type="history:Add" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
       </changes>
@@ -15257,7 +15257,7 @@
       <changes xsi:type="history:Remove" element="muml.ecore#//model/protocol/Role"
           featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/BehavioralElement"/>
       <changes xsi:type="history:Remove" element="muml.ecore#//model/protocol/Role"
-          featureName="eSuperTypes" referenceValue="muml.ecore#//model/core/ConstrainableElement"/>
+          featureName="eSuperTypes" referenceValue="muml.ecore#//model/constraint/ConstrainableElement"/>
       <changes xsi:type="history:Remove" element="muml.ecore#//model/protocol/Role"
           featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
       <operation name="extractSuperClass2">
@@ -15276,7 +15276,7 @@
         </parameters>
         <parameters name="superSuperClasses">
           <referenceValue element="muml.ecore#//model/core/BehavioralElement"/>
-          <referenceValue element="muml.ecore#//model/core/ConstrainableElement"/>
+          <referenceValue element="muml.ecore#//model/constraint/ConstrainableElement"/>
           <referenceValue element="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
         </parameters>
       </operation>
@@ -17305,5 +17305,7 @@
         referenceName="eStructuralFeatures">
       <element xsi:type="ecore:EAttribute" name="periodUpper" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </changes>
+    <changes xsi:type="history:Move" target="muml.ecore#//model/constraint" referenceName="eClassifiers"
+        element="muml.ecore#//model/constraint/ConstrainableElement" source="muml.ecore#//model/core"/>
   </releases>
 </history:History>

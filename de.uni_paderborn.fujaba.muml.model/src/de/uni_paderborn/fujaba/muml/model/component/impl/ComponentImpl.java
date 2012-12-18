@@ -26,9 +26,9 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -380,7 +380,7 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 		}
 		if (baseClass == ConstrainableElement.class) {
 			switch (derivedFeatureID) {
-				case ComponentPackage.COMPONENT__CONSTRAINT: return de.uni_paderborn.fujaba.muml.model.core.CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
+				case ComponentPackage.COMPONENT__CONSTRAINT: return ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
 				default: return -1;
 			}
 		}
@@ -402,7 +402,7 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 		}
 		if (baseClass == ConstrainableElement.class) {
 			switch (baseFeatureID) {
-				case de.uni_paderborn.fujaba.muml.model.core.CorePackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ComponentPackage.COMPONENT__CONSTRAINT;
+				case ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ComponentPackage.COMPONENT__CONSTRAINT;
 				default: return -1;
 			}
 		}

@@ -20,6 +20,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.impl.ConnectorPackageImpl;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
@@ -76,6 +77,13 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * @generated
 	 */
 	private EClass textualConstraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass constrainableElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,6 +263,24 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getConstrainableElement() {
+		return constrainableElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConstrainableElement_Constraint() {
+		return (EReference)constrainableElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getCorrectness() {
 		return correctnessEEnum;
 	}
@@ -299,6 +325,9 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		textualConstraintEClass = createEClass(TEXTUAL_CONSTRAINT);
 		createEReference(textualConstraintEClass, TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION);
 
+		constrainableElementEClass = createEClass(CONSTRAINABLE_ELEMENT);
+		createEReference(constrainableElementEClass, CONSTRAINABLE_ELEMENT__CONSTRAINT);
+
 		// Create enums
 		correctnessEEnum = createEEnum(CORRECTNESS);
 	}
@@ -328,7 +357,6 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 
 		// Obtain other dependent packages
 		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 
 		// Create type parameters
@@ -346,7 +374,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		initEClass(constraintEClass, Constraint.class, "Constraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConstraint_Correctness(), this.getCorrectness(), "correctness", "Correctness.UNKNOWN", 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConstraint_Background(), ecorePackage.getEBoolean(), "background", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConstraint_ConstrainableElement(), theCorePackage.getConstrainableElement(), theCorePackage.getConstrainableElement_Constraint(), "constrainableElement", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConstraint_ConstrainableElement(), this.getConstrainableElement(), this.getConstrainableElement_Constraint(), "constrainableElement", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(constraintEClass, ecorePackage.getEBoolean(), "isCorrect", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -356,6 +384,9 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 
 		initEClass(textualConstraintEClass, TextualConstraint.class, "TextualConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTextualConstraint_TextualExpression(), theExpressionsPackage.getTextualExpression(), null, "textualExpression", null, 0, 1, TextualConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(constrainableElementEClass, ConstrainableElement.class, "ConstrainableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConstrainableElement_Constraint(), this.getConstraint(), this.getConstraint_ConstrainableElement(), "constraint", null, 0, -1, ConstrainableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(correctnessEEnum, Correctness.class, "Correctness");
