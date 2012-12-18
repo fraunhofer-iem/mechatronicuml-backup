@@ -756,13 +756,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__ACTION = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
+	 * The feature id for the '<em><b>Urgent</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__URGENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 16;
+
+	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 16;
+	int TRANSITION_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
@@ -2224,6 +2233,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getTransition_Action();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isUrgent <em>Urgent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Urgent</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#isUrgent()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EAttribute getTransition_Urgent();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint <em>Clock Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3162,6 +3182,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRANSITION__ACTION = eINSTANCE.getTransition_Action();
+
+		/**
+		 * The meta object literal for the '<em><b>Urgent</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRANSITION__URGENT = eINSTANCE.getTransition_Urgent();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.

@@ -65,6 +65,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getEvents <em>Events</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#isUrgent <em>Urgent</em>}</li>
  * </ul>
  * </p>
  *
@@ -253,6 +254,26 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	 * @ordered
 	 */
 	protected Action action;
+
+	/**
+	 * The default value of the '{@link #isUrgent() <em>Urgent</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUrgent()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean URGENT_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isUrgent() <em>Urgent</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isUrgent()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean urgent = URGENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -811,6 +832,27 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isUrgent() {
+		return urgent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUrgent(boolean newUrgent) {
+		boolean oldUrgent = urgent;
+		urgent = newUrgent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__URGENT, oldUrgent, urgent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -921,6 +963,8 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 				return getEvents();
 			case RealtimestatechartPackage.TRANSITION__ACTION:
 				return getAction();
+			case RealtimestatechartPackage.TRANSITION__URGENT:
+				return isUrgent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -980,6 +1024,9 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 			case RealtimestatechartPackage.TRANSITION__ACTION:
 				setAction((Action)newValue);
 				return;
+			case RealtimestatechartPackage.TRANSITION__URGENT:
+				setUrgent((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1034,6 +1081,9 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 			case RealtimestatechartPackage.TRANSITION__ACTION:
 				setAction((Action)null);
 				return;
+			case RealtimestatechartPackage.TRANSITION__URGENT:
+				setUrgent(URGENT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1078,6 +1128,8 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 				return events != null && !events.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__ACTION:
 				return action != null;
+			case RealtimestatechartPackage.TRANSITION__URGENT:
+				return urgent != URGENT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1142,6 +1194,8 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 		result.append(comment);
 		result.append(", blockable: ");
 		result.append(blockable);
+		result.append(", urgent: ");
+		result.append(urgent);
 		result.append(')');
 		return result.toString();
 	}

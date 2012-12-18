@@ -362,6 +362,7 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/events"/>
           <genFeatures children="true" createChild="true" propertyCategory="Action"
               propertyDescription="" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Transition/action"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Transition/urgent"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/ClockConstraint">
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/ClockConstraint/bound"/>
