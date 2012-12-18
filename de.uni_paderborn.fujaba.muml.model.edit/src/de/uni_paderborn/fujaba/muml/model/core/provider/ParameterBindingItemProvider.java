@@ -27,15 +27,9 @@ import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.common.LiteralExpression;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
-import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
-import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
