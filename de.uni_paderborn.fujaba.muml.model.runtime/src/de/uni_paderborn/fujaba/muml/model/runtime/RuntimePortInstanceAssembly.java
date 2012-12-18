@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime;
 
-import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,5 +18,5 @@ import de.uni_paderborn.fujaba.muml.model.instance.AssemblyInstance;
  * @model
  * @generated
  */
-public interface RuntimePortInstanceAssembly extends AssemblyInstance, RuntimeAssemblyInstance {
+public interface RuntimePortInstanceAssembly extends AssemblyConnectorInstance, RuntimeAssemblyInstance {
 } // RuntimePortInstanceAssembly

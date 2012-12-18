@@ -22,10 +22,10 @@ import org.storydriven.core.impl.ExtendableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
-import de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
+import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,7 +83,7 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AttributeBinding> attributeBindings;
+	protected EList<VariableBinding> attributeBindings;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -265,9 +265,9 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AttributeBinding> getAttributeBindings() {
+	public EList<VariableBinding> getAttributeBindings() {
 		if (attributeBindings == null) {
-			attributeBindings = new EObjectContainmentEList<AttributeBinding>(AttributeBinding.class, this, RuntimePackage.REALTIME_STATECHART_INSTANCE__ATTRIBUTE_BINDINGS);
+			attributeBindings = new EObjectContainmentEList<VariableBinding>(VariableBinding.class, this, RuntimePackage.REALTIME_STATECHART_INSTANCE__ATTRIBUTE_BINDINGS);
 		}
 		return attributeBindings;
 	}
@@ -368,7 +368,7 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 				return;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ATTRIBUTE_BINDINGS:
 				getAttributeBindings().clear();
-				getAttributeBindings().addAll((Collection<? extends AttributeBinding>)newValue);
+				getAttributeBindings().addAll((Collection<? extends VariableBinding>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

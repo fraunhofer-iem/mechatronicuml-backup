@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.runtime;
 
 import org.eclipse.emf.common.util.EList;
 
-import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
+import de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector;
 
 /**
  * <!-- begin-user-doc -->

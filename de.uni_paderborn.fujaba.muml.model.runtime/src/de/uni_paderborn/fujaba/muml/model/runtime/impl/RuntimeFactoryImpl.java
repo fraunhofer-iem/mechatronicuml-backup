@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly;
 import de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance;
@@ -27,6 +26,7 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstanceAssembly;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly;
 import de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
 /**
  * <!-- begin-user-doc -->
@@ -78,7 +78,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE: return createRealtimeStatechartInstance();
 			case RuntimePackage.RUNTIME_MESSAGE: return createRuntimeMessage();
 			case RuntimePackage.RUNTIME_PARAMETER: return createRuntimeParameter();
-			case RuntimePackage.ATTRIBUTE_BINDING: return createAttributeBinding();
+			case RuntimePackage.VARIABLE_BINDING: return createVariableBinding();
 			case RuntimePackage.SINGLE_ROLE_INSTANCE: return createSingleRoleInstance();
 			case RuntimePackage.MULTI_ROLE_INSTANCE: return createMultiRoleInstance();
 			case RuntimePackage.RUNTIME_ROLE_ASSEMBLY: return createRuntimeRoleAssembly();
@@ -180,9 +180,9 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttributeBinding createAttributeBinding() {
-		AttributeBindingImpl attributeBinding = new AttributeBindingImpl();
-		return attributeBinding;
+	public VariableBinding createVariableBinding() {
+		VariableBindingImpl variableBinding = new VariableBindingImpl();
+		return variableBinding;
 	}
 
 	/**

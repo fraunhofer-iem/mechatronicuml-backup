@@ -131,7 +131,7 @@ public interface RealtimeStatechartInstance extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Attribute Bindings</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Attribute Bindings</em>' containment reference list isn't clear,
@@ -143,6 +143,6 @@ public interface RealtimeStatechartInstance extends ExtendableElement {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<AttributeBinding> getAttributeBindings();
+	EList<VariableBinding> getAttributeBindings();
 
 } // RealtimeStatechartInstance

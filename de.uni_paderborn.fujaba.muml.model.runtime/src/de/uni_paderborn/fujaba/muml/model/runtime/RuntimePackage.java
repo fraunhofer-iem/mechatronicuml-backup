@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -242,6 +241,24 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_PORT_INSTANCE__COMMENT = InstancePackage.DISCRETE_PORT_INSTANCE__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES = InstancePackage.DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_PORT_INSTANCE__TYPE = InstancePackage.DISCRETE_PORT_INSTANCE__TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Port Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -260,31 +277,13 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE = InstancePackage.DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Connector Instances</b></em>' reference list.
+	 * The feature id for the '<em><b>Port Connector Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_DISCRETE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES = InstancePackage.DISCRETE_PORT_INSTANCE__INCOMING_CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES = InstancePackage.DISCRETE_PORT_INSTANCE__OUTGOING_CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES = InstancePackage.DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = InstancePackage.DISCRETE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -358,16 +357,6 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 */
 	int MESSAGE_BUFFER = 3;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.AttributeBindingImpl <em>Attribute Binding</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.AttributeBindingImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getAttributeBinding()
-	 * @generated
-	 */
-	int ATTRIBUTE_BINDING = 7;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.SingleRoleInstanceImpl <em>Single Role Instance</em>}' class.
@@ -792,13 +781,23 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_PARAMETER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.VariableBindingImpl <em>Variable Binding</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.VariableBindingImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getVariableBinding()
+	 * @generated
+	 */
+	int VARIABLE_BINDING = 7;
+
+	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_BINDING__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int VARIABLE_BINDING__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -807,16 +806,16 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_BINDING__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int VARIABLE_BINDING__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * The feature id for the '<em><b>Variable</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_BINDING__ATTRIBUTE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int VARIABLE_BINDING__VARIABLE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -825,16 +824,16 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_BINDING__VALUE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int VARIABLE_BINDING__VALUE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Attribute Binding</em>' class.
+	 * The number of structural features of the '<em>Variable Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_BINDING_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int VARIABLE_BINDING_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1095,7 +1094,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE_ASSEMBLY__ANNOTATION = InstancePackage.ASSEMBLY_INSTANCE__ANNOTATION;
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__ANNOTATION = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1104,7 +1103,34 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE_ASSEMBLY__EXTENSION = InstancePackage.ASSEMBLY_INSTANCE__EXTENSION;
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__EXTENSION = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__COMMENT = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__TYPE = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Connector Endpoint Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__CONNECTOR_ENDPOINT_INSTANCES = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -1113,7 +1139,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE_ASSEMBLY__SOURCE = InstancePackage.ASSEMBLY_INSTANCE__SOURCE;
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__SOURCE = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -1122,25 +1148,25 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE_ASSEMBLY__TARGET = InstancePackage.ASSEMBLY_INSTANCE__TARGET;
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__TARGET = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__TARGET;
 
 	/**
-	 * The feature id for the '<em><b>Connector Type</b></em>' reference.
+	 * The feature id for the '<em><b>Port Connector Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE_ASSEMBLY__CONNECTOR_TYPE = InstancePackage.ASSEMBLY_INSTANCE__CONNECTOR_TYPE;
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__PORT_CONNECTOR_TYPE = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Assembly Type</b></em>' reference.
+	 * The feature id for the '<em><b>Assembly Connector Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE_ASSEMBLY__ASSEMBLY_TYPE = InstancePackage.ASSEMBLY_INSTANCE__ASSEMBLY_TYPE;
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__ASSEMBLY_CONNECTOR_TYPE = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__ASSEMBLY_CONNECTOR_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Transient Messages</b></em>' containment reference list.
@@ -1149,7 +1175,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE_ASSEMBLY__TRANSIENT_MESSAGES = InstancePackage.ASSEMBLY_INSTANCE_FEATURE_COUNT + 0;
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY__TRANSIENT_MESSAGES = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Port Instance Assembly</em>' class.
@@ -1158,7 +1184,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PORT_INSTANCE_ASSEMBLY_FEATURE_COUNT = InstancePackage.ASSEMBLY_INSTANCE_FEATURE_COUNT + 1;
+	int RUNTIME_PORT_INSTANCE_ASSEMBLY_FEATURE_COUNT = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Receiver</b></em>' reference.
@@ -1421,36 +1447,36 @@ public interface RuntimePackage extends EPackage {
 	EAttribute getRuntimeParameter_Value();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding <em>Attribute Binding</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding <em>Variable Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Attribute Binding</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding
+	 * @return the meta object for class '<em>Variable Binding</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding
 	 * @generated
 	 */
-	EClass getAttributeBinding();
+	EClass getVariableBinding();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding#getAttribute <em>Attribute</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding#getVariable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attribute</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding#getAttribute()
-	 * @see #getAttributeBinding()
+	 * @return the meta object for the reference '<em>Variable</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding#getVariable()
+	 * @see #getVariableBinding()
 	 * @generated
 	 */
-	EReference getAttributeBinding_Attribute();
+	EReference getVariableBinding_Variable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.AttributeBinding#getValue()
-	 * @see #getAttributeBinding()
+	 * @see de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding#getValue()
+	 * @see #getVariableBinding()
 	 * @generated
 	 */
-	EAttribute getAttributeBinding_Value();
+	EAttribute getVariableBinding_Value();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement <em>Behavioral Element</em>}'.
@@ -1840,22 +1866,22 @@ public interface RuntimePackage extends EPackage {
 		EAttribute RUNTIME_PARAMETER__VALUE = eINSTANCE.getRuntimeParameter_Value();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.AttributeBindingImpl <em>Attribute Binding</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.VariableBindingImpl <em>Variable Binding</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.AttributeBindingImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getAttributeBinding()
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.VariableBindingImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimePackageImpl#getVariableBinding()
 		 * @generated
 		 */
-		EClass ATTRIBUTE_BINDING = eINSTANCE.getAttributeBinding();
+		EClass VARIABLE_BINDING = eINSTANCE.getVariableBinding();
 
 		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE_BINDING__ATTRIBUTE = eINSTANCE.getAttributeBinding_Attribute();
+		EReference VARIABLE_BINDING__VARIABLE = eINSTANCE.getVariableBinding_Variable();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -1863,7 +1889,7 @@ public interface RuntimePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ATTRIBUTE_BINDING__VALUE = eINSTANCE.getAttributeBinding_Value();
+		EAttribute VARIABLE_BINDING__VALUE = eINSTANCE.getVariableBinding_Value();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeBehavioralElementImpl <em>Behavioral Element</em>}' class.

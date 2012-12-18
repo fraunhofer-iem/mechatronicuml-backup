@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector;
+import de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector;
 import de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly;

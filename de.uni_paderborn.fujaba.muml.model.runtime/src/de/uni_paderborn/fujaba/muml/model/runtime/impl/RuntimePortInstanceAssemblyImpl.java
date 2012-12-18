@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyInstanceImpl;
+import de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyConnectorInstanceImpl;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
@@ -34,7 +34,7 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstanceAssembly;
  *
  * @generated
  */
-public class RuntimePortInstanceAssemblyImpl extends AssemblyInstanceImpl implements RuntimePortInstanceAssembly {
+public class RuntimePortInstanceAssemblyImpl extends AssemblyConnectorInstanceImpl implements RuntimePortInstanceAssembly {
 	/**
 	 * The cached value of the '{@link #getTransientMessages() <em>Transient Messages</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

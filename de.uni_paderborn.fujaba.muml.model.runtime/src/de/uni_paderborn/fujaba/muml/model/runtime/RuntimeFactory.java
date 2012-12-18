@@ -80,13 +80,13 @@ public interface RuntimeFactory extends EFactory {
 	RuntimeParameter createRuntimeParameter();
 
 	/**
-	 * Returns a new object of class '<em>Attribute Binding</em>'.
+	 * Returns a new object of class '<em>Variable Binding</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Attribute Binding</em>'.
+	 * @return a new object of class '<em>Variable Binding</em>'.
 	 * @generated
 	 */
-	AttributeBinding createAttributeBinding();
+	VariableBinding createVariableBinding();
 
 	/**
 	 * Returns a new object of class '<em>Single Role Instance</em>'.
