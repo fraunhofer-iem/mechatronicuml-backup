@@ -268,6 +268,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT__COMMENT = ComponentPackage.DISCRETE_PORT__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__CONNECTORS = ComponentPackage.DISCRETE_PORT__CONNECTORS;
+
+	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -275,33 +284,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_PORT__CONSTRAINT = ComponentPackage.DISCRETE_PORT__CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_PORT__CARDINALITY = ComponentPackage.DISCRETE_PORT__CARDINALITY;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_PORT__INCOMING_CONNECTORS = ComponentPackage.DISCRETE_PORT__INCOMING_CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_PORT__OUTGOING_CONNECTORS = ComponentPackage.DISCRETE_PORT__OUTGOING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -313,22 +295,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT__COMPONENT = ComponentPackage.DISCRETE_PORT__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__CONNECTORS = ComponentPackage.DISCRETE_PORT__CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Is Multi Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_PORT__IS_MULTI_PORT = ComponentPackage.DISCRETE_PORT__IS_MULTI_PORT;
+	int RECONFIGURATION_PORT__PORT_CONNECTORS = ComponentPackage.DISCRETE_PORT__PORT_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -376,6 +349,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__CARDINALITY = ComponentPackage.DISCRETE_PORT__CARDINALITY;
+
+	/**
 	 * The feature id for the '<em><b>Refines</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -419,6 +401,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER = ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER;
+
+	/**
+	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__MULTI_PORT = ComponentPackage.DISCRETE_PORT__MULTI_PORT;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -875,6 +866,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__COMMENT = RECONFIGURATION_PORT__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__CONNECTORS = RECONFIGURATION_PORT__CONNECTORS;
+
+	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -882,33 +882,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_MESSAGE_PORT__CONSTRAINT = RECONFIGURATION_PORT__CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT__CARDINALITY = RECONFIGURATION_PORT__CARDINALITY;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT__INCOMING_CONNECTORS = RECONFIGURATION_PORT__INCOMING_CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT__OUTGOING_CONNECTORS = RECONFIGURATION_PORT__OUTGOING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -920,22 +893,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__COMPONENT = RECONFIGURATION_PORT__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT__CONNECTORS = RECONFIGURATION_PORT__CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Is Multi Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT__IS_MULTI_PORT = RECONFIGURATION_PORT__IS_MULTI_PORT;
+	int RECONFIGURATION_MESSAGE_PORT__PORT_CONNECTORS = RECONFIGURATION_PORT__PORT_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -983,6 +947,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__CARDINALITY = RECONFIGURATION_PORT__CARDINALITY;
+
+	/**
 	 * The feature id for the '<em><b>Refines</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1026,6 +999,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_MESSAGE_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER;
+
+	/**
+	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__MULTI_PORT = RECONFIGURATION_PORT__MULTI_PORT;
 
 	/**
 	 * The number of structural features of the '<em>Message Port</em>' class.
@@ -1083,6 +1065,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__COMMENT = RECONFIGURATION_PORT__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__CONNECTORS = RECONFIGURATION_PORT__CONNECTORS;
+
+	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1090,33 +1081,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_EXECUTION_PORT__CONSTRAINT = RECONFIGURATION_PORT__CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_EXECUTION_PORT__CARDINALITY = RECONFIGURATION_PORT__CARDINALITY;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_EXECUTION_PORT__INCOMING_CONNECTORS = RECONFIGURATION_PORT__INCOMING_CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_EXECUTION_PORT__OUTGOING_CONNECTORS = RECONFIGURATION_PORT__OUTGOING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -1128,22 +1092,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__COMPONENT = RECONFIGURATION_PORT__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT__CONNECTORS = RECONFIGURATION_PORT__CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Is Multi Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_EXECUTION_PORT__IS_MULTI_PORT = RECONFIGURATION_PORT__IS_MULTI_PORT;
+	int RECONFIGURATION_EXECUTION_PORT__PORT_CONNECTORS = RECONFIGURATION_PORT__PORT_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -1191,6 +1146,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__CARDINALITY = RECONFIGURATION_PORT__CARDINALITY;
+
+	/**
 	 * The feature id for the '<em><b>Refines</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1234,6 +1198,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER;
+
+	/**
+	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__MULTI_PORT = RECONFIGURATION_PORT__MULTI_PORT;
 
 	/**
 	 * The number of structural features of the '<em>Execution Port</em>' class.
@@ -1598,6 +1571,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__COMMENT = RECONFIGURATION_EXECUTION_PORT__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__CONNECTORS = RECONFIGURATION_EXECUTION_PORT__CONNECTORS;
+
+	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1605,33 +1587,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__CONSTRAINT = RECONFIGURATION_EXECUTION_PORT__CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__CARDINALITY = RECONFIGURATION_EXECUTION_PORT__CARDINALITY;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__INCOMING_CONNECTORS = RECONFIGURATION_EXECUTION_PORT__INCOMING_CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__OUTGOING_CONNECTORS = RECONFIGURATION_EXECUTION_PORT__OUTGOING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -1643,22 +1598,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__COMPONENT = RECONFIGURATION_EXECUTION_PORT__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__CONNECTORS = RECONFIGURATION_EXECUTION_PORT__CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Is Multi Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_MULTI_PORT = RECONFIGURATION_EXECUTION_PORT__IS_MULTI_PORT;
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__PORT_CONNECTORS = RECONFIGURATION_EXECUTION_PORT__PORT_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -1706,6 +1652,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__CARDINALITY = RECONFIGURATION_EXECUTION_PORT__CARDINALITY;
+
+	/**
 	 * The feature id for the '<em><b>Refines</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1749,6 +1704,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER;
+
+	/**
+	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__MULTI_PORT = RECONFIGURATION_EXECUTION_PORT__MULTI_PORT;
 
 	/**
 	 * The feature id for the '<em><b>Specification Entries</b></em>' reference list.
@@ -1805,6 +1769,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__COMMENT = RECONFIGURATION_EXECUTION_PORT__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__CONNECTORS = RECONFIGURATION_EXECUTION_PORT__CONNECTORS;
+
+	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1812,33 +1785,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__CONSTRAINT = RECONFIGURATION_EXECUTION_PORT__CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__CARDINALITY = RECONFIGURATION_EXECUTION_PORT__CARDINALITY;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__INCOMING_CONNECTORS = RECONFIGURATION_EXECUTION_PORT__INCOMING_CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__OUTGOING_CONNECTORS = RECONFIGURATION_EXECUTION_PORT__OUTGOING_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -1850,22 +1796,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__COMPONENT = RECONFIGURATION_EXECUTION_PORT__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__CONNECTORS = RECONFIGURATION_EXECUTION_PORT__CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Is Multi Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_MULTI_PORT = RECONFIGURATION_EXECUTION_PORT__IS_MULTI_PORT;
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__PORT_CONNECTORS = RECONFIGURATION_EXECUTION_PORT__PORT_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -1913,6 +1850,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__CARDINALITY = RECONFIGURATION_EXECUTION_PORT__CARDINALITY;
+
+	/**
 	 * The feature id for the '<em><b>Refines</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1956,6 +1902,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER;
+
+	/**
+	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__MULTI_PORT = RECONFIGURATION_EXECUTION_PORT__MULTI_PORT;
 
 	/**
 	 * The number of structural features of the '<em>Internal Reconfiguration Execution Port</em>' class.
