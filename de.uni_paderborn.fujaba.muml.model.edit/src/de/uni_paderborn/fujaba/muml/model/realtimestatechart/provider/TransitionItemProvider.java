@@ -886,16 +886,6 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION,
 				 RealtimestatechartFactory.eINSTANCE.createSynchronization()));
 
@@ -913,11 +903,6 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__RELATIVE_DEADLINE,
 				 RealtimestatechartFactory.eINSTANCE.createRelativeDeadline()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -948,41 +933,6 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
 				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.TRANSITION__GUARD,
-				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

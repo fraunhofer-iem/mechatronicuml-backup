@@ -193,16 +193,6 @@ public class CoordinationProtocolItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
 				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
 

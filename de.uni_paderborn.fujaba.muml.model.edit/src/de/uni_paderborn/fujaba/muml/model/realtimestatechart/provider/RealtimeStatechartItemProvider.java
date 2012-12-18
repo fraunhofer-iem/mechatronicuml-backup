@@ -407,16 +407,6 @@ public class RealtimeStatechartItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__OPERATIONS,
 				 CoreFactory.eINSTANCE.createOperation()));
 

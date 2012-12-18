@@ -250,16 +250,6 @@ public class HardwareNodeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(DeploymentPackage.Literals.HARDWARE_NODE__HARDWARE_PORTS,
 				 DeploymentFactory.eINSTANCE.createHardwarePort()));
 	}

@@ -121,29 +121,6 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ActivityCallExpressionItemProvider activityCallExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.ActivityCallExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createActivityCallExpressionAdapter() {
-		if (activityCallExpressionItemProvider == null) {
-			activityCallExpressionItemProvider = new ActivityCallExpressionItemProvider(this);
-		}
-
-		return activityCallExpressionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.Variable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -359,7 +336,6 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	public void dispose() {
 		if (naturalNumberItemProvider != null) naturalNumberItemProvider.dispose();
 		if (cardinalityItemProvider != null) cardinalityItemProvider.dispose();
-		if (activityCallExpressionItemProvider != null) activityCallExpressionItemProvider.dispose();
 		if (variableItemProvider != null) variableItemProvider.dispose();
 		if (operationItemProvider != null) operationItemProvider.dispose();
 		if (parameterItemProvider != null) parameterItemProvider.dispose();

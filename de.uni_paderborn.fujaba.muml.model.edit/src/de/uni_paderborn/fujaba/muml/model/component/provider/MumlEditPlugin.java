@@ -49,7 +49,6 @@ public final class MumlEditPlugin extends EMFPlugin {
 		     CoreEditPlugin.INSTANCE,
 		     EcoreEditPlugin.INSTANCE,
 		     ModelinstanceEditPlugin.INSTANCE,
-		     StorydiagramsEditPlugin.INSTANCE,
 		   });
 	}
 

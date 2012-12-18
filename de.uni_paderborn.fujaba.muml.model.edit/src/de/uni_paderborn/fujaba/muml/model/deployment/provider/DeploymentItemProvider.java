@@ -212,16 +212,6 @@ public class DeploymentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(DeploymentPackage.Literals.DEPLOYMENT__COMMUNICATION_LINKS,
 				 DeploymentFactory.eINSTANCE.createCommunicationLink()));
 

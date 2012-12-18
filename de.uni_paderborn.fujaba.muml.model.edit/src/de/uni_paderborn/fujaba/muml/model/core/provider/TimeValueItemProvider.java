@@ -209,16 +209,6 @@ public class TimeValueItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(CorePackage.Literals.TIME_VALUE__VALUE,
 				 CoreFactory.eINSTANCE.createNaturalNumber()));
 	}

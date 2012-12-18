@@ -216,21 +216,6 @@ public class SynchronizationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
-				 CoreFactory.eINSTANCE.createActivityCallExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
@@ -258,41 +243,6 @@ public class SynchronizationItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
-				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
-				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
-				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 	}
 
 	/**

@@ -263,21 +263,6 @@ public class OperationItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 CoreFactory.eINSTANCE.createActivityCallExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
@@ -305,41 +290,6 @@ public class OperationItemProvider
 			(createChildParameter
 				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
 				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.OPERATION__IMPLEMENTATIONS,
-				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

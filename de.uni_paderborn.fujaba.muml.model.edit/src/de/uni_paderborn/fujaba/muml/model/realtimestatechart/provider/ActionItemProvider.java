@@ -186,21 +186,6 @@ public class ActionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
-				 CoreFactory.eINSTANCE.createActivityCallExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
@@ -228,41 +213,6 @@ public class ActionItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
 				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
-				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
-				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
-				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
-				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
-				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS,
-				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 	}
 
 	/**

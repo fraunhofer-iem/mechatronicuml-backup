@@ -185,16 +185,6 @@ public class MessageTypeRepositoryItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(MsgtypePackage.Literals.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES,
 				 MsgtypeFactory.eINSTANCE.createMessageType()));
 	}

@@ -263,16 +263,6 @@ public class ComponentInstanceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(InstancePackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES,
 				 InstanceFactory.eINSTANCE.createContinuousPortInstance()));
 
