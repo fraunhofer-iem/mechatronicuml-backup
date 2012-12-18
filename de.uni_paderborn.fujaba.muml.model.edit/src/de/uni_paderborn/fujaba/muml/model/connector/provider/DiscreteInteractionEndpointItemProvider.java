@@ -32,6 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.provider.BehavioralElementItemProvider;
 
@@ -71,35 +72,12 @@ public class DiscreteInteractionEndpointItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addConstraintPropertyDescriptor(object);
 			addSenderMessageTypesPropertyDescriptor(object);
 			addReceiverMessageTypesPropertyDescriptor(object);
 			addAdaptationBehaviorPropertyDescriptor(object);
 			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Constraint feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConstraintPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConstrainableElement_constraint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
-				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ConstraintPropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -226,7 +204,7 @@ public class DiscreteInteractionEndpointItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
 			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
-			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
+			childrenFeatures.add(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 			childrenFeatures.add(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY);
 		}
 		return childrenFeatures;
@@ -312,7 +290,7 @@ public class DiscreteInteractionEndpointItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
 				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
 
 		newChildDescriptors.add

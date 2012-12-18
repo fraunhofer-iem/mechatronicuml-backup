@@ -30,9 +30,8 @@ import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.provider.ConnectorEndpointItemProvider;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.model.core.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.Port} object.
@@ -69,33 +68,10 @@ public class PortItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addConstraintPropertyDescriptor(object);
 			addComponentPropertyDescriptor(object);
 			addPortConnectorsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Constraint feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConstraintPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConstrainableElement_constraint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
-				 CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ConstraintPropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -200,7 +176,7 @@ public class PortItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
+			childrenFeatures.add(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 		}
 		return childrenFeatures;
 	}
@@ -275,7 +251,7 @@ public class PortItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
 				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
 	}
 

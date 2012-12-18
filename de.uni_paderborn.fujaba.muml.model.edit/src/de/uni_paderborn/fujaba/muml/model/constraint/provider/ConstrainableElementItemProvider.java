@@ -4,45 +4,42 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.protocol.provider;
+package de.uni_paderborn.fujaba.muml.model.constraint.provider;
 
+
+import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.provider.NamedElementItemProvider;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
-
-import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
-import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolFactory;
-import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CoordinationProtocolItemProvider
-	extends NamedElementItemProvider
+public class ConstrainableElementItemProvider
+	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -55,7 +52,7 @@ public class CoordinationProtocolItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocolItemProvider(AdapterFactory adapterFactory) {
+	public ConstrainableElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -70,31 +67,8 @@ public class CoordinationProtocolItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Comment feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -110,9 +84,6 @@ public class CoordinationProtocolItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
-			childrenFeatures.add(ProtocolPackage.Literals.COORDINATION_PROTOCOL__ROLES);
-			childrenFeatures.add(ProtocolPackage.Literals.COORDINATION_PROTOCOL__ROLE_CONNECTOR);
-			childrenFeatures.add(ProtocolPackage.Literals.COORDINATION_PROTOCOL__COORDINATION_PROTOCOL);
 		}
 		return childrenFeatures;
 	}
@@ -131,17 +102,6 @@ public class CoordinationProtocolItemProvider
 	}
 
 	/**
-	 * This returns CoordinationProtocol.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CoordinationProtocol"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -149,10 +109,7 @@ public class CoordinationProtocolItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CoordinationProtocol)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_CoordinationProtocol_type") :
-			getString("_UI_CoordinationProtocol_type") + " " + label;
+		return getString("_UI_ConstrainableElement_type");
 	}
 
 	/**
@@ -166,14 +123,8 @@ public class CoordinationProtocolItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(CoordinationProtocol.class)) {
-			case ProtocolPackage.COORDINATION_PROTOCOL__COMMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ProtocolPackage.COORDINATION_PROTOCOL__CONSTRAINT:
-			case ProtocolPackage.COORDINATION_PROTOCOL__ROLES:
-			case ProtocolPackage.COORDINATION_PROTOCOL__ROLE_CONNECTOR:
-			case ProtocolPackage.COORDINATION_PROTOCOL__COORDINATION_PROTOCOL:
+		switch (notification.getFeatureID(ConstrainableElement.class)) {
+			case ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -193,33 +144,8 @@ public class CoordinationProtocolItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
 				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ProtocolPackage.Literals.COORDINATION_PROTOCOL__ROLES,
-				 ProtocolFactory.eINSTANCE.createRole()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ProtocolPackage.Literals.COORDINATION_PROTOCOL__ROLE_CONNECTOR,
-				 ProtocolFactory.eINSTANCE.createRoleConnector()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ProtocolPackage.Literals.COORDINATION_PROTOCOL__COORDINATION_PROTOCOL,
-				 ProtocolFactory.eINSTANCE.createCoordinationProtocol()));
 	}
 
 	/**

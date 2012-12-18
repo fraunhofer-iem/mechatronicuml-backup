@@ -30,7 +30,7 @@ import org.storydriven.storydiagrams.calls.CallsFactory;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.provider.BehavioralElementItemProvider;
 import de.uni_paderborn.fujaba.muml.model.protocol.DiscreteInteractionEndpoint;
 
@@ -92,7 +92,7 @@ public class DiscreteInteractionEndpointItemProvider
 				 getResourceLocator(),
 				 getString("_UI_ConstrainableElement_constraint_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
-				 CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				 ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
 				 true,
 				 false,
 				 true,
@@ -223,7 +223,7 @@ public class DiscreteInteractionEndpointItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
+			childrenFeatures.add(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 			childrenFeatures.add(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
 			childrenFeatures.add(org.storydriven.core.CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
 		}
@@ -294,7 +294,7 @@ public class DiscreteInteractionEndpointItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
 				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
 
 		newChildDescriptors.add

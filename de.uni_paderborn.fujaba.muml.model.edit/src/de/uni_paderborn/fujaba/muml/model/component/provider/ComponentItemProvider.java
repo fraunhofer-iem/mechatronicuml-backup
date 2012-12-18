@@ -36,6 +36,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentFactory;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
+import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.Component} object.
@@ -73,7 +74,6 @@ public class ComponentItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
-			addConstraintPropertyDescriptor(object);
 			addPortsPropertyDescriptor(object);
 			addReferencingComponentPartsPropertyDescriptor(object);
 			addComponentTypePropertyDescriptor(object);
@@ -100,28 +100,6 @@ public class ComponentItemProvider
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Constraint feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConstraintPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConstrainableElement_constraint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
-				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_ConstraintPropertyCategory"),
 				 null));
 	}
 
@@ -228,7 +206,7 @@ public class ComponentItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
+			childrenFeatures.add(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 			childrenFeatures.add(ComponentPackage.Literals.COMPONENT__PORTS);
 		}
 		return childrenFeatures;
@@ -308,7 +286,7 @@ public class ComponentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
 				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
 
 		newChildDescriptors.add
