@@ -235,7 +235,7 @@ public class HybridPortItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentPackage.Literals.HYBRID_PORT__SAMPLING_INTERVAL,
-				 CoreFactory.eINSTANCE.createNaturalNumber()));
+				 CoreFactory.eINSTANCE.createTimeValue()));
 	}
 
 }
