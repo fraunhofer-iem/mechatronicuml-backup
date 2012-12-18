@@ -99,6 +99,7 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 			addBlockablePropertyDescriptor(object);
 			addGuardPropertyDescriptor(object);
 			addActionPropertyDescriptor(object);
+			addUrgentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -743,6 +744,28 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 	}
 
 	/**
+	 * This adds a property descriptor for the Urgent feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUrgentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_urgent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_urgent_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__URGENT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -833,6 +856,7 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 			case RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT:
 			case RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT:
 			case RealtimestatechartPackage.TRANSITION__BLOCKABLE:
+			case RealtimestatechartPackage.TRANSITION__URGENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
