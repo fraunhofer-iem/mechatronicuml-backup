@@ -1,7 +1,6 @@
 package de.uni_paderborn.fujaba.muml.common.edit.parts;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;

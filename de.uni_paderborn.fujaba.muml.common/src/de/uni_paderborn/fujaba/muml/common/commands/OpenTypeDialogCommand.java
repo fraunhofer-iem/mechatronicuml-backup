@@ -36,7 +36,6 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
-import org.storydriven.core.CorePackage;
 import org.storydriven.core.ExtendableElement;
 
 import de.fujaba.modelinstance.ModelElementCategory;

@@ -11,7 +11,6 @@ import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.model.protocol.Role;
 
 public class RoleBehavior extends AbstractPortBehavior {
