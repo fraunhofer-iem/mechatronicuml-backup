@@ -11,6 +11,7 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelector;
 
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -44,7 +45,7 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	 * @generated
 	 * @ordered
 	 */
-	protected AttributeExpression attribute;
+	protected VariableExpression attribute;
 
 	/**
 	 * The cached value of the '{@link #getPosition() <em>Position</em>}' containment reference.
@@ -80,7 +81,7 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttributeExpression getAttribute() {
+	public VariableExpression getAttribute() {
 		return attribute;
 	}
 
@@ -89,8 +90,8 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAttribute(AttributeExpression newAttribute, NotificationChain msgs) {
-		AttributeExpression oldAttribute = attribute;
+	public NotificationChain basicSetAttribute(VariableExpression newAttribute, NotificationChain msgs) {
+		VariableExpression oldAttribute = attribute;
 		attribute = newAttribute;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE, oldAttribute, newAttribute);
@@ -104,7 +105,7 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAttribute(AttributeExpression newAttribute) {
+	public void setAttribute(VariableExpression newAttribute) {
 		if (newAttribute != attribute) {
 			NotificationChain msgs = null;
 			if (attribute != null)
@@ -202,7 +203,7 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE:
-				setAttribute((AttributeExpression)newValue);
+				setAttribute((VariableExpression)newValue);
 				return;
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				setPosition((PositionSelector)newValue);
@@ -220,7 +221,7 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE:
-				setAttribute((AttributeExpression)null);
+				setAttribute((VariableExpression)null);
 				return;
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				setPosition((PositionSelector)null);

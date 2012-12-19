@@ -153,12 +153,12 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ActionLanguagePackage.ATTRIBUTE_EXPRESSION: {
-				AttributeExpression attributeExpression = (AttributeExpression)theEObject;
-				T result = caseAttributeExpression(attributeExpression);
-				if (result == null) result = caseExpression(attributeExpression);
-				if (result == null) result = caseCommentableElement(attributeExpression);
-				if (result == null) result = caseExtendableElement(attributeExpression);
+			case ActionLanguagePackage.VARIABLE_EXPRESSION: {
+				VariableExpression variableExpression = (VariableExpression)theEObject;
+				T result = caseVariableExpression(variableExpression);
+				if (result == null) result = caseExpression(variableExpression);
+				if (result == null) result = caseCommentableElement(variableExpression);
+				if (result == null) result = caseExtendableElement(variableExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -317,17 +317,17 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Attribute Expression</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Variable Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Attribute Expression</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Variable Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAttributeExpression(AttributeExpression object) {
+	public T caseVariableExpression(VariableExpression object) {
 		return null;
 	}
 

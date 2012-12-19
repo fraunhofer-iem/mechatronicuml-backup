@@ -35,12 +35,12 @@ public interface DiscreteInteractionEndpointReference extends Expression {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attribute</em>' containment reference.
-	 * @see #setAttribute(AttributeExpression)
+	 * @see #setAttribute(VariableExpression)
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getDiscreteInteractionEndpointReference_Attribute()
 	 * @model containment="true"
 	 * @generated
 	 */
-	AttributeExpression getAttribute();
+	VariableExpression getAttribute();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference#getAttribute <em>Attribute</em>}' containment reference.
@@ -50,7 +50,7 @@ public interface DiscreteInteractionEndpointReference extends Expression {
 	 * @see #getAttribute()
 	 * @generated
 	 */
-	void setAttribute(AttributeExpression value);
+	void setAttribute(VariableExpression value);
 
 	/**
 	 * Returns the value of the '<em><b>Position</b></em>' containment reference.

@@ -213,26 +213,26 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AttributeExpressionItemProvider attributeExpressionItemProvider;
+	protected VariableExpressionItemProvider variableExpressionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAttributeExpressionAdapter() {
-		if (attributeExpressionItemProvider == null) {
-			attributeExpressionItemProvider = new AttributeExpressionItemProvider(this);
+	public Adapter createVariableExpressionAdapter() {
+		if (variableExpressionItemProvider == null) {
+			variableExpressionItemProvider = new VariableExpressionItemProvider(this);
 		}
 
-		return attributeExpressionItemProvider;
+		return variableExpressionItemProvider;
 	}
 
 	/**
@@ -455,7 +455,7 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 		if (assignmentItemProvider != null) assignmentItemProvider.dispose();
 		if (forLoopItemProvider != null) forLoopItemProvider.dispose();
 		if (ifStatementItemProvider != null) ifStatementItemProvider.dispose();
-		if (attributeExpressionItemProvider != null) attributeExpressionItemProvider.dispose();
+		if (variableExpressionItemProvider != null) variableExpressionItemProvider.dispose();
 		if (operationCallItemProvider != null) operationCallItemProvider.dispose();
 		if (returnStatementItemProvider != null) returnStatementItemProvider.dispose();
 		if (triggerMessageExpressionItemProvider != null) triggerMessageExpressionItemProvider.dispose();

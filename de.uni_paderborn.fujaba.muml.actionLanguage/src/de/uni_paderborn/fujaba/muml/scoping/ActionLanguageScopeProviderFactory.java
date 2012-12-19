@@ -7,7 +7,7 @@ import org.eclipse.xtext.scoping.IScopeProvider;
 
 import com.google.inject.Provider;
 
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
+import de.uni_paderborn.fujaba.muml.model.core.Variable;
 
 
 public class ActionLanguageScopeProviderFactory implements Provider<IScopeProvider> {

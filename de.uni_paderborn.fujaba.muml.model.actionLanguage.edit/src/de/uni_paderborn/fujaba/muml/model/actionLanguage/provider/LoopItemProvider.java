@@ -216,7 +216,7 @@ public class LoopItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createAttributeExpression()));
+				 ActionLanguageFactory.eINSTANCE.createVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -242,11 +242,6 @@ public class LoopItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
 				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -277,41 +272,6 @@ public class LoopItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
 				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 	}
 
 	/**

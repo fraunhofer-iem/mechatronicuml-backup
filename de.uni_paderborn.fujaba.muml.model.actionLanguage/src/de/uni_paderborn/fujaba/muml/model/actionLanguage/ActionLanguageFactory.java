@@ -80,13 +80,13 @@ public interface ActionLanguageFactory extends EFactory {
 	IfStatement createIfStatement();
 
 	/**
-	 * Returns a new object of class '<em>Attribute Expression</em>'.
+	 * Returns a new object of class '<em>Variable Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Attribute Expression</em>'.
+	 * @return a new object of class '<em>Variable Expression</em>'.
 	 * @generated
 	 */
-	AttributeExpression createAttributeExpression();
+	VariableExpression createVariableExpression();
 
 	/**
 	 * Returns a new object of class '<em>Operation Call</em>'.

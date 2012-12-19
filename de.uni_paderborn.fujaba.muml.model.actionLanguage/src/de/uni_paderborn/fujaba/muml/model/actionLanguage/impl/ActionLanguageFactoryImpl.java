@@ -77,7 +77,7 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 			case ActionLanguagePackage.ASSIGNMENT: return createAssignment();
 			case ActionLanguagePackage.FOR_LOOP: return createForLoop();
 			case ActionLanguagePackage.IF_STATEMENT: return createIfStatement();
-			case ActionLanguagePackage.ATTRIBUTE_EXPRESSION: return createAttributeExpression();
+			case ActionLanguagePackage.VARIABLE_EXPRESSION: return createVariableExpression();
 			case ActionLanguagePackage.OPERATION_CALL: return createOperationCall();
 			case ActionLanguagePackage.RETURN_STATEMENT: return createReturnStatement();
 			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION: return createTriggerMessageExpression();
@@ -191,9 +191,9 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttributeExpression createAttributeExpression() {
-		AttributeExpressionImpl attributeExpression = new AttributeExpressionImpl();
-		return attributeExpression;
+	public VariableExpression createVariableExpression() {
+		VariableExpressionImpl variableExpression = new VariableExpressionImpl();
+		return variableExpression;
 	}
 
 	/**

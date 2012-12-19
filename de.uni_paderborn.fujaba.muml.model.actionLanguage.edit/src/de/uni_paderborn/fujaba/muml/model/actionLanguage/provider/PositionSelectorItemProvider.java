@@ -191,16 +191,6 @@ public class PositionSelectorItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ActionLanguagePackage.Literals.POSITION_SELECTOR__SUCCESSOR,
 				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
 	}

@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 
 import org.storydriven.core.expressions.Expression;
 
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
+import de.uni_paderborn.fujaba.muml.model.core.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -139,12 +139,12 @@ public interface Assignment extends Expression {
 	 *  The left-hand-side of an assignment must be a single attribute and must not be another expression.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Lhs attribute Expression</em>' containment reference.
-	 * @see #setLhs_attributeExpression(AttributeExpression)
+	 * @see #setLhs_attributeExpression(VariableExpression)
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getAssignment_Lhs_attributeExpression()
 	 * @model containment="true"
 	 * @generated
 	 */
-	AttributeExpression getLhs_attributeExpression();
+	VariableExpression getLhs_attributeExpression();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_attributeExpression <em>Lhs attribute Expression</em>}' containment reference.
@@ -154,6 +154,6 @@ public interface Assignment extends Expression {
 	 * @see #getLhs_attributeExpression()
 	 * @generated
 	 */
-	void setLhs_attributeExpression(AttributeExpression value);
+	void setLhs_attributeExpression(VariableExpression value);
 
 } // Assignment

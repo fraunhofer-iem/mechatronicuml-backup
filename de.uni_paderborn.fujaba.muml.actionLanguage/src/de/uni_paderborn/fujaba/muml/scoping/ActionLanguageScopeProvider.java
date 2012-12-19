@@ -14,7 +14,7 @@ import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
+import de.uni_paderborn.fujaba.muml.model.core.Variable;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
 import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
@@ -33,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
  *
  */
 public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
-	private List<Attribute> attributeList = null;
+	private List<Variable> variableList = null;
 	private List<Operation> operationList = null;
 	private List<MessageType> messageTypeList = null;
 	
@@ -47,10 +47,10 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		// this is called whenever an EAttribute is needed
 		// (regardless if it's an assignment or BinaryLogicExpression etc.)
 		//System.out.println(this);
-		if (attributeList == null) {
+		if (variableList == null) {
 			return IScope.NULLSCOPE;
 		}
-		return Scopes.scopeFor(attributeList);
+		return Scopes.scopeFor(variableList);
 	}
 	
 	IScope scope_Operation(Object object, EReference ref) {
@@ -92,7 +92,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	}*/
 	
 	public void setScopeForEObject(EObject object) {
-		attributeList = null;
+		variableList = null;
 		operationList = null;
 		messageTypeList = null;
 		if (object instanceof StateEvent) {
@@ -148,7 +148,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 			throw new IllegalArgumentException("object is no rtsc: " + object);
 		}
 		RealtimeStatechart rtsc = (RealtimeStatechart) object;
-		attributeList = rtsc.getAllAvailableAttributes();
+		variableList = rtsc.getAllAvailableVariables();
 		operationList = rtsc.getAllAvailableOperations();
 	}
 	

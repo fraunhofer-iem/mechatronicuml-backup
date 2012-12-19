@@ -19,7 +19,8 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator;
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression;
+import de.uni_paderborn.fujaba.muml.model.core.Variable;
 
 
 /**
@@ -97,7 +98,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	 * @generated
 	 * @ordered
 	 */
-	protected AttributeExpression lhs_attributeExpression;
+	protected VariableExpression lhs_attributeExpression;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +209,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AttributeExpression getLhs_attributeExpression() {
+	public VariableExpression getLhs_attributeExpression() {
 		return lhs_attributeExpression;
 	}
 
@@ -217,8 +218,8 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLhs_attributeExpression(AttributeExpression newLhs_attributeExpression, NotificationChain msgs) {
-		AttributeExpression oldLhs_attributeExpression = lhs_attributeExpression;
+	public NotificationChain basicSetLhs_attributeExpression(VariableExpression newLhs_attributeExpression, NotificationChain msgs) {
+		VariableExpression oldLhs_attributeExpression = lhs_attributeExpression;
 		lhs_attributeExpression = newLhs_attributeExpression;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION, oldLhs_attributeExpression, newLhs_attributeExpression);
@@ -232,7 +233,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLhs_attributeExpression(AttributeExpression newLhs_attributeExpression) {
+	public void setLhs_attributeExpression(VariableExpression newLhs_attributeExpression) {
 		if (newLhs_attributeExpression != lhs_attributeExpression) {
 			NotificationChain msgs = null;
 			if (lhs_attributeExpression != null)
@@ -300,7 +301,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 				setIncrementDecrementOperator((IncrementDecrementOperator)newValue);
 				return;
 			case ActionLanguagePackage.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION:
-				setLhs_attributeExpression((AttributeExpression)newValue);
+				setLhs_attributeExpression((VariableExpression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -324,7 +325,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 				setIncrementDecrementOperator(INCREMENT_DECREMENT_OPERATOR_EDEFAULT);
 				return;
 			case ActionLanguagePackage.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION:
-				setLhs_attributeExpression((AttributeExpression)null);
+				setLhs_attributeExpression((VariableExpression)null);
 				return;
 		}
 		super.eUnset(featureID);

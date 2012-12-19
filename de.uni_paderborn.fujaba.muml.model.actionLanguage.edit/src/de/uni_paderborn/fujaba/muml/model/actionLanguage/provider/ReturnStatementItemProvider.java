@@ -172,16 +172,6 @@ public class ReturnStatementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createBlock()));
 
@@ -213,7 +203,7 @@ public class ReturnStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createAttributeExpression()));
+				 ActionLanguageFactory.eINSTANCE.createVariableExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -239,11 +229,6 @@ public class ReturnStatementItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 CoreFactory.eINSTANCE.createActivityCallExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -274,41 +259,6 @@ public class ReturnStatementItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 ActivitiesExpressionsFactory.eINSTANCE.createExceptionVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 CallsExpressionsFactory.eINSTANCE.createMethodCallExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 CallsExpressionsFactory.eINSTANCE.createParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createAttributeValueExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createObjectVariableExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createCollectionSizeExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 PatternsExpressionsFactory.eINSTANCE.createPrimitiveVariableExpression()));
 	}
 
 	/**

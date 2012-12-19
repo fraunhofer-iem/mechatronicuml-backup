@@ -605,14 +605,14 @@ public interface ActionLanguagePackage extends EPackage {
 	int IF_STATEMENT_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 5;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.AttributeExpressionImpl <em>Attribute Expression</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.VariableExpressionImpl <em>Variable Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.AttributeExpressionImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getAttributeExpression()
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.VariableExpressionImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getVariableExpression()
 	 * @generated
 	 */
-	int ATTRIBUTE_EXPRESSION = 7;
+	int VARIABLE_EXPRESSION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -621,7 +621,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int VARIABLE_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -630,7 +630,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int VARIABLE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -639,16 +639,16 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
+	int VARIABLE_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * The feature id for the '<em><b>Variable</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_EXPRESSION__ATTRIBUTE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+	int VARIABLE_EXPRESSION__VARIABLE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Indices</b></em>' containment reference list.
@@ -657,16 +657,16 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_EXPRESSION__INDICES = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+	int VARIABLE_EXPRESSION__INDICES = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Attribute Expression</em>' class.
+	 * The number of structural features of the '<em>Variable Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+	int VARIABLE_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.OperationCallImpl <em>Operation Call</em>}' class.
@@ -1234,36 +1234,36 @@ public interface ActionLanguagePackage extends EPackage {
 	EReference getIfStatement_ElseBlock();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression <em>Attribute Expression</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression <em>Variable Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Attribute Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression
+	 * @return the meta object for class '<em>Variable Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression
 	 * @generated
 	 */
-	EClass getAttributeExpression();
+	EClass getVariableExpression();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression#getAttribute <em>Attribute</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression#getVariable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attribute</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression#getAttribute()
-	 * @see #getAttributeExpression()
+	 * @return the meta object for the reference '<em>Variable</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression#getVariable()
+	 * @see #getVariableExpression()
 	 * @generated
 	 */
-	EReference getAttributeExpression_Attribute();
+	EReference getVariableExpression_Variable();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression#getIndices <em>Indices</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression#getIndices <em>Indices</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Indices</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression#getIndices()
-	 * @see #getAttributeExpression()
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression#getIndices()
+	 * @see #getVariableExpression()
 	 * @generated
 	 */
-	EReference getAttributeExpression_Indices();
+	EReference getVariableExpression_Indices();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall <em>Operation Call</em>}'.
@@ -1649,22 +1649,22 @@ public interface ActionLanguagePackage extends EPackage {
 		EReference IF_STATEMENT__ELSE_BLOCK = eINSTANCE.getIfStatement_ElseBlock();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.AttributeExpressionImpl <em>Attribute Expression</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.VariableExpressionImpl <em>Variable Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.AttributeExpressionImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getAttributeExpression()
+		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.VariableExpressionImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getVariableExpression()
 		 * @generated
 		 */
-		EClass ATTRIBUTE_EXPRESSION = eINSTANCE.getAttributeExpression();
+		EClass VARIABLE_EXPRESSION = eINSTANCE.getVariableExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE_EXPRESSION__ATTRIBUTE = eINSTANCE.getAttributeExpression_Attribute();
+		EReference VARIABLE_EXPRESSION__VARIABLE = eINSTANCE.getVariableExpression_Variable();
 
 		/**
 		 * The meta object literal for the '<em><b>Indices</b></em>' containment reference list feature.
@@ -1672,7 +1672,7 @@ public interface ActionLanguagePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE_EXPRESSION__INDICES = eINSTANCE.getAttributeExpression_Indices();
+		EReference VARIABLE_EXPRESSION__INDICES = eINSTANCE.getVariableExpression_Indices();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.OperationCallImpl <em>Operation Call</em>}' class.

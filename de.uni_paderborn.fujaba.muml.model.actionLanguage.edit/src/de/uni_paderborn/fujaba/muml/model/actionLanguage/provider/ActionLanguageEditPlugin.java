@@ -49,7 +49,6 @@ public final class ActionLanguageEditPlugin extends EMFPlugin {
 		     EcoreEditPlugin.INSTANCE,
 		     MumlEditPlugin.INSTANCE,
 		     CoreEditPlugin.INSTANCE,
-		     StorydiagramsEditPlugin.INSTANCE,
 		   });
 	}
 

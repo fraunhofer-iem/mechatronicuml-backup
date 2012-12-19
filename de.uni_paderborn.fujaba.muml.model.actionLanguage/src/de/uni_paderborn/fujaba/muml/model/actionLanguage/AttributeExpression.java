@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 
 import org.storydriven.core.expressions.Expression;
 
-import de.uni_paderborn.fujaba.muml.model.core.Attribute;
+import de.uni_paderborn.fujaba.muml.model.core.Variable;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import org.eclipse.emf.common.util.EList;
 
@@ -46,12 +46,12 @@ public interface AttributeExpression extends Expression {
 	 * Attribute of an attribute expression.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Attribute</em>' reference.
-	 * @see #setAttribute(Attribute)
+	 * @see #setAttribute(Variable)
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getAttributeExpression_Attribute()
 	 * @model
 	 * @generated
 	 */
-	Attribute getAttribute();
+	Variable getAttribute();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression#getAttribute <em>Attribute</em>}' reference.
@@ -61,7 +61,7 @@ public interface AttributeExpression extends Expression {
 	 * @see #getAttribute()
 	 * @generated
 	 */
-	void setAttribute(Attribute value);
+	void setAttribute(Variable value);
 
 	/**
 	 * Returns the value of the '<em><b>Indices</b></em>' containment reference list.
