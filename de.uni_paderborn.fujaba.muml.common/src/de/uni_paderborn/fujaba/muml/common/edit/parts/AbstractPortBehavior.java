@@ -88,7 +88,7 @@ public abstract class AbstractPortBehavior {
 			figure.setPortKindAndPortType(getPortKind(), getPortType());
 		}
 	}
-	
+
 	protected AbstractBorderItemEditPart getBorderItemEditPart() {
 		return (AbstractBorderItemEditPart) editPart;
 	}
@@ -129,7 +129,8 @@ public abstract class AbstractPortBehavior {
 				IBorderItemLocator borderItemLocator = getBorderItemEditPart()
 						.getBorderItemLocator();
 				if (borderItemLocator != null) {
-					borderItemLocator.relocate(getBorderItemEditPart().getFigure());
+					borderItemLocator.relocate(getBorderItemEditPart()
+							.getFigure());
 					int side = borderItemLocator.getCurrentSideOfParent();
 					figure.setPortSide(side);
 				}
@@ -179,7 +180,8 @@ public abstract class AbstractPortBehavior {
 			IBorderItemLocator locator = ((AbstractBorderItemEditPart) editPart)
 					.getBorderItemLocator();
 			if (locator instanceof BorderItemLocator) {
-				((BorderItemLocator) locator).setBorderItemOffset(DEFAULT_OFFSET);
+				((BorderItemLocator) locator)
+						.setBorderItemOffset(DEFAULT_OFFSET);
 			}
 		}
 	}
@@ -225,6 +227,15 @@ public abstract class AbstractPortBehavior {
 		// FIXME: workaround for #154536
 		result.getBounds().setSize(result.getPreferredSize());
 		return result;
+	}
+
+	/**
+	 * Gets the editpart.
+	 * 
+	 * @return the edipart.
+	 */
+	public GraphicalEditPart getEditPart() {
+		return editPart;
 	}
 
 }
