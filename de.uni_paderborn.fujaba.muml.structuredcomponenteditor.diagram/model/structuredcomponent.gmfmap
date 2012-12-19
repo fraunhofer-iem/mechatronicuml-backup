@@ -35,7 +35,7 @@
                 xsi:type="gmfmap:ReferenceNewElementSpec">
               <feature
                   xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/cardinality"/>
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality"/>
               <newElementInitializers>
                 <initializers
                     xsi:type="gmfmap:ReferenceNewElementSpec">
@@ -102,46 +102,6 @@
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ContinuousPort"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
-            <initializers
-                xsi:type="gmfmap:ReferenceNewElementSpec">
-              <feature
-                  xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/cardinality"/>
-              <newElementInitializers>
-                <initializers
-                    xsi:type="gmfmap:ReferenceNewElementSpec">
-                  <feature
-                      xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/lowerBound"/>
-                  <newElementInitializers>
-                    <initializers
-                        xsi:type="gmfmap:FeatureValueSpec">
-                      <feature
-                          xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
-                      <value
-                          body="1"/>
-                    </initializers>
-                  </newElementInitializers>
-                </initializers>
-                <initializers
-                    xsi:type="gmfmap:ReferenceNewElementSpec">
-                  <feature
-                      xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/upperBound"/>
-                  <newElementInitializers>
-                    <initializers
-                        xsi:type="gmfmap:FeatureValueSpec">
-                      <feature
-                          xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
-                      <value
-                          body="1"/>
-                    </initializers>
-                  </newElementInitializers>
-                </initializers>
-              </newElementInitializers>
-            </initializers>
             <initializers
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
@@ -238,46 +198,6 @@
               <domainInitializer
                   xsi:type="gmfmap:FeatureSeqInitializer">
                 <initializers
-                    xsi:type="gmfmap:ReferenceNewElementSpec">
-                  <feature
-                      xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port/cardinality"/>
-                  <newElementInitializers>
-                    <initializers
-                        xsi:type="gmfmap:ReferenceNewElementSpec">
-                      <feature
-                          xsi:type="ecore:EReference"
-                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/lowerBound"/>
-                      <newElementInitializers>
-                        <initializers
-                            xsi:type="gmfmap:FeatureValueSpec">
-                          <feature
-                              xsi:type="ecore:EAttribute"
-                              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
-                          <value
-                              body="1"/>
-                        </initializers>
-                      </newElementInitializers>
-                    </initializers>
-                    <initializers
-                        xsi:type="gmfmap:ReferenceNewElementSpec">
-                      <feature
-                          xsi:type="ecore:EReference"
-                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/upperBound"/>
-                      <newElementInitializers>
-                        <initializers
-                            xsi:type="gmfmap:FeatureValueSpec">
-                          <feature
-                              xsi:type="ecore:EAttribute"
-                              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
-                          <value
-                              body="1"/>
-                        </initializers>
-                      </newElementInitializers>
-                    </initializers>
-                  </newElementInitializers>
-                </initializers>
-                <initializers
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EAttribute"
@@ -316,40 +236,6 @@
       </compartments>
     </ownedChild>
   </nodes>
-  <links>
-    <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Delegation"/>
-    <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent/connectors"/>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="structuredcomponent.gmftool#//@palette/@tools.2/@tools.1"/>
-    <diagramLink
-        href="structuredcomponent.gmfgraph#Delegation"/>
-    <sourceMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ConnectorType/fromPort"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ConnectorType/toPort"/>
-  </links>
-  <links>
-    <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Assembly"/>
-    <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent/connectors"/>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="structuredcomponent.gmftool#//@palette/@tools.2/@tools.0"/>
-    <diagramLink
-        href="structuredcomponent.gmfgraph#Assembly"/>
-    <sourceMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ConnectorType/fromPort"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ConnectorType/toPort"/>
-  </links>
   <diagram>
     <diagramCanvas
         href="structuredcomponent.gmfgraph#componenteditor"/>

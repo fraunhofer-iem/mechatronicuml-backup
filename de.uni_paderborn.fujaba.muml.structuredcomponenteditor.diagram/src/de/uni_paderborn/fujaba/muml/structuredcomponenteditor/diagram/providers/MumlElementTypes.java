@@ -86,16 +86,6 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Delegation_4003 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.Delegation_4003"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType Assembly_4004 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.Assembly_4004"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -241,16 +231,6 @@ public class MumlElementTypes {
 					ContinuousPort_3015,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getContinuousPort());
-
-			elements.put(
-					Delegation_4003,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
-							.getDelegation());
-
-			elements.put(
-					Assembly_4004,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
-							.getAssembly());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -276,8 +256,6 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(HybridPort_3013);
 			KNOWN_ELEMENT_TYPES.add(DiscretePort_3014);
 			KNOWN_ELEMENT_TYPES.add(ContinuousPort_3015);
-			KNOWN_ELEMENT_TYPES.add(Delegation_4003);
-			KNOWN_ELEMENT_TYPES.add(Assembly_4004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -303,10 +281,6 @@ public class MumlElementTypes {
 			return DiscretePort_3014;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPort2EditPart.VISUAL_ID:
 			return ContinuousPort_3015;
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DelegationEditPart.VISUAL_ID:
-			return Delegation_4003;
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyEditPart.VISUAL_ID:
-			return Assembly_4004;
 		}
 		return null;
 	}

@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression[12];
+		this.expressions = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression[8];
 	}
 
 	/**
@@ -53,11 +53,7 @@ public class MumlOCLFactory {
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"\'port\'", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
 					"\'port\'", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"\'port\'", //$NON-NLS-1$

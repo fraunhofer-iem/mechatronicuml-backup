@@ -84,7 +84,7 @@ public class ComponentPartLabelExpressionLabelParser5017 implements IParser {
 		initializeEnvironment(typeEnv, env, target);
 		Object result = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						11,
+						7,
 						de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 								.getComponentPart(), typeEnv).evaluate(target,
 						env);
