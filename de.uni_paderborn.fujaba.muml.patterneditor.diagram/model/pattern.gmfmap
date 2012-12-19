@@ -10,7 +10,7 @@
         href="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers
@@ -25,7 +25,7 @@
             xsi:type="gmfmap:ReferenceNewElementSpec">
           <feature
               xsi:type="ecore:EReference"
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern/roles"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol/roles"/>
           <newElementInitializers>
             <initializers
                 xsi:type="gmfmap:FeatureValueSpec">
@@ -39,7 +39,7 @@
                 xsi:type="gmfmap:ReferenceNewElementSpec">
               <feature
                   xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/cardinality"/>
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality"/>
               <newElementInitializers>
                 <initializers
                     xsi:type="gmfmap:ReferenceNewElementSpec">
@@ -73,18 +73,12 @@
                     </initializers>
                   </newElementInitializers>
                 </initializers>
+                <elementClass
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality"/>
               </newElementInitializers>
             </initializers>
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
-                  xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/outgoingRoleConnector"/>
-              <value
-                  body="self.coordinationPattern.connector->any(true)"/>
-            </initializers>
             <elementClass
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/Role"/>
           </newElementInitializers>
           <newElementInitializers>
             <initializers
@@ -99,7 +93,7 @@
                 xsi:type="gmfmap:ReferenceNewElementSpec">
               <feature
                   xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/cardinality"/>
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality"/>
               <newElementInitializers>
                 <initializers
                     xsi:type="gmfmap:ReferenceNewElementSpec">
@@ -133,58 +127,44 @@
                     </initializers>
                   </newElementInitializers>
                 </initializers>
+                <elementClass
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality"/>
               </newElementInitializers>
             </initializers>
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
-                  xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/incomingRoleConnector"/>
-              <value
-                  body="self.coordinationPattern.connector->any(true)"/>
-            </initializers>
-            <elementClass
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role"/>
           </newElementInitializers>
         </initializers>
         <initializers
             xsi:type="gmfmap:ReferenceNewElementSpec">
           <feature
               xsi:type="ecore:EReference"
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern/connector"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol/roleConnector"/>
           <newElementInitializers>
             <initializers
                 xsi:type="gmfmap:FeatureValueSpec">
               <feature
                   xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/source"/>
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
               <value
-                  body="self.coordinationPattern.roles->first()"/>
-            </initializers>
-            <initializers
-                xsi:type="gmfmap:FeatureValueSpec">
-              <feature
-                  xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/target"/>
-              <value
-                  body="self.coordinationPattern.roles->last()"/>
+                  body="OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }"/>
             </initializers>
             <initializers
                 xsi:type="gmfmap:ReferenceNewElementSpec">
               <feature
                   xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions"/>
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
               <newElementInitializers>
                 <initializers
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EAttribute"
-                      href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                      href="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
                   <value
-                      body="'QoS Assumption'"/>
+                      body="''"/>
                 </initializers>
               </newElementInitializers>
             </initializers>
+            <elementClass
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/RoleConnector"/>
           </newElementInitializers>
         </initializers>
       </domainInitializer>
@@ -196,10 +176,10 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern/pattern"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol"/>
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping"
               viewPattern=""
@@ -217,10 +197,10 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern/roles"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol/roles"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/Role"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -235,7 +215,7 @@
                 xsi:type="gmfmap:ReferenceNewElementSpec">
               <feature
                   xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/Role/cardinality"/>
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality"/>
               <newElementInitializers>
                 <initializers
                     xsi:type="gmfmap:ReferenceNewElementSpec">
@@ -269,6 +249,8 @@
                     </initializers>
                   </newElementInitializers>
                 </initializers>
+                <elementClass
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality"/>
               </newElementInitializers>
             </initializers>
           </domainInitializer>
@@ -294,36 +276,40 @@
     </ownedChild>
   </nodes>
   <links>
+    <domainMetaElement
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol"/>
+    <containmentFeature
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"/>
     <diagramLink
         href="pattern.gmfgraph#RolePattern"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern/roles"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol/roles"/>
   </links>
   <links>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/RoleConnector"/>
     <domainInitializer
         xsi:type="gmfmap:FeatureSeqInitializer">
       <initializers
           xsi:type="gmfmap:ReferenceNewElementSpec">
         <feature
             xsi:type="ecore:EReference"
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/connectorQualityOfServiceAssumptions"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
         <newElementInitializers>
           <initializers
               xsi:type="gmfmap:FeatureValueSpec">
             <feature
                 xsi:type="ecore:EAttribute"
-                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                href="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
             <value
-                body="'QoS Assumption'"/>
+                body="''"/>
           </initializers>
         </newElementInitializers>
       </initializers>
     </domainInitializer>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/CoordinationPattern/connector"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol/roleConnector"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="pattern.gmftool#//@palette/@tools.0/@tools.2"/>
@@ -331,20 +317,20 @@
         href="pattern.gmfgraph#RoleConnector"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/source"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern/RoleConnector/target"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
     <creationConstraints>
       <targetEnd
-          body="self.coordinationPattern = oppositeEnd.coordinationPattern"/>
+          body="self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol"/>
     </creationConstraints>
   </links>
   <diagram>
     <diagramCanvas
         href="pattern.gmfgraph#patterneditor"/>
     <domainModel
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/pattern"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol"/>
     <domainMetaElement
         href="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
     <palette

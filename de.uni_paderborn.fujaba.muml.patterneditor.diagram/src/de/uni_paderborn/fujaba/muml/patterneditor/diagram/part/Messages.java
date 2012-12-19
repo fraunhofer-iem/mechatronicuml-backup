@@ -288,37 +288,42 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RoleConnector_4006_target;
+	public static String NavigatorGroupName_CoordinationProtocol_4006_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RoleConnector_4006_source;
+	public static String NavigatorGroupName_CoordinationProtocol_4006_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Role_3006_incominglinks;
+	public static String NavigatorGroupName_CoordinationProtocol_4006_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Role_3006_outgoinglinks;
+	public static String NavigatorGroupName_CoordinationProtocol_2005_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationPatternRoles_4005_target;
+	public static String NavigatorGroupName_RoleConnector_4005_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationPatternRoles_4005_source;
+	public static String NavigatorGroupName_RoleConnector_4005_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationPattern_3005_outgoinglinks;
+	public static String NavigatorGroupName_Role_3005_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Role_3005_outgoinglinks;
 
 	/**
 	 * @generated
@@ -328,7 +333,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationPattern_2005_outgoinglinks;
+	public static String NavigatorGroupName_CoordinationProtocol_3006_outgoinglinks;
 
 	/**
 	 * @generated

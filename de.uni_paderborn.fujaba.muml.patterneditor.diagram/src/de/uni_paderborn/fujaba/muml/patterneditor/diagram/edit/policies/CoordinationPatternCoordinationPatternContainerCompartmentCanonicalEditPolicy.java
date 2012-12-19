@@ -62,11 +62,11 @@ public class CoordinationPatternCoordinationPatternContainerCompartmentCanonical
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
-							.getCoordinationPattern_Pattern());
+					.add(de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+							.getCoordinationProtocol_CoordinationProtocol());
 			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
-							.getCoordinationPattern_Roles());
+					.add(de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+							.getCoordinationProtocol_Roles());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -98,7 +98,7 @@ public class CoordinationPatternCoordinationPatternContainerCompartmentCanonical
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID;
 				if (childElement.eContainer() == containerView.getElement()
 						&& visualID == de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 								.getVisualID(childView)) {
@@ -113,7 +113,7 @@ public class CoordinationPatternCoordinationPatternContainerCompartmentCanonical
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
-				.getCoordinationPatternCoordinationPatternContainerCompartment_7005SemanticChildren(viewObject);
+				.getCoordinationProtocolCoordinationPatternContainerCompartment_7005SemanticChildren(viewObject);
 
 	}
 
@@ -132,8 +132,8 @@ public class CoordinationPatternCoordinationPatternContainerCompartmentCanonical
 	private boolean isMyDiagramElement(View view) {
 		int visualID = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
-		return visualID == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID;
+		return visualID == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID
+				|| visualID == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID;
 	}
 
 	/**

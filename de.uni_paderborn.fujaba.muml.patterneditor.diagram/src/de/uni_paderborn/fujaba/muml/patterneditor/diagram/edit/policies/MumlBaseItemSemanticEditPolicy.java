@@ -328,69 +328,63 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateCoordinationPatternRoles_4005(
-				de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern source,
-				de.uni_paderborn.fujaba.muml.model.pattern.Role target) {
+		public boolean canCreateCoordinationProtocol_4006(
+				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol source,
+				de.uni_paderborn.fujaba.muml.model.protocol.Role target) {
 			if (source != null) {
-				if (source.getRoles().size() >= 2
-						|| source.getRoles().contains(target)) {
-					return false;
-				}
-				if (source == target) {
+				if (source.getCoordinationProtocol() != null) {
 					return false;
 				}
 			}
-			if (target != null && (target.getCoordinationPattern() != null)) {
-				return false;
-			}
-
-			return canExistCoordinationPatternRoles_4005(source, target);
+			return canExistCoordinationProtocol_4006(null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateRoleConnector_4006(
-				de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern container,
-				de.uni_paderborn.fujaba.muml.model.pattern.Role source,
-				de.uni_paderborn.fujaba.muml.model.pattern.Role target) {
+		public boolean canCreateRoleConnector_4005(
+				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target) {
 			if (container != null) {
-				if (container.getConnector() != null) {
+				if (container.getRoleConnector() != null) {
 					return false;
 				}
 			}
-			return canExistRoleConnector_4006(container, null, source, target);
+			return canExistRoleConnector_4005(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistCoordinationPatternRoles_4005(
-				de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern source,
-				de.uni_paderborn.fujaba.muml.model.pattern.Role target) {
+		public boolean canExistCoordinationProtocol_4006(
+				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol linkInstance,
+				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol source,
+				de.uni_paderborn.fujaba.muml.model.protocol.Role target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistRoleConnector_4006(
-				de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern container,
-				de.uni_paderborn.fujaba.muml.model.pattern.RoleConnector linkInstance,
-				de.uni_paderborn.fujaba.muml.model.pattern.Role source,
-				de.uni_paderborn.fujaba.muml.model.pattern.Role target) {
+		public boolean canExistRoleConnector_4005(
+				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container,
+				de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector linkInstance,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target) {
 			try {
 				if (target == null) {
 					return true;
 				} else {
 					Map<String, EClassifier> env = Collections
 							.<String, EClassifier> singletonMap(
-									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE.getRole()); //$NON-NLS-1$
+									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					Object targetVal = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									16,
-									de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
-											.getRole(), env).evaluate(
+									13,
+									de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpoint(), env)
+							.evaluate(
 									target,
 									Collections.singletonMap(
 											"oppositeEnd", source)); //$NON-NLS-1$

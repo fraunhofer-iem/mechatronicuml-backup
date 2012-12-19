@@ -121,21 +121,21 @@ public class MumlVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
-					.getCoordinationPattern().isSuperTypeOf(
+			if (de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+					.getCoordinationProtocol().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternCoordinationPatternContainerCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
-					.getCoordinationPattern().isSuperTypeOf(
+			if (de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+					.getCoordinationProtocol().isSuperTypeOf(
 							domainElement.eClass())) {
-				return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID;
-			}
-			if (de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
-					.getRole().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID;
+			}
+			if (de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+					.getRole().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -175,21 +175,21 @@ public class MumlVisualIDRegistry {
 				return true;
 			}
 			break;
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternNameEditPart.VISUAL_ID == nodeVisualID) {
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternCoordinationPatternContainerCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -204,9 +204,14 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage.eINSTANCE
-				.getRoleConnector().isSuperTypeOf(domainElement.eClass())) {
+		if (de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+				.getCoordinationProtocol()
+				.isSuperTypeOf(domainElement.eClass())) {
 			return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID;
+		}
+		if (de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+				.getRoleConnector().isSuperTypeOf(domainElement.eClass())) {
+			return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternRolesEditPart.VISUAL_ID;
 		}
 		return -1;
 	}

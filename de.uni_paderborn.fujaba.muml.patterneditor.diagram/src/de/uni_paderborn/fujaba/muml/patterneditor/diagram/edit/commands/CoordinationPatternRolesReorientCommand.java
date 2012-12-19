@@ -6,7 +6,6 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
-import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 
 /**
@@ -22,11 +21,6 @@ public class CoordinationPatternRolesReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
-	private final EObject referenceOwner;
-
-	/**
-	 * @generated
-	 */
 	private final EObject oldEnd;
 
 	/**
@@ -38,10 +32,9 @@ public class CoordinationPatternRolesReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	public CoordinationPatternRolesReorientCommand(
-			ReorientReferenceRelationshipRequest request) {
-		super(request.getLabel(), null, request);
+			ReorientRelationshipRequest request) {
+		super(request.getLabel(), request.getRelationship(), request);
 		reorientDirection = request.getDirection();
-		referenceOwner = request.getReferenceOwner();
 		oldEnd = request.getOldRelationshipEnd();
 		newEnd = request.getNewRelationshipEnd();
 	}
@@ -50,7 +43,7 @@ public class CoordinationPatternRolesReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern) {
+		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -66,24 +59,44 @@ public class CoordinationPatternRolesReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.pattern.Role && newEnd instanceof de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint)) {
 			return false;
 		}
+		if (getLink().getConnectorEndpoints().size() != 1) {
+			return false;
+		}
+		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) getLink()
+				.getConnectorEndpoints().get(0);
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol)) {
+			return false;
+		}
+		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) getLink()
+				.eContainer();
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistCoordinationPatternRoles_4005(
-						getNewSource(), getOldTarget());
+				.getLinkConstraints().canExistRoleConnector_4005(container,
+						getLink(), getNewSource(), target);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.pattern.Role && newEnd instanceof de.uni_paderborn.fujaba.muml.model.pattern.Role)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint)) {
 			return false;
 		}
+		if (getLink().getConnectorEndpoints().size() != 1) {
+			return false;
+		}
+		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) getLink()
+				.getConnectorEndpoints().get(0);
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol)) {
+			return false;
+		}
+		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) getLink()
+				.eContainer();
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistCoordinationPatternRoles_4005(
-						getOldSource(), getNewTarget());
+				.getLinkConstraints().canExistRoleConnector_4005(container,
+						getLink(), source, getNewTarget());
 	}
 
 	/**
@@ -108,46 +121,53 @@ public class CoordinationPatternRolesReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getOldSource().getRoles().remove(getOldTarget());
-		getNewSource().getRoles().add(getOldTarget());
-		return CommandResult.newOKCommandResult(referenceOwner);
+		getLink().getConnectorEndpoints().remove(getOldSource());
+		getLink().getConnectorEndpoints().add(getNewSource());
+		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getOldSource().getRoles().remove(getOldTarget());
-		getOldSource().getRoles().add(getNewTarget());
-		return CommandResult.newOKCommandResult(referenceOwner);
+		getLink().getConnectorEndpoints().remove(getOldTarget());
+		getLink().getConnectorEndpoints().add(getNewTarget());
+		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern getOldSource() {
-		return (de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern) referenceOwner;
+	protected de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector getLink() {
+		return (de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern getNewSource() {
-		return (de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.pattern.Role getOldTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.pattern.Role) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.pattern.Role getNewTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.pattern.Role) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) newEnd;
 	}
 
 	/**

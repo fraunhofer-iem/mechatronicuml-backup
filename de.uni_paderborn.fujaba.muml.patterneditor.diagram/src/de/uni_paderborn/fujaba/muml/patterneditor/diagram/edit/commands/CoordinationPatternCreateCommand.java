@@ -52,14 +52,14 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern newElement = de.uni_paderborn.fujaba.muml.model.pattern.PatternFactory.eINSTANCE
-				.createCoordinationPattern();
+		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol newElement = de.uni_paderborn.fujaba.muml.model.protocol.ProtocolFactory.eINSTANCE
+				.createCoordinationProtocol();
 
 		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.ElementInitializers
-				.getInstance().init_CoordinationPattern_2005(newElement);
+				.getInstance().init_CoordinationProtocol_2005(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -71,7 +71,7 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.pattern.CoordinationPattern newElement,
+			de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

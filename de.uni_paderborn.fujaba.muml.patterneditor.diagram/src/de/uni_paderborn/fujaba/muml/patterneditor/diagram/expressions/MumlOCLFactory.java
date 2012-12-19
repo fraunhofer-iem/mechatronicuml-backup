@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression[17];
+		this.expressions = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression[14];
 	}
 
 	/**
@@ -54,19 +54,16 @@ public class MumlOCLFactory {
 					"\'role1\'", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
-					"self.coordinationPattern.connector->any(true)", //$NON-NLS-1$
 					"\'role2\'", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
-					"self.coordinationPattern.connector->any(true)", //$NON-NLS-1$
-					"self.coordinationPattern.roles->first()", //$NON-NLS-1$
-					"self.coordinationPattern.roles->last()", //$NON-NLS-1$
-					"\'QoS Assumption\'", //$NON-NLS-1$
+					"OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }", //$NON-NLS-1$
+					"\'\'", //$NON-NLS-1$
 					"\'role\'", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
-					"\'QoS Assumption\'", //$NON-NLS-1$
-					"self.coordinationPattern = oppositeEnd.coordinationPattern", //$NON-NLS-1$
+					"\'\'", //$NON-NLS-1$
+					"self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

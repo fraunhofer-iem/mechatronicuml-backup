@@ -42,13 +42,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class CoordinationPatternNameEditPart extends CompartmentEditPart
+public class CoordinationProtocolNameEditPart extends CompartmentEditPart
 		implements ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5005;
+	public static final int VISUAL_ID = 5006;
 
 	/**
 	 * @generated
@@ -73,7 +73,7 @@ public class CoordinationPatternNameEditPart extends CompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public CoordinationPatternNameEditPart(View view) {
+	public CoordinationProtocolNameEditPart(View view) {
 		super(view);
 	}
 
@@ -290,10 +290,10 @@ public class CoordinationPatternNameEditPart extends CompartmentEditPart
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationPattern_3005,
+							de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_3006,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternNameEditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
