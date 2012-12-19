@@ -25,7 +25,7 @@ public class MumlDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.VISUAL_ID:
 			return getModelElementCategory_1000SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return getAtomicComponent_2005SemanticChildren(view);
+			return getAtomicComponent_2006SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -59,7 +59,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlNodeDescriptor> getAtomicComponent_2005SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlNodeDescriptor> getAtomicComponent_2006SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
@@ -102,13 +102,13 @@ public class MumlDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentDiagramEditPart.VISUAL_ID:
 			return getModelElementCategory_1000ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return getAtomicComponent_2005ContainedLinks(view);
+			return getAtomicComponent_2006ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
-			return getHybridPort_3005ContainedLinks(view);
+			return getHybridPort_3008ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
-			return getDiscretePort_3006ContainedLinks(view);
+			return getDiscretePort_3009ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
-			return getContinuousPort_3007ContainedLinks(view);
+			return getContinuousPort_3010ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -121,13 +121,13 @@ public class MumlDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return getAtomicComponent_2005IncomingLinks(view);
+			return getAtomicComponent_2006IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
-			return getHybridPort_3005IncomingLinks(view);
+			return getHybridPort_3008IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
-			return getDiscretePort_3006IncomingLinks(view);
+			return getDiscretePort_3009IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
-			return getContinuousPort_3007IncomingLinks(view);
+			return getContinuousPort_3010IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -140,13 +140,13 @@ public class MumlDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return getAtomicComponent_2005OutgoingLinks(view);
+			return getAtomicComponent_2006OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
-			return getHybridPort_3005OutgoingLinks(view);
+			return getHybridPort_3008OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
-			return getDiscretePort_3006OutgoingLinks(view);
+			return getDiscretePort_3009OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
-			return getContinuousPort_3007OutgoingLinks(view);
+			return getContinuousPort_3010OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -162,7 +162,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getAtomicComponent_2005ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getAtomicComponent_2006ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -170,7 +170,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getHybridPort_3005ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getHybridPort_3008ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -178,7 +178,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getDiscretePort_3006ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getDiscretePort_3009ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -186,7 +186,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getContinuousPort_3007ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getContinuousPort_3010ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -194,7 +194,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getAtomicComponent_2005IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getAtomicComponent_2006IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -202,7 +202,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getHybridPort_3005IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getHybridPort_3008IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -210,7 +210,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getDiscretePort_3006IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getDiscretePort_3009IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -218,7 +218,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getContinuousPort_3007IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getContinuousPort_3010IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -226,7 +226,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getAtomicComponent_2005OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getAtomicComponent_2006OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -234,7 +234,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getHybridPort_3005OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getHybridPort_3008OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -242,7 +242,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getDiscretePort_3006OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getDiscretePort_3009OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -250,7 +250,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getContinuousPort_3007OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlLinkDescriptor> getContinuousPort_3010OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}

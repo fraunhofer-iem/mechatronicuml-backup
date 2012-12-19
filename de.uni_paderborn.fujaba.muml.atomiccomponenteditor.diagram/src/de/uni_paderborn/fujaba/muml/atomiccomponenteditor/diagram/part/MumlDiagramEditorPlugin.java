@@ -142,7 +142,7 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.instance.provider.InstanceItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.pattern.provider.PatternItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.model.protocol.provider.ProtocolItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
 		factories
@@ -151,19 +151,13 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 				.add(new de.uni_paderborn.fujaba.muml.model.deployment.provider.DeploymentItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.types.provider.TypesItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.connector.provider.ConnectorItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new ModelinstanceItemProviderAdapterFactory());
-		factories.add(new StorydiagramsItemProviderAdapterFactory());
-		factories.add(new ActivitiesItemProviderAdapterFactory());
-		factories.add(new ActivitiesExpressionsItemProviderAdapterFactory());
-		factories.add(new CallsItemProviderAdapterFactory());
-		factories.add(new CallsExpressionsItemProviderAdapterFactory());
-		factories.add(new PatternsItemProviderAdapterFactory());
-		factories.add(new PatternsExpressionsItemProviderAdapterFactory());
-		factories.add(new TemplatesItemProviderAdapterFactory());
 
 		// Custom Factories with negative priority
 		factories.addAll(negativePriorityFactories);

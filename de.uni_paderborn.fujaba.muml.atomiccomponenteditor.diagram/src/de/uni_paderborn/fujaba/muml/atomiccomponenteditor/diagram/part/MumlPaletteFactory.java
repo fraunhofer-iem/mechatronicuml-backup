@@ -58,7 +58,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.Messages.AtomicComponent1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.Messages.AtomicComponent1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.AtomicComponent_2005));
+						.singletonList(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.AtomicComponent_2006));
 		entry.setId("createAtomicComponent1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/AtomicComponent.gif")); //$NON-NLS-1$
@@ -74,7 +74,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.Messages.DiscretePort1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.Messages.DiscretePort1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.DiscretePort_3006));
+						.singletonList(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.DiscretePort_3009));
 		entry.setId("createDiscretePort1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/DiscretePort.gif")); //$NON-NLS-1$
@@ -90,7 +90,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.Messages.ContinuousPort2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.Messages.ContinuousPort2CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.ContinuousPort_3007));
+						.singletonList(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.ContinuousPort_3010));
 		entry.setId("createContinuousPort2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/ContinuousPort.gif")); //$NON-NLS-1$
@@ -106,7 +106,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.Messages.HybridPort3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.Messages.HybridPort3CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.HybridPort_3005));
+						.singletonList(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.HybridPort_3008));
 		entry.setId("createHybridPort3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif")); //$NON-NLS-1$

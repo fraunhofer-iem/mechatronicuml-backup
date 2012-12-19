@@ -14,7 +14,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_AtomicComponent_2005(
+	public void init_AtomicComponent_2006(
 			de.uni_paderborn.fujaba.muml.model.component.AtomicComponent instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
@@ -33,8 +33,8 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_HybridPort_3005(
-			de.uni_paderborn.fujaba.muml.model.component.HybridPort instance) {
+	public void init_DiscretePort_3009(
+			de.uni_paderborn.fujaba.muml.model.component.DiscretePort instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
 					.createCardinality();
@@ -73,111 +73,8 @@ public class ElementInitializers {
 					.getExpression(
 							3,
 							de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
-									.getHybridPort(), null).evaluate(instance);
-			instance.setName((String) value_1);
-		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	public void init_DiscretePort_3006(
-			de.uni_paderborn.fujaba.muml.model.component.DiscretePort instance) {
-		try {
-			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
-					.createCardinality();
-			instance.setCardinality(newInstance_0_0);
-			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
-					.createNaturalNumber();
-			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
-			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
-					.getExpression(
-							4,
-							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
-									.getNaturalNumber(), null).evaluate(
-							newInstance_0_0_0_0);
-
-			value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlAbstractExpression
-					.performCast(value_0_0_0_0_0,
-							EcorePackage.eINSTANCE.getELong());
-			newInstance_0_0_0_0.setValue(((Long) value_0_0_0_0_0).longValue());
-
-			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
-					.createNaturalNumber();
-			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
-			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
-					.getExpression(
-							5,
-							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
-									.getNaturalNumber(), null).evaluate(
-							newInstance_0_0_1_0);
-
-			value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlAbstractExpression
-					.performCast(value_0_0_1_0_0,
-							EcorePackage.eINSTANCE.getELong());
-			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
-
-			Object value_1 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
-					.getExpression(
-							6,
-							de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 									.getDiscretePort(), null)
 					.evaluate(instance);
-			instance.setName((String) value_1);
-		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
-					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	public void init_ContinuousPort_3007(
-			de.uni_paderborn.fujaba.muml.model.component.ContinuousPort instance) {
-		try {
-			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
-					.createCardinality();
-			instance.setCardinality(newInstance_0_0);
-			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
-					.createNaturalNumber();
-			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
-			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
-					.getExpression(
-							7,
-							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
-									.getNaturalNumber(), null).evaluate(
-							newInstance_0_0_0_0);
-
-			value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlAbstractExpression
-					.performCast(value_0_0_0_0_0,
-							EcorePackage.eINSTANCE.getELong());
-			newInstance_0_0_0_0.setValue(((Long) value_0_0_0_0_0).longValue());
-
-			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
-					.createNaturalNumber();
-			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
-			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
-					.getExpression(
-							8,
-							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
-									.getNaturalNumber(), null).evaluate(
-							newInstance_0_0_1_0);
-
-			value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlAbstractExpression
-					.performCast(value_0_0_1_0_0,
-							EcorePackage.eINSTANCE.getELong());
-			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
-
-			Object value_1 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
-					.getExpression(
-							9,
-							de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
-									.getContinuousPort(), null).evaluate(
-							instance);
 			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
