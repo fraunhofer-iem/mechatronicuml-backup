@@ -116,7 +116,7 @@
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.messagetype.category"
             modelId="Messageinterface">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/modelinstance/0.3.6"
+               packageNsURI="http://www.fujaba.de/modelinstance/0.3.8"
                className="ModelElementCategory">
          </diagramElement>
          
@@ -377,7 +377,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/modelinstance/0.3.6">
+      <metamodel nsURI="http://www.fujaba.de/modelinstance/0.3.8">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.ModelElementCategory_1000"
                name="%metatype.name.ModelElementCategory_1000"
@@ -407,7 +407,7 @@
             <param name="semanticHint" value="3007"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/core/0.3.6">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/core/0.3.8">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.Parameter_3008"
                name="%metatype.name.Parameter_3008"

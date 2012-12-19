@@ -52,6 +52,7 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType MessageTypeRepository_2007 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageTypeRepository_2007"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
