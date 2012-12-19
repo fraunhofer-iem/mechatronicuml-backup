@@ -61,7 +61,7 @@ public class DoEventCreateCommand extends EditElementCommand {
 		owner.setDoEvent(newElement);
 
 		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_DoEvent_3019(newElement);
+				.getInstance().init_DoEvent_3034(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -48,7 +48,7 @@ public class WrappingLabel7EditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5041;
+	public static final int VISUAL_ID = 5057;
 
 	/**
 	 * @generated
@@ -290,7 +290,7 @@ public class WrappingLabel7EditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Region_3023,
+							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Region_3038,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID));

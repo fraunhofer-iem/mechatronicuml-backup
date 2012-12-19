@@ -48,7 +48,7 @@ public class RegionPriorityEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5040;
+	public static final int VISUAL_ID = 5056;
 
 	/**
 	 * @generated
@@ -290,7 +290,7 @@ public class RegionPriorityEditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Region_3023,
+							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Region_3038,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionPriorityEditPart.VISUAL_ID));

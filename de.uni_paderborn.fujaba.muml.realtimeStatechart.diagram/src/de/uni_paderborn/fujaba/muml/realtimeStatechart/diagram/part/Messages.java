@@ -403,47 +403,47 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_EntryPoint_3040_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_EntryPoint_3040_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_RealtimeStatechart_1000_links;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ExitPoint_3031_incominglinks;
+	public static String NavigatorGroupName_State_3032_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ExitPoint_3031_outgoinglinks;
+	public static String NavigatorGroupName_State_3032_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_EntryPoint_3030_incominglinks;
+	public static String NavigatorGroupName_ExitPoint_3041_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_EntryPoint_3030_outgoinglinks;
+	public static String NavigatorGroupName_ExitPoint_3041_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_State_3029_incominglinks;
+	public static String NavigatorGroupName_Transition_4003_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_State_3029_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Transition_4002_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Transition_4002_source;
+	public static String NavigatorGroupName_Transition_4003_source;
 
 	/**
 	 * @generated

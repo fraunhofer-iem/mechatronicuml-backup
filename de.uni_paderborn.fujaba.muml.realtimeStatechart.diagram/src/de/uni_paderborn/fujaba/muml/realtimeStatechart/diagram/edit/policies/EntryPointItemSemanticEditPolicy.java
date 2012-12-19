@@ -25,7 +25,7 @@ public class EntryPointItemSemanticEditPolicy
 	 */
 	public EntryPointItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryPoint_3030);
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryPoint_3040);
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class EntryPointItemSemanticEditPolicy
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4002 == req
+		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4003 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.commands.TransitionCreateCommand(
 					req, req.getSource(), req.getTarget()));
@@ -98,7 +98,7 @@ public class EntryPointItemSemanticEditPolicy
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4002 == req
+		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4003 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.commands.TransitionCreateCommand(
 					req, req.getSource(), req.getTarget()));

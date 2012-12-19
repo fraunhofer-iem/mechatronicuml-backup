@@ -97,7 +97,7 @@ public class StateInvariantCompartmentCanonicalEditPolicy extends
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getStateInvariantCompartment_7029SemanticChildren(viewObject);
+				.getStateInvariantCompartment_7034SemanticChildren(viewObject);
 
 	}
 

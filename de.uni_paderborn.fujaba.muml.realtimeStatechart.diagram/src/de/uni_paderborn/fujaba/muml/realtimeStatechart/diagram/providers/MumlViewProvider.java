@@ -232,37 +232,37 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		}
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
-			return createRealtimeStatechart_2006(domainElement, containerView,
+			return createRealtimeStatechart_2007(domainElement, containerView,
 					index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
-			return createState_3029(domainElement, containerView, index,
+			return createState_3032(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
-			return createEntryEvent_3018(domainElement, containerView, index,
+			return createEntryEvent_3033(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
-			return createDoEvent_3019(domainElement, containerView, index,
+			return createDoEvent_3034(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
-			return createExitEvent_3020(domainElement, containerView, index,
+			return createExitEvent_3035(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
-			return createClockConstraint_3021(domainElement, containerView,
+			return createClockConstraint_3036(domainElement, containerView,
 					index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
-			return createSynchronizationChannel_3022(domainElement,
+			return createSynchronizationChannel_3037(domainElement,
 					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
-			return createRegion_3023(domainElement, containerView, index,
+			return createRegion_3038(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
-			return createRealtimeStatechart_3024(domainElement, containerView,
+			return createRealtimeStatechart_3039(domainElement, containerView,
 					index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
-			return createEntryPoint_3030(domainElement, containerView, index,
+			return createEntryPoint_3040(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
-			return createExitPoint_3031(domainElement, containerView, index,
+			return createExitPoint_3041(domainElement, containerView, index,
 					persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
@@ -280,7 +280,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		switch (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 				.getVisualID(elementTypeHint)) {
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
-			return createTransition_4002(getSemanticElement(semanticAdapter),
+			return createTransition_4003(getSemanticElement(semanticAdapter),
 					containerView, index, persisted, preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
@@ -290,7 +290,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createRealtimeStatechart_2006(EObject domainElement,
+	public Node createRealtimeStatechart_2007(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -331,11 +331,11 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5045 = createLabel(
+		Node label5061 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RealtimeStatechartNameEditPart.VISUAL_ID));
-		Node label5046 = createLabel(
+		Node label5062 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
@@ -350,7 +350,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createState_3029(EObject domainElement, View containerView,
+	public Node createState_3032(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -389,7 +389,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5049 = createLabel(
+		Node label5060 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateNameEditPart.VISUAL_ID));
@@ -419,7 +419,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createEntryEvent_3018(EObject domainElement,
+	public Node createEntryEvent_3033(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -459,7 +459,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5030 = createLabel(
+		Node label5050 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
@@ -469,7 +469,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createDoEvent_3019(EObject domainElement, View containerView,
+	public Node createDoEvent_3034(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -508,7 +508,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5031 = createLabel(
+		Node label5051 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
@@ -518,7 +518,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createExitEvent_3020(EObject domainElement, View containerView,
+	public Node createExitEvent_3035(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -557,7 +557,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5032 = createLabel(
+		Node label5052 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel4EditPart.VISUAL_ID));
@@ -567,7 +567,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createClockConstraint_3021(EObject domainElement,
+	public Node createClockConstraint_3036(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -607,7 +607,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5033 = createLabel(
+		Node label5053 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
@@ -617,7 +617,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createSynchronizationChannel_3022(EObject domainElement,
+	public Node createSynchronizationChannel_3037(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -657,7 +657,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5034 = createLabel(
+		Node label5054 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
@@ -667,7 +667,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createRegion_3023(EObject domainElement, View containerView,
+	public Node createRegion_3038(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -706,15 +706,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5039 = createLabel(
+		Node label5055 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionNameEditPart.VISUAL_ID));
-		Node label5040 = createLabel(
+		Node label5056 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionPriorityEditPart.VISUAL_ID));
-		Node label5041 = createLabel(
+		Node label5057 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID));
@@ -722,14 +722,14 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart.VISUAL_ID),
-				false, false, true, true);
+				false, false, false, false);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createRealtimeStatechart_3024(EObject domainElement,
+	public Node createRealtimeStatechart_3039(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -780,7 +780,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createEntryPoint_3030(EObject domainElement,
+	public Node createEntryPoint_3040(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -820,22 +820,22 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5047 = createLabel(
+		Node label5058 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointNameEditPart.VISUAL_ID));
-		label5047.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5058.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5047 = (Location) label5047.getLayoutConstraint();
-		location5047.setX(0);
-		location5047.setY(5);
+		Location location5058 = (Location) label5058.getLayoutConstraint();
+		location5058.setX(0);
+		location5058.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Node createExitPoint_3031(EObject domainElement, View containerView,
+	public Node createExitPoint_3041(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -874,22 +874,22 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5048 = createLabel(
+		Node label5059 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointNameEditPart.VISUAL_ID));
-		label5048.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5059.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5048 = (Location) label5048.getLayoutConstraint();
-		location5048.setX(0);
-		location5048.setY(5);
+		Location location5059 = (Location) label5059.getLayoutConstraint();
+		location5059.setX(0);
+		location5059.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Edge createTransition_4002(EObject domainElement,
+	public Edge createTransition_4003(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
@@ -939,24 +939,24 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
 					routing);
 		}
-		Node label6003 = createLabel(
+		Node label6005 = createLabel(
+				edge,
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
+		label6005.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location6005 = (Location) label6005.getLayoutConstraint();
+		location6005.setX(0);
+		location6005.setY(-20);
+		Node label6006 = createLabel(
 				edge,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID));
-		label6003.setLayoutConstraint(NotationFactory.eINSTANCE
+		label6006.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location6003 = (Location) label6003.getLayoutConstraint();
-		location6003.setX(0);
-		location6003.setY(-20);
-		Node label6004 = createLabel(
-				edge,
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID));
-		label6004.setLayoutConstraint(NotationFactory.eINSTANCE
-				.createLocation());
-		Location location6004 = (Location) label6004.getLayoutConstraint();
-		location6004.setX(-10);
-		location6004.setY(20);
+		Location location6006 = (Location) label6006.getLayoutConstraint();
+		location6006.setX(-10);
+		location6006.setY(20);
 		return edge;
 	}
 

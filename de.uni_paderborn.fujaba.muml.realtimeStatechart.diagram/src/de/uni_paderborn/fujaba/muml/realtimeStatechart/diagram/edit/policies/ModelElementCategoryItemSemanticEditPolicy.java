@@ -26,7 +26,7 @@ public class ModelElementCategoryItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2006 == req
+		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2007 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.commands.RealtimeStatechartCreateCommand(
 					req));

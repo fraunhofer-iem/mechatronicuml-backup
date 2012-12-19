@@ -15,14 +15,14 @@ public class RealtimeStatechartStatechartContentsCompartment2ItemSemanticEditPol
 	 */
 	public RealtimeStatechartStatechartContentsCompartment2ItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_3024);
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_3039);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3029 == req
+		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3032 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.commands.StateCreateCommand(
 					req));

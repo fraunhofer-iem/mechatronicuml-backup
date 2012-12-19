@@ -19,7 +19,7 @@ public class RealtimeStatechartStatechartContentsCompartmentEditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7019;
+	public static final int VISUAL_ID = 7030;
 
 	/**
 	 * @generated

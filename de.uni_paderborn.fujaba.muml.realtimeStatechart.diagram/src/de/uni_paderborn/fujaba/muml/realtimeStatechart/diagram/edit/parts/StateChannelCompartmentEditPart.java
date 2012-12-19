@@ -19,7 +19,7 @@ public class StateChannelCompartmentEditPart extends ListCompartmentEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7028;
+	public static final int VISUAL_ID = 7033;
 
 	/**
 	 * @generated

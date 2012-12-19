@@ -14,12 +14,12 @@ import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6003;
+import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6005;
 
 /**
  * @generated
  */
-public class CustomTransitionLabelExpressionLabelParser6003 extends TransitionLabelExpressionLabelParser6003 {
+public class CustomTransitionLabelExpressionLabelParser6005 extends TransitionLabelExpressionLabelParser6005 {
 
 	@Override
 	protected void initializeEnvironment(Map<String, EClassifier> typeEnv,

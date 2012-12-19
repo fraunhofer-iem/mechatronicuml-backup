@@ -28,19 +28,19 @@ public class StateItemSemanticEditPolicy
 	 */
 	public StateItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3029);
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3032);
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryPoint_3030 == req
+		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryPoint_3040 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.commands.EntryPointCreateCommand(
 					req));
 		}
-		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitPoint_3031 == req
+		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitPoint_3041 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.commands.ExitPointCreateCommand(
 					req));
@@ -261,7 +261,7 @@ public class StateItemSemanticEditPolicy
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4002 == req
+		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4003 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.commands.TransitionCreateCommand(
 					req, req.getSource(), req.getTarget()));
@@ -274,7 +274,7 @@ public class StateItemSemanticEditPolicy
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4002 == req
+		if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4003 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.commands.TransitionCreateCommand(
 					req, req.getSource(), req.getTarget()));

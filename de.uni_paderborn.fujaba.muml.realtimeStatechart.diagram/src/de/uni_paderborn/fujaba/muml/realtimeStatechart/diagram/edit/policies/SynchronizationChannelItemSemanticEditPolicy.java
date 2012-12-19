@@ -20,7 +20,7 @@ public class SynchronizationChannelItemSemanticEditPolicy
 	 */
 	public SynchronizationChannelItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3022);
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3037);
 	}
 
 	/**

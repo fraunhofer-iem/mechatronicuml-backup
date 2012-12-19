@@ -43,13 +43,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class WrappingLabel10EditPart extends LabelEditPart implements
+public class WrappingLabel8EditPart extends LabelEditPart implements
 		ITextAwareEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 6004;
+	public static final int VISUAL_ID = 6005;
 
 	/**
 	 * @generated
@@ -77,14 +77,14 @@ public class WrappingLabel10EditPart extends LabelEditPart implements
 	static {
 		registerSnapBackPosition(
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID),
-				new Point(-10, 20));
+						.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID),
+				new Point(0, -20));
 	}
 
 	/**
 	 * @generated
 	 */
-	public WrappingLabel10EditPart(View view) {
+	public WrappingLabel8EditPart(View view) {
 		super(view);
 	}
 
@@ -107,7 +107,7 @@ public class WrappingLabel10EditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	public int getKeyPoint() {
-		return ConnectionLocator.SOURCE;
+		return ConnectionLocator.MIDDLE;
 	}
 
 	/**
@@ -308,10 +308,10 @@ public class WrappingLabel10EditPart extends LabelEditPart implements
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4002,
+							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4003,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

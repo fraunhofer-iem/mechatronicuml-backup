@@ -115,7 +115,7 @@ public class StateActionCompartmentCanonicalEditPolicy extends
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getStateActionCompartment_7026SemanticChildren(viewObject);
+				.getStateActionCompartment_7031SemanticChildren(viewObject);
 
 	}
 

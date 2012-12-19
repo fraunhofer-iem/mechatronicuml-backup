@@ -328,17 +328,17 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateTransition_4002(
+		public boolean canCreateTransition_4003(
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart container,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex source,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex target) {
-			return canExistTransition_4002(container, null, source, target);
+			return canExistTransition_4003(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistTransition_4002(
+		public boolean canExistTransition_4003(
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart container,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition linkInstance,
 				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex source,

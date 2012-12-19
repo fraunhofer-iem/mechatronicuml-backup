@@ -20,7 +20,7 @@ public class ExitEventItemSemanticEditPolicy
 	 */
 	public ExitEventItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitEvent_3020);
+				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitEvent_3035);
 	}
 
 	/**

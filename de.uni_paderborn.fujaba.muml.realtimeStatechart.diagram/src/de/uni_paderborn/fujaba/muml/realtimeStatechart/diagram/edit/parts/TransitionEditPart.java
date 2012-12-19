@@ -27,7 +27,7 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4002;
+	public static final int VISUAL_ID = 4003;
 
 	/**
 	 * @generated
@@ -50,14 +50,14 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureTransitionLabelFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart) {
-			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart) {
+			((de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureTransitionDeadlineLabelFigure());
 			return true;
@@ -79,10 +79,10 @@ public class TransitionEditPart extends ConnectionNodeEditPart implements
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart) {
 			return true;
 		}
 		return false;

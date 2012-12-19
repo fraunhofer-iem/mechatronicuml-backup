@@ -48,7 +48,7 @@ public class EntryPointEditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3030;
+	public static final int VISUAL_ID = 3040;
 
 	/**
 	 * @generated
@@ -348,7 +348,7 @@ public class EntryPointEditPart extends BorderedBorderItemEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4002);
+		types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4003);
 		return types;
 	}
 
@@ -359,13 +359,13 @@ public class EntryPointEditPart extends BorderedBorderItemEditPart {
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.StateEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4002);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4003);
 		}
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryPointEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4002);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4003);
 		}
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitPointEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4002);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4003);
 		}
 		return types;
 	}
@@ -375,10 +375,10 @@ public class EntryPointEditPart extends BorderedBorderItemEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4002) {
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3029);
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryPoint_3030);
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitPoint_3031);
+		if (relationshipType == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4003) {
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3032);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryPoint_3040);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitPoint_3041);
 		}
 		return types;
 	}
@@ -388,7 +388,7 @@ public class EntryPointEditPart extends BorderedBorderItemEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4002);
+		types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4003);
 		return types;
 	}
 
@@ -397,10 +397,10 @@ public class EntryPointEditPart extends BorderedBorderItemEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4002) {
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3029);
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryPoint_3030);
-			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitPoint_3031);
+		if (relationshipType == de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4003) {
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3032);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryPoint_3040);
+			types.add(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitPoint_3041);
 		}
 		return types;
 	}

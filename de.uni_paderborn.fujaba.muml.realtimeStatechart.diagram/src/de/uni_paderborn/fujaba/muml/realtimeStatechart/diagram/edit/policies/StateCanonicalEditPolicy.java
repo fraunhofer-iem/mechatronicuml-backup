@@ -111,7 +111,7 @@ public class StateCanonicalEditPolicy extends CanonicalEditPolicy {
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.MumlDiagramUpdater
-				.getState_3029SemanticChildren(viewObject);
+				.getState_3032SemanticChildren(viewObject);
 
 	}
 

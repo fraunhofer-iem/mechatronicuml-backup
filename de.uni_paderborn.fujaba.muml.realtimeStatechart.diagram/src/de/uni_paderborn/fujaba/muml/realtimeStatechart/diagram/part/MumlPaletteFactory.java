@@ -69,7 +69,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.State1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.State1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3029));
+						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.State_3032));
 		entry.setId("createState1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/c_state16.gif")); //$NON-NLS-1$
@@ -85,7 +85,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.Transition2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.Transition2CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4002));
+						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Transition_4003));
 		entry.setId("createTransition2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/transition16.gif")); //$NON-NLS-1$
@@ -131,7 +131,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.EntryAction1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.EntryAction1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryEvent_3018));
+						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryEvent_3033));
 		entry.setId("createEntryAction1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/entry_action16.gif")); //$NON-NLS-1$
@@ -147,7 +147,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.DoAction2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.DoAction2CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.DoEvent_3019));
+						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.DoEvent_3034));
 		entry.setId("createDoAction2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/do_action16.gif")); //$NON-NLS-1$
@@ -163,7 +163,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.ExitAction3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.ExitAction3CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitEvent_3020));
+						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitEvent_3035));
 		entry.setId("createExitAction3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/exit_action16.gif")); //$NON-NLS-1$
@@ -179,7 +179,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.Region4CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.Region4CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Region_3023));
+						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.Region_3038));
 		entry.setId("createRegion4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/region.gif")); //$NON-NLS-1$
@@ -195,7 +195,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.StateEntryPoint5CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.StateEntryPoint5CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryPoint_3030));
+						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.EntryPoint_3040));
 		entry.setId("createStateEntryPoint5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/state_entry_point.gif")); //$NON-NLS-1$
@@ -211,7 +211,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.StateExitPoint6CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.Messages.StateExitPoint6CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitPoint_3031));
+						.singletonList(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlElementTypes.ExitPoint_3041));
 		entry.setId("createStateExitPoint6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/state_exit_point.gif")); //$NON-NLS-1$

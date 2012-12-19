@@ -57,7 +57,7 @@ public class SynchronizationChannelCreateCommand extends EditElementCommand {
 		owner.getChannels().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers
-				.getInstance().init_SynchronizationChannel_3022(newElement);
+				.getInstance().init_SynchronizationChannel_3037(newElement);
 
 		doConfigure(newElement, monitor, info);
 

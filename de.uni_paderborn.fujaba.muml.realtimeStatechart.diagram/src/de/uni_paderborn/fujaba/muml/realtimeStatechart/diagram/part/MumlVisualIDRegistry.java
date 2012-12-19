@@ -348,10 +348,10 @@ public class MumlVisualIDRegistry {
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel10EditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

@@ -20,7 +20,7 @@ public class StateRegionCompartmentEditPart extends ShapeCompartmentEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7027;
+	public static final int VISUAL_ID = 7032;
 
 	/**
 	 * @generated

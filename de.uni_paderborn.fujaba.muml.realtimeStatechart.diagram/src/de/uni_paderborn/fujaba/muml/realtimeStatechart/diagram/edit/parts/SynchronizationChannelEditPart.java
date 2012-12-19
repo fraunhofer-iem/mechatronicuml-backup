@@ -35,7 +35,7 @@ public class SynchronizationChannelEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3022;
+	public static final int VISUAL_ID = 3037;
 
 	/**
 	 * @generated
