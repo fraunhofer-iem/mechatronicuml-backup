@@ -110,14 +110,6 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType StructuredComponentInstance_3025 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.StructuredComponentInstance_3025"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType AssemblyInstance_4005 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.AssemblyInstance_4005"); //$NON-NLS-1$
-	/**
-	 * @generated
-	 */
-	public static final IElementType DelegationInstance_4006 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DelegationInstance_4006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -304,16 +296,6 @@ public class MumlElementTypes {
 					StructuredComponentInstance_3025,
 					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 							.getStructuredComponentInstance());
-
-			elements.put(
-					AssemblyInstance_4005,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-							.getAssemblyInstance());
-
-			elements.put(
-					DelegationInstance_4006,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-							.getDelegationInstance());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -346,8 +328,6 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ComponentInstanceConfiguration_3023);
 			KNOWN_ELEMENT_TYPES.add(AtomicComponentInstance_3024);
 			KNOWN_ELEMENT_TYPES.add(StructuredComponentInstance_3025);
-			KNOWN_ELEMENT_TYPES.add(AssemblyInstance_4005);
-			KNOWN_ELEMENT_TYPES.add(DelegationInstance_4006);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -387,10 +367,6 @@ public class MumlElementTypes {
 			return AtomicComponentInstance_3024;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID:
 			return StructuredComponentInstance_3025;
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AssemblyInstanceEditPart.VISUAL_ID:
-			return AssemblyInstance_4005;
-		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DelegationInstanceEditPart.VISUAL_ID:
-			return DelegationInstance_4006;
 		}
 		return null;
 	}

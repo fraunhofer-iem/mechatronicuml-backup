@@ -320,44 +320,6 @@
       </compartments>
     </ownedChild>
   </nodes>
-  <links>
-    <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/AssemblyInstance"/>
-    <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration/connectorInstances"/>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.2"/>
-    <diagramLink
-        href="componentinstanceconfiguration.gmfgraph#Assembly"/>
-    <sourceMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ConnectorInstance/source"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ConnectorInstance/target"/>
-  </links>
-  <links>
-    <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DelegationInstance"/>
-    <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ComponentInstanceConfiguration/connectorInstances"/>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="componentinstanceconfiguration.gmftool#//@palette/@tools.0/@tools.3"/>
-    <diagramLink
-        href="componentinstanceconfiguration.gmfgraph#Delegation"/>
-    <sourceMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ConnectorInstance/source"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/ConnectorInstance/target"/>
-    <creationConstraints>
-      <sourceEnd
-          body="self.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->isEmpty()"/>
-    </creationConstraints>
-  </links>
   <diagram>
     <diagramCanvas
         href="componentinstanceconfiguration.gmfgraph#componentinstanceconfiguration"/>

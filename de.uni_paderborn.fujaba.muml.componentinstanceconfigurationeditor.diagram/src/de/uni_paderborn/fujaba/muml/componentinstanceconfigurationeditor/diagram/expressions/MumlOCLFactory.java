@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlAbstractExpression[13];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlAbstractExpression[12];
 	}
 
 	/**
@@ -62,7 +62,6 @@ public class MumlOCLFactory {
 					"\'instance\'", //$NON-NLS-1$
 					"\'configuration\'", //$NON-NLS-1$
 					"let compName : String = if self.componentType.name.oclIsUndefined() then \'null\' else\tself.componentType.name endif in\r\nlet partName : String = if self.componentPart.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPart.name) endif in\r\n(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(partName.concat(\' : \'.concat(compName)))", //$NON-NLS-1$
-					"self.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->isEmpty()", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],
