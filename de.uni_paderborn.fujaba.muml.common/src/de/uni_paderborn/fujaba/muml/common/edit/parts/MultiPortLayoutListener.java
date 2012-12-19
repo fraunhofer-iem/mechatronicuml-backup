@@ -11,7 +11,14 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 
-
+/**
+ * A LayoutListener that listens to changes in the container's layout.
+ * After the ports are layouted, we check at which side they are, to
+ * rotate the compartment.
+ * 
+ * @author bingo
+ * 
+ */
 public class MultiPortLayoutListener extends LayoutListener.Stub {
 
 		private static final int MAX_RECURSION_DEPTH = 3;
