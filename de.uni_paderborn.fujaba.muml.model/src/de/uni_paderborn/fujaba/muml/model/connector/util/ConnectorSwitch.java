@@ -117,9 +117,11 @@ public class ConnectorSwitch<T> extends Switch<T> {
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT: {
 				DiscreteInteractionEndpoint discreteInteractionEndpoint = (DiscreteInteractionEndpoint)theEObject;
 				T result = caseDiscreteInteractionEndpoint(discreteInteractionEndpoint);
+				if (result == null) result = caseConnectorEndpoint(discreteInteractionEndpoint);
 				if (result == null) result = caseBehavioralElement(discreteInteractionEndpoint);
-				if (result == null) result = caseNamedElement(discreteInteractionEndpoint);
 				if (result == null) result = caseConstrainableElement(discreteInteractionEndpoint);
+				if (result == null) result = caseNamedElement(discreteInteractionEndpoint);
+				if (result == null) result = caseCommentableElement(discreteInteractionEndpoint);
 				if (result == null) result = caseExtendableElement(discreteInteractionEndpoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

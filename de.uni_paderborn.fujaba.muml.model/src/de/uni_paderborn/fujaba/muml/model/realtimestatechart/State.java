@@ -219,7 +219,7 @@ public interface State extends Vertex {
 	 * @see #isSetSimple()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getState_Simple()
 	 * @model default="false" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='regions -> isEmpty()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- a state is simple if it contains no regions\nregions->isEmpty()\n'"
 	 * @generated
 	 */
 	boolean isSimple();

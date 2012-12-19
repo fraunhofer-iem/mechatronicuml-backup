@@ -285,36 +285,36 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public EList<Port> getPortsDerived() {
-
-		/* 
-		 * BEGIN: Bugfix to prevent NullPointerAccess:
-		 * 
-		 * Caused by: java.lang.NullPointerException
-		 * at org.eclipse.emf.ecore.impl.EStructuralFeatureImpl$InternalSettingDelegateMany.dynamicGet(EStructuralFeatureImpl.java:1710)
-		 * at de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl.getPortsDerived(ComponentPartImpl.java:286)
-		 * 
-		 * TODO: Why was this exception thrown?
-		*/
-		if (componentType != null) {
-			return componentType.getPorts();
-		} else {
-			return ECollections.emptyEList();
-		}
-		
-		// Original Code:
-		// return (EList<Port>)PORTS_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-		
-		
-		/*
-		 * END: Bugfix
-		 */
-	}
+//	/**
+//	 * <!-- begin-user-doc -->
+//	 * <!-- end-user-doc -->
+//	 * @generated NOT
+//	 */
+//	public EList<Port> getPortsDerived() {
+//
+//		/* 
+//		 * BEGIN: Bugfix to prevent NullPointerAccess:
+//		 * 
+//		 * Caused by: java.lang.NullPointerException
+//		 * at org.eclipse.emf.ecore.impl.EStructuralFeatureImpl$InternalSettingDelegateMany.dynamicGet(EStructuralFeatureImpl.java:1710)
+//		 * at de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl.getPortsDerived(ComponentPartImpl.java:286)
+//		 * 
+//		 * TODO: Why was this exception thrown?
+//		*/
+//		if (componentType != null) {
+//			return componentType.getPorts();
+//		} else {
+//			return ECollections.emptyEList();
+//		}
+//		
+//		// Original Code:
+//		// return (EList<Port>)PORTS_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+//		
+//		
+//		/*
+//		 * END: Bugfix
+//		 */
+//	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -384,6 +384,16 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT_PART__CARDINALITY, newCardinality, newCardinality));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EList<Port> getPortsDerived() {
+		return (EList<Port>)PORTS_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**

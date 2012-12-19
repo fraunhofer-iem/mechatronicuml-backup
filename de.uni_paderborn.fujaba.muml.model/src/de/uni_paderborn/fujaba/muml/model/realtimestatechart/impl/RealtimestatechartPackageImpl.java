@@ -1640,7 +1640,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "OneInvariantPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero InvalidClockConstraintOperator"
-		   });																											
+		   });																												
 		addAnnotation
 		  (transitionEClass, 
 		   source, 
@@ -1711,8 +1711,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getState_Simple(), 
 		   source, 
 		   new String[] {
-			 "derivation", "regions -> isEmpty()"
-		   });												
+			 "derivation", "-- a state is simple if it contains no regions\nregions->isEmpty()\n"
+		   });													
 		addAnnotation
 		  (transitionEClass, 
 		   source, 
@@ -1756,7 +1756,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getRealtimeStatechart_Flat(), 
 		   source, 
 		   new String[] {
-			 "derivation", "not(vertices -> exists( v : Vertex | v.oclIsTypeOf(State) implies v.oclAsType(State).regions -> notEmpty()))"
+			 "derivation", "-- a statechart is flat if it exclusively contains simple states\nstates->forAll(simple)"
 		   });				
 		addAnnotation
 		  (getRealtimeStatechart_AvailableClocks(), 

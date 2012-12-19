@@ -171,6 +171,7 @@
         <genClasses ecoreClass="muml.ecore#//model/core/TimeValue">
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/TimeValue/value"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/TimeValue/unit"/>
+          <genOperations ecoreOperation="muml.ecore#//model/core/TimeValue/toString"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.muml.model"

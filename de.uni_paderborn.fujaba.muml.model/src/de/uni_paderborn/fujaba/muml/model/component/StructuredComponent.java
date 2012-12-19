@@ -125,4 +125,12 @@ public interface StructuredComponent extends Component {
 	 */
 	boolean isSetAllAtomicComponents();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return \"Structured_Component_\" + getName();'"
+	 * @generated
+	 */
+	String toString();
+
 } // StructuredComponent

@@ -194,7 +194,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @return the value of the '<em>Flat</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_Flat()
 	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not(vertices -> exists( v : Vertex | v.oclIsTypeOf(State) implies v.oclAsType(State).regions -> notEmpty()))'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- a statechart is flat if it exclusively contains simple states\nstates->forAll(simple)'"
 	 * @generated
 	 */
 	boolean isFlat();

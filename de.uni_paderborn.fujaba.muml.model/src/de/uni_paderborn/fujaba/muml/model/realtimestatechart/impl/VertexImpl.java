@@ -109,9 +109,10 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public boolean isSuperVertexOf(Vertex vertex) {
+		// TODO: Replace this by OCL transitive closure?
 		Assert.isLegal(vertex != null);
 
 		BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();

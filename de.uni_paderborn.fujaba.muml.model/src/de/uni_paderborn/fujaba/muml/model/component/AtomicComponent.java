@@ -26,4 +26,12 @@ import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
  * @generated
  */
 public interface AtomicComponent extends Component, BehavioralElement {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return \"Atomic_Component_\" + getName();'"
+	 * @generated
+	 */
+	String toString();
 } // AtomicComponent

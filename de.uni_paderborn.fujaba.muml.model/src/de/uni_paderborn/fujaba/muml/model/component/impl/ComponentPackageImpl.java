@@ -925,6 +925,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		initEClass(atomicComponentEClass, AtomicComponent.class, "AtomicComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(atomicComponentEClass, theEcorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(portConnectorEClass, PortConnector.class, "PortConnector", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortConnector_ParentComponent(), this.getStructuredComponent(), this.getStructuredComponent_Connectors(), "parentComponent", null, 0, 1, PortConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -949,6 +951,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getStructuredComponent_Connectors(), this.getPortConnector(), this.getPortConnector_ParentComponent(), "connectors", null, 0, -1, StructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStructuredComponent_AllStructuredComponents(), this.getStructuredComponent(), null, "allStructuredComponents", null, 0, -1, StructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getStructuredComponent_AllAtomicComponents(), this.getAtomicComponent(), null, "allAtomicComponents", null, 0, -1, StructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		addEOperation(structuredComponentEClass, theEcorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(directedTypedPortEClass, DirectedTypedPort.class, "DirectedTypedPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDirectedTypedPort_Kind(), this.getContinuousPortDirectionKind(), "kind", null, 1, 1, DirectedTypedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1019,7 +1023,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "SoftwareComponentRequiresBehavior ValidComponentType SoftwareComponentValidPorts ContinuousComponentValidPorts AtomicComponentsNamesMustBeUnique"
-		   });					
+		   });						
 		addAnnotation
 		  (assemblyConnectorEClass, 
 		   source, 
@@ -1037,7 +1041,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"
-		   });									
+		   });										
 	}
 
 	/**
@@ -1149,7 +1153,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "SoftwareComponentValidPorts", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::HybridPort))\n\t)",
 			 "ContinuousComponentValidPorts", "self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::ContinuousPort))\n\t)",
 			 "AtomicComponentsNamesMustBeUnique", "AtomicComponent.allInstances().name->count(self.name) = 1"
-		   });							
+		   });								
 		addAnnotation
 		  (assemblyConnectorEClass, 
 		   source, 
@@ -1209,7 +1213,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "DiscreteStructuredComponentValidPorts", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))\n\t)",
 			 "HybridStructuredComponentValidPorts", "self.componentType = component::ComponentKind::HYBRID_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))\n\t)",
 			 "ComponentPartsHaveUniqueName", "self.embeddedParts -> isUnique(name)"
-		   });				
+		   });					
 		addAnnotation
 		  (getStructuredComponent_AllStructuredComponents(), 
 		   source, 

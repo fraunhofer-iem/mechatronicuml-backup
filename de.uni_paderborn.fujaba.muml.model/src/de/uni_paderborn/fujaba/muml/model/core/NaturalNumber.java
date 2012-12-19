@@ -89,7 +89,7 @@ public interface NaturalNumber extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Set the value to the value of the given parameter.
 	 * <!-- end-model-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (value == null || value.equals(\"*\")) {\n\tsetInfinity(true);\n\treturn;\n}\n\n// Convert to long, if string cannot be parsed, set infinity.\nlong longValue;\ntry {\n\tlongValue = Long.parseLong(value);\n} catch (NumberFormatException e) {\n\tsetInfinity(true);\n\treturn;\n}\n\n// Call setValue(long) outsite of catch block, so that the NumberFormatException\n// indicating negative numbers is not catched.\nsetValue(longValue);'"
 	 * @generated
 	 */
 	void setValue(String value);
@@ -111,7 +111,7 @@ public interface NaturalNumber extends EObject {
 	 * <!-- begin-model-doc -->
 	 * This operation yields the value of this natural number in a string representation.
 	 * <!-- end-model-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (isInfinity()) {\n\treturn \"*\";\n}\nreturn Long.toString(value);'"
 	 * @generated
 	 */
 	String toString();

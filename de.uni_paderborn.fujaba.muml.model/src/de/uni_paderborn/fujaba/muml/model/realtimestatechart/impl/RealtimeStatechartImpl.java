@@ -501,16 +501,15 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 		return (EList<Clock>)AVAILABLE_CLOCKS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	@Override
 	public boolean isEmbedded() {
-		return getEmbeddingRegion() != null;
+		return (Boolean)EMBEDDED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
-
 
 	/**
 	 * <!-- begin-user-doc -->

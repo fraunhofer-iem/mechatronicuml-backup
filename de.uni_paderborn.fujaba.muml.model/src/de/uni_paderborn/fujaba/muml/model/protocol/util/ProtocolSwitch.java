@@ -14,6 +14,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.connector.Connector;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
@@ -107,9 +108,10 @@ public class ProtocolSwitch<T> extends Switch<T> {
 				T result = caseRole(role);
 				if (result == null) result = caseDiscreteInteractionEndpoint(role);
 				if (result == null) result = caseDataType(role);
+				if (result == null) result = caseConnectorEndpoint(role);
 				if (result == null) result = caseBehavioralElement(role);
-				if (result == null) result = caseNamedElement(role);
 				if (result == null) result = caseConstrainableElement(role);
+				if (result == null) result = caseNamedElement(role);
 				if (result == null) result = caseCommentableElement(role);
 				if (result == null) result = caseExtendableElement(role);
 				if (result == null) result = defaultCase(theEObject);
@@ -283,6 +285,21 @@ public class ProtocolSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConstrainableElement(ConstrainableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Endpoint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Endpoint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnectorEndpoint(ConnectorEndpoint object) {
 		return null;
 	}
 

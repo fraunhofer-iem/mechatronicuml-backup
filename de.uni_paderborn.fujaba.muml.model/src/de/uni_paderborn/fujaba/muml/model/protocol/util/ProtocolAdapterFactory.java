@@ -15,6 +15,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.connector.Connector;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
@@ -122,6 +123,10 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseConstrainableElement(ConstrainableElement object) {
 				return createConstrainableElementAdapter();
+			}
+			@Override
+			public Adapter caseConnectorEndpoint(ConnectorEndpoint object) {
+				return createConnectorEndpointAdapter();
 			}
 			@Override
 			public Adapter caseBehavioralElement(BehavioralElement object) {
@@ -292,6 +297,20 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConstrainableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint <em>Endpoint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint
+	 * @generated
+	 */
+	public Adapter createConnectorEndpointAdapter() {
 		return null;
 	}
 

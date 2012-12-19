@@ -11,19 +11,12 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.ExtendableElement;
-import org.storydriven.core.Extension;
-import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
@@ -31,8 +24,9 @@ import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
+import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
-import de.uni_paderborn.fujaba.muml.model.core.impl.BehavioralElementImpl;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 
 /**
@@ -42,9 +36,7 @@ import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getAnnotations <em>Annotation</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getExtensions <em>Extension</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getConstraint <em>Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteInteractionEndpointImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
@@ -56,46 +48,16 @@ import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
  *
  * @generated
  */
-public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementImpl implements DiscreteInteractionEndpoint {
+public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointImpl implements DiscreteInteractionEndpoint {
 	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotation</em>}' containment reference list.
+	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
+	 * @see #getBehavior()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EAnnotation> annotations;
-
-	/**
-	 * The cached value of the '{@link #getExtensions() <em>Extension</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExtensions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Extension> extensions;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
+	protected Behavior behavior;
 
 	/**
 	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' containment reference list.
@@ -181,56 +143,71 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Behavior getBehavior() {
+		if (behavior != null && behavior.eIsProxy()) {
+			InternalEObject oldBehavior = (InternalEObject)behavior;
+			behavior = (Behavior)eResolveProxy(oldBehavior);
+			if (behavior != oldBehavior) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR, oldBehavior, behavior));
+			}
+		}
+		return behavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Behavior basicGetBehavior() {
+		return behavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBehavior(Behavior newBehavior, NotificationChain msgs) {
+		Behavior oldBehavior = behavior;
+		behavior = newBehavior;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR, oldBehavior, newBehavior);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBehavior(Behavior newBehavior) {
+		if (newBehavior != behavior) {
+			NotificationChain msgs = null;
+			if (behavior != null)
+				msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+			if (newBehavior != null)
+				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+			msgs = basicSetBehavior(newBehavior, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR, newBehavior, newBehavior));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Constraint> getConstraint() {
 		if (constraint == null) {
 			constraint = new EObjectContainmentWithInverseEList<Constraint>(Constraint.class, this, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT);
 		}
 		return constraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<EAnnotation> getAnnotations() {
-		if (annotations == null) {
-			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION);
-		}
-		return annotations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Extension> getExtensions() {
-		if (extensions == null) {
-			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION, CorePackage.EXTENSION__EXTENDABLE_BASE);
-		}
-		return extensions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME, oldName, name));
 	}
 
 	/**
@@ -381,56 +358,14 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Extension getExtension(EClass type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Extension provideExtension(EClass type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation getAnnotation(String source) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation provideAnnotation(String source) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtensions()).basicAdd(otherEnd, msgs);
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR:
+				if (behavior != null)
+					msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+				return basicSetBehavior((Behavior)otherEnd, msgs);
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
 		}
@@ -445,10 +380,8 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
-				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR:
+				return basicSetBehavior(null, msgs);
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
@@ -465,12 +398,9 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
-				return getAnnotations();
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
-				return getExtensions();
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
-				return getName();
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR:
+				if (resolve) return getBehavior();
+				return basicGetBehavior();
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				return getConstraint();
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
@@ -498,16 +428,8 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
-				return;
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
-				getExtensions().clear();
-				getExtensions().addAll((Collection<? extends Extension>)newValue);
-				return;
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
-				setName((String)newValue);
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR:
+				setBehavior((Behavior)newValue);
 				return;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				getConstraint().clear();
@@ -542,14 +464,8 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
-				getAnnotations().clear();
-				return;
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
-				getExtensions().clear();
-				return;
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
-				setName(NAME_EDEFAULT);
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR:
+				setBehavior((Behavior)null);
 				return;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				getConstraint().clear();
@@ -581,12 +497,8 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
-				return annotations != null && !annotations.isEmpty();
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
-				return extensions != null && !extensions.isEmpty();
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR:
+				return behavior != null;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				return constraint != null && !constraint.isEmpty();
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
@@ -610,21 +522,9 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == EObject.class) {
+		if (baseClass == BehavioralElement.class) {
 			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == ExtendableElement.class) {
-			switch (derivedFeatureID) {
-				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION: return CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
-				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION: return CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
-				default: return -1;
-			}
-		}
-		if (baseClass == NamedElement.class) {
-			switch (derivedFeatureID) {
-				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME: return CorePackage.NAMED_ELEMENT__NAME;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR: return CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
 				default: return -1;
 			}
 		}
@@ -644,21 +544,9 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == EObject.class) {
+		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == ExtendableElement.class) {
-			switch (baseFeatureID) {
-				case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION;
-				case CorePackage.EXTENDABLE_ELEMENT__EXTENSION: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION;
-				default: return -1;
-			}
-		}
-		if (baseClass == NamedElement.class) {
-			switch (baseFeatureID) {
-				case CorePackage.NAMED_ELEMENT__NAME: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME;
+				case CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR;
 				default: return -1;
 			}
 		}
@@ -669,22 +557,6 @@ public abstract class DiscreteInteractionEndpointImpl extends BehavioralElementI
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //DiscreteInteractionEndpointImpl

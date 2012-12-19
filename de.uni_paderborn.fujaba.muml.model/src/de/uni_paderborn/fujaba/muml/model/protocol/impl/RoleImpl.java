@@ -39,7 +39,6 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getPort <em>Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl#getRoleConnector <em>Role Connector</em>}</li>
@@ -51,26 +50,6 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * @generated
  */
 public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
-	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
-
-	/**
-	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comment = COMMENT_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getPort() <em>Port</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -128,27 +107,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	@Override
 	protected EClass eStaticClass() {
 		return ProtocolPackage.Literals.ROLE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getComment() {
-		return comment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComment(String newComment) {
-		String oldComment = comment;
-		comment = newComment;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.ROLE__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -304,8 +262,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProtocolPackage.ROLE__COMMENT:
-				return getComment();
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				return getCoordinationProtocol();
 			case ProtocolPackage.ROLE__PORT:
@@ -330,9 +286,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProtocolPackage.ROLE__COMMENT:
-				setComment((String)newValue);
-				return;
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((CoordinationProtocol)newValue);
 				return;
@@ -356,9 +309,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProtocolPackage.ROLE__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((CoordinationProtocol)null);
 				return;
@@ -380,8 +330,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProtocolPackage.ROLE__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				return getCoordinationProtocol() != null;
 			case ProtocolPackage.ROLE__PORT:
@@ -394,64 +342,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 				return receiverMessageBuffer != null && !receiverMessageBuffer.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (derivedFeatureID) {
-				case ProtocolPackage.ROLE__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
-				default: return -1;
-			}
-		}
-		if (baseClass == DataType.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (baseFeatureID) {
-				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return ProtocolPackage.ROLE__COMMENT;
-				default: return -1;
-			}
-		}
-		if (baseClass == DataType.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (comment: ");
-		result.append(comment);
-		result.append(')');
-		return result.toString();
 	}
 
 } //RoleImpl

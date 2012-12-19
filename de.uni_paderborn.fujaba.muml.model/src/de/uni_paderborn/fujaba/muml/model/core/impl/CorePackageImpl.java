@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.expressions.ExpressionsPackage;
 
@@ -566,6 +567,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -627,6 +629,8 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		initEReference(getTimeValue_Value(), this.getNaturalNumber(), null, "value", null, 1, 1, TimeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeValue_Unit(), this.getTimeUnit(), "unit", null, 0, 1, TimeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		addEOperation(timeValueEClass, theEcorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		// Initialize data types
 		initEDataType(timeUnitEDataType, TimeUnit.class, "TimeUnit", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
@@ -667,7 +671,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
-		   });																			
+		   });																				
 	}
 
 	/**
@@ -689,7 +693,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\nand (self.lowerBound.infinity implies self.upperBound.infinity)"
-		   });																		
+		   });																			
 	}
 
 } //CorePackageImpl

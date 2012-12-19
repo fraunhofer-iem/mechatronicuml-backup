@@ -17332,5 +17332,131 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/constraint" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/constraint/0.3.8" oldDataValue="http://www.fujaba.de/muml/model/constraint/0.2.2"/>
   </releases>
-  <releases/>
+  <releases>
+    <changes xsi:type="history:Remove" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/connector/DiscreteInteractionEndpoint"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/connector/ConnectorEndpoint"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core/TimeValue"
+        referenceName="eOperations" element="muml.ecore#//model/core/TimeValue/toString"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/toString"
+        featureName="name" dataValue="toString"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/toString"
+        featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core/TimeValue/toString"
+        referenceName="eAnnotations" element="muml.ecore#//model/core/TimeValue/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core/TimeValue/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/core/TimeValue/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="if componentType.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;componentType.ports&#xD;&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="key" dataValue="body" oldDataValue="derivation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="StringBuffer sb = new StringBuffer();&#xA;sb.append(value.toString());&#xA;sb.append(' ');&#xA;sb.append(unit.toString().toLowerCase());&#xA;return sb.toString(); "
+        oldDataValue="if componentType.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;componentType.ports&#xD;&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="// Return value concatenated with unit in lowercase.&#xA;StringBuffer sb = new StringBuffer();&#xA;sb.append(value.toString());&#xA;sb.append(' ');&#xA;sb.append(unit.toString().toLowerCase());&#xA;return sb.toString(); "
+        oldDataValue="StringBuffer sb = new StringBuffer();&#xA;sb.append(value.toString());&#xA;sb.append(' ');&#xA;sb.append(unit.toString().toLowerCase());&#xA;return sb.toString(); "/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/TimeValue/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"
+        oldDataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/flat/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- a statechart is flat if it exclusively contains simple states&#xA;states->forAll(simple)"
+        oldDataValue="not(vertices -> exists( v : Vertex | v.oclIsTypeOf(State) implies v.oclAsType(State).regions -> notEmpty()))"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/simple/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- a state is simple if it contains no regions&#xA;regions->isEmpty()&#xA;"
+        oldDataValue="regions -> isEmpty()"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/AtomicComponent"
+        referenceName="eOperations" element="muml.ecore#//model/component/AtomicComponent/toString"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/AtomicComponent/toString"
+        featureName="name" dataValue="toString"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/AtomicComponent/toString"
+        featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/AtomicComponent/toString"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/AtomicComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/AtomicComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/AtomicComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/component/AtomicComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/AtomicComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/AtomicComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="-- a state is simple if it contains no regions&#xA;regions->isEmpty()&#xA;"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/AtomicComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"
+        oldDataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/AtomicComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="key" dataValue="body" oldDataValue="derivation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/AtomicComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="return &quot;Atomic_Component_&quot;+getName();"
+        oldDataValue="-- a state is simple if it contains no regions&#xA;regions->isEmpty()&#xA;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/AtomicComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="return &quot;Atomic_Component_&quot; + getName();"
+        oldDataValue="return &quot;Atomic_Component_&quot;+getName();"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent"
+        referenceName="eOperations" element="muml.ecore#//model/component/StructuredComponent/toString">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/toString"
+          featureName="name" dataValue="toString"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/toString"
+          featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent/toString"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/StructuredComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/component/StructuredComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="body"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="return &quot;Atomic_Component_&quot; + getName();"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="return &quot;Structured_Component_&quot; + getName();"
+        oldDataValue="return &quot;Atomic_Component_&quot; + getName();"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core/NaturalNumber/setValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/core/NaturalNumber/setValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/NaturalNumber/setValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
+        featureName="key" dataValue="body"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/NaturalNumber/setValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
+        featureName="value" dataValue="if (value == null || value.equals(&quot;*&quot;)) {&#xA;&#x9;setInfinity(true);&#xA;&#x9;return;&#xA;}&#xA;&#xA;// Convert to long, if string cannot be parsed, set infinity.&#xA;long longValue;&#xA;try {&#xA;&#x9;longValue = Long.parseLong(value);&#xA;} catch (NumberFormatException e) {&#xA;&#x9;setInfinity(true);&#xA;&#x9;return;&#xA;}&#xA;&#xA;// Call setValue(long) outsite of catch block, so that the NumberFormatException&#xA;// indicating negative numbers is not catched.&#xA;setValue(longValue);"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/core/NaturalNumber/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/core/NaturalNumber/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/NaturalNumber/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
+        featureName="key" dataValue="body"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/core/NaturalNumber/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
+        featureName="value" dataValue="if (isInfinity()) {&#xA;&#x9;return &quot;*&quot;;&#xA;}&#xA;return Long.toString(value);"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Vertex/isSuperVertexOf"
+        referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="This class represents a node in a realtime statechart that is connected with other nodes via transitions."/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="key" dataValue="body" oldDataValue="documentation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Assert.isLegal(vertex != null);&#xA;&#xA;BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();&#xA;return bfs.search(vertex, new ISearchVisitor() {&#xA;&#xA;&#x9;@Override&#xA;&#x9;public boolean visit(Object object) {&#xA;&#x9;&#x9;return !VertexImpl.this.equals(object);&#xA;&#x9;}&#xA;&#xA;&#x9;@Override&#xA;&#x9;public List&lt;?> getAdjacentNodes(Object object) {&#xA;&#xA;&#x9;&#x9;List&lt;Object> parentStates = new ArrayList&lt;Object>();&#xA;&#xA;&#x9;&#x9;State state = (State) object;&#xA;&#x9;&#x9;RealtimeStatechart rtsc = state.getStatechart();&#xA;&#x9;&#x9;if (rtsc != null) {&#xA;&#x9;&#x9;&#x9;Region region = rtsc.getEmbeddingRegion();&#xA;&#x9;&#x9;&#x9;if (region != null) {&#xA;&#x9;&#x9;&#x9;&#x9;// List&lt;Region> regions = rtsc.getEmbeddingRegions();&#xA;&#x9;&#x9;&#x9;&#x9;// for (Region region : regions) {&#xA;&#x9;&#x9;&#x9;&#x9;State parentState = region.getParentState();&#xA;&#x9;&#x9;&#x9;&#x9;if (state != null) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;parentStates.add(parentState);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;// }&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;return parentStates;&#xA;&#x9;}&#xA;&#xA;});"
+        oldDataValue="This class represents a node in a realtime statechart that is connected with other nodes via transitions."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).receiverMessageTypes&#xD;&#xA;endif"
+        oldDataValue="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).receiverMessageTypes&#xD;&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageTypes&#xD;&#xA;endif"
+        oldDataValue="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageTypes&#xD;&#xA;endif"/>
+  </releases>
 </history:History>

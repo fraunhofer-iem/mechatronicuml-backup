@@ -247,15 +247,6 @@ public interface ProtocolPackage extends EPackage {
 	int ROLE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__BEHAVIOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR;
-
-	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -281,6 +272,33 @@ public interface ProtocolPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROLE__NAME = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__COMMENT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__CONNECTORS = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__BEHAVIOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -337,22 +355,13 @@ public interface ProtocolPackage extends EPackage {
 	int ROLE__CARDINALITY = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__COMMENT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Coordination Protocol</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__COORDINATION_PROTOCOL = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 1;
+	int ROLE__COORDINATION_PROTOCOL = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Port</b></em>' reference list.
@@ -361,7 +370,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__PORT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 2;
+	int ROLE__PORT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Role Connector</b></em>' reference.
@@ -370,7 +379,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ROLE_CONNECTOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 3;
+	int ROLE__ROLE_CONNECTOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Multi Role</b></em>' attribute.
@@ -379,7 +388,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__MULTI_ROLE = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 4;
+	int ROLE__MULTI_ROLE = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
@@ -388,7 +397,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__RECEIVER_MESSAGE_BUFFER = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 5;
+	int ROLE__RECEIVER_MESSAGE_BUFFER = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -397,7 +406,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 6;
+	int ROLE_FEATURE_COUNT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.MessageBufferImpl <em>Message Buffer</em>}' class.

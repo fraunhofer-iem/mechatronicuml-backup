@@ -146,14 +146,14 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void setValue(String value) throws NumberFormatException {
 		if (value == null || value.equals("*")) {
 			setInfinity(true);
 			return;
 		}
-
+		
 		// Convert to long, if string cannot be parsed, set infinity.
 		long longValue;
 		try {
@@ -162,10 +162,10 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 			setInfinity(true);
 			return;
 		}
-
+		
 		// Call setValue(long) outsite of catch block, so that the NumberFormatException
 		// indicating negative numbers is not catched.
-		setValue(longValue);		
+		setValue(longValue);
 	}
 
 	/**
@@ -182,7 +182,7 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public String toString() {
 		if (isInfinity()) {

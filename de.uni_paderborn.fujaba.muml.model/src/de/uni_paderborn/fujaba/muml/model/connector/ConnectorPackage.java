@@ -326,22 +326,13 @@ public interface ConnectorPackage extends EPackage {
 	int DISCRETE_INTERACTION_ENDPOINT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR = de.uni_paderborn.fujaba.muml.model.core.CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
-
-	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__ANNOTATION = de.uni_paderborn.fujaba.muml.model.core.CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
+	int DISCRETE_INTERACTION_ENDPOINT__ANNOTATION = CONNECTOR_ENDPOINT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -350,7 +341,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__EXTENSION = de.uni_paderborn.fujaba.muml.model.core.CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
+	int DISCRETE_INTERACTION_ENDPOINT__EXTENSION = CONNECTOR_ENDPOINT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -359,7 +350,34 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__NAME = de.uni_paderborn.fujaba.muml.model.core.CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
+	int DISCRETE_INTERACTION_ENDPOINT__NAME = CONNECTOR_ENDPOINT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_ENDPOINT__COMMENT = CONNECTOR_ENDPOINT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_ENDPOINT__CONNECTORS = CONNECTOR_ENDPOINT__CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -368,7 +386,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT = de.uni_paderborn.fujaba.muml.model.core.CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
+	int DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT = CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
@@ -377,7 +395,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES = de.uni_paderborn.fujaba.muml.model.core.CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 4;
+	int DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES = CONNECTOR_ENDPOINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -386,7 +404,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES = de.uni_paderborn.fujaba.muml.model.core.CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 5;
+	int DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES = CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -395,7 +413,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR = de.uni_paderborn.fujaba.muml.model.core.CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 6;
+	int DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
@@ -404,7 +422,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR = de.uni_paderborn.fujaba.muml.model.core.CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 7;
+	int DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -413,7 +431,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__CARDINALITY = de.uni_paderborn.fujaba.muml.model.core.CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 8;
+	int DISCRETE_INTERACTION_ENDPOINT__CARDINALITY = CONNECTOR_ENDPOINT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Discrete Interaction Endpoint</em>' class.
@@ -422,7 +440,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT = de.uni_paderborn.fujaba.muml.model.core.CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 9;
+	int DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT = CONNECTOR_ENDPOINT_FEATURE_COUNT + 7;
 
 
 	/**

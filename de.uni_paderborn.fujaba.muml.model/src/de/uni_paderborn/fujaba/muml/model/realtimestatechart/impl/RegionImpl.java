@@ -225,34 +225,6 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@SuppressWarnings("unchecked")
-	public EList<? extends Vertex> getVertices() {
-//		return (EList<Vertex>)VERTICES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-		if (getStatechart() != null) {
-			return getStatechart().getStates();
-		}
-		return (EList<Vertex>) ECollections.EMPTY_ELIST;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@SuppressWarnings("unchecked")
-	public EList<Transition> getTransitions() {
-//		return (EList<Transition>)TRANSITIONS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-		if (getStatechart() != null) {
-			return getStatechart().getTransitions();
-		}
-		return (EList<Transition>) ECollections.EMPTY_ELIST;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

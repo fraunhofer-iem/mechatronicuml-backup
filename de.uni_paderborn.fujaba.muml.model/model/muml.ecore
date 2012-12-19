@@ -256,6 +256,11 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="SoftwareComponentRequiresBehavior ValidComponentType SoftwareComponentValidPorts ContinuousComponentValidPorts AtomicComponentsNamesMustBeUnique"/>
         </eAnnotations>
+        <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="body" value="return &quot;Atomic_Component_&quot; + getName();"/>
+          </eAnnotations>
+        </eOperations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PortConnector" abstract="true" eSuperTypes="#//model/connector/Connector">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -434,6 +439,11 @@
           <details key="HybridStructuredComponentValidPorts" value="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))&#xA;&#x9;)"/>
           <details key="ComponentPartsHaveUniqueName" value="self.embeddedParts -> isUnique(name)"/>
         </eAnnotations>
+        <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="body" value="return &quot;Structured_Component_&quot; + getName();"/>
+          </eAnnotations>
+        </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedParts" lowerBound="1"
             upperBound="-1" eType="#//model/component/ComponentPart" containment="true"
             eOpposite="#//model/component/ComponentPart/parentComponent">
@@ -582,6 +592,7 @@
         <eOperations name="setValue">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Set the value to the value of the given parameter."/>
+            <details key="body" value="if (value == null || value.equals(&quot;*&quot;)) {&#xA;&#x9;setInfinity(true);&#xA;&#x9;return;&#xA;}&#xA;&#xA;// Convert to long, if string cannot be parsed, set infinity.&#xA;long longValue;&#xA;try {&#xA;&#x9;longValue = Long.parseLong(value);&#xA;} catch (NumberFormatException e) {&#xA;&#x9;setInfinity(true);&#xA;&#x9;return;&#xA;}&#xA;&#xA;// Call setValue(long) outsite of catch block, so that the NumberFormatException&#xA;// indicating negative numbers is not catched.&#xA;setValue(longValue);"/>
           </eAnnotations>
           <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         </eOperations>
@@ -593,6 +604,7 @@
         <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This operation yields the value of this natural number in a string representation."/>
+            <details key="body" value="if (isInfinity()) {&#xA;&#x9;return &quot;*&quot;;&#xA;}&#xA;return Long.toString(value);"/>
           </eAnnotations>
         </eOperations>
         <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
@@ -730,6 +742,11 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EDataType" name="TimeUnit" instanceClassName="java.util.concurrent.TimeUnit"/>
       <eClassifiers xsi:type="ecore:EClass" name="TimeValue" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+        <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="body" value="// Return value concatenated with unit in lowercase.&#xA;StringBuffer sb = new StringBuffer();&#xA;sb.append(value.toString());&#xA;sb.append(' ');&#xA;sb.append(unit.toString().toLowerCase());&#xA;return sb.toString(); "/>
+          </eAnnotations>
+        </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
             eType="#//model/core/NaturalNumber" containment="true"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//model/core/TimeUnit"
@@ -898,7 +915,7 @@
             upperBound="-1" eType="#//model/msgtype/MessageType" changeable="false"
             volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).receiverMessageTypes&#xD;&#xA;endif"/>
+            <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).receiverMessageTypes&#xD;&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The receiver message interface defines which messages this port instance receives&#xD;&#xA;It is derived from the receiver message interface of its port.&#xD;&#xA;\todosd{ocl: implement derived}"/>
@@ -908,7 +925,7 @@
             upperBound="-1" eType="#//model/msgtype/MessageType" changeable="false"
             volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageTypes&#xD;&#xA;endif"/>
+            <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageTypes&#xD;&#xA;endif"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The sender message interface defines which messages this port instance sends.&#xD;&#xA;It is derived from the sender message interface of its port.&#xD;&#xA;\todosd{ocl: implement derived}"/>
@@ -1349,7 +1366,7 @@
             changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
             unsettable="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="regions -> isEmpty()"/>
+            <details key="derivation" value="-- a state is simple if it contains no regions&#xA;regions->isEmpty()&#xA;"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="A state is simple if it does not contain a region with an embedded substatechart."/>
@@ -1373,6 +1390,9 @@
           <details key="documentation" value="This class represents a node in a realtime statechart that is connected with other nodes via transitions."/>
         </eAnnotations>
         <eOperations name="isSuperVertexOf" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="body" value="Assert.isLegal(vertex != null);&#xA;&#xA;BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();&#xA;return bfs.search(vertex, new ISearchVisitor() {&#xA;&#xA;&#x9;@Override&#xA;&#x9;public boolean visit(Object object) {&#xA;&#x9;&#x9;return !VertexImpl.this.equals(object);&#xA;&#x9;}&#xA;&#xA;&#x9;@Override&#xA;&#x9;public List&lt;?> getAdjacentNodes(Object object) {&#xA;&#xA;&#x9;&#x9;List&lt;Object> parentStates = new ArrayList&lt;Object>();&#xA;&#xA;&#x9;&#x9;State state = (State) object;&#xA;&#x9;&#x9;RealtimeStatechart rtsc = state.getStatechart();&#xA;&#x9;&#x9;if (rtsc != null) {&#xA;&#x9;&#x9;&#x9;Region region = rtsc.getEmbeddingRegion();&#xA;&#x9;&#x9;&#x9;if (region != null) {&#xA;&#x9;&#x9;&#x9;&#x9;// List&lt;Region> regions = rtsc.getEmbeddingRegions();&#xA;&#x9;&#x9;&#x9;&#x9;// for (Region region : regions) {&#xA;&#x9;&#x9;&#x9;&#x9;State parentState = region.getParentState();&#xA;&#x9;&#x9;&#x9;&#x9;if (state != null) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;parentStates.add(parentState);&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;// }&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;return parentStates;&#xA;&#x9;}&#xA;&#xA;});"/>
+          </eAnnotations>
           <eParameters name="vertex" eType="#//model/realtimestatechart/Vertex"/>
         </eOperations>
         <eOperations name="getUniqueTransitionPriority" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
@@ -1714,7 +1734,7 @@
             changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
             derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="not(vertices -> exists( v : Vertex | v.oclIsTypeOf(State) implies v.oclAsType(State).regions -> notEmpty()))"/>
+            <details key="derivation" value="-- a statechart is flat if it exclusively contains simple states&#xA;states->forAll(simple)"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This derived attribute allows to checks whether a statechart is flat or not. In a&#xD;&#xA;flat statechart, none of the contained states contains a regions with an embedded&#xD;&#xA;substatechart."/>
@@ -2161,7 +2181,7 @@
             lowerBound="2" upperBound="2" eType="#//model/connector/ConnectorEndpointInstance"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpoint" abstract="true"
-          eSuperTypes="#//model/core/BehavioralElement ../../org.storydriven.core/model/core.ecore#//NamedElement #//model/constraint/ConstrainableElement">
+          eSuperTypes="#//model/connector/ConnectorEndpoint #//model/core/BehavioralElement #//model/constraint/ConstrainableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An interaction point for discrete communication via asynchronous messages. This class generalizes concepts of classes DiscretePort and Role."/>
         </eAnnotations>

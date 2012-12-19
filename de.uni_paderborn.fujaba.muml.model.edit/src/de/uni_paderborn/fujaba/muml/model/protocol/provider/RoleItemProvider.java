@@ -65,34 +65,11 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
 			addPortPropertyDescriptor(object);
 			addRoleConnectorPropertyDescriptor(object);
 			addMultiRolePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Comment feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addCommentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -286,7 +263,6 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Role.class)) {
-			case ProtocolPackage.ROLE__COMMENT:
 			case ProtocolPackage.ROLE__MULTI_ROLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

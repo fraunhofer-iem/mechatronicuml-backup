@@ -12,9 +12,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,17 +20,14 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.muml.model.core.provider.BehavioralElementItemProvider;
+import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint} object.
@@ -41,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.model.core.provider.BehavioralElementItemPro
  * @generated
  */
 public class DiscreteInteractionEndpointItemProvider
-	extends BehavioralElementItemProvider
+	extends ConnectorEndpointItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -69,7 +64,7 @@ public class DiscreteInteractionEndpointItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addBehaviorPropertyDescriptor(object);
 			addSenderMessageTypesPropertyDescriptor(object);
 			addReceiverMessageTypesPropertyDescriptor(object);
 			addAdaptationBehaviorPropertyDescriptor(object);
@@ -79,24 +74,24 @@ public class DiscreteInteractionEndpointItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Behavior feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addBehaviorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_NamedElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				 CorePackage.Literals.NAMED_ELEMENT__NAME,
+				 getString("_UI_BehavioralElement_behavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_behavior_feature", "_UI_BehavioralElement_type"),
+				 CorePackage.Literals.BEHAVIORAL_ELEMENT__BEHAVIOR,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
 				 null,
+				 getString("_UI_BehaviorPropertyCategory"),
 				 null));
 	}
 
@@ -200,8 +195,6 @@ public class DiscreteInteractionEndpointItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
 			childrenFeatures.add(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 			childrenFeatures.add(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY);
 		}
@@ -247,11 +240,6 @@ public class DiscreteInteractionEndpointItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DiscreteInteractionEndpoint.class)) {
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION:
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION:
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -273,11 +261,6 @@ public class DiscreteInteractionEndpointItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION,
-				 EcoreFactory.eINSTANCE.createEAnnotation()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
 				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
 
@@ -285,17 +268,6 @@ public class DiscreteInteractionEndpointItemProvider
 			(createChildParameter
 				(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY,
 				 CoreFactory.eINSTANCE.createCardinality()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return MumlEditPlugin.INSTANCE;
 	}
 
 }

@@ -279,12 +279,11 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String toString() {
-
-		return "Structured_Component_"+getName();
+		return "Structured_Component_" + getName();
 	}
 
 } //StructuredComponentImpl

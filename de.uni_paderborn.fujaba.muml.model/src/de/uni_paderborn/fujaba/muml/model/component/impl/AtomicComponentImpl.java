@@ -246,12 +246,11 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String toString() {
-
-		return "Atomic_Component_"+getName();
+		return "Atomic_Component_" + getName();
 	}
 
 } //AtomicComponentImpl

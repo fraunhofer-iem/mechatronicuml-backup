@@ -215,17 +215,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT__COMPONENT_TYPE, oldComponentType, componentType));
 	}
 
-	//	/**
-//	 * <!-- begin-user-doc -->
-//	 * <!-- end-user-doc -->
-//	 * @generated NOT
-//	 */
-//	public ComponentInstance createInstance() {
-//		ComponentInstance componentInstance = InstanceFactory.eINSTANCE.createComponentInstance();
-//		componentInstance.setComponentType(this);
-//		return componentInstance;
-//	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
