@@ -112,22 +112,21 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * @generated
 	 */
 	public boolean isSuperVertexOf(Vertex vertex) {
-		// TODO: Replace this by OCL transitive closure?
 		Assert.isLegal(vertex != null);
-
+		
 		BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();
 		return bfs.search(vertex, new ISearchVisitor() {
-
+		
 			@Override
 			public boolean visit(Object object) {
 				return !VertexImpl.this.equals(object);
 			}
-
+		
 			@Override
 			public List<?> getAdjacentNodes(Object object) {
-
+		
 				List<Object> parentStates = new ArrayList<Object>();
-
+		
 				State state = (State) object;
 				RealtimeStatechart rtsc = state.getStatechart();
 				if (rtsc != null) {
@@ -142,10 +141,10 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 						// }
 					}
 				}
-
+		
 				return parentStates;
 			}
-
+		
 		});
 	}
 

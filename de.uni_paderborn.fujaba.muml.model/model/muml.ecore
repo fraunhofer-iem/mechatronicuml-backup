@@ -1111,7 +1111,7 @@
             eType="#//model/protocol/RoleConnector" changeable="false" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if self.incomingConnector -> notEmpty() then&#xD;&#xA;&#x9;self.incomingConnector&#xD;&#xA;else&#xD;&#xA;&#x9;self.outgoingConnector&#xD;&#xA;endif"/>
+            <details key="derivation" value="if self.connectors->isEmpty() then&#xA;&#x9;null&#xA;else&#xA;&#x9;self.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiRole" lowerBound="1"

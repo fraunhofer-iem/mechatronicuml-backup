@@ -17467,5 +17467,8 @@
     <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="To perform an action on a value of a variable of a \rtsc we use the variable expression, which has a reference to a variable of the \rtsc and optional indicies if a concrete array element should be referenced."
         oldDataValue="To perform an action on a value of an attribute of a \rtsc we use the attribute expression which has a reference to an attribute of the \rtsc and optional indicies if a concrete array element should be referenced."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/roleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if self.connectors->isEmpty() then&#xA;&#x9;null&#xA;else&#xA;&#x9;self.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)&#xA;endif"
+        oldDataValue="if self.incomingConnector -> notEmpty() then&#xD;&#xA;&#x9;self.incomingConnector&#xD;&#xA;else&#xD;&#xA;&#x9;self.outgoingConnector&#xD;&#xA;endif"/>
   </releases>
 </history:History>

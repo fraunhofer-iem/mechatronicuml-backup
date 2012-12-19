@@ -59,7 +59,9 @@
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/ComponentPart/multiPart"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/component/StaticStructuredComponent"/>
-        <genClasses ecoreClass="muml.ecore#//model/component/AtomicComponent"/>
+        <genClasses ecoreClass="muml.ecore#//model/component/AtomicComponent">
+          <genOperations ecoreOperation="muml.ecore#//model/component/AtomicComponent/toString"/>
+        </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/component/PortConnector">
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/PortConnector/parentComponent"/>
         </genClasses>
@@ -88,6 +90,7 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/component/StructuredComponent/connectors"/>
           <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/StructuredComponent/allStructuredComponents"/>
           <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/component/StructuredComponent/allAtomicComponents"/>
+          <genOperations ecoreOperation="muml.ecore#//model/component/StructuredComponent/toString"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/component/DirectedTypedPort">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/DirectedTypedPort/kind"/>

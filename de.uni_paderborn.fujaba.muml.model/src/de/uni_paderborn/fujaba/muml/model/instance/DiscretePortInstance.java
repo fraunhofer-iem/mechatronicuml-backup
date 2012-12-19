@@ -53,7 +53,7 @@ public interface DiscretePortInstance extends PortInstance {
 	 * @return the value of the '<em>Receiver Message Types</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscretePortInstance_ReceiverMessageTypes()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\r\n\tnull\r\nelse\r\n\tportType.oclAsType(component::DiscretePort).receiverMessageTypes\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\r\n\tOrderedSet { }\r\nelse\r\n\tportType.oclAsType(component::DiscretePort).receiverMessageTypes\r\nendif'"
 	 * @generated
 	 */
 	EList<MessageType> getReceiverMessageTypes();
@@ -71,7 +71,7 @@ public interface DiscretePortInstance extends PortInstance {
 	 * @return the value of the '<em>Sender Message Types</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscretePortInstance_SenderMessageTypes()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\r\n\tnull\r\nelse\r\n\tportType.oclAsType(component::DiscretePort).senderMessageTypes\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\r\n\tOrderedSet { }\r\nelse\r\n\tportType.oclAsType(component::DiscretePort).senderMessageTypes\r\nendif'"
 	 * @generated
 	 */
 	EList<MessageType> getSenderMessageTypes();

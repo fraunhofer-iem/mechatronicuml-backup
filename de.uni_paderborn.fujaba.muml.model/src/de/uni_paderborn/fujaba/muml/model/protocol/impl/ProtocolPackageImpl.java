@@ -603,7 +603,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (getRole_RoleConnector(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if self.incomingConnector -> notEmpty() then\r\n\tself.incomingConnector\r\nelse\r\n\tself.outgoingConnector\r\nendif"
+			 "derivation", "if self.connectors->isEmpty() then\n\tnull\nelse\n\tself.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)\nendif"
 		   });			
 		addAnnotation
 		  (getRole_MultiRole(), 

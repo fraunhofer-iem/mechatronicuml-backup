@@ -860,13 +860,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (getDiscretePortInstance_ReceiverMessageTypes(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\r\n\tnull\r\nelse\r\n\tportType.oclAsType(component::DiscretePort).receiverMessageTypes\r\nendif"
+			 "derivation", "if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\r\n\tOrderedSet { }\r\nelse\r\n\tportType.oclAsType(component::DiscretePort).receiverMessageTypes\r\nendif"
 		   });			
 		addAnnotation
 		  (getDiscretePortInstance_SenderMessageTypes(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\r\n\tnull\r\nelse\r\n\tportType.oclAsType(component::DiscretePort).senderMessageTypes\r\nendif"
+			 "derivation", "if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\r\n\tOrderedSet { }\r\nelse\r\n\tportType.oclAsType(component::DiscretePort).senderMessageTypes\r\nendif"
 		   });			
 		addAnnotation
 		  (getDiscretePortInstance_ReceiverMessageBuffer(), 
