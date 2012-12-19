@@ -17,7 +17,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart;
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.CoordinationPattern2ItemSemanticEditPolicy;
 
 /**
@@ -27,8 +27,8 @@ import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.Coordina
  * @author bingo
  * 
  */
-public class CustomCoordination2PatternEditPart extends
-		CoordinationPattern2EditPart {
+public class CustomCoordinationPatternEditPart extends
+		CoordinationPatternEditPart {
 
 	@Override
 	public void deactivate() {
@@ -36,7 +36,7 @@ public class CustomCoordination2PatternEditPart extends
 		super.deactivate();
 	}
 
-	public CustomCoordination2PatternEditPart(View view) {
+	public CustomCoordinationPatternEditPart(View view) {
 		super(view);
 	}
 
