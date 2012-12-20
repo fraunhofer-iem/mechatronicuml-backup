@@ -1,9 +1,7 @@
 package de.uni_paderborn.fujaba.muml.tests;
 
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
-import java.io.File;
 import java.util.Map;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenBase;
@@ -11,22 +9,23 @@ import org.eclipse.emf.codegen.ecore.genmodel.GenFeature;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import de.uni_paderborn.fujaba.muml.tests.resource.ILabelProvider;
+import de.uni_paderborn.fujaba.muml.tests.resource.IResourceVisitor;
+import de.uni_paderborn.fujaba.muml.tests.resource.QualifiedLabelProvider;
 
 /**
  * <p>
@@ -43,7 +42,8 @@ import org.junit.Test;
  * @author bingo
  * 
  */
-public class GenmodelTest {
+public class GenmodelTest extends TraverseTest {
+
 
 	/**
 	 * The workspace-relative path to the muml.model project.
@@ -60,89 +60,32 @@ public class GenmodelTest {
 	 */
 	private static Resource genmodel;
 
-	/**
-	 * Traverses the containment hierarchy starting the the specified
-	 * <code>element</code> and visits all found elements using the
-	 * <code>visitor</code>.
-	 * 
-	 * @param element
-	 *            The start element.
-	 * @param visitor
-	 *            The visitor to use.
-	 */
-	private void traverse(EObject element, IVisitor visitor) {
-		if (element == null) {
-			return;
-		}
-		if (visitor.visit(element)) {
-			for (EObject child : element.eContents()) {
-				traverse(child, visitor);
-			}
-		}
-	}
+	private static ILabelProvider defaultLabelProvider = new ILabelProvider() {
 
-	/**
-	 * Interface for visitors that can be used to visit genmodel elements.
-	 * 
-	 * @author ingo
-	 * 
-	 */
-	private interface IVisitor {
 		/**
-		 * Visits this element.
+		 * Gets a label for the given element (e.g. by getting its name).
 		 * 
 		 * @param element
-		 *            The element to visit.
-		 * @return <code>true</code>, if children of the <code>element</code>
-		 *         should be visited, too.
+		 *            The element to get a label for
+		 * @return The label
 		 */
-		boolean visit(EObject element);
-	}
-
-	/**
-	 * Gets a qualified label for the given element (e.g.
-	 * package.package.element).
-	 * 
-	 * @param element
-	 *            The element to get a label for
-	 * @return The label
-	 */
-	private String getQualifiedLabel(EObject element) {
-
-		StringBuffer buffer = new StringBuffer();
-
-		while (element != null) {
-			String label = getLabel(element);
-			if (label != null) {
-				buffer.insert(0, '.');
-				buffer.insert(0, label);
+		@Override
+		public String getLabel(EObject element) {
+			if (element instanceof ENamedElement) {
+				return ((ENamedElement) element).getName();
 			}
+			if (element instanceof GenBase) {
+				return getLabel(((GenBase) element).getEcoreModelElement());
+			}
+			if (element != null) {
+				return element.eClass().getName();
+			}
+			return "null";
+		}
+	};
 
-			element = element.eContainer();
-		}
+	private static ILabelProvider qualifiedLabelProvider = new QualifiedLabelProvider(defaultLabelProvider);
 
-		return buffer.toString();
-	}
-
-	/**
-	 * Gets a label for the given element (e.g. by getting its name).
-	 * 
-	 * @param element
-	 *            The element to get a label for
-	 * @return The label
-	 */
-	private String getLabel(EObject element) {
-		if (element instanceof ENamedElement) {
-			return ((ENamedElement) element).getName();
-		}
-		if (element instanceof GenBase) {
-			return getLabel(((GenBase) element).getEcoreModelElement());
-		}
-		if (element != null) {
-			return element.eClass().getName();
-		}
-		return null;
-	}
 
 	/**
 	 * Initializes this test class by loading the genmodel. All tests in this
@@ -153,10 +96,6 @@ public class GenmodelTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		URI uri = URI.createPlatformResourceURI(GENMODEL_PROJECT
-				+ GENMODEL_PATH, true);
-		assertNotNull(uri);
-
 		// Initialize new ResourceSet
 		ResourceSet resourceSet = new ResourceSetImpl();
 
@@ -167,30 +106,15 @@ public class GenmodelTest {
 		extensionToFactoryMap.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
 				new XMIResourceFactoryImpl());
 
+
 		// Register Packages
 		EcorePackage.eINSTANCE.eClass();
 		GenModelPackage.eINSTANCE.eClass();
 
-		// Find out absolute path of muml.model project
-		StringBuffer absoluteProjectPath = new StringBuffer();
-		absoluteProjectPath.append(new File("").getAbsoluteFile()
-				.getParentFile());
-		absoluteProjectPath.append('/');
-		absoluteProjectPath.append(GENMODEL_PROJECT);
-		// no idea why, but this is necessary two times :)
-		absoluteProjectPath.append('/');
-		absoluteProjectPath.append(GENMODEL_PROJECT);
-
-		// Register platform mapping for muml.model project
-		EcorePlugin.getPlatformResourceMap().put(GENMODEL_PROJECT,
-				URI.createFileURI(absoluteProjectPath.toString()));
-
-		// Load genmodel
-		genmodel = resourceSet.getResource(uri, true);
-		assertNotNull(genmodel);
-
-		// Resolve all referenced models
-		EcoreUtil.resolveAll(resourceSet);
+		// Load resource
+		genmodel = loadResource(resourceSet, GENMODEL_PROJECT, GENMODEL_PATH);
+		
+		setLabelProvider(qualifiedLabelProvider);
 	}
 
 	/**
@@ -248,10 +172,10 @@ public class GenmodelTest {
 	 * Tests, if the genmodel has only one root element.
 	 */
 	@Test
-	public void singleGenmodelRoots() {
+	public void singleRootElement() {
 		EList<EObject> contents = genmodel.getContents();
-		if (!contents.isEmpty() && contents.size() > 1) {
-			fail("Genmodel has more than one root element.");
+		if (contents.size() != 1) {
+			fail("Genmodel has not exactly one root element.");
 		}
 	}
 
@@ -260,7 +184,7 @@ public class GenmodelTest {
 	 */
 	@Test
 	public void validChildrenSetting() {
-		traverse(getRootElement(), new IVisitor() {
+		accept(getRootElement(), new IResourceVisitor() {
 			@Override
 			public boolean visit(EObject element) {
 				if (element instanceof GenFeature) {
@@ -274,7 +198,7 @@ public class GenmodelTest {
 								&& !reference.isDerived();
 
 						if (genFeature.isChildren() != children) {
-							fail(getQualifiedLabel(genFeature)
+							fail(getLabel(genFeature)
 									+ ": 'Children' must be set to "
 									+ Boolean.valueOf(children).toString()
 									+ ".");
@@ -292,7 +216,7 @@ public class GenmodelTest {
 	 */
 	@Test
 	public void validCreateChildrenSetting() {
-		traverse(getRootElement(), new IVisitor() {
+		accept(getRootElement(), new IResourceVisitor() {
 			@Override
 			public boolean visit(EObject element) {
 				if (element instanceof GenFeature) {
@@ -306,7 +230,7 @@ public class GenmodelTest {
 								&& !reference.isDerived();
 
 						if (genFeature.isChildren() != createChildren) {
-							fail(getQualifiedLabel(genFeature)
+							fail(getLabel(genFeature)
 									+ ": 'Create Children' must be set to "
 									+ Boolean.valueOf(createChildren)
 											.toString() + ".");
@@ -324,7 +248,7 @@ public class GenmodelTest {
 	 */
 	@Test
 	public void validNotifySetting() {
-		traverse(getRootElement(), new IVisitor() {
+		accept(getRootElement(), new IResourceVisitor() {
 			@Override
 			public boolean visit(EObject element) {
 				if (element instanceof GenFeature) {
@@ -335,7 +259,7 @@ public class GenmodelTest {
 						EReference reference = (EReference) ecoreFeature;
 
 						if (reference.isDerived() && !genFeature.isNotify()) {
-							fail(getQualifiedLabel(genFeature)
+							fail(getLabel(genFeature)
 									+ ": 'Notify' must be set to "
 									+ Boolean.valueOf(true).toString() + ".");
 						}

@@ -5,7 +5,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 
 @RunWith(Suite.class)
-@SuiteClasses({ GenmodelTest.class })
+@SuiteClasses({ GeneratedOCLTest.class, GenmodelTest.class, PluginXmlTest.class })
 public class MumlTestSuite {
 	// empty
 }
