@@ -1004,13 +1004,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (continuousPortEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "LowerBoundMustBeZeroOrOne UpperBoundMustBeOne"
+			 "constraints", ""
 		   });								
 		addAnnotation
 		  (discretePortEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AtLeastOneMessageInterface DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortAndRoleSameMessageInterface MultiPortMustRefineMultiRole"
+			 "constraints", "DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole"
 		   });														
 		addAnnotation
 		  (componentPartEClass, 
@@ -1028,19 +1028,19 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (assemblyConnectorEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"
+			 "constraints", ""
 		   });					
 		addAnnotation
 		  (delegationConnectorEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"
+			 "constraints", ""
 		   });																					
 		addAnnotation
 		  (structuredComponentEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"
+			 "constraints", "StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"
 		   });										
 	}
 
@@ -1092,7 +1092,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "DiscretePortAtStructuredComponentHasNoBehavior", "(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\n\timplies self.behavior.oclIsUndefined()",
 			 "DiscretePortRequiresRole", "self.oclIsTypeOf(component::DiscretePort) implies not self.refines.oclIsUndefined()",
 			 "DiscretePortAndRoleSameMessageInterface", "not self.refines.oclIsUndefined() implies\n\t(self.senderMessageInterface = self.refines.senderMessageInterface\n\t and\n\t self.receiverMessageInterface = self.refines.receiverMessageInterface\n\t)",
-			 "MultiPortMustRefineMultiRole", "if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then\r\n       self.isMultiPort implies self.refines.isMultiRole\r\nelse\r\n\ttrue\r\nendif"
+			 "MultiPortMustRefineMultiRole", "if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then\r\n       self.multiPort implies self.refines.multiRole\r\nelse\r\n\ttrue\r\nendif"
 		   });				
 		addAnnotation
 		  (getDiscretePort_IsDiscreteInPort(), 

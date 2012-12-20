@@ -94,6 +94,8 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 			addGuardPropertyDescriptor(object);
 			addActionPropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
+			addReceiverMessageTypesPropertyDescriptor(object);
+			addSenderMessageTypesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -755,6 +757,50 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Receiver Message Types feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReceiverMessageTypesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_receiverMessageTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_receiverMessageTypes_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__RECEIVER_MESSAGE_TYPES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sender Message Types feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSenderMessageTypesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_senderMessageTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_senderMessageTypes_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__SENDER_MESSAGE_TYPES,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

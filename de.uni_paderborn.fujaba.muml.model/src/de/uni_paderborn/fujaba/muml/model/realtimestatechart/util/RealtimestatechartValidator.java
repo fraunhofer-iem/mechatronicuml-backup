@@ -236,7 +236,6 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_OneInvariantPerClock(state, diagnostics, context);
-		if (result || diagnostics != null) result &= validateState_OneInitialState(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_NoOutgoingTransitionOfFinalState(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_NoRegionsOfFinalState(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_UniquePrioritiesOfOutgoingTransitions(state, diagnostics, context);
@@ -275,34 +274,6 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
-	}
-
-	/**
-	 * Validates the OneInitialState constraint of '<em>State</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateState_OneInitialState(State state, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "OneInitialState", getObjectLabel(state, context) },
-						 new Object[] { state },
-						 context));
-			}
-			return false;
-		}
-		return true;
 	}
 
 	/**
@@ -485,7 +456,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__BOUND_OF_INVARIANT_GREATER_OR_EQUAL_ZERO__EEXPRESSION = "self.invariants->forAll(bound.value >= 0)";
+	protected static final String STATE__BOUND_OF_INVARIANT_GREATER_OR_EQUAL_ZERO__EEXPRESSION = "self.invariants.bound.value->forAll(value >= 0)";
 
 	/**
 	 * Validates the BoundOfInvariantGreaterOrEqualZero constraint of '<em>State</em>'.
@@ -687,19 +658,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__VALID_TRIGGER_MESSAGE_EVENTS__EEXPRESSION = "let a : msgiface::MessageInterface =\r\n" +
-		"(\r\n" +
-		"\tif statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(component::DiscretePort) then\r\n" +
-		"\t\tstatechart.getPortOrRoleStatechart().behavioralElement.oclAsType(component::DiscretePort).receiverMessageInterface\r\n" +
-		"\telse\r\n" +
-		"\t\tif statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pattern::Role) then\r\n" +
-		"\t\t\tstatechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pattern::Role).receiverMessageInterface\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tnull\r\n" +
-		"\t\tendif\r\n" +
-		"\tendif\r\n" +
-		") in\r\n" +
-		"(not triggerMessageEvent.message.instanceOf.oclIsUndefined()) implies (not a.oclIsUndefined() and a.messageTypes->includes(triggerMessageEvent.message.instanceOf))";
+	protected static final String TRANSITION__VALID_TRIGGER_MESSAGE_EVENTS__EEXPRESSION = "not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)";
 
 	/**
 	 * Validates the ValidTriggerMessageEvents constraint of '<em>Transition</em>'.
@@ -728,19 +687,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__VALID_RAISE_MESSAGE_EVENTS__EEXPRESSION = "let a : msgiface::MessageInterface =\r\n" +
-		"(\r\n" +
-		"\tif statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(component::DiscretePort) then\r\n" +
-		"\t\tstatechart.getPortOrRoleStatechart().behavioralElement.oclAsType(component::DiscretePort).senderMessageInterface\r\n" +
-		"\telse\r\n" +
-		"\t\tif statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pattern::Role) then\r\n" +
-		"\t\t\tstatechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pattern::Role).senderMessageInterface\r\n" +
-		"\t\telse\r\n" +
-		"\t\t\tnull\r\n" +
-		"\t\tendif\r\n" +
-		"\tendif\r\n" +
-		") in\r\n" +
-		"(not raiseMessageEvent.message.instanceOf.oclIsUndefined()) implies (not a.oclIsUndefined() and a.messageTypes->includes(raiseMessageEvent.message.instanceOf))";
+	protected static final String TRANSITION__VALID_RAISE_MESSAGE_EVENTS__EEXPRESSION = "not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)";
 
 	/**
 	 * Validates the ValidRaiseMessageEvents constraint of '<em>Transition</em>'.
@@ -865,46 +812,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDoEvent(DoEvent doEvent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(doEvent, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(doEvent, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(doEvent, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(doEvent, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(doEvent, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(doEvent, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(doEvent, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(doEvent, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(doEvent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDoEvent_ValidLowerUpperPeriod(doEvent, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the ValidLowerUpperPeriod constraint of '<em>Do Event</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DO_EVENT__VALID_LOWER_UPPER_PERIOD__EEXPRESSION = "self.periodLower >= 1 and self.periodLower <= self.periodUpper";
-
-	/**
-	 * Validates the ValidLowerUpperPeriod constraint of '<em>Do Event</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDoEvent_ValidLowerUpperPeriod(DoEvent doEvent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(RealtimestatechartPackage.Literals.DO_EVENT,
-				 doEvent,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidLowerUpperPeriod",
-				 DO_EVENT__VALID_LOWER_UPPER_PERIOD__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return validate_EveryDefaultConstraint(doEvent, diagnostics, context);
 	}
 
 	/**
@@ -959,8 +867,8 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_UniqueNameOfStates(realtimeStatechart, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRealtimeStatechart_MinOneState(realtimeStatechart, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRealtimeStatechart_NoCycles(realtimeStatechart, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRealtimeStatechart_OneInitialState(realtimeStatechart, diagnostics, context);
 		return result;
 	}
 
@@ -970,7 +878,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__UNIQUE_NAME_OF_STATES__EEXPRESSION = "self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->isUnique(name)";
+	protected static final String REALTIME_STATECHART__UNIQUE_NAME_OF_STATES__EEXPRESSION = "self.states->isUnique(name)";
 
 	/**
 	 * Validates the UniqueNameOfStates constraint of '<em>Realtime Statechart</em>'.
@@ -988,35 +896,6 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "UniqueNameOfStates",
 				 REALTIME_STATECHART__UNIQUE_NAME_OF_STATES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the MinOneState constraint of '<em>Realtime Statechart</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String REALTIME_STATECHART__MIN_ONE_STATE__EEXPRESSION = "self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->notEmpty()";
-
-	/**
-	 * Validates the MinOneState constraint of '<em>Realtime Statechart</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateRealtimeStatechart_MinOneState(RealtimeStatechart realtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(RealtimestatechartPackage.Literals.REALTIME_STATECHART,
-				 realtimeStatechart,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "MinOneState",
-				 REALTIME_STATECHART__MIN_ONE_STATE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -1052,6 +931,35 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "NoCycles",
 				 REALTIME_STATECHART__NO_CYCLES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the OneInitialState constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String REALTIME_STATECHART__ONE_INITIAL_STATE__EEXPRESSION = "self.states->select(s |  s.initial)->size() = 1";
+
+	/**
+	 * Validates the OneInitialState constraint of '<em>Realtime Statechart</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRealtimeStatechart_OneInitialState(RealtimeStatechart realtimeStatechart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.REALTIME_STATECHART,
+				 realtimeStatechart,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "OneInitialState",
+				 REALTIME_STATECHART__ONE_INITIAL_STATE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

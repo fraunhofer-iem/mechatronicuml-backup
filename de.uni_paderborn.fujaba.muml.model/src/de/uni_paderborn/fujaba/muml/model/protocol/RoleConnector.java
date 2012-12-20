@@ -29,8 +29,8 @@ import de.uni_paderborn.fujaba.muml.model.connector.Connector;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getRoleConnector()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OnlyRolesOfSameCoordinationPattern'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyRolesOfSameCoordinationPattern='(not source.oclIsUndefined() and not target.oclIsUndefined()) implies source.coordinationPattern = target.coordinationPattern'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OnlyRolesOfSameCoordinationProtocol'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyRolesOfSameCoordinationProtocol='self.roles->size() = 2 implies self.roles->isUnique(coordinationProtocol)'"
  * @generated
  */
 public interface RoleConnector extends Connector {

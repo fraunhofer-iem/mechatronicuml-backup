@@ -238,15 +238,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		theTypesPackage.initializePackageContents();
 		theConnectorPackage.initializePackageContents();
 
-		// Register package validator
-		EValidator.Registry.INSTANCE.put
-			(theInstancePackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
-					 return InstanceValidator.INSTANCE;
-				 }
-			 });
-
 		// Mark meta-data to indicate it can't be changed
 		theInstancePackage.freeze();
 
@@ -814,7 +805,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (delegationConnectorInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "OneDelegationInstancePerPortInstance"
+			 "constraints", ""
 		   });																														
 	}
 

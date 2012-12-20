@@ -31,8 +31,8 @@ import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getCoordinationProtocol()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueRoleNames CoordinationPatternNamesMustBeUnique'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueRoleNames='self.roles->isUnique(name)' CoordinationPatternNamesMustBeUnique='CoordinationPattern.allInstances().name->count(self.name) = 1'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueRoleNames CoordinationProtocolNamesMustBeUnique'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueRoleNames='self.roles->isUnique(name)' CoordinationProtocolNamesMustBeUnique='CoordinationProtocol.allInstances()->isUnique(name)'"
  * @generated
  */
 public interface CoordinationProtocol extends NamedElement, ConstrainableElement, CommentableElement {

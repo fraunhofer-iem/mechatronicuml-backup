@@ -41,8 +41,8 @@ import de.uni_paderborn.fujaba.muml.model.core.Variable;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueNameOfStates='self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->isUnique(name)' MinOneState='self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->notEmpty()' NoCycles='-- If we are contained within a statechart...\n(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n\nimplies\n\n-- ... then we must not be a super statechart of it.\n(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))' OneInitialState='self.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->size() = 1'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueNameOfStates MinOneState NoCycles'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueNameOfStates='self.states->isUnique(name)' NoCycles='-- If we are contained within a statechart...\n(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n\nimplies\n\n-- ... then we must not be a super statechart of it.\n(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))' OneInitialState='self.states->select(s |  s.initial)->size() = 1'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueNameOfStates NoCycles OneInitialState'"
  * @generated
  */
 public interface RealtimeStatechart extends NamedElement, CommentableElement, Behavior {
@@ -108,7 +108,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @return the value of the '<em>States</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_States()
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.State#getStatechart
-	 * @model opposite="statechart" containment="true"
+	 * @model opposite="statechart" containment="true" required="true"
 	 * @generated
 	 */
 	EList<State> getStates();

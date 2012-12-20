@@ -765,13 +765,31 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__URGENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__RECEIVER_MESSAGE_TYPES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 17;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__SENDER_MESSAGE_TYPES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 18;
+
+	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 17;
+	int TRANSITION_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.
@@ -2244,6 +2262,28 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getTransition_Urgent();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getReceiverMessageTypes <em>Receiver Message Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Receiver Message Types</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getReceiverMessageTypes()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EReference getTransition_ReceiverMessageTypes();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSenderMessageTypes <em>Sender Message Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Sender Message Types</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSenderMessageTypes()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EReference getTransition_SenderMessageTypes();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint <em>Clock Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3190,6 +3230,22 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TRANSITION__URGENT = eINSTANCE.getTransition_Urgent();
+
+		/**
+		 * The meta object literal for the '<em><b>Receiver Message Types</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRANSITION__RECEIVER_MESSAGE_TYPES = eINSTANCE.getTransition_ReceiverMessageTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Sender Message Types</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRANSITION__SENDER_MESSAGE_TYPES = eINSTANCE.getTransition_SenderMessageTypes();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.ClockConstraintImpl <em>Clock Constraint</em>}' class.

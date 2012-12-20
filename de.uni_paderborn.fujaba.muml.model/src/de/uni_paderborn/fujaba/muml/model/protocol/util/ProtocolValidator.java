@@ -124,25 +124,25 @@ public class ProtocolValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(roleConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(roleConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(roleConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRoleConnector_OnlyRolesOfSameCoordinationPattern(roleConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRoleConnector_OnlyRolesOfSameCoordinationProtocol(roleConnector, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the OnlyRolesOfSameCoordinationPattern constraint of '<em>Role Connector</em>'.
+	 * The cached validation expression for the OnlyRolesOfSameCoordinationProtocol constraint of '<em>Role Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ROLE_CONNECTOR__ONLY_ROLES_OF_SAME_COORDINATION_PATTERN__EEXPRESSION = "(not source.oclIsUndefined() and not target.oclIsUndefined()) implies source.coordinationPattern = target.coordinationPattern";
+	protected static final String ROLE_CONNECTOR__ONLY_ROLES_OF_SAME_COORDINATION_PROTOCOL__EEXPRESSION = "self.roles->size() = 2 implies self.roles->isUnique(coordinationProtocol)";
 
 	/**
-	 * Validates the OnlyRolesOfSameCoordinationPattern constraint of '<em>Role Connector</em>'.
+	 * Validates the OnlyRolesOfSameCoordinationProtocol constraint of '<em>Role Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRoleConnector_OnlyRolesOfSameCoordinationPattern(RoleConnector roleConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateRoleConnector_OnlyRolesOfSameCoordinationProtocol(RoleConnector roleConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ProtocolPackage.Literals.ROLE_CONNECTOR,
@@ -150,8 +150,8 @@ public class ProtocolValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "OnlyRolesOfSameCoordinationPattern",
-				 ROLE_CONNECTOR__ONLY_ROLES_OF_SAME_COORDINATION_PATTERN__EEXPRESSION,
+				 "OnlyRolesOfSameCoordinationProtocol",
+				 ROLE_CONNECTOR__ONLY_ROLES_OF_SAME_COORDINATION_PROTOCOL__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -173,7 +173,7 @@ public class ProtocolValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(coordinationProtocol, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(coordinationProtocol, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCoordinationProtocol_UniqueRoleNames(coordinationProtocol, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCoordinationProtocol_CoordinationPatternNamesMustBeUnique(coordinationProtocol, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCoordinationProtocol_CoordinationProtocolNamesMustBeUnique(coordinationProtocol, diagnostics, context);
 		return result;
 	}
 
@@ -207,20 +207,20 @@ public class ProtocolValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the CoordinationPatternNamesMustBeUnique constraint of '<em>Coordination Protocol</em>'.
+	 * The cached validation expression for the CoordinationProtocolNamesMustBeUnique constraint of '<em>Coordination Protocol</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COORDINATION_PROTOCOL__COORDINATION_PATTERN_NAMES_MUST_BE_UNIQUE__EEXPRESSION = "CoordinationPattern.allInstances().name->count(self.name) = 1";
+	protected static final String COORDINATION_PROTOCOL__COORDINATION_PROTOCOL_NAMES_MUST_BE_UNIQUE__EEXPRESSION = "CoordinationProtocol.allInstances()->isUnique(name)";
 
 	/**
-	 * Validates the CoordinationPatternNamesMustBeUnique constraint of '<em>Coordination Protocol</em>'.
+	 * Validates the CoordinationProtocolNamesMustBeUnique constraint of '<em>Coordination Protocol</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCoordinationProtocol_CoordinationPatternNamesMustBeUnique(CoordinationProtocol coordinationProtocol, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateCoordinationProtocol_CoordinationProtocolNamesMustBeUnique(CoordinationProtocol coordinationProtocol, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ProtocolPackage.Literals.COORDINATION_PROTOCOL,
@@ -228,8 +228,8 @@ public class ProtocolValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "CoordinationPatternNamesMustBeUnique",
-				 COORDINATION_PROTOCOL__COORDINATION_PATTERN_NAMES_MUST_BE_UNIQUE__EEXPRESSION,
+				 "CoordinationProtocolNamesMustBeUnique",
+				 COORDINATION_PROTOCOL__COORDINATION_PROTOCOL_NAMES_MUST_BE_UNIQUE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -250,69 +250,8 @@ public class ProtocolValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(role, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRole_MultiPortRequiresDefinedOrder(role, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRole_RoleHasConnector(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresBehavior(role, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRole_RoleRequiresInterface(role, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * The cached validation expression for the MultiPortRequiresDefinedOrder constraint of '<em>Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ROLE__MULTI_PORT_REQUIRES_DEFINED_ORDER__EEXPRESSION = "self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)";
-
-	/**
-	 * Validates the MultiPortRequiresDefinedOrder constraint of '<em>Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateRole_MultiPortRequiresDefinedOrder(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ProtocolPackage.Literals.ROLE,
-				 role,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "MultiPortRequiresDefinedOrder",
-				 ROLE__MULTI_PORT_REQUIRES_DEFINED_ORDER__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the RoleHasConnector constraint of '<em>Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ROLE__ROLE_HAS_CONNECTOR__EEXPRESSION = "self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()";
-
-	/**
-	 * Validates the RoleHasConnector constraint of '<em>Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateRole_RoleHasConnector(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ProtocolPackage.Literals.ROLE,
-				 role,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "RoleHasConnector",
-				 ROLE__ROLE_HAS_CONNECTOR__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
 	}
 
 	/**
@@ -339,35 +278,6 @@ public class ProtocolValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "RoleRequiresBehavior",
 				 ROLE__ROLE_REQUIRES_BEHAVIOR__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the RoleRequiresInterface constraint of '<em>Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ROLE__ROLE_REQUIRES_INTERFACE__EEXPRESSION = "not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())";
-
-	/**
-	 * Validates the RoleRequiresInterface constraint of '<em>Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateRole_RoleRequiresInterface(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ProtocolPackage.Literals.ROLE,
-				 role,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "RoleRequiresInterface",
-				 ROLE__ROLE_REQUIRES_INTERFACE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

@@ -546,19 +546,19 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (roleConnectorEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "OnlyRolesOfSameCoordinationPattern"
+			 "constraints", "OnlyRolesOfSameCoordinationProtocol"
 		   });						
 		addAnnotation
 		  (coordinationProtocolEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniqueRoleNames CoordinationPatternNamesMustBeUnique"
+			 "constraints", "UniqueRoleNames CoordinationProtocolNamesMustBeUnique"
 		   });								
 		addAnnotation
 		  (roleEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "MultiPortRequiresDefinedOrder RoleHasConnector RoleRequiresBehavior RoleRequiresInterface"
+			 "constraints", "RoleRequiresBehavior"
 		   });															
 	}
 
@@ -574,14 +574,14 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (roleConnectorEClass, 
 		   source, 
 		   new String[] {
-			 "OnlyRolesOfSameCoordinationPattern", "(not source.oclIsUndefined() and not target.oclIsUndefined()) implies source.coordinationPattern = target.coordinationPattern"
+			 "OnlyRolesOfSameCoordinationProtocol", "self.roles->size() = 2 implies self.roles->isUnique(coordinationProtocol)"
 		   });						
 		addAnnotation
 		  (coordinationProtocolEClass, 
 		   source, 
 		   new String[] {
 			 "UniqueRoleNames", "self.roles->isUnique(name)",
-			 "CoordinationPatternNamesMustBeUnique", "CoordinationPattern.allInstances().name->count(self.name) = 1"
+			 "CoordinationProtocolNamesMustBeUnique", "CoordinationProtocol.allInstances()->isUnique(name)"
 		   });				
 		addAnnotation
 		  (getCoordinationProtocol_CoordinationProtocol(), 
@@ -595,7 +595,6 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		   new String[] {
 			 "MultiPortRequiresDefinedOrder", "self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)",
 			 "OrderedRequiresIntegerOrderVariable", "self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')",
-			 "RoleHasConnector", "self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()",
 			 "RoleRequiresBehavior", "not self.behavior.oclIsUndefined()",
 			 "RoleRequiresInterface", "not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())"
 		   });				

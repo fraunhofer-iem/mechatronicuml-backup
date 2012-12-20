@@ -69,7 +69,7 @@
           <details key="documentation" value="This class represents a concrete port specification which provides the &#xD;&#xA;continuous functionality of a port. A continuous port emits a signal value.&#xD;&#xA;A signal value has a data type and it has concrete values at all points in time."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="LowerBoundMustBeZeroOrOne UpperBoundMustBeOne"/>
+          <details key="constraints" value=""/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="LowerBoundMustBeZeroOrOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.lowerBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1&#xA;&#x9;endif&#xA;)"/>
@@ -103,7 +103,7 @@
           <details key="documentation" value="This class represents a concrete port specification which provides the discrete functionality of a port."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="AtLeastOneMessageInterface DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortAndRoleSameMessageInterface MultiPortMustRefineMultiRole"/>
+          <details key="constraints" value="DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="AtLeastOneMessageInterface" value="self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))"/>
@@ -111,7 +111,7 @@
           <details key="DiscretePortAtStructuredComponentHasNoBehavior" value="(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))&#xA;&#x9;implies self.behavior.oclIsUndefined()"/>
           <details key="DiscretePortRequiresRole" value="self.oclIsTypeOf(component::DiscretePort) implies not self.refines.oclIsUndefined()"/>
           <details key="DiscretePortAndRoleSameMessageInterface" value="not self.refines.oclIsUndefined() implies&#xA;&#x9;(self.senderMessageInterface = self.refines.senderMessageInterface&#xA;&#x9; and&#xA;&#x9; self.receiverMessageInterface = self.refines.receiverMessageInterface&#xA;&#x9;)"/>
-          <details key="MultiPortMustRefineMultiRole" value="if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then&#xD;&#xA;       self.isMultiPort implies self.refines.isMultiRole&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
+          <details key="MultiPortMustRefineMultiRole" value="if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then&#xD;&#xA;       self.multiPort implies self.refines.multiRole&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//model/protocol/Role"
             eOpposite="#//model/protocol/Role/port">
@@ -278,7 +278,7 @@
           <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
+          <details key="constraints" value=""/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="NoSelfAssembliesForSinglePortsOfSingleParts" value="(self.fromPort.cardinality.upperBound.value &lt;= 1 and self.from.cardinality.upperBound.value &lt;= 1)&#xD;&#xA;implies&#xD;&#xA;self.fromPort &lt;> self.toPort"/>
@@ -311,7 +311,7 @@
           <details key="documentation" value="This class represents a delegation connector. A delegation connector &#xD;&#xA;connects a port of a structured component type and a port part of &#xD;&#xA;component part the structured component contains.&#xD;&#xA;The delegation has no behavior. In a running system, the port of the structured&#xD;&#xA;component and the port of the component part will be the same object like &#xD;&#xA;interfaces of classes where interface and class are the same object at runtime."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
+          <details key="constraints" value=""/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="ValidContinuousPortDirections" value="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind = self.toContinuousPort.kind"/>
@@ -427,7 +427,7 @@
           <details key="documentation" value="This class represents a structured component which is capable of including arbitraryly many component parts."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="UniqueComponentPartsWithinStructuredComponent StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"/>
+          <details key="constraints" value="StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="StructuredComponentNoHybridPort" value="self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))"/>
@@ -852,7 +852,7 @@
           <details key="documentation" value="This class represents a delegation connector at instance level."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="OneDelegationInstancePerPortInstance"/>
+          <details key="constraints" value=""/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="OneDelegationInstancePerPortInstance" value="not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1"/>
@@ -1025,10 +1025,10 @@
           <details key="documentation" value="This class represents a communication channel connecting two roles of a coordination pattern."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="OnlyRolesOfSameCoordinationPattern"/>
+          <details key="constraints" value="OnlyRolesOfSameCoordinationProtocol"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="OnlyRolesOfSameCoordinationPattern" value="(not source.oclIsUndefined() and not target.oclIsUndefined()) implies source.coordinationPattern = target.coordinationPattern"/>
+          <details key="OnlyRolesOfSameCoordinationProtocol" value="self.roles->size() = 2 implies self.roles->isUnique(coordinationProtocol)"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
             lowerBound="1" eType="#//model/protocol/CoordinationProtocol" eOpposite="#//model/protocol/CoordinationProtocol/roleConnector">
@@ -1052,11 +1052,11 @@
           <details key="documentation" value="A coordination protocol specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination patterns. Constraints specify certain properties the coordination specified by the pattern has to fullfill."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="UniqueRoleNames CoordinationPatternNamesMustBeUnique"/>
+          <details key="constraints" value="UniqueRoleNames CoordinationProtocolNamesMustBeUnique"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="UniqueRoleNames" value="self.roles->isUnique(name)"/>
-          <details key="CoordinationPatternNamesMustBeUnique" value="CoordinationPattern.allInstances().name->count(self.name) = 1"/>
+          <details key="CoordinationProtocolNamesMustBeUnique" value="CoordinationProtocol.allInstances()->isUnique(name)"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="1"
             upperBound="2" eType="#//model/protocol/Role" containment="true" eOpposite="#//model/protocol/Role/coordinationProtocol">
@@ -1086,12 +1086,11 @@
           <details key="documentation" value="This class represents a role of a coordination pattern."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="MultiPortRequiresDefinedOrder RoleHasConnector RoleRequiresBehavior RoleRequiresInterface"/>
+          <details key="constraints" value="RoleRequiresBehavior"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="MultiPortRequiresDefinedOrder" value="self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)"/>
           <details key="OrderedRequiresIntegerOrderVariable" value="self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType ='EInt')"/>
-          <details key="RoleHasConnector" value="self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()"/>
           <details key="RoleRequiresBehavior" value="not self.behavior.oclIsUndefined()"/>
           <details key="RoleRequiresInterface" value="not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())"/>
         </eAnnotations>
@@ -1263,7 +1262,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//model/realtimestatechart/Vertex">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="OneInvariantPerClock OneInitialState NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero InvalidClockConstraintOperator"/>
+          <details key="constraints" value="OneInvariantPerClock NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero InvalidClockConstraintOperator"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a complex state of a realtime statechart. Complex states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more complex states have do, entry and exit actions. Also complex states define which synchronization channels are allowed to be used by embedded statecharts."/>
@@ -1276,7 +1275,7 @@
           <details key="UniquePrioritiesOfRegions" value="self.regions->isUnique(priority)"/>
           <details key="UniqueChannelNames" value="self.channels->isUnique(name)"/>
           <details key="UniqueRegionNames" value="self.regions->isUnique(name)"/>
-          <details key="BoundOfInvariantGreaterOrEqualZero" value="self.invariants->forAll(bound.value >= 0)"/>
+          <details key="BoundOfInvariantGreaterOrEqualZero" value="self.invariants.bound.value->forAll(value >= 0)"/>
           <details key="InvalidClockConstraintOperator" value="self.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))"/>
         </eAnnotations>
         <eOperations name="getUniqueRegionPriority" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
@@ -1433,8 +1432,8 @@
           <details key="SetTargetAndSource" value="self.target->notEmpty() and self.source->notEmpty()"/>
           <details key="LegalTransitionsOnly" value="-- State A to State B within the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).statechart = self.target.oclAsType(State).statechart)&#xD;&#xA;or&#xD;&#xA;-- State A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).statechart = self.target.oclAsType(ExitPoint).state.statechart)&#xD;&#xA;or&#xD;&#xA;-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(State).statechart.embeddingRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(EntryPoint).state.statechart.embeddingRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to State B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(State).statechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(EntryPoint).state.statechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)"/>
           <details key="TriggerMessageEventsMustNotHaveAnOwnedParameterBinding" value="not self.triggerMessageEvent.message.oclIsUndefined() implies&#xA;self.triggerMessageEvent.message.parameterBinding->isEmpty()"/>
-          <details key="ValidTriggerMessageEvents" value="let a : msgiface::MessageInterface =&#xD;&#xA;(&#xD;&#xA;&#x9;if statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;&#x9;statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(component::DiscretePort).receiverMessageInterface&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pattern::Role) then&#xD;&#xA;&#x9;&#x9;&#x9;statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pattern::Role).receiverMessageInterface&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;null&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;) in&#xD;&#xA;(not triggerMessageEvent.message.instanceOf.oclIsUndefined()) implies (not a.oclIsUndefined() and a.messageTypes->includes(triggerMessageEvent.message.instanceOf))"/>
-          <details key="ValidRaiseMessageEvents" value="let a : msgiface::MessageInterface =&#xD;&#xA;(&#xD;&#xA;&#x9;if statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;&#x9;statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(component::DiscretePort).senderMessageInterface&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;if statechart.getPortOrRoleStatechart().behavioralElement.oclIsKindOf(pattern::Role) then&#xD;&#xA;&#x9;&#x9;&#x9;statechart.getPortOrRoleStatechart().behavioralElement.oclAsType(pattern::Role).senderMessageInterface&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;null&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;) in&#xD;&#xA;(not raiseMessageEvent.message.instanceOf.oclIsUndefined()) implies (not a.oclIsUndefined() and a.messageTypes->includes(raiseMessageEvent.message.instanceOf))"/>
+          <details key="ValidTriggerMessageEvents" value="not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)"/>
+          <details key="ValidRaiseMessageEvents" value="not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)"/>
           <details key="ExitPointIncomingTransitionsNoSideEffectsOrDeadlines" value="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
           <details key="ExitPointOutgoingTransitionsNoConditions" value="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
         </eAnnotations>
@@ -1532,6 +1531,20 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             defaultValueLiteral="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageTypes"
+            eType="#//model/msgtype/MessageType" volatile="true" transient="true"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="let b : core::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in&#xA;if b.oclIsUndefined() then&#xA;&#x9;OrderedSet { }&#xA;else&#xA;&#x9;if b.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;b.oclAsType(component::DiscretePort).receiverMessageTypes&#xA;&#x9;else&#xA;&#x9;&#x9;if b.oclIsKindOf(protocol::Role) then&#xA;&#x9;&#x9;&#x9;b.oclAsType(protocol::Role).receiverMessageTypes&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;OrderedSet { }&#xA;&#x9;&#x9;endif&#xA;&#x9;endif&#xA;endif"/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageTypes"
+            eType="#//model/msgtype/MessageType" volatile="true" transient="true"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="let b : core::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in&#xA;if b.oclIsUndefined() then&#xA;&#x9;OrderedSet { }&#xA;else&#xA;&#x9;if b.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;b.oclAsType(component::DiscretePort).senderMessageTypes&#xA;&#x9;else&#xA;&#x9;&#x9;if b.oclIsKindOf(protocol::Role) then&#xA;&#x9;&#x9;&#x9;b.oclAsType(protocol::Role).senderMessageTypes&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;OrderedSet { }&#xA;&#x9;&#x9;endif&#xA;&#x9;endif&#xA;endif"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ClockConstraint">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1588,7 +1601,7 @@
           <details key="ValidLowerUpperPeriod" value="self.periodLower >= 1 and self.periodLower &lt;= self.periodUpper"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="ValidLowerUpperPeriod"/>
+          <details key="constraints" value=""/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
             eType="#//model/realtimestatechart/Action" containment="true">
@@ -1673,13 +1686,12 @@
           <details key="documentation" value="This class is a concrete statechart implementation of a real-time statechart."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="UniqueNameOfStates" value="self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->isUnique(name)"/>
-          <details key="MinOneState" value="self.vertices->select(oclIsTypeOf(State)).oclAsType(State)->notEmpty()"/>
+          <details key="UniqueNameOfStates" value="self.states->isUnique(name)"/>
           <details key="NoCycles" value="-- If we are contained within a statechart...&#xA;(not self.embeddingRegion.parentState.statechart.oclIsUndefined())&#xA;&#xA;implies&#xA;&#xA;-- ... then we must not be a super statechart of it.&#xA;(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))"/>
-          <details key="OneInitialState" value="self.vertices->select(x | x.oclIsKindOf(State)).oclAsType(State)->select(s |  s.initial)->size() = 1"/>
+          <details key="OneInitialState" value="self.states->select(s |  s.initial)->size() = 1"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="UniqueNameOfStates MinOneState NoCycles"/>
+          <details key="constraints" value="UniqueNameOfStates NoCycles OneInitialState"/>
         </eAnnotations>
         <eOperations name="isSuperStatechartOf" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1712,8 +1724,9 @@
             <details key="documentation" value="The transitions of the realtime statechart."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
-            eType="#//model/realtimestatechart/State" containment="true" eOpposite="#//model/realtimestatechart/State/statechart">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+            upperBound="-1" eType="#//model/realtimestatechart/State" containment="true"
+            eOpposite="#//model/realtimestatechart/State/statechart">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The states of this realtime statechart."/>
           </eAnnotations>

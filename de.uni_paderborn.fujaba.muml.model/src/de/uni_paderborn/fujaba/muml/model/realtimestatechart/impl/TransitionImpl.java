@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -66,6 +67,8 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getEvents <em>Events</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getAction <em>Action</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#isUrgent <em>Urgent</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.TransitionImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -274,6 +277,26 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	 * @ordered
 	 */
 	protected boolean urgent = URGENT_EDEFAULT;
+
+	/**
+	 * The cached setting delegate for the '{@link #getReceiverMessageTypes() <em>Receiver Message Types</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReceiverMessageTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate RECEIVER_MESSAGE_TYPES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__RECEIVER_MESSAGE_TYPES).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getSenderMessageTypes() <em>Sender Message Types</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSenderMessageTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate SENDER_MESSAGE_TYPES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__SENDER_MESSAGE_TYPES).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -853,6 +876,60 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public MessageType getReceiverMessageTypes() {
+		return (MessageType)RECEIVER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageType basicGetReceiverMessageTypes() {
+		return (MessageType)RECEIVER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReceiverMessageTypes(MessageType newReceiverMessageTypes) {
+		RECEIVER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicSet(this, null, 0, newReceiverMessageTypes);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageType getSenderMessageTypes() {
+		return (MessageType)SENDER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageType basicGetSenderMessageTypes() {
+		return (MessageType)SENDER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSenderMessageTypes(MessageType newSenderMessageTypes) {
+		SENDER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicSet(this, null, 0, newSenderMessageTypes);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -965,6 +1042,12 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 				return getAction();
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 				return isUrgent();
+			case RealtimestatechartPackage.TRANSITION__RECEIVER_MESSAGE_TYPES:
+				if (resolve) return getReceiverMessageTypes();
+				return basicGetReceiverMessageTypes();
+			case RealtimestatechartPackage.TRANSITION__SENDER_MESSAGE_TYPES:
+				if (resolve) return getSenderMessageTypes();
+				return basicGetSenderMessageTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1027,6 +1110,12 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 				setUrgent((Boolean)newValue);
 				return;
+			case RealtimestatechartPackage.TRANSITION__RECEIVER_MESSAGE_TYPES:
+				setReceiverMessageTypes((MessageType)newValue);
+				return;
+			case RealtimestatechartPackage.TRANSITION__SENDER_MESSAGE_TYPES:
+				setSenderMessageTypes((MessageType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1084,6 +1173,12 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 				setUrgent(URGENT_EDEFAULT);
 				return;
+			case RealtimestatechartPackage.TRANSITION__RECEIVER_MESSAGE_TYPES:
+				setReceiverMessageTypes((MessageType)null);
+				return;
+			case RealtimestatechartPackage.TRANSITION__SENDER_MESSAGE_TYPES:
+				setSenderMessageTypes((MessageType)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1130,6 +1225,10 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 				return action != null;
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 				return urgent != URGENT_EDEFAULT;
+			case RealtimestatechartPackage.TRANSITION__RECEIVER_MESSAGE_TYPES:
+				return RECEIVER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case RealtimestatechartPackage.TRANSITION__SENDER_MESSAGE_TYPES:
+				return SENDER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
