@@ -534,25 +534,27 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public boolean isSuperStatechartOf(RealtimeStatechart statechart) {
+		// TODO: Replace by OCL's transitive closure?
+				
 		Assert.isLegal(statechart != null);
-
+		
 		BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();
 		return bfs.search(statechart, new ISearchVisitor() {
-
+		
 			@Override
 			public boolean visit(Object object) {
 				return !RealtimeStatechartImpl.this.equals(object);
 			}
-
+		
 			@Override
 			public List<?> getAdjacentNodes(Object object) {
 				RealtimeStatechart rtsc = (RealtimeStatechart) object;
-
+		
 				List<Object> parentStatecharts = new ArrayList<Object>();
-
+		
 				Region region = rtsc.getEmbeddingRegion();
 				if (region != null) {
 					// List<Region> regions = rtsc.getEmbeddingRegions();
@@ -563,10 +565,10 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 					}
 					// }
 				}
-
+		
 				return parentStatecharts;
 			}
-
+		
 		});
 	}
 

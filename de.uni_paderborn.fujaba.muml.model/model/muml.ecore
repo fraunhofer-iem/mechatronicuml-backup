@@ -1682,6 +1682,10 @@
           <details key="constraints" value="UniqueNameOfStates MinOneState NoCycles"/>
         </eAnnotations>
         <eOperations name="isSuperStatechartOf" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Returns realtime statechart which represents the root of the hierarchy tree."/>
+            <details key="body" value="// TODO: Replace by OCL's transitive closure?&#xA;&#x9;&#x9;&#xA;Assert.isLegal(statechart != null);&#xA;&#xA;BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();&#xA;return bfs.search(statechart, new ISearchVisitor() {&#xA;&#xA;&#x9;@Override&#xA;&#x9;public boolean visit(Object object) {&#xA;&#x9;&#x9;return !RealtimeStatechartImpl.this.equals(object);&#xA;&#x9;}&#xA;&#xA;&#x9;@Override&#xA;&#x9;public List&lt;?> getAdjacentNodes(Object object) {&#xA;&#x9;&#x9;RealtimeStatechart rtsc = (RealtimeStatechart) object;&#xA;&#xA;&#x9;&#x9;List&lt;Object> parentStatecharts = new ArrayList&lt;Object>();&#xA;&#xA;&#x9;&#x9;Region region = rtsc.getEmbeddingRegion();&#xA;&#x9;&#x9;if (region != null) {&#xA;&#x9;&#x9;&#x9;// List&lt;Region> regions = rtsc.getEmbeddingRegions();&#xA;&#x9;&#x9;&#x9;// for (Region region : regions) {&#xA;&#x9;&#x9;&#x9;State state = region.getParentState();&#xA;&#x9;&#x9;&#x9;if (state != null &amp;&amp; state.getStatechart() != null) {&#xA;&#x9;&#x9;&#x9;&#x9;parentStatecharts.add(state.getStatechart());&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;// }&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;return parentStatecharts;&#xA;&#x9;}&#xA;&#xA;});"/>
+          </eAnnotations>
           <eParameters name="statechart" lowerBound="1" eType="#//model/realtimestatechart/RealtimeStatechart"/>
         </eOperations>
         <eOperations name="getHighestParentStatechart" lowerBound="1" eType="#//model/realtimestatechart/RealtimeStatechart">

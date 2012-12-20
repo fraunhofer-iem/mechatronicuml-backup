@@ -268,7 +268,11 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Returns realtime statechart which represents the root of the hierarchy tree.
+	 * <!-- end-model-doc -->
 	 * @model required="true" statechartRequired="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='// TODO: Replace by OCL\'s transitive closure?\n\t\t\nAssert.isLegal(statechart != null);\n\nBreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();\nreturn bfs.search(statechart, new ISearchVisitor() {\n\n\t@Override\n\tpublic boolean visit(Object object) {\n\t\treturn !RealtimeStatechartImpl.this.equals(object);\n\t}\n\n\t@Override\n\tpublic List<?> getAdjacentNodes(Object object) {\n\t\tRealtimeStatechart rtsc = (RealtimeStatechart) object;\n\n\t\tList<Object> parentStatecharts = new ArrayList<Object>();\n\n\t\tRegion region = rtsc.getEmbeddingRegion();\n\t\tif (region != null) {\n\t\t\t// List<Region> regions = rtsc.getEmbeddingRegions();\n\t\t\t// for (Region region : regions) {\n\t\t\tState state = region.getParentState();\n\t\t\tif (state != null && state.getStatechart() != null) {\n\t\t\t\tparentStatecharts.add(state.getStatechart());\n\t\t\t}\n\t\t\t// }\n\t\t}\n\n\t\treturn parentStatecharts;\n\t}\n\n});'"
 	 * @generated
 	 */
 	boolean isSuperStatechartOf(RealtimeStatechart statechart);
