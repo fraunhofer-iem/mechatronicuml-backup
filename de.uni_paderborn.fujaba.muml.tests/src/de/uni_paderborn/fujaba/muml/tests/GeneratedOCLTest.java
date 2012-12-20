@@ -67,6 +67,8 @@ public class GeneratedOCLTest extends TraverseTest {
 	 */
 	@Test
 	public void validOclConstraints() {
+		final List<String> problems = new ArrayList<String>();
+
 		accept(ModelPackage.eINSTANCE, new IResourceVisitor() {
 			@Override
 			public boolean visit(EObject element) {
@@ -74,18 +76,20 @@ public class GeneratedOCLTest extends TraverseTest {
 					EMap<String, String> constraints = new BasicEMap<String, String>();
 					List<String> activatedConstraints = new ArrayList<String>();
 					EClass eClass = (EClass) element;
-					
+
 					for (EObject contents : eClass.eContents()) {
 						if (contents instanceof EAnnotation) {
 							EAnnotation annotation = (EAnnotation) contents;
-							
+
 							if (annotation.getSource() == "http://www.eclipse.org/emf/2002/Ecore"
 									&& annotation.getDetails().containsKey(
 											"constraints")) {
 								String constraintLine = annotation.getDetails()
 										.get("constraints");
-								activatedConstraints.addAll(Arrays
-										.asList(constraintLine.split(" ")));
+								if (!constraintLine.isEmpty()) {
+									activatedConstraints.addAll(Arrays
+											.asList(constraintLine.split(" ")));
+								}
 							}
 							if (annotation.getSource() == "http://www.eclipse.org/emf/2002/Ecore/OCL") {
 								constraints.putAll(annotation.getDetails());
@@ -95,8 +99,8 @@ public class GeneratedOCLTest extends TraverseTest {
 					// Evaluate active constraints
 					for (String constraintName : activatedConstraints) {
 						if (!constraints.containsKey(constraintName)) {
-							fail("Class "
-									+ getLabel(element)
+							problems.add("Class "
+									+ eClass.getName()
 									+ " references non-existing OCL constraint \""
 									+ constraintName + "\"");
 						}
@@ -104,7 +108,9 @@ public class GeneratedOCLTest extends TraverseTest {
 						try {
 							validateOCL(eClass, constraintOCL);
 						} catch (ParserException e) {
-							fail(e.getLocalizedMessage() + " in OCL constraint: " + eClass.getName() + "." + constraintName);
+							problems.add(e.getLocalizedMessage()
+									+ " in OCL constraint: " + eClass.getName()
+									+ "." + constraintName);
 						}
 					}
 				}
@@ -112,9 +118,21 @@ public class GeneratedOCLTest extends TraverseTest {
 			}
 
 		});
+		if (!problems.isEmpty()) {
+			StringBuilder errorText = new StringBuilder();
+			int line = 0;
+			for (String problem : problems) {
+				if (line++ > 0) {
+					errorText.append('\n');
+				}
+				errorText.append(problem);
+			}
+			fail(errorText.toString());
+		}
 	}
 
-	protected void validateOCL(EClass context, String expr) throws ParserException {
+	protected void validateOCL(EClass context, String expr)
+			throws ParserException {
 		OCLHelper<EClassifier, EOperation, EStructuralFeature, Constraint> helper = OCL_ENV
 				.createOCLHelper();
 		helper.setValidating(true);
