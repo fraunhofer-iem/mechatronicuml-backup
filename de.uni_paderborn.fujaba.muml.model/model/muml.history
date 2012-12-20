@@ -6271,17 +6271,17 @@
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          referenceName="details" element="#//@releases.7/@changes.102/@element">
+        <changes xsi:type="history:Set" element="#//@releases.7/@changes.102/@element"
             featureName="key" dataValue="MultiPortRequiresDefinedOrder"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.7/@changes.102/@element"
             featureName="value" dataValue="self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+          referenceName="details" element="#//@releases.7/@changes.101/@element">
+        <changes xsi:type="history:Set" element="#//@releases.7/@changes.101/@element"
             featureName="key" dataValue="OrderedRequiresIntegerOrderVariable"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        <changes xsi:type="history:Set" element="#//@releases.7/@changes.101/@element"
             featureName="value" dataValue="self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType ='EInt')"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
@@ -6292,17 +6292,17 @@
             featureName="value" dataValue="self.incomingRoleConnector->notEmpty() or self.outgoingRoleConnector->notEmpty()"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+          referenceName="details" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="RoleRequiresBehavior"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="not self.behavior.oclIsUndefined()"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+          referenceName="details" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
             featureName="key" dataValue="RoleRequiresInterface"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
             featureName="value" dataValue="not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/Role"
@@ -17627,5 +17627,53 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
         featureName="value" dataValue="not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)"
         oldDataValue="not raisedMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raisedMessageEvent.message.instanceOf)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="AtLeastOneMessageType" oldDataValue="AtLeastOneMessageInterface"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="not self.senderMessageTypes.isEmpty() or not self.receiverMessageTypes.isEmpty()"
+        oldDataValue="self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="key" dataValue="DiscretePortAndRoleSameMessageTypes" oldDataValue="DiscretePortAndRoleSameMessageInterface"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="AtLeastOneMessageType DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole"
+        oldDataValue="DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="value" dataValue="not self.refines.oclIsUndefined() implies&#xA;&#x9;(self.senderMessageTypes = self.refines.senderMessageTypes&#xA;&#x9; and&#xA;&#x9; self.receiverMessageTypes = self.refines.receiverMessageTypes&#xA;&#x9;)"
+        oldDataValue="not self.refines.oclIsUndefined() implies&#xA;&#x9;(self.senderMessageInterface = self.refines.senderMessageInterface&#xA;&#x9; and&#xA;&#x9; self.receiverMessageInterface = self.refines.receiverMessageInterface&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="not self.senderMessageTypes->isEmpty() or not self.receiverMessageTypes->isEmpty()"
+        oldDataValue="not self.senderMessageTypes.isEmpty() or not self.receiverMessageTypes.isEmpty()"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="OrderedRequiresIntegerOrderVariable"
+          value="self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType ='EInt')"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="MultiPortRequiresDefinedOrder"
+          value="self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="not (self.senderMessageTypes->isEmpty() and self.receiverMessageTypes->isEmpty())"
+        oldDataValue="not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="RoleRequiresBehavior RoleRequiresMessageTypes"
+        oldDataValue="RoleRequiresBehavior"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="key" dataValue="RoleRequiresMessageTypes" oldDataValue="RoleRequiresInterface"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        referenceName="details" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+          featureName="key" dataValue="constraints"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+          featureName="value" dataValue="RoleRequiresBehavior RoleRequiresMessageTypes"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="SameConfiguration" oldDataValue="RoleRequiresBehavior RoleRequiresMessageTypes"/>
   </releases>
 </history:History>

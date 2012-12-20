@@ -558,7 +558,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (roleEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "RoleRequiresBehavior"
+			 "constraints", "RoleRequiresBehavior RoleRequiresMessageTypes"
 		   });															
 	}
 
@@ -593,10 +593,8 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (roleEClass, 
 		   source, 
 		   new String[] {
-			 "MultiPortRequiresDefinedOrder", "self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)",
-			 "OrderedRequiresIntegerOrderVariable", "self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')",
 			 "RoleRequiresBehavior", "not self.behavior.oclIsUndefined()",
-			 "RoleRequiresInterface", "not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())"
+			 "RoleRequiresMessageTypes", "not (self.senderMessageTypes->isEmpty() and self.receiverMessageTypes->isEmpty())"
 		   });				
 		addAnnotation
 		  (getRole_RoleConnector(), 

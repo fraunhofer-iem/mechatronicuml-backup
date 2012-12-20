@@ -33,8 +33,8 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getRole()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RoleRequiresBehavior'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL MultiPortRequiresDefinedOrder='self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)' OrderedRequiresIntegerOrderVariable='self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType =\'EInt\')' RoleRequiresBehavior='not self.behavior.oclIsUndefined()' RoleRequiresInterface='not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RoleRequiresBehavior RoleRequiresMessageTypes'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RoleRequiresBehavior='not self.behavior.oclIsUndefined()' RoleRequiresMessageTypes='not (self.senderMessageTypes->isEmpty() and self.receiverMessageTypes->isEmpty())'"
  * @generated
  */
 public interface Role extends DiscreteInteractionEndpoint, DataType {

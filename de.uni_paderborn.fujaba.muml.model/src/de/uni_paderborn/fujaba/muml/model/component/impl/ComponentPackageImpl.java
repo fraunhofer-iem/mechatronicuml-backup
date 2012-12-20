@@ -1010,7 +1010,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (discretePortEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole"
+			 "constraints", "AtLeastOneMessageType DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole"
 		   });														
 		addAnnotation
 		  (componentPartEClass, 
@@ -1087,11 +1087,11 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (discretePortEClass, 
 		   source, 
 		   new String[] {
-			 "AtLeastOneMessageInterface", "self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))",
+			 "AtLeastOneMessageType", "not self.senderMessageTypes->isEmpty() or not self.receiverMessageTypes->isEmpty()",
 			 "DiscretePortRequiresBehavior", "-- this also holds for a hybrid port, ports of structured components do not require a behavior\r\n(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))\r\n\timplies not self.behavior.oclIsUndefined()",
 			 "DiscretePortAtStructuredComponentHasNoBehavior", "(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\n\timplies self.behavior.oclIsUndefined()",
 			 "DiscretePortRequiresRole", "self.oclIsTypeOf(component::DiscretePort) implies not self.refines.oclIsUndefined()",
-			 "DiscretePortAndRoleSameMessageInterface", "not self.refines.oclIsUndefined() implies\n\t(self.senderMessageInterface = self.refines.senderMessageInterface\n\t and\n\t self.receiverMessageInterface = self.refines.receiverMessageInterface\n\t)",
+			 "DiscretePortAndRoleSameMessageTypes", "not self.refines.oclIsUndefined() implies\n\t(self.senderMessageTypes = self.refines.senderMessageTypes\n\t and\n\t self.receiverMessageTypes = self.refines.receiverMessageTypes\n\t)",
 			 "MultiPortMustRefineMultiRole", "if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then\r\n       self.multiPort implies self.refines.multiRole\r\nelse\r\n\ttrue\r\nendif"
 		   });				
 		addAnnotation

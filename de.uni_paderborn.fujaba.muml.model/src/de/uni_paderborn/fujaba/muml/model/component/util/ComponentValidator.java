@@ -223,11 +223,75 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_AtLeastOneMessageType(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAndRoleSameMessageTypes(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresBehavior(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresRole(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_MultiPortMustRefineMultiRole(discretePort, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the AtLeastOneMessageType constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_PORT__AT_LEAST_ONE_MESSAGE_TYPE__EEXPRESSION = "not self.senderMessageTypes->isEmpty() or not self.receiverMessageTypes->isEmpty()";
+
+	/**
+	 * Validates the AtLeastOneMessageType constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscretePort_AtLeastOneMessageType(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DISCRETE_PORT,
+				 discretePort,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AtLeastOneMessageType",
+				 DISCRETE_PORT__AT_LEAST_ONE_MESSAGE_TYPE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the DiscretePortAndRoleSameMessageTypes constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_AND_ROLE_SAME_MESSAGE_TYPES__EEXPRESSION = "not self.refines.oclIsUndefined() implies\n" +
+		"\t(self.senderMessageTypes = self.refines.senderMessageTypes\n" +
+		"\t and\n" +
+		"\t self.receiverMessageTypes = self.refines.receiverMessageTypes\n" +
+		"\t)";
+
+	/**
+	 * Validates the DiscretePortAndRoleSameMessageTypes constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscretePort_DiscretePortAndRoleSameMessageTypes(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DISCRETE_PORT,
+				 discretePort,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DiscretePortAndRoleSameMessageTypes",
+				 DISCRETE_PORT__DISCRETE_PORT_AND_ROLE_SAME_MESSAGE_TYPES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

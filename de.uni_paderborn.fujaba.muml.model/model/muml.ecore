@@ -103,14 +103,14 @@
           <details key="documentation" value="This class represents a concrete port specification which provides the discrete functionality of a port."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole"/>
+          <details key="constraints" value="AtLeastOneMessageType DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="AtLeastOneMessageInterface" value="self.oclIsTypeOf(component::DiscretePort) implies (not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined()))"/>
+          <details key="AtLeastOneMessageType" value="not self.senderMessageTypes->isEmpty() or not self.receiverMessageTypes->isEmpty()"/>
           <details key="DiscretePortRequiresBehavior" value="-- this also holds for a hybrid port, ports of structured components do not require a behavior&#xD;&#xA;(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))&#xD;&#xA;&#x9;implies not self.behavior.oclIsUndefined()"/>
           <details key="DiscretePortAtStructuredComponentHasNoBehavior" value="(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))&#xA;&#x9;implies self.behavior.oclIsUndefined()"/>
           <details key="DiscretePortRequiresRole" value="self.oclIsTypeOf(component::DiscretePort) implies not self.refines.oclIsUndefined()"/>
-          <details key="DiscretePortAndRoleSameMessageInterface" value="not self.refines.oclIsUndefined() implies&#xA;&#x9;(self.senderMessageInterface = self.refines.senderMessageInterface&#xA;&#x9; and&#xA;&#x9; self.receiverMessageInterface = self.refines.receiverMessageInterface&#xA;&#x9;)"/>
+          <details key="DiscretePortAndRoleSameMessageTypes" value="not self.refines.oclIsUndefined() implies&#xA;&#x9;(self.senderMessageTypes = self.refines.senderMessageTypes&#xA;&#x9; and&#xA;&#x9; self.receiverMessageTypes = self.refines.receiverMessageTypes&#xA;&#x9;)"/>
           <details key="MultiPortMustRefineMultiRole" value="if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then&#xD;&#xA;       self.multiPort implies self.refines.multiRole&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//model/protocol/Role"
@@ -1086,13 +1086,11 @@
           <details key="documentation" value="This class represents a role of a coordination pattern."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="RoleRequiresBehavior"/>
+          <details key="constraints" value="RoleRequiresBehavior RoleRequiresMessageTypes"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="MultiPortRequiresDefinedOrder" value="self.ordered implies (self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity)"/>
-          <details key="OrderedRequiresIntegerOrderVariable" value="self.ordered implies (self.orderVariable->notEmpty() implies self.orderVariable.eAttributeType ='EInt')"/>
           <details key="RoleRequiresBehavior" value="not self.behavior.oclIsUndefined()"/>
-          <details key="RoleRequiresInterface" value="not (self.senderMessageInterface.oclIsUndefined() and self.receiverMessageInterface.oclIsUndefined())"/>
+          <details key="RoleRequiresMessageTypes" value="not (self.senderMessageTypes->isEmpty() and self.receiverMessageTypes->isEmpty())"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
             lowerBound="1" eType="#//model/protocol/CoordinationProtocol" eOpposite="#//model/protocol/CoordinationProtocol/roles">
@@ -2064,6 +2062,9 @@
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="SameConfiguration" value="self.deployedAssemblyInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="SameConfiguration"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deployment" lowerBound="1"
             eType="#//model/deployment/Deployment" eOpposite="#//model/deployment/Deployment/communicationLinks">

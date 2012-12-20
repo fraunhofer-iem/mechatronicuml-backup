@@ -636,7 +636,13 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		   source, 
 		   new String[] {
 			 "constraints", "NoDeploymentOnActorOrSensor"
-		   });																							
+		   });															
+		addAnnotation
+		  (communicationLinkEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "SameConfiguration"
+		   });										
 	}
 
 	/**
@@ -658,7 +664,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		   source, 
 		   new String[] {
 			 "SameConfiguration", "self.deployedAssemblyInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"
-		   });										
+		   });											
 	}
 
 } //DeploymentPackageImpl
