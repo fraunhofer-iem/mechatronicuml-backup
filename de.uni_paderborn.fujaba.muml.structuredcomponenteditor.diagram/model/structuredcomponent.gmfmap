@@ -191,7 +191,7 @@
               href="structuredcomponent.gmfgraph#ComponentPart"/>
           <children>
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/portsDerived"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/ports"/>
             <ownedChild>
               <domainMetaElement
                   href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/HybridPort"/>
@@ -220,12 +220,12 @@
           <children
               referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/portsDerived"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/ports"/>
           </children>
           <children
               referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/portsDerived"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/ComponentPart/ports"/>
           </children>
         </ownedChild>
       </children>

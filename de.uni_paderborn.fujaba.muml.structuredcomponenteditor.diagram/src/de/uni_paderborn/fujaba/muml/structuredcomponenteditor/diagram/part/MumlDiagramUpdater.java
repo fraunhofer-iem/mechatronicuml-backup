@@ -107,8 +107,7 @@ public class MumlDiagramUpdater {
 		de.uni_paderborn.fujaba.muml.model.component.ComponentPart modelElement = (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getPortsDerived().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getPorts().iterator(); it.hasNext();) {
 			de.uni_paderborn.fujaba.muml.model.component.Port childElement = (de.uni_paderborn.fujaba.muml.model.component.Port) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry

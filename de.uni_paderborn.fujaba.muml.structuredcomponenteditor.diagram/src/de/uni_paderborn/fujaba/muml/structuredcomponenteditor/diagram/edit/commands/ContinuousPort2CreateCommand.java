@@ -54,7 +54,7 @@ public class ContinuousPort2CreateCommand extends EditElementCommand {
 				.createContinuousPort();
 
 		de.uni_paderborn.fujaba.muml.model.component.ComponentPart owner = (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) getElementToEdit();
-		owner.getPortsDerived().add(newElement);
+		owner.getPorts().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.ElementInitializers
 				.getInstance().init_ContinuousPort_3015(newElement);

@@ -54,7 +54,7 @@ public class HybridPort2CreateCommand extends EditElementCommand {
 				.createHybridPort();
 
 		de.uni_paderborn.fujaba.muml.model.component.ComponentPart owner = (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) getElementToEdit();
-		owner.getPortsDerived().add(newElement);
+		owner.getPorts().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.ElementInitializers
 				.getInstance().init_HybridPort_3013(newElement);

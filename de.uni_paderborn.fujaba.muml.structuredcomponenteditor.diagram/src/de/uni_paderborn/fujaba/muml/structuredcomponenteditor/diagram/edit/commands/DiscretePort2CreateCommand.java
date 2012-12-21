@@ -54,7 +54,7 @@ public class DiscretePort2CreateCommand extends EditElementCommand {
 				.createDiscretePort();
 
 		de.uni_paderborn.fujaba.muml.model.component.ComponentPart owner = (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) getElementToEdit();
-		owner.getPortsDerived().add(newElement);
+		owner.getPorts().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.ElementInitializers
 				.getInstance().init_DiscretePort_3014(newElement);

@@ -51,7 +51,7 @@ public class ComponentPartCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
-				.getComponentPart_PortsDerived();
+				.getComponentPart_Ports();
 	}
 
 	/**
