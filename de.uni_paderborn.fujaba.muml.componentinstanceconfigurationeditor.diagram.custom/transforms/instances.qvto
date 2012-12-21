@@ -5,6 +5,7 @@ modeltype ModelPackage uses muml::model('http://www.fujaba.de/muml/0.2.2');
 modeltype CorePackage uses muml::model::core('http://www.fujaba.de/muml/0.2.2');
 modeltype ComponentPackage uses muml::model::component('http://www.fujaba.de/muml/0.2.2');
 modeltype InstancePackage uses muml::model::instance('http://www.fujaba.de/muml/0.2.2');
+modeltype ConnectorPackage uses muml::model::connector('http://www.fujaba.de/muml/0.2.2');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 main() {
@@ -37,9 +38,17 @@ query Component::createPortInstances() : Set(PortInstance) {
 	return portInstances;
 }
 query Port::createPortInstances() : Set(PortInstance) {
-	return self.basicCreatePortInstances()
+	return Set { self.createPortInstance() }
 }
-query Port::basicCreatePortInstances() : Set(PortInstance) {
+query DiscretePort::createPortInstances() : Set(PortInstance) {
+	if (self.multiPort) then {
+		var multiPortInstance : DiscreteMultiPortInstance := new DiscreteMultiPortInstance(self);
+		//return OrderedSet { multiPortInstance }
+		return OrderedSet { multiPortInstance }[PortInstance]->union(multiPortInstance.subPortInstances[PortInstance])
+	} endif;
+	return self.createSubPortInstances();
+}
+query DiscretePort::createSubPortInstances() : Set(PortInstance) {
 	var subPortInstances : Set(PortInstance);
 	var count : Integer := 0;
 	while (count < self.cardinality.lowerBound.toInteger()) {
@@ -49,18 +58,6 @@ query Port::basicCreatePortInstances() : Set(PortInstance) {
 		count := count + 1;
 	};
 	return subPortInstances
-}
-query DiscretePort::createPortInstances() : Set(PortInstance) {
-	if (self.isMultiPort) then {
-		var multiPortInstance : DiscreteMultiPortInstance := new DiscreteMultiPortInstance(self);
-		//return OrderedSet { multiPortInstance }
-		return OrderedSet { multiPortInstance }[PortInstance]->union(multiPortInstance.subPortInstances[PortInstance])
-	} endif;
-	return self.basicCreatePortInstances()
-}
-// HybridPort inherits from DiscretePort, but should use the normal behavior!
-query HybridPort::createPortInstances() : Set(PortInstance) {
-	return self.basicCreatePortInstances()
 }
 
 query Port::createPortInstance() : PortInstance {
@@ -98,17 +95,17 @@ constructor StructuredComponentInstance::StructuredComponentInstance(type : Stru
 	portInstances := type.createPortInstances();
 	embeddedCIC := new ComponentInstanceConfiguration(type);
 }
-constructor DiscreteMultiPortInstance::DiscreteMultiPortInstance(type : DiscretePort) {
-	portType := type;
+constructor DiscreteMultiPortInstance::DiscreteMultiPortInstance(port : DiscretePort) {
+	type := port;
 	name := type.name;
-	subPortInstances := type.basicCreatePortInstances()[DiscreteSinglePortInstance];
+	subPortInstances := port.createSubPortInstances()[DiscreteSinglePortInstance];
 }
-constructor DiscreteSinglePortInstance::DiscreteSinglePortInstance(type : DiscretePort) {
-	portType := type;
+constructor DiscreteSinglePortInstance::DiscreteSinglePortInstance(port : DiscretePort) {
+	type := port;
 }
-constructor ContinuousPortInstance::ContinuousPortInstance(type : ContinuousPort) {
-	portType := type;
+constructor ContinuousPortInstance::ContinuousPortInstance(port : ContinuousPort) {
+	type := port;
 }
-constructor HybridPortInstance::HybridPortInstance(type : HybridPort) {
-	portType := type;
+constructor HybridPortInstance::HybridPortInstance(port : HybridPort) {
+	type := port;
 }
