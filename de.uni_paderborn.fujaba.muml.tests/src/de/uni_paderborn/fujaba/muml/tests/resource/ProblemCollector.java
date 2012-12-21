@@ -5,12 +5,15 @@ import java.util.ArrayList;
 @SuppressWarnings("serial")
 public class ProblemCollector extends ArrayList<String> {
 
+	/**
+	 * Fail if there have been problems added.
+	 */
 	public void fail() {
 		if (!isEmpty()) {
 			StringBuilder errorText = new StringBuilder();
-			int line = 0;
+			int size = size();
 			for (String problem : this) {
-				if (line++ > 0) {
+				if (size > 1) {
 					errorText.append('\n');
 				}
 				errorText.append(problem);

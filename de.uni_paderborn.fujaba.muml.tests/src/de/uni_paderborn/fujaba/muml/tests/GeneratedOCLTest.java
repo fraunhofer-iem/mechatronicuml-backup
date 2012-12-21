@@ -1,7 +1,5 @@
 package de.uni_paderborn.fujaba.muml.tests;
 
-import static org.junit.Assert.fail;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -15,12 +13,17 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.ocl.Environment;
 import org.eclipse.ocl.OCL;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.Query;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.EcoreEnvironmentFactory;
 import org.eclipse.ocl.helper.OCLHelper;
+import org.eclipse.ocl.lpg.BasicEnvironment;
+import org.eclipse.ocl.lpg.ProblemHandler;
+import org.eclipse.ocl.options.ProblemOption;
+import org.eclipse.ocl.util.OCLUtil;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -28,6 +31,13 @@ import de.uni_paderborn.fujaba.muml.model.ModelPackage;
 import de.uni_paderborn.fujaba.muml.tests.resource.IResourceVisitor;
 import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
 
+/**
+ * This test checks the generated model code for invalid OCL. After making
+ * changes, please regenerate the model code prior to testing them.
+ * 
+ * @author bingo
+ * 
+ */
 public class GeneratedOCLTest extends TraverseTest {
 
 	public static OCL OCL_ENV = OCL
@@ -42,6 +52,14 @@ public class GeneratedOCLTest extends TraverseTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		// Initialize OCL environment
+		BasicEnvironment benv = OCLUtil.getAdapter(OCL_ENV.getEnvironment(),
+				BasicEnvironment.class);
+		// Do not show warning for closure iterator (we currently display
+		// warnings as errors)
+		benv.setOption(ProblemOption.CLOSURE_ITERATOR,
+				ProblemHandler.Severity.OK);
+
 		// Initialize all packages
 		accept(ModelPackage.eINSTANCE, new IResourceVisitor() {
 			@Override
@@ -64,7 +82,7 @@ public class GeneratedOCLTest extends TraverseTest {
 	 */
 	@Test
 	public void validOclConstraints() {
-		final List<String> problems = new ArrayList<String>();
+		final ProblemCollector problems = new ProblemCollector();
 
 		accept(ModelPackage.eINSTANCE, new IResourceVisitor() {
 			@Override
@@ -104,11 +122,21 @@ public class GeneratedOCLTest extends TraverseTest {
 						}
 						String constraintOCL = constraints.get(constraintName);
 						try {
-							validateOCLConstraint(eClass, constraintOCL);
+							EObject object = null;
+							if (eClass.isAbstract()) {
+								EClass concrete = findConcreteClass(eClass);
+								if (concrete != null) {
+									object = eClass.getEPackage()
+											.getEFactoryInstance()
+											.create(concrete);
+								}
+							}
+
+							validateOCLConstraint(eClass, object, constraintOCL);
 						} catch (ParserException e) {
-							problems.add(e.getLocalizedMessage()
-									+ " in OCL constraint: " + eClass.getName()
-									+ "." + constraintName);
+							problems.add("ERROR: " + eClass.getName() + "."
+									+ constraintName + ": "
+									+ e.getLocalizedMessage());
 						}
 					}
 					return false;
@@ -117,17 +145,7 @@ public class GeneratedOCLTest extends TraverseTest {
 			}
 
 		});
-		if (!problems.isEmpty()) {
-			StringBuilder errorText = new StringBuilder();
-			int line = 0;
-			for (String problem : problems) {
-				if (line++ > 0) {
-					errorText.append('\n');
-				}
-				errorText.append(problem);
-			}
-			fail(errorText.toString());
-		}
+		problems.fail();
 	}
 
 	/**
@@ -135,7 +153,7 @@ public class GeneratedOCLTest extends TraverseTest {
 	 */
 	@Test
 	public void validOclDerivations() {
-		final List<String> problems = new ArrayList<String>();
+		final ProblemCollector problems = new ProblemCollector();
 
 		accept(ModelPackage.eINSTANCE, new IResourceVisitor() {
 			@Override
@@ -161,20 +179,32 @@ public class GeneratedOCLTest extends TraverseTest {
 						}
 
 						if (derivation == null && body == null) {
-							problems.add("No derivation implemented for feature: "
+							problems.add("NOIMPL: "
 									+ feature.getEContainingClass().getName()
 									+ "." + feature.getName());
 						} else if (derivation != null) {
 							String derivationOCL = derivation.getDetails().get(
 									"derivation");
 							try {
-								validateOCLDerivation(feature, derivationOCL);
+								EClass eClass = feature.getEContainingClass();
+								EObject object = null;
+								if (eClass.isAbstract()) {
+									EClass concrete = findConcreteClass(eClass);
+									if (concrete != null) {
+										object = eClass.getEPackage()
+												.getEFactoryInstance()
+												.create(concrete);
+
+									}
+								}
+								validateOCLDerivation(eClass, feature, object,
+										derivationOCL);
 							} catch (ParserException e) {
-								problems.add(e.getLocalizedMessage()
-										+ " in OCL derivation for: "
+								problems.add("ERROR: "
 										+ feature.getEContainingClass()
 												.getName() + "."
-										+ feature.getName());
+										+ feature.getName() + ": "
+										+ e.getLocalizedMessage());
 							}
 						}
 
@@ -184,24 +214,14 @@ public class GeneratedOCLTest extends TraverseTest {
 			}
 
 		});
-		if (!problems.isEmpty()) {
-			StringBuilder errorText = new StringBuilder();
-			int line = 0;
-			for (String problem : problems) {
-				if (line++ > 0) {
-					errorText.append('\n');
-				}
-				errorText.append(problem);
-			}
-			fail(errorText.toString());
-		}
+		problems.fail();
 	}
 
 	/**
 	 * Tests, if there are deactivated OCL constraints.
 	 */
 	@Test
-	public void noDeactivatedOclConstraints() {
+	public void deactivatedOclConstraints() {
 		final ProblemCollector problems = new ProblemCollector();
 
 		accept(ModelPackage.eINSTANCE, new IResourceVisitor() {
@@ -234,9 +254,8 @@ public class GeneratedOCLTest extends TraverseTest {
 					// Find deactivated constraints
 					for (String constraintName : constraints.keySet()) {
 						if (!activatedConstraints.contains(constraintName)) {
-							problems.add("Class " + eClass.getName()
-									+ " has deactivated OCL constraint \""
-									+ constraintName + "\"");
+							problems.add("DEACT:" + eClass.getName() + "."
+									+ constraintName);
 						}
 					}
 					return false;
@@ -248,29 +267,51 @@ public class GeneratedOCLTest extends TraverseTest {
 		problems.fail();
 	}
 
-	protected void validateOCLConstraint(EClassifier context, String expr)
-			throws ParserException {
+	protected EClass findConcreteClass(EClass abstractClass) {
+		for (EClassifier classifier : abstractClass.getEPackage()
+				.getEClassifiers()) {
+			if (classifier instanceof EClass) {
+				EClass eClass = (EClass) classifier;
+				if (abstractClass.isSuperTypeOf(eClass) && !eClass.isAbstract()) {
+					return eClass;
+				}
+			}
+		}
+		return null;
+	}
+
+	protected void validateOCLConstraint(EClass eClass, EObject object,
+			String expr) throws ParserException {
 		OCLHelper<EClassifier, EOperation, EStructuralFeature, Constraint> helper = OCL_ENV
 				.createOCLHelper();
+
 		helper.setValidating(true);
-		helper.setContext(context);
+		helper.setContext(eClass);
 
 		Constraint constraintExpression = helper.createInvariant(expr);
 		Query<EClassifier, ?, ?> query = OCL_ENV
 				.createQuery(constraintExpression);
-		// query.check(object);
+
+		if (object != null) {
+			query.check(object);
+		}
+
 	}
 
-	protected void validateOCLDerivation(EStructuralFeature context, String expr)
+	protected void validateOCLDerivation(EClass eClass,
+			EStructuralFeature feature, EObject object, String expr)
 			throws ParserException {
 		OCLHelper helper = OCL_ENV.createOCLHelper();
 		helper.setValidating(true);
-		helper.setContext(context.getEContainingClass());
-		helper.setAttributeContext(context.getEContainingClass(), context);
+		helper.setAttributeContext(eClass, feature);
 
 		Object queryExpression = helper.createDerivedValueExpression(expr);
 		Query<EClassifier, ?, ?> query = OCL_ENV.createQuery(queryExpression);
-		// query.evaluate(null);
+		EClassifier resultType = query.resultType();
+
+		if (object != null) {
+			query.evaluate(object);
+		}
 	}
 
 }
