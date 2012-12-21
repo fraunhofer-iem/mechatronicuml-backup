@@ -279,7 +279,7 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	protected boolean urgent = URGENT_EDEFAULT;
 
 	/**
-	 * The cached setting delegate for the '{@link #getReceiverMessageTypes() <em>Receiver Message Types</em>}' reference.
+	 * The cached setting delegate for the '{@link #getReceiverMessageTypes() <em>Receiver Message Types</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReceiverMessageTypes()
@@ -289,7 +289,7 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	protected EStructuralFeature.Internal.SettingDelegate RECEIVER_MESSAGE_TYPES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__RECEIVER_MESSAGE_TYPES).getSettingDelegate();
 
 	/**
-	 * The cached setting delegate for the '{@link #getSenderMessageTypes() <em>Sender Message Types</em>}' reference.
+	 * The cached setting delegate for the '{@link #getSenderMessageTypes() <em>Sender Message Types</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSenderMessageTypes()
@@ -876,8 +876,9 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageType getReceiverMessageTypes() {
-		return (MessageType)RECEIVER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	@SuppressWarnings("unchecked")
+	public EList<MessageType> getReceiverMessageTypes() {
+		return (EList<MessageType>)RECEIVER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -885,44 +886,9 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageType basicGetReceiverMessageTypes() {
-		return (MessageType)RECEIVER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setReceiverMessageTypes(MessageType newReceiverMessageTypes) {
-		RECEIVER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicSet(this, null, 0, newReceiverMessageTypes);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageType getSenderMessageTypes() {
-		return (MessageType)SENDER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageType basicGetSenderMessageTypes() {
-		return (MessageType)SENDER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSenderMessageTypes(MessageType newSenderMessageTypes) {
-		SENDER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicSet(this, null, 0, newSenderMessageTypes);
+	@SuppressWarnings("unchecked")
+	public EList<MessageType> getSenderMessageTypes() {
+		return (EList<MessageType>)SENDER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -1043,11 +1009,9 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 				return isUrgent();
 			case RealtimestatechartPackage.TRANSITION__RECEIVER_MESSAGE_TYPES:
-				if (resolve) return getReceiverMessageTypes();
-				return basicGetReceiverMessageTypes();
+				return getReceiverMessageTypes();
 			case RealtimestatechartPackage.TRANSITION__SENDER_MESSAGE_TYPES:
-				if (resolve) return getSenderMessageTypes();
-				return basicGetSenderMessageTypes();
+				return getSenderMessageTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1111,10 +1075,12 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 				setUrgent((Boolean)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__RECEIVER_MESSAGE_TYPES:
-				setReceiverMessageTypes((MessageType)newValue);
+				getReceiverMessageTypes().clear();
+				getReceiverMessageTypes().addAll((Collection<? extends MessageType>)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__SENDER_MESSAGE_TYPES:
-				setSenderMessageTypes((MessageType)newValue);
+				getSenderMessageTypes().clear();
+				getSenderMessageTypes().addAll((Collection<? extends MessageType>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1174,10 +1140,10 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 				setUrgent(URGENT_EDEFAULT);
 				return;
 			case RealtimestatechartPackage.TRANSITION__RECEIVER_MESSAGE_TYPES:
-				setReceiverMessageTypes((MessageType)null);
+				getReceiverMessageTypes().clear();
 				return;
 			case RealtimestatechartPackage.TRANSITION__SENDER_MESSAGE_TYPES:
-				setSenderMessageTypes((MessageType)null);
+				getSenderMessageTypes().clear();
 				return;
 		}
 		super.eUnset(featureID);

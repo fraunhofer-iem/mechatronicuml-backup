@@ -60,7 +60,7 @@
             eType="#//model/component/PortConnector" changeable="false" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self.incomingConnectors -> union(self.outgoingConnectors)"/>
+            <details key="derivation" value="self.connectors->select(c | c.oclIsKindOf(PortConnector)).oclAsType(PortConnector)->asOrderedSet()"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -202,12 +202,18 @@
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The assemblies originating in port parts of this component part."/>
           </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self.ports.portConnectors->select(c | c.oclIsKindOf(AssemblyConnector)).oclAsType(AssemblyConnector)->asOrderedSet()"/>
+          </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="delegationConnectors"
             upperBound="-1" eType="#//model/component/DelegationConnector" changeable="false"
             volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The delegations connecting a port part of this component part with a port of the parent component type."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self.ports.portConnectors->select(c | c.oclIsKindOf(DelegationConnector)).oclAsType(DelegationConnector)->asOrderedSet()"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
@@ -216,7 +222,7 @@
             <details key="documentation" value="The cardinality of a ComponentPart specifies how many instances of a ComponentPart are allowed to exist at runtime."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="portsDerived" upperBound="-1"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
             eType="#//model/component/Port" changeable="false" volatile="true" transient="true"
             unsettable="true" derived="true" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -270,6 +276,12 @@
             eOpposite="#//model/component/StructuredComponent/connectors">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The structured component this connector belongs to."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+            eType="#//model/component/Port" volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port)->asOrderedSet()"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -368,7 +380,7 @@
             <details key="documentation" value="This derived attribute indicates if the hybrid port is an IN port"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="-- derive from superclass ContinuousPort&#xD;&#xA;self.isContinuousInPort"/>
+            <details key="derivation" value="self.kind = component::ContinuousPortDirectionKind::IN"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="isHybridOutPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -378,7 +390,7 @@
             <details key="documentation" value="This derived attribute indicates if the hybrid port is an OUT port"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="-- derive from superclass ContinuousPort&#xD;&#xA;self.isContinuousOutPort"/>
+            <details key="derivation" value="self.kind = component::ContinuousPortDirectionKind::OUT"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="samplingInterval" lowerBound="1"
@@ -461,7 +473,7 @@
             upperBound="-1" eType="#//model/component/StructuredComponent" changeable="false"
             volatile="true" transient="true" unsettable="true" derived="true" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self->closure(&#xA;&#x9;embeddedParts->select(&#xA;&#x9;&#x9;componentType.oclIsTypeOf(component::StructuredComponent)&#xA;&#x9;)->collect(componentType.oclAsType(component::StructuredComponent))&#xA;)"/>
+            <details key="derivation" value="self->closure(&#xA;&#x9;embeddedParts->select(&#xA;&#x9;&#x9;componentType.oclIsTypeOf(StructuredComponent)&#xA;&#x9;).componentType.oclAsType(StructuredComponent)&#xA;)"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Transitive closure of all StructuredComponents which are used (specified&#xA;as a componentType for a ComponentPart) in the component hierarchy."/>
@@ -805,6 +817,9 @@
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The connector type of this connector instance."/>
           </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self.type.oclAsType(component::PortConnector)"/>
+          </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="PortInstance" abstract="true" eSuperTypes="#//model/connector/ConnectorEndpointInstance">
@@ -817,6 +832,9 @@
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The port type of which this port instance is built from."/>
           </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self.type.oclAsType(component::Port)"/>
+          </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance"
             eType="#//model/instance/ComponentInstance" eOpposite="#//model/instance/ComponentInstance/portInstances">
@@ -828,7 +846,7 @@
             upperBound="-1" eType="#//model/instance/PortConnectorInstance" changeable="false"
             volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self.incomingConnectorInstances -> union(self.outgoingConnectorInstances )"/>
+            <details key="derivation" value="self.connectorInstances->select(i | i.oclIsKindOf(PortConnectorInstance)).oclAsType(PortConnectorInstance)->asOrderedSet()"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -843,7 +861,7 @@
             <details key="documentation" value="The assembly that this assembly instance is built from."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="connectorType.oclAsType(component::Assembly)"/>
+            <details key="derivation" value="self.type.oclAsType(component::AssemblyConnector)"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -864,7 +882,7 @@
             <details key="documentation" value="The delegation type of this delegation instance."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="connectorType.oclAsType(component::Delegation)"/>
+            <details key="derivation" value="self.type.oclAsType(component::DelegationConnector)"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -935,7 +953,7 @@
             upperBound="-1" eType="#//model/protocol/MessageBuffer" changeable="false"
             volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self.portType.refines.receiverMessageBuffer"/>
+            <details key="derivation" value="self.refines.receiverMessageBuffer"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The derived properties of the refined role regarding the receiver message buffers."/>
@@ -944,7 +962,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//model/protocol/Role"
             changeable="false" volatile="true" transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self.portType.refines"/>
+            <details key="derivation" value="self.portType.oclAsType(component::DiscretePort).refines"/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The role of a coordination pattern that the port type of this port instance refines."/>
@@ -1045,7 +1063,11 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="2"
             upperBound="2" eType="#//model/protocol/Role" changeable="false" volatile="true"
-            transient="true" derived="true"/>
+            transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self.connectorEndpoints->select(e | e.oclIsKindOf(Role)).oclAsType(Role)->asOrderedSet()"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocol" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement #//model/constraint/ConstrainableElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1530,14 +1552,14 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             defaultValueLiteral="true"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageTypes"
-            eType="#//model/msgtype/MessageType" volatile="true" transient="true"
+            upperBound="-1" eType="#//model/msgtype/MessageType" volatile="true" transient="true"
             derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="let b : core::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in&#xA;if b.oclIsUndefined() then&#xA;&#x9;OrderedSet { }&#xA;else&#xA;&#x9;if b.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;b.oclAsType(component::DiscretePort).receiverMessageTypes&#xA;&#x9;else&#xA;&#x9;&#x9;if b.oclIsKindOf(protocol::Role) then&#xA;&#x9;&#x9;&#x9;b.oclAsType(protocol::Role).receiverMessageTypes&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;OrderedSet { }&#xA;&#x9;&#x9;endif&#xA;&#x9;endif&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageTypes"
-            eType="#//model/msgtype/MessageType" volatile="true" transient="true"
+            upperBound="-1" eType="#//model/msgtype/MessageType" volatile="true" transient="true"
             derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="let b : core::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in&#xA;if b.oclIsUndefined() then&#xA;&#x9;OrderedSet { }&#xA;else&#xA;&#x9;if b.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;b.oclAsType(component::DiscretePort).senderMessageTypes&#xA;&#x9;else&#xA;&#x9;&#x9;if b.oclIsKindOf(protocol::Role) then&#xA;&#x9;&#x9;&#x9;b.oclAsType(protocol::Role).senderMessageTypes&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;OrderedSet { }&#xA;&#x9;&#x9;endif&#xA;&#x9;endif&#xA;endif"/>
@@ -1779,7 +1801,7 @@
             upperBound="-1" eType="#//model/core/Variable" changeable="false" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).attributes->asOrderedSet()"/>
+            <details key="derivation" value="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).variables->asOrderedSet()"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="allAvailableOperations"
@@ -2064,7 +2086,7 @@
           <details key="SameConfiguration" value="self.deployedAssemblyInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="SameConfiguration"/>
+          <details key="constraints" value=""/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deployment" lowerBound="1"
             eType="#//model/deployment/Deployment" eOpposite="#//model/deployment/Deployment/communicationLinks">

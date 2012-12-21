@@ -49,7 +49,7 @@ public interface HybridPort extends DirectedTypedPort {
 	 * @return the value of the '<em>Is Hybrid In Port</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getHybridPort_IsHybridInPort()
 	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- derive from superclass ContinuousPort\r\nself.isContinuousInPort'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.kind = component::ContinuousPortDirectionKind::IN'"
 	 * @generated
 	 */
 	boolean isIsHybridInPort();
@@ -65,7 +65,7 @@ public interface HybridPort extends DirectedTypedPort {
 	 * @return the value of the '<em>Is Hybrid Out Port</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getHybridPort_IsHybridOutPort()
 	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- derive from superclass ContinuousPort\r\nself.isContinuousOutPort'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.kind = component::ContinuousPortDirectionKind::OUT'"
 	 * @generated
 	 */
 	boolean isIsHybridOutPort();

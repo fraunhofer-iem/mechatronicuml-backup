@@ -391,57 +391,37 @@ public interface Transition extends ExtendableElement, Prioritizable, Commentabl
 	void setUrgent(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Receiver Message Types</b></em>' reference.
+	 * Returns the value of the '<em><b>Receiver Message Types</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgtype.MessageType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Receiver Message Types</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Receiver Message Types</em>' reference.
-	 * @see #setReceiverMessageTypes(MessageType)
+	 * @return the value of the '<em>Receiver Message Types</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_ReceiverMessageTypes()
 	 * @model transient="true" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='let b : core::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\nif b.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tif b.oclIsKindOf(component::DiscretePort) then\n\t\tb.oclAsType(component::DiscretePort).receiverMessageTypes\n\telse\n\t\tif b.oclIsKindOf(protocol::Role) then\n\t\t\tb.oclAsType(protocol::Role).receiverMessageTypes\n\t\telse\n\t\t\tOrderedSet { }\n\t\tendif\n\tendif\nendif'"
 	 * @generated
 	 */
-	MessageType getReceiverMessageTypes();
+	EList<MessageType> getReceiverMessageTypes();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getReceiverMessageTypes <em>Receiver Message Types</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Receiver Message Types</em>' reference.
-	 * @see #getReceiverMessageTypes()
-	 * @generated
-	 */
-	void setReceiverMessageTypes(MessageType value);
-
-	/**
-	 * Returns the value of the '<em><b>Sender Message Types</b></em>' reference.
+	 * Returns the value of the '<em><b>Sender Message Types</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.msgtype.MessageType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sender Message Types</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sender Message Types</em>' reference.
-	 * @see #setSenderMessageTypes(MessageType)
+	 * @return the value of the '<em>Sender Message Types</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getTransition_SenderMessageTypes()
 	 * @model transient="true" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='let b : core::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\nif b.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tif b.oclIsKindOf(component::DiscretePort) then\n\t\tb.oclAsType(component::DiscretePort).senderMessageTypes\n\telse\n\t\tif b.oclIsKindOf(protocol::Role) then\n\t\t\tb.oclAsType(protocol::Role).senderMessageTypes\n\t\telse\n\t\t\tOrderedSet { }\n\t\tendif\n\tendif\nendif'"
 	 * @generated
 	 */
-	MessageType getSenderMessageTypes();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSenderMessageTypes <em>Sender Message Types</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Sender Message Types</em>' reference.
-	 * @see #getSenderMessageTypes()
-	 * @generated
-	 */
-	void setSenderMessageTypes(MessageType value);
+	EList<MessageType> getSenderMessageTypes();
 
 } // Transition

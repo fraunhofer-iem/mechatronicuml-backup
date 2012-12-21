@@ -765,7 +765,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__URGENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
-	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference.
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -774,7 +774,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__RECEIVER_MESSAGE_TYPES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference.
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2262,10 +2262,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EAttribute getTransition_Urgent();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getReceiverMessageTypes <em>Receiver Message Types</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getReceiverMessageTypes <em>Receiver Message Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Receiver Message Types</em>'.
+	 * @return the meta object for the reference list '<em>Receiver Message Types</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getReceiverMessageTypes()
 	 * @see #getTransition()
 	 * @generated
@@ -2273,10 +2273,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getTransition_ReceiverMessageTypes();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSenderMessageTypes <em>Sender Message Types</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSenderMessageTypes <em>Sender Message Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Sender Message Types</em>'.
+	 * @return the meta object for the reference list '<em>Sender Message Types</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition#getSenderMessageTypes()
 	 * @see #getTransition()
 	 * @generated
@@ -3232,7 +3232,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EAttribute TRANSITION__URGENT = eINSTANCE.getTransition_Urgent();
 
 		/**
-		 * The meta object literal for the '<em><b>Receiver Message Types</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Receiver Message Types</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3240,7 +3240,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference TRANSITION__RECEIVER_MESSAGE_TYPES = eINSTANCE.getTransition_ReceiverMessageTypes();
 
 		/**
-		 * The meta object literal for the '<em><b>Sender Message Types</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Sender Message Types</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -46,6 +47,16 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 	 * @ordered
 	 */
 	protected ConnectorQualityOfServiceAssumptions connectorQualityOfServiceAssumptions;
+
+	/**
+	 * The cached setting delegate for the '{@link #getRoles() <em>Roles</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoles()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ROLES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ProtocolPackage.Literals.ROLE_CONNECTOR__ROLES).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,12 +166,9 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<Role> getRoles() {
-		// TODO: implement this method to return the 'Roles' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		return (EList<Role>)ROLES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -276,7 +284,7 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 			case ProtocolPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				return connectorQualityOfServiceAssumptions != null;
 			case ProtocolPackage.ROLE_CONNECTOR__ROLES:
-				return !getRoles().isEmpty();
+				return ROLES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

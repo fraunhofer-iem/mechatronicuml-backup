@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.instance.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -52,6 +53,16 @@ public abstract class PortConnectorInstanceImpl extends ConnectorInstanceImpl im
 	 * @ordered
 	 */
 	protected PortInstance target;
+
+	/**
+	 * The cached setting delegate for the '{@link #getPortConnectorType() <em>Port Connector Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortConnectorType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PORT_CONNECTOR_TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.PORT_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,8 +165,7 @@ public abstract class PortConnectorInstanceImpl extends ConnectorInstanceImpl im
 	 * @generated
 	 */
 	public PortConnector getPortConnectorType() {
-		PortConnector portConnectorType = basicGetPortConnectorType();
-		return portConnectorType != null && portConnectorType.eIsProxy() ? (PortConnector)eResolveProxy((InternalEObject)portConnectorType) : portConnectorType;
+		return (PortConnector)PORT_CONNECTOR_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -164,10 +174,7 @@ public abstract class PortConnectorInstanceImpl extends ConnectorInstanceImpl im
 	 * @generated
 	 */
 	public PortConnector basicGetPortConnectorType() {
-		// TODO: implement this method to return the 'Port Connector Type' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (PortConnector)PORT_CONNECTOR_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -240,7 +247,7 @@ public abstract class PortConnectorInstanceImpl extends ConnectorInstanceImpl im
 			case InstancePackage.PORT_CONNECTOR_INSTANCE__TARGET:
 				return target != null;
 			case InstancePackage.PORT_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE:
-				return basicGetPortConnectorType() != null;
+				return PORT_CONNECTOR_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -800,7 +800,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																		
+		   });																				
 		addAnnotation
 		  (delegationConnectorInstanceEClass, 
 		   source, 
@@ -816,18 +816,30 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";														
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";											
+		addAnnotation
+		  (getPortConnectorInstance_PortConnectorType(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.type.oclAsType(component::PortConnector)"
+		   });				
+		addAnnotation
+		  (getPortInstance_PortType(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.type.oclAsType(component::Port)"
+		   });			
 		addAnnotation
 		  (getPortInstance_PortConnectorInstances(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.incomingConnectorInstances -> union(self.outgoingConnectorInstances )"
+			 "derivation", "self.connectorInstances->select(i | i.oclIsKindOf(PortConnectorInstance)).oclAsType(PortConnectorInstance)->asOrderedSet()"
 		   });				
 		addAnnotation
 		  (getAssemblyConnectorInstance_AssemblyConnectorType(), 
 		   source, 
 		   new String[] {
-			 "derivation", "connectorType.oclAsType(component::Assembly)"
+			 "derivation", "self.type.oclAsType(component::AssemblyConnector)"
 		   });				
 		addAnnotation
 		  (delegationConnectorInstanceEClass, 
@@ -839,7 +851,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (getDelegationConnectorInstance_DelegationConnectorType(), 
 		   source, 
 		   new String[] {
-			 "derivation", "connectorType.oclAsType(component::Delegation)"
+			 "derivation", "self.type.oclAsType(component::DelegationConnector)"
 		   });					
 		addAnnotation
 		  (getComponentInstanceConfiguration_ParentPortInstances(), 
@@ -863,13 +875,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (getDiscretePortInstance_ReceiverMessageBuffer(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.portType.refines.receiverMessageBuffer"
+			 "derivation", "self.refines.receiverMessageBuffer"
 		   });			
 		addAnnotation
 		  (getDiscretePortInstance_Refines(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.portType.refines"
+			 "derivation", "self.portType.oclAsType(component::DiscretePort).refines"
 		   });							
 		addAnnotation
 		  (getDiscreteMultiPortInstance_GmfSubPortInstances(), 

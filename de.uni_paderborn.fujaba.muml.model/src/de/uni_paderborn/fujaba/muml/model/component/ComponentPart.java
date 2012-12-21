@@ -34,7 +34,7 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getAssemblyConnectors <em>Assembly Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getDelegationConnectors <em>Delegation Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getPortsDerived <em>Ports Derived</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getPorts <em>Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#isMultiPart <em>Multi Part</em>}</li>
  * </ul>
  * </p>
@@ -110,6 +110,7 @@ public interface ComponentPart extends CommentableElement, NamedElement, DataTyp
 	 * @return the value of the '<em>Assembly Connectors</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponentPart_AssemblyConnectors()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.ports.portConnectors->select(c | c.oclIsKindOf(AssemblyConnector)).oclAsType(AssemblyConnector)->asOrderedSet()'"
 	 * @generated
 	 */
 	EList<AssemblyConnector> getAssemblyConnectors();
@@ -125,41 +126,10 @@ public interface ComponentPart extends CommentableElement, NamedElement, DataTyp
 	 * @return the value of the '<em>Delegation Connectors</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponentPart_DelegationConnectors()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.ports.portConnectors->select(c | c.oclIsKindOf(DelegationConnector)).oclAsType(DelegationConnector)->asOrderedSet()'"
 	 * @generated
 	 */
 	EList<DelegationConnector> getDelegationConnectors();
-
-	/**
-	 * Returns the value of the '<em><b>Ports Derived</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.Port}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The ports of this part. They are derived from the ports of the
-	 * componentType of this component part. It is a containment
-	 * reference, so that GMF is able to let them flow around the
-	 * component.
-	 * Because this feature is derived, transient, volatile the model file
-	 * will not store the ports in this feature.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Ports Derived</em>' containment reference list.
-	 * @see #isSetPortsDerived()
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponentPart_PortsDerived()
-	 * @model containment="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tcomponentType.ports\r\nendif'"
-	 * @generated
-	 */
-	EList<Port> getPortsDerived();
-
-	/**
-	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getPortsDerived <em>Ports Derived</em>}' containment reference list is set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Ports Derived</em>' containment reference list is set.
-	 * @see #getPortsDerived()
-	 * @generated
-	 */
-	boolean isSetPortsDerived();
 
 	/**
 	 * Returns the value of the '<em><b>Multi Part</b></em>' attribute.
@@ -213,5 +183,37 @@ public interface ComponentPart extends CommentableElement, NamedElement, DataTyp
 	 * @generated
 	 */
 	void setCardinality(Cardinality value);
+
+	/**
+	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.component.Port}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The ports of this part. They are derived from the ports of the
+	 * componentType of this component part. It is a containment
+	 * reference, so that GMF is able to let them flow around the
+	 * component.
+	 * Because this feature is derived, transient, volatile the model file
+	 * will not store the ports in this feature.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Ports</em>' containment reference list.
+	 * @see #isSetPorts()
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponentPart_Ports()
+	 * @model containment="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tcomponentType.ports\r\nendif'"
+	 * @generated
+	 */
+	EList<Port> getPorts();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getPorts <em>Ports</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Ports</em>' containment reference list is set.
+	 * @see #getPorts()
+	 * @generated
+	 */
+	boolean isSetPorts();
 
 } // ComponentPart

@@ -76,7 +76,7 @@ public interface Port extends ConnectorEndpoint, ConstrainableElement, DataType 
 	 * @return the value of the '<em>Port Connectors</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPort_PortConnectors()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.incomingConnectors -> union(self.outgoingConnectors)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectors->select(c | c.oclIsKindOf(PortConnector)).oclAsType(PortConnector)->asOrderedSet()'"
 	 * @generated
 	 */
 	EList<PortConnector> getPortConnectors();

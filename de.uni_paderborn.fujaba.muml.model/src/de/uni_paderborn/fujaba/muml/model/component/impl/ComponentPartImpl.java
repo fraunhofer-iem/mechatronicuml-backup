@@ -44,7 +44,7 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getAssemblyConnectors <em>Assembly Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getDelegationConnectors <em>Delegation Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getPortsDerived <em>Ports Derived</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getPorts <em>Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#isMultiPart <em>Multi Part</em>}</li>
  * </ul>
  * </p>
@@ -83,6 +83,26 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	protected Component componentType;
 
 	/**
+	 * The cached setting delegate for the '{@link #getAssemblyConnectors() <em>Assembly Connectors</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssemblyConnectors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ASSEMBLY_CONNECTORS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__ASSEMBLY_CONNECTORS).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getDelegationConnectors() <em>Delegation Connectors</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDelegationConnectors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate DELEGATION_CONNECTORS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__DELEGATION_CONNECTORS).getSettingDelegate();
+
+	/**
 	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -93,14 +113,14 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	protected Cardinality cardinality;
 
 	/**
-	 * The cached setting delegate for the '{@link #getPortsDerived() <em>Ports Derived</em>}' containment reference list.
+	 * The cached setting delegate for the '{@link #getPorts() <em>Ports</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPortsDerived()
+	 * @see #getPorts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate PORTS_DERIVED__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate PORTS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__PORTS).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #isMultiPart() <em>Multi Part</em>}' attribute.
@@ -121,9 +141,9 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 		super();
 		
 		// Install a notification adapter that informs the
-		// portsDerived-reference, whenever one of the dependent features
+		// ports-reference, whenever one of the dependent features
 		// was modified
-		DerivedAttributeAdapter portsDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__PORTS_DERIVED);
+		DerivedAttributeAdapter portsDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__PORTS);
 		portsDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE, ComponentPackage.Literals.COMPONENT__PORTS);
 	}
 
@@ -264,12 +284,9 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<AssemblyConnector> getAssemblyConnectors() {
-		// TODO: implement this method to return the 'Assembly Connectors' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		return (EList<AssemblyConnector>)ASSEMBLY_CONNECTORS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -277,12 +294,9 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<DelegationConnector> getDelegationConnectors() {
-		// TODO: implement this method to return the 'Delegation Connectors' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		return (EList<DelegationConnector>)DELEGATION_CONNECTORS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 //	/**
@@ -315,15 +329,6 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 //		 * END: Bugfix
 //		 */
 //	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isSetPortsDerived() {
-		return PORTS_DERIVED__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -392,8 +397,17 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<Port> getPortsDerived() {
-		return (EList<Port>)PORTS_DERIVED__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public EList<Port> getPorts() {
+		return (EList<Port>)PORTS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetPorts() {
+		return PORTS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 	}
 
 	/**
@@ -431,8 +445,8 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 				return basicSetParentComponent(null, msgs);
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				return basicSetCardinality(null, msgs);
-			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
-				return ((InternalEList<?>)getPortsDerived()).basicRemove(otherEnd, msgs);
+			case ComponentPackage.COMPONENT_PART__PORTS:
+				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -472,8 +486,8 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 				return getDelegationConnectors();
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				return getCardinality();
-			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
-				return getPortsDerived();
+			case ComponentPackage.COMPONENT_PART__PORTS:
+				return getPorts();
 			case ComponentPackage.COMPONENT_PART__MULTI_PART:
 				return isMultiPart();
 		}
@@ -544,13 +558,13 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 			case ComponentPackage.COMPONENT_PART__PARENT_COMPONENT:
 				return getParentComponent() != null;
 			case ComponentPackage.COMPONENT_PART__ASSEMBLY_CONNECTORS:
-				return !getAssemblyConnectors().isEmpty();
+				return ASSEMBLY_CONNECTORS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.COMPONENT_PART__DELEGATION_CONNECTORS:
-				return !getDelegationConnectors().isEmpty();
+				return DELEGATION_CONNECTORS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				return cardinality != null;
-			case ComponentPackage.COMPONENT_PART__PORTS_DERIVED:
-				return isSetPortsDerived();
+			case ComponentPackage.COMPONENT_PART__PORTS:
+				return isSetPorts();
 			case ComponentPackage.COMPONENT_PART__MULTI_PART:
 				return isSetMultiPart();
 		}

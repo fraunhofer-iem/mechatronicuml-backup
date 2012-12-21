@@ -39,6 +39,15 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  */
 public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl implements PortInstance {
 	/**
+	 * The cached setting delegate for the '{@link #getPortType() <em>Port Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PORT_TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.PORT_INSTANCE__PORT_TYPE).getSettingDelegate();
+	/**
 	 * The cached setting delegate for the '{@link #getPortConnectorInstances() <em>Port Connector Instances</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95,8 +104,7 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 	 * @generated
 	 */
 	public Port getPortType() {
-		Port portType = basicGetPortType();
-		return portType != null && portType.eIsProxy() ? (Port)eResolveProxy((InternalEObject)portType) : portType;
+		return (Port)PORT_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -105,10 +113,7 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 	 * @generated
 	 */
 	public Port basicGetPortType() {
-		// TODO: implement this method to return the 'Port Type' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (Port)PORT_TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -266,7 +271,7 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
-				return basicGetPortType() != null;
+				return PORT_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE:
 				return getComponentInstance() != null;
 			case InstancePackage.PORT_INSTANCE__PORT_CONNECTOR_INSTANCES:

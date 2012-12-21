@@ -87,7 +87,7 @@ public interface DiscretePortInstance extends PortInstance {
 	 * @return the value of the '<em>Receiver Message Buffer</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscretePortInstance_ReceiverMessageBuffer()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.portType.refines.receiverMessageBuffer'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.refines.receiverMessageBuffer'"
 	 * @generated
 	 */
 	EList<MessageBuffer> getReceiverMessageBuffer();
@@ -102,7 +102,7 @@ public interface DiscretePortInstance extends PortInstance {
 	 * @return the value of the '<em>Refines</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscretePortInstance_Refines()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.portType.refines'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.portType.oclAsType(component::DiscretePort).refines'"
 	 * @generated
 	 */
 	Role getRefines();

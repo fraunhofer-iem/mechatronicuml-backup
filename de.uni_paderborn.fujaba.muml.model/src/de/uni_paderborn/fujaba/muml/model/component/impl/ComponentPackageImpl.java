@@ -478,15 +478,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponentPart_PortsDerived() {
-		return (EReference)componentPartEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getComponentPart_MultiPart() {
 		return (EAttribute)componentPartEClass.getEStructuralFeatures().get(6);
 	}
@@ -507,6 +498,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 */
 	public EReference getComponentPart_Cardinality() {
 		return (EReference)componentPartEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponentPart_Ports() {
+		return (EReference)componentPartEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -606,6 +606,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 */
 	public EReference getPortConnector_ParentComponent() {
 		return (EReference)portConnectorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPortConnector_Ports() {
+		return (EReference)portConnectorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -789,7 +798,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(componentPartEClass, COMPONENT_PART__ASSEMBLY_CONNECTORS);
 		createEReference(componentPartEClass, COMPONENT_PART__DELEGATION_CONNECTORS);
 		createEReference(componentPartEClass, COMPONENT_PART__CARDINALITY);
-		createEReference(componentPartEClass, COMPONENT_PART__PORTS_DERIVED);
+		createEReference(componentPartEClass, COMPONENT_PART__PORTS);
 		createEAttribute(componentPartEClass, COMPONENT_PART__MULTI_PART);
 
 		staticStructuredComponentEClass = createEClass(STATIC_STRUCTURED_COMPONENT);
@@ -798,6 +807,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		portConnectorEClass = createEClass(PORT_CONNECTOR);
 		createEReference(portConnectorEClass, PORT_CONNECTOR__PARENT_COMPONENT);
+		createEReference(portConnectorEClass, PORT_CONNECTOR__PORTS);
 
 		assemblyConnectorEClass = createEClass(ASSEMBLY_CONNECTOR);
 		createEReference(assemblyConnectorEClass, ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL);
@@ -918,7 +928,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getComponentPart_AssemblyConnectors(), this.getAssemblyConnector(), null, "assemblyConnectors", null, 0, -1, ComponentPart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentPart_DelegationConnectors(), this.getDelegationConnector(), null, "delegationConnectors", null, 0, -1, ComponentPart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentPart_Cardinality(), theCorePackage.getCardinality(), null, "cardinality", null, 1, 1, ComponentPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentPart_PortsDerived(), this.getPort(), null, "portsDerived", null, 0, -1, ComponentPart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentPart_Ports(), this.getPort(), null, "ports", null, 0, -1, ComponentPart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponentPart_MultiPart(), theEcorePackage.getEBoolean(), "multiPart", "", 0, 1, ComponentPart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(staticStructuredComponentEClass, StaticStructuredComponent.class, "StaticStructuredComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -929,6 +939,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		initEClass(portConnectorEClass, PortConnector.class, "PortConnector", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortConnector_ParentComponent(), this.getStructuredComponent(), this.getStructuredComponent_Connectors(), "parentComponent", null, 0, 1, PortConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPortConnector_Ports(), this.getPort(), null, "ports", null, 0, -1, PortConnector.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(assemblyConnectorEClass, AssemblyConnector.class, "AssemblyConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssemblyConnector_CoordinationProtocol(), theProtocolPackage.getCoordinationProtocol(), null, "coordinationProtocol", null, 0, 1, AssemblyConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1017,13 +1028,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet"
-		   });																
+		   });																		
 		addAnnotation
 		  (atomicComponentEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "SoftwareComponentRequiresBehavior ValidComponentType SoftwareComponentValidPorts ContinuousComponentValidPorts AtomicComponentsNamesMustBeUnique"
-		   });						
+		   });							
 		addAnnotation
 		  (assemblyConnectorEClass, 
 		   source, 
@@ -1062,7 +1073,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (getPort_PortConnectors(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.incomingConnectors -> union(self.outgoingConnectors)"
+			 "derivation", "self.connectors->select(c | c.oclIsKindOf(PortConnector)).oclAsType(PortConnector)->asOrderedSet()"
 		   });				
 		addAnnotation
 		  (continuousPortEClass, 
@@ -1131,9 +1142,21 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "CardinalityLowerBoundSet", "self.cardinality.lowerBound->notEmpty()",
 			 "TypeNotEqualToParent", "self.componentType <> self.parentComponent",
 			 "CardinalityUpperBoundSet", "self.cardinality.upperBound->notEmpty()"
-		   });							
+		   });					
 		addAnnotation
-		  (getComponentPart_PortsDerived(), 
+		  (getComponentPart_AssemblyConnectors(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.ports.portConnectors->select(c | c.oclIsKindOf(AssemblyConnector)).oclAsType(AssemblyConnector)->asOrderedSet()"
+		   });			
+		addAnnotation
+		  (getComponentPart_DelegationConnectors(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.ports.portConnectors->select(c | c.oclIsKindOf(DelegationConnector)).oclAsType(DelegationConnector)->asOrderedSet()"
+		   });			
+		addAnnotation
+		  (getComponentPart_Ports(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if componentType.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tcomponentType.ports\r\nendif"
@@ -1153,7 +1176,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "SoftwareComponentValidPorts", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::HybridPort))\n\t)",
 			 "ContinuousComponentValidPorts", "self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::ContinuousPort))\n\t)",
 			 "AtomicComponentsNamesMustBeUnique", "AtomicComponent.allInstances().name->count(self.name) = 1"
-		   });								
+		   });						
+		addAnnotation
+		  (getPortConnector_Ports(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port)->asOrderedSet()"
+		   });				
 		addAnnotation
 		  (assemblyConnectorEClass, 
 		   source, 
@@ -1193,13 +1222,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (getHybridPort_IsHybridInPort(), 
 		   source, 
 		   new String[] {
-			 "derivation", "-- derive from superclass ContinuousPort\r\nself.isContinuousInPort"
+			 "derivation", "self.kind = component::ContinuousPortDirectionKind::IN"
 		   });			
 		addAnnotation
 		  (getHybridPort_IsHybridOutPort(), 
 		   source, 
 		   new String[] {
-			 "derivation", "-- derive from superclass ContinuousPort\r\nself.isContinuousOutPort"
+			 "derivation", "self.kind = component::ContinuousPortDirectionKind::OUT"
 		   });											
 		addAnnotation
 		  (structuredComponentEClass, 
@@ -1218,7 +1247,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (getStructuredComponent_AllStructuredComponents(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self->closure(\n\tembeddedParts->select(\n\t\tcomponentType.oclIsTypeOf(component::StructuredComponent)\n\t)->collect(componentType.oclAsType(component::StructuredComponent))\n)"
+			 "derivation", "self->closure(\n\tembeddedParts->select(\n\t\tcomponentType.oclIsTypeOf(StructuredComponent)\n\t).componentType.oclAsType(StructuredComponent)\n)"
 		   });			
 		addAnnotation
 		  (getStructuredComponent_AllAtomicComponents(), 

@@ -547,7 +547,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		   source, 
 		   new String[] {
 			 "constraints", "OnlyRolesOfSameCoordinationProtocol"
-		   });						
+		   });							
 		addAnnotation
 		  (coordinationProtocolEClass, 
 		   source, 
@@ -575,7 +575,13 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		   source, 
 		   new String[] {
 			 "OnlyRolesOfSameCoordinationProtocol", "self.roles->size() = 2 implies self.roles->isUnique(coordinationProtocol)"
-		   });						
+		   });				
+		addAnnotation
+		  (getRoleConnector_Roles(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.connectorEndpoints->select(e | e.oclIsKindOf(Role)).oclAsType(Role)->asOrderedSet()"
+		   });				
 		addAnnotation
 		  (coordinationProtocolEClass, 
 		   source, 

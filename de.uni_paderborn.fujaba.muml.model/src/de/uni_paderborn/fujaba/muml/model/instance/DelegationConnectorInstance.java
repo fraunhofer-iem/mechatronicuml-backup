@@ -40,7 +40,7 @@ public interface DelegationConnectorInstance extends PortConnectorInstance {
 	 * @return the value of the '<em>Delegation Connector Type</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDelegationConnectorInstance_DelegationConnectorType()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='connectorType.oclAsType(component::Delegation)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.type.oclAsType(component::DelegationConnector)'"
 	 * @generated
 	 */
 	DelegationConnector getDelegationConnectorType();
