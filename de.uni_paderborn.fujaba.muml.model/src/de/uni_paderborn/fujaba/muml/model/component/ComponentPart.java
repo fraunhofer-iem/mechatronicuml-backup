@@ -10,8 +10,8 @@ import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
+import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
 
 /**
  * <!-- begin-user-doc -->
@@ -167,12 +167,12 @@ public interface ComponentPart extends CommentableElement, NamedElement, DataTyp
 	 * The cardinality of a ComponentPart specifies how many instances of a ComponentPart are allowed to exist at runtime.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Cardinality</em>' containment reference.
-	 * @see #setCardinality(Cardinality)
+	 * @see #setCardinality(Range)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getComponentPart_Cardinality()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Cardinality getCardinality();
+	Range getCardinality();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart#getCardinality <em>Cardinality</em>}' containment reference.
@@ -182,7 +182,7 @@ public interface ComponentPart extends CommentableElement, NamedElement, DataTyp
 	 * @see #getCardinality()
 	 * @generated
 	 */
-	void setCardinality(Cardinality value);
+	void setCardinality(Range value);
 
 	/**
 	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.

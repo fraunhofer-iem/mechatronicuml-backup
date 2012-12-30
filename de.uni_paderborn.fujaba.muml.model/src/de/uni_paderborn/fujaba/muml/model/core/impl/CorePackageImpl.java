@@ -28,7 +28,6 @@ import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
@@ -50,6 +49,8 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.impl.ValuetypePackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -64,13 +65,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 * @generated
 	 */
 	private EClass naturalNumberEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass cardinalityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -187,6 +181,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		ConnectorPackageImpl theConnectorPackage = (ConnectorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) instanceof ConnectorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) : ConnectorPackage.eINSTANCE);
+		ValuetypePackageImpl theValuetypePackage = (ValuetypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) instanceof ValuetypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) : ValuetypePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theCorePackage.createPackageContents();
@@ -199,6 +194,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		theDeploymentPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
 		theConnectorPackage.createPackageContents();
+		theValuetypePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theCorePackage.initializePackageContents();
@@ -211,6 +207,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		theDeploymentPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
 		theConnectorPackage.initializePackageContents();
+		theValuetypePackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
@@ -255,33 +252,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 	 */
 	public EAttribute getNaturalNumber_Infinity() {
 		return (EAttribute)naturalNumberEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCardinality() {
-		return cardinalityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCardinality_LowerBound() {
-		return (EReference)cardinalityEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCardinality_UpperBound() {
-		return (EReference)cardinalityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -505,10 +475,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		createEAttribute(naturalNumberEClass, NATURAL_NUMBER__VALUE);
 		createEAttribute(naturalNumberEClass, NATURAL_NUMBER__INFINITY);
 
-		cardinalityEClass = createEClass(CARDINALITY);
-		createEReference(cardinalityEClass, CARDINALITY__LOWER_BOUND);
-		createEReference(cardinalityEClass, CARDINALITY__UPPER_BOUND);
-
 		behavioralElementEClass = createEClass(BEHAVIORAL_ELEMENT);
 		createEReference(behavioralElementEClass, BEHAVIORAL_ELEMENT__BEHAVIOR);
 
@@ -598,10 +564,6 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		op = addEOperation(naturalNumberEClass, ecorePackage.getEBoolean(), "equals", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(cardinalityEClass, Cardinality.class, "Cardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCardinality_LowerBound(), this.getNaturalNumber(), null, "lowerBound", null, 1, 1, Cardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCardinality_UpperBound(), this.getNaturalNumber(), null, "upperBound", null, 1, 1, Cardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(behavioralElementEClass, BehavioralElement.class, "BehavioralElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehavioralElement_Behavior(), this.getBehavior(), this.getBehavior_BehavioralElement(), "behavior", null, 0, 1, BehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -665,13 +627,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "constraints", "ValueGreaterOrEqualZero"
-		   });									
-		addAnnotation
-		  (cardinalityEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
-		   });																				
+		   });																							
 	}
 
 	/**
@@ -687,13 +643,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		   source, 
 		   new String[] {
 			 "ValueGreaterOrEqualZero", "self.value >= 0"
-		   });									
-		addAnnotation
-		  (cardinalityEClass, 
-		   source, 
-		   new String[] {
-			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\nand (self.lowerBound.infinity implies self.upperBound.infinity)"
-		   });																			
+		   });																						
 	}
 
 } //CorePackageImpl

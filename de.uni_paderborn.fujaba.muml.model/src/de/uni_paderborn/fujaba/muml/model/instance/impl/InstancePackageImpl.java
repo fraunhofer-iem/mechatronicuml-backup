@@ -9,7 +9,6 @@ package de.uni_paderborn.fujaba.muml.model.instance.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import de.fujaba.modelinstance.ModelinstancePackage;
@@ -39,7 +38,6 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.util.InstanceValidator;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.model.msgtype.impl.MsgtypePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
@@ -48,6 +46,8 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.impl.ValuetypePackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -213,6 +213,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		ConnectorPackageImpl theConnectorPackage = (ConnectorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) instanceof ConnectorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) : ConnectorPackage.eINSTANCE);
+		ValuetypePackageImpl theValuetypePackage = (ValuetypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) instanceof ValuetypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) : ValuetypePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theInstancePackage.createPackageContents();
@@ -225,6 +226,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		theDeploymentPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
 		theConnectorPackage.createPackageContents();
+		theValuetypePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theInstancePackage.initializePackageContents();
@@ -237,6 +239,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		theDeploymentPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
 		theConnectorPackage.initializePackageContents();
+		theValuetypePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theInstancePackage.freeze();

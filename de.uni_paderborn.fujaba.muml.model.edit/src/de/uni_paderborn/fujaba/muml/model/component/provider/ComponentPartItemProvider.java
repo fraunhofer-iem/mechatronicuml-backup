@@ -31,8 +31,8 @@ import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart} object.
@@ -216,7 +216,7 @@ public class ComponentPartItemProvider
 						"_UI_PropertyDescriptor_description",
 						"_UI_Cardinality_lowerBound_feature",
 						"_UI_Cardinality_type"),
-						de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CARDINALITY__LOWER_BOUND,
+						de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.RANGE__LOWER_BOUND,
 						true, false,
 				false, null, getString("_UI_CardinalityPropertyCategory"),
 				null, rootPropertyDescriptor));
@@ -228,7 +228,7 @@ public class ComponentPartItemProvider
 						"_UI_PropertyDescriptor_description",
 						"_UI_Cardinality_upperBound_feature",
 						"_UI_Cardinality_type"),
-						de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CARDINALITY__UPPER_BOUND,
+						de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.RANGE__UPPER_BOUND,
 						true, false,
 				false, null, getString("_UI_CardinalityPropertyCategory"),
 				null, rootPropertyDescriptor));
@@ -353,7 +353,7 @@ public class ComponentPartItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentPackage.Literals.COMPONENT_PART__CARDINALITY,
-				 CoreFactory.eINSTANCE.createCardinality()));
+				 ValuetypeFactory.eINSTANCE.createRange()));
 	}
 
 	/**

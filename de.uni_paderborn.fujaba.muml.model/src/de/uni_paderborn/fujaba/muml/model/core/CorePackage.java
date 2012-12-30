@@ -106,43 +106,6 @@ public interface CorePackage extends EPackage {
 	int NATURAL_NUMBER_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.CardinalityImpl <em>Cardinality</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CardinalityImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getCardinality()
-	 * @generated
-	 */
-	int CARDINALITY = 1;
-
-	/**
-	 * The feature id for the '<em><b>Lower Bound</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARDINALITY__LOWER_BOUND = 0;
-
-	/**
-	 * The feature id for the '<em><b>Upper Bound</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARDINALITY__UPPER_BOUND = 1;
-
-	/**
-	 * The number of structural features of the '<em>Cardinality</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CARDINALITY_FEATURE_COUNT = 2;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehavioralElementImpl <em>Behavioral Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -150,7 +113,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getBehavioralElement()
 	 * @generated
 	 */
-	int BEHAVIORAL_ELEMENT = 2;
+	int BEHAVIORAL_ELEMENT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -178,7 +141,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getBehavior()
 	 * @generated
 	 */
-	int BEHAVIOR = 3;
+	int BEHAVIOR = 2;
 
 	/**
 	 * The feature id for the '<em><b>Behavioral Element</b></em>' reference.
@@ -224,7 +187,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getVariable()
 	 * @generated
 	 */
-	int VARIABLE = 4;
+	int VARIABLE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -288,7 +251,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getOperation()
 	 * @generated
 	 */
-	int OPERATION = 5;
+	int OPERATION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -370,7 +333,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 6;
+	int PARAMETER = 5;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -434,7 +397,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getParameterBinding()
 	 * @generated
 	 */
-	int PARAMETER_BINDING = 7;
+	int PARAMETER_BINDING = 6;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -489,7 +452,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getTimeValue()
 	 * @generated
 	 */
-	int TIME_VALUE = 8;
+	int TIME_VALUE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -544,7 +507,7 @@ public interface CorePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getTimeUnit()
 	 * @generated
 	 */
-	int TIME_UNIT = 9;
+	int TIME_UNIT = 8;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.NaturalNumber <em>Natural Number</em>}'.
@@ -577,38 +540,6 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNaturalNumber_Infinity();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.Cardinality <em>Cardinality</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Cardinality</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.Cardinality
-	 * @generated
-	 */
-	EClass getCardinality();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.core.Cardinality#getLowerBound <em>Lower Bound</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Lower Bound</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.Cardinality#getLowerBound()
-	 * @see #getCardinality()
-	 * @generated
-	 */
-	EReference getCardinality_LowerBound();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.core.Cardinality#getUpperBound <em>Upper Bound</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Upper Bound</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.Cardinality#getUpperBound()
-	 * @see #getCardinality()
-	 * @generated
-	 */
-	EReference getCardinality_UpperBound();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement <em>Behavioral Element</em>}'.
@@ -881,32 +812,6 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NATURAL_NUMBER__INFINITY = eINSTANCE.getNaturalNumber_Infinity();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.CardinalityImpl <em>Cardinality</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CardinalityImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl#getCardinality()
-		 * @generated
-		 */
-		EClass CARDINALITY = eINSTANCE.getCardinality();
-
-		/**
-		 * The meta object literal for the '<em><b>Lower Bound</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CARDINALITY__LOWER_BOUND = eINSTANCE.getCardinality_LowerBound();
-
-		/**
-		 * The meta object literal for the '<em><b>Upper Bound</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CARDINALITY__UPPER_BOUND = eINSTANCE.getCardinality_UpperBound();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.core.impl.BehavioralElementImpl <em>Behavioral Element</em>}' class.

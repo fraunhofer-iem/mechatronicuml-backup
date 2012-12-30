@@ -98,29 +98,6 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.Cardinality} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CardinalityItemProvider cardinalityItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.core.Cardinality}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCardinalityAdapter() {
-		if (cardinalityItemProvider == null) {
-			cardinalityItemProvider = new CardinalityItemProvider(this);
-		}
-
-		return cardinalityItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.core.Variable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -335,7 +312,6 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 */
 	public void dispose() {
 		if (naturalNumberItemProvider != null) naturalNumberItemProvider.dispose();
-		if (cardinalityItemProvider != null) cardinalityItemProvider.dispose();
 		if (variableItemProvider != null) variableItemProvider.dispose();
 		if (operationItemProvider != null) operationItemProvider.dispose();
 		if (parameterItemProvider != null) parameterItemProvider.dispose();

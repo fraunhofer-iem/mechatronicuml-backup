@@ -4,13 +4,12 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.types.impl;
+package de.uni_paderborn.fujaba.muml.model.valuetype.impl;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import de.fujaba.modelinstance.ModelinstancePackage;
@@ -32,14 +31,12 @@ import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.model.protocol.impl.ProtocolPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.types.ArrayDataType;
-import de.uni_paderborn.fujaba.muml.model.types.DataType;
-import de.uni_paderborn.fujaba.muml.model.types.PrimitiveDataType;
-import de.uni_paderborn.fujaba.muml.model.types.PrimitiveTypes;
-import de.uni_paderborn.fujaba.muml.model.types.TypesFactory;
 import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
+import de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl;
+import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
-import de.uni_paderborn.fujaba.muml.model.valuetype.impl.ValuetypePackageImpl;
+import de.uni_paderborn.fujaba.muml.model.valuetype.util.ValuetypeValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,34 +44,13 @@ import de.uni_paderborn.fujaba.muml.model.valuetype.impl.ValuetypePackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
+public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass arrayDataTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass primitiveDataTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dataTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum primitiveTypesEEnum = null;
+	private EClass rangeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -87,12 +63,12 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see de.uni_paderborn.fujaba.muml.model.types.TypesPackage#eNS_URI
+	 * @see de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private TypesPackageImpl() {
-		super(eNS_URI, TypesFactory.eINSTANCE);
+	private ValuetypePackageImpl() {
+		super(eNS_URI, ValuetypeFactory.eINSTANCE);
 	}
 
 	/**
@@ -105,7 +81,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link TypesPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link ValuetypePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,11 +90,11 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static TypesPackage init() {
-		if (isInited) return (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+	public static ValuetypePackage init() {
+		if (isInited) return (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 
 		// Obtain or create and register package
-		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new TypesPackageImpl());
+		ValuetypePackageImpl theValuetypePackage = (ValuetypePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ValuetypePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ValuetypePackageImpl());
 
 		isInited = true;
 
@@ -134,11 +110,11 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
 		MsgtypePackageImpl theMsgtypePackage = (MsgtypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI) instanceof MsgtypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI) : MsgtypePackage.eINSTANCE);
 		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
+		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		ConnectorPackageImpl theConnectorPackage = (ConnectorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) instanceof ConnectorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) : ConnectorPackage.eINSTANCE);
-		ValuetypePackageImpl theValuetypePackage = (ValuetypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) instanceof ValuetypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) : ValuetypePackage.eINSTANCE);
 
 		// Create package meta-data objects
-		theTypesPackage.createPackageContents();
+		theValuetypePackage.createPackageContents();
 		theComponentPackage.createPackageContents();
 		theConstraintPackage.createPackageContents();
 		theCorePackage.createPackageContents();
@@ -147,11 +123,11 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		theRealtimestatechartPackage.createPackageContents();
 		theMsgtypePackage.createPackageContents();
 		theDeploymentPackage.createPackageContents();
+		theTypesPackage.createPackageContents();
 		theConnectorPackage.createPackageContents();
-		theValuetypePackage.createPackageContents();
 
 		// Initialize created meta-data
-		theTypesPackage.initializePackageContents();
+		theValuetypePackage.initializePackageContents();
 		theComponentPackage.initializePackageContents();
 		theConstraintPackage.initializePackageContents();
 		theCorePackage.initializePackageContents();
@@ -160,16 +136,25 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		theRealtimestatechartPackage.initializePackageContents();
 		theMsgtypePackage.initializePackageContents();
 		theDeploymentPackage.initializePackageContents();
+		theTypesPackage.initializePackageContents();
 		theConnectorPackage.initializePackageContents();
-		theValuetypePackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theValuetypePackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return ValuetypeValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
-		theTypesPackage.freeze();
+		theValuetypePackage.freeze();
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(TypesPackage.eNS_URI, theTypesPackage);
-		return theTypesPackage;
+		EPackage.Registry.INSTANCE.put(ValuetypePackage.eNS_URI, theValuetypePackage);
+		return theValuetypePackage;
 	}
 
 	/**
@@ -177,8 +162,8 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getArrayDataType() {
-		return arrayDataTypeEClass;
+	public EClass getRange() {
+		return rangeEClass;
 	}
 
 	/**
@@ -186,8 +171,8 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArrayDataType_Type() {
-		return (EReference)arrayDataTypeEClass.getEStructuralFeatures().get(0);
+	public EReference getRange_LowerBound() {
+		return (EReference)rangeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -195,8 +180,8 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArrayDataType_Cardinality() {
-		return (EReference)arrayDataTypeEClass.getEStructuralFeatures().get(1);
+	public EReference getRange_UpperBound() {
+		return (EReference)rangeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -204,44 +189,8 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPrimitiveDataType() {
-		return primitiveDataTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPrimitiveDataType_PrimitiveType() {
-		return (EAttribute)primitiveDataTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDataType() {
-		return dataTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getPrimitiveTypes() {
-		return primitiveTypesEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TypesFactory getTypesFactory() {
-		return (TypesFactory)getEFactoryInstance();
+	public ValuetypeFactory getValuetypeFactory() {
+		return (ValuetypeFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -263,17 +212,9 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		arrayDataTypeEClass = createEClass(ARRAY_DATA_TYPE);
-		createEReference(arrayDataTypeEClass, ARRAY_DATA_TYPE__TYPE);
-		createEReference(arrayDataTypeEClass, ARRAY_DATA_TYPE__CARDINALITY);
-
-		primitiveDataTypeEClass = createEClass(PRIMITIVE_DATA_TYPE);
-		createEAttribute(primitiveDataTypeEClass, PRIMITIVE_DATA_TYPE__PRIMITIVE_TYPE);
-
-		dataTypeEClass = createEClass(DATA_TYPE);
-
-		// Create enums
-		primitiveTypesEEnum = createEEnum(PRIMITIVE_TYPES);
+		rangeEClass = createEClass(RANGE);
+		createEReference(rangeEClass, RANGE__LOWER_BOUND);
+		createEReference(rangeEClass, RANGE__UPPER_BOUND);
 	}
 
 	/**
@@ -301,41 +242,58 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
-		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		arrayDataTypeEClass.getESuperTypes().add(this.getDataType());
-		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
-		dataTypeEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		dataTypeEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(arrayDataTypeEClass, ArrayDataType.class, "ArrayDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getArrayDataType_Type(), this.getDataType(), null, "type", null, 1, 1, ArrayDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArrayDataType_Cardinality(), theCorePackage.getNaturalNumber(), null, "cardinality", null, 1, 1, ArrayDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(primitiveDataTypeEClass, PrimitiveDataType.class, "PrimitiveDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPrimitiveDataType_PrimitiveType(), this.getPrimitiveTypes(), "primitiveType", "PrimitiveTypes.VOID", 1, 1, PrimitiveDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		// Initialize enums and add enum literals
-		initEEnum(primitiveTypesEEnum, PrimitiveTypes.class, "PrimitiveTypes");
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.VOID);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.BOOLEAN);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.BYTE);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.SHORT);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.INT);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.LONG);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.DOUBLE);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.STRING);
+		initEClass(rangeEClass, Range.class, "Range", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRange_LowerBound(), theCorePackage.getNaturalNumber(), null, "lowerBound", null, 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRange_UpperBound(), theCorePackage.getNaturalNumber(), null, "upperBound", null, 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
 	}
 
-} //TypesPackageImpl
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";			
+		addAnnotation
+		  (rangeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
+		   });			
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";				
+		addAnnotation
+		  (rangeEClass, 
+		   source, 
+		   new String[] {
+			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\nand (self.lowerBound.infinity implies self.upperBound.infinity)"
+		   });		
+	}
+
+} //ValuetypePackageImpl

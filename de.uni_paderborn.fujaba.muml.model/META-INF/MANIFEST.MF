@@ -49,4 +49,7 @@ Export-Package: de.uni_paderborn.fujaba.muml,
  de.uni_paderborn.fujaba.muml.model.types.impl,
  de.uni_paderborn.fujaba.muml.model.types.util,
  de.uni_paderborn.fujaba.muml.model.util,
+ de.uni_paderborn.fujaba.muml.model.valuetype,
+ de.uni_paderborn.fujaba.muml.model.valuetype.impl,
+ de.uni_paderborn.fujaba.muml.model.valuetype.util,
  de.uni_paderborn.fujaba.muml.util

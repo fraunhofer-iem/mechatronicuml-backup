@@ -6,11 +6,12 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
-import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.expressions.Expression;
+
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 
 /**
  * <!-- begin-user-doc -->

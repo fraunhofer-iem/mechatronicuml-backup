@@ -139,10 +139,6 @@
             <genParameters ecoreParameter="muml.ecore#//model/core/NaturalNumber/equals/o"/>
           </genOperations>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/core/Cardinality">
-          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Cardinality/lowerBound"/>
-          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Cardinality/upperBound"/>
-        </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/core/BehavioralElement">
           <genFeatures notify="false" createChild="false" propertyCategory="Behavior"
               propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/BehavioralElement/behavior"/>
@@ -560,6 +556,13 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Valuetype" basePackage="de.uni_paderborn.fujaba.muml.model"
+          disposableProviderFactory="true" ecorePackage="muml.ecore#//model/valuetype">
+        <genClasses ecoreClass="muml.ecore#//model/valuetype/Range">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/valuetype/Range/lowerBound"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/valuetype/Range/upperBound"/>
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>

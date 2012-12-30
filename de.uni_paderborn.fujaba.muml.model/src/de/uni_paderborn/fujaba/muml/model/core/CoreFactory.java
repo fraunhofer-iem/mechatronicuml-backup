@@ -35,15 +35,6 @@ public interface CoreFactory extends EFactory {
 	NaturalNumber createNaturalNumber();
 
 	/**
-	 * Returns a new object of class '<em>Cardinality</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Cardinality</em>'.
-	 * @generated
-	 */
-	Cardinality createCardinality();
-
-	/**
 	 * Returns a new object of class '<em>Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

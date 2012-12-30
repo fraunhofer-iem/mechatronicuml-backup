@@ -93,6 +93,14 @@
             class="de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage"
             genModel="model/muml.genmodel"/>
    </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage"
+            genModel="model/muml.genmodel"
+            uri="http://www.fujaba.de/muml/model/valuetype/0.3.9">
+      </package>
+   </extension>
 
 
    <extension

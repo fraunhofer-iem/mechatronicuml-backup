@@ -97,11 +97,11 @@ public class PortItemProvider
 		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Cardinality_lowerBound_feature"), getString(
+				getString("_UI_Range_lowerBound_feature"), getString(
 						"_UI_PropertyDescriptor_description",
-						"_UI_Cardinality_lowerBound_feature",
-						"_UI_Cardinality_type"),
-						de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CARDINALITY__LOWER_BOUND,
+						"_UI_Range_lowerBound_feature",
+						"_UI_Range_type"),
+						de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.RANGE__LOWER_BOUND,
 						true, false,
 				false, null, getString("_UI_CardinalityPropertyCategory"),
 				null, rootPropertyDescriptor));
@@ -109,11 +109,11 @@ public class PortItemProvider
 		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Cardinality_upperBound_feature"), getString(
+				getString("_UI_Range_upperBound_feature"), getString(
 						"_UI_PropertyDescriptor_description",
-						"_UI_Cardinality_upperBound_feature",
-						"_UI_Cardinality_type"),
-						de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CARDINALITY__UPPER_BOUND,
+						"_UI_Range_upperBound_feature",
+						"_UI_Range_type"),
+						de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.RANGE__UPPER_BOUND,
 						true, false,
 				false, null, getString("_UI_CardinalityPropertyCategory"),
 				null, rootPropertyDescriptor));

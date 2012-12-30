@@ -17,7 +17,6 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.core.Operation;
@@ -85,10 +84,6 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseNaturalNumber(NaturalNumber object) {
 				return createNaturalNumberAdapter();
-			}
-			@Override
-			public Adapter caseCardinality(Cardinality object) {
-				return createCardinalityAdapter();
 			}
 			@Override
 			public Adapter caseBehavioralElement(BehavioralElement object) {
@@ -161,20 +156,6 @@ public class CoreAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNaturalNumberAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.Cardinality <em>Cardinality</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.Cardinality
-	 * @generated
-	 */
-	public Adapter createCardinalityAdapter() {
 		return null;
 	}
 

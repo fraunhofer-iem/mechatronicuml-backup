@@ -7,13 +7,12 @@
 package de.uni_paderborn.fujaba.muml.model.connector;
 
 import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.core.Behavior;
 import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
 
 /**
  * <!-- begin-user-doc -->
@@ -135,12 +134,12 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * The cardinality of a port specifies how many instances of a port are allowed to exist at runtime.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Cardinality</em>' containment reference.
-	 * @see #setCardinality(Cardinality)
+	 * @see #setCardinality(Range)
 	 * @see de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage#getDiscreteInteractionEndpoint_Cardinality()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Cardinality getCardinality();
+	Range getCardinality();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint#getCardinality <em>Cardinality</em>}' containment reference.
@@ -150,6 +149,6 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * @see #getCardinality()
 	 * @generated
 	 */
-	void setCardinality(Cardinality value);
+	void setCardinality(Range value);
 
 } // DiscreteInteractionEndpoint

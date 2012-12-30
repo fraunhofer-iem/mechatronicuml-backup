@@ -22,7 +22,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
@@ -96,9 +95,9 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 						getResourceLocator(),
 						getString("_UI_Cardinality_lowerBound_feature"),
 						getString("_UI_PropertyDescriptor_description",
-								"_UI_Cardinality_lowerBound_feature",
+								"_UI_Range_upperBound_feature",
 								"_UI_Cardinality_type"),
-						de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CARDINALITY__LOWER_BOUND,
+								de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.RANGE__LOWER_BOUND,
 						true, false, false, null,
 						getString("_UI_CardinalityPropertyCategory"), null,
 						rootPropertyDescriptor));
@@ -112,7 +111,7 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 						getString("_UI_PropertyDescriptor_description",
 								"_UI_Cardinality_upperBound_feature",
 								"_UI_Cardinality_type"),
-						de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.CARDINALITY__UPPER_BOUND,
+								de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.RANGE__UPPER_BOUND,
 						true, false, false, null,
 						getString("_UI_CardinalityPropertyCategory"), null,
 						rootPropertyDescriptor));

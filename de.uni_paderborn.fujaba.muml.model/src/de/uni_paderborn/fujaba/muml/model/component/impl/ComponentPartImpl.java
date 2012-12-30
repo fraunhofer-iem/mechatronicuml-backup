@@ -8,7 +8,6 @@ package de.uni_paderborn.fujaba.muml.model.component.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -28,8 +27,8 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.DelegationConnector;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
-import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
+import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
 
 /**
  * <!-- begin-user-doc -->
@@ -110,7 +109,7 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 * @generated
 	 * @ordered
 	 */
-	protected Cardinality cardinality;
+	protected Range cardinality;
 
 	/**
 	 * The cached setting delegate for the '{@link #getPorts() <em>Ports</em>}' containment reference list.
@@ -353,7 +352,7 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Cardinality getCardinality() {
+	public Range getCardinality() {
 		return cardinality;
 	}
 
@@ -362,8 +361,8 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
-		Cardinality oldCardinality = cardinality;
+	public NotificationChain basicSetCardinality(Range newCardinality, NotificationChain msgs) {
+		Range oldCardinality = cardinality;
 		cardinality = newCardinality;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT_PART__CARDINALITY, oldCardinality, newCardinality);
@@ -377,7 +376,7 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCardinality(Cardinality newCardinality) {
+	public void setCardinality(Range newCardinality) {
 		if (newCardinality != cardinality) {
 			NotificationChain msgs = null;
 			if (cardinality != null)
@@ -513,7 +512,7 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 				setParentComponent((StructuredComponent)newValue);
 				return;
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
-				setCardinality((Cardinality)newValue);
+				setCardinality((Range)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -537,7 +536,7 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 				setParentComponent((StructuredComponent)null);
 				return;
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
-				setCardinality((Cardinality)null);
+				setCardinality((Range)null);
 				return;
 		}
 		super.eUnset(featureID);

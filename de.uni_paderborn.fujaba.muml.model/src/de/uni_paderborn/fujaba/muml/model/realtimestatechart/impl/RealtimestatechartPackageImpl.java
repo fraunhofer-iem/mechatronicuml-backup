@@ -67,6 +67,8 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.util.RealtimestatechartValidator;
 import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.impl.ValuetypePackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -323,6 +325,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		ConnectorPackageImpl theConnectorPackage = (ConnectorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) instanceof ConnectorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) : ConnectorPackage.eINSTANCE);
+		ValuetypePackageImpl theValuetypePackage = (ValuetypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) instanceof ValuetypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) : ValuetypePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theRealtimestatechartPackage.createPackageContents();
@@ -335,6 +338,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		theDeploymentPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
 		theConnectorPackage.createPackageContents();
+		theValuetypePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theRealtimestatechartPackage.initializePackageContents();
@@ -347,6 +351,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		theDeploymentPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
 		theConnectorPackage.initializePackageContents();
+		theValuetypePackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put

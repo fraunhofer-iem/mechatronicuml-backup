@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -20,7 +22,6 @@ import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.connector.impl.ConnectorImpl;
-import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->

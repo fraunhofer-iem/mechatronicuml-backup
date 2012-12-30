@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.fujaba.muml.model.core.Cardinality;
 import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
@@ -71,7 +70,6 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case CorePackage.NATURAL_NUMBER: return createNaturalNumber();
-			case CorePackage.CARDINALITY: return createCardinality();
 			case CorePackage.VARIABLE: return createVariable();
 			case CorePackage.OPERATION: return createOperation();
 			case CorePackage.PARAMETER: return createParameter();
@@ -120,16 +118,6 @@ public class CoreFactoryImpl extends EFactoryImpl implements CoreFactory {
 	public NaturalNumber createNaturalNumber() {
 		NaturalNumberImpl naturalNumber = new NaturalNumberImpl();
 		return naturalNumber;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Cardinality createCardinality() {
-		CardinalityImpl cardinality = new CardinalityImpl();
-		return cardinality;
 	}
 
 	/**

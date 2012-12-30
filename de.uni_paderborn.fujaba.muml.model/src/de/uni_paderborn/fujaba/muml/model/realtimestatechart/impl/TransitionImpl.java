@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
-import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -27,6 +26,7 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.impl.ExtendableElementImpl;
 
+import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;

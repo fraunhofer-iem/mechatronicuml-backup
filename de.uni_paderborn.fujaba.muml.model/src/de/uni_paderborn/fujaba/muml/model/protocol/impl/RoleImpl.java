@@ -19,8 +19,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
@@ -30,7 +28,6 @@ import de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.model.protocol.Role;
 import de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector;
-import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

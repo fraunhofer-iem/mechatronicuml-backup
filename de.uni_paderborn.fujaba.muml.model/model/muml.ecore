@@ -217,7 +217,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
-            eType="#//model/core/Cardinality" containment="true">
+            eType="#//model/valuetype/Range" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The cardinality of a ComponentPart specifies how many instances of a ComponentPart are allowed to exist at runtime."/>
           </eAnnotations>
@@ -632,29 +632,6 @@
             defaultValueLiteral="false">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Determins whether this natural number represents infinity."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Cardinality">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This class represents the cardinality of an arbitrary model object. It consists of a lower and an upper bound."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="LowerBoundMustBeLessOrEqualThanUpperBound"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="LowerBoundMustBeLessOrEqualThanUpperBound" value="((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value &lt;= self.upperBound.value))&#xA;and (self.lowerBound.infinity implies self.upperBound.infinity)"/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" lowerBound="1"
-            eType="#//model/core/NaturalNumber" containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The lower bound of this cardinality."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" lowerBound="1"
-            eType="#//model/core/NaturalNumber" containment="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The upper bound of this cardinality."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -2250,9 +2227,35 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
-            eType="#//model/core/Cardinality" containment="true">
+            eType="#//model/valuetype/Range" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The cardinality of a port specifies how many instances of a port are allowed to exist at runtime."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </eSubpackages>
+    <eSubpackages name="valuetype" nsURI="http://www.fujaba.de/muml/model/valuetype/0.3.9"
+        nsPrefix="valueType">
+      <eClassifiers xsi:type="ecore:EClass" name="Range">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This class represents a two-dimensional range specification of an arbitrary model object. It consists of a lower and an upper bound."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="LowerBoundMustBeLessOrEqualThanUpperBound"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="LowerBoundMustBeLessOrEqualThanUpperBound" value="((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value &lt;= self.upperBound.value))&#xA;and (self.lowerBound.infinity implies self.upperBound.infinity)"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" lowerBound="1"
+            eType="#//model/core/NaturalNumber" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The lower bound of this cardinality."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" lowerBound="1"
+            eType="#//model/core/NaturalNumber" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The upper bound of this cardinality."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
