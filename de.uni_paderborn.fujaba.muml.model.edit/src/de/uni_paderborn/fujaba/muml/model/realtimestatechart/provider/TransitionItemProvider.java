@@ -34,11 +34,9 @@ import org.storydriven.core.provider.ExtendableElementItemProvider;
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.utils.FujabaEcoreUtil;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.descriptor.EnumerationPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.model.protocol.Role;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
@@ -48,7 +46,9 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.ClockPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.TransitionMessageEventPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition} object.
@@ -542,7 +542,7 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
-				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.TIME_VALUE__VALUE,
+				 de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.TIME_VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -557,7 +557,7 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_unit_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
-				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.TIME_VALUE__UNIT,
+				 de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.TIME_VALUE__UNIT,
 				 true,
 				 false,
 				 false,
@@ -585,7 +585,7 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
-				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.TIME_VALUE__VALUE,
+				 de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.TIME_VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -600,7 +600,7 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_unit_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
-				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.TIME_VALUE__UNIT,
+				 de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.TIME_VALUE__UNIT,
 				 true,
 				 false,
 				 false,

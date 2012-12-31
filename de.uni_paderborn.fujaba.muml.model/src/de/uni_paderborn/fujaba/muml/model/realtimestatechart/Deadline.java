@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
 import org.eclipse.emf.ecore.EObject;
 
-import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
+import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->

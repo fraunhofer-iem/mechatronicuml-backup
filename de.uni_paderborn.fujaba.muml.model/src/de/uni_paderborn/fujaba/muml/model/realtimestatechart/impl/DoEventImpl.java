@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->

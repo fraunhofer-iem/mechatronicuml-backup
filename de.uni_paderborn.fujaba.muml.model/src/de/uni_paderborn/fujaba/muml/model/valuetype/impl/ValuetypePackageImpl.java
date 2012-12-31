@@ -6,21 +6,28 @@
  */
 package de.uni_paderborn.fujaba.muml.model.valuetype.impl;
 
+import java.util.concurrent.TimeUnit;
+
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.core.CorePackage;
 
 import de.fujaba.modelinstance.ModelinstancePackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.impl.BehaviorPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.impl.ConnectorPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
@@ -33,7 +40,9 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartP
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl;
+import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
+import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
 import de.uni_paderborn.fujaba.muml.model.valuetype.util.ValuetypeValidator;
@@ -51,6 +60,25 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	 * @generated
 	 */
 	private EClass rangeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass timeValueEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass naturalNumberEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType timeUnitEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -104,7 +132,6 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		// Obtain or create and register interdependencies
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);
-		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		ProtocolPackageImpl theProtocolPackage = (ProtocolPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) instanceof ProtocolPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) : ProtocolPackage.eINSTANCE);
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
@@ -112,12 +139,12 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		ConnectorPackageImpl theConnectorPackage = (ConnectorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) instanceof ConnectorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) : ConnectorPackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theValuetypePackage.createPackageContents();
 		theComponentPackage.createPackageContents();
 		theConstraintPackage.createPackageContents();
-		theCorePackage.createPackageContents();
 		theInstancePackage.createPackageContents();
 		theProtocolPackage.createPackageContents();
 		theRealtimestatechartPackage.createPackageContents();
@@ -125,12 +152,12 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		theDeploymentPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
 		theConnectorPackage.createPackageContents();
+		theBehaviorPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theValuetypePackage.initializePackageContents();
 		theComponentPackage.initializePackageContents();
 		theConstraintPackage.initializePackageContents();
-		theCorePackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
 		theProtocolPackage.initializePackageContents();
 		theRealtimestatechartPackage.initializePackageContents();
@@ -138,6 +165,7 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		theDeploymentPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
 		theConnectorPackage.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
@@ -189,6 +217,69 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTimeValue() {
+		return timeValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTimeValue_Value() {
+		return (EReference)timeValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTimeValue_Unit() {
+		return (EAttribute)timeValueEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNaturalNumber() {
+		return naturalNumberEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNaturalNumber_Value() {
+		return (EAttribute)naturalNumberEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNaturalNumber_Infinity() {
+		return (EAttribute)naturalNumberEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getTimeUnit() {
+		return timeUnitEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ValuetypeFactory getValuetypeFactory() {
 		return (ValuetypeFactory)getEFactoryInstance();
 	}
@@ -215,6 +306,17 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		rangeEClass = createEClass(RANGE);
 		createEReference(rangeEClass, RANGE__LOWER_BOUND);
 		createEReference(rangeEClass, RANGE__UPPER_BOUND);
+
+		timeValueEClass = createEClass(TIME_VALUE);
+		createEReference(timeValueEClass, TIME_VALUE__VALUE);
+		createEAttribute(timeValueEClass, TIME_VALUE__UNIT);
+
+		naturalNumberEClass = createEClass(NATURAL_NUMBER);
+		createEAttribute(naturalNumberEClass, NATURAL_NUMBER__VALUE);
+		createEAttribute(naturalNumberEClass, NATURAL_NUMBER__INFINITY);
+
+		// Create data types
+		timeUnitEDataType = createEDataType(TIME_UNIT);
 	}
 
 	/**
@@ -242,17 +344,42 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		timeValueEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(rangeEClass, Range.class, "Range", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRange_LowerBound(), theCorePackage.getNaturalNumber(), null, "lowerBound", null, 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRange_UpperBound(), theCorePackage.getNaturalNumber(), null, "upperBound", null, 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRange_LowerBound(), this.getNaturalNumber(), null, "lowerBound", null, 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRange_UpperBound(), this.getNaturalNumber(), null, "upperBound", null, 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(timeValueEClass, TimeValue.class, "TimeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTimeValue_Value(), this.getNaturalNumber(), null, "value", null, 1, 1, TimeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTimeValue_Unit(), this.getTimeUnit(), "unit", null, 0, 1, TimeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(timeValueEClass, theEcorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(naturalNumberEClass, NaturalNumber.class, "NaturalNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNaturalNumber_Value(), ecorePackage.getELong(), "value", "1", 0, 1, NaturalNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNaturalNumber_Infinity(), ecorePackage.getEBoolean(), "infinity", "false", 0, 1, NaturalNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = addEOperation(naturalNumberEClass, null, "setValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(naturalNumberEClass, ecorePackage.getELong(), "longValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(naturalNumberEClass, ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(naturalNumberEClass, ecorePackage.getEBoolean(), "equals", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		// Initialize data types
+		initEDataType(timeUnitEDataType, TimeUnit.class, "TimeUnit", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -271,13 +398,27 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";			
+		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });			
 		addAnnotation
 		  (rangeEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
-		   });			
+		   });							
+		addAnnotation
+		  (naturalNumberEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ValueGreaterOrEqualZero"
+		   });						
 	}
 
 	/**
@@ -287,13 +428,19 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";				
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";					
 		addAnnotation
 		  (rangeEClass, 
 		   source, 
 		   new String[] {
 			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\nand (self.lowerBound.infinity implies self.upperBound.infinity)"
-		   });		
+		   });							
+		addAnnotation
+		  (naturalNumberEClass, 
+		   source, 
+		   new String[] {
+			 "ValueGreaterOrEqualZero", "self.value >= 0"
+		   });					
 	}
 
 } //ValuetypePackageImpl

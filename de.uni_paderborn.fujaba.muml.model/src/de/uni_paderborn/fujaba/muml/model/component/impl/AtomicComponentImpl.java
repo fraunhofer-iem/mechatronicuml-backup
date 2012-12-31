@@ -12,11 +12,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.Behavior;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.core.Behavior;
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -110,9 +110,9 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 		if (newBehavior != behavior) {
 			NotificationChain msgs = null;
 			if (behavior != null)
-				msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+				msgs = ((InternalEObject)behavior).eInverseRemove(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
 			if (newBehavior != null)
-				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
 			msgs = basicSetBehavior(newBehavior, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -131,7 +131,7 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 		switch (featureID) {
 			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
 				if (behavior != null)
-					msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+					msgs = ((InternalEObject)behavior).eInverseRemove(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
 				return basicSetBehavior((Behavior)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -220,7 +220,7 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (derivedFeatureID) {
-				case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR: return CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+				case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR: return BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
 				default: return -1;
 			}
 		}
@@ -236,7 +236,7 @@ public class AtomicComponentImpl extends ComponentImpl implements AtomicComponen
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR;
+				case BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR;
 				default: return -1;
 			}
 		}

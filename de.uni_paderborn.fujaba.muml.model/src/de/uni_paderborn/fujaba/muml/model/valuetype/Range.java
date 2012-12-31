@@ -8,8 +8,6 @@ package de.uni_paderborn.fujaba.muml.model.valuetype;
 
 import org.eclipse.emf.ecore.EObject;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Range</b></em>'.

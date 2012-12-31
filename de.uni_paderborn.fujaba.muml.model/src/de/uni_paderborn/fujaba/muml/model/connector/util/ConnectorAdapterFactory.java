@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.connector.util;
 
-import de.uni_paderborn.fujaba.muml.model.connector.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -15,6 +14,8 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.connector.*;
 import de.uni_paderborn.fujaba.muml.model.connector.Connector;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance;
@@ -22,7 +23,6 @@ import de.uni_paderborn.fujaba.muml.model.connector.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -253,13 +253,13 @@ public class ConnectorAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.BehavioralElement <em>Behavioral Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement <em>Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.BehavioralElement
+	 * @see de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement
 	 * @generated
 	 */
 	public Adapter createBehavioralElementAdapter() {

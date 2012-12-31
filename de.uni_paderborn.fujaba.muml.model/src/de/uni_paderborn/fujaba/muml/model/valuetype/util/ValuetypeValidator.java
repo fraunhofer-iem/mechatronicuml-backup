@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.valuetype.util;
 
 import de.uni_paderborn.fujaba.muml.model.valuetype.*;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
@@ -15,7 +16,9 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
+import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
+import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
 
 /**
@@ -92,6 +95,12 @@ public class ValuetypeValidator extends EObjectValidator {
 		switch (classifierID) {
 			case ValuetypePackage.RANGE:
 				return validateRange((Range)value, diagnostics, context);
+			case ValuetypePackage.TIME_VALUE:
+				return validateTimeValue((TimeValue)value, diagnostics, context);
+			case ValuetypePackage.NATURAL_NUMBER:
+				return validateNaturalNumber((NaturalNumber)value, diagnostics, context);
+			case ValuetypePackage.TIME_UNIT:
+				return validateTimeUnit((TimeUnit)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -117,30 +126,98 @@ public class ValuetypeValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the LowerBoundMustBeLessOrEqualThanUpperBound constraint of '<em>Range</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String RANGE__LOWER_BOUND_MUST_BE_LESS_OR_EQUAL_THAN_UPPER_BOUND__EEXPRESSION = "((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\n" +
+		"and (self.lowerBound.infinity implies self.upperBound.infinity)";
+
+	/**
 	 * Validates the LowerBoundMustBeLessOrEqualThanUpperBound constraint of '<em>Range</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateRange_LowerBoundMustBeLessOrEqualThanUpperBound(Range range, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "LowerBoundMustBeLessOrEqualThanUpperBound", getObjectLabel(range, context) },
-						 new Object[] { range },
-						 context));
-			}
-			return false;
-		}
+		return
+			validate
+				(ValuetypePackage.Literals.RANGE,
+				 range,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "LowerBoundMustBeLessOrEqualThanUpperBound",
+				 RANGE__LOWER_BOUND_MUST_BE_LESS_OR_EQUAL_THAN_UPPER_BOUND__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTimeValue(TimeValue timeValue, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(timeValue, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNaturalNumber(NaturalNumber naturalNumber, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(naturalNumber, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(naturalNumber, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNaturalNumber_ValueGreaterOrEqualZero(naturalNumber, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ValueGreaterOrEqualZero constraint of '<em>Natural Number</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String NATURAL_NUMBER__VALUE_GREATER_OR_EQUAL_ZERO__EEXPRESSION = "self.value >= 0";
+
+	/**
+	 * Validates the ValueGreaterOrEqualZero constraint of '<em>Natural Number</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNaturalNumber_ValueGreaterOrEqualZero(NaturalNumber naturalNumber, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ValuetypePackage.Literals.NATURAL_NUMBER,
+				 naturalNumber,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValueGreaterOrEqualZero",
+				 NATURAL_NUMBER__VALUE_GREATER_OR_EQUAL_ZERO__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTimeUnit(TimeUnit timeUnit, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

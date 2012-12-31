@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
 import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
 

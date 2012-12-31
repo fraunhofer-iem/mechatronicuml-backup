@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
-import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
+import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->

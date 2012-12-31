@@ -8,9 +8,9 @@ package de.uni_paderborn.fujaba.muml.model.connector;
 
 import org.eclipse.emf.common.util.EList;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.Behavior;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.core.Behavior;
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
 

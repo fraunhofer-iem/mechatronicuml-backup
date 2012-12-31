@@ -28,10 +28,10 @@ import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.provider.DiscreteInteractionEndpointItemProvider;
-import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolFactory;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.model.protocol.Role;
+import de.uni_paderborn.fujaba.muml.model.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a

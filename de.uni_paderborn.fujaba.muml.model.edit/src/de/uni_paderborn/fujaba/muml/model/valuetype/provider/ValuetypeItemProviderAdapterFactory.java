@@ -98,6 +98,52 @@ public class ValuetypeItemProviderAdapterFactory extends ValuetypeAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TimeValueItemProvider timeValueItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTimeValueAdapter() {
+		if (timeValueItemProvider == null) {
+			timeValueItemProvider = new TimeValueItemProvider(this);
+		}
+
+		return timeValueItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NaturalNumberItemProvider naturalNumberItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNaturalNumberAdapter() {
+		if (naturalNumberItemProvider == null) {
+			naturalNumberItemProvider = new NaturalNumberItemProvider(this);
+		}
+
+		return naturalNumberItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -197,6 +243,8 @@ public class ValuetypeItemProviderAdapterFactory extends ValuetypeAdapterFactory
 	 */
 	public void dispose() {
 		if (rangeItemProvider != null) rangeItemProvider.dispose();
+		if (timeValueItemProvider != null) timeValueItemProvider.dispose();
+		if (naturalNumberItemProvider != null) naturalNumberItemProvider.dispose();
 	}
 
 }

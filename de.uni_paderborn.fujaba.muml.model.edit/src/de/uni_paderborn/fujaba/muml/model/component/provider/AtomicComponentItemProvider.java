@@ -20,8 +20,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.component.AtomicComponent;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.AtomicComponent} object.
@@ -76,12 +76,12 @@ public class AtomicComponentItemProvider
 				 getResourceLocator(),
 				 getString("_UI_BehavioralElement_behavior_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_behavior_feature", "_UI_BehavioralElement_type"),
-				 CorePackage.Literals.BEHAVIORAL_ELEMENT__BEHAVIOR,
+				 BehaviorPackage.Literals.BEHAVIORAL_ELEMENT__BEHAVIOR,
 				 true,
 				 false,
 				 true,
 				 null,
-				 getString("_UI_BehaviorPropertyCategory"),
+				 null,
 				 null));
 	}
 

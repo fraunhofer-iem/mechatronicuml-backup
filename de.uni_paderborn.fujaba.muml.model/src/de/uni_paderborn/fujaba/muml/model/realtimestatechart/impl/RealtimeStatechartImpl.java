@@ -23,16 +23,17 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.common.algorithm.BreadthFirstSearchAlgorithm;
 import de.uni_paderborn.fujaba.common.algorithm.ISearchVisitor;
+import de.uni_paderborn.fujaba.muml.model.behavior.Behavior;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.behavior.Operation;
+import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.core.Behavior;
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.Operation;
-import de.uni_paderborn.fujaba.muml.model.core.Variable;
 import de.uni_paderborn.fujaba.muml.model.protocol.Role;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
@@ -329,9 +330,9 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 		if (newBehavioralElement != behavioralElement) {
 			NotificationChain msgs = null;
 			if (behavioralElement != null)
-				msgs = ((InternalEObject)behavioralElement).eInverseRemove(this, CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR, BehavioralElement.class, msgs);
+				msgs = ((InternalEObject)behavioralElement).eInverseRemove(this, BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR, BehavioralElement.class, msgs);
 			if (newBehavioralElement != null)
-				msgs = ((InternalEObject)newBehavioralElement).eInverseAdd(this, CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR, BehavioralElement.class, msgs);
+				msgs = ((InternalEObject)newBehavioralElement).eInverseAdd(this, BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR, BehavioralElement.class, msgs);
 			msgs = basicSetBehavioralElement(newBehavioralElement, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -615,7 +616,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 		switch (featureID) {
 			case RealtimestatechartPackage.REALTIME_STATECHART__BEHAVIORAL_ELEMENT:
 				if (behavioralElement != null)
-					msgs = ((InternalEObject)behavioralElement).eInverseRemove(this, CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR, BehavioralElement.class, msgs);
+					msgs = ((InternalEObject)behavioralElement).eInverseRemove(this, BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR, BehavioralElement.class, msgs);
 				return basicSetBehavioralElement((BehavioralElement)otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION:
 				if (eInternalContainer() != null)
@@ -855,15 +856,15 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
-				case RealtimestatechartPackage.REALTIME_STATECHART__COMMENT: return org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+				case RealtimestatechartPackage.REALTIME_STATECHART__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 				default: return -1;
 			}
 		}
 		if (baseClass == Behavior.class) {
 			switch (derivedFeatureID) {
-				case RealtimestatechartPackage.REALTIME_STATECHART__BEHAVIORAL_ELEMENT: return CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT;
-				case RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS: return CorePackage.BEHAVIOR__OPERATIONS;
-				case RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES: return CorePackage.BEHAVIOR__VARIABLES;
+				case RealtimestatechartPackage.REALTIME_STATECHART__BEHAVIORAL_ELEMENT: return BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT;
+				case RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS: return BehaviorPackage.BEHAVIOR__OPERATIONS;
+				case RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES: return BehaviorPackage.BEHAVIOR__VARIABLES;
 				default: return -1;
 			}
 		}
@@ -879,15 +880,15 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
-				case org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT: return RealtimestatechartPackage.REALTIME_STATECHART__COMMENT;
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return RealtimestatechartPackage.REALTIME_STATECHART__COMMENT;
 				default: return -1;
 			}
 		}
 		if (baseClass == Behavior.class) {
 			switch (baseFeatureID) {
-				case CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT: return RealtimestatechartPackage.REALTIME_STATECHART__BEHAVIORAL_ELEMENT;
-				case CorePackage.BEHAVIOR__OPERATIONS: return RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS;
-				case CorePackage.BEHAVIOR__VARIABLES: return RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES;
+				case BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT: return RealtimestatechartPackage.REALTIME_STATECHART__BEHAVIORAL_ELEMENT;
+				case BehaviorPackage.BEHAVIOR__OPERATIONS: return RealtimestatechartPackage.REALTIME_STATECHART__OPERATIONS;
+				case BehaviorPackage.BEHAVIOR__VARIABLES: return RealtimestatechartPackage.REALTIME_STATECHART__VARIABLES;
 				default: return -1;
 			}
 		}

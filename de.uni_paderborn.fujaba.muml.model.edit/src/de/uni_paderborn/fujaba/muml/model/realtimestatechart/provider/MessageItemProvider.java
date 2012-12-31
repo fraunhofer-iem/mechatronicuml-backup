@@ -24,8 +24,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 
@@ -202,7 +202,7 @@ public class MessageItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.MESSAGE__PARAMETER_BINDING,
-				 CoreFactory.eINSTANCE.createParameterBinding()));
+				 BehaviorFactory.eINSTANCE.createParameterBinding()));
 	}
 
 	/**

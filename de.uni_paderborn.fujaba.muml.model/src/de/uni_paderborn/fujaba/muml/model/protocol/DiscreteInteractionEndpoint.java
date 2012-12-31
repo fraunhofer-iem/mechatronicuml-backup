@@ -9,9 +9,9 @@ package de.uni_paderborn.fujaba.muml.model.protocol;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.NamedElement;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.Behavior;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.core.Behavior;
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 
 /**

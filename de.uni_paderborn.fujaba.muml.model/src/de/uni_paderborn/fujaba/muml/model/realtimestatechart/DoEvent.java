@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
-import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
+import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
 
 
 /**

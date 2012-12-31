@@ -11,16 +11,17 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.core.CorePackage;
 
 import de.fujaba.modelinstance.ModelinstancePackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.impl.BehaviorPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.impl.ConnectorPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
@@ -112,7 +113,6 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		// Obtain or create and register interdependencies
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);
-		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		ProtocolPackageImpl theProtocolPackage = (ProtocolPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) instanceof ProtocolPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) : ProtocolPackage.eINSTANCE);
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
@@ -120,12 +120,12 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		ConnectorPackageImpl theConnectorPackage = (ConnectorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) instanceof ConnectorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) : ConnectorPackage.eINSTANCE);
 		ValuetypePackageImpl theValuetypePackage = (ValuetypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) instanceof ValuetypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) : ValuetypePackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theMsgtypePackage.createPackageContents();
 		theComponentPackage.createPackageContents();
 		theConstraintPackage.createPackageContents();
-		theCorePackage.createPackageContents();
 		theInstancePackage.createPackageContents();
 		theProtocolPackage.createPackageContents();
 		theRealtimestatechartPackage.createPackageContents();
@@ -133,12 +133,12 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		theTypesPackage.createPackageContents();
 		theConnectorPackage.createPackageContents();
 		theValuetypePackage.createPackageContents();
+		theBehaviorPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theMsgtypePackage.initializePackageContents();
 		theComponentPackage.initializePackageContents();
 		theConstraintPackage.initializePackageContents();
-		theCorePackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
 		theProtocolPackage.initializePackageContents();
 		theRealtimestatechartPackage.initializePackageContents();
@@ -146,6 +146,7 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		theTypesPackage.initializePackageContents();
 		theConnectorPackage.initializePackageContents();
 		theValuetypePackage.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
@@ -270,22 +271,22 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		messageTypeEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		messageTypeEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		messageTypeRepositoryEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		messageTypeRepositoryEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
+		messageTypeEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		messageTypeEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		messageTypeRepositoryEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		messageTypeRepositoryEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(messageTypeEClass, MessageType.class, "MessageType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMessageType_Parameters(), theCorePackage.getParameter(), null, "parameters", null, 0, -1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageType_Parameters(), theBehaviorPackage.getParameter(), null, "parameters", null, 0, -1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageType_Repository(), this.getMessageTypeRepository(), this.getMessageTypeRepository_MessageTypes(), "repository", null, 1, 1, MessageType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageTypeRepositoryEClass, MessageTypeRepository.class, "MessageTypeRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

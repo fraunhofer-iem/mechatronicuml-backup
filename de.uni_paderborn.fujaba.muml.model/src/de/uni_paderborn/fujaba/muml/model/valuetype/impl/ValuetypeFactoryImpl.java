@@ -7,13 +7,18 @@
 package de.uni_paderborn.fujaba.muml.model.valuetype.impl;
 
 import de.uni_paderborn.fujaba.muml.model.valuetype.*;
+import java.util.concurrent.TimeUnit;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
+import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
 
@@ -32,7 +37,7 @@ public class ValuetypeFactoryImpl extends EFactoryImpl implements ValuetypeFacto
 	 */
 	public static ValuetypeFactory init() {
 		try {
-			ValuetypeFactory theValuetypeFactory = (ValuetypeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/valuetype/0.3.9"); 
+			ValuetypeFactory theValuetypeFactory = (ValuetypeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/valuetype/0.3.10"); 
 			if (theValuetypeFactory != null) {
 				return theValuetypeFactory;
 			}
@@ -62,8 +67,40 @@ public class ValuetypeFactoryImpl extends EFactoryImpl implements ValuetypeFacto
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ValuetypePackage.RANGE: return createRange();
+			case ValuetypePackage.TIME_VALUE: return createTimeValue();
+			case ValuetypePackage.NATURAL_NUMBER: return createNaturalNumber();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case ValuetypePackage.TIME_UNIT:
+				return createTimeUnitFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case ValuetypePackage.TIME_UNIT:
+				return convertTimeUnitToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -75,6 +112,44 @@ public class ValuetypeFactoryImpl extends EFactoryImpl implements ValuetypeFacto
 	public Range createRange() {
 		RangeImpl range = new RangeImpl();
 		return range;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TimeValue createTimeValue() {
+		TimeValueImpl timeValue = new TimeValueImpl();
+		return timeValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NaturalNumber createNaturalNumber() {
+		NaturalNumberImpl naturalNumber = new NaturalNumberImpl();
+		return naturalNumber;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TimeUnit createTimeUnitFromString(EDataType eDataType, String initialValue) {
+		return (TimeUnit)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTimeUnitToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

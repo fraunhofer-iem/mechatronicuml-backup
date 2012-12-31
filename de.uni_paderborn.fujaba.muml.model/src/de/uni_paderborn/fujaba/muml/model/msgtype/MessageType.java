@@ -10,7 +10,7 @@ import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.core.Parameter;
+import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,7 +41,7 @@ import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 public interface MessageType extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Parameter}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.behavior.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

@@ -13,11 +13,11 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.connector.Connector;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.protocol.*;
 import de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol;

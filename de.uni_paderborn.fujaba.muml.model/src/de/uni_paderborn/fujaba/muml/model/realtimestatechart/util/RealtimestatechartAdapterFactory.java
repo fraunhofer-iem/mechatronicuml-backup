@@ -14,7 +14,7 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.core.Behavior;
+import de.uni_paderborn.fujaba.muml.model.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.*;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
@@ -628,13 +628,13 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.core.Behavior <em>Behavior</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.behavior.Behavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.core.Behavior
+	 * @see de.uni_paderborn.fujaba.muml.model.behavior.Behavior
 	 * @generated
 	 */
 	public Adapter createBehaviorAdapter() {

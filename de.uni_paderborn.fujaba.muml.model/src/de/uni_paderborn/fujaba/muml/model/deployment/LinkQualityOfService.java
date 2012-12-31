@@ -9,7 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.deployment;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
+import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->

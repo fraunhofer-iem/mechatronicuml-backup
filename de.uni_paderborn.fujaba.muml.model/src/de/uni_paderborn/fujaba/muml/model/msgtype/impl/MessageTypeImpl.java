@@ -21,7 +21,7 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
-import de.uni_paderborn.fujaba.muml.model.core.Parameter;
+import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageTypeRepository;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;

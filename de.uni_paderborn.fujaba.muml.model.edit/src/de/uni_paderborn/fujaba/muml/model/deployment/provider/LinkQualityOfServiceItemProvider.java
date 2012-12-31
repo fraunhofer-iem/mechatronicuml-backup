@@ -27,9 +27,9 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.provider.CommentableElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService} object.
@@ -186,12 +186,12 @@ public class LinkQualityOfServiceItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(DeploymentPackage.Literals.LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION,
-				 CoreFactory.eINSTANCE.createTimeValue()));
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(DeploymentPackage.Literals.LINK_QUALITY_OF_SERVICE__LATENCY,
-				 CoreFactory.eINSTANCE.createTimeValue()));
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 	}
 
 	/**

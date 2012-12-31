@@ -26,9 +26,9 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.provider.CommentableElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions} object.
@@ -185,12 +185,12 @@ public class ConnectorQualityOfServiceAssumptionsItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY,
-				 CoreFactory.eINSTANCE.createTimeValue()));
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY,
-				 CoreFactory.eINSTANCE.createTimeValue()));
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 	}
 
 	/**

@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.types;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
 
 /**
  * <!-- begin-user-doc -->

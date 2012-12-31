@@ -26,8 +26,9 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.provider.NamedElementItemProvider;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -69,7 +70,6 @@ public class RealtimeStatechartItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addBehavioralElementPropertyDescriptor(object);
-			addOperationsPropertyDescriptor(object);
 			addClocksPropertyDescriptor(object);
 			addHistoryPropertyDescriptor(object);
 			addEventQueueSizePropertyDescriptor(object);
@@ -116,34 +116,12 @@ public class RealtimeStatechartItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Behavior_behavioralElement_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Behavior_behavioralElement_feature", "_UI_Behavior_type"),
-				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__BEHAVIORAL_ELEMENT,
+				 BehaviorPackage.Literals.BEHAVIOR__BEHAVIORAL_ELEMENT,
 				 true,
 				 false,
 				 true,
 				 null,
-				 getString("_UI_GeneralPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Operations feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOperationsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Behavior_operations_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Behavior_operations_feature", "_UI_Behavior_type"),
-				 de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__OPERATIONS,
-				 true,
-				 false,
-				 false,
 				 null,
-				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 
@@ -313,8 +291,8 @@ public class RealtimeStatechartItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__OPERATIONS);
-			childrenFeatures.add(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__VARIABLES);
+			childrenFeatures.add(BehaviorPackage.Literals.BEHAVIOR__OPERATIONS);
+			childrenFeatures.add(BehaviorPackage.Literals.BEHAVIOR__VARIABLES);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__TRANSITIONS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__STATES);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.REALTIME_STATECHART__CLOCKS);
@@ -405,13 +383,13 @@ public class RealtimeStatechartItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__OPERATIONS,
-				 CoreFactory.eINSTANCE.createOperation()));
+				(BehaviorPackage.Literals.BEHAVIOR__OPERATIONS,
+				 BehaviorFactory.eINSTANCE.createOperation()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(de.uni_paderborn.fujaba.muml.model.core.CorePackage.Literals.BEHAVIOR__VARIABLES,
-				 CoreFactory.eINSTANCE.createVariable()));
+				(BehaviorPackage.Literals.BEHAVIOR__VARIABLES,
+				 BehaviorFactory.eINSTANCE.createVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter

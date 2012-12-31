@@ -10,8 +10,8 @@ import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
 
 /**
  * <!-- begin-user-doc -->

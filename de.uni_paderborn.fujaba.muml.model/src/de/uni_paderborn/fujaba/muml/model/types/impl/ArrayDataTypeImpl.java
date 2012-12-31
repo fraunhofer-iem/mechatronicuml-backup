@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.types.ArrayDataType;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
 import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
 
 /**
  * <!-- begin-user-doc -->

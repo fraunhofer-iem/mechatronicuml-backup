@@ -28,12 +28,12 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.descriptor.EnumerationPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Deadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Deadline} object.
@@ -102,7 +102,7 @@ public class DeadlineItemProvider
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
-				 CorePackage.Literals.TIME_VALUE__VALUE,
+				 ValuetypePackage.Literals.TIME_VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -117,7 +117,7 @@ public class DeadlineItemProvider
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_unit_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
-				 CorePackage.Literals.TIME_VALUE__UNIT,
+				 ValuetypePackage.Literals.TIME_VALUE__UNIT,
 				 true,
 				 false,
 				 false,
@@ -153,7 +153,7 @@ public class DeadlineItemProvider
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
-				 CorePackage.Literals.TIME_VALUE__VALUE,
+				 ValuetypePackage.Literals.TIME_VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -168,7 +168,7 @@ public class DeadlineItemProvider
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_unit_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
-				 CorePackage.Literals.TIME_VALUE__UNIT,
+				 ValuetypePackage.Literals.TIME_VALUE__UNIT,
 				 true,
 				 false,
 				 false,
@@ -255,12 +255,12 @@ public class DeadlineItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND,
-				 CoreFactory.eINSTANCE.createTimeValue()));
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.DEADLINE__LOWER_BOUND,
-				 CoreFactory.eINSTANCE.createTimeValue()));
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 	}
 
 	/**

@@ -27,18 +27,17 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.storydriven.core.expressions.common.ComparingOperator;
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.descriptor.EnumerationPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.ClockPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint} object.
@@ -100,7 +99,7 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
-				 CorePackage.Literals.TIME_VALUE__VALUE,
+				 ValuetypePackage.Literals.TIME_VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -115,7 +114,7 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_unit_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
-				 CorePackage.Literals.TIME_VALUE__UNIT,
+				 ValuetypePackage.Literals.TIME_VALUE__UNIT,
 				 true,
 				 false,
 				 false,
@@ -332,7 +331,7 @@ public class ClockConstraintItemProvider extends ItemProviderAdapter implements
 		newChildDescriptors.add
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND,
-				 CoreFactory.eINSTANCE.createTimeValue()));
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 	}
 
 	/**

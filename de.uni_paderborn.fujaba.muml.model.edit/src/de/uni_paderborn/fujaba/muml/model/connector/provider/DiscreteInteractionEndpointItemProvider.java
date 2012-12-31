@@ -22,11 +22,11 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory;
 
 /**
@@ -86,12 +86,12 @@ public class DiscreteInteractionEndpointItemProvider
 				 getResourceLocator(),
 				 getString("_UI_BehavioralElement_behavior_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_behavior_feature", "_UI_BehavioralElement_type"),
-				 CorePackage.Literals.BEHAVIORAL_ELEMENT__BEHAVIOR,
+				 BehaviorPackage.Literals.BEHAVIORAL_ELEMENT__BEHAVIOR,
 				 true,
 				 false,
 				 true,
 				 null,
-				 getString("_UI_BehaviorPropertyCategory"),
+				 null,
 				 null));
 	}
 

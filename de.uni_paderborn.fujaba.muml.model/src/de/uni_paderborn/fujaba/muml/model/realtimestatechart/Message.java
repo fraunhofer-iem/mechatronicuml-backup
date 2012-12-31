@@ -9,7 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.ExtendableElement;
 
-import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 
 /**
@@ -63,7 +63,7 @@ public interface Message extends ExtendableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Parameter Binding</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.ParameterBinding}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parameter Binding</em>' containment reference list isn't clear,

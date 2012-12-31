@@ -26,8 +26,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.provider.NamedElementItemProvider;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
 
@@ -184,7 +184,7 @@ public class MessageTypeItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MsgtypePackage.Literals.MESSAGE_TYPE__PARAMETERS,
-				 CoreFactory.eINSTANCE.createParameter()));
+				 BehaviorFactory.eINSTANCE.createParameter()));
 	}
 
 	/**

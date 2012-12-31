@@ -35,6 +35,24 @@ public interface ValuetypeFactory extends EFactory {
 	Range createRange();
 
 	/**
+	 * Returns a new object of class '<em>Time Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Time Value</em>'.
+	 * @generated
+	 */
+	TimeValue createTimeValue();
+
+	/**
+	 * Returns a new object of class '<em>Natural Number</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Natural Number</em>'.
+	 * @generated
+	 */
+	NaturalNumber createNaturalNumber();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

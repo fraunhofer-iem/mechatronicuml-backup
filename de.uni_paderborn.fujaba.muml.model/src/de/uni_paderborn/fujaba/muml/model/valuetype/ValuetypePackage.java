@@ -6,9 +6,12 @@
  */
 package de.uni_paderborn.fujaba.muml.model.valuetype;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.storydriven.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +26,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface ValuetypePackage extends EPackage {
@@ -40,7 +44,7 @@ public interface ValuetypePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/valuetype/0.3.9";
+	String eNS_URI = "http://www.fujaba.de/muml/model/valuetype/0.3.10";
 
 	/**
 	 * The package namespace name.
@@ -97,6 +101,109 @@ public interface ValuetypePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.valuetype.impl.TimeValueImpl <em>Time Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.valuetype.impl.TimeValueImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.valuetype.impl.ValuetypePackageImpl#getTimeValue()
+	 * @generated
+	 */
+	int TIME_VALUE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE__VALUE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE__UNIT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Time Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.valuetype.impl.NaturalNumberImpl <em>Natural Number</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.valuetype.impl.NaturalNumberImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.valuetype.impl.ValuetypePackageImpl#getNaturalNumber()
+	 * @generated
+	 */
+	int NATURAL_NUMBER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NATURAL_NUMBER__VALUE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Infinity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NATURAL_NUMBER__INFINITY = 1;
+
+	/**
+	 * The number of structural features of the '<em>Natural Number</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NATURAL_NUMBER_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '<em>Time Unit</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.concurrent.TimeUnit
+	 * @see de.uni_paderborn.fujaba.muml.model.valuetype.impl.ValuetypePackageImpl#getTimeUnit()
+	 * @generated
+	 */
+	int TIME_UNIT = 3;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.valuetype.Range <em>Range</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -127,6 +234,81 @@ public interface ValuetypePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRange_UpperBound();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue <em>Time Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Time Value</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue
+	 * @generated
+	 */
+	EClass getTimeValue();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue#getValue()
+	 * @see #getTimeValue()
+	 * @generated
+	 */
+	EReference getTimeValue_Value();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue#getUnit <em>Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Unit</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue#getUnit()
+	 * @see #getTimeValue()
+	 * @generated
+	 */
+	EAttribute getTimeValue_Unit();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber <em>Natural Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Natural Number</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber
+	 * @generated
+	 */
+	EClass getNaturalNumber();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber#getValue()
+	 * @see #getNaturalNumber()
+	 * @generated
+	 */
+	EAttribute getNaturalNumber_Value();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber#isInfinity <em>Infinity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Infinity</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber#isInfinity()
+	 * @see #getNaturalNumber()
+	 * @generated
+	 */
+	EAttribute getNaturalNumber_Infinity();
+
+	/**
+	 * Returns the meta object for data type '{@link java.util.concurrent.TimeUnit <em>Time Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Time Unit</em>'.
+	 * @see java.util.concurrent.TimeUnit
+	 * @model instanceClass="java.util.concurrent.TimeUnit"
+	 * @generated
+	 */
+	EDataType getTimeUnit();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -175,6 +357,68 @@ public interface ValuetypePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RANGE__UPPER_BOUND = eINSTANCE.getRange_UpperBound();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.valuetype.impl.TimeValueImpl <em>Time Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.valuetype.impl.TimeValueImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.valuetype.impl.ValuetypePackageImpl#getTimeValue()
+		 * @generated
+		 */
+		EClass TIME_VALUE = eINSTANCE.getTimeValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TIME_VALUE__VALUE = eINSTANCE.getTimeValue_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME_VALUE__UNIT = eINSTANCE.getTimeValue_Unit();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.valuetype.impl.NaturalNumberImpl <em>Natural Number</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.valuetype.impl.NaturalNumberImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.valuetype.impl.ValuetypePackageImpl#getNaturalNumber()
+		 * @generated
+		 */
+		EClass NATURAL_NUMBER = eINSTANCE.getNaturalNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NATURAL_NUMBER__VALUE = eINSTANCE.getNaturalNumber_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Infinity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NATURAL_NUMBER__INFINITY = eINSTANCE.getNaturalNumber_Infinity();
+
+		/**
+		 * The meta object literal for the '<em>Time Unit</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.concurrent.TimeUnit
+		 * @see de.uni_paderborn.fujaba.muml.model.valuetype.impl.ValuetypePackageImpl#getTimeUnit()
+		 * @generated
+		 */
+		EDataType TIME_UNIT = eINSTANCE.getTimeUnit();
 
 	}
 

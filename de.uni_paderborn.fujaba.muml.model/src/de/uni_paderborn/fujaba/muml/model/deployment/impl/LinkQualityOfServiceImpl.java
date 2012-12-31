@@ -16,10 +16,10 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.NamedElement;
 import org.storydriven.core.impl.CommentableElementImpl;
 
-import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 import de.uni_paderborn.fujaba.muml.model.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService;
+import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->

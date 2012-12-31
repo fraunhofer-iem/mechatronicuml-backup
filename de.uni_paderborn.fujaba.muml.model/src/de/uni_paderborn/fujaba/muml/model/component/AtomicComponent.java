@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
 
 /**
  * <!-- begin-user-doc -->

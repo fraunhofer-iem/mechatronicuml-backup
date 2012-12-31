@@ -10,8 +10,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.core.CorePackage;
 
 import de.fujaba.modelinstance.ModelinstancePackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.impl.BehaviorPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.connector.Connector;
@@ -23,8 +26,6 @@ import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
@@ -134,7 +135,6 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		// Obtain or create and register interdependencies
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);
-		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		ProtocolPackageImpl theProtocolPackage = (ProtocolPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) instanceof ProtocolPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) : ProtocolPackage.eINSTANCE);
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
@@ -142,12 +142,12 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		DeploymentPackageImpl theDeploymentPackage = (DeploymentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) instanceof DeploymentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DeploymentPackage.eNS_URI) : DeploymentPackage.eINSTANCE);
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		ValuetypePackageImpl theValuetypePackage = (ValuetypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) instanceof ValuetypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) : ValuetypePackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theConnectorPackage.createPackageContents();
 		theComponentPackage.createPackageContents();
 		theConstraintPackage.createPackageContents();
-		theCorePackage.createPackageContents();
 		theInstancePackage.createPackageContents();
 		theProtocolPackage.createPackageContents();
 		theRealtimestatechartPackage.createPackageContents();
@@ -155,12 +155,12 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		theDeploymentPackage.createPackageContents();
 		theTypesPackage.createPackageContents();
 		theValuetypePackage.createPackageContents();
+		theBehaviorPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theConnectorPackage.initializePackageContents();
 		theComponentPackage.initializePackageContents();
 		theConstraintPackage.initializePackageContents();
-		theCorePackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
 		theProtocolPackage.initializePackageContents();
 		theRealtimestatechartPackage.initializePackageContents();
@@ -168,6 +168,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		theDeploymentPackage.initializePackageContents();
 		theTypesPackage.initializePackageContents();
 		theValuetypePackage.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theConnectorPackage.freeze();
@@ -396,8 +397,8 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
@@ -407,14 +408,14 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		connectorEndpointEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		connectorEndpointEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		connectorEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		connectorEndpointInstanceEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		connectorEndpointInstanceEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		connectorInstanceEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
+		connectorEndpointEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		connectorEndpointEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		connectorEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		connectorEndpointInstanceEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		connectorEndpointInstanceEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		connectorInstanceEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		discreteInteractionEndpointEClass.getESuperTypes().add(this.getConnectorEndpoint());
-		discreteInteractionEndpointEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
+		discreteInteractionEndpointEClass.getESuperTypes().add(theBehaviorPackage.getBehavioralElement());
 		discreteInteractionEndpointEClass.getESuperTypes().add(theConstraintPackage.getConstrainableElement());
 
 		// Initialize classes and features; add operations and parameters
@@ -435,8 +436,8 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		initEClass(discreteInteractionEndpointEClass, DiscreteInteractionEndpoint.class, "DiscreteInteractionEndpoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiscreteInteractionEndpoint_SenderMessageTypes(), theMsgtypePackage.getMessageType(), null, "senderMessageTypes", null, 0, -1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscreteInteractionEndpoint_ReceiverMessageTypes(), theMsgtypePackage.getMessageType(), null, "receiverMessageTypes", null, 0, -1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDiscreteInteractionEndpoint_AdaptationBehavior(), theCorePackage.getBehavior(), null, "adaptationBehavior", null, 0, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior(), theCorePackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscreteInteractionEndpoint_AdaptationBehavior(), theBehaviorPackage.getBehavior(), null, "adaptationBehavior", null, 0, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior(), theBehaviorPackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscreteInteractionEndpoint_Cardinality(), theValuetypePackage.getRange(), null, "cardinality", null, 1, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

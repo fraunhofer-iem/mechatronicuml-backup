@@ -18,14 +18,14 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.Behavior;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.model.core.Behavior;
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
 
@@ -188,9 +188,9 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 		if (newBehavior != behavior) {
 			NotificationChain msgs = null;
 			if (behavior != null)
-				msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+				msgs = ((InternalEObject)behavior).eInverseRemove(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
 			if (newBehavior != null)
-				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
 			msgs = basicSetBehavior(newBehavior, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -364,7 +364,7 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 		switch (featureID) {
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR:
 				if (behavior != null)
-					msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+					msgs = ((InternalEObject)behavior).eInverseRemove(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
 				return basicSetBehavior((Behavior)otherEnd, msgs);
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
@@ -524,7 +524,7 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (derivedFeatureID) {
-				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR: return CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR: return BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
 				default: return -1;
 			}
 		}
@@ -546,7 +546,7 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR;
+				case BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR;
 				default: return -1;
 			}
 		}

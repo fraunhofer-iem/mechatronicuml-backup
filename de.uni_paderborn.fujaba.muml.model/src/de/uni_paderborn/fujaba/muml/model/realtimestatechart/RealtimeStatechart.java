@@ -10,9 +10,9 @@ import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.core.Behavior;
-import de.uni_paderborn.fujaba.muml.model.core.Operation;
-import de.uni_paderborn.fujaba.muml.model.core.Variable;
+import de.uni_paderborn.fujaba.muml.model.behavior.Behavior;
+import de.uni_paderborn.fujaba.muml.model.behavior.Operation;
+import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -233,7 +233,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 
 	/**
 	 * Returns the value of the '<em><b>All Available Variables</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Variable}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.behavior.Variable}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>All Available Variables</em>' reference list isn't clear,
@@ -250,7 +250,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 
 	/**
 	 * Returns the value of the '<em><b>All Available Operations</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.Operation}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.behavior.Operation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>All Available Operations</em>' reference list isn't clear,

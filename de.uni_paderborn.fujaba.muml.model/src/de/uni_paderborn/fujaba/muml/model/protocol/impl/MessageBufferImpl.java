@@ -20,11 +20,11 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.model.protocol.Role;
+import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
 
 /**
  * <!-- begin-user-doc -->

@@ -25,8 +25,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
-import de.uni_paderborn.fujaba.muml.model.core.descriptor.NaturalNumberPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory;
+import de.uni_paderborn.fujaba.muml.model.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.HybridPort} object.
@@ -235,7 +235,7 @@ public class HybridPortItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentPackage.Literals.HYBRID_PORT__SAMPLING_INTERVAL,
-				 CoreFactory.eINSTANCE.createTimeValue()));
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 	}
 
 }

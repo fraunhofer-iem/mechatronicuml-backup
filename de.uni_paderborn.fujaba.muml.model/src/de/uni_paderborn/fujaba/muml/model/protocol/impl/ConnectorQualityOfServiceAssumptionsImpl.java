@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.impl.CommentableElementImpl;
 
-import de.uni_paderborn.fujaba.muml.model.core.TimeValue;
 import de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->

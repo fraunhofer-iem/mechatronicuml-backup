@@ -124,57 +124,6 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/constraint/ConstrainableElement/constraint"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages prefix="Core" basePackage="de.uni_paderborn.fujaba.muml.model"
-          disposableProviderFactory="true" ecorePackage="muml.ecore#//model/core">
-        <genDataTypes ecoreDataType="muml.ecore#//model/core/TimeUnit"/>
-        <genClasses ecoreClass="muml.ecore#//model/core/NaturalNumber">
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/NaturalNumber/value"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/NaturalNumber/infinity"/>
-          <genOperations ecoreOperation="muml.ecore#//model/core/NaturalNumber/setValue">
-            <genParameters ecoreParameter="muml.ecore#//model/core/NaturalNumber/setValue/value"/>
-          </genOperations>
-          <genOperations ecoreOperation="muml.ecore#//model/core/NaturalNumber/longValue"/>
-          <genOperations ecoreOperation="muml.ecore#//model/core/NaturalNumber/toString"/>
-          <genOperations ecoreOperation="muml.ecore#//model/core/NaturalNumber/equals">
-            <genParameters ecoreParameter="muml.ecore#//model/core/NaturalNumber/equals/o"/>
-          </genOperations>
-        </genClasses>
-        <genClasses image="false" ecoreClass="muml.ecore#//model/core/BehavioralElement">
-          <genFeatures notify="false" createChild="false" propertyCategory="Behavior"
-              propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/BehavioralElement/behavior"/>
-        </genClasses>
-        <genClasses image="false" ecoreClass="muml.ecore#//model/core/Behavior">
-          <genFeatures notify="false" createChild="false" propertyCategory="General"
-              propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Behavior/behavioralElement"/>
-          <genFeatures children="true" createChild="true" propertyCategory="General"
-              ecoreFeature="ecore:EReference muml.ecore#//model/core/Behavior/operations"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Behavior/variables"/>
-        </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/core/Variable">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/core/Variable/type"/>
-        </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/core/Operation">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/core/Operation/returnType"/>
-          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Operation/implementations"/>
-          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/Operation/parameters"/>
-        </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/core/Parameter">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/core/Parameter/type"/>
-        </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/core/ParameterBinding">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/core/ParameterBinding/parameter"/>
-          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/ParameterBinding/value"/>
-        </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/core/TimeValue">
-          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/core/TimeValue/value"/>
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/core/TimeValue/unit"/>
-          <genOperations ecoreOperation="muml.ecore#//model/core/TimeValue/toString"/>
-        </genClasses>
-      </nestedGenPackages>
       <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.muml.model"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//model/instance">
         <genClasses ecoreClass="muml.ecore#//model/instance/ComponentInstance">
@@ -560,9 +509,59 @@
       </nestedGenPackages>
       <nestedGenPackages prefix="Valuetype" basePackage="de.uni_paderborn.fujaba.muml.model"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//model/valuetype">
+        <genDataTypes ecoreDataType="muml.ecore#//model/valuetype/TimeUnit"/>
         <genClasses ecoreClass="muml.ecore#//model/valuetype/Range">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/valuetype/Range/lowerBound"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/valuetype/Range/upperBound"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/valuetype/TimeValue">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/valuetype/TimeValue/value"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/valuetype/TimeValue/unit"/>
+          <genOperations ecoreOperation="muml.ecore#//model/valuetype/TimeValue/toString"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/valuetype/NaturalNumber">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/valuetype/NaturalNumber/value"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/valuetype/NaturalNumber/infinity"/>
+          <genOperations ecoreOperation="muml.ecore#//model/valuetype/NaturalNumber/setValue">
+            <genParameters ecoreParameter="muml.ecore#//model/valuetype/NaturalNumber/setValue/value"/>
+          </genOperations>
+          <genOperations ecoreOperation="muml.ecore#//model/valuetype/NaturalNumber/longValue"/>
+          <genOperations ecoreOperation="muml.ecore#//model/valuetype/NaturalNumber/toString"/>
+          <genOperations ecoreOperation="muml.ecore#//model/valuetype/NaturalNumber/equals">
+            <genParameters ecoreParameter="muml.ecore#//model/valuetype/NaturalNumber/equals/o"/>
+          </genOperations>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Behavior" basePackage="de.uni_paderborn.fujaba.muml.model"
+          disposableProviderFactory="true" ecorePackage="muml.ecore#//model/behavior">
+        <genClasses image="false" ecoreClass="muml.ecore#//model/behavior/BehavioralElement">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/behavior/BehavioralElement/behavior"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="muml.ecore#//model/behavior/Behavior">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Behavior/behavioralElement"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Behavior/operations"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Behavior/variables"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/behavior/Variable">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Variable/type"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/behavior/Operation">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Operation/returnType"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Operation/implementations"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Operation/parameters"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/behavior/Parameter">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Parameter/type"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/behavior/ParameterBinding">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/behavior/ParameterBinding/parameter"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/ParameterBinding/value"/>
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>

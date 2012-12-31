@@ -22,9 +22,9 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.types.ArrayDataType;
 import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.types.ArrayDataType} object.
@@ -176,7 +176,7 @@ public class ArrayDataTypeItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(TypesPackage.Literals.ARRAY_DATA_TYPE__CARDINALITY,
-				 CoreFactory.eINSTANCE.createNaturalNumber()));
+				 ValuetypeFactory.eINSTANCE.createNaturalNumber()));
 	}
 
 }

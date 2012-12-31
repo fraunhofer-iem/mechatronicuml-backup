@@ -14,8 +14,11 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.core.CorePackage;
 
 import de.fujaba.modelinstance.ModelinstancePackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.impl.BehaviorPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.model.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.model.component.Component;
@@ -39,8 +42,6 @@ import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.impl.ConnectorPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.impl.CorePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
@@ -226,7 +227,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		// Obtain or create and register interdependencies
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);
-		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
 		ProtocolPackageImpl theProtocolPackage = (ProtocolPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) instanceof ProtocolPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI) : ProtocolPackage.eINSTANCE);
 		RealtimestatechartPackageImpl theRealtimestatechartPackage = (RealtimestatechartPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) instanceof RealtimestatechartPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI) : RealtimestatechartPackage.eINSTANCE);
@@ -235,11 +235,11 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI) : TypesPackage.eINSTANCE);
 		ConnectorPackageImpl theConnectorPackage = (ConnectorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) instanceof ConnectorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI) : ConnectorPackage.eINSTANCE);
 		ValuetypePackageImpl theValuetypePackage = (ValuetypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) instanceof ValuetypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI) : ValuetypePackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theComponentPackage.createPackageContents();
 		theConstraintPackage.createPackageContents();
-		theCorePackage.createPackageContents();
 		theInstancePackage.createPackageContents();
 		theProtocolPackage.createPackageContents();
 		theRealtimestatechartPackage.createPackageContents();
@@ -248,11 +248,11 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		theTypesPackage.createPackageContents();
 		theConnectorPackage.createPackageContents();
 		theValuetypePackage.createPackageContents();
+		theBehaviorPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theComponentPackage.initializePackageContents();
 		theConstraintPackage.initializePackageContents();
-		theCorePackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
 		theProtocolPackage.initializePackageContents();
 		theRealtimestatechartPackage.initializePackageContents();
@@ -261,6 +261,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		theTypesPackage.initializePackageContents();
 		theConnectorPackage.initializePackageContents();
 		theValuetypePackage.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
@@ -869,22 +870,22 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		ProtocolPackage theProtocolPackage = (ProtocolPackage)EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		componentEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		componentEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
+		componentEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		componentEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		componentEClass.getESuperTypes().add(theConstraintPackage.getConstrainableElement());
 		portEClass.getESuperTypes().add(theConnectorPackage.getConnectorEndpoint());
 		portEClass.getESuperTypes().add(theConstraintPackage.getConstrainableElement());
@@ -892,17 +893,17 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		continuousPortEClass.getESuperTypes().add(this.getDirectedTypedPort());
 		discretePortEClass.getESuperTypes().add(this.getPort());
 		discretePortEClass.getESuperTypes().add(theConnectorPackage.getDiscreteInteractionEndpoint());
-		componentPartEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		componentPartEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		componentPartEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		componentPartEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		componentPartEClass.getESuperTypes().add(theTypesPackage.getDataType());
 		staticStructuredComponentEClass.getESuperTypes().add(this.getStructuredComponent());
 		atomicComponentEClass.getESuperTypes().add(this.getComponent());
-		atomicComponentEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
+		atomicComponentEClass.getESuperTypes().add(theBehaviorPackage.getBehavioralElement());
 		portConnectorEClass.getESuperTypes().add(theConnectorPackage.getConnector());
 		assemblyConnectorEClass.getESuperTypes().add(this.getPortConnector());
 		delegationConnectorEClass.getESuperTypes().add(this.getPortConnector());
 		hybridPortEClass.getESuperTypes().add(this.getDirectedTypedPort());
-		coordinationProtocolOccurrenceEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
+		coordinationProtocolOccurrenceEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		structuredComponentEClass.getESuperTypes().add(this.getComponent());
 		directedTypedPortEClass.getESuperTypes().add(this.getPort());
 
@@ -957,7 +958,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEClass(hybridPortEClass, HybridPort.class, "HybridPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHybridPort_IsHybridInPort(), ecorePackage.getEBoolean(), "isHybridInPort", "false", 0, 1, HybridPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHybridPort_IsHybridOutPort(), ecorePackage.getEBoolean(), "isHybridOutPort", "false", 0, 1, HybridPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getHybridPort_SamplingInterval(), theCorePackage.getTimeValue(), null, "samplingInterval", null, 1, 1, HybridPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHybridPort_SamplingInterval(), theValuetypePackage.getTimeValue(), null, "samplingInterval", null, 1, 1, HybridPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(coordinationProtocolOccurrenceEClass, CoordinationProtocolOccurrence.class, "CoordinationProtocolOccurrence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCoordinationProtocolOccurrence_CoordinationProtocol(), theProtocolPackage.getCoordinationProtocol(), null, "coordinationProtocol", null, 1, 1, CoordinationProtocolOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

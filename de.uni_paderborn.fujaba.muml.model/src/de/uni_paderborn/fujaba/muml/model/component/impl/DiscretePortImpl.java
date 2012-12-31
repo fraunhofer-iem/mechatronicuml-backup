@@ -17,13 +17,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.Behavior;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.model.core.Behavior;
-import de.uni_paderborn.fujaba.muml.model.core.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
@@ -244,9 +244,9 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 		if (newBehavior != behavior) {
 			NotificationChain msgs = null;
 			if (behavior != null)
-				msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+				msgs = ((InternalEObject)behavior).eInverseRemove(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
 			if (newBehavior != null)
-				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
 			msgs = basicSetBehavior(newBehavior, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -514,7 +514,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 		switch (featureID) {
 			case ComponentPackage.DISCRETE_PORT__BEHAVIOR:
 				if (behavior != null)
-					msgs = ((InternalEObject)behavior).eInverseRemove(this, CorePackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+					msgs = ((InternalEObject)behavior).eInverseRemove(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
 				return basicSetBehavior((Behavior)otherEnd, msgs);
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				if (refines != null)
@@ -696,7 +696,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (derivedFeatureID) {
-				case ComponentPackage.DISCRETE_PORT__BEHAVIOR: return CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+				case ComponentPackage.DISCRETE_PORT__BEHAVIOR: return BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
 				default: return -1;
 			}
 		}
@@ -722,7 +722,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ComponentPackage.DISCRETE_PORT__BEHAVIOR;
+				case BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ComponentPackage.DISCRETE_PORT__BEHAVIOR;
 				default: return -1;
 			}
 		}

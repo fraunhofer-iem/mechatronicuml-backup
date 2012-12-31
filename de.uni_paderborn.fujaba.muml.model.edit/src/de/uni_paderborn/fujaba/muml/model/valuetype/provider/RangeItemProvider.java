@@ -24,8 +24,8 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
 
 /**
@@ -154,12 +154,12 @@ public class RangeItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ValuetypePackage.Literals.RANGE__LOWER_BOUND,
-				 CoreFactory.eINSTANCE.createNaturalNumber()));
+				 ValuetypeFactory.eINSTANCE.createNaturalNumber()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ValuetypePackage.Literals.RANGE__UPPER_BOUND,
-				 CoreFactory.eINSTANCE.createNaturalNumber()));
+				 ValuetypeFactory.eINSTANCE.createNaturalNumber()));
 	}
 
 	/**
