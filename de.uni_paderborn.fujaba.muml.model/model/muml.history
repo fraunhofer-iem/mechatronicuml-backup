@@ -14842,24 +14842,24 @@
             featureName="value" dataValue="The for loop statement firstly initialize a loop variable by the initialize expression and assigning on each loop run afterwards a loop variable by the counting expression to successive values of a sequence."/>
       </changes>
       <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop"
-          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initalizeExpression">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initalizeExpression"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initializeExpression">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initializeExpression"
             featureName="name" dataValue="initalizeExpression"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initalizeExpression"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initializeExpression"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initalizeExpression"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initializeExpression"
             featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initalizeExpression"
-          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initalizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initalizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initializeExpression"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initializeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initializeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initalizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initalizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initalizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initializeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initializeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initializeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initalizeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initializeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Initialize a loop variable by the initialize expression."/>
       </changes>
       <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop"
@@ -18292,6 +18292,110 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/deployment" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/deployment/0.3.11" oldDataValue="http://www.fujaba.de/muml/model/deployment/0.3.7"/>
   </releases>
-    <releases>
-    </releases>
+  <releases date="2013-01-01T15:19:51.291+0100" label="0.3.12">
+    <changes xsi:type="history:OperationChange">
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>LocalVariableDeclarationStatement</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/variable">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/variable"
+            featureName="name" dataValue="variable"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/variable"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/variable"
+            featureName="eType" referenceValue="muml.ecore#//model/behavior/Variable"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>variable</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/behavior/Variable"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//OperationCall/operation"
+        featureName="eType" referenceValue="muml.ecore#//model/behavior/Operation"
+        oldReferenceValue="muml.ecore#//model/core/Operation"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/variable"
+        featureName="eType" referenceValue="muml.ecore#//model/behavior/Variable"
+        oldReferenceValue="muml.ecore#//model/core/Variable"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//OperationCall/parameterBinding"
+        featureName="eType" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/ParameterBinding"
+        oldReferenceValue="muml.ecore#//model/core/ParameterBinding"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//TriggerMessageExpression/parameter"
+        featureName="eType" referenceValue="muml.ecore#//model/behavior/Parameter"
+        oldReferenceValue="muml.ecore#//model/core/Parameter"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//OperationCall/parameterBinding"
+        featureName="eType" referenceValue="muml.ecore#//model/behavior/ParameterBinding"
+        oldReferenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//calls/ParameterBinding"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/variable"
+        featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/initializeExpression">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/initializeExpression"
+            featureName="name" dataValue="initializeExpression"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/initializeExpression"
+            featureName="containment" dataValue="true" oldDataValue="false"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/initializeExpression"
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>initializeExpression</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//ForLoop/initializeExpression"
+        featureName="name" dataValue="initializeExpression" oldDataValue="initalizeExpression"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/muml/actionlanguage/0.3.12"
+        oldDataValue="http://www.fujaba.de/muml/actionlanguage/0.3.5"/>
+  </releases>
+  <releases>
+  </releases>
 </history:History>

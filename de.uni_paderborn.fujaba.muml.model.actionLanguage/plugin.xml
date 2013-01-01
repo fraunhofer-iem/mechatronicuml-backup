@@ -12,7 +12,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/actionlanguage/0.3.5"
+            uri="http://www.fujaba.de/muml/actionlanguage/0.3.12"
             class="de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage"
             genModel="model/actionLanguage.genmodel"/>
    </extension>

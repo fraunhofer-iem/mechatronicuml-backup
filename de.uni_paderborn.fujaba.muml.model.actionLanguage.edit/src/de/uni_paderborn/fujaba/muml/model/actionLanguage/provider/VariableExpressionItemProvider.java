@@ -246,6 +246,11 @@ public class VariableExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.VARIABLE_EXPRESSION__INDICES,
+				 ActionLanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.VARIABLE_EXPRESSION__INDICES,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add

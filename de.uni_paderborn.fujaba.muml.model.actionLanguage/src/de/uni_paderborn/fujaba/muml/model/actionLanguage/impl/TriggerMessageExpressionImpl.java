@@ -14,7 +14,7 @@ import org.storydriven.core.expressions.impl.ExpressionImpl;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
-import de.uni_paderborn.fujaba.muml.model.core.Parameter;
+import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 
 /**

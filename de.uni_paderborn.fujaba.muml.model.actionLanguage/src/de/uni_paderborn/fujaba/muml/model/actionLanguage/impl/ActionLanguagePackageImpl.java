@@ -25,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.DoWhileLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelector;
@@ -36,7 +37,8 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
@@ -148,6 +150,13 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass localVariableDeclarationStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum assignOperatorEEnum = null;
 
 	/**
@@ -213,7 +222,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		// Initialize simple dependencies
 		ComponentPackage.eINSTANCE.eClass();
 		ConstraintPackage.eINSTANCE.eClass();
-		CorePackage.eINSTANCE.eClass();
 		InstancePackage.eINSTANCE.eClass();
 		ProtocolPackage.eINSTANCE.eClass();
 		RealtimestatechartPackage.eINSTANCE.eClass();
@@ -221,6 +229,8 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		DeploymentPackage.eINSTANCE.eClass();
 		TypesPackage.eINSTANCE.eClass();
 		ConnectorPackage.eINSTANCE.eClass();
+		ValuetypePackage.eINSTANCE.eClass();
+		BehaviorPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theActionLanguagePackage.createPackageContents();
@@ -370,8 +380,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EReference getForLoop_InitalizeExpression() {
+	public EReference getForLoop_InitializeExpression() {
 		return (EReference)forLoopEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -606,6 +615,33 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getLocalVariableDeclarationStatement() {
+		return localVariableDeclarationStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLocalVariableDeclarationStatement_Variable() {
+		return (EReference)localVariableDeclarationStatementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLocalVariableDeclarationStatement_InitializeExpression() {
+		return (EReference)localVariableDeclarationStatementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EEnum getAssignOperator() {
 		return assignOperatorEEnum;
@@ -677,7 +713,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		createEReference(assignmentEClass, ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION);
 
 		forLoopEClass = createEClass(FOR_LOOP);
-		createEReference(forLoopEClass, FOR_LOOP__INITALIZE_EXPRESSION);
+		createEReference(forLoopEClass, FOR_LOOP__INITIALIZE_EXPRESSION);
 		createEReference(forLoopEClass, FOR_LOOP__COUNTING_EXPRESSION);
 
 		ifStatementEClass = createEClass(IF_STATEMENT);
@@ -710,6 +746,10 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		createEAttribute(positionSelectorEClass, POSITION_SELECTOR__KIND);
 		createEReference(positionSelectorEClass, POSITION_SELECTOR__SUCCESSOR);
 
+		localVariableDeclarationStatementEClass = createEClass(LOCAL_VARIABLE_DECLARATION_STATEMENT);
+		createEReference(localVariableDeclarationStatementEClass, LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE);
+		createEReference(localVariableDeclarationStatementEClass, LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION);
+
 		// Create enums
 		assignOperatorEEnum = createEEnum(ASSIGN_OPERATOR);
 		incrementDecrementOperatorEEnum = createEEnum(INCREMENT_DECREMENT_OPERATOR);
@@ -741,7 +781,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		// Obtain other dependent packages
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 
 		// Create type parameters
@@ -762,6 +802,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		triggerMessageExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		discreteInteractionEndpointReferenceEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		positionSelectorEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		localVariableDeclarationStatementEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -782,7 +823,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		initEReference(getAssignment_Lhs_attributeExpression(), this.getVariableExpression(), null, "lhs_attributeExpression", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(forLoopEClass, ForLoop.class, "ForLoop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getForLoop_InitalizeExpression(), this.getAssignment(), null, "initalizeExpression", null, 0, 1, ForLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getForLoop_InitializeExpression(), this.getAssignment(), null, "initializeExpression", null, 0, 1, ForLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getForLoop_CountingExpression(), this.getAssignment(), null, "countingExpression", null, 0, 1, ForLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ifStatementEClass, IfStatement.class, "IfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -793,19 +834,19 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		initEReference(getIfStatement_ElseBlock(), this.getBlock(), null, "elseBlock", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variableExpressionEClass, VariableExpression.class, "VariableExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariableExpression_Variable(), theCorePackage.getVariable(), null, "variable", null, 0, 1, VariableExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVariableExpression_Variable(), theBehaviorPackage.getVariable(), null, "variable", null, 0, 1, VariableExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariableExpression_Indices(), theExpressionsPackage.getExpression(), null, "indices", null, 0, -1, VariableExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationCallEClass, OperationCall.class, "OperationCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOperationCall_Operation(), theCorePackage.getOperation(), null, "operation", null, 1, 1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperationCall_ParameterBinding(), theCorePackage.getParameterBinding(), null, "parameterBinding", null, 0, -1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperationCall_Operation(), theBehaviorPackage.getOperation(), null, "operation", null, 1, 1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperationCall_ParameterBinding(), theBehaviorPackage.getParameterBinding(), null, "parameterBinding", null, 0, -1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(returnStatementEClass, ReturnStatement.class, "ReturnStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReturnStatement_Expression(), theExpressionsPackage.getExpression(), null, "expression", null, 0, 1, ReturnStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(triggerMessageExpressionEClass, TriggerMessageExpression.class, "TriggerMessageExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTriggerMessageExpression_MessageType(), theMsgtypePackage.getMessageType(), null, "messageType", null, 1, 1, TriggerMessageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTriggerMessageExpression_Parameter(), theCorePackage.getParameter(), null, "parameter", null, 1, 1, TriggerMessageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTriggerMessageExpression_Parameter(), theBehaviorPackage.getParameter(), null, "parameter", null, 1, 1, TriggerMessageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(discreteInteractionEndpointReferenceEClass, DiscreteInteractionEndpointReference.class, "DiscreteInteractionEndpointReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiscreteInteractionEndpointReference_Attribute(), this.getVariableExpression(), null, "attribute", null, 0, 1, DiscreteInteractionEndpointReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -814,6 +855,10 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		initEClass(positionSelectorEClass, PositionSelector.class, "PositionSelector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPositionSelector_Kind(), this.getPositionSelectorKind(), "kind", null, 0, 1, PositionSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPositionSelector_Successor(), this.getPositionSelector(), null, "successor", null, 0, 1, PositionSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(localVariableDeclarationStatementEClass, LocalVariableDeclarationStatement.class, "LocalVariableDeclarationStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLocalVariableDeclarationStatement_Variable(), theBehaviorPackage.getVariable(), null, "variable", null, 1, 1, LocalVariableDeclarationStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLocalVariableDeclarationStatement_InitializeExpression(), this.getAssignment(), null, "initializeExpression", null, 0, 1, LocalVariableDeclarationStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assignOperatorEEnum, AssignOperator.class, "AssignOperator");

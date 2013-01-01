@@ -7,14 +7,22 @@
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.provider;
 
 
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement;
+
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -22,28 +30,16 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.expressions.ExpressionsFactory;
-import org.storydriven.core.expressions.common.CommonExpressionsFactory;
-import org.storydriven.core.expressions.provider.ExpressionItemProvider;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
-import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
-import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
 
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
+import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class OperationCallItemProvider
+public class LocalVariableDeclarationStatementItemProvider
 	extends ExpressionItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -57,7 +53,7 @@ public class OperationCallItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OperationCallItemProvider(AdapterFactory adapterFactory) {
+	public LocalVariableDeclarationStatementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -72,31 +68,8 @@ public class OperationCallItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOperationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Operation feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOperationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OperationCall_operation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OperationCall_operation_feature", "_UI_OperationCall_type"),
-				 ActionLanguagePackage.Literals.OPERATION_CALL__OPERATION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -111,7 +84,8 @@ public class OperationCallItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_BINDING);
+			childrenFeatures.add(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE);
+			childrenFeatures.add(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -130,14 +104,14 @@ public class OperationCallItemProvider
 	}
 
 	/**
-	 * This returns OperationCall.gif.
+	 * This returns LocalVariableDeclarationStatement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/OperationCall"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/LocalVariableDeclarationStatement"));
 	}
 
 	/**
@@ -148,10 +122,10 @@ public class OperationCallItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((OperationCall)object).getComment();
+		String label = ((LocalVariableDeclarationStatement)object).getComment();
 		return label == null || label.length() == 0 ?
-			getString("_UI_OperationCall_type") :
-			getString("_UI_OperationCall_type") + " " + label;
+			getString("_UI_LocalVariableDeclarationStatement_type") :
+			getString("_UI_LocalVariableDeclarationStatement_type") + " " + label;
 	}
 
 	/**
@@ -165,8 +139,9 @@ public class OperationCallItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(OperationCall.class)) {
-			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
+		switch (notification.getFeatureID(LocalVariableDeclarationStatement.class)) {
+			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
+			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -186,8 +161,13 @@ public class OperationCallItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_BINDING,
-				 BehaviorFactory.eINSTANCE.createParameterBinding()));
+				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE,
+				 BehaviorFactory.eINSTANCE.createVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionLanguageFactory.eINSTANCE.createAssignment()));
 	}
 
 	/**

@@ -351,6 +351,29 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LocalVariableDeclarationStatementItemProvider localVariableDeclarationStatementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLocalVariableDeclarationStatementAdapter() {
+		if (localVariableDeclarationStatementItemProvider == null) {
+			localVariableDeclarationStatementItemProvider = new LocalVariableDeclarationStatementItemProvider(this);
+		}
+
+		return localVariableDeclarationStatementItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -461,6 +484,7 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 		if (triggerMessageExpressionItemProvider != null) triggerMessageExpressionItemProvider.dispose();
 		if (discreteInteractionEndpointReferenceItemProvider != null) discreteInteractionEndpointReferenceItemProvider.dispose();
 		if (positionSelectorItemProvider != null) positionSelectorItemProvider.dispose();
+		if (localVariableDeclarationStatementItemProvider != null) localVariableDeclarationStatementItemProvider.dispose();
 	}
 
 }

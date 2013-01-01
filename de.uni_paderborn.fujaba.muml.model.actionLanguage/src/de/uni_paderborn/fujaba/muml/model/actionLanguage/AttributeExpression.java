@@ -8,8 +8,8 @@ package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 
 import org.storydriven.core.expressions.Expression;
 
-import de.uni_paderborn.fujaba.muml.model.core.Variable;
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
 import org.eclipse.emf.common.util.EList;
 
 /**

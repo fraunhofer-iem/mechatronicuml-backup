@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 
 import org.storydriven.core.expressions.Expression;
 
-import de.uni_paderborn.fujaba.muml.model.core.Parameter;
+import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 
 /**

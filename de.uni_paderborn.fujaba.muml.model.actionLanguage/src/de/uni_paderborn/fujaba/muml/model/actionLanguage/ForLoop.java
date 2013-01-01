@@ -19,7 +19,7 @@ package de.uni_paderborn.fujaba.muml.model.actionLanguage;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop#getInitalizeExpression <em>Initalize Expression</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop#getInitializeExpression <em>Initialize Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop#getCountingExpression <em>Counting Expression</em>}</li>
  * </ul>
  * </p>
@@ -30,33 +30,29 @@ package de.uni_paderborn.fujaba.muml.model.actionLanguage;
  */
 public interface ForLoop extends Loop {
 	/**
-	 * Returns the value of the '<em><b>Initalize Expression</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Initialize Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Initalize Expression</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Initialize a loop variable by the initialize expression.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Initalize Expression</em>' containment reference.
-	 * @see #setInitalizeExpression(Assignment)
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getForLoop_InitalizeExpression()
+	 * @return the value of the '<em>Initialize Expression</em>' containment reference.
+	 * @see #setInitializeExpression(Assignment)
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getForLoop_InitializeExpression()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Assignment getInitalizeExpression();
+	Assignment getInitializeExpression();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop#getInitalizeExpression <em>Initalize Expression</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop#getInitializeExpression <em>Initialize Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Initalize Expression</em>' containment reference.
-	 * @see #getInitalizeExpression()
+	 * @param value the new value of the '<em>Initialize Expression</em>' containment reference.
+	 * @see #getInitializeExpression()
 	 * @generated
 	 */
-	void setInitalizeExpression(Assignment value);
+	void setInitializeExpression(Assignment value);
 
 	/**
 	 * Returns the value of the '<em><b>Counting Expression</b></em>' containment reference.

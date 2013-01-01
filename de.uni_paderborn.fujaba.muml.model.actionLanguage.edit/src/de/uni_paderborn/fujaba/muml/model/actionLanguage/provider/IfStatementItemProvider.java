@@ -34,7 +34,7 @@ import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFac
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
 
 
 /**
@@ -232,6 +232,11 @@ public class IfStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 ActionLanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add
@@ -338,6 +343,11 @@ public class IfStatementItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
 				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 ActionLanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter

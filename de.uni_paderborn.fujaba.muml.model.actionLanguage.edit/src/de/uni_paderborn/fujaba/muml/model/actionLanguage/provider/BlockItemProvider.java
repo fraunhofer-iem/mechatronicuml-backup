@@ -34,7 +34,7 @@ import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFac
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
 
 
 /**
@@ -221,6 +221,11 @@ public class BlockItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
 				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionLanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter

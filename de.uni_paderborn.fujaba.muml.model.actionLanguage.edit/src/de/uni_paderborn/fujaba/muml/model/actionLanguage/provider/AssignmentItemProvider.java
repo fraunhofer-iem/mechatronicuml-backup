@@ -36,7 +36,7 @@ import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFac
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
 
 
 /**
@@ -297,6 +297,11 @@ public class AssignmentItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionLanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter

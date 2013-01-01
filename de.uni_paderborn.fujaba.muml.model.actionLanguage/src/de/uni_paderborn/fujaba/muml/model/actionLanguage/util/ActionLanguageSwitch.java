@@ -207,6 +207,15 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT: {
+				LocalVariableDeclarationStatement localVariableDeclarationStatement = (LocalVariableDeclarationStatement)theEObject;
+				T result = caseLocalVariableDeclarationStatement(localVariableDeclarationStatement);
+				if (result == null) result = caseExpression(localVariableDeclarationStatement);
+				if (result == null) result = caseCommentableElement(localVariableDeclarationStatement);
+				if (result == null) result = caseExtendableElement(localVariableDeclarationStatement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -403,6 +412,21 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePositionSelector(PositionSelector object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Local Variable Declaration Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Local Variable Declaration Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLocalVariableDeclarationStatement(LocalVariableDeclarationStatement object) {
 		return null;
 	}
 

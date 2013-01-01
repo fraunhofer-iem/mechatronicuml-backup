@@ -76,7 +76,7 @@ public class ForLoopItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionLanguagePackage.Literals.FOR_LOOP__INITALIZE_EXPRESSION);
+			childrenFeatures.add(ActionLanguagePackage.Literals.FOR_LOOP__INITIALIZE_EXPRESSION);
 			childrenFeatures.add(ActionLanguagePackage.Literals.FOR_LOOP__COUNTING_EXPRESSION);
 		}
 		return childrenFeatures;
@@ -132,7 +132,7 @@ public class ForLoopItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ForLoop.class)) {
-			case ActionLanguagePackage.FOR_LOOP__INITALIZE_EXPRESSION:
+			case ActionLanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION:
 			case ActionLanguagePackage.FOR_LOOP__COUNTING_EXPRESSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -153,7 +153,7 @@ public class ForLoopItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.FOR_LOOP__INITALIZE_EXPRESSION,
+				(ActionLanguagePackage.Literals.FOR_LOOP__INITIALIZE_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createAssignment()));
 
 		newChildDescriptors.add
@@ -177,7 +177,7 @@ public class ForLoopItemProvider
 			childFeature == ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS ||
 			childFeature == ActionLanguagePackage.Literals.LOOP__BLOCK ||
 			childFeature == ActionLanguagePackage.Literals.LOOP__LOOP_TEST ||
-			childFeature == ActionLanguagePackage.Literals.FOR_LOOP__INITALIZE_EXPRESSION ||
+			childFeature == ActionLanguagePackage.Literals.FOR_LOOP__INITIALIZE_EXPRESSION ||
 			childFeature == ActionLanguagePackage.Literals.FOR_LOOP__COUNTING_EXPRESSION;
 
 		if (qualify) {

@@ -35,7 +35,7 @@ import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
 import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop} object.
@@ -242,6 +242,11 @@ public class LoopItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
 				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionLanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter

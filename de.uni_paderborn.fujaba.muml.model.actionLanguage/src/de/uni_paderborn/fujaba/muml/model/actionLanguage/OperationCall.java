@@ -9,8 +9,8 @@ package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.expressions.Expression;
 
-import de.uni_paderborn.fujaba.muml.model.core.Operation;
-import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.behavior.Operation;
+import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public interface OperationCall extends Expression {
 
 	/**
 	 * Returns the value of the '<em><b>Parameter Binding</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.core.ParameterBinding}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parameter Binding</em>' containment reference list isn't clear,

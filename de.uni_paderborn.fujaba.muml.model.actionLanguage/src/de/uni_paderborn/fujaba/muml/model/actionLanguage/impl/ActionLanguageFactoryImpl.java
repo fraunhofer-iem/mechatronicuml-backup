@@ -42,7 +42,7 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 	 */
 	public static ActionLanguageFactory init() {
 		try {
-			ActionLanguageFactory theActionLanguageFactory = (ActionLanguageFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/actionlanguage/0.3.5"); 
+			ActionLanguageFactory theActionLanguageFactory = (ActionLanguageFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/actionlanguage/0.3.12"); 
 			if (theActionLanguageFactory != null) {
 				return theActionLanguageFactory;
 			}
@@ -83,6 +83,7 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION: return createTriggerMessageExpression();
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE: return createDiscreteInteractionEndpointReference();
 			case ActionLanguagePackage.POSITION_SELECTOR: return createPositionSelector();
+			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT: return createLocalVariableDeclarationStatement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -244,6 +245,16 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 	public PositionSelector createPositionSelector() {
 		PositionSelectorImpl positionSelector = new PositionSelectorImpl();
 		return positionSelector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LocalVariableDeclarationStatement createLocalVariableDeclarationStatement() {
+		LocalVariableDeclarationStatementImpl localVariableDeclarationStatement = new LocalVariableDeclarationStatementImpl();
+		return localVariableDeclarationStatement;
 	}
 
 	/**

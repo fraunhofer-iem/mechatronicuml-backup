@@ -48,7 +48,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/actionlanguage/0.3.5";
+	String eNS_URI = "http://www.fujaba.de/muml/actionlanguage/0.3.12";
 
 	/**
 	 * The package namespace name.
@@ -487,13 +487,13 @@ public interface ActionLanguagePackage extends EPackage {
 	int FOR_LOOP__LOOP_TEST = LOOP__LOOP_TEST;
 
 	/**
-	 * The feature id for the '<em><b>Initalize Expression</b></em>' containment reference.
+	 * The feature id for the '<em><b>Initialize Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FOR_LOOP__INITALIZE_EXPRESSION = LOOP_FEATURE_COUNT + 0;
+	int FOR_LOOP__INITIALIZE_EXPRESSION = LOOP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Counting Expression</b></em>' containment reference.
@@ -980,6 +980,70 @@ public interface ActionLanguagePackage extends EPackage {
 	int POSITION_SELECTOR_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.LocalVariableDeclarationStatementImpl <em>Local Variable Declaration Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.LocalVariableDeclarationStatementImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getLocalVariableDeclarationStatement()
+	 * @generated
+	 */
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT = 13;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Variable</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Initialize Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Local Variable Declaration Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator <em>Assign Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -987,7 +1051,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getAssignOperator()
 	 * @generated
 	 */
-	int ASSIGN_OPERATOR = 13;
+	int ASSIGN_OPERATOR = 14;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator <em>Increment Decrement Operator</em>}' enum.
@@ -997,7 +1061,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getIncrementDecrementOperator()
 	 * @generated
 	 */
-	int INCREMENT_DECREMENT_OPERATOR = 14;
+	int INCREMENT_DECREMENT_OPERATOR = 15;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelectorKind <em>Position Selector Kind</em>}' enum.
@@ -1007,7 +1071,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getPositionSelectorKind()
 	 * @generated
 	 */
-	int POSITION_SELECTOR_KIND = 15;
+	int POSITION_SELECTOR_KIND = 16;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Block <em>Block</em>}'.
@@ -1147,15 +1211,15 @@ public interface ActionLanguagePackage extends EPackage {
 	EClass getForLoop();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop#getInitalizeExpression <em>Initalize Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop#getInitializeExpression <em>Initialize Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Initalize Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop#getInitalizeExpression()
+	 * @return the meta object for the containment reference '<em>Initialize Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop#getInitializeExpression()
 	 * @see #getForLoop()
 	 * @generated
 	 */
-	EReference getForLoop_InitalizeExpression();
+	EReference getForLoop_InitializeExpression();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop#getCountingExpression <em>Counting Expression</em>}'.
@@ -1415,6 +1479,38 @@ public interface ActionLanguagePackage extends EPackage {
 	EReference getPositionSelector_Successor();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement <em>Local Variable Declaration Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Local Variable Declaration Statement</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement
+	 * @generated
+	 */
+	EClass getLocalVariableDeclarationStatement();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement#getVariable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Variable</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement#getVariable()
+	 * @see #getLocalVariableDeclarationStatement()
+	 * @generated
+	 */
+	EReference getLocalVariableDeclarationStatement_Variable();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement#getInitializeExpression <em>Initialize Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Initialize Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement#getInitializeExpression()
+	 * @see #getLocalVariableDeclarationStatement()
+	 * @generated
+	 */
+	EReference getLocalVariableDeclarationStatement_InitializeExpression();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator <em>Assign Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1583,12 +1679,12 @@ public interface ActionLanguagePackage extends EPackage {
 		EClass FOR_LOOP = eINSTANCE.getForLoop();
 
 		/**
-		 * The meta object literal for the '<em><b>Initalize Expression</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Initialize Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FOR_LOOP__INITALIZE_EXPRESSION = eINSTANCE.getForLoop_InitalizeExpression();
+		EReference FOR_LOOP__INITIALIZE_EXPRESSION = eINSTANCE.getForLoop_InitializeExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Counting Expression</b></em>' containment reference feature.
@@ -1795,6 +1891,32 @@ public interface ActionLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference POSITION_SELECTOR__SUCCESSOR = eINSTANCE.getPositionSelector_Successor();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.LocalVariableDeclarationStatementImpl <em>Local Variable Declaration Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.LocalVariableDeclarationStatementImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getLocalVariableDeclarationStatement()
+		 * @generated
+		 */
+		EClass LOCAL_VARIABLE_DECLARATION_STATEMENT = eINSTANCE.getLocalVariableDeclarationStatement();
+
+		/**
+		 * The meta object literal for the '<em><b>Variable</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE = eINSTANCE.getLocalVariableDeclarationStatement_Variable();
+
+		/**
+		 * The meta object literal for the '<em><b>Initialize Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION = eINSTANCE.getLocalVariableDeclarationStatement_InitializeExpression();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator <em>Assign Operator</em>}' enum.

@@ -134,6 +134,15 @@ public interface ActionLanguageFactory extends EFactory {
 	PositionSelector createPositionSelector();
 
 	/**
+	 * Returns a new object of class '<em>Local Variable Declaration Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Local Variable Declaration Statement</em>'.
+	 * @generated
+	 */
+	LocalVariableDeclarationStatement createLocalVariableDeclarationStatement();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

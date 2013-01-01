@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 
-import de.uni_paderborn.fujaba.muml.model.core.Variable;
+import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
 
 import org.eclipse.emf.common.util.EList;
 

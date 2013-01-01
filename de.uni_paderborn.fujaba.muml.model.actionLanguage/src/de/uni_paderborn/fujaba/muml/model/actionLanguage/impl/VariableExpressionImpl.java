@@ -9,7 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.actionLanguage.impl;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression;
 
-import de.uni_paderborn.fujaba.muml.model.core.Variable;
+import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
 
 import java.util.Collection;
 

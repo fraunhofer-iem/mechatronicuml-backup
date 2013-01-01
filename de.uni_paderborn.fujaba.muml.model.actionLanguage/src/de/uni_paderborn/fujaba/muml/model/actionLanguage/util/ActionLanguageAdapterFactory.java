@@ -136,6 +136,10 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 				return createPositionSelectorAdapter();
 			}
 			@Override
+			public Adapter caseLocalVariableDeclarationStatement(LocalVariableDeclarationStatement object) {
+				return createLocalVariableDeclarationStatementAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -346,6 +350,20 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPositionSelectorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement <em>Local Variable Declaration Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement
+	 * @generated
+	 */
+	public Adapter createLocalVariableDeclarationStatementAdapter() {
 		return null;
 	}
 

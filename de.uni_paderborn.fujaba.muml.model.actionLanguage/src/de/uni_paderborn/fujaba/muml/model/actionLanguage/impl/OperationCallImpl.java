@@ -21,8 +21,8 @@ import org.storydriven.core.expressions.impl.ExpressionImpl;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
-import de.uni_paderborn.fujaba.muml.model.core.Operation;
-import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.behavior.Operation;
+import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
 
 /**
  * <!-- begin-user-doc -->

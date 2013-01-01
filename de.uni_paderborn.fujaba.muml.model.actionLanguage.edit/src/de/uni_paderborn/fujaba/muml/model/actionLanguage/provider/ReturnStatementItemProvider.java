@@ -11,7 +11,7 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ReturnStatement;
 
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
 
 import java.util.Collection;
 import java.util.List;
@@ -229,6 +229,11 @@ public class ReturnStatementItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionLanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter

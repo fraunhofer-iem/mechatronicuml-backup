@@ -45,7 +45,7 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Assignment/lhs_attributeExpression"/>
     </genClasses>
     <genClasses ecoreClass="actionLanguage.ecore#//ForLoop">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//ForLoop/initalizeExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//ForLoop/initializeExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//ForLoop/countingExpression"/>
     </genClasses>
     <genClasses ecoreClass="actionLanguage.ecore#//IfStatement">
@@ -55,9 +55,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//IfStatement/elseIfBlocks"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//IfStatement/elseBlock"/>
     </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//AttributeExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//AttributeExpression/attribute"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//AttributeExpression/indices"/>
+    <genClasses ecoreClass="actionLanguage.ecore#//VariableExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//VariableExpression/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//VariableExpression/indices"/>
     </genClasses>
     <genClasses ecoreClass="actionLanguage.ecore#//OperationCall">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//OperationCall/operation"/>
@@ -77,6 +77,10 @@
     <genClasses ecoreClass="actionLanguage.ecore#//PositionSelector">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//PositionSelector/kind"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//PositionSelector/successor"/>
+    </genClasses>
+    <genClasses ecoreClass="actionLanguage.ecore#//LocalVariableDeclarationStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//LocalVariableDeclarationStatement/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//LocalVariableDeclarationStatement/initializeExpression"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
