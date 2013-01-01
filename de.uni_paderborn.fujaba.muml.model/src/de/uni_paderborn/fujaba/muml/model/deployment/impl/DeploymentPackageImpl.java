@@ -321,7 +321,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHardwarePort_OutgoingCommunicationLink() {
+	public EReference getHardwarePort_DeployedPortInstance() {
 		return (EReference)hardwarePortEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -330,26 +330,17 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHardwarePort_IncomingCommunicationLink() {
-		return (EReference)hardwarePortEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getHardwarePort_DeployedPortInstance() {
-		return (EReference)hardwarePortEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getHardwarePort_Kind() {
-		return (EAttribute)hardwarePortEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)hardwarePortEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getHardwarePort_CommunicationLinks() {
+		return (EReference)hardwarePortEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -375,7 +366,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCommunicationLink_Source() {
+	public EReference getCommunicationLink_QualityOfService() {
 		return (EReference)communicationLinkEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -384,7 +375,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCommunicationLink_Target() {
+	public EReference getCommunicationLink_DeployedAssemblyInstances() {
 		return (EReference)communicationLinkEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -393,17 +384,8 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCommunicationLink_QualityOfService() {
+	public EReference getCommunicationLink_HardwarePorts() {
 		return (EReference)communicationLinkEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCommunicationLink_DeployedAssemblyInstances() {
-		return (EReference)communicationLinkEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -502,17 +484,15 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 
 		hardwarePortEClass = createEClass(HARDWARE_PORT);
 		createEReference(hardwarePortEClass, HARDWARE_PORT__HARDWARE_NODE);
-		createEReference(hardwarePortEClass, HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK);
-		createEReference(hardwarePortEClass, HARDWARE_PORT__INCOMING_COMMUNICATION_LINK);
 		createEReference(hardwarePortEClass, HARDWARE_PORT__DEPLOYED_PORT_INSTANCE);
 		createEAttribute(hardwarePortEClass, HARDWARE_PORT__KIND);
+		createEReference(hardwarePortEClass, HARDWARE_PORT__COMMUNICATION_LINKS);
 
 		communicationLinkEClass = createEClass(COMMUNICATION_LINK);
 		createEReference(communicationLinkEClass, COMMUNICATION_LINK__DEPLOYMENT);
-		createEReference(communicationLinkEClass, COMMUNICATION_LINK__SOURCE);
-		createEReference(communicationLinkEClass, COMMUNICATION_LINK__TARGET);
 		createEReference(communicationLinkEClass, COMMUNICATION_LINK__QUALITY_OF_SERVICE);
 		createEReference(communicationLinkEClass, COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES);
+		createEReference(communicationLinkEClass, COMMUNICATION_LINK__HARDWARE_PORTS);
 
 		linkQualityOfServiceEClass = createEClass(LINK_QUALITY_OF_SERVICE);
 		createEReference(linkQualityOfServiceEClass, LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION);
@@ -550,6 +530,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
+		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 
 		// Create type parameters
@@ -563,7 +544,9 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		hardwareNodeEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		hardwarePortEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		hardwarePortEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		hardwarePortEClass.getESuperTypes().add(theConnectorPackage.getConnectorEndpoint());
 		communicationLinkEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
+		communicationLinkEClass.getESuperTypes().add(theConnectorPackage.getConnector());
 		linkQualityOfServiceEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		linkQualityOfServiceEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
@@ -582,17 +565,15 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 
 		initEClass(hardwarePortEClass, HardwarePort.class, "HardwarePort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHardwarePort_HardwareNode(), this.getHardwareNode(), this.getHardwareNode_HardwarePorts(), "hardwareNode", null, 1, 1, HardwarePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHardwarePort_OutgoingCommunicationLink(), this.getCommunicationLink(), this.getCommunicationLink_Source(), "outgoingCommunicationLink", null, 0, -1, HardwarePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHardwarePort_IncomingCommunicationLink(), this.getCommunicationLink(), this.getCommunicationLink_Target(), "incomingCommunicationLink", null, 0, -1, HardwarePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHardwarePort_DeployedPortInstance(), theInstancePackage.getPortInstance(), null, "deployedPortInstance", null, 0, -1, HardwarePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHardwarePort_Kind(), this.getHardwarePortDirectionKind(), "kind", "", 0, 1, HardwarePort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHardwarePort_CommunicationLinks(), this.getCommunicationLink(), null, "communicationLinks", null, 0, -1, HardwarePort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(communicationLinkEClass, CommunicationLink.class, "CommunicationLink", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCommunicationLink_Deployment(), this.getDeployment(), this.getDeployment_CommunicationLinks(), "deployment", null, 1, 1, CommunicationLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCommunicationLink_Source(), this.getHardwarePort(), this.getHardwarePort_OutgoingCommunicationLink(), "source", null, 1, 1, CommunicationLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCommunicationLink_Target(), this.getHardwarePort(), this.getHardwarePort_IncomingCommunicationLink(), "target", null, 1, 1, CommunicationLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationLink_QualityOfService(), this.getLinkQualityOfService(), null, "qualityOfService", null, 0, 1, CommunicationLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationLink_DeployedAssemblyInstances(), theInstancePackage.getAssemblyConnectorInstance(), null, "deployedAssemblyInstances", null, 0, -1, CommunicationLink.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCommunicationLink_HardwarePorts(), this.getHardwarePort(), null, "hardwarePorts", null, 0, -1, CommunicationLink.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(linkQualityOfServiceEClass, LinkQualityOfService.class, "LinkQualityOfService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLinkQualityOfService_PacketDelayVariation(), theValuetypePackage.getTimeValue(), null, "packetDelayVariation", null, 0, 1, LinkQualityOfService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -664,13 +645,25 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		   source, 
 		   new String[] {
 			 "NoDeploymentOnActorOrSensor", "(self.hardwareNodeKind <> deployment::HardwareNodeKind::COMPUTATIONAL_RESOURCE) implies self.deployedInstances->isEmpty()"
-		   });																
+		   });													
+		addAnnotation
+		  (getHardwarePort_CommunicationLinks(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.connectors->select(c | c.oclIsTypeOf(CommunicationLink)).oclAsType(CommunicationLink)->asOrderedSet()"
+		   });				
 		addAnnotation
 		  (communicationLinkEClass, 
 		   source, 
 		   new String[] {
 			 "SameConfiguration", "self.deployedAssemblyInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"
-		   });											
+		   });						
+		addAnnotation
+		  (getCommunicationLink_HardwarePorts(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.connectorEndpoints->select(c | c.oclIsTypeOf(HardwarePort)).oclAsType(HardwarePort)->asOrderedSet()"
+		   });						
 	}
 
 } //DeploymentPackageImpl

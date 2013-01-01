@@ -9250,24 +9250,24 @@
             featureName="value" dataValue="Hardware nodes are hardware elements on which port instances could be deployed if they are not a sensor or an actor."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink"
+          referenceName="eStructuralFeatures" element="#//@releases.9/@changes.9/@changes.1/@element">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.1/@element"
             featureName="name" dataValue="incomingCommunicationLink"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.1/@element"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.1/@element"
             featureName="eType" referenceValue="muml.ecore#//model/deployment/CommunicationLink"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink"
-          referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.9/@changes.9/@changes.1/@element"
+          referenceName="eAnnotations" element="#//@releases.9/@changes.9/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.9/@changes.9/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.9/@changes.9/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="CommunicationLinks which have the HardwarePort as sink."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort"
@@ -9361,74 +9361,74 @@
             featureName="value" dataValue="The deployment to which the link belongs to."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/CommunicationLink/source">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/source"
+          referenceName="eStructuralFeatures" element="#//@releases.9/@changes.10/@changes.2/@element">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.2/@element"
             featureName="name" dataValue="source"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/source"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.2/@element"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/source"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.2/@element"
             featureName="eType" referenceValue="muml.ecore#//model/deployment/HardwarePort"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink"
+          referenceName="eStructuralFeatures" element="#//@releases.9/@changes.10/@changes.1/@element">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.1/@element"
             featureName="name" dataValue="outgoingCommunicationLink"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.1/@element"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.1/@element"
             featureName="eType" referenceValue="muml.ecore#//model/deployment/CommunicationLink"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/deployment/CommunicationLink/source"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/source"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink"/>
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.1/@element"
+            featureName="eOpposite" referenceValue="#//@releases.9/@changes.10/@changes.2/@element"/>
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.2/@element"
+            featureName="eOpposite" referenceValue="#//@releases.9/@changes.10/@changes.1/@element"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink"
-          referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.9/@changes.10/@changes.1/@element"
+          referenceName="eAnnotations" element="#//@releases.9/@changes.10/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.9/@changes.10/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.9/@changes.10/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="CommunicationLinks which have the HardwarePort as source."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/source"
-          referenceName="eAnnotations" element="muml.ecore#//model/deployment/CommunicationLink/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.9/@changes.10/@changes.2/@element"
+          referenceName="eAnnotations" element="#//@releases.9/@changes.10/@changes.2/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.2/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/deployment/CommunicationLink/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.9/@changes.10/@changes.2/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.9/@changes.10/@changes.2/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.2/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.2/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Source HardwarePort of the link."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/CommunicationLink/target">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/target"
+          referenceName="eStructuralFeatures" element="#//@releases.9/@changes.9/@changes.2/@element">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.2/@element"
             featureName="name" dataValue="target"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/target"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.2/@element"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/target"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.2/@element"
             featureName="eType" referenceValue="muml.ecore#//model/deployment/HardwarePort"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/target"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/deployment/CommunicationLink/target"/>
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.2/@element"
+            featureName="eOpposite" referenceValue="#//@releases.9/@changes.9/@changes.1/@element"/>
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.1/@element"
+            featureName="eOpposite" referenceValue="#//@releases.9/@changes.9/@changes.2/@element"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/target"
-          referenceName="eAnnotations" element="muml.ecore#//model/deployment/CommunicationLink/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.9/@changes.9/@changes.2/@element"
+          referenceName="eAnnotations" element="#//@releases.9/@changes.9/@changes.2/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.2/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/deployment/CommunicationLink/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.9/@changes.9/@changes.2/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.9/@changes.9/@changes.2/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.2/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.2/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Target HardwarePort of the link."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/deployment" referenceName="eClassifiers"
@@ -18074,6 +18074,224 @@
         featureName="value" dataValue="This class represents a composite state of a realtime statechart. Composite states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more composite states have do, entry and exit actions. Also composite states define which synchronization channels are allowed to be used by embedded statecharts."
         oldDataValue="This class represents a complex state of a realtime statechart. Complex states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more complex states have do, entry and exit actions. Also complex states define which synchronization channels are allowed to be used by embedded statecharts."/>
   </releases>
-  <releases>
+  <releases date="2013-01-01T11:17:51.291+0100" label="0.3.11">
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks"
+        featureName="name" dataValue="communicationLinks"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks"
+        featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks"
+        featureName="eType" referenceValue="muml.ecore#//model/deployment/CommunicationLink"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks"
+          featureName="volatile" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks"
+          featureName="transient" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks"
+          featureName="derived" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks"
+          featureName="changeable" dataValue="false" oldDataValue="true"/>
+      <operation name="makeFeatureVolatile">
+        <parameters name="feature">
+          <referenceValue element="muml.ecore#//model/deployment/HardwarePort/communicationLinks"/>
+        </parameters>
+        <parameters name="trans">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="derived">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="changeable">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/communicationLinks"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="self.connectors->select(c | c.oclIsKindOf(PortConnector)).oclAsType(PortConnector)->asOrderedSet()"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.connectors->select(c | c.oclIsTypeOf(CommunicationLink)).oclAsType(CommunicationLink)->asOrderedSet()"
+        oldDataValue="self.connectors->select(c | c.oclIsKindOf(PortConnector)).oclAsType(PortConnector)->asOrderedSet()"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/communicationLinks"
+          referenceName="eAnnotations" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="CommunicationLinks which have the HardwarePort as connector endpoints."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/deployment/HardwarePort/communicationLinks"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>CommunicationLinks which have the HardwarePort as connector endpoints.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.2/@element"
+          featureName="eOpposite" oldReferenceValue="#//@releases.9/@changes.9/@changes.1/@element"/>
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/deployment/HardwarePort"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="incomingCommunicationLink" upperBound="-1"
+            eType="ecore:EClass muml.ecore#//model/deployment/CommunicationLink" eOpposite="#//@releases.9/@changes.9/@changes.2/@element">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="CommunicationLinks which have the HardwarePort as sink."/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/deployment/CommunicationLink"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="target" lowerBound="1" eType="ecore:EClass muml.ecore#//model/deployment/HardwarePort">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Target HardwarePort of the link."/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.9/@changes.9/@changes.1/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.2/@element"
+          featureName="eOpposite" oldReferenceValue="#//@releases.9/@changes.10/@changes.1/@element"/>
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/deployment/HardwarePort"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="outgoingCommunicationLink" upperBound="-1"
+            eType="ecore:EClass muml.ecore#//model/deployment/CommunicationLink" eOpposite="#//@releases.9/@changes.10/@changes.2/@element">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="CommunicationLinks which have the HardwarePort as source."/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/deployment/CommunicationLink"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="source" lowerBound="1" eType="ecore:EClass muml.ecore#//model/deployment/HardwarePort">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Source HardwarePort of the link."/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.9/@changes.10/@changes.1/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"
+            featureName="name" dataValue="hardwarePorts"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"
+            featureName="eType" referenceValue="muml.ecore#//model/deployment/HardwarePort"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/deployment/CommunicationLink"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>hardwarePorts</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/deployment/HardwarePort"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"
+          featureName="volatile" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"
+          featureName="transient" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"
+          featureName="derived" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"
+          featureName="changeable" dataValue="false" oldDataValue="true"/>
+      <operation name="makeFeatureVolatile">
+        <parameters name="feature">
+          <referenceValue element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"/>
+        </parameters>
+        <parameters name="trans">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="derived">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="changeable">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"
+        referenceName="eAnnotations" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port)->asOrderedSet()"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.connectorEndpoints->select(c | c.oclIsTypeOf(HardwarePort)).oclAsType(HardwarePort)->asOrderedSet()"
+        oldDataValue="self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port)->asOrderedSet()"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"
+          referenceName="eAnnotations" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+            featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="key" dataValue="documentation"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+            featureName="value" dataValue="Derives all hardware ports which are endpoints of the communication link."/>
+      </changes>
+      <operation name="document">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"/>
+        </parameters>
+        <parameters name="documentation">
+          <dataValue>Derives all hardware ports which are endpoints of the communication link.</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/deployment" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/deployment/0.3.11" oldDataValue="http://www.fujaba.de/muml/model/deployment/0.3.7"/>
   </releases>
+    <releases>
+    </releases>
 </history:History>

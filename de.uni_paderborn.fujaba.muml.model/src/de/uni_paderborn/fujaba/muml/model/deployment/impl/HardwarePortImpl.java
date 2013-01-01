@@ -6,12 +6,16 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.impl;
 
+import de.uni_paderborn.fujaba.muml.model.connector.Connector;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -37,11 +41,11 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwarePortImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwarePortImpl#getConnectors <em>Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwarePortImpl#getHardwareNode <em>Hardware Node</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwarePortImpl#getOutgoingCommunicationLink <em>Outgoing Communication Link</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwarePortImpl#getIncomingCommunicationLink <em>Incoming Communication Link</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwarePortImpl#getDeployedPortInstance <em>Deployed Port Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwarePortImpl#getKind <em>Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.HardwarePortImpl#getCommunicationLinks <em>Communication Links</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,24 +73,14 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 	protected String comment = COMMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getOutgoingCommunicationLink() <em>Outgoing Communication Link</em>}' reference list.
+	 * The cached value of the '{@link #getConnectors() <em>Connectors</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOutgoingCommunicationLink()
+	 * @see #getConnectors()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CommunicationLink> outgoingCommunicationLink;
-
-	/**
-	 * The cached value of the '{@link #getIncomingCommunicationLink() <em>Incoming Communication Link</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIncomingCommunicationLink()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<CommunicationLink> incomingCommunicationLink;
+	protected EList<Connector> connectors;
 
 	/**
 	 * The cached value of the '{@link #getDeployedPortInstance() <em>Deployed Port Instance</em>}' reference list.
@@ -117,6 +111,16 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 	 * @ordered
 	 */
 	protected HardwarePortDirectionKind kind = KIND_EDEFAULT;
+
+	/**
+	 * The cached setting delegate for the '{@link #getCommunicationLinks() <em>Communication Links</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCommunicationLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate COMMUNICATION_LINKS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)DeploymentPackage.Literals.HARDWARE_PORT__COMMUNICATION_LINKS).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,6 +160,18 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 		comment = newComment;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.HARDWARE_PORT__COMMENT, oldComment, comment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Connector> getConnectors() {
+		if (connectors == null) {
+			connectors = new EObjectResolvingEList<Connector>(Connector.class, this, DeploymentPackage.HARDWARE_PORT__CONNECTORS);
+		}
+		return connectors;
 	}
 
 	/**
@@ -204,30 +220,6 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CommunicationLink> getOutgoingCommunicationLink() {
-		if (outgoingCommunicationLink == null) {
-			outgoingCommunicationLink = new EObjectWithInverseResolvingEList<CommunicationLink>(CommunicationLink.class, this, DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK, DeploymentPackage.COMMUNICATION_LINK__SOURCE);
-		}
-		return outgoingCommunicationLink;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<CommunicationLink> getIncomingCommunicationLink() {
-		if (incomingCommunicationLink == null) {
-			incomingCommunicationLink = new EObjectWithInverseResolvingEList<CommunicationLink>(CommunicationLink.class, this, DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK, DeploymentPackage.COMMUNICATION_LINK__TARGET);
-		}
-		return incomingCommunicationLink;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<PortInstance> getDeployedPortInstance() {
 		if (deployedPortInstance == null) {
 			deployedPortInstance = new EObjectResolvingEList<PortInstance>(PortInstance.class, this, DeploymentPackage.HARDWARE_PORT__DEPLOYED_PORT_INSTANCE);
@@ -262,6 +254,16 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	public EList<CommunicationLink> getCommunicationLinks() {
+		return (EList<CommunicationLink>)COMMUNICATION_LINKS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -269,10 +271,6 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetHardwareNode((HardwareNode)otherEnd, msgs);
-			case DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingCommunicationLink()).basicAdd(otherEnd, msgs);
-			case DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingCommunicationLink()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -287,10 +285,6 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 		switch (featureID) {
 			case DeploymentPackage.HARDWARE_PORT__HARDWARE_NODE:
 				return basicSetHardwareNode(null, msgs);
-			case DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK:
-				return ((InternalEList<?>)getOutgoingCommunicationLink()).basicRemove(otherEnd, msgs);
-			case DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK:
-				return ((InternalEList<?>)getIncomingCommunicationLink()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -319,16 +313,16 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 		switch (featureID) {
 			case DeploymentPackage.HARDWARE_PORT__COMMENT:
 				return getComment();
+			case DeploymentPackage.HARDWARE_PORT__CONNECTORS:
+				return getConnectors();
 			case DeploymentPackage.HARDWARE_PORT__HARDWARE_NODE:
 				return getHardwareNode();
-			case DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK:
-				return getOutgoingCommunicationLink();
-			case DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK:
-				return getIncomingCommunicationLink();
 			case DeploymentPackage.HARDWARE_PORT__DEPLOYED_PORT_INSTANCE:
 				return getDeployedPortInstance();
 			case DeploymentPackage.HARDWARE_PORT__KIND:
 				return getKind();
+			case DeploymentPackage.HARDWARE_PORT__COMMUNICATION_LINKS:
+				return getCommunicationLinks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -345,16 +339,12 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 			case DeploymentPackage.HARDWARE_PORT__COMMENT:
 				setComment((String)newValue);
 				return;
+			case DeploymentPackage.HARDWARE_PORT__CONNECTORS:
+				getConnectors().clear();
+				getConnectors().addAll((Collection<? extends Connector>)newValue);
+				return;
 			case DeploymentPackage.HARDWARE_PORT__HARDWARE_NODE:
 				setHardwareNode((HardwareNode)newValue);
-				return;
-			case DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK:
-				getOutgoingCommunicationLink().clear();
-				getOutgoingCommunicationLink().addAll((Collection<? extends CommunicationLink>)newValue);
-				return;
-			case DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK:
-				getIncomingCommunicationLink().clear();
-				getIncomingCommunicationLink().addAll((Collection<? extends CommunicationLink>)newValue);
 				return;
 			case DeploymentPackage.HARDWARE_PORT__DEPLOYED_PORT_INSTANCE:
 				getDeployedPortInstance().clear();
@@ -378,14 +368,11 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 			case DeploymentPackage.HARDWARE_PORT__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
+			case DeploymentPackage.HARDWARE_PORT__CONNECTORS:
+				getConnectors().clear();
+				return;
 			case DeploymentPackage.HARDWARE_PORT__HARDWARE_NODE:
 				setHardwareNode((HardwareNode)null);
-				return;
-			case DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK:
-				getOutgoingCommunicationLink().clear();
-				return;
-			case DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK:
-				getIncomingCommunicationLink().clear();
 				return;
 			case DeploymentPackage.HARDWARE_PORT__DEPLOYED_PORT_INSTANCE:
 				getDeployedPortInstance().clear();
@@ -407,16 +394,16 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 		switch (featureID) {
 			case DeploymentPackage.HARDWARE_PORT__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			case DeploymentPackage.HARDWARE_PORT__CONNECTORS:
+				return connectors != null && !connectors.isEmpty();
 			case DeploymentPackage.HARDWARE_PORT__HARDWARE_NODE:
 				return getHardwareNode() != null;
-			case DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK:
-				return outgoingCommunicationLink != null && !outgoingCommunicationLink.isEmpty();
-			case DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK:
-				return incomingCommunicationLink != null && !incomingCommunicationLink.isEmpty();
 			case DeploymentPackage.HARDWARE_PORT__DEPLOYED_PORT_INSTANCE:
 				return deployedPortInstance != null && !deployedPortInstance.isEmpty();
 			case DeploymentPackage.HARDWARE_PORT__KIND:
 				return kind != KIND_EDEFAULT;
+			case DeploymentPackage.HARDWARE_PORT__COMMUNICATION_LINKS:
+				return COMMUNICATION_LINKS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -434,6 +421,12 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 				default: return -1;
 			}
 		}
+		if (baseClass == ConnectorEndpoint.class) {
+			switch (derivedFeatureID) {
+				case DeploymentPackage.HARDWARE_PORT__CONNECTORS: return ConnectorPackage.CONNECTOR_ENDPOINT__CONNECTORS;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -447,6 +440,12 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
 				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return DeploymentPackage.HARDWARE_PORT__COMMENT;
+				default: return -1;
+			}
+		}
+		if (baseClass == ConnectorEndpoint.class) {
+			switch (baseFeatureID) {
+				case ConnectorPackage.CONNECTOR_ENDPOINT__CONNECTORS: return DeploymentPackage.HARDWARE_PORT__CONNECTORS;
 				default: return -1;
 			}
 		}

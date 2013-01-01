@@ -27,6 +27,7 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode;
 import de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort;
@@ -69,10 +70,10 @@ public class HardwarePortItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
-			addOutgoingCommunicationLinkPropertyDescriptor(object);
-			addIncomingCommunicationLinkPropertyDescriptor(object);
+			addConnectorsPropertyDescriptor(object);
 			addDeployedPortInstancePropertyDescriptor(object);
 			addKindPropertyDescriptor(object);
+			addCommunicationLinksPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -100,41 +101,19 @@ public class HardwarePortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Outgoing Communication Link feature.
+	 * This adds a property descriptor for the Connectors feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOutgoingCommunicationLinkPropertyDescriptor(Object object) {
+	protected void addConnectorsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_HardwarePort_outgoingCommunicationLink_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HardwarePort_outgoingCommunicationLink_feature", "_UI_HardwarePort_type"),
-				 DeploymentPackage.Literals.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Incoming Communication Link feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIncomingCommunicationLinkPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_HardwarePort_incomingCommunicationLink_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HardwarePort_incomingCommunicationLink_feature", "_UI_HardwarePort_type"),
-				 DeploymentPackage.Literals.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK,
+				 getString("_UI_ConnectorEndpoint_connectors_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorEndpoint_connectors_feature", "_UI_ConnectorEndpoint_type"),
+				 ConnectorPackage.Literals.CONNECTOR_ENDPOINT__CONNECTORS,
 				 true,
 				 false,
 				 true,
@@ -203,6 +182,28 @@ public class HardwarePortItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Communication Links feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommunicationLinksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HardwarePort_communicationLinks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HardwarePort_communicationLinks_feature", "_UI_HardwarePort_type"),
+				 DeploymentPackage.Literals.HARDWARE_PORT__COMMUNICATION_LINKS,
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

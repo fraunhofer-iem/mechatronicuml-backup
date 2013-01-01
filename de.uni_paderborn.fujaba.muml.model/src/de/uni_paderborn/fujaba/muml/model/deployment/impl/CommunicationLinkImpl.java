@@ -6,16 +6,22 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.impl;
 
+import de.uni_paderborn.fujaba.muml.model.connector.Connector;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.ExtendableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink;
@@ -32,11 +38,12 @@ import de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl#getConnectorEndpoints <em>Connector Endpoints</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl#getDeployment <em>Deployment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl#getSource <em>Source</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl#getQualityOfService <em>Quality Of Service</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl#getDeployedAssemblyInstances <em>Deployed Assembly Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl#getHardwarePorts <em>Hardware Ports</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,24 +51,34 @@ import de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance;
  */
 public class CommunicationLinkImpl extends ExtendableElementImpl implements CommunicationLink {
 	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSource()
+	 * @see #getComment()
 	 * @generated
 	 * @ordered
 	 */
-	protected HardwarePort source;
+	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
 
 	/**
-	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTarget()
+	 * @see #getComment()
 	 * @generated
 	 * @ordered
 	 */
-	protected HardwarePort target;
+	protected String comment = COMMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getConnectorEndpoints() <em>Connector Endpoints</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnectorEndpoints()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ConnectorEndpoint> connectorEndpoints;
 
 	/**
 	 * The cached value of the '{@link #getQualityOfService() <em>Quality Of Service</em>}' reference.
@@ -84,6 +101,16 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	protected EList<AssemblyConnectorInstance> deployedAssemblyInstances;
 
 	/**
+	 * The cached setting delegate for the '{@link #getHardwarePorts() <em>Hardware Ports</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHardwarePorts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate HARDWARE_PORTS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)DeploymentPackage.Literals.COMMUNICATION_LINK__HARDWARE_PORTS).getSettingDelegate();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -100,6 +127,39 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	@Override
 	protected EClass eStaticClass() {
 		return DeploymentPackage.Literals.COMMUNICATION_LINK;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.COMMUNICATION_LINK__COMMENT, oldComment, comment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ConnectorEndpoint> getConnectorEndpoints() {
+		if (connectorEndpoints == null) {
+			connectorEndpoints = new EObjectResolvingEList<ConnectorEndpoint>(ConnectorEndpoint.class, this, DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS);
+		}
+		return connectorEndpoints;
 	}
 
 	/**
@@ -141,126 +201,6 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.COMMUNICATION_LINK__DEPLOYMENT, newDeployment, newDeployment));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public HardwarePort getSource() {
-		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)source;
-			source = (HardwarePort)eResolveProxy(oldSource);
-			if (source != oldSource) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeploymentPackage.COMMUNICATION_LINK__SOURCE, oldSource, source));
-			}
-		}
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public HardwarePort basicGetSource() {
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSource(HardwarePort newSource, NotificationChain msgs) {
-		HardwarePort oldSource = source;
-		source = newSource;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeploymentPackage.COMMUNICATION_LINK__SOURCE, oldSource, newSource);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSource(HardwarePort newSource) {
-		if (newSource != source) {
-			NotificationChain msgs = null;
-			if (source != null)
-				msgs = ((InternalEObject)source).eInverseRemove(this, DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK, HardwarePort.class, msgs);
-			if (newSource != null)
-				msgs = ((InternalEObject)newSource).eInverseAdd(this, DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK, HardwarePort.class, msgs);
-			msgs = basicSetSource(newSource, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.COMMUNICATION_LINK__SOURCE, newSource, newSource));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public HardwarePort getTarget() {
-		if (target != null && target.eIsProxy()) {
-			InternalEObject oldTarget = (InternalEObject)target;
-			target = (HardwarePort)eResolveProxy(oldTarget);
-			if (target != oldTarget) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DeploymentPackage.COMMUNICATION_LINK__TARGET, oldTarget, target));
-			}
-		}
-		return target;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public HardwarePort basicGetTarget() {
-		return target;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetTarget(HardwarePort newTarget, NotificationChain msgs) {
-		HardwarePort oldTarget = target;
-		target = newTarget;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DeploymentPackage.COMMUNICATION_LINK__TARGET, oldTarget, newTarget);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTarget(HardwarePort newTarget) {
-		if (newTarget != target) {
-			NotificationChain msgs = null;
-			if (target != null)
-				msgs = ((InternalEObject)target).eInverseRemove(this, DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK, HardwarePort.class, msgs);
-			if (newTarget != null)
-				msgs = ((InternalEObject)newTarget).eInverseAdd(this, DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK, HardwarePort.class, msgs);
-			msgs = basicSetTarget(newTarget, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DeploymentPackage.COMMUNICATION_LINK__TARGET, newTarget, newTarget));
 	}
 
 	/**
@@ -318,6 +258,16 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	public EList<HardwarePort> getHardwarePorts() {
+		return (EList<HardwarePort>)HARDWARE_PORTS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -325,14 +275,6 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetDeployment((Deployment)otherEnd, msgs);
-			case DeploymentPackage.COMMUNICATION_LINK__SOURCE:
-				if (source != null)
-					msgs = ((InternalEObject)source).eInverseRemove(this, DeploymentPackage.HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK, HardwarePort.class, msgs);
-				return basicSetSource((HardwarePort)otherEnd, msgs);
-			case DeploymentPackage.COMMUNICATION_LINK__TARGET:
-				if (target != null)
-					msgs = ((InternalEObject)target).eInverseRemove(this, DeploymentPackage.HARDWARE_PORT__INCOMING_COMMUNICATION_LINK, HardwarePort.class, msgs);
-				return basicSetTarget((HardwarePort)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -347,10 +289,6 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 		switch (featureID) {
 			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYMENT:
 				return basicSetDeployment(null, msgs);
-			case DeploymentPackage.COMMUNICATION_LINK__SOURCE:
-				return basicSetSource(null, msgs);
-			case DeploymentPackage.COMMUNICATION_LINK__TARGET:
-				return basicSetTarget(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -377,19 +315,19 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case DeploymentPackage.COMMUNICATION_LINK__COMMENT:
+				return getComment();
+			case DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS:
+				return getConnectorEndpoints();
 			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYMENT:
 				return getDeployment();
-			case DeploymentPackage.COMMUNICATION_LINK__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
-			case DeploymentPackage.COMMUNICATION_LINK__TARGET:
-				if (resolve) return getTarget();
-				return basicGetTarget();
 			case DeploymentPackage.COMMUNICATION_LINK__QUALITY_OF_SERVICE:
 				if (resolve) return getQualityOfService();
 				return basicGetQualityOfService();
 			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES:
 				return getDeployedAssemblyInstances();
+			case DeploymentPackage.COMMUNICATION_LINK__HARDWARE_PORTS:
+				return getHardwarePorts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -403,14 +341,15 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case DeploymentPackage.COMMUNICATION_LINK__COMMENT:
+				setComment((String)newValue);
+				return;
+			case DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS:
+				getConnectorEndpoints().clear();
+				getConnectorEndpoints().addAll((Collection<? extends ConnectorEndpoint>)newValue);
+				return;
 			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYMENT:
 				setDeployment((Deployment)newValue);
-				return;
-			case DeploymentPackage.COMMUNICATION_LINK__SOURCE:
-				setSource((HardwarePort)newValue);
-				return;
-			case DeploymentPackage.COMMUNICATION_LINK__TARGET:
-				setTarget((HardwarePort)newValue);
 				return;
 			case DeploymentPackage.COMMUNICATION_LINK__QUALITY_OF_SERVICE:
 				setQualityOfService((LinkQualityOfService)newValue);
@@ -431,14 +370,14 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case DeploymentPackage.COMMUNICATION_LINK__COMMENT:
+				setComment(COMMENT_EDEFAULT);
+				return;
+			case DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS:
+				getConnectorEndpoints().clear();
+				return;
 			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYMENT:
 				setDeployment((Deployment)null);
-				return;
-			case DeploymentPackage.COMMUNICATION_LINK__SOURCE:
-				setSource((HardwarePort)null);
-				return;
-			case DeploymentPackage.COMMUNICATION_LINK__TARGET:
-				setTarget((HardwarePort)null);
 				return;
 			case DeploymentPackage.COMMUNICATION_LINK__QUALITY_OF_SERVICE:
 				setQualityOfService((LinkQualityOfService)null);
@@ -458,18 +397,80 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case DeploymentPackage.COMMUNICATION_LINK__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			case DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS:
+				return connectorEndpoints != null && !connectorEndpoints.isEmpty();
 			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYMENT:
 				return getDeployment() != null;
-			case DeploymentPackage.COMMUNICATION_LINK__SOURCE:
-				return source != null;
-			case DeploymentPackage.COMMUNICATION_LINK__TARGET:
-				return target != null;
 			case DeploymentPackage.COMMUNICATION_LINK__QUALITY_OF_SERVICE:
 				return qualityOfService != null;
 			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES:
 				return deployedAssemblyInstances != null && !deployedAssemblyInstances.isEmpty();
+			case DeploymentPackage.COMMUNICATION_LINK__HARDWARE_PORTS:
+				return HARDWARE_PORTS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == CommentableElement.class) {
+			switch (derivedFeatureID) {
+				case DeploymentPackage.COMMUNICATION_LINK__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+				default: return -1;
+			}
+		}
+		if (baseClass == Connector.class) {
+			switch (derivedFeatureID) {
+				case DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS: return ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == CommentableElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return DeploymentPackage.COMMUNICATION_LINK__COMMENT;
+				default: return -1;
+			}
+		}
+		if (baseClass == Connector.class) {
+			switch (baseFeatureID) {
+				case ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS: return DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (comment: ");
+		result.append(comment);
+		result.append(')');
+		return result.toString();
 	}
 
 } //CommunicationLinkImpl

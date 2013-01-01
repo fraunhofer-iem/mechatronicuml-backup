@@ -1779,7 +1779,7 @@
             eOpposite="#//model/msgtype/MessageType/repository"/>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="deployment" nsURI="http://www.fujaba.de/muml/model/deployment/0.3.7"
+    <eSubpackages name="deployment" nsURI="http://www.fujaba.de/muml/model/deployment/0.3.11"
         nsPrefix="deployment">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1860,7 +1860,7 @@
         <eLiterals name="ACTOR" value="1"/>
         <eLiterals name="COMMUNICATION" value="3"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="HardwarePort" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="HardwarePort" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//model/connector/ConnectorEndpoint">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Hardware ports  are used to communicate&#xD;&#xA;with other hardware nodes and with component instances."/>
         </eAnnotations>
@@ -1868,18 +1868,6 @@
             eType="#//model/deployment/HardwareNode" eOpposite="#//model/deployment/HardwareNode/hardwarePorts">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Hardware nodes are hardware elements on which port instances could be deployed if they are not a sensor or an actor."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingCommunicationLink"
-            upperBound="-1" eType="#//model/deployment/CommunicationLink" eOpposite="#//model/deployment/CommunicationLink/source">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="CommunicationLinks which have the HardwarePort as source."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="incomingCommunicationLink"
-            upperBound="-1" eType="#//model/deployment/CommunicationLink" eOpposite="#//model/deployment/CommunicationLink/target">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="CommunicationLinks which have the HardwarePort as sink."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deployedPortInstance"
@@ -1894,8 +1882,18 @@
             <details key="documentation" value="A HardwarePort is of kind in, out, or in/out. &#xD;&#xA;Depending on its kind it can receive, send, or receive and send messages. "/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="communicationLinks"
+            upperBound="-1" eType="#//model/deployment/CommunicationLink" changeable="false"
+            volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self.connectors->select(c | c.oclIsTypeOf(CommunicationLink)).oclAsType(CommunicationLink)->asOrderedSet()"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="CommunicationLinks which have the HardwarePort as connector endpoints."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="CommunicationLink" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="CommunicationLink" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement #//model/connector/Connector">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A communication link between hardware nodes and a target used for the deployment of connectors between component instances."/>
         </eAnnotations>
@@ -1911,18 +1909,6 @@
             <details key="documentation" value="The deployment to which the link belongs to."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-            eType="#//model/deployment/HardwarePort" eOpposite="#//model/deployment/HardwarePort/outgoingCommunicationLink">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Source HardwarePort of the link."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-            eType="#//model/deployment/HardwarePort" eOpposite="#//model/deployment/HardwarePort/incomingCommunicationLink">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Target HardwarePort of the link."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="qualityOfService" eType="#//model/deployment/LinkQualityOfService">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The quality of service which the link fullfills. "/>
@@ -1932,6 +1918,16 @@
             upperBound="-1" eType="#//model/instance/AssemblyConnectorInstance">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Used for the deployment of connectors between component instances."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="hardwarePorts" upperBound="-1"
+            eType="#//model/deployment/HardwarePort" changeable="false" volatile="true"
+            transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsTypeOf(HardwarePort)).oclAsType(HardwarePort)->asOrderedSet()"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Derives all hardware ports which are endpoints of the communication link."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

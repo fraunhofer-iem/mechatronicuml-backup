@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment;
 
+import de.uni_paderborn.fujaba.muml.model.connector.Connector;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.ExtendableElement;
 
@@ -24,10 +25,9 @@ import de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getDeployment <em>Deployment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getSource <em>Source</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getTarget <em>Target</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getQualityOfService <em>Quality Of Service</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getDeployedAssemblyInstances <em>Deployed Assembly Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getHardwarePorts <em>Hardware Ports</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints=''"
  * @generated
  */
-public interface CommunicationLink extends ExtendableElement {
+public interface CommunicationLink extends ExtendableElement, Connector {
 	/**
 	 * Returns the value of the '<em><b>Deployment</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.deployment.Deployment#getCommunicationLinks <em>Communication Links</em>}'.
@@ -67,68 +67,6 @@ public interface CommunicationLink extends ExtendableElement {
 	 * @generated
 	 */
 	void setDeployment(Deployment value);
-
-	/**
-	 * Returns the value of the '<em><b>Source</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getOutgoingCommunicationLink <em>Outgoing Communication Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Source</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Source HardwarePort of the link.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Source</em>' reference.
-	 * @see #setSource(HardwarePort)
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getCommunicationLink_Source()
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getOutgoingCommunicationLink
-	 * @model opposite="outgoingCommunicationLink" required="true"
-	 * @generated
-	 */
-	HardwarePort getSource();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getSource <em>Source</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source</em>' reference.
-	 * @see #getSource()
-	 * @generated
-	 */
-	void setSource(HardwarePort value);
-
-	/**
-	 * Returns the value of the '<em><b>Target</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getIncomingCommunicationLink <em>Incoming Communication Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Target</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Target HardwarePort of the link.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Target</em>' reference.
-	 * @see #setTarget(HardwarePort)
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getCommunicationLink_Target()
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getIncomingCommunicationLink
-	 * @model opposite="incomingCommunicationLink" required="true"
-	 * @generated
-	 */
-	HardwarePort getTarget();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getTarget <em>Target</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target</em>' reference.
-	 * @see #getTarget()
-	 * @generated
-	 */
-	void setTarget(HardwarePort value);
 
 	/**
 	 * Returns the value of the '<em><b>Quality Of Service</b></em>' reference.
@@ -173,5 +111,21 @@ public interface CommunicationLink extends ExtendableElement {
 	 * @generated
 	 */
 	EList<AssemblyConnectorInstance> getDeployedAssemblyInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Hardware Ports</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Derives all hardware ports which are endpoints of the communication link.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Hardware Ports</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage#getCommunicationLink_HardwarePorts()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->select(c | c.oclIsTypeOf(HardwarePort)).oclAsType(HardwarePort)->asOrderedSet()'"
+	 * @generated
+	 */
+	EList<HardwarePort> getHardwarePorts();
 
 } // CommunicationLink

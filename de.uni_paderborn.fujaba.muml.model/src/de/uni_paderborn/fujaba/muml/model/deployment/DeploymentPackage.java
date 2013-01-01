@@ -44,7 +44,7 @@ public interface DeploymentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/deployment/0.3.7";
+	String eNS_URI = "http://www.fujaba.de/muml/model/deployment/0.3.11";
 
 	/**
 	 * The package namespace name.
@@ -291,31 +291,22 @@ public interface DeploymentPackage extends EPackage {
 	int HARDWARE_PORT__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__CONNECTORS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Hardware Node</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT__HARDWARE_NODE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Communication Link</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Communication Link</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HARDWARE_PORT__INCOMING_COMMUNICATION_LINK = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int HARDWARE_PORT__HARDWARE_NODE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Deployed Port Instance</b></em>' reference list.
@@ -324,7 +315,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT__DEPLOYED_PORT_INSTANCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int HARDWARE_PORT__DEPLOYED_PORT_INSTANCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -333,7 +324,16 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HARDWARE_PORT__KIND = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int HARDWARE_PORT__KIND = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Communication Links</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_PORT__COMMUNICATION_LINKS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Hardware Port</em>' class.
@@ -373,31 +373,31 @@ public interface DeploymentPackage extends EPackage {
 	int COMMUNICATION_LINK__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_LINK__COMMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Connector Endpoints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_LINK__CONNECTOR_ENDPOINTS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Deployment</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_LINK__DEPLOYMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_LINK__SOURCE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMUNICATION_LINK__TARGET = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int COMMUNICATION_LINK__DEPLOYMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Quality Of Service</b></em>' reference.
@@ -418,13 +418,22 @@ public interface DeploymentPackage extends EPackage {
 	int COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Hardware Ports</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_LINK__HARDWARE_PORTS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Communication Link</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_LINK_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
+	int COMMUNICATION_LINK_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
 
 
 	/**
@@ -660,28 +669,6 @@ public interface DeploymentPackage extends EPackage {
 	EReference getHardwarePort_HardwareNode();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getOutgoingCommunicationLink <em>Outgoing Communication Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Outgoing Communication Link</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getOutgoingCommunicationLink()
-	 * @see #getHardwarePort()
-	 * @generated
-	 */
-	EReference getHardwarePort_OutgoingCommunicationLink();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getIncomingCommunicationLink <em>Incoming Communication Link</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Incoming Communication Link</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getIncomingCommunicationLink()
-	 * @see #getHardwarePort()
-	 * @generated
-	 */
-	EReference getHardwarePort_IncomingCommunicationLink();
-
-	/**
 	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getDeployedPortInstance <em>Deployed Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -702,6 +689,17 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getHardwarePort_Kind();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getCommunicationLinks <em>Communication Links</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Communication Links</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort#getCommunicationLinks()
+	 * @see #getHardwarePort()
+	 * @generated
+	 */
+	EReference getHardwarePort_CommunicationLinks();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink <em>Communication Link</em>}'.
@@ -725,28 +723,6 @@ public interface DeploymentPackage extends EPackage {
 	EReference getCommunicationLink_Deployment();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getSource()
-	 * @see #getCommunicationLink()
-	 * @generated
-	 */
-	EReference getCommunicationLink_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getTarget()
-	 * @see #getCommunicationLink()
-	 * @generated
-	 */
-	EReference getCommunicationLink_Target();
-
-	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getQualityOfService <em>Quality Of Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -767,6 +743,17 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCommunicationLink_DeployedAssemblyInstances();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getHardwarePorts <em>Hardware Ports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Hardware Ports</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink#getHardwarePorts()
+	 * @see #getCommunicationLink()
+	 * @generated
+	 */
+	EReference getCommunicationLink_HardwarePorts();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.deployment.LinkQualityOfService <em>Link Quality Of Service</em>}'.
@@ -956,22 +943,6 @@ public interface DeploymentPackage extends EPackage {
 		EReference HARDWARE_PORT__HARDWARE_NODE = eINSTANCE.getHardwarePort_HardwareNode();
 
 		/**
-		 * The meta object literal for the '<em><b>Outgoing Communication Link</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference HARDWARE_PORT__OUTGOING_COMMUNICATION_LINK = eINSTANCE.getHardwarePort_OutgoingCommunicationLink();
-
-		/**
-		 * The meta object literal for the '<em><b>Incoming Communication Link</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference HARDWARE_PORT__INCOMING_COMMUNICATION_LINK = eINSTANCE.getHardwarePort_IncomingCommunicationLink();
-
-		/**
 		 * The meta object literal for the '<em><b>Deployed Port Instance</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -986,6 +957,14 @@ public interface DeploymentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute HARDWARE_PORT__KIND = eINSTANCE.getHardwarePort_Kind();
+
+		/**
+		 * The meta object literal for the '<em><b>Communication Links</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HARDWARE_PORT__COMMUNICATION_LINKS = eINSTANCE.getHardwarePort_CommunicationLinks();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.CommunicationLinkImpl <em>Communication Link</em>}' class.
@@ -1006,22 +985,6 @@ public interface DeploymentPackage extends EPackage {
 		EReference COMMUNICATION_LINK__DEPLOYMENT = eINSTANCE.getCommunicationLink_Deployment();
 
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMMUNICATION_LINK__SOURCE = eINSTANCE.getCommunicationLink_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMMUNICATION_LINK__TARGET = eINSTANCE.getCommunicationLink_Target();
-
-		/**
 		 * The meta object literal for the '<em><b>Quality Of Service</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1036,6 +999,14 @@ public interface DeploymentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES = eINSTANCE.getCommunicationLink_DeployedAssemblyInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Hardware Ports</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMMUNICATION_LINK__HARDWARE_PORTS = eINSTANCE.getCommunicationLink_HardwarePorts();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.deployment.impl.LinkQualityOfServiceImpl <em>Link Quality Of Service</em>}' class.

@@ -69,7 +69,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/deployment/0.3.7"
+            uri="http://www.fujaba.de/muml/model/deployment/0.3.11"
             class="de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage"
             genModel="model/muml.genmodel"/>
    </extension>

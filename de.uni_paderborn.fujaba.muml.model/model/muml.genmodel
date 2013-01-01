@@ -427,23 +427,17 @@
         <genClasses ecoreClass="muml.ecore#//model/deployment/HardwarePort">
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/deployment/HardwarePort/hardwareNode"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/deployment/HardwarePort/outgoingCommunicationLink"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/deployment/HardwarePort/incomingCommunicationLink"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/deployment/HardwarePort/deployedPortInstance"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/deployment/HardwarePort/kind"/>
+          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/deployment/HardwarePort/communicationLinks"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/deployment/CommunicationLink">
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/deployment/CommunicationLink/deployment"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/deployment/CommunicationLink/source"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/deployment/CommunicationLink/target"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/deployment/CommunicationLink/qualityOfService"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/deployment/CommunicationLink/deployedAssemblyInstances"/>
+          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/deployment/LinkQualityOfService">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/deployment/LinkQualityOfService/packetDelayVariation"/>

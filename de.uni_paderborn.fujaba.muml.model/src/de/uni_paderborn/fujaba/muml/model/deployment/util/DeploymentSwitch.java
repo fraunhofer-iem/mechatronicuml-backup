@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment.util;
 
+import de.uni_paderborn.fujaba.muml.model.connector.Connector;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.model.deployment.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -99,15 +101,18 @@ public class DeploymentSwitch<T> extends Switch<T> {
 			case DeploymentPackage.HARDWARE_PORT: {
 				HardwarePort hardwarePort = (HardwarePort)theEObject;
 				T result = caseHardwarePort(hardwarePort);
+				if (result == null) result = caseConnectorEndpoint(hardwarePort);
 				if (result == null) result = caseNamedElement(hardwarePort);
-				if (result == null) result = caseCommentableElement(hardwarePort);
 				if (result == null) result = caseExtendableElement(hardwarePort);
+				if (result == null) result = caseCommentableElement(hardwarePort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case DeploymentPackage.COMMUNICATION_LINK: {
 				CommunicationLink communicationLink = (CommunicationLink)theEObject;
 				T result = caseCommunicationLink(communicationLink);
+				if (result == null) result = caseConnector(communicationLink);
+				if (result == null) result = caseCommentableElement(communicationLink);
 				if (result == null) result = caseExtendableElement(communicationLink);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -242,6 +247,36 @@ public class DeploymentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommentableElement(CommentableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Endpoint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Endpoint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnectorEndpoint(ConnectorEndpoint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Connector</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnector(Connector object) {
 		return null;
 	}
 
