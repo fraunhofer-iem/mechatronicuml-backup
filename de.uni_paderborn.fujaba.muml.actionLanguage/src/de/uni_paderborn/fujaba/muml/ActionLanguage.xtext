@@ -9,7 +9,7 @@ import "platform:/resource/org.storydriven.core/model/core.ecore" as modeling
 
 import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart" as rtsc
 
-import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core" as core
+import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior" as behavior
 
 import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgtype" as msgtype
 
@@ -26,12 +26,12 @@ Block returns actionLanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
 // TODO: clarify if it makes sense to allow arbitrary expressions for
 // the initializeExpression and countingExpression
 ForLoop returns actionLanguage::ForLoop:
-	'for' '(' initalizeExpression=Assignment  loopTest=Expression';'  countingExpression=ForLoopCountingExpression ')' 
+	'for' '(' initializeExpression=Assignment  loopTest=Expression';'  countingExpression=ForLoopCountingExpression ')' 
 		block=Block
 ;
 
 ForLoopCountingExpression returns actionLanguage::Assignment:
-	(lhs_attributeExpression=AttributeExpression
+	(lhs_attributeExpression=VariableExpression
 	(incrementDecrementOperator=IncrementDecrementOperator |(assignOperator=AssignOperator rhs_assignExpression=Expression)) )
 ;
 
@@ -73,7 +73,7 @@ enum IncrementDecrementOperator returns actionLanguage::IncrementDecrementOperat
 // Assignment
 	
 Assignment returns actionLanguage::Assignment:
-	lhs_attributeExpression=AttributeExpression
+	lhs_attributeExpression=VariableExpression
 	assignOperator=AssignOperator rhs_assignExpression=Expression ';'
 ;
 
@@ -213,7 +213,7 @@ enum UnaryPostOperator returns commonExpressions::UnaryOperator:
 // Operand
 
 Operand returns expressions::Expression:
-	'(' Expression ')' | LiteralExpression | ExtendedAttributeExpression | OperationCall | TriggerMessageExpression
+	'(' Expression ')' | LiteralExpression | ExtendedVariableExpression | OperationCall | TriggerMessageExpression
 	| NoAttributeSelectorExpression
 ;
 
@@ -227,16 +227,16 @@ Literal returns ecore::EString:
 	NUMBER | BOOLEAN | INT | STRING
 ;
 
-ExtendedAttributeExpression returns expressions::Expression:
-	AttributeExpression
+ExtendedVariableExpression returns expressions::Expression:
+	VariableExpression
 	(
 		{actionLanguage::DiscreteInteractionEndpointReference.attribute = current}
 		'.' position=PositionSelectorExpression
 	)?
 ;
 
-AttributeExpression returns actionLanguage::AttributeExpression:
-	attribute=[core::Attribute]('['indices+=ArithmeticExpression']')*
+VariableExpression returns actionLanguage::VariableExpression:
+	variable=[behavior::Variable]('['indices+=ArithmeticExpression']')*
 ;
 
 NoAttributeSelectorExpression returns actionLanguage::DiscreteInteractionEndpointReference:
@@ -252,19 +252,19 @@ enum PositionSelectorKind returns actionLanguage::PositionSelectorKind:
 ;
 
 OperationCall returns actionLanguage::OperationCall:
-	operation=[core::Operation] '('
+	operation=[behavior::Operation] '('
 		(parameterBinding+=ParamaterBinding (',' parameterBinding+=ParamaterBinding)* )?
 	')'
 ;
 
-ParamaterBinding returns core::ParameterBinding:
-	{core::ParameterBinding}parameter=[core::Parameter] ':=' value=Expression
+ParamaterBinding returns behavior::ParameterBinding:
+	{behavior::ParameterBinding}parameter=[behavior::Parameter] ':=' value=Expression
 ;	
 
 // TriggerMessageExpression
 
 TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
-	messageType=[msgtype::MessageType] '.' parameter=[core::Parameter]
+	messageType=[msgtype::MessageType] '.' parameter=[behavior::Parameter]
 ;
 
 // end of TriggerMessageExpression

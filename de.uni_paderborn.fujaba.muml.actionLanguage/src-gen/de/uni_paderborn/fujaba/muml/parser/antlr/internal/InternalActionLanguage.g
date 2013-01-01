@@ -171,16 +171,16 @@ ruleForLoop returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getForLoopAccess().getInitalizeExpressionAssignmentParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getForLoopAccess().getInitializeExpressionAssignmentParserRuleCall_2_0()); 
 	    }
-		lv_initalizeExpression_2_0=ruleAssignment		{
+		lv_initializeExpression_2_0=ruleAssignment		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getForLoopRule());
 	        }
        		set(
        			$current, 
-       			"initalizeExpression",
-        		lv_initalizeExpression_2_0, 
+       			"initializeExpression",
+        		lv_initializeExpression_2_0, 
         		"Assignment");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -272,9 +272,9 @@ ruleForLoopCountingExpression returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getForLoopCountingExpressionAccess().getLhs_attributeExpressionAttributeExpressionParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getForLoopCountingExpressionAccess().getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0()); 
 	    }
-		lv_lhs_attributeExpression_0_0=ruleAttributeExpression		{
+		lv_lhs_attributeExpression_0_0=ruleVariableExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getForLoopCountingExpressionRule());
 	        }
@@ -282,7 +282,7 @@ ruleForLoopCountingExpression returns [EObject current=null]
        			$current, 
        			"lhs_attributeExpression",
         		lv_lhs_attributeExpression_0_0, 
-        		"AttributeExpression");
+        		"VariableExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -780,9 +780,9 @@ ruleAssignment returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAssignmentAccess().getLhs_attributeExpressionAttributeExpressionParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getAssignmentAccess().getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0()); 
 	    }
-		lv_lhs_attributeExpression_0_0=ruleAttributeExpression		{
+		lv_lhs_attributeExpression_0_0=ruleVariableExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAssignmentRule());
 	        }
@@ -790,7 +790,7 @@ ruleAssignment returns [EObject current=null]
        			$current, 
        			"lhs_attributeExpression",
         		lv_lhs_attributeExpression_0_0, 
-        		"AttributeExpression");
+        		"VariableExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1553,11 +1553,11 @@ ruleOperand returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getOperandAccess().getExtendedAttributeExpressionParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getOperandAccess().getExtendedVariableExpressionParserRuleCall_2()); 
     }
-    this_ExtendedAttributeExpression_4=ruleExtendedAttributeExpression
+    this_ExtendedVariableExpression_4=ruleExtendedVariableExpression
     { 
-        $current = $this_ExtendedAttributeExpression_4.current; 
+        $current = $this_ExtendedVariableExpression_4.current; 
         afterParserOrEnumRuleCall();
     }
 
@@ -1694,47 +1694,47 @@ ruleLiteral returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 
 
 
-// Entry rule entryRuleExtendedAttributeExpression
-entryRuleExtendedAttributeExpression returns [EObject current=null] 
+// Entry rule entryRuleExtendedVariableExpression
+entryRuleExtendedVariableExpression returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getExtendedAttributeExpressionRule()); }
-	 iv_ruleExtendedAttributeExpression=ruleExtendedAttributeExpression 
-	 { $current=$iv_ruleExtendedAttributeExpression.current; } 
+	{ newCompositeNode(grammarAccess.getExtendedVariableExpressionRule()); }
+	 iv_ruleExtendedVariableExpression=ruleExtendedVariableExpression 
+	 { $current=$iv_ruleExtendedVariableExpression.current; } 
 	 EOF 
 ;
 
-// Rule ExtendedAttributeExpression
-ruleExtendedAttributeExpression returns [EObject current=null] 
+// Rule ExtendedVariableExpression
+ruleExtendedVariableExpression returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getExtendedAttributeExpressionAccess().getAttributeExpressionParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getExtendedVariableExpressionAccess().getVariableExpressionParserRuleCall_0()); 
     }
-    this_AttributeExpression_0=ruleAttributeExpression
+    this_VariableExpression_0=ruleVariableExpression
     { 
-        $current = $this_AttributeExpression_0.current; 
+        $current = $this_VariableExpression_0.current; 
         afterParserOrEnumRuleCall();
     }
 ((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getExtendedAttributeExpressionAccess().getDiscreteInteractionEndpointReferenceAttributeAction_1_0(),
+            grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceAttributeAction_1_0(),
             $current);
     }
 )	otherlv_2='.' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getExtendedAttributeExpressionAccess().getFullStopKeyword_1_1());
+    	newLeafNode(otherlv_2, grammarAccess.getExtendedVariableExpressionAccess().getFullStopKeyword_1_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getExtendedAttributeExpressionAccess().getPositionPositionSelectorExpressionParserRuleCall_1_2_0()); 
+	        newCompositeNode(grammarAccess.getExtendedVariableExpressionAccess().getPositionPositionSelectorExpressionParserRuleCall_1_2_0()); 
 	    }
 		lv_position_3_0=rulePositionSelectorExpression		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getExtendedAttributeExpressionRule());
+	            $current = createModelElementForParent(grammarAccess.getExtendedVariableExpressionRule());
 	        }
        		set(
        			$current, 
@@ -1752,17 +1752,17 @@ ruleExtendedAttributeExpression returns [EObject current=null]
 
 
 
-// Entry rule entryRuleAttributeExpression
-entryRuleAttributeExpression returns [EObject current=null] 
+// Entry rule entryRuleVariableExpression
+entryRuleVariableExpression returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getAttributeExpressionRule()); }
-	 iv_ruleAttributeExpression=ruleAttributeExpression 
-	 { $current=$iv_ruleAttributeExpression.current; } 
+	{ newCompositeNode(grammarAccess.getVariableExpressionRule()); }
+	 iv_ruleVariableExpression=ruleVariableExpression 
+	 { $current=$iv_ruleVariableExpression.current; } 
 	 EOF 
 ;
 
-// Rule AttributeExpression
-ruleAttributeExpression returns [EObject current=null] 
+// Rule VariableExpression
+ruleVariableExpression returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
@@ -1770,27 +1770,27 @@ ruleAttributeExpression returns [EObject current=null]
 (
 		{
 			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAttributeExpressionRule());
+	            $current = createModelElement(grammarAccess.getVariableExpressionRule());
 	        }
         }
 	otherlv_0=RULE_ID
 	{
-		newLeafNode(otherlv_0, grammarAccess.getAttributeExpressionAccess().getAttributeAttributeCrossReference_0_0()); 
+		newLeafNode(otherlv_0, grammarAccess.getVariableExpressionAccess().getVariableVariableCrossReference_0_0()); 
 	}
 
 )
 )(	otherlv_1='[' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getAttributeExpressionAccess().getLeftSquareBracketKeyword_1_0());
+    	newLeafNode(otherlv_1, grammarAccess.getVariableExpressionAccess().getLeftSquareBracketKeyword_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAttributeExpressionAccess().getIndicesArithmeticExpressionParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getVariableExpressionAccess().getIndicesArithmeticExpressionParserRuleCall_1_1_0()); 
 	    }
 		lv_indices_2_0=ruleArithmeticExpression		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getAttributeExpressionRule());
+	            $current = createModelElementForParent(grammarAccess.getVariableExpressionRule());
 	        }
        		add(
        			$current, 
@@ -1803,7 +1803,7 @@ ruleAttributeExpression returns [EObject current=null]
 )
 )	otherlv_3=']' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getAttributeExpressionAccess().getRightSquareBracketKeyword_1_2());
+    	newLeafNode(otherlv_3, grammarAccess.getVariableExpressionAccess().getRightSquareBracketKeyword_1_2());
     }
 )*)
 ;

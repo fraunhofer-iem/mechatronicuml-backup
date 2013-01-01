@@ -82,10 +82,10 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryPostExpressionAccess().getGroup_1(), "rule__UnaryPostExpression__Group_1__0");
 					put(grammarAccess.getOperandAccess().getGroup_0(), "rule__Operand__Group_0__0");
 					put(grammarAccess.getLiteralExpressionAccess().getGroup(), "rule__LiteralExpression__Group__0");
-					put(grammarAccess.getExtendedAttributeExpressionAccess().getGroup(), "rule__ExtendedAttributeExpression__Group__0");
-					put(grammarAccess.getExtendedAttributeExpressionAccess().getGroup_1(), "rule__ExtendedAttributeExpression__Group_1__0");
-					put(grammarAccess.getAttributeExpressionAccess().getGroup(), "rule__AttributeExpression__Group__0");
-					put(grammarAccess.getAttributeExpressionAccess().getGroup_1(), "rule__AttributeExpression__Group_1__0");
+					put(grammarAccess.getExtendedVariableExpressionAccess().getGroup(), "rule__ExtendedVariableExpression__Group__0");
+					put(grammarAccess.getExtendedVariableExpressionAccess().getGroup_1(), "rule__ExtendedVariableExpression__Group_1__0");
+					put(grammarAccess.getVariableExpressionAccess().getGroup(), "rule__VariableExpression__Group__0");
+					put(grammarAccess.getVariableExpressionAccess().getGroup_1(), "rule__VariableExpression__Group_1__0");
 					put(grammarAccess.getPositionSelectorExpressionAccess().getGroup(), "rule__PositionSelectorExpression__Group__0");
 					put(grammarAccess.getPositionSelectorExpressionAccess().getGroup_1(), "rule__PositionSelectorExpression__Group_1__0");
 					put(grammarAccess.getOperationCallAccess().getGroup(), "rule__OperationCall__Group__0");
@@ -95,7 +95,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTriggerMessageExpressionAccess().getGroup(), "rule__TriggerMessageExpression__Group__0");
 					put(grammarAccess.getBlockAccess().getExpressionsAssignment_0_2(), "rule__Block__ExpressionsAssignment_0_2");
 					put(grammarAccess.getBlockAccess().getExpressionsAssignment_1(), "rule__Block__ExpressionsAssignment_1");
-					put(grammarAccess.getForLoopAccess().getInitalizeExpressionAssignment_2(), "rule__ForLoop__InitalizeExpressionAssignment_2");
+					put(grammarAccess.getForLoopAccess().getInitializeExpressionAssignment_2(), "rule__ForLoop__InitializeExpressionAssignment_2");
 					put(grammarAccess.getForLoopAccess().getLoopTestAssignment_3(), "rule__ForLoop__LoopTestAssignment_3");
 					put(grammarAccess.getForLoopAccess().getCountingExpressionAssignment_5(), "rule__ForLoop__CountingExpressionAssignment_5");
 					put(grammarAccess.getForLoopAccess().getBlockAssignment_7(), "rule__ForLoop__BlockAssignment_7");
@@ -132,9 +132,9 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryPreExpressionAccess().getEnclosedExpressionAssignment_2(), "rule__UnaryPreExpression__EnclosedExpressionAssignment_2");
 					put(grammarAccess.getUnaryPostExpressionAccess().getOperatorAssignment_1_1(), "rule__UnaryPostExpression__OperatorAssignment_1_1");
 					put(grammarAccess.getLiteralExpressionAccess().getValueAssignment_1(), "rule__LiteralExpression__ValueAssignment_1");
-					put(grammarAccess.getExtendedAttributeExpressionAccess().getPositionAssignment_1_2(), "rule__ExtendedAttributeExpression__PositionAssignment_1_2");
-					put(grammarAccess.getAttributeExpressionAccess().getAttributeAssignment_0(), "rule__AttributeExpression__AttributeAssignment_0");
-					put(grammarAccess.getAttributeExpressionAccess().getIndicesAssignment_1_1(), "rule__AttributeExpression__IndicesAssignment_1_1");
+					put(grammarAccess.getExtendedVariableExpressionAccess().getPositionAssignment_1_2(), "rule__ExtendedVariableExpression__PositionAssignment_1_2");
+					put(grammarAccess.getVariableExpressionAccess().getVariableAssignment_0(), "rule__VariableExpression__VariableAssignment_0");
+					put(grammarAccess.getVariableExpressionAccess().getIndicesAssignment_1_1(), "rule__VariableExpression__IndicesAssignment_1_1");
 					put(grammarAccess.getNoAttributeSelectorExpressionAccess().getPositionAssignment(), "rule__NoAttributeSelectorExpression__PositionAssignment");
 					put(grammarAccess.getPositionSelectorExpressionAccess().getKindAssignment_0(), "rule__PositionSelectorExpression__KindAssignment_0");
 					put(grammarAccess.getPositionSelectorExpressionAccess().getSuccessorAssignment_1_1(), "rule__PositionSelectorExpression__SuccessorAssignment_1_1");

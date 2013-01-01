@@ -1,13 +1,10 @@
 package de.uni_paderborn.fujaba.muml.scoping;
 
-import java.util.List;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.scoping.IScopeProvider;
 
 import com.google.inject.Provider;
 
-import de.uni_paderborn.fujaba.muml.model.core.Variable;
 
 
 public class ActionLanguageScopeProviderFactory implements Provider<IScopeProvider> {
