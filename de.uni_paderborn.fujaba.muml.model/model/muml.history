@@ -15019,24 +15019,24 @@
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
       </changes>
       <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment"
-          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_attributeExpression">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_attributeExpression"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression"
             featureName="name" dataValue="lhs_attributeExpression"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_attributeExpression"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_attributeExpression"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression"
             featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_attributeExpression"
-          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_attributeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_attributeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_attributeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_attributeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_attributeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_attributeExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue=" The left-hand-side of an assignment must be a single attribute and must not be another expression."/>
       </changes>
       <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression"
@@ -18397,5 +18397,10 @@
         oldDataValue="http://www.fujaba.de/muml/actionlanguage/0.3.5"/>
   </releases>
   <releases>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression"
+        featureName="name" dataValue="lhs_variableExpression" oldDataValue="lhs_attributeExpression"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue=" The left-hand-side of an assignment must be a single variable and must not be another expression."
+        oldDataValue=" The left-hand-side of an assignment must be a single attribute and must not be another expression."/>
   </releases>
 </history:History>

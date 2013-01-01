@@ -33,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.AssignmentImpl#getAssignOperator <em>Assign Operator</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.AssignmentImpl#getRhs_assignExpression <em>Rhs assign Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.AssignmentImpl#getIncrementDecrementOperator <em>Increment Decrement Operator</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.AssignmentImpl#getLhs_attributeExpression <em>Lhs attribute Expression</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.AssignmentImpl#getLhs_variableExpression <em>Lhs variable Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -91,14 +91,14 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	protected IncrementDecrementOperator incrementDecrementOperator = INCREMENT_DECREMENT_OPERATOR_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getLhs_attributeExpression() <em>Lhs attribute Expression</em>}' containment reference.
+	 * The cached value of the '{@link #getLhs_variableExpression() <em>Lhs variable Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLhs_attributeExpression()
+	 * @see #getLhs_variableExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected VariableExpression lhs_attributeExpression;
+	protected VariableExpression lhs_variableExpression;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,8 +209,8 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VariableExpression getLhs_attributeExpression() {
-		return lhs_attributeExpression;
+	public VariableExpression getLhs_variableExpression() {
+		return lhs_variableExpression;
 	}
 
 	/**
@@ -218,11 +218,11 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLhs_attributeExpression(VariableExpression newLhs_attributeExpression, NotificationChain msgs) {
-		VariableExpression oldLhs_attributeExpression = lhs_attributeExpression;
-		lhs_attributeExpression = newLhs_attributeExpression;
+	public NotificationChain basicSetLhs_variableExpression(VariableExpression newLhs_variableExpression, NotificationChain msgs) {
+		VariableExpression oldLhs_variableExpression = lhs_variableExpression;
+		lhs_variableExpression = newLhs_variableExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION, oldLhs_attributeExpression, newLhs_attributeExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.ASSIGNMENT__LHS_VARIABLE_EXPRESSION, oldLhs_variableExpression, newLhs_variableExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -233,18 +233,18 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLhs_attributeExpression(VariableExpression newLhs_attributeExpression) {
-		if (newLhs_attributeExpression != lhs_attributeExpression) {
+	public void setLhs_variableExpression(VariableExpression newLhs_variableExpression) {
+		if (newLhs_variableExpression != lhs_variableExpression) {
 			NotificationChain msgs = null;
-			if (lhs_attributeExpression != null)
-				msgs = ((InternalEObject)lhs_attributeExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION, null, msgs);
-			if (newLhs_attributeExpression != null)
-				msgs = ((InternalEObject)newLhs_attributeExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION, null, msgs);
-			msgs = basicSetLhs_attributeExpression(newLhs_attributeExpression, msgs);
+			if (lhs_variableExpression != null)
+				msgs = ((InternalEObject)lhs_variableExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.ASSIGNMENT__LHS_VARIABLE_EXPRESSION, null, msgs);
+			if (newLhs_variableExpression != null)
+				msgs = ((InternalEObject)newLhs_variableExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.ASSIGNMENT__LHS_VARIABLE_EXPRESSION, null, msgs);
+			msgs = basicSetLhs_variableExpression(newLhs_variableExpression, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION, newLhs_attributeExpression, newLhs_attributeExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.ASSIGNMENT__LHS_VARIABLE_EXPRESSION, newLhs_variableExpression, newLhs_variableExpression));
 	}
 
 	/**
@@ -257,8 +257,8 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 		switch (featureID) {
 			case ActionLanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION:
 				return basicSetRhs_assignExpression(null, msgs);
-			case ActionLanguagePackage.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION:
-				return basicSetLhs_attributeExpression(null, msgs);
+			case ActionLanguagePackage.ASSIGNMENT__LHS_VARIABLE_EXPRESSION:
+				return basicSetLhs_variableExpression(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -277,8 +277,8 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 				return getRhs_assignExpression();
 			case ActionLanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
 				return getIncrementDecrementOperator();
-			case ActionLanguagePackage.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION:
-				return getLhs_attributeExpression();
+			case ActionLanguagePackage.ASSIGNMENT__LHS_VARIABLE_EXPRESSION:
+				return getLhs_variableExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -300,8 +300,8 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 			case ActionLanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
 				setIncrementDecrementOperator((IncrementDecrementOperator)newValue);
 				return;
-			case ActionLanguagePackage.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION:
-				setLhs_attributeExpression((VariableExpression)newValue);
+			case ActionLanguagePackage.ASSIGNMENT__LHS_VARIABLE_EXPRESSION:
+				setLhs_variableExpression((VariableExpression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -324,8 +324,8 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 			case ActionLanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
 				setIncrementDecrementOperator(INCREMENT_DECREMENT_OPERATOR_EDEFAULT);
 				return;
-			case ActionLanguagePackage.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION:
-				setLhs_attributeExpression((VariableExpression)null);
+			case ActionLanguagePackage.ASSIGNMENT__LHS_VARIABLE_EXPRESSION:
+				setLhs_variableExpression((VariableExpression)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -345,8 +345,8 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 				return rhs_assignExpression != null;
 			case ActionLanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
 				return incrementDecrementOperator != INCREMENT_DECREMENT_OPERATOR_EDEFAULT;
-			case ActionLanguagePackage.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION:
-				return lhs_attributeExpression != null;
+			case ActionLanguagePackage.ASSIGNMENT__LHS_VARIABLE_EXPRESSION:
+				return lhs_variableExpression != null;
 		}
 		return super.eIsSet(featureID);
 	}

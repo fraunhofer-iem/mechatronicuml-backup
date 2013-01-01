@@ -361,7 +361,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAssignment_Lhs_attributeExpression() {
+	public EReference getAssignment_Lhs_variableExpression() {
 		return (EReference)assignmentEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -710,7 +710,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		createEAttribute(assignmentEClass, ASSIGNMENT__ASSIGN_OPERATOR);
 		createEReference(assignmentEClass, ASSIGNMENT__RHS_ASSIGN_EXPRESSION);
 		createEAttribute(assignmentEClass, ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR);
-		createEReference(assignmentEClass, ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION);
+		createEReference(assignmentEClass, ASSIGNMENT__LHS_VARIABLE_EXPRESSION);
 
 		forLoopEClass = createEClass(FOR_LOOP);
 		createEReference(forLoopEClass, FOR_LOOP__INITIALIZE_EXPRESSION);
@@ -820,7 +820,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		initEAttribute(getAssignment_AssignOperator(), this.getAssignOperator(), "assignOperator", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAssignment_Rhs_assignExpression(), theExpressionsPackage.getExpression(), null, "rhs_assignExpression", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAssignment_IncrementDecrementOperator(), this.getIncrementDecrementOperator(), "incrementDecrementOperator", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAssignment_Lhs_attributeExpression(), this.getVariableExpression(), null, "lhs_attributeExpression", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAssignment_Lhs_variableExpression(), this.getVariableExpression(), null, "lhs_variableExpression", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(forLoopEClass, ForLoop.class, "ForLoop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getForLoop_InitializeExpression(), this.getAssignment(), null, "initializeExpression", null, 0, 1, ForLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -405,13 +405,13 @@ public interface ActionLanguagePackage extends EPackage {
 	int ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Lhs attribute Expression</b></em>' containment reference.
+	 * The feature id for the '<em><b>Lhs variable Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
+	int ASSIGNMENT__LHS_VARIABLE_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Assignment</em>' class.
@@ -1190,15 +1190,15 @@ public interface ActionLanguagePackage extends EPackage {
 	EAttribute getAssignment_IncrementDecrementOperator();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_attributeExpression <em>Lhs attribute Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_variableExpression <em>Lhs variable Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Lhs attribute Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_attributeExpression()
+	 * @return the meta object for the containment reference '<em>Lhs variable Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_variableExpression()
 	 * @see #getAssignment()
 	 * @generated
 	 */
-	EReference getAssignment_Lhs_attributeExpression();
+	EReference getAssignment_Lhs_variableExpression();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop <em>For Loop</em>}'.
@@ -1661,12 +1661,12 @@ public interface ActionLanguagePackage extends EPackage {
 		EAttribute ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR = eINSTANCE.getAssignment_IncrementDecrementOperator();
 
 		/**
-		 * The meta object literal for the '<em><b>Lhs attribute Expression</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Lhs variable Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION = eINSTANCE.getAssignment_Lhs_attributeExpression();
+		EReference ASSIGNMENT__LHS_VARIABLE_EXPRESSION = eINSTANCE.getAssignment_Lhs_variableExpression();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ForLoopImpl <em>For Loop</em>}' class.

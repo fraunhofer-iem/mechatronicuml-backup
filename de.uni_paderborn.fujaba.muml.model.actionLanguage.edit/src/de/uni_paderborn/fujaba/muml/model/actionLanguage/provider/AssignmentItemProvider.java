@@ -76,7 +76,6 @@ public class AssignmentItemProvider
 
 			addAssignOperatorPropertyDescriptor(object);
 			addIncrementDecrementOperatorPropertyDescriptor(object);
-			addLhs_attributeExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -126,28 +125,6 @@ public class AssignmentItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Lhs attribute Expression feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLhs_attributeExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Assignment_lhs_attributeExpression_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Assignment_lhs_attributeExpression_feature", "_UI_Assignment_type"),
-				 ActionLanguagePackage.Literals.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -160,7 +137,7 @@ public class AssignmentItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION);
-			childrenFeatures.add(ActionLanguagePackage.Literals.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION);
+			childrenFeatures.add(ActionLanguagePackage.Literals.ASSIGNMENT__LHS_VARIABLE_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -220,7 +197,7 @@ public class AssignmentItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ActionLanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION:
-			case ActionLanguagePackage.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION:
+			case ActionLanguagePackage.ASSIGNMENT__LHS_VARIABLE_EXPRESSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -335,7 +312,7 @@ public class AssignmentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION,
+				(ActionLanguagePackage.Literals.ASSIGNMENT__LHS_VARIABLE_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createVariableExpression()));
 	}
 
@@ -352,7 +329,7 @@ public class AssignmentItemProvider
 
 		boolean qualify =
 			childFeature == ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION ||
-			childFeature == ActionLanguagePackage.Literals.ASSIGNMENT__LHS_ATTRIBUTE_EXPRESSION;
+			childFeature == ActionLanguagePackage.Literals.ASSIGNMENT__LHS_VARIABLE_EXPRESSION;
 
 		if (qualify) {
 			return getString

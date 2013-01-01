@@ -82,10 +82,10 @@
         <details key="documentation" value="Abbreviated form of x := x+1; or x :=x-1."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="lhs_attributeExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lhs_variableExpression"
         eType="#//VariableExpression" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=" The left-hand-side of an assignment must be a single attribute and must not be another expression."/>
+        <details key="documentation" value=" The left-hand-side of an assignment must be a single variable and must not be another expression."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
