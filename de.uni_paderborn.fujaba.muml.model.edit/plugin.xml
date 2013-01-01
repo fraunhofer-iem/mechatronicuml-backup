@@ -138,7 +138,7 @@
                org.eclipse.emf.edit.provider.ITreeItemContentProvider
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"
-            uri="http://www.fujaba.de/muml/model/valuetype/0.3.9">
+            uri="http://www.fujaba.de/muml/model/valuetype/0.3.10">
             
       </factory>
    </extension>

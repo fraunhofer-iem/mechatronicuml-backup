@@ -92,7 +92,7 @@
       <package
             class="de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage"
             genModel="model/muml.genmodel"
-            uri="http://www.fujaba.de/muml/model/valuetype/0.3.9">
+            uri="http://www.fujaba.de/muml/model/valuetype/0.3.10">
       </package>
    </extension>
    <extension
