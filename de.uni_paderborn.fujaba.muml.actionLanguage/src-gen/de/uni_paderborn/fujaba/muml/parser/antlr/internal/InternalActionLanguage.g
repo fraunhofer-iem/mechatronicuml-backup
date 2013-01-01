@@ -272,16 +272,16 @@ ruleForLoopCountingExpression returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getForLoopCountingExpressionAccess().getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getForLoopCountingExpressionAccess().getLhs_variableExpressionVariableExpressionParserRuleCall_0_0()); 
 	    }
-		lv_lhs_attributeExpression_0_0=ruleVariableExpression		{
+		lv_lhs_variableExpression_0_0=ruleVariableExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getForLoopCountingExpressionRule());
 	        }
        		set(
        			$current, 
-       			"lhs_attributeExpression",
-        		lv_lhs_attributeExpression_0_0, 
+       			"lhs_variableExpression",
+        		lv_lhs_variableExpression_0_0, 
         		"VariableExpression");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -780,16 +780,16 @@ ruleAssignment returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getAssignmentAccess().getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getAssignmentAccess().getLhs_variableExpressionVariableExpressionParserRuleCall_0_0()); 
 	    }
-		lv_lhs_attributeExpression_0_0=ruleVariableExpression		{
+		lv_lhs_variableExpression_0_0=ruleVariableExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getAssignmentRule());
 	        }
        		set(
        			$current, 
-       			"lhs_attributeExpression",
-        		lv_lhs_attributeExpression_0_0, 
+       			"lhs_variableExpression",
+        		lv_lhs_variableExpression_0_0, 
         		"VariableExpression");
 	        afterParserOrEnumRuleCall();
 	    }

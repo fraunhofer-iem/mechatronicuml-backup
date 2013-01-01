@@ -2016,9 +2016,9 @@ rule__ForLoopCountingExpression__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getForLoopCountingExpressionAccess().getLhs_attributeExpressionAssignment_0()); }
-(rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0)
-{ after(grammarAccess.getForLoopCountingExpressionAccess().getLhs_attributeExpressionAssignment_0()); }
+{ before(grammarAccess.getForLoopCountingExpressionAccess().getLhs_variableExpressionAssignment_0()); }
+(rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0)
+{ after(grammarAccess.getForLoopCountingExpressionAccess().getLhs_variableExpressionAssignment_0()); }
 )
 
 ;
@@ -3065,9 +3065,9 @@ rule__Assignment__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getAssignmentAccess().getLhs_attributeExpressionAssignment_0()); }
-(rule__Assignment__Lhs_attributeExpressionAssignment_0)
-{ after(grammarAccess.getAssignmentAccess().getLhs_attributeExpressionAssignment_0()); }
+{ before(grammarAccess.getAssignmentAccess().getLhs_variableExpressionAssignment_0()); }
+(rule__Assignment__Lhs_variableExpressionAssignment_0)
+{ after(grammarAccess.getAssignmentAccess().getLhs_variableExpressionAssignment_0()); }
 )
 
 ;
@@ -5480,14 +5480,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0
+rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getForLoopCountingExpressionAccess().getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0()); }
-	ruleVariableExpression{ after(grammarAccess.getForLoopCountingExpressionAccess().getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0()); }
+{ before(grammarAccess.getForLoopCountingExpressionAccess().getLhs_variableExpressionVariableExpressionParserRuleCall_0_0()); }
+	ruleVariableExpression{ after(grammarAccess.getForLoopCountingExpressionAccess().getLhs_variableExpressionVariableExpressionParserRuleCall_0_0()); }
 )
 
 ;
@@ -5690,14 +5690,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Assignment__Lhs_attributeExpressionAssignment_0
+rule__Assignment__Lhs_variableExpressionAssignment_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getAssignmentAccess().getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0()); }
-	ruleVariableExpression{ after(grammarAccess.getAssignmentAccess().getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0()); }
+{ before(grammarAccess.getAssignmentAccess().getLhs_variableExpressionVariableExpressionParserRuleCall_0_0()); }
+	ruleVariableExpression{ after(grammarAccess.getAssignmentAccess().getLhs_variableExpressionVariableExpressionParserRuleCall_0_0()); }
 )
 
 ;

@@ -5803,31 +5803,31 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__ForLoopCountingExpression__Group__0__Impl"
-    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:2013:1: rule__ForLoopCountingExpression__Group__0__Impl : ( ( rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0 ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:2013:1: rule__ForLoopCountingExpression__Group__0__Impl : ( ( rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0 ) ) ;
     public final void rule__ForLoopCountingExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:2017:1: ( ( ( rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0 ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:2018:1: ( ( rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0 ) )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:2017:1: ( ( ( rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0 ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:2018:1: ( ( rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0 ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:2018:1: ( ( rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0 ) )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:2019:1: ( rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0 )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:2018:1: ( ( rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0 ) )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:2019:1: ( rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0 )
             {
-             before(grammarAccess.getForLoopCountingExpressionAccess().getLhs_attributeExpressionAssignment_0()); 
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:2020:1: ( rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0 )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:2020:2: rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0
+             before(grammarAccess.getForLoopCountingExpressionAccess().getLhs_variableExpressionAssignment_0()); 
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:2020:1: ( rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0 )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:2020:2: rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0_in_rule__ForLoopCountingExpression__Group__0__Impl4282);
-            rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0();
+            pushFollow(FollowSets000.FOLLOW_rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0_in_rule__ForLoopCountingExpression__Group__0__Impl4282);
+            rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getForLoopCountingExpressionAccess().getLhs_attributeExpressionAssignment_0()); 
+             after(grammarAccess.getForLoopCountingExpressionAccess().getLhs_variableExpressionAssignment_0()); 
 
             }
 
@@ -8427,31 +8427,31 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Assignment__Group__0__Impl"
-    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3062:1: rule__Assignment__Group__0__Impl : ( ( rule__Assignment__Lhs_attributeExpressionAssignment_0 ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3062:1: rule__Assignment__Group__0__Impl : ( ( rule__Assignment__Lhs_variableExpressionAssignment_0 ) ) ;
     public final void rule__Assignment__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3066:1: ( ( ( rule__Assignment__Lhs_attributeExpressionAssignment_0 ) ) )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3067:1: ( ( rule__Assignment__Lhs_attributeExpressionAssignment_0 ) )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3066:1: ( ( ( rule__Assignment__Lhs_variableExpressionAssignment_0 ) ) )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3067:1: ( ( rule__Assignment__Lhs_variableExpressionAssignment_0 ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3067:1: ( ( rule__Assignment__Lhs_attributeExpressionAssignment_0 ) )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3068:1: ( rule__Assignment__Lhs_attributeExpressionAssignment_0 )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3067:1: ( ( rule__Assignment__Lhs_variableExpressionAssignment_0 ) )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3068:1: ( rule__Assignment__Lhs_variableExpressionAssignment_0 )
             {
-             before(grammarAccess.getAssignmentAccess().getLhs_attributeExpressionAssignment_0()); 
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3069:1: ( rule__Assignment__Lhs_attributeExpressionAssignment_0 )
-            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3069:2: rule__Assignment__Lhs_attributeExpressionAssignment_0
+             before(grammarAccess.getAssignmentAccess().getLhs_variableExpressionAssignment_0()); 
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3069:1: ( rule__Assignment__Lhs_variableExpressionAssignment_0 )
+            // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:3069:2: rule__Assignment__Lhs_variableExpressionAssignment_0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Assignment__Lhs_attributeExpressionAssignment_0_in_rule__Assignment__Group__0__Impl6339);
-            rule__Assignment__Lhs_attributeExpressionAssignment_0();
+            pushFollow(FollowSets000.FOLLOW_rule__Assignment__Lhs_variableExpressionAssignment_0_in_rule__Assignment__Group__0__Impl6339);
+            rule__Assignment__Lhs_variableExpressionAssignment_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAssignmentAccess().getLhs_attributeExpressionAssignment_0()); 
+             after(grammarAccess.getAssignmentAccess().getLhs_variableExpressionAssignment_0()); 
 
             }
 
@@ -14754,9 +14754,9 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__ForLoop__BlockAssignment_7"
 
 
-    // $ANTLR start "rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0"
-    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5483:1: rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0 : ( ruleVariableExpression ) ;
-    public final void rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0"
+    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5483:1: rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0 : ( ruleVariableExpression ) ;
+    public final void rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -14767,13 +14767,13 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5488:1: ( ruleVariableExpression )
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5489:1: ruleVariableExpression
             {
-             before(grammarAccess.getForLoopCountingExpressionAccess().getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleVariableExpression_in_rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_011101);
+             before(grammarAccess.getForLoopCountingExpressionAccess().getLhs_variableExpressionVariableExpressionParserRuleCall_0_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleVariableExpression_in_rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_011101);
             ruleVariableExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getForLoopCountingExpressionAccess().getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0()); 
+             after(grammarAccess.getForLoopCountingExpressionAccess().getLhs_variableExpressionVariableExpressionParserRuleCall_0_0()); 
 
             }
 
@@ -14792,7 +14792,7 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0"
+    // $ANTLR end "rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0"
 
 
     // $ANTLR start "rule__ForLoopCountingExpression__IncrementDecrementOperatorAssignment_1_0"
@@ -15328,9 +15328,9 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__ReturnStatement__ExpressionAssignment_2"
 
 
-    // $ANTLR start "rule__Assignment__Lhs_attributeExpressionAssignment_0"
-    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5693:1: rule__Assignment__Lhs_attributeExpressionAssignment_0 : ( ruleVariableExpression ) ;
-    public final void rule__Assignment__Lhs_attributeExpressionAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__Assignment__Lhs_variableExpressionAssignment_0"
+    // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5693:1: rule__Assignment__Lhs_variableExpressionAssignment_0 : ( ruleVariableExpression ) ;
+    public final void rule__Assignment__Lhs_variableExpressionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -15341,13 +15341,13 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5698:1: ( ruleVariableExpression )
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:5699:1: ruleVariableExpression
             {
-             before(grammarAccess.getAssignmentAccess().getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleVariableExpression_in_rule__Assignment__Lhs_attributeExpressionAssignment_011535);
+             before(grammarAccess.getAssignmentAccess().getLhs_variableExpressionVariableExpressionParserRuleCall_0_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleVariableExpression_in_rule__Assignment__Lhs_variableExpressionAssignment_011535);
             ruleVariableExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getAssignmentAccess().getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0()); 
+             after(grammarAccess.getAssignmentAccess().getLhs_variableExpressionVariableExpressionParserRuleCall_0_0()); 
 
             }
 
@@ -15366,7 +15366,7 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__Assignment__Lhs_attributeExpressionAssignment_0"
+    // $ANTLR end "rule__Assignment__Lhs_variableExpressionAssignment_0"
 
 
     // $ANTLR start "rule__Assignment__AssignOperatorAssignment_1"
@@ -16859,7 +16859,7 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
         public static final BitSet FOLLOW_rule__ForLoop__BlockAssignment_7_in_rule__ForLoop__Group__7__Impl4206 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__ForLoopCountingExpression__Group__0__Impl_in_rule__ForLoopCountingExpression__Group__04252 = new BitSet(new long[]{0x00000000003F8000L});
         public static final BitSet FOLLOW_rule__ForLoopCountingExpression__Group__1_in_rule__ForLoopCountingExpression__Group__04255 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_0_in_rule__ForLoopCountingExpression__Group__0__Impl4282 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0_in_rule__ForLoopCountingExpression__Group__0__Impl4282 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__ForLoopCountingExpression__Group__1__Impl_in_rule__ForLoopCountingExpression__Group__14312 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__ForLoopCountingExpression__Alternatives_1_in_rule__ForLoopCountingExpression__Group__1__Impl4339 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__ForLoopCountingExpression__Group_1_1__0__Impl_in_rule__ForLoopCountingExpression__Group_1_1__04373 = new BitSet(new long[]{0x0000023F300001F0L});
@@ -16949,7 +16949,7 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
         public static final BitSet FOLLOW_42_in_rule__ReturnStatement__Group__3__Impl6270 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Assignment__Group__0__Impl_in_rule__Assignment__Group__06309 = new BitSet(new long[]{0x00000000003F8000L});
         public static final BitSet FOLLOW_rule__Assignment__Group__1_in_rule__Assignment__Group__06312 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Assignment__Lhs_attributeExpressionAssignment_0_in_rule__Assignment__Group__0__Impl6339 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Assignment__Lhs_variableExpressionAssignment_0_in_rule__Assignment__Group__0__Impl6339 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Assignment__Group__1__Impl_in_rule__Assignment__Group__16369 = new BitSet(new long[]{0x0000023F300001F0L});
         public static final BitSet FOLLOW_rule__Assignment__Group__2_in_rule__Assignment__Group__16372 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Assignment__AssignOperatorAssignment_1_in_rule__Assignment__Group__1__Impl6399 = new BitSet(new long[]{0x0000000000000002L});
@@ -17138,7 +17138,7 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
         public static final BitSet FOLLOW_ruleExpression_in_rule__ForLoop__LoopTestAssignment_311008 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleForLoopCountingExpression_in_rule__ForLoop__CountingExpressionAssignment_511039 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleBlock_in_rule__ForLoop__BlockAssignment_711070 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleVariableExpression_in_rule__ForLoopCountingExpression__Lhs_attributeExpressionAssignment_011101 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleVariableExpression_in_rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_011101 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleIncrementDecrementOperator_in_rule__ForLoopCountingExpression__IncrementDecrementOperatorAssignment_1_011132 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleAssignOperator_in_rule__ForLoopCountingExpression__AssignOperatorAssignment_1_1_011163 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleExpression_in_rule__ForLoopCountingExpression__Rhs_assignExpressionAssignment_1_1_111194 = new BitSet(new long[]{0x0000000000000002L});
@@ -17152,7 +17152,7 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
         public static final BitSet FOLLOW_ruleBlock_in_rule__IfStatement__ElseIfBlocksAssignment_5_411442 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleBlock_in_rule__IfStatement__ElseBlockAssignment_6_111473 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleExpression_in_rule__ReturnStatement__ExpressionAssignment_211504 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleVariableExpression_in_rule__Assignment__Lhs_attributeExpressionAssignment_011535 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleVariableExpression_in_rule__Assignment__Lhs_variableExpressionAssignment_011535 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleAssignOperator_in_rule__Assignment__AssignOperatorAssignment_111566 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleExpression_in_rule__Assignment__Rhs_assignExpressionAssignment_211597 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_ruleLogicalOrOperator_in_rule__LogicalOrExpression__OperatorAssignment_1_111628 = new BitSet(new long[]{0x0000000000000002L});

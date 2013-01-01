@@ -31,7 +31,7 @@ ForLoop returns actionLanguage::ForLoop:
 ;
 
 ForLoopCountingExpression returns actionLanguage::Assignment:
-	(lhs_attributeExpression=VariableExpression
+	(lhs_variableExpression=VariableExpression
 	(incrementDecrementOperator=IncrementDecrementOperator |(assignOperator=AssignOperator rhs_assignExpression=Expression)) )
 ;
 
@@ -73,7 +73,7 @@ enum IncrementDecrementOperator returns actionLanguage::IncrementDecrementOperat
 // Assignment
 	
 Assignment returns actionLanguage::Assignment:
-	lhs_attributeExpression=VariableExpression
+	lhs_variableExpression=VariableExpression
 	assignOperator=AssignOperator rhs_assignExpression=Expression ';'
 ;
 

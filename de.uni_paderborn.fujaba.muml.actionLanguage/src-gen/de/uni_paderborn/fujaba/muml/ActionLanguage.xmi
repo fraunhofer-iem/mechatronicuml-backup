@@ -75,7 +75,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.12#//Assignment"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Assignment" feature="lhs_attributeExpression" operator="=">
+        <elements xsi:type="xtext:Assignment" feature="lhs_variableExpression" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.34"/>
         </elements>
         <elements xsi:type="xtext:Alternatives">
@@ -209,7 +209,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.12#//Assignment"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Assignment" feature="lhs_attributeExpression" operator="=">
+        <elements xsi:type="xtext:Assignment" feature="lhs_variableExpression" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.34"/>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="assignOperator" operator="=">

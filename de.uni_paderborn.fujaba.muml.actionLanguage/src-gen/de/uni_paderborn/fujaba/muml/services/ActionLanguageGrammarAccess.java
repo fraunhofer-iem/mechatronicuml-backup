@@ -128,8 +128,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	public class ForLoopCountingExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ForLoopCountingExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cLhs_attributeExpressionAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cLhs_attributeExpressionVariableExpressionParserRuleCall_0_0 = (RuleCall)cLhs_attributeExpressionAssignment_0.eContents().get(0);
+		private final Assignment cLhs_variableExpressionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cLhs_variableExpressionVariableExpressionParserRuleCall_0_0 = (RuleCall)cLhs_variableExpressionAssignment_0.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Assignment cIncrementDecrementOperatorAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
 		private final RuleCall cIncrementDecrementOperatorIncrementDecrementOperatorEnumRuleCall_1_0_0 = (RuleCall)cIncrementDecrementOperatorAssignment_1_0.eContents().get(0);
@@ -140,19 +140,19 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRhs_assignExpressionExpressionParserRuleCall_1_1_1_0 = (RuleCall)cRhs_assignExpressionAssignment_1_1_1.eContents().get(0);
 		
 		//ForLoopCountingExpression returns actionLanguage::Assignment:
-		//	lhs_attributeExpression=VariableExpression (incrementDecrementOperator=IncrementDecrementOperator |
+		//	lhs_variableExpression=VariableExpression (incrementDecrementOperator=IncrementDecrementOperator |
 		//	assignOperator=AssignOperator rhs_assignExpression=Expression);
 		public ParserRule getRule() { return rule; }
 
-		//lhs_attributeExpression=VariableExpression (incrementDecrementOperator=IncrementDecrementOperator |
+		//lhs_variableExpression=VariableExpression (incrementDecrementOperator=IncrementDecrementOperator |
 		//assignOperator=AssignOperator rhs_assignExpression=Expression)
 		public Group getGroup() { return cGroup; }
 
-		//lhs_attributeExpression=VariableExpression
-		public Assignment getLhs_attributeExpressionAssignment_0() { return cLhs_attributeExpressionAssignment_0; }
+		//lhs_variableExpression=VariableExpression
+		public Assignment getLhs_variableExpressionAssignment_0() { return cLhs_variableExpressionAssignment_0; }
 
 		//VariableExpression
-		public RuleCall getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0() { return cLhs_attributeExpressionVariableExpressionParserRuleCall_0_0; }
+		public RuleCall getLhs_variableExpressionVariableExpressionParserRuleCall_0_0() { return cLhs_variableExpressionVariableExpressionParserRuleCall_0_0; }
 
 		//incrementDecrementOperator=IncrementDecrementOperator | assignOperator=AssignOperator rhs_assignExpression=Expression
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
@@ -424,8 +424,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	public class AssignmentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Assignment");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cLhs_attributeExpressionAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cLhs_attributeExpressionVariableExpressionParserRuleCall_0_0 = (RuleCall)cLhs_attributeExpressionAssignment_0.eContents().get(0);
+		private final Assignment cLhs_variableExpressionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cLhs_variableExpressionVariableExpressionParserRuleCall_0_0 = (RuleCall)cLhs_variableExpressionAssignment_0.eContents().get(0);
 		private final Assignment cAssignOperatorAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cAssignOperatorAssignOperatorEnumRuleCall_1_0 = (RuleCall)cAssignOperatorAssignment_1.eContents().get(0);
 		private final Assignment cRhs_assignExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
@@ -434,17 +434,17 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//// Assignment
 		//Assignment returns actionLanguage::Assignment:
-		//	lhs_attributeExpression=VariableExpression assignOperator=AssignOperator rhs_assignExpression=Expression ";";
+		//	lhs_variableExpression=VariableExpression assignOperator=AssignOperator rhs_assignExpression=Expression ";";
 		public ParserRule getRule() { return rule; }
 
-		//lhs_attributeExpression=VariableExpression assignOperator=AssignOperator rhs_assignExpression=Expression ";"
+		//lhs_variableExpression=VariableExpression assignOperator=AssignOperator rhs_assignExpression=Expression ";"
 		public Group getGroup() { return cGroup; }
 
-		//lhs_attributeExpression=VariableExpression
-		public Assignment getLhs_attributeExpressionAssignment_0() { return cLhs_attributeExpressionAssignment_0; }
+		//lhs_variableExpression=VariableExpression
+		public Assignment getLhs_variableExpressionAssignment_0() { return cLhs_variableExpressionAssignment_0; }
 
 		//VariableExpression
-		public RuleCall getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0() { return cLhs_attributeExpressionVariableExpressionParserRuleCall_0_0; }
+		public RuleCall getLhs_variableExpressionVariableExpressionParserRuleCall_0_0() { return cLhs_variableExpressionVariableExpressionParserRuleCall_0_0; }
 
 		//assignOperator=AssignOperator
 		public Assignment getAssignOperatorAssignment_1() { return cAssignOperatorAssignment_1; }
@@ -1704,7 +1704,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ForLoopCountingExpression returns actionLanguage::Assignment:
-	//	lhs_attributeExpression=VariableExpression (incrementDecrementOperator=IncrementDecrementOperator |
+	//	lhs_variableExpression=VariableExpression (incrementDecrementOperator=IncrementDecrementOperator |
 	//	assignOperator=AssignOperator rhs_assignExpression=Expression);
 	public ForLoopCountingExpressionElements getForLoopCountingExpressionAccess() {
 		return (pForLoopCountingExpression != null) ? pForLoopCountingExpression : (pForLoopCountingExpression = new ForLoopCountingExpressionElements());
@@ -1777,7 +1777,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// Assignment
 	//Assignment returns actionLanguage::Assignment:
-	//	lhs_attributeExpression=VariableExpression assignOperator=AssignOperator rhs_assignExpression=Expression ";";
+	//	lhs_variableExpression=VariableExpression assignOperator=AssignOperator rhs_assignExpression=Expression ";";
 	public AssignmentElements getAssignmentAccess() {
 		return (pAssignment != null) ? pAssignment : (pAssignment = new AssignmentElements());
 	}

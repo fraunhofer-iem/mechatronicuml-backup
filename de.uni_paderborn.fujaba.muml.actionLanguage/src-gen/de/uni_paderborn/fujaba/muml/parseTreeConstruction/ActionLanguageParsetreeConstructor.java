@@ -611,12 +611,12 @@ protected class ForLoop_BlockAssignment_7 extends AssignmentToken  {
 /************ begin Rule ForLoopCountingExpression ****************
  *
  * ForLoopCountingExpression returns actionLanguage::Assignment:
- * 	lhs_attributeExpression=VariableExpression (incrementDecrementOperator=IncrementDecrementOperator |
+ * 	lhs_variableExpression=VariableExpression (incrementDecrementOperator=IncrementDecrementOperator |
  * 	assignOperator=AssignOperator rhs_assignExpression=Expression);
  *
  **/
 
-// lhs_attributeExpression=VariableExpression (incrementDecrementOperator=IncrementDecrementOperator |
+// lhs_variableExpression=VariableExpression (incrementDecrementOperator=IncrementDecrementOperator |
 // assignOperator=AssignOperator rhs_assignExpression=Expression)
 protected class ForLoopCountingExpression_Group extends GroupToken {
 	
@@ -646,16 +646,16 @@ protected class ForLoopCountingExpression_Group extends GroupToken {
 
 }
 
-// lhs_attributeExpression=VariableExpression
-protected class ForLoopCountingExpression_Lhs_attributeExpressionAssignment_0 extends AssignmentToken  {
+// lhs_variableExpression=VariableExpression
+protected class ForLoopCountingExpression_Lhs_variableExpressionAssignment_0 extends AssignmentToken  {
 	
-	public ForLoopCountingExpression_Lhs_attributeExpressionAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ForLoopCountingExpression_Lhs_variableExpressionAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getForLoopCountingExpressionAccess().getLhs_attributeExpressionAssignment_0();
+		return grammarAccess.getForLoopCountingExpressionAccess().getLhs_variableExpressionAssignment_0();
 	}
 
     @Override
@@ -668,13 +668,13 @@ protected class ForLoopCountingExpression_Lhs_attributeExpressionAssignment_0 ex
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("lhs_attributeExpression",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("lhs_attributeExpression");
+		if((value = eObjectConsumer.getConsumable("lhs_variableExpression",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("lhs_variableExpression");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getVariableExpressionRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getForLoopCountingExpressionAccess().getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0(); 
+				element = grammarAccess.getForLoopCountingExpressionAccess().getLhs_variableExpressionVariableExpressionParserRuleCall_0_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -729,7 +729,7 @@ protected class ForLoopCountingExpression_IncrementDecrementOperatorAssignment_1
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ForLoopCountingExpression_Lhs_attributeExpressionAssignment_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ForLoopCountingExpression_Lhs_variableExpressionAssignment_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -785,7 +785,7 @@ protected class ForLoopCountingExpression_AssignOperatorAssignment_1_1_0 extends
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ForLoopCountingExpression_Lhs_attributeExpressionAssignment_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ForLoopCountingExpression_Lhs_variableExpressionAssignment_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -2173,11 +2173,11 @@ protected class ExpressionStartRule_ReturnStatementParserRuleCall_5 extends Rule
  *
  * // Assignment
  * Assignment returns actionLanguage::Assignment:
- * 	lhs_attributeExpression=VariableExpression assignOperator=AssignOperator rhs_assignExpression=Expression ";";
+ * 	lhs_variableExpression=VariableExpression assignOperator=AssignOperator rhs_assignExpression=Expression ";";
  *
  **/
 
-// lhs_attributeExpression=VariableExpression assignOperator=AssignOperator rhs_assignExpression=Expression ";"
+// lhs_variableExpression=VariableExpression assignOperator=AssignOperator rhs_assignExpression=Expression ";"
 protected class Assignment_Group extends GroupToken {
 	
 	public Assignment_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2206,16 +2206,16 @@ protected class Assignment_Group extends GroupToken {
 
 }
 
-// lhs_attributeExpression=VariableExpression
-protected class Assignment_Lhs_attributeExpressionAssignment_0 extends AssignmentToken  {
+// lhs_variableExpression=VariableExpression
+protected class Assignment_Lhs_variableExpressionAssignment_0 extends AssignmentToken  {
 	
-	public Assignment_Lhs_attributeExpressionAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Assignment_Lhs_variableExpressionAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getAssignmentAccess().getLhs_attributeExpressionAssignment_0();
+		return grammarAccess.getAssignmentAccess().getLhs_variableExpressionAssignment_0();
 	}
 
     @Override
@@ -2228,13 +2228,13 @@ protected class Assignment_Lhs_attributeExpressionAssignment_0 extends Assignmen
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("lhs_attributeExpression",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("lhs_attributeExpression");
+		if((value = eObjectConsumer.getConsumable("lhs_variableExpression",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("lhs_variableExpression");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getVariableExpressionRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getAssignmentAccess().getLhs_attributeExpressionVariableExpressionParserRuleCall_0_0(); 
+				element = grammarAccess.getAssignmentAccess().getLhs_variableExpressionVariableExpressionParserRuleCall_0_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -2266,7 +2266,7 @@ protected class Assignment_AssignOperatorAssignment_1 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Assignment_Lhs_attributeExpressionAssignment_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Assignment_Lhs_variableExpressionAssignment_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
