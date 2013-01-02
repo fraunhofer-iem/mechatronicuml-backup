@@ -18472,5 +18472,8 @@
         featureName="eSuperTypes" referenceValue="muml.ecore#//model/behavior/ITypedNamedElement"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/behavior" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/behavior/0.3.13" oldDataValue="http://www.fujaba.de/muml/model/behavior/0.3.10"/>
+    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.12"
+        oldDataValue="http://www.fujaba.de/modelinstance/0.3.8"/>
   </releases>
 </history:History>
