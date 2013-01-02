@@ -812,7 +812,46 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDoEvent(DoEvent doEvent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(doEvent, diagnostics, context);
+		if (!validate_NoCircularContainment(doEvent, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(doEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(doEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(doEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(doEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(doEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(doEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(doEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(doEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDoEvent_ValidLowerUpperPeriod(doEvent, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ValidLowerUpperPeriod constraint of '<em>Do Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DO_EVENT__VALID_LOWER_UPPER_PERIOD__EEXPRESSION = "self.periodLower.value.value >= 1 and self.periodLower.value.value <= self.periodUpper.value.value";
+
+	/**
+	 * Validates the ValidLowerUpperPeriod constraint of '<em>Do Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDoEvent_ValidLowerUpperPeriod(DoEvent doEvent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.DO_EVENT,
+				 doEvent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidLowerUpperPeriod",
+				 DO_EVENT__VALID_LOWER_UPPER_PERIOD__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

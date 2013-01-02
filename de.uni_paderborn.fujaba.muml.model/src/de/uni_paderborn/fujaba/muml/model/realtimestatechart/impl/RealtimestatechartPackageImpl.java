@@ -1684,7 +1684,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (doEventEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", ""
+			 "constraints", "ValidLowerUpperPeriod"
 		   });																	
 		addAnnotation
 		  (realtimeStatechartEClass, 
@@ -1786,7 +1786,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (doEventEClass, 
 		   source, 
 		   new String[] {
-			 "ValidLowerUpperPeriod", "self.periodLower >= 1 and self.periodLower <= self.periodUpper"
+			 "ValidLowerUpperPeriod", "self.periodLower.value.value >= 1 and self.periodLower.value.value <= self.periodUpper.value.value"
 		   });																	
 		addAnnotation
 		  (realtimeStatechartEClass, 

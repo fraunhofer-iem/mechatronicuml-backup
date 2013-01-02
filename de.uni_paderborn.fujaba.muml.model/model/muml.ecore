@@ -1418,10 +1418,10 @@
           <details key="documentation" value="The action of a state that is executed periodically as long as this state is active. The first period starts after the execution of the entry-action."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="ValidLowerUpperPeriod" value="self.periodLower >= 1 and self.periodLower &lt;= self.periodUpper"/>
+          <details key="ValidLowerUpperPeriod" value="self.periodLower.value.value >= 1 and self.periodLower.value.value &lt;= self.periodUpper.value.value"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value=""/>
+          <details key="constraints" value="ValidLowerUpperPeriod"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
             eType="#//model/realtimestatechart/Action" containment="true">

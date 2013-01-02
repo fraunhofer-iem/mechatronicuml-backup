@@ -28,8 +28,8 @@ import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getDoEvent()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidLowerUpperPeriod='self.periodLower >= 1 and self.periodLower <= self.periodUpper'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints=''"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidLowerUpperPeriod='self.periodLower.value.value >= 1 and self.periodLower.value.value <= self.periodUpper.value.value'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidLowerUpperPeriod'"
  * @generated
  */
 public interface DoEvent extends StateEvent {
