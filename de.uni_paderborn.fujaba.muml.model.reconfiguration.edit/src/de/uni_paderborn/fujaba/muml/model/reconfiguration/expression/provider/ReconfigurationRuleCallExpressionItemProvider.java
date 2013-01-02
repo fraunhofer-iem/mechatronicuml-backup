@@ -27,7 +27,7 @@ import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ExpressionPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ReconfigurationRuleCallExpression;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.provider.MumlReconfigurationEditPlugin;
@@ -192,7 +192,7 @@ public class ReconfigurationRuleCallExpressionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.RECONFIGURATION_RULE_CALL_EXPRESSION__PARAMETER_BINDINGS,
-				 CoreFactory.eINSTANCE.createParameterBinding()));
+				 BehaviorFactory.eINSTANCE.createParameterBinding()));
 	}
 
 	/**

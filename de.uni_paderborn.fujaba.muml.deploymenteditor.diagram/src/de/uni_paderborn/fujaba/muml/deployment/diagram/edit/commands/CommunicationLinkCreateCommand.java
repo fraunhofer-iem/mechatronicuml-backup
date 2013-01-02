@@ -80,14 +80,7 @@ public class CommunicationLinkCreateCommand extends EditElementCommand {
 					"Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink newElement = de.uni_paderborn.fujaba.muml.model.deployment.DeploymentFactory.eINSTANCE
-				.createCommunicationLink();
-		getContainer().getCommunicationLinks().add(newElement);
-		newElement.setSource(getSource());
-		newElement.setTarget(getTarget());
-		doConfigure(newElement, monitor, info);
-		((CreateElementRequest) getRequest()).setNewElement(newElement);
-		return CommandResult.newOKCommandResult(newElement);
+		throw new UnsupportedOperationException();
 
 	}
 

@@ -7,20 +7,12 @@
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.Call;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
-
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.provider.ComponentStoryDiagramEditPlugin;
-
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -34,7 +26,11 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.Call;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.provider.ComponentStoryDiagramEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.Call} object.
@@ -193,7 +189,7 @@ public class CallItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentstorypatternPackage.Literals.CALL__PARAMETER_BINDING,
-				 CoreFactory.eINSTANCE.createParameterBinding()));
+				 BehaviorFactory.eINSTANCE.createParameterBinding()));
 	}
 
 	/**

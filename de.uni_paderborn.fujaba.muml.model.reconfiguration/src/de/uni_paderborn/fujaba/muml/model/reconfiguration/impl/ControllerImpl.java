@@ -26,7 +26,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.Extension;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.core.impl.BehavioralElementImpl;
+import de.uni_paderborn.fujaba.muml.model.behavior.impl.BehavioralElementImpl;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;

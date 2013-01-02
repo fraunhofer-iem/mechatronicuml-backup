@@ -188,7 +188,7 @@ public class MumlElementTypes {
 
 			elements.put(
 					Parameter_3008,
-					de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage.eINSTANCE
 							.getParameter());
 		}
 		return (ENamedElement) elements.get(type);

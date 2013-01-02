@@ -155,6 +155,15 @@ public class MumlEditPartFactory implements EditPartFactory {
 			case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart(
 						view);
+
+			case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AssemblyConnectorInstanceEditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DelegationConnectorInstanceEditPart(
+						view);
+
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

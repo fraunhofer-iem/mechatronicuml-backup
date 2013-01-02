@@ -69,6 +69,11 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 	/**
 	 * @generated
 	 */
+	private de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+
+	/**
+	 * @generated
+	 */
 	private de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.providers.ElementInitializers initializers;
 
 	/**
@@ -99,6 +104,7 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
+		linkConstraints = null;
 		initializers = null;
 		oclFactory = null;
 		instance = null;
@@ -139,8 +145,6 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.constraint.provider.ConstraintItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.core.provider.CoreItemProviderAdapterFactory());
-		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.instance.provider.InstanceItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.protocol.provider.ProtocolItemProviderAdapterFactory());
@@ -154,6 +158,10 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 				.add(new de.uni_paderborn.fujaba.muml.model.types.provider.TypesItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.connector.provider.ConnectorItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.valuetype.provider.ValuetypeItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.behavior.provider.BehaviorItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
@@ -251,6 +259,21 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 			documentProvider = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlDocumentProvider();
 		}
 		return documentProvider;
+	}
+
+	/**
+	 * @generated
+	 */
+	public de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+		return linkConstraints;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setLinkConstraints(
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints lc) {
+		this.linkConstraints = lc;
 	}
 
 	/**

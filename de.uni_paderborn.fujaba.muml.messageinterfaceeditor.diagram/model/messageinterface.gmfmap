@@ -70,7 +70,7 @@
                 href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgtype/MessageType/parameters"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Parameter"/>
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/Parameter"/>
               <domainInitializer
                   xsi:type="gmfmap:FeatureSeqInitializer">
                 <initializers

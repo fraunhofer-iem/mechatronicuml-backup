@@ -94,7 +94,7 @@ public class Comparer {
 
 	public boolean compare(Resource a, Resource b) {
 		return compare((EList<Object>) (EList<?>) a.getContents(),
-				(EList<Object>) (EList<?>) b.getContents(), true);
+				(EList<Object>) (EList<?>) b.getContents(), !alwaysUnordered);
 	}
 
 	protected boolean compare(EObject a, EObject b, EStructuralFeature feature) {

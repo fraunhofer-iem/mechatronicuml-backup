@@ -196,7 +196,7 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 
 				// TODO: Provide Extension Point, which fills packages array
 
-				EPackage packages[] = new EPackage[] { de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE };
+				EPackage packages[] = new EPackage[] { de.uni_paderborn.fujaba.muml.model.types.TypesPackage.eINSTANCE };
 				for (EPackage _package : packages) {
 					EList<EClassifier> classifiers = _package.getEClassifiers();
 

@@ -28,7 +28,7 @@ import org.storydriven.core.provider.NamedElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.muml.model.core.CoreFactory;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
 
@@ -230,7 +230,7 @@ public class ReconfigurationRuleItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__PARAMETERS,
-				 CoreFactory.eINSTANCE.createParameter()));
+				 BehaviorFactory.eINSTANCE.createParameter()));
 	}
 
 	/**

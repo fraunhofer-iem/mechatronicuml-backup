@@ -10,7 +10,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
 
 public abstract class AbstractPortTypeBehavior extends AbstractPortBehavior {
 

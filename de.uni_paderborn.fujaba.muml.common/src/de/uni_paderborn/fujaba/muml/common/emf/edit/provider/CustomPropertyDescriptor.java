@@ -45,12 +45,12 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertySheetDialog
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.SimpleTextualDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.UseParserDialogExtension;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.Parameter;
-import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
+import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
 
 public class CustomPropertyDescriptor extends PropertyDescriptor {
 
@@ -83,7 +83,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			EClass eClass = (EClass) feature.getEType();
 
 			// Natural numbers should be entered like Strings
-			if (CorePackage.Literals.NATURAL_NUMBER.isSuperTypeOf(eClass)) {
+			if (ValuetypePackage.Literals.NATURAL_NUMBER.isSuperTypeOf(eClass)) {
 				EDataType eDataType = EcorePackage.Literals.ESTRING;
 				return createEDataTypeCellEditor(eDataType, parent);
 			}

@@ -375,6 +375,7 @@
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Componentinstanceconfiguration"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2021,2022,2023,2024,2016,2015,3026,3031,3032,3033,3034,3023,3024,3025"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
       </viewProvider>
    </extension>
 
@@ -389,7 +390,7 @@
             <method name="getType()" value="2021,2022,2023,2024,2016,2015,3026,3031,3032,3033,3034,3023,3024,3025"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value=""/>
+            <method name="getType()" value="4001,4002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5039,5040,5041,5042,5027,5026,5043,5044,5045,5046,5028,5029"/>
@@ -574,6 +575,26 @@
             <param name="semanticHint" value="3025"/>
          </specializationType>
       </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.3.7">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.AssemblyConnectorInstance_4001"
+               name="%metatype.name.AssemblyConnectorInstance_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="AssemblyConnectorInstance"
+               edithelper="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.helpers.AssemblyConnectorInstanceEditHelper">
+            <param name="semanticHint" value="4001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/model/instance/0.3.7">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DelegationConnectorInstance_4002"
+               name="%metatype.name.DelegationConnectorInstance_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DelegationConnectorInstance"
+               edithelper="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.helpers.DelegationConnectorInstanceEditHelper">
+            <param name="semanticHint" value="4002"/>
+         </metamodelType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -601,6 +622,8 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ComponentInstanceConfiguration_3023"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.AtomicComponentInstance_3024"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.StructuredComponentInstance_3025"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.AssemblyConnectorInstance_4001"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DelegationConnectorInstance_4002"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

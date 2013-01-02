@@ -407,7 +407,7 @@
             <param name="semanticHint" value="3007"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/core/0.3.8">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/behavior/0.3.10">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.Parameter_3008"
                name="%metatype.name.Parameter_3008"

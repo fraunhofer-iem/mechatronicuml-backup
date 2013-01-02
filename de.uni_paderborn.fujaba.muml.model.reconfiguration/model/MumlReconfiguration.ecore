@@ -36,7 +36,7 @@
       <details key="documentation" value="A reconfiguration port defines the external interface for accessing the reconfiguration capabilities of a reconfigurable structured component. In case of a reconfigurable structured component, they are delegated to one of the controllers of the component. In case of a reconfigurable atomic component, the reconfiguration port is directly implemented."/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Controller" abstract="true" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/BehavioralElement ../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Controller" abstract="true" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/BehavioralElement ../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Reconfiguration controllers encapsulate the reconfiguration behavior of a reconfigurable structured component."/>
     </eAnnotations>
@@ -61,10 +61,10 @@
       <details key="documentation" value="A reconfiguration rule describes a modification of the internal structure of a reconfigurable structured component or of a reconfigurable atomic component."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Parameter"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/Parameter"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnParameters" upperBound="-1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Parameter"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/Parameter"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reconfiguredComponent"
         eType="#//ReconfigurableComponent"/>
@@ -72,7 +72,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationCondition" abstract="true"
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Parameter"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/Parameter"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableComponent" abstract="true"
@@ -140,7 +140,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
           eType="ecore:EClass ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ParameterBinding"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/ParameterBinding"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationRuleCallExpression"
@@ -148,7 +148,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationRule"
           lowerBound="1" eType="#//ReconfigurationRule"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/ParameterBinding"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/ParameterBinding"
           containment="true"/>
     </eClassifiers>
   </eSubpackages>

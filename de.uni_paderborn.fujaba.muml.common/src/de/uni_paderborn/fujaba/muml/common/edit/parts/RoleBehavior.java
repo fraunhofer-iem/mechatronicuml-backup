@@ -10,8 +10,8 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.protocol.Role;
+import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
 
 public class RoleBehavior extends AbstractPortBehavior {
 	/**

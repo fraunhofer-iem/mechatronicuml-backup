@@ -20,7 +20,7 @@ public class HybridPortItemSemanticEditPolicy
 	 */
 	public HybridPortItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.HybridPort_3008);
+				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.HybridPort_3005);
 	}
 
 	/**

@@ -20,7 +20,7 @@ public class DiscretePortItemSemanticEditPolicy
 	 */
 	public DiscretePortItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.DiscretePort_3009);
+				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.DiscretePort_3006);
 	}
 
 	/**

@@ -177,9 +177,9 @@
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/deployment/Deployment/communicationLinks"/>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/deployment/CommunicationLink/source"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/deployment/CommunicationLink/hardwarePorts"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/deployment/CommunicationLink/target"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/deployment/CommunicationLink/hardwarePorts"/>
       </modelFacet>
       <creationConstraints
           sourceEnd="//@expressionProviders/@providers.0/@expressions.2"

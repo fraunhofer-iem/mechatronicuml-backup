@@ -90,7 +90,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 					"Navigator?Node?http://www.fujaba.de/muml/model/msgtype/0.3.6?MessageType", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageType_3007); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/model/core/0.3.8?Parameter", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.Parameter_3008); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/model/behavior/0.3.10?Parameter", de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.Parameter_3008); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}

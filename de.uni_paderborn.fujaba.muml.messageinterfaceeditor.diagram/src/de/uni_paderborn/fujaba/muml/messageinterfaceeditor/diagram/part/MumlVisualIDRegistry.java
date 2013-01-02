@@ -134,7 +134,7 @@ public class MumlVisualIDRegistry {
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage.eINSTANCE
 					.getParameter().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID;
 			}

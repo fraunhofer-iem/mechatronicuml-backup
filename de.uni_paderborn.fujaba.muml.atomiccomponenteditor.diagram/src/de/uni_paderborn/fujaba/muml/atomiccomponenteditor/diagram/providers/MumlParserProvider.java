@@ -23,77 +23,77 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser atomicComponentName_5015Parser;
+	protected IParser atomicComponentName_5011Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getAtomicComponentName_5015Parser() {
-		if (atomicComponentName_5015Parser == null) {
+	protected IParser getAtomicComponentName_5011Parser() {
+		if (atomicComponentName_5011Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			atomicComponentName_5015Parser = parser;
+			atomicComponentName_5011Parser = parser;
 		}
-		return atomicComponentName_5015Parser;
+		return atomicComponentName_5011Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser hybridPortName_5012Parser;
+	protected IParser hybridPortName_5006Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getHybridPortName_5012Parser() {
-		if (hybridPortName_5012Parser == null) {
+	protected IParser getHybridPortName_5006Parser() {
+		if (hybridPortName_5006Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			hybridPortName_5012Parser = parser;
+			hybridPortName_5006Parser = parser;
 		}
-		return hybridPortName_5012Parser;
+		return hybridPortName_5006Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser discretePortName_5013Parser;
+	protected IParser discretePortName_5007Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getDiscretePortName_5013Parser() {
-		if (discretePortName_5013Parser == null) {
+	protected IParser getDiscretePortName_5007Parser() {
+		if (discretePortName_5007Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			discretePortName_5013Parser = parser;
+			discretePortName_5007Parser = parser;
 		}
-		return discretePortName_5013Parser;
+		return discretePortName_5007Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser continuousPortName_5014Parser;
+	protected IParser continuousPortName_5008Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getContinuousPortName_5014Parser() {
-		if (continuousPortName_5014Parser == null) {
+	protected IParser getContinuousPortName_5008Parser() {
+		if (continuousPortName_5008Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.MessageFormatParser(
 					features);
-			continuousPortName_5014Parser = parser;
+			continuousPortName_5008Parser = parser;
 		}
-		return continuousPortName_5014Parser;
+		return continuousPortName_5008Parser;
 	}
 
 	/**
@@ -102,13 +102,13 @@ public class MumlParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID:
-			return getAtomicComponentName_5015Parser();
+			return getAtomicComponentName_5011Parser();
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortNameEditPart.VISUAL_ID:
-			return getHybridPortName_5012Parser();
+			return getHybridPortName_5006Parser();
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID:
-			return getDiscretePortName_5013Parser();
+			return getDiscretePortName_5007Parser();
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID:
-			return getContinuousPortName_5014Parser();
+			return getContinuousPortName_5008Parser();
 		}
 		return null;
 	}

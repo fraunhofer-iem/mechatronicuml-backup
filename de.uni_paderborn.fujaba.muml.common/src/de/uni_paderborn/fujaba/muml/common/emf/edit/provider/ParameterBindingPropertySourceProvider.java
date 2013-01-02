@@ -20,6 +20,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.common.LiteralExpression;
@@ -27,9 +28,9 @@ import org.storydriven.core.expressions.common.LiteralExpression;
 import de.uni_paderborn.fujaba.common.descriptor.AbstractItemPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.common.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
-import de.uni_paderborn.fujaba.muml.model.core.Parameter;
-import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
+import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
 
 public class ParameterBindingPropertySourceProvider implements
 		IPropertySourceProvider {
@@ -249,7 +250,7 @@ public class ParameterBindingPropertySourceProvider implements
 			EStructuralFeature feature = parameterBindingsElement.getParameterBindingFeature();
 			ParameterBinding parameterBinding = getParameterBinding(parameter);
 			if (parameterBinding == null) {
-				parameterBinding = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
+				parameterBinding = de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory.eINSTANCE
 						.createParameterBinding();
 				parameterBinding.setParameter(parameter);
 
@@ -277,7 +278,7 @@ public class ParameterBindingPropertySourceProvider implements
 				expression = (Expression) value;
 			}
 			// Set within a write transaction
-			setFeature(CorePackage.Literals.PARAMETER_BINDING__VALUE,
+			setFeature(BehaviorPackage.Literals.PARAMETER_BINDING__VALUE,
 					parameterBinding, expression);
 		}
 
@@ -315,7 +316,7 @@ public class ParameterBindingPropertySourceProvider implements
 
 		@Override
 		public Object getFeature(Object object) {
-			return CorePackage.Literals.PARAMETER_BINDING__VALUE;
+			return BehaviorPackage.Literals.PARAMETER_BINDING__VALUE;
 		}
 
 		private void setFeature(EStructuralFeature feature, EObject eObject,

@@ -50,12 +50,12 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public void init_Parameter_3008(
-			de.uni_paderborn.fujaba.muml.model.core.Parameter instance) {
+			de.uni_paderborn.fujaba.muml.model.behavior.Parameter instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							2,
-							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+							de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage.eINSTANCE
 									.getParameter(), null).evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {

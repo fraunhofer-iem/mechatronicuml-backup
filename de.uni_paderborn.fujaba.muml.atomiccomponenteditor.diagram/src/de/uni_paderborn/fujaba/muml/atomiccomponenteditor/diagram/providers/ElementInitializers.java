@@ -14,7 +14,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_AtomicComponent_2006(
+	public void init_AtomicComponent_2005(
 			de.uni_paderborn.fujaba.muml.model.component.AtomicComponent instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
@@ -33,19 +33,19 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_DiscretePort_3009(
+	public void init_DiscretePort_3006(
 			de.uni_paderborn.fujaba.muml.model.component.DiscretePort instance) {
 		try {
-			de.uni_paderborn.fujaba.muml.model.core.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
-					.createCardinality();
+			de.uni_paderborn.fujaba.muml.model.valuetype.Range newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory.eINSTANCE
+					.createRange();
 			instance.setCardinality(newInstance_0_0);
-			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
+			de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory.eINSTANCE
 					.createNaturalNumber();
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
 			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							1,
-							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+							de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_0_0);
 
@@ -54,13 +54,13 @@ public class ElementInitializers {
 							EcorePackage.eINSTANCE.getELong());
 			newInstance_0_0_0_0.setValue(((Long) value_0_0_0_0_0).longValue());
 
-			de.uni_paderborn.fujaba.muml.model.core.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.model.core.CoreFactory.eINSTANCE
+			de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber newInstance_0_0_1_0 = de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory.eINSTANCE
 					.createNaturalNumber();
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
 			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							2,
-							de.uni_paderborn.fujaba.muml.model.core.CorePackage.eINSTANCE
+							de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_1_0);
 

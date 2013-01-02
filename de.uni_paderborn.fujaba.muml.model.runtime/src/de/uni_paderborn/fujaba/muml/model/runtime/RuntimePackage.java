@@ -1133,24 +1133,6 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_PORT_INSTANCE_ASSEMBLY__CONNECTOR_ENDPOINT_INSTANCES = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_PORT_INSTANCE_ASSEMBLY__SOURCE = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_PORT_INSTANCE_ASSEMBLY__TARGET = InstancePackage.ASSEMBLY_CONNECTOR_INSTANCE__TARGET;
-
-	/**
 	 * The feature id for the '<em><b>Port Connector Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

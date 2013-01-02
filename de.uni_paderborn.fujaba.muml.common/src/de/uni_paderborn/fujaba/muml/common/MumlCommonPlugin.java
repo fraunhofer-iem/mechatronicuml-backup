@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.common;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,11 +70,11 @@ public class MumlCommonPlugin implements BundleActivator {
 
 	protected ComposedAdapterFactory createAdapterFactory() {
 		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
-		fillItemProviderFactories(factories);
+		fillDefaultItemProviderFactories(factories);
 		return new ComposedAdapterFactory(factories);
 	}
 
-	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
+	public static void fillDefaultItemProviderFactories(List<AdapterFactory> factories) {
 
 		// Default Factories
 		factories
@@ -83,7 +82,14 @@ public class MumlCommonPlugin implements BundleActivator {
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.constraint.provider.ConstraintItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.core.provider.CoreItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.model.types.provider.TypesItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.behavior.provider.BehaviorItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.connector.provider.ConnectorItemProviderAdapterFactory());
+
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.valuetype.provider.ValuetypeItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.instance.provider.InstanceItemProviderAdapterFactory());
 		factories
@@ -110,7 +116,6 @@ public class MumlCommonPlugin implements BundleActivator {
 		factories.add(new ProtocolItemProviderAdapterFactory());
 		factories.add(new PatternsExpressionsItemProviderAdapterFactory());
 		factories.add(new TemplatesItemProviderAdapterFactory());
-		factories.add(new ConnectorItemProviderAdapterFactory());
 
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
@@ -119,6 +124,5 @@ public class MumlCommonPlugin implements BundleActivator {
 	public AdapterFactory getItemProvidersAdapterFactory() {
 		return adapterFactory;
 	}
-
 
 }

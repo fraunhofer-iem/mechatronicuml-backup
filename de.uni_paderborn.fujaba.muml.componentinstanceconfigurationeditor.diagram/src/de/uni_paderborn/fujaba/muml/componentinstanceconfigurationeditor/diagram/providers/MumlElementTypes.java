@@ -114,6 +114,16 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType AssemblyConnectorInstance_4001 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.AssemblyConnectorInstance_4001"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType DelegationConnectorInstance_4002 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DelegationConnectorInstance_4002"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -296,6 +306,16 @@ public class MumlElementTypes {
 					StructuredComponentInstance_3025,
 					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 							.getStructuredComponentInstance());
+
+			elements.put(
+					AssemblyConnectorInstance_4001,
+					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+							.getAssemblyConnectorInstance());
+
+			elements.put(
+					DelegationConnectorInstance_4002,
+					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+							.getDelegationConnectorInstance());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -328,6 +348,8 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ComponentInstanceConfiguration_3023);
 			KNOWN_ELEMENT_TYPES.add(AtomicComponentInstance_3024);
 			KNOWN_ELEMENT_TYPES.add(StructuredComponentInstance_3025);
+			KNOWN_ELEMENT_TYPES.add(AssemblyConnectorInstance_4001);
+			KNOWN_ELEMENT_TYPES.add(DelegationConnectorInstance_4002);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -367,6 +389,10 @@ public class MumlElementTypes {
 			return AtomicComponentInstance_3024;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID:
 			return StructuredComponentInstance_3025;
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID:
+			return AssemblyConnectorInstance_4001;
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID:
+			return DelegationConnectorInstance_4002;
 		}
 		return null;
 	}

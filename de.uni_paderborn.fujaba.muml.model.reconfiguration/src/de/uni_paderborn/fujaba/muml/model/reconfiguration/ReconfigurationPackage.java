@@ -10,9 +10,10 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.storydriven.core.CorePackage;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -436,7 +437,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__BEHAVIOR = CorePackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
+	int CONTROLLER__BEHAVIOR = BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -445,7 +446,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__ANNOTATION = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
+	int CONTROLLER__ANNOTATION = BehaviorPackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -454,7 +455,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__EXTENSION = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
+	int CONTROLLER__EXTENSION = BehaviorPackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -463,7 +464,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__NAME = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
+	int CONTROLLER__NAME = BehaviorPackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -472,7 +473,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__COMMENT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
+	int CONTROLLER__COMMENT = BehaviorPackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Structured Component</b></em>' container reference.
@@ -481,7 +482,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__STRUCTURED_COMPONENT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 4;
+	int CONTROLLER__STRUCTURED_COMPONENT = BehaviorPackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Controller</em>' class.
@@ -490,7 +491,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER_FEATURE_COUNT = CorePackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 5;
+	int CONTROLLER_FEATURE_COUNT = BehaviorPackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationControllerImpl <em>Controller</em>}' class.
@@ -549,7 +550,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__ANNOTATION = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int MANAGER__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -558,7 +559,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__EXTENSION = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int MANAGER__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -567,7 +568,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__COMMENT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+	int MANAGER__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Specification Entries</b></em>' containment reference list.
@@ -576,7 +577,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__SPECIFICATION_ENTRIES = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int MANAGER__SPECIFICATION_ENTRIES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Reconfiguration Controller</b></em>' container reference.
@@ -585,7 +586,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__RECONFIGURATION_CONTROLLER = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int MANAGER__RECONFIGURATION_CONTROLLER = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Manager</em>' class.
@@ -594,7 +595,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_FEATURE_COUNT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int MANAGER_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ExecutorImpl <em>Executor</em>}' class.
@@ -613,7 +614,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR__ANNOTATION = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int EXECUTOR__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -622,7 +623,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR__EXTENSION = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int EXECUTOR__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -631,7 +632,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR__COMMENT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+	int EXECUTOR__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Specification Entries</b></em>' containment reference list.
@@ -640,7 +641,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR__SPECIFICATION_ENTRIES = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int EXECUTOR__SPECIFICATION_ENTRIES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Reconfiguration Controller</b></em>' container reference.
@@ -649,7 +650,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR__RECONFIGURATION_CONTROLLER = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int EXECUTOR__RECONFIGURATION_CONTROLLER = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Executor</em>' class.
@@ -658,7 +659,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_FEATURE_COUNT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int EXECUTOR_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 
 	/**
@@ -678,7 +679,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__ANNOTATION = org.storydriven.core.CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int RECONFIGURATION_RULE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -687,7 +688,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__EXTENSION = org.storydriven.core.CorePackage.NAMED_ELEMENT__EXTENSION;
+	int RECONFIGURATION_RULE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -696,7 +697,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__NAME = org.storydriven.core.CorePackage.NAMED_ELEMENT__NAME;
+	int RECONFIGURATION_RULE__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -705,7 +706,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__COMMENT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RECONFIGURATION_RULE__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -714,7 +715,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__PARAMETERS = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RECONFIGURATION_RULE__PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Return Parameters</b></em>' containment reference list.
@@ -723,7 +724,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__RETURN_PARAMETERS = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int RECONFIGURATION_RULE__RETURN_PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Reconfigured Component</b></em>' reference.
@@ -732,7 +733,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE__RECONFIGURED_COMPONENT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int RECONFIGURATION_RULE__RECONFIGURED_COMPONENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Rule</em>' class.
@@ -741,7 +742,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int RECONFIGURATION_RULE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 
 	/**
@@ -761,7 +762,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONDITION__ANNOTATION = org.storydriven.core.CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int RECONFIGURATION_CONDITION__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -770,7 +771,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONDITION__EXTENSION = org.storydriven.core.CorePackage.NAMED_ELEMENT__EXTENSION;
+	int RECONFIGURATION_CONDITION__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -779,7 +780,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONDITION__NAME = org.storydriven.core.CorePackage.NAMED_ELEMENT__NAME;
+	int RECONFIGURATION_CONDITION__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -788,7 +789,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONDITION__COMMENT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RECONFIGURATION_CONDITION__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -797,7 +798,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONDITION__PARAMETERS = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RECONFIGURATION_CONDITION__PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Condition</em>' class.
@@ -806,7 +807,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_CONDITION_FEATURE_COUNT = org.storydriven.core.CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int RECONFIGURATION_CONDITION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent <em>Reconfigurable Component</em>}' class.
@@ -1242,7 +1243,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__ANNOTATION = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int EXECUTOR_SPECIFICATION_ENTRY__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1251,7 +1252,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__EXTENSION = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int EXECUTOR_SPECIFICATION_ENTRY__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Executor</b></em>' container reference.
@@ -1260,7 +1261,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__EXECUTOR = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int EXECUTOR_SPECIFICATION_ENTRY__EXECUTOR = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Reconfiguration Rule</b></em>' reference.
@@ -1269,7 +1270,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Externally Visible</b></em>' attribute.
@@ -1278,7 +1279,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Time To Failure</b></em>' attribute.
@@ -1287,7 +1288,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Time To Success</b></em>' attribute.
@@ -1296,7 +1297,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_SUCCESS = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
+	int EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_SUCCESS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Executor Specification Entry</em>' class.
@@ -1305,7 +1306,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY_FEATURE_COUNT = org.storydriven.core.CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
+	int EXECUTOR_SPECIFICATION_ENTRY_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ManagerSpecificationEntryImpl <em>Manager Specification Entry</em>}' class.
@@ -1324,7 +1325,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__ANNOTATION = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int MANAGER_SPECIFICATION_ENTRY__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1333,7 +1334,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__EXTENSION = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int MANAGER_SPECIFICATION_ENTRY__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1342,7 +1343,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__COMMENT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+	int MANAGER_SPECIFICATION_ENTRY__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Treat</b></em>' attribute.
@@ -1351,7 +1352,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__TREAT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int MANAGER_SPECIFICATION_ENTRY__TREAT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Propagate</b></em>' attribute.
@@ -1360,7 +1361,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__PROPAGATE = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int MANAGER_SPECIFICATION_ENTRY__PROPAGATE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Manager</b></em>' container reference.
@@ -1369,7 +1370,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__MANAGER = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int MANAGER_SPECIFICATION_ENTRY__MANAGER = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Message Type</b></em>' reference.
@@ -1378,7 +1379,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__MESSAGE_TYPE = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int MANAGER_SPECIFICATION_ENTRY__MESSAGE_TYPE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' reference.
@@ -1387,7 +1388,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY__GUARD = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
+	int MANAGER_SPECIFICATION_ENTRY__GUARD = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Manager Specification Entry</em>' class.
@@ -1396,7 +1397,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY_FEATURE_COUNT = org.storydriven.core.CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
+	int MANAGER_SPECIFICATION_ENTRY_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.

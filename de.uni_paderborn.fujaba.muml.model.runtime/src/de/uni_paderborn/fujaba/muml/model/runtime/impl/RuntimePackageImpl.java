@@ -13,11 +13,12 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.core.CorePackage;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
@@ -41,6 +42,7 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly;
 import de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -210,7 +212,6 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		// Initialize simple dependencies
 		ComponentPackage.eINSTANCE.eClass();
 		ConstraintPackage.eINSTANCE.eClass();
-		CorePackage.eINSTANCE.eClass();
 		InstancePackage.eINSTANCE.eClass();
 		ProtocolPackage.eINSTANCE.eClass();
 		RealtimestatechartPackage.eINSTANCE.eClass();
@@ -218,6 +219,8 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		DeploymentPackage.eINSTANCE.eClass();
 		TypesPackage.eINSTANCE.eClass();
 		ConnectorPackage.eINSTANCE.eClass();
+		ValuetypePackage.eINSTANCE.eClass();
+		BehaviorPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theRuntimePackage.createPackageContents();
@@ -716,10 +719,10 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		// Obtain other dependent packages
 		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
 		ProtocolPackage theProtocolPackage = (ProtocolPackage)EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI);
-		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -731,16 +734,16 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		runtimeDiscretePortInstanceEClass.getESuperTypes().add(theInstancePackage.getDiscretePortInstance());
 		runtimeDiscretePortInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
 		roleInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
-		messageBufferEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
-		realtimeStatechartInstanceEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
-		runtimeMessageEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		runtimeParameterEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		variableBindingEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
-		runtimeBehavioralElementEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
+		messageBufferEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
+		realtimeStatechartInstanceEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
+		runtimeMessageEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		runtimeParameterEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		variableBindingEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
+		runtimeBehavioralElementEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		singleRoleInstanceEClass.getESuperTypes().add(this.getRoleInstance());
 		multiRoleInstanceEClass.getESuperTypes().add(this.getRoleInstance());
 		runtimeRoleAssemblyEClass.getESuperTypes().add(this.getRuntimeAssemblyInstance());
-		runtimeAssemblyInstanceEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
+		runtimeAssemblyInstanceEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 		runtimePortInstanceAssemblyEClass.getESuperTypes().add(theInstancePackage.getAssemblyConnectorInstance());
 		runtimePortInstanceAssemblyEClass.getESuperTypes().add(this.getRuntimeAssemblyInstance());
 
@@ -773,7 +776,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		initEAttribute(getRuntimeParameter_Value(), this.getJavaObject(), "value", null, 0, 1, RuntimeParameter.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variableBindingEClass, VariableBinding.class, "VariableBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariableBinding_Variable(), theCorePackage.getVariable(), null, "variable", null, 1, 1, VariableBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVariableBinding_Variable(), theBehaviorPackage.getVariable(), null, "variable", null, 1, 1, VariableBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVariableBinding_Value(), this.getJavaObject(), "value", null, 0, 1, VariableBinding.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(runtimeBehavioralElementEClass, RuntimeBehavioralElement.class, "RuntimeBehavioralElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

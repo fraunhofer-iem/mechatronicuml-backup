@@ -299,4 +299,75 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 	}
 
+	/**
+	 * @generated
+	 */
+	public static LinkConstraints getLinkConstraints() {
+		LinkConstraints cached = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+				.getInstance().getLinkConstraints();
+		if (cached == null) {
+			de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin
+					.getInstance().setLinkConstraints(
+							cached = new LinkConstraints());
+		}
+		return cached;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static class LinkConstraints {
+
+		/**
+		 * @generated
+		 */
+		LinkConstraints() {
+			// use static method #getLinkConstraints() to access instance
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateAssemblyConnectorInstance_4001(
+				de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance source,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target) {
+			return canExistAssemblyConnectorInstance_4001(container, null,
+					source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateDelegationConnectorInstance_4002(
+				de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance source,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target) {
+			return canExistDelegationConnectorInstance_4002(container, null,
+					source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistAssemblyConnectorInstance_4001(
+				de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container,
+				de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance linkInstance,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance source,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistDelegationConnectorInstance_4002(
+				de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container,
+				de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance linkInstance,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance source,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target) {
+			return true;
+		}
+	}
+
 }

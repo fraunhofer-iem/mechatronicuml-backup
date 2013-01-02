@@ -20,6 +20,8 @@ import org.storydriven.storydiagrams.patterns.provider.PatternsItemProviderAdapt
 import org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAdapterFactory;
 
 import de.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
+import de.uni_paderborn.fujaba.common.FujabaCommonPlugin;
+import de.uni_paderborn.fujaba.muml.common.MumlCommonPlugin;
 
 /**
  * The activator class controls the plug-in life cycle
@@ -92,36 +94,7 @@ public class UtilitiesPlugin extends AbstractUIPlugin {
 		factories.addAll(positivePriorityFactories);
 
 		// Default Factories
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.component.provider.ComponentItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.constraint.provider.ConstraintItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.core.provider.CoreItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.instance.provider.InstanceItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.protocol.provider.ProtocolItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.msgtype.provider.MsgtypeItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.types.provider.TypesItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.deployment.provider.DeploymentItemProviderAdapterFactory());
-		factories.add(new EcoreItemProviderAdapterFactory());
-		factories.add(new ModelinstanceItemProviderAdapterFactory());
-		factories.add(new CoreItemProviderAdapterFactory());
-		factories.add(new ActivitiesItemProviderAdapterFactory());
-		factories.add(new ExpressionsItemProviderAdapterFactory());
-		factories
-				.add(new org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory());
-		factories.add(new CallsItemProviderAdapterFactory());
-		factories.add(new CallsExpressionsItemProviderAdapterFactory());
-		factories.add(new PatternsItemProviderAdapterFactory());
-		factories.add(new PatternsExpressionsItemProviderAdapterFactory());
-		factories.add(new TemplatesItemProviderAdapterFactory());
+		MumlCommonPlugin.fillDefaultItemProviderFactories(factories);
 
 		// Custom Factories with negative priority
 		factories.addAll(negativePriorityFactories);

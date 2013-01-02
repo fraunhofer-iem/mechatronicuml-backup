@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
 <uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
   <mapping sourceURI="http://www.fujaba.de/muml/0.2.2" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore"/>
-  <mapping sourceURI="http://www.fujaba.de/muml/model/component/0.3.1" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore"/>
+  <mapping sourceURI="http://www.fujaba.de/muml/model/component/0.3.8" targetURI="platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore"/>
 </uriMap:MappingContainer>

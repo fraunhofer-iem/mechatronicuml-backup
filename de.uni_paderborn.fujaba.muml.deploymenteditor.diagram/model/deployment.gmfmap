@@ -83,10 +83,10 @@
         href="deployment.gmfgraph#CommunicationLink"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/CommunicationLink/source"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/CommunicationLink/target"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"/>
     <creationConstraints>
       <sourceEnd
           body="self.kind = HardwarePortDirectionKind::OUT or self.kind = HardwarePortDirectionKind::IN_OUT"/>

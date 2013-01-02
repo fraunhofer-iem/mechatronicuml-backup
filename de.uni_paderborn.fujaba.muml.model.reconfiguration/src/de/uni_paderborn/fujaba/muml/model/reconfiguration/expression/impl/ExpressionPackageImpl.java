@@ -14,10 +14,10 @@ import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
@@ -30,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ExpressionP
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ReconfigurationRuleCallExpression;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -101,7 +102,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		// Initialize simple dependencies
 		ComponentPackage.eINSTANCE.eClass();
 		ConstraintPackage.eINSTANCE.eClass();
-		CorePackage.eINSTANCE.eClass();
 		InstancePackage.eINSTANCE.eClass();
 		ProtocolPackage.eINSTANCE.eClass();
 		RealtimestatechartPackage.eINSTANCE.eClass();
@@ -109,6 +109,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		DeploymentPackage.eINSTANCE.eClass();
 		TypesPackage.eINSTANCE.eClass();
 		ConnectorPackage.eINSTANCE.eClass();
+		ValuetypePackage.eINSTANCE.eClass();
+		BehaviorPackage.eINSTANCE.eClass();
 		StorydiagramsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
@@ -248,7 +250,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		// Obtain other dependent packages
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 		ReconfigurationPackage theReconfigurationPackage = (ReconfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI);
 
 		// Create type parameters
@@ -262,11 +264,11 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		// Initialize classes and features; add operations and parameters
 		initEClass(activityCallExpressionEClass, ActivityCallExpression.class, "ActivityCallExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActivityCallExpression_Activity(), theActivitiesPackage.getActivity(), null, "activity", null, 1, 1, ActivityCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivityCallExpression_ParameterBindings(), theCorePackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, ActivityCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActivityCallExpression_ParameterBindings(), theBehaviorPackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, ActivityCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reconfigurationRuleCallExpressionEClass, ReconfigurationRuleCallExpression.class, "ReconfigurationRuleCallExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReconfigurationRuleCallExpression_ReconfigurationRule(), theReconfigurationPackage.getReconfigurationRule(), null, "reconfigurationRule", null, 1, 1, ReconfigurationRuleCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getReconfigurationRuleCallExpression_ParameterBindings(), theCorePackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, ReconfigurationRuleCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationRuleCallExpression_ParameterBindings(), theBehaviorPackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, ReconfigurationRuleCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //ExpressionPackageImpl

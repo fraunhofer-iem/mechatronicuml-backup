@@ -122,7 +122,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Parameter"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/behavior/Parameter"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/msgtype/MessageType/parameters"/>
         <childMetaFeature
@@ -366,7 +366,7 @@
         viewExpression="//@expressionProviders/@providers.0/@expressions.3"
         editExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Parameter"/>
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/behavior/Parameter"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:PredefinedParser"

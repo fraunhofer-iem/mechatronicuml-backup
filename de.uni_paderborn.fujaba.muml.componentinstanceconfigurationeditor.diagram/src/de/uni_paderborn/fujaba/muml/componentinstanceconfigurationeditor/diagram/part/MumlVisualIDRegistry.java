@@ -494,6 +494,16 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
+		if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+				.getAssemblyConnectorInstance().isSuperTypeOf(
+						domainElement.eClass())) {
+			return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID;
+		}
+		if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+				.getDelegationConnectorInstance().isSuperTypeOf(
+						domainElement.eClass())) {
+			return de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID;
+		}
 		return -1;
 	}
 

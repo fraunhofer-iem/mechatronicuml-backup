@@ -61,8 +61,11 @@ public class CommunicationLinkReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort && newEnd instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort target = getLink()
-				.getTarget();
+		if (getLink().getHardwarePorts().size() != 1) {
+			return false;
+		}
+		de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort target = (de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) getLink()
+				.getHardwarePorts().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.deployment.Deployment)) {
 			return false;
 		}
@@ -80,8 +83,11 @@ public class CommunicationLinkReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort && newEnd instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort source = getLink()
-				.getSource();
+		if (getLink().getHardwarePorts().size() != 1) {
+			return false;
+		}
+		de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort source = (de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) getLink()
+				.getHardwarePorts().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.deployment.Deployment)) {
 			return false;
 		}
@@ -114,16 +120,14 @@ public class CommunicationLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().setSource(getNewSource());
-		return CommandResult.newOKCommandResult(getLink());
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setTarget(getNewTarget());
-		return CommandResult.newOKCommandResult(getLink());
+		throw new UnsupportedOperationException();
 	}
 
 	/**

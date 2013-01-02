@@ -65,7 +65,8 @@
       <labels
           visualID="5006"
           editPartClassName="CoordinationProtocolNameEditPart"
-          itemSemanticEditPolicyClassName="CoordinationProtocolNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="CoordinationProtocolNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="CoordinationProtocolNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -131,31 +132,31 @@
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/lowerBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.10">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/upperBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.11">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
               <elementClass
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality"/>
+                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range"/>
             </newElementInitializers>
           </initializers>
         </modelElementInitializer>
@@ -164,7 +165,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5005"
           editPartClassName="RoleNameEditPart"
-          itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="RoleNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -229,31 +231,31 @@
                   <initializers
                       xsi:type="gmfgen:GenReferenceNewElementSpec">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/lowerBound"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range/lowerBound"/>
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
                           value="//@expressionProviders/@providers.0/@expressions.2">
                         <feature
-                            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
+                            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
                       </initializers>
                     </newElementInitializers>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenReferenceNewElementSpec">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/upperBound"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range/upperBound"/>
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
                           value="//@expressionProviders/@providers.0/@expressions.3">
                         <feature
-                            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
+                            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
                       </initializers>
                     </newElementInitializers>
                   </initializers>
                   <elementClass
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality"/>
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range"/>
                 </newElementInitializers>
               </initializers>
               <elementClass
@@ -274,31 +276,31 @@
                   <initializers
                       xsi:type="gmfgen:GenReferenceNewElementSpec">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/lowerBound"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range/lowerBound"/>
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
                           value="//@expressionProviders/@providers.0/@expressions.5">
                         <feature
-                            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
+                            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
                       </initializers>
                     </newElementInitializers>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenReferenceNewElementSpec">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/upperBound"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range/upperBound"/>
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
                           value="//@expressionProviders/@providers.0/@expressions.6">
                         <feature
-                            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
+                            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
                       </initializers>
                     </newElementInitializers>
                   </initializers>
                   <elementClass
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality"/>
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range"/>
                 </newElementInitializers>
               </initializers>
             </newElementInitializers>

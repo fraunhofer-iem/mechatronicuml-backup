@@ -42,7 +42,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableBinding" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Variable"/>
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/Variable"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//JavaObject"
         transient="true"/>
   </eClassifiers>

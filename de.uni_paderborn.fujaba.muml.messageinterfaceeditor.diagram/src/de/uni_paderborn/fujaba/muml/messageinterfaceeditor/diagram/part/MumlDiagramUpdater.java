@@ -106,7 +106,7 @@ public class MumlDiagramUpdater {
 		LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getParameters().iterator(); it
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.core.Parameter childElement = (de.uni_paderborn.fujaba.muml.model.core.Parameter) it
+			de.uni_paderborn.fujaba.muml.model.behavior.Parameter childElement = (de.uni_paderborn.fujaba.muml.model.behavior.Parameter) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);

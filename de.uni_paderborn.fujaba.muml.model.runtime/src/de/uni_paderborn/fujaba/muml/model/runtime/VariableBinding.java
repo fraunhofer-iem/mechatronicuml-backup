@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.runtime;
 
 import org.storydriven.core.ExtendableElement;
 
-import de.uni_paderborn.fujaba.muml.model.core.Variable;
+import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
 
 /**
  * <!-- begin-user-doc -->

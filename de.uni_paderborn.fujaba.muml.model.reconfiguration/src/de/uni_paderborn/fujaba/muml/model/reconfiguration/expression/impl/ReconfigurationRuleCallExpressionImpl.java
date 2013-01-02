@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
-import de.uni_paderborn.fujaba.muml.model.core.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ExpressionPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ReconfigurationRuleCallExpression;

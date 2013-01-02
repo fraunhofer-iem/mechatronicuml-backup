@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern;
 
 import de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector;
-import de.uni_paderborn.fujaba.muml.model.component.Assembly;
 
 /**
  * <!-- begin-user-doc -->

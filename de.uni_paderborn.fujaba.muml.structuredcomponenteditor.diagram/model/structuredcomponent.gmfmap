@@ -41,13 +41,13 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/lowerBound"/>
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/valuetype/Range/lowerBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/valuetype/NaturalNumber/value"/>
                       <value
                           body="1"/>
                     </initializers>
@@ -57,13 +57,13 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/upperBound"/>
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/valuetype/Range/upperBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/valuetype/NaturalNumber/value"/>
                       <value
                           body="1"/>
                     </initializers>
@@ -145,13 +145,13 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/lowerBound"/>
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/valuetype/Range/lowerBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/valuetype/NaturalNumber/value"/>
                       <value
                           body="1"/>
                     </initializers>
@@ -161,13 +161,13 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/Cardinality/upperBound"/>
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/valuetype/Range/upperBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/core/NaturalNumber/value"/>
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/valuetype/NaturalNumber/value"/>
                       <value
                           body="1"/>
                     </initializers>

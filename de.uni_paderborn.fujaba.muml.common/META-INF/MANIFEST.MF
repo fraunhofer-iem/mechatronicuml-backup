@@ -18,7 +18,8 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.4.1",
  de.fujaba.newwizard;bundle-version="0.3.1"
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
-Export-Package: de.uni_paderborn.fujaba.muml.common.edit.parts,
+Export-Package: de.uni_paderborn.fujaba.muml.common,
+ de.uni_paderborn.fujaba.muml.common.edit.parts,
  de.uni_paderborn.fujaba.muml.common.emf.edit.provider,
  de.uni_paderborn.fujaba.muml.common.figures
 Bundle-Activator: de.uni_paderborn.fujaba.muml.common.MumlCommonPlugin

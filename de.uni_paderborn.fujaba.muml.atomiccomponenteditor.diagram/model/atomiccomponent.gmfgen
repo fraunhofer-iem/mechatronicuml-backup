@@ -35,7 +35,7 @@
         href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3008"
+        visualID="3005"
         editPartClassName="HybridPortEditPart"
         itemSemanticEditPolicyClassName="HybridPortItemSemanticEditPolicy"
         canonicalEditPolicyClassName="HybridPortCanonicalEditPolicy"
@@ -67,7 +67,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5012"
+          visualID="5006"
           editPartClassName="HybridPortNameEditPart"
           itemSemanticEditPolicyClassName="HybridPortNameItemSemanticEditPolicy">
         <diagramRunTimeClass
@@ -85,7 +85,7 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3009"
+        visualID="3006"
         editPartClassName="DiscretePortEditPart"
         itemSemanticEditPolicyClassName="DiscretePortItemSemanticEditPolicy"
         canonicalEditPolicyClassName="DiscretePortCanonicalEditPolicy"
@@ -124,26 +124,26 @@
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/lowerBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.1">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/Cardinality/upperBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.2">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/core/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
@@ -159,7 +159,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5013"
+          visualID="5007"
           editPartClassName="DiscretePortNameEditPart"
           itemSemanticEditPolicyClassName="DiscretePortNameItemSemanticEditPolicy">
         <diagramRunTimeClass
@@ -177,7 +177,7 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3010"
+        visualID="3007"
         editPartClassName="ContinuousPortEditPart"
         itemSemanticEditPolicyClassName="ContinuousPortItemSemanticEditPolicy"
         canonicalEditPolicyClassName="ContinuousPortCanonicalEditPolicy"
@@ -209,7 +209,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5014"
+          visualID="5008"
           editPartClassName="ContinuousPortNameEditPart"
           itemSemanticEditPolicyClassName="ContinuousPortNameItemSemanticEditPolicy">
         <diagramRunTimeClass
@@ -226,7 +226,7 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2006"
+        visualID="2005"
         editPartClassName="AtomicComponentEditPart"
         itemSemanticEditPolicyClassName="AtomicComponentItemSemanticEditPolicy"
         canonicalEditPolicyClassName="AtomicComponentCanonicalEditPolicy"
@@ -265,7 +265,7 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5015"
+          visualID="5011"
           editPartClassName="AtomicComponentNameEditPart"
           itemSemanticEditPolicyClassName="AtomicComponentNameItemSemanticEditPolicy">
         <diagramRunTimeClass

@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.model.core.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.policies.CustomComponentPartItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart;
 

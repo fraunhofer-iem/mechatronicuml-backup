@@ -52,7 +52,7 @@ public class ContinuousPortEditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3010;
+	public static final int VISUAL_ID = 3007;
 
 	/**
 	 * @generated

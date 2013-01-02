@@ -13,12 +13,13 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.storydriven.core.CorePackage;
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.model.core.CorePackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
@@ -46,6 +47,7 @@ import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ExpressionP
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.impl.ExpressionPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.util.ReconfigurationValidator;
 import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -215,7 +217,6 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		// Initialize simple dependencies
 		ComponentPackage.eINSTANCE.eClass();
 		ConstraintPackage.eINSTANCE.eClass();
-		CorePackage.eINSTANCE.eClass();
 		InstancePackage.eINSTANCE.eClass();
 		ProtocolPackage.eINSTANCE.eClass();
 		RealtimestatechartPackage.eINSTANCE.eClass();
@@ -223,6 +224,8 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		DeploymentPackage.eINSTANCE.eClass();
 		TypesPackage.eINSTANCE.eClass();
 		ConnectorPackage.eINSTANCE.eClass();
+		ValuetypePackage.eINSTANCE.eClass();
+		BehaviorPackage.eINSTANCE.eClass();
 		StorydiagramsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
@@ -735,8 +738,8 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		// Obtain other dependent packages
 		ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
-		org.storydriven.core.CorePackage theCorePackage_1 = (org.storydriven.core.CorePackage)EPackage.Registry.INSTANCE.getEPackage(org.storydriven.core.CorePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 
@@ -751,19 +754,19 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		reconfigurableStructuredComponentEClass.getESuperTypes().add(theComponentPackage.getStructuredComponent());
 		reconfigurableStructuredComponentEClass.getESuperTypes().add(this.getReconfigurableComponent());
 		reconfigurationPortEClass.getESuperTypes().add(theComponentPackage.getDiscretePort());
-		controllerEClass.getESuperTypes().add(theCorePackage.getBehavioralElement());
-		controllerEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		controllerEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		managerEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		executorEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		reconfigurationRuleEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		reconfigurationRuleEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
-		reconfigurationConditionEClass.getESuperTypes().add(theCorePackage_1.getNamedElement());
-		reconfigurationConditionEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
+		controllerEClass.getESuperTypes().add(theBehaviorPackage.getBehavioralElement());
+		controllerEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		controllerEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		managerEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		executorEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		reconfigurationRuleEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		reconfigurationRuleEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		reconfigurationConditionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		reconfigurationConditionEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		reconfigurationMessagePortEClass.getESuperTypes().add(this.getReconfigurationPort());
 		reconfigurationExecutionPortEClass.getESuperTypes().add(this.getReconfigurationPort());
-		executorSpecificationEntryEClass.getESuperTypes().add(theCorePackage_1.getExtendableElement());
-		managerSpecificationEntryEClass.getESuperTypes().add(theCorePackage_1.getCommentableElement());
+		executorSpecificationEntryEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
+		managerSpecificationEntryEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		reconfigurationControllerEClass.getESuperTypes().add(this.getController());
 		ruleBasedReconfigurationControllerEClass.getESuperTypes().add(this.getReconfigurationController());
 		externalReconfigurationExecutionPortEClass.getESuperTypes().add(this.getReconfigurationExecutionPort());
@@ -789,12 +792,12 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEReference(getExecutor_ReconfigurationController(), this.getRuleBasedReconfigurationController(), this.getRuleBasedReconfigurationController_Executor(), "reconfigurationController", null, 1, 1, Executor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reconfigurationRuleEClass, ReconfigurationRule.class, "ReconfigurationRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReconfigurationRule_Parameters(), theCorePackage.getParameter(), null, "parameters", null, 0, -1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getReconfigurationRule_ReturnParameters(), theCorePackage.getParameter(), null, "returnParameters", null, 0, -1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationRule_Parameters(), theBehaviorPackage.getParameter(), null, "parameters", null, 0, -1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationRule_ReturnParameters(), theBehaviorPackage.getParameter(), null, "returnParameters", null, 0, -1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationRule_ReconfiguredComponent(), this.getReconfigurableComponent(), null, "reconfiguredComponent", null, 0, 1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reconfigurationConditionEClass, ReconfigurationCondition.class, "ReconfigurationCondition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReconfigurationCondition_Parameters(), theCorePackage.getParameter(), null, "parameters", null, 0, -1, ReconfigurationCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationCondition_Parameters(), theBehaviorPackage.getParameter(), null, "parameters", null, 0, -1, ReconfigurationCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reconfigurableComponentEClass, ReconfigurableComponent.class, "ReconfigurableComponent", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
