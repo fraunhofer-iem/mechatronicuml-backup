@@ -12,7 +12,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://www.fujaba.de/muml/model/component/0.3.8"
+            uri="http://www.fujaba.de/muml/model/component/0.3.13"
             class="de.uni_paderborn.fujaba.muml.model.component.provider.ComponentItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

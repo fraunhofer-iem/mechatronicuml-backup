@@ -62,6 +62,7 @@ public class DirectedTypedPortItemProvider
 
 			addKindPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
+			addOptionalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,6 +112,28 @@ public class DirectedTypedPortItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Optional feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOptionalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DirectedTypedPort_optional_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DirectedTypedPort_optional_feature", "_UI_DirectedTypedPort_type"),
+				 ComponentPackage.Literals.DIRECTED_TYPED_PORT__OPTIONAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,6 +160,7 @@ public class DirectedTypedPortItemProvider
 
 		switch (notification.getFeatureID(DirectedTypedPort.class)) {
 			case ComponentPackage.DIRECTED_TYPED_PORT__KIND:
+			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
