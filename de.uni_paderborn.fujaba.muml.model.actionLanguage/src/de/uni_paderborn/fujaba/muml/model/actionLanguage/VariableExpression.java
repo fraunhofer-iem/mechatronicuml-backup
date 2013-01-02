@@ -39,7 +39,7 @@ public interface VariableExpression extends Expression {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Attribute of an attribute expression.
+	 * Variable of a variable expression.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Variable</em>' reference.
 	 * @see #setVariable(Variable)

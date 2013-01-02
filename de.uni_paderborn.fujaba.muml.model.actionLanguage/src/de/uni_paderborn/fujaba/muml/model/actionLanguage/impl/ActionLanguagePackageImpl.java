@@ -570,7 +570,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDiscreteInteractionEndpointReference_Attribute() {
+	public EReference getDiscreteInteractionEndpointReference_VariableExpression() {
 		return (EReference)discreteInteractionEndpointReferenceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -739,7 +739,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		createEReference(triggerMessageExpressionEClass, TRIGGER_MESSAGE_EXPRESSION__PARAMETER);
 
 		discreteInteractionEndpointReferenceEClass = createEClass(DISCRETE_INTERACTION_ENDPOINT_REFERENCE);
-		createEReference(discreteInteractionEndpointReferenceEClass, DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE);
+		createEReference(discreteInteractionEndpointReferenceEClass, DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION);
 		createEReference(discreteInteractionEndpointReferenceEClass, DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION);
 
 		positionSelectorEClass = createEClass(POSITION_SELECTOR);
@@ -849,7 +849,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		initEReference(getTriggerMessageExpression_Parameter(), theBehaviorPackage.getParameter(), null, "parameter", null, 1, 1, TriggerMessageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(discreteInteractionEndpointReferenceEClass, DiscreteInteractionEndpointReference.class, "DiscreteInteractionEndpointReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDiscreteInteractionEndpointReference_Attribute(), this.getVariableExpression(), null, "attribute", null, 0, 1, DiscreteInteractionEndpointReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscreteInteractionEndpointReference_VariableExpression(), this.getVariableExpression(), null, "variableExpression", null, 0, 1, DiscreteInteractionEndpointReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscreteInteractionEndpointReference_Position(), this.getPositionSelector(), null, "position", null, 1, 1, DiscreteInteractionEndpointReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(positionSelectorEClass, PositionSelector.class, "PositionSelector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

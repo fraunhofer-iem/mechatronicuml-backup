@@ -42,7 +42,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//Assignment/assignOperator"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Assignment/rhs_assignExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//Assignment/incrementDecrementOperator"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Assignment/lhs_attributeExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Assignment/lhs_variableExpression"/>
     </genClasses>
     <genClasses ecoreClass="actionLanguage.ecore#//ForLoop">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//ForLoop/initializeExpression"/>
@@ -71,7 +71,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//TriggerMessageExpression/parameter"/>
     </genClasses>
     <genClasses ecoreClass="actionLanguage.ecore#//DiscreteInteractionEndpointReference">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//DiscreteInteractionEndpointReference/attribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//DiscreteInteractionEndpointReference/variableExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//DiscreteInteractionEndpointReference/position"/>
     </genClasses>
     <genClasses ecoreClass="actionLanguage.ecore#//PositionSelector">

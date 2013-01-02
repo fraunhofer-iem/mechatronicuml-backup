@@ -88,7 +88,7 @@ public class DiscreteInteractionEndpointReferenceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE);
+			childrenFeatures.add(ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION);
 			childrenFeatures.add(ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION);
 		}
 		return childrenFeatures;
@@ -144,7 +144,7 @@ public class DiscreteInteractionEndpointReferenceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DiscreteInteractionEndpointReference.class)) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE:
+			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION:
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -165,7 +165,7 @@ public class DiscreteInteractionEndpointReferenceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE,
+				(ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createVariableExpression()));
 
 		newChildDescriptors.add

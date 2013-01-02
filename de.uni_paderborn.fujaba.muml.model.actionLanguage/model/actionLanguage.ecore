@@ -4,7 +4,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="actionLanguage"
     nsURI="http://www.fujaba.de/muml/actionlanguage/0.3.12" nsPrefix="actionLanguage">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-    <details key="documentation" value="The base package for the muml action language. It is an extension to the core.ecore expression package.&#xD;&#xA;The action language contains block definition, control structures like conditional statements and loops, assignments, and attribute and operation call expressions. "/>
+    <details key="documentation" value="The base package for the muml action language. It is an extension to the core.ecore expression package.&#xD;&#xA;The action language contains block definition, control structures like conditional statements and loops, assignments, and variable and operation call expressions. "/>
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/edapt">
     <details key="historyURI" value="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
@@ -63,17 +63,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="An assignment is used to assign a value to an attribute. "/>
+      <details key="documentation" value="An assignment is used to assign a value to a variable. "/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assignOperator" eType="#//AssignOperator">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An assignment is used to assign a value to an attribute. A simple assignment is one made using the \emph{&lt;ASSIGN>} Operator \emph{':='}. Further, we have  four more assign operators which are used as abbreviated syntax form. "/>
+        <details key="documentation" value="An assignment is used to assign a value to a variable. A simple assignment is one made using the \emph{&lt;ASSIGN>} Operator \emph{':='}. Further, we have  four more assign operators which are used as abbreviated syntax form. "/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rhs_assignExpression" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The right-hand-side expression evaluates to a value which is assigned to the left-hand-side attribute."/>
+        <details key="documentation" value="The right-hand-side expression evaluates to a value which is assigned to the left-hand-side variable."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="incrementDecrementOperator"
@@ -148,7 +148,7 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/Variable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Attribute of an attribute expression."/>
+        <details key="documentation" value="Variable of a variable expression."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="indices" upperBound="-1"
@@ -199,7 +199,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpointReference"
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//VariableExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variableExpression" eType="#//VariableExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="position" lowerBound="1"
         eType="#//PositionSelector" containment="true"/>

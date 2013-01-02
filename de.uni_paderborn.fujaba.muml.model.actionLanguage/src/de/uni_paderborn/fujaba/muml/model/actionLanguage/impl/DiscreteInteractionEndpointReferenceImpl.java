@@ -29,7 +29,7 @@ import org.storydriven.core.expressions.impl.ExpressionImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.DiscreteInteractionEndpointReferenceImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.DiscreteInteractionEndpointReferenceImpl#getVariableExpression <em>Variable Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.DiscreteInteractionEndpointReferenceImpl#getPosition <em>Position</em>}</li>
  * </ul>
  * </p>
@@ -38,14 +38,14 @@ import org.storydriven.core.expressions.impl.ExpressionImpl;
  */
 public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl implements DiscreteInteractionEndpointReference {
 	/**
-	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' containment reference.
+	 * The cached value of the '{@link #getVariableExpression() <em>Variable Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttribute()
+	 * @see #getVariableExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected VariableExpression attribute;
+	protected VariableExpression variableExpression;
 
 	/**
 	 * The cached value of the '{@link #getPosition() <em>Position</em>}' containment reference.
@@ -81,8 +81,8 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VariableExpression getAttribute() {
-		return attribute;
+	public VariableExpression getVariableExpression() {
+		return variableExpression;
 	}
 
 	/**
@@ -90,11 +90,11 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAttribute(VariableExpression newAttribute, NotificationChain msgs) {
-		VariableExpression oldAttribute = attribute;
-		attribute = newAttribute;
+	public NotificationChain basicSetVariableExpression(VariableExpression newVariableExpression, NotificationChain msgs) {
+		VariableExpression oldVariableExpression = variableExpression;
+		variableExpression = newVariableExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE, oldAttribute, newAttribute);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION, oldVariableExpression, newVariableExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -105,18 +105,18 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAttribute(VariableExpression newAttribute) {
-		if (newAttribute != attribute) {
+	public void setVariableExpression(VariableExpression newVariableExpression) {
+		if (newVariableExpression != variableExpression) {
 			NotificationChain msgs = null;
-			if (attribute != null)
-				msgs = ((InternalEObject)attribute).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE, null, msgs);
-			if (newAttribute != null)
-				msgs = ((InternalEObject)newAttribute).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE, null, msgs);
-			msgs = basicSetAttribute(newAttribute, msgs);
+			if (variableExpression != null)
+				msgs = ((InternalEObject)variableExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION, null, msgs);
+			if (newVariableExpression != null)
+				msgs = ((InternalEObject)newVariableExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION, null, msgs);
+			msgs = basicSetVariableExpression(newVariableExpression, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE, newAttribute, newAttribute));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION, newVariableExpression, newVariableExpression));
 	}
 
 	/**
@@ -170,8 +170,8 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE:
-				return basicSetAttribute(null, msgs);
+			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION:
+				return basicSetVariableExpression(null, msgs);
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				return basicSetPosition(null, msgs);
 		}
@@ -186,8 +186,8 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE:
-				return getAttribute();
+			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION:
+				return getVariableExpression();
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				return getPosition();
 		}
@@ -202,8 +202,8 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE:
-				setAttribute((VariableExpression)newValue);
+			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION:
+				setVariableExpression((VariableExpression)newValue);
 				return;
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				setPosition((PositionSelector)newValue);
@@ -220,8 +220,8 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE:
-				setAttribute((VariableExpression)null);
+			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION:
+				setVariableExpression((VariableExpression)null);
 				return;
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				setPosition((PositionSelector)null);
@@ -238,8 +238,8 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE:
-				return attribute != null;
+			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION:
+				return variableExpression != null;
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				return position != null;
 		}

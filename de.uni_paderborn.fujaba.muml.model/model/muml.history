@@ -15881,7 +15881,7 @@
       <element xsi:type="ecore:EClass" name="AttributeReference"/>
     </changes>
     <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference"
-        referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/attribute"/>
+        referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/variableExpression"/>
     <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/attribute"
         featureName="name" dataValue="attribute"/>
     <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/attribute"
@@ -18402,5 +18402,15 @@
     <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue=" The left-hand-side of an assignment must be a single variable and must not be another expression."
         oldDataValue=" The left-hand-side of an assignment must be a single attribute and must not be another expression."/>
+    <changes xsi:type="history:OperationChange">
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/variableExpression"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>variableExpression</dataValue>
+        </parameters>
+      </operation>
+    </changes>
   </releases>
 </history:History>

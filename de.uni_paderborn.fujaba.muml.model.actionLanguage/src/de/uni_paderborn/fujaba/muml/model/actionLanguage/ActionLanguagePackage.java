@@ -26,7 +26,7 @@ import org.storydriven.core.expressions.ExpressionsPackage;
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
  * The base package for the muml action language. It is an extension to the core.ecore expression package.
- * The action language contains block definition, control structures like conditional statements and loops, assignments, and attribute and operation call expressions. 
+ * The action language contains block definition, control structures like conditional statements and loops, assignments, and variable and operation call expressions. 
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory
  * @model kind="package"
@@ -889,13 +889,13 @@ public interface ActionLanguagePackage extends EPackage {
 	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference.
+	 * The feature id for the '<em><b>Variable Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+	int DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Position</b></em>' containment reference.
@@ -1425,15 +1425,15 @@ public interface ActionLanguagePackage extends EPackage {
 	EClass getDiscreteInteractionEndpointReference();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference#getAttribute <em>Attribute</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference#getVariableExpression <em>Variable Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Attribute</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference#getAttribute()
+	 * @return the meta object for the containment reference '<em>Variable Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference#getVariableExpression()
 	 * @see #getDiscreteInteractionEndpointReference()
 	 * @generated
 	 */
-	EReference getDiscreteInteractionEndpointReference_Attribute();
+	EReference getDiscreteInteractionEndpointReference_VariableExpression();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference#getPosition <em>Position</em>}'.
@@ -1851,12 +1851,12 @@ public interface ActionLanguagePackage extends EPackage {
 		EClass DISCRETE_INTERACTION_ENDPOINT_REFERENCE = eINSTANCE.getDiscreteInteractionEndpointReference();
 
 		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Variable Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DISCRETE_INTERACTION_ENDPOINT_REFERENCE__ATTRIBUTE = eINSTANCE.getDiscreteInteractionEndpointReference_Attribute();
+		EReference DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION = eINSTANCE.getDiscreteInteractionEndpointReference_VariableExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Position</b></em>' containment reference feature.

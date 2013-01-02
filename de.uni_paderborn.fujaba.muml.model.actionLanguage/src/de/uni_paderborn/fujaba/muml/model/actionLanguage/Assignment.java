@@ -16,7 +16,7 @@ import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An assignment is used to assign a value to an attribute. 
+ * An assignment is used to assign a value to a variable. 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -44,7 +44,7 @@ public interface Assignment extends Expression {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * An assignment is used to assign a value to an attribute. A simple assignment is one made using the \emph{<ASSIGN>} Operator \emph{':='}. Further, we have  four more assign operators which are used as abbreviated syntax form. 
+	 * An assignment is used to assign a value to a variable. A simple assignment is one made using the \emph{<ASSIGN>} Operator \emph{':='}. Further, we have  four more assign operators which are used as abbreviated syntax form. 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Assign Operator</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator
@@ -75,7 +75,7 @@ public interface Assignment extends Expression {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The right-hand-side expression evaluates to a value which is assigned to the left-hand-side attribute.
+	 * The right-hand-side expression evaluates to a value which is assigned to the left-hand-side variable.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Rhs assign Expression</em>' containment reference.
 	 * @see #setRhs_assignExpression(Expression)
