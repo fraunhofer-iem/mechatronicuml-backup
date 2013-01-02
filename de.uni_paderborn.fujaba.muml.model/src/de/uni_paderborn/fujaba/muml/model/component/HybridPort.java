@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement;
 import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
 
 
@@ -36,7 +37,7 @@ import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
  * @model
  * @generated
  */
-public interface HybridPort extends DirectedTypedPort {
+public interface HybridPort extends DirectedTypedPort, ITypedNamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Is Hybrid In Port</b></em>' attribute.

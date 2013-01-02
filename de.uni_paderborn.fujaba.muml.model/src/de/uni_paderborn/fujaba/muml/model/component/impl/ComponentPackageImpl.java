@@ -907,6 +907,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		assemblyConnectorEClass.getESuperTypes().add(this.getPortConnector());
 		delegationConnectorEClass.getESuperTypes().add(this.getPortConnector());
 		hybridPortEClass.getESuperTypes().add(this.getDirectedTypedPort());
+		hybridPortEClass.getESuperTypes().add(theBehaviorPackage.getITypedNamedElement());
 		coordinationProtocolOccurrenceEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		structuredComponentEClass.getESuperTypes().add(this.getComponent());
 		directedTypedPortEClass.getESuperTypes().add(this.getPort());

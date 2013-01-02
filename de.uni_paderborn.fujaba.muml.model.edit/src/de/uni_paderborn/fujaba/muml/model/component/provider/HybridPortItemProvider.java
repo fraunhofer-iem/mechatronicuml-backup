@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.component.provider;
 
 
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -63,11 +64,34 @@ public class HybridPortItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDataTypePropertyDescriptor(object);
 			addIsHybridInPortPropertyDescriptor(object);
 			addIsHybridOutPortPropertyDescriptor(object);
 			addSamplingIntervalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Data Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDataTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ITypedNamedElement_dataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ITypedNamedElement_dataType_feature", "_UI_ITypedNamedElement_type"),
+				 BehaviorPackage.Literals.ITYPED_NAMED_ELEMENT__DATA_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

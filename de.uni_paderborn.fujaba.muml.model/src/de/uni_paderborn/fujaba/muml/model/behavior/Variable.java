@@ -31,7 +31,7 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * @model
  * @generated
  */
-public interface Variable extends NamedElement, CommentableElement {
+public interface Variable extends NamedElement, CommentableElement, ITypedNamedElement {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

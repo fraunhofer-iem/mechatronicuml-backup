@@ -134,10 +134,6 @@
               ecoreFeature="ecore:EReference muml.ecore#//model/instance/ComponentInstance/componentPart"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/instance/PortConnectorInstance">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/instance/PortConnectorInstance/source"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/instance/PortConnectorInstance/target"/>
           <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/PortConnectorInstance/portConnectorType"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/PortInstance">
@@ -556,6 +552,10 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/behavior/ParameterBinding/parameter"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/ParameterBinding/value"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="muml.ecore#//model/behavior/ITypedNamedElement">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/behavior/ITypedNamedElement/dataType"/>
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>

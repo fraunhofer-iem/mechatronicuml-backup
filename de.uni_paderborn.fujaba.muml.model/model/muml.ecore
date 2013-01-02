@@ -369,7 +369,7 @@
           </eAnnotations>
         </eLiterals>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="HybridPort" eSuperTypes="#//model/component/DirectedTypedPort">
+      <eClassifiers xsi:type="ecore:EClass" name="HybridPort" eSuperTypes="#//model/component/DirectedTypedPort #//model/behavior/ITypedNamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a hybrid port which acts as a bridge between continuous&#xD;&#xA;controllers and discrete software. A hybrid port emits or receives a signal value &#xD;&#xA;which has a data type and a concrete value at all points in time. Then, the&#xD;&#xA;hybrid port discretizes the signal value in given time intervals and provides the&#xD;&#xA;value as variable to its Real-Time Statechart. The hybrid port does not define message&#xD;&#xA;interfaces."/>
         </eAnnotations>
@@ -616,18 +616,6 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class is the common super class of delegation instances and assemly instances."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-            eType="#//model/instance/PortInstance">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The port instance this connector instance originates from."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-            eType="#//model/instance/PortInstance">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The port instance this connector instance leads to."/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="portConnectorType"
             lowerBound="1" eType="#//model/component/PortConnector" changeable="false"
             volatile="true" transient="true" derived="true">
@@ -2157,7 +2145,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EDataType" name="TimeUnit" instanceClassName="java.util.concurrent.TimeUnit"/>
     </eSubpackages>
-    <eSubpackages name="behavior" nsURI="http://www.fujaba.de/muml/model/behavior/0.3.10"
+    <eSubpackages name="behavior" nsURI="http://www.fujaba.de/muml/model/behavior/0.3.13"
         nsPrefix="behavior">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -2198,7 +2186,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//model/behavior/ITypedNamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Implementation of an Attribute of a behavior which has a certain type."/>
         </eAnnotations>
@@ -2229,7 +2217,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
             eType="#//model/behavior/Parameter" containment="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//model/behavior/ITypedNamedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This is a general representation of a Parameter which is by all model elements&#xD;&#xA;that receive parameters. Examples include operations, message types, and synchronization channels.&#xD;&#xA;A parameter defines a data type."/>
         </eAnnotations>
@@ -2257,6 +2245,10 @@
             <details key="documentation" value="The value which is associated with the parameter. The value is defined by an expression."/>
           </eAnnotations>
         </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ITypedNamedElement" abstract="true"
+          interface="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="#//model/types/DataType"/>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>

@@ -21,6 +21,7 @@ import de.uni_paderborn.fujaba.muml.model.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement;
 import de.uni_paderborn.fujaba.muml.model.behavior.Operation;
 import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
@@ -95,6 +96,13 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * @generated
 	 */
 	private EClass parameterBindingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iTypedNamedElementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -350,6 +358,24 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getITypedNamedElement() {
+		return iTypedNamedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getITypedNamedElement_DataType() {
+		return (EReference)iTypedNamedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BehaviorFactory getBehaviorFactory() {
 		return (BehaviorFactory)getEFactoryInstance();
 	}
@@ -395,6 +421,9 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		parameterBindingEClass = createEClass(PARAMETER_BINDING);
 		createEReference(parameterBindingEClass, PARAMETER_BINDING__PARAMETER);
 		createEReference(parameterBindingEClass, PARAMETER_BINDING__VALUE);
+
+		iTypedNamedElementEClass = createEClass(ITYPED_NAMED_ELEMENT);
+		createEReference(iTypedNamedElementEClass, ITYPED_NAMED_ELEMENT__DATA_TYPE);
 	}
 
 	/**
@@ -432,11 +461,14 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		// Add supertypes to classes
 		variableEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		variableEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		variableEClass.getESuperTypes().add(this.getITypedNamedElement());
 		operationEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		operationEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		parameterEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		parameterEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		parameterEClass.getESuperTypes().add(this.getITypedNamedElement());
 		parameterBindingEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
+		iTypedNamedElementEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(behavioralElementEClass, BehavioralElement.class, "BehavioralElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -461,6 +493,9 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		initEClass(parameterBindingEClass, ParameterBinding.class, "ParameterBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParameterBinding_Parameter(), this.getParameter(), null, "parameter", null, 1, 1, ParameterBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getParameterBinding_Value(), theExpressionsPackage.getExpression(), null, "value", null, 1, 1, ParameterBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(iTypedNamedElementEClass, ITypedNamedElement.class, "ITypedNamedElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getITypedNamedElement_DataType(), theTypesPackage.getDataType(), null, "dataType", null, 0, 1, ITypedNamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

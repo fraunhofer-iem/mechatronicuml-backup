@@ -94,8 +94,9 @@ public class BehaviorSwitch<T> extends Switch<T> {
 			case BehaviorPackage.VARIABLE: {
 				Variable variable = (Variable)theEObject;
 				T result = caseVariable(variable);
-				if (result == null) result = caseNamedElement(variable);
 				if (result == null) result = caseCommentableElement(variable);
+				if (result == null) result = caseITypedNamedElement(variable);
+				if (result == null) result = caseNamedElement(variable);
 				if (result == null) result = caseExtendableElement(variable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -112,8 +113,9 @@ public class BehaviorSwitch<T> extends Switch<T> {
 			case BehaviorPackage.PARAMETER: {
 				Parameter parameter = (Parameter)theEObject;
 				T result = caseParameter(parameter);
-				if (result == null) result = caseNamedElement(parameter);
 				if (result == null) result = caseCommentableElement(parameter);
+				if (result == null) result = caseITypedNamedElement(parameter);
+				if (result == null) result = caseNamedElement(parameter);
 				if (result == null) result = caseExtendableElement(parameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -122,6 +124,14 @@ public class BehaviorSwitch<T> extends Switch<T> {
 				ParameterBinding parameterBinding = (ParameterBinding)theEObject;
 				T result = caseParameterBinding(parameterBinding);
 				if (result == null) result = caseExtendableElement(parameterBinding);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BehaviorPackage.ITYPED_NAMED_ELEMENT: {
+				ITypedNamedElement iTypedNamedElement = (ITypedNamedElement)theEObject;
+				T result = caseITypedNamedElement(iTypedNamedElement);
+				if (result == null) result = caseNamedElement(iTypedNamedElement);
+				if (result == null) result = caseExtendableElement(iTypedNamedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -216,6 +226,21 @@ public class BehaviorSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseParameterBinding(ParameterBinding object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ITyped Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ITyped Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseITypedNamedElement(ITypedNamedElement object) {
 		return null;
 	}
 

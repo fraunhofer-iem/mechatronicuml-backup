@@ -36,7 +36,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://www.fujaba.de/muml/model/behavior/0.3.10"
+            uri="http://www.fujaba.de/muml/model/behavior/0.3.13"
             class="de.uni_paderborn.fujaba.muml.model.behavior.provider.BehaviorItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

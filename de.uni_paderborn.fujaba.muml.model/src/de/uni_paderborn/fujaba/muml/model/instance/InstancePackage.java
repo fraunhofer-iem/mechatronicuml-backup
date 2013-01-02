@@ -196,31 +196,13 @@ public interface InstancePackage extends EPackage {
 	int PORT_CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES = ConnectorPackage.CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_CONNECTOR_INSTANCE__SOURCE = ConnectorPackage.CONNECTOR_INSTANCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_CONNECTOR_INSTANCE__TARGET = ConnectorPackage.CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Port Connector Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE = ConnectorPackage.CONNECTOR_INSTANCE_FEATURE_COUNT + 2;
+	int PORT_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE = ConnectorPackage.CONNECTOR_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Port Connector Instance</em>' class.
@@ -229,7 +211,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_CONNECTOR_INSTANCE_FEATURE_COUNT = ConnectorPackage.CONNECTOR_INSTANCE_FEATURE_COUNT + 3;
+	int PORT_CONNECTOR_INSTANCE_FEATURE_COUNT = ConnectorPackage.CONNECTOR_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortInstanceImpl <em>Port Instance</em>}' class.
@@ -387,24 +369,6 @@ public interface InstancePackage extends EPackage {
 	int ASSEMBLY_CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES = PORT_CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_CONNECTOR_INSTANCE__SOURCE = PORT_CONNECTOR_INSTANCE__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSEMBLY_CONNECTOR_INSTANCE__TARGET = PORT_CONNECTOR_INSTANCE__TARGET;
-
-	/**
 	 * The feature id for the '<em><b>Port Connector Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -485,24 +449,6 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int DELEGATION_CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES = PORT_CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION_CONNECTOR_INSTANCE__SOURCE = PORT_CONNECTOR_INSTANCE__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION_CONNECTOR_INSTANCE__TARGET = PORT_CONNECTOR_INSTANCE__TARGET;
 
 	/**
 	 * The feature id for the '<em><b>Port Connector Type</b></em>' reference.
@@ -1558,28 +1504,6 @@ public interface InstancePackage extends EPackage {
 	EClass getPortConnectorInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance#getSource()
-	 * @see #getPortConnectorInstance()
-	 * @generated
-	 */
-	EReference getPortConnectorInstance_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance#getTarget()
-	 * @see #getPortConnectorInstance()
-	 * @generated
-	 */
-	EReference getPortConnectorInstance_Target();
-
-	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance#getPortConnectorType <em>Port Connector Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1973,22 +1897,6 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EClass PORT_CONNECTOR_INSTANCE = eINSTANCE.getPortConnectorInstance();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT_CONNECTOR_INSTANCE__SOURCE = eINSTANCE.getPortConnectorInstance_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT_CONNECTOR_INSTANCE__TARGET = eINSTANCE.getPortConnectorInstance_Target();
 
 		/**
 		 * The meta object literal for the '<em><b>Port Connector Type</b></em>' reference feature.

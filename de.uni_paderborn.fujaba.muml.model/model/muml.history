@@ -5389,45 +5389,45 @@
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/instance/PortConnectorInstance"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/PortConnectorInstance/source">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/source"
+          referenceName="eStructuralFeatures" element="#//@releases.11/@changes.4/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.4/@changes.0/@element"
             featureName="name" dataValue="source"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/source"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.4/@changes.0/@element"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/source"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.4/@changes.0/@element"
             featureName="eType" referenceValue="muml.ecore#//model/instance/PortInstance"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/PortConnectorInstance/source"
-          referenceName="eAnnotations" element="muml.ecore#//model/instance/PortConnectorInstance/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.4/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.11/@changes.4/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.4/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/PortConnectorInstance/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/instance/PortConnectorInstance/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.4/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.11/@changes.4/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.4/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/source/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.4/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The port instance this connector instance originates from."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/instance/PortConnectorInstance"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/PortConnectorInstance/target">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/target"
+          referenceName="eStructuralFeatures" element="#//@releases.11/@changes.3/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.3/@changes.0/@element"
             featureName="name" dataValue="target"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/target"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.3/@changes.0/@element"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/target"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.3/@changes.0/@element"
             featureName="eType" referenceValue="muml.ecore#//model/instance/PortInstance"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/PortConnectorInstance/target"
-          referenceName="eAnnotations" element="muml.ecore#//model/instance/PortConnectorInstance/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.3/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.11/@changes.3/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.3/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/PortConnectorInstance/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/instance/PortConnectorInstance/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.3/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.11/@changes.3/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.3/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/target/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.3/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The port instance this connector instance leads to."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/instance/PortInstance"
@@ -5518,8 +5518,8 @@
         <changes xsi:type="history:Set" element="#//@releases.5/@changes.135/@element"
             featureName="eType" referenceValue="muml.ecore#//model/instance/PortConnectorInstance"/>
         <changes xsi:type="history:Set" element="#//@releases.5/@changes.135/@element"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/instance/PortConnectorInstance/target"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/target"
+            featureName="eOpposite" referenceValue="#//@releases.11/@changes.3/@changes.0/@element"/>
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.3/@changes.0/@element"
             featureName="eOpposite" referenceValue="#//@releases.5/@changes.135/@element"/>
       </changes>
       <changes xsi:type="history:Create" target="#//@releases.5/@changes.135/@element"
@@ -5543,8 +5543,8 @@
         <changes xsi:type="history:Set" element="#//@releases.5/@changes.134/@element"
             featureName="eType" referenceValue="muml.ecore#//model/instance/PortConnectorInstance"/>
         <changes xsi:type="history:Set" element="#//@releases.5/@changes.134/@element"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/instance/PortConnectorInstance/source"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/source"
+            featureName="eOpposite" referenceValue="#//@releases.11/@changes.4/@changes.0/@element"/>
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.4/@changes.0/@element"
             featureName="eOpposite" referenceValue="#//@releases.5/@changes.134/@element"/>
       </changes>
       <changes xsi:type="history:Create" target="#//@releases.5/@changes.134/@element"
@@ -17100,10 +17100,10 @@
         featureName="name" dataValue="portConnectorInstances" oldDataValue="incomingConnectorInstances"/>
     <changes xsi:type="history:Delete" target="muml.ecore#//model/instance/PortInstance"
         referenceName="eStructuralFeatures">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/source"
+      <changes xsi:type="history:Set" element="#//@releases.11/@changes.4/@changes.0/@element"
           featureName="eOpposite" oldReferenceValue="#//@releases.5/@changes.134/@element"/>
       <element xsi:type="ecore:EReference" name="outgoingConnectorInstances" upperBound="-1"
-          eType="ecore:EClass muml.ecore#//model/instance/PortConnectorInstance" eOpposite="muml.ecore#//model/instance/PortConnectorInstance/source">
+          eType="ecore:EClass muml.ecore#//model/instance/PortConnectorInstance" eOpposite="#//@releases.11/@changes.4/@changes.0/@element">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The connector instances that origin from this port instance."/>
         </eAnnotations>
@@ -17111,10 +17111,10 @@
     </changes>
     <changes xsi:type="history:Delete" target="muml.ecore#//model/instance/PortInstance"
         referenceName="eStructuralFeatures">
-      <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/target"
+      <changes xsi:type="history:Set" element="#//@releases.11/@changes.3/@changes.0/@element"
           featureName="eOpposite" oldReferenceValue="#//@releases.5/@changes.135/@element"/>
       <element xsi:type="ecore:EReference" name="portConnectorInstances" upperBound="-1"
-          eType="ecore:EClass muml.ecore#//model/instance/PortConnectorInstance" eOpposite="muml.ecore#//model/instance/PortConnectorInstance/target">
+          eType="ecore:EClass muml.ecore#//model/instance/PortConnectorInstance" eOpposite="#//@releases.11/@changes.3/@changes.0/@element">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The connector instances that lead into this port instance."/>
         </eAnnotations>
@@ -18412,5 +18412,65 @@
         </parameters>
       </operation>
     </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/instance/PortConnectorInstance"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="target" lowerBound="1" eType="ecore:EClass muml.ecore#//model/instance/PortInstance">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The port instance this connector instance leads to."/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.11/@changes.3/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/instance/PortConnectorInstance"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="source" lowerBound="1" eType="ecore:EClass muml.ecore#//model/instance/PortInstance">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The port instance this connector instance originates from."/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.11/@changes.4/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/behavior" referenceName="eClassifiers"
+        element="muml.ecore#//model/behavior/ITypedNamedElement"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement"
+        featureName="name" dataValue="bla"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement"
+        featureName="interface" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/behavior/ITypedNamedElement"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement"
+        featureName="abstract" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement"
+        featureName="name" dataValue="I" oldDataValue="bla"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement"
+        featureName="name" dataValue="ITypedNamedElement" oldDataValue="I"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/behavior/ITypedNamedElement"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/behavior/ITypedNamedElement/dataType"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement/dataType"
+        featureName="name" dataValue="dataType"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement/dataType"
+        featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement/dataType"
+        featureName="eType" referenceValue="muml.ecore#//model/types/DataType" oldReferenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/behavior/Parameter"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/behavior/ITypedNamedElement"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/behavior/Variable"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/behavior/ITypedNamedElement"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/component/HybridPort"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/behavior/ITypedNamedElement"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/behavior/0.3.13" oldDataValue="http://www.fujaba.de/muml/model/behavior/0.3.10"/>
   </releases>
 </history:History>

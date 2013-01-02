@@ -15,6 +15,7 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement;
 import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
@@ -26,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.behavior.impl.VariableImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.behavior.impl.VariableImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.behavior.impl.VariableImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
@@ -52,6 +54,16 @@ public class VariableImpl extends NamedElementImpl implements Variable {
 	 * @ordered
 	 */
 	protected String comment = COMMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataType()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataType dataType;
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
@@ -108,6 +120,44 @@ public class VariableImpl extends NamedElementImpl implements Variable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DataType getDataType() {
+		if (dataType != null && dataType.eIsProxy()) {
+			InternalEObject oldDataType = (InternalEObject)dataType;
+			dataType = (DataType)eResolveProxy(oldDataType);
+			if (dataType != oldDataType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.VARIABLE__DATA_TYPE, oldDataType, dataType));
+			}
+		}
+		return dataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataType basicGetDataType() {
+		return dataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDataType(DataType newDataType) {
+		DataType oldDataType = dataType;
+		dataType = newDataType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.VARIABLE__DATA_TYPE, oldDataType, dataType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DataType getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
@@ -151,6 +201,9 @@ public class VariableImpl extends NamedElementImpl implements Variable {
 		switch (featureID) {
 			case BehaviorPackage.VARIABLE__COMMENT:
 				return getComment();
+			case BehaviorPackage.VARIABLE__DATA_TYPE:
+				if (resolve) return getDataType();
+				return basicGetDataType();
 			case BehaviorPackage.VARIABLE__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
@@ -168,6 +221,9 @@ public class VariableImpl extends NamedElementImpl implements Variable {
 		switch (featureID) {
 			case BehaviorPackage.VARIABLE__COMMENT:
 				setComment((String)newValue);
+				return;
+			case BehaviorPackage.VARIABLE__DATA_TYPE:
+				setDataType((DataType)newValue);
 				return;
 			case BehaviorPackage.VARIABLE__TYPE:
 				setType((DataType)newValue);
@@ -187,6 +243,9 @@ public class VariableImpl extends NamedElementImpl implements Variable {
 			case BehaviorPackage.VARIABLE__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
+			case BehaviorPackage.VARIABLE__DATA_TYPE:
+				setDataType((DataType)null);
+				return;
 			case BehaviorPackage.VARIABLE__TYPE:
 				setType((DataType)null);
 				return;
@@ -204,6 +263,8 @@ public class VariableImpl extends NamedElementImpl implements Variable {
 		switch (featureID) {
 			case BehaviorPackage.VARIABLE__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			case BehaviorPackage.VARIABLE__DATA_TYPE:
+				return dataType != null;
 			case BehaviorPackage.VARIABLE__TYPE:
 				return type != null;
 		}
@@ -223,6 +284,12 @@ public class VariableImpl extends NamedElementImpl implements Variable {
 				default: return -1;
 			}
 		}
+		if (baseClass == ITypedNamedElement.class) {
+			switch (derivedFeatureID) {
+				case BehaviorPackage.VARIABLE__DATA_TYPE: return BehaviorPackage.ITYPED_NAMED_ELEMENT__DATA_TYPE;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -236,6 +303,12 @@ public class VariableImpl extends NamedElementImpl implements Variable {
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
 				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return BehaviorPackage.VARIABLE__COMMENT;
+				default: return -1;
+			}
+		}
+		if (baseClass == ITypedNamedElement.class) {
+			switch (baseFeatureID) {
+				case BehaviorPackage.ITYPED_NAMED_ELEMENT__DATA_TYPE: return BehaviorPackage.VARIABLE__DATA_TYPE;
 				default: return -1;
 			}
 		}

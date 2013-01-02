@@ -1504,13 +1504,22 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__TYPE = DIRECTED_TYPED_PORT__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__DATA_TYPE = DIRECTED_TYPED_PORT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Is Hybrid In Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__IS_HYBRID_IN_PORT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 0;
+	int HYBRID_PORT__IS_HYBRID_IN_PORT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Is Hybrid Out Port</b></em>' attribute.
@@ -1519,7 +1528,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__IS_HYBRID_OUT_PORT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 1;
+	int HYBRID_PORT__IS_HYBRID_OUT_PORT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Sampling Interval</b></em>' containment reference.
@@ -1528,7 +1537,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__SAMPLING_INTERVAL = DIRECTED_TYPED_PORT_FEATURE_COUNT + 2;
+	int HYBRID_PORT__SAMPLING_INTERVAL = DIRECTED_TYPED_PORT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Hybrid Port</em>' class.
@@ -1537,7 +1546,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT_FEATURE_COUNT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 3;
+	int HYBRID_PORT_FEATURE_COUNT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.CoordinationProtocolOccurrenceImpl <em>Coordination Protocol Occurrence</em>}' class.
