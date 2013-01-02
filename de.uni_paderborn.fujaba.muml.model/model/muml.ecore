@@ -8,7 +8,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The model package contains the core meta-model of MechatronicUML. The&#xD;&#xA;subpackages define the base classes for the component model, real-time &#xD;&#xA;statecharts, message interfaces and coordination pattern."/>
     </eAnnotations>
-    <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/model/component/0.3.8"
+    <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/model/component/0.3.13"
         nsPrefix="component">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -67,13 +67,6 @@
       <eClassifiers xsi:type="ecore:EClass" name="ContinuousPort" eSuperTypes="#//model/component/DirectedTypedPort">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a concrete port specification which provides the &#xD;&#xA;continuous functionality of a port. A continuous port emits a signal value.&#xD;&#xA;A signal value has a data type and it has concrete values at all points in time."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value=""/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="LowerBoundMustBeZeroOrOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.lowerBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1&#xA;&#x9;endif&#xA;)"/>
-          <details key="UpperBoundMustBeOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.upperBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.upperBound.value = 1&#xA;&#x9;endif&#xA;)"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="isContinuousInPort"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -504,6 +497,8 @@
             <details key="documentation" value="Defines the data type of the signal value which is emitted or received by "/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+            defaultValueLiteral="false"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/model/constraint/0.3.8"

@@ -50,7 +50,7 @@ public interface ComponentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/component/0.3.8";
+	String eNS_URI = "http://www.fujaba.de/muml/model/component/0.3.13";
 
 	/**
 	 * The package namespace name.
@@ -351,13 +351,22 @@ public interface ComponentPackage extends EPackage {
 	int DIRECTED_TYPED_PORT__TYPE = PORT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Optional</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__OPTIONAL = PORT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Directed Typed Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_TYPED_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 2;
+	int DIRECTED_TYPED_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl <em>Continuous Port</em>}' class.
@@ -458,6 +467,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTINUOUS_PORT__TYPE = DIRECTED_TYPED_PORT__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Optional</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__OPTIONAL = DIRECTED_TYPED_PORT__OPTIONAL;
 
 	/**
 	 * The feature id for the '<em><b>Is Continuous In Port</b></em>' attribute.
@@ -1504,6 +1522,15 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__TYPE = DIRECTED_TYPED_PORT__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Optional</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__OPTIONAL = DIRECTED_TYPED_PORT__OPTIONAL;
+
+	/**
 	 * The feature id for the '<em><b>Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1997,6 +2024,17 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDirectedTypedPort_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isOptional <em>Optional</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Optional</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isOptional()
+	 * @see #getDirectedTypedPort()
+	 * @generated
+	 */
+	EAttribute getDirectedTypedPort_Optional();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.AtomicComponent <em>Atomic Component</em>}'.
@@ -2497,6 +2535,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DIRECTED_TYPED_PORT__TYPE = eINSTANCE.getDirectedTypedPort_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Optional</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIRECTED_TYPED_PORT__OPTIONAL = eINSTANCE.getDirectedTypedPort_Optional();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.AtomicComponentImpl <em>Atomic Component</em>}' class.

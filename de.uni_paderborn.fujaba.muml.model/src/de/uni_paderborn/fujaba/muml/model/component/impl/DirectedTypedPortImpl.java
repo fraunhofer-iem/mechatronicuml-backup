@@ -25,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl#getType <em>Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl#isOptional <em>Optional</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,6 +61,26 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	 * @ordered
 	 */
 	protected DataType type;
+
+	/**
+	 * The default value of the '{@link #isOptional() <em>Optional</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOptional()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean OPTIONAL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOptional() <em>Optional</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOptional()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean optional = OPTIONAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -144,6 +165,27 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isOptional() {
+		return optional;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOptional(boolean newOptional) {
+		boolean oldOptional = optional;
+		optional = newOptional;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL, oldOptional, optional));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -152,6 +194,8 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 			case ComponentPackage.DIRECTED_TYPED_PORT__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
+			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
+				return isOptional();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,6 +213,9 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 				return;
 			case ComponentPackage.DIRECTED_TYPED_PORT__TYPE:
 				setType((DataType)newValue);
+				return;
+			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
+				setOptional((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -188,6 +235,9 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 			case ComponentPackage.DIRECTED_TYPED_PORT__TYPE:
 				setType((DataType)null);
 				return;
+			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
+				setOptional(OPTIONAL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -204,6 +254,8 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 				return kind != KIND_EDEFAULT;
 			case ComponentPackage.DIRECTED_TYPED_PORT__TYPE:
 				return type != null;
+			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
+				return optional != OPTIONAL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -220,6 +272,8 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (kind: ");
 		result.append(kind);
+		result.append(", optional: ");
+		result.append(optional);
 		result.append(')');
 		return result.toString();
 	}

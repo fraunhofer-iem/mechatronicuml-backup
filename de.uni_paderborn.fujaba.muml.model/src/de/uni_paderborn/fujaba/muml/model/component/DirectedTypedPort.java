@@ -18,6 +18,7 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#getKind <em>Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#getType <em>Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isOptional <em>Optional</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,5 +79,32 @@ public interface DirectedTypedPort extends Port {
 	 * @generated
 	 */
 	void setType(DataType value);
+
+	/**
+	 * Returns the value of the '<em><b>Optional</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Optional</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Optional</em>' attribute.
+	 * @see #setOptional(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDirectedTypedPort_Optional()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isOptional();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isOptional <em>Optional</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Optional</em>' attribute.
+	 * @see #isOptional()
+	 * @generated
+	 */
+	void setOptional(boolean value);
 
 } // DirectedTypedPort

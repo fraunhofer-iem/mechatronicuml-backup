@@ -3402,34 +3402,34 @@
             featureName="value" dataValue="This class represents a concrete port specification which provides the &#xD;&#xA;continuous functionality of a port. A continuous port emits a signal value.&#xD;&#xA;A signal value has a data type and it has concrete values at all points in time."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="eAnnotations" element="#//@releases.11/@changes.25/@element">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.25/@element"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.25/@element"
+          referenceName="details" element="#//@releases.11/@changes.25/@element/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.25/@element/@details.0"
             featureName="key" dataValue="constraints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.25/@element/@details.0"
             featureName="value" dataValue="LowerBoundMustBeZeroOrOne UpperBoundMustBeOne"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="eAnnotations" element="#//@releases.11/@changes.26/@element">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.26/@element"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.26/@element"
+          referenceName="details" element="#//@releases.11/@changes.26/@element/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.26/@element/@details.0"
             featureName="key" dataValue="LowerBoundMustBeZeroOrOne"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.26/@element/@details.0"
             featureName="value" dataValue="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.lowerBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1&#xA;&#x9;endif&#xA;)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.26/@element"
+          referenceName="details" element="#//@releases.11/@changes.26/@element/@details.1">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.26/@element/@details.1"
             featureName="key" dataValue="UpperBoundMustBeOne"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.26/@element/@details.1"
             featureName="value" dataValue="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.upperBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.upperBound.value = 1&#xA;&#x9;endif&#xA;)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort"
@@ -17507,7 +17507,7 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/RealtimeStatechart/isSuperStatechartOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
         featureName="value" dataValue="// TODO: Replace by OCL's transitive closure?&#xA;&#x9;&#x9;&#xA;Assert.isLegal(statechart != null);&#xA;&#xA;BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();&#xA;return bfs.search(statechart, new ISearchVisitor() {&#xA;&#xA;&#x9;@Override&#xA;&#x9;public boolean visit(Object object) {&#xA;&#x9;&#x9;return !RealtimeStatechartImpl.this.equals(object);&#xA;&#x9;}&#xA;&#xA;&#x9;@Override&#xA;&#x9;public List&lt;?> getAdjacentNodes(Object object) {&#xA;&#x9;&#x9;RealtimeStatechart rtsc = (RealtimeStatechart) object;&#xA;&#xA;&#x9;&#x9;List&lt;Object> parentStatecharts = new ArrayList&lt;Object>();&#xA;&#xA;&#x9;&#x9;Region region = rtsc.getEmbeddingRegion();&#xA;&#x9;&#x9;if (region != null) {&#xA;&#x9;&#x9;&#x9;// List&lt;Region> regions = rtsc.getEmbeddingRegions();&#xA;&#x9;&#x9;&#x9;// for (Region region : regions) {&#xA;&#x9;&#x9;&#x9;State state = region.getParentState();&#xA;&#x9;&#x9;&#x9;if (state != null &amp;&amp; state.getStatechart() != null) {&#xA;&#x9;&#x9;&#x9;&#x9;parentStatecharts.add(state.getStatechart());&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;// }&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;return parentStatecharts;&#xA;&#x9;}&#xA;&#xA;});"
         oldDataValue="RealtimeStatechart rtsc = this;&#xD;&#xA;while (rtsc.isEmbedded()==true)&#xD;&#xA;{rtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();} &#xD;&#xA;return rtsc;"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.11/@changes.25/@element/@details.0"
         featureName="value" dataValue="" oldDataValue="LowerBoundMustBeZeroOrOne UpperBoundMustBeOne"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortAndRoleSameMessageInterface MultiPortMustRefineMultiRole"
@@ -18475,5 +18475,30 @@
     <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.12"
         oldDataValue="http://www.fujaba.de/modelinstance/0.3.8"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/DirectedTypedPort"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/DirectedTypedPort/optional"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/optional"
+        featureName="name" dataValue="optional"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/optional"
+        featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/optional"
+        featureName="defaultValueLiteral" dataValue="false"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/component/ContinuousPort"
+        referenceName="eAnnotations">
+      <element xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value=""/>
+      </element>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/component/ContinuousPort"
+        referenceName="eAnnotations">
+      <element xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="LowerBoundMustBeZeroOrOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.lowerBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1&#xA;&#x9;endif&#xA;)"/>
+        <details key="UpperBoundMustBeOne" value="-- This Constraint is fulfilled, if no Cardinality exists.&#xA;-- But that is okay, as then another Problem-Marker is shown,&#xA;-- because Cardinality.upperBound is 1..1&#xA;self.cardinality.oclIsUndefined() or (&#xA;&#x9;if self.cardinality.upperBound.oclIsUndefined() then&#xA;&#x9;&#x9;false&#xA;&#x9;else&#xA;&#x9;&#x9;self.cardinality.upperBound.value = 1&#xA;&#x9;endif&#xA;)"/>
+      </element>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/component/0.313" oldDataValue="http://www.fujaba.de/muml/model/component/0.3.8"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/component/0.3.13" oldDataValue="http://www.fujaba.de/muml/model/component/0.313"/>
   </releases>
 </history:History>

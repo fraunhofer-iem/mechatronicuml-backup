@@ -596,6 +596,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDirectedTypedPort_Optional() {
+		return (EAttribute)directedTypedPortEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAtomicComponent() {
 		return atomicComponentEClass;
 	}
@@ -844,6 +853,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		directedTypedPortEClass = createEClass(DIRECTED_TYPED_PORT);
 		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__KIND);
 		createEReference(directedTypedPortEClass, DIRECTED_TYPED_PORT__TYPE);
+		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__OPTIONAL);
 
 		// Create enums
 		componentKindEEnum = createEEnum(COMPONENT_KIND);
@@ -980,6 +990,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEClass(directedTypedPortEClass, DirectedTypedPort.class, "DirectedTypedPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDirectedTypedPort_Kind(), this.getContinuousPortDirectionKind(), "kind", null, 1, 1, DirectedTypedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDirectedTypedPort_Type(), theTypesPackage.getDataType(), null, "type", null, 1, 1, DirectedTypedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDirectedTypedPort_Optional(), theEcorePackage.getEBoolean(), "optional", "false", 0, 1, DirectedTypedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(componentKindEEnum, ComponentKind.class, "ComponentKind");
@@ -1022,13 +1033,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "UniquePortNames"
-		   });										
-		addAnnotation
-		  (continuousPortEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", ""
-		   });								
+		   });															
 		addAnnotation
 		  (discretePortEClass, 
 		   source, 
@@ -1087,13 +1092,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   new String[] {
 			 "derivation", "self.connectors->select(c | c.oclIsKindOf(PortConnector)).oclAsType(PortConnector)->asOrderedSet()"
 		   });				
-		addAnnotation
-		  (continuousPortEClass, 
-		   source, 
-		   new String[] {
-			 "LowerBoundMustBeZeroOrOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.lowerBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.lowerBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.lowerBound.value = 0 or self.cardinality.lowerBound.value = 1\n\tendif\n)",
-			 "UpperBoundMustBeOne", "-- This Constraint is fulfilled, if no Cardinality exists.\n-- But that is okay, as then another Problem-Marker is shown,\n-- because Cardinality.upperBound is 1..1\nself.cardinality.oclIsUndefined() or (\n\tif self.cardinality.upperBound.oclIsUndefined() then\n\t\tfalse\n\telse\n\t\tself.cardinality.upperBound.value = 1\n\tendif\n)"
-		   });			
 		addAnnotation
 		  (getContinuousPort_IsContinuousInPort(), 
 		   source, 
