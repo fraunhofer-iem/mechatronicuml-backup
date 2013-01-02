@@ -604,7 +604,7 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.34"/>
         <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Action" feature="attribute" operator="=">
+          <elements xsi:type="xtext:Action" feature="variableExpression" operator="=">
             <type metamodel="/0/@metamodelDeclarations.0">
               <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/actionlanguage/0.3.12#//DiscreteInteractionEndpointReference"/>
             </type>

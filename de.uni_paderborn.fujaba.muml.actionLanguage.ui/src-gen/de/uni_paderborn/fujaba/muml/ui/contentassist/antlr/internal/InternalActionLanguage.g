@@ -4558,11 +4558,11 @@ rule__ExtendedVariableExpression__Group_1__0__Impl
     }
 :
 (
-{ before(grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceAttributeAction_1_0()); }
+{ before(grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceVariableExpressionAction_1_0()); }
 (
 
 )
-{ after(grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceAttributeAction_1_0()); }
+{ after(grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceVariableExpressionAction_1_0()); }
 )
 
 ;

@@ -12366,13 +12366,13 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:4560:1: ( () )
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:4561:1: ()
             {
-             before(grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceAttributeAction_1_0()); 
+             before(grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceVariableExpressionAction_1_0()); 
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:4562:1: ()
             // ../de.uni_paderborn.fujaba.muml.actionLanguage.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:4564:1: 
             {
             }
 
-             after(grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceAttributeAction_1_0()); 
+             after(grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceVariableExpressionAction_1_0()); 
 
             }
 

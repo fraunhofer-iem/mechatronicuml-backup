@@ -230,7 +230,7 @@ Literal returns ecore::EString:
 ExtendedVariableExpression returns expressions::Expression:
 	VariableExpression
 	(
-		{actionLanguage::DiscreteInteractionEndpointReference.attribute = current}
+		{actionLanguage::DiscreteInteractionEndpointReference.variableExpression = current}
 		'.' position=PositionSelectorExpression
 	)?
 ;

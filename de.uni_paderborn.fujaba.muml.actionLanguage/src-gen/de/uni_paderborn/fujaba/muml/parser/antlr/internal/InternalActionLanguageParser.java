@@ -4339,7 +4339,7 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
                     {
 
                             current = forceCreateModelElementAndSet(
-                                grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceAttributeAction_1_0(),
+                                grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceVariableExpressionAction_1_0(),
                                 current);
                         
 

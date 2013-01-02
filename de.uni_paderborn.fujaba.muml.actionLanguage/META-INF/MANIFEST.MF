@@ -25,5 +25,7 @@ Export-Package: de.uni_paderborn.fujaba.muml,
  de.uni_paderborn.fujaba.muml.parser.antlr.internal,
  de.uni_paderborn.fujaba.muml.services,
  de.uni_paderborn.fujaba.muml.storage,
- de.uni_paderborn.fujaba.muml.validation
+ de.uni_paderborn.fujaba.muml.validation,
+ de.uni_paderborn.fujaba.muml.scoping,
+ de.uni_paderborn.fujaba.muml.formatting
 Import-Package: org.apache.log4j

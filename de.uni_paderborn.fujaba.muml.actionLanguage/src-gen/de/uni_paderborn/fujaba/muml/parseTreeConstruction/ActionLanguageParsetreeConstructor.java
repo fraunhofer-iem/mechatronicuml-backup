@@ -69,6 +69,7 @@ protected class ThisRootNode extends RootToken {
 /************ begin Rule Block ****************
  *
  * Block returns actionLanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
+ * 
  * 	{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=Expression;
  *
  **/
@@ -296,14 +297,19 @@ protected class Block_ExpressionsAssignment_1 extends AssignmentToken  {
 /************ begin Rule ForLoop ****************
  *
  * // TODO: clarify if it makes sense to allow arbitrary expressions for
+ * 
+ * 
  * // the initializeExpression and countingExpression
- * ForLoop returns actionLanguage::ForLoop:
+ *  ForLoop returns actionLanguage::ForLoop:
+ * 
  * 	"for" "(" initializeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
+ * 
  * 	block=Block;
  *
  **/
 
 // "for" "(" initializeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
+// 
 // block=Block
 protected class ForLoop_Group extends GroupToken {
 	
@@ -611,12 +617,15 @@ protected class ForLoop_BlockAssignment_7 extends AssignmentToken  {
 /************ begin Rule ForLoopCountingExpression ****************
  *
  * ForLoopCountingExpression returns actionLanguage::Assignment:
+ * 
  * 	lhs_variableExpression=VariableExpression (incrementDecrementOperator=IncrementDecrementOperator |
+ * 
  * 	assignOperator=AssignOperator rhs_assignExpression=Expression);
  *
  **/
 
 // lhs_variableExpression=VariableExpression (incrementDecrementOperator=IncrementDecrementOperator |
+// 
 // assignOperator=AssignOperator rhs_assignExpression=Expression)
 protected class ForLoopCountingExpression_Group extends GroupToken {
 	
@@ -859,6 +868,7 @@ protected class ForLoopCountingExpression_Rhs_assignExpressionAssignment_1_1_1 e
 /************ begin Rule WhileLoop ****************
  *
  * WhileLoop returns actionLanguage::WhileLoop:
+ * 
  * 	"while" "(" loopTest=Expression ")" block=Block;
  *
  **/
@@ -1056,6 +1066,7 @@ protected class WhileLoop_BlockAssignment_4 extends AssignmentToken  {
 /************ begin Rule DoWhileLoop ****************
  *
  * DoWhileLoop returns actionLanguage::DoWhileLoop:
+ * 
  * 	"do" block=Block "while" "(" loopTest=Expression ");";
  *
  **/
@@ -1275,12 +1286,15 @@ protected class DoWhileLoop_RightParenthesisSemicolonKeyword_5 extends KeywordTo
 /************ begin Rule IfStatement ****************
  *
  * IfStatement returns actionLanguage::IfStatement:
- * 	"if" "(" ifCondition=Expression ")" ifBlock=Block ("elseif" "(" elseIfConditions+=Expression ")" elseIfBlocks+=Block)*
- * 	("else" elseBlock=Block)?;
+ * 
+ * 	"if" "(" ifCondition=Expression ")" ifBlock=Block ("elseif" "(" elseIfConditions+=Expression ")"
+ * 
+ * 	elseIfBlocks+=Block)* ("else" elseBlock=Block)?;
  *
  **/
 
 // "if" "(" ifCondition=Expression ")" ifBlock=Block ("elseif" "(" elseIfConditions+=Expression ")" elseIfBlocks+=Block)*
+// 
 // ("else" elseBlock=Block)?
 protected class IfStatement_Group extends GroupToken {
 	
@@ -1750,6 +1764,7 @@ protected class IfStatement_ElseBlockAssignment_6_1 extends AssignmentToken  {
 /************ begin Rule ReturnStatement ****************
  *
  * ReturnStatement returns actionLanguage::ReturnStatement:
+ * 
  * 	{actionLanguage::ReturnStatement} "return" expression=Expression ";";
  *
  **/
@@ -1906,6 +1921,7 @@ protected class ReturnStatement_SemicolonKeyword_3 extends KeywordToken  {
 /************ begin Rule ExpressionStartRule ****************
  *
  * ExpressionStartRule returns expressions::Expression:
+ * 
  * 	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement;
  *
  **/
@@ -2172,7 +2188,8 @@ protected class ExpressionStartRule_ReturnStatementParserRuleCall_5 extends Rule
 /************ begin Rule Assignment ****************
  *
  * // Assignment
- * Assignment returns actionLanguage::Assignment:
+ *  Assignment returns actionLanguage::Assignment:
+ * 
  * 	lhs_variableExpression=VariableExpression assignOperator=AssignOperator rhs_assignExpression=Expression ";";
  *
  **/
@@ -2360,7 +2377,8 @@ protected class Assignment_SemicolonKeyword_3 extends KeywordToken  {
 /************ begin Rule Expression ****************
  *
  * // end of assignment
- * Expression returns expressions::Expression:
+ *  Expression returns expressions::Expression:
+ * 
  * 	LogicalExpression;
  *
  **/
@@ -2415,7 +2433,8 @@ protected class Expression_LogicalExpressionParserRuleCall extends RuleCallToken
 /************ begin Rule LogicalExpression ****************
  *
  * // LogicalExpression
- * LogicalExpression returns expressions::Expression:
+ *  LogicalExpression returns expressions::Expression:
+ * 
  * 	LogicalOrExpression;
  *
  **/
@@ -2470,12 +2489,15 @@ protected class LogicalExpression_LogicalOrExpressionParserRuleCall extends Rule
 /************ begin Rule LogicalOrExpression ****************
  *
  * LogicalOrExpression returns expressions::Expression:
+ * 
  * 	LogicalAndExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalOrOperator
+ * 
  * 	rightExpression=LogicalAndExpression)*;
  *
  **/
 
 // LogicalAndExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalOrOperator
+// 
 // rightExpression=LogicalAndExpression)*
 protected class LogicalOrExpression_Group extends GroupToken {
 	
@@ -2549,6 +2571,7 @@ protected class LogicalOrExpression_LogicalAndExpressionParserRuleCall_0 extends
 }
 
 // ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalOrOperator
+// 
 // rightExpression=LogicalAndExpression)*
 protected class LogicalOrExpression_Group_1 extends GroupToken {
 	
@@ -2696,12 +2719,15 @@ protected class LogicalOrExpression_RightExpressionAssignment_1_2 extends Assign
 /************ begin Rule LogicalAndExpression ****************
  *
  * LogicalAndExpression returns expressions::Expression:
+ * 
  * 	ComparisonExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalAndOperator
+ * 
  * 	rightExpression=ComparisonExpression)*;
  *
  **/
 
 // ComparisonExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalAndOperator
+// 
 // rightExpression=ComparisonExpression)*
 protected class LogicalAndExpression_Group extends GroupToken {
 	
@@ -2775,6 +2801,7 @@ protected class LogicalAndExpression_ComparisonExpressionParserRuleCall_0 extend
 }
 
 // ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalAndOperator
+// 
 // rightExpression=ComparisonExpression)*
 protected class LogicalAndExpression_Group_1 extends GroupToken {
 	
@@ -2922,14 +2949,17 @@ protected class LogicalAndExpression_RightExpressionAssignment_1_2 extends Assig
 /************ begin Rule ComparisonExpression ****************
  *
  * // end of LogicalExpression
- * // ComparisonExpression
- * ComparisonExpression returns expressions::Expression:
+ *  // ComparisonExpression
+ *  ComparisonExpression returns expressions::Expression:
+ * 
  * 	ComparisonHigherOpExpression ({commonExpressions::ComparisonExpression.leftExpression=current}
+ * 
  * 	operator=ComparingEQNEQOperator rightExpression=ComparisonHigherOpExpression)?;
  *
  **/
 
 // ComparisonHigherOpExpression ({commonExpressions::ComparisonExpression.leftExpression=current}
+// 
 // operator=ComparingEQNEQOperator rightExpression=ComparisonHigherOpExpression)?
 protected class ComparisonExpression_Group extends GroupToken {
 	
@@ -3003,6 +3033,7 @@ protected class ComparisonExpression_ComparisonHigherOpExpressionParserRuleCall_
 }
 
 // ({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingEQNEQOperator
+// 
 // rightExpression=ComparisonHigherOpExpression)?
 protected class ComparisonExpression_Group_1 extends GroupToken {
 	
@@ -3149,12 +3180,15 @@ protected class ComparisonExpression_RightExpressionAssignment_1_2 extends Assig
 /************ begin Rule ComparisonHigherOpExpression ****************
  *
  * ComparisonHigherOpExpression returns expressions::Expression:
+ * 
  * 	ArithmeticExpression ({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingRelOperator
+ * 
  * 	rightExpression=ArithmeticExpression)?;
  *
  **/
 
 // ArithmeticExpression ({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingRelOperator
+// 
 // rightExpression=ArithmeticExpression)?
 protected class ComparisonHigherOpExpression_Group extends GroupToken {
 	
@@ -3228,6 +3262,7 @@ protected class ComparisonHigherOpExpression_ArithmeticExpressionParserRuleCall_
 }
 
 // ({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingRelOperator
+// 
 // rightExpression=ArithmeticExpression)?
 protected class ComparisonHigherOpExpression_Group_1 extends GroupToken {
 	
@@ -3374,8 +3409,9 @@ protected class ComparisonHigherOpExpression_RightExpressionAssignment_1_2 exten
 /************ begin Rule ArithmeticExpression ****************
  *
  * // end of ComparisonExpression
- * // ArithmeticExpression	
- * ArithmeticExpression returns expressions::Expression:
+ *  // ArithmeticExpression	
+ *  ArithmeticExpression returns expressions::Expression:
+ * 
  * 	AdditionExpression;
  *
  **/
@@ -3430,12 +3466,15 @@ protected class ArithmeticExpression_AdditionExpressionParserRuleCall extends Ru
 /************ begin Rule AdditionExpression ****************
  *
  * AdditionExpression returns expressions::Expression:
+ * 
  * 	MultiplicationExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=AdditionOperator
+ * 
  * 	rightExpression=MultiplicationExpression)*;
  *
  **/
 
 // MultiplicationExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=AdditionOperator
+// 
 // rightExpression=MultiplicationExpression)*
 protected class AdditionExpression_Group extends GroupToken {
 	
@@ -3509,6 +3548,7 @@ protected class AdditionExpression_MultiplicationExpressionParserRuleCall_0 exte
 }
 
 // ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=AdditionOperator
+// 
 // rightExpression=MultiplicationExpression)*
 protected class AdditionExpression_Group_1 extends GroupToken {
 	
@@ -3656,12 +3696,15 @@ protected class AdditionExpression_RightExpressionAssignment_1_2 extends Assignm
 /************ begin Rule MultiplicationExpression ****************
  *
  * MultiplicationExpression returns expressions::Expression:
+ * 
  * 	UnaryPreExpression | UnaryPostExpression ({commonExpressions::ArithmeticExpression.leftExpression=current}
+ * 
  * 	operator=MultiplicationOperator rightExpression=(UnaryPreExpression | UnaryPostExpression))*;
  *
  **/
 
 // UnaryPreExpression | UnaryPostExpression ({commonExpressions::ArithmeticExpression.leftExpression=current}
+// 
 // operator=MultiplicationOperator rightExpression=(UnaryPreExpression | UnaryPostExpression))*
 protected class MultiplicationExpression_Alternatives extends AlternativesToken {
 
@@ -3737,6 +3780,7 @@ protected class MultiplicationExpression_UnaryPreExpressionParserRuleCall_0 exte
 }
 
 // UnaryPostExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=MultiplicationOperator
+// 
 // rightExpression=(UnaryPreExpression | UnaryPostExpression))*
 protected class MultiplicationExpression_Group_1 extends GroupToken {
 	
@@ -3795,6 +3839,7 @@ protected class MultiplicationExpression_UnaryPostExpressionParserRuleCall_1_0 e
 }
 
 // ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=MultiplicationOperator
+// 
 // rightExpression=(UnaryPreExpression | UnaryPostExpression))*
 protected class MultiplicationExpression_Group_1_1 extends GroupToken {
 	
@@ -3953,8 +3998,9 @@ protected class MultiplicationExpression_RightExpressionAssignment_1_1_2 extends
 /************ begin Rule UnaryPreExpression ****************
  *
  * // end of ArithmeticExpression
- * // UnaryPreExpression
- * UnaryPreExpression returns expressions::Expression:
+ *  // UnaryPreExpression
+ *  UnaryPreExpression returns expressions::Expression:
+ * 
  * 	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=Operand;
  *
  **/
@@ -4101,8 +4147,9 @@ protected class UnaryPreExpression_EnclosedExpressionAssignment_2 extends Assign
 /************ begin Rule UnaryPostExpression ****************
  *
  * // end of UnaryPreExpression
- * // UnaryPostExpression
- * UnaryPostExpression returns expressions::Expression:
+ *  // UnaryPostExpression
+ *  UnaryPostExpression returns expressions::Expression:
+ * 
  * 	Operand ({commonExpressions::UnaryExpression.enclosedExpression=current} operator=UnaryPostOperator)?;
  *
  **/
@@ -4279,14 +4326,17 @@ protected class UnaryPostExpression_OperatorAssignment_1_1 extends AssignmentTok
 /************ begin Rule Operand ****************
  *
  * // end of UnaryPostExpression
- * // Operand
- * Operand returns expressions::Expression:
+ *  // Operand
+ *  Operand returns expressions::Expression:
+ * 
  * 	"(" Expression ")" | LiteralExpression | ExtendedVariableExpression | OperationCall | TriggerMessageExpression |
+ * 
  * 	NoAttributeSelectorExpression;
  *
  **/
 
 // "(" Expression ")" | LiteralExpression | ExtendedVariableExpression | OperationCall | TriggerMessageExpression |
+// 
 // NoAttributeSelectorExpression
 protected class Operand_Alternatives extends AlternativesToken {
 
@@ -4488,7 +4538,7 @@ protected class Operand_ExtendedVariableExpressionParserRuleCall_2 extends RuleC
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceAttributeAction_1_0().getType().getClassifier() && 
+		if(getEObject().eClass() != grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceVariableExpressionAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getVariableExpressionRule().getType().getClassifier())
 			return null;
 		if(checkForRecursion(ExtendedVariableExpression_Group.class, eObjectConsumer)) return null;
@@ -4618,7 +4668,8 @@ protected class Operand_NoAttributeSelectorExpressionParserRuleCall_5 extends Ru
 /************ begin Rule LiteralExpression ****************
  *
  * // end of Operand
- * LiteralExpression returns commonExpressions::LiteralExpression:
+ *  LiteralExpression returns commonExpressions::LiteralExpression:
+ * 
  * 	{commonExpressions::LiteralExpression} value=Literal;
  *
  **/
@@ -4720,12 +4771,15 @@ protected class LiteralExpression_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule ExtendedVariableExpression ****************
  *
  * ExtendedVariableExpression returns expressions::Expression:
- * 	VariableExpression ({actionLanguage::DiscreteInteractionEndpointReference.attribute=current} "."
+ * 
+ * 	VariableExpression ({actionLanguage::DiscreteInteractionEndpointReference.variableExpression=current} "."
+ * 
  * 	position=PositionSelectorExpression)?;
  *
  **/
 
-// VariableExpression ({actionLanguage::DiscreteInteractionEndpointReference.attribute=current} "."
+// VariableExpression ({actionLanguage::DiscreteInteractionEndpointReference.variableExpression=current} "."
+// 
 // position=PositionSelectorExpression)?
 protected class ExtendedVariableExpression_Group extends GroupToken {
 	
@@ -4749,7 +4803,7 @@ protected class ExtendedVariableExpression_Group extends GroupToken {
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceAttributeAction_1_0().getType().getClassifier() && 
+		if(getEObject().eClass() != grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceVariableExpressionAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getVariableExpressionRule().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
@@ -4793,7 +4847,9 @@ protected class ExtendedVariableExpression_VariableExpressionParserRuleCall_0 ex
 	}	
 }
 
-// ({actionLanguage::DiscreteInteractionEndpointReference.attribute=current} "." position=PositionSelectorExpression)?
+// ({actionLanguage::DiscreteInteractionEndpointReference.variableExpression=current} "."
+// 
+// position=PositionSelectorExpression)?
 protected class ExtendedVariableExpression_Group_1 extends GroupToken {
 	
 	public ExtendedVariableExpression_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4815,23 +4871,23 @@ protected class ExtendedVariableExpression_Group_1 extends GroupToken {
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceAttributeAction_1_0().getType().getClassifier())
+		if(getEObject().eClass() != grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceVariableExpressionAction_1_0().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
 	}
 
 }
 
-// {actionLanguage::DiscreteInteractionEndpointReference.attribute=current}
-protected class ExtendedVariableExpression_DiscreteInteractionEndpointReferenceAttributeAction_1_0 extends ActionToken  {
+// {actionLanguage::DiscreteInteractionEndpointReference.variableExpression=current}
+protected class ExtendedVariableExpression_DiscreteInteractionEndpointReferenceVariableExpressionAction_1_0 extends ActionToken  {
 
-	public ExtendedVariableExpression_DiscreteInteractionEndpointReferenceAttributeAction_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ExtendedVariableExpression_DiscreteInteractionEndpointReferenceVariableExpressionAction_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Action getGrammarElement() {
-		return grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceAttributeAction_1_0();
+		return grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceVariableExpressionAction_1_0();
 	}
 
     @Override
@@ -4844,9 +4900,9 @@ protected class ExtendedVariableExpression_DiscreteInteractionEndpointReferenceA
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		Object val = eObjectConsumer.getConsumable("attribute", false);
+		Object val = eObjectConsumer.getConsumable("variableExpression", false);
 		if(val == null) return null;
-		if(!eObjectConsumer.isConsumedWithLastConsumtion("attribute")) return null;
+		if(!eObjectConsumer.isConsumedWithLastConsumtion("variableExpression")) return null;
 		return createEObjectConsumer((EObject) val);
 	}
 }
@@ -4866,7 +4922,7 @@ protected class ExtendedVariableExpression_FullStopKeyword_1_1 extends KeywordTo
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ExtendedVariableExpression_DiscreteInteractionEndpointReferenceAttributeAction_1_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ExtendedVariableExpression_DiscreteInteractionEndpointReferenceVariableExpressionAction_1_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4927,6 +4983,7 @@ protected class ExtendedVariableExpression_PositionAssignment_1_2 extends Assign
 /************ begin Rule VariableExpression ****************
  *
  * VariableExpression returns actionLanguage::VariableExpression:
+ * 
  * 	variable=[behavior::Variable] ("[" indices+=ArithmeticExpression "]")*;
  *
  **/
@@ -5118,6 +5175,7 @@ protected class VariableExpression_RightSquareBracketKeyword_1_2 extends Keyword
 /************ begin Rule NoAttributeSelectorExpression ****************
  *
  * NoAttributeSelectorExpression returns actionLanguage::DiscreteInteractionEndpointReference:
+ * 
  * 	position=PositionSelectorExpression;
  *
  **/
@@ -5175,6 +5233,7 @@ protected class NoAttributeSelectorExpression_PositionAssignment extends Assignm
 /************ begin Rule PositionSelectorExpression ****************
  *
  * PositionSelectorExpression returns actionLanguage::PositionSelector:
+ * 
  * 	kind=PositionSelectorKind ("." successor=PositionSelectorExpression)?;
  *
  **/
@@ -5340,7 +5399,9 @@ protected class PositionSelectorExpression_SuccessorAssignment_1_1 extends Assig
 /************ begin Rule OperationCall ****************
  *
  * OperationCall returns actionLanguage::OperationCall:
+ * 
  * 	operation=[behavior::Operation] "(" (parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)?
+ * 
  * 	")";
  *
  **/
@@ -5624,6 +5685,7 @@ protected class OperationCall_RightParenthesisKeyword_3 extends KeywordToken  {
 /************ begin Rule ParamaterBinding ****************
  *
  * ParamaterBinding returns behavior::ParameterBinding:
+ * 
  * 	{behavior::ParameterBinding} parameter=[behavior::Parameter] ":=" value=Expression;
  *
  **/
@@ -5795,7 +5857,8 @@ protected class ParamaterBinding_ValueAssignment_3 extends AssignmentToken  {
 /************ begin Rule TriggerMessageExpression ****************
  *
  * // TriggerMessageExpression
- * TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
+ *  TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
+ * 
  * 	messageType=[msgtype::MessageType] "." parameter=[behavior::Parameter];
  *
  **/

@@ -1720,7 +1720,7 @@ ruleExtendedVariableExpression returns [EObject current=null]
 ((
     {
         $current = forceCreateModelElementAndSet(
-            grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceAttributeAction_1_0(),
+            grammarAccess.getExtendedVariableExpressionAccess().getDiscreteInteractionEndpointReferenceVariableExpressionAction_1_0(),
             $current);
     }
 )	otherlv_2='.' 
