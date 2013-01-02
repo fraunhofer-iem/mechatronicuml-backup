@@ -63,36 +63,6 @@ public interface ModelPackage extends EPackage {
 	ModelPackage eINSTANCE = de.uni_paderborn.fujaba.muml.model.impl.ModelPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.impl.Test2Impl <em>Test2</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.impl.Test2Impl
-	 * @see de.uni_paderborn.fujaba.muml.model.impl.ModelPackageImpl#getTest2()
-	 * @generated
-	 */
-	int TEST2 = 0;
-
-	/**
-	 * The number of structural features of the '<em>Test2</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST2_FEATURE_COUNT = 0;
-
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.Test2 <em>Test2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Test2</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.Test2
-	 * @generated
-	 */
-	EClass getTest2();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,16 +84,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.impl.Test2Impl <em>Test2</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.impl.Test2Impl
-		 * @see de.uni_paderborn.fujaba.muml.model.impl.ModelPackageImpl#getTest2()
-		 * @generated
-		 */
-		EClass TEST2 = eINSTANCE.getTest2();
-
+		
 	}
 
 } //ModelPackage

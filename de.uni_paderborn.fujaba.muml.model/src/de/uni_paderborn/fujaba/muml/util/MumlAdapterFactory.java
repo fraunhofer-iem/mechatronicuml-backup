@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.util;
 
+import de.uni_paderborn.fujaba.muml.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -89,19 +90,6 @@ public class MumlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.Test <em>Test</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.Test
-	 * @generated
-	 */
-	public Adapter createTestAdapter() {
-		return null;
-	}
 
 	/**
 	 * Creates a new adapter for the default case.

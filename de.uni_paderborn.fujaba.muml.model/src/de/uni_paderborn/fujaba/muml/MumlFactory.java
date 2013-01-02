@@ -25,6 +25,7 @@ public interface MumlFactory extends EFactory {
 	 */
 	MumlFactory eINSTANCE = de.uni_paderborn.fujaba.muml.impl.MumlFactoryImpl.init();
 
+
 	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->

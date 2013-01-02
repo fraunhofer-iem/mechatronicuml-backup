@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EMap;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -13,12 +14,16 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.ocl.Environment;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.ocl.OCL;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.Query;
+import org.eclipse.ocl.SemanticException;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.EcoreEnvironmentFactory;
+import org.eclipse.ocl.ecore.delegate.OCLInvocationDelegateFactory;
+import org.eclipse.ocl.ecore.delegate.OCLSettingDelegateFactory;
+import org.eclipse.ocl.ecore.delegate.OCLValidationDelegateFactory;
 import org.eclipse.ocl.helper.OCLHelper;
 import org.eclipse.ocl.lpg.BasicEnvironment;
 import org.eclipse.ocl.lpg.ProblemHandler;
@@ -59,18 +64,28 @@ public class GeneratedOCLTest extends TraverseTest {
 		// warnings as errors)
 		benv.setOption(ProblemOption.CLOSURE_ITERATOR,
 				ProblemHandler.Severity.OK);
+		
+		
+		// initialize OCL in ecore
+		EOperation.Internal.InvocationDelegate.Factory.Registry.INSTANCE.put("http://www.eclipse.org/emf/2002/Ecore/OCL",
+		    new OCLInvocationDelegateFactory.Global());
+		EStructuralFeature.Internal.SettingDelegate.Factory.Registry.INSTANCE.put("http://www.eclipse.org/emf/2002/Ecore/OCL",
+		    new OCLSettingDelegateFactory.Global());
+		EValidator.ValidationDelegate.Registry.INSTANCE.put("http://www.eclipse.org/emf/2002/Ecore/OCL",
+		    new OCLValidationDelegateFactory.Global());
 
-		// Initialize all packages
-		accept(ModelPackage.eINSTANCE, new IResourceVisitor() {
-			@Override
-			public boolean visit(EObject element) {
-				if (element instanceof EPackage) {
-					((EPackage) element).eClass();
-					return true;
-				}
-				return false;
-			}
-		});
+//
+//		// Initialize all packages
+//		accept(ModelPackage.eINSTANCE, new IResourceVisitor() {
+//			@Override
+//			public boolean visit(EObject element) {
+//				if (element instanceof EPackage) {
+//					((EPackage) element).eClass();
+//					return true;
+//				}
+//				return false;
+//			}
+//		});
 
 		// TODO: set a different label provider
 		// setLabelProvider(qualifiedLabelProvider);
@@ -137,6 +152,10 @@ public class GeneratedOCLTest extends TraverseTest {
 							problems.add("ERROR: " + eClass.getName() + "."
 									+ constraintName + ": "
 									+ e.getLocalizedMessage());
+						} catch (WrappedException e) {
+							problems.add("ERROR: " + eClass.getName() + "."
+									+ constraintName + ": "
+									+ e.getLocalizedMessage());
 						}
 					}
 					return false;
@@ -200,6 +219,12 @@ public class GeneratedOCLTest extends TraverseTest {
 								validateOCLDerivation(eClass, feature, object,
 										derivationOCL);
 							} catch (ParserException e) {
+								problems.add("ERROR: "
+										+ feature.getEContainingClass()
+												.getName() + "."
+										+ feature.getName() + ": "
+										+ e.getLocalizedMessage());
+							} catch (WrappedException e) {
 								problems.add("ERROR: "
 										+ feature.getEContainingClass()
 												.getName() + "."
@@ -294,6 +319,10 @@ public class GeneratedOCLTest extends TraverseTest {
 
 		if (object != null) {
 			query.check(object);
+			Object result = query.evaluate(object);
+			if (!(result instanceof Boolean)) {
+				throw new SemanticException("Result type does not evaluate to boolean:" + result.toString());
+			}
 		}
 
 	}
@@ -307,10 +336,13 @@ public class GeneratedOCLTest extends TraverseTest {
 
 		Object queryExpression = helper.createDerivedValueExpression(expr);
 		Query<EClassifier, ?, ?> query = OCL_ENV.createQuery(queryExpression);
-		EClassifier resultType = query.resultType();
+		EClassifier staticResultType = query.resultType();
+		//EClass staticResultClass = (EClass) staticResultType;
+		
 
 		if (object != null) {
-			query.evaluate(object);
+			Object result = query.evaluate(object);
+			object.eGet(feature); // try to read the value (also checks result type)
 		}
 	}
 

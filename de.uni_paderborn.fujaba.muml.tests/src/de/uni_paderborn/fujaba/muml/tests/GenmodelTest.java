@@ -112,7 +112,7 @@ public class GenmodelTest extends TraverseTest {
 		GenModelPackage.eINSTANCE.eClass();
 
 		// Load resource
-		genmodel = loadResource(resourceSet, GENMODEL_PROJECT, GENMODEL_PATH);
+		genmodel = TestUtilities.loadResource(resourceSet, GENMODEL_PROJECT, GENMODEL_PATH);
 		
 		setLabelProvider(qualifiedLabelProvider);
 	}

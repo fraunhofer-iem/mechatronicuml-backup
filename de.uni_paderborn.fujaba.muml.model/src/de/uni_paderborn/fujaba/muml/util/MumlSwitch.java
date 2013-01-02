@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.util;
 
+import de.uni_paderborn.fujaba.muml.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -70,7 +71,6 @@ public class MumlSwitch<T> extends Switch<T> {
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		return defaultCase(theEObject);
 	}
-
 
 	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
