@@ -558,7 +558,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/model/instance/0.3.7"
+    <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/model/instance/0.3.15"
         nsPrefix="instance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -713,7 +713,7 @@
         </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DiscretePortInstance" abstract="true"
-          eSuperTypes="#//model/instance/PortInstance">
+          eSuperTypes="#//model/instance/PortInstance #//model/connector/DiscreteInteractionEndpointInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a discrete port at instance level. At instance level, we &#xD;&#xA;distinguish between single-port instances and multi-port instances by using&#xD;&#xA;two subclasses of this abstract class."/>
         </eAnnotations>
@@ -757,31 +757,23 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="DiscreteSinglePortInstance" eSuperTypes="#//model/instance/DiscretePortInstance">
+      <eClassifiers xsi:type="ecore:EClass" name="DiscreteSinglePortInstance" eSuperTypes="#//model/instance/DiscretePortInstance #//model/connector/DiscreteSingleInteractionEndpointInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a discrete single port at instance level as well as a sub-port instance&#xD;&#xA;of a multi-port instance. Each single port instance references its behavior instance.&#xD;&#xA;When used as a sub-port instance, the instance references its role behavior instance. "/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="multiPortInstance"
-            eType="#//model/instance/DiscreteMultiPortInstance" eOpposite="#//model/instance/DiscreteMultiPortInstance/subPortInstances"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="DiscreteMultiPortInstance" eSuperTypes="#//model/instance/DiscretePortInstance">
+      <eClassifiers xsi:type="ecore:EClass" name="DiscreteMultiPortInstance" eSuperTypes="#//model/instance/DiscretePortInstance #//model/connector/DiscreteMultiInteractionEndpointInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a multi-port at instance level. For each multi-port of a&#xD;&#xA;component, there exists exactly one multi-port instance in the respective component &#xD;&#xA;instance at all times. That instance references an instance of the statechart of the&#xD;&#xA;multi-port as well as an instance of the adaptation behavior. The DiscreteMultiPortInstance&#xD;&#xA;also references all sub-port instances of the multi-port instance. The DiscreteMultiPortInstance&#xD;&#xA;has no visual representation in the concrete syntax. It is represented by its sub-roles."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="subPortInstances" upperBound="-1"
-            eType="#//model/instance/DiscreteSinglePortInstance" eOpposite="#//model/instance/DiscreteSinglePortInstance/multiPortInstance">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="These are all sub-port instances of the multi-port. The sub-port instances are&#xD;&#xA;represented by DiscreteSinglePortsInstances. \todosd{Why is this not a containment reference?}"/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="gmfSubPortInstances"
-            upperBound="-1" eType="#//model/instance/DiscreteSinglePortInstance" derived="true"
-            containment="true">
+            upperBound="-1" eType="#//model/connector/DiscreteSingleInteractionEndpointInstance"
+            derived="true" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This reference just derives the values of &quot;subPortInstances&quot; and specifies a containment. This containment reference is needed by the GMF tooling."/>
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self.subPortInstances"/>
+            <details key="derivation" value="self.subInteractionEndpointInstances"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -1979,7 +1971,7 @@
         <eLiterals name="STRING" value="7"/>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="connector" nsURI="http://www.fujaba.de/muml/model/connector/0.3.13"
+    <eSubpackages name="connector" nsURI="http://www.fujaba.de/muml/model/connector/0.3.15"
         nsPrefix="connector">
       <eClassifiers xsi:type="ecore:EClass" name="ConnectorEndpoint" abstract="true"
           eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
@@ -2039,6 +2031,23 @@
             eType="#//model/valuetype/Range" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The cardinality of a port specifies how many instances of a port are allowed to exist at runtime."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpointInstance"
+          abstract="true" eSuperTypes="#//model/connector/ConnectorEndpointInstance"/>
+      <eClassifiers xsi:type="ecore:EClass" name="DiscreteSingleInteractionEndpointInstance"
+          abstract="true" eSuperTypes="#//model/connector/DiscreteInteractionEndpointInstance">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="multiInteractionEndpointInstance"
+            eType="#//model/connector/DiscreteMultiInteractionEndpointInstance" eOpposite="#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="DiscreteMultiInteractionEndpointInstance"
+          abstract="true" eSuperTypes="#//model/connector/DiscreteInteractionEndpointInstance">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="subInteractionEndpointInstances"
+            upperBound="-1" eType="#//model/connector/DiscreteSingleInteractionEndpointInstance"
+            eOpposite="#//model/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="These are all sub-interaction endpoint instances of the multi-interaction endpoint instance. The sub-interaction endpoint instances are&#xD;&#xA;represented by DiscreteSingleInteractionEndpointInstances. This reference may only be used if the corresponding &#xD;&#xA;DiscreteInteractionEndpoint has an upper bound greater 1 in its cardinality."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

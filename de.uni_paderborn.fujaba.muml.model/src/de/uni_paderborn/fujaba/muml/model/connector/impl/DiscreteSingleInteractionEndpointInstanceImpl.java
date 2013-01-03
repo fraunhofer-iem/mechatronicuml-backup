@@ -4,35 +4,34 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.instance.impl;
+package de.uni_paderborn.fujaba.muml.model.connector.impl;
 
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Discrete Single Port Instance</b></em>'.
+ * An implementation of the model object '<em><b>Discrete Single Interaction Endpoint Instance</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscreteSinglePortInstanceImpl#getMultiInteractionEndpointInstance <em>Multi Interaction Endpoint Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteSingleInteractionEndpointInstanceImpl#getMultiInteractionEndpointInstance <em>Multi Interaction Endpoint Instance</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl implements DiscreteSinglePortInstance {
+public abstract class DiscreteSingleInteractionEndpointInstanceImpl extends DiscreteInteractionEndpointInstanceImpl implements DiscreteSingleInteractionEndpointInstance {
 	/**
 	 * The cached value of the '{@link #getMultiInteractionEndpointInstance() <em>Multi Interaction Endpoint Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -42,12 +41,13 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	 * @ordered
 	 */
 	protected DiscreteMultiInteractionEndpointInstance multiInteractionEndpointInstance;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DiscreteSinglePortInstanceImpl() {
+	protected DiscreteSingleInteractionEndpointInstanceImpl() {
 		super();
 	}
 
@@ -58,7 +58,7 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return InstancePackage.Literals.DISCRETE_SINGLE_PORT_INSTANCE;
+		return ConnectorPackage.Literals.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE;
 	}
 
 	/**
@@ -72,7 +72,7 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 			multiInteractionEndpointInstance = (DiscreteMultiInteractionEndpointInstance)eResolveProxy(oldMultiInteractionEndpointInstance);
 			if (multiInteractionEndpointInstance != oldMultiInteractionEndpointInstance) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE, oldMultiInteractionEndpointInstance, multiInteractionEndpointInstance));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE, oldMultiInteractionEndpointInstance, multiInteractionEndpointInstance));
 			}
 		}
 		return multiInteractionEndpointInstance;
@@ -96,7 +96,7 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 		DiscreteMultiInteractionEndpointInstance oldMultiInteractionEndpointInstance = multiInteractionEndpointInstance;
 		multiInteractionEndpointInstance = newMultiInteractionEndpointInstance;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE, oldMultiInteractionEndpointInstance, newMultiInteractionEndpointInstance);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE, oldMultiInteractionEndpointInstance, newMultiInteractionEndpointInstance);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -118,7 +118,7 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE, newMultiInteractionEndpointInstance, newMultiInteractionEndpointInstance));
+			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE, newMultiInteractionEndpointInstance, newMultiInteractionEndpointInstance));
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
+			case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
 				if (multiInteractionEndpointInstance != null)
 					msgs = ((InternalEObject)multiInteractionEndpointInstance).eInverseRemove(this, ConnectorPackage.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__SUB_INTERACTION_ENDPOINT_INSTANCES, DiscreteMultiInteractionEndpointInstance.class, msgs);
 				return basicSetMultiInteractionEndpointInstance((DiscreteMultiInteractionEndpointInstance)otherEnd, msgs);
@@ -145,7 +145,7 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
+			case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
 				return basicSetMultiInteractionEndpointInstance(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -159,7 +159,7 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
+			case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
 				if (resolve) return getMultiInteractionEndpointInstance();
 				return basicGetMultiInteractionEndpointInstance();
 		}
@@ -174,7 +174,7 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
+			case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
 				setMultiInteractionEndpointInstance((DiscreteMultiInteractionEndpointInstance)newValue);
 				return;
 		}
@@ -189,7 +189,7 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
+			case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
 				setMultiInteractionEndpointInstance((DiscreteMultiInteractionEndpointInstance)null);
 				return;
 		}
@@ -204,42 +204,10 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
+			case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
 				return multiInteractionEndpointInstance != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == DiscreteSingleInteractionEndpointInstance.class) {
-			switch (derivedFeatureID) {
-				case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE: return ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == DiscreteSingleInteractionEndpointInstance.class) {
-			switch (baseFeatureID) {
-				case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE: return InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-} //DiscreteSinglePortInstanceImpl
+} //DiscreteSingleInteractionEndpointInstanceImpl

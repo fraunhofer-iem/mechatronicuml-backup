@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance;
 
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -25,7 +27,6 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getSubPortInstances <em>Sub Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getGmfSubPortInstances <em>Gmf Sub Port Instances</em>}</li>
  * </ul>
  * </p>
@@ -34,32 +35,10 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DiscreteMultiPortInstance extends DiscretePortInstance {
-	/**
-	 * Returns the value of the '<em><b>Sub Port Instances</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance#getMultiPortInstance <em>Multi Port Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Sub Port Instances</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * These are all sub-port instances of the multi-port. The sub-port instances are
-	 * represented by DiscreteSinglePortsInstances. \todosd{Why is this not a containment reference?}
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Sub Port Instances</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscreteMultiPortInstance_SubPortInstances()
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance#getMultiPortInstance
-	 * @model opposite="multiPortInstance"
-	 * @generated
-	 */
-	EList<DiscreteSinglePortInstance> getSubPortInstances();
-
+public interface DiscreteMultiPortInstance extends DiscretePortInstance, DiscreteMultiInteractionEndpointInstance {
 	/**
 	 * Returns the value of the '<em><b>Gmf Sub Port Instances</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -68,9 +47,9 @@ public interface DiscreteMultiPortInstance extends DiscretePortInstance {
 	 * @return the value of the '<em>Gmf Sub Port Instances</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscreteMultiPortInstance_GmfSubPortInstances()
 	 * @model containment="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.subPortInstances'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.subInteractionEndpointInstances'"
 	 * @generated
 	 */
-	EList<DiscreteSinglePortInstance> getGmfSubPortInstances();
+	EList<DiscreteSingleInteractionEndpointInstance> getGmfSubPortInstances();
 
 } // DiscreteMultiPortInstance

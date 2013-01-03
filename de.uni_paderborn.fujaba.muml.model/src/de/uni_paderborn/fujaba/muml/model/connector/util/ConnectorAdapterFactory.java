@@ -101,6 +101,18 @@ public class ConnectorAdapterFactory extends AdapterFactoryImpl {
 				return createDiscreteInteractionEndpointAdapter();
 			}
 			@Override
+			public Adapter caseDiscreteInteractionEndpointInstance(DiscreteInteractionEndpointInstance object) {
+				return createDiscreteInteractionEndpointInstanceAdapter();
+			}
+			@Override
+			public Adapter caseDiscreteSingleInteractionEndpointInstance(DiscreteSingleInteractionEndpointInstance object) {
+				return createDiscreteSingleInteractionEndpointInstanceAdapter();
+			}
+			@Override
+			public Adapter caseDiscreteMultiInteractionEndpointInstance(DiscreteMultiInteractionEndpointInstance object) {
+				return createDiscreteMultiInteractionEndpointInstanceAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -207,6 +219,48 @@ public class ConnectorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiscreteInteractionEndpointAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpointInstance <em>Discrete Interaction Endpoint Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpointInstance
+	 * @generated
+	 */
+	public Adapter createDiscreteInteractionEndpointInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance <em>Discrete Single Interaction Endpoint Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance
+	 * @generated
+	 */
+	public Adapter createDiscreteSingleInteractionEndpointInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance <em>Discrete Multi Interaction Endpoint Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance
+	 * @generated
+	 */
+	public Adapter createDiscreteMultiInteractionEndpointInstanceAdapter() {
 		return null;
 	}
 

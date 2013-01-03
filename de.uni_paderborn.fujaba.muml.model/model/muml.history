@@ -5786,10 +5786,10 @@
             featureName="eSuperTypes" referenceValue="muml.ecore#//model/instance/DiscretePortInstance"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscreteSinglePortInstance"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/DiscreteSinglePortInstance/multiPortInstance">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscreteSinglePortInstance/multiPortInstance"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"
             featureName="name" dataValue="multiPortInstance"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscreteSinglePortInstance/multiPortInstance"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"
             featureName="eType" referenceValue="muml.ecore#//model/instance/DiscreteMultiPortInstance"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscreteMultiPortInstance"
@@ -5805,28 +5805,28 @@
             featureName="value" dataValue="This class represents a multi-port at instance level. For each multi-port of a&#xD;&#xA;component, there exists exactly one multi-port instance in the respective component &#xD;&#xA;instance at all times. That instance references an instance of the statechart of the&#xD;&#xA;multi-port as well as an instance of the adaptation behavior. The DiscreteMultiPortInstance&#xD;&#xA;also references all sub-port instances of the multi-port instance. The DiscreteMultiPortInstance&#xD;&#xA;has no visual representation in the concrete syntax. It is represented by its sub-roles."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscreteMultiPortInstance"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"
             featureName="name" dataValue="subPortInstances"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"
             featureName="eType" referenceValue="muml.ecore#//model/instance/DiscreteSinglePortInstance"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/instance/DiscreteSinglePortInstance/multiPortInstance"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscreteSinglePortInstance/multiPortInstance"
-            featureName="eOpposite" referenceValue="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"
+            featureName="eOpposite" referenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"
+            featureName="eOpposite" referenceValue="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"
-          referenceName="eAnnotations" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"
+          referenceName="eAnnotations" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="These are all sub-port instances of the multi-port. The sub-port instances are&#xD;&#xA;represented by DiscreteSinglePortsInstances. \todosd{Why is this not a containment reference?}"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/instance/DiscreteMultiPortInstance"
@@ -18910,5 +18910,74 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/TypedNamedElement"
         featureName="interface" dataValue="false" oldDataValue="true"/>
   </releases>
-  <releases/> 
+  <releases>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector" referenceName="eClassifiers"
+        element="muml.ecore#//model/connector/DiscreteInteractionEndpointInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpointInstance"
+        featureName="name" dataValue="DiscreteInteractionEndpointInstance"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/connector/DiscreteInteractionEndpointInstance"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/connector/ConnectorEndpointInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpointInstance"
+        featureName="abstract" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector" referenceName="eClassifiers"
+        element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance"
+        featureName="name" dataValue="DiscreteSingleInteractionEndpointInstance"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/connector/DiscreteInteractionEndpointInstance"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector" referenceName="eClassifiers"
+        element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance"
+        featureName="name" dataValue="DiscreteMultiInteractionEndpointInstance"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/connector/DiscreteInteractionEndpointInstance"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/instance/DiscretePortInstance"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/connector/DiscreteInteractionEndpointInstance"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/instance/DiscreteSinglePortInstance"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/instance/DiscreteMultiPortInstance"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance"/>
+    <changes xsi:type="history:Move" target="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"
+        source="muml.ecore#//model/instance/DiscreteSinglePortInstance"/>
+    <changes xsi:type="history:Move" target="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"
+        source="muml.ecore#//model/instance/DiscreteMultiPortInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"
+        featureName="name" dataValue="multiInteractionEndpointInstance" oldDataValue="multiPortInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"
+        featureName="name" dataValue="subInteractionEndpointInstances" oldDataValue="subPortInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/gmfSubPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.subInteractionEndpointInstances" oldDataValue="self.subPortInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"
+        featureName="eOpposite" oldReferenceValue="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"
+        featureName="eOpposite" oldReferenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"
+        featureName="eType" referenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance"
+        oldReferenceValue="muml.ecore#//model/instance/DiscreteSinglePortInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"
+        featureName="eType" referenceValue="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance"
+        oldReferenceValue="muml.ecore#//model/instance/DiscreteMultiPortInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"
+        featureName="eOpposite" referenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"
+        featureName="eOpposite" referenceValue="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="These are all sub-interaction endpoint instances of the multi-interaction endpoint instance. The sub-interaction endpoint instances are&#xD;&#xA;represented by DiscreteSingleInteractionEndpointInstances. This reference may only be used if the corresponding &#xD;&#xA;DiscreteInteractionEndpoint has an upper bound greater 1 in its cardinality."
+        oldDataValue="These are all sub-port instances of the multi-port. The sub-port instances are&#xD;&#xA;represented by DiscreteSinglePortsInstances. \todosd{Why is this not a containment reference?}"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscreteMultiPortInstance/gmfSubPortInstances"
+        featureName="eType" referenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance"
+        oldReferenceValue="muml.ecore#//model/instance/DiscreteSinglePortInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/instance/0.3.14" oldDataValue="http://www.fujaba.de/muml/model/instance/0.3.7"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/instance/0.3.15" oldDataValue="http://www.fujaba.de/muml/model/instance/0.3.14"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/connector/0.3.15" oldDataValue="http://www.fujaba.de/muml/model/connector/0.3.13"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance"
+        featureName="abstract" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance"
+        featureName="abstract" dataValue="true" oldDataValue="false"/>
+  </releases>
 </history:History>

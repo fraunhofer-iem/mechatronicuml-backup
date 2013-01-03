@@ -24,6 +24,9 @@ import de.uni_paderborn.fujaba.muml.model.connector.ConnectorFactory;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
@@ -82,6 +85,27 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 	 * @generated
 	 */
 	private EClass discreteInteractionEndpointEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass discreteInteractionEndpointInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass discreteSingleInteractionEndpointInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass discreteMultiInteractionEndpointInstanceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -328,6 +352,51 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDiscreteInteractionEndpointInstance() {
+		return discreteInteractionEndpointInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDiscreteSingleInteractionEndpointInstance() {
+		return discreteSingleInteractionEndpointInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiscreteSingleInteractionEndpointInstance_MultiInteractionEndpointInstance() {
+		return (EReference)discreteSingleInteractionEndpointInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDiscreteMultiInteractionEndpointInstance() {
+		return discreteMultiInteractionEndpointInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDiscreteMultiInteractionEndpointInstance_SubInteractionEndpointInstances() {
+		return (EReference)discreteMultiInteractionEndpointInstanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ConnectorFactory getConnectorFactory() {
 		return (ConnectorFactory)getEFactoryInstance();
 	}
@@ -371,6 +440,14 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR);
 		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR);
 		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__CARDINALITY);
+
+		discreteInteractionEndpointInstanceEClass = createEClass(DISCRETE_INTERACTION_ENDPOINT_INSTANCE);
+
+		discreteSingleInteractionEndpointInstanceEClass = createEClass(DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE);
+		createEReference(discreteSingleInteractionEndpointInstanceEClass, DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE);
+
+		discreteMultiInteractionEndpointInstanceEClass = createEClass(DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE);
+		createEReference(discreteMultiInteractionEndpointInstanceEClass, DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__SUB_INTERACTION_ENDPOINT_INSTANCES);
 	}
 
 	/**
@@ -417,6 +494,9 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		discreteInteractionEndpointEClass.getESuperTypes().add(this.getConnectorEndpoint());
 		discreteInteractionEndpointEClass.getESuperTypes().add(theBehaviorPackage.getBehavioralElement());
 		discreteInteractionEndpointEClass.getESuperTypes().add(theConstraintPackage.getConstrainableElement());
+		discreteInteractionEndpointInstanceEClass.getESuperTypes().add(this.getConnectorEndpointInstance());
+		discreteSingleInteractionEndpointInstanceEClass.getESuperTypes().add(this.getDiscreteInteractionEndpointInstance());
+		discreteMultiInteractionEndpointInstanceEClass.getESuperTypes().add(this.getDiscreteInteractionEndpointInstance());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(connectorEndpointEClass, ConnectorEndpoint.class, "ConnectorEndpoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -439,6 +519,14 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		initEReference(getDiscreteInteractionEndpoint_AdaptationBehavior(), theBehaviorPackage.getBehavior(), null, "adaptationBehavior", null, 0, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior(), theBehaviorPackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscreteInteractionEndpoint_Cardinality(), theValuetypePackage.getRange(), null, "cardinality", null, 1, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(discreteInteractionEndpointInstanceEClass, DiscreteInteractionEndpointInstance.class, "DiscreteInteractionEndpointInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(discreteSingleInteractionEndpointInstanceEClass, DiscreteSingleInteractionEndpointInstance.class, "DiscreteSingleInteractionEndpointInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDiscreteSingleInteractionEndpointInstance_MultiInteractionEndpointInstance(), this.getDiscreteMultiInteractionEndpointInstance(), this.getDiscreteMultiInteractionEndpointInstance_SubInteractionEndpointInstances(), "multiInteractionEndpointInstance", null, 0, 1, DiscreteSingleInteractionEndpointInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(discreteMultiInteractionEndpointInstanceEClass, DiscreteMultiInteractionEndpointInstance.class, "DiscreteMultiInteractionEndpointInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDiscreteMultiInteractionEndpointInstance_SubInteractionEndpointInstances(), this.getDiscreteSingleInteractionEndpointInstance(), this.getDiscreteSingleInteractionEndpointInstance_MultiInteractionEndpointInstance(), "subInteractionEndpointInstances", null, 0, -1, DiscreteMultiInteractionEndpointInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

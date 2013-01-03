@@ -126,6 +126,38 @@ public class ConnectorSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_INSTANCE: {
+				DiscreteInteractionEndpointInstance discreteInteractionEndpointInstance = (DiscreteInteractionEndpointInstance)theEObject;
+				T result = caseDiscreteInteractionEndpointInstance(discreteInteractionEndpointInstance);
+				if (result == null) result = caseConnectorEndpointInstance(discreteInteractionEndpointInstance);
+				if (result == null) result = caseNamedElement(discreteInteractionEndpointInstance);
+				if (result == null) result = caseCommentableElement(discreteInteractionEndpointInstance);
+				if (result == null) result = caseExtendableElement(discreteInteractionEndpointInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE: {
+				DiscreteSingleInteractionEndpointInstance discreteSingleInteractionEndpointInstance = (DiscreteSingleInteractionEndpointInstance)theEObject;
+				T result = caseDiscreteSingleInteractionEndpointInstance(discreteSingleInteractionEndpointInstance);
+				if (result == null) result = caseDiscreteInteractionEndpointInstance(discreteSingleInteractionEndpointInstance);
+				if (result == null) result = caseConnectorEndpointInstance(discreteSingleInteractionEndpointInstance);
+				if (result == null) result = caseNamedElement(discreteSingleInteractionEndpointInstance);
+				if (result == null) result = caseCommentableElement(discreteSingleInteractionEndpointInstance);
+				if (result == null) result = caseExtendableElement(discreteSingleInteractionEndpointInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ConnectorPackage.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE: {
+				DiscreteMultiInteractionEndpointInstance discreteMultiInteractionEndpointInstance = (DiscreteMultiInteractionEndpointInstance)theEObject;
+				T result = caseDiscreteMultiInteractionEndpointInstance(discreteMultiInteractionEndpointInstance);
+				if (result == null) result = caseDiscreteInteractionEndpointInstance(discreteMultiInteractionEndpointInstance);
+				if (result == null) result = caseConnectorEndpointInstance(discreteMultiInteractionEndpointInstance);
+				if (result == null) result = caseNamedElement(discreteMultiInteractionEndpointInstance);
+				if (result == null) result = caseCommentableElement(discreteMultiInteractionEndpointInstance);
+				if (result == null) result = caseExtendableElement(discreteMultiInteractionEndpointInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -202,6 +234,51 @@ public class ConnectorSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDiscreteInteractionEndpoint(DiscreteInteractionEndpoint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Interaction Endpoint Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteInteractionEndpointInstance(DiscreteInteractionEndpointInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Single Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Single Interaction Endpoint Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteSingleInteractionEndpointInstance(DiscreteSingleInteractionEndpointInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Multi Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Multi Interaction Endpoint Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteMultiInteractionEndpointInstance(DiscreteMultiInteractionEndpointInstance object) {
 		return null;
 	}
 

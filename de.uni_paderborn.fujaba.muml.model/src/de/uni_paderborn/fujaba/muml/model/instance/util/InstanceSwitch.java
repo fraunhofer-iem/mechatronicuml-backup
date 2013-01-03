@@ -15,6 +15,9 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.*;
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.AtomicComponentInstance;
@@ -162,6 +165,7 @@ public class InstanceSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDiscretePortInstance(hybridPortInstance);
 				if (result == null) result = caseContinuousPortInstance(hybridPortInstance);
 				if (result == null) result = casePortInstance(hybridPortInstance);
+				if (result == null) result = caseDiscreteInteractionEndpointInstance(hybridPortInstance);
 				if (result == null) result = caseConnectorEndpointInstance(hybridPortInstance);
 				if (result == null) result = caseNamedElement(hybridPortInstance);
 				if (result == null) result = caseCommentableElement(hybridPortInstance);
@@ -173,6 +177,7 @@ public class InstanceSwitch<T> extends Switch<T> {
 				DiscretePortInstance discretePortInstance = (DiscretePortInstance)theEObject;
 				T result = caseDiscretePortInstance(discretePortInstance);
 				if (result == null) result = casePortInstance(discretePortInstance);
+				if (result == null) result = caseDiscreteInteractionEndpointInstance(discretePortInstance);
 				if (result == null) result = caseConnectorEndpointInstance(discretePortInstance);
 				if (result == null) result = caseNamedElement(discretePortInstance);
 				if (result == null) result = caseCommentableElement(discretePortInstance);
@@ -184,7 +189,9 @@ public class InstanceSwitch<T> extends Switch<T> {
 				DiscreteSinglePortInstance discreteSinglePortInstance = (DiscreteSinglePortInstance)theEObject;
 				T result = caseDiscreteSinglePortInstance(discreteSinglePortInstance);
 				if (result == null) result = caseDiscretePortInstance(discreteSinglePortInstance);
+				if (result == null) result = caseDiscreteSingleInteractionEndpointInstance(discreteSinglePortInstance);
 				if (result == null) result = casePortInstance(discreteSinglePortInstance);
+				if (result == null) result = caseDiscreteInteractionEndpointInstance(discreteSinglePortInstance);
 				if (result == null) result = caseConnectorEndpointInstance(discreteSinglePortInstance);
 				if (result == null) result = caseNamedElement(discreteSinglePortInstance);
 				if (result == null) result = caseCommentableElement(discreteSinglePortInstance);
@@ -196,7 +203,9 @@ public class InstanceSwitch<T> extends Switch<T> {
 				DiscreteMultiPortInstance discreteMultiPortInstance = (DiscreteMultiPortInstance)theEObject;
 				T result = caseDiscreteMultiPortInstance(discreteMultiPortInstance);
 				if (result == null) result = caseDiscretePortInstance(discreteMultiPortInstance);
+				if (result == null) result = caseDiscreteMultiInteractionEndpointInstance(discreteMultiPortInstance);
 				if (result == null) result = casePortInstance(discreteMultiPortInstance);
+				if (result == null) result = caseDiscreteInteractionEndpointInstance(discreteMultiPortInstance);
 				if (result == null) result = caseConnectorEndpointInstance(discreteMultiPortInstance);
 				if (result == null) result = caseNamedElement(discreteMultiPortInstance);
 				if (result == null) result = caseCommentableElement(discreteMultiPortInstance);
@@ -291,6 +300,51 @@ public class InstanceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConnectorEndpointInstance(ConnectorEndpointInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Interaction Endpoint Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteInteractionEndpointInstance(DiscreteInteractionEndpointInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Single Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Single Interaction Endpoint Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteSingleInteractionEndpointInstance(DiscreteSingleInteractionEndpointInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Multi Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Multi Interaction Endpoint Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteMultiInteractionEndpointInstance(DiscreteMultiInteractionEndpointInstance object) {
 		return null;
 	}
 

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance;
 
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpointInstance;
 import org.eclipse.emf.common.util.EList;
 
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
@@ -38,7 +39,7 @@ import de.uni_paderborn.fujaba.muml.model.protocol.Role;
  * @model abstract="true"
  * @generated
  */
-public interface DiscretePortInstance extends PortInstance {
+public interface DiscretePortInstance extends PortInstance, DiscreteInteractionEndpointInstance {
 
 	/**
 	 * Returns the value of the '<em><b>Receiver Message Types</b></em>' reference list.

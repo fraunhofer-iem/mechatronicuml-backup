@@ -158,13 +158,8 @@
           <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscretePortInstance/receiverMessageBuffer"/>
           <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscretePortInstance/refines"/>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/instance/DiscreteSinglePortInstance">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscreteSinglePortInstance/multiPortInstance"/>
-        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/instance/DiscreteSinglePortInstance"/>
         <genClasses ecoreClass="muml.ecore#//model/instance/DiscreteMultiPortInstance">
-          <genFeatures children="true" createChild="true" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscreteMultiPortInstance/subPortInstances"/>
           <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/DiscreteMultiPortInstance/gmfSubPortInstances"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/CoordinationProtocolInstance">
@@ -492,6 +487,15 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality"/>
+        </genClasses>
+        <genClasses image="false" ecoreClass="muml.ecore#//model/connector/DiscreteInteractionEndpointInstance"/>
+        <genClasses ecoreClass="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
+        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Valuetype" basePackage="de.uni_paderborn.fujaba.muml.model"

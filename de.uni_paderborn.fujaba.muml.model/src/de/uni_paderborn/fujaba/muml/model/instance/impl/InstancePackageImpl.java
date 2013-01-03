@@ -499,15 +499,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDiscreteSinglePortInstance_MultiPortInstance() {
-		return (EReference)discreteSinglePortInstanceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getDiscreteMultiPortInstance() {
 		return discreteMultiPortInstanceEClass;
 	}
@@ -517,17 +508,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDiscreteMultiPortInstance_SubPortInstances() {
-		return (EReference)discreteMultiPortInstanceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getDiscreteMultiPortInstance_GmfSubPortInstances() {
-		return (EReference)discreteMultiPortInstanceEClass.getEStructuralFeatures().get(1);
+		return (EReference)discreteMultiPortInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -648,10 +630,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		createEReference(discretePortInstanceEClass, DISCRETE_PORT_INSTANCE__REFINES);
 
 		discreteSinglePortInstanceEClass = createEClass(DISCRETE_SINGLE_PORT_INSTANCE);
-		createEReference(discreteSinglePortInstanceEClass, DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE);
 
 		discreteMultiPortInstanceEClass = createEClass(DISCRETE_MULTI_PORT_INSTANCE);
-		createEReference(discreteMultiPortInstanceEClass, DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES);
 		createEReference(discreteMultiPortInstanceEClass, DISCRETE_MULTI_PORT_INSTANCE__GMF_SUB_PORT_INSTANCES);
 
 		coordinationProtocolInstanceEClass = createEClass(COORDINATION_PROTOCOL_INSTANCE);
@@ -710,8 +690,11 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		hybridPortInstanceEClass.getESuperTypes().add(this.getDiscretePortInstance());
 		hybridPortInstanceEClass.getESuperTypes().add(this.getContinuousPortInstance());
 		discretePortInstanceEClass.getESuperTypes().add(this.getPortInstance());
+		discretePortInstanceEClass.getESuperTypes().add(theConnectorPackage.getDiscreteInteractionEndpointInstance());
 		discreteSinglePortInstanceEClass.getESuperTypes().add(this.getDiscretePortInstance());
+		discreteSinglePortInstanceEClass.getESuperTypes().add(theConnectorPackage.getDiscreteSingleInteractionEndpointInstance());
 		discreteMultiPortInstanceEClass.getESuperTypes().add(this.getDiscretePortInstance());
+		discreteMultiPortInstanceEClass.getESuperTypes().add(theConnectorPackage.getDiscreteMultiInteractionEndpointInstance());
 		coordinationProtocolInstanceEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		structuredComponentInstanceEClass.getESuperTypes().add(this.getComponentInstance());
 		atomicComponentInstanceEClass.getESuperTypes().add(this.getComponentInstance());
@@ -753,11 +736,9 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEReference(getDiscretePortInstance_Refines(), theProtocolPackage.getRole(), null, "refines", null, 0, 1, DiscretePortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(discreteSinglePortInstanceEClass, DiscreteSinglePortInstance.class, "DiscreteSinglePortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDiscreteSinglePortInstance_MultiPortInstance(), this.getDiscreteMultiPortInstance(), this.getDiscreteMultiPortInstance_SubPortInstances(), "multiPortInstance", null, 0, 1, DiscreteSinglePortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(discreteMultiPortInstanceEClass, DiscreteMultiPortInstance.class, "DiscreteMultiPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDiscreteMultiPortInstance_SubPortInstances(), this.getDiscreteSinglePortInstance(), this.getDiscreteSinglePortInstance_MultiPortInstance(), "subPortInstances", null, 0, -1, DiscreteMultiPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDiscreteMultiPortInstance_GmfSubPortInstances(), this.getDiscreteSinglePortInstance(), null, "gmfSubPortInstances", null, 0, -1, DiscreteMultiPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscreteMultiPortInstance_GmfSubPortInstances(), theConnectorPackage.getDiscreteSingleInteractionEndpointInstance(), null, "gmfSubPortInstances", null, 0, -1, DiscreteMultiPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(coordinationProtocolInstanceEClass, CoordinationProtocolInstance.class, "CoordinationProtocolInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCoordinationProtocolInstance_PortInstances(), this.getPortInstance(), null, "portInstances", null, 1, -1, CoordinationProtocolInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -799,7 +780,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "constraints", ""
-		   });																														
+		   });																													
 	}
 
 	/**
@@ -881,12 +862,12 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "self.portType.oclAsType(component::DiscretePort).refines"
-		   });							
+		   });						
 		addAnnotation
 		  (getDiscreteMultiPortInstance_GmfSubPortInstances(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.subPortInstances"
+			 "derivation", "self.subInteractionEndpointInstances"
 		   });						
 	}
 

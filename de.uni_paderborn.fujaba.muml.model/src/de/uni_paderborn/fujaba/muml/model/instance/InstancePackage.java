@@ -49,7 +49,7 @@ public interface InstancePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/instance/0.3.7";
+	String eNS_URI = "http://www.fujaba.de/muml/model/instance/0.3.15";
 
 	/**
 	 * The package namespace name.
@@ -1087,13 +1087,13 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_SINGLE_PORT_INSTANCE__REFINES = DISCRETE_PORT_INSTANCE__REFINES;
 
 	/**
-	 * The feature id for the '<em><b>Multi Port Instance</b></em>' reference.
+	 * The feature id for the '<em><b>Multi Interaction Endpoint Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE = DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 0;
+	int DISCRETE_SINGLE_PORT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE = DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Discrete Single Port Instance</em>' class.
@@ -1232,13 +1232,13 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_MULTI_PORT_INSTANCE__REFINES = DISCRETE_PORT_INSTANCE__REFINES;
 
 	/**
-	 * The feature id for the '<em><b>Sub Port Instances</b></em>' reference list.
+	 * The feature id for the '<em><b>Sub Interaction Endpoint Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES = DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 0;
+	int DISCRETE_MULTI_PORT_INSTANCE__SUB_INTERACTION_ENDPOINT_INSTANCES = DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Gmf Sub Port Instances</b></em>' containment reference list.
@@ -1765,17 +1765,6 @@ public interface InstancePackage extends EPackage {
 	EClass getDiscreteSinglePortInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance#getMultiPortInstance <em>Multi Port Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Multi Port Instance</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance#getMultiPortInstance()
-	 * @see #getDiscreteSinglePortInstance()
-	 * @generated
-	 */
-	EReference getDiscreteSinglePortInstance_MultiPortInstance();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance <em>Discrete Multi Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1784,17 +1773,6 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDiscreteMultiPortInstance();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getSubPortInstances <em>Sub Port Instances</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Sub Port Instances</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getSubPortInstances()
-	 * @see #getDiscreteMultiPortInstance()
-	 * @generated
-	 */
-	EReference getDiscreteMultiPortInstance_SubPortInstances();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance#getGmfSubPortInstances <em>Gmf Sub Port Instances</em>}'.
@@ -2129,14 +2107,6 @@ public interface InstancePackage extends EPackage {
 		EClass DISCRETE_SINGLE_PORT_INSTANCE = eINSTANCE.getDiscreteSinglePortInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Multi Port Instance</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCRETE_SINGLE_PORT_INSTANCE__MULTI_PORT_INSTANCE = eINSTANCE.getDiscreteSinglePortInstance_MultiPortInstance();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.instance.impl.DiscreteMultiPortInstanceImpl <em>Discrete Multi Port Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2145,14 +2115,6 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EClass DISCRETE_MULTI_PORT_INSTANCE = eINSTANCE.getDiscreteMultiPortInstance();
-
-		/**
-		 * The meta object literal for the '<em><b>Sub Port Instances</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES = eINSTANCE.getDiscreteMultiPortInstance_SubPortInstances();
 
 		/**
 		 * The meta object literal for the '<em><b>Gmf Sub Port Instances</b></em>' containment reference list feature.
