@@ -63,6 +63,8 @@ public class DirectedTypedPortItemProvider
 			addKindPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addOptionalPropertyDescriptor(object);
+			addInPortPropertyDescriptor(object);
+			addOutPortPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -134,6 +136,50 @@ public class DirectedTypedPortItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the In Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DirectedTypedPort_inPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DirectedTypedPort_inPort_feature", "_UI_DirectedTypedPort_type"),
+				 ComponentPackage.Literals.DIRECTED_TYPED_PORT__IN_PORT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Out Port feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOutPortPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DirectedTypedPort_outPort_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DirectedTypedPort_outPort_feature", "_UI_DirectedTypedPort_type"),
+				 ComponentPackage.Literals.DIRECTED_TYPED_PORT__OUT_PORT,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,6 +207,8 @@ public class DirectedTypedPortItemProvider
 		switch (notification.getFeatureID(DirectedTypedPort.class)) {
 			case ComponentPackage.DIRECTED_TYPED_PORT__KIND:
 			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
+			case ComponentPackage.DIRECTED_TYPED_PORT__IN_PORT:
+			case ComponentPackage.DIRECTED_TYPED_PORT__OUT_PORT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

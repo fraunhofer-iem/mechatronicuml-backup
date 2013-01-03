@@ -65,8 +65,6 @@ public class HybridPortItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDataTypePropertyDescriptor(object);
-			addIsHybridInPortPropertyDescriptor(object);
-			addIsHybridOutPortPropertyDescriptor(object);
 			addSamplingIntervalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -90,50 +88,6 @@ public class HybridPortItemProvider
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Hybrid In Port feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsHybridInPortPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_HybridPort_isHybridInPort_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HybridPort_isHybridInPort_feature", "_UI_HybridPort_type"),
-				 ComponentPackage.Literals.HYBRID_PORT__IS_HYBRID_IN_PORT,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Hybrid Out Port feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsHybridOutPortPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_HybridPort_isHybridOutPort_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HybridPort_isHybridOutPort_feature", "_UI_HybridPort_type"),
-				 ComponentPackage.Literals.HYBRID_PORT__IS_HYBRID_OUT_PORT,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -234,10 +188,6 @@ public class HybridPortItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(HybridPort.class)) {
-			case ComponentPackage.HYBRID_PORT__IS_HYBRID_IN_PORT:
-			case ComponentPackage.HYBRID_PORT__IS_HYBRID_OUT_PORT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case ComponentPackage.HYBRID_PORT__SAMPLING_INTERVAL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
