@@ -590,13 +590,31 @@ public interface ConnectorPackage extends EPackage {
 	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE = DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Next</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__NEXT = DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Previous</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__PREVIOUS = DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Discrete Single Interaction Endpoint Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT = DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT + 1;
+	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT = DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteMultiInteractionEndpointInstanceImpl <em>Discrete Multi Interaction Endpoint Instance</em>}' class.
@@ -672,13 +690,31 @@ public interface ConnectorPackage extends EPackage {
 	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__SUB_INTERACTION_ENDPOINT_INSTANCES = DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>First</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__FIRST = DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Last</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__LAST = DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Discrete Multi Interaction Endpoint Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT = DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT + 1;
+	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT = DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT + 3;
 
 
 	/**
@@ -884,6 +920,28 @@ public interface ConnectorPackage extends EPackage {
 	EReference getDiscreteSingleInteractionEndpointInstance_MultiInteractionEndpointInstance();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance#getNext <em>Next</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Next</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance#getNext()
+	 * @see #getDiscreteSingleInteractionEndpointInstance()
+	 * @generated
+	 */
+	EReference getDiscreteSingleInteractionEndpointInstance_Next();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance#getPrevious <em>Previous</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Previous</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance#getPrevious()
+	 * @see #getDiscreteSingleInteractionEndpointInstance()
+	 * @generated
+	 */
+	EReference getDiscreteSingleInteractionEndpointInstance_Previous();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance <em>Discrete Multi Interaction Endpoint Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -903,6 +961,28 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDiscreteMultiInteractionEndpointInstance_SubInteractionEndpointInstances();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance#getFirst <em>First</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>First</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance#getFirst()
+	 * @see #getDiscreteMultiInteractionEndpointInstance()
+	 * @generated
+	 */
+	EReference getDiscreteMultiInteractionEndpointInstance_First();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance#getLast <em>Last</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Last</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance#getLast()
+	 * @see #getDiscreteMultiInteractionEndpointInstance()
+	 * @generated
+	 */
+	EReference getDiscreteMultiInteractionEndpointInstance_Last();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1093,6 +1173,22 @@ public interface ConnectorPackage extends EPackage {
 		EReference DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE = eINSTANCE.getDiscreteSingleInteractionEndpointInstance_MultiInteractionEndpointInstance();
 
 		/**
+		 * The meta object literal for the '<em><b>Next</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__NEXT = eINSTANCE.getDiscreteSingleInteractionEndpointInstance_Next();
+
+		/**
+		 * The meta object literal for the '<em><b>Previous</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__PREVIOUS = eINSTANCE.getDiscreteSingleInteractionEndpointInstance_Previous();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.connector.impl.DiscreteMultiInteractionEndpointInstanceImpl <em>Discrete Multi Interaction Endpoint Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1109,6 +1205,22 @@ public interface ConnectorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__SUB_INTERACTION_ENDPOINT_INSTANCES = eINSTANCE.getDiscreteMultiInteractionEndpointInstance_SubInteractionEndpointInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>First</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__FIRST = eINSTANCE.getDiscreteMultiInteractionEndpointInstance_First();
+
+		/**
+		 * The meta object literal for the '<em><b>Last</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__LAST = eINSTANCE.getDiscreteMultiInteractionEndpointInstance_Last();
 
 	}
 

@@ -2040,6 +2040,10 @@
           abstract="true" eSuperTypes="#//model/connector/DiscreteInteractionEndpointInstance">
         <eStructuralFeatures xsi:type="ecore:EReference" name="multiInteractionEndpointInstance"
             eType="#//model/connector/DiscreteMultiInteractionEndpointInstance" eOpposite="#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//model/connector/DiscreteSingleInteractionEndpointInstance"
+            eOpposite="#//model/connector/DiscreteSingleInteractionEndpointInstance/previous"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="previous" eType="#//model/connector/DiscreteSingleInteractionEndpointInstance"
+            eOpposite="#//model/connector/DiscreteSingleInteractionEndpointInstance/next"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DiscreteMultiInteractionEndpointInstance"
           abstract="true" eSuperTypes="#//model/connector/DiscreteInteractionEndpointInstance">
@@ -2050,6 +2054,8 @@
             <details key="documentation" value="These are all sub-interaction endpoint instances of the multi-interaction endpoint instance. The sub-interaction endpoint instances are&#xD;&#xA;represented by DiscreteSingleInteractionEndpointInstances. This reference may only be used if the corresponding &#xD;&#xA;DiscreteInteractionEndpoint has an upper bound greater 1 in its cardinality."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="first" eType="#//model/connector/DiscreteSingleInteractionEndpointInstance"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="last" eType="#//model/connector/DiscreteSingleInteractionEndpointInstance"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="valuetype" nsURI="http://www.fujaba.de/muml/model/valuetype/0.3.13"

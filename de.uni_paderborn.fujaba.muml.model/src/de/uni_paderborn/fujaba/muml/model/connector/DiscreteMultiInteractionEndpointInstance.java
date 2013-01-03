@@ -17,6 +17,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance#getSubInteractionEndpointInstances <em>Sub Interaction Endpoint Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance#getFirst <em>First</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance#getLast <em>Last</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,5 +45,57 @@ public interface DiscreteMultiInteractionEndpointInstance extends DiscreteIntera
 	 * @generated
 	 */
 	EList<DiscreteSingleInteractionEndpointInstance> getSubInteractionEndpointInstances();
+
+	/**
+	 * Returns the value of the '<em><b>First</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>First</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>First</em>' reference.
+	 * @see #setFirst(DiscreteSingleInteractionEndpointInstance)
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage#getDiscreteMultiInteractionEndpointInstance_First()
+	 * @model
+	 * @generated
+	 */
+	DiscreteSingleInteractionEndpointInstance getFirst();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance#getFirst <em>First</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>First</em>' reference.
+	 * @see #getFirst()
+	 * @generated
+	 */
+	void setFirst(DiscreteSingleInteractionEndpointInstance value);
+
+	/**
+	 * Returns the value of the '<em><b>Last</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Last</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Last</em>' reference.
+	 * @see #setLast(DiscreteSingleInteractionEndpointInstance)
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage#getDiscreteMultiInteractionEndpointInstance_Last()
+	 * @model
+	 * @generated
+	 */
+	DiscreteSingleInteractionEndpointInstance getLast();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance#getLast <em>Last</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Last</em>' reference.
+	 * @see #getLast()
+	 * @generated
+	 */
+	void setLast(DiscreteSingleInteractionEndpointInstance value);
 
 } // DiscreteMultiInteractionEndpointInstance

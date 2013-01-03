@@ -492,10 +492,18 @@
         <genClasses ecoreClass="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/next"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/previous"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/first"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/last"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Valuetype" basePackage="de.uni_paderborn.fujaba.muml.model"

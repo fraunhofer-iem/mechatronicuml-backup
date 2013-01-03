@@ -18979,5 +18979,33 @@
         featureName="abstract" dataValue="true" oldDataValue="false"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance"
         featureName="abstract" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/first"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/first"
+        featureName="name" dataValue="first"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/first"
+        featureName="eType" referenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/last"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/last"
+        featureName="name" dataValue="last"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance/last"
+        featureName="eType" referenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/next"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/next"
+        featureName="name" dataValue="next"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/next"
+        featureName="eType" referenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/previous"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/previous"
+        featureName="name" dataValue="previous"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/previous"
+        featureName="eType" referenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/next"
+        featureName="eOpposite" referenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/previous"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/previous"
+        featureName="eOpposite" referenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/next"/>
   </releases>
 </history:History>
