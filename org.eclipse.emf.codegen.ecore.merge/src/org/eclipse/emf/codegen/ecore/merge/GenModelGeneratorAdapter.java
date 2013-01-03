@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -18,6 +19,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.codegen.ecore.CodeGenEcorePlugin;
 import org.eclipse.emf.codegen.ecore.generator.GeneratorAdapterFactory;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
@@ -45,6 +47,8 @@ public class GenModelGeneratorAdapter extends GenBaseGeneratorAdapter {
 			new JETEmitterDescriptor("edit/plugin.xmljet",
 					"org.eclipse.emf.codegen.ecore.templates.edit.PluginXML"), //
 	};
+
+	private static final int INDENT = 4;
 
 	/**
 	 * Returns the set of <code>JETEmitterDescriptor</code>s used by the
@@ -174,6 +178,7 @@ public class GenModelGeneratorAdapter extends GenBaseGeneratorAdapter {
 
 			DocumentBuilderFactory builderFactory = DocumentBuilderFactory
 					.newInstance();
+//			builderFactory.setIgnoringElementContentWhitespace(true);
 
 			builder = builderFactory.newDocumentBuilder();
 
@@ -217,18 +222,21 @@ public class GenModelGeneratorAdapter extends GenBaseGeneratorAdapter {
 		// WRITE BACK
 		TransformerFactory transformerFactory = TransformerFactory
 				.newInstance();
+		transformerFactory.setAttribute("indent-number", INDENT);
+        
 		Transformer transformer;
 		try {
-			transformer = transformerFactory.newTransformer();
+			transformer = transformerFactory.newTransformer(); 
+	        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 			DOMSource source = new DOMSource(merged);
 			StreamResult result = new StreamResult(file);
 			transformer.transform(source, result);
+			ifile.refreshLocal(0, null);
 		} catch (Exception e) {
 			MergerPlugin.INSTANCE.log(e);
 		} finally {
 			monitor.done();
 		}
-
 	}
 
 	@Override

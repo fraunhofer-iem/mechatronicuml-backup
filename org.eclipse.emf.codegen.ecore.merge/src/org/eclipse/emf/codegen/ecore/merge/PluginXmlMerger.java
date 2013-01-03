@@ -13,6 +13,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.ProcessingInstruction;
+import org.w3c.dom.Text;
 
 public class PluginXmlMerger {
 
@@ -28,21 +29,30 @@ public class PluginXmlMerger {
 		Element beforePluginElement = findPluginElement(before);
 		Element mergedPluginElement = findPluginElement(merged);
 		Node firstChild = mergedPluginElement.getFirstChild();
-		for (Element customElement : getCustomElements(beforePluginElement)) {
+		for (Node customElement : getCustomElements(beforePluginElement)) {
 			Node copy = merged.importNode(customElement, true);
+			
+			// Trim text
+			if (copy instanceof Text) {
+				Text textNode = (Text) copy;
+				String textContent = textNode.getTextContent();
+				textContent = textContent.trim();
+				textNode.setTextContent(textContent);
+			}
+			
 			mergedPluginElement.insertBefore(copy, firstChild);
 		}
 
 		return merged;
 	}
 
-	public static Document copyDocument(Document after) {
-		Document copy = null;
+	public static Document copyDocument(Document originalDocument) {
+		Document copyDocument = null;
 		try {
 			DocumentBuilderFactory dbfac = DocumentBuilderFactory.newInstance();
 			DocumentBuilder docBuilder;
 			docBuilder = dbfac.newDocumentBuilder();
-			copy = docBuilder.newDocument();
+			copyDocument = docBuilder.newDocument();
 
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
@@ -50,24 +60,26 @@ public class PluginXmlMerger {
 		}
 		
 		
-		for (int i = 0; i < after.getChildNodes().getLength(); i++) {
-			Node node = after.getChildNodes().item(i);
-			copy.appendChild(copy.importNode(node, true));
+		for (int i = 0; i < originalDocument.getChildNodes().getLength(); i++) {
+			Node node = originalDocument.getChildNodes().item(i);
+			Node copyNode = copyDocument.importNode(node, true);		
+			copyDocument.appendChild(copyNode);
 		}
 		
-		return copy;
+		return copyDocument;
 	}
 
-	private Collection<Element> getCustomElements(Element pluginElement) {
-		List<Element> customElements = new ArrayList<Element>();
+	private Collection<Node> getCustomElements(Element pluginElement) {
+		List<Node> customElements = new ArrayList<Node>();
 		for (int i = 0; i < pluginElement.getChildNodes().getLength(); i++) {
 			Node node = pluginElement.getChildNodes().item(i);
 			if (node instanceof Element) {
 				Element element = (Element) node;
-				if (!containsGeneratedTag(element)) {
-					customElements.add(element);
+				if (containsGeneratedTag(element)) {
+					continue;
 				}
 			}
+			customElements.add(node);
 		}
 		return customElements;
 	}
