@@ -60,6 +60,8 @@ public class DiscreteMultiInteractionEndpointInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addSubInteractionEndpointInstancesPropertyDescriptor(object);
+			addFirstPropertyDescriptor(object);
+			addLastPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,6 +80,50 @@ public class DiscreteMultiInteractionEndpointInstanceItemProvider
 				 getString("_UI_DiscreteMultiInteractionEndpointInstance_subInteractionEndpointInstances_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteMultiInteractionEndpointInstance_subInteractionEndpointInstances_feature", "_UI_DiscreteMultiInteractionEndpointInstance_type"),
 				 ConnectorPackage.Literals.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__SUB_INTERACTION_ENDPOINT_INSTANCES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the First feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFirstPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscreteMultiInteractionEndpointInstance_first_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteMultiInteractionEndpointInstance_first_feature", "_UI_DiscreteMultiInteractionEndpointInstance_type"),
+				 ConnectorPackage.Literals.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__FIRST,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Last feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLastPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscreteMultiInteractionEndpointInstance_last_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteMultiInteractionEndpointInstance_last_feature", "_UI_DiscreteMultiInteractionEndpointInstance_type"),
+				 ConnectorPackage.Literals.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__LAST,
 				 true,
 				 false,
 				 true,

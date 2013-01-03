@@ -60,6 +60,8 @@ public class DiscreteSinglePortInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addMultiInteractionEndpointInstancePropertyDescriptor(object);
+			addNextPropertyDescriptor(object);
+			addPreviousPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,6 +80,50 @@ public class DiscreteSinglePortInstanceItemProvider
 				 getString("_UI_DiscreteSingleInteractionEndpointInstance_multiInteractionEndpointInstance_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteSingleInteractionEndpointInstance_multiInteractionEndpointInstance_feature", "_UI_DiscreteSingleInteractionEndpointInstance_type"),
 				 ConnectorPackage.Literals.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Next feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNextPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscreteSingleInteractionEndpointInstance_next_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteSingleInteractionEndpointInstance_next_feature", "_UI_DiscreteSingleInteractionEndpointInstance_type"),
+				 ConnectorPackage.Literals.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__NEXT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Previous feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPreviousPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscreteSingleInteractionEndpointInstance_previous_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteSingleInteractionEndpointInstance_previous_feature", "_UI_DiscreteSingleInteractionEndpointInstance_type"),
+				 ConnectorPackage.Literals.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__PREVIOUS,
 				 true,
 				 false,
 				 true,
