@@ -12,7 +12,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance;
 
@@ -23,7 +25,9 @@ import de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.SingleRoleInstanceImpl#getMultiRoleInstance <em>Multi Role Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.SingleRoleInstanceImpl#getMultiInteractionEndpointInstance <em>Multi Interaction Endpoint Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.SingleRoleInstanceImpl#getNext <em>Next</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.SingleRoleInstanceImpl#getPrevious <em>Previous</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,15 +35,32 @@ import de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance;
  */
 public class SingleRoleInstanceImpl extends RoleInstanceImpl implements SingleRoleInstance {
 	/**
-	 * The cached value of the '{@link #getMultiRoleInstance() <em>Multi Role Instance</em>}' reference.
+	 * The cached value of the '{@link #getMultiInteractionEndpointInstance() <em>Multi Interaction Endpoint Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMultiRoleInstance()
+	 * @see #getMultiInteractionEndpointInstance()
 	 * @generated
 	 * @ordered
 	 */
-	protected MultiRoleInstance multiRoleInstance;
-
+	protected DiscreteMultiInteractionEndpointInstance multiInteractionEndpointInstance;
+	/**
+	 * The cached value of the '{@link #getNext() <em>Next</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNext()
+	 * @generated
+	 * @ordered
+	 */
+	protected DiscreteSingleInteractionEndpointInstance next;
+	/**
+	 * The cached value of the '{@link #getPrevious() <em>Previous</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrevious()
+	 * @generated
+	 * @ordered
+	 */
+	protected DiscreteSingleInteractionEndpointInstance previous;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,16 +85,16 @@ public class SingleRoleInstanceImpl extends RoleInstanceImpl implements SingleRo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MultiRoleInstance getMultiRoleInstance() {
-		if (multiRoleInstance != null && multiRoleInstance.eIsProxy()) {
-			InternalEObject oldMultiRoleInstance = (InternalEObject)multiRoleInstance;
-			multiRoleInstance = (MultiRoleInstance)eResolveProxy(oldMultiRoleInstance);
-			if (multiRoleInstance != oldMultiRoleInstance) {
+	public DiscreteMultiInteractionEndpointInstance getMultiInteractionEndpointInstance() {
+		if (multiInteractionEndpointInstance != null && multiInteractionEndpointInstance.eIsProxy()) {
+			InternalEObject oldMultiInteractionEndpointInstance = (InternalEObject)multiInteractionEndpointInstance;
+			multiInteractionEndpointInstance = (DiscreteMultiInteractionEndpointInstance)eResolveProxy(oldMultiInteractionEndpointInstance);
+			if (multiInteractionEndpointInstance != oldMultiInteractionEndpointInstance) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE, oldMultiRoleInstance, multiRoleInstance));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE, oldMultiInteractionEndpointInstance, multiInteractionEndpointInstance));
 			}
 		}
-		return multiRoleInstance;
+		return multiInteractionEndpointInstance;
 	}
 
 	/**
@@ -81,8 +102,8 @@ public class SingleRoleInstanceImpl extends RoleInstanceImpl implements SingleRo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MultiRoleInstance basicGetMultiRoleInstance() {
-		return multiRoleInstance;
+	public DiscreteMultiInteractionEndpointInstance basicGetMultiInteractionEndpointInstance() {
+		return multiInteractionEndpointInstance;
 	}
 
 	/**
@@ -90,11 +111,11 @@ public class SingleRoleInstanceImpl extends RoleInstanceImpl implements SingleRo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMultiRoleInstance(MultiRoleInstance newMultiRoleInstance, NotificationChain msgs) {
-		MultiRoleInstance oldMultiRoleInstance = multiRoleInstance;
-		multiRoleInstance = newMultiRoleInstance;
+	public NotificationChain basicSetMultiInteractionEndpointInstance(DiscreteMultiInteractionEndpointInstance newMultiInteractionEndpointInstance, NotificationChain msgs) {
+		DiscreteMultiInteractionEndpointInstance oldMultiInteractionEndpointInstance = multiInteractionEndpointInstance;
+		multiInteractionEndpointInstance = newMultiInteractionEndpointInstance;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE, oldMultiRoleInstance, newMultiRoleInstance);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE, oldMultiInteractionEndpointInstance, newMultiInteractionEndpointInstance);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -105,18 +126,138 @@ public class SingleRoleInstanceImpl extends RoleInstanceImpl implements SingleRo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMultiRoleInstance(MultiRoleInstance newMultiRoleInstance) {
-		if (newMultiRoleInstance != multiRoleInstance) {
+	public void setMultiInteractionEndpointInstance(DiscreteMultiInteractionEndpointInstance newMultiInteractionEndpointInstance) {
+		if (newMultiInteractionEndpointInstance != multiInteractionEndpointInstance) {
 			NotificationChain msgs = null;
-			if (multiRoleInstance != null)
-				msgs = ((InternalEObject)multiRoleInstance).eInverseRemove(this, RuntimePackage.MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES, MultiRoleInstance.class, msgs);
-			if (newMultiRoleInstance != null)
-				msgs = ((InternalEObject)newMultiRoleInstance).eInverseAdd(this, RuntimePackage.MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES, MultiRoleInstance.class, msgs);
-			msgs = basicSetMultiRoleInstance(newMultiRoleInstance, msgs);
+			if (multiInteractionEndpointInstance != null)
+				msgs = ((InternalEObject)multiInteractionEndpointInstance).eInverseRemove(this, ConnectorPackage.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__SUB_INTERACTION_ENDPOINT_INSTANCES, DiscreteMultiInteractionEndpointInstance.class, msgs);
+			if (newMultiInteractionEndpointInstance != null)
+				msgs = ((InternalEObject)newMultiInteractionEndpointInstance).eInverseAdd(this, ConnectorPackage.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__SUB_INTERACTION_ENDPOINT_INSTANCES, DiscreteMultiInteractionEndpointInstance.class, msgs);
+			msgs = basicSetMultiInteractionEndpointInstance(newMultiInteractionEndpointInstance, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE, newMultiRoleInstance, newMultiRoleInstance));
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE, newMultiInteractionEndpointInstance, newMultiInteractionEndpointInstance));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscreteSingleInteractionEndpointInstance getNext() {
+		if (next != null && next.eIsProxy()) {
+			InternalEObject oldNext = (InternalEObject)next;
+			next = (DiscreteSingleInteractionEndpointInstance)eResolveProxy(oldNext);
+			if (next != oldNext) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.SINGLE_ROLE_INSTANCE__NEXT, oldNext, next));
+			}
+		}
+		return next;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscreteSingleInteractionEndpointInstance basicGetNext() {
+		return next;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetNext(DiscreteSingleInteractionEndpointInstance newNext, NotificationChain msgs) {
+		DiscreteSingleInteractionEndpointInstance oldNext = next;
+		next = newNext;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RuntimePackage.SINGLE_ROLE_INSTANCE__NEXT, oldNext, newNext);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNext(DiscreteSingleInteractionEndpointInstance newNext) {
+		if (newNext != next) {
+			NotificationChain msgs = null;
+			if (next != null)
+				msgs = ((InternalEObject)next).eInverseRemove(this, ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__PREVIOUS, DiscreteSingleInteractionEndpointInstance.class, msgs);
+			if (newNext != null)
+				msgs = ((InternalEObject)newNext).eInverseAdd(this, ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__PREVIOUS, DiscreteSingleInteractionEndpointInstance.class, msgs);
+			msgs = basicSetNext(newNext, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.SINGLE_ROLE_INSTANCE__NEXT, newNext, newNext));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscreteSingleInteractionEndpointInstance getPrevious() {
+		if (previous != null && previous.eIsProxy()) {
+			InternalEObject oldPrevious = (InternalEObject)previous;
+			previous = (DiscreteSingleInteractionEndpointInstance)eResolveProxy(oldPrevious);
+			if (previous != oldPrevious) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.SINGLE_ROLE_INSTANCE__PREVIOUS, oldPrevious, previous));
+			}
+		}
+		return previous;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscreteSingleInteractionEndpointInstance basicGetPrevious() {
+		return previous;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPrevious(DiscreteSingleInteractionEndpointInstance newPrevious, NotificationChain msgs) {
+		DiscreteSingleInteractionEndpointInstance oldPrevious = previous;
+		previous = newPrevious;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RuntimePackage.SINGLE_ROLE_INSTANCE__PREVIOUS, oldPrevious, newPrevious);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPrevious(DiscreteSingleInteractionEndpointInstance newPrevious) {
+		if (newPrevious != previous) {
+			NotificationChain msgs = null;
+			if (previous != null)
+				msgs = ((InternalEObject)previous).eInverseRemove(this, ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__NEXT, DiscreteSingleInteractionEndpointInstance.class, msgs);
+			if (newPrevious != null)
+				msgs = ((InternalEObject)newPrevious).eInverseAdd(this, ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__NEXT, DiscreteSingleInteractionEndpointInstance.class, msgs);
+			msgs = basicSetPrevious(newPrevious, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.SINGLE_ROLE_INSTANCE__PREVIOUS, newPrevious, newPrevious));
 	}
 
 	/**
@@ -127,10 +268,18 @@ public class SingleRoleInstanceImpl extends RoleInstanceImpl implements SingleRo
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE:
-				if (multiRoleInstance != null)
-					msgs = ((InternalEObject)multiRoleInstance).eInverseRemove(this, RuntimePackage.MULTI_ROLE_INSTANCE__SUB_ROLE_INSTANCES, MultiRoleInstance.class, msgs);
-				return basicSetMultiRoleInstance((MultiRoleInstance)otherEnd, msgs);
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
+				if (multiInteractionEndpointInstance != null)
+					msgs = ((InternalEObject)multiInteractionEndpointInstance).eInverseRemove(this, ConnectorPackage.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__SUB_INTERACTION_ENDPOINT_INSTANCES, DiscreteMultiInteractionEndpointInstance.class, msgs);
+				return basicSetMultiInteractionEndpointInstance((DiscreteMultiInteractionEndpointInstance)otherEnd, msgs);
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__NEXT:
+				if (next != null)
+					msgs = ((InternalEObject)next).eInverseRemove(this, ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__PREVIOUS, DiscreteSingleInteractionEndpointInstance.class, msgs);
+				return basicSetNext((DiscreteSingleInteractionEndpointInstance)otherEnd, msgs);
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__PREVIOUS:
+				if (previous != null)
+					msgs = ((InternalEObject)previous).eInverseRemove(this, ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__NEXT, DiscreteSingleInteractionEndpointInstance.class, msgs);
+				return basicSetPrevious((DiscreteSingleInteractionEndpointInstance)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -143,8 +292,12 @@ public class SingleRoleInstanceImpl extends RoleInstanceImpl implements SingleRo
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE:
-				return basicSetMultiRoleInstance(null, msgs);
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
+				return basicSetMultiInteractionEndpointInstance(null, msgs);
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__NEXT:
+				return basicSetNext(null, msgs);
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__PREVIOUS:
+				return basicSetPrevious(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -157,9 +310,15 @@ public class SingleRoleInstanceImpl extends RoleInstanceImpl implements SingleRo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE:
-				if (resolve) return getMultiRoleInstance();
-				return basicGetMultiRoleInstance();
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
+				if (resolve) return getMultiInteractionEndpointInstance();
+				return basicGetMultiInteractionEndpointInstance();
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__NEXT:
+				if (resolve) return getNext();
+				return basicGetNext();
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__PREVIOUS:
+				if (resolve) return getPrevious();
+				return basicGetPrevious();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -172,8 +331,14 @@ public class SingleRoleInstanceImpl extends RoleInstanceImpl implements SingleRo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE:
-				setMultiRoleInstance((MultiRoleInstance)newValue);
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
+				setMultiInteractionEndpointInstance((DiscreteMultiInteractionEndpointInstance)newValue);
+				return;
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__NEXT:
+				setNext((DiscreteSingleInteractionEndpointInstance)newValue);
+				return;
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__PREVIOUS:
+				setPrevious((DiscreteSingleInteractionEndpointInstance)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,8 +352,14 @@ public class SingleRoleInstanceImpl extends RoleInstanceImpl implements SingleRo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE:
-				setMultiRoleInstance((MultiRoleInstance)null);
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
+				setMultiInteractionEndpointInstance((DiscreteMultiInteractionEndpointInstance)null);
+				return;
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__NEXT:
+				setNext((DiscreteSingleInteractionEndpointInstance)null);
+				return;
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__PREVIOUS:
+				setPrevious((DiscreteSingleInteractionEndpointInstance)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -202,10 +373,50 @@ public class SingleRoleInstanceImpl extends RoleInstanceImpl implements SingleRo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_ROLE_INSTANCE:
-				return multiRoleInstance != null;
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE:
+				return multiInteractionEndpointInstance != null;
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__NEXT:
+				return next != null;
+			case RuntimePackage.SINGLE_ROLE_INSTANCE__PREVIOUS:
+				return previous != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == DiscreteSingleInteractionEndpointInstance.class) {
+			switch (derivedFeatureID) {
+				case RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE: return ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE;
+				case RuntimePackage.SINGLE_ROLE_INSTANCE__NEXT: return ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__NEXT;
+				case RuntimePackage.SINGLE_ROLE_INSTANCE__PREVIOUS: return ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__PREVIOUS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == DiscreteSingleInteractionEndpointInstance.class) {
+			switch (baseFeatureID) {
+				case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE: return RuntimePackage.SINGLE_ROLE_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE;
+				case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__NEXT: return RuntimePackage.SINGLE_ROLE_INSTANCE__NEXT;
+				case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__PREVIOUS: return RuntimePackage.SINGLE_ROLE_INSTANCE__PREVIOUS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //SingleRoleInstanceImpl

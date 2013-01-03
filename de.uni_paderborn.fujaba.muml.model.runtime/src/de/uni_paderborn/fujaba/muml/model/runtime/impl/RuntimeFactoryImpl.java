@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime.impl;
 
-import de.uni_paderborn.fujaba.muml.model.runtime.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -15,17 +14,17 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
-import de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly;
+import de.uni_paderborn.fujaba.muml.model.runtime.MessageOnConnector;
 import de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeDiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstanceAssembly;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
@@ -44,7 +43,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	 */
 	public static RuntimeFactory init() {
 		try {
-			RuntimeFactory theRuntimeFactory = (RuntimeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/runtime/0.3.1"); 
+			RuntimeFactory theRuntimeFactory = (RuntimeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/runtime/0.3.14"); 
 			if (theRuntimeFactory != null) {
 				return theRuntimeFactory;
 			}
@@ -82,9 +81,9 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 			case RuntimePackage.VARIABLE_BINDING: return createVariableBinding();
 			case RuntimePackage.SINGLE_ROLE_INSTANCE: return createSingleRoleInstance();
 			case RuntimePackage.MULTI_ROLE_INSTANCE: return createMultiRoleInstance();
-			case RuntimePackage.RUNTIME_ROLE_ASSEMBLY: return createRuntimeRoleAssembly();
-			case RuntimePackage.RUNTIME_PORT_INSTANCE_ASSEMBLY: return createRuntimePortInstanceAssembly();
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY: return createMessageOnAssembly();
+			case RuntimePackage.RUNTIME_ROLE_CONNECTOR_INSTANCE: return createRuntimeRoleConnectorInstance();
+			case RuntimePackage.RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE: return createRuntimeAssemblyConnectorInstance();
+			case RuntimePackage.MESSAGE_ON_CONNECTOR: return createMessageOnConnector();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -211,9 +210,9 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RuntimeRoleAssembly createRuntimeRoleAssembly() {
-		RuntimeRoleAssemblyImpl runtimeRoleAssembly = new RuntimeRoleAssemblyImpl();
-		return runtimeRoleAssembly;
+	public RuntimeRoleConnectorInstance createRuntimeRoleConnectorInstance() {
+		RuntimeRoleConnectorInstanceImpl runtimeRoleConnectorInstance = new RuntimeRoleConnectorInstanceImpl();
+		return runtimeRoleConnectorInstance;
 	}
 
 	/**
@@ -221,9 +220,9 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RuntimePortInstanceAssembly createRuntimePortInstanceAssembly() {
-		RuntimePortInstanceAssemblyImpl runtimePortInstanceAssembly = new RuntimePortInstanceAssemblyImpl();
-		return runtimePortInstanceAssembly;
+	public RuntimeAssemblyConnectorInstance createRuntimeAssemblyConnectorInstance() {
+		RuntimeAssemblyConnectorInstanceImpl runtimeAssemblyConnectorInstance = new RuntimeAssemblyConnectorInstanceImpl();
+		return runtimeAssemblyConnectorInstance;
 	}
 
 	/**
@@ -231,9 +230,9 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageOnAssembly createMessageOnAssembly() {
-		MessageOnAssemblyImpl messageOnAssembly = new MessageOnAssemblyImpl();
-		return messageOnAssembly;
+	public MessageOnConnector createMessageOnConnector() {
+		MessageOnConnectorImpl messageOnConnector = new MessageOnConnectorImpl();
+		return messageOnConnector;
 	}
 
 	/**

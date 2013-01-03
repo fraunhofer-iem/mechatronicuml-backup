@@ -42,24 +42,17 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeBehavioralElement/statechartInstance"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeBehavioralElement/messageBuffer"/>
     </genClasses>
-    <genClasses ecoreClass="RuntimeModel.ecore#//SingleRoleInstance">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//SingleRoleInstance/multiRoleInstance"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//SingleRoleInstance"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//MultiRoleInstance"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeRoleConnectorInstance"/>
+    <genClasses image="false" ecoreClass="RuntimeModel.ecore#//RuntimeConnectorInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeConnectorInstance/transientMessages"/>
     </genClasses>
-    <genClasses ecoreClass="RuntimeModel.ecore#//MultiRoleInstance">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MultiRoleInstance/subRoleInstances"/>
-    </genClasses>
-    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeRoleAssembly">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeRoleAssembly/roleInstances"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeRoleAssembly/instanceOf"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="RuntimeModel.ecore#//RuntimeAssemblyInstance">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeAssemblyInstance/transientMessages"/>
-    </genClasses>
-    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimePortInstanceAssembly"/>
-    <genClasses ecoreClass="RuntimeModel.ecore#//MessageOnAssembly">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageOnAssembly/receiver"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageOnAssembly/message"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageOnAssembly/runtimeAssembly"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeAssemblyConnectorInstance"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//MessageOnConnector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageOnConnector/receiver"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageOnConnector/message"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageOnConnector/runtimeConnectorInstance"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

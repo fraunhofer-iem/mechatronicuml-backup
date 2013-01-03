@@ -14,28 +14,28 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-import de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.MessageOnConnector;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Message On Assembly</b></em>'.
+ * An implementation of the model object '<em><b>Message On Connector</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageOnAssemblyImpl#getReceiver <em>Receiver</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageOnAssemblyImpl#getMessage <em>Message</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageOnAssemblyImpl#getRuntimeAssembly <em>Runtime Assembly</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageOnConnectorImpl#getReceiver <em>Receiver</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageOnConnectorImpl#getMessage <em>Message</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.MessageOnConnectorImpl#getRuntimeConnectorInstance <em>Runtime Connector Instance</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssembly {
+public class MessageOnConnectorImpl extends EObjectImpl implements MessageOnConnector {
 	/**
 	 * The cached value of the '{@link #getReceiver() <em>Receiver</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MessageOnAssemblyImpl() {
+	protected MessageOnConnectorImpl() {
 		super();
 	}
 
@@ -72,7 +72,7 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RuntimePackage.Literals.MESSAGE_ON_ASSEMBLY;
+		return RuntimePackage.Literals.MESSAGE_ON_CONNECTOR;
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 			receiver = (RuntimeBehavioralElement)eResolveProxy(oldReceiver);
 			if (receiver != oldReceiver) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.MESSAGE_ON_ASSEMBLY__RECEIVER, oldReceiver, receiver));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.MESSAGE_ON_CONNECTOR__RECEIVER, oldReceiver, receiver));
 			}
 		}
 		return receiver;
@@ -110,7 +110,7 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 		RuntimeBehavioralElement oldReceiver = receiver;
 		receiver = newReceiver;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.MESSAGE_ON_ASSEMBLY__RECEIVER, oldReceiver, receiver));
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.MESSAGE_ON_CONNECTOR__RECEIVER, oldReceiver, receiver));
 	}
 
 	/**
@@ -131,7 +131,7 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 		RuntimeMessage oldMessage = message;
 		message = newMessage;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RuntimePackage.MESSAGE_ON_ASSEMBLY__MESSAGE, oldMessage, newMessage);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RuntimePackage.MESSAGE_ON_CONNECTOR__MESSAGE, oldMessage, newMessage);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -146,14 +146,14 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 		if (newMessage != message) {
 			NotificationChain msgs = null;
 			if (message != null)
-				msgs = ((InternalEObject)message).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RuntimePackage.MESSAGE_ON_ASSEMBLY__MESSAGE, null, msgs);
+				msgs = ((InternalEObject)message).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RuntimePackage.MESSAGE_ON_CONNECTOR__MESSAGE, null, msgs);
 			if (newMessage != null)
-				msgs = ((InternalEObject)newMessage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RuntimePackage.MESSAGE_ON_ASSEMBLY__MESSAGE, null, msgs);
+				msgs = ((InternalEObject)newMessage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RuntimePackage.MESSAGE_ON_CONNECTOR__MESSAGE, null, msgs);
 			msgs = basicSetMessage(newMessage, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.MESSAGE_ON_ASSEMBLY__MESSAGE, newMessage, newMessage));
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.MESSAGE_ON_CONNECTOR__MESSAGE, newMessage, newMessage));
 	}
 
 	/**
@@ -161,9 +161,9 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RuntimeAssemblyInstance getRuntimeAssembly() {
-		if (eContainerFeatureID() != RuntimePackage.MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY) return null;
-		return (RuntimeAssemblyInstance)eContainer();
+	public RuntimeConnectorInstance getRuntimeConnectorInstance() {
+		if (eContainerFeatureID() != RuntimePackage.MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE) return null;
+		return (RuntimeConnectorInstance)eContainer();
 	}
 
 	/**
@@ -171,8 +171,8 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRuntimeAssembly(RuntimeAssemblyInstance newRuntimeAssembly, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newRuntimeAssembly, RuntimePackage.MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY, msgs);
+	public NotificationChain basicSetRuntimeConnectorInstance(RuntimeConnectorInstance newRuntimeConnectorInstance, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newRuntimeConnectorInstance, RuntimePackage.MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE, msgs);
 		return msgs;
 	}
 
@@ -181,20 +181,20 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRuntimeAssembly(RuntimeAssemblyInstance newRuntimeAssembly) {
-		if (newRuntimeAssembly != eInternalContainer() || (eContainerFeatureID() != RuntimePackage.MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY && newRuntimeAssembly != null)) {
-			if (EcoreUtil.isAncestor(this, newRuntimeAssembly))
+	public void setRuntimeConnectorInstance(RuntimeConnectorInstance newRuntimeConnectorInstance) {
+		if (newRuntimeConnectorInstance != eInternalContainer() || (eContainerFeatureID() != RuntimePackage.MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE && newRuntimeConnectorInstance != null)) {
+			if (EcoreUtil.isAncestor(this, newRuntimeConnectorInstance))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newRuntimeAssembly != null)
-				msgs = ((InternalEObject)newRuntimeAssembly).eInverseAdd(this, RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES, RuntimeAssemblyInstance.class, msgs);
-			msgs = basicSetRuntimeAssembly(newRuntimeAssembly, msgs);
+			if (newRuntimeConnectorInstance != null)
+				msgs = ((InternalEObject)newRuntimeConnectorInstance).eInverseAdd(this, RuntimePackage.RUNTIME_CONNECTOR_INSTANCE__TRANSIENT_MESSAGES, RuntimeConnectorInstance.class, msgs);
+			msgs = basicSetRuntimeConnectorInstance(newRuntimeConnectorInstance, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY, newRuntimeAssembly, newRuntimeAssembly));
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE, newRuntimeConnectorInstance, newRuntimeConnectorInstance));
 	}
 
 	/**
@@ -205,10 +205,10 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY:
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetRuntimeAssembly((RuntimeAssemblyInstance)otherEnd, msgs);
+				return basicSetRuntimeConnectorInstance((RuntimeConnectorInstance)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -221,10 +221,10 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__MESSAGE:
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__MESSAGE:
 				return basicSetMessage(null, msgs);
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY:
-				return basicSetRuntimeAssembly(null, msgs);
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE:
+				return basicSetRuntimeConnectorInstance(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -237,8 +237,8 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY:
-				return eInternalContainer().eInverseRemove(this, RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES, RuntimeAssemblyInstance.class, msgs);
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE:
+				return eInternalContainer().eInverseRemove(this, RuntimePackage.RUNTIME_CONNECTOR_INSTANCE__TRANSIENT_MESSAGES, RuntimeConnectorInstance.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -251,13 +251,13 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__RECEIVER:
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__RECEIVER:
 				if (resolve) return getReceiver();
 				return basicGetReceiver();
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__MESSAGE:
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__MESSAGE:
 				return getMessage();
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY:
-				return getRuntimeAssembly();
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE:
+				return getRuntimeConnectorInstance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -270,14 +270,14 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__RECEIVER:
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__RECEIVER:
 				setReceiver((RuntimeBehavioralElement)newValue);
 				return;
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__MESSAGE:
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__MESSAGE:
 				setMessage((RuntimeMessage)newValue);
 				return;
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY:
-				setRuntimeAssembly((RuntimeAssemblyInstance)newValue);
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE:
+				setRuntimeConnectorInstance((RuntimeConnectorInstance)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -291,14 +291,14 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__RECEIVER:
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__RECEIVER:
 				setReceiver((RuntimeBehavioralElement)null);
 				return;
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__MESSAGE:
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__MESSAGE:
 				setMessage((RuntimeMessage)null);
 				return;
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY:
-				setRuntimeAssembly((RuntimeAssemblyInstance)null);
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE:
+				setRuntimeConnectorInstance((RuntimeConnectorInstance)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -312,14 +312,14 @@ public class MessageOnAssemblyImpl extends EObjectImpl implements MessageOnAssem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__RECEIVER:
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__RECEIVER:
 				return receiver != null;
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__MESSAGE:
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__MESSAGE:
 				return message != null;
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY:
-				return getRuntimeAssembly() != null;
+			case RuntimePackage.MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE:
+				return getRuntimeConnectorInstance() != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //MessageOnAssemblyImpl
+} //MessageOnConnectorImpl

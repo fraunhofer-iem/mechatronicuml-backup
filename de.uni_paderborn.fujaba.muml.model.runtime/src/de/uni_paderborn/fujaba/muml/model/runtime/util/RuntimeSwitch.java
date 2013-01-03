@@ -15,26 +15,28 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
-import de.uni_paderborn.fujaba.muml.model.runtime.*;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
-import de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly;
+import de.uni_paderborn.fujaba.muml.model.runtime.MessageOnConnector;
 import de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeDiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeMessage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePortInstanceAssembly;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 
@@ -111,6 +113,7 @@ public class RuntimeSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDiscretePortInstance(runtimeDiscretePortInstance);
 				if (result == null) result = caseRuntimeBehavioralElement(runtimeDiscretePortInstance);
 				if (result == null) result = casePortInstance(runtimeDiscretePortInstance);
+				if (result == null) result = caseDiscreteInteractionEndpointInstance(runtimeDiscretePortInstance);
 				if (result == null) result = caseConnectorEndpointInstance(runtimeDiscretePortInstance);
 				if (result == null) result = caseNamedElement(runtimeDiscretePortInstance);
 				if (result == null) result = caseCommentableElement(runtimeDiscretePortInstance);
@@ -122,7 +125,10 @@ public class RuntimeSwitch<T> extends Switch<T> {
 				RoleInstance roleInstance = (RoleInstance)theEObject;
 				T result = caseRoleInstance(roleInstance);
 				if (result == null) result = caseRuntimeBehavioralElement(roleInstance);
+				if (result == null) result = caseDiscreteInteractionEndpointInstance(roleInstance);
+				if (result == null) result = caseConnectorEndpointInstance(roleInstance);
 				if (result == null) result = caseNamedElement(roleInstance);
+				if (result == null) result = caseCommentableElement(roleInstance);
 				if (result == null) result = caseExtendableElement(roleInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -176,8 +182,12 @@ public class RuntimeSwitch<T> extends Switch<T> {
 				SingleRoleInstance singleRoleInstance = (SingleRoleInstance)theEObject;
 				T result = caseSingleRoleInstance(singleRoleInstance);
 				if (result == null) result = caseRoleInstance(singleRoleInstance);
+				if (result == null) result = caseDiscreteSingleInteractionEndpointInstance(singleRoleInstance);
 				if (result == null) result = caseRuntimeBehavioralElement(singleRoleInstance);
+				if (result == null) result = caseDiscreteInteractionEndpointInstance(singleRoleInstance);
+				if (result == null) result = caseConnectorEndpointInstance(singleRoleInstance);
 				if (result == null) result = caseNamedElement(singleRoleInstance);
+				if (result == null) result = caseCommentableElement(singleRoleInstance);
 				if (result == null) result = caseExtendableElement(singleRoleInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -186,42 +196,50 @@ public class RuntimeSwitch<T> extends Switch<T> {
 				MultiRoleInstance multiRoleInstance = (MultiRoleInstance)theEObject;
 				T result = caseMultiRoleInstance(multiRoleInstance);
 				if (result == null) result = caseRoleInstance(multiRoleInstance);
+				if (result == null) result = caseDiscreteMultiInteractionEndpointInstance(multiRoleInstance);
 				if (result == null) result = caseRuntimeBehavioralElement(multiRoleInstance);
+				if (result == null) result = caseDiscreteInteractionEndpointInstance(multiRoleInstance);
+				if (result == null) result = caseConnectorEndpointInstance(multiRoleInstance);
 				if (result == null) result = caseNamedElement(multiRoleInstance);
+				if (result == null) result = caseCommentableElement(multiRoleInstance);
 				if (result == null) result = caseExtendableElement(multiRoleInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RuntimePackage.RUNTIME_ROLE_ASSEMBLY: {
-				RuntimeRoleAssembly runtimeRoleAssembly = (RuntimeRoleAssembly)theEObject;
-				T result = caseRuntimeRoleAssembly(runtimeRoleAssembly);
-				if (result == null) result = caseRuntimeAssemblyInstance(runtimeRoleAssembly);
-				if (result == null) result = caseExtendableElement(runtimeRoleAssembly);
+			case RuntimePackage.RUNTIME_ROLE_CONNECTOR_INSTANCE: {
+				RuntimeRoleConnectorInstance runtimeRoleConnectorInstance = (RuntimeRoleConnectorInstance)theEObject;
+				T result = caseRuntimeRoleConnectorInstance(runtimeRoleConnectorInstance);
+				if (result == null) result = caseRuntimeConnectorInstance(runtimeRoleConnectorInstance);
+				if (result == null) result = caseConnectorInstance(runtimeRoleConnectorInstance);
+				if (result == null) result = caseCommentableElement(runtimeRoleConnectorInstance);
+				if (result == null) result = caseExtendableElement(runtimeRoleConnectorInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE: {
-				RuntimeAssemblyInstance runtimeAssemblyInstance = (RuntimeAssemblyInstance)theEObject;
-				T result = caseRuntimeAssemblyInstance(runtimeAssemblyInstance);
-				if (result == null) result = caseExtendableElement(runtimeAssemblyInstance);
+			case RuntimePackage.RUNTIME_CONNECTOR_INSTANCE: {
+				RuntimeConnectorInstance runtimeConnectorInstance = (RuntimeConnectorInstance)theEObject;
+				T result = caseRuntimeConnectorInstance(runtimeConnectorInstance);
+				if (result == null) result = caseConnectorInstance(runtimeConnectorInstance);
+				if (result == null) result = caseCommentableElement(runtimeConnectorInstance);
+				if (result == null) result = caseExtendableElement(runtimeConnectorInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RuntimePackage.RUNTIME_PORT_INSTANCE_ASSEMBLY: {
-				RuntimePortInstanceAssembly runtimePortInstanceAssembly = (RuntimePortInstanceAssembly)theEObject;
-				T result = caseRuntimePortInstanceAssembly(runtimePortInstanceAssembly);
-				if (result == null) result = caseAssemblyConnectorInstance(runtimePortInstanceAssembly);
-				if (result == null) result = caseRuntimeAssemblyInstance(runtimePortInstanceAssembly);
-				if (result == null) result = casePortConnectorInstance(runtimePortInstanceAssembly);
-				if (result == null) result = caseConnectorInstance(runtimePortInstanceAssembly);
-				if (result == null) result = caseCommentableElement(runtimePortInstanceAssembly);
-				if (result == null) result = caseExtendableElement(runtimePortInstanceAssembly);
+			case RuntimePackage.RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE: {
+				RuntimeAssemblyConnectorInstance runtimeAssemblyConnectorInstance = (RuntimeAssemblyConnectorInstance)theEObject;
+				T result = caseRuntimeAssemblyConnectorInstance(runtimeAssemblyConnectorInstance);
+				if (result == null) result = caseAssemblyConnectorInstance(runtimeAssemblyConnectorInstance);
+				if (result == null) result = caseRuntimeConnectorInstance(runtimeAssemblyConnectorInstance);
+				if (result == null) result = casePortConnectorInstance(runtimeAssemblyConnectorInstance);
+				if (result == null) result = caseConnectorInstance(runtimeAssemblyConnectorInstance);
+				if (result == null) result = caseCommentableElement(runtimeAssemblyConnectorInstance);
+				if (result == null) result = caseExtendableElement(runtimeAssemblyConnectorInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RuntimePackage.MESSAGE_ON_ASSEMBLY: {
-				MessageOnAssembly messageOnAssembly = (MessageOnAssembly)theEObject;
-				T result = caseMessageOnAssembly(messageOnAssembly);
+			case RuntimePackage.MESSAGE_ON_CONNECTOR: {
+				MessageOnConnector messageOnConnector = (MessageOnConnector)theEObject;
+				T result = caseMessageOnConnector(messageOnConnector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -395,62 +413,62 @@ public class RuntimeSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Role Assembly</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Role Connector Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Role Assembly</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Role Connector Instance</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRuntimeRoleAssembly(RuntimeRoleAssembly object) {
+	public T caseRuntimeRoleConnectorInstance(RuntimeRoleConnectorInstance object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Assembly Instance</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Connector Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Assembly Instance</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Connector Instance</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRuntimeAssemblyInstance(RuntimeAssemblyInstance object) {
+	public T caseRuntimeConnectorInstance(RuntimeConnectorInstance object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Port Instance Assembly</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Assembly Connector Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Port Instance Assembly</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Assembly Connector Instance</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRuntimePortInstanceAssembly(RuntimePortInstanceAssembly object) {
+	public T caseRuntimeAssemblyConnectorInstance(RuntimeAssemblyConnectorInstance object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Message On Assembly</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Message On Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Message On Assembly</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Message On Connector</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMessageOnAssembly(MessageOnAssembly object) {
+	public T caseMessageOnConnector(MessageOnConnector object) {
 		return null;
 	}
 
@@ -545,6 +563,21 @@ public class RuntimeSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Interaction Endpoint Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteInteractionEndpointInstance(DiscreteInteractionEndpointInstance object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Discrete Port Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -556,6 +589,36 @@ public class RuntimeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDiscretePortInstance(DiscretePortInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Single Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Single Interaction Endpoint Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteSingleInteractionEndpointInstance(DiscreteSingleInteractionEndpointInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Multi Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Multi Interaction Endpoint Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteMultiInteractionEndpointInstance(DiscreteMultiInteractionEndpointInstance object) {
 		return null;
 	}
 

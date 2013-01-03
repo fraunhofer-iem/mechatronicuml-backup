@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime;
 
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.model.protocol.Role;
 
 /**
@@ -25,7 +26,7 @@ import de.uni_paderborn.fujaba.muml.model.protocol.Role;
  * @model abstract="true"
  * @generated
  */
-public interface RoleInstance extends RuntimeBehavioralElement {
+public interface RoleInstance extends RuntimeBehavioralElement, DiscreteInteractionEndpointInstance {
 	/**
 	 * Returns the value of the '<em><b>Instance Of</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -54,7 +55,6 @@ public interface RoleInstance extends RuntimeBehavioralElement {
 
 	/**
 	 * Returns the value of the '<em><b>Assembly</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly#getRoleInstances <em>Role Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Assembly</em>' reference isn't clear,
@@ -62,13 +62,12 @@ public interface RoleInstance extends RuntimeBehavioralElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Assembly</em>' reference.
-	 * @see #setAssembly(RuntimeRoleAssembly)
+	 * @see #setAssembly(RuntimeRoleConnectorInstance)
 	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage#getRoleInstance_Assembly()
-	 * @see de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleAssembly#getRoleInstances
-	 * @model opposite="roleInstances"
+	 * @model
 	 * @generated
 	 */
-	RuntimeRoleAssembly getAssembly();
+	RuntimeRoleConnectorInstance getAssembly();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance#getAssembly <em>Assembly</em>}' reference.
@@ -78,6 +77,6 @@ public interface RoleInstance extends RuntimeBehavioralElement {
 	 * @see #getAssembly()
 	 * @generated
 	 */
-	void setAssembly(RuntimeRoleAssembly value);
+	void setAssembly(RuntimeRoleConnectorInstance value);
 
 } // RoleInstance

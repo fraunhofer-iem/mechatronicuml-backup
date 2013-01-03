@@ -14,26 +14,27 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.storydriven.core.impl.ExtendableElementImpl;
 
-import de.uni_paderborn.fujaba.muml.model.runtime.MessageOnAssembly;
-import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.impl.AssemblyConnectorInstanceImpl;
+import de.uni_paderborn.fujaba.muml.model.runtime.MessageOnConnector;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeAssemblyConnectorInstance;
+import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Assembly Instance</b></em>'.
+ * An implementation of the model object '<em><b>Assembly Connector Instance</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeAssemblyInstanceImpl#getTransientMessages <em>Transient Messages</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.runtime.impl.RuntimeAssemblyConnectorInstanceImpl#getTransientMessages <em>Transient Messages</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl implements RuntimeAssemblyInstance {
+public class RuntimeAssemblyConnectorInstanceImpl extends AssemblyConnectorInstanceImpl implements RuntimeAssemblyConnectorInstance {
 	/**
 	 * The cached value of the '{@link #getTransientMessages() <em>Transient Messages</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -42,13 +43,14 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MessageOnAssembly> transientMessages;
+	protected EList<MessageOnConnector> transientMessages;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RuntimeAssemblyInstanceImpl() {
+	protected RuntimeAssemblyConnectorInstanceImpl() {
 		super();
 	}
 
@@ -59,7 +61,7 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RuntimePackage.Literals.RUNTIME_ASSEMBLY_INSTANCE;
+		return RuntimePackage.Literals.RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE;
 	}
 
 	/**
@@ -67,9 +69,9 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MessageOnAssembly> getTransientMessages() {
+	public EList<MessageOnConnector> getTransientMessages() {
 		if (transientMessages == null) {
-			transientMessages = new EObjectContainmentWithInverseEList<MessageOnAssembly>(MessageOnAssembly.class, this, RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES, RuntimePackage.MESSAGE_ON_ASSEMBLY__RUNTIME_ASSEMBLY);
+			transientMessages = new EObjectContainmentWithInverseEList<MessageOnConnector>(MessageOnConnector.class, this, RuntimePackage.RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE__TRANSIENT_MESSAGES, RuntimePackage.MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE);
 		}
 		return transientMessages;
 	}
@@ -83,7 +85,7 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES:
+			case RuntimePackage.RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE__TRANSIENT_MESSAGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTransientMessages()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -97,7 +99,7 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES:
+			case RuntimePackage.RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE__TRANSIENT_MESSAGES:
 				return ((InternalEList<?>)getTransientMessages()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -111,7 +113,7 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES:
+			case RuntimePackage.RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE__TRANSIENT_MESSAGES:
 				return getTransientMessages();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -126,9 +128,9 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES:
+			case RuntimePackage.RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE__TRANSIENT_MESSAGES:
 				getTransientMessages().clear();
-				getTransientMessages().addAll((Collection<? extends MessageOnAssembly>)newValue);
+				getTransientMessages().addAll((Collection<? extends MessageOnConnector>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -142,7 +144,7 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES:
+			case RuntimePackage.RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE__TRANSIENT_MESSAGES:
 				getTransientMessages().clear();
 				return;
 		}
@@ -157,10 +159,42 @@ public abstract class RuntimeAssemblyInstanceImpl extends ExtendableElementImpl 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.RUNTIME_ASSEMBLY_INSTANCE__TRANSIENT_MESSAGES:
+			case RuntimePackage.RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE__TRANSIENT_MESSAGES:
 				return transientMessages != null && !transientMessages.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //RuntimeAssemblyInstanceImpl
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == RuntimeConnectorInstance.class) {
+			switch (derivedFeatureID) {
+				case RuntimePackage.RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE__TRANSIENT_MESSAGES: return RuntimePackage.RUNTIME_CONNECTOR_INSTANCE__TRANSIENT_MESSAGES;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == RuntimeConnectorInstance.class) {
+			switch (baseFeatureID) {
+				case RuntimePackage.RUNTIME_CONNECTOR_INSTANCE__TRANSIENT_MESSAGES: return RuntimePackage.RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE__TRANSIENT_MESSAGES;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+} //RuntimeAssemblyConnectorInstanceImpl

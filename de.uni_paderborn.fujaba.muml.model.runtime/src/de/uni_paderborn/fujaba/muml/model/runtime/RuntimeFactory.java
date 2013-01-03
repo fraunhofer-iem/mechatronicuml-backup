@@ -107,31 +107,31 @@ public interface RuntimeFactory extends EFactory {
 	MultiRoleInstance createMultiRoleInstance();
 
 	/**
-	 * Returns a new object of class '<em>Role Assembly</em>'.
+	 * Returns a new object of class '<em>Role Connector Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Role Assembly</em>'.
+	 * @return a new object of class '<em>Role Connector Instance</em>'.
 	 * @generated
 	 */
-	RuntimeRoleAssembly createRuntimeRoleAssembly();
+	RuntimeRoleConnectorInstance createRuntimeRoleConnectorInstance();
 
 	/**
-	 * Returns a new object of class '<em>Port Instance Assembly</em>'.
+	 * Returns a new object of class '<em>Assembly Connector Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Port Instance Assembly</em>'.
+	 * @return a new object of class '<em>Assembly Connector Instance</em>'.
 	 * @generated
 	 */
-	RuntimePortInstanceAssembly createRuntimePortInstanceAssembly();
+	RuntimeAssemblyConnectorInstance createRuntimeAssemblyConnectorInstance();
 
 	/**
-	 * Returns a new object of class '<em>Message On Assembly</em>'.
+	 * Returns a new object of class '<em>Message On Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Message On Assembly</em>'.
+	 * @return a new object of class '<em>Message On Connector</em>'.
 	 * @generated
 	 */
-	MessageOnAssembly createMessageOnAssembly();
+	MessageOnConnector createMessageOnConnector();
 
 	/**
 	 * Returns the package supported by this factory.
