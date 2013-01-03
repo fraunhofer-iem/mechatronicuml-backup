@@ -63,8 +63,8 @@ public class DirectedTypedPortItemProvider
 			addKindPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addOptionalPropertyDescriptor(object);
-			addInPortPropertyDescriptor(object);
 			addOutPortPropertyDescriptor(object);
+			addInPortPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -207,8 +207,8 @@ public class DirectedTypedPortItemProvider
 		switch (notification.getFeatureID(DirectedTypedPort.class)) {
 			case ComponentPackage.DIRECTED_TYPED_PORT__KIND:
 			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
-			case ComponentPackage.DIRECTED_TYPED_PORT__IN_PORT:
 			case ComponentPackage.DIRECTED_TYPED_PORT__OUT_PORT:
+			case ComponentPackage.DIRECTED_TYPED_PORT__IN_PORT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
