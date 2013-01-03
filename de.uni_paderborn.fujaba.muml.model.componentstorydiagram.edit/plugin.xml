@@ -24,7 +24,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.2"
+            uri="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3"
             class="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.provider.ComponentstorypatternItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

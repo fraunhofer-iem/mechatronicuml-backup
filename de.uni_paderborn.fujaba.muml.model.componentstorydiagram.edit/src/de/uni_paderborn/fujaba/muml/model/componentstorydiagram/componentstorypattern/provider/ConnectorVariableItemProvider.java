@@ -22,6 +22,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable} object.
@@ -58,26 +59,26 @@ public class ConnectorVariableItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSourcePropertyDescriptor(object);
-			addTargetPropertyDescriptor(object);
+			addConnectorEndpointsPropertyDescriptor(object);
+			addPortVariablesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Source feature.
+	 * This adds a property descriptor for the Connector Endpoints feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSourcePropertyDescriptor(Object object) {
+	protected void addConnectorEndpointsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ConnectorVariable_source_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorVariable_source_feature", "_UI_ConnectorVariable_type"),
-				 ComponentstorypatternPackage.Literals.CONNECTOR_VARIABLE__SOURCE,
+				 getString("_UI_Connector_connectorEndpoints_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Connector_connectorEndpoints_feature", "_UI_Connector_type"),
+				 ConnectorPackage.Literals.CONNECTOR__CONNECTOR_ENDPOINTS,
 				 true,
 				 false,
 				 true,
@@ -87,22 +88,22 @@ public class ConnectorVariableItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Target feature.
+	 * This adds a property descriptor for the Port Variables feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTargetPropertyDescriptor(Object object) {
+	protected void addPortVariablesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ConnectorVariable_target_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorVariable_target_feature", "_UI_ConnectorVariable_type"),
-				 ComponentstorypatternPackage.Literals.CONNECTOR_VARIABLE__TARGET,
-				 true,
+				 getString("_UI_ConnectorVariable_portVariables_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorVariable_portVariables_feature", "_UI_ConnectorVariable_type"),
+				 ComponentstorypatternPackage.Literals.CONNECTOR_VARIABLE__PORT_VARIABLES,
 				 false,
-				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

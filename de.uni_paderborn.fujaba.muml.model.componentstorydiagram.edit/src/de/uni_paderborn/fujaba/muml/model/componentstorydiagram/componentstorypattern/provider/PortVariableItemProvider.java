@@ -22,6 +22,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable} object.
@@ -58,49 +59,27 @@ public class PortVariableItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIncomingConnectorVariablesPropertyDescriptor(object);
-			addOutgoingConnectorVariablesPropertyDescriptor(object);
+			addConnectorsPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
+			addConnectorVariablesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Incoming Connector Variables feature.
+	 * This adds a property descriptor for the Connectors feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIncomingConnectorVariablesPropertyDescriptor(Object object) {
+	protected void addConnectorsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PortVariable_incomingConnectorVariables_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortVariable_incomingConnectorVariables_feature", "_UI_PortVariable_type"),
-				 ComponentstorypatternPackage.Literals.PORT_VARIABLE__INCOMING_CONNECTOR_VARIABLES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Outgoing Connector Variables feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOutgoingConnectorVariablesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PortVariable_outgoingConnectorVariables_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortVariable_outgoingConnectorVariables_feature", "_UI_PortVariable_type"),
-				 ComponentstorypatternPackage.Literals.PORT_VARIABLE__OUTGOING_CONNECTOR_VARIABLES,
+				 getString("_UI_ConnectorEndpoint_connectors_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorEndpoint_connectors_feature", "_UI_ConnectorEndpoint_type"),
+				 ConnectorPackage.Literals.CONNECTOR_ENDPOINT__CONNECTORS,
 				 true,
 				 false,
 				 true,
@@ -126,6 +105,28 @@ public class PortVariableItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Connector Variables feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConnectorVariablesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortVariable_connectorVariables_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortVariable_connectorVariables_feature", "_UI_PortVariable_type"),
+				 ComponentstorypatternPackage.Literals.PORT_VARIABLE__CONNECTOR_VARIABLES,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
