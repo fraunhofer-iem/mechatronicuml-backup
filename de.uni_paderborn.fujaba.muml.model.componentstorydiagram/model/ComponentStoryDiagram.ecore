@@ -59,7 +59,7 @@
       <eLiterals name="FLAT_SWITCHING" value="2"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="componentstorypattern" nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.2"
+  <eSubpackages name="componentstorypattern" nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3"
       nsPrefix="componentstorypattern">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -95,7 +95,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PortVariable" eSuperTypes="#//componentstorypattern/ComponentStoryPatternVariable">
+    <eClassifiers xsi:type="ecore:EClass" name="PortVariable" eSuperTypes="#//componentstorypattern/ComponentStoryPatternVariable ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/ConnectorEndpoint">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="SameBindingOperatorAsParent" value="if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CHECK_ONLY then&#xD;&#xA;&#x9;self.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
         <details key="SameBindingSemanticsAsParent" value="if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics=storydiagrams::patterns::BindingSemantics::OPTIONAL then&#xD;&#xA;&#x9;self.bindingSemantics = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
@@ -104,12 +104,15 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="SameBindingOperatorAsParent SameBindingSemanticsAsParent ValidTypeOfPortVariable"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnectorVariables"
-          upperBound="-1" eType="#//componentstorypattern/ConnectorVariable" eOpposite="#//componentstorypattern/ConnectorVariable/target"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingConnectorVariables"
-          upperBound="-1" eType="#//componentstorypattern/ConnectorVariable" eOpposite="#//componentstorypattern/ConnectorVariable/source"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Port"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectorVariables" upperBound="-1"
+          eType="#//componentstorypattern/ConnectorVariable" changeable="false" volatile="true"
+          transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectors->select(c | c.oclIsKindOf(ConnectorVariable)).oclAsType(ConnectorVariable)->asOrderedSet()"/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PartVariable" eSuperTypes="#//componentstorypattern/ComponentStoryPatternVariable">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -126,7 +129,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="call" eType="#//componentstorypattern/Call"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ConnectorVariable" abstract="true"
-        eSuperTypes="#//componentstorypattern/ComponentStoryPatternVariable">
+        eSuperTypes="#//componentstorypattern/ComponentStoryPatternVariable ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="MustNotConnectCreateAndDestroyPorts" value="if self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::CREATE then&#xD;&#xA;&#x9;self.target.oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::DESTROY&#xD;&#xA;else&#xD;&#xA;&#x9;if self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::DESTROY then&#xD;&#xA;&#x9;&#x9;self.target.oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CREATE&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
         <details key="SameBindingOperatorAsPortVariable" value="if self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CHECK_ONLY then&#xD;&#xA;&#x9;self.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator&#xD;&#xA;else&#xD;&#xA;&#x9;if self.target.oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CHECK_ONLY then&#xD;&#xA;&#x9;&#x9;self.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.target.oclAsType(ComponentStoryPatternVariable).bindingOperator&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
@@ -135,10 +138,13 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="MustNotConnectCreateAndDestroyPorts SameBindingOperatorAsPortVariable ExistingConnectorBetweenPortVariableTypes"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-          eType="#//componentstorypattern/PortVariable" eOpposite="#//componentstorypattern/PortVariable/outgoingConnectorVariables"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-          eType="#//componentstorypattern/PortVariable" eOpposite="#//componentstorypattern/PortVariable/incomingConnectorVariables"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portVariables" upperBound="-1"
+          eType="#//componentstorypattern/PortVariable" changeable="false" volatile="true"
+          transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectorEndpoints->select(i | i.oclIsKindOf(PortVariable)).oclAsType(PortVariable)->asOrderedSet()"/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AssemblyVariable" eSuperTypes="#//componentstorypattern/ConnectorVariable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"

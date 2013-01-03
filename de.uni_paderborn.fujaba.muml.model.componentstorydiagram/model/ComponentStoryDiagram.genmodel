@@ -49,11 +49,8 @@
       </genClasses>
       <genClasses ecoreClass="ComponentStoryDiagram.ecore#//componentstorypattern/PortVariable">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/PortVariable/incomingConnectorVariables"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/PortVariable/outgoingConnectorVariables"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/PortVariable/type"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/PortVariable/connectorVariables"/>
       </genClasses>
       <genClasses ecoreClass="ComponentStoryDiagram.ecore#//componentstorypattern/PartVariable">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/PartVariable/portVariables"/>
@@ -63,10 +60,7 @@
             ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/PartVariable/call"/>
       </genClasses>
       <genClasses image="false" ecoreClass="ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/source"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/target"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/portVariables"/>
       </genClasses>
       <genClasses ecoreClass="ComponentStoryDiagram.ecore#//componentstorypattern/AssemblyVariable">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

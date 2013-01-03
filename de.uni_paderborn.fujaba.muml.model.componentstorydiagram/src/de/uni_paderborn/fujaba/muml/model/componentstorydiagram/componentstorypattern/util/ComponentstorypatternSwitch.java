@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.util;
 
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -25,6 +24,8 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable;
+import de.uni_paderborn.fujaba.muml.model.connector.Connector;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
 
 /**
  * <!-- begin-user-doc -->
@@ -115,6 +116,7 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 				PortVariable portVariable = (PortVariable)theEObject;
 				T result = casePortVariable(portVariable);
 				if (result == null) result = caseComponentStoryPatternVariable(portVariable);
+				if (result == null) result = caseConnectorEndpoint(portVariable);
 				if (result == null) result = caseNamedElement(portVariable);
 				if (result == null) result = caseCommentableElement(portVariable);
 				if (result == null) result = caseExtendableElement(portVariable);
@@ -135,6 +137,7 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 				ConnectorVariable connectorVariable = (ConnectorVariable)theEObject;
 				T result = caseConnectorVariable(connectorVariable);
 				if (result == null) result = caseComponentStoryPatternVariable(connectorVariable);
+				if (result == null) result = caseConnector(connectorVariable);
 				if (result == null) result = caseNamedElement(connectorVariable);
 				if (result == null) result = caseCommentableElement(connectorVariable);
 				if (result == null) result = caseExtendableElement(connectorVariable);
@@ -146,6 +149,7 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 				T result = caseAssemblyVariable(assemblyVariable);
 				if (result == null) result = caseConnectorVariable(assemblyVariable);
 				if (result == null) result = caseComponentStoryPatternVariable(assemblyVariable);
+				if (result == null) result = caseConnector(assemblyVariable);
 				if (result == null) result = caseNamedElement(assemblyVariable);
 				if (result == null) result = caseCommentableElement(assemblyVariable);
 				if (result == null) result = caseExtendableElement(assemblyVariable);
@@ -157,6 +161,7 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 				T result = caseDelegationVariable(delegationVariable);
 				if (result == null) result = caseConnectorVariable(delegationVariable);
 				if (result == null) result = caseComponentStoryPatternVariable(delegationVariable);
+				if (result == null) result = caseConnector(delegationVariable);
 				if (result == null) result = caseNamedElement(delegationVariable);
 				if (result == null) result = caseCommentableElement(delegationVariable);
 				if (result == null) result = caseExtendableElement(delegationVariable);
@@ -375,6 +380,36 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommentableElement(CommentableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Endpoint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Endpoint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnectorEndpoint(ConnectorEndpoint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Connector</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnector(Connector object) {
 		return null;
 	}
 

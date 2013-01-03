@@ -6,15 +6,19 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable;
+import de.uni_paderborn.fujaba.muml.model.connector.Connector;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,8 +27,8 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.ConnectorVariableImpl#getSource <em>Source</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.ConnectorVariableImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.ConnectorVariableImpl#getConnectorEndpoints <em>Connector Endpoints</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.ConnectorVariableImpl#getPortVariables <em>Port Variables</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,24 +36,24 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
  */
 public abstract class ConnectorVariableImpl extends ComponentStoryPatternVariableImpl implements ConnectorVariable {
 	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
+	 * The cached value of the '{@link #getConnectorEndpoints() <em>Connector Endpoints</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSource()
+	 * @see #getConnectorEndpoints()
 	 * @generated
 	 * @ordered
 	 */
-	protected PortVariable source;
+	protected EList<ConnectorEndpoint> connectorEndpoints;
 
 	/**
-	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
+	 * The cached setting delegate for the '{@link #getPortVariables() <em>Port Variables</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTarget()
+	 * @see #getPortVariables()
 	 * @generated
 	 * @ordered
 	 */
-	protected PortVariable target;
+	protected EStructuralFeature.Internal.SettingDelegate PORT_VARIABLES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentstorypatternPackage.Literals.CONNECTOR_VARIABLE__PORT_VARIABLES).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,16 +79,11 @@ public abstract class ConnectorVariableImpl extends ComponentStoryPatternVariabl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortVariable getSource() {
-		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)source;
-			source = (PortVariable)eResolveProxy(oldSource);
-			if (source != oldSource) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentstorypatternPackage.CONNECTOR_VARIABLE__SOURCE, oldSource, source));
-			}
+	public EList<ConnectorEndpoint> getConnectorEndpoints() {
+		if (connectorEndpoints == null) {
+			connectorEndpoints = new EObjectResolvingEList<ConnectorEndpoint>(ConnectorEndpoint.class, this, ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS);
 		}
-		return source;
+		return connectorEndpoints;
 	}
 
 	/**
@@ -92,138 +91,9 @@ public abstract class ConnectorVariableImpl extends ComponentStoryPatternVariabl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortVariable basicGetSource() {
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSource(PortVariable newSource, NotificationChain msgs) {
-		PortVariable oldSource = source;
-		source = newSource;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.CONNECTOR_VARIABLE__SOURCE, oldSource, newSource);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSource(PortVariable newSource) {
-		if (newSource != source) {
-			NotificationChain msgs = null;
-			if (source != null)
-				msgs = ((InternalEObject)source).eInverseRemove(this, ComponentstorypatternPackage.PORT_VARIABLE__OUTGOING_CONNECTOR_VARIABLES, PortVariable.class, msgs);
-			if (newSource != null)
-				msgs = ((InternalEObject)newSource).eInverseAdd(this, ComponentstorypatternPackage.PORT_VARIABLE__OUTGOING_CONNECTOR_VARIABLES, PortVariable.class, msgs);
-			msgs = basicSetSource(newSource, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.CONNECTOR_VARIABLE__SOURCE, newSource, newSource));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PortVariable getTarget() {
-		if (target != null && target.eIsProxy()) {
-			InternalEObject oldTarget = (InternalEObject)target;
-			target = (PortVariable)eResolveProxy(oldTarget);
-			if (target != oldTarget) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentstorypatternPackage.CONNECTOR_VARIABLE__TARGET, oldTarget, target));
-			}
-		}
-		return target;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PortVariable basicGetTarget() {
-		return target;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetTarget(PortVariable newTarget, NotificationChain msgs) {
-		PortVariable oldTarget = target;
-		target = newTarget;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.CONNECTOR_VARIABLE__TARGET, oldTarget, newTarget);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTarget(PortVariable newTarget) {
-		if (newTarget != target) {
-			NotificationChain msgs = null;
-			if (target != null)
-				msgs = ((InternalEObject)target).eInverseRemove(this, ComponentstorypatternPackage.PORT_VARIABLE__INCOMING_CONNECTOR_VARIABLES, PortVariable.class, msgs);
-			if (newTarget != null)
-				msgs = ((InternalEObject)newTarget).eInverseAdd(this, ComponentstorypatternPackage.PORT_VARIABLE__INCOMING_CONNECTOR_VARIABLES, PortVariable.class, msgs);
-			msgs = basicSetTarget(newTarget, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.CONNECTOR_VARIABLE__TARGET, newTarget, newTarget));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__SOURCE:
-				if (source != null)
-					msgs = ((InternalEObject)source).eInverseRemove(this, ComponentstorypatternPackage.PORT_VARIABLE__OUTGOING_CONNECTOR_VARIABLES, PortVariable.class, msgs);
-				return basicSetSource((PortVariable)otherEnd, msgs);
-			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__TARGET:
-				if (target != null)
-					msgs = ((InternalEObject)target).eInverseRemove(this, ComponentstorypatternPackage.PORT_VARIABLE__INCOMING_CONNECTOR_VARIABLES, PortVariable.class, msgs);
-				return basicSetTarget((PortVariable)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__SOURCE:
-				return basicSetSource(null, msgs);
-			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__TARGET:
-				return basicSetTarget(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	@SuppressWarnings("unchecked")
+	public EList<PortVariable> getPortVariables() {
+		return (EList<PortVariable>)PORT_VARIABLES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -234,12 +104,10 @@ public abstract class ConnectorVariableImpl extends ComponentStoryPatternVariabl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
-			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__TARGET:
-				if (resolve) return getTarget();
-				return basicGetTarget();
+			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS:
+				return getConnectorEndpoints();
+			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__PORT_VARIABLES:
+				return getPortVariables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -249,14 +117,13 @@ public abstract class ConnectorVariableImpl extends ComponentStoryPatternVariabl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__SOURCE:
-				setSource((PortVariable)newValue);
-				return;
-			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__TARGET:
-				setTarget((PortVariable)newValue);
+			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS:
+				getConnectorEndpoints().clear();
+				getConnectorEndpoints().addAll((Collection<? extends ConnectorEndpoint>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -270,11 +137,8 @@ public abstract class ConnectorVariableImpl extends ComponentStoryPatternVariabl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__SOURCE:
-				setSource((PortVariable)null);
-				return;
-			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__TARGET:
-				setTarget((PortVariable)null);
+			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS:
+				getConnectorEndpoints().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -288,12 +152,44 @@ public abstract class ConnectorVariableImpl extends ComponentStoryPatternVariabl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__SOURCE:
-				return source != null;
-			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__TARGET:
-				return target != null;
+			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS:
+				return connectorEndpoints != null && !connectorEndpoints.isEmpty();
+			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__PORT_VARIABLES:
+				return PORT_VARIABLES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Connector.class) {
+			switch (derivedFeatureID) {
+				case ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS: return ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Connector.class) {
+			switch (baseFeatureID) {
+				case ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS: return ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //ConnectorVariableImpl

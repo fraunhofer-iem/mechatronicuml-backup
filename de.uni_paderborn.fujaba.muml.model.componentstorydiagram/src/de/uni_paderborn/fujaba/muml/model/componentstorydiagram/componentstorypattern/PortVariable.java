@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstoryp
 import org.eclipse.emf.common.util.EList;
 
 import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,9 +19,8 @@ import de.uni_paderborn.fujaba.muml.model.component.Port;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable#getIncomingConnectorVariables <em>Incoming Connector Variables</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable#getOutgoingConnectorVariables <em>Outgoing Connector Variables</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable#getType <em>Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable#getConnectorVariables <em>Connector Variables</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,43 +29,7 @@ import de.uni_paderborn.fujaba.muml.model.component.Port;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SameBindingOperatorAsParent SameBindingSemanticsAsParent ValidTypeOfPortVariable'"
  * @generated
  */
-public interface PortVariable extends ComponentStoryPatternVariable {
-	/**
-	 * Returns the value of the '<em><b>Incoming Connector Variables</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Incoming Connector Variables</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Incoming Connector Variables</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage#getPortVariable_IncomingConnectorVariables()
-	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable#getTarget
-	 * @model opposite="target"
-	 * @generated
-	 */
-	EList<ConnectorVariable> getIncomingConnectorVariables();
-
-	/**
-	 * Returns the value of the '<em><b>Outgoing Connector Variables</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Outgoing Connector Variables</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Outgoing Connector Variables</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage#getPortVariable_OutgoingConnectorVariables()
-	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable#getSource
-	 * @model opposite="source"
-	 * @generated
-	 */
-	EList<ConnectorVariable> getOutgoingConnectorVariables();
-
+public interface PortVariable extends ComponentStoryPatternVariable, ConnectorEndpoint {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -91,5 +55,22 @@ public interface PortVariable extends ComponentStoryPatternVariable {
 	 * @generated
 	 */
 	void setType(Port value);
+
+	/**
+	 * Returns the value of the '<em><b>Connector Variables</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Connector Variables</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Connector Variables</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage#getPortVariable_ConnectorVariables()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectors->select(c | c.oclIsKindOf(ConnectorVariable)).oclAsType(ConnectorVariable)->asOrderedSet()'"
+	 * @generated
+	 */
+	EList<ConnectorVariable> getConnectorVariables();
 
 } // PortVariable

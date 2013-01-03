@@ -43,7 +43,7 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.2";
+	String eNS_URI = "http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3";
 
 	/**
 	 * The package namespace name.
@@ -400,22 +400,13 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int PORT_VARIABLE__BINDING_STATE = COMPONENT_STORY_PATTERN_VARIABLE__BINDING_STATE;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Connector Variables</b></em>' reference list.
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_VARIABLE__INCOMING_CONNECTOR_VARIABLES = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing Connector Variables</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_VARIABLE__OUTGOING_CONNECTOR_VARIABLES = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 1;
+	int PORT_VARIABLE__CONNECTORS = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -424,7 +415,16 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_VARIABLE__TYPE = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 2;
+	int PORT_VARIABLE__TYPE = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Connector Variables</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_VARIABLE__CONNECTOR_VARIABLES = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Port Variable</em>' class.
@@ -618,22 +618,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int CONNECTOR_VARIABLE__BINDING_STATE = COMPONENT_STORY_PATTERN_VARIABLE__BINDING_STATE;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * The feature id for the '<em><b>Connector Endpoints</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_VARIABLE__SOURCE = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 0;
+	int CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * The feature id for the '<em><b>Port Variables</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_VARIABLE__TARGET = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 1;
+	int CONNECTOR_VARIABLE__PORT_VARIABLES = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Connector Variable</em>' class.
@@ -718,22 +718,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int ASSEMBLY_VARIABLE__BINDING_STATE = CONNECTOR_VARIABLE__BINDING_STATE;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * The feature id for the '<em><b>Connector Endpoints</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_VARIABLE__SOURCE = CONNECTOR_VARIABLE__SOURCE;
+	int ASSEMBLY_VARIABLE__CONNECTOR_ENDPOINTS = CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS;
 
 	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * The feature id for the '<em><b>Port Variables</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_VARIABLE__TARGET = CONNECTOR_VARIABLE__TARGET;
+	int ASSEMBLY_VARIABLE__PORT_VARIABLES = CONNECTOR_VARIABLE__PORT_VARIABLES;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -827,22 +827,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int DELEGATION_VARIABLE__BINDING_STATE = CONNECTOR_VARIABLE__BINDING_STATE;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * The feature id for the '<em><b>Connector Endpoints</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_VARIABLE__SOURCE = CONNECTOR_VARIABLE__SOURCE;
+	int DELEGATION_VARIABLE__CONNECTOR_ENDPOINTS = CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS;
 
 	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * The feature id for the '<em><b>Port Variables</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_VARIABLE__TARGET = CONNECTOR_VARIABLE__TARGET;
+	int DELEGATION_VARIABLE__PORT_VARIABLES = CONNECTOR_VARIABLE__PORT_VARIABLES;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1120,28 +1120,6 @@ public interface ComponentstorypatternPackage extends EPackage {
 	EClass getPortVariable();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable#getIncomingConnectorVariables <em>Incoming Connector Variables</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Incoming Connector Variables</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable#getIncomingConnectorVariables()
-	 * @see #getPortVariable()
-	 * @generated
-	 */
-	EReference getPortVariable_IncomingConnectorVariables();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable#getOutgoingConnectorVariables <em>Outgoing Connector Variables</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Outgoing Connector Variables</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable#getOutgoingConnectorVariables()
-	 * @see #getPortVariable()
-	 * @generated
-	 */
-	EReference getPortVariable_OutgoingConnectorVariables();
-
-	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1151,6 +1129,17 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPortVariable_Type();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable#getConnectorVariables <em>Connector Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Connector Variables</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable#getConnectorVariables()
+	 * @see #getPortVariable()
+	 * @generated
+	 */
+	EReference getPortVariable_ConnectorVariables();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable <em>Part Variable</em>}'.
@@ -1206,26 +1195,15 @@ public interface ComponentstorypatternPackage extends EPackage {
 	EClass getConnectorVariable();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable#getSource <em>Source</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable#getPortVariables <em>Port Variables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable#getSource()
+	 * @return the meta object for the reference list '<em>Port Variables</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable#getPortVariables()
 	 * @see #getConnectorVariable()
 	 * @generated
 	 */
-	EReference getConnectorVariable_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable#getTarget()
-	 * @see #getConnectorVariable()
-	 * @generated
-	 */
-	EReference getConnectorVariable_Target();
+	EReference getConnectorVariable_PortVariables();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable <em>Assembly Variable</em>}'.
@@ -1448,26 +1426,19 @@ public interface ComponentstorypatternPackage extends EPackage {
 		 */
 		EClass PORT_VARIABLE = eINSTANCE.getPortVariable();
 		/**
-		 * The meta object literal for the '<em><b>Incoming Connector Variables</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT_VARIABLE__INCOMING_CONNECTOR_VARIABLES = eINSTANCE.getPortVariable_IncomingConnectorVariables();
-		/**
-		 * The meta object literal for the '<em><b>Outgoing Connector Variables</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT_VARIABLE__OUTGOING_CONNECTOR_VARIABLES = eINSTANCE.getPortVariable_OutgoingConnectorVariables();
-		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference PORT_VARIABLE__TYPE = eINSTANCE.getPortVariable_Type();
+		/**
+		 * The meta object literal for the '<em><b>Connector Variables</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT_VARIABLE__CONNECTOR_VARIABLES = eINSTANCE.getPortVariable_ConnectorVariables();
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.PartVariableImpl <em>Part Variable</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -1508,19 +1479,12 @@ public interface ComponentstorypatternPackage extends EPackage {
 		 */
 		EClass CONNECTOR_VARIABLE = eINSTANCE.getConnectorVariable();
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Port Variables</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTOR_VARIABLE__SOURCE = eINSTANCE.getConnectorVariable_Source();
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONNECTOR_VARIABLE__TARGET = eINSTANCE.getConnectorVariable_Target();
+		EReference CONNECTOR_VARIABLE__PORT_VARIABLES = eINSTANCE.getConnectorVariable_PortVariables();
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.AssemblyVariableImpl <em>Assembly Variable</em>}' class.
 		 * <!-- begin-user-doc -->

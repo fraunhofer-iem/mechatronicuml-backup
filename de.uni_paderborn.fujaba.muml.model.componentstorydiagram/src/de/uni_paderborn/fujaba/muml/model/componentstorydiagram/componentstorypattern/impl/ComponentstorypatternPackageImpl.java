@@ -32,6 +32,7 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.util.ComponentstorypatternValidator;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.impl.ControlflowPackageImpl;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 
 /**
@@ -294,7 +295,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPortVariable_IncomingConnectorVariables() {
+	public EReference getPortVariable_Type() {
 		return (EReference)portVariableEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -303,17 +304,8 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPortVariable_OutgoingConnectorVariables() {
+	public EReference getPortVariable_ConnectorVariables() {
 		return (EReference)portVariableEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPortVariable_Type() {
-		return (EReference)portVariableEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -366,17 +358,8 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConnectorVariable_Source() {
+	public EReference getConnectorVariable_PortVariables() {
 		return (EReference)connectorVariableEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getConnectorVariable_Target() {
-		return (EReference)connectorVariableEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -512,9 +495,8 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		createEReference(componentVariableEClass, COMPONENT_VARIABLE__TYPE);
 
 		portVariableEClass = createEClass(PORT_VARIABLE);
-		createEReference(portVariableEClass, PORT_VARIABLE__INCOMING_CONNECTOR_VARIABLES);
-		createEReference(portVariableEClass, PORT_VARIABLE__OUTGOING_CONNECTOR_VARIABLES);
 		createEReference(portVariableEClass, PORT_VARIABLE__TYPE);
+		createEReference(portVariableEClass, PORT_VARIABLE__CONNECTOR_VARIABLES);
 
 		partVariableEClass = createEClass(PART_VARIABLE);
 		createEReference(partVariableEClass, PART_VARIABLE__PORT_VARIABLES);
@@ -522,8 +504,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		createEReference(partVariableEClass, PART_VARIABLE__CALL);
 
 		connectorVariableEClass = createEClass(CONNECTOR_VARIABLE);
-		createEReference(connectorVariableEClass, CONNECTOR_VARIABLE__SOURCE);
-		createEReference(connectorVariableEClass, CONNECTOR_VARIABLE__TARGET);
+		createEReference(connectorVariableEClass, CONNECTOR_VARIABLE__PORT_VARIABLES);
 
 		assemblyVariableEClass = createEClass(ASSEMBLY_VARIABLE);
 		createEReference(assemblyVariableEClass, ASSEMBLY_VARIABLE__TYPE);
@@ -567,6 +548,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		PatternsPackage thePatternsPackage = (PatternsPackage)EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
+		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
 		ControlflowPackage theControlflowPackage = (ControlflowPackage)EPackage.Registry.INSTANCE.getEPackage(ControlflowPackage.eNS_URI);
 		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 
@@ -581,8 +563,10 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		componentStoryPatternVariableEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		componentVariableEClass.getESuperTypes().add(this.getComponentStoryPatternVariable());
 		portVariableEClass.getESuperTypes().add(this.getComponentStoryPatternVariable());
+		portVariableEClass.getESuperTypes().add(theConnectorPackage.getConnectorEndpoint());
 		partVariableEClass.getESuperTypes().add(this.getComponentStoryPatternVariable());
 		connectorVariableEClass.getESuperTypes().add(this.getComponentStoryPatternVariable());
+		connectorVariableEClass.getESuperTypes().add(theConnectorPackage.getConnector());
 		assemblyVariableEClass.getESuperTypes().add(this.getConnectorVariable());
 		delegationVariableEClass.getESuperTypes().add(this.getConnectorVariable());
 		callEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
@@ -605,9 +589,8 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		initEReference(getComponentVariable_Type(), theComponentPackage.getComponent(), null, "type", null, 1, 1, ComponentVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portVariableEClass, PortVariable.class, "PortVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPortVariable_IncomingConnectorVariables(), this.getConnectorVariable(), this.getConnectorVariable_Target(), "incomingConnectorVariables", null, 0, -1, PortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPortVariable_OutgoingConnectorVariables(), this.getConnectorVariable(), this.getConnectorVariable_Source(), "outgoingConnectorVariables", null, 0, -1, PortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortVariable_Type(), theComponentPackage.getPort(), null, "type", null, 1, 1, PortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPortVariable_ConnectorVariables(), this.getConnectorVariable(), null, "connectorVariables", null, 0, -1, PortVariable.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(partVariableEClass, PartVariable.class, "PartVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPartVariable_PortVariables(), this.getPortVariable(), null, "portVariables", null, 0, -1, PartVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -615,8 +598,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		initEReference(getPartVariable_Call(), this.getCall(), null, "call", null, 0, 1, PartVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorVariableEClass, ConnectorVariable.class, "ConnectorVariable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConnectorVariable_Source(), this.getPortVariable(), this.getPortVariable_OutgoingConnectorVariables(), "source", null, 1, 1, ConnectorVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnectorVariable_Target(), this.getPortVariable(), this.getPortVariable_IncomingConnectorVariables(), "target", null, 1, 1, ConnectorVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectorVariable_PortVariables(), this.getPortVariable(), null, "portVariables", null, 0, -1, ConnectorVariable.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(assemblyVariableEClass, AssemblyVariable.class, "AssemblyVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssemblyVariable_Type(), theComponentPackage.getAssemblyConnector(), null, "type", null, 1, 1, AssemblyVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -669,7 +651,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		   source, 
 		   new String[] {
 			 "constraints", "SameBindingOperatorAsParent SameBindingSemanticsAsParent ValidTypeOfPortVariable"
-		   });			
+		   });				
 		addAnnotation
 		  (partVariableEClass, 
 		   source, 
@@ -681,7 +663,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		   source, 
 		   new String[] {
 			 "constraints", "MustNotConnectCreateAndDestroyPorts SameBindingOperatorAsPortVariable ExistingConnectorBetweenPortVariableTypes"
-		   });
+		   });	
 	}
 
 	/**
@@ -708,6 +690,12 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 			 "ValidTypeOfPortVariable", "if self.eContainer().oclIsKindOf(ComponentVariable) then\r\n\tif not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::model::component::Component).ports->includes(self.type.oclAsType(muml::model::component::Port))\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tif self.eContainer().oclIsKindOf(PartVariable) then\r\n\t\tif not self.eContainer().oclAsType(PartVariable).type.oclIsUndefined() then\r\n\t\t\tself.eContainer().oclAsType(PartVariable).type.oclAsType(muml::model::component::ComponentPart).componentType.oclAsType(muml::model::component::Component).ports->includes(self.type.oclAsType(muml::model::component::Port))\r\n\t\telse\r\n\t\t\tfalse\r\n\t\tendif\r\n\telse\r\n\t\ttrue\r\n\tendif\r\nendif"
 		   });			
 		addAnnotation
+		  (getPortVariable_ConnectorVariables(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.connectors->select(c | c.oclIsKindOf(ConnectorVariable)).oclAsType(ConnectorVariable)->asOrderedSet()"
+		   });		
+		addAnnotation
 		  (partVariableEClass, 
 		   source, 
 		   new String[] {
@@ -721,7 +709,13 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 			 "MustNotConnectCreateAndDestroyPorts", "if self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::CREATE then\r\n\tself.target.oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::DESTROY\r\nelse\r\n\tif self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::DESTROY then\r\n\t\tself.target.oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CREATE\r\n\telse\r\n\t\ttrue\r\n\tendif\r\nendif",
 			 "SameBindingOperatorAsPortVariable", "if self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n\tself.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator\r\nelse\r\n\tif self.target.oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n\t\tself.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.target.oclAsType(ComponentStoryPatternVariable).bindingOperator\r\n\telse\r\n\t\ttrue\r\n\tendif\r\nendif",
 			 "ExistingConnectorBetweenPortVariableTypes", "if self.oclIsKindOf(AssemblyVariable) then\r\n\tif not self.oclAsType(AssemblyVariable).type.oclIsUndefined() then\r\n\t\t(self.oclAsType(AssemblyVariable).type.oclAsType(muml::model::component::ConnectorType).fromPort = self.source.oclAsType(PortVariable).type and\r\n\t\tself.oclAsType(AssemblyVariable).type.oclAsType(muml::model::component::ConnectorType).toPort = self.target.oclAsType(PortVariable).type) or\r\n\t\t(self.oclAsType(AssemblyVariable).type.oclAsType(muml::model::component::ConnectorType).toPort = self.source.oclAsType(PortVariable).type and\r\n\t\tself.oclAsType(AssemblyVariable).type.oclAsType(muml::model::component::ConnectorType).fromPort = self.target.oclAsType(PortVariable).type)\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tif self.oclIsKindOf(DelegationVariable) then\r\n\t\tif not self.oclAsType(DelegationVariable).type.oclIsUndefined() then\r\n\t\t\t(self.oclAsType(DelegationVariable).type.oclAsType(muml::model::component::ConnectorType).fromPort = self.source.oclAsType(PortVariable).type and\r\n\t\t\tself.oclAsType(DelegationVariable).type.oclAsType(muml::model::component::ConnectorType).toPort = self.target.oclAsType(PortVariable).type) or\r\n\t\t\t(self.oclAsType(DelegationVariable).type.oclAsType(muml::model::component::ConnectorType).toPort = self.source.oclAsType(PortVariable).type and\r\n\t\t\tself.oclAsType(DelegationVariable).type.oclAsType(muml::model::component::ConnectorType).fromPort = self.target.oclAsType(PortVariable).type)\r\n\t\telse\r\n\t\t\tfalse\r\n\t\tendif\t\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nendif"
-		   });	
+		   });			
+		addAnnotation
+		  (getConnectorVariable_PortVariables(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.connectorEndpoints->select(i | i.oclIsKindOf(PortVariable)).oclAsType(PortVariable)->asOrderedSet()"
+		   });
 	}
 
 } //ComponentstorypatternPackageImpl

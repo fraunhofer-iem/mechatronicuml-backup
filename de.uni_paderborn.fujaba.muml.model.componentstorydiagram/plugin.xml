@@ -19,7 +19,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.2"
+            uri="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3"
             class="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage"
             genModel="model/ComponentStoryDiagram.genmodel"/>
    </extension>
