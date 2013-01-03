@@ -375,8 +375,6 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		EOperation op = addEOperation(naturalNumberEClass, null, "setValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(naturalNumberEClass, ecorePackage.getELong(), "longValue", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		addEOperation(naturalNumberEClass, ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(naturalNumberEClass, ecorePackage.getEBoolean(), "equals", 0, 1, IS_UNIQUE, IS_ORDERED);

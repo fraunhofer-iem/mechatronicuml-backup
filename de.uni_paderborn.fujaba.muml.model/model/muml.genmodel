@@ -513,7 +513,6 @@
           <genOperations ecoreOperation="muml.ecore#//model/valuetype/NaturalNumber/setValue">
             <genParameters ecoreParameter="muml.ecore#//model/valuetype/NaturalNumber/setValue/value"/>
           </genOperations>
-          <genOperations ecoreOperation="muml.ecore#//model/valuetype/NaturalNumber/longValue"/>
           <genOperations ecoreOperation="muml.ecore#//model/valuetype/NaturalNumber/toString"/>
           <genOperations ecoreOperation="muml.ecore#//model/valuetype/NaturalNumber/equals">
             <genParameters ecoreParameter="muml.ecore#//model/valuetype/NaturalNumber/equals/o"/>

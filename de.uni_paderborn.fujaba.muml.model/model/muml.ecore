@@ -2040,7 +2040,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="valuetype" nsURI="http://www.fujaba.de/muml/model/valuetype/0.3.10"
+    <eSubpackages name="valuetype" nsURI="http://www.fujaba.de/muml/model/valuetype/0.3.13"
         nsPrefix="valueType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -2098,11 +2098,6 @@
           </eAnnotations>
           <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         </eOperations>
-        <eOperations name="longValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This operation yields the value of this natural number as a long value."/>
-          </eAnnotations>
-        </eOperations>
         <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="This operation yields the value of this natural number in a string representation."/>
@@ -2110,6 +2105,9 @@
           </eAnnotations>
         </eOperations>
         <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="body" value="if (o instanceof NaturalNumber) {&#xD;&#xA;&#x9;NaturalNumber naturalNumber = (NaturalNumber) o;&#xD;&#xA;&#x9;// Value of infinity must be equal&#xD;&#xA;&#x9;if (isInfinity() != naturalNumber.isInfinity()) {&#xD;&#xA;&#x9;&#x9;return false;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;// If both are not infinite, make sure their value is identical.&#xD;&#xA;&#x9;if (!isInfinity() &amp;&amp; (naturalNumber.getValue() != getValue())) {&#xD;&#xA;&#x9;&#x9;return false;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;return false;"/>
+          </eAnnotations>
           <eParameters name="o" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
         </eOperations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"

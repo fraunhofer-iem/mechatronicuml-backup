@@ -174,17 +174,6 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public long longValue() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String toString() {
 		if (isInfinity()) {
 			return "*";
@@ -198,9 +187,19 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 	 * @generated
 	 */
 	public boolean equals(EObject o) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (o instanceof NaturalNumber) {
+			NaturalNumber naturalNumber = (NaturalNumber) o;
+			// Value of infinity must be equal
+			if (isInfinity() != naturalNumber.isInfinity()) {
+				return false;
+			}
+			// If both are not infinite, make sure their value is identical.
+			if (!isInfinity() && (naturalNumber.getValue() != getValue())) {
+				return false;
+			}
+			return true;
+		}
+		return false;
 	}
 
 	/**

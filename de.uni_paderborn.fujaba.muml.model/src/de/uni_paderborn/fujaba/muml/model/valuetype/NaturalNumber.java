@@ -98,17 +98,6 @@ public interface NaturalNumber extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This operation yields the value of this natural number as a long value.
-	 * <!-- end-model-doc -->
-	 * @model
-	 * @generated
-	 */
-	long longValue();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
 	 * This operation yields the value of this natural number in a string representation.
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (isInfinity()) {\n\treturn \"*\";\n}\nreturn Long.toString(value);'"
@@ -119,7 +108,7 @@ public interface NaturalNumber extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (o instanceof NaturalNumber) {\r\n\tNaturalNumber naturalNumber = (NaturalNumber) o;\r\n\t// Value of infinity must be equal\r\n\tif (isInfinity() != naturalNumber.isInfinity()) {\r\n\t\treturn false;\r\n\t}\r\n\t// If both are not infinite, make sure their value is identical.\r\n\tif (!isInfinity() && (naturalNumber.getValue() != getValue())) {\r\n\t\treturn false;\r\n\t}\r\n\treturn true;\r\n}\r\nreturn false;'"
 	 * @generated
 	 */
 	boolean equals(EObject o);

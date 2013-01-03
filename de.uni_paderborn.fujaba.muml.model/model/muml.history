@@ -403,22 +403,22 @@
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/valuetype/NaturalNumber"
-          referenceName="eOperations" element="muml.ecore#//model/valuetype/NaturalNumber/longValue">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/valuetype/NaturalNumber/longValue"
+          referenceName="eOperations" element="#//@releases.11/@changes.57/@element">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.57/@element"
             featureName="name" dataValue="longValue"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/valuetype/NaturalNumber/longValue"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.57/@element"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/valuetype/NaturalNumber/longValue"
-          referenceName="eAnnotations" element="muml.ecore#//model/valuetype/NaturalNumber/longValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/valuetype/NaturalNumber/longValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.57/@element"
+          referenceName="eAnnotations" element="#//@releases.11/@changes.57/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.57/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/valuetype/NaturalNumber/longValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/valuetype/NaturalNumber/longValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/valuetype/NaturalNumber/longValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.57/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.11/@changes.57/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.57/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/valuetype/NaturalNumber/longValue/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.57/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="This operation yields the value of this natural number as a long value."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/valuetype/NaturalNumber"
@@ -18614,5 +18614,25 @@
     </changes>
     <changes xsi:type="history:Set" element="muml.ecore#//model/constraint" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/constraint/0.3.13" oldDataValue="http://www.fujaba.de/muml/model/constraint/0.3.8"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/valuetype/NaturalNumber"
+        referenceName="eOperations">
+      <element xsi:type="ecore:EOperation" name="longValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This operation yields the value of this natural number as a long value."/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/valuetype/NaturalNumber/equals"
+        referenceName="eAnnotations" element="muml.ecore#//model/valuetype/NaturalNumber/equals/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/valuetype/NaturalNumber/equals/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/valuetype/NaturalNumber/equals/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/valuetype/NaturalNumber/equals/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="key" dataValue="body"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/valuetype/NaturalNumber/equals/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="if (o instanceof NaturalNumber) {&#xD;&#xA;&#x9;NaturalNumber naturalNumber = (NaturalNumber) o;&#xD;&#xA;&#x9;// Value of infinity must be equal&#xD;&#xA;&#x9;if (isInfinity() != naturalNumber.isInfinity()) {&#xD;&#xA;&#x9;&#x9;return false;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;// If both are not infinite, make sure their value is identical.&#xD;&#xA;&#x9;if (!isInfinity() &amp;&amp; (naturalNumber.getValue() != getValue())) {&#xD;&#xA;&#x9;&#x9;return false;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;return false;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/valuetype/NaturalNumber/equals/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/valuetype" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/valuetype/0.3.13" oldDataValue="http://www.fujaba.de/muml/model/valuetype/0.3.10"/>
   </releases>
 </history:History>

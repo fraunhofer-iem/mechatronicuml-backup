@@ -37,7 +37,7 @@ public class ValuetypeFactoryImpl extends EFactoryImpl implements ValuetypeFacto
 	 */
 	public static ValuetypeFactory init() {
 		try {
-			ValuetypeFactory theValuetypeFactory = (ValuetypeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/valuetype/0.3.10"); 
+			ValuetypeFactory theValuetypeFactory = (ValuetypeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/valuetype/0.3.13"); 
 			if (theValuetypeFactory != null) {
 				return theValuetypeFactory;
 			}
