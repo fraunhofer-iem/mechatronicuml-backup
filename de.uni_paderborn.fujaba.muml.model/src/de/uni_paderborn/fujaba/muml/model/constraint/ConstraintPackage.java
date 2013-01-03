@@ -49,7 +49,7 @@ public interface ConstraintPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/constraint/0.3.8";
+	String eNS_URI = "http://www.fujaba.de/muml/model/constraint/0.3.13";
 
 	/**
 	 * The package namespace name.

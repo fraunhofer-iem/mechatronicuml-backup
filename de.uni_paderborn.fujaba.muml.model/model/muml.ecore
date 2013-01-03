@@ -479,7 +479,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/model/constraint/0.3.8"
+    <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/model/constraint/0.3.13"
         nsPrefix="constraint">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The package constraint provides abstract super classes for modeling different&#xD;&#xA;kinds of constraints that may be attached to ConstrainableElements of the&#xD;&#xA;MechatronicUML meta-model. "/>

@@ -18612,5 +18612,7 @@
         referenceName="eOperations">
       <element xsi:type="ecore:EOperation" name="isCorrect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/constraint" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/constraint/0.3.13" oldDataValue="http://www.fujaba.de/muml/model/constraint/0.3.8"/>
   </releases>
 </history:History>

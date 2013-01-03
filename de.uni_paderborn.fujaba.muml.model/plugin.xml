@@ -33,7 +33,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/constraint/0.3.8"
+            uri="http://www.fujaba.de/muml/model/constraint/0.3.13"
             class="de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage"
             genModel="model/muml.genmodel"/>
    </extension>
