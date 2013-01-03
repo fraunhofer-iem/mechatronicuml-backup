@@ -1,11 +1,12 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Merger
+Bundle-Name: PluginXml Merger for JET-Engine
 Bundle-SymbolicName: org.eclipse.emf.codegen.ecore.merge;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.3.2.qualifier
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.codegen.ecore;bundle-version="2.7.0",
  org.eclipse.core.resources;bundle-version="3.7.101"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Activator: org.eclipse.emf.codegen.ecore.merge.MergerPlugin$Implementation
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

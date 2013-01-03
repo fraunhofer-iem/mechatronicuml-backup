@@ -6,7 +6,7 @@ import org.osgi.framework.BundleContext;
 
 public final class MergerPlugin extends EMFPlugin {
 
-	public static final String ID = "pluginxml.merger";
+	public static final String ID = "org.eclipse.emf.codegen.ecore.merge";
 
 	/**
 	 * The singleton instance of the plugin.

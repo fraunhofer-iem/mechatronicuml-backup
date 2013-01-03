@@ -22,10 +22,9 @@ public class PluginXmlMerger {
 
 	public Document merge(Document before, Document after) {
 		// Create a copy of the after document.
-		//Document merged = copyDocument(after);
-		Document merged = after;
+		Document merged = copyDocument(after);
 		
-		// Merge custom elements from before
+		// Merge custom elements from before into it.
 		Element beforePluginElement = findPluginElement(before);
 		Element mergedPluginElement = findPluginElement(merged);
 		Node firstChild = mergedPluginElement.getFirstChild();
@@ -65,7 +64,7 @@ public class PluginXmlMerger {
 			Node node = pluginElement.getChildNodes().item(i);
 			if (node instanceof Element) {
 				Element element = (Element) node;
-				if (containsCustomInstruction(element)) {
+				if (!containsGeneratedTag(element)) {
 					customElements.add(element);
 				}
 			}
@@ -73,20 +72,20 @@ public class PluginXmlMerger {
 		return customElements;
 	}
 
-	private boolean containsCustomInstruction(Element element) {
+	private boolean containsGeneratedTag(Element element) {
 		for (int j = 0; j < element.getChildNodes().getLength(); j++) {
 			Node child = element.getChildNodes().item(j);
 			if (child instanceof ProcessingInstruction) {
 				ProcessingInstruction instruction = (ProcessingInstruction) child;
-				if (isCustomInstruction(instruction)) {
-					return false;
+				if (isGeneratedTag(instruction)) {
+					return true;
 				}
 			}
 		}
-		return true;
+		return false;
 	}
 
-	protected boolean isCustomInstruction(
+	protected boolean isGeneratedTag(
 			ProcessingInstruction instruction) {
 		return "emfgen".equals(instruction.getTarget())
 				&& "generated=\"true\"".equals(instruction.getData());
