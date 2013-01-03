@@ -4,16 +4,17 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.instance.provider;
+package de.uni_paderborn.fujaba.muml.model.connector.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpointInstance;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -21,17 +22,14 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpointInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DiscreteSinglePortInstanceItemProvider
-	extends DiscretePortInstanceItemProvider
+public class DiscreteInteractionEndpointInstanceItemProvider
+	extends ConnectorEndpointInstanceItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -44,7 +42,7 @@ public class DiscreteSinglePortInstanceItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DiscreteSinglePortInstanceItemProvider(AdapterFactory adapterFactory) {
+	public DiscreteInteractionEndpointInstanceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,42 +57,8 @@ public class DiscreteSinglePortInstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMultiInteractionEndpointInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Multi Interaction Endpoint Instance feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMultiInteractionEndpointInstancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiscreteSingleInteractionEndpointInstance_multiInteractionEndpointInstance_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteSingleInteractionEndpointInstance_multiInteractionEndpointInstance_feature", "_UI_DiscreteSingleInteractionEndpointInstance_type"),
-				 ConnectorPackage.Literals.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns DiscreteSinglePortInstance.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DiscreteSinglePortInstance"));
 	}
 
 	/**
@@ -105,10 +69,10 @@ public class DiscreteSinglePortInstanceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DiscreteSinglePortInstance)object).getName();
+		String label = ((DiscreteInteractionEndpointInstance)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_DiscreteSinglePortInstance_type") :
-			getString("_UI_DiscreteSinglePortInstance_type") + " " + label;
+			getString("_UI_DiscreteInteractionEndpointInstance_type") :
+			getString("_UI_DiscreteInteractionEndpointInstance_type") + " " + label;
 	}
 
 	/**

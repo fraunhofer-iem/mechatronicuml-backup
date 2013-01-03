@@ -4,15 +4,18 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.model.instance.provider;
+package de.uni_paderborn.fujaba.muml.model.connector.provider;
 
 
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,17 +24,14 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DiscreteSinglePortInstanceItemProvider
-	extends DiscretePortInstanceItemProvider
+public class DiscreteSingleInteractionEndpointInstanceItemProvider
+	extends DiscreteInteractionEndpointInstanceItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -44,7 +44,7 @@ public class DiscreteSinglePortInstanceItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DiscreteSinglePortInstanceItemProvider(AdapterFactory adapterFactory) {
+	public DiscreteSingleInteractionEndpointInstanceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -87,14 +87,14 @@ public class DiscreteSinglePortInstanceItemProvider
 	}
 
 	/**
-	 * This returns DiscreteSinglePortInstance.gif.
+	 * This returns DiscreteSingleInteractionEndpointInstance.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DiscreteSinglePortInstance"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/DiscreteSingleInteractionEndpointInstance"));
 	}
 
 	/**
@@ -105,10 +105,10 @@ public class DiscreteSinglePortInstanceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DiscreteSinglePortInstance)object).getName();
+		String label = ((DiscreteSingleInteractionEndpointInstance)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_DiscreteSinglePortInstance_type") :
-			getString("_UI_DiscreteSinglePortInstance_type") + " " + label;
+			getString("_UI_DiscreteSingleInteractionEndpointInstance_type") :
+			getString("_UI_DiscreteSingleInteractionEndpointInstance_type") + " " + label;
 	}
 
 	/**

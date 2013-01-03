@@ -48,7 +48,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://www.fujaba.de/muml/model/instance/0.3.7"
+            uri="http://www.fujaba.de/muml/model/instance/0.3.15"
             class="de.uni_paderborn.fujaba.muml.model.instance.provider.InstanceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -120,7 +120,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <factory
-            uri="http://www.fujaba.de/muml/model/connector/0.3.13"
+            uri="http://www.fujaba.de/muml/model/connector/0.3.15"
             class="de.uni_paderborn.fujaba.muml.model.connector.provider.ConnectorItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
