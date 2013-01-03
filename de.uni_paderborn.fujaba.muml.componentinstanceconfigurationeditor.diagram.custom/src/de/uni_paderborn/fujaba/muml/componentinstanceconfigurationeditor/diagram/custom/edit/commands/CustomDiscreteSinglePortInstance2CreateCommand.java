@@ -23,7 +23,7 @@ public class CustomDiscreteSinglePortInstance2CreateCommand extends
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance owner = (de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance) getElementToEdit();
-		newElement.setMultiPortInstance(owner);
+		newElement.setMultiInteractionEndpointInstance(owner);
 		super.doConfigure(newElement, monitor, info);
 	}
 

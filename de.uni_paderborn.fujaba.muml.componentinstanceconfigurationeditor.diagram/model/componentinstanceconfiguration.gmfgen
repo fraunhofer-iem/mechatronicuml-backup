@@ -862,6 +862,7 @@
         visualID="4001"
         editPartClassName="AssemblyConnectorInstanceEditPart"
         itemSemanticEditPolicyClassName="AssemblyConnectorInstanceItemSemanticEditPolicy"
+        notationViewFactoryClassName="AssemblyConnectorInstanceViewFactory"
         createCommandClassName="AssemblyConnectorInstanceCreateCommand"
         reorientCommandClassName="AssemblyConnectorInstanceReorientCommand">
       <diagramRunTimeClass
@@ -890,6 +891,7 @@
         visualID="4002"
         editPartClassName="DelegationConnectorInstanceEditPart"
         itemSemanticEditPolicyClassName="DelegationConnectorInstanceItemSemanticEditPolicy"
+        notationViewFactoryClassName="DelegationConnectorInstanceViewFactory"
         createCommandClassName="DelegationConnectorInstanceCreateCommand"
         reorientCommandClassName="DelegationConnectorInstanceReorientCommand">
       <diagramRunTimeClass
@@ -1666,7 +1668,7 @@
           body="'portinstance'"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="self.multiPortInstance.oclIsUndefined()"/>
+          body="self.multiInteractionEndpointInstance.oclIsUndefined()"/>
       <expressions
           body="'portinstance'"/>
       <expressions
@@ -1674,7 +1676,7 @@
       <expressions
           body="'portinstance'"/>
       <expressions
-          body="self.multiPortInstance.componentInstance"/>
+          body="if self.multiInteractionEndpointInstance.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;if  self.multiInteractionEndpointInstance.oclIsKindOf(DiscreteMultiPortInstance) then&#xA;&#x9;&#x9;self.multiInteractionEndpointInstance.oclAsType(DiscreteMultiPortInstance).componentInstance&#xA;&#x9;else&#xA;&#x9;&#x9;null&#xA;&#x9;endif&#xA;endif"/>
       <expressions
           body="'portinstance'"/>
       <expressions

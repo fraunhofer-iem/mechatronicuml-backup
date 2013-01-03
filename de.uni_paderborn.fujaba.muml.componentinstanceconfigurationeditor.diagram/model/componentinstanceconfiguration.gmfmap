@@ -43,7 +43,7 @@
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/DiscreteSinglePortInstance"/>
       <domainSpecialization
-          body="self.multiPortInstance.oclIsUndefined()"/>
+          body="self.multiInteractionEndpointInstance.oclIsUndefined()"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers
@@ -121,7 +121,7 @@
                   xsi:type="ecore:EReference"
                   href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/instance/PortInstance/componentInstance"/>
               <value
-                  body="self.multiPortInstance.componentInstance"/>
+                  body="if self.multiInteractionEndpointInstance.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;if  self.multiInteractionEndpointInstance.oclIsKindOf(DiscreteMultiPortInstance) then&#xA;&#x9;&#x9;self.multiInteractionEndpointInstance.oclAsType(DiscreteMultiPortInstance).componentInstance&#xA;&#x9;else&#xA;&#x9;&#x9;null&#xA;&#x9;endif&#xA;endif"/>
             </initializers>
           </domainInitializer>
           <tool

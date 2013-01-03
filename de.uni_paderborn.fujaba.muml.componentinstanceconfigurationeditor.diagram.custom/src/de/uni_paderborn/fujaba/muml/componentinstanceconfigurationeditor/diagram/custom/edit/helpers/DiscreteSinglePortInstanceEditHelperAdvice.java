@@ -11,6 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
@@ -31,9 +32,13 @@ public class DiscreteSinglePortInstanceEditHelperAdvice extends
 			final DiscreteSinglePortInstance singlePortInstance = (DiscreteSinglePortInstance) request
 					.getElementToConfigure();
 	
-			DiscreteMultiPortInstance multiPortInstance = singlePortInstance
-					.getMultiPortInstance();
-	
+			DiscreteMultiPortInstance multiPortInstance = null;
+			DiscreteMultiInteractionEndpointInstance multiInteractionEndpointInstance = singlePortInstance
+					.getMultiInteractionEndpointInstance();
+			if (multiInteractionEndpointInstance instanceof DiscreteMultiPortInstance) {
+				multiPortInstance = (DiscreteMultiPortInstance) multiInteractionEndpointInstance;
+			}
+			
 			if (multiPortInstance != null) {
 				final ComponentInstance componentInstance = multiPortInstance
 						.getComponentInstance();
@@ -60,8 +65,12 @@ public class DiscreteSinglePortInstanceEditHelperAdvice extends
 			final DiscreteSinglePortInstance singlePortInstance = (DiscreteSinglePortInstance) request
 					.getElementToDestroy();
 
-			DiscreteMultiPortInstance multiPortInstance = singlePortInstance
-					.getMultiPortInstance();
+			DiscreteMultiPortInstance multiPortInstance = null;
+			DiscreteMultiInteractionEndpointInstance multiInteractionEndpointInstance = singlePortInstance
+					.getMultiInteractionEndpointInstance();
+			if (multiInteractionEndpointInstance instanceof DiscreteMultiPortInstance) {
+				multiPortInstance = (DiscreteMultiPortInstance) multiInteractionEndpointInstance;
+			}
 
 			if (multiPortInstance != null) {
 				final ComponentInstance componentInstance = multiPortInstance

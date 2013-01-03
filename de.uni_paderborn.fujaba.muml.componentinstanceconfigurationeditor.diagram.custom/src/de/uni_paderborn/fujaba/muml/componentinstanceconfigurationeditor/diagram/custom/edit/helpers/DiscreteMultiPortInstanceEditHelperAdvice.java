@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 
+import de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
 
@@ -32,8 +33,10 @@ public class DiscreteMultiPortInstanceEditHelperAdvice extends
 				protected CommandResult doExecuteWithResult(
 						IProgressMonitor monitor, IAdaptable info)
 						throws ExecutionException {
-					for (DiscreteSinglePortInstance dspi : multiPortInstance.getSubPortInstances()) {
-						dspi.setComponentInstance(null);
+					for (DiscreteSingleInteractionEndpointInstance dspi : multiPortInstance.getSubInteractionEndpointInstances()) {
+						if (dspi instanceof DiscreteSinglePortInstance) {
+							((DiscreteSinglePortInstance)dspi).setComponentInstance(null);
+						}
 					}
 					return CommandResult.newOKCommandResult();
 				}

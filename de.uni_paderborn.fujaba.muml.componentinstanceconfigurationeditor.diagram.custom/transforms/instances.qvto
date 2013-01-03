@@ -2,10 +2,10 @@ transformation InstantiationTransformation(inout instance : InstancePackage);
 
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.2.2');
 modeltype ModelPackage uses muml::model('http://www.fujaba.de/muml/0.2.2');
-modeltype CorePackage uses muml::model::core('http://www.fujaba.de/muml/0.2.2');
+modeltype ConnectorPackage uses muml::model::connector('http://www.fujaba.de/muml/0.2.2');
+modeltype ValuetypePackage uses muml::model::valuetype('http://www.fujaba.de/muml/0.2.2');
 modeltype ComponentPackage uses muml::model::component('http://www.fujaba.de/muml/0.2.2');
 modeltype InstancePackage uses muml::model::instance('http://www.fujaba.de/muml/0.2.2');
-modeltype ConnectorPackage uses muml::model::connector('http://www.fujaba.de/muml/0.2.2');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 main() {
@@ -44,7 +44,7 @@ query DiscretePort::createPortInstances() : Set(PortInstance) {
 	if (self.multiPort) then {
 		var multiPortInstance : DiscreteMultiPortInstance := new DiscreteMultiPortInstance(self);
 		//return OrderedSet { multiPortInstance }
-		return OrderedSet { multiPortInstance }[PortInstance]->union(multiPortInstance.subPortInstances[PortInstance])
+		return OrderedSet { multiPortInstance }[PortInstance]->union(multiPortInstance.subInteractionEndpointInstances[PortInstance])
 	} endif;
 	return self.createSubPortInstances();
 }
@@ -98,7 +98,7 @@ constructor StructuredComponentInstance::StructuredComponentInstance(type : Stru
 constructor DiscreteMultiPortInstance::DiscreteMultiPortInstance(port : DiscretePort) {
 	type := port;
 	name := type.name;
-	subPortInstances := port.createSubPortInstances()[DiscreteSinglePortInstance];
+	subInteractionEndpointInstances := port.createSubPortInstances()[DiscreteSinglePortInstance];
 }
 constructor DiscreteSinglePortInstance::DiscreteSinglePortInstance(port : DiscretePort) {
 	type := port;

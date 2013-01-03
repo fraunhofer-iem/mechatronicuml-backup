@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortType;
-import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 
 public class DiscreteMultiPortInstanceBehavior extends
 		AbstractPortInstanceBehavior {
@@ -35,7 +35,7 @@ public class DiscreteMultiPortInstanceBehavior extends
 	 *            The notification sent by the model.
 	 */
 	public void handleNotificationEvent(final Notification notification) {
-		if (InstancePackage.Literals.DISCRETE_MULTI_PORT_INSTANCE__SUB_PORT_INSTANCES
+		if (ConnectorPackage.Literals.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__SUB_INTERACTION_ENDPOINT_INSTANCES
 				.equals(notification.getFeature())) {
 			// Reactivate layouting
 			((MultiPortLayoutListener) getContainerLayoutListener())
