@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
-import de.uni_paderborn.fujaba.muml.model.types.DataType;
+import de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +17,6 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#getKind <em>Kind</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#getType <em>Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isOptional <em>Optional</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isOutPort <em>Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isInPort <em>In Port</em>}</li>
@@ -28,7 +27,7 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * @model abstract="true"
  * @generated
  */
-public interface DirectedTypedPort extends Port {
+public interface DirectedTypedPort extends Port, TypedNamedElement {
 	/**
 	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
 	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind}.
@@ -56,31 +55,6 @@ public interface DirectedTypedPort extends Port {
 	 * @generated
 	 */
 	void setKind(ContinuousPortDirectionKind value);
-
-	/**
-	 * Returns the value of the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Defines the data type of the signal value which is emitted or received by 
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(DataType)
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDirectedTypedPort_Type()
-	 * @model required="true"
-	 * @generated
-	 */
-	DataType getType();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#getType <em>Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' reference.
-	 * @see #getType()
-	 * @generated
-	 */
-	void setType(DataType value);
 
 	/**
 	 * Returns the value of the '<em><b>Optional</b></em>' attribute.

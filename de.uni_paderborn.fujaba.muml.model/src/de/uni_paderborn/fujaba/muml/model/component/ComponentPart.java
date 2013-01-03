@@ -44,7 +44,7 @@ import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CardinalityLowerBoundSet='self.cardinality.lowerBound->notEmpty()' TypeNotEqualToParent='self.componentType <> self.parentComponent' CardinalityUpperBoundSet='self.cardinality.upperBound->notEmpty()'"
  * @generated
  */
-public interface ComponentPart extends CommentableElement, NamedElement, DataType {
+public interface ComponentPart extends NamedElement, CommentableElement, DataType {
 	/**
 	 * Returns the value of the '<em><b>Component Type</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.component.Component#getReferencingComponentParts <em>Referencing Component Parts</em>}'.

@@ -14,7 +14,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement;
+import de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.model.component.*;
 import de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.model.component.AtomicComponent;
@@ -121,6 +121,7 @@ public class ComponentSwitch<T> extends Switch<T> {
 				T result = caseContinuousPort(continuousPort);
 				if (result == null) result = caseDirectedTypedPort(continuousPort);
 				if (result == null) result = casePort(continuousPort);
+				if (result == null) result = caseTypedNamedElement(continuousPort);
 				if (result == null) result = caseConnectorEndpoint(continuousPort);
 				if (result == null) result = caseConstrainableElement(continuousPort);
 				if (result == null) result = caseDataType(continuousPort);
@@ -149,9 +150,9 @@ public class ComponentSwitch<T> extends Switch<T> {
 				ComponentPart componentPart = (ComponentPart)theEObject;
 				T result = caseComponentPart(componentPart);
 				if (result == null) result = caseDataType(componentPart);
-				if (result == null) result = caseCommentableElement(componentPart);
-				if (result == null) result = caseExtendableElement(componentPart);
 				if (result == null) result = caseNamedElement(componentPart);
+				if (result == null) result = caseExtendableElement(componentPart);
+				if (result == null) result = caseCommentableElement(componentPart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -212,8 +213,8 @@ public class ComponentSwitch<T> extends Switch<T> {
 				HybridPort hybridPort = (HybridPort)theEObject;
 				T result = caseHybridPort(hybridPort);
 				if (result == null) result = caseDirectedTypedPort(hybridPort);
-				if (result == null) result = caseITypedNamedElement(hybridPort);
 				if (result == null) result = casePort(hybridPort);
+				if (result == null) result = caseTypedNamedElement(hybridPort);
 				if (result == null) result = caseConnectorEndpoint(hybridPort);
 				if (result == null) result = caseConstrainableElement(hybridPort);
 				if (result == null) result = caseDataType(hybridPort);
@@ -246,6 +247,7 @@ public class ComponentSwitch<T> extends Switch<T> {
 				DirectedTypedPort directedTypedPort = (DirectedTypedPort)theEObject;
 				T result = caseDirectedTypedPort(directedTypedPort);
 				if (result == null) result = casePort(directedTypedPort);
+				if (result == null) result = caseTypedNamedElement(directedTypedPort);
 				if (result == null) result = caseConnectorEndpoint(directedTypedPort);
 				if (result == null) result = caseConstrainableElement(directedTypedPort);
 				if (result == null) result = caseDataType(directedTypedPort);
@@ -560,6 +562,21 @@ public class ComponentSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Typed Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Typed Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTypedNamedElement(TypedNamedElement object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Behavioral Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -601,21 +618,6 @@ public class ComponentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConnector(Connector object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>ITyped Named Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>ITyped Named Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseITypedNamedElement(ITypedNamedElement object) {
 		return null;
 	}
 

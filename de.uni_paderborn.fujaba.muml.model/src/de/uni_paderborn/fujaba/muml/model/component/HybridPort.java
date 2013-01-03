@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.component;
 
-import de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement;
 import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
 
 
@@ -35,7 +34,7 @@ import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
  * @model
  * @generated
  */
-public interface HybridPort extends DirectedTypedPort, ITypedNamedElement {
+public interface HybridPort extends DirectedTypedPort {
 
 	/**
 	 * Returns the value of the '<em><b>Sampling Interval</b></em>' containment reference.

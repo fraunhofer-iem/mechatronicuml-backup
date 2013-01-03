@@ -20,6 +20,7 @@ import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.behavior.Operation;
 import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
 
 /**
@@ -94,8 +95,8 @@ public class BehaviorSwitch<T> extends Switch<T> {
 			case BehaviorPackage.VARIABLE: {
 				Variable variable = (Variable)theEObject;
 				T result = caseVariable(variable);
+				if (result == null) result = caseTypedNamedElement(variable);
 				if (result == null) result = caseCommentableElement(variable);
-				if (result == null) result = caseITypedNamedElement(variable);
 				if (result == null) result = caseNamedElement(variable);
 				if (result == null) result = caseExtendableElement(variable);
 				if (result == null) result = defaultCase(theEObject);
@@ -113,8 +114,8 @@ public class BehaviorSwitch<T> extends Switch<T> {
 			case BehaviorPackage.PARAMETER: {
 				Parameter parameter = (Parameter)theEObject;
 				T result = caseParameter(parameter);
+				if (result == null) result = caseTypedNamedElement(parameter);
 				if (result == null) result = caseCommentableElement(parameter);
-				if (result == null) result = caseITypedNamedElement(parameter);
 				if (result == null) result = caseNamedElement(parameter);
 				if (result == null) result = caseExtendableElement(parameter);
 				if (result == null) result = defaultCase(theEObject);
@@ -127,11 +128,11 @@ public class BehaviorSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BehaviorPackage.ITYPED_NAMED_ELEMENT: {
-				ITypedNamedElement iTypedNamedElement = (ITypedNamedElement)theEObject;
-				T result = caseITypedNamedElement(iTypedNamedElement);
-				if (result == null) result = caseNamedElement(iTypedNamedElement);
-				if (result == null) result = caseExtendableElement(iTypedNamedElement);
+			case BehaviorPackage.TYPED_NAMED_ELEMENT: {
+				TypedNamedElement typedNamedElement = (TypedNamedElement)theEObject;
+				T result = caseTypedNamedElement(typedNamedElement);
+				if (result == null) result = caseNamedElement(typedNamedElement);
+				if (result == null) result = caseExtendableElement(typedNamedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -230,17 +231,17 @@ public class BehaviorSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>ITyped Named Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Typed Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>ITyped Named Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Typed Named Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseITypedNamedElement(ITypedNamedElement object) {
+	public T caseTypedNamedElement(TypedNamedElement object) {
 		return null;
 	}
 

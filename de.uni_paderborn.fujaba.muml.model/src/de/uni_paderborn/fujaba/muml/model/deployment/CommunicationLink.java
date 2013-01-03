@@ -6,10 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.deployment;
 
-import de.uni_paderborn.fujaba.muml.model.connector.Connector;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.ExtendableElement;
 
+import de.uni_paderborn.fujaba.muml.model.connector.Connector;
 import de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance;
 
 /**

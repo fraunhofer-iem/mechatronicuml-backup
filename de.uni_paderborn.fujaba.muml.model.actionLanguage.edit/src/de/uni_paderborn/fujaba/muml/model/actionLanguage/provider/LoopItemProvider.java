@@ -216,7 +216,12 @@ public class LoopItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createVariableExpression()));
+				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionLanguageFactory.eINSTANCE.createVariableOrParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

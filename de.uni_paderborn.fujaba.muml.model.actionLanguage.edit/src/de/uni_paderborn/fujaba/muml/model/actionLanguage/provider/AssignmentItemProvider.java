@@ -137,7 +137,7 @@ public class AssignmentItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION);
-			childrenFeatures.add(ActionLanguagePackage.Literals.ASSIGNMENT__LHS_VARIABLE_EXPRESSION);
+			childrenFeatures.add(ActionLanguagePackage.Literals.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -197,7 +197,7 @@ public class AssignmentItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ActionLanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION:
-			case ActionLanguagePackage.ASSIGNMENT__LHS_VARIABLE_EXPRESSION:
+			case ActionLanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -248,7 +248,12 @@ public class AssignmentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createVariableExpression()));
+				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionLanguageFactory.eINSTANCE.createVariableOrParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -312,8 +317,13 @@ public class AssignmentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__LHS_VARIABLE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createVariableExpression()));
+				(ActionLanguagePackage.Literals.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION,
+				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION,
+				 ActionLanguageFactory.eINSTANCE.createVariableOrParameterExpression()));
 	}
 
 	/**
@@ -329,7 +339,7 @@ public class AssignmentItemProvider
 
 		boolean qualify =
 			childFeature == ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION ||
-			childFeature == ActionLanguagePackage.Literals.ASSIGNMENT__LHS_VARIABLE_EXPRESSION;
+			childFeature == ActionLanguagePackage.Literals.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION;
 
 		if (qualify) {
 			return getString

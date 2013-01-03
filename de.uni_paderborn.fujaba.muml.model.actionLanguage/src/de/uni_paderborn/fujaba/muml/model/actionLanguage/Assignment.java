@@ -25,7 +25,7 @@ import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getAssignOperator <em>Assign Operator</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getRhs_assignExpression <em>Rhs assign Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getIncrementDecrementOperator <em>Increment Decrement Operator</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_variableExpression <em>Lhs variable Expression</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_typedNamedElementExpression <em>Lhs typed Named Element Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -128,28 +128,28 @@ public interface Assignment extends Expression {
 	void setIncrementDecrementOperator(IncrementDecrementOperator value);
 
 	/**
-	 * Returns the value of the '<em><b>Lhs variable Expression</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Lhs typed Named Element Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 *  The left-hand-side of an assignment must be a single variable and must not be another expression.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Lhs variable Expression</em>' containment reference.
-	 * @see #setLhs_variableExpression(VariableExpression)
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getAssignment_Lhs_variableExpression()
+	 * @return the value of the '<em>Lhs typed Named Element Expression</em>' containment reference.
+	 * @see #setLhs_typedNamedElementExpression(TypedNamedElementExpression)
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getAssignment_Lhs_typedNamedElementExpression()
 	 * @model containment="true"
 	 * @generated
 	 */
-	VariableExpression getLhs_variableExpression();
+	TypedNamedElementExpression getLhs_typedNamedElementExpression();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_variableExpression <em>Lhs variable Expression</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_typedNamedElementExpression <em>Lhs typed Named Element Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Lhs variable Expression</em>' containment reference.
-	 * @see #getLhs_variableExpression()
+	 * @param value the new value of the '<em>Lhs typed Named Element Expression</em>' containment reference.
+	 * @see #getLhs_typedNamedElementExpression()
 	 * @generated
 	 */
-	void setLhs_variableExpression(VariableExpression value);
+	void setLhs_typedNamedElementExpression(TypedNamedElementExpression value);
 
 } // Assignment

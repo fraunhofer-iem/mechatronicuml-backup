@@ -64,32 +64,9 @@ public class HybridPortItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDataTypePropertyDescriptor(object);
 			addSamplingIntervalPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Data Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDataTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ITypedNamedElement_dataType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ITypedNamedElement_dataType_feature", "_UI_ITypedNamedElement_type"),
-				 BehaviorPackage.Literals.ITYPED_NAMED_ELEMENT__DATA_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

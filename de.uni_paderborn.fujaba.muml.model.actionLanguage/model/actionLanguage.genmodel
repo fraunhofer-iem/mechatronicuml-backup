@@ -42,7 +42,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//Assignment/assignOperator"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Assignment/rhs_assignExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//Assignment/incrementDecrementOperator"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Assignment/lhs_variableExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression"/>
     </genClasses>
     <genClasses ecoreClass="actionLanguage.ecore#//ForLoop">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//ForLoop/initializeExpression"/>
@@ -55,9 +55,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//IfStatement/elseIfBlocks"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//IfStatement/elseBlock"/>
     </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//VariableExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//VariableExpression/variable"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//VariableExpression/indices"/>
+    <genClasses ecoreClass="actionLanguage.ecore#//VariableOrParameterExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//VariableOrParameterExpression/indices"/>
     </genClasses>
     <genClasses ecoreClass="actionLanguage.ecore#//OperationCall">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//OperationCall/operation"/>
@@ -81,6 +80,9 @@
     <genClasses ecoreClass="actionLanguage.ecore#//LocalVariableDeclarationStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//LocalVariableDeclarationStatement/variable"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//LocalVariableDeclarationStatement/initializeExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="actionLanguage.ecore#//TypedNamedElementExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//TypedNamedElementExpression/typedNamedElement"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

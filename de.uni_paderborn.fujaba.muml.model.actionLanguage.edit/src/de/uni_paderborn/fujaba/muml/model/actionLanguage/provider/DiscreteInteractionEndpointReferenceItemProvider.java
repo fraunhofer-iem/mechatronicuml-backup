@@ -166,7 +166,7 @@ public class DiscreteInteractionEndpointReferenceItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createVariableExpression()));
+				 ActionLanguageFactory.eINSTANCE.createVariableOrParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -17,9 +17,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 
 import de.fujaba.modelinstance.ModelinstancePackage;
-import de.uni_paderborn.fujaba.muml.MumlPackage;
-import de.uni_paderborn.fujaba.muml.impl.MumlPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.ModelPackage;
 import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.behavior.impl.BehaviorPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector;
@@ -47,7 +44,6 @@ import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.impl.ModelPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
@@ -569,17 +565,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDirectedTypedPort_Type() {
-		return (EReference)directedTypedPortEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getDirectedTypedPort_Optional() {
-		return (EAttribute)directedTypedPortEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)directedTypedPortEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -588,7 +575,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EAttribute getDirectedTypedPort_InPort() {
-		return (EAttribute)directedTypedPortEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)directedTypedPortEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -597,7 +584,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EAttribute getDirectedTypedPort_OutPort() {
-		return (EAttribute)directedTypedPortEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)directedTypedPortEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -830,7 +817,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		directedTypedPortEClass = createEClass(DIRECTED_TYPED_PORT);
 		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__KIND);
-		createEReference(directedTypedPortEClass, DIRECTED_TYPED_PORT__TYPE);
 		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__OPTIONAL);
 		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__OUT_PORT);
 		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__IN_PORT);
@@ -887,8 +873,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		continuousPortEClass.getESuperTypes().add(this.getDirectedTypedPort());
 		discretePortEClass.getESuperTypes().add(this.getPort());
 		discretePortEClass.getESuperTypes().add(theConnectorPackage.getDiscreteInteractionEndpoint());
-		componentPartEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		componentPartEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		componentPartEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		componentPartEClass.getESuperTypes().add(theTypesPackage.getDataType());
 		staticStructuredComponentEClass.getESuperTypes().add(this.getStructuredComponent());
 		atomicComponentEClass.getESuperTypes().add(this.getComponent());
@@ -897,10 +883,10 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		assemblyConnectorEClass.getESuperTypes().add(this.getPortConnector());
 		delegationConnectorEClass.getESuperTypes().add(this.getPortConnector());
 		hybridPortEClass.getESuperTypes().add(this.getDirectedTypedPort());
-		hybridPortEClass.getESuperTypes().add(theBehaviorPackage.getITypedNamedElement());
 		coordinationProtocolOccurrenceEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		structuredComponentEClass.getESuperTypes().add(this.getComponent());
 		directedTypedPortEClass.getESuperTypes().add(this.getPort());
+		directedTypedPortEClass.getESuperTypes().add(theBehaviorPackage.getTypedNamedElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -965,7 +951,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		initEClass(directedTypedPortEClass, DirectedTypedPort.class, "DirectedTypedPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDirectedTypedPort_Kind(), this.getContinuousPortDirectionKind(), "kind", null, 1, 1, DirectedTypedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDirectedTypedPort_Type(), theTypesPackage.getDataType(), null, "type", null, 1, 1, DirectedTypedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDirectedTypedPort_Optional(), theEcorePackage.getEBoolean(), "optional", "false", 0, 1, DirectedTypedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDirectedTypedPort_OutPort(), ecorePackage.getEBoolean(), "outPort", "false", 0, 1, DirectedTypedPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDirectedTypedPort_InPort(), ecorePackage.getEBoolean(), "inPort", "false", 0, 1, DirectedTypedPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -1047,7 +1032,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"
-		   });														
+		   });													
 	}
 
 	/**
@@ -1218,7 +1203,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "self.allStructuredComponents->collect(\n\tembeddedParts->select(\n\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t)->collect(componentType.oclAsType(component::AtomicComponent))\n)->asOrderedSet()"
-		   });						
+		   });					
 		addAnnotation
 		  (getDirectedTypedPort_OutPort(), 
 		   source, 

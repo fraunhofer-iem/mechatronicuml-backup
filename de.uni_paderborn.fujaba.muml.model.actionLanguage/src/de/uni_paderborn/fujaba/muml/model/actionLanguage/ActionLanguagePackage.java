@@ -48,7 +48,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/actionlanguage/0.3.12";
+	String eNS_URI = "http://www.fujaba.de/muml/actionlanguage/0.3.14";
 
 	/**
 	 * The package namespace name.
@@ -405,13 +405,13 @@ public interface ActionLanguagePackage extends EPackage {
 	int ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Lhs variable Expression</b></em>' containment reference.
+	 * The feature id for the '<em><b>Lhs typed Named Element Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNMENT__LHS_VARIABLE_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
+	int ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Assignment</em>' class.
@@ -605,14 +605,14 @@ public interface ActionLanguagePackage extends EPackage {
 	int IF_STATEMENT_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 5;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.VariableExpressionImpl <em>Variable Expression</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.TypedNamedElementExpressionImpl <em>Typed Named Element Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.VariableExpressionImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getVariableExpression()
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.TypedNamedElementExpressionImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getTypedNamedElementExpression()
 	 * @generated
 	 */
-	int VARIABLE_EXPRESSION = 7;
+	int TYPED_NAMED_ELEMENT_EXPRESSION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -621,7 +621,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+	int TYPED_NAMED_ELEMENT_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -630,7 +630,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+	int TYPED_NAMED_ELEMENT_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -639,16 +639,71 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
+	int TYPED_NAMED_ELEMENT_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Variable</b></em>' reference.
+	 * The feature id for the '<em><b>Typed Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_EXPRESSION__VARIABLE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+	int TYPED_NAMED_ELEMENT_EXPRESSION__TYPED_NAMED_ELEMENT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Typed Named Element Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_NAMED_ELEMENT_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.VariableOrParameterExpressionImpl <em>Variable Or Parameter Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.VariableOrParameterExpressionImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getVariableOrParameterExpression()
+	 * @generated
+	 */
+	int VARIABLE_OR_PARAMETER_EXPRESSION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_OR_PARAMETER_EXPRESSION__ANNOTATION = TYPED_NAMED_ELEMENT_EXPRESSION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_OR_PARAMETER_EXPRESSION__EXTENSION = TYPED_NAMED_ELEMENT_EXPRESSION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_OR_PARAMETER_EXPRESSION__COMMENT = TYPED_NAMED_ELEMENT_EXPRESSION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Typed Named Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_OR_PARAMETER_EXPRESSION__TYPED_NAMED_ELEMENT = TYPED_NAMED_ELEMENT_EXPRESSION__TYPED_NAMED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Indices</b></em>' containment reference list.
@@ -657,16 +712,16 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_EXPRESSION__INDICES = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+	int VARIABLE_OR_PARAMETER_EXPRESSION__INDICES = TYPED_NAMED_ELEMENT_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Variable Expression</em>' class.
+	 * The number of structural features of the '<em>Variable Or Parameter Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+	int VARIABLE_OR_PARAMETER_EXPRESSION_FEATURE_COUNT = TYPED_NAMED_ELEMENT_EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.OperationCallImpl <em>Operation Call</em>}' class.
@@ -1051,7 +1106,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getAssignOperator()
 	 * @generated
 	 */
-	int ASSIGN_OPERATOR = 14;
+	int ASSIGN_OPERATOR = 15;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator <em>Increment Decrement Operator</em>}' enum.
@@ -1061,7 +1116,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getIncrementDecrementOperator()
 	 * @generated
 	 */
-	int INCREMENT_DECREMENT_OPERATOR = 15;
+	int INCREMENT_DECREMENT_OPERATOR = 16;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelectorKind <em>Position Selector Kind</em>}' enum.
@@ -1071,7 +1126,7 @@ public interface ActionLanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getPositionSelectorKind()
 	 * @generated
 	 */
-	int POSITION_SELECTOR_KIND = 16;
+	int POSITION_SELECTOR_KIND = 17;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Block <em>Block</em>}'.
@@ -1190,15 +1245,15 @@ public interface ActionLanguagePackage extends EPackage {
 	EAttribute getAssignment_IncrementDecrementOperator();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_variableExpression <em>Lhs variable Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_typedNamedElementExpression <em>Lhs typed Named Element Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Lhs variable Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_variableExpression()
+	 * @return the meta object for the containment reference '<em>Lhs typed Named Element Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment#getLhs_typedNamedElementExpression()
 	 * @see #getAssignment()
 	 * @generated
 	 */
-	EReference getAssignment_Lhs_variableExpression();
+	EReference getAssignment_Lhs_typedNamedElementExpression();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop <em>For Loop</em>}'.
@@ -1298,36 +1353,25 @@ public interface ActionLanguagePackage extends EPackage {
 	EReference getIfStatement_ElseBlock();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression <em>Variable Expression</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression <em>Variable Or Parameter Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Variable Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression
+	 * @return the meta object for class '<em>Variable Or Parameter Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression
 	 * @generated
 	 */
-	EClass getVariableExpression();
+	EClass getVariableOrParameterExpression();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression#getVariable <em>Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Variable</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression#getVariable()
-	 * @see #getVariableExpression()
-	 * @generated
-	 */
-	EReference getVariableExpression_Variable();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression#getIndices <em>Indices</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression#getIndices <em>Indices</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Indices</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression#getIndices()
-	 * @see #getVariableExpression()
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression#getIndices()
+	 * @see #getVariableOrParameterExpression()
 	 * @generated
 	 */
-	EReference getVariableExpression_Indices();
+	EReference getVariableOrParameterExpression_Indices();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall <em>Operation Call</em>}'.
@@ -1511,6 +1555,27 @@ public interface ActionLanguagePackage extends EPackage {
 	EReference getLocalVariableDeclarationStatement_InitializeExpression();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression <em>Typed Named Element Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Typed Named Element Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression
+	 * @generated
+	 */
+	EClass getTypedNamedElementExpression();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression#getTypedNamedElement <em>Typed Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Typed Named Element</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression#getTypedNamedElement()
+	 * @see #getTypedNamedElementExpression()
+	 * @generated
+	 */
+	EReference getTypedNamedElementExpression_TypedNamedElement();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator <em>Assign Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1661,12 +1726,12 @@ public interface ActionLanguagePackage extends EPackage {
 		EAttribute ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR = eINSTANCE.getAssignment_IncrementDecrementOperator();
 
 		/**
-		 * The meta object literal for the '<em><b>Lhs variable Expression</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Lhs typed Named Element Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ASSIGNMENT__LHS_VARIABLE_EXPRESSION = eINSTANCE.getAssignment_Lhs_variableExpression();
+		EReference ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION = eINSTANCE.getAssignment_Lhs_typedNamedElementExpression();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ForLoopImpl <em>For Loop</em>}' class.
@@ -1745,22 +1810,14 @@ public interface ActionLanguagePackage extends EPackage {
 		EReference IF_STATEMENT__ELSE_BLOCK = eINSTANCE.getIfStatement_ElseBlock();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.VariableExpressionImpl <em>Variable Expression</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.VariableOrParameterExpressionImpl <em>Variable Or Parameter Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.VariableExpressionImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getVariableExpression()
+		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.VariableOrParameterExpressionImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getVariableOrParameterExpression()
 		 * @generated
 		 */
-		EClass VARIABLE_EXPRESSION = eINSTANCE.getVariableExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VARIABLE_EXPRESSION__VARIABLE = eINSTANCE.getVariableExpression_Variable();
+		EClass VARIABLE_OR_PARAMETER_EXPRESSION = eINSTANCE.getVariableOrParameterExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Indices</b></em>' containment reference list feature.
@@ -1768,7 +1825,7 @@ public interface ActionLanguagePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VARIABLE_EXPRESSION__INDICES = eINSTANCE.getVariableExpression_Indices();
+		EReference VARIABLE_OR_PARAMETER_EXPRESSION__INDICES = eINSTANCE.getVariableOrParameterExpression_Indices();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.OperationCallImpl <em>Operation Call</em>}' class.
@@ -1917,6 +1974,24 @@ public interface ActionLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION = eINSTANCE.getLocalVariableDeclarationStatement_InitializeExpression();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.TypedNamedElementExpressionImpl <em>Typed Named Element Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.TypedNamedElementExpressionImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.ActionLanguagePackageImpl#getTypedNamedElementExpression()
+		 * @generated
+		 */
+		EClass TYPED_NAMED_ELEMENT_EXPRESSION = eINSTANCE.getTypedNamedElementExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Typed Named Element</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPED_NAMED_ELEMENT_EXPRESSION__TYPED_NAMED_ELEMENT = eINSTANCE.getTypedNamedElementExpression_TypedNamedElement();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator <em>Assign Operator</em>}' enum.

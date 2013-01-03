@@ -21,6 +21,7 @@ import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.behavior.Operation;
 import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
 
 /**
@@ -104,8 +105,8 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 				return createParameterBindingAdapter();
 			}
 			@Override
-			public Adapter caseITypedNamedElement(ITypedNamedElement object) {
-				return createITypedNamedElementAdapter();
+			public Adapter caseTypedNamedElement(TypedNamedElement object) {
+				return createTypedNamedElementAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -224,16 +225,16 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement <em>ITyped Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement <em>Typed Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement
+	 * @see de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement
 	 * @generated
 	 */
-	public Adapter createITypedNamedElementAdapter() {
+	public Adapter createTypedNamedElementAdapter() {
 		return null;
 	}
 

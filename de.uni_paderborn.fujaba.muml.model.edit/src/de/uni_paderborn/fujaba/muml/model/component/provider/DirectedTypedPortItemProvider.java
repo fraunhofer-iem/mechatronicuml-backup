@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.model.component.provider;
 
 
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -60,13 +61,35 @@ public class DirectedTypedPortItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDataTypePropertyDescriptor(object);
 			addKindPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
 			addOptionalPropertyDescriptor(object);
 			addOutPortPropertyDescriptor(object);
 			addInPortPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Data Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDataTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TypedNamedElement_dataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TypedNamedElement_dataType_feature", "_UI_TypedNamedElement_type"),
+				 BehaviorPackage.Literals.TYPED_NAMED_ELEMENT__DATA_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -87,28 +110,6 @@ public class DirectedTypedPortItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DirectedTypedPort_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DirectedTypedPort_type_feature", "_UI_DirectedTypedPort_type"),
-				 ComponentPackage.Literals.DIRECTED_TYPED_PORT__TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

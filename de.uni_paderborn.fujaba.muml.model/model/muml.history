@@ -5119,45 +5119,45 @@
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/DirectedTypedPort/type">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/type"
+          referenceName="eStructuralFeatures" element="#//@releases.11/@changes.72/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.72/@changes.0/@element"
             featureName="name" dataValue="type"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/type"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.72/@changes.0/@element"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/type"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.72/@changes.0/@element"
             featureName="eType" referenceValue="muml.ecore#//model/types/DataType"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DirectedTypedPort/type"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/DirectedTypedPort/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.72/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.11/@changes.72/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.72/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DirectedTypedPort/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/component/DirectedTypedPort/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.72/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.11/@changes.72/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.72/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.72/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Defines the data type of the signal value which is emitted or received by "/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/behavior/Variable"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/behavior/Variable/type">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/Variable/type"
+          referenceName="eStructuralFeatures" element="#//@releases.11/@changes.76/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.76/@changes.0/@element"
             featureName="name" dataValue="type"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/Variable/type"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.76/@changes.0/@element"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/Variable/type"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.76/@changes.0/@element"
             featureName="eType" referenceValue="muml.ecore#//model/types/DataType"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/behavior/Variable/type"
-          referenceName="eAnnotations" element="muml.ecore#//model/behavior/Variable/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/Variable/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.76/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.11/@changes.76/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.76/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/behavior/Variable/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/behavior/Variable/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/Variable/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.76/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.11/@changes.76/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.76/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/Variable/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.76/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The type of this attribute."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/behavior/Operation"
@@ -5182,24 +5182,24 @@
             featureName="value" dataValue="The type of the return value of this operation."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/behavior/Parameter"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/behavior/Parameter/type">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/Parameter/type"
+          referenceName="eStructuralFeatures" element="#//@releases.11/@changes.75/@changes.0/@element">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.75/@changes.0/@element"
             featureName="name" dataValue="type"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/Parameter/type"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.75/@changes.0/@element"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/Parameter/type"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.75/@changes.0/@element"
             featureName="eType" referenceValue="muml.ecore#//model/types/DataType"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/behavior/Parameter/type"
-          referenceName="eAnnotations" element="muml.ecore#//model/behavior/Parameter/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/Parameter/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.75/@changes.0/@element"
+          referenceName="eAnnotations" element="#//@releases.11/@changes.75/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.75/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/behavior/Parameter/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/behavior/Parameter/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/Parameter/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.75/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.11/@changes.75/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.75/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/Parameter/type/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.75/@changes.0/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The type of this parameter."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/types/DataType"
@@ -15012,85 +15012,85 @@
             featureName="value" dataValue="Block which is executed if no if or elseif condition evaluates to true."/>
       </changes>
       <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"
-          referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression"
+          referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression"
             featureName="name" dataValue="AttributeExpression"/>
-        <changes xsi:type="history:Add" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression"
+        <changes xsi:type="history:Add" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
       </changes>
       <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment"
-          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression"
             featureName="name" dataValue="lhs_attributeExpression"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression"
-            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression"
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression"
-          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue=" The left-hand-side of an assignment must be a single attribute and must not be another expression."/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression"
-          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="To perform an action on a value of an attribute of a \rtsc we use the attribute expression which has a reference to an attribute of the \rtsc and optional indicies if a concrete array element should be referenced."/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression"
-          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/variable">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/variable"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression"
+          referenceName="eStructuralFeatures" element="#//@releases.11/@changes.89/@element">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.89/@element"
             featureName="name" dataValue="attribute"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/variable"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.89/@element"
             featureName="eType" referenceValue="muml.ecore#//model/behavior/Variable"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/variable"
-          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/variable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/variable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.89/@element"
+          referenceName="eAnnotations" element="#//@releases.11/@changes.89/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.89/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/variable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/variable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/variable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.89/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.11/@changes.89/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.89/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/variable/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.89/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Attribute of an attribute expression."/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression"
-          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/indices">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/indices"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/indices">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/indices"
             featureName="name" dataValue="indices"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/indices"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/indices"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/indices"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/indices"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/indices"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/indices"
             featureName="eType" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/indices"
-          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/indices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/indices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/indices"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/indices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/indices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/indices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/indices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/indices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/indices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/indices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/indices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/indices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/indices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Indices which refer to an concrete index of an array."/>
       </changes>
       <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"
@@ -15885,7 +15885,7 @@
     <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/attribute"
         featureName="name" dataValue="attribute"/>
     <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//DiscreteInteractionEndpointReference/attribute"
-        featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression"/>
+        featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression"/>
     <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"
         referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind"/>
     <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind"
@@ -16053,11 +16053,11 @@
     </changes>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Move" target="muml.ecore#//model/component/DirectedTypedPort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/DirectedTypedPort/type"
+          referenceName="eStructuralFeatures" element="#//@releases.11/@changes.72/@changes.0/@element"
           source="muml.ecore#//model/component/ContinuousPort"/>
       <operation name="pullFeature">
         <parameters name="features">
-          <referenceValue element="muml.ecore#//model/component/DirectedTypedPort/type"/>
+          <referenceValue element="#//@releases.11/@changes.72/@changes.0/@element"/>
         </parameters>
         <parameters name="targetClass">
           <referenceValue element="muml.ecore#//model/component/DirectedTypedPort"/>
@@ -17475,11 +17475,11 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/instance/DiscretePortInstance/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageTypes&#xD;&#xA;endif"
         oldDataValue="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageTypes&#xD;&#xA;endif"/>
-    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression"
         featureName="name" dataValue="VariableExpression" oldDataValue="AttributeExpression"/>
-    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/variable"
+    <changes xsi:type="history:Set" element="#//@releases.11/@changes.89/@element"
         featureName="name" dataValue="variable" oldDataValue="attribute"/>
-    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="To perform an action on a value of a variable of a \rtsc we use the variable expression, which has a reference to a variable of the \rtsc and optional indicies if a concrete array element should be referenced."
         oldDataValue="To perform an action on a value of an attribute of a \rtsc we use the attribute expression which has a reference to an attribute of the \rtsc and optional indicies if a concrete array element should be referenced."/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/roleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
@@ -18344,7 +18344,7 @@
     <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//OperationCall/operation"
         featureName="eType" referenceValue="muml.ecore#//model/behavior/Operation"
         oldReferenceValue="muml.ecore#//model/core/Operation"/>
-    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableExpression/variable"
+    <changes xsi:type="history:Set" element="#//@releases.11/@changes.89/@element"
         featureName="eType" referenceValue="muml.ecore#//model/behavior/Variable"
         oldReferenceValue="muml.ecore#//model/core/Variable"/>
     <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//OperationCall/parameterBinding"
@@ -18397,9 +18397,9 @@
         oldDataValue="http://www.fujaba.de/muml/actionlanguage/0.3.5"/>
   </releases>
   <releases>
-    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression"
         featureName="name" dataValue="lhs_variableExpression" oldDataValue="lhs_attributeExpression"/>
-    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_variableExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue=" The left-hand-side of an assignment must be a single variable and must not be another expression."
         oldDataValue=" The left-hand-side of an assignment must be a single attribute and must not be another expression."/>
     <changes xsi:type="history:OperationChange">
@@ -18443,33 +18443,33 @@
       </operation>
     </changes>
     <changes xsi:type="history:Create" target="muml.ecore#//model/behavior" referenceName="eClassifiers"
-        element="muml.ecore#//model/behavior/ITypedNamedElement"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement"
+        element="muml.ecore#//model/behavior/TypedNamedElement"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/TypedNamedElement"
         featureName="name" dataValue="bla"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/TypedNamedElement"
         featureName="interface" dataValue="true" oldDataValue="false"/>
-    <changes xsi:type="history:Add" element="muml.ecore#//model/behavior/ITypedNamedElement"
+    <changes xsi:type="history:Add" element="muml.ecore#//model/behavior/TypedNamedElement"
         featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/TypedNamedElement"
         featureName="abstract" dataValue="true" oldDataValue="false"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/TypedNamedElement"
         featureName="name" dataValue="I" oldDataValue="bla"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/TypedNamedElement"
         featureName="name" dataValue="ITypedNamedElement" oldDataValue="I"/>
-    <changes xsi:type="history:Create" target="muml.ecore#//model/behavior/ITypedNamedElement"
-        referenceName="eStructuralFeatures" element="muml.ecore#//model/behavior/ITypedNamedElement/dataType"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement/dataType"
+    <changes xsi:type="history:Create" target="muml.ecore#//model/behavior/TypedNamedElement"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/behavior/TypedNamedElement/dataType"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/TypedNamedElement/dataType"
         featureName="name" dataValue="dataType"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement/dataType"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/TypedNamedElement/dataType"
         featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/ITypedNamedElement/dataType"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/TypedNamedElement/dataType"
         featureName="eType" referenceValue="muml.ecore#//model/types/DataType" oldReferenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType"/>
     <changes xsi:type="history:Add" element="muml.ecore#//model/behavior/Parameter"
-        featureName="eSuperTypes" referenceValue="muml.ecore#//model/behavior/ITypedNamedElement"/>
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/behavior/TypedNamedElement"/>
     <changes xsi:type="history:Add" element="muml.ecore#//model/behavior/Variable"
-        featureName="eSuperTypes" referenceValue="muml.ecore#//model/behavior/ITypedNamedElement"/>
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/behavior/TypedNamedElement"/>
     <changes xsi:type="history:Add" element="muml.ecore#//model/component/HybridPort"
-        featureName="eSuperTypes" referenceValue="muml.ecore#//model/behavior/ITypedNamedElement"/>
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/behavior/TypedNamedElement"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/behavior" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/behavior/0.3.13" oldDataValue="http://www.fujaba.de/muml/model/behavior/0.3.10"/>
     <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
@@ -18644,5 +18644,270 @@
         featureName="eOpposite" referenceValue="muml.ecore#//model/connector/Connector/connectorEndpoints"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/connector" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/connector/0.3.13" oldDataValue="http://www.fujaba.de/muml/model/connector/0.3.7"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/TypedNamedElement"
+          featureName="name" dataValue="TypedNamedElement" oldDataValue="ITypedNamedElement"/>
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="muml.ecore#//model/behavior/TypedNamedElement"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>TypedNamedElement</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Remove" element="muml.ecore#//model/component/HybridPort"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/behavior/TypedNamedElement"/>
+    <changes xsi:type="history:Add" element="muml.ecore#//model/component/DirectedTypedPort"
+        featureName="eSuperTypes" referenceValue="muml.ecore#//model/behavior/TypedNamedElement"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/component/DirectedTypedPort"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass muml.ecore#//model/types/DataType">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Defines the data type of the signal value which is emitted or received by "/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.11/@changes.72/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/component/0.3.14" oldDataValue="http://www.fujaba.de/muml/model/component/0.3.13"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/behavior/0.3.14" oldDataValue="http://www.fujaba.de/muml/model/behavior/0.3.13"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/behavior/Parameter"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass muml.ecore#//model/types/DataType">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The type of this parameter."/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.11/@changes.75/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Delete" target="muml.ecore#//model/behavior/Variable"
+          referenceName="eStructuralFeatures">
+        <element xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass muml.ecore#//model/types/DataType">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The type of this attribute."/>
+          </eAnnotations>
+        </element>
+      </changes>
+      <operation name="deleteFeature2">
+        <parameters name="feature">
+          <referenceValue element="#//@releases.11/@changes.76/@changes.0/@element"/>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/initializeExpression"
+        featureName="eType" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+        oldReferenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"
+          referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//TypedNamedElementExpression">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//TypedNamedElementExpression"
+            featureName="name" dataValue="TypedElementExpression"/>
+        <changes xsi:type="history:Add" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//TypedNamedElementExpression"
+            featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
+      </changes>
+      <operation name="newClass">
+        <parameters name="ePackage">
+          <referenceValue element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>TypedElementExpression</dataValue>
+        </parameters>
+        <parameters name="superClasses">
+          <referenceValue element="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
+        </parameters>
+        <parameters name="abstr">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//TypedNamedElementExpression"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//TypedNamedElementExpression/typedNamedElement">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//TypedNamedElementExpression/typedNamedElement"
+            featureName="name" dataValue="typedNamedElement"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//TypedNamedElementExpression/typedNamedElement"
+            featureName="eType" referenceValue="muml.ecore#//model/behavior/TypedNamedElement"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//TypedNamedElementExpression"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>typedNamedElement</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/behavior/TypedNamedElement"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//TypedNamedElementExpression"
+          featureName="name" dataValue="TypedNamedElementExpression" oldDataValue="TypedElementExpression"/>
+      <operation name="rename">
+        <parameters name="element">
+          <referenceValue element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//TypedNamedElementExpression"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>TypedNamedElementExpression</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//TypedNamedElementExpression"
+        referenceName="eStructuralFeatures" element="#//@releases.11/@changes.87/@element">
+      <changes xsi:type="history:Set" element="#//@releases.11/@changes.87/@element"
+          featureName="name" dataValue="indices"/>
+      <changes xsi:type="history:Set" element="#//@releases.11/@changes.87/@element"
+          featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+      <changes xsi:type="history:Set" element="#//@releases.11/@changes.87/@element"
+          featureName="containment" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="#//@releases.11/@changes.87/@element"
+          featureName="eType" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
+    </changes>
+    <changes xsi:type="history:Create" target="#//@releases.11/@changes.87/@element"
+        referenceName="eAnnotations" element="#//@releases.11/@changes.87/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="#//@releases.11/@changes.87/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="#//@releases.11/@changes.87/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="#//@releases.11/@changes.87/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="#//@releases.11/@changes.87/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="#//@releases.11/@changes.87/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="Indices which refer to an concrete index of an array."/>
+    </changes>
+    <changes xsi:type="history:Remove" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression"
+        featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
+    <changes xsi:type="history:Add" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression"
+        featureName="eSuperTypes" referenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//TypedNamedElementExpression"/>
+    <changes xsi:type="history:Set" element="#//@releases.11/@changes.89/@element"
+        featureName="name" dataValue="typedNamedElement" oldDataValue="variable"/>
+    <changes xsi:type="history:Delete" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//TypedNamedElementExpression"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EReference" name="indices" upperBound="-1" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Indices which refer to an concrete index of an array."/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:Set" element="#//@releases.11/@changes.89/@element"
+        featureName="eType" referenceValue="muml.ecore#//model/behavior/TypedNamedElement"
+        oldReferenceValue="muml.ecore#//model/behavior/Variable"/>
+    <changes xsi:type="history:Delete" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EReference" name="typedNamedElement" eType="ecore:EClass muml.ecore#//model/behavior/TypedNamedElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Variable of a variable expression."/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression"
+        featureName="name" dataValue="VariableOrParameterExpression" oldDataValue="VariableExpression"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/muml/actionlanguage/0.3.14"
+        oldDataValue="http://www.fujaba.de/muml/actionlanguage/0.3.12"/>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Create" target="muml.ecore#//model/instance/PortConnectorInstance"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/instance/PortConnectorInstance/portInstances">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/portInstances"
+            featureName="name" dataValue="portInstances"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/portInstances"
+            featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/portInstances"
+            featureName="eType" referenceValue="muml.ecore#//model/instance/PortInstance"/>
+      </changes>
+      <operation name="newReference">
+        <parameters name="eClass">
+          <referenceValue element="muml.ecore#//model/instance/PortConnectorInstance"/>
+        </parameters>
+        <parameters name="name">
+          <dataValue>portInstances</dataValue>
+        </parameters>
+        <parameters name="type">
+          <referenceValue element="muml.ecore#//model/instance/PortInstance"/>
+        </parameters>
+        <parameters name="lowerBound">
+          <dataValue>0</dataValue>
+        </parameters>
+        <parameters name="upperBound">
+          <dataValue>-1</dataValue>
+        </parameters>
+        <parameters name="containment">
+          <dataValue>false</dataValue>
+        </parameters>
+        <parameters name="opposite"/>
+      </operation>
+    </changes>
+    <changes xsi:type="history:OperationChange">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/portInstances"
+          featureName="volatile" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/portInstances"
+          featureName="transient" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/portInstances"
+          featureName="derived" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/portInstances"
+          featureName="changeable" dataValue="false" oldDataValue="true"/>
+      <operation name="makeFeatureVolatile">
+        <parameters name="feature">
+          <referenceValue element="muml.ecore#//model/instance/PortConnectorInstance/portInstances"/>
+        </parameters>
+        <parameters name="trans">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="derived">
+          <dataValue>true</dataValue>
+        </parameters>
+        <parameters name="changeable">
+          <dataValue>false</dataValue>
+        </parameters>
+      </operation>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/instance/PortConnectorInstance/portInstances"
+        referenceName="eAnnotations" element="muml.ecore#//model/instance/PortConnectorInstance/portInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/portInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/instance/PortConnectorInstance/portInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/instance/PortConnectorInstance/portInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/portInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/portInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="self.connectorEndpoints->select(c | c.oclIsTypeOf(HardwarePort)).oclAsType(HardwarePort)->asOrderedSet()"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/instance/PortConnectorInstance/portInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.connectorEndpointInstances->select(c | c.oclIsTypeOf(PortInstance)).oclAsType(PortInstance)->asOrderedSet()"
+        oldDataValue="self.connectorEndpoints->select(c | c.oclIsTypeOf(HardwarePort)).oclAsType(HardwarePort)->asOrderedSet()"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression"
+        featureName="name" dataValue="lhs_typedNamedElementExpression" oldDataValue="lhs_variableExpression"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression"
+        featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//TypedNamedElementExpression"
+        oldReferenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//VariableOrParameterExpression"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/TypedNamedElement"
+        featureName="interface" dataValue="false" oldDataValue="true"/>
   </releases>
 </history:History>

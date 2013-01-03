@@ -112,8 +112,8 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 				return createIfStatementAdapter();
 			}
 			@Override
-			public Adapter caseVariableExpression(VariableExpression object) {
-				return createVariableExpressionAdapter();
+			public Adapter caseVariableOrParameterExpression(VariableOrParameterExpression object) {
+				return createVariableOrParameterExpressionAdapter();
 			}
 			@Override
 			public Adapter caseOperationCall(OperationCall object) {
@@ -138,6 +138,10 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseLocalVariableDeclarationStatement(LocalVariableDeclarationStatement object) {
 				return createLocalVariableDeclarationStatementAdapter();
+			}
+			@Override
+			public Adapter caseTypedNamedElementExpression(TypedNamedElementExpression object) {
+				return createTypedNamedElementExpressionAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -270,16 +274,16 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression <em>Variable Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression <em>Variable Or Parameter Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression
 	 * @generated
 	 */
-	public Adapter createVariableExpressionAdapter() {
+	public Adapter createVariableOrParameterExpressionAdapter() {
 		return null;
 	}
 
@@ -364,6 +368,20 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLocalVariableDeclarationStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression <em>Typed Named Element Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression
+	 * @generated
+	 */
+	public Adapter createTypedNamedElementExpressionAdapter() {
 		return null;
 	}
 

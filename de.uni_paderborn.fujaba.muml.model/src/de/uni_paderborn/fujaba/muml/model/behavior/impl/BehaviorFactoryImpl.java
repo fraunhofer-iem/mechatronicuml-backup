@@ -35,7 +35,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	 */
 	public static BehaviorFactory init() {
 		try {
-			BehaviorFactory theBehaviorFactory = (BehaviorFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/behavior/0.3.13"); 
+			BehaviorFactory theBehaviorFactory = (BehaviorFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/behavior/0.3.14"); 
 			if (theBehaviorFactory != null) {
 				return theBehaviorFactory;
 			}

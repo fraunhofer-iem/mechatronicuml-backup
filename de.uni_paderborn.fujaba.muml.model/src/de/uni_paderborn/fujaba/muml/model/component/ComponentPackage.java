@@ -50,7 +50,7 @@ public interface ComponentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/component/0.3.13";
+	String eNS_URI = "http://www.fujaba.de/muml/model/component/0.3.14";
 
 	/**
 	 * The package namespace name.
@@ -333,22 +333,22 @@ public interface ComponentPackage extends EPackage {
 	int DIRECTED_TYPED_PORT__PORT_CONNECTORS = PORT__PORT_CONNECTORS;
 
 	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__DATA_TYPE = PORT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_TYPED_PORT__KIND = PORT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_TYPED_PORT__TYPE = PORT_FEATURE_COUNT + 1;
+	int DIRECTED_TYPED_PORT__KIND = PORT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Optional</b></em>' attribute.
@@ -469,6 +469,15 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_PORT__PORT_CONNECTORS = DIRECTED_TYPED_PORT__PORT_CONNECTORS;
 
 	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__DATA_TYPE = DIRECTED_TYPED_PORT__DATA_TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -476,15 +485,6 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTINUOUS_PORT__KIND = DIRECTED_TYPED_PORT__KIND;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_PORT__TYPE = DIRECTED_TYPED_PORT__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Optional</b></em>' attribute.
@@ -738,7 +738,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int COMPONENT_PART__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -747,16 +747,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_PART__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+	int COMPONENT_PART__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -765,7 +756,16 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__NAME = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int COMPONENT_PART__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_PART__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Component Type</b></em>' reference.
@@ -774,7 +774,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__COMPONENT_TYPE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int COMPONENT_PART__COMPONENT_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.
@@ -783,7 +783,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__PARENT_COMPONENT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int COMPONENT_PART__PARENT_COMPONENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Assembly Connectors</b></em>' reference list.
@@ -792,7 +792,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__ASSEMBLY_CONNECTORS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int COMPONENT_PART__ASSEMBLY_CONNECTORS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Delegation Connectors</b></em>' reference list.
@@ -801,7 +801,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__DELEGATION_CONNECTORS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
+	int COMPONENT_PART__DELEGATION_CONNECTORS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -810,7 +810,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__CARDINALITY = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
+	int COMPONENT_PART__CARDINALITY = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
@@ -819,7 +819,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__PORTS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 6;
+	int COMPONENT_PART__PORTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Multi Part</b></em>' attribute.
@@ -828,7 +828,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART__MULTI_PART = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 7;
+	int COMPONENT_PART__MULTI_PART = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Part</em>' class.
@@ -837,7 +837,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 8;
+	int COMPONENT_PART_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.StructuredComponentImpl <em>Structured Component</em>}' class.
@@ -1522,6 +1522,15 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__PORT_CONNECTORS = DIRECTED_TYPED_PORT__PORT_CONNECTORS;
 
 	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__DATA_TYPE = DIRECTED_TYPED_PORT__DATA_TYPE;
+
+	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1529,15 +1538,6 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int HYBRID_PORT__KIND = DIRECTED_TYPED_PORT__KIND;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__TYPE = DIRECTED_TYPED_PORT__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Optional</b></em>' attribute.
@@ -1567,22 +1567,13 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__IN_PORT = DIRECTED_TYPED_PORT__IN_PORT;
 
 	/**
-	 * The feature id for the '<em><b>Data Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__DATA_TYPE = DIRECTED_TYPED_PORT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Sampling Interval</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__SAMPLING_INTERVAL = DIRECTED_TYPED_PORT_FEATURE_COUNT + 1;
+	int HYBRID_PORT__SAMPLING_INTERVAL = DIRECTED_TYPED_PORT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Hybrid Port</em>' class.
@@ -1591,7 +1582,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT_FEATURE_COUNT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 2;
+	int HYBRID_PORT_FEATURE_COUNT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.CoordinationProtocolOccurrenceImpl <em>Coordination Protocol Occurrence</em>}' class.
@@ -2009,17 +2000,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDirectedTypedPort_Kind();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#getType()
-	 * @see #getDirectedTypedPort()
-	 * @generated
-	 */
-	EReference getDirectedTypedPort_Type();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isOptional <em>Optional</em>}'.
@@ -2507,14 +2487,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DIRECTED_TYPED_PORT__KIND = eINSTANCE.getDirectedTypedPort_Kind();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DIRECTED_TYPED_PORT__TYPE = eINSTANCE.getDirectedTypedPort_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Optional</b></em>' attribute feature.

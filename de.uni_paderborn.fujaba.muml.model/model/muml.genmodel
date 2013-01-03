@@ -91,8 +91,6 @@
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/component/DirectedTypedPort">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/DirectedTypedPort/kind"/>
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/component/DirectedTypedPort/type"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/DirectedTypedPort/optional"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/DirectedTypedPort/outPort"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/DirectedTypedPort/inPort"/>
@@ -133,6 +131,7 @@
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/instance/PortConnectorInstance">
           <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/PortConnectorInstance/portConnectorType"/>
+          <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/instance/PortConnectorInstance/portInstances"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/instance/PortInstance">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -531,28 +530,22 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Behavior/operations"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Behavior/variables"/>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/behavior/Variable">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Variable/type"/>
-        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/behavior/Variable"/>
         <genClasses ecoreClass="muml.ecore#//model/behavior/Operation">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Operation/returnType"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Operation/implementations"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Operation/parameters"/>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/behavior/Parameter">
-          <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Parameter/type"/>
-        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/behavior/Parameter"/>
         <genClasses ecoreClass="muml.ecore#//model/behavior/ParameterBinding">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/behavior/ParameterBinding/parameter"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/ParameterBinding/value"/>
         </genClasses>
-        <genClasses image="false" ecoreClass="muml.ecore#//model/behavior/ITypedNamedElement">
+        <genClasses image="false" ecoreClass="muml.ecore#//model/behavior/TypedNamedElement">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
-              ecoreFeature="ecore:EReference muml.ecore#//model/behavior/ITypedNamedElement/dataType"/>
+              ecoreFeature="ecore:EReference muml.ecore#//model/behavior/TypedNamedElement/dataType"/>
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>

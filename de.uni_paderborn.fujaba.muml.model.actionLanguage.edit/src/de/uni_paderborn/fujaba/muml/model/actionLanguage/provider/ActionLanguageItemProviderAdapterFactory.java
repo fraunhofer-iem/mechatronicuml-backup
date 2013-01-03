@@ -213,26 +213,26 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected VariableExpressionItemProvider variableExpressionItemProvider;
+	protected VariableOrParameterExpressionItemProvider variableOrParameterExpressionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createVariableExpressionAdapter() {
-		if (variableExpressionItemProvider == null) {
-			variableExpressionItemProvider = new VariableExpressionItemProvider(this);
+	public Adapter createVariableOrParameterExpressionAdapter() {
+		if (variableOrParameterExpressionItemProvider == null) {
+			variableOrParameterExpressionItemProvider = new VariableOrParameterExpressionItemProvider(this);
 		}
 
-		return variableExpressionItemProvider;
+		return variableOrParameterExpressionItemProvider;
 	}
 
 	/**
@@ -374,6 +374,29 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TypedNamedElementExpressionItemProvider typedNamedElementExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTypedNamedElementExpressionAdapter() {
+		if (typedNamedElementExpressionItemProvider == null) {
+			typedNamedElementExpressionItemProvider = new TypedNamedElementExpressionItemProvider(this);
+		}
+
+		return typedNamedElementExpressionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -478,13 +501,14 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 		if (assignmentItemProvider != null) assignmentItemProvider.dispose();
 		if (forLoopItemProvider != null) forLoopItemProvider.dispose();
 		if (ifStatementItemProvider != null) ifStatementItemProvider.dispose();
-		if (variableExpressionItemProvider != null) variableExpressionItemProvider.dispose();
+		if (variableOrParameterExpressionItemProvider != null) variableOrParameterExpressionItemProvider.dispose();
 		if (operationCallItemProvider != null) operationCallItemProvider.dispose();
 		if (returnStatementItemProvider != null) returnStatementItemProvider.dispose();
 		if (triggerMessageExpressionItemProvider != null) triggerMessageExpressionItemProvider.dispose();
 		if (discreteInteractionEndpointReferenceItemProvider != null) discreteInteractionEndpointReferenceItemProvider.dispose();
 		if (positionSelectorItemProvider != null) positionSelectorItemProvider.dispose();
 		if (localVariableDeclarationStatementItemProvider != null) localVariableDeclarationStatementItemProvider.dispose();
+		if (typedNamedElementExpressionItemProvider != null) typedNamedElementExpressionItemProvider.dispose();
 	}
 
 }

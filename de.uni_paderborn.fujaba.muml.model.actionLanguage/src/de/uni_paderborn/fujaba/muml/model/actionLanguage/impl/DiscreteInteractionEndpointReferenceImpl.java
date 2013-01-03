@@ -6,21 +6,17 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.impl;
 
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelector;
-
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.storydriven.core.expressions.impl.ExpressionImpl;
+
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelector;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,7 +41,7 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	 * @generated
 	 * @ordered
 	 */
-	protected VariableExpression variableExpression;
+	protected VariableOrParameterExpression variableExpression;
 
 	/**
 	 * The cached value of the '{@link #getPosition() <em>Position</em>}' containment reference.
@@ -81,7 +77,7 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VariableExpression getVariableExpression() {
+	public VariableOrParameterExpression getVariableExpression() {
 		return variableExpression;
 	}
 
@@ -90,8 +86,8 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetVariableExpression(VariableExpression newVariableExpression, NotificationChain msgs) {
-		VariableExpression oldVariableExpression = variableExpression;
+	public NotificationChain basicSetVariableExpression(VariableOrParameterExpression newVariableExpression, NotificationChain msgs) {
+		VariableOrParameterExpression oldVariableExpression = variableExpression;
 		variableExpression = newVariableExpression;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION, oldVariableExpression, newVariableExpression);
@@ -105,7 +101,7 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setVariableExpression(VariableExpression newVariableExpression) {
+	public void setVariableExpression(VariableOrParameterExpression newVariableExpression) {
 		if (newVariableExpression != variableExpression) {
 			NotificationChain msgs = null;
 			if (variableExpression != null)
@@ -203,7 +199,7 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION:
-				setVariableExpression((VariableExpression)newValue);
+				setVariableExpression((VariableOrParameterExpression)newValue);
 				return;
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				setPosition((PositionSelector)newValue);
@@ -221,7 +217,7 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION:
-				setVariableExpression((VariableExpression)null);
+				setVariableExpression((VariableOrParameterExpression)null);
 				return;
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				setPosition((PositionSelector)null);

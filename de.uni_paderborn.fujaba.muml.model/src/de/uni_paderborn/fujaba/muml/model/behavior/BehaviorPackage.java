@@ -42,7 +42,7 @@ public interface BehaviorPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/behavior/0.3.13";
+	String eNS_URI = "http://www.fujaba.de/muml/model/behavior/0.3.14";
 
 	/**
 	 * The package namespace name.
@@ -135,6 +135,61 @@ public interface BehaviorPackage extends EPackage {
 	int BEHAVIOR_FEATURE_COUNT = 3;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.behavior.impl.TypedNamedElementImpl <em>Typed Named Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.behavior.impl.TypedNamedElementImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.behavior.impl.BehaviorPackageImpl#getTypedNamedElement()
+	 * @generated
+	 */
+	int TYPED_NAMED_ELEMENT = 6;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_NAMED_ELEMENT__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_NAMED_ELEMENT__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_NAMED_ELEMENT__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_NAMED_ELEMENT__DATA_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Typed Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_NAMED_ELEMENT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.behavior.impl.VariableImpl <em>Variable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -151,7 +206,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int VARIABLE__ANNOTATION = TYPED_NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -160,7 +215,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int VARIABLE__EXTENSION = TYPED_NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -169,16 +224,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE__NAME = CorePackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int VARIABLE__NAME = TYPED_NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Data Type</b></em>' reference.
@@ -187,16 +233,16 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE__DATA_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int VARIABLE__DATA_TYPE = TYPED_NAMED_ELEMENT__DATA_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE__TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int VARIABLE__COMMENT = TYPED_NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Variable</em>' class.
@@ -205,7 +251,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int VARIABLE_FEATURE_COUNT = TYPED_NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.behavior.impl.OperationImpl <em>Operation</em>}' class.
@@ -306,7 +352,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int PARAMETER__ANNOTATION = TYPED_NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -315,7 +361,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int PARAMETER__EXTENSION = TYPED_NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -324,16 +370,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__NAME = CorePackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int PARAMETER__NAME = TYPED_NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Data Type</b></em>' reference.
@@ -342,16 +379,16 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__DATA_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int PARAMETER__DATA_TYPE = TYPED_NAMED_ELEMENT__DATA_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int PARAMETER__COMMENT = TYPED_NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
@@ -360,7 +397,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int PARAMETER_FEATURE_COUNT = TYPED_NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.behavior.impl.ParameterBindingImpl <em>Parameter Binding</em>}' class.
@@ -416,62 +453,6 @@ public interface BehaviorPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAMETER_BINDING_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
-
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement <em>ITyped Named Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement
-	 * @see de.uni_paderborn.fujaba.muml.model.behavior.impl.BehaviorPackageImpl#getITypedNamedElement()
-	 * @generated
-	 */
-	int ITYPED_NAMED_ELEMENT = 6;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITYPED_NAMED_ELEMENT__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITYPED_NAMED_ELEMENT__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITYPED_NAMED_ELEMENT__NAME = CorePackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Data Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITYPED_NAMED_ELEMENT__DATA_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>ITyped Named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ITYPED_NAMED_ELEMENT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 
 	/**
@@ -549,17 +530,6 @@ public interface BehaviorPackage extends EPackage {
 	EClass getVariable();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.behavior.Variable#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.behavior.Variable#getType()
-	 * @see #getVariable()
-	 * @generated
-	 */
-	EReference getVariable_Type();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.behavior.Operation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -613,17 +583,6 @@ public interface BehaviorPackage extends EPackage {
 	EClass getParameter();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.behavior.Parameter#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.behavior.Parameter#getType()
-	 * @see #getParameter()
-	 * @generated
-	 */
-	EReference getParameter_Type();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding <em>Parameter Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -656,25 +615,25 @@ public interface BehaviorPackage extends EPackage {
 	EReference getParameterBinding_Value();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement <em>ITyped Named Element</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement <em>Typed Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>ITyped Named Element</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement
+	 * @return the meta object for class '<em>Typed Named Element</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement
 	 * @generated
 	 */
-	EClass getITypedNamedElement();
+	EClass getTypedNamedElement();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement#getDataType <em>Data Type</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement#getDataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Data Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement#getDataType()
-	 * @see #getITypedNamedElement()
+	 * @see de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement#getDataType()
+	 * @see #getTypedNamedElement()
 	 * @generated
 	 */
-	EReference getITypedNamedElement_DataType();
+	EReference getTypedNamedElement_DataType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -761,14 +720,6 @@ public interface BehaviorPackage extends EPackage {
 		EClass VARIABLE = eINSTANCE.getVariable();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VARIABLE__TYPE = eINSTANCE.getVariable_Type();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.behavior.impl.OperationImpl <em>Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -813,14 +764,6 @@ public interface BehaviorPackage extends EPackage {
 		EClass PARAMETER = eINSTANCE.getParameter();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PARAMETER__TYPE = eINSTANCE.getParameter_Type();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.behavior.impl.ParameterBindingImpl <em>Parameter Binding</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -847,14 +790,14 @@ public interface BehaviorPackage extends EPackage {
 		EReference PARAMETER_BINDING__VALUE = eINSTANCE.getParameterBinding_Value();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement <em>ITyped Named Element</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.behavior.impl.TypedNamedElementImpl <em>Typed Named Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement
-		 * @see de.uni_paderborn.fujaba.muml.model.behavior.impl.BehaviorPackageImpl#getITypedNamedElement()
+		 * @see de.uni_paderborn.fujaba.muml.model.behavior.impl.TypedNamedElementImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.behavior.impl.BehaviorPackageImpl#getTypedNamedElement()
 		 * @generated
 		 */
-		EClass ITYPED_NAMED_ELEMENT = eINSTANCE.getITypedNamedElement();
+		EClass TYPED_NAMED_ELEMENT = eINSTANCE.getTypedNamedElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Data Type</b></em>' reference feature.
@@ -862,7 +805,7 @@ public interface BehaviorPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ITYPED_NAMED_ELEMENT__DATA_TYPE = eINSTANCE.getITypedNamedElement_DataType();
+		EReference TYPED_NAMED_ELEMENT__DATA_TYPE = eINSTANCE.getTypedNamedElement_DataType();
 
 	}
 

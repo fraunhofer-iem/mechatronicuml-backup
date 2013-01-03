@@ -15,7 +15,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement;
+import de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.model.component.*;
 import de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.model.component.AtomicComponent;
@@ -175,6 +175,10 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 				return createDataTypeAdapter();
 			}
 			@Override
+			public Adapter caseTypedNamedElement(TypedNamedElement object) {
+				return createTypedNamedElementAdapter();
+			}
+			@Override
 			public Adapter caseBehavioralElement(BehavioralElement object) {
 				return createBehavioralElementAdapter();
 			}
@@ -185,10 +189,6 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseConnector(Connector object) {
 				return createConnectorAdapter();
-			}
-			@Override
-			public Adapter caseITypedNamedElement(ITypedNamedElement object) {
-				return createITypedNamedElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -491,6 +491,20 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement <em>Typed Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement
+	 * @generated
+	 */
+	public Adapter createTypedNamedElementAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement <em>Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -529,20 +543,6 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConnectorAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement <em>ITyped Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.behavior.ITypedNamedElement
-	 * @generated
-	 */
-	public Adapter createITypedNamedElementAdapter() {
 		return null;
 	}
 

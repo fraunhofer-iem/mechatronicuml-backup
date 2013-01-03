@@ -6,11 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.impl;
 
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.impl.CorePackageImpl;
 
 import de.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.MumlFactory;

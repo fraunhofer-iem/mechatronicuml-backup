@@ -195,7 +195,12 @@ public class BlockItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createVariableExpression()));
+				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionLanguageFactory.eINSTANCE.createVariableOrParameterExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

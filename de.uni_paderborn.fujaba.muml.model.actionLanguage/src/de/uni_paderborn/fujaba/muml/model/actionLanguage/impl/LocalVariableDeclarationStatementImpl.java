@@ -6,21 +6,17 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.impl;
 
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement;
-
-import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
+import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
+
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement;
+import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -55,7 +51,7 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	 * @generated
 	 * @ordered
 	 */
-	protected Assignment initializeExpression;
+	protected Expression initializeExpression;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,7 +120,7 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Assignment getInitializeExpression() {
+	public Expression getInitializeExpression() {
 		return initializeExpression;
 	}
 
@@ -133,8 +129,8 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetInitializeExpression(Assignment newInitializeExpression, NotificationChain msgs) {
-		Assignment oldInitializeExpression = initializeExpression;
+	public NotificationChain basicSetInitializeExpression(Expression newInitializeExpression, NotificationChain msgs) {
+		Expression oldInitializeExpression = initializeExpression;
 		initializeExpression = newInitializeExpression;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION, oldInitializeExpression, newInitializeExpression);
@@ -148,7 +144,7 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInitializeExpression(Assignment newInitializeExpression) {
+	public void setInitializeExpression(Expression newInitializeExpression) {
 		if (newInitializeExpression != initializeExpression) {
 			NotificationChain msgs = null;
 			if (initializeExpression != null)
@@ -206,7 +202,7 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 				setVariable((Variable)newValue);
 				return;
 			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
-				setInitializeExpression((Assignment)newValue);
+				setInitializeExpression((Expression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -224,7 +220,7 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 				setVariable((Variable)null);
 				return;
 			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
-				setInitializeExpression((Assignment)null);
+				setInitializeExpression((Expression)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -153,12 +153,13 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ActionLanguagePackage.VARIABLE_EXPRESSION: {
-				VariableExpression variableExpression = (VariableExpression)theEObject;
-				T result = caseVariableExpression(variableExpression);
-				if (result == null) result = caseExpression(variableExpression);
-				if (result == null) result = caseCommentableElement(variableExpression);
-				if (result == null) result = caseExtendableElement(variableExpression);
+			case ActionLanguagePackage.VARIABLE_OR_PARAMETER_EXPRESSION: {
+				VariableOrParameterExpression variableOrParameterExpression = (VariableOrParameterExpression)theEObject;
+				T result = caseVariableOrParameterExpression(variableOrParameterExpression);
+				if (result == null) result = caseTypedNamedElementExpression(variableOrParameterExpression);
+				if (result == null) result = caseExpression(variableOrParameterExpression);
+				if (result == null) result = caseCommentableElement(variableOrParameterExpression);
+				if (result == null) result = caseExtendableElement(variableOrParameterExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -213,6 +214,15 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 				if (result == null) result = caseExpression(localVariableDeclarationStatement);
 				if (result == null) result = caseCommentableElement(localVariableDeclarationStatement);
 				if (result == null) result = caseExtendableElement(localVariableDeclarationStatement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ActionLanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION: {
+				TypedNamedElementExpression typedNamedElementExpression = (TypedNamedElementExpression)theEObject;
+				T result = caseTypedNamedElementExpression(typedNamedElementExpression);
+				if (result == null) result = caseExpression(typedNamedElementExpression);
+				if (result == null) result = caseCommentableElement(typedNamedElementExpression);
+				if (result == null) result = caseExtendableElement(typedNamedElementExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -326,17 +336,17 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Variable Expression</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Variable Or Parameter Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Variable Expression</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Variable Or Parameter Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVariableExpression(VariableExpression object) {
+	public T caseVariableOrParameterExpression(VariableOrParameterExpression object) {
 		return null;
 	}
 
@@ -427,6 +437,21 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLocalVariableDeclarationStatement(LocalVariableDeclarationStatement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Typed Named Element Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Typed Named Element Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTypedNamedElementExpression(TypedNamedElementExpression object) {
 		return null;
 	}
 

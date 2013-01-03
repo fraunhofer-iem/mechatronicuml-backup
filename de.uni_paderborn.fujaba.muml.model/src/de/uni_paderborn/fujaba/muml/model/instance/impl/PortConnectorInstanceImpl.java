@@ -6,11 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.model.instance.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import de.uni_paderborn.fujaba.muml.model.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.model.connector.impl.ConnectorInstanceImpl;
@@ -26,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortConnectorInstanceImpl#getPortConnectorType <em>Port Connector Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.instance.impl.PortConnectorInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +40,16 @@ public abstract class PortConnectorInstanceImpl extends ConnectorInstanceImpl im
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate PORT_CONNECTOR_TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.PORT_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getPortInstances() <em>Port Instances</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PORT_INSTANCES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.PORT_CONNECTOR_INSTANCE__PORT_INSTANCES).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,12 +93,24 @@ public abstract class PortConnectorInstanceImpl extends ConnectorInstanceImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	public EList<PortInstance> getPortInstances() {
+		return (EList<PortInstance>)PORT_INSTANCES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case InstancePackage.PORT_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE:
 				if (resolve) return getPortConnectorType();
 				return basicGetPortConnectorType();
+			case InstancePackage.PORT_CONNECTOR_INSTANCE__PORT_INSTANCES:
+				return getPortInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -104,6 +125,8 @@ public abstract class PortConnectorInstanceImpl extends ConnectorInstanceImpl im
 		switch (featureID) {
 			case InstancePackage.PORT_CONNECTOR_INSTANCE__PORT_CONNECTOR_TYPE:
 				return PORT_CONNECTOR_TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case InstancePackage.PORT_CONNECTOR_INSTANCE__PORT_INSTANCES:
+				return PORT_INSTANCES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

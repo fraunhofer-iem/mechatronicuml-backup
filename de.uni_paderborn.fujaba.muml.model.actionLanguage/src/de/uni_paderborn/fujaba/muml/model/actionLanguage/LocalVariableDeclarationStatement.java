@@ -63,12 +63,12 @@ public interface LocalVariableDeclarationStatement extends Expression {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Initialize Expression</em>' containment reference.
-	 * @see #setInitializeExpression(Assignment)
+	 * @see #setInitializeExpression(Expression)
 	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage#getLocalVariableDeclarationStatement_InitializeExpression()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Assignment getInitializeExpression();
+	Expression getInitializeExpression();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement#getInitializeExpression <em>Initialize Expression</em>}' containment reference.
@@ -78,6 +78,6 @@ public interface LocalVariableDeclarationStatement extends Expression {
 	 * @see #getInitializeExpression()
 	 * @generated
 	 */
-	void setInitializeExpression(Assignment value);
+	void setInitializeExpression(Expression value);
 
 } // LocalVariableDeclarationStatement

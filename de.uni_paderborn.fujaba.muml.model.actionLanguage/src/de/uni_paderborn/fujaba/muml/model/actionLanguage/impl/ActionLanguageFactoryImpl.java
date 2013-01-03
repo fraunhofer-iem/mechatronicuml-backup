@@ -18,13 +18,20 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.DoWhileLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelector;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelectorKind;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ReturnStatement;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 
 /**
@@ -42,7 +49,7 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 	 */
 	public static ActionLanguageFactory init() {
 		try {
-			ActionLanguageFactory theActionLanguageFactory = (ActionLanguageFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/actionlanguage/0.3.12"); 
+			ActionLanguageFactory theActionLanguageFactory = (ActionLanguageFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/actionlanguage/0.3.14"); 
 			if (theActionLanguageFactory != null) {
 				return theActionLanguageFactory;
 			}
@@ -77,13 +84,14 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 			case ActionLanguagePackage.ASSIGNMENT: return createAssignment();
 			case ActionLanguagePackage.FOR_LOOP: return createForLoop();
 			case ActionLanguagePackage.IF_STATEMENT: return createIfStatement();
-			case ActionLanguagePackage.VARIABLE_EXPRESSION: return createVariableExpression();
+			case ActionLanguagePackage.VARIABLE_OR_PARAMETER_EXPRESSION: return createVariableOrParameterExpression();
 			case ActionLanguagePackage.OPERATION_CALL: return createOperationCall();
 			case ActionLanguagePackage.RETURN_STATEMENT: return createReturnStatement();
 			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION: return createTriggerMessageExpression();
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE: return createDiscreteInteractionEndpointReference();
 			case ActionLanguagePackage.POSITION_SELECTOR: return createPositionSelector();
 			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT: return createLocalVariableDeclarationStatement();
+			case ActionLanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION: return createTypedNamedElementExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -192,9 +200,9 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VariableExpression createVariableExpression() {
-		VariableExpressionImpl variableExpression = new VariableExpressionImpl();
-		return variableExpression;
+	public VariableOrParameterExpression createVariableOrParameterExpression() {
+		VariableOrParameterExpressionImpl variableOrParameterExpression = new VariableOrParameterExpressionImpl();
+		return variableOrParameterExpression;
 	}
 
 	/**
@@ -255,6 +263,16 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 	public LocalVariableDeclarationStatement createLocalVariableDeclarationStatement() {
 		LocalVariableDeclarationStatementImpl localVariableDeclarationStatement = new LocalVariableDeclarationStatementImpl();
 		return localVariableDeclarationStatement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypedNamedElementExpression createTypedNamedElementExpression() {
+		TypedNamedElementExpressionImpl typedNamedElementExpression = new TypedNamedElementExpressionImpl();
+		return typedNamedElementExpression;
 	}
 
 	/**

@@ -80,13 +80,13 @@ public interface ActionLanguageFactory extends EFactory {
 	IfStatement createIfStatement();
 
 	/**
-	 * Returns a new object of class '<em>Variable Expression</em>'.
+	 * Returns a new object of class '<em>Variable Or Parameter Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Variable Expression</em>'.
+	 * @return a new object of class '<em>Variable Or Parameter Expression</em>'.
 	 * @generated
 	 */
-	VariableExpression createVariableExpression();
+	VariableOrParameterExpression createVariableOrParameterExpression();
 
 	/**
 	 * Returns a new object of class '<em>Operation Call</em>'.
@@ -141,6 +141,15 @@ public interface ActionLanguageFactory extends EFactory {
 	 * @generated
 	 */
 	LocalVariableDeclarationStatement createLocalVariableDeclarationStatement();
+
+	/**
+	 * Returns a new object of class '<em>Typed Named Element Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Typed Named Element Expression</em>'.
+	 * @generated
+	 */
+	TypedNamedElementExpression createTypedNamedElementExpression();
 
 	/**
 	 * Returns the package supported by this factory.

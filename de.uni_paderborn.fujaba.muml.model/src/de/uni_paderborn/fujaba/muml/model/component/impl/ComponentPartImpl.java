@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
-import org.storydriven.core.NamedElement;
-import org.storydriven.core.impl.CommentableElementImpl;
+import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector;
@@ -37,7 +37,7 @@ import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getParentComponent <em>Parent Component</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl#getAssemblyConnectors <em>Assembly Connectors</em>}</li>
@@ -50,26 +50,26 @@ import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
  *
  * @generated
  */
-public class ComponentPartImpl extends CommentableElementImpl implements ComponentPart {
+public class ComponentPartImpl extends NamedElementImpl implements ComponentPart {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getComment()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getComment()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String comment = COMMENT_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getComponentType() <em>Component Type</em>}' reference.
@@ -161,8 +161,8 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getComment() {
+		return comment;
 	}
 
 	/**
@@ -170,11 +170,11 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT_PART__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT_PART__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -472,8 +472,8 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentPackage.COMPONENT_PART__NAME:
-				return getName();
+			case ComponentPackage.COMPONENT_PART__COMMENT:
+				return getComment();
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				if (resolve) return getComponentType();
 				return basicGetComponentType();
@@ -502,8 +502,8 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentPackage.COMPONENT_PART__NAME:
-				setName((String)newValue);
+			case ComponentPackage.COMPONENT_PART__COMMENT:
+				setComment((String)newValue);
 				return;
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				setComponentType((Component)newValue);
@@ -526,8 +526,8 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.COMPONENT_PART__NAME:
-				setName(NAME_EDEFAULT);
+			case ComponentPackage.COMPONENT_PART__COMMENT:
+				setComment(COMMENT_EDEFAULT);
 				return;
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				setComponentType((Component)null);
@@ -550,8 +550,8 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.COMPONENT_PART__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ComponentPackage.COMPONENT_PART__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
 				return componentType != null;
 			case ComponentPackage.COMPONENT_PART__PARENT_COMPONENT:
@@ -577,9 +577,9 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == NamedElement.class) {
+		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
-				case ComponentPackage.COMPONENT_PART__NAME: return CorePackage.NAMED_ELEMENT__NAME;
+				case ComponentPackage.COMPONENT_PART__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 				default: return -1;
 			}
 		}
@@ -598,9 +598,9 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == NamedElement.class) {
+		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.NAMED_ELEMENT__NAME: return ComponentPackage.COMPONENT_PART__NAME;
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return ComponentPackage.COMPONENT_PART__COMMENT;
 				default: return -1;
 			}
 		}
@@ -622,8 +622,8 @@ public class ComponentPartImpl extends CommentableElementImpl implements Compone
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (comment: ");
+		result.append(comment);
 		result.append(')');
 		return result.toString();
 	}

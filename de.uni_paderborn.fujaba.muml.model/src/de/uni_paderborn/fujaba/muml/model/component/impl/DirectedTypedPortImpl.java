@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort;
@@ -24,8 +26,8 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl#isOptional <em>Optional</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl#isOutPort <em>Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl#isInPort <em>In Port</em>}</li>
@@ -35,6 +37,16 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * @generated
  */
 public abstract class DirectedTypedPortImpl extends PortImpl implements DirectedTypedPort {
+	/**
+	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataType()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataType dataType;
+
 	/**
 	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -54,16 +66,6 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	 * @ordered
 	 */
 	protected ContinuousPortDirectionKind kind = KIND_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected DataType type;
 
 	/**
 	 * The default value of the '{@link #isOptional() <em>Optional</em>}' attribute.
@@ -129,6 +131,44 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DataType getDataType() {
+		if (dataType != null && dataType.eIsProxy()) {
+			InternalEObject oldDataType = (InternalEObject)dataType;
+			dataType = (DataType)eResolveProxy(oldDataType);
+			if (dataType != oldDataType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DIRECTED_TYPED_PORT__DATA_TYPE, oldDataType, dataType));
+			}
+		}
+		return dataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataType basicGetDataType() {
+		return dataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDataType(DataType newDataType) {
+		DataType oldDataType = dataType;
+		dataType = newDataType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DIRECTED_TYPED_PORT__DATA_TYPE, oldDataType, dataType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ContinuousPortDirectionKind getKind() {
 		return kind;
 	}
@@ -143,44 +183,6 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DIRECTED_TYPED_PORT__KIND, oldKind, kind));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataType getType() {
-		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (DataType)eResolveProxy(oldType);
-			if (type != oldType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DIRECTED_TYPED_PORT__TYPE, oldType, type));
-			}
-		}
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataType basicGetType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setType(DataType newType) {
-		DataType oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DIRECTED_TYPED_PORT__TYPE, oldType, type));
 	}
 
 	/**
@@ -230,11 +232,11 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ComponentPackage.DIRECTED_TYPED_PORT__DATA_TYPE:
+				if (resolve) return getDataType();
+				return basicGetDataType();
 			case ComponentPackage.DIRECTED_TYPED_PORT__KIND:
 				return getKind();
-			case ComponentPackage.DIRECTED_TYPED_PORT__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
 			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
 				return isOptional();
 			case ComponentPackage.DIRECTED_TYPED_PORT__OUT_PORT:
@@ -253,11 +255,11 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ComponentPackage.DIRECTED_TYPED_PORT__DATA_TYPE:
+				setDataType((DataType)newValue);
+				return;
 			case ComponentPackage.DIRECTED_TYPED_PORT__KIND:
 				setKind((ContinuousPortDirectionKind)newValue);
-				return;
-			case ComponentPackage.DIRECTED_TYPED_PORT__TYPE:
-				setType((DataType)newValue);
 				return;
 			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
 				setOptional((Boolean)newValue);
@@ -274,11 +276,11 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ComponentPackage.DIRECTED_TYPED_PORT__DATA_TYPE:
+				setDataType((DataType)null);
+				return;
 			case ComponentPackage.DIRECTED_TYPED_PORT__KIND:
 				setKind(KIND_EDEFAULT);
-				return;
-			case ComponentPackage.DIRECTED_TYPED_PORT__TYPE:
-				setType((DataType)null);
 				return;
 			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
 				setOptional(OPTIONAL_EDEFAULT);
@@ -295,10 +297,10 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ComponentPackage.DIRECTED_TYPED_PORT__DATA_TYPE:
+				return dataType != null;
 			case ComponentPackage.DIRECTED_TYPED_PORT__KIND:
 				return kind != KIND_EDEFAULT;
-			case ComponentPackage.DIRECTED_TYPED_PORT__TYPE:
-				return type != null;
 			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
 				return optional != OPTIONAL_EDEFAULT;
 			case ComponentPackage.DIRECTED_TYPED_PORT__OUT_PORT:
@@ -307,6 +309,38 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 				return IN_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == TypedNamedElement.class) {
+			switch (derivedFeatureID) {
+				case ComponentPackage.DIRECTED_TYPED_PORT__DATA_TYPE: return BehaviorPackage.TYPED_NAMED_ELEMENT__DATA_TYPE;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == TypedNamedElement.class) {
+			switch (baseFeatureID) {
+				case BehaviorPackage.TYPED_NAMED_ELEMENT__DATA_TYPE: return ComponentPackage.DIRECTED_TYPED_PORT__DATA_TYPE;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
