@@ -13,9 +13,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 
 import de.fujaba.modelinstance.ModelinstancePackage;
-import de.uni_paderborn.fujaba.muml.MumlPackage;
-import de.uni_paderborn.fujaba.muml.impl.MumlPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.ModelPackage;
 import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.behavior.impl.BehaviorPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
@@ -31,7 +28,6 @@ import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.impl.ModelPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
@@ -424,18 +420,18 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(connectorEndpointEClass, ConnectorEndpoint.class, "ConnectorEndpoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConnectorEndpoint_Connectors(), this.getConnector(), null, "connectors", null, 0, -1, ConnectorEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectorEndpoint_Connectors(), this.getConnector(), this.getConnector_ConnectorEndpoints(), "connectors", null, 0, -1, ConnectorEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorEClass, Connector.class, "Connector", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConnector_ConnectorEndpoints(), this.getConnectorEndpoint(), null, "connectorEndpoints", null, 2, 2, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnector_ConnectorEndpoints(), this.getConnectorEndpoint(), this.getConnectorEndpoint_Connectors(), "connectorEndpoints", null, 2, 2, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorEndpointInstanceEClass, ConnectorEndpointInstance.class, "ConnectorEndpointInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConnectorEndpointInstance_ConnectorInstances(), this.getConnectorInstance(), null, "connectorInstances", null, 0, -1, ConnectorEndpointInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectorEndpointInstance_ConnectorInstances(), this.getConnectorInstance(), this.getConnectorInstance_ConnectorEndpointInstances(), "connectorInstances", null, 0, -1, ConnectorEndpointInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnectorEndpointInstance_Type(), this.getConnectorEndpoint(), null, "type", null, 1, 1, ConnectorEndpointInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorInstanceEClass, ConnectorInstance.class, "ConnectorInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConnectorInstance_Type(), this.getConnector(), null, "type", null, 1, 1, ConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnectorInstance_ConnectorEndpointInstances(), this.getConnectorEndpointInstance(), null, "connectorEndpointInstances", null, 2, 2, ConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectorInstance_ConnectorEndpointInstances(), this.getConnectorEndpointInstance(), this.getConnectorEndpointInstance_ConnectorInstances(), "connectorEndpointInstances", null, 2, 2, ConnectorInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(discreteInteractionEndpointEClass, DiscreteInteractionEndpoint.class, "DiscreteInteractionEndpoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiscreteInteractionEndpoint_SenderMessageTypes(), theMsgtypePackage.getMessageType(), null, "senderMessageTypes", null, 0, -1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

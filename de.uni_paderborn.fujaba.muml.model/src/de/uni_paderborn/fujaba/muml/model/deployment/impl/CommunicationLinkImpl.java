@@ -19,7 +19,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.ExtendableElementImpl;
@@ -157,7 +159,7 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	 */
 	public EList<ConnectorEndpoint> getConnectorEndpoints() {
 		if (connectorEndpoints == null) {
-			connectorEndpoints = new EObjectResolvingEList<ConnectorEndpoint>(ConnectorEndpoint.class, this, DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS);
+			connectorEndpoints = new EObjectWithInverseResolvingEList.ManyInverse<ConnectorEndpoint>(ConnectorEndpoint.class, this, DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS, ConnectorPackage.CONNECTOR_ENDPOINT__CONNECTORS);
 		}
 		return connectorEndpoints;
 	}
@@ -268,9 +270,12 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectorEndpoints()).basicAdd(otherEnd, msgs);
 			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYMENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -287,6 +292,8 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS:
+				return ((InternalEList<?>)getConnectorEndpoints()).basicRemove(otherEnd, msgs);
 			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYMENT:
 				return basicSetDeployment(null, msgs);
 		}

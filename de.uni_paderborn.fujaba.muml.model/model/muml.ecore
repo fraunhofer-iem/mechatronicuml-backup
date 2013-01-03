@@ -1978,21 +1978,22 @@
         <eLiterals name="STRING" value="7"/>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="connector" nsURI="http://www.fujaba.de/muml/model/connector/0.3.7"
+    <eSubpackages name="connector" nsURI="http://www.fujaba.de/muml/model/connector/0.3.13"
         nsPrefix="connector">
       <eClassifiers xsi:type="ecore:EClass" name="ConnectorEndpoint" abstract="true"
           eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
-            eType="#//model/connector/Connector"/>
+            eType="#//model/connector/Connector" eOpposite="#//model/connector/Connector/connectorEndpoints"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="connectorEndpoints"
-            lowerBound="2" upperBound="2" eType="#//model/connector/ConnectorEndpoint"/>
+            lowerBound="2" upperBound="2" eType="#//model/connector/ConnectorEndpoint"
+            eOpposite="#//model/connector/ConnectorEndpoint/connectors"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ConnectorEndpointInstance" abstract="true"
           eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="connectorInstances"
-            upperBound="-1" eType="#//model/connector/ConnectorInstance"/>
+            upperBound="-1" eType="#//model/connector/ConnectorInstance" eOpposite="#//model/connector/ConnectorInstance/connectorEndpointInstances"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
             eType="#//model/connector/ConnectorEndpoint"/>
       </eClassifiers>
@@ -2001,7 +2002,8 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
             eType="#//model/connector/Connector"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="connectorEndpointInstances"
-            lowerBound="2" upperBound="2" eType="#//model/connector/ConnectorEndpointInstance"/>
+            lowerBound="2" upperBound="2" eType="#//model/connector/ConnectorEndpointInstance"
+            eOpposite="#//model/connector/ConnectorEndpointInstance/connectorInstances"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpoint" abstract="true"
           eSuperTypes="#//model/connector/ConnectorEndpoint #//model/behavior/BehavioralElement #//model/constraint/ConstrainableElement">

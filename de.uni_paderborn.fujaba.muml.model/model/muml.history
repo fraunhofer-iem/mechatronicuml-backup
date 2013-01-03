@@ -18634,5 +18634,15 @@
         featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/valuetype" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/valuetype/0.3.13" oldDataValue="http://www.fujaba.de/muml/model/valuetype/0.3.10"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpointInstance/connectorInstances"
+        featureName="eOpposite" referenceValue="muml.ecore#//model/connector/ConnectorInstance/connectorEndpointInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorInstance/connectorEndpointInstances"
+        featureName="eOpposite" referenceValue="muml.ecore#//model/connector/ConnectorEndpointInstance/connectorInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/Connector/connectorEndpoints"
+        featureName="eOpposite" referenceValue="muml.ecore#//model/connector/ConnectorEndpoint/connectors"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector/ConnectorEndpoint/connectors"
+        featureName="eOpposite" referenceValue="muml.ecore#//model/connector/Connector/connectorEndpoints"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/connector" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/connector/0.3.13" oldDataValue="http://www.fujaba.de/muml/model/connector/0.3.7"/>
   </releases>
 </history:History>

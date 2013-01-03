@@ -9,11 +9,13 @@ package de.uni_paderborn.fujaba.muml.model.connector.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.CommentableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.connector.Connector;
@@ -120,9 +122,38 @@ public abstract class ConnectorInstanceImpl extends CommentableElementImpl imple
 	 */
 	public EList<ConnectorEndpointInstance> getConnectorEndpointInstances() {
 		if (connectorEndpointInstances == null) {
-			connectorEndpointInstances = new EObjectResolvingEList<ConnectorEndpointInstance>(ConnectorEndpointInstance.class, this, ConnectorPackage.CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES);
+			connectorEndpointInstances = new EObjectWithInverseResolvingEList.ManyInverse<ConnectorEndpointInstance>(ConnectorEndpointInstance.class, this, ConnectorPackage.CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES, ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__CONNECTOR_INSTANCES);
 		}
 		return connectorEndpointInstances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ConnectorPackage.CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectorEndpointInstances()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ConnectorPackage.CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES:
+				return ((InternalEList<?>)getConnectorEndpointInstances()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

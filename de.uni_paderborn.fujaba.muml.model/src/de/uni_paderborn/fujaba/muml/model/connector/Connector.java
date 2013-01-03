@@ -29,6 +29,7 @@ public interface Connector extends CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Connector Endpoints</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint#getConnectors <em>Connectors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Connector Endpoints</em>' reference list isn't clear,
@@ -37,7 +38,8 @@ public interface Connector extends CommentableElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Connector Endpoints</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage#getConnector_ConnectorEndpoints()
-	 * @model lower="2" upper="2"
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint#getConnectors
+	 * @model opposite="connectors" lower="2" upper="2"
 	 * @generated
 	 */
 	EList<ConnectorEndpoint> getConnectorEndpoints();

@@ -41,7 +41,7 @@ public interface ConnectorPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/connector/0.3.7";
+	String eNS_URI = "http://www.fujaba.de/muml/model/connector/0.3.13";
 
 	/**
 	 * The package namespace name.

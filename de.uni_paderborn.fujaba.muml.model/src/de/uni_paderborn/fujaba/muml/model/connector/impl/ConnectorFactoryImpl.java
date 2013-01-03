@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.connector.impl;
 
-import de.uni_paderborn.fujaba.muml.model.connector.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -31,7 +30,7 @@ public class ConnectorFactoryImpl extends EFactoryImpl implements ConnectorFacto
 	 */
 	public static ConnectorFactory init() {
 		try {
-			ConnectorFactory theConnectorFactory = (ConnectorFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/connector/0.3.7"); 
+			ConnectorFactory theConnectorFactory = (ConnectorFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/connector/0.3.13"); 
 			if (theConnectorFactory != null) {
 				return theConnectorFactory;
 			}

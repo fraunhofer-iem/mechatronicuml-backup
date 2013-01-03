@@ -8,9 +8,12 @@ package de.uni_paderborn.fujaba.muml.model.connector.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.CommentableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.connector.Connector;
@@ -67,9 +70,38 @@ public abstract class ConnectorImpl extends CommentableElementImpl implements Co
 	 */
 	public EList<ConnectorEndpoint> getConnectorEndpoints() {
 		if (connectorEndpoints == null) {
-			connectorEndpoints = new EObjectResolvingEList<ConnectorEndpoint>(ConnectorEndpoint.class, this, ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS);
+			connectorEndpoints = new EObjectWithInverseResolvingEList.ManyInverse<ConnectorEndpoint>(ConnectorEndpoint.class, this, ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS, ConnectorPackage.CONNECTOR_ENDPOINT__CONNECTORS);
 		}
 		return connectorEndpoints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectorEndpoints()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS:
+				return ((InternalEList<?>)getConnectorEndpoints()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

@@ -169,7 +169,7 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 	 */
 	public EList<Connector> getConnectors() {
 		if (connectors == null) {
-			connectors = new EObjectResolvingEList<Connector>(Connector.class, this, DeploymentPackage.HARDWARE_PORT__CONNECTORS);
+			connectors = new EObjectWithInverseResolvingEList.ManyInverse<Connector>(Connector.class, this, DeploymentPackage.HARDWARE_PORT__CONNECTORS, ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS);
 		}
 		return connectors;
 	}
@@ -267,6 +267,8 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case DeploymentPackage.HARDWARE_PORT__CONNECTORS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectors()).basicAdd(otherEnd, msgs);
 			case DeploymentPackage.HARDWARE_PORT__HARDWARE_NODE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -283,6 +285,8 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case DeploymentPackage.HARDWARE_PORT__CONNECTORS:
+				return ((InternalEList<?>)getConnectors()).basicRemove(otherEnd, msgs);
 			case DeploymentPackage.HARDWARE_PORT__HARDWARE_NODE:
 				return basicSetHardwareNode(null, msgs);
 		}

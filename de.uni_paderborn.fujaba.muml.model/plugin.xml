@@ -83,7 +83,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.fujaba.de/muml/model/connector/0.3.7"
+            uri="http://www.fujaba.de/muml/model/connector/0.3.13"
             class="de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage"
             genModel="model/muml.genmodel"/>
    </extension>

@@ -31,6 +31,7 @@ public interface ConnectorEndpointInstance extends NamedElement, CommentableElem
 	/**
 	 * Returns the value of the '<em><b>Connector Instances</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.connector.ConnectorInstance}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.connector.ConnectorInstance#getConnectorEndpointInstances <em>Connector Endpoint Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Connector Instances</em>' reference list isn't clear,
@@ -39,7 +40,8 @@ public interface ConnectorEndpointInstance extends NamedElement, CommentableElem
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Connector Instances</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage#getConnectorEndpointInstance_ConnectorInstances()
-	 * @model
+	 * @see de.uni_paderborn.fujaba.muml.model.connector.ConnectorInstance#getConnectorEndpointInstances
+	 * @model opposite="connectorEndpointInstances"
 	 * @generated
 	 */
 	EList<ConnectorInstance> getConnectorInstances();
