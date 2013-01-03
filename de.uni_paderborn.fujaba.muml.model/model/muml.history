@@ -18910,7 +18910,7 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/TypedNamedElement"
         featureName="interface" dataValue="false" oldDataValue="true"/>
   </releases>
-  <releases>
+  <releases date="2013-01-03T17:24:51.291+0100" label="0.3.15">
     <changes xsi:type="history:Create" target="muml.ecore#//model/connector" referenceName="eClassifiers"
         element="muml.ecore#//model/connector/DiscreteInteractionEndpointInstance"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteInteractionEndpointInstance"
@@ -19007,5 +19007,9 @@
         featureName="eOpposite" referenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/previous"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/previous"
         featureName="eOpposite" referenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/next"/>
+    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.15"
+        oldDataValue="http://www.fujaba.de/modelinstance/0.3.12"/>
   </releases>
+  <releases/>
 </history:History>
