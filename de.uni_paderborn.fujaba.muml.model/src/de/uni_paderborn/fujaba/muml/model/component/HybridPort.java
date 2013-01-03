@@ -27,8 +27,6 @@ import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort#isIsHybridInPort <em>Is Hybrid In Port</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort#isIsHybridOutPort <em>Is Hybrid Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort#getSamplingInterval <em>Sampling Interval</em>}</li>
  * </ul>
  * </p>
@@ -38,38 +36,6 @@ import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
  * @generated
  */
 public interface HybridPort extends DirectedTypedPort, ITypedNamedElement {
-
-	/**
-	 * Returns the value of the '<em><b>Is Hybrid In Port</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This derived attribute indicates if the hybrid port is an IN port
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Is Hybrid In Port</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getHybridPort_IsHybridInPort()
-	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.kind = component::ContinuousPortDirectionKind::IN'"
-	 * @generated
-	 */
-	boolean isIsHybridInPort();
-
-	/**
-	 * Returns the value of the '<em><b>Is Hybrid Out Port</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This derived attribute indicates if the hybrid port is an OUT port
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Is Hybrid Out Port</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getHybridPort_IsHybridOutPort()
-	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.kind = component::ContinuousPortDirectionKind::OUT'"
-	 * @generated
-	 */
-	boolean isIsHybridOutPort();
 
 	/**
 	 * Returns the value of the '<em><b>Sampling Interval</b></em>' containment reference.

@@ -3454,85 +3454,85 @@
             featureName="value" dataValue="Decides the direction of a continous port."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/DirectedTypedPort/inPort">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/inPort"
             featureName="name" dataValue="isContinuousInPort"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/inPort"
             featureName="changeable" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/inPort"
             featureName="volatile" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/inPort"
             featureName="transient" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/inPort"
             featureName="defaultValueLiteral" dataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/inPort"
             featureName="derived" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/inPort"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort/isContinuousInPort"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DirectedTypedPort/inPort"
+          referenceName="eAnnotations" element="muml.ecore#//model/component/DirectedTypedPort/inPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/inPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort/isContinuousInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DirectedTypedPort/inPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/component/DirectedTypedPort/inPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/inPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/inPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="This derived attribute indicates if the continuous port is an IN port"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort/isContinuousInPort"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DirectedTypedPort/inPort"
+          referenceName="eAnnotations" element="muml.ecore#//model/component/DirectedTypedPort/inPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/inPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort/isContinuousInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DirectedTypedPort/inPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="muml.ecore#//model/component/DirectedTypedPort/inPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/inPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="derivation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/inPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="self.kind = component::ContinuousPortDirectionKind::IN"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/DirectedTypedPort/outPort">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort"
             featureName="name" dataValue="isContinuousOutPort"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort"
             featureName="changeable" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort"
             featureName="volatile" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort"
             featureName="transient" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort"
             featureName="defaultValueLiteral" dataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort"
             featureName="derived" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DirectedTypedPort/outPort"
+          referenceName="eAnnotations" element="muml.ecore#//model/component/DirectedTypedPort/outPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DirectedTypedPort/outPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/component/DirectedTypedPort/outPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="This derived attribute indicates if the continuous port is an OUT port"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DirectedTypedPort/outPort"
+          referenceName="eAnnotations" element="muml.ecore#//model/component/DirectedTypedPort/outPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/component/DirectedTypedPort/outPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="muml.ecore#//model/component/DirectedTypedPort/outPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="derivation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/ContinuousPort/isContinuousOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="self.kind = component::ContinuousPortDirectionKind::OUT"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component" referenceName="eClassifiers"
@@ -4561,85 +4561,85 @@
             featureName="value" dataValue="This class represents a hybrid port which acts as a bridge between continuous&#xD;&#xA;controllers and discrete software. A hybrid port emits or receives a signal value &#xD;&#xA;which has a data type and a concrete value at all points in time. Then, the&#xD;&#xA;hybrid port discretizes the signal value in given time intervals and provides the&#xD;&#xA;value as variable to its Real-Time Statechart. The hybrid port does not define message&#xD;&#xA;interfaces."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/HybridPort/isHybridInPort">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridInPort"
+          referenceName="eStructuralFeatures" element="#//@releases.11/@changes.36/@element">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.36/@element"
             featureName="name" dataValue="isHybridInPort"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridInPort"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.36/@element"
             featureName="changeable" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridInPort"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.36/@element"
             featureName="volatile" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridInPort"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.36/@element"
             featureName="transient" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridInPort"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.36/@element"
             featureName="defaultValueLiteral" dataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridInPort"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.36/@element"
             featureName="derived" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridInPort"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.36/@element"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort/isHybridInPort"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/HybridPort/isHybridInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.36/@element"
+          referenceName="eAnnotations" element="#//@releases.11/@changes.36/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.36/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort/isHybridInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/component/HybridPort/isHybridInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.36/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.11/@changes.36/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.36/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.36/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="This derived attribute indicates if the hybrid port is an IN port"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort/isHybridInPort"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/HybridPort/isHybridInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.36/@element"
+          referenceName="eAnnotations" element="#//@releases.11/@changes.36/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.36/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort/isHybridInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/component/HybridPort/isHybridInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.36/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.11/@changes.36/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.36/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="derivation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.36/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="-- derive from superclass ContinuousPort&#xD;&#xA;self.isContinuousInPort"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/component/HybridPort/isHybridOutPort">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridOutPort"
+          referenceName="eStructuralFeatures" element="#//@releases.11/@changes.35/@element">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.35/@element"
             featureName="name" dataValue="isHybridOutPort"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridOutPort"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.35/@element"
             featureName="changeable" dataValue="false" oldDataValue="true"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridOutPort"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.35/@element"
             featureName="volatile" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridOutPort"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.35/@element"
             featureName="transient" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridOutPort"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.35/@element"
             featureName="defaultValueLiteral" dataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridOutPort"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.35/@element"
             featureName="derived" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridOutPort"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.35/@element"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort/isHybridOutPort"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/HybridPort/isHybridOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.35/@element"
+          referenceName="eAnnotations" element="#//@releases.11/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort/isHybridOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/component/HybridPort/isHybridOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="#//@releases.11/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="This derived attribute indicates if the hybrid port is an OUT port"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort/isHybridOutPort"
-          referenceName="eAnnotations" element="muml.ecore#//model/component/HybridPort/isHybridOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.35/@element"
+          referenceName="eAnnotations" element="#//@releases.11/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort/isHybridOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/component/HybridPort/isHybridOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.11/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="derivation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="-- derive from superclass ContinuousPort&#xD;&#xA;self.isContinuousOutPort"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/component/HybridPort"
@@ -17744,10 +17744,10 @@
         featureName="key" dataValue="derivation"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/PortConnector/ports/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port)->asOrderedSet()"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridInPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.11/@changes.36/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="self.kind = component::ContinuousPortDirectionKind::IN"
         oldDataValue="-- derive from superclass ContinuousPort&#xD;&#xA;self.isContinuousInPort"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/component/HybridPort/isHybridOutPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.11/@changes.35/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="self.kind = component::ContinuousPortDirectionKind::OUT"
         oldDataValue="-- derive from superclass ContinuousPort&#xD;&#xA;self.isContinuousOutPort"/>
     <changes xsi:type="history:Create" target="muml.ecore#//model/instance/PortConnectorInstance/portConnectorType"
@@ -18505,5 +18505,47 @@
         oldDataValue="self.periodLower >= 1 and self.periodLower &lt;= self.periodUpper"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/DoEvent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="ValidLowerUpperPeriod" oldDataValue=""/>
+    <changes xsi:type="history:Move" target="muml.ecore#//model/component/DirectedTypedPort"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/DirectedTypedPort/outPort"
+        source="muml.ecore#//model/component/ContinuousPort"/>
+    <changes xsi:type="history:Move" target="muml.ecore#//model/component/DirectedTypedPort"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/DirectedTypedPort/inPort"
+        source="muml.ecore#//model/component/ContinuousPort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/inPort"
+        featureName="name" dataValue="inPort" oldDataValue="isContinuousInPort"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort"
+        featureName="name" dataValue="outPort" oldDataValue="isContinuousOutPort"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/component/HybridPort"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EAttribute" name="isHybridOutPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This derived attribute indicates if the hybrid port is an OUT port"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.kind = component::ContinuousPortDirectionKind::OUT"/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/component/HybridPort"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EAttribute" name="isHybridInPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This derived attribute indicates if the hybrid port is an IN port"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.kind = component::ContinuousPortDirectionKind::IN"/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/inPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="This derived attribute indicates if the port is an IN port"
+        oldDataValue="This derived attribute indicates if the continuous port is an IN port"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="This derived attribute indicates if the port is an OUT port"
+        oldDataValue="This derived attribute indicates if the continuous port is an OUT port"/>
   </releases>
 </history:History>

@@ -28,8 +28,6 @@ import de.uni_paderborn.fujaba.muml.model.valuetype.TimeValue;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#getDataType <em>Data Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#isIsHybridInPort <em>Is Hybrid In Port</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#isIsHybridOutPort <em>Is Hybrid Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.HybridPortImpl#getSamplingInterval <em>Sampling Interval</em>}</li>
  * </ul>
  * </p>
@@ -46,26 +44,6 @@ public class HybridPortImpl extends DirectedTypedPortImpl implements HybridPort 
 	 * @ordered
 	 */
 	protected DataType dataType;
-
-	/**
-	 * The cached setting delegate for the '{@link #isIsHybridInPort() <em>Is Hybrid In Port</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsHybridInPort()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate IS_HYBRID_IN_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.HYBRID_PORT__IS_HYBRID_IN_PORT).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #isIsHybridOutPort() <em>Is Hybrid Out Port</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsHybridOutPort()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate IS_HYBRID_OUT_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.HYBRID_PORT__IS_HYBRID_OUT_PORT).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getSamplingInterval() <em>Sampling Interval</em>}' containment reference.
@@ -139,24 +117,6 @@ public class HybridPortImpl extends DirectedTypedPortImpl implements HybridPort 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isIsHybridInPort() {
-		return (Boolean)IS_HYBRID_IN_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isIsHybridOutPort() {
-		return (Boolean)IS_HYBRID_OUT_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public TimeValue getSamplingInterval() {
 		return samplingInterval;
 	}
@@ -220,10 +180,6 @@ public class HybridPortImpl extends DirectedTypedPortImpl implements HybridPort 
 			case ComponentPackage.HYBRID_PORT__DATA_TYPE:
 				if (resolve) return getDataType();
 				return basicGetDataType();
-			case ComponentPackage.HYBRID_PORT__IS_HYBRID_IN_PORT:
-				return isIsHybridInPort();
-			case ComponentPackage.HYBRID_PORT__IS_HYBRID_OUT_PORT:
-				return isIsHybridOutPort();
 			case ComponentPackage.HYBRID_PORT__SAMPLING_INTERVAL:
 				return getSamplingInterval();
 		}
@@ -277,10 +233,6 @@ public class HybridPortImpl extends DirectedTypedPortImpl implements HybridPort 
 		switch (featureID) {
 			case ComponentPackage.HYBRID_PORT__DATA_TYPE:
 				return dataType != null;
-			case ComponentPackage.HYBRID_PORT__IS_HYBRID_IN_PORT:
-				return IS_HYBRID_IN_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case ComponentPackage.HYBRID_PORT__IS_HYBRID_OUT_PORT:
-				return IS_HYBRID_OUT_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.HYBRID_PORT__SAMPLING_INTERVAL:
 				return samplingInterval != null;
 		}

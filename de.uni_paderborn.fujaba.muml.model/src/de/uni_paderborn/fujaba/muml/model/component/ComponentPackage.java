@@ -360,13 +360,31 @@ public interface ComponentPackage extends EPackage {
 	int DIRECTED_TYPED_PORT__OPTIONAL = PORT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>In Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__IN_PORT = PORT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Out Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__OUT_PORT = PORT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Directed Typed Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_TYPED_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 3;
+	int DIRECTED_TYPED_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ContinuousPortImpl <em>Continuous Port</em>}' class.
@@ -478,22 +496,22 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_PORT__OPTIONAL = DIRECTED_TYPED_PORT__OPTIONAL;
 
 	/**
-	 * The feature id for the '<em><b>Is Continuous In Port</b></em>' attribute.
+	 * The feature id for the '<em><b>In Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 0;
+	int CONTINUOUS_PORT__IN_PORT = DIRECTED_TYPED_PORT__IN_PORT;
 
 	/**
-	 * The feature id for the '<em><b>Is Continuous Out Port</b></em>' attribute.
+	 * The feature id for the '<em><b>Out Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 1;
+	int CONTINUOUS_PORT__OUT_PORT = DIRECTED_TYPED_PORT__OUT_PORT;
 
 	/**
 	 * The number of structural features of the '<em>Continuous Port</em>' class.
@@ -502,7 +520,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT_FEATURE_COUNT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 2;
+	int CONTINUOUS_PORT_FEATURE_COUNT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl <em>Discrete Port</em>}' class.
@@ -1531,6 +1549,24 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__OPTIONAL = DIRECTED_TYPED_PORT__OPTIONAL;
 
 	/**
+	 * The feature id for the '<em><b>In Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__IN_PORT = DIRECTED_TYPED_PORT__IN_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Out Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__OUT_PORT = DIRECTED_TYPED_PORT__OUT_PORT;
+
+	/**
 	 * The feature id for the '<em><b>Data Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1540,31 +1576,13 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__DATA_TYPE = DIRECTED_TYPED_PORT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Is Hybrid In Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__IS_HYBRID_IN_PORT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Is Hybrid Out Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__IS_HYBRID_OUT_PORT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Sampling Interval</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT__SAMPLING_INTERVAL = DIRECTED_TYPED_PORT_FEATURE_COUNT + 3;
+	int HYBRID_PORT__SAMPLING_INTERVAL = DIRECTED_TYPED_PORT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Hybrid Port</em>' class.
@@ -1573,7 +1591,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT_FEATURE_COUNT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 4;
+	int HYBRID_PORT_FEATURE_COUNT = DIRECTED_TYPED_PORT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.CoordinationProtocolOccurrenceImpl <em>Coordination Protocol Occurrence</em>}' class.
@@ -1743,28 +1761,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getContinuousPort();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#isIsContinuousInPort <em>Is Continuous In Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Continuous In Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#isIsContinuousInPort()
-	 * @see #getContinuousPort()
-	 * @generated
-	 */
-	EAttribute getContinuousPort_IsContinuousInPort();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#isIsContinuousOutPort <em>Is Continuous Out Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Continuous Out Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.ContinuousPort#isIsContinuousOutPort()
-	 * @see #getContinuousPort()
-	 * @generated
-	 */
-	EAttribute getContinuousPort_IsContinuousOutPort();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort <em>Discrete Port</em>}'.
@@ -2037,6 +2033,28 @@ public interface ComponentPackage extends EPackage {
 	EAttribute getDirectedTypedPort_Optional();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isInPort <em>In Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>In Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isInPort()
+	 * @see #getDirectedTypedPort()
+	 * @generated
+	 */
+	EAttribute getDirectedTypedPort_InPort();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isOutPort <em>Out Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Out Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isOutPort()
+	 * @see #getDirectedTypedPort()
+	 * @generated
+	 */
+	EAttribute getDirectedTypedPort_OutPort();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.AtomicComponent <em>Atomic Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2140,28 +2158,6 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getHybridPort();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort#isIsHybridInPort <em>Is Hybrid In Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Hybrid In Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.HybridPort#isIsHybridInPort()
-	 * @see #getHybridPort()
-	 * @generated
-	 */
-	EAttribute getHybridPort_IsHybridInPort();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort#isIsHybridOutPort <em>Is Hybrid Out Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Hybrid Out Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.component.HybridPort#isIsHybridOutPort()
-	 * @see #getHybridPort()
-	 * @generated
-	 */
-	EAttribute getHybridPort_IsHybridOutPort();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.component.HybridPort#getSamplingInterval <em>Sampling Interval</em>}'.
@@ -2317,22 +2313,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CONTINUOUS_PORT = eINSTANCE.getContinuousPort();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Continuous In Port</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTINUOUS_PORT__IS_CONTINUOUS_IN_PORT = eINSTANCE.getContinuousPort_IsContinuousInPort();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Continuous Out Port</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTINUOUS_PORT__IS_CONTINUOUS_OUT_PORT = eINSTANCE.getContinuousPort_IsContinuousOutPort();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl <em>Discrete Port</em>}' class.
@@ -2545,6 +2525,22 @@ public interface ComponentPackage extends EPackage {
 		EAttribute DIRECTED_TYPED_PORT__OPTIONAL = eINSTANCE.getDirectedTypedPort_Optional();
 
 		/**
+		 * The meta object literal for the '<em><b>In Port</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIRECTED_TYPED_PORT__IN_PORT = eINSTANCE.getDirectedTypedPort_InPort();
+
+		/**
+		 * The meta object literal for the '<em><b>Out Port</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DIRECTED_TYPED_PORT__OUT_PORT = eINSTANCE.getDirectedTypedPort_OutPort();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.AtomicComponentImpl <em>Atomic Component</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2633,22 +2629,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EClass HYBRID_PORT = eINSTANCE.getHybridPort();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Hybrid In Port</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute HYBRID_PORT__IS_HYBRID_IN_PORT = eINSTANCE.getHybridPort_IsHybridInPort();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Hybrid Out Port</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute HYBRID_PORT__IS_HYBRID_OUT_PORT = eINSTANCE.getHybridPort_IsHybridOutPort();
 
 		/**
 		 * The meta object literal for the '<em><b>Sampling Interval</b></em>' containment reference feature.

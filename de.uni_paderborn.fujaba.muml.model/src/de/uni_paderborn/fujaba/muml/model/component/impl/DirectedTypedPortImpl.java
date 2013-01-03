@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.component.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -26,6 +27,8 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl#isOptional <em>Optional</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl#isInPort <em>In Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl#isOutPort <em>Out Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,6 +84,26 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	 * @ordered
 	 */
 	protected boolean optional = OPTIONAL_EDEFAULT;
+
+	/**
+	 * The cached setting delegate for the '{@link #isInPort() <em>In Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isInPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate IN_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.DIRECTED_TYPED_PORT__IN_PORT).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #isOutPort() <em>Out Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOutPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate OUT_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.DIRECTED_TYPED_PORT__OUT_PORT).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,6 +209,24 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isInPort() {
+		return (Boolean)IN_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isOutPort() {
+		return (Boolean)OUT_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -196,6 +237,10 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 				return basicGetType();
 			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
 				return isOptional();
+			case ComponentPackage.DIRECTED_TYPED_PORT__IN_PORT:
+				return isInPort();
+			case ComponentPackage.DIRECTED_TYPED_PORT__OUT_PORT:
+				return isOutPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -256,6 +301,10 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 				return type != null;
 			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
 				return optional != OPTIONAL_EDEFAULT;
+			case ComponentPackage.DIRECTED_TYPED_PORT__IN_PORT:
+				return IN_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.DIRECTED_TYPED_PORT__OUT_PORT:
+				return OUT_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

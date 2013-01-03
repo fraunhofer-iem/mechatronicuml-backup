@@ -19,6 +19,8 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#getKind <em>Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#getType <em>Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isOptional <em>Optional</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isInPort <em>In Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isOutPort <em>Out Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -106,5 +108,37 @@ public interface DirectedTypedPort extends Port {
 	 * @generated
 	 */
 	void setOptional(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>In Port</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived attribute indicates if the port is an IN port
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>In Port</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDirectedTypedPort_InPort()
+	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.kind = component::ContinuousPortDirectionKind::IN'"
+	 * @generated
+	 */
+	boolean isInPort();
+
+	/**
+	 * Returns the value of the '<em><b>Out Port</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived attribute indicates if the port is an OUT port
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Out Port</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDirectedTypedPort_OutPort()
+	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.kind = component::ContinuousPortDirectionKind::OUT'"
+	 * @generated
+	 */
+	boolean isOutPort();
 
 } // DirectedTypedPort
