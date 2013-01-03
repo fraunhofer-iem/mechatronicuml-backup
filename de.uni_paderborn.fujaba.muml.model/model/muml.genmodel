@@ -94,8 +94,8 @@
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/component/DirectedTypedPort/type"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/DirectedTypedPort/optional"/>
-          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/DirectedTypedPort/inPort"/>
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/DirectedTypedPort/outPort"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/component/DirectedTypedPort/inPort"/>
         </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Constraint" basePackage="de.uni_paderborn.fujaba.muml.model"
@@ -110,7 +110,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/constraint/Constraint/background"/>
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/constraint/Constraint/constrainableElement"/>
-          <genOperations ecoreOperation="muml.ecore#//model/constraint/Constraint/isCorrect"/>
+          <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/constraint/Constraint/correct"/>
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//model/constraint/ModelingConstraint"/>
         <genClasses image="false" ecoreClass="muml.ecore#//model/constraint/VerifiableConstraint"/>

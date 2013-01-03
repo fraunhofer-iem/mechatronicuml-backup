@@ -457,16 +457,6 @@
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
             defaultValueLiteral="false"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="inPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-            changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
-            derived="true">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This derived attribute indicates if the port is an IN port"/>
-          </eAnnotations>
-          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="self.kind = component::ContinuousPortDirectionKind::IN"/>
-          </eAnnotations>
-        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="outPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
             changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
             derived="true">
@@ -477,6 +467,16 @@
             <details key="derivation" value="self.kind = component::ContinuousPortDirectionKind::OUT"/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="inPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
+            derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This derived attribute indicates if the port is an IN port"/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self.kind = component::ContinuousPortDirectionKind::IN"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/model/constraint/0.3.8"
@@ -484,15 +484,15 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The package constraint provides abstract super classes for modeling different&#xD;&#xA;kinds of constraints that may be attached to ConstrainableElements of the&#xD;&#xA;MechatronicUML meta-model. "/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+        <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+        <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      </eAnnotations>
       <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This class represents a constraint. A constraint defines certain properties a system has to fullfill. In terms of model checking a constraint represents the specification of the system."/>
         </eAnnotations>
-        <eOperations name="isCorrect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This operation yields &quot;true&quot; if and only if this.correctness == Correctness.CORRECT holds."/>
-          </eAnnotations>
-        </eOperations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="correctness" eType="#//model/constraint/Correctness"
             defaultValueLiteral="Correctness.UNKNOWN">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -508,6 +508,15 @@
             lowerBound="1" eType="#//model/constraint/ConstrainableElement" eOpposite="#//model/constraint/ConstrainableElement/constraint">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The element this constraint applies to."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="correct" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+            changeable="false" volatile="true" transient="true" derived="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="This derived attribute is &quot;true&quot; if and only if this.correctness == Correctness.CORRECT holds."/>
+          </eAnnotations>
+          <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+            <details key="derivation" value="self.correctness = constraint::Correctness::CORRECT"/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsPackage;
@@ -235,6 +236,15 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getConstraint_Correct() {
+		return (EAttribute)constraintEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getModelingConstraint() {
 		return modelingConstraintEClass;
 	}
@@ -325,6 +335,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		createEAttribute(constraintEClass, CONSTRAINT__CORRECTNESS);
 		createEAttribute(constraintEClass, CONSTRAINT__BACKGROUND);
 		createEReference(constraintEClass, CONSTRAINT__CONSTRAINABLE_ELEMENT);
+		createEAttribute(constraintEClass, CONSTRAINT__CORRECT);
 
 		modelingConstraintEClass = createEClass(MODELING_CONSTRAINT);
 
@@ -365,6 +376,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 
 		// Create type parameters
@@ -383,8 +395,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		initEAttribute(getConstraint_Correctness(), this.getCorrectness(), "correctness", "Correctness.UNKNOWN", 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConstraint_Background(), ecorePackage.getEBoolean(), "background", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConstraint_ConstrainableElement(), this.getConstrainableElement(), this.getConstrainableElement_Constraint(), "constrainableElement", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(constraintEClass, ecorePackage.getEBoolean(), "isCorrect", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEAttribute(getConstraint_Correct(), theEcorePackage.getEBoolean(), "correct", null, 0, 1, Constraint.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelingConstraintEClass, ModelingConstraint.class, "ModelingConstraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -404,6 +415,46 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";			
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });													
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";									
+		addAnnotation
+		  (getConstraint_Correct(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.correctness = constraint::Correctness::CORRECT"
+		   });							
 	}
 
 } //ConstraintPackageImpl

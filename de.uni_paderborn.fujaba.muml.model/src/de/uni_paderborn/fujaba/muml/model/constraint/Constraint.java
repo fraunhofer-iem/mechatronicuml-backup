@@ -23,6 +23,7 @@ import org.storydriven.core.ExtendableElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.constraint.Constraint#getCorrectness <em>Correctness</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.constraint.Constraint#isBackground <em>Background</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.constraint.Constraint#getConstrainableElement <em>Constrainable Element</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.constraint.Constraint#isCorrect <em>Correct</em>}</li>
  * </ul>
  * </p>
  *
@@ -113,12 +114,16 @@ public interface Constraint extends ExtendableElement {
 	void setConstrainableElement(ConstrainableElement value);
 
 	/**
+	 * Returns the value of the '<em><b>Correct</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This operation yields "true" if and only if this.correctness == Correctness.CORRECT holds.
+	 * This derived attribute is "true" if and only if this.correctness == Correctness.CORRECT holds.
 	 * <!-- end-model-doc -->
-	 * @model kind="operation"
+	 * @return the value of the '<em>Correct</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage#getConstraint_Correct()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.correctness = constraint::Correctness::CORRECT'"
 	 * @generated
 	 */
 	boolean isCorrect();

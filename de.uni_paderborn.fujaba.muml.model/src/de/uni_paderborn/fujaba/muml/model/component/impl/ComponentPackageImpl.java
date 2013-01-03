@@ -588,7 +588,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EAttribute getDirectedTypedPort_InPort() {
-		return (EAttribute)directedTypedPortEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)directedTypedPortEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -597,7 +597,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	public EAttribute getDirectedTypedPort_OutPort() {
-		return (EAttribute)directedTypedPortEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)directedTypedPortEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -832,8 +832,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__KIND);
 		createEReference(directedTypedPortEClass, DIRECTED_TYPED_PORT__TYPE);
 		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__OPTIONAL);
-		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__IN_PORT);
 		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__OUT_PORT);
+		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__IN_PORT);
 
 		// Create enums
 		componentKindEEnum = createEEnum(COMPONENT_KIND);
@@ -967,8 +967,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEAttribute(getDirectedTypedPort_Kind(), this.getContinuousPortDirectionKind(), "kind", null, 1, 1, DirectedTypedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDirectedTypedPort_Type(), theTypesPackage.getDataType(), null, "type", null, 1, 1, DirectedTypedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDirectedTypedPort_Optional(), theEcorePackage.getEBoolean(), "optional", "false", 0, 1, DirectedTypedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDirectedTypedPort_InPort(), ecorePackage.getEBoolean(), "inPort", "false", 0, 1, DirectedTypedPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDirectedTypedPort_OutPort(), ecorePackage.getEBoolean(), "outPort", "false", 0, 1, DirectedTypedPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDirectedTypedPort_InPort(), ecorePackage.getEBoolean(), "inPort", "false", 0, 1, DirectedTypedPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(componentKindEEnum, ComponentKind.class, "ComponentKind");
@@ -1220,16 +1220,16 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "derivation", "self.allStructuredComponents->collect(\n\tembeddedParts->select(\n\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t)->collect(componentType.oclAsType(component::AtomicComponent))\n)->asOrderedSet()"
 		   });						
 		addAnnotation
-		  (getDirectedTypedPort_InPort(), 
-		   source, 
-		   new String[] {
-			 "derivation", "self.kind = component::ContinuousPortDirectionKind::IN"
-		   });			
-		addAnnotation
 		  (getDirectedTypedPort_OutPort(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.kind = component::ContinuousPortDirectionKind::OUT"
+		   });			
+		addAnnotation
+		  (getDirectedTypedPort_InPort(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.kind = component::ContinuousPortDirectionKind::IN"
 		   });
 	}
 

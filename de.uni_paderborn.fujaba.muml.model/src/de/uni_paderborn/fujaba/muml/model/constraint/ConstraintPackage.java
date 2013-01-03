@@ -31,6 +31,7 @@ import org.storydriven.core.CorePackage;
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.model.constraint.ConstraintFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface ConstraintPackage extends EPackage {
@@ -122,13 +123,22 @@ public interface ConstraintPackage extends EPackage {
 	int CONSTRAINT__CONSTRAINABLE_ELEMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Correct</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT__CORRECT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int CONSTRAINT_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.constraint.impl.ModelingConstraintImpl <em>Modeling Constraint</em>}' class.
@@ -184,6 +194,15 @@ public interface ConstraintPackage extends EPackage {
 	 * @ordered
 	 */
 	int MODELING_CONSTRAINT__CONSTRAINABLE_ELEMENT = CONSTRAINT__CONSTRAINABLE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Correct</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODELING_CONSTRAINT__CORRECT = CONSTRAINT__CORRECT;
 
 	/**
 	 * The number of structural features of the '<em>Modeling Constraint</em>' class.
@@ -250,6 +269,15 @@ public interface ConstraintPackage extends EPackage {
 	int VERIFIABLE_CONSTRAINT__CONSTRAINABLE_ELEMENT = CONSTRAINT__CONSTRAINABLE_ELEMENT;
 
 	/**
+	 * The feature id for the '<em><b>Correct</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERIFIABLE_CONSTRAINT__CORRECT = CONSTRAINT__CORRECT;
+
+	/**
 	 * The number of structural features of the '<em>Verifiable Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -312,6 +340,15 @@ public interface ConstraintPackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXTUAL_CONSTRAINT__CONSTRAINABLE_ELEMENT = VERIFIABLE_CONSTRAINT__CONSTRAINABLE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Correct</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXTUAL_CONSTRAINT__CORRECT = VERIFIABLE_CONSTRAINT__CORRECT;
 
 	/**
 	 * The feature id for the '<em><b>Textual Expression</b></em>' containment reference.
@@ -412,6 +449,17 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConstraint_ConstrainableElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.constraint.Constraint#isCorrect <em>Correct</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Correct</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.constraint.Constraint#isCorrect()
+	 * @see #getConstraint()
+	 * @generated
+	 */
+	EAttribute getConstraint_Correct();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.constraint.ModelingConstraint <em>Modeling Constraint</em>}'.
@@ -540,6 +588,14 @@ public interface ConstraintPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONSTRAINT__CONSTRAINABLE_ELEMENT = eINSTANCE.getConstraint_ConstrainableElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Correct</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSTRAINT__CORRECT = eINSTANCE.getConstraint_Correct();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.constraint.impl.ModelingConstraintImpl <em>Modeling Constraint</em>}' class.

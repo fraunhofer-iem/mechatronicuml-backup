@@ -19,8 +19,8 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#getKind <em>Kind</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#getType <em>Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isOptional <em>Optional</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isInPort <em>In Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isOutPort <em>Out Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort#isInPort <em>In Port</em>}</li>
  * </ul>
  * </p>
  *

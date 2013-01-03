@@ -2026,22 +2026,22 @@
             featureName="value" dataValue="This class represents a constraint. A constraint defines certain properties a system has to fullfill. In terms of model checking a constraint represents the specification of the system."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/Constraint"
-          referenceName="eOperations" element="muml.ecore#//model/constraint/Constraint/isCorrect">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/isCorrect"
+          referenceName="eOperations" element="#//@releases.11/@changes.55/@element">
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.55/@element"
             featureName="name" dataValue="isCorrect"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/isCorrect"
+        <changes xsi:type="history:Set" element="#//@releases.11/@changes.55/@element"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/Constraint/isCorrect"
-          referenceName="eAnnotations" element="muml.ecore#//model/constraint/Constraint/isCorrect/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/isCorrect/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="#//@releases.11/@changes.55/@element"
+          referenceName="eAnnotations" element="muml.ecore#//model/constraint/Constraint/correct/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/correct/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/Constraint/isCorrect/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/constraint/Constraint/isCorrect/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/isCorrect/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/Constraint/correct/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/constraint/Constraint/correct/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/correct/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/isCorrect/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/correct/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="This operation yields &quot;true&quot; if and only if this.correctness == Correctness.CORRECT holds."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/Constraint"
@@ -18547,5 +18547,70 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/DirectedTypedPort/outPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="This derived attribute indicates if the port is an OUT port"
         oldDataValue="This derived attribute indicates if the continuous port is an OUT port"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/Constraint"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/constraint/Constraint/correct"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/correct"
+        featureName="derived" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/correct"
+        featureName="changeable" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/correct"
+        featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/correct"
+        featureName="name" dataValue="correct"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/correct"
+        featureName="transient" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/correct"
+        featureName="volatile" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/constraint" referenceName="eAnnotations"
+        element="muml.ecore#//model/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        referenceName="details" element="muml.ecore#//model/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+          featureName="key" dataValue="invocationDelegates"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+          featureName="value" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        referenceName="details" element="muml.ecore#//model/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1"
+          featureName="key" dataValue="settingDelegates"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1"
+          featureName="value" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        referenceName="details" element="muml.ecore#//model/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2"
+          featureName="key" dataValue="validationDelegates"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2"
+          featureName="value" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Move" target="muml.ecore#//model/constraint/Constraint/correct"
+        referenceName="eAnnotations" element="muml.ecore#//model/constraint/Constraint/correct/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        source="#//@releases.11/@changes.55/@element"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/correct/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="This derived attribute is &quot;true&quot; if and only if this.correctness == Correctness.CORRECT holds."
+        oldDataValue="This operation yields &quot;true&quot; if and only if this.correctness == Correctness.CORRECT holds."/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/Constraint/correct"
+        referenceName="eAnnotations" element="muml.ecore#//model/constraint/Constraint/correct/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/correct/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/constraint/Constraint/correct/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/constraint/Constraint/correct/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/correct/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/correct/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="self.kind = component::ContinuousPortDirectionKind::OUT"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/constraint/Constraint/correct/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.correctness = constraint::Correctness::CORRECT"
+        oldDataValue="self.kind = component::ContinuousPortDirectionKind::OUT"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/constraint/Constraint"
+        referenceName="eOperations">
+      <element xsi:type="ecore:EOperation" name="isCorrect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </changes>
   </releases>
 </history:History>

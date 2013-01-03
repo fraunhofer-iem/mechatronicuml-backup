@@ -360,22 +360,22 @@ public interface ComponentPackage extends EPackage {
 	int DIRECTED_TYPED_PORT__OPTIONAL = PORT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>In Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_TYPED_PORT__IN_PORT = PORT_FEATURE_COUNT + 3;
-
-	/**
 	 * The feature id for the '<em><b>Out Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_TYPED_PORT__OUT_PORT = PORT_FEATURE_COUNT + 4;
+	int DIRECTED_TYPED_PORT__OUT_PORT = PORT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>In Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__IN_PORT = PORT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Directed Typed Port</em>' class.
@@ -496,15 +496,6 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_PORT__OPTIONAL = DIRECTED_TYPED_PORT__OPTIONAL;
 
 	/**
-	 * The feature id for the '<em><b>In Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_PORT__IN_PORT = DIRECTED_TYPED_PORT__IN_PORT;
-
-	/**
 	 * The feature id for the '<em><b>Out Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -512,6 +503,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTINUOUS_PORT__OUT_PORT = DIRECTED_TYPED_PORT__OUT_PORT;
+
+	/**
+	 * The feature id for the '<em><b>In Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__IN_PORT = DIRECTED_TYPED_PORT__IN_PORT;
 
 	/**
 	 * The number of structural features of the '<em>Continuous Port</em>' class.
@@ -1549,15 +1549,6 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__OPTIONAL = DIRECTED_TYPED_PORT__OPTIONAL;
 
 	/**
-	 * The feature id for the '<em><b>In Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__IN_PORT = DIRECTED_TYPED_PORT__IN_PORT;
-
-	/**
 	 * The feature id for the '<em><b>Out Port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1565,6 +1556,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int HYBRID_PORT__OUT_PORT = DIRECTED_TYPED_PORT__OUT_PORT;
+
+	/**
+	 * The feature id for the '<em><b>In Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__IN_PORT = DIRECTED_TYPED_PORT__IN_PORT;
 
 	/**
 	 * The feature id for the '<em><b>Data Type</b></em>' reference.
