@@ -23,6 +23,6 @@ import org.storydriven.core.NamedElement;
  * @model
  * @generated
  */
-public interface Variable extends TypedNamedElement, NamedElement, CommentableElement {
+public interface Variable extends TypedNamedElement, CommentableElement {
 
 } // Variable

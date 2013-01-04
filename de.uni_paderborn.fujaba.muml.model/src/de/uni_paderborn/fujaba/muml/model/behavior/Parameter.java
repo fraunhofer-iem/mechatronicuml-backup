@@ -25,6 +25,6 @@ import org.storydriven.core.NamedElement;
  * @model
  * @generated
  */
-public interface Parameter extends TypedNamedElement, NamedElement, CommentableElement {
+public interface Parameter extends TypedNamedElement, CommentableElement {
 
 } // Parameter

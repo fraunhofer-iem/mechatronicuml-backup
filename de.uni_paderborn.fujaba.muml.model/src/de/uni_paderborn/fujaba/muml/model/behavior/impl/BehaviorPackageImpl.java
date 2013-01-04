@@ -436,12 +436,10 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		// Add supertypes to classes
 		variableEClass.getESuperTypes().add(this.getTypedNamedElement());
-		variableEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		variableEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		operationEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		operationEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		parameterEClass.getESuperTypes().add(this.getTypedNamedElement());
-		parameterEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		parameterEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		parameterBindingEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 		typedNamedElementEClass.getESuperTypes().add(theCorePackage.getNamedElement());

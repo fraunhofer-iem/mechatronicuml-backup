@@ -532,7 +532,6 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(transition, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTransition_SetTargetAndSource(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_LegalTransitionsOnly(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_TriggerMessageEventsMustNotHaveAnOwnedParameterBinding(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_ValidTriggerMessageEvents(transition, diagnostics, context);
@@ -540,35 +539,6 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateTransition_ExitPointIncomingTransitionsNoSideEffectsOrDeadlines(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_ExitPointOutgoingTransitionsNoConditions(transition, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * The cached validation expression for the SetTargetAndSource constraint of '<em>Transition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String TRANSITION__SET_TARGET_AND_SOURCE__EEXPRESSION = "self.target->notEmpty() and self.source->notEmpty()";
-
-	/**
-	 * Validates the SetTargetAndSource constraint of '<em>Transition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateTransition_SetTargetAndSource(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(RealtimestatechartPackage.Literals.TRANSITION,
-				 transition,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "SetTargetAndSource",
-				 TRANSITION__SET_TARGET_AND_SOURCE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
 	}
 
 	/**
