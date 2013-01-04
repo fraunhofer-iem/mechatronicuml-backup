@@ -581,7 +581,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).statechart = self.target.oclAsType(State).statechart)\r\n" +
 		"or\r\n" +
 		"-- State A to EntryPoint of B, where A and B are in the same statechart\r\n" +
-		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).statechart = self.target.oclAsType(ExitPoint).state.statechart)\r\n" +
+		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).statechart = self.target.oclAsType(EntryPoint).state.statechart)\r\n" +
 		"or\r\n" +
 		"-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n" +
 		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)\r\n" +
@@ -720,6 +720,8 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		"\timplies (\r\n" +
 		"\t\tself.clockResets->isEmpty()\r\n" +
 		"\t\tand self.action.oclIsUndefined()\r\n" +
+		"\t\tand self.raiseMessageEvent.oclIsUndefined()\r\n" +
+		"\t\tand self.synchronization.oclIsUndefined()\r\n" +
 		"\t\tand self.absoluteDeadlines->isEmpty()\r\n" +
 		"\t\tand self.relativeDeadline.oclIsUndefined()\r\n" +
 		"\t)";
