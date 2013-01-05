@@ -19,7 +19,6 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.codegen.ecore.CodeGenEcorePlugin;
 import org.eclipse.emf.codegen.ecore.generator.GeneratorAdapterFactory;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
@@ -43,9 +42,9 @@ public class GenModelGeneratorAdapter extends GenBaseGeneratorAdapter {
 
 	private static final JETEmitterDescriptor[] JET_EMITTER_DESCRIPTORS = {
 			new JETEmitterDescriptor("model/plugin.xmljet",
-					"org.eclipse.emf.codegen.ecore.templates.model.PluginXML"),
+					"org.eclipse.emf.codegen.ecore.merge.templates.model.PluginXML"),
 			new JETEmitterDescriptor("edit/plugin.xmljet",
-					"org.eclipse.emf.codegen.ecore.templates.edit.PluginXML"), //
+					"org.eclipse.emf.codegen.ecore.merge.templates.edit.PluginXML"), //
 	};
 
 	private static final int INDENT = 4;

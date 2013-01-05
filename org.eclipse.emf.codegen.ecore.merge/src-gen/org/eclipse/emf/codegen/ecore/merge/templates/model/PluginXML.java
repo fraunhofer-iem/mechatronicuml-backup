@@ -1,4 +1,4 @@
-package org.eclipse.emf.codegen.ecore.templates.model;
+package org.eclipse.emf.codegen.ecore.merge.templates.model;
 
 import java.util.*;
 import org.eclipse.emf.codegen.ecore.genmodel.*;
