@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse version="3.0"?>
 
 <!--
@@ -7,20 +7,16 @@
 
  $Id$
 -->
-
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <package
-            uri="http://www.fujaba.de/muml/reconfiguration/0.3.7"
-            class="de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage"
-            genModel="model/MumlReconfiguration.genmodel"/>
+      <?emfgen generated="true"?>
+      <package class="de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage" genModel="model/MumlReconfiguration.genmodel" uri="http://www.fujaba.de/muml/reconfiguration/0.3.7"/>
    </extension>
 
-	<extension point="org.eclipse.emf.ecore.generated_package">
-      <package
-            uri="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"
-            class="de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ExpressionPackage"
-            genModel="model/MumlReconfiguration.genmodel"/>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <?emfgen generated="true"?>
+      <package class="de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ExpressionPackage" genModel="model/MumlReconfiguration.genmodel" uri="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"/>
    </extension>
+
 </plugin>
