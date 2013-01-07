@@ -169,9 +169,8 @@ public class ComponentStoryDiagramDiagramEditorPlugin extends AbstractUIPlugin {
 				.add(new de.uni_paderborn.fujaba.muml.model.behavior.provider.BehaviorItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.reconfiguration.provider.ReconfigurationItemProviderAdapterFactory());
-// FIXME: Access restriction: The type ExpressionItemProviderAdapterFactory is not accessible due to restriction on required project de.uni_paderborn.fujaba.muml.model.reconfiguration.edit
-//		factories
-//				.add(new de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.provider.ExpressionItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.provider.ExpressionItemProviderAdapterFactory());
 		factories.add(new StorydiagramsItemProviderAdapterFactory());
 		factories.add(new ActivitiesItemProviderAdapterFactory());
 		factories.add(new ActivitiesExpressionsItemProviderAdapterFactory());
