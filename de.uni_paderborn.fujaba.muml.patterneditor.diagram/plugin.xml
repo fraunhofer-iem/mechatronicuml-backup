@@ -359,7 +359,9 @@
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ModelElementCategoryEditPart" id="ModelElementCategory_1000"/>
          <object class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart" id="CoordinationProtocol_2005"/>
-         <context elements="ModelElementCategory_1000,CoordinationProtocol_2005"/>
+         <object class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart" id="CoordinationProtocol_3006"/>
+         <object class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart" id="Role_3005"/>
+         <context elements="ModelElementCategory_1000,CoordinationProtocol_2005,CoordinationProtocol_3006,Role_3005"/>
       </modelingAssistantProvider>
    </extension>
 
