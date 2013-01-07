@@ -19116,5 +19116,13 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="AtLeastOneIncomingTransition AtLeastOneOutgoingTransitionPerRegion"
         oldDataValue="AtLeastOneIncomingTransition AtLeastOneOutgoingTransition"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- all regions of the parent state have at least one state that the EntryPoint connects to&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states->select(s |&#xD;&#xA;&#x9;&#x9;s.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.entryPoints.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;)->size() = 1&#xD;&#xA;)"
+        oldDataValue="-- all regions of the parent state have at least one state that the EntryPoint connects to&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states->exists(s |&#xD;&#xA;&#x9;&#x9;s.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.entryPoints.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="key" dataValue="OneOutgoingTransitionPerRegion" oldDataValue="AtLeastOneOutgoingTransitionPerRegion"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="AtLeastOneIncomingTransition OneOutgoingTransitionPerRegion"
+        oldDataValue="AtLeastOneIncomingTransition AtLeastOneOutgoingTransitionPerRegion"/>
   </releases>
 </history:History>

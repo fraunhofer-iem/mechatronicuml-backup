@@ -1119,7 +1119,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entryPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entryPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntryPoint_AtLeastOneIncomingTransition(entryPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validateEntryPoint_AtLeastOneOutgoingTransitionPerRegion(entryPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateEntryPoint_OneOutgoingTransitionPerRegion(entryPoint, diagnostics, context);
 		return result;
 	}
 
@@ -1153,27 +1153,27 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the AtLeastOneOutgoingTransitionPerRegion constraint of '<em>Entry Point</em>'.
+	 * The cached validation expression for the OneOutgoingTransitionPerRegion constraint of '<em>Entry Point</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ENTRY_POINT__AT_LEAST_ONE_OUTGOING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state have at least one state that the EntryPoint connects to\r\n" +
+	protected static final String ENTRY_POINT__ONE_OUTGOING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state have at least one state that the EntryPoint connects to\r\n" +
 		"self.state.regions->forAll(r | \r\n" +
-		"\tr.statechart.states->exists(s |\r\n" +
+		"\tr.statechart.states->select(s |\r\n" +
 		"\t\ts.incomingTransitions->exists(t | t.source = self)\r\n" +
 		"\t\tor\r\n" +
 		"\t\ts.entryPoints.incomingTransitions->exists(t | t.source = self)\r\n" +
-		"\t)\r\n" +
+		"\t)->size() = 1\r\n" +
 		")";
 
 	/**
-	 * Validates the AtLeastOneOutgoingTransitionPerRegion constraint of '<em>Entry Point</em>'.
+	 * Validates the OneOutgoingTransitionPerRegion constraint of '<em>Entry Point</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateEntryPoint_AtLeastOneOutgoingTransitionPerRegion(EntryPoint entryPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateEntryPoint_OneOutgoingTransitionPerRegion(EntryPoint entryPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(RealtimestatechartPackage.Literals.ENTRY_POINT,
@@ -1181,8 +1181,8 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "AtLeastOneOutgoingTransitionPerRegion",
-				 ENTRY_POINT__AT_LEAST_ONE_OUTGOING_TRANSITION_PER_REGION__EEXPRESSION,
+				 "OneOutgoingTransitionPerRegion",
+				 ENTRY_POINT__ONE_OUTGOING_TRANSITION_PER_REGION__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

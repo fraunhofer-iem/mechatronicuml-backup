@@ -1692,7 +1692,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (entryPointEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AtLeastOneIncomingTransition AtLeastOneOutgoingTransitionPerRegion"
+			 "constraints", "AtLeastOneIncomingTransition OneOutgoingTransitionPerRegion"
 		   });					
 		addAnnotation
 		  (exitPointEClass, 
@@ -1828,7 +1828,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "AtLeastOneIncomingTransition", "self.incomingTransitions ->notEmpty()",
-			 "AtLeastOneOutgoingTransitionPerRegion", "-- all regions of the parent state have at least one state that the EntryPoint connects to\r\nself.state.regions->forAll(r | \r\n\tr.statechart.states->exists(s |\r\n\t\ts.incomingTransitions->exists(t | t.source = self)\r\n\t\tor\r\n\t\ts.entryPoints.incomingTransitions->exists(t | t.source = self)\r\n\t)\r\n)"
+			 "OneOutgoingTransitionPerRegion", "-- all regions of the parent state have at least one state that the EntryPoint connects to\r\nself.state.regions->forAll(r | \r\n\tr.statechart.states->select(s |\r\n\t\ts.incomingTransitions->exists(t | t.source = self)\r\n\t\tor\r\n\t\ts.entryPoints.incomingTransitions->exists(t | t.source = self)\r\n\t)->size() = 1\r\n)"
 		   });					
 		addAnnotation
 		  (exitPointEClass, 

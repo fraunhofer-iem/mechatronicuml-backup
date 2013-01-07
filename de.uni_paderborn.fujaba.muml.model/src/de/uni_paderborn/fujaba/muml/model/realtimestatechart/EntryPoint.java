@@ -24,8 +24,8 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getEntryPoint()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtLeastOneIncomingTransition AtLeastOneOutgoingTransitionPerRegion'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneIncomingTransition='self.incomingTransitions ->notEmpty()' AtLeastOneOutgoingTransitionPerRegion='-- all regions of the parent state have at least one state that the EntryPoint connects to\r\nself.state.regions->forAll(r | \r\n\tr.statechart.states->exists(s |\r\n\t\ts.incomingTransitions->exists(t | t.source = self)\r\n\t\tor\r\n\t\ts.entryPoints.incomingTransitions->exists(t | t.source = self)\r\n\t)\r\n)'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtLeastOneIncomingTransition OneOutgoingTransitionPerRegion'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneIncomingTransition='self.incomingTransitions ->notEmpty()' OneOutgoingTransitionPerRegion='-- all regions of the parent state have at least one state that the EntryPoint connects to\r\nself.state.regions->forAll(r | \r\n\tr.statechart.states->select(s |\r\n\t\ts.incomingTransitions->exists(t | t.source = self)\r\n\t\tor\r\n\t\ts.entryPoints.incomingTransitions->exists(t | t.source = self)\r\n\t)->size() = 1\r\n)'"
  * @generated
  */
 public interface EntryPoint extends Vertex {
