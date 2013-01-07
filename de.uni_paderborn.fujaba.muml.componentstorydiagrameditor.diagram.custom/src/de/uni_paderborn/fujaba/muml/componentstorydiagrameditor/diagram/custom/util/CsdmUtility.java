@@ -5,6 +5,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.RGB;
 import org.storydriven.storydiagrams.activities.Activity;
 
+import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
@@ -13,7 +14,6 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
-import de.uni_paderborn.fujaba.muml.model.core.Parameter;
 
 public class CsdmUtility {
 
@@ -117,12 +117,12 @@ public class CsdmUtility {
 		// build list of Return Parameters and build String to Display
 		for (Parameter returnParameter : componentStoryRule
 				.getReturnParameters()) {
-			if (returnParameter.getType() instanceof Port) {
-				tmpPort = ((Port) returnParameter.getType());
+			if (returnParameter.getDataType() instanceof Port) {
+				tmpPort = ((Port) returnParameter.getDataType());
 				resultParameters = resultParameters.concat(tmpPort.getName()
 						+ " " + returnParameter.getName() + ", ");
-			} else if (returnParameter.getType() instanceof ComponentPart) {
-				tmpPart = ((ComponentPart) returnParameter.getType());
+			} else if (returnParameter.getDataType() instanceof ComponentPart) {
+				tmpPart = ((ComponentPart) returnParameter.getDataType());
 				tmpComponent = ((Component) tmpPart.getComponentType());
 				resultParameters = resultParameters.concat(returnParameter
 						.getName()
@@ -139,13 +139,13 @@ public class CsdmUtility {
 		}
 
 		for (Parameter parameter : componentStoryRule.getParameters()) {
-			if (parameter.getType() instanceof Port) {
-				tmpPort = ((Port) parameter.getType());
+			if (parameter.getDataType() instanceof Port) {
+				tmpPort = ((Port) parameter.getDataType());
 				parameters = parameters.concat(parameter.getName() + " / "
 						+ tmpPort.getName() /* + " : " + tmpPortType.getName() */
 						+ ", ");
-			} else if (parameter.getType() instanceof ComponentPart) {
-				tmpPart = ((ComponentPart) parameter.getType());
+			} else if (parameter.getDataType() instanceof ComponentPart) {
+				tmpPart = ((ComponentPart) parameter.getDataType());
 				tmpComponent = ((Component) tmpPart.getComponentType());
 				parameters = parameters.concat(parameter.getName() + " / "
 						+ tmpPart.getName() + " : " + tmpComponent.getName()

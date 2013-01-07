@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.util;
 
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -123,6 +124,14 @@ public class ComponentstorypatternAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseFadingFunction(FadingFunction object) {
 				return createFadingFunctionAdapter();
+			}
+			@Override
+			public Adapter caseSinglePortVariable(SinglePortVariable object) {
+				return createSinglePortVariableAdapter();
+			}
+			@Override
+			public Adapter caseMultiPortVariable(MultiPortVariable object) {
+				return createMultiPortVariableAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -301,6 +310,34 @@ public class ComponentstorypatternAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFadingFunctionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable <em>Single Port Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable
+	 * @generated
+	 */
+	public Adapter createSinglePortVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable <em>Multi Port Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable
+	 * @generated
+	 */
+	public Adapter createMultiPortVariableAdapter() {
 		return null;
 	}
 

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.util;
 
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -118,6 +119,10 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 				return validateCall((Call)value, diagnostics, context);
 			case ComponentstorypatternPackage.FADING_FUNCTION:
 				return validateFadingFunction((FadingFunction)value, diagnostics, context);
+			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE:
+				return validateSinglePortVariable((SinglePortVariable)value, diagnostics, context);
+			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE:
+				return validateMultiPortVariable((MultiPortVariable)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -646,6 +651,48 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 */
 	public boolean validateFadingFunction(FadingFunction fadingFunction, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(fadingFunction, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSinglePortVariable(SinglePortVariable singlePortVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(singlePortVariable, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(singlePortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(singlePortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(singlePortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(singlePortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(singlePortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(singlePortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(singlePortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(singlePortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortVariable_SameBindingOperatorAsParent(singlePortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortVariable_SameBindingSemanticsAsParent(singlePortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortVariable_ValidTypeOfPortVariable(singlePortVariable, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMultiPortVariable(MultiPortVariable multiPortVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(multiPortVariable, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(multiPortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(multiPortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(multiPortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(multiPortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(multiPortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(multiPortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(multiPortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(multiPortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortVariable_SameBindingOperatorAsParent(multiPortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortVariable_SameBindingSemanticsAsParent(multiPortVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortVariable_ValidTypeOfPortVariable(multiPortVariable, diagnostics, context);
+		return result;
 	}
 
 	/**

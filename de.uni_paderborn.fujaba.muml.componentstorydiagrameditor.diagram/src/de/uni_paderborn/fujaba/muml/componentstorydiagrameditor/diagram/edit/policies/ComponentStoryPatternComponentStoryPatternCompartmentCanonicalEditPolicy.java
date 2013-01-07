@@ -98,7 +98,7 @@ public class ComponentStoryPatternComponentStoryPatternCompartmentCanonicalEditP
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramUpdater
-				.getComponentStoryPatternComponentStoryPatternCompartment_7003SemanticChildren(viewObject);
+				.getComponentStoryPatternComponentStoryPatternCompartment_7005SemanticChildren(viewObject);
 
 	}
 

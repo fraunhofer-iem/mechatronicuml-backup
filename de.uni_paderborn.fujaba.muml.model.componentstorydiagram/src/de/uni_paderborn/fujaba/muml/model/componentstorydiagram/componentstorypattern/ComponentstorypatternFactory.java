@@ -53,15 +53,6 @@ public interface ComponentstorypatternFactory extends EFactory {
 	ComponentVariable createComponentVariable();
 
 	/**
-	 * Returns a new object of class '<em>Port Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Port Variable</em>'.
-	 * @generated
-	 */
-	PortVariable createPortVariable();
-
-	/**
 	 * Returns a new object of class '<em>Part Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,6 +96,24 @@ public interface ComponentstorypatternFactory extends EFactory {
 	 * @generated
 	 */
 	FadingFunction createFadingFunction();
+
+	/**
+	 * Returns a new object of class '<em>Single Port Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Single Port Variable</em>'.
+	 * @generated
+	 */
+	SinglePortVariable createSinglePortVariable();
+
+	/**
+	 * Returns a new object of class '<em>Multi Port Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Multi Port Variable</em>'.
+	 * @generated
+	 */
+	MultiPortVariable createMultiPortVariable();
 
 	/**
 	 * Returns the package supported by this factory.

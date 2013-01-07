@@ -51,9 +51,9 @@ public class ComponentStoryDiagramPaletteFactory {
 		PaletteDrawer paletteContainer = new PaletteDrawer(
 				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ComponentStoryPattern2Group_title);
 		paletteContainer.setId("createComponentStoryPattern2Group"); //$NON-NLS-1$
-		paletteContainer.add(createComponentVariable1CreationTool());
-		paletteContainer.add(createPortVariable2CreationTool());
-		paletteContainer.add(createPartVariable3CreationTool());
+		paletteContainer.add(createPartVariable1CreationTool());
+		paletteContainer.add(createSinglePortVariable2CreationTool());
+		paletteContainer.add(createMultiPortVariable3CreationTool());
 		paletteContainer.add(createAssemblyVariable4CreationTool());
 		paletteContainer.add(createDelegationVariable5CreationTool());
 		return paletteContainer;
@@ -158,15 +158,15 @@ public class ComponentStoryDiagramPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createComponentVariable1CreationTool() {
+	private ToolEntry createPartVariable1CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ComponentVariable1CreationTool_title,
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ComponentVariable1CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.PartVariable1CreationTool_title,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.PartVariable1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ComponentVariable_3003));
-		entry.setId("createComponentVariable1CreationTool"); //$NON-NLS-1$
+						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.PartVariable_3014));
+		entry.setId("createPartVariable1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ComponentVariable_3003));
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.PartVariable_3014));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -174,17 +174,18 @@ public class ComponentStoryDiagramPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createPortVariable2CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.PortVariable_3004);
-		types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.PortVariable_3006);
+	private ToolEntry createSinglePortVariable2CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
+		types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3017);
+		types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3018);
+		types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3020);
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.PortVariable2CreationTool_title,
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.PortVariable2CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.SinglePortVariable2CreationTool_title,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.SinglePortVariable2CreationTool_desc,
 				types);
-		entry.setId("createPortVariable2CreationTool"); //$NON-NLS-1$
+		entry.setId("createSinglePortVariable2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.PortVariable_3004));
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.SinglePortVariable_3017));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -192,15 +193,17 @@ public class ComponentStoryDiagramPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createPartVariable3CreationTool() {
+	private ToolEntry createMultiPortVariable3CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3016);
+		types.add(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3019);
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.PartVariable3CreationTool_title,
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.PartVariable3CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.PartVariable_3005));
-		entry.setId("createPartVariable3CreationTool"); //$NON-NLS-1$
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.MultiPortVariable3CreationTool_title,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.MultiPortVariable3CreationTool_desc,
+				types);
+		entry.setId("createMultiPortVariable3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.PartVariable_3005));
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.MultiPortVariable_3016));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -213,10 +216,10 @@ public class ComponentStoryDiagramPaletteFactory {
 				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.AssemblyVariable4CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.AssemblyVariable4CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4002));
+						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004));
 		entry.setId("createAssemblyVariable4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4002));
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -229,10 +232,10 @@ public class ComponentStoryDiagramPaletteFactory {
 				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.DelegationVariable5CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.DelegationVariable5CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4003));
+						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005));
 		entry.setId("createDelegationVariable5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4003));
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

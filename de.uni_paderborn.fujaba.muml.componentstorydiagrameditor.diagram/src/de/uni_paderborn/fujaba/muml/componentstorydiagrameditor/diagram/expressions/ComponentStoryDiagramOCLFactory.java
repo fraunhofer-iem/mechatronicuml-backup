@@ -30,7 +30,7 @@ public class ComponentStoryDiagramOCLFactory {
 	 * @generated
 	 */
 	protected ComponentStoryDiagramOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramAbstractExpression[11];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramAbstractExpression[12];
 	}
 
 	/**
@@ -56,6 +56,7 @@ public class ComponentStoryDiagramOCLFactory {
 					"storydiagrams::patterns::BindingState::BOUND", //$NON-NLS-1$
 					"storydiagrams::patterns::BindingSemantics::MANDATORY", //$NON-NLS-1$
 					"\'componentStoryNode\'", //$NON-NLS-1$
+					"self.multiPortVariable.oclIsUndefined()", //$NON-NLS-1$
 					"let compName : String = if self.type.componentType.name.oclIsUndefined() then \'null\' else\tself.type.componentType.name endif in\r\nlet partName : String = if self.type.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.type.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagrams::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif", //$NON-NLS-1$
 					"self.eContainer().oclIsKindOf(PartVariable)", //$NON-NLS-1$
 					"self.eContainer().oclIsKindOf(PartVariable) and self <> oppositeEnd and self.eContainer().eContainer() =oppositeEnd.eContainer().eContainer()", //$NON-NLS-1$

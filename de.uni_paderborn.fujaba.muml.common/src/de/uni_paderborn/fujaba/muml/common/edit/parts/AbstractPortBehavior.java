@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -200,6 +201,19 @@ public abstract class AbstractPortBehavior {
 	public void setFigure(CustomPortFigure figure) {
 		this.figure = figure;
 	}
+	
+	protected IFigure getPortContainerFigure() {
+		GraphicalEditPart parentEditPart = (GraphicalEditPart) editPart
+				.getParent();
+		if (parentEditPart.getFigure() instanceof BorderedNodeFigure) {
+			BorderedNodeFigure bnf = (BorderedNodeFigure) parentEditPart
+					.getFigure();
+			return bnf.getBorderItemContainer();
+		}
+		return null;
+	}
+
+	
 
 	/**
 	 * The Port's Node Plate to use. It defines the size to use and is

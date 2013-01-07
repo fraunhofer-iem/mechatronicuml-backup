@@ -66,7 +66,7 @@ public class DelegationVariableCreateCommand extends EditElementCommand {
 			return false;
 		}
 		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateDelegationVariable_4003(
+				.getLinkConstraints().canCreateDelegationVariable_4005(
 						getContainer(), getSource(), getTarget());
 	}
 
@@ -80,14 +80,7 @@ public class DelegationVariableCreateCommand extends EditElementCommand {
 					"Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable newElement = de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
-				.createDelegationVariable();
-		getContainer().getConnectorVariables().add(newElement);
-		newElement.setSource(getSource());
-		newElement.setTarget(getTarget());
-		doConfigure(newElement, monitor, info);
-		((CreateElementRequest) getRequest()).setNewElement(newElement);
-		return CommandResult.newOKCommandResult(newElement);
+		throw new UnsupportedOperationException();
 
 	}
 

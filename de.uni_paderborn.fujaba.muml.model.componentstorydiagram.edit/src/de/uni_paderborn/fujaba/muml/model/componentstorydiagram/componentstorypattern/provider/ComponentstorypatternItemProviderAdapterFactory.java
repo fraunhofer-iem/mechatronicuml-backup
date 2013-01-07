@@ -144,29 +144,6 @@ public class ComponentstorypatternItemProviderAdapterFactory extends Componentst
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PortVariableItemProvider portVariableItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPortVariableAdapter() {
-		if (portVariableItemProvider == null) {
-			portVariableItemProvider = new PortVariableItemProvider(this);
-		}
-
-		return portVariableItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -282,6 +259,52 @@ public class ComponentstorypatternItemProviderAdapterFactory extends Componentst
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SinglePortVariableItemProvider singlePortVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSinglePortVariableAdapter() {
+		if (singlePortVariableItemProvider == null) {
+			singlePortVariableItemProvider = new SinglePortVariableItemProvider(this);
+		}
+
+		return singlePortVariableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MultiPortVariableItemProvider multiPortVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMultiPortVariableAdapter() {
+		if (multiPortVariableItemProvider == null) {
+			multiPortVariableItemProvider = new MultiPortVariableItemProvider(this);
+		}
+
+		return multiPortVariableItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -383,12 +406,13 @@ public class ComponentstorypatternItemProviderAdapterFactory extends Componentst
 		if (componentStoryPatternItemProvider != null) componentStoryPatternItemProvider.dispose();
 		if (componentStoryPatternVariableItemProvider != null) componentStoryPatternVariableItemProvider.dispose();
 		if (componentVariableItemProvider != null) componentVariableItemProvider.dispose();
-		if (portVariableItemProvider != null) portVariableItemProvider.dispose();
 		if (partVariableItemProvider != null) partVariableItemProvider.dispose();
 		if (assemblyVariableItemProvider != null) assemblyVariableItemProvider.dispose();
 		if (delegationVariableItemProvider != null) delegationVariableItemProvider.dispose();
 		if (callItemProvider != null) callItemProvider.dispose();
 		if (fadingFunctionItemProvider != null) fadingFunctionItemProvider.dispose();
+		if (singlePortVariableItemProvider != null) singlePortVariableItemProvider.dispose();
+		if (multiPortVariableItemProvider != null) multiPortVariableItemProvider.dispose();
 	}
 
 }

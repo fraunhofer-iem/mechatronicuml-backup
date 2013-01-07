@@ -10,4 +10,67 @@
          </Priority>
       </editpartProvider>
    </extension>
+   
+<extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+	   <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.1">
+	         <adviceBinding
+                class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
+                id="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.SinglePortVariable_3012Advice"
+                typeId="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3012">
+	         </adviceBinding>
+	      </metamodel>
+	      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.1">
+	         <adviceBinding
+                class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
+                id="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.SinglePortVariable_3015Advice"
+                interitance="all"
+                typeId="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3015">
+	         </adviceBinding>
+	      </metamodel>
+	    <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.1">
+	         <adviceBinding
+                class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
+                id="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.SinglePortVariable_3016Advice"
+                interitance="all"
+                typeId="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3016">
+	         </adviceBinding>
+	      </metamodel>
+	      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.1">
+	         <adviceBinding
+                class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
+                id="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.SinglePortVariable_3013Advice"
+                interitance="all"
+                typeId="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3013">
+	         </adviceBinding>
+	      </metamodel>
+      </extension>
+      
+      <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      	<binding context="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.TypeContext">
+      		<elementType ref="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3012"/>
+      		<advice ref="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.SinglePortVariable_3012Advice"/>
+      	</binding>
+      </extension>
+      
+      <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      	<binding context="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.TypeContext">
+      		<elementType ref="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3013"/>
+      		<advice ref="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.SinglePortVariable_3013Advice"/>
+      	</binding>
+      </extension>
+      
+      <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      	<binding context="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.TypeContext">
+      		<elementType ref="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3015"/>
+      		<advice ref="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.SinglePortVariable_3015Advice"/>
+      	</binding>
+      </extension>
+      
+      <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      	<binding context="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.TypeContext">
+      		<elementType ref="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3016"/>
+      		<advice ref="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.SinglePortVariable_3016Advice"/>
+      	</binding>
+      </extension>
 </plugin>
+

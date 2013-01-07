@@ -180,7 +180,12 @@ public class ComponentVariableItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentstorypatternPackage.Literals.COMPONENT_VARIABLE__PORT_VARIABLES,
-				 ComponentstorypatternFactory.eINSTANCE.createPortVariable()));
+				 ComponentstorypatternFactory.eINSTANCE.createSinglePortVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentstorypatternPackage.Literals.COMPONENT_VARIABLE__PORT_VARIABLES,
+				 ComponentstorypatternFactory.eINSTANCE.createMultiPortVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter

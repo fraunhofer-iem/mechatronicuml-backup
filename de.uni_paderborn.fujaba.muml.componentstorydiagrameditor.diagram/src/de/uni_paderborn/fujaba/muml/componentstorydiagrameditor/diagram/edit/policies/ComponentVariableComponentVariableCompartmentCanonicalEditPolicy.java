@@ -98,7 +98,7 @@ public class ComponentVariableComponentVariableCompartmentCanonicalEditPolicy
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramUpdater
-				.getComponentVariableComponentVariableCompartment_7004SemanticChildren(viewObject);
+				.getComponentVariableComponentVariableCompartment_7006SemanticChildren(viewObject);
 
 	}
 

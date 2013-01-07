@@ -42,119 +42,161 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	protected IParser componentVariableName_5012Parser;
+	protected IParser componentVariableName_5020Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getComponentVariableName_5012Parser() {
-		if (componentVariableName_5012Parser == null) {
+	protected IParser getComponentVariableName_5020Parser() {
+		if (componentVariableName_5020Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser(
 					features);
-			componentVariableName_5012Parser = parser;
+			componentVariableName_5020Parser = parser;
 		}
-		return componentVariableName_5012Parser;
+		return componentVariableName_5020Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser portVariableName_5007Parser;
+	protected de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.PartVariableLabelExpressionLabelParser5018 partVariableLabel_5018Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getPortVariableName_5007Parser() {
-		if (portVariableName_5007Parser == null) {
+	protected IParser getPartVariableLabel_5018Parser() {
+		if (partVariableLabel_5018Parser == null) {
+			partVariableLabel_5018Parser = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.PartVariableLabelExpressionLabelParser5018();
+		}
+		return partVariableLabel_5018Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser multiPortVariableName_5022Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getMultiPortVariableName_5022Parser() {
+		if (multiPortVariableName_5022Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
-			portVariableName_5007Parser = parser;
+			multiPortVariableName_5022Parser = parser;
 		}
-		return portVariableName_5007Parser;
+		return multiPortVariableName_5022Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.PartVariableLabelExpressionLabelParser5009 partVariableLabel_5009Parser;
+	protected IParser singlePortVariableName_5024Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getPartVariableLabel_5009Parser() {
-		if (partVariableLabel_5009Parser == null) {
-			partVariableLabel_5009Parser = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.PartVariableLabelExpressionLabelParser5009();
-		}
-		return partVariableLabel_5009Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IParser portVariableName_5008Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getPortVariableName_5008Parser() {
-		if (portVariableName_5008Parser == null) {
+	protected IParser getSinglePortVariableName_5024Parser() {
+		if (singlePortVariableName_5024Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
-			portVariableName_5008Parser = parser;
+			singlePortVariableName_5024Parser = parser;
 		}
-		return portVariableName_5008Parser;
+		return singlePortVariableName_5024Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser assemblyVariableName_6002Parser;
+	protected IParser multiPortVariableName_5026Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getAssemblyVariableName_6002Parser() {
-		if (assemblyVariableName_6002Parser == null) {
+	protected IParser getMultiPortVariableName_5026Parser() {
+		if (multiPortVariableName_5026Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
-			assemblyVariableName_6002Parser = parser;
+			multiPortVariableName_5026Parser = parser;
 		}
-		return assemblyVariableName_6002Parser;
+		return multiPortVariableName_5026Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser delegationVariableName_6003Parser;
+	protected IParser singlePortVariableName_5028Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getDelegationVariableName_6003Parser() {
-		if (delegationVariableName_6003Parser == null) {
+	protected IParser getSinglePortVariableName_5028Parser() {
+		if (singlePortVariableName_5028Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser(
 					features, editableFeatures);
-			delegationVariableName_6003Parser = parser;
+			singlePortVariableName_5028Parser = parser;
 		}
-		return delegationVariableName_6003Parser;
+		return singlePortVariableName_5028Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser assemblyVariableName_6004Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getAssemblyVariableName_6004Parser() {
+		if (assemblyVariableName_6004Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser(
+					features, editableFeatures);
+			assemblyVariableName_6004Parser = parser;
+		}
+		return assemblyVariableName_6004Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser delegationVariableName_6005Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getDelegationVariableName_6005Parser() {
+		if (delegationVariableName_6005Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			EAttribute[] editableFeatures = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser(
+					features, editableFeatures);
+			delegationVariableName_6005Parser = parser;
+		}
+		return delegationVariableName_6005Parser;
 	}
 
 	/**
@@ -165,17 +207,21 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryNodeNameEditPart.VISUAL_ID:
 			return getComponentStoryNodeName_5001Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableNameEditPart.VISUAL_ID:
-			return getComponentVariableName_5012Parser();
-		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariableNameEditPart.VISUAL_ID:
-			return getPortVariableName_5007Parser();
-		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
-			return getPartVariableLabel_5009Parser();
-		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariableName2EditPart.VISUAL_ID:
-			return getPortVariableName_5008Parser();
+			return getComponentVariableName_5020Parser();
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+			return getPartVariableLabel_5018Parser();
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariableNameEditPart.VISUAL_ID:
+			return getMultiPortVariableName_5022Parser();
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.SinglePortVariableNameEditPart.VISUAL_ID:
+			return getSinglePortVariableName_5024Parser();
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariableName2EditPart.VISUAL_ID:
+			return getMultiPortVariableName_5026Parser();
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.SinglePortVariableName2EditPart.VISUAL_ID:
+			return getSinglePortVariableName_5028Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.AssemblyVariableNameEditPart.VISUAL_ID:
-			return getAssemblyVariableName_6002Parser();
+			return getAssemblyVariableName_6004Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.DelegationVariableNameEditPart.VISUAL_ID:
-			return getDelegationVariableName_6003Parser();
+			return getDelegationVariableName_6005Parser();
 		}
 		return null;
 	}

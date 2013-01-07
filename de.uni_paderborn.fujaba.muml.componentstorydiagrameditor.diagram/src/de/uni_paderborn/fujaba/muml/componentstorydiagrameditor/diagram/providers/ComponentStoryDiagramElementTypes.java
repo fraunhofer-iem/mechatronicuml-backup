@@ -58,38 +58,47 @@ public class ComponentStoryDiagramElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentStoryPattern_3002 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.ComponentStoryPattern_3002"); //$NON-NLS-1$
+	public static final IElementType ComponentStoryPattern_3011 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.ComponentStoryPattern_3011"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ComponentVariable_3003 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.ComponentVariable_3003"); //$NON-NLS-1$
+	public static final IElementType ComponentVariable_3012 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.ComponentVariable_3012"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType PortVariable_3004 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.PortVariable_3004"); //$NON-NLS-1$
+	public static final IElementType PartVariable_3014 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.PartVariable_3014"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType PartVariable_3005 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.PartVariable_3005"); //$NON-NLS-1$
+	public static final IElementType MultiPortVariable_3016 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.MultiPortVariable_3016"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType PortVariable_3006 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.PortVariable_3006"); //$NON-NLS-1$
+	public static final IElementType SinglePortVariable_3017 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3017"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType SinglePortVariable_3018 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3018"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType MultiPortVariable_3019 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.MultiPortVariable_3019"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType SinglePortVariable_3020 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3020"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType InitialNode_3007 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.InitialNode_3007"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType JunctionNode_3008 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.JunctionNode_3008"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType ActivityFinalNode_3010 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.ActivityFinalNode_3010"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
@@ -97,11 +106,11 @@ public class ComponentStoryDiagramElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType AssemblyVariable_4002 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.AssemblyVariable_4002"); //$NON-NLS-1$
+	public static final IElementType AssemblyVariable_4004 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.AssemblyVariable_4004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType DelegationVariable_4003 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.DelegationVariable_4003"); //$NON-NLS-1$
+	public static final IElementType DelegationVariable_4005 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.DelegationVariable_4005"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -228,29 +237,44 @@ public class ComponentStoryDiagramElementTypes {
 							.getComponentStoryNode());
 
 			elements.put(
-					ComponentStoryPattern_3002,
+					ComponentStoryPattern_3011,
 					de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getComponentStoryPattern());
 
 			elements.put(
-					ComponentVariable_3003,
+					ComponentVariable_3012,
 					de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getComponentVariable());
 
 			elements.put(
-					PortVariable_3004,
-					de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getPortVariable());
-
-			elements.put(
-					PartVariable_3005,
+					PartVariable_3014,
 					de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getPartVariable());
 
 			elements.put(
-					PortVariable_3006,
+					MultiPortVariable_3016,
 					de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getPortVariable());
+							.getMultiPortVariable());
+
+			elements.put(
+					SinglePortVariable_3017,
+					de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+							.getSinglePortVariable());
+
+			elements.put(
+					SinglePortVariable_3018,
+					de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+							.getSinglePortVariable());
+
+			elements.put(
+					MultiPortVariable_3019,
+					de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+							.getMultiPortVariable());
+
+			elements.put(
+					SinglePortVariable_3020,
+					de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+							.getSinglePortVariable());
 
 			elements.put(InitialNode_3007,
 					ActivitiesPackage.eINSTANCE.getInitialNode());
@@ -265,12 +289,12 @@ public class ComponentStoryDiagramElementTypes {
 					ActivitiesPackage.eINSTANCE.getActivityEdge());
 
 			elements.put(
-					AssemblyVariable_4002,
+					AssemblyVariable_4004,
 					de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getAssemblyVariable());
 
 			elements.put(
-					DelegationVariable_4003,
+					DelegationVariable_4005,
 					de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getDelegationVariable());
 		}
@@ -293,17 +317,20 @@ public class ComponentStoryDiagramElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ComponentStoryRule_1000);
 			KNOWN_ELEMENT_TYPES.add(Activity_2003);
 			KNOWN_ELEMENT_TYPES.add(ComponentStoryNode_3001);
-			KNOWN_ELEMENT_TYPES.add(ComponentStoryPattern_3002);
-			KNOWN_ELEMENT_TYPES.add(ComponentVariable_3003);
-			KNOWN_ELEMENT_TYPES.add(PortVariable_3004);
-			KNOWN_ELEMENT_TYPES.add(PartVariable_3005);
-			KNOWN_ELEMENT_TYPES.add(PortVariable_3006);
+			KNOWN_ELEMENT_TYPES.add(ComponentStoryPattern_3011);
+			KNOWN_ELEMENT_TYPES.add(ComponentVariable_3012);
+			KNOWN_ELEMENT_TYPES.add(PartVariable_3014);
+			KNOWN_ELEMENT_TYPES.add(MultiPortVariable_3016);
+			KNOWN_ELEMENT_TYPES.add(SinglePortVariable_3017);
+			KNOWN_ELEMENT_TYPES.add(SinglePortVariable_3018);
+			KNOWN_ELEMENT_TYPES.add(MultiPortVariable_3019);
+			KNOWN_ELEMENT_TYPES.add(SinglePortVariable_3020);
 			KNOWN_ELEMENT_TYPES.add(InitialNode_3007);
 			KNOWN_ELEMENT_TYPES.add(JunctionNode_3008);
 			KNOWN_ELEMENT_TYPES.add(ActivityFinalNode_3010);
 			KNOWN_ELEMENT_TYPES.add(ActivityEdge_4001);
-			KNOWN_ELEMENT_TYPES.add(AssemblyVariable_4002);
-			KNOWN_ELEMENT_TYPES.add(DelegationVariable_4003);
+			KNOWN_ELEMENT_TYPES.add(AssemblyVariable_4004);
+			KNOWN_ELEMENT_TYPES.add(DelegationVariable_4005);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -320,15 +347,21 @@ public class ComponentStoryDiagramElementTypes {
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryNodeEditPart.VISUAL_ID:
 			return ComponentStoryNode_3001;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternEditPart.VISUAL_ID:
-			return ComponentStoryPattern_3002;
+			return ComponentStoryPattern_3011;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID:
-			return ComponentVariable_3003;
-		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariableEditPart.VISUAL_ID:
-			return PortVariable_3004;
+			return ComponentVariable_3012;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PartVariableEditPart.VISUAL_ID:
-			return PartVariable_3005;
-		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariable2EditPart.VISUAL_ID:
-			return PortVariable_3006;
+			return PartVariable_3014;
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariableEditPart.VISUAL_ID:
+			return MultiPortVariable_3016;
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.SinglePortVariableEditPart.VISUAL_ID:
+			return SinglePortVariable_3017;
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.SinglePortVariable2EditPart.VISUAL_ID:
+			return SinglePortVariable_3018;
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariable2EditPart.VISUAL_ID:
+			return MultiPortVariable_3019;
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.SinglePortVariable3EditPart.VISUAL_ID:
+			return SinglePortVariable_3020;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.InitialNodeEditPart.VISUAL_ID:
 			return InitialNode_3007;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.JunctionNodeEditPart.VISUAL_ID:
@@ -338,9 +371,9 @@ public class ComponentStoryDiagramElementTypes {
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityEdgeEditPart.VISUAL_ID:
 			return ActivityEdge_4001;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID:
-			return AssemblyVariable_4002;
+			return AssemblyVariable_4004;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID:
-			return DelegationVariable_4003;
+			return DelegationVariable_4005;
 		}
 		return null;
 	}

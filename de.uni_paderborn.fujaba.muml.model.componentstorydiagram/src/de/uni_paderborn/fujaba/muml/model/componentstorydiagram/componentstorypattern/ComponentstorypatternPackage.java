@@ -992,6 +992,252 @@ public interface ComponentstorypatternPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.SinglePortVariableImpl <em>Single Port Variable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.SinglePortVariableImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.ComponentstorypatternPackageImpl#getSinglePortVariable()
+	 * @generated
+	 */
+	int SINGLE_PORT_VARIABLE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_PORT_VARIABLE__ANNOTATION = PORT_VARIABLE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_PORT_VARIABLE__EXTENSION = PORT_VARIABLE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_PORT_VARIABLE__NAME = PORT_VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_PORT_VARIABLE__COMMENT = PORT_VARIABLE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_PORT_VARIABLE__BINDING_SEMANTICS = PORT_VARIABLE__BINDING_SEMANTICS;
+
+	/**
+	 * The feature id for the '<em><b>Binding Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_PORT_VARIABLE__BINDING_OPERATOR = PORT_VARIABLE__BINDING_OPERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Binding State</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_PORT_VARIABLE__BINDING_STATE = PORT_VARIABLE__BINDING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_PORT_VARIABLE__CONNECTORS = PORT_VARIABLE__CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_PORT_VARIABLE__TYPE = PORT_VARIABLE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Connector Variables</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_PORT_VARIABLE__CONNECTOR_VARIABLES = PORT_VARIABLE__CONNECTOR_VARIABLES;
+
+	/**
+	 * The feature id for the '<em><b>Multi Port Variable</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_PORT_VARIABLE__MULTI_PORT_VARIABLE = PORT_VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Single Port Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_PORT_VARIABLE_FEATURE_COUNT = PORT_VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.MultiPortVariableImpl <em>Multi Port Variable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.MultiPortVariableImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.ComponentstorypatternPackageImpl#getMultiPortVariable()
+	 * @generated
+	 */
+	int MULTI_PORT_VARIABLE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_VARIABLE__ANNOTATION = PORT_VARIABLE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_VARIABLE__EXTENSION = PORT_VARIABLE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_VARIABLE__NAME = PORT_VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_VARIABLE__COMMENT = PORT_VARIABLE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_VARIABLE__BINDING_SEMANTICS = PORT_VARIABLE__BINDING_SEMANTICS;
+
+	/**
+	 * The feature id for the '<em><b>Binding Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_VARIABLE__BINDING_OPERATOR = PORT_VARIABLE__BINDING_OPERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Binding State</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_VARIABLE__BINDING_STATE = PORT_VARIABLE__BINDING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_VARIABLE__CONNECTORS = PORT_VARIABLE__CONNECTORS;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_VARIABLE__TYPE = PORT_VARIABLE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Connector Variables</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_VARIABLE__CONNECTOR_VARIABLES = PORT_VARIABLE__CONNECTOR_VARIABLES;
+
+	/**
+	 * The feature id for the '<em><b>Sub Port Variables</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_VARIABLE__SUB_PORT_VARIABLES = PORT_VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Gmf Sub Port Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_VARIABLE__GMF_SUB_PORT_VARIABLES = PORT_VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Multi Port Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTI_PORT_VARIABLE_FEATURE_COUNT = PORT_VARIABLE_FEATURE_COUNT + 2;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern <em>Component Story Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1312,6 +1558,59 @@ public interface ComponentstorypatternPackage extends EPackage {
 	EReference getFadingFunction_ToPort();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable <em>Single Port Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Single Port Variable</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable
+	 * @generated
+	 */
+	EClass getSinglePortVariable();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable#getMultiPortVariable <em>Multi Port Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Multi Port Variable</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable#getMultiPortVariable()
+	 * @see #getSinglePortVariable()
+	 * @generated
+	 */
+	EReference getSinglePortVariable_MultiPortVariable();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable <em>Multi Port Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Multi Port Variable</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable
+	 * @generated
+	 */
+	EClass getMultiPortVariable();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable#getSubPortVariables <em>Sub Port Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Sub Port Variables</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable#getSubPortVariables()
+	 * @see #getMultiPortVariable()
+	 * @generated
+	 */
+	EReference getMultiPortVariable_SubPortVariables();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable#getGmfSubPortVariables <em>Gmf Sub Port Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Gmf Sub Port Variables</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable#getGmfSubPortVariables()
+	 * @see #getMultiPortVariable()
+	 * @generated
+	 */
+	EReference getMultiPortVariable_GmfSubPortVariables();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1563,6 +1862,45 @@ public interface ComponentstorypatternPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FADING_FUNCTION__TO_PORT = eINSTANCE.getFadingFunction_ToPort();
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.SinglePortVariableImpl <em>Single Port Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.SinglePortVariableImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.ComponentstorypatternPackageImpl#getSinglePortVariable()
+		 * @generated
+		 */
+		EClass SINGLE_PORT_VARIABLE = eINSTANCE.getSinglePortVariable();
+		/**
+		 * The meta object literal for the '<em><b>Multi Port Variable</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SINGLE_PORT_VARIABLE__MULTI_PORT_VARIABLE = eINSTANCE.getSinglePortVariable_MultiPortVariable();
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.MultiPortVariableImpl <em>Multi Port Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.MultiPortVariableImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl.ComponentstorypatternPackageImpl#getMultiPortVariable()
+		 * @generated
+		 */
+		EClass MULTI_PORT_VARIABLE = eINSTANCE.getMultiPortVariable();
+		/**
+		 * The meta object literal for the '<em><b>Sub Port Variables</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MULTI_PORT_VARIABLE__SUB_PORT_VARIABLES = eINSTANCE.getMultiPortVariable_SubPortVariables();
+		/**
+		 * The meta object literal for the '<em><b>Gmf Sub Port Variables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MULTI_PORT_VARIABLE__GMF_SUB_PORT_VARIABLES = eINSTANCE.getMultiPortVariable_GmfSubPortVariables();
 
 	}
 

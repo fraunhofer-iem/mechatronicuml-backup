@@ -61,17 +61,6 @@ public abstract class AbstractPortInstanceBehavior extends AbstractPortBehavior 
 		return true;
 	}
 
-	protected IFigure getPortContainerFigure() {
-		GraphicalEditPart parentEditPart = (GraphicalEditPart) editPart
-				.getParent();
-		if (parentEditPart.getFigure() instanceof BorderedNodeFigure) {
-			BorderedNodeFigure bnf = (BorderedNodeFigure) parentEditPart
-					.getFigure();
-			return bnf.getBorderItemContainer();
-		}
-		return null;
-	}
-
 	public PortInstance getPortInstance() {
 		return portInstance;
 	}

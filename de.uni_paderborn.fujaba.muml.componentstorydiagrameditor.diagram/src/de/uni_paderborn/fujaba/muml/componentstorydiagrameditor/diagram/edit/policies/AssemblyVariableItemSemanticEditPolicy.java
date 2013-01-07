@@ -16,7 +16,7 @@ public class AssemblyVariableItemSemanticEditPolicy
 	 */
 	public AssemblyVariableItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4002);
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004);
 	}
 
 	/**

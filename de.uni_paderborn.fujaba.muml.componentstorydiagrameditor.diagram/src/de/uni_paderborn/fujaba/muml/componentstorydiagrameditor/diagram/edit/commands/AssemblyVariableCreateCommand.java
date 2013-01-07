@@ -66,7 +66,7 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 			return false;
 		}
 		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateAssemblyVariable_4002(
+				.getLinkConstraints().canCreateAssemblyVariable_4004(
 						getContainer(), getSource(), getTarget());
 	}
 
@@ -80,14 +80,7 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 					"Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable newElement = de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
-				.createAssemblyVariable();
-		getContainer().getConnectorVariables().add(newElement);
-		newElement.setSource(getSource());
-		newElement.setTarget(getTarget());
-		doConfigure(newElement, monitor, info);
-		((CreateElementRequest) getRequest()).setNewElement(newElement);
-		return CommandResult.newOKCommandResult(newElement);
+		throw new UnsupportedOperationException();
 
 	}
 

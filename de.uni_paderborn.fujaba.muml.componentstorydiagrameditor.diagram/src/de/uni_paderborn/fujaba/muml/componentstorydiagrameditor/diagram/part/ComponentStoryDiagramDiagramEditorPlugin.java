@@ -150,11 +150,9 @@ public class ComponentStoryDiagramDiagramEditorPlugin extends AbstractUIPlugin {
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.constraint.provider.ConstraintItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.core.provider.CoreItemProviderAdapterFactory());
-		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.instance.provider.InstanceItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.pattern.provider.PatternItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.model.protocol.provider.ProtocolItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
 		factories
@@ -164,7 +162,16 @@ public class ComponentStoryDiagramDiagramEditorPlugin extends AbstractUIPlugin {
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.types.provider.TypesItemProviderAdapterFactory());
 		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.connector.provider.ConnectorItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.valuetype.provider.ValuetypeItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.model.behavior.provider.BehaviorItemProviderAdapterFactory());
+		factories
 				.add(new de.uni_paderborn.fujaba.muml.model.reconfiguration.provider.ReconfigurationItemProviderAdapterFactory());
+// FIXME: Access restriction: The type ExpressionItemProviderAdapterFactory is not accessible due to restriction on required project de.uni_paderborn.fujaba.muml.model.reconfiguration.edit
+//		factories
+//				.add(new de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.provider.ExpressionItemProviderAdapterFactory());
 		factories.add(new StorydiagramsItemProviderAdapterFactory());
 		factories.add(new ActivitiesItemProviderAdapterFactory());
 		factories.add(new ActivitiesExpressionsItemProviderAdapterFactory());

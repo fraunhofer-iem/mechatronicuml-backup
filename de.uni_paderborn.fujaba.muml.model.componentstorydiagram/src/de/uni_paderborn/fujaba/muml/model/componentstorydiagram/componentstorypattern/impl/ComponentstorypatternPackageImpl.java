@@ -27,8 +27,10 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.util.ComponentstorypatternValidator;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.impl.ControlflowPackageImpl;
@@ -103,6 +105,20 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * @generated
 	 */
 	private EClass fadingFunctionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass singlePortVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass multiPortVariableEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -457,6 +473,51 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSinglePortVariable() {
+		return singlePortVariableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSinglePortVariable_MultiPortVariable() {
+		return (EReference)singlePortVariableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMultiPortVariable() {
+		return multiPortVariableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMultiPortVariable_SubPortVariables() {
+		return (EReference)multiPortVariableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMultiPortVariable_GmfSubPortVariables() {
+		return (EReference)multiPortVariableEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ComponentstorypatternFactory getComponentstorypatternFactory() {
 		return (ComponentstorypatternFactory)getEFactoryInstance();
 	}
@@ -519,6 +580,13 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		fadingFunctionEClass = createEClass(FADING_FUNCTION);
 		createEReference(fadingFunctionEClass, FADING_FUNCTION__FROM_PORT);
 		createEReference(fadingFunctionEClass, FADING_FUNCTION__TO_PORT);
+
+		singlePortVariableEClass = createEClass(SINGLE_PORT_VARIABLE);
+		createEReference(singlePortVariableEClass, SINGLE_PORT_VARIABLE__MULTI_PORT_VARIABLE);
+
+		multiPortVariableEClass = createEClass(MULTI_PORT_VARIABLE);
+		createEReference(multiPortVariableEClass, MULTI_PORT_VARIABLE__SUB_PORT_VARIABLES);
+		createEReference(multiPortVariableEClass, MULTI_PORT_VARIABLE__GMF_SUB_PORT_VARIABLES);
 	}
 
 	/**
@@ -572,6 +640,8 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		callEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 		fadingFunctionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		fadingFunctionEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		singlePortVariableEClass.getESuperTypes().add(this.getPortVariable());
+		multiPortVariableEClass.getESuperTypes().add(this.getPortVariable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentStoryPatternEClass, ComponentStoryPattern.class, "ComponentStoryPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -588,7 +658,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		initEReference(getComponentVariable_ConnectorVariables(), this.getConnectorVariable(), null, "connectorVariables", null, 0, -1, ComponentVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentVariable_Type(), theComponentPackage.getComponent(), null, "type", null, 1, 1, ComponentVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(portVariableEClass, PortVariable.class, "PortVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(portVariableEClass, PortVariable.class, "PortVariable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortVariable_Type(), theComponentPackage.getPort(), null, "type", null, 1, 1, PortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortVariable_ConnectorVariables(), this.getConnectorVariable(), null, "connectorVariables", null, 0, -1, PortVariable.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
@@ -613,6 +683,13 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		initEClass(fadingFunctionEClass, FadingFunction.class, "FadingFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFadingFunction_FromPort(), this.getPortVariable(), null, "fromPort", null, 1, 1, FadingFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFadingFunction_ToPort(), this.getPortVariable(), null, "toPort", null, 1, 1, FadingFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(singlePortVariableEClass, SinglePortVariable.class, "SinglePortVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSinglePortVariable_MultiPortVariable(), this.getMultiPortVariable(), this.getMultiPortVariable_SubPortVariables(), "multiPortVariable", null, 0, 1, SinglePortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(multiPortVariableEClass, MultiPortVariable.class, "MultiPortVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMultiPortVariable_SubPortVariables(), this.getSinglePortVariable(), this.getSinglePortVariable_MultiPortVariable(), "subPortVariables", null, 0, -1, MultiPortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMultiPortVariable_GmfSubPortVariables(), this.getSinglePortVariable(), null, "gmfSubPortVariables", null, 0, -1, MultiPortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -663,7 +740,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		   source, 
 		   new String[] {
 			 "constraints", "MustNotConnectCreateAndDestroyPorts SameBindingOperatorAsPortVariable ExistingConnectorBetweenPortVariableTypes"
-		   });	
+		   });				
 	}
 
 	/**
@@ -715,6 +792,12 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpoints->select(i | i.oclIsKindOf(PortVariable)).oclAsType(PortVariable)->asOrderedSet()"
+		   });				
+		addAnnotation
+		  (getMultiPortVariable_GmfSubPortVariables(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.subPortVariables"
 		   });
 	}
 

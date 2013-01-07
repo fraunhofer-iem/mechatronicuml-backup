@@ -23,6 +23,7 @@ Export-Package: de.uni_paderborn.fujaba.muml.common,
  de.uni_paderborn.fujaba.muml.common.emf.edit.provider,
  de.uni_paderborn.fujaba.muml.common.figures
 Bundle-Activator: de.uni_paderborn.fujaba.muml.common.MumlCommonPlugin
-Import-Package: org.eclipse.ltk.core.refactoring,
+Import-Package: de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern,
+ org.eclipse.ltk.core.refactoring,
  org.eclipse.ltk.core.refactoring.participants
 

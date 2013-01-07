@@ -313,32 +313,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ComponentVariable1CreationTool_title;
+	public static String PartVariable1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ComponentVariable1CreationTool_desc;
+	public static String PartVariable1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String PortVariable2CreationTool_title;
+	public static String SinglePortVariable2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String PortVariable2CreationTool_desc;
+	public static String SinglePortVariable2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String PartVariable3CreationTool_title;
+	public static String MultiPortVariable3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String PartVariable3CreationTool_desc;
+	public static String MultiPortVariable3CreationTool_desc;
 
 	/**
 	 * @generated
@@ -379,6 +379,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String ComponentVariableComponentVariableCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String MultiPortVariableMultiPortVariablesCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String MultiPortVariableMultiPortVariablesCompartment2EditPart_title;
 
 	/**
 	 * @generated

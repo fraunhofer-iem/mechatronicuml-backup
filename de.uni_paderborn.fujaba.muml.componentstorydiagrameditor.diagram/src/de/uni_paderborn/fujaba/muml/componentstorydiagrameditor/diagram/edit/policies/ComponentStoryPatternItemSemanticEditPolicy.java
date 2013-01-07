@@ -24,7 +24,7 @@ public class ComponentStoryPatternItemSemanticEditPolicy
 	 */
 	public ComponentStoryPatternItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryPattern_3002);
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryPattern_3011);
 	}
 
 	/**

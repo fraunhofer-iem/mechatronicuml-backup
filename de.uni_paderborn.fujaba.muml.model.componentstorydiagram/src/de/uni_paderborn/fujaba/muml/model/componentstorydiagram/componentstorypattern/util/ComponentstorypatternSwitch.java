@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.util;
 
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -184,6 +185,30 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE: {
+				SinglePortVariable singlePortVariable = (SinglePortVariable)theEObject;
+				T result = caseSinglePortVariable(singlePortVariable);
+				if (result == null) result = casePortVariable(singlePortVariable);
+				if (result == null) result = caseComponentStoryPatternVariable(singlePortVariable);
+				if (result == null) result = caseConnectorEndpoint(singlePortVariable);
+				if (result == null) result = caseNamedElement(singlePortVariable);
+				if (result == null) result = caseCommentableElement(singlePortVariable);
+				if (result == null) result = caseExtendableElement(singlePortVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE: {
+				MultiPortVariable multiPortVariable = (MultiPortVariable)theEObject;
+				T result = caseMultiPortVariable(multiPortVariable);
+				if (result == null) result = casePortVariable(multiPortVariable);
+				if (result == null) result = caseComponentStoryPatternVariable(multiPortVariable);
+				if (result == null) result = caseConnectorEndpoint(multiPortVariable);
+				if (result == null) result = caseNamedElement(multiPortVariable);
+				if (result == null) result = caseCommentableElement(multiPortVariable);
+				if (result == null) result = caseExtendableElement(multiPortVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -335,6 +360,36 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFadingFunction(FadingFunction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Single Port Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Single Port Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSinglePortVariable(SinglePortVariable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Multi Port Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Multi Port Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMultiPortVariable(MultiPortVariable object) {
 		return null;
 	}
 

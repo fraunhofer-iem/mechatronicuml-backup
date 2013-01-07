@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.impl;
 
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -71,12 +72,13 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 			case ComponentstorypatternPackage.COMPONENT_STORY_PATTERN: return createComponentStoryPattern();
 			case ComponentstorypatternPackage.COMPONENT_STORY_PATTERN_VARIABLE: return createComponentStoryPatternVariable();
 			case ComponentstorypatternPackage.COMPONENT_VARIABLE: return createComponentVariable();
-			case ComponentstorypatternPackage.PORT_VARIABLE: return createPortVariable();
 			case ComponentstorypatternPackage.PART_VARIABLE: return createPartVariable();
 			case ComponentstorypatternPackage.ASSEMBLY_VARIABLE: return createAssemblyVariable();
 			case ComponentstorypatternPackage.DELEGATION_VARIABLE: return createDelegationVariable();
 			case ComponentstorypatternPackage.CALL: return createCall();
 			case ComponentstorypatternPackage.FADING_FUNCTION: return createFadingFunction();
+			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE: return createSinglePortVariable();
+			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE: return createMultiPortVariable();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -110,16 +112,6 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 	public ComponentVariable createComponentVariable() {
 		ComponentVariableImpl componentVariable = new ComponentVariableImpl();
 		return componentVariable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PortVariable createPortVariable() {
-		PortVariableImpl portVariable = new PortVariableImpl();
-		return portVariable;
 	}
 
 	/**
@@ -170,6 +162,26 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 	public FadingFunction createFadingFunction() {
 		FadingFunctionImpl fadingFunction = new FadingFunctionImpl();
 		return fadingFunction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SinglePortVariable createSinglePortVariable() {
+		SinglePortVariableImpl singlePortVariable = new SinglePortVariableImpl();
+		return singlePortVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MultiPortVariable createMultiPortVariable() {
+		MultiPortVariableImpl multiPortVariable = new MultiPortVariableImpl();
+		return multiPortVariable;
 	}
 
 	/**

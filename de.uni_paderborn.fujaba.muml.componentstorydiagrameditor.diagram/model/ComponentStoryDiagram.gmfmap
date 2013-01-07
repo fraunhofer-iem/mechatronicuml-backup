@@ -139,38 +139,8 @@
                     <features
                         href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
                   </labelMappings>
-                  <tool
-                      xsi:type="gmftool:CreationTool"
-                      href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.0"/>
                   <diagramNode
                       href="ComponentStoryDiagram.gmfgraph#ComponentVariable"/>
-                  <children>
-                    <containmentFeature
-                        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/portVariables"/>
-                    <ownedChild>
-                      <domainMetaElement
-                          href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/PortVariable"/>
-                      <labelMappings
-                          readOnly="true">
-                        <diagramLabel
-                            href="ComponentStoryDiagram.gmfgraph#PortVariableOperatorLabel"/>
-                      </labelMappings>
-                      <labelMappings
-                          xsi:type="gmfmap:FeatureLabelMapping">
-                        <diagramLabel
-                            href="ComponentStoryDiagram.gmfgraph#PortVariableNameLabel"/>
-                        <features
-                            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                        <editableFeatures
-                            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                      </labelMappings>
-                      <tool
-                          xsi:type="gmftool:CreationTool"
-                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
-                      <diagramNode
-                          href="ComponentStoryDiagram.gmfgraph#PortVariable"/>
-                    </ownedChild>
-                  </children>
                   <children
                       compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
                     <containmentFeature
@@ -193,40 +163,98 @@
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
-                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
+                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.0"/>
                       <diagramNode
                           href="ComponentStoryDiagram.gmfgraph#PartVariable"/>
-                      <children>
+                      <children
+                          referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild">
                         <containmentFeature
                             href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/PartVariable/portVariables"/>
+                      </children>
+                      <children
+                          referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild">
+                        <containmentFeature
+                            href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/PartVariable/portVariables"/>
+                      </children>
+                    </ownedChild>
+                  </children>
+                  <children>
+                    <containmentFeature
+                        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/portVariables"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/MultiPortVariable"/>
+                      <labelMappings
+                          readOnly="true">
+                        <diagramLabel
+                            href="ComponentStoryDiagram.gmfgraph#PortVariableOperatorLabel"/>
+                      </labelMappings>
+                      <labelMappings
+                          xsi:type="gmfmap:FeatureLabelMapping">
+                        <diagramLabel
+                            href="ComponentStoryDiagram.gmfgraph#PortVariableNameLabel"/>
+                        <features
+                            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                        <editableFeatures
+                            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                      </labelMappings>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
+                      <diagramNode
+                          href="ComponentStoryDiagram.gmfgraph#MultiPortVariable"/>
+                      <children
+                          compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
+                        <containmentFeature
+                            href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/MultiPortVariable/gmfSubPortVariables"/>
                         <ownedChild>
                           <domainMetaElement
-                              href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/PortVariable"/>
-                          <labelMappings
-                              readOnly="true">
-                            <diagramLabel
-                                href="ComponentStoryDiagram.gmfgraph#PortVariableOperatorLabel"/>
-                          </labelMappings>
-                          <labelMappings
-                              xsi:type="gmfmap:FeatureLabelMapping">
-                            <diagramLabel
-                                href="ComponentStoryDiagram.gmfgraph#PortVariableNameLabel"/>
-                            <features
-                                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                            <editableFeatures
-                                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-                          </labelMappings>
+                              href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/SinglePortVariable"/>
                           <tool
                               xsi:type="gmftool:CreationTool"
                               href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
                           <diagramNode
-                              href="ComponentStoryDiagram.gmfgraph#PortVariable"/>
+                              href="ComponentStoryDiagram.gmfgraph#InnerSinglePortVariable"/>
                         </ownedChild>
                       </children>
+                      <compartments
+                          children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@children.0">
+                        <compartment
+                            href="ComponentStoryDiagram.gmfgraph#MultiPortVariablesCompartment"/>
+                      </compartments>
+                    </ownedChild>
+                  </children>
+                  <children>
+                    <containmentFeature
+                        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/portVariables"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/SinglePortVariable"/>
+                      <domainSpecialization
+                          body="self.multiPortVariable.oclIsUndefined()"/>
+                      <labelMappings
+                          readOnly="true">
+                        <diagramLabel
+                            href="ComponentStoryDiagram.gmfgraph#PortVariableOperatorLabel"/>
+                      </labelMappings>
+                      <labelMappings
+                          xsi:type="gmfmap:FeatureLabelMapping">
+                        <diagramLabel
+                            href="ComponentStoryDiagram.gmfgraph#PortVariableNameLabel"/>
+                        <features
+                            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                        <editableFeatures
+                            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                      </labelMappings>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
+                      <diagramNode
+                          href="ComponentStoryDiagram.gmfgraph#SinglePortVariable"/>
                     </ownedChild>
                   </children>
                   <compartments
-                      children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.1">
+                      children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0">
                     <compartment
                         href="ComponentStoryDiagram.gmfgraph#ComponentVariableCompartment"/>
                   </compartments>
@@ -343,10 +371,10 @@
         href="ComponentStoryDiagram.gmfgraph#AssemblyVariable"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/source"/>
+        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/portVariables"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/target"/>
+        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/portVariables"/>
     <creationConstraints>
       <sourceEnd
           body="self.eContainer().oclIsKindOf(PartVariable)"/>
@@ -375,10 +403,10 @@
         href="ComponentStoryDiagram.gmfgraph#DelegationVariable"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/source"/>
+        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/portVariables"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/target"/>
+        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/portVariables"/>
     <creationConstraints>
       <sourceEnd
           body="self.eContainer().oclIsKindOf(ComponentVariable)"/>

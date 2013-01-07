@@ -2,8 +2,8 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.po
 
 import java.util.Collections;
 import java.util.Iterator;
-
 import java.util.Map;
+
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
@@ -341,22 +341,22 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canCreateAssemblyVariable_4002(
+		public boolean canCreateAssemblyVariable_4004(
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable source,
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable target) {
-			return canExistAssemblyVariable_4002(container, null, source,
+			return canExistAssemblyVariable_4004(container, null, source,
 					target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateDelegationVariable_4003(
+		public boolean canCreateDelegationVariable_4005(
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable source,
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable target) {
-			return canExistDelegationVariable_4003(container, null, source,
+			return canExistDelegationVariable_4005(container, null, source,
 					target);
 		}
 
@@ -372,7 +372,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canExistAssemblyVariable_4002(
+		public boolean canExistAssemblyVariable_4004(
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable linkInstance,
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable source,
@@ -386,7 +386,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE.getPortVariable()); //$NON-NLS-1$
 					Object sourceVal = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									7,
+									8,
 									de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 											.getPortVariable(), env).evaluate(
 									source,
@@ -405,7 +405,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE.getPortVariable()); //$NON-NLS-1$
 					Object targetVal = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									8,
+									9,
 									de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 											.getPortVariable(), env).evaluate(
 									target,
@@ -428,7 +428,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canExistDelegationVariable_4003(
+		public boolean canExistDelegationVariable_4005(
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable linkInstance,
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable source,
@@ -442,7 +442,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE.getPortVariable()); //$NON-NLS-1$
 					Object sourceVal = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									9,
+									10,
 									de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 											.getPortVariable(), env).evaluate(
 									source,
@@ -461,7 +461,7 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE.getPortVariable()); //$NON-NLS-1$
 					Object targetVal = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramOCLFactory
 							.getExpression(
-									10,
+									11,
 									de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 											.getPortVariable(), env).evaluate(
 									target,

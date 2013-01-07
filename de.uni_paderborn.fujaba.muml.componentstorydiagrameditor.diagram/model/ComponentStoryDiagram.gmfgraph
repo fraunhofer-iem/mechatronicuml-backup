@@ -460,6 +460,29 @@
       <accessors
           figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
     </descriptors>
+    <descriptors
+        name="MultiPortVariableFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="MultiPortVariableFigure"
+          fill="false"
+          lineKind="LINE_DASH">
+        <layout
+            xsi:type="gmfgraph:GridLayout"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="SinglePortVariablesCompartment"
+            outline="false"
+            fill="false">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"/>
+        </children>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
+    </descriptors>
   </figures>
   <nodes
       name="Activity"
@@ -495,13 +518,45 @@
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
-          dx="20"
-          dy="20"/>
+          dx="30"
+          dy="30"/>
     </facets>
   </nodes>
   <nodes
       name="PartVariable"
       figure="PartVariableFigure"/>
+  <nodes
+      name="MultiPortVariable"
+      figure="MultiPortVariableFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="24"
+          dy="24"/>
+    </facets>
+  </nodes>
+  <nodes
+      name="SinglePortVariable">
+    <figure
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigure"/>
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="30"
+          dy="30"/>
+    </facets>
+  </nodes>
+  <nodes
+      name="InnerSinglePortVariable">
+    <figure
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigure"/>
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="30"
+          dy="30"/>
+    </facets>
+  </nodes>
   <connections
       name="AssemblyVariable"
       figure="AssemblyVariableFigure"/>
@@ -527,6 +582,10 @@
       name="ComponentVariableCompartment"
       figure="ComponentVariableFigure"
       accessor="//@figures.0/@descriptors.3/@accessors.1"/>
+  <compartments
+      name="MultiPortVariablesCompartment"
+      figure="MultiPortVariableFigure"
+      accessor="//@figures.0/@descriptors.13/@accessors.0"/>
   <labels
       name="ActivityEdgeLabel"
       figure="ActivityEdgeFigure"

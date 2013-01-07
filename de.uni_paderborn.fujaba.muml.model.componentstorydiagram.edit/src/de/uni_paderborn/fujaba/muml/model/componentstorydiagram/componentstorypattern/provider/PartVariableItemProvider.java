@@ -199,7 +199,12 @@ public class PartVariableItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentstorypatternPackage.Literals.PART_VARIABLE__PORT_VARIABLES,
-				 ComponentstorypatternFactory.eINSTANCE.createPortVariable()));
+				 ComponentstorypatternFactory.eINSTANCE.createSinglePortVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentstorypatternPackage.Literals.PART_VARIABLE__PORT_VARIABLES,
+				 ComponentstorypatternFactory.eINSTANCE.createMultiPortVariable()));
 	}
 
 }

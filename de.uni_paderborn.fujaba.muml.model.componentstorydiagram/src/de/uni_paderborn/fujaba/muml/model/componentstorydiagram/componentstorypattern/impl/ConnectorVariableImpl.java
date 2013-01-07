@@ -8,9 +8,13 @@ package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstoryp
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
@@ -81,7 +85,7 @@ public abstract class ConnectorVariableImpl extends ComponentStoryPatternVariabl
 	 */
 	public EList<ConnectorEndpoint> getConnectorEndpoints() {
 		if (connectorEndpoints == null) {
-			connectorEndpoints = new EObjectResolvingEList<ConnectorEndpoint>(ConnectorEndpoint.class, this, ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS);
+			connectorEndpoints = new EObjectWithInverseResolvingEList.ManyInverse<ConnectorEndpoint>(ConnectorEndpoint.class, this, ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS, ConnectorPackage.CONNECTOR_ENDPOINT__CONNECTORS);
 		}
 		return connectorEndpoints;
 	}
@@ -94,6 +98,35 @@ public abstract class ConnectorVariableImpl extends ComponentStoryPatternVariabl
 	@SuppressWarnings("unchecked")
 	public EList<PortVariable> getPortVariables() {
 		return (EList<PortVariable>)PORT_VARIABLES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectorEndpoints()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS:
+				return ((InternalEList<?>)getConnectorEndpoints()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

@@ -61,15 +61,18 @@ public class DelegationVariableReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable && newEnd instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable target = getLink()
-				.getTarget();
+		if (getLink().getPortVariables().size() != 1) {
+			return false;
+		}
+		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable target = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) getLink()
+				.getPortVariables().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable)) {
 			return false;
 		}
 		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) getLink()
 				.eContainer();
 		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistDelegationVariable_4003(
+				.getLinkConstraints().canExistDelegationVariable_4005(
 						container, getLink(), getNewSource(), target);
 	}
 
@@ -80,15 +83,18 @@ public class DelegationVariableReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable && newEnd instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable source = getLink()
-				.getSource();
+		if (getLink().getPortVariables().size() != 1) {
+			return false;
+		}
+		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable source = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) getLink()
+				.getPortVariables().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable)) {
 			return false;
 		}
 		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) getLink()
 				.eContainer();
 		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistDelegationVariable_4003(
+				.getLinkConstraints().canExistDelegationVariable_4005(
 						container, getLink(), source, getNewTarget());
 	}
 
@@ -114,16 +120,14 @@ public class DelegationVariableReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().setSource(getNewSource());
-		return CommandResult.newOKCommandResult(getLink());
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().setTarget(getNewTarget());
-		return CommandResult.newOKCommandResult(getLink());
+		throw new UnsupportedOperationException();
 	}
 
 	/**
