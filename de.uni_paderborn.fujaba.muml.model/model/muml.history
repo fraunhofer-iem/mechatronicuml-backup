@@ -19043,5 +19043,78 @@
         featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
     <changes xsi:type="history:Remove" element="muml.ecore#//model/behavior/Variable"
         featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="#//@releases.13/@changes.19/@element">
+      <changes xsi:type="history:Set" element="#//@releases.13/@changes.19/@element"
+          featureName="key" dataValue="ExitPointIncomingTransitionsNoSideEffectsOrDeadlines"/>
+      <changes xsi:type="history:Set" element="#//@releases.13/@changes.19/@element"
+          featureName="value" dataValue="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.synchronization.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="#//@releases.13/@changes.18/@element">
+      <changes xsi:type="history:Set" element="#//@releases.13/@changes.18/@element"
+          featureName="key" dataValue="ExitPointOutgoingTransitionsNoConditions"/>
+      <changes xsi:type="history:Set" element="#//@releases.13/@changes.18/@element"
+          featureName="value" dataValue="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+    </changes>
+    <changes xsi:type="history:Set" element="#//@releases.13/@changes.19/@element"
+        featureName="key" dataValue="EntryPointOutgoingTransitionsNoSideEffectsOrDeadlines"
+        oldDataValue="ExitPointIncomingTransitionsNoSideEffectsOrDeadlines"/>
+    <changes xsi:type="history:Set" element="#//@releases.13/@changes.19/@element"
+        featureName="value" dataValue="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::EntryPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.synchronization.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"
+        oldDataValue="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.synchronization.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="#//@releases.13/@changes.18/@element"
+        featureName="key" dataValue="EntryPointIncomingTransitionsNoConditions" oldDataValue="ExitPointOutgoingTransitionsNoConditions"/>
+    <changes xsi:type="history:Set" element="#//@releases.13/@changes.18/@element"
+        featureName="value" dataValue="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::EntryPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"
+        oldDataValue="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents ExitPointIncomingTransitionsNoSideEffectsOrDeadlines ExitPointOutgoingTransitionsNoConditions EntryPointIncomingTransitionsNoSideEffectsOrDeadlines EntryPointOutgoingTransitionsNoConditions"
+        oldDataValue="LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents ExitPointIncomingTransitionsNoSideEffectsOrDeadlines ExitPointOutgoingTransitionsNoConditions"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="EntryPointIncomingTransitionsNoConditions"
+          value="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::EntryPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="EntryPointOutgoingTransitionsNoSideEffectsOrDeadlines"
+          value="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::EntryPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.synchronization.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+          featureName="key" dataValue="ExitPointIncomingTransitionsNoSideEffectsOrDeadlines"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+          featureName="value" dataValue="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.synchronization.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+          featureName="key" dataValue="ExitPointOutgoingTransitionsNoConditions"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+          featureName="value" dataValue="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+        featureName="key" dataValue="EntryPointIncomingTransitionsNoSideEffectsOrDeadlines"
+        oldDataValue="ExitPointIncomingTransitionsNoSideEffectsOrDeadlines"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+        featureName="value" dataValue="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::EntryPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.synchronization.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"
+        oldDataValue="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.synchronization.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        featureName="key" dataValue="EntryPointOutgoingTransitionsNoConditions" oldDataValue="ExitPointOutgoingTransitionsNoConditions"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        featureName="value" dataValue="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::EntryPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"
+        oldDataValue="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="key" dataValue="AtLeastOneOutgoingTransitionPerRegion" oldDataValue="AtLeastOneOutgoingTransition"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- all regions of the parent state have at least one state that the EntryPoint connects to&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states->exists(s |&#xD;&#xA;&#x9;&#x9;s.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.entryPoints.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;)&#xD;&#xA;)"
+        oldDataValue="self.outgoingTransitions->size() > 0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.incomingTransitions ->notEmpty()" oldDataValue="self.incomingTransitions ->size()>0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="AtLeastOneIncomingTransition AtLeastOneOutgoingTransitionPerRegion"
+        oldDataValue="AtLeastOneIncomingTransition AtLeastOneOutgoingTransition"/>
   </releases>
 </history:History>

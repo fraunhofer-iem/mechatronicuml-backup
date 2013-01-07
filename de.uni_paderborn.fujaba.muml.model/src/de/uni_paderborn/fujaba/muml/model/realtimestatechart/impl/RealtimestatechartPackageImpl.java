@@ -1674,7 +1674,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (transitionEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents ExitPointIncomingTransitionsNoSideEffectsOrDeadlines ExitPointOutgoingTransitionsNoConditions"
+			 "constraints", "LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents ExitPointIncomingTransitionsNoSideEffectsOrDeadlines ExitPointOutgoingTransitionsNoConditions EntryPointIncomingTransitionsNoSideEffectsOrDeadlines EntryPointOutgoingTransitionsNoConditions"
 		   });																																
 		addAnnotation
 		  (doEventEClass, 
@@ -1692,7 +1692,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (entryPointEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AtLeastOneIncomingTransition AtLeastOneOutgoingTransition"
+			 "constraints", "AtLeastOneIncomingTransition AtLeastOneOutgoingTransitionPerRegion"
 		   });					
 		addAnnotation
 		  (exitPointEClass, 
@@ -1751,7 +1751,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "ValidTriggerMessageEvents", "not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)",
 			 "ValidRaiseMessageEvents", "not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)",
 			 "ExitPointIncomingTransitionsNoSideEffectsOrDeadlines", "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ExitPoint))\r\n\timplies (\r\n\t\tself.clockResets->isEmpty()\r\n\t\tand self.action.oclIsUndefined()\r\n\t\tand self.raiseMessageEvent.oclIsUndefined()\r\n\t\tand self.synchronization.oclIsUndefined()\r\n\t\tand self.absoluteDeadlines->isEmpty()\r\n\t\tand self.relativeDeadline.oclIsUndefined()\r\n\t)",
-			 "ExitPointOutgoingTransitionsNoConditions", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ExitPoint))\r\n\timplies (\r\n\t\tself.triggerMessageEvent.oclIsUndefined()\r\n\t\tand self.clockConstraints->isEmpty()\r\n\t\tand self.guard.oclIsUndefined()\r\n\t)"
+			 "ExitPointOutgoingTransitionsNoConditions", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ExitPoint))\r\n\timplies (\r\n\t\tself.triggerMessageEvent.oclIsUndefined()\r\n\t\tand self.clockConstraints->isEmpty()\r\n\t\tand self.guard.oclIsUndefined()\r\n\t)",
+			 "EntryPointIncomingTransitionsNoSideEffectsOrDeadlines", "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::EntryPoint))\r\n\timplies (\r\n\t\tself.clockResets->isEmpty()\r\n\t\tand self.action.oclIsUndefined()\r\n\t\tand self.raiseMessageEvent.oclIsUndefined()\r\n\t\tand self.synchronization.oclIsUndefined()\r\n\t\tand self.absoluteDeadlines->isEmpty()\r\n\t\tand self.relativeDeadline.oclIsUndefined()\r\n\t)",
+			 "EntryPointOutgoingTransitionsNoConditions", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::EntryPoint))\r\n\timplies (\r\n\t\tself.triggerMessageEvent.oclIsUndefined()\r\n\t\tand self.clockConstraints->isEmpty()\r\n\t\tand self.guard.oclIsUndefined()\r\n\t)"
 		   });								
 		addAnnotation
 		  (getTransition_TriggerMessageEvent(), 
@@ -1825,8 +1827,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (entryPointEClass, 
 		   source, 
 		   new String[] {
-			 "AtLeastOneIncomingTransition", "self.incomingTransitions ->size()>0",
-			 "AtLeastOneOutgoingTransition", "self.outgoingTransitions->size() > 0"
+			 "AtLeastOneIncomingTransition", "self.incomingTransitions ->notEmpty()",
+			 "AtLeastOneOutgoingTransitionPerRegion", "-- all regions of the parent state have at least one state that the EntryPoint connects to\r\nself.state.regions->forAll(r | \r\n\tr.statechart.states->exists(s |\r\n\t\ts.incomingTransitions->exists(t | t.source = self)\r\n\t\tor\r\n\t\ts.entryPoints.incomingTransitions->exists(t | t.source = self)\r\n\t)\r\n)"
 		   });					
 		addAnnotation
 		  (exitPointEClass, 
