@@ -82,10 +82,10 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryPostExpressionAccess().getGroup_1(), "rule__UnaryPostExpression__Group_1__0");
 					put(grammarAccess.getOperandAccess().getGroup_0(), "rule__Operand__Group_0__0");
 					put(grammarAccess.getLiteralExpressionAccess().getGroup(), "rule__LiteralExpression__Group__0");
-					put(grammarAccess.getExtendedVariableExpressionAccess().getGroup(), "rule__ExtendedVariableExpression__Group__0");
-					put(grammarAccess.getExtendedVariableExpressionAccess().getGroup_1(), "rule__ExtendedVariableExpression__Group_1__0");
-					put(grammarAccess.getVariableExpressionAccess().getGroup(), "rule__VariableExpression__Group__0");
-					put(grammarAccess.getVariableExpressionAccess().getGroup_1(), "rule__VariableExpression__Group_1__0");
+					put(grammarAccess.getExtendedVariableOrParameterExpressionAccess().getGroup(), "rule__ExtendedVariableOrParameterExpression__Group__0");
+					put(grammarAccess.getExtendedVariableOrParameterExpressionAccess().getGroup_1(), "rule__ExtendedVariableOrParameterExpression__Group_1__0");
+					put(grammarAccess.getVariableOrParameterOrPortExpressionAccess().getGroup(), "rule__VariableOrParameterOrPortExpression__Group__0");
+					put(grammarAccess.getVariableOrParameterOrPortExpressionAccess().getGroup_1(), "rule__VariableOrParameterOrPortExpression__Group_1__0");
 					put(grammarAccess.getPositionSelectorExpressionAccess().getGroup(), "rule__PositionSelectorExpression__Group__0");
 					put(grammarAccess.getPositionSelectorExpressionAccess().getGroup_1(), "rule__PositionSelectorExpression__Group_1__0");
 					put(grammarAccess.getOperationCallAccess().getGroup(), "rule__OperationCall__Group__0");
@@ -99,7 +99,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getForLoopAccess().getLoopTestAssignment_3(), "rule__ForLoop__LoopTestAssignment_3");
 					put(grammarAccess.getForLoopAccess().getCountingExpressionAssignment_5(), "rule__ForLoop__CountingExpressionAssignment_5");
 					put(grammarAccess.getForLoopAccess().getBlockAssignment_7(), "rule__ForLoop__BlockAssignment_7");
-					put(grammarAccess.getForLoopCountingExpressionAccess().getLhs_variableExpressionAssignment_0(), "rule__ForLoopCountingExpression__Lhs_variableExpressionAssignment_0");
+					put(grammarAccess.getForLoopCountingExpressionAccess().getLhs_typedNamedElementExpressionAssignment_0(), "rule__ForLoopCountingExpression__Lhs_typedNamedElementExpressionAssignment_0");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getIncrementDecrementOperatorAssignment_1_0(), "rule__ForLoopCountingExpression__IncrementDecrementOperatorAssignment_1_0");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getAssignOperatorAssignment_1_1_0(), "rule__ForLoopCountingExpression__AssignOperatorAssignment_1_1_0");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getRhs_assignExpressionAssignment_1_1_1(), "rule__ForLoopCountingExpression__Rhs_assignExpressionAssignment_1_1_1");
@@ -113,7 +113,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIfStatementAccess().getElseIfBlocksAssignment_5_4(), "rule__IfStatement__ElseIfBlocksAssignment_5_4");
 					put(grammarAccess.getIfStatementAccess().getElseBlockAssignment_6_1(), "rule__IfStatement__ElseBlockAssignment_6_1");
 					put(grammarAccess.getReturnStatementAccess().getExpressionAssignment_2(), "rule__ReturnStatement__ExpressionAssignment_2");
-					put(grammarAccess.getAssignmentAccess().getLhs_variableExpressionAssignment_0(), "rule__Assignment__Lhs_variableExpressionAssignment_0");
+					put(grammarAccess.getAssignmentAccess().getLhs_typedNamedElementExpressionAssignment_0(), "rule__Assignment__Lhs_typedNamedElementExpressionAssignment_0");
 					put(grammarAccess.getAssignmentAccess().getAssignOperatorAssignment_1(), "rule__Assignment__AssignOperatorAssignment_1");
 					put(grammarAccess.getAssignmentAccess().getRhs_assignExpressionAssignment_2(), "rule__Assignment__Rhs_assignExpressionAssignment_2");
 					put(grammarAccess.getLogicalOrExpressionAccess().getOperatorAssignment_1_1(), "rule__LogicalOrExpression__OperatorAssignment_1_1");
@@ -132,9 +132,9 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryPreExpressionAccess().getEnclosedExpressionAssignment_2(), "rule__UnaryPreExpression__EnclosedExpressionAssignment_2");
 					put(grammarAccess.getUnaryPostExpressionAccess().getOperatorAssignment_1_1(), "rule__UnaryPostExpression__OperatorAssignment_1_1");
 					put(grammarAccess.getLiteralExpressionAccess().getValueAssignment_1(), "rule__LiteralExpression__ValueAssignment_1");
-					put(grammarAccess.getExtendedVariableExpressionAccess().getPositionAssignment_1_2(), "rule__ExtendedVariableExpression__PositionAssignment_1_2");
-					put(grammarAccess.getVariableExpressionAccess().getVariableAssignment_0(), "rule__VariableExpression__VariableAssignment_0");
-					put(grammarAccess.getVariableExpressionAccess().getIndicesAssignment_1_1(), "rule__VariableExpression__IndicesAssignment_1_1");
+					put(grammarAccess.getExtendedVariableOrParameterExpressionAccess().getPositionAssignment_1_2(), "rule__ExtendedVariableOrParameterExpression__PositionAssignment_1_2");
+					put(grammarAccess.getVariableOrParameterOrPortExpressionAccess().getTypedNamedElementAssignment_0(), "rule__VariableOrParameterOrPortExpression__TypedNamedElementAssignment_0");
+					put(grammarAccess.getVariableOrParameterOrPortExpressionAccess().getIndicesAssignment_1_1(), "rule__VariableOrParameterOrPortExpression__IndicesAssignment_1_1");
 					put(grammarAccess.getNoAttributeSelectorExpressionAccess().getPositionAssignment(), "rule__NoAttributeSelectorExpression__PositionAssignment");
 					put(grammarAccess.getPositionSelectorExpressionAccess().getKindAssignment_0(), "rule__PositionSelectorExpression__KindAssignment_0");
 					put(grammarAccess.getPositionSelectorExpressionAccess().getSuccessorAssignment_1_1(), "rule__PositionSelectorExpression__SuccessorAssignment_1_1");

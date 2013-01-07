@@ -31,8 +31,11 @@ ForLoop returns actionLanguage::ForLoop:
 ;
 
 ForLoopCountingExpression returns actionLanguage::Assignment:
-	(lhs_variableExpression=VariableExpression
-	(incrementDecrementOperator=IncrementDecrementOperator |(assignOperator=AssignOperator rhs_assignExpression=Expression)) )
+	lhs_typedNamedElementExpression=VariableOrParameterOrPortExpression
+	(
+		incrementDecrementOperator=IncrementDecrementOperator
+		| (assignOperator=AssignOperator rhs_assignExpression=Expression)
+	)
 ;
 
 WhileLoop returns actionLanguage::WhileLoop:
@@ -73,7 +76,7 @@ enum IncrementDecrementOperator returns actionLanguage::IncrementDecrementOperat
 // Assignment
 	
 Assignment returns actionLanguage::Assignment:
-	lhs_variableExpression=VariableExpression
+	lhs_typedNamedElementExpression=VariableOrParameterOrPortExpression
 	assignOperator=AssignOperator rhs_assignExpression=Expression ';'
 ;
 
@@ -213,8 +216,8 @@ enum UnaryPostOperator returns commonExpressions::UnaryOperator:
 // Operand
 
 Operand returns expressions::Expression:
-	'(' Expression ')' | LiteralExpression | ExtendedVariableExpression | OperationCall | TriggerMessageExpression
-	| NoAttributeSelectorExpression
+	'(' Expression ')' | LiteralExpression | ExtendedVariableOrParameterExpression
+	| OperationCall | TriggerMessageExpression | NoAttributeSelectorExpression
 ;
 
 // end of Operand
@@ -227,16 +230,16 @@ Literal returns ecore::EString:
 	NUMBER | BOOLEAN | INT | STRING
 ;
 
-ExtendedVariableExpression returns expressions::Expression:
-	VariableExpression
+ExtendedVariableOrParameterExpression returns expressions::Expression:
+	VariableOrParameterOrPortExpression
 	(
 		{actionLanguage::DiscreteInteractionEndpointReference.variableExpression = current}
 		'.' position=PositionSelectorExpression
 	)?
 ;
 
-VariableExpression returns actionLanguage::VariableExpression:
-	variable=[behavior::Variable]('['indices+=ArithmeticExpression']')*
+VariableOrParameterOrPortExpression returns actionLanguage::VariableOrParameterExpression:
+	typedNamedElement=[behavior::TypedNamedElement]('['indices+=ArithmeticExpression']')*
 ;
 
 NoAttributeSelectorExpression returns actionLanguage::DiscreteInteractionEndpointReference:

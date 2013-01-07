@@ -71,19 +71,6 @@
         </page>
     </extension>
     <extension
-            point="org.eclipse.ui.propertyPages">
-        <page
-            class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="de.uni_paderborn.fujaba.muml.ActionLanguage"
-            name="ActionLanguage">
-            <keywordReference id="de.uni_paderborn.fujaba.muml.ui.keyword_ActionLanguage"/>
-            <enabledWhen>
-	            <adapt type="org.eclipse.core.resources.IProject"/>
-			</enabledWhen>
-	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
-        </page>
-    </extension>
-    <extension
         point="org.eclipse.ui.keywords">
         <keyword
             id="de.uni_paderborn.fujaba.muml.ui.keyword_ActionLanguage"
@@ -151,28 +138,6 @@
     </extension>
 
 
-    <!-- marker definitions for de.uni_paderborn.fujaba.muml.ActionLanguage -->
-    <extension
-            id="actionlanguage.check.fast"
-            name="ActionLanguage Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.fast"/>
-        <persistent value="true"/>
-    </extension>
-    <extension
-            id="actionlanguage.check.normal"
-            name="ActionLanguage Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.normal"/>
-        <persistent value="true"/>
-    </extension>
-    <extension
-            id="actionlanguage.check.expensive"
-            name="ActionLanguage Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.expensive"/>
-        <persistent value="true"/>
-    </extension>
 
 	<!-- Quick Outline -->
 	<extension
@@ -226,33 +191,12 @@
             extensions="action">
     </provider>
   </extension>
-    <!-- quickfix marker resolution generator for de.uni_paderborn.fujaba.muml.ActionLanguage -->
-    <extension
-            point="org.eclipse.ui.ide.markerResolution">
-        <markerResolutionGenerator
-            class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="de.uni_paderborn.fujaba.muml.ui.actionlanguage.check.fast">
-            <attribute
-                name="FIXABLE_KEY"
-                value="true">
-            </attribute>
-        </markerResolutionGenerator>
-        <markerResolutionGenerator
-            class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="de.uni_paderborn.fujaba.muml.ui.actionlanguage.check.normal">
-            <attribute
-                name="FIXABLE_KEY"
-                value="true">
-            </attribute>
-        </markerResolutionGenerator>
-        <markerResolutionGenerator
-            class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="de.uni_paderborn.fujaba.muml.ui.actionlanguage.check.expensive">
-            <attribute
-                name="FIXABLE_KEY"
-                value="true">
-            </attribute>
-        </markerResolutionGenerator>
-    </extension>
+   <!-- quickfix marker resolution generator -->
+   <extension
+         point="org.eclipse.ui.ide.markerResolution">
+      <markerResolutionGenerator
+            class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
+      </markerResolutionGenerator>
+   </extension>
 
 </plugin>

@@ -4,6 +4,7 @@
 package de.uni_paderborn.fujaba.muml.scoping;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
@@ -14,7 +15,7 @@ import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
-import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.model.behavior.Operation;
 import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
@@ -33,38 +34,27 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
  *
  */
 public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
-	private List<Variable> variableList = null;
-	private List<Operation> operationList = null;
-	private List<MessageType> messageTypeList = null;
+	private List<TypedNamedElement> typedNamedElementList;
+	private List<Operation> operationList;
+	private List<MessageType> messageTypeList;
 	
 	public ActionLanguageScopeProvider() {
 		super();
+		initLists();
 	}
 	
 	//IScope scope_Assignment_attribute(Assignment assignment, EReference ref) {
 	//IScope scope_EAttribute(Assignment assignment, EReference ref) {
-	IScope scope_Attribute(Object object, EReference ref) {
-		// this is called whenever an EAttribute is needed
-		// (regardless if it's an assignment or BinaryLogicExpression etc.)
-		//System.out.println(this);
-		if (variableList == null) {
-			return IScope.NULLSCOPE;
-		}
-		return Scopes.scopeFor(variableList);
+	IScope scope_TypedNamedElement(Object object, EReference ref) {
+		return createScope(typedNamedElementList);
 	}
 	
 	IScope scope_Operation(Object object, EReference ref) {
-		if (operationList == null) {
-			return IScope.NULLSCOPE;
-		}
-		return Scopes.scopeFor(operationList);
+		return createScope(operationList);
 	}
 	
 	IScope scope_MessageType(Object object, EReference ref) {
-		if (messageTypeList == null) {
-			return IScope.NULLSCOPE;
-		}
-		return Scopes.scopeFor(messageTypeList);
+		return createScope(messageTypeList);
 	}
 	
 	IScope scope_Parameter(Object object, EReference ref) {
@@ -76,15 +66,14 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 			return IScope.NULLSCOPE;
 		}
 		EObject eObject = (EObject) object;
+		List<Parameter> parameterList = Collections.<Parameter>emptyList();
 		if ((eObject instanceof ParameterBinding) && eObject.eContainer() instanceof OperationCall) {
 			OperationCall operationCall = (OperationCall) ((EObject) object).eContainer();
-			List<Parameter> parameterList = getScopeForOperationCall(operationCall);
-			return Scopes.scopeFor(parameterList);
+			parameterList = getScopeForOperationCall(operationCall);
 		} else if (eObject instanceof TriggerMessageExpression) {
-			List<Parameter> parameterList = getScopeForTriggerMessageExpression((TriggerMessageExpression) eObject);
-			return Scopes.scopeFor(parameterList);
+			parameterList = getScopeForTriggerMessageExpression((TriggerMessageExpression) eObject);
 		}
-		return IScope.NULLSCOPE;
+		return createScope(parameterList);
 	}
 	
 	/*public void setAttributeList(List<Attribute> attributeList) {
@@ -92,9 +81,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	}*/
 	
 	public void setScopeForEObject(EObject object) {
-		variableList = null;
-		operationList = null;
-		messageTypeList = null;
+		initLists();
 		if (object instanceof StateEvent) {
 			setScopeForEObject((StateEvent) object);
 		} else if (object instanceof Transition) {
@@ -148,14 +135,14 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 			throw new IllegalArgumentException("object is no rtsc: " + object);
 		}
 		RealtimeStatechart rtsc = (RealtimeStatechart) object;
-		variableList = rtsc.getAllAvailableVariables();
+		typedNamedElementList.addAll(rtsc.getAllAvailableVariables());
 		operationList = rtsc.getAllAvailableOperations();
 	}
 	
 	private List<Parameter> getScopeForOperationCall(OperationCall operationCall) {
 		if (operationCall.getOperation() == null) {
 			// should not happen
-			return null;
+			return Collections.<Parameter>emptyList();
 		}
 		return operationCall.getOperation().getParameters();
 	}
@@ -163,9 +150,22 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	private List<Parameter> getScopeForTriggerMessageExpression(TriggerMessageExpression triggerMessageExpression) {
 		if (triggerMessageExpression.getMessageType() == null) {
 			// should not happen
-			return null;
+			return Collections.<Parameter>emptyList();
 		}
 		return triggerMessageExpression.getMessageType().getParameters();
+	}
+	
+	private IScope createScope(List<? extends EObject> list) {
+		if (list.isEmpty()) {
+			return IScope.NULLSCOPE;
+		}
+		return Scopes.scopeFor(list);
+	}
+	
+	private void initLists() {
+		typedNamedElementList = Collections.<TypedNamedElement>emptyList();
+		operationList = Collections.<Operation>emptyList();
+		messageTypeList = Collections.<MessageType>emptyList();
 	}
 
 }
