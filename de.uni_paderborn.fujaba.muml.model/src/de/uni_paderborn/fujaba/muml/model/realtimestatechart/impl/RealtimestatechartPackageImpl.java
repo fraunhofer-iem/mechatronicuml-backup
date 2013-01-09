@@ -41,6 +41,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ConnectionPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Deadline;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent;
@@ -238,6 +239,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	private EClass exitEventEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass connectionPointEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -584,7 +592,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_EntryPoints() {
+	public EReference getState_ConnectionPoints() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -602,17 +610,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_ExitPoints() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getState_Statechart() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(13);
+		return (EReference)stateEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1214,6 +1213,24 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getConnectionPoint() {
+		return connectionPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConnectionPoint_State() {
+		return (EReference)connectionPointEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEntryPoint() {
 		return entryPointEClass;
 	}
@@ -1223,26 +1240,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntryPoint_State() {
-		return (EReference)entryPointEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getExitPoint() {
 		return exitPointEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getExitPoint_State() {
-		return (EReference)exitPointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1319,9 +1318,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEAttribute(stateEClass, STATE__URGENT);
 		createEReference(stateEClass, STATE__CHANNELS);
 		createEReference(stateEClass, STATE__EVENTS);
-		createEReference(stateEClass, STATE__ENTRY_POINTS);
+		createEReference(stateEClass, STATE__CONNECTION_POINTS);
 		createEAttribute(stateEClass, STATE__SIMPLE);
-		createEReference(stateEClass, STATE__EXIT_POINTS);
 		createEReference(stateEClass, STATE__STATECHART);
 
 		vertexEClass = createEClass(VERTEX);
@@ -1407,11 +1405,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		exitEventEClass = createEClass(EXIT_EVENT);
 
+		connectionPointEClass = createEClass(CONNECTION_POINT);
+		createEReference(connectionPointEClass, CONNECTION_POINT__STATE);
+
 		entryPointEClass = createEClass(ENTRY_POINT);
-		createEReference(entryPointEClass, ENTRY_POINT__STATE);
 
 		exitPointEClass = createEClass(EXIT_POINT);
-		createEReference(exitPointEClass, EXIT_POINT__STATE);
 
 		// Create enums
 		synchronizationKindEEnum = createEEnum(SYNCHRONIZATION_KIND);
@@ -1481,8 +1480,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		messageEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 		entryEventEClass.getESuperTypes().add(this.getEntryOrExitEvent());
 		exitEventEClass.getESuperTypes().add(this.getEntryOrExitEvent());
-		entryPointEClass.getESuperTypes().add(this.getVertex());
-		exitPointEClass.getESuperTypes().add(this.getVertex());
+		connectionPointEClass.getESuperTypes().add(this.getVertex());
+		entryPointEClass.getESuperTypes().add(this.getConnectionPoint());
+		exitPointEClass.getESuperTypes().add(this.getConnectionPoint());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(deadlineEClass, Deadline.class, "Deadline", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1513,9 +1513,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getState_Urgent(), ecorePackage.getEBoolean(), "urgent", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_Channels(), this.getSynchronizationChannel(), this.getSynchronizationChannel_State(), "channels", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_Events(), this.getStateEvent(), null, "events", null, 0, -1, State.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getState_EntryPoints(), this.getEntryPoint(), this.getEntryPoint_State(), "entryPoints", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_ConnectionPoints(), this.getConnectionPoint(), this.getConnectionPoint_State(), "connectionPoints", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getState_Simple(), theEcorePackage.getEBoolean(), "simple", "false", 0, 1, State.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getState_ExitPoints(), this.getExitPoint(), this.getExitPoint_State(), "exitPoints", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_Statechart(), this.getRealtimeStatechart(), this.getRealtimeStatechart_States(), "statechart", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(stateEClass, theEcorePackage.getEInt(), "getUniqueRegionPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1623,11 +1622,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		initEClass(exitEventEClass, ExitEvent.class, "ExitEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(connectionPointEClass, ConnectionPoint.class, "ConnectionPoint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConnectionPoint_State(), this.getState(), this.getState_ConnectionPoints(), "state", null, 1, 1, ConnectionPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(entryPointEClass, EntryPoint.class, "EntryPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEntryPoint_State(), this.getState(), this.getState_EntryPoints(), "state", null, 1, 1, EntryPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(exitPointEClass, ExitPoint.class, "ExitPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExitPoint_State(), this.getState(), this.getState_ExitPoints(), "state", null, 1, 1, ExitPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(synchronizationKindEEnum, SynchronizationKind.class, "SynchronizationKind");
@@ -1669,12 +1669,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "OneInvariantPerClock NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero InvalidClockConstraintOperator"
-		   });																												
+		   });																											
 		addAnnotation
 		  (transitionEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents ExitPointIncomingTransitionsNoSideEffectsOrDeadlines ExitPointOutgoingTransitionsNoConditions EntryPointIncomingTransitionsNoSideEffectsOrDeadlines EntryPointOutgoingTransitionsNoConditions"
+			 "constraints", "LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines ConnectionPointOutgoingTransitionsNoConditions ConnectionPointTransitionsNoSynchronization"
 		   });																																
 		addAnnotation
 		  (doEventEClass, 
@@ -1689,17 +1689,23 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "constraints", "UniqueNameOfStates NoCycles OneInitialState"
 		   });																																	
 		addAnnotation
+		  (connectionPointEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ConnectionPointsOnlyAtCompositeStates"
+		   });					
+		addAnnotation
 		  (entryPointEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "AtLeastOneIncomingTransition OneOutgoingTransitionPerRegion"
-		   });					
+		   });				
 		addAnnotation
 		  (exitPointEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AtLeastOneIncomingTransitionPerRegion OneOutgoingTransition ExitPointsOnlyAtCompositeStates"
-		   });			
+			 "constraints", "AtLeastOneIncomingTransitionPerRegion OneOutgoingTransition"
+		   });		
 	}
 
 	/**
@@ -1741,7 +1747,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "-- a state is simple if it contains no regions\nregions->isEmpty()\n"
-		   });													
+		   });												
 		addAnnotation
 		  (transitionEClass, 
 		   source, 
@@ -1750,10 +1756,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "TriggerMessageEventsMustNotHaveAnOwnedParameterBinding", "not self.triggerMessageEvent.message.oclIsUndefined() implies\nself.triggerMessageEvent.message.parameterBinding->isEmpty()",
 			 "ValidTriggerMessageEvents", "not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)",
 			 "ValidRaiseMessageEvents", "not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)",
-			 "ExitPointIncomingTransitionsNoSideEffectsOrDeadlines", "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ExitPoint))\r\n\timplies (\r\n\t\tself.clockResets->isEmpty()\r\n\t\tand self.action.oclIsUndefined()\r\n\t\tand self.raiseMessageEvent.oclIsUndefined()\r\n\t\tand self.synchronization.oclIsUndefined()\r\n\t\tand self.absoluteDeadlines->isEmpty()\r\n\t\tand self.relativeDeadline.oclIsUndefined()\r\n\t)",
-			 "ExitPointOutgoingTransitionsNoConditions", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ExitPoint))\r\n\timplies (\r\n\t\tself.triggerMessageEvent.oclIsUndefined()\r\n\t\tand self.clockConstraints->isEmpty()\r\n\t\tand self.guard.oclIsUndefined()\r\n\t)",
-			 "EntryPointIncomingTransitionsNoSideEffectsOrDeadlines", "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::EntryPoint))\r\n\timplies (\r\n\t\tself.clockResets->isEmpty()\r\n\t\tand self.action.oclIsUndefined()\r\n\t\tand self.raiseMessageEvent.oclIsUndefined()\r\n\t\tand self.synchronization.oclIsUndefined()\r\n\t\tand self.absoluteDeadlines->isEmpty()\r\n\t\tand self.relativeDeadline.oclIsUndefined()\r\n\t)",
-			 "EntryPointOutgoingTransitionsNoConditions", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::EntryPoint))\r\n\timplies (\r\n\t\tself.triggerMessageEvent.oclIsUndefined()\r\n\t\tand self.clockConstraints->isEmpty()\r\n\t\tand self.guard.oclIsUndefined()\r\n\t)"
+			 "ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines", "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ConnectionPoint))\r\n\timplies (\r\n\t\tself.clockResets->isEmpty()\r\n\t\tand self.action.oclIsUndefined()\r\n\t\tand self.raiseMessageEvent.oclIsUndefined()\r\n\t\tand self.absoluteDeadlines->isEmpty()\r\n\t\tand self.relativeDeadline.oclIsUndefined()\r\n\t)",
+			 "ConnectionPointOutgoingTransitionsNoConditions", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ConnectionPoint))\r\n\timplies (\r\n\t\tself.triggerMessageEvent.oclIsUndefined()\r\n\t\tand self.clockConstraints->isEmpty()\r\n\t\tand self.guard.oclIsUndefined()\r\n\t)",
+			 "ConnectionPointTransitionsNoSynchronization", "((not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ConnectionPoint))\r\n\tor\r\n (not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ConnectionPoint)))\r\n\timplies\r\nself.synchronization.oclIsUndefined()"
 		   });								
 		addAnnotation
 		  (getTransition_TriggerMessageEvent(), 
@@ -1824,20 +1829,25 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "derivation", "self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asOrderedSet()"
 		   });																		
 		addAnnotation
+		  (connectionPointEClass, 
+		   source, 
+		   new String[] {
+			 "ConnectionPointsOnlyAtCompositeStates", "not self.state.simple"
+		   });					
+		addAnnotation
 		  (entryPointEClass, 
 		   source, 
 		   new String[] {
 			 "AtLeastOneIncomingTransition", "self.incomingTransitions ->notEmpty()",
-			 "OneOutgoingTransitionPerRegion", "-- all regions of the parent state have at least one state that the EntryPoint connects to\r\nself.state.regions->forAll(r | \r\n\tr.statechart.states->select(s |\r\n\t\ts.incomingTransitions->exists(t | t.source = self)\r\n\t\tor\r\n\t\ts.entryPoints.incomingTransitions->exists(t | t.source = self)\r\n\t)->size() = 1\r\n)"
-		   });					
+			 "OneOutgoingTransitionPerRegion", "-- all regions of the parent state have at least one state that the EntryPoint connects to\r\nself.state.regions->forAll(r | \r\n\tr.statechart.states->select(s |\r\n\t\ts.incomingTransitions->exists(t | t.source = self)\r\n\t\tor\r\n\t\ts.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)\r\n\t)->size() = 1\r\n)"
+		   });				
 		addAnnotation
 		  (exitPointEClass, 
 		   source, 
 		   new String[] {
-			 "AtLeastOneIncomingTransitionPerRegion", "-- all regions of the parent state have at least one state that connects to the ExitPoint\r\nself.state.regions->forAll(r | \r\n\tr.statechart.states->exists(s |\r\n\t\ts.outgoingTransitions->exists(t | t.target = self)\r\n\t\tor\r\n\t\ts.exitPoints.outgoingTransitions->exists(t | t.target = self)\r\n\t)\r\n)",
-			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1",
-			 "ExitPointsOnlyAtCompositeStates", "not self.state.simple"
-		   });	
+			 "AtLeastOneIncomingTransitionPerRegion", "-- all regions of the parent state have at least one state that connects to the ExitPoint\r\nself.state.regions->forAll(r | \r\n\tr.statechart.states->exists(s |\r\n\t\ts.outgoingTransitions->exists(t | t.target = self)\r\n\t\tor\r\n\t\ts.connectionPoints->select(oclIsKindOf(ExitPoint)).outgoingTransitions->exists(t | t.target = self)\r\n\t)\r\n)",
+			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1"
+		   });
 	}
 
 } //RealtimestatechartPackageImpl

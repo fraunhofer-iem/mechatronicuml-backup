@@ -162,6 +162,8 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				return validateEntryEvent((EntryEvent)value, diagnostics, context);
 			case RealtimestatechartPackage.EXIT_EVENT:
 				return validateExitEvent((ExitEvent)value, diagnostics, context);
+			case RealtimestatechartPackage.CONNECTION_POINT:
+				return validateConnectionPoint((ConnectionPoint)value, diagnostics, context);
 			case RealtimestatechartPackage.ENTRY_POINT:
 				return validateEntryPoint((EntryPoint)value, diagnostics, context);
 			case RealtimestatechartPackage.EXIT_POINT:
@@ -536,10 +538,9 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateTransition_TriggerMessageEventsMustNotHaveAnOwnedParameterBinding(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_ValidTriggerMessageEvents(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_ValidRaiseMessageEvents(transition, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTransition_ExitPointIncomingTransitionsNoSideEffectsOrDeadlines(transition, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTransition_ExitPointOutgoingTransitionsNoConditions(transition, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTransition_EntryPointIncomingTransitionsNoSideEffectsOrDeadlines(transition, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTransition_EntryPointOutgoingTransitionsNoConditions(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_ConnectionPointOutgoingTransitionsNoConditions(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_ConnectionPointTransitionsNoSynchronization(transition, diagnostics, context);
 		return result;
 	}
 
@@ -683,28 +684,27 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the ExitPointIncomingTransitionsNoSideEffectsOrDeadlines constraint of '<em>Transition</em>'.
+	 * The cached validation expression for the ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines constraint of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__EXIT_POINT_INCOMING_TRANSITIONS_NO_SIDE_EFFECTS_OR_DEADLINES__EEXPRESSION = "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ExitPoint))\r\n" +
+	protected static final String TRANSITION__CONNECTION_POINT_INCOMING_TRANSITIONS_NO_SIDE_EFFECTS_OR_DEADLINES__EEXPRESSION = "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ConnectionPoint))\r\n" +
 		"\timplies (\r\n" +
 		"\t\tself.clockResets->isEmpty()\r\n" +
 		"\t\tand self.action.oclIsUndefined()\r\n" +
 		"\t\tand self.raiseMessageEvent.oclIsUndefined()\r\n" +
-		"\t\tand self.synchronization.oclIsUndefined()\r\n" +
 		"\t\tand self.absoluteDeadlines->isEmpty()\r\n" +
 		"\t\tand self.relativeDeadline.oclIsUndefined()\r\n" +
 		"\t)";
 
 	/**
-	 * Validates the ExitPointIncomingTransitionsNoSideEffectsOrDeadlines constraint of '<em>Transition</em>'.
+	 * Validates the ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines constraint of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTransition_ExitPointIncomingTransitionsNoSideEffectsOrDeadlines(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateTransition_ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(RealtimestatechartPackage.Literals.TRANSITION,
@@ -712,20 +712,20 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ExitPointIncomingTransitionsNoSideEffectsOrDeadlines",
-				 TRANSITION__EXIT_POINT_INCOMING_TRANSITIONS_NO_SIDE_EFFECTS_OR_DEADLINES__EEXPRESSION,
+				 "ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines",
+				 TRANSITION__CONNECTION_POINT_INCOMING_TRANSITIONS_NO_SIDE_EFFECTS_OR_DEADLINES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
 	}
 
 	/**
-	 * The cached validation expression for the ExitPointOutgoingTransitionsNoConditions constraint of '<em>Transition</em>'.
+	 * The cached validation expression for the ConnectionPointOutgoingTransitionsNoConditions constraint of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__EXIT_POINT_OUTGOING_TRANSITIONS_NO_CONDITIONS__EEXPRESSION = "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ExitPoint))\r\n" +
+	protected static final String TRANSITION__CONNECTION_POINT_OUTGOING_TRANSITIONS_NO_CONDITIONS__EEXPRESSION = "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ConnectionPoint))\r\n" +
 		"\timplies (\r\n" +
 		"\t\tself.triggerMessageEvent.oclIsUndefined()\r\n" +
 		"\t\tand self.clockConstraints->isEmpty()\r\n" +
@@ -733,12 +733,12 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		"\t)";
 
 	/**
-	 * Validates the ExitPointOutgoingTransitionsNoConditions constraint of '<em>Transition</em>'.
+	 * Validates the ConnectionPointOutgoingTransitionsNoConditions constraint of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTransition_ExitPointOutgoingTransitionsNoConditions(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateTransition_ConnectionPointOutgoingTransitionsNoConditions(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(RealtimestatechartPackage.Literals.TRANSITION,
@@ -746,36 +746,32 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ExitPointOutgoingTransitionsNoConditions",
-				 TRANSITION__EXIT_POINT_OUTGOING_TRANSITIONS_NO_CONDITIONS__EEXPRESSION,
+				 "ConnectionPointOutgoingTransitionsNoConditions",
+				 TRANSITION__CONNECTION_POINT_OUTGOING_TRANSITIONS_NO_CONDITIONS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
 	}
 
 	/**
-	 * The cached validation expression for the EntryPointIncomingTransitionsNoSideEffectsOrDeadlines constraint of '<em>Transition</em>'.
+	 * The cached validation expression for the ConnectionPointTransitionsNoSynchronization constraint of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__ENTRY_POINT_INCOMING_TRANSITIONS_NO_SIDE_EFFECTS_OR_DEADLINES__EEXPRESSION = "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::EntryPoint))\r\n" +
-		"\timplies (\r\n" +
-		"\t\tself.clockResets->isEmpty()\r\n" +
-		"\t\tand self.action.oclIsUndefined()\r\n" +
-		"\t\tand self.raiseMessageEvent.oclIsUndefined()\r\n" +
-		"\t\tand self.synchronization.oclIsUndefined()\r\n" +
-		"\t\tand self.absoluteDeadlines->isEmpty()\r\n" +
-		"\t\tand self.relativeDeadline.oclIsUndefined()\r\n" +
-		"\t)";
+	protected static final String TRANSITION__CONNECTION_POINT_TRANSITIONS_NO_SYNCHRONIZATION__EEXPRESSION = "((not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ConnectionPoint))\r\n" +
+		"\tor\r\n" +
+		" (not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ConnectionPoint)))\r\n" +
+		"\timplies\r\n" +
+		"self.synchronization.oclIsUndefined()";
 
 	/**
-	 * Validates the EntryPointIncomingTransitionsNoSideEffectsOrDeadlines constraint of '<em>Transition</em>'.
+	 * Validates the ConnectionPointTransitionsNoSynchronization constraint of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTransition_EntryPointIncomingTransitionsNoSideEffectsOrDeadlines(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateTransition_ConnectionPointTransitionsNoSynchronization(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(RealtimestatechartPackage.Literals.TRANSITION,
@@ -783,42 +779,8 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "EntryPointIncomingTransitionsNoSideEffectsOrDeadlines",
-				 TRANSITION__ENTRY_POINT_INCOMING_TRANSITIONS_NO_SIDE_EFFECTS_OR_DEADLINES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the EntryPointOutgoingTransitionsNoConditions constraint of '<em>Transition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String TRANSITION__ENTRY_POINT_OUTGOING_TRANSITIONS_NO_CONDITIONS__EEXPRESSION = "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::EntryPoint))\r\n" +
-		"\timplies (\r\n" +
-		"\t\tself.triggerMessageEvent.oclIsUndefined()\r\n" +
-		"\t\tand self.clockConstraints->isEmpty()\r\n" +
-		"\t\tand self.guard.oclIsUndefined()\r\n" +
-		"\t)";
-
-	/**
-	 * Validates the EntryPointOutgoingTransitionsNoConditions constraint of '<em>Transition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateTransition_EntryPointOutgoingTransitionsNoConditions(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(RealtimestatechartPackage.Literals.TRANSITION,
-				 transition,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "EntryPointOutgoingTransitionsNoConditions",
-				 TRANSITION__ENTRY_POINT_OUTGOING_TRANSITIONS_NO_CONDITIONS__EEXPRESSION,
+				 "ConnectionPointTransitionsNoSynchronization",
+				 TRANSITION__CONNECTION_POINT_TRANSITIONS_NO_SYNCHRONIZATION__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -1108,6 +1070,54 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateConnectionPoint(ConnectionPoint connectionPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(connectionPoint, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(connectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(connectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(connectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(connectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(connectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(connectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(connectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(connectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConnectionPoint_ConnectionPointsOnlyAtCompositeStates(connectionPoint, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ConnectionPointsOnlyAtCompositeStates constraint of '<em>Connection Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CONNECTION_POINT__CONNECTION_POINTS_ONLY_AT_COMPOSITE_STATES__EEXPRESSION = "not self.state.simple";
+
+	/**
+	 * Validates the ConnectionPointsOnlyAtCompositeStates constraint of '<em>Connection Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConnectionPoint_ConnectionPointsOnlyAtCompositeStates(ConnectionPoint connectionPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.CONNECTION_POINT,
+				 connectionPoint,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ConnectionPointsOnlyAtCompositeStates",
+				 CONNECTION_POINT__CONNECTION_POINTS_ONLY_AT_COMPOSITE_STATES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateEntryPoint(EntryPoint entryPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(entryPoint, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(entryPoint, diagnostics, context);
@@ -1118,6 +1128,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(entryPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entryPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entryPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConnectionPoint_ConnectionPointsOnlyAtCompositeStates(entryPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntryPoint_AtLeastOneIncomingTransition(entryPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntryPoint_OneOutgoingTransitionPerRegion(entryPoint, diagnostics, context);
 		return result;
@@ -1163,7 +1174,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		"\tr.statechart.states->select(s |\r\n" +
 		"\t\ts.incomingTransitions->exists(t | t.source = self)\r\n" +
 		"\t\tor\r\n" +
-		"\t\ts.entryPoints.incomingTransitions->exists(t | t.source = self)\r\n" +
+		"\t\ts.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)\r\n" +
 		"\t)->size() = 1\r\n" +
 		")";
 
@@ -1203,9 +1214,9 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(exitPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(exitPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(exitPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConnectionPoint_ConnectionPointsOnlyAtCompositeStates(exitPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateExitPoint_AtLeastOneIncomingTransitionPerRegion(exitPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateExitPoint_OneOutgoingTransition(exitPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validateExitPoint_ExitPointsOnlyAtCompositeStates(exitPoint, diagnostics, context);
 		return result;
 	}
 
@@ -1220,7 +1231,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		"\tr.statechart.states->exists(s |\r\n" +
 		"\t\ts.outgoingTransitions->exists(t | t.target = self)\r\n" +
 		"\t\tor\r\n" +
-		"\t\ts.exitPoints.outgoingTransitions->exists(t | t.target = self)\r\n" +
+		"\t\ts.connectionPoints->select(oclIsKindOf(ExitPoint)).outgoingTransitions->exists(t | t.target = self)\r\n" +
 		"\t)\r\n" +
 		")";
 
@@ -1269,35 +1280,6 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "OneOutgoingTransition",
 				 EXIT_POINT__ONE_OUTGOING_TRANSITION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ExitPointsOnlyAtCompositeStates constraint of '<em>Exit Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String EXIT_POINT__EXIT_POINTS_ONLY_AT_COMPOSITE_STATES__EEXPRESSION = "not self.state.simple";
-
-	/**
-	 * Validates the ExitPointsOnlyAtCompositeStates constraint of '<em>Exit Point</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateExitPoint_ExitPointsOnlyAtCompositeStates(ExitPoint exitPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(RealtimestatechartPackage.Literals.EXIT_POINT,
-				 exitPoint,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ExitPointsOnlyAtCompositeStates",
-				 EXIT_POINT__EXIT_POINTS_ONLY_AT_COMPOSITE_STATES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

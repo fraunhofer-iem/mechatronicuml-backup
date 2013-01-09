@@ -979,7 +979,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.3.8"
+    <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.3.9"
         nsPrefix="realtimestatechart">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1153,10 +1153,11 @@
             <details key="documentation" value="This derived reference returns all StateEvents of this state. The StateEvents of&#xD;&#xA;this state are all entry-, do- and exit-Events."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="entryPoints" upperBound="-1"
-            eType="#//model/realtimestatechart/EntryPoint" containment="true" eOpposite="#//model/realtimestatechart/EntryPoint/state">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="connectionPoints" upperBound="-1"
+            eType="#//model/realtimestatechart/ConnectionPoint" containment="true"
+            eOpposite="#//model/realtimestatechart/ConnectionPoint/state">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="A state references its entry points. They can only exist, if a state embeds one or more statecharts."/>
+            <details key="documentation" value="A state references its connection points. They can only exist, if a state embeds one or more statecharts."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="simple" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
@@ -1167,12 +1168,6 @@
           </eAnnotations>
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="A state is simple if it does not contain a region with an embedded substatechart."/>
-          </eAnnotations>
-        </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="exitPoints" upperBound="-1"
-            eType="#//model/realtimestatechart/ExitPoint" containment="true" eOpposite="#//model/realtimestatechart/ExitPoint/state">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="A state references its exit points. They can only exist, if a state embeds one or more statecharts."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//model/realtimestatechart/RealtimeStatechart"
@@ -1221,7 +1216,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement #//model/realtimestatechart/Prioritizable ../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents ExitPointIncomingTransitionsNoSideEffectsOrDeadlines ExitPointOutgoingTransitionsNoConditions EntryPointIncomingTransitionsNoSideEffectsOrDeadlines EntryPointOutgoingTransitionsNoConditions"/>
+          <details key="constraints" value="LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines ConnectionPointOutgoingTransitionsNoConditions ConnectionPointTransitionsNoSynchronization"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A transition connects different vertices. If the vertex is a state a self-transition is also possible."/>
@@ -1231,10 +1226,10 @@
           <details key="TriggerMessageEventsMustNotHaveAnOwnedParameterBinding" value="not self.triggerMessageEvent.message.oclIsUndefined() implies&#xA;self.triggerMessageEvent.message.parameterBinding->isEmpty()"/>
           <details key="ValidTriggerMessageEvents" value="not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)"/>
           <details key="ValidRaiseMessageEvents" value="not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)"/>
-          <details key="ExitPointIncomingTransitionsNoSideEffectsOrDeadlines" value="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.synchronization.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
-          <details key="ExitPointOutgoingTransitionsNoConditions" value="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
-          <details key="EntryPointIncomingTransitionsNoSideEffectsOrDeadlines" value="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::EntryPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.synchronization.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
-          <details key="EntryPointOutgoingTransitionsNoConditions" value="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::EntryPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+          <details key="ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines"
+              value="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ConnectionPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+          <details key="ConnectionPointOutgoingTransitionsNoConditions" value="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ConnectionPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+          <details key="ConnectionPointTransitionsNoSynchronization" value="((not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ConnectionPoint))&#xD;&#xA;&#x9;or&#xD;&#xA; (not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ConnectionPoint)))&#xD;&#xA;&#x9;implies&#xD;&#xA;self.synchronization.oclIsUndefined()"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="synchronization" eType="#//model/realtimestatechart/Synchronization"
             containment="true">
@@ -1665,7 +1660,25 @@
           <details key="documentation" value="This class represents an exit event. The action associated with this &#xD;&#xA;event will be executed when the state is left.&#xA;\paragraph{Note}&#xA;We need this subclass, because GMF forbids using the same semantic&#xA;element for different notational elements within the same container."/>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="EntryPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
+      <eClassifiers xsi:type="ecore:EClass" name="ConnectionPoint" abstract="true"
+          eSuperTypes="#//model/realtimestatechart/Vertex">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="ConnectionPointsOnlyAtCompositeStates"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A ConnectionPoint is a pseudostate which makes it possible to chain transitions between different hierarchy levels. The ConnectionPoint is assigned to a state."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="ConnectionPointsOnlyAtCompositeStates" value="not self.state.simple"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
+            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/connectionPoints">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The StateEntryPoint is assigned to a state."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="EntryPoint" eSuperTypes="#//model/realtimestatechart/ConnectionPoint">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="AtLeastOneIncomingTransition OneOutgoingTransitionPerRegion"/>
         </eAnnotations>
@@ -1674,33 +1687,20 @@
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="AtLeastOneIncomingTransition" value="self.incomingTransitions ->notEmpty()"/>
-          <details key="OneOutgoingTransitionPerRegion" value="-- all regions of the parent state have at least one state that the EntryPoint connects to&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states->select(s |&#xD;&#xA;&#x9;&#x9;s.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.entryPoints.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;)->size() = 1&#xD;&#xA;)"/>
+          <details key="OneOutgoingTransitionPerRegion" value="-- all regions of the parent state have at least one state that the EntryPoint connects to&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states->select(s |&#xD;&#xA;&#x9;&#x9;s.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;)->size() = 1&#xD;&#xA;)"/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
-            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/entryPoints">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The StateEntryPoint is assigned to a state."/>
-          </eAnnotations>
-        </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="#//model/realtimestatechart/Vertex">
+      <eClassifiers xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="#//model/realtimestatechart/ConnectionPoint">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value="AtLeastOneIncomingTransitionPerRegion OneOutgoingTransition ExitPointsOnlyAtCompositeStates"/>
+          <details key="constraints" value="AtLeastOneIncomingTransitionPerRegion OneOutgoingTransition"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="An ExitPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. The ExitPoint is assigned to a state. An ExitPoint is used to jointly deactivate dedicated inner states of embedded statecharts."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="AtLeastOneIncomingTransitionPerRegion" value="-- all regions of the parent state have at least one state that connects to the ExitPoint&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states->exists(s |&#xD;&#xA;&#x9;&#x9;s.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.exitPoints.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
+          <details key="AtLeastOneIncomingTransitionPerRegion" value="-- all regions of the parent state have at least one state that connects to the ExitPoint&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states->exists(s |&#xD;&#xA;&#x9;&#x9;s.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(ExitPoint)).outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
           <details key="OneOutgoingTransition" value="self.outgoingTransitions->size() = 1"/>
-          <details key="ExitPointsOnlyAtCompositeStates" value="not self.state.simple"/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1"
-            eType="#//model/realtimestatechart/State" eOpposite="#//model/realtimestatechart/State/exitPoints">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The StateExitPoint is assigned to a state. "/>
-          </eAnnotations>
-        </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="msgtype" nsURI="http://www.fujaba.de/muml/model/msgtype/0.3.6"

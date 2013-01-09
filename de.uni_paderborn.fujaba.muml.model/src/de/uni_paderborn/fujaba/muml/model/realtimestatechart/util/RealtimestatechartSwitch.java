@@ -277,9 +277,19 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RealtimestatechartPackage.CONNECTION_POINT: {
+				ConnectionPoint connectionPoint = (ConnectionPoint)theEObject;
+				T result = caseConnectionPoint(connectionPoint);
+				if (result == null) result = caseVertex(connectionPoint);
+				if (result == null) result = caseNamedElement(connectionPoint);
+				if (result == null) result = caseExtendableElement(connectionPoint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case RealtimestatechartPackage.ENTRY_POINT: {
 				EntryPoint entryPoint = (EntryPoint)theEObject;
 				T result = caseEntryPoint(entryPoint);
+				if (result == null) result = caseConnectionPoint(entryPoint);
 				if (result == null) result = caseVertex(entryPoint);
 				if (result == null) result = caseNamedElement(entryPoint);
 				if (result == null) result = caseExtendableElement(entryPoint);
@@ -289,6 +299,7 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 			case RealtimestatechartPackage.EXIT_POINT: {
 				ExitPoint exitPoint = (ExitPoint)theEObject;
 				T result = caseExitPoint(exitPoint);
+				if (result == null) result = caseConnectionPoint(exitPoint);
 				if (result == null) result = caseVertex(exitPoint);
 				if (result == null) result = caseNamedElement(exitPoint);
 				if (result == null) result = caseExtendableElement(exitPoint);
@@ -641,6 +652,21 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseExitEvent(ExitEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Connection Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Connection Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnectionPoint(ConnectionPoint object) {
 		return null;
 	}
 

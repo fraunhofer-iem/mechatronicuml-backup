@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryPoint;
  * @generated
  */
 public class EntryPointItemProvider
-	extends VertexItemProvider
+	extends ConnectionPointItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

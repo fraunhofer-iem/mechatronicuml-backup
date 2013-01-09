@@ -182,7 +182,7 @@
         <genClasses ecoreClass="muml.ecore#//model/protocol/CoordinationProtocol">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/protocol/CoordinationProtocol/roles"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/protocol/CoordinationProtocol/roleConnector"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/protocol/Role">
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/protocol/Role/coordinationProtocol"/>
@@ -243,10 +243,9 @@
           <genFeatures createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/State/urgent"/>
           <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/State/channels"/>
           <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/State/events"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/State/entryPoints"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/State/connectionPoints"/>
           <genFeatures property="Readonly" createChild="false" propertyCategory=""
               ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/State/simple"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/State/exitPoints"/>
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/State/statechart"/>
           <genOperations ecoreOperation="muml.ecore#//model/realtimestatechart/State/getUniqueRegionPriority">
             <genParameters ecoreParameter="muml.ecore#//model/realtimestatechart/State/getUniqueRegionPriority/hint"/>
@@ -367,12 +366,11 @@
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/EntryEvent"/>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/ExitEvent"/>
-        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/EntryPoint">
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/EntryPoint/state"/>
+        <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/ConnectionPoint">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/ConnectionPoint/state"/>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/ExitPoint">
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/ExitPoint/state"/>
-        </genClasses>
+        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/EntryPoint"/>
+        <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/ExitPoint"/>
       </nestedGenPackages>
       <nestedGenPackages prefix="Msgtype" basePackage="de.uni_paderborn.fujaba.muml.model"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//model/msgtype">
