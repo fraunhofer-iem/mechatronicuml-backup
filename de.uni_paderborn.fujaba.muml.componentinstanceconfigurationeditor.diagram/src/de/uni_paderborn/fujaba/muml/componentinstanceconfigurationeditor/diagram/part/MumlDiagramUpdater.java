@@ -292,7 +292,7 @@ public class MumlDiagramUpdater {
 		LinkedList<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getGmfSubPortInstances().iterator(); it
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance childElement = (de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance) it
+			de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance childElement = (de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -323,7 +323,7 @@ public class MumlDiagramUpdater {
 		LinkedList<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getGmfSubPortInstances().iterator(); it
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance childElement = (de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance) it
+			de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance childElement = (de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);

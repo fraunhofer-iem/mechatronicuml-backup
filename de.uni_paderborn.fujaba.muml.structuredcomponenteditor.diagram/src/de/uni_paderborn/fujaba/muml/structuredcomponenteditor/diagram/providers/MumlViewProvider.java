@@ -523,15 +523,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5014 = createLabel(
+		Node label5024 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortName2EditPart.VISUAL_ID));
-		label5014.setLayoutConstraint(NotationFactory.eINSTANCE
+						.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortNameEditPart.VISUAL_ID));
+		label5024.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5014 = (Location) label5014.getLayoutConstraint();
-		location5014.setX(0);
-		location5014.setY(5);
+		Location location5024 = (Location) label5024.getLayoutConstraint();
+		location5024.setX(0);
+		location5024.setY(5);
 		return node;
 	}
 

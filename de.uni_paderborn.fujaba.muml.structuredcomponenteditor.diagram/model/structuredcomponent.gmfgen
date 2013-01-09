@@ -323,10 +323,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5014"
-          editPartClassName="HybridPortName2EditPart"
-          itemSemanticEditPolicyClassName="HybridPortName2ItemSemanticEditPolicy"
-          notationViewFactoryClassName="HybridPortNameViewFactory">
+          visualID="5024"
+          editPartClassName="HybridPortNameEditPart"
+          itemSemanticEditPolicyClassName="HybridPortNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap

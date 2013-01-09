@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers;
 
 import java.util.Collection;
+
 import org.eclipse.emf.ecore.EcorePackage;
 
 /**

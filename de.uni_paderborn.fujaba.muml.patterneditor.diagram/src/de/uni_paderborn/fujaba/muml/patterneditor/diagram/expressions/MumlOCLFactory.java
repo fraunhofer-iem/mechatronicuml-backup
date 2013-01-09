@@ -11,9 +11,9 @@ import org.eclipse.ocl.Environment;
 import org.eclipse.ocl.EvaluationEnvironment;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.ecore.EcoreFactory;
+import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.ecore.OCLExpression;
 import org.eclipse.ocl.ecore.Variable;
-import org.eclipse.ocl.ecore.OCL.Helper;
 import org.eclipse.ocl.options.ParsingOptions;
 
 /**
@@ -29,50 +29,8 @@ public class MumlOCLFactory {
 	/**
 	 * @generated
 	 */
-	private final String[] expressionBodies;
-
-	/**
-	 * @generated
-	 */
 	protected MumlOCLFactory() {
 		this.expressions = new de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression[14];
-		this.expressionBodies = new String[] {
-				"\'pattern\'", //$NON-NLS-1$
-				"\'role1\'", //$NON-NLS-1$
-				"1", //$NON-NLS-1$
-				"1", //$NON-NLS-1$
-				"\'role2\'", //$NON-NLS-1$
-				"1", //$NON-NLS-1$
-				"1", //$NON-NLS-1$
-				"OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }", //$NON-NLS-1$
-				"\'\'", //$NON-NLS-1$
-				"\'role\'", //$NON-NLS-1$
-				"1", //$NON-NLS-1$
-				"1", //$NON-NLS-1$
-				"\'\'", //$NON-NLS-1$
-				"self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol", //$NON-NLS-1$
-		};
-	}
-
-	/**
-	 * @generated
-	 */
-	private static MumlOCLFactory getInstance() {
-		MumlOCLFactory instance = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
-				.getInstance().getMumlOCLFactory();
-		if (instance == null) {
-			de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
-					.getInstance().setMumlOCLFactory(
-							instance = new MumlOCLFactory());
-		}
-		return instance;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static String getExpressionBody(int index) {
-		return getInstance().expressionBodies[index];
 	}
 
 	/**
@@ -80,13 +38,35 @@ public class MumlOCLFactory {
 	 */
 	public static de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlAbstractExpression getExpression(
 			int index, EClassifier context, Map<String, EClassifier> environment) {
-		MumlOCLFactory cached = getInstance();
+		MumlOCLFactory cached = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
+				.getInstance().getMumlOCLFactory();
+		if (cached == null) {
+			de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
+					.getInstance().setMumlOCLFactory(
+							cached = new MumlOCLFactory());
+		}
 		if (index < 0 || index >= cached.expressions.length) {
 			throw new IllegalArgumentException();
 		}
 		if (cached.expressions[index] == null) {
+			final String[] exprBodies = new String[] {
+					"\'pattern\'", //$NON-NLS-1$
+					"\'role1\'", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
+					"\'role2\'", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
+					"OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }", //$NON-NLS-1$
+					"\'\'", //$NON-NLS-1$
+					"\'role\'", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
+					"\'\'", //$NON-NLS-1$
+					"self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol", //$NON-NLS-1$
+			};
 			cached.expressions[index] = getExpression(
-					cached.expressionBodies[index],
+					exprBodies[index],
 					context,
 					environment == null ? Collections
 							.<String, EClassifier> emptyMap() : environment);

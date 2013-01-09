@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts;
+package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts;
 
 import java.util.Collections;
 import java.util.List;
@@ -45,13 +45,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class RoleNameEditPart extends LabelEditPart implements
+public class HybridPortNameEditPart extends LabelEditPart implements
 		ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5005;
+	public static final int VISUAL_ID = 5024;
 
 	/**
 	 * @generated
@@ -78,15 +78,15 @@ public class RoleNameEditPart extends LabelEditPart implements
 	 */
 	static {
 		registerSnapBackPosition(
-				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleNameEditPart.VISUAL_ID),
+				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortNameEditPart.VISUAL_ID),
 				new Point(0, 0));
 	}
 
 	/**
 	 * @generated
 	 */
-	public RoleNameEditPart(View view) {
+	public HybridPortNameEditPart(View view) {
 		super(view);
 	}
 
@@ -99,7 +99,7 @@ public class RoleNameEditPart extends LabelEditPart implements
 				new LabelDirectEditPolicy());
 		installEditPolicy(
 				EditPolicy.SELECTION_FEEDBACK_ROLE,
-				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlTextSelectionEditPolicy());
+				new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy());
 	}
 
 	/**
@@ -238,13 +238,13 @@ public class RoleNameEditPart extends LabelEditPart implements
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlTextSelectionEditPolicy) pdEditPolicy)
+		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) pdEditPolicy)
 					.refreshFeedback();
 		}
 		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlTextSelectionEditPolicy) sfEditPolicy)
+		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) sfEditPolicy)
 					.refreshFeedback();
 		}
 	}
@@ -327,12 +327,12 @@ public class RoleNameEditPart extends LabelEditPart implements
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlParserProvider
+			parser = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_3005,
+							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.HybridPort_3013,
 							getParserElement(),
-							de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleNameEditPart.VISUAL_ID));
+							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
+									.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -345,7 +345,7 @@ public class RoleNameEditPart extends LabelEditPart implements
 			setManager(new TextDirectEditManager(
 					this,
 					TextDirectEditManager.getTextCellEditorClass(this),
-					de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.MumlEditPartFactory
+					de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.MumlEditPartFactory
 							.getTextCellEditorLocator(this)));
 		}
 		return manager;
@@ -437,13 +437,13 @@ public class RoleNameEditPart extends LabelEditPart implements
 		setLabelTextHelper(getFigure(), getLabelText());
 		setLabelIconHelper(getFigure(), getLabelIcon());
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlTextSelectionEditPolicy) pdEditPolicy)
+		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) pdEditPolicy)
 					.refreshFeedback();
 		}
 		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlTextSelectionEditPolicy) sfEditPolicy)
+		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) sfEditPolicy)
 					.refreshFeedback();
 		}
 	}

@@ -96,10 +96,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3008"
+        visualID="3009"
         editPartClassName="ParameterEditPart"
         itemSemanticEditPolicyClassName="ParameterItemSemanticEditPolicy"
-        notationViewFactoryClassName="ParameterViewFactory"
         canonicalEditPolicyClassName="ParameterCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ParameterGraphicalNodeEditPolicy"
         createCommandClassName="ParameterCreateCommand"
@@ -138,10 +137,9 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5013"
+          visualID="5016"
           editPartClassName="WrappingLabelEditPart"
-          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
-          notationViewFactoryClassName="ParameterLabelViewFactory">
+          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -154,10 +152,9 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2007"
+        visualID="2008"
         editPartClassName="MessageTypeRepositoryEditPart"
         itemSemanticEditPolicyClassName="MessageTypeRepositoryItemSemanticEditPolicy"
-        notationViewFactoryClassName="MessageTypeRepositoryViewFactory"
         canonicalEditPolicyClassName="MessageTypeRepositoryCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="MessageTypeRepositoryGraphicalNodeEditPolicy"
@@ -194,10 +191,9 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5015"
+          visualID="5017"
           editPartClassName="MessageTypeRepositoryNameEditPart"
-          itemSemanticEditPolicyClassName="MessageTypeRepositoryNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="MessageTypeRepositoryNameViewFactory">
+          itemSemanticEditPolicyClassName="MessageTypeRepositoryNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -217,16 +213,16 @@
       </labels>
     </topLevelNodes>
     <compartments
-        visualID="7008"
+        visualID="7010"
         editPartClassName="MessageTypeRepositoryMessageTypesCompartmentEditPart"
         itemSemanticEditPolicyClassName="MessageTypeRepositoryMessageTypesCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="MessageTypeRepositoryMessageTypesCompartmentViewFactory"
         canonicalEditPolicyClassName="MessageTypeRepositoryMessageTypesCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="MessageTypesCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.0">
+        node="//@diagram/@topLevelNodes.0"
+        listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -362,7 +358,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.1/@labels.0/@modelFacet"
-        className="ParameterLabelExpressionLabelParser5013"
+        className="ParameterLabelExpressionLabelParser5016"
         viewExpression="//@expressionProviders/@providers.0/@expressions.3"
         editExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext
