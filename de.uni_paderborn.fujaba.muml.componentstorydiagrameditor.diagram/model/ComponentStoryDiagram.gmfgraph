@@ -472,8 +472,7 @@
         <children
             xsi:type="gmfgraph:Rectangle"
             name="SinglePortVariablesCompartment"
-            outline="false"
-            fill="false">
+            outline="false">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"
@@ -527,7 +526,8 @@
       figure="PartVariableFigure"/>
   <nodes
       name="MultiPortVariable"
-      figure="MultiPortVariableFigure">
+      figure="MultiPortVariableFigure"
+      affixedParentSide="NORTH">
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -536,7 +536,8 @@
     </facets>
   </nodes>
   <nodes
-      name="SinglePortVariable">
+      name="SinglePortVariable"
+      affixedParentSide="NORTH">
     <figure
         href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigure"/>
     <facets

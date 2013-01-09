@@ -31,6 +31,7 @@ import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.BorderedBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
@@ -49,7 +50,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class MultiPortVariable2EditPart extends AbstractBorderedShapeEditPart {
+public class MultiPortVariable2EditPart extends BorderedBorderItemEditPart {
 
 	/**
 	 * @generated
@@ -80,6 +81,8 @@ public class MultiPortVariable2EditPart extends AbstractBorderedShapeEditPart {
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicy());
 		super.createDefaultEditPolicies();
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
+				getPrimaryDragEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.MultiPortVariable2ItemSemanticEditPolicy());
@@ -327,8 +330,8 @@ public class MultiPortVariable2EditPart extends AbstractBorderedShapeEditPart {
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24);
 
-		// Ensures that the element can be shrinked (Muml Bug #62).
-		result.setMinimumSize(new Dimension(0, 0));
+		//FIXME: workaround for #154536
+		result.getBounds().setSize(result.getPreferredSize());
 
 		return result;
 	}
@@ -569,7 +572,6 @@ public class MultiPortVariable2EditPart extends AbstractBorderedShapeEditPart {
 		private void createContents() {
 
 			fFigureSinglePortVariablesCompartment = new RectangleFigure();
-			fFigureSinglePortVariablesCompartment.setFill(false);
 			fFigureSinglePortVariablesCompartment.setOutline(false);
 
 			GridData constraintFFigureSinglePortVariablesCompartment = new GridData();

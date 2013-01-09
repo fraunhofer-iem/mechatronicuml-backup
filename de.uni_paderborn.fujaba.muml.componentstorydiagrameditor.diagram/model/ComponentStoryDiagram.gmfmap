@@ -379,7 +379,7 @@
       <sourceEnd
           body="self.eContainer().oclIsKindOf(PartVariable)"/>
       <targetEnd
-          body="self.eContainer().oclIsKindOf(PartVariable) and self &lt;> oppositeEnd and self.eContainer().eContainer() =oppositeEnd.eContainer().eContainer()"/>
+          body="self.eContainer().oclIsKindOf(PartVariable) and self &lt;> oppositeEnd and self.eContainer().eContainer() = oppositeEnd.eContainer().eContainer()"/>
     </creationConstraints>
   </links>
   <links>

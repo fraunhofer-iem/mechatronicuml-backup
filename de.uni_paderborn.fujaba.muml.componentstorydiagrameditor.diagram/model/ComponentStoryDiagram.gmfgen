@@ -283,6 +283,7 @@
       </labels>
     </childNodes>
     <childNodes
+        xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3016"
         editPartClassName="MultiPortVariableEditPart"
         itemSemanticEditPolicyClassName="MultiPortVariableItemSemanticEditPolicy"
@@ -291,7 +292,8 @@
         compartments="//@diagram/@compartments.4"
         graphicalNodeEditPolicyClassName="MultiPortVariableGraphicalNodeEditPolicy"
         createCommandClassName="MultiPortVariableCreateCommand"
-        containers="//@diagram/@childNodes.3">
+        containers="//@diagram/@childNodes.3"
+        preferredSideName="NORTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -300,7 +302,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="MultiPortVariableFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MultiPortVariableFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureSinglePortVariablesCompartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MultiPortVariableFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSinglePortVariablesCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureSinglePortVariablesCompartment.setFill(false);&#xA;fFigureSinglePortVariablesCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureSinglePortVariablesCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureSinglePortVariablesCompartment.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalIndent = 0;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalSpan = 1;&#xA;constraintFFigureSinglePortVariablesCompartment.verticalSpan = 1;&#xA;constraintFFigureSinglePortVariablesCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureSinglePortVariablesCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureSinglePortVariablesCompartment, constraintFFigureSinglePortVariablesCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureSinglePortVariablesCompartment() {&#xA;&#x9;&#x9;return fFigureSinglePortVariablesCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MultiPortVariableFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureSinglePortVariablesCompartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MultiPortVariableFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSinglePortVariablesCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureSinglePortVariablesCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureSinglePortVariablesCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureSinglePortVariablesCompartment.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalIndent = 0;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalSpan = 1;&#xA;constraintFFigureSinglePortVariablesCompartment.verticalSpan = 1;&#xA;constraintFFigureSinglePortVariablesCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureSinglePortVariablesCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureSinglePortVariablesCompartment, constraintFFigureSinglePortVariablesCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureSinglePortVariablesCompartment() {&#xA;&#x9;&#x9;return fFigureSinglePortVariablesCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="24"
@@ -392,6 +394,7 @@
       </modelFacet>
     </childNodes>
     <childNodes
+        xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3018"
         editPartClassName="SinglePortVariable2EditPart"
         itemSemanticEditPolicyClassName="SinglePortVariable2ItemSemanticEditPolicy"
@@ -399,7 +402,8 @@
         canonicalEditPolicyClassName="SinglePortVariable2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="SinglePortVariable2GraphicalNodeEditPolicy"
         createCommandClassName="SinglePortVariable2CreateCommand"
-        containers="//@diagram/@childNodes.3">
+        containers="//@diagram/@childNodes.3"
+        preferredSideName="NORTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -469,6 +473,7 @@
       </labels>
     </childNodes>
     <childNodes
+        xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3019"
         editPartClassName="MultiPortVariable2EditPart"
         itemSemanticEditPolicyClassName="MultiPortVariable2ItemSemanticEditPolicy"
@@ -477,7 +482,8 @@
         compartments="//@diagram/@compartments.5"
         graphicalNodeEditPolicyClassName="MultiPortVariable2GraphicalNodeEditPolicy"
         createCommandClassName="MultiPortVariable2CreateCommand"
-        containers="//@diagram/@childNodes.2">
+        containers="//@diagram/@childNodes.2"
+        preferredSideName="NORTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -486,7 +492,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="MultiPortVariableFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MultiPortVariableFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureSinglePortVariablesCompartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MultiPortVariableFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSinglePortVariablesCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureSinglePortVariablesCompartment.setFill(false);&#xA;fFigureSinglePortVariablesCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureSinglePortVariablesCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureSinglePortVariablesCompartment.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalIndent = 0;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalSpan = 1;&#xA;constraintFFigureSinglePortVariablesCompartment.verticalSpan = 1;&#xA;constraintFFigureSinglePortVariablesCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureSinglePortVariablesCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureSinglePortVariablesCompartment, constraintFFigureSinglePortVariablesCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureSinglePortVariablesCompartment() {&#xA;&#x9;&#x9;return fFigureSinglePortVariablesCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MultiPortVariableFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureSinglePortVariablesCompartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MultiPortVariableFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSinglePortVariablesCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureSinglePortVariablesCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureSinglePortVariablesCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureSinglePortVariablesCompartment.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalIndent = 0;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalSpan = 1;&#xA;constraintFFigureSinglePortVariablesCompartment.verticalSpan = 1;&#xA;constraintFFigureSinglePortVariablesCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureSinglePortVariablesCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureSinglePortVariablesCompartment, constraintFFigureSinglePortVariablesCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureSinglePortVariablesCompartment() {&#xA;&#x9;&#x9;return fFigureSinglePortVariablesCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="24"
@@ -547,6 +553,7 @@
       </labels>
     </childNodes>
     <childNodes
+        xsi:type="gmfgen:GenChildSideAffixedNode"
         visualID="3020"
         editPartClassName="SinglePortVariable3EditPart"
         itemSemanticEditPolicyClassName="SinglePortVariable3ItemSemanticEditPolicy"
@@ -554,7 +561,8 @@
         canonicalEditPolicyClassName="SinglePortVariable3CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="SinglePortVariable3GraphicalNodeEditPolicy"
         createCommandClassName="SinglePortVariable3CreateCommand"
-        containers="//@diagram/@childNodes.2">
+        containers="//@diagram/@childNodes.2"
+        preferredSideName="NORTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -1195,7 +1203,7 @@
           body="self.eContainer().oclIsKindOf(PartVariable)"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="self.eContainer().oclIsKindOf(PartVariable) and self &lt;> oppositeEnd and self.eContainer().eContainer() =oppositeEnd.eContainer().eContainer()"/>
+          body="self.eContainer().oclIsKindOf(PartVariable) and self &lt;> oppositeEnd and self.eContainer().eContainer() = oppositeEnd.eContainer().eContainer()"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="self.eContainer().oclIsKindOf(ComponentVariable)"/>
@@ -1215,7 +1223,6 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.1/@modelFacet"
-        className="PartVariableLabelExpressionLabelParser5018"
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/PartVariable"/>

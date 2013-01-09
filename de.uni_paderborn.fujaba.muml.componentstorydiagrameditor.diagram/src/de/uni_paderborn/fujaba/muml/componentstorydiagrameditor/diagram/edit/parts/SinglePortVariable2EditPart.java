@@ -31,6 +31,7 @@ import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.BorderedBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
@@ -50,7 +51,7 @@ import org.eclipse.swt.widgets.Display;
 /**
  * @generated
  */
-public class SinglePortVariable2EditPart extends AbstractBorderedShapeEditPart {
+public class SinglePortVariable2EditPart extends BorderedBorderItemEditPart {
 
 	/**
 	 * @generated
@@ -79,6 +80,8 @@ public class SinglePortVariable2EditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
+				getPrimaryDragEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.SinglePortVariable2ItemSemanticEditPolicy());
@@ -263,8 +266,8 @@ public class SinglePortVariable2EditPart extends AbstractBorderedShapeEditPart {
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(30, 30);
 
-		// Ensures that the element can be shrinked (Muml Bug #62).
-		result.setMinimumSize(new Dimension(0, 0));
+		//FIXME: workaround for #154536
+		result.getBounds().setSize(result.getPreferredSize());
 
 		return result;
 	}

@@ -9,7 +9,7 @@ import de.uni_paderborn.fujaba.muml.common.edit.parts.SinglePortVariableBehavior
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.SinglePortVariable3EditPart;
 
-public class CustomSinglePortVariable4EditPart extends
+public class CustomSinglePortVariable3EditPart extends
 		SinglePortVariable3EditPart {
 
 	/**
@@ -17,7 +17,7 @@ public class CustomSinglePortVariable4EditPart extends
 	 */
 	private SinglePortVariableBehavior delegation;
 
-	public CustomSinglePortVariable4EditPart(View view) {
+	public CustomSinglePortVariable3EditPart(View view) {
 		super(view);
 	}
 

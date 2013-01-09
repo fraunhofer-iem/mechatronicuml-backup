@@ -15,7 +15,8 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.4.1",
  de.fujaba.modelinstance.edit;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.muml.model.edit;bundle-version="0.3.1",
  org.storydriven.storydiagrams.edit;bundle-version="1.0.0",
- de.fujaba.newwizard;bundle-version="0.3.1"
+ de.fujaba.newwizard;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml.model.componentstorydiagram;bundle-version="0.3.2"
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Export-Package: de.uni_paderborn.fujaba.muml.common,
@@ -23,7 +24,6 @@ Export-Package: de.uni_paderborn.fujaba.muml.common,
  de.uni_paderborn.fujaba.muml.common.emf.edit.provider,
  de.uni_paderborn.fujaba.muml.common.figures
 Bundle-Activator: de.uni_paderborn.fujaba.muml.common.MumlCommonPlugin
-Import-Package: de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern,
- org.eclipse.ltk.core.refactoring,
+Import-Package: org.eclipse.ltk.core.refactoring,
  org.eclipse.ltk.core.refactoring.participants
 
