@@ -19,7 +19,6 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression;
 
 
 /**

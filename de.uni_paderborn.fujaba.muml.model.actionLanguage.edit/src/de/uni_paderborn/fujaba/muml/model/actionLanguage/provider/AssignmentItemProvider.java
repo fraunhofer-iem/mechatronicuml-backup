@@ -23,20 +23,13 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
-import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
-import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
 
 
 /**
@@ -248,16 +241,6 @@ public class AssignmentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createVariableOrParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
 
 		newChildDescriptors.add
@@ -284,6 +267,11 @@ public class AssignmentItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -319,11 +307,6 @@ public class AssignmentItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createVariableOrParameterExpression()));
 	}
 
 	/**

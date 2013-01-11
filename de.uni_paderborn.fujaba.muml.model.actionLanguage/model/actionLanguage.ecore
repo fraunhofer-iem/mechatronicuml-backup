@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="actionLanguage"
-    nsURI="http://www.fujaba.de/muml/actionlanguage/0.3.14" nsPrefix="actionLanguage">
+    nsURI="http://www.fujaba.de/muml/actionlanguage/0.3.16" nsPrefix="actionLanguage">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The base package for the muml action language. It is an extension to the core.ecore expression package.&#xD;&#xA;The action language contains block definition, control structures like conditional statements and loops, assignments, and variable and operation call expressions. "/>
   </eAnnotations>
@@ -142,18 +142,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VariableOrParameterExpression" eSuperTypes="#//TypedNamedElementExpression">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="To perform an action on a value of a variable of a \rtsc we use the variable expression, which has a reference to a variable of the \rtsc and optional indicies if a concrete array element should be referenced."/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="indices" upperBound="-1"
-        eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-        containment="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Indices which refer to an concrete index of an array."/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperationCall" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Operation calls are used to call an operation with concrete parameter bindings. "/>
@@ -194,8 +182,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpointReference"
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variableExpression" eType="#//VariableOrParameterExpression"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typedNamedElementExpression"
+        eType="#//TypedNamedElementExpression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="position" lowerBound="1"
         eType="#//PositionSelector" containment="true"/>
   </eClassifiers>
@@ -219,6 +207,16 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypedNamedElementExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="To perform an action on a value of a variable of a \rtsc we use the typed named element expression, which has a reference to a typed named element and optional indicies if a concrete array element should be referenced."/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typedNamedElement" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/TypedNamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="indices" upperBound="-1"
+        eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indices which refer to an concrete index of an array."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

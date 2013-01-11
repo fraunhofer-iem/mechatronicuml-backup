@@ -7,22 +7,13 @@
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement;
-
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -30,10 +21,14 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
+
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement} object.
@@ -199,16 +194,6 @@ public class LocalVariableDeclarationStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createVariableOrParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
 
 		newChildDescriptors.add
@@ -235,6 +220,11 @@ public class LocalVariableDeclarationStatementItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
 				 ActionLanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

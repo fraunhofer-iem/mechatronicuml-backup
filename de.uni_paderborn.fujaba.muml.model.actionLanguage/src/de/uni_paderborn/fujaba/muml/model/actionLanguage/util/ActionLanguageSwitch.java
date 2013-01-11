@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.util;
 
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -16,13 +15,18 @@ import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.DoWhileLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelector;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ReturnStatement;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 
 
@@ -150,16 +154,6 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 				if (result == null) result = caseExpression(ifStatement);
 				if (result == null) result = caseCommentableElement(ifStatement);
 				if (result == null) result = caseExtendableElement(ifStatement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ActionLanguagePackage.VARIABLE_OR_PARAMETER_EXPRESSION: {
-				VariableOrParameterExpression variableOrParameterExpression = (VariableOrParameterExpression)theEObject;
-				T result = caseVariableOrParameterExpression(variableOrParameterExpression);
-				if (result == null) result = caseTypedNamedElementExpression(variableOrParameterExpression);
-				if (result == null) result = caseExpression(variableOrParameterExpression);
-				if (result == null) result = caseCommentableElement(variableOrParameterExpression);
-				if (result == null) result = caseExtendableElement(variableOrParameterExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -332,21 +326,6 @@ public class ActionLanguageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIfStatement(IfStatement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Variable Or Parameter Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Variable Or Parameter Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVariableOrParameterExpression(VariableOrParameterExpression object) {
 		return null;
 	}
 

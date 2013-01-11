@@ -82,10 +82,10 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryPostExpressionAccess().getGroup_1(), "rule__UnaryPostExpression__Group_1__0");
 					put(grammarAccess.getOperandAccess().getGroup_0(), "rule__Operand__Group_0__0");
 					put(grammarAccess.getLiteralExpressionAccess().getGroup(), "rule__LiteralExpression__Group__0");
-					put(grammarAccess.getExtendedVariableOrParameterExpressionAccess().getGroup(), "rule__ExtendedVariableOrParameterExpression__Group__0");
-					put(grammarAccess.getExtendedVariableOrParameterExpressionAccess().getGroup_1(), "rule__ExtendedVariableOrParameterExpression__Group_1__0");
-					put(grammarAccess.getVariableOrParameterOrPortExpressionAccess().getGroup(), "rule__VariableOrParameterOrPortExpression__Group__0");
-					put(grammarAccess.getVariableOrParameterOrPortExpressionAccess().getGroup_1(), "rule__VariableOrParameterOrPortExpression__Group_1__0");
+					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getGroup(), "rule__ExtendedTypedNamedElementExpression__Group__0");
+					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getGroup_1(), "rule__ExtendedTypedNamedElementExpression__Group_1__0");
+					put(grammarAccess.getTypedNamedElementExpressionAccess().getGroup(), "rule__TypedNamedElementExpression__Group__0");
+					put(grammarAccess.getTypedNamedElementExpressionAccess().getGroup_1(), "rule__TypedNamedElementExpression__Group_1__0");
 					put(grammarAccess.getPositionSelectorExpressionAccess().getGroup(), "rule__PositionSelectorExpression__Group__0");
 					put(grammarAccess.getPositionSelectorExpressionAccess().getGroup_1(), "rule__PositionSelectorExpression__Group_1__0");
 					put(grammarAccess.getOperationCallAccess().getGroup(), "rule__OperationCall__Group__0");
@@ -132,9 +132,9 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryPreExpressionAccess().getEnclosedExpressionAssignment_2(), "rule__UnaryPreExpression__EnclosedExpressionAssignment_2");
 					put(grammarAccess.getUnaryPostExpressionAccess().getOperatorAssignment_1_1(), "rule__UnaryPostExpression__OperatorAssignment_1_1");
 					put(grammarAccess.getLiteralExpressionAccess().getValueAssignment_1(), "rule__LiteralExpression__ValueAssignment_1");
-					put(grammarAccess.getExtendedVariableOrParameterExpressionAccess().getPositionAssignment_1_2(), "rule__ExtendedVariableOrParameterExpression__PositionAssignment_1_2");
-					put(grammarAccess.getVariableOrParameterOrPortExpressionAccess().getTypedNamedElementAssignment_0(), "rule__VariableOrParameterOrPortExpression__TypedNamedElementAssignment_0");
-					put(grammarAccess.getVariableOrParameterOrPortExpressionAccess().getIndicesAssignment_1_1(), "rule__VariableOrParameterOrPortExpression__IndicesAssignment_1_1");
+					put(grammarAccess.getExtendedTypedNamedElementExpressionAccess().getPositionAssignment_1_2(), "rule__ExtendedTypedNamedElementExpression__PositionAssignment_1_2");
+					put(grammarAccess.getTypedNamedElementExpressionAccess().getTypedNamedElementAssignment_0(), "rule__TypedNamedElementExpression__TypedNamedElementAssignment_0");
+					put(grammarAccess.getTypedNamedElementExpressionAccess().getIndicesAssignment_1_1(), "rule__TypedNamedElementExpression__IndicesAssignment_1_1");
 					put(grammarAccess.getNoAttributeSelectorExpressionAccess().getPositionAssignment(), "rule__NoAttributeSelectorExpression__PositionAssignment");
 					put(grammarAccess.getPositionSelectorExpressionAccess().getKindAssignment_0(), "rule__PositionSelectorExpression__KindAssignment_0");
 					put(grammarAccess.getPositionSelectorExpressionAccess().getSuccessorAssignment_1_1(), "rule__PositionSelectorExpression__SuccessorAssignment_1_1");

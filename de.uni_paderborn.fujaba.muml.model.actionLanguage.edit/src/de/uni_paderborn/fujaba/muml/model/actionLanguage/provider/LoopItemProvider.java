@@ -7,15 +7,12 @@
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -23,19 +20,12 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
-import org.storydriven.core.expressions.provider.ExpressionItemProvider;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
-import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop} object.
@@ -216,16 +206,6 @@ public class LoopItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createVariableOrParameterExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
 				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
 
 		newChildDescriptors.add
@@ -252,6 +232,11 @@ public class LoopItemProvider
 			(createChildParameter
 				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
 				 ActionLanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

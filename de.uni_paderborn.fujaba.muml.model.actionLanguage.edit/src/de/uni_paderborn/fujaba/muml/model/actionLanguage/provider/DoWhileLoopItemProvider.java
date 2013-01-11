@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -20,6 +19,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.DoWhileLoop;
 
 /**

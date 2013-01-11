@@ -31,7 +31,7 @@ ForLoop returns actionLanguage::ForLoop:
 ;
 
 ForLoopCountingExpression returns actionLanguage::Assignment:
-	lhs_typedNamedElementExpression=VariableOrParameterOrPortExpression
+	lhs_typedNamedElementExpression=TypedNamedElementExpression
 	(
 		incrementDecrementOperator=IncrementDecrementOperator
 		| (assignOperator=AssignOperator rhs_assignExpression=Expression)
@@ -76,7 +76,7 @@ enum IncrementDecrementOperator returns actionLanguage::IncrementDecrementOperat
 // Assignment
 	
 Assignment returns actionLanguage::Assignment:
-	lhs_typedNamedElementExpression=VariableOrParameterOrPortExpression
+	lhs_typedNamedElementExpression=TypedNamedElementExpression
 	assignOperator=AssignOperator rhs_assignExpression=Expression ';'
 ;
 
@@ -216,7 +216,7 @@ enum UnaryPostOperator returns commonExpressions::UnaryOperator:
 // Operand
 
 Operand returns expressions::Expression:
-	'(' Expression ')' | LiteralExpression | ExtendedVariableOrParameterExpression
+	'(' Expression ')' | LiteralExpression | ExtendedTypedNamedElementExpression
 	| OperationCall | TriggerMessageExpression | NoAttributeSelectorExpression
 ;
 
@@ -230,15 +230,15 @@ Literal returns ecore::EString:
 	NUMBER | BOOLEAN | INT | STRING
 ;
 
-ExtendedVariableOrParameterExpression returns expressions::Expression:
-	VariableOrParameterOrPortExpression
+ExtendedTypedNamedElementExpression returns expressions::Expression:
+	TypedNamedElementExpression
 	(
-		{actionLanguage::DiscreteInteractionEndpointReference.variableExpression = current}
+		{actionLanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression = current}
 		'.' position=PositionSelectorExpression
 	)?
 ;
 
-VariableOrParameterOrPortExpression returns actionLanguage::VariableOrParameterExpression:
+TypedNamedElementExpression returns actionLanguage::TypedNamedElementExpression:
 	typedNamedElement=[behavior::TypedNamedElement]('['indices+=ArithmeticExpression']')*
 ;
 

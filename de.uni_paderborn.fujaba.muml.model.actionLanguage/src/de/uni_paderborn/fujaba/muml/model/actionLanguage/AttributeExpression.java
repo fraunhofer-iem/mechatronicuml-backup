@@ -6,11 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 
+import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
-import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->

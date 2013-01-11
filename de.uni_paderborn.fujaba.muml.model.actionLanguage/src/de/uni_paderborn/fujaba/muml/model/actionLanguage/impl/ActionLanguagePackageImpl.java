@@ -32,7 +32,6 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelectorKind;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ReturnStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
@@ -102,13 +101,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * @generated
 	 */
 	private EClass ifStatementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass variableOrParameterExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -466,24 +458,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getVariableOrParameterExpression() {
-		return variableOrParameterExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getVariableOrParameterExpression_Indices() {
-		return (EReference)variableOrParameterExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public EClass getOperationCall() {
 		return operationCallEClass;
@@ -568,7 +542,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDiscreteInteractionEndpointReference_VariableExpression() {
+	public EReference getDiscreteInteractionEndpointReference_TypedNamedElementExpression() {
 		return (EReference)discreteInteractionEndpointReferenceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -658,6 +632,15 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getTypedNamedElementExpression_Indices() {
+		return (EReference)typedNamedElementExpressionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EEnum getAssignOperator() {
 		return assignOperatorEEnum;
@@ -739,9 +722,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		createEReference(ifStatementEClass, IF_STATEMENT__ELSE_IF_BLOCKS);
 		createEReference(ifStatementEClass, IF_STATEMENT__ELSE_BLOCK);
 
-		variableOrParameterExpressionEClass = createEClass(VARIABLE_OR_PARAMETER_EXPRESSION);
-		createEReference(variableOrParameterExpressionEClass, VARIABLE_OR_PARAMETER_EXPRESSION__INDICES);
-
 		operationCallEClass = createEClass(OPERATION_CALL);
 		createEReference(operationCallEClass, OPERATION_CALL__OPERATION);
 		createEReference(operationCallEClass, OPERATION_CALL__PARAMETER_BINDING);
@@ -754,7 +734,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		createEReference(triggerMessageExpressionEClass, TRIGGER_MESSAGE_EXPRESSION__PARAMETER);
 
 		discreteInteractionEndpointReferenceEClass = createEClass(DISCRETE_INTERACTION_ENDPOINT_REFERENCE);
-		createEReference(discreteInteractionEndpointReferenceEClass, DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION);
+		createEReference(discreteInteractionEndpointReferenceEClass, DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION);
 		createEReference(discreteInteractionEndpointReferenceEClass, DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION);
 
 		positionSelectorEClass = createEClass(POSITION_SELECTOR);
@@ -767,6 +747,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		typedNamedElementExpressionEClass = createEClass(TYPED_NAMED_ELEMENT_EXPRESSION);
 		createEReference(typedNamedElementExpressionEClass, TYPED_NAMED_ELEMENT_EXPRESSION__TYPED_NAMED_ELEMENT);
+		createEReference(typedNamedElementExpressionEClass, TYPED_NAMED_ELEMENT_EXPRESSION__INDICES);
 
 		// Create enums
 		assignOperatorEEnum = createEEnum(ASSIGN_OPERATOR);
@@ -814,7 +795,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		assignmentEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		forLoopEClass.getESuperTypes().add(this.getLoop());
 		ifStatementEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
-		variableOrParameterExpressionEClass.getESuperTypes().add(this.getTypedNamedElementExpression());
 		operationCallEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		returnStatementEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		triggerMessageExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
@@ -852,9 +832,6 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		initEReference(getIfStatement_ElseIfBlocks(), this.getBlock(), null, "elseIfBlocks", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIfStatement_ElseBlock(), this.getBlock(), null, "elseBlock", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(variableOrParameterExpressionEClass, VariableOrParameterExpression.class, "VariableOrParameterExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariableOrParameterExpression_Indices(), theExpressionsPackage.getExpression(), null, "indices", null, 0, -1, VariableOrParameterExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(operationCallEClass, OperationCall.class, "OperationCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperationCall_Operation(), theBehaviorPackage.getOperation(), null, "operation", null, 1, 1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperationCall_ParameterBinding(), theBehaviorPackage.getParameterBinding(), null, "parameterBinding", null, 0, -1, OperationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -867,7 +844,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		initEReference(getTriggerMessageExpression_Parameter(), theBehaviorPackage.getParameter(), null, "parameter", null, 1, 1, TriggerMessageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(discreteInteractionEndpointReferenceEClass, DiscreteInteractionEndpointReference.class, "DiscreteInteractionEndpointReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDiscreteInteractionEndpointReference_VariableExpression(), this.getVariableOrParameterExpression(), null, "variableExpression", null, 0, 1, DiscreteInteractionEndpointReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscreteInteractionEndpointReference_TypedNamedElementExpression(), this.getTypedNamedElementExpression(), null, "typedNamedElementExpression", null, 0, 1, DiscreteInteractionEndpointReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscreteInteractionEndpointReference_Position(), this.getPositionSelector(), null, "position", null, 1, 1, DiscreteInteractionEndpointReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(positionSelectorEClass, PositionSelector.class, "PositionSelector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -880,6 +857,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		initEClass(typedNamedElementExpressionEClass, TypedNamedElementExpression.class, "TypedNamedElementExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTypedNamedElementExpression_TypedNamedElement(), theBehaviorPackage.getTypedNamedElement(), null, "typedNamedElement", null, 0, 1, TypedNamedElementExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTypedNamedElementExpression_Indices(), theExpressionsPackage.getExpression(), null, "indices", null, 0, -1, TypedNamedElementExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(assignOperatorEEnum, AssignOperator.class, "AssignOperator");

@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.impl;
 
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -31,7 +30,6 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelectorKind;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ReturnStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 
 /**
@@ -49,7 +47,7 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 	 */
 	public static ActionLanguageFactory init() {
 		try {
-			ActionLanguageFactory theActionLanguageFactory = (ActionLanguageFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/actionlanguage/0.3.14"); 
+			ActionLanguageFactory theActionLanguageFactory = (ActionLanguageFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/actionlanguage/0.3.16"); 
 			if (theActionLanguageFactory != null) {
 				return theActionLanguageFactory;
 			}
@@ -84,7 +82,6 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 			case ActionLanguagePackage.ASSIGNMENT: return createAssignment();
 			case ActionLanguagePackage.FOR_LOOP: return createForLoop();
 			case ActionLanguagePackage.IF_STATEMENT: return createIfStatement();
-			case ActionLanguagePackage.VARIABLE_OR_PARAMETER_EXPRESSION: return createVariableOrParameterExpression();
 			case ActionLanguagePackage.OPERATION_CALL: return createOperationCall();
 			case ActionLanguagePackage.RETURN_STATEMENT: return createReturnStatement();
 			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION: return createTriggerMessageExpression();
@@ -193,16 +190,6 @@ public class ActionLanguageFactoryImpl extends EFactoryImpl implements ActionLan
 	public IfStatement createIfStatement() {
 		IfStatementImpl ifStatement = new IfStatementImpl();
 		return ifStatement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public VariableOrParameterExpression createVariableOrParameterExpression() {
-		VariableOrParameterExpressionImpl variableOrParameterExpression = new VariableOrParameterExpressionImpl();
-		return variableOrParameterExpression;
 	}
 
 	/**

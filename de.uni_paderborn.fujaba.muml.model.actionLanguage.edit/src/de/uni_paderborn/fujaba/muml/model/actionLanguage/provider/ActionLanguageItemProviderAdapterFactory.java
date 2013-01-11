@@ -213,29 +213,6 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected VariableOrParameterExpressionItemProvider variableOrParameterExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createVariableOrParameterExpressionAdapter() {
-		if (variableOrParameterExpressionItemProvider == null) {
-			variableOrParameterExpressionItemProvider = new VariableOrParameterExpressionItemProvider(this);
-		}
-
-		return variableOrParameterExpressionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -501,7 +478,6 @@ public class ActionLanguageItemProviderAdapterFactory extends ActionLanguageAdap
 		if (assignmentItemProvider != null) assignmentItemProvider.dispose();
 		if (forLoopItemProvider != null) forLoopItemProvider.dispose();
 		if (ifStatementItemProvider != null) ifStatementItemProvider.dispose();
-		if (variableOrParameterExpressionItemProvider != null) variableOrParameterExpressionItemProvider.dispose();
 		if (operationCallItemProvider != null) operationCallItemProvider.dispose();
 		if (returnStatementItemProvider != null) returnStatementItemProvider.dispose();
 		if (triggerMessageExpressionItemProvider != null) triggerMessageExpressionItemProvider.dispose();

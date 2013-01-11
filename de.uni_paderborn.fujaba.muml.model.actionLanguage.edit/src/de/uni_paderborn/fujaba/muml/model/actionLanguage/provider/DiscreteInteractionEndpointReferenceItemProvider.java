@@ -7,20 +7,13 @@
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -28,14 +21,11 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.storydriven.core.CorePackage;
-
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-
-import org.storydriven.storydiagrams.calls.CallsFactory;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference} object.
@@ -88,7 +78,7 @@ public class DiscreteInteractionEndpointReferenceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION);
+			childrenFeatures.add(ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION);
 			childrenFeatures.add(ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION);
 		}
 		return childrenFeatures;
@@ -144,7 +134,7 @@ public class DiscreteInteractionEndpointReferenceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DiscreteInteractionEndpointReference.class)) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION:
+			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -165,8 +155,8 @@ public class DiscreteInteractionEndpointReferenceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createVariableOrParameterExpression()));
+				(ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION,
+				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter

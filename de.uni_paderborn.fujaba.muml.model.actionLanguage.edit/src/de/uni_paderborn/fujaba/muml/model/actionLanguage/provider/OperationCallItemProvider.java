@@ -22,17 +22,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.expressions.ExpressionsFactory;
-import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.activities.expressions.ActivitiesExpressionsFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
-import org.storydriven.storydiagrams.calls.expressions.CallsExpressionsFactory;
-import org.storydriven.storydiagrams.patterns.expressions.PatternsExpressionsFactory;
 
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;

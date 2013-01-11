@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.util;
 
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -17,13 +16,18 @@ import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.AttributeExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.DoWhileLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.IfStatement;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Loop;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelector;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.ReturnStatement;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
 
 
@@ -110,10 +114,6 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseIfStatement(IfStatement object) {
 				return createIfStatementAdapter();
-			}
-			@Override
-			public Adapter caseVariableOrParameterExpression(VariableOrParameterExpression object) {
-				return createVariableOrParameterExpressionAdapter();
 			}
 			@Override
 			public Adapter caseOperationCall(OperationCall object) {
@@ -270,20 +270,6 @@ public class ActionLanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIfStatementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression <em>Variable Or Parameter Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression
-	 * @generated
-	 */
-	public Adapter createVariableOrParameterExpressionAdapter() {
 		return null;
 	}
 

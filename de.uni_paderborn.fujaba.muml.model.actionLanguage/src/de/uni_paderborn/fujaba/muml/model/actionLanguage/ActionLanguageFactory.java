@@ -80,15 +80,6 @@ public interface ActionLanguageFactory extends EFactory {
 	IfStatement createIfStatement();
 
 	/**
-	 * Returns a new object of class '<em>Variable Or Parameter Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Variable Or Parameter Expression</em>'.
-	 * @generated
-	 */
-	VariableOrParameterExpression createVariableOrParameterExpression();
-
-	/**
 	 * Returns a new object of class '<em>Operation Call</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

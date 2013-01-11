@@ -16,7 +16,7 @@ import org.storydriven.core.expressions.impl.ExpressionImpl;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.DiscreteInteractionEndpointReference;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.PositionSelector;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpression;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +25,7 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpr
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.DiscreteInteractionEndpointReferenceImpl#getVariableExpression <em>Variable Expression</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.DiscreteInteractionEndpointReferenceImpl#getTypedNamedElementExpression <em>Typed Named Element Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.DiscreteInteractionEndpointReferenceImpl#getPosition <em>Position</em>}</li>
  * </ul>
  * </p>
@@ -34,14 +34,14 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableOrParameterExpr
  */
 public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl implements DiscreteInteractionEndpointReference {
 	/**
-	 * The cached value of the '{@link #getVariableExpression() <em>Variable Expression</em>}' containment reference.
+	 * The cached value of the '{@link #getTypedNamedElementExpression() <em>Typed Named Element Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVariableExpression()
+	 * @see #getTypedNamedElementExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected VariableOrParameterExpression variableExpression;
+	protected TypedNamedElementExpression typedNamedElementExpression;
 
 	/**
 	 * The cached value of the '{@link #getPosition() <em>Position</em>}' containment reference.
@@ -77,8 +77,8 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VariableOrParameterExpression getVariableExpression() {
-		return variableExpression;
+	public TypedNamedElementExpression getTypedNamedElementExpression() {
+		return typedNamedElementExpression;
 	}
 
 	/**
@@ -86,11 +86,11 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetVariableExpression(VariableOrParameterExpression newVariableExpression, NotificationChain msgs) {
-		VariableOrParameterExpression oldVariableExpression = variableExpression;
-		variableExpression = newVariableExpression;
+	public NotificationChain basicSetTypedNamedElementExpression(TypedNamedElementExpression newTypedNamedElementExpression, NotificationChain msgs) {
+		TypedNamedElementExpression oldTypedNamedElementExpression = typedNamedElementExpression;
+		typedNamedElementExpression = newTypedNamedElementExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION, oldVariableExpression, newVariableExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION, oldTypedNamedElementExpression, newTypedNamedElementExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -101,18 +101,18 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setVariableExpression(VariableOrParameterExpression newVariableExpression) {
-		if (newVariableExpression != variableExpression) {
+	public void setTypedNamedElementExpression(TypedNamedElementExpression newTypedNamedElementExpression) {
+		if (newTypedNamedElementExpression != typedNamedElementExpression) {
 			NotificationChain msgs = null;
-			if (variableExpression != null)
-				msgs = ((InternalEObject)variableExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION, null, msgs);
-			if (newVariableExpression != null)
-				msgs = ((InternalEObject)newVariableExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION, null, msgs);
-			msgs = basicSetVariableExpression(newVariableExpression, msgs);
+			if (typedNamedElementExpression != null)
+				msgs = ((InternalEObject)typedNamedElementExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION, null, msgs);
+			if (newTypedNamedElementExpression != null)
+				msgs = ((InternalEObject)newTypedNamedElementExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION, null, msgs);
+			msgs = basicSetTypedNamedElementExpression(newTypedNamedElementExpression, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION, newVariableExpression, newVariableExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION, newTypedNamedElementExpression, newTypedNamedElementExpression));
 	}
 
 	/**
@@ -166,8 +166,8 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION:
-				return basicSetVariableExpression(null, msgs);
+			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
+				return basicSetTypedNamedElementExpression(null, msgs);
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				return basicSetPosition(null, msgs);
 		}
@@ -182,8 +182,8 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION:
-				return getVariableExpression();
+			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
+				return getTypedNamedElementExpression();
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				return getPosition();
 		}
@@ -198,8 +198,8 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION:
-				setVariableExpression((VariableOrParameterExpression)newValue);
+			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
+				setTypedNamedElementExpression((TypedNamedElementExpression)newValue);
 				return;
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				setPosition((PositionSelector)newValue);
@@ -216,8 +216,8 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION:
-				setVariableExpression((VariableOrParameterExpression)null);
+			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
+				setTypedNamedElementExpression((TypedNamedElementExpression)null);
 				return;
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				setPosition((PositionSelector)null);
@@ -234,8 +234,8 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__VARIABLE_EXPRESSION:
-				return variableExpression != null;
+			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
+				return typedNamedElementExpression != null;
 			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				return position != null;
 		}
