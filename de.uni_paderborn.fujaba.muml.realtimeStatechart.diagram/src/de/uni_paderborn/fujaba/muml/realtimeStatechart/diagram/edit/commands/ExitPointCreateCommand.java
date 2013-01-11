@@ -54,7 +54,7 @@ public class ExitPointCreateCommand extends EditElementCommand {
 				.createExitPoint();
 
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) getElementToEdit();
-		owner.getExitPoints().add(newElement);
+		owner.getConnectionPoints().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers
 				.getInstance().init_ExitPoint_3041(newElement);
