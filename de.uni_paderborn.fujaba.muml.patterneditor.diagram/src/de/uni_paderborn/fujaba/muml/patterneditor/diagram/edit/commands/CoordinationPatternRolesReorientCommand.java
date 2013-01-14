@@ -62,9 +62,12 @@ public class CoordinationPatternRolesReorientCommand extends EditElementCommand 
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint)) {
 			return false;
 		}
+		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
+		/*
 		if (getLink().getConnectorEndpoints().size() != 1) {
-			return false;
+		  return false;
 		}
+		 */
 		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) getLink()
 				.getConnectorEndpoints().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol)) {
@@ -84,9 +87,12 @@ public class CoordinationPatternRolesReorientCommand extends EditElementCommand 
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint)) {
 			return false;
 		}
+		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
+		/*
 		if (getLink().getConnectorEndpoints().size() != 1) {
-			return false;
+		  return false;
 		}
+		 */
 		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) getLink()
 				.getConnectorEndpoints().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol)) {
@@ -121,8 +127,13 @@ public class CoordinationPatternRolesReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().getConnectorEndpoints().remove(getOldSource());
+
+		// Enhancement for MUML-BUG #446
+		if (getLink().getConnectorEndpoints().size() > 1) {
+			getLink().getConnectorEndpoints().remove(getOldSource());
+		}
 		getLink().getConnectorEndpoints().add(getNewSource());
+
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -130,8 +141,13 @@ public class CoordinationPatternRolesReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().getConnectorEndpoints().remove(getOldTarget());
+
+		// Enhancement for MUML-BUG #446
+		if (getLink().getConnectorEndpoints().size() > 1) {
+			getLink().getConnectorEndpoints().remove(getOldTarget());
+		}
 		getLink().getConnectorEndpoints().add(getNewTarget());
+
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

@@ -61,9 +61,12 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol && newEnd instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol)) {
 			return false;
 		}
+		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
+		/*
 		if (getLink().getRoles().size() != 1) {
-			return false;
+		  return false;
 		}
+		 */
 		de.uni_paderborn.fujaba.muml.model.protocol.Role target = (de.uni_paderborn.fujaba.muml.model.protocol.Role) getLink()
 				.getRoles().get(0);
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
@@ -110,8 +113,10 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
+
 		getOldSource().setCoordinationProtocol(null);
 		getNewSource().setCoordinationProtocol(getLink());
+
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -119,8 +124,13 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().getRoles().remove(getOldTarget());
+
+		// Enhancement for MUML-BUG #446
+		if (getLink().getRoles().size() > 1) {
+			getLink().getRoles().remove(getOldTarget());
+		}
 		getLink().getRoles().add(getNewTarget());
+
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

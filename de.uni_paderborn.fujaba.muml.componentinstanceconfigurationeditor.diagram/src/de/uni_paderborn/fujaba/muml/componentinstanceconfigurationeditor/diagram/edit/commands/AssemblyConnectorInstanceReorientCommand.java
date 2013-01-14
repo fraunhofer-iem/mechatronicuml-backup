@@ -63,9 +63,12 @@ public class AssemblyConnectorInstanceReorientCommand extends
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance)) {
 			return false;
 		}
+		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
+		/*
 		if (getLink().getConnectorEndpointInstances().size() != 1) {
-			return false;
+		  return false;
 		}
+		 */
 		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance) getLink()
 				.getConnectorEndpointInstances().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration)) {
@@ -85,9 +88,12 @@ public class AssemblyConnectorInstanceReorientCommand extends
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance)) {
 			return false;
 		}
+		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
+		/*
 		if (getLink().getConnectorEndpointInstances().size() != 1) {
-			return false;
+		  return false;
 		}
+		 */
 		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance source = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance) getLink()
 				.getConnectorEndpointInstances().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration)) {
@@ -121,18 +127,32 @@ public class AssemblyConnectorInstanceReorientCommand extends
 	/**
 	 * @generated
 	 */
-	protected CommandResult reorientSource() throws ExecutionException {
-		getLink().getConnectorEndpointInstances().remove(getOldSource());
+	protected CommandResult reorientSource()
+			throws org.eclipse.core.commands.ExecutionException,
+			ExecutionException {
+
+		// Enhancement for MUML-BUG #446
+		if (getLink().getConnectorEndpointInstances().size() > 1) {
+			getLink().getConnectorEndpointInstances().remove(getOldSource());
+		}
 		getLink().getConnectorEndpointInstances().add(getNewSource());
+
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected CommandResult reorientTarget() throws ExecutionException {
-		getLink().getConnectorEndpointInstances().remove(getOldTarget());
+	protected CommandResult reorientTarget()
+			throws org.eclipse.core.commands.ExecutionException,
+			ExecutionException {
+
+		// Enhancement for MUML-BUG #446
+		if (getLink().getConnectorEndpointInstances().size() > 1) {
+			getLink().getConnectorEndpointInstances().remove(getOldTarget());
+		}
 		getLink().getConnectorEndpointInstances().add(getNewTarget());
+
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

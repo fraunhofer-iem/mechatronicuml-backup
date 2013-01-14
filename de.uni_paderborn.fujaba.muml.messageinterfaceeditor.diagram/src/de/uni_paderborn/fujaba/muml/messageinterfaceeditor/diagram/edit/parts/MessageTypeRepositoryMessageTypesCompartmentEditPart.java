@@ -16,25 +16,18 @@ import org.eclipse.gmf.runtime.notation.View;
  * @generated
  */
 public class MessageTypeRepositoryMessageTypesCompartmentEditPart extends
-		ListCompartmentEditPart {
+		ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7008;
+	public static final int VISUAL_ID = 7010;
 
 	/**
 	 * @generated
 	 */
 	public MessageTypeRepositoryMessageTypesCompartmentEditPart(View view) {
 		super(view);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected boolean hasModelChildrenChanged(Notification evt) {
-		return false;
 	}
 
 	/**
@@ -90,24 +83,6 @@ public class MessageTypeRepositoryMessageTypesCompartmentEditPart extends
 		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);
 		}
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void refreshVisibility() {
-		final View notationView = getNotationView();
-		final boolean hasChildren = notationView.getChildren().size() > 0;
-		setVisibility(hasChildren);
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	protected void handleNotificationEvent(Notification event) {
-		refreshVisibility();
-		super.handleNotificationEvent(event);
 	}
 
 }

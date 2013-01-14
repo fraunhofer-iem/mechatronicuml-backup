@@ -31,6 +31,18 @@ public class AssemblyConnectorInstanceEditPart extends ConnectionNodeEditPart
 		super(view);
 	}
 
+	@Override
+	public void activate() {
+		// TODO Auto-generated method stub
+		super.activate();
+	}
+
+	@Override
+	public void deactivate() {
+		// TODO Auto-generated method stub
+		super.deactivate();
+	}
+
 	/**
 	 * @generated
 	 */

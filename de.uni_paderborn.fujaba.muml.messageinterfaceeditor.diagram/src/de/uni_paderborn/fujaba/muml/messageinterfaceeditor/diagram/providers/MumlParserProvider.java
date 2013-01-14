@@ -23,20 +23,20 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser messageTypeRepositoryName_5015Parser;
+	protected IParser messageTypeRepositoryName_5017Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getMessageTypeRepositoryName_5015Parser() {
-		if (messageTypeRepositoryName_5015Parser == null) {
+	protected IParser getMessageTypeRepositoryName_5017Parser() {
+		if (messageTypeRepositoryName_5017Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.MessageFormatParser(
 					features);
-			messageTypeRepositoryName_5015Parser = parser;
+			messageTypeRepositoryName_5017Parser = parser;
 		}
-		return messageTypeRepositoryName_5015Parser;
+		return messageTypeRepositoryName_5017Parser;
 	}
 
 	/**
@@ -61,16 +61,16 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.ParameterLabelExpressionLabelParser5013 parameterLabel_5013Parser;
+	protected de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.ParameterLabelExpressionLabelParser5016 parameterLabel_5016Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getParameterLabel_5013Parser() {
-		if (parameterLabel_5013Parser == null) {
-			parameterLabel_5013Parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.ParameterLabelExpressionLabelParser5013();
+	protected IParser getParameterLabel_5016Parser() {
+		if (parameterLabel_5016Parser == null) {
+			parameterLabel_5016Parser = new de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.parsers.ParameterLabelExpressionLabelParser5016();
 		}
-		return parameterLabel_5013Parser;
+		return parameterLabel_5016Parser;
 	}
 
 	/**
@@ -79,11 +79,11 @@ public class MumlParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryNameEditPart.VISUAL_ID:
-			return getMessageTypeRepositoryName_5015Parser();
+			return getMessageTypeRepositoryName_5017Parser();
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeNameEditPart.VISUAL_ID:
 			return getMessageTypeName_5014Parser();
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
-			return getParameterLabel_5013Parser();
+			return getParameterLabel_5016Parser();
 		}
 		return null;
 	}

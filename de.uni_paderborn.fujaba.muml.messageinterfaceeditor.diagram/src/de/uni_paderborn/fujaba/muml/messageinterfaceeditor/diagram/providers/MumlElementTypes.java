@@ -51,7 +51,7 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType MessageTypeRepository_2007 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageTypeRepository_2007"); //$NON-NLS-1$
+	public static final IElementType MessageTypeRepository_2008 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.MessageTypeRepository_2008"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -60,7 +60,7 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Parameter_3008 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.Parameter_3008"); //$NON-NLS-1$
+	public static final IElementType Parameter_3009 = getElementType("de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.Parameter_3009"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -177,7 +177,7 @@ public class MumlElementTypes {
 					ModelinstancePackage.eINSTANCE.getModelElementCategory());
 
 			elements.put(
-					MessageTypeRepository_2007,
+					MessageTypeRepository_2008,
 					de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage.eINSTANCE
 							.getMessageTypeRepository());
 
@@ -187,7 +187,7 @@ public class MumlElementTypes {
 							.getMessageType());
 
 			elements.put(
-					Parameter_3008,
+					Parameter_3009,
 					de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage.eINSTANCE
 							.getParameter());
 		}
@@ -208,9 +208,9 @@ public class MumlElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ModelElementCategory_1000);
-			KNOWN_ELEMENT_TYPES.add(MessageTypeRepository_2007);
+			KNOWN_ELEMENT_TYPES.add(MessageTypeRepository_2008);
 			KNOWN_ELEMENT_TYPES.add(MessageType_3007);
-			KNOWN_ELEMENT_TYPES.add(Parameter_3008);
+			KNOWN_ELEMENT_TYPES.add(Parameter_3009);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -223,11 +223,11 @@ public class MumlElementTypes {
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return ModelElementCategory_1000;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
-			return MessageTypeRepository_2007;
+			return MessageTypeRepository_2008;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return MessageType_3007;
 		case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
-			return Parameter_3008;
+			return Parameter_3009;
 		}
 		return null;
 	}

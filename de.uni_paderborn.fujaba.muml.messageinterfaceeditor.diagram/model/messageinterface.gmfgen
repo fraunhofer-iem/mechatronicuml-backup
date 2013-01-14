@@ -99,6 +99,7 @@
         visualID="3009"
         editPartClassName="ParameterEditPart"
         itemSemanticEditPolicyClassName="ParameterItemSemanticEditPolicy"
+        notationViewFactoryClassName="ParameterViewFactory"
         canonicalEditPolicyClassName="ParameterCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ParameterGraphicalNodeEditPolicy"
         createCommandClassName="ParameterCreateCommand"
@@ -139,7 +140,8 @@
       <labels
           visualID="5016"
           editPartClassName="WrappingLabelEditPart"
-          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
+          notationViewFactoryClassName="ParameterLabelViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -155,6 +157,7 @@
         visualID="2008"
         editPartClassName="MessageTypeRepositoryEditPart"
         itemSemanticEditPolicyClassName="MessageTypeRepositoryItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageTypeRepositoryViewFactory"
         canonicalEditPolicyClassName="MessageTypeRepositoryCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="MessageTypeRepositoryGraphicalNodeEditPolicy"
@@ -193,7 +196,8 @@
       <labels
           visualID="5017"
           editPartClassName="MessageTypeRepositoryNameEditPart"
-          itemSemanticEditPolicyClassName="MessageTypeRepositoryNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="MessageTypeRepositoryNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="MessageTypeRepositoryNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -216,6 +220,7 @@
         visualID="7010"
         editPartClassName="MessageTypeRepositoryMessageTypesCompartmentEditPart"
         itemSemanticEditPolicyClassName="MessageTypeRepositoryMessageTypesCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="MessageTypeRepositoryMessageTypesCompartmentViewFactory"
         canonicalEditPolicyClassName="MessageTypeRepositoryMessageTypesCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="MessageTypesCompartment"

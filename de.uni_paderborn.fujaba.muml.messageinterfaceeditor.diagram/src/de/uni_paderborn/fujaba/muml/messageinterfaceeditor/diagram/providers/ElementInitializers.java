@@ -12,7 +12,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_MessageTypeRepository_2007(
+	public void init_MessageTypeRepository_2008(
 			de.uni_paderborn.fujaba.muml.model.msgtype.MessageTypeRepository instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory
@@ -49,7 +49,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Parameter_3008(
+	public void init_Parameter_3009(
 			de.uni_paderborn.fujaba.muml.model.behavior.Parameter instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.expressions.MumlOCLFactory

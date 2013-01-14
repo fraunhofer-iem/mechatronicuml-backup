@@ -252,13 +252,14 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 			List targets = link.getHardwarePorts();
-			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
+			Object theTarget = !targets.isEmpty() ? targets.get(0) : null; // Adapted for MUML-BUG #446
 			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort dst = (de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) theTarget;
 			List sources = link.getHardwarePorts();
-			Object theSource = sources.size() == 1 ? sources.get(0) : null;
+			Object theSource = !sources.isEmpty() ? sources
+					.get(sources.size() - 1) : null; // Adapted for MUML-BUG #446
 			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) {
 				continue;
 			}
@@ -295,7 +296,8 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 			List sources = link.getHardwarePorts();
-			Object theSource = sources.size() == 1 ? sources.get(0) : null;
+			Object theSource = !sources.isEmpty() ? sources
+					.get(sources.size() - 1) : null; // Adapted for MUML-BUG #446
 			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) {
 				continue;
 			}
@@ -341,13 +343,14 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 			List targets = link.getHardwarePorts();
-			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
+			Object theTarget = !targets.isEmpty() ? targets.get(0) : null; // Adapted for MUML-BUG #446
 			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) {
 				continue;
 			}
 			de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort dst = (de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) theTarget;
 			List sources = link.getHardwarePorts();
-			Object theSource = sources.size() == 1 ? sources.get(0) : null;
+			Object theSource = !sources.isEmpty() ? sources
+					.get(sources.size() - 1) : null; // Adapted for MUML-BUG #446
 			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) {
 				continue;
 			}

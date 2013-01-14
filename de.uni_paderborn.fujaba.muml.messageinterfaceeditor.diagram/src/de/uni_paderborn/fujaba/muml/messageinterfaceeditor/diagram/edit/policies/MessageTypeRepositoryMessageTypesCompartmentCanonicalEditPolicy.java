@@ -98,7 +98,7 @@ public class MessageTypeRepositoryMessageTypesCompartmentCanonicalEditPolicy
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlDiagramUpdater
-				.getMessageTypeRepositoryMessageTypesCompartment_7008SemanticChildren(viewObject);
+				.getMessageTypeRepositoryMessageTypesCompartment_7010SemanticChildren(viewObject);
 
 	}
 

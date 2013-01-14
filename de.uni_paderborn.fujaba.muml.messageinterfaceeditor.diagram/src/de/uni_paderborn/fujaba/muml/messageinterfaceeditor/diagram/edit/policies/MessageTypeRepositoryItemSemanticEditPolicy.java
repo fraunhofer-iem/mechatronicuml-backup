@@ -24,7 +24,7 @@ public class MessageTypeRepositoryItemSemanticEditPolicy
 	 */
 	public MessageTypeRepositoryItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageTypeRepository_2007);
+				de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.MumlElementTypes.MessageTypeRepository_2008);
 	}
 
 	/**

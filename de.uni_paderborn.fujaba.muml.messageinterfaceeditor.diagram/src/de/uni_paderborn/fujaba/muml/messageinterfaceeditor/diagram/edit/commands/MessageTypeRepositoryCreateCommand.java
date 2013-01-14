@@ -59,7 +59,7 @@ public class MessageTypeRepositoryCreateCommand extends EditElementCommand {
 		owner.getModelElements().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.providers.ElementInitializers
-				.getInstance().init_MessageTypeRepository_2007(newElement);
+				.getInstance().init_MessageTypeRepository_2008(newElement);
 
 		doConfigure(newElement, monitor, info);
 
