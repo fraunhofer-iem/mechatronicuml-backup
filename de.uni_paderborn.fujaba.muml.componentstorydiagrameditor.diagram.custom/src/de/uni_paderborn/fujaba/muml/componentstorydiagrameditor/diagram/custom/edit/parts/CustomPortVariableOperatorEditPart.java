@@ -5,12 +5,13 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.diagram.custom.util.SdmUtility;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
-import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabelEditPart;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariableOperatorEditPart;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable;
 
-public class CustomWrappingLabelEditPart extends WrappingLabelEditPart {
+public class CustomPortVariableOperatorEditPart extends
+		PortVariableOperatorEditPart {
 
-	public CustomWrappingLabelEditPart(View view) {
+	public CustomPortVariableOperatorEditPart(View view) {
 		super(view);
 	}
 	
@@ -24,12 +25,13 @@ public class CustomWrappingLabelEditPart extends WrappingLabelEditPart {
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 		updateText();
-		SdmUtility.adaptColor(getFigure(), ((PartVariable) ((View) this
+		SdmUtility.adaptColor(getFigure(), ((PortVariable) ((View) this
 				.getModel()).getElement()).getBindingOperator());
 	}
 	
 	private void updateText(){
 		setLabelText(CsdmUtility.adaptComponentStoryPatternVariableText(this));
 	}
+
 
 }

@@ -2,9 +2,12 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
+import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.common.edit.parts.MultiPortVariableBehavior;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariableEditPart;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 
 public class CustomMultiPortVariableEditPart extends MultiPortVariableEditPart {
 
@@ -45,6 +48,15 @@ public class CustomMultiPortVariableEditPart extends MultiPortVariableEditPart {
 	protected final void handleNotificationEvent(final Notification notification) {
 		getDelegation().handleNotificationEvent(notification);
 		super.handleNotificationEvent(notification);
+		
+		if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR
+				.equals(notification.getFeature())) {
+			CsdmUtility.adaptColor(this);
+		} else if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_SEMANTICS
+				.equals(notification.getFeature())) {
+			//updateOptional();
+			//updateNegative();
+		}
 	}
 
 	/**

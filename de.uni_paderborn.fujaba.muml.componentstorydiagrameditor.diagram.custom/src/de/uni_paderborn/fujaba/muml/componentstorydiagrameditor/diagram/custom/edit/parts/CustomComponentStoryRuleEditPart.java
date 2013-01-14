@@ -1,16 +1,23 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.edit.parts;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityNode;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityEditPart.ActivityFigure;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryRuleEditPart;
+import de.uni_paderborn.fujaba.muml.model.component.Component;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 
 public class CustomComponentStoryRuleEditPart extends
 		ComponentStoryRuleEditPart {
@@ -26,8 +33,11 @@ public class CustomComponentStoryRuleEditPart extends
 	}
 
 	@Override
-	protected void handleNotificationEvent(Notification event) {
-		super.handleNotificationEvent(event);
+	protected void handleNotificationEvent(Notification notification) {
+		super.handleNotificationEvent(notification);
+//		if (ReconfigurationPackage.Literals.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT.equals(notification.getFeature())) {
+//			updateComponentVariableTypes();
+//		}
 		updateActivityNameLabel();
 	}
 
@@ -45,4 +55,30 @@ public class CustomComponentStoryRuleEditPart extends
 		}
 
 	}
+	
+//	private void updateComponentVariableTypes(){
+//		ComponentStoryRule componentStoryRule = (ComponentStoryRule) getNotationView().getElement();
+//		ReconfigurableStructuredComponent reconfigurableComponent = (ReconfigurableStructuredComponent) componentStoryRule.getReconfiguredComponent();
+//		if (reconfigurableComponent instanceof Component){
+//			Component component = (Component) reconfigurableComponent;
+//			Activity activity = (Activity) componentStoryRule.getActivity();
+//			if (activity != null){
+//				EList<ActivityNode> componentStoryNodes = activity.getOwnedActivityNodes();
+//				if (!componentStoryNodes.isEmpty()){
+//					for (ActivityNode node : componentStoryNodes){
+//						if (node instanceof ComponentStoryNode){
+//							ComponentStoryNode componentStoryNode = (ComponentStoryNode) node;
+//							ComponentStoryPattern componentStoryPattern = componentStoryNode.getComponentStoryPattern();
+//							if (componentStoryPattern != null){
+//								ComponentVariable componentVariable = componentStoryPattern.getThisVariable();
+//								if (componentVariable != null){
+//									componentVariable.setType(component);
+//								}
+//							}
+//						}
+//					}
+//				}
+//			}
+//		}
+//	}
 }

@@ -42,25 +42,6 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	protected IParser componentVariableName_5020Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getComponentVariableName_5020Parser() {
-		if (componentVariableName_5020Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser(
-					features);
-			componentVariableName_5020Parser = parser;
-		}
-		return componentVariableName_5020Parser;
-	}
-
-	/**
-	 * @generated
-	 */
 	protected de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.PartVariableLabelExpressionLabelParser partVariableLabel_5018Parser;
 
 	/**
@@ -206,8 +187,6 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryNodeNameEditPart.VISUAL_ID:
 			return getComponentStoryNodeName_5001Parser();
-		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableNameEditPart.VISUAL_ID:
-			return getComponentVariableName_5020Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
 			return getPartVariableLabel_5018Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariableNameEditPart.VISUAL_ID:

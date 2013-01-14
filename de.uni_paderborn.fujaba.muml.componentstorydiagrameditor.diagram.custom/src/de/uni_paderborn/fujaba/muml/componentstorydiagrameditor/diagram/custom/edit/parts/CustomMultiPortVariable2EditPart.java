@@ -4,7 +4,9 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.common.edit.parts.MultiPortVariableBehavior;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariable2EditPart;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 
 public class CustomMultiPortVariable2EditPart extends
 		MultiPortVariable2EditPart {
@@ -45,6 +47,15 @@ public class CustomMultiPortVariable2EditPart extends
 	protected final void handleNotificationEvent(final Notification notification) {
 		getDelegation().handleNotificationEvent(notification);
 		super.handleNotificationEvent(notification);
+		
+		if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR
+				.equals(notification.getFeature())) {
+			CsdmUtility.adaptColor(this);
+		} else if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_SEMANTICS
+				.equals(notification.getFeature())) {
+			//updateOptional();
+			//updateNegative();
+		}
 	}
 
 	/**

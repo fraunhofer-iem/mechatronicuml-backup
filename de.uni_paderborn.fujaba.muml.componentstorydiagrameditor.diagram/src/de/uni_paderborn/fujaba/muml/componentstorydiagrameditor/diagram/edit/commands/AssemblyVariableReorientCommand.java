@@ -58,14 +58,17 @@ public class AssemblyVariableReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable && newEnd instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint)) {
 			return false;
 		}
-		if (getLink().getPortVariables().size() != 1) {
-			return false;
+		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
+		/*
+		if (getLink().getConnectorEndpoints().size() != 1) {
+		  return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable target = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) getLink()
-				.getPortVariables().get(0);
+		 */
+		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) getLink()
+				.getConnectorEndpoints().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable)) {
 			return false;
 		}
@@ -80,14 +83,17 @@ public class AssemblyVariableReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable && newEnd instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint)) {
 			return false;
 		}
-		if (getLink().getPortVariables().size() != 1) {
-			return false;
+		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
+		/*
+		if (getLink().getConnectorEndpoints().size() != 1) {
+		  return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable source = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) getLink()
-				.getPortVariables().get(0);
+		 */
+		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) getLink()
+				.getConnectorEndpoints().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable)) {
 			return false;
 		}
@@ -120,14 +126,28 @@ public class AssemblyVariableReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		throw new UnsupportedOperationException();
+
+		// Enhancement for MUML-BUG #446
+		if (getLink().getConnectorEndpoints().size() > 1) {
+			getLink().getConnectorEndpoints().remove(getOldSource());
+		}
+		getLink().getConnectorEndpoints().add(getNewSource());
+
+		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		throw new UnsupportedOperationException();
+
+		// Enhancement for MUML-BUG #446
+		if (getLink().getConnectorEndpoints().size() > 1) {
+			getLink().getConnectorEndpoints().remove(getOldTarget());
+		}
+		getLink().getConnectorEndpoints().add(getNewTarget());
+
+		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
@@ -140,29 +160,29 @@ public class AssemblyVariableReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable getOldSource() {
-		return (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable getNewSource() {
-		return (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable getOldTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable getNewTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) newEnd;
 	}
 
 	/**

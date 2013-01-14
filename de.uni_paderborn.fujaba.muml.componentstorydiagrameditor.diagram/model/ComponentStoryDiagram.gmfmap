@@ -132,12 +132,9 @@
                         href="ComponentStoryDiagram.gmfgraph#ComponentOperatorLabel"/>
                   </labelMappings>
                   <labelMappings
-                      xsi:type="gmfmap:FeatureLabelMapping"
                       readOnly="true">
                     <diagramLabel
                         href="ComponentStoryDiagram.gmfgraph#ComponentNameLabel"/>
-                    <features
-                        href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
                   </labelMappings>
                   <diagramNode
                       href="ComponentStoryDiagram.gmfgraph#ComponentVariable"/>
@@ -371,16 +368,10 @@
         href="ComponentStoryDiagram.gmfgraph#AssemblyVariable"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/portVariables"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/portVariables"/>
-    <creationConstraints>
-      <sourceEnd
-          body="self.eContainer().oclIsKindOf(PartVariable)"/>
-      <targetEnd
-          body="self.eContainer().oclIsKindOf(PartVariable) and self &lt;> oppositeEnd and self.eContainer().eContainer() = oppositeEnd.eContainer().eContainer()"/>
-    </creationConstraints>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
   </links>
   <links>
     <domainMetaElement
@@ -403,16 +394,10 @@
         href="ComponentStoryDiagram.gmfgraph#DelegationVariable"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/portVariables"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/portVariables"/>
-    <creationConstraints>
-      <sourceEnd
-          body="self.eContainer().oclIsKindOf(ComponentVariable)"/>
-      <targetEnd
-          body="self.eContainer().oclIsKindOf(PartVariable) and self.eContainer().eContainer() = oppositeEnd.eContainer()"/>
-    </creationConstraints>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
   </links>
   <diagram>
     <diagramCanvas

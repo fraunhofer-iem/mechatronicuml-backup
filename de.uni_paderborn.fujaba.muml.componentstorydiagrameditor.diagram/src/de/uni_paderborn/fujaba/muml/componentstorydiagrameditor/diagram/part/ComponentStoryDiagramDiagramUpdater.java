@@ -1021,18 +1021,19 @@ public class ComponentStoryDiagramDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List targets = link.getPortVariables();
-			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) {
+			List targets = link.getConnectorEndpoints();
+			Object theTarget = !targets.isEmpty() ? targets.get(0) : null; // Adapted for MUML-BUG #446
+			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable dst = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) theTarget;
-			List sources = link.getPortVariables();
-			Object theSource = sources.size() == 1 ? sources.get(0) : null;
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) {
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theTarget;
+			List sources = link.getConnectorEndpoints();
+			Object theSource = !sources.isEmpty() ? sources
+					.get(sources.size() - 1) : null; // Adapted for MUML-BUG #446
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable src = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) theSource;
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramLinkDescriptor(
 					src,
 					dst,
@@ -1060,18 +1061,19 @@ public class ComponentStoryDiagramDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List targets = link.getPortVariables();
-			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) {
+			List targets = link.getConnectorEndpoints();
+			Object theTarget = !targets.isEmpty() ? targets.get(0) : null; // Adapted for MUML-BUG #446
+			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable dst = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) theTarget;
-			List sources = link.getPortVariables();
-			Object theSource = sources.size() == 1 ? sources.get(0) : null;
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) {
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theTarget;
+			List sources = link.getConnectorEndpoints();
+			Object theSource = !sources.isEmpty() ? sources
+					.get(sources.size() - 1) : null; // Adapted for MUML-BUG #446
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable src = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) theSource;
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramLinkDescriptor(
 					src,
 					dst,
@@ -1117,14 +1119,14 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramLinkDescriptor> getIncomingTypeModelFacetLinks_AssemblyVariable_4004(
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable target,
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-					.getConnectorVariable_PortVariables()
+			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+					.getConnector_ConnectorEndpoints()
 					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable) {
 				continue;
 			}
@@ -1134,12 +1136,13 @@ public class ComponentStoryDiagramDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List sources = link.getPortVariables();
-			Object theSource = sources.size() == 1 ? sources.get(0) : null;
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) {
+			List sources = link.getConnectorEndpoints();
+			Object theSource = !sources.isEmpty() ? sources
+					.get(sources.size() - 1) : null; // Adapted for MUML-BUG #446
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable src = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) theSource;
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramLinkDescriptor(
 					src,
 					target,
@@ -1154,14 +1157,14 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramLinkDescriptor> getIncomingTypeModelFacetLinks_DelegationVariable_4005(
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable target,
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-					.getConnectorVariable_PortVariables()
+			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+					.getConnector_ConnectorEndpoints()
 					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable) {
 				continue;
 			}
@@ -1171,12 +1174,13 @@ public class ComponentStoryDiagramDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List sources = link.getPortVariables();
-			Object theSource = sources.size() == 1 ? sources.get(0) : null;
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) {
+			List sources = link.getConnectorEndpoints();
+			Object theSource = !sources.isEmpty() ? sources
+					.get(sources.size() - 1) : null; // Adapted for MUML-BUG #446
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable src = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) theSource;
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramLinkDescriptor(
 					src,
 					target,
@@ -1236,7 +1240,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramLinkDescriptor> getOutgoingTypeModelFacetLinks_AssemblyVariable_4004(
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable source) {
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source) {
 		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -1262,18 +1266,19 @@ public class ComponentStoryDiagramDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List targets = link.getPortVariables();
-			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) {
+			List targets = link.getConnectorEndpoints();
+			Object theTarget = !targets.isEmpty() ? targets.get(0) : null; // Adapted for MUML-BUG #446
+			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable dst = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) theTarget;
-			List sources = link.getPortVariables();
-			Object theSource = sources.size() == 1 ? sources.get(0) : null;
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) {
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theTarget;
+			List sources = link.getConnectorEndpoints();
+			Object theSource = !sources.isEmpty() ? sources
+					.get(sources.size() - 1) : null; // Adapted for MUML-BUG #446
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable src = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) theSource;
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
 			if (src != source) {
 				continue;
 			}
@@ -1291,7 +1296,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramLinkDescriptor> getOutgoingTypeModelFacetLinks_DelegationVariable_4005(
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable source) {
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source) {
 		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -1317,18 +1322,19 @@ public class ComponentStoryDiagramDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List targets = link.getPortVariables();
-			Object theTarget = targets.size() == 1 ? targets.get(0) : null;
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) {
+			List targets = link.getConnectorEndpoints();
+			Object theTarget = !targets.isEmpty() ? targets.get(0) : null; // Adapted for MUML-BUG #446
+			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable dst = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) theTarget;
-			List sources = link.getPortVariables();
-			Object theSource = sources.size() == 1 ? sources.get(0) : null;
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) {
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theTarget;
+			List sources = link.getConnectorEndpoints();
+			Object theSource = !sources.isEmpty() ? sources
+					.get(sources.size() - 1) : null; // Adapted for MUML-BUG #446
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable src = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) theSource;
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
 			if (src != source) {
 				continue;
 			}

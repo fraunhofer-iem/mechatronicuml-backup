@@ -113,7 +113,9 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
+
 		getLink().setSource(getNewSource());
+
 		return CommandResult.newOKCommandResult(getLink());
 	}
 
@@ -121,7 +123,9 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
+
 		getLink().setTarget(getNewTarget());
+
 		return CommandResult.newOKCommandResult(getLink());
 	}
 

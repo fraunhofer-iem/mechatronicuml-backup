@@ -18,15 +18,24 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.par
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryRuleEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableComponentVariableCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableNameEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableOperatorEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.DelegationVariableEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.DelegationVariableNameEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariable2EditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariableEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariableName2EditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariableNameEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PartVariableEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariableOperator2EditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariableOperator3EditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariableOperator4EditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariableOperatorEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.SinglePortVariable2EditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.SinglePortVariable3EditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.SinglePortVariableEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.SinglePortVariableName2EditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.SinglePortVariableNameEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel2EditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel4EditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabelEditPart;
@@ -72,6 +81,8 @@ public class CustomComponentStoryDiagramEditPartFactory extends
 				return new CustomComponentVariableEditPart(view);
 			case ComponentVariableOperatorEditPart.VISUAL_ID:
 				return new CustomComponentVariableOperatorEditPart(view);
+			case ComponentVariableNameEditPart.VISUAL_ID:
+				return new CustomComponentVariableNameEditPart(view);
 				
 			case ComponentVariableComponentVariableCompartmentEditPart.VISUAL_ID:
 				return new CustomComponentVariableComponentVariableCompartmentEditPart(view);
@@ -98,14 +109,31 @@ public class CustomComponentStoryDiagramEditPartFactory extends
 				
 			case MultiPortVariableEditPart.VISUAL_ID:
 				return new CustomMultiPortVariableEditPart(view);
+			case MultiPortVariableNameEditPart.VISUAL_ID:
+				return new CustomMultiPortVariableNameEditPart(view);
+			case PortVariableOperatorEditPart.VISUAL_ID:
+				return new CustomPortVariableOperatorEditPart(view);
 			case MultiPortVariable2EditPart.VISUAL_ID:
 				return new CustomMultiPortVariable2EditPart(view);
+			case MultiPortVariableName2EditPart.VISUAL_ID:
+				return new CustomMultiPortVariableName2EditPart(view);
+			case PortVariableOperator3EditPart.VISUAL_ID:
+				return new CustomPortVariableOperator3EditPart(view);
+				
 			case SinglePortVariableEditPart.VISUAL_ID:
 				return new CustomSinglePortVariableEditPart(view);
 			case SinglePortVariable2EditPart.VISUAL_ID:
 				return new CustomSinglePortVariable2EditPart(view);
+			case SinglePortVariableNameEditPart.VISUAL_ID:
+				return new CustomSinglePortVariableNameEditPart(view);
+			case PortVariableOperator2EditPart.VISUAL_ID:
+				return new CustomPortVariableOperator2EditPart(view);
 			case SinglePortVariable3EditPart.VISUAL_ID:
 				return new CustomSinglePortVariable3EditPart(view);
+			case SinglePortVariableName2EditPart.VISUAL_ID:
+				return new CustomSinglePortVariableName2EditPart(view);
+			case PortVariableOperator4EditPart.VISUAL_ID:
+				return new CustomPortVariableOperator4EditPart(view);
 
 			case AssemblyVariableEditPart.VISUAL_ID:
 				return new CustomAssemblyVariableEditPart(view);
