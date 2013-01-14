@@ -42,12 +42,12 @@ public class GenModelGeneratorAdapter extends GenBaseGeneratorAdapter {
 
 	private static final JETEmitterDescriptor[] JET_EMITTER_DESCRIPTORS = {
 			new JETEmitterDescriptor("model/plugin.xmljet",
-					"org.eclipse.emf.codegen.ecore.merge.templates.model.PluginXML"),
+					"org.eclipse.emf.codegen.ecore.templates.model.PluginXML"),
 			new JETEmitterDescriptor("edit/plugin.xmljet",
-					"org.eclipse.emf.codegen.ecore.merge.templates.edit.PluginXML"), //
+					"org.eclipse.emf.codegen.ecore.templates.edit.PluginXML"), //
 	};
 
-	private static final int INDENT = 4;
+	private static final int INDENT = 3;
 
 	/**
 	 * Returns the set of <code>JETEmitterDescriptor</code>s used by the
@@ -177,7 +177,6 @@ public class GenModelGeneratorAdapter extends GenBaseGeneratorAdapter {
 
 			DocumentBuilderFactory builderFactory = DocumentBuilderFactory
 					.newInstance();
-//			builderFactory.setIgnoringElementContentWhitespace(true);
 
 			builder = builderFactory.newDocumentBuilder();
 
@@ -207,11 +206,13 @@ public class GenModelGeneratorAdapter extends GenBaseGeneratorAdapter {
 		} catch (Exception exception) {
 			MergerPlugin.INSTANCE.log(exception);
 		}
-
+		
+		
 		// MERGE
+		PluginXmlMerger merger = new PluginXmlMerger(INDENT);
+		merger.addAnnotation(after);
 		Document merged = after;
 		if (before != null && after != null) {
-			PluginXmlMerger merger = new PluginXmlMerger();
 			merged = merger.merge(before, after);
 		}
 		if (merged == null) {
@@ -253,8 +254,4 @@ public class GenModelGeneratorAdapter extends GenBaseGeneratorAdapter {
 		super.notifyChanged(notification);
 	}
 
-	protected void addBaseTemplatePathEntries(List<String> templatePath) {
-		templatePath.add("platform:/plugin/" + MergerPlugin.ID + "/templates");
-		super.addBaseTemplatePathEntries(templatePath);
-	}
 }
