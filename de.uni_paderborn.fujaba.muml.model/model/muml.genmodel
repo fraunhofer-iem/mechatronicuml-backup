@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.model/src"
-    modelPluginID="de.uni_paderborn.fujaba.muml.model" modelName="Muml" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance">
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.model/src" modelPluginID="de.uni_paderborn.fujaba.muml.model"
+    modelName="Muml" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance">
   <foreignModel>muml.ecore</foreignModel>
   <foreignModel>../../de.fujaba.modelinstance/model/modelinstance.ecore</foreignModel>
   <genPackages prefix="Muml" basePackage="de.uni_paderborn.fujaba" disposableProviderFactory="true"
@@ -183,7 +182,7 @@
         <genClasses ecoreClass="muml.ecore#//model/protocol/CoordinationProtocol">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/protocol/CoordinationProtocol/roles"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/protocol/CoordinationProtocol/roleConnector"/>
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/protocol/Role">
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//model/protocol/Role/coordinationProtocol"/>
@@ -334,8 +333,9 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Synchronization/kind"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/realtimestatechart/Synchronization/selectorExpression"/>
         </genClasses>
-        <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/Prioritizable">
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/Prioritizable/priority"/>
+        <genClasses image="false" ecoreClass="muml.ecore#//model/realtimestatechart/PrioritizedElement">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EAttribute muml.ecore#//model/realtimestatechart/PrioritizedElement/priority"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/realtimestatechart/RealtimeStatechart">
           <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
@@ -540,7 +540,10 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Behavior/operations"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Behavior/variables"/>
         </genClasses>
-        <genClasses ecoreClass="muml.ecore#//model/behavior/Variable"/>
+        <genClasses ecoreClass="muml.ecore#//model/behavior/Variable">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Variable/initializeExpression"/>
+        </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/behavior/Operation">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Operation/returnType"/>

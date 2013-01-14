@@ -42,10 +42,21 @@ public interface DelegationConnector extends PortConnector {
 	 * The component part of the port part which is connected by this delegation.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Component Part</em>' reference.
+	 * @see #setComponentPart(ComponentPart)
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDelegationConnector_ComponentPart()
-	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	ComponentPart getComponentPart();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.DelegationConnector#getComponentPart <em>Component Part</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Component Part</em>' reference.
+	 * @see #getComponentPart()
+	 * @generated
+	 */
+	void setComponentPart(ComponentPart value);
 
 } // DelegationConnector

@@ -219,13 +219,13 @@ public interface ProtocolPackage extends EPackage {
 	int COORDINATION_PROTOCOL__ROLE_CONNECTOR = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Coordination Protocol</b></em>' containment reference.
+	 * The feature id for the '<em><b>Gmf Coordination Protocol</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL__COORDINATION_PROTOCOL = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Coordination Protocol</em>' class.
@@ -640,15 +640,15 @@ public interface ProtocolPackage extends EPackage {
 	EReference getCoordinationProtocol_RoleConnector();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol#getCoordinationProtocol <em>Coordination Protocol</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol#getGmfCoordinationProtocol <em>Gmf Coordination Protocol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Coordination Protocol</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol#getCoordinationProtocol()
+	 * @return the meta object for the containment reference '<em>Gmf Coordination Protocol</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol#getGmfCoordinationProtocol()
 	 * @see #getCoordinationProtocol()
 	 * @generated
 	 */
-	EReference getCoordinationProtocol_CoordinationProtocol();
+	EReference getCoordinationProtocol_GmfCoordinationProtocol();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.protocol.Role <em>Role</em>}'.
@@ -884,12 +884,12 @@ public interface ProtocolPackage extends EPackage {
 		EReference COORDINATION_PROTOCOL__ROLE_CONNECTOR = eINSTANCE.getCoordinationProtocol_RoleConnector();
 
 		/**
-		 * The meta object literal for the '<em><b>Coordination Protocol</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Gmf Coordination Protocol</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COORDINATION_PROTOCOL__COORDINATION_PROTOCOL = eINSTANCE.getCoordinationProtocol_CoordinationProtocol();
+		EReference COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL = eINSTANCE.getCoordinationProtocol_GmfCoordinationProtocol();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.RoleImpl <em>Role</em>}' class.

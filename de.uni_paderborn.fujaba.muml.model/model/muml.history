@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<history:History xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<history:History xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:history="http://www.eclipse.org/emf/edapt/history/0.3">
   <releases date="2012-11-07T14:51:41.065+0100" label="0.3.2">
     <changes xsi:type="history:CompositeChange">
@@ -6131,42 +6130,42 @@
             featureName="value" dataValue="Each coordination pattern has exactly one role connector.&#xD;&#xA;Cardinality is 1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, than change cardinality to 1..*"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/CoordinationProtocol"
-          referenceName="eStructuralFeatures" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"
+          referenceName="eStructuralFeatures" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol"
             featureName="name" dataValue="pattern"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol"
             featureName="volatile" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol"
             featureName="transient" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol"
             featureName="derived" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol"
             featureName="eType" referenceValue="muml.ecore#//model/protocol/CoordinationProtocol"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"
-          referenceName="eAnnotations" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol"
+          referenceName="eAnnotations" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="derivation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="self"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"
-          referenceName="eAnnotations" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol"
+          referenceName="eAnnotations" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="This derived reference only exists because GMF needs it to visualize the inner ellipse of a Real-Time Coordination Pattern."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//model/protocol" referenceName="eClassifiers"
@@ -16445,15 +16444,15 @@
         featureName="name" dataValue="CoordinationProtocol" oldDataValue="CoordinationPattern"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/RoleConnector/coordinationProtocol"
         featureName="name" dataValue="coordinationProtocol" oldDataValue="coordinationPattern"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol"
         featureName="name" dataValue="rotocol" oldDataValue="pattern"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol"
         featureName="name" dataValue="protocol" oldDataValue="rotocol"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/roleConnector"
         featureName="name" dataValue="roleConnector" oldDataValue="connector"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/coordinationProtocol"
         featureName="name" dataValue="coordinationProtocol" oldDataValue="coordinationPattern"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"
+    <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol"
         featureName="name" dataValue="coordinationProtocol" oldDataValue="protocol"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/multiRole"
         featureName="name" dataValue="multiRole" oldDataValue="isMultiRole"/>
@@ -19349,5 +19348,124 @@
         oldDataValue="http://www.fujaba.de/muml/actionlanguage/0.3.15"/>
   </releases>
   <releases>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/behavior/Variable"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/behavior/Variable/initializeExpression"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/Variable/initializeExpression"
+        featureName="name" dataValue="initializeExpression"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/Variable/initializeExpression"
+        featureName="eType" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/Role/roleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if self.connectors->isEmpty() then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;self.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)&#xD;&#xA;endif"
+        oldDataValue="if self.connectors->isEmpty() then&#xA;&#x9;null&#xA;else&#xA;&#x9;self.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol"
+        featureName="name" dataValue="gmfCoordinationProtocol" oldDataValue="coordinationProtocol"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/hasRegionOfPriority"
+        featureName="eType" referenceValue="muml.ecore#//model/valuetype/NaturalNumber"
+        oldReferenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/hasRegionOfPriority"
+        featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        oldReferenceValue="muml.ecore#//model/valuetype/NaturalNumber"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/hasRegionOfPriority/priority"
+        featureName="eType" referenceValue="muml.ecore#//model/valuetype/NaturalNumber"
+        oldReferenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/hasRegionOfPriority/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
+        featureName="value" dataValue="for (Region region : getRegions()) {&#xD;&#xA;&#x9;if (region.getPriority().equals(priority)) {&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return false;"
+        oldDataValue="for (Region region : getRegions()) {&#xA;&#x9;if (region.getPriority() == priority) {&#xA;&#x9;&#x9;return true;&#xA;&#x9;}&#xA;}&#xA;return false;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/hasOutgoingTransitionOfPriority/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Returns &lt;code>true&lt;/code>, if this Vertex contains an outgoing transition of the given priority."
+        oldDataValue="Returns the &lt;code>true&lt;/code>, if this Vertex contains an outgoing transition of the given priority."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/hasOutgoingTransitionOfPriority/priority"
+        featureName="eType" referenceValue="muml.ecore#//model/valuetype/NaturalNumber"
+        oldReferenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/hasOutgoingTransitionOfPriority/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
+        featureName="value" dataValue="for (Transition transition : getOutgoingTransitions()) {&#xD;&#xA;&#x9;if (transition.getPriority().equals(priority)) {&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return false;"
+        oldDataValue="for (Transition transition : getOutgoingTransitions()) {&#xA;&#x9;if (transition.getPriority() == priority) {&#xA;&#x9;&#x9;return true;&#xA;&#x9;}&#xA;}&#xA;return false;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/getUniqueTransitionPriority/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Returns the next free higher transition priority that is closest to the value provided as hint.&#xD;&#xA;\todosd{Rename hint to an understandable name.}"
+        oldDataValue="Returns the next free higher transition priority that is closest to the value provided as hint."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/getUniqueRegionPriority"
+        featureName="eType" referenceValue="muml.ecore#//model/valuetype/NaturalNumber"
+        oldReferenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/getUniqueRegionPriority/hint"
+        featureName="eType" referenceValue="muml.ecore#//model/valuetype/NaturalNumber"
+        oldReferenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <changes xsi:type="history:Set" element="#//@releases.14/@changes.19/@element"
+        featureName="eType" oldReferenceValue="muml.ecore#//model/valuetype/NaturalNumber"/>
+    <changes xsi:type="history:Set" element="#//@releases.14/@changes.19/@element"
+        featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAnnotation"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/PrioritizedElement"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/priority"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/priority"
+        featureName="name" dataValue="priority"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//model/realtimestatechart/PrioritizedElement"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EReference" name="priority" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAnnotation"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/priority"
+        featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/PrioritizedElement"
+        referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/PrioritizedElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        referenceName="details" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+          featureName="key" dataValue="constraints"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+          featureName="value" dataValue="ValueGreaterOrEqualZero"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/PrioritizedElement"
+        referenceName="eAnnotations" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/realtimestatechart/PrioritizedElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="ValueGreaterOrEqualZero"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="self.value >= 0"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="PriorityGreaterOrEqualOne" oldDataValue="ValueGreaterOrEqualZero"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.priority >= 1" oldDataValue="self.value >= 0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/hasRegionOfPriority"
+        featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        oldReferenceValue="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/PrioritizedElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="Enables the priorization of elements. The minimum priority is 1."
+        oldDataValue="Enables the priorization of elements."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/hasRegionOfPriority/priority"
+        featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        oldReferenceValue="muml.ecore#//model/valuetype/NaturalNumber"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/hasRegionOfPriority/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
+        featureName="value" dataValue="for (Region region : getRegions()) {&#xD;&#xA;&#x9;if (region.getPriority() == priority) {&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return false;"
+        oldDataValue="for (Region region : getRegions()) {&#xD;&#xA;&#x9;if (region.getPriority().equals(priority)) {&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return false;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/getUniqueRegionPriority/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
+        featureName="value" dataValue="for (; hasRegionOfPriority(hint); hint++);&#xD;&#xA;return hint;"
+        oldDataValue="for (; hasRegionOfPriority(hint); hint++);&#xA;return hint;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/getUniqueRegionPriority/hint/@eGenericType"
+        featureName="eClassifier" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        oldReferenceValue="muml.ecore#//model/valuetype/NaturalNumber"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/getUniqueRegionPriority/hint"
+        featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        oldReferenceValue="muml.ecore#//model/valuetype/NaturalNumber"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/getUniqueRegionPriority/@eGenericType"
+        featureName="eClassifier" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        oldReferenceValue="muml.ecore#//model/valuetype/NaturalNumber"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/getUniqueRegionPriority"
+        featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        oldReferenceValue="muml.ecore#//model/valuetype/NaturalNumber"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/hasOutgoingTransitionOfPriority/priority"
+        featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        oldReferenceValue="muml.ecore#//model/valuetype/NaturalNumber"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/Vertex/hasOutgoingTransitionOfPriority/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
+        featureName="value" dataValue="for (Transition transition : getOutgoingTransitions()) {&#xD;&#xA;&#x9;if (transition.getPriority() == priority) {&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return false;"
+        oldDataValue="for (Transition transition : getOutgoingTransitions()) {&#xD;&#xA;&#x9;if (transition.getPriority().equals(priority)) {&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return false;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/hasRegionOfPriority"
+        featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        oldReferenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
   </releases>
 </history:History>

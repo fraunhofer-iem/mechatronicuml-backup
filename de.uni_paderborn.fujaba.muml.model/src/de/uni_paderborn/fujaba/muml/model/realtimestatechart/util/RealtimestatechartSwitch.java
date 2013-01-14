@@ -29,7 +29,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
@@ -131,7 +130,7 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 				Region region = (Region)theEObject;
 				T result = caseRegion(region);
 				if (result == null) result = caseNamedElement(region);
-				if (result == null) result = casePrioritizable(region);
+				if (result == null) result = casePrioritizedElement(region);
 				if (result == null) result = caseExtendableElement(region);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -156,7 +155,7 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 			case RealtimestatechartPackage.TRANSITION: {
 				Transition transition = (Transition)theEObject;
 				T result = caseTransition(transition);
-				if (result == null) result = casePrioritizable(transition);
+				if (result == null) result = casePrioritizedElement(transition);
 				if (result == null) result = caseCommentableElement(transition);
 				if (result == null) result = caseExtendableElement(transition);
 				if (result == null) result = defaultCase(theEObject);
@@ -216,9 +215,9 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.PRIORITIZABLE: {
-				Prioritizable prioritizable = (Prioritizable)theEObject;
-				T result = casePrioritizable(prioritizable);
+			case RealtimestatechartPackage.PRIORITIZED_ELEMENT: {
+				PrioritizedElement prioritizedElement = (PrioritizedElement)theEObject;
+				T result = casePrioritizedElement(prioritizedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -536,17 +535,17 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Prioritizable</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Prioritized Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Prioritizable</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Prioritized Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePrioritizable(Prioritizable object) {
+	public T casePrioritizedElement(PrioritizedElement object) {
 		return null;
 	}
 

@@ -30,7 +30,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Event;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
@@ -160,8 +159,8 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createSynchronizationAdapter();
 			}
 			@Override
-			public Adapter casePrioritizable(Prioritizable object) {
-				return createPrioritizableAdapter();
+			public Adapter casePrioritizedElement(PrioritizedElement object) {
+				return createPrioritizedElementAdapter();
 			}
 			@Override
 			public Adapter caseRealtimeStatechart(RealtimeStatechart object) {
@@ -450,16 +449,16 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable <em>Prioritizable</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.PrioritizedElement <em>Prioritized Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.PrioritizedElement
 	 * @generated
 	 */
-	public Adapter createPrioritizableAdapter() {
+	public Adapter createPrioritizedElementAdapter() {
 		return null;
 	}
 

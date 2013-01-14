@@ -85,12 +85,12 @@ public class RegionItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Prioritizable_priority_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Prioritizable_priority_feature", "_UI_Prioritizable_type"),
-				 RealtimestatechartPackage.Literals.PRIORITIZABLE__PRIORITY,
+				 getString("_UI_PrioritizedElement_priority_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PrioritizedElement_priority_feature", "_UI_PrioritizedElement_type"),
+				 RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT__PRIORITY,
 				 true,
 				 false,
-				 false,
+				 true,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
@@ -217,7 +217,6 @@ public class RegionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Region.class)) {
-			case RealtimestatechartPackage.REGION__PRIORITY:
 			case RealtimestatechartPackage.REGION__GMF_HISTORY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

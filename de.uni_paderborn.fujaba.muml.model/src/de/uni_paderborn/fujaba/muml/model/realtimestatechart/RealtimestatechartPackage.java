@@ -238,16 +238,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	int CLOCK_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.PrioritizableImpl <em>Prioritizable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.PrioritizableImpl
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getPrioritizable()
-	 * @generated
-	 */
-	int PRIORITIZABLE = 15;
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RegionImpl <em>Region</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1243,22 +1233,32 @@ public interface RealtimestatechartPackage extends EPackage {
 	int SYNCHRONIZATION_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.PrioritizedElementImpl <em>Prioritized Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.PrioritizedElementImpl
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getPrioritizedElement()
+	 * @generated
+	 */
+	int PRIORITIZED_ELEMENT = 15;
+
+	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIORITIZABLE__PRIORITY = 0;
+	int PRIORITIZED_ELEMENT__PRIORITY = 0;
 
 	/**
-	 * The number of structural features of the '<em>Prioritizable</em>' class.
+	 * The number of structural features of the '<em>Prioritized Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIORITIZABLE_FEATURE_COUNT = 1;
+	int PRIORITIZED_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl <em>Realtime Statechart</em>}' class.
@@ -2572,25 +2572,25 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getSynchronization_SelectorExpression();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable <em>Prioritizable</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.PrioritizedElement <em>Prioritized Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Prioritizable</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable
+	 * @return the meta object for class '<em>Prioritized Element</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.PrioritizedElement
 	 * @generated
 	 */
-	EClass getPrioritizable();
+	EClass getPrioritizedElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable#getPriority <em>Priority</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.PrioritizedElement#getPriority <em>Priority</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Priority</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable#getPriority()
-	 * @see #getPrioritizable()
+	 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.PrioritizedElement#getPriority()
+	 * @see #getPrioritizedElement()
 	 * @generated
 	 */
-	EAttribute getPrioritizable_Priority();
+	EAttribute getPrioritizedElement_Priority();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart <em>Realtime Statechart</em>}'.
@@ -3482,14 +3482,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference SYNCHRONIZATION__SELECTOR_EXPRESSION = eINSTANCE.getSynchronization_SelectorExpression();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.PrioritizableImpl <em>Prioritizable</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.PrioritizedElementImpl <em>Prioritized Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.PrioritizableImpl
-		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getPrioritizable()
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.PrioritizedElementImpl
+		 * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl#getPrioritizedElement()
 		 * @generated
 		 */
-		EClass PRIORITIZABLE = eINSTANCE.getPrioritizable();
+		EClass PRIORITIZED_ELEMENT = eINSTANCE.getPrioritizedElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
@@ -3497,7 +3497,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRIORITIZABLE__PRIORITY = eINSTANCE.getPrioritizable_Priority();
+		EAttribute PRIORITIZED_ELEMENT__PRIORITY = eINSTANCE.getPrioritizedElement_Priority();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimeStatechartImpl <em>Realtime Statechart</em>}' class.

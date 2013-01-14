@@ -110,6 +110,7 @@ public class CoordinationProtocolItemProvider
 			childrenFeatures.add(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 			childrenFeatures.add(ProtocolPackage.Literals.COORDINATION_PROTOCOL__ROLES);
 			childrenFeatures.add(ProtocolPackage.Literals.COORDINATION_PROTOCOL__ROLE_CONNECTOR);
+			childrenFeatures.add(ProtocolPackage.Literals.COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL);
 		}
 		return childrenFeatures;
 	}
@@ -170,6 +171,7 @@ public class CoordinationProtocolItemProvider
 			case ProtocolPackage.COORDINATION_PROTOCOL__CONSTRAINT:
 			case ProtocolPackage.COORDINATION_PROTOCOL__ROLES:
 			case ProtocolPackage.COORDINATION_PROTOCOL__ROLE_CONNECTOR:
+			case ProtocolPackage.COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -201,6 +203,11 @@ public class CoordinationProtocolItemProvider
 			(createChildParameter
 				(ProtocolPackage.Literals.COORDINATION_PROTOCOL__ROLE_CONNECTOR,
 				 ProtocolFactory.eINSTANCE.createRoleConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ProtocolPackage.Literals.COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL,
+				 ProtocolFactory.eINSTANCE.createCoordinationProtocol()));
 	}
 
 	/**

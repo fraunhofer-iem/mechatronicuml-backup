@@ -93,7 +93,7 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	 * @return the value of the '<em>Role Connector</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getRole_RoleConnector()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.connectors->isEmpty() then\n\tnull\nelse\n\tself.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.connectors->isEmpty() then\r\n\tnull\r\nelse\r\n\tself.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)\r\nendif'"
 	 * @generated
 	 */
 	RoleConnector getRoleConnector();

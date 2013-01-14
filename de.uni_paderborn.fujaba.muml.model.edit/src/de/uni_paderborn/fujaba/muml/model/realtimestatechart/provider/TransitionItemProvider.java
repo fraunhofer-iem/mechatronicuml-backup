@@ -111,12 +111,12 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Prioritizable_priority_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Prioritizable_priority_feature", "_UI_Prioritizable_type"),
-				 RealtimestatechartPackage.Literals.PRIORITIZABLE__PRIORITY,
+				 getString("_UI_PrioritizedElement_priority_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PrioritizedElement_priority_feature", "_UI_PrioritizedElement_type"),
+				 RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT__PRIORITY,
 				 true,
 				 false,
-				 false,
+				 true,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
@@ -891,7 +891,6 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Transition.class)) {
-			case RealtimestatechartPackage.TRANSITION__PRIORITY:
 			case RealtimestatechartPackage.TRANSITION__COMMENT:
 			case RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT:
 			case RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT:

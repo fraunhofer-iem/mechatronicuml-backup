@@ -40,7 +40,7 @@ import de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.CoordinationProtocolImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.CoordinationProtocolImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.CoordinationProtocolImpl#getRoleConnector <em>Role Connector</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.CoordinationProtocolImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.impl.CoordinationProtocolImpl#getGmfCoordinationProtocol <em>Gmf Coordination Protocol</em>}</li>
  * </ul>
  * </p>
  *
@@ -98,14 +98,14 @@ public class CoordinationProtocolImpl extends NamedElementImpl implements Coordi
 	protected RoleConnector roleConnector;
 
 	/**
-	 * The cached setting delegate for the '{@link #getCoordinationProtocol() <em>Coordination Protocol</em>}' containment reference.
+	 * The cached setting delegate for the '{@link #getGmfCoordinationProtocol() <em>Gmf Coordination Protocol</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCoordinationProtocol()
+	 * @see #getGmfCoordinationProtocol()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate COORDINATION_PROTOCOL__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ProtocolPackage.Literals.COORDINATION_PROTOCOL__COORDINATION_PROTOCOL).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate GMF_COORDINATION_PROTOCOL__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ProtocolPackage.Literals.COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,8 +219,8 @@ public class CoordinationProtocolImpl extends NamedElementImpl implements Coordi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocol getCoordinationProtocol() {
-		return (CoordinationProtocol)COORDINATION_PROTOCOL__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public CoordinationProtocol getGmfCoordinationProtocol() {
+		return (CoordinationProtocol)GMF_COORDINATION_PROTOCOL__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -228,8 +228,8 @@ public class CoordinationProtocolImpl extends NamedElementImpl implements Coordi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCoordinationProtocol(CoordinationProtocol newCoordinationProtocol, NotificationChain msgs) {
-		// TODO: implement this method to set the contained 'Coordination Protocol' containment reference
+	public NotificationChain basicSetGmfCoordinationProtocol(CoordinationProtocol newGmfCoordinationProtocol, NotificationChain msgs) {
+		// TODO: implement this method to set the contained 'Gmf Coordination Protocol' containment reference
 		// -> this method is automatically invoked to keep the containment relationship in synch
 		// -> do not modify other features
 		// -> return msgs, after adding any generated Notification to it (if it is null, a NotificationChain object must be created first)
@@ -242,8 +242,8 @@ public class CoordinationProtocolImpl extends NamedElementImpl implements Coordi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCoordinationProtocol(CoordinationProtocol newCoordinationProtocol) {
-		COORDINATION_PROTOCOL__ESETTING_DELEGATE.dynamicSet(this, null, 0, newCoordinationProtocol);
+	public void setGmfCoordinationProtocol(CoordinationProtocol newGmfCoordinationProtocol) {
+		GMF_COORDINATION_PROTOCOL__ESETTING_DELEGATE.dynamicSet(this, null, 0, newGmfCoordinationProtocol);
 	}
 
 	/**
@@ -281,8 +281,8 @@ public class CoordinationProtocolImpl extends NamedElementImpl implements Coordi
 				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
 			case ProtocolPackage.COORDINATION_PROTOCOL__ROLE_CONNECTOR:
 				return basicSetRoleConnector(null, msgs);
-			case ProtocolPackage.COORDINATION_PROTOCOL__COORDINATION_PROTOCOL:
-				return basicSetCoordinationProtocol(null, msgs);
+			case ProtocolPackage.COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL:
+				return basicSetGmfCoordinationProtocol(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -303,8 +303,8 @@ public class CoordinationProtocolImpl extends NamedElementImpl implements Coordi
 				return getRoles();
 			case ProtocolPackage.COORDINATION_PROTOCOL__ROLE_CONNECTOR:
 				return getRoleConnector();
-			case ProtocolPackage.COORDINATION_PROTOCOL__COORDINATION_PROTOCOL:
-				return getCoordinationProtocol();
+			case ProtocolPackage.COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL:
+				return getGmfCoordinationProtocol();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -332,8 +332,8 @@ public class CoordinationProtocolImpl extends NamedElementImpl implements Coordi
 			case ProtocolPackage.COORDINATION_PROTOCOL__ROLE_CONNECTOR:
 				setRoleConnector((RoleConnector)newValue);
 				return;
-			case ProtocolPackage.COORDINATION_PROTOCOL__COORDINATION_PROTOCOL:
-				setCoordinationProtocol((CoordinationProtocol)newValue);
+			case ProtocolPackage.COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL:
+				setGmfCoordinationProtocol((CoordinationProtocol)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -359,8 +359,8 @@ public class CoordinationProtocolImpl extends NamedElementImpl implements Coordi
 			case ProtocolPackage.COORDINATION_PROTOCOL__ROLE_CONNECTOR:
 				setRoleConnector((RoleConnector)null);
 				return;
-			case ProtocolPackage.COORDINATION_PROTOCOL__COORDINATION_PROTOCOL:
-				setCoordinationProtocol((CoordinationProtocol)null);
+			case ProtocolPackage.COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL:
+				setGmfCoordinationProtocol((CoordinationProtocol)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -382,8 +382,8 @@ public class CoordinationProtocolImpl extends NamedElementImpl implements Coordi
 				return roles != null && !roles.isEmpty();
 			case ProtocolPackage.COORDINATION_PROTOCOL__ROLE_CONNECTOR:
 				return roleConnector != null;
-			case ProtocolPackage.COORDINATION_PROTOCOL__COORDINATION_PROTOCOL:
-				return COORDINATION_PROTOCOL__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ProtocolPackage.COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL:
+				return GMF_COORDINATION_PROTOCOL__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -70,7 +70,7 @@ public interface PortConnector extends Connector {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ports</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getPortConnector_Ports()
-	 * @model transient="true" volatile="true" derived="true"
+	 * @model lower="2" upper="2" transient="true" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port)->asOrderedSet()'"
 	 * @generated
 	 */

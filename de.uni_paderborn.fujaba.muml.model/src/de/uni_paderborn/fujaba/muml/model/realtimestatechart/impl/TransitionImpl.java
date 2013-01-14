@@ -32,8 +32,8 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ClockConstraint;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.PrioritizedElement;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline;
@@ -1206,9 +1206,9 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Prioritizable.class) {
+		if (baseClass == PrioritizedElement.class) {
 			switch (derivedFeatureID) {
-				case RealtimestatechartPackage.TRANSITION__PRIORITY: return RealtimestatechartPackage.PRIORITIZABLE__PRIORITY;
+				case RealtimestatechartPackage.TRANSITION__PRIORITY: return RealtimestatechartPackage.PRIORITIZED_ELEMENT__PRIORITY;
 				default: return -1;
 			}
 		}
@@ -1228,9 +1228,9 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Prioritizable.class) {
+		if (baseClass == PrioritizedElement.class) {
 			switch (baseFeatureID) {
-				case RealtimestatechartPackage.PRIORITIZABLE__PRIORITY: return RealtimestatechartPackage.TRANSITION__PRIORITY;
+				case RealtimestatechartPackage.PRIORITIZED_ELEMENT__PRIORITY: return RealtimestatechartPackage.TRANSITION__PRIORITY;
 				default: return -1;
 			}
 		}

@@ -30,7 +30,7 @@ import org.storydriven.core.NamedElement;
  * @model
  * @generated
  */
-public interface Region extends NamedElement, Prioritizable {
+public interface Region extends NamedElement, PrioritizedElement {
 	/**
 	 * Returns the value of the '<em><b>Statechart</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}'.

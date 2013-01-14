@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.NamedElement;
 
@@ -79,6 +80,7 @@ public interface Vertex extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Returns the next free higher transition priority that is closest to the value provided as hint.
+	 * \todosd{Rename hint to an understandable name.}
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (; hasOutgoingTransitionOfPriority(hint); hint++);\nreturn hint;'"
 	 * @generated
@@ -89,9 +91,9 @@ public interface Vertex extends NamedElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Returns the <code>true</code>, if this Vertex contains an outgoing transition of the given priority.
+	 * Returns <code>true</code>, if this Vertex contains an outgoing transition of the given priority.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (Transition transition : getOutgoingTransitions()) {\n\tif (transition.getPriority() == priority) {\n\t\treturn true;\n\t}\n}\nreturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (Transition transition : getOutgoingTransitions()) {\r\n\tif (transition.getPriority() == priority) {\r\n\t\treturn true;\r\n\t}\r\n}\r\nreturn false;'"
 	 * @generated
 	 */
 	boolean hasOutgoingTransitionOfPriority(int priority);

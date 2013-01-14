@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
@@ -26,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.model.types.DataType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.behavior.impl.VariableImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.behavior.impl.VariableImpl#getInitializeExpression <em>Initialize Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +53,16 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 	 * @ordered
 	 */
 	protected String comment = COMMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getInitializeExpression() <em>Initialize Expression</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInitializeExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected Expression initializeExpression;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,11 +109,52 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Expression getInitializeExpression() {
+		if (initializeExpression != null && initializeExpression.eIsProxy()) {
+			InternalEObject oldInitializeExpression = (InternalEObject)initializeExpression;
+			initializeExpression = (Expression)eResolveProxy(oldInitializeExpression);
+			if (initializeExpression != oldInitializeExpression) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION, oldInitializeExpression, initializeExpression));
+			}
+		}
+		return initializeExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Expression basicGetInitializeExpression() {
+		return initializeExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInitializeExpression(Expression newInitializeExpression) {
+		Expression oldInitializeExpression = initializeExpression;
+		initializeExpression = newInitializeExpression;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION, oldInitializeExpression, initializeExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BehaviorPackage.VARIABLE__COMMENT:
 				return getComment();
+			case BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION:
+				if (resolve) return getInitializeExpression();
+				return basicGetInitializeExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,6 +169,9 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 		switch (featureID) {
 			case BehaviorPackage.VARIABLE__COMMENT:
 				setComment((String)newValue);
+				return;
+			case BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION:
+				setInitializeExpression((Expression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -132,6 +188,9 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 			case BehaviorPackage.VARIABLE__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
+			case BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION:
+				setInitializeExpression((Expression)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -146,6 +205,8 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 		switch (featureID) {
 			case BehaviorPackage.VARIABLE__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			case BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION:
+				return initializeExpression != null;
 		}
 		return super.eIsSet(featureID);
 	}

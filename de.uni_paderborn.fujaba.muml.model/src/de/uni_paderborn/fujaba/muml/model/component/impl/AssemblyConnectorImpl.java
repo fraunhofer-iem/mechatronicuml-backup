@@ -12,10 +12,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol;
+import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,6 +43,16 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	 * @ordered
 	 */
 	protected CoordinationProtocol coordinationProtocol;
+
+	/**
+	 * The cached value of the '{@link #getComponentParts() <em>Component Parts</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComponentParts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ComponentPart> componentParts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,11 +117,10 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	 * @generated
 	 */
 	public EList<ComponentPart> getComponentParts() {
-		// TODO: implement this method to return the 'Component Parts' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		if (componentParts == null) {
+			componentParts = new EObjectResolvingEList<ComponentPart>(ComponentPart.class, this, ComponentPackage.ASSEMBLY_CONNECTOR__COMPONENT_PARTS);
+		}
+		return componentParts;
 	}
 
 	/**
@@ -134,11 +145,16 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((CoordinationProtocol)newValue);
+				return;
+			case ComponentPackage.ASSEMBLY_CONNECTOR__COMPONENT_PARTS:
+				getComponentParts().clear();
+				getComponentParts().addAll((Collection<? extends ComponentPart>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -155,6 +171,9 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((CoordinationProtocol)null);
 				return;
+			case ComponentPackage.ASSEMBLY_CONNECTOR__COMPONENT_PARTS:
+				getComponentParts().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -170,7 +189,7 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL:
 				return coordinationProtocol != null;
 			case ComponentPackage.ASSEMBLY_CONNECTOR__COMPONENT_PARTS:
-				return !getComponentParts().isEmpty();
+				return componentParts != null && !componentParts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
 
+import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -267,7 +268,7 @@ public interface State extends Vertex {
 	 * <!-- begin-model-doc -->
 	 * Returns the next free higher region priority that is closest to the value provided as hint.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (; hasRegionOfPriority(hint); hint++);\nreturn hint;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (; hasRegionOfPriority(hint); hint++);\r\nreturn hint;'"
 	 * @generated
 	 */
 	int getUniqueRegionPriority(int hint);
@@ -278,7 +279,7 @@ public interface State extends Vertex {
 	 * <!-- begin-model-doc -->
 	 * Returns the <code>true</code>, if this State contains a region of the given priority.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (Region region : getRegions()) {\n\tif (region.getPriority() == priority) {\n\t\treturn true;\n\t}\n}\nreturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (Region region : getRegions()) {\r\n\tif (region.getPriority() == priority) {\r\n\t\treturn true;\r\n\t}\r\n}\r\nreturn false;'"
 	 * @generated
 	 */
 	boolean hasRegionOfPriority(int priority);

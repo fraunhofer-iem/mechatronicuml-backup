@@ -26,7 +26,7 @@ import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol#getRoles <em>Roles</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol#getRoleConnector <em>Role Connector</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol#getGmfCoordinationProtocol <em>Gmf Coordination Protocol</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,29 +82,29 @@ public interface CoordinationProtocol extends NamedElement, ConstrainableElement
 	void setRoleConnector(RoleConnector value);
 
 	/**
-	 * Returns the value of the '<em><b>Coordination Protocol</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Gmf Coordination Protocol</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * This derived reference only exists because GMF needs it to visualize the inner ellipse of a Real-Time Coordination Pattern.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Coordination Protocol</em>' containment reference.
-	 * @see #setCoordinationProtocol(CoordinationProtocol)
-	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getCoordinationProtocol_CoordinationProtocol()
+	 * @return the value of the '<em>Gmf Coordination Protocol</em>' containment reference.
+	 * @see #setGmfCoordinationProtocol(CoordinationProtocol)
+	 * @see de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage#getCoordinationProtocol_GmfCoordinationProtocol()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self'"
 	 * @generated
 	 */
-	CoordinationProtocol getCoordinationProtocol();
+	CoordinationProtocol getGmfCoordinationProtocol();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol#getCoordinationProtocol <em>Coordination Protocol</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol#getGmfCoordinationProtocol <em>Gmf Coordination Protocol</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Coordination Protocol</em>' containment reference.
-	 * @see #getCoordinationProtocol()
+	 * @param value the new value of the '<em>Gmf Coordination Protocol</em>' containment reference.
+	 * @see #getGmfCoordinationProtocol()
 	 * @generated
 	 */
-	void setCoordinationProtocol(CoordinationProtocol value);
+	void setGmfCoordinationProtocol(CoordinationProtocol value);
 
 } // CoordinationProtocol

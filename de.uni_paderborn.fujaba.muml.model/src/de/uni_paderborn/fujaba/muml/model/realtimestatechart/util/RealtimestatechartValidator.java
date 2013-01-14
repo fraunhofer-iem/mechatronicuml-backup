@@ -30,7 +30,6 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
@@ -146,8 +145,8 @@ public class RealtimestatechartValidator extends EObjectValidator {
 				return validateSynchronizationChannel((SynchronizationChannel)value, diagnostics, context);
 			case RealtimestatechartPackage.SYNCHRONIZATION:
 				return validateSynchronization((Synchronization)value, diagnostics, context);
-			case RealtimestatechartPackage.PRIORITIZABLE:
-				return validatePrioritizable((Prioritizable)value, diagnostics, context);
+			case RealtimestatechartPackage.PRIORITIZED_ELEMENT:
+				return validatePrioritizedElement((PrioritizedElement)value, diagnostics, context);
 			case RealtimestatechartPackage.REALTIME_STATECHART:
 				return validateRealtimeStatechart((RealtimeStatechart)value, diagnostics, context);
 			case RealtimestatechartPackage.EVENT:
@@ -219,7 +218,17 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateRegion(Region region, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(region, diagnostics, context);
+		if (!validate_NoCircularContainment(region, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(region, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePrioritizedElement_PriorityGreaterOrEqualOne(region, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -534,6 +543,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePrioritizedElement_PriorityGreaterOrEqualOne(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_LegalTransitionsOnly(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_TriggerMessageEventsMustNotHaveAnOwnedParameterBinding(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_ValidTriggerMessageEvents(transition, diagnostics, context);
@@ -893,8 +903,46 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePrioritizable(Prioritizable prioritizable, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(prioritizable, diagnostics, context);
+	public boolean validatePrioritizedElement(PrioritizedElement prioritizedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(prioritizedElement, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(prioritizedElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(prioritizedElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(prioritizedElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(prioritizedElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(prioritizedElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(prioritizedElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(prioritizedElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(prioritizedElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePrioritizedElement_PriorityGreaterOrEqualOne(prioritizedElement, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the PriorityGreaterOrEqualOne constraint of '<em>Prioritized Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePrioritizedElement_PriorityGreaterOrEqualOne(PrioritizedElement prioritizedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "PriorityGreaterOrEqualOne", getObjectLabel(prioritizedElement, context) },
+						 new Object[] { prioritizedElement },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**

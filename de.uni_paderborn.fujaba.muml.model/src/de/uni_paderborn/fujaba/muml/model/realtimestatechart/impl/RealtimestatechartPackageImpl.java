@@ -52,7 +52,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Prioritizable;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.PrioritizedElement;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
@@ -189,7 +189,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass prioritizableEClass = null;
+	private EClass prioritizedElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1006,8 +1006,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPrioritizable() {
-		return prioritizableEClass;
+	public EClass getPrioritizedElement() {
+		return prioritizedElementEClass;
 	}
 
 	/**
@@ -1015,8 +1015,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPrioritizable_Priority() {
-		return (EAttribute)prioritizableEClass.getEStructuralFeatures().get(0);
+	public EAttribute getPrioritizedElement_Priority() {
+		return (EAttribute)prioritizedElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1374,8 +1374,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEAttribute(synchronizationEClass, SYNCHRONIZATION__KIND);
 		createEReference(synchronizationEClass, SYNCHRONIZATION__SELECTOR_EXPRESSION);
 
-		prioritizableEClass = createEClass(PRIORITIZABLE);
-		createEAttribute(prioritizableEClass, PRIORITIZABLE__PRIORITY);
+		prioritizedElementEClass = createEClass(PRIORITIZED_ELEMENT);
+		createEAttribute(prioritizedElementEClass, PRIORITIZED_ELEMENT__PRIORITY);
 
 		realtimeStatechartEClass = createEClass(REALTIME_STATECHART);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__EMBEDDING_REGION);
@@ -1459,11 +1459,11 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		relativeDeadlineEClass.getESuperTypes().add(this.getDeadline());
 		clockEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		regionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		regionEClass.getESuperTypes().add(this.getPrioritizable());
+		regionEClass.getESuperTypes().add(this.getPrioritizedElement());
 		stateEClass.getESuperTypes().add(this.getVertex());
 		vertexEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		transitionEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
-		transitionEClass.getESuperTypes().add(this.getPrioritizable());
+		transitionEClass.getESuperTypes().add(this.getPrioritizedElement());
 		transitionEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		actionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		asynchronousMessageEventEClass.getESuperTypes().add(this.getTransitionEvent());
@@ -1517,11 +1517,11 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getState_Simple(), theEcorePackage.getEBoolean(), "simple", "false", 0, 1, State.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getState_Statechart(), this.getRealtimeStatechart(), this.getRealtimeStatechart_States(), "statechart", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = addEOperation(stateEClass, theEcorePackage.getEInt(), "getUniqueRegionPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theEcorePackage.getEInt(), "hint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = addEOperation(stateEClass, ecorePackage.getEInt(), "getUniqueRegionPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "hint", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(stateEClass, theEcorePackage.getEBoolean(), "hasRegionOfPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theEcorePackage.getEInt(), "priority", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(stateEClass, ecorePackage.getEBoolean(), "hasRegionOfPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "priority", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(vertexEClass, Vertex.class, "Vertex", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVertex_OutgoingTransitions(), this.getTransition(), this.getTransition_Source(), "outgoingTransitions", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1534,7 +1534,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		addEParameter(op, theEcorePackage.getEInt(), "hint", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = addEOperation(vertexEClass, theEcorePackage.getEBoolean(), "hasOutgoingTransitionOfPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, theEcorePackage.getEInt(), "priority", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "priority", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTransition_Synchronization(), this.getSynchronization(), null, "synchronization", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1584,8 +1584,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getSynchronization_Kind(), this.getSynchronizationKind(), "kind", null, 1, 1, Synchronization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSynchronization_SelectorExpression(), theExpressionsPackage.getExpression(), null, "selectorExpression", null, 0, 1, Synchronization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(prioritizableEClass, Prioritizable.class, "Prioritizable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPrioritizable_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, Prioritizable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(prioritizedElementEClass, PrioritizedElement.class, "PrioritizedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPrioritizedElement_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, PrioritizedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(realtimeStatechartEClass, RealtimeStatechart.class, "RealtimeStatechart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRealtimeStatechart_EmbeddingRegion(), this.getRegion(), this.getRegion_Statechart(), "embeddingRegion", null, 0, 1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1681,7 +1681,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "ValidLowerUpperPeriod"
-		   });																	
+		   });														
+		addAnnotation
+		  (prioritizedElementEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "PriorityGreaterOrEqualOne"
+		   });					
 		addAnnotation
 		  (realtimeStatechartEClass, 
 		   source, 
@@ -1789,7 +1795,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "ValidLowerUpperPeriod", "self.periodLower.value.value >= 1 and self.periodLower.value.value <= self.periodUpper.value.value"
-		   });																	
+		   });																
+		addAnnotation
+		  (prioritizedElementEClass, 
+		   source, 
+		   new String[] {
+			 "ValueGreaterOrEqualZero", "self.priority >= 1"
+		   });			
 		addAnnotation
 		  (realtimeStatechartEClass, 
 		   source, 

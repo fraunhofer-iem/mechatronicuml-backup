@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="muml"
-    nsURI="http://www.fujaba.de/muml/0.2.2" nsPrefix="muml">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="muml" nsURI="http://www.fujaba.de/muml/0.2.2" nsPrefix="muml">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel"/>
   <eSubpackages name="model" nsURI="http://www.fujaba.de/muml/model/0.2.2" nsPrefix="model">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -249,8 +247,9 @@
             <details key="documentation" value="The structured component this connector belongs to."/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
-            eType="#//model/component/Port" volatile="true" transient="true" derived="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="ports" lowerBound="2"
+            upperBound="2" eType="#//model/component/Port" volatile="true" transient="true"
+            derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
             <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port)->asOrderedSet()"/>
           </eAnnotations>
@@ -264,7 +263,7 @@
           <details key="constraints" value=""/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="NoSelfAssembliesForSinglePortsOfSingleParts" value="(self.fromPort.cardinality.upperBound.value &lt;= 1 and self.from.cardinality.upperBound.value &lt;= 1)&#xD;&#xA;implies&#xD;&#xA;self.fromPort &lt;> self.toPort"/>
+          <details key="NoSelfAssembliesForSinglePortsOfSingleParts" value="(self.ports[0].cardinality.upperBound.value &lt;= 1 and self.ports[0].cardinality.upperBound.value &lt;= 1)&#xD;&#xA;implies&#xD;&#xA;self.ports[0] &lt;> self.ports[1]"/>
           <details key="ValidContinuousPortDirections" value="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind &lt;> self.toContinuousPort.kind"/>
           <details key="AssemblyBetweenDiscretePortsRequiresCoordinationPattern" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- assembly between two discrete ports requires a coordination pattern&#xA;&#x9;not self.coordinationPattern.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"/>
           <details key="AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern"
@@ -286,8 +285,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="componentParts" lowerBound="2"
-            upperBound="2" eType="#//model/component/ComponentPart" changeable="false"
-            volatile="true" transient="true" derived="true"/>
+            upperBound="2" eType="#//model/component/ComponentPart"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" eSuperTypes="#//model/component/PortConnector">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -313,8 +311,7 @@
           <details key="ValidHybridOutPortCombination" value="not self.fromHybridPort.oclIsUndefined() &#xD;&#xA;and &#xD;&#xA;self.fromHybridPort.isHybridOutPort &#xD;&#xA;implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) "/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart" lowerBound="1"
-            eType="#//model/component/ComponentPart" changeable="false" volatile="true"
-            transient="true" derived="true">
+            eType="#//model/component/ComponentPart">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The component part of the port part which is connected by this delegation."/>
           </eAnnotations>
@@ -872,7 +869,7 @@
             <details key="documentation" value="Each coordination pattern has exactly one role connector.&#xD;&#xA;Cardinality is 1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, than change cardinality to 1..*"/>
           </eAnnotations>
         </eStructuralFeatures>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
+        <eStructuralFeatures xsi:type="ecore:EReference" name="gmfCoordinationProtocol"
             eType="#//model/protocol/CoordinationProtocol" volatile="true" transient="true"
             derived="true" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -910,7 +907,7 @@
             eType="#//model/protocol/RoleConnector" changeable="false" volatile="true"
             transient="true" derived="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-            <details key="derivation" value="if self.connectors->isEmpty() then&#xA;&#x9;null&#xA;else&#xA;&#x9;self.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)&#xA;endif"/>
+            <details key="derivation" value="if self.connectors->isEmpty() then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;self.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)&#xD;&#xA;endif"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiRole" lowerBound="1"
@@ -1032,7 +1029,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement #//model/realtimestatechart/Prioritizable">
+      <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement #//model/realtimestatechart/PrioritizedElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Regions enables hierarchy and parallelism. Each state can have zero, one or more regions."/>
         </eAnnotations>
@@ -1078,19 +1075,19 @@
           <details key="BoundOfInvariantGreaterOrEqualZero" value="self.invariants.bound.value->forAll(value >= 0)"/>
           <details key="InvalidClockConstraintOperator" value="self.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))"/>
         </eAnnotations>
-        <eOperations name="getUniqueRegionPriority" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
+        <eOperations name="getUniqueRegionPriority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Returns the next free higher region priority that is closest to the value provided as hint."/>
-            <details key="body" value="for (; hasRegionOfPriority(hint); hint++);&#xA;return hint;"/>
+            <details key="body" value="for (; hasRegionOfPriority(hint); hint++);&#xD;&#xA;return hint;"/>
           </eAnnotations>
-          <eParameters name="hint" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+          <eParameters name="hint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eOperations>
-        <eOperations name="hasRegionOfPriority" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+        <eOperations name="hasRegionOfPriority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Returns the &lt;code>true&lt;/code>, if this State contains a region of the given priority."/>
-            <details key="body" value="for (Region region : getRegions()) {&#xA;&#x9;if (region.getPriority() == priority) {&#xA;&#x9;&#x9;return true;&#xA;&#x9;}&#xA;}&#xA;return false;"/>
+            <details key="body" value="for (Region region : getRegions()) {&#xD;&#xA;&#x9;if (region.getPriority() == priority) {&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return false;"/>
           </eAnnotations>
-          <eParameters name="priority" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+          <eParameters name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1"
             eType="#//model/realtimestatechart/Region" containment="true" eOpposite="#//model/realtimestatechart/Region/parentState">
@@ -1191,17 +1188,17 @@
         </eOperations>
         <eOperations name="getUniqueTransitionPriority" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Returns the next free higher transition priority that is closest to the value provided as hint."/>
+            <details key="documentation" value="Returns the next free higher transition priority that is closest to the value provided as hint.&#xD;&#xA;\todosd{Rename hint to an understandable name.}"/>
             <details key="body" value="for (; hasOutgoingTransitionOfPriority(hint); hint++);&#xA;return hint;"/>
           </eAnnotations>
           <eParameters name="hint" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
         </eOperations>
         <eOperations name="hasOutgoingTransitionOfPriority" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Returns the &lt;code>true&lt;/code>, if this Vertex contains an outgoing transition of the given priority."/>
-            <details key="body" value="for (Transition transition : getOutgoingTransitions()) {&#xA;&#x9;if (transition.getPriority() == priority) {&#xA;&#x9;&#x9;return true;&#xA;&#x9;}&#xA;}&#xA;return false;"/>
+            <details key="documentation" value="Returns &lt;code>true&lt;/code>, if this Vertex contains an outgoing transition of the given priority."/>
+            <details key="body" value="for (Transition transition : getOutgoingTransitions()) {&#xD;&#xA;&#x9;if (transition.getPriority() == priority) {&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return false;"/>
           </eAnnotations>
-          <eParameters name="priority" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+          <eParameters name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions"
             upperBound="-1" eType="#//model/realtimestatechart/Transition" eOpposite="#//model/realtimestatechart/Transition/source">
@@ -1216,7 +1213,7 @@
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement #//model/realtimestatechart/Prioritizable ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement #//model/realtimestatechart/PrioritizedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
           <details key="constraints" value="LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines ConnectionPointOutgoingTransitionsNoConditions ConnectionPointTransitionsNoSynchronization"/>
         </eAnnotations>
@@ -1467,15 +1464,17 @@
             eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
             containment="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Prioritizable" abstract="true">
+      <eClassifiers xsi:type="ecore:EClass" name="PrioritizedElement" abstract="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Enables the priorization of elements."/>
+          <details key="documentation" value="Enables the priorization of elements. The minimum priority is 1."/>
         </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="the priority of the element"/>
-          </eAnnotations>
-        </eStructuralFeatures>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="PriorityGreaterOrEqualOne"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="ValueGreaterOrEqualZero" value="self.priority >= 1"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//model/behavior/Behavior">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2189,6 +2188,8 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Implementation of an Attribute of a behavior which has a certain type."/>
         </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="initializeExpression"
+            eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
