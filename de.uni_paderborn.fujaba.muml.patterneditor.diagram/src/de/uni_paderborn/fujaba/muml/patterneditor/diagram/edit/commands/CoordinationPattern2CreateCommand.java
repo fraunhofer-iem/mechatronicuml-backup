@@ -42,7 +42,7 @@ public class CoordinationPattern2CreateCommand extends EditElementCommand {
 	 */
 	public boolean canExecute() {
 		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) getElementToEdit();
-		if (container.getCoordinationProtocol() != null) {
+		if (container.getGmfCoordinationProtocol() != null) {
 			return false;
 		}
 		return true;
@@ -58,7 +58,7 @@ public class CoordinationPattern2CreateCommand extends EditElementCommand {
 				.createCoordinationProtocol();
 
 		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol owner = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) getElementToEdit();
-		owner.setCoordinationProtocol(newElement);
+		owner.setGmfCoordinationProtocol(newElement);
 
 		doConfigure(newElement, monitor, info);
 

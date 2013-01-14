@@ -176,7 +176,7 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol"/>
@@ -279,7 +279,7 @@
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol"/>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol/coordinationProtocol"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
     <diagramLink
         href="pattern.gmfgraph#RolePattern"/>
     <linkMetaFeature

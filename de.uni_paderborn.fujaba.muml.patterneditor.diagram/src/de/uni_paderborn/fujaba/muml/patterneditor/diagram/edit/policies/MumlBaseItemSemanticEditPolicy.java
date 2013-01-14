@@ -332,7 +332,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol source,
 				de.uni_paderborn.fujaba.muml.model.protocol.Role target) {
 			if (source != null) {
-				if (source.getCoordinationProtocol() != null) {
+				if (source.getGmfCoordinationProtocol() != null) {
 					return false;
 				}
 			}

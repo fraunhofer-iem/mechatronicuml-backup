@@ -114,8 +114,8 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
 
-		getOldSource().setCoordinationProtocol(null);
-		getNewSource().setCoordinationProtocol(getLink());
+		getOldSource().setGmfCoordinationProtocol(null);
+		getNewSource().setGmfCoordinationProtocol(getLink());
 
 		return CommandResult.newOKCommandResult(getLink());
 	}

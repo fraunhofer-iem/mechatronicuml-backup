@@ -78,7 +78,7 @@ public class MumlDiagramUpdater {
 		LinkedList<de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlNodeDescriptor>();
 		{
 			de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol childElement = modelElement
-					.getCoordinationProtocol();
+					.getGmfCoordinationProtocol();
 			int visualID = de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID) {
@@ -341,7 +341,7 @@ public class MumlDiagramUpdater {
 			de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container) {
 		LinkedList<de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlLinkDescriptor>();
 		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol link = container
-				.getCoordinationProtocol();
+				.getGmfCoordinationProtocol();
 		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 				.getLinkWithClassVisualID(link)) {
 			return result;

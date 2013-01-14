@@ -73,7 +73,7 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 
 		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol newElement = de.uni_paderborn.fujaba.muml.model.protocol.ProtocolFactory.eINSTANCE
 				.createCoordinationProtocol();
-		getSource().setCoordinationProtocol(newElement);
+		getSource().setGmfCoordinationProtocol(newElement);
 		newElement.getRoles().add(getTarget());
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
