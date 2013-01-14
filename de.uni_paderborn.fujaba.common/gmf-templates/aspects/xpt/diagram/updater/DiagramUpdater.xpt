@@ -57,3 +57,48 @@ public static «EXPAND CodeStyle::G('java.util.List', getDiagram().editorGen.dia
 	«ENDIF-»	
 }
 «ENDAROUND»
+
+
+
+«REM»
+	Enhancement for MUML-BUG #446
+«ENDREM»
+«AROUND defineLinkSource(inLoop : Boolean) FOR gmfgen::TypeLinkModelFacet-»
+	«IF isListType(sourceMetaFeature)-»
+java.util.List sources = «EXPAND MetaModel::getFeatureValue('link', metaClass) FOR sourceMetaFeature»;
+Object theSource = !sources.isEmpty() ? sources.get(sources.size() - 1) : null; // Adapted for MUML-BUG #446
+if («EXPAND MetaModel::NotInstance('theSource') FOR getSourceType()») {
+	«EXPAND stopLinkProcessing(inLoop)-»
+}
+«EXPAND MetaModel::DeclareAndAssign('src', 'theSource', true) FOR getSourceType()»
+	«ELSE-»
+«EXPAND MetaModel::DeclareAndAssign('src', 'link', metaClass, sourceMetaFeature) FOR getSourceType()»
+	«ENDIF-»
+«ENDAROUND»
+
+
+«REM»
+	Enhancement for MUML-BUG #446
+«ENDREM»
+«AROUND defineLinkDestination(inLoop : Boolean) FOR gmfgen::TypeLinkModelFacet-»
+	«IF isListType(targetMetaFeature)-»
+java.util.List targets = «EXPAND MetaModel::getFeatureValue('link', metaClass) FOR targetMetaFeature»;
+Object theTarget = !targets.isEmpty() ? targets.get(0) : null; // Adapted for MUML-BUG #446
+if («EXPAND MetaModel::NotInstance('theTarget') FOR getTargetType()») {
+	«EXPAND stopLinkProcessing(inLoop)-»
+}
+«EXPAND MetaModel::DeclareAndAssign('dst', 'theTarget', true) FOR getTargetType()»
+	«ELSE-»
+«EXPAND MetaModel::DeclareAndAssign('dst', 'link', metaClass, targetMetaFeature) FOR getTargetType()»
+	«ENDIF-»
+«ENDAROUND»
+
+
+«REM» Just copied so that it can be called from this file «ENDREM»
+«DEFINE stopLinkProcessing(inLoop : Boolean) FOR gmfgen::TypeLinkModelFacet-»
+«IF inLoop-»
+continue;
+«ELSE-»
+return result;
+«ENDIF-»
+«ENDDEFINE»
