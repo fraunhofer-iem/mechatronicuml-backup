@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.instance.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 
@@ -39,6 +40,7 @@ import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.instance.PortConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance;
+import de.uni_paderborn.fujaba.muml.model.instance.util.InstanceValidator;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.model.msgtype.impl.MsgtypePackageImpl;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
@@ -241,6 +243,15 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		theConnectorPackage.initializePackageContents();
 		theValuetypePackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theInstancePackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return InstanceValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theInstancePackage.freeze();
@@ -779,7 +790,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (delegationConnectorInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", ""
+			 "constraints", "OneDelegationInstancePerPortInstance"
 		   });																													
 	}
 

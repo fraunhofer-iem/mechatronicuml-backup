@@ -1019,13 +1019,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (assemblyConnectorEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", ""
+			 "constraints", "NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"
 		   });					
 		addAnnotation
 		  (delegationConnectorEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", ""
+			 "constraints", "ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"
 		   });																	
 		addAnnotation
 		  (structuredComponentEClass, 

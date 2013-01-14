@@ -628,7 +628,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		  (communicationLinkEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", ""
+			 "constraints", "SameConfiguration"
 		   });										
 	}
 

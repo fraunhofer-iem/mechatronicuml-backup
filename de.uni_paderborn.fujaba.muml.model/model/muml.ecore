@@ -262,7 +262,7 @@
           <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value=""/>
+          <details key="constraints" value="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="NoSelfAssembliesForSinglePortsOfSingleParts" value="(self.ports[0].cardinality.upperBound.value &lt;= 1 and self.ports[0].cardinality.upperBound.value &lt;= 1)&#xD;&#xA;implies&#xD;&#xA;self.ports[0] &lt;> self.ports[1]"/>
@@ -294,7 +294,7 @@
           <details key="documentation" value="This class represents a delegation connector. A delegation connector &#xD;&#xA;connects a port of a structured component type and a port part of &#xD;&#xA;component part the structured component contains.&#xD;&#xA;The delegation has no behavior. In a running system, the port of the structured&#xD;&#xA;component and the port of the component part will be the same object like &#xD;&#xA;interfaces of classes where interface and class are the same object at runtime."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value=""/>
+          <details key="constraints" value="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="ValidContinuousPortDirections" value="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind = self.toContinuousPort.kind"/>
@@ -657,7 +657,7 @@
           <details key="documentation" value="This class represents a delegation connector at instance level."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value=""/>
+          <details key="constraints" value="OneDelegationInstancePerPortInstance"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="OneDelegationInstancePerPortInstance" value="not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1"/>
@@ -1866,7 +1866,7 @@
           <details key="SameConfiguration" value="self.deployedAssemblyInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-          <details key="constraints" value=""/>
+          <details key="constraints" value="SameConfiguration"/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="deployment" lowerBound="1"
             eType="#//model/deployment/Deployment" eOpposite="#//model/deployment/Deployment/communicationLinks">

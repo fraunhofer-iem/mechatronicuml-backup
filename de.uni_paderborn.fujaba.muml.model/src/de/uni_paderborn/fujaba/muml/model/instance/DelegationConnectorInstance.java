@@ -25,7 +25,7 @@ import de.uni_paderborn.fujaba.muml.model.component.DelegationConnector;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDelegationConnectorInstance()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints=''"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OneDelegationInstancePerPortInstance'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OneDelegationInstancePerPortInstance='not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1'"
  * @generated
  */
