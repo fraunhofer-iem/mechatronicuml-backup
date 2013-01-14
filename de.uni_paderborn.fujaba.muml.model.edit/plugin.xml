@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?eclipse version="3.0"?>
-
-<!--
- <copyright>
- </copyright>
-
- $Id$
--->
-<plugin>
+<?eclipse version="3.0"?><!--
+--><plugin>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <?emfgen generated="true"?>
-      <factory class="de.uni_paderborn.fujaba.muml.model.component.provider.ComponentItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://www.fujaba.de/muml/model/component/0.3.14"/>
+      <factory class="de.uni_paderborn.fujaba.muml.model.component.provider.ComponentItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://www.fujaba.de/muml/model/component/0.3.17"/>
    </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
@@ -26,12 +19,12 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <?emfgen generated="true"?>
-      <factory class="de.uni_paderborn.fujaba.muml.model.protocol.provider.ProtocolItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://www.fujaba.de/muml/model/protocol/0.3.7"/>
+      <factory class="de.uni_paderborn.fujaba.muml.model.protocol.provider.ProtocolItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://www.fujaba.de/muml/model/protocol/0.3.17"/>
    </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <?emfgen generated="true"?>
-      <factory class="de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://www.fujaba.de/muml/model/realtimestatechart/0.3.9"/>
+      <factory class="de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17"/>
    </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
@@ -61,7 +54,7 @@
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <?emfgen generated="true"?>
-      <factory class="de.uni_paderborn.fujaba.muml.model.behavior.provider.BehaviorItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://www.fujaba.de/muml/model/behavior/0.3.14"/>
+      <factory class="de.uni_paderborn.fujaba.muml.model.behavior.provider.BehaviorItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://www.fujaba.de/muml/model/behavior/0.3.17"/>
    </extension>
 
 </plugin>

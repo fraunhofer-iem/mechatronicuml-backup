@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?eclipse version="3.0"?>
-
-<!--
- <copyright>
- </copyright>
-
- $Id$
--->
-<plugin>
+<?eclipse version="3.0"?><!--
+--><plugin>
 <!-- manual extensions -->
 <extension point="org.eclipse.emf.ecore.generated_package">
       <package class="de.uni_paderborn.fujaba.muml.MumlPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/0.2.2"/>
@@ -29,7 +22,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.component.ComponentPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/component/0.3.14"/>
+      <package class="de.uni_paderborn.fujaba.muml.model.component.ComponentPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/component/0.3.17"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -44,12 +37,12 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/protocol/0.3.7"/>
+      <package class="de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/protocol/0.3.17"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/realtimestatechart/0.3.9"/>
+      <package class="de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -79,7 +72,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/behavior/0.3.14"/>
+      <package class="de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/behavior/0.3.17"/>
    </extension>
 
 </plugin>

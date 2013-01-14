@@ -42,7 +42,7 @@ public interface BehaviorPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/behavior/0.3.14";
+	String eNS_URI = "http://www.fujaba.de/muml/model/behavior/0.3.17";
 
 	/**
 	 * The package namespace name.

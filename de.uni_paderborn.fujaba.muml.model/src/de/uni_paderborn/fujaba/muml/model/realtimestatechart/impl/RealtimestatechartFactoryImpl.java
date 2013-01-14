@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl;
 
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -51,7 +52,7 @@ public class RealtimestatechartFactoryImpl extends EFactoryImpl implements Realt
 	 */
 	public static RealtimestatechartFactory init() {
 		try {
-			RealtimestatechartFactory theRealtimestatechartFactory = (RealtimestatechartFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/realtimestatechart/0.3.9"); 
+			RealtimestatechartFactory theRealtimestatechartFactory = (RealtimestatechartFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/realtimestatechart/0.3.17"); 
 			if (theRealtimestatechartFactory != null) {
 				return theRealtimestatechartFactory;
 			}

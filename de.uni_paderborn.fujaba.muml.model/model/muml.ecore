@@ -6,7 +6,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The model package contains the core meta-model of MechatronicUML. The&#xD;&#xA;subpackages define the base classes for the component model, real-time &#xD;&#xA;statecharts, message interfaces and coordination pattern."/>
     </eAnnotations>
-    <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/model/component/0.3.14"
+    <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/model/component/0.3.17"
         nsPrefix="component">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -808,7 +808,7 @@
         </eAnnotations>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="protocol" nsURI="http://www.fujaba.de/muml/model/protocol/0.3.7"
+    <eSubpackages name="protocol" nsURI="http://www.fujaba.de/muml/model/protocol/0.3.17"
         nsPrefix="protocol">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -978,7 +978,7 @@
         </eStructuralFeatures>
       </eClassifiers>
     </eSubpackages>
-    <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.3.9"
+    <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17"
         nsPrefix="realtimestatechart">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -2143,7 +2143,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EDataType" name="TimeUnit" instanceClassName="java.util.concurrent.TimeUnit"/>
     </eSubpackages>
-    <eSubpackages name="behavior" nsURI="http://www.fujaba.de/muml/model/behavior/0.3.14"
+    <eSubpackages name="behavior" nsURI="http://www.fujaba.de/muml/model/behavior/0.3.17"
         nsPrefix="behavior">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>

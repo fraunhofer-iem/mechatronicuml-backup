@@ -19347,7 +19347,7 @@
         featureName="nsURI" dataValue="http://www.fujaba.de/muml/actionlanguage/0.3.16"
         oldDataValue="http://www.fujaba.de/muml/actionlanguage/0.3.15"/>
   </releases>
-  <releases>
+  <releases date="2013-01-14T12:15:00.065+0100" label="0.3.17">
     <changes xsi:type="history:Create" target="muml.ecore#//model/behavior/Variable"
         referenceName="eStructuralFeatures" element="muml.ecore#//model/behavior/Variable/initializeExpression"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/behavior/Variable/initializeExpression"
@@ -19467,5 +19467,16 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart/State/hasRegionOfPriority"
         featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         oldReferenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart"
+        featureName="nsURI" dataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17"
+        oldDataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.3.9"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/behavior" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/behavior/0.3.17" oldDataValue="http://www.fujaba.de/muml/model/behavior/0.3.14"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/component/0.3.17" oldDataValue="http://www.fujaba.de/muml/model/component/0.3.14"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/protocol" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/model/protocol/0.3.17" oldDataValue="http://www.fujaba.de/muml/model/protocol/0.3.7"/>
+  </releases>
+  <releases>
   </releases>
 </history:History>
