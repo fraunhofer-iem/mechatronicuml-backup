@@ -9,7 +9,7 @@ package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagra
  * 
  */
 
-//TODO: reactivate when metamodel supports storing the ComponentPart in the AssemblyConnector again (after bug #414 was closed)
+//TODO: reactivate
 
 
 //public class CustomDelegationInstanceReorientCommand extends
