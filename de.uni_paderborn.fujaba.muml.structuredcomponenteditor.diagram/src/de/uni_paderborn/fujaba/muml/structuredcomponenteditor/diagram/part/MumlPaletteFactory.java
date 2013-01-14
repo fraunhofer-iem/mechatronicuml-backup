@@ -140,14 +140,15 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAssembly1CreationTool() {
-		ToolEntry entry = new ToolEntry(
+		LinkToolEntry entry = new LinkToolEntry(
 				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.Messages.Assembly1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.Messages.Assembly1CreationTool_desc,
-				null, null) {
-		};
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.AssemblyConnector_4001));
 		entry.setId("createAssembly1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Assembly.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -155,14 +156,15 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createDelegation2CreationTool() {
-		ToolEntry entry = new ToolEntry(
+		LinkToolEntry entry = new LinkToolEntry(
 				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.Messages.Delegation2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.Messages.Delegation2CreationTool_desc,
-				null, null) {
-		};
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.DelegationConnector_4002));
 		entry.setId("createDelegation2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Delegation.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
@@ -190,6 +192,35 @@ public class MumlPaletteFactory {
 		 */
 		public Tool createTool() {
 			Tool tool = new UnspecifiedTypeCreationTool(elementTypes);
+			tool.setProperties(getToolProperties());
+			return tool;
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private static class LinkToolEntry extends ToolEntry {
+
+		/**
+		 * @generated
+		 */
+		private final List<IElementType> relationshipTypes;
+
+		/**
+		 * @generated
+		 */
+		private LinkToolEntry(String title, String description,
+				List<IElementType> relationshipTypes) {
+			super(title, description, null, null);
+			this.relationshipTypes = relationshipTypes;
+		}
+
+		/**
+		 * @generated
+		 */
+		public Tool createTool() {
+			Tool tool = new UnspecifiedTypeConnectionTool(relationshipTypes);
 			tool.setProperties(getToolProperties());
 			return tool;
 		}

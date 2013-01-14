@@ -325,7 +325,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5024"
           editPartClassName="HybridPortNameEditPart"
-          itemSemanticEditPolicyClassName="HybridPortNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="HybridPortNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="HybridPortNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -549,6 +550,62 @@
         </modelFacet>
       </labels>
     </topLevelNodes>
+    <links
+        visualID="4001"
+        editPartClassName="AssemblyConnectorEditPart"
+        itemSemanticEditPolicyClassName="AssemblyConnectorItemSemanticEditPolicy"
+        createCommandClassName="AssemblyConnectorCreateCommand"
+        reorientCommandClassName="AssemblyConnectorReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="AssemblyConnectorEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
+      <modelFacet
+          xsi:type="gmfgen:TypeLinkModelFacet">
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/AssemblyConnector"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/StructuredComponent/connectors"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/StructuredComponent/connectors"/>
+        <sourceMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/connector/Connector/connectorEndpoints"/>
+        <targetMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/connector/Connector/connectorEndpoints"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4002"
+        editPartClassName="DelegationConnectorEditPart"
+        itemSemanticEditPolicyClassName="DelegationConnectorItemSemanticEditPolicy"
+        createCommandClassName="DelegationConnectorCreateCommand"
+        reorientCommandClassName="DelegationConnectorReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="DelegationConnectorEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
+      <modelFacet
+          xsi:type="gmfgen:TypeLinkModelFacet">
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/DelegationConnector"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/StructuredComponent/connectors"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/StructuredComponent/connectors"/>
+        <sourceMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/connector/Connector/connectorEndpoints"/>
+        <targetMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/connector/Connector/connectorEndpoints"/>
+      </modelFacet>
+    </links>
     <compartments
         visualID="7005"
         editPartClassName="StaticStructuredComponentComponentCompartmentEditPart"
@@ -612,12 +669,14 @@
             title="Assembly"
             description="Create new Assembly"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/Assembly.gif"
-            default="true"/>
+            default="true"
+            genLinks="//@diagram/@links.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Delegation"
             description="Create new Delegation"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/Delegation.gif"/>
+            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/Delegation.gif"
+            genLinks="//@diagram/@links.1"/>
       </groups>
     </palette>
     <preferencePages

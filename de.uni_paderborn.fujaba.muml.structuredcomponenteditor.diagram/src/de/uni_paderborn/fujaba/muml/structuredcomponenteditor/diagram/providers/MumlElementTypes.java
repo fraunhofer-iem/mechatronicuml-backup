@@ -86,6 +86,16 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType AssemblyConnector_4001 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.AssemblyConnector_4001"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType DelegationConnector_4002 = getElementType("de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DelegationConnector_4002"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	private static ImageRegistry getImageRegistry() {
 		if (imageRegistry == null) {
 			imageRegistry = new ImageRegistry();
@@ -231,6 +241,16 @@ public class MumlElementTypes {
 					ContinuousPort_3015,
 					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 							.getContinuousPort());
+
+			elements.put(
+					AssemblyConnector_4001,
+					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+							.getAssemblyConnector());
+
+			elements.put(
+					DelegationConnector_4002,
+					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+							.getDelegationConnector());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -256,6 +276,8 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(HybridPort_3013);
 			KNOWN_ELEMENT_TYPES.add(DiscretePort_3014);
 			KNOWN_ELEMENT_TYPES.add(ContinuousPort_3015);
+			KNOWN_ELEMENT_TYPES.add(AssemblyConnector_4001);
+			KNOWN_ELEMENT_TYPES.add(DelegationConnector_4002);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -281,6 +303,10 @@ public class MumlElementTypes {
 			return DiscretePort_3014;
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPort2EditPart.VISUAL_ID:
 			return ContinuousPort_3015;
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID:
+			return AssemblyConnector_4001;
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID:
+			return DelegationConnector_4002;
 		}
 		return null;
 	}

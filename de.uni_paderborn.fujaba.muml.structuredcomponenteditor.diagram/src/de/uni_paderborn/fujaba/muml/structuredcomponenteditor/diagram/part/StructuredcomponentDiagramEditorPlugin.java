@@ -68,6 +68,11 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
+	private de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
+
+	/**
+	 * @generated
+	 */
 	private de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.ElementInitializers initializers;
 
 	/**
@@ -100,6 +105,7 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
+		linkConstraints = null;
 		initializers = null;
 		oclFactory = null;
 		instance = null;
@@ -254,6 +260,21 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 			documentProvider = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDocumentProvider();
 		}
 		return documentProvider;
+	}
+
+	/**
+	 * @generated
+	 */
+	public de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
+		return linkConstraints;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setLinkConstraints(
+			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy.LinkConstraints lc) {
+		this.linkConstraints = lc;
 	}
 
 	/**

@@ -3,7 +3,8 @@ package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.ed
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.DiscretePortItemSemanticEditPolicy;
 
 
-//TODO: reactivate connectors (muml bug #405)
+//TODO: reactivate when metamodel supports storing the ComponentPart in the AssemblyConnector again (after bug #414 was closed)
+
 
 /**
  * A customized PortItemSemanticEditPolicy. We create our customized Delegation

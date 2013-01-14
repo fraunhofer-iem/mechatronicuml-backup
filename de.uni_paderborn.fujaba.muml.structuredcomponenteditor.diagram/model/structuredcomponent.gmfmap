@@ -236,6 +236,40 @@
       </compartments>
     </ownedChild>
   </nodes>
+  <links>
+    <domainMetaElement
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/AssemblyConnector"/>
+    <containmentFeature
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent/connectors"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="structuredcomponent.gmftool#//@palette/@tools.2/@tools.0"/>
+    <diagramLink
+        href="structuredcomponent.gmfgraph#Assembly"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
+  </links>
+  <links>
+    <domainMetaElement
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DelegationConnector"/>
+    <containmentFeature
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent/connectors"/>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="structuredcomponent.gmftool#//@palette/@tools.2/@tools.1"/>
+    <diagramLink
+        href="structuredcomponent.gmfgraph#Delegation"/>
+    <sourceMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
+  </links>
   <diagram>
     <diagramCanvas
         href="structuredcomponent.gmfgraph#componenteditor"/>

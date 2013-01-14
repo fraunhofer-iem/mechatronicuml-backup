@@ -324,6 +324,7 @@
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Structuredcomponent"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,3010,3011,3012,3013,3014,3015"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
       </viewProvider>
    </extension>
 
@@ -338,7 +339,7 @@
             <method name="getType()" value="2005,3010,3011,3012,3013,3014,3015"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value=""/>
+            <method name="getType()" value="4001,4002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5021,5012,5013,5017,5024,5015,5016"/>
@@ -454,6 +455,26 @@
             <param name="semanticHint" value="3015"/>
          </specializationType>
       </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.14">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.AssemblyConnector_4001"
+               name="%metatype.name.AssemblyConnector_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="AssemblyConnector"
+               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.AssemblyConnectorEditHelper">
+            <param name="semanticHint" value="4001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.14">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DelegationConnector_4002"
+               name="%metatype.name.DelegationConnector_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DelegationConnector"
+               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.DelegationConnectorEditHelper">
+            <param name="semanticHint" value="4002"/>
+         </metamodelType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -474,6 +495,8 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HybridPort_3013"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePort_3014"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ContinuousPort_3015"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.AssemblyConnector_4001"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DelegationConnector_4002"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

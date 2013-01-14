@@ -10,7 +10,7 @@ package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.ed
  * 
  */
 
-//TODO: reactivate connectors (muml bug #405)
+//TODO: reactivate when metamodel supports storing the ComponentPart in the AssemblyConnector again (after bug #414 was closed)
 
 
 //public class CustomDelegationCreateCommand extends DelegationCreateCommand {
