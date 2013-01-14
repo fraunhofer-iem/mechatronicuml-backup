@@ -33,6 +33,7 @@ import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
 import de.uni_paderborn.fujaba.muml.model.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
@@ -211,28 +212,32 @@ public class ComponentPartItemProvider
 				getString("_UI_CardinalityPropertyCategory"), null);
 
 		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Cardinality_lowerBound_feature"), getString(
-						"_UI_PropertyDescriptor_description",
-						"_UI_Cardinality_lowerBound_feature",
-						"_UI_Cardinality_type"),
-						de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.RANGE__LOWER_BOUND,
-						true, false,
-				false, null, getString("_UI_CardinalityPropertyCategory"),
-				null, rootPropertyDescriptor));
-		
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_Range_lowerBound_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_Range_lowerBound_feature", "_UI_Range_type"),
+			 ValuetypePackage.Literals.RANGE__LOWER_BOUND,
+			 true,
+			 false,
+			 false,
+			 null,
+			 getString("_UI_CardinalityPropertyCategory"),
+			 null,
+			 rootPropertyDescriptor));
+
 		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_Cardinality_upperBound_feature"), getString(
-						"_UI_PropertyDescriptor_description",
-						"_UI_Cardinality_upperBound_feature",
-						"_UI_Cardinality_type"),
-						de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.RANGE__UPPER_BOUND,
-						true, false,
-				false, null, getString("_UI_CardinalityPropertyCategory"),
-				null, rootPropertyDescriptor));
+			((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_Range_upperBound_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_Range_upperBound_feature", "_UI_Range_type"),
+			 ValuetypePackage.Literals.RANGE__UPPER_BOUND,
+			 true,
+			 false,
+			 false,
+			 null,
+			 getString("_UI_CardinalityPropertyCategory"),
+			 null,
+			 rootPropertyDescriptor));
 	}
 
 
