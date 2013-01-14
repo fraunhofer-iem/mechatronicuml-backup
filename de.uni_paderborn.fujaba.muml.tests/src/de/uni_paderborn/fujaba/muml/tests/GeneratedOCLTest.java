@@ -321,7 +321,11 @@ public class GeneratedOCLTest extends TraverseTest {
 			query.check(object);
 			Object result = query.evaluate(object);
 			if (!(result instanceof Boolean)) {
-				throw new SemanticException("Result type does not evaluate to boolean:" + result.toString());
+				String resultText = "null";
+				if (result != null) {
+					resultText = result.toString();
+				}
+				throw new SemanticException("Result type does not evaluate to boolean:" + resultText);
 			}
 		}
 
