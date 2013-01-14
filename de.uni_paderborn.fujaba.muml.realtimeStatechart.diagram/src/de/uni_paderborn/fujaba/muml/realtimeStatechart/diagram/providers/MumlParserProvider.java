@@ -178,7 +178,7 @@ public class MumlParserProvider extends AbstractProvider implements
 	protected IParser getRegionPriority_5056Parser() {
 		if (regionPriority_5056Parser == null) {
 			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-					.getPrioritizable_Priority() };
+					.getPrioritizedElement_Priority() };
 			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.MessageFormatParser(
 					features);
 			regionPriority_5056Parser = parser;

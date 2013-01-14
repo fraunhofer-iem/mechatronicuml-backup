@@ -20,7 +20,7 @@ public class CustomTransitionEditPart extends TransitionEditPart {
 	protected void handleNotificationEvent(Notification notification) {
 		Transition transition = (Transition) getNotationView().getElement();
 		Object feature = notification.getFeature();
-		if (RealtimestatechartPackage.Literals.PRIORITIZABLE__PRIORITY
+		if (RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT__PRIORITY
 				.equals(feature)) {
 			((CustomTransitionFigure) getFigure()).setPriority(transition
 					.getPriority());

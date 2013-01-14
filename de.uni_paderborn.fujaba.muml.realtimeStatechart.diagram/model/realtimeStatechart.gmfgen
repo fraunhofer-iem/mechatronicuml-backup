@@ -416,7 +416,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.9">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Prioritizable/priority"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/PrioritizedElement/priority"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
@@ -472,7 +472,7 @@
             parser="//@labelParsers/@implementations.5"
             viewPattern="">
           <metaFeatures
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Prioritizable/priority"/>
+              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/PrioritizedElement/priority"/>
         </modelFacet>
       </labels>
       <labels
@@ -730,7 +730,7 @@
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.15">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/Prioritizable/priority"/>
+                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/realtimestatechart/PrioritizedElement/priority"/>
           </initializers>
         </modelElementInitializer>
         <sourceMetaFeature

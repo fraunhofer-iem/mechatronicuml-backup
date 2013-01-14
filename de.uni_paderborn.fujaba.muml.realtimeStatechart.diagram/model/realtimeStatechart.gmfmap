@@ -212,7 +212,7 @@
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EAttribute"
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Prioritizable/priority"/>
+                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/PrioritizedElement/priority"/>
                   <value
                       body="self.parentState.getUniqueRegionPriority(0)"/>
                 </initializers>
@@ -247,7 +247,7 @@
                 <diagramLabel
                     href="realtimeStatechart.gmfgraph#RegionPriorityLabel"/>
                 <features
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Prioritizable/priority"/>
+                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/PrioritizedElement/priority"/>
               </labelMappings>
               <labelMappings
                   xsi:type="gmfmap:ExpressionLabelMapping"
@@ -391,7 +391,7 @@
           xsi:type="gmfmap:FeatureValueSpec">
         <feature
             xsi:type="ecore:EAttribute"
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Prioritizable/priority"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/PrioritizedElement/priority"/>
         <value
             body="self.source.getUniqueTransitionPriority(0)"/>
       </initializers>
