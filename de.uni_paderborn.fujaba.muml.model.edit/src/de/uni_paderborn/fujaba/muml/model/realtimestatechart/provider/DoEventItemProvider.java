@@ -28,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent} object.
@@ -160,6 +161,8 @@ public class DoEventItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.DO_EVENT__ACTION);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.DO_EVENT__PERIOD_LOWER);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.DO_EVENT__PERIOD_UPPER);
 		}
 		return childrenFeatures;
 	}
@@ -215,11 +218,9 @@ public class DoEventItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DoEvent.class)) {
+			case RealtimestatechartPackage.DO_EVENT__ACTION:
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
 			case RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case RealtimestatechartPackage.DO_EVENT__ACTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -241,6 +242,39 @@ public class DoEventItemProvider
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.DO_EVENT__ACTION,
 				 RealtimestatechartFactory.eINSTANCE.createAction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.DO_EVENT__PERIOD_LOWER,
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.DO_EVENT__PERIOD_UPPER,
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == RealtimestatechartPackage.Literals.DO_EVENT__PERIOD_LOWER ||
+			childFeature == RealtimestatechartPackage.Literals.DO_EVENT__PERIOD_UPPER;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

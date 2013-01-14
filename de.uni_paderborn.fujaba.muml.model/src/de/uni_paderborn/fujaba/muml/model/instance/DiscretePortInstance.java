@@ -88,7 +88,7 @@ public interface DiscretePortInstance extends PortInstance, DiscreteInteractionE
 	 * @return the value of the '<em>Receiver Message Buffer</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscretePortInstance_ReceiverMessageBuffer()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.refines.receiverMessageBuffer'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.refines.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tself.refines.receiverMessageBuffer\nendif'"
 	 * @generated
 	 */
 	EList<MessageBuffer> getReceiverMessageBuffer();
@@ -103,7 +103,7 @@ public interface DiscretePortInstance extends PortInstance, DiscreteInteractionE
 	 * @return the value of the '<em>Refines</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.model.instance.InstancePackage#getDiscretePortInstance_Refines()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.portType.oclAsType(component::DiscretePort).refines'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.portType.oclIsUndefined() and self.portType.oclIsKindOf(component::DiscretePort) then\n\tself.portType.oclAsType(component::DiscretePort).refines\nelse\n\tnull\nendif'"
 	 * @generated
 	 */
 	Role getRefines();

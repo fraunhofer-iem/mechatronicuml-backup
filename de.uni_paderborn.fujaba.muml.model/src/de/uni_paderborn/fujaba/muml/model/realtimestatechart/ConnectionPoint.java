@@ -22,7 +22,7 @@ package de.uni_paderborn.fujaba.muml.model.realtimestatechart;
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getConnectionPoint()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ConnectionPointsOnlyAtCompositeStates'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ConnectionPointsOnlyAtCompositeStates='not self.state.simple'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ConnectionPointsOnlyAtCompositeStates='not self.state.oclIsUndefined() implies not self.state.simple'"
  * @generated
  */
 public interface ConnectionPoint extends Vertex {

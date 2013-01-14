@@ -918,31 +918,32 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the PriorityGreaterOrEqualOne constraint of '<em>Prioritized Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PRIORITIZED_ELEMENT__PRIORITY_GREATER_OR_EQUAL_ONE__EEXPRESSION = "self.priority >= 1";
+
+	/**
 	 * Validates the PriorityGreaterOrEqualOne constraint of '<em>Prioritized Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validatePrioritizedElement_PriorityGreaterOrEqualOne(PrioritizedElement prioritizedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "PriorityGreaterOrEqualOne", getObjectLabel(prioritizedElement, context) },
-						 new Object[] { prioritizedElement },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT,
+				 prioritizedElement,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "PriorityGreaterOrEqualOne",
+				 PRIORITIZED_ELEMENT__PRIORITY_GREATER_OR_EQUAL_ONE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -1138,7 +1139,7 @@ public class RealtimestatechartValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CONNECTION_POINT__CONNECTION_POINTS_ONLY_AT_COMPOSITE_STATES__EEXPRESSION = "not self.state.simple";
+	protected static final String CONNECTION_POINT__CONNECTION_POINTS_ONLY_AT_COMPOSITE_STATES__EEXPRESSION = "not self.state.oclIsUndefined() implies not self.state.simple";
 
 	/**
 	 * Validates the ConnectionPointsOnlyAtCompositeStates constraint of '<em>Connection Point</em>'.

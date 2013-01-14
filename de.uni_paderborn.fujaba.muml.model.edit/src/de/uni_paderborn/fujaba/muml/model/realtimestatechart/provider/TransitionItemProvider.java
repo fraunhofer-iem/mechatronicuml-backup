@@ -896,6 +896,8 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 			case RealtimestatechartPackage.TRANSITION__RAISE_MESSAGE_EVENT:
 			case RealtimestatechartPackage.TRANSITION__BLOCKABLE:
 			case RealtimestatechartPackage.TRANSITION__URGENT:
+			case RealtimestatechartPackage.TRANSITION__RECEIVER_MESSAGE_TYPES:
+			case RealtimestatechartPackage.TRANSITION__SENDER_MESSAGE_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:

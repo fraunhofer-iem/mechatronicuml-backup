@@ -356,6 +356,7 @@ public class RealtimeStatechartItemProvider
 			case RealtimestatechartPackage.REALTIME_STATECHART__FLAT:
 			case RealtimestatechartPackage.REALTIME_STATECHART__AVAILABLE_CLOCKS:
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDED:
+			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_VARIABLES:
 			case RealtimestatechartPackage.REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

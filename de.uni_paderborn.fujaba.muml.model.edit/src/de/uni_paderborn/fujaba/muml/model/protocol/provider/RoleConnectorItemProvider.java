@@ -259,6 +259,9 @@ public class RoleConnectorItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(RoleConnector.class)) {
+			case ProtocolPackage.ROLE_CONNECTOR__ROLES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case ProtocolPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

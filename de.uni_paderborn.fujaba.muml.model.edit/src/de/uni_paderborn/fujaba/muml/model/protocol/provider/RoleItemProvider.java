@@ -263,6 +263,7 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Role.class)) {
+			case ProtocolPackage.ROLE__ROLE_CONNECTOR:
 			case ProtocolPackage.ROLE__MULTI_ROLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

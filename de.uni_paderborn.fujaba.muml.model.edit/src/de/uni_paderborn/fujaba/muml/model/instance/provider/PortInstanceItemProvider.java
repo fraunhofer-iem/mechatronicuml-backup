@@ -21,6 +21,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
@@ -172,6 +173,13 @@ public class PortInstanceItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(PortInstance.class)) {
+			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
+			case InstancePackage.PORT_INSTANCE__PORT_CONNECTOR_INSTANCES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

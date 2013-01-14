@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage#getPrioritizedElement()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='PriorityGreaterOrEqualOne'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValueGreaterOrEqualZero='self.priority >= 1'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL PriorityGreaterOrEqualOne='self.priority >= 1'"
  * @generated
  */
 public interface PrioritizedElement extends EObject {

@@ -222,6 +222,7 @@ public class CommunicationLinkItemProvider
 
 		switch (notification.getFeatureID(CommunicationLink.class)) {
 			case DeploymentPackage.COMMUNICATION_LINK__COMMENT:
+			case DeploymentPackage.COMMUNICATION_LINK__HARDWARE_PORTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 
@@ -120,6 +121,12 @@ public class DelegationConnectorInstanceItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(DelegationConnectorInstance.class)) {
+			case InstancePackage.DELEGATION_CONNECTOR_INSTANCE__DELEGATION_CONNECTOR_TYPE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

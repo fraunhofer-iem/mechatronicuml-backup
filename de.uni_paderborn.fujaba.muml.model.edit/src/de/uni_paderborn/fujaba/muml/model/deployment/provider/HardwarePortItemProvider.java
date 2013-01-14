@@ -247,6 +247,7 @@ public class HardwarePortItemProvider
 		switch (notification.getFeatureID(HardwarePort.class)) {
 			case DeploymentPackage.HARDWARE_PORT__COMMENT:
 			case DeploymentPackage.HARDWARE_PORT__KIND:
+			case DeploymentPackage.HARDWARE_PORT__COMMUNICATION_LINKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

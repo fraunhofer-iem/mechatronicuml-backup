@@ -1782,13 +1782,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getTransition_ReceiverMessageTypes(), 
 		   source, 
 		   new String[] {
-			 "derivation", "let b : core::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\nif b.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tif b.oclIsKindOf(component::DiscretePort) then\n\t\tb.oclAsType(component::DiscretePort).receiverMessageTypes\n\telse\n\t\tif b.oclIsKindOf(protocol::Role) then\n\t\t\tb.oclAsType(protocol::Role).receiverMessageTypes\n\t\telse\n\t\t\tOrderedSet { }\n\t\tendif\n\tendif\nendif"
+			 "derivation", "let b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\nif b.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tif b.oclIsKindOf(component::DiscretePort) then\n\t\tb.oclAsType(component::DiscretePort).receiverMessageTypes\n\telse\n\t\tif b.oclIsKindOf(protocol::Role) then\n\t\t\tb.oclAsType(protocol::Role).receiverMessageTypes\n\t\telse\n\t\t\tOrderedSet { }\n\t\tendif\n\tendif\nendif"
 		   });		
 		addAnnotation
 		  (getTransition_SenderMessageTypes(), 
 		   source, 
 		   new String[] {
-			 "derivation", "let b : core::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\nif b.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tif b.oclIsKindOf(component::DiscretePort) then\n\t\tb.oclAsType(component::DiscretePort).senderMessageTypes\n\telse\n\t\tif b.oclIsKindOf(protocol::Role) then\n\t\t\tb.oclAsType(protocol::Role).senderMessageTypes\n\t\telse\n\t\t\tOrderedSet { }\n\t\tendif\n\tendif\nendif"
+			 "derivation", "let b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\nif b.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tif b.oclIsKindOf(component::DiscretePort) then\n\t\tb.oclAsType(component::DiscretePort).senderMessageTypes\n\telse\n\t\tif b.oclIsKindOf(protocol::Role) then\n\t\t\tb.oclAsType(protocol::Role).senderMessageTypes\n\t\telse\n\t\t\tOrderedSet { }\n\t\tendif\n\tendif\nendif"
 		   });											
 		addAnnotation
 		  (doEventEClass, 
@@ -1800,7 +1800,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (prioritizedElementEClass, 
 		   source, 
 		   new String[] {
-			 "ValueGreaterOrEqualZero", "self.priority >= 1"
+			 "PriorityGreaterOrEqualOne", "self.priority >= 1"
 		   });			
 		addAnnotation
 		  (realtimeStatechartEClass, 
@@ -1844,7 +1844,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (connectionPointEClass, 
 		   source, 
 		   new String[] {
-			 "ConnectionPointsOnlyAtCompositeStates", "not self.state.simple"
+			 "ConnectionPointsOnlyAtCompositeStates", "not self.state.oclIsUndefined() implies not self.state.simple"
 		   });					
 		addAnnotation
 		  (entryPointEClass, 

@@ -855,13 +855,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (getDiscretePortInstance_ReceiverMessageBuffer(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.refines.receiverMessageBuffer"
+			 "derivation", "if self.refines.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tself.refines.receiverMessageBuffer\nendif"
 		   });			
 		addAnnotation
 		  (getDiscretePortInstance_Refines(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.portType.oclAsType(component::DiscretePort).refines"
+			 "derivation", "if not self.portType.oclIsUndefined() and self.portType.oclIsKindOf(component::DiscretePort) then\n\tself.portType.oclAsType(component::DiscretePort).refines\nelse\n\tnull\nendif"
 		   });						
 		addAnnotation
 		  (getDiscreteMultiPortInstance_GmfSubPortInstances(), 
