@@ -48,8 +48,8 @@ public class MumlPaletteFactory {
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes.HardwareNode_2001));
 		entry.setId("createHardwareNode1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes.HardwareNode_2001));
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.deployment.diagram/icons/obj16/HardwareNode.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -64,8 +64,8 @@ public class MumlPaletteFactory {
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes.HardwarePort_3001));
 		entry.setId("createHardwarePort2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes.HardwarePort_3001));
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.deployment.diagram/icons/obj16/HardwarePort.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -80,8 +80,8 @@ public class MumlPaletteFactory {
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes.CommunicationLink_4001));
 		entry.setId("createCommunicationLink3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes.CommunicationLink_4001));
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.deployment.diagram/icons/obj16/CommunicationLink.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

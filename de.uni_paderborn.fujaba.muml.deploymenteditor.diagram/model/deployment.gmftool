@@ -13,27 +13,27 @@
           title="HardwareNode"
           description="Create new HardwareNode">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/HardwareNode.gif"
+            bundle="de.uni_paderborn.fujaba.muml.deployment.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="HardwarePort"
           description="Create new HardwarePort">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/HardwarePort.gif"
+            bundle="de.uni_paderborn.fujaba.muml.deployment.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="CommunicationLink"
           description="Create new CommunicationLink">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/CommunicationLink.gif"
+            bundle="de.uni_paderborn.fujaba.muml.deployment.diagram"/>
       </tools>
     </tools>
   </palette>

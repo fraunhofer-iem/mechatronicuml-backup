@@ -25,7 +25,7 @@
       <editor
          id="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramEditorID"
          name="%editorName"
-         icon="icons/obj16/ControlflowDiagramFile.gif"
+         icon="icons/obj16/ComponentStoryDiagramFile.gif"
          extensions="componentstorydiagram_diagram"
          default="true"
          class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramEditor"
@@ -47,7 +47,7 @@
       <?gmfgen generated="true"?>
   	  <wizard
   	     name="%newWizardName"
-  	     icon="icons/obj16/ControlflowDiagramFile.gif"
+  	     icon="icons/obj16/ComponentStoryDiagramFile.gif"
   	     category="org.eclipse.ui.Examples"
   	     class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramCreationWizardID">
@@ -65,7 +65,7 @@
 	         locationURI="popup:de.fujaba?after=diagrams">
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.createDiagram"
-	            icon="icons/obj16/ControlflowDiagramFile.gif"
+	            icon="icons/obj16/ComponentStoryDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.createDiagram"
 	            label="Initialize Component Story Diagram"
 	            style="push">

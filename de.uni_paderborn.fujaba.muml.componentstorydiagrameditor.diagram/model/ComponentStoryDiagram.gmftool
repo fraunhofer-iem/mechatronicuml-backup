@@ -23,9 +23,9 @@
           title="ComponentStoryNode"
           description="Create new ComponentStoryNode">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/ComponentStoryDiagramFile.gif"
+            bundle="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -73,45 +73,45 @@
           title="PartVariable"
           description="Create new PartVariable">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/ComponentPart.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="SinglePortVariable"
           description="Create new SinglePortVariable">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/Port.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="MultiPortVariable"
           description="Create new MultiPortVariable">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/Port.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="AssemblyVariable"
           description="Create new AssemblyVariable">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/Assembly.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="DelegationVariable"
           description="Create new DelegationVariable">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/Delegation.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
     </tools>
   </palette>

@@ -192,16 +192,19 @@
             xsi:type="gmfgen:ToolEntry"
             title="HardwareNode"
             description="Create new HardwareNode"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.deployment.diagram/icons/obj16/HardwareNode.gif"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="HardwarePort"
             description="Create new HardwarePort"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.deployment.diagram/icons/obj16/HardwarePort.gif"
             genNodes="//@diagram/@childNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="CommunicationLink"
             description="Create new CommunicationLink"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.deployment.diagram/icons/obj16/CommunicationLink.gif"
             genLinks="//@diagram/@links.0"/>
       </groups>
     </palette>
