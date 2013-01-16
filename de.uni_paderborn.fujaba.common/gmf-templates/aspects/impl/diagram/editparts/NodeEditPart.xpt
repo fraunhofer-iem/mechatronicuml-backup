@@ -12,7 +12,7 @@
 	result.getBounds().setSize(result.getPreferredSize());
 «ENDDEFINE»
 
-
+«REM»Copied from original NodeEditPart.xpt«ENDREM»
 «DEFINE mySetupNodePlate FOR gmfgen::GenNode»
 
 	// Ensures that the element can be shrinked (Muml Bug #62).
@@ -120,4 +120,16 @@ new org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolic
 		return java.util.Collections.singletonList(mh);
 	}
 }
+«ENDAROUND»
+
+
+«REM»
+	When creating a connection with this node as start or end,
+	we store our edit part in the ConfigureRequest for that connection.
+	See MUML Bug #455 and depending bugs for a more detailed explanation.
+«ENDREM»
+«AROUND createDefaultEditPoliciesBody FOR gmfgen::GenNode-»
+	«targetDef.proceed()»
+	installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
+		new de.uni_paderborn.fujaba.muml.common.edit.policies.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 «ENDAROUND»
