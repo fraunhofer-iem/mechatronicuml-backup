@@ -347,7 +347,8 @@ public class MumlDiagramUpdater {
 			return result;
 		}
 		List targets = link.getRoles();
-		Object theTarget = !targets.isEmpty() ? targets.get(0) : null; // Adapted for MUML-BUG #446
+		Object theTarget = !targets.isEmpty() ? targets.get(targets.size() - 1)
+				: null; // Adapted for MUML-BUG #446
 		if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.protocol.Role) {
 			return result;
 		}
@@ -374,14 +375,14 @@ public class MumlDiagramUpdater {
 			return result;
 		}
 		List targets = link.getConnectorEndpoints();
-		Object theTarget = !targets.isEmpty() ? targets.get(0) : null; // Adapted for MUML-BUG #446
+		Object theTarget = !targets.isEmpty() ? targets.get(targets.size() - 1)
+				: null; // Adapted for MUML-BUG #446
 		if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 			return result;
 		}
 		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theTarget;
 		List sources = link.getConnectorEndpoints();
-		Object theSource = !sources.isEmpty() ? sources.get(sources.size() - 1)
-				: null; // Adapted for MUML-BUG #446
+		Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
 		if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 			return result;
 		}
@@ -454,8 +455,7 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 			List sources = link.getConnectorEndpoints();
-			Object theSource = !sources.isEmpty() ? sources
-					.get(sources.size() - 1) : null; // Adapted for MUML-BUG #446
+			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
 			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
@@ -496,14 +496,14 @@ public class MumlDiagramUpdater {
 			return result;
 		}
 		List targets = link.getConnectorEndpoints();
-		Object theTarget = !targets.isEmpty() ? targets.get(0) : null; // Adapted for MUML-BUG #446
+		Object theTarget = !targets.isEmpty() ? targets.get(targets.size() - 1)
+				: null; // Adapted for MUML-BUG #446
 		if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 			return result;
 		}
 		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theTarget;
 		List sources = link.getConnectorEndpoints();
-		Object theSource = !sources.isEmpty() ? sources.get(sources.size() - 1)
-				: null; // Adapted for MUML-BUG #446
+		Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
 		if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 			return result;
 		}

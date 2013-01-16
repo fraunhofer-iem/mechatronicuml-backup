@@ -66,7 +66,7 @@ public static «EXPAND CodeStyle::G('java.util.List', getDiagram().editorGen.dia
 «AROUND defineLinkSource(inLoop : Boolean) FOR gmfgen::TypeLinkModelFacet-»
 	«IF isListType(sourceMetaFeature)-»
 java.util.List sources = «EXPAND MetaModel::getFeatureValue('link', metaClass) FOR sourceMetaFeature»;
-Object theSource = !sources.isEmpty() ? sources.get(sources.size() - 1) : null; // Adapted for MUML-BUG #446
+Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
 if («EXPAND MetaModel::NotInstance('theSource') FOR getSourceType()») {
 	«EXPAND stopLinkProcessing(inLoop)-»
 }
@@ -83,7 +83,7 @@ if («EXPAND MetaModel::NotInstance('theSource') FOR getSourceType()») {
 «AROUND defineLinkDestination(inLoop : Boolean) FOR gmfgen::TypeLinkModelFacet-»
 	«IF isListType(targetMetaFeature)-»
 java.util.List targets = «EXPAND MetaModel::getFeatureValue('link', metaClass) FOR targetMetaFeature»;
-Object theTarget = !targets.isEmpty() ? targets.get(0) : null; // Adapted for MUML-BUG #446
+Object theTarget = !targets.isEmpty() ? targets.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
 if («EXPAND MetaModel::NotInstance('theTarget') FOR getTargetType()») {
 	«EXPAND stopLinkProcessing(inLoop)-»
 }
