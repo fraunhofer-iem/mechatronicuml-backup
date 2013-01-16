@@ -40,26 +40,28 @@ protected class ThisRootNode extends RootToken {
 			case 6: return new ReturnStatement_Group(this, this, 6, inst);
 			case 7: return new ExpressionStartRule_Alternatives(this, this, 7, inst);
 			case 8: return new Assignment_Group(this, this, 8, inst);
-			case 9: return new Expression_LogicalExpressionParserRuleCall(this, this, 9, inst);
-			case 10: return new LogicalExpression_LogicalOrExpressionParserRuleCall(this, this, 10, inst);
-			case 11: return new LogicalOrExpression_Group(this, this, 11, inst);
-			case 12: return new LogicalAndExpression_Group(this, this, 12, inst);
-			case 13: return new ComparisonExpression_Group(this, this, 13, inst);
-			case 14: return new ComparisonHigherOpExpression_Group(this, this, 14, inst);
-			case 15: return new ArithmeticExpression_AdditionExpressionParserRuleCall(this, this, 15, inst);
-			case 16: return new AdditionExpression_Group(this, this, 16, inst);
-			case 17: return new MultiplicationExpression_Alternatives(this, this, 17, inst);
-			case 18: return new UnaryPreExpression_Group(this, this, 18, inst);
-			case 19: return new UnaryPostExpression_Group(this, this, 19, inst);
-			case 20: return new Operand_Alternatives(this, this, 20, inst);
-			case 21: return new LiteralExpression_Group(this, this, 21, inst);
-			case 22: return new ExtendedTypedNamedElementExpression_Group(this, this, 22, inst);
-			case 23: return new TypedNamedElementExpression_Group(this, this, 23, inst);
-			case 24: return new NoAttributeSelectorExpression_PositionAssignment(this, this, 24, inst);
-			case 25: return new PositionSelectorExpression_Group(this, this, 25, inst);
-			case 26: return new OperationCall_Group(this, this, 26, inst);
-			case 27: return new ParamaterBinding_Group(this, this, 27, inst);
-			case 28: return new TriggerMessageExpression_Group(this, this, 28, inst);
+			case 9: return new LocalVariableDeclarationStatement_Group(this, this, 9, inst);
+			case 10: return new LocalVariableDeclaration_Group(this, this, 10, inst);
+			case 11: return new Expression_LogicalExpressionParserRuleCall(this, this, 11, inst);
+			case 12: return new LogicalExpression_LogicalOrExpressionParserRuleCall(this, this, 12, inst);
+			case 13: return new LogicalOrExpression_Group(this, this, 13, inst);
+			case 14: return new LogicalAndExpression_Group(this, this, 14, inst);
+			case 15: return new ComparisonExpression_Group(this, this, 15, inst);
+			case 16: return new ComparisonHigherOpExpression_Group(this, this, 16, inst);
+			case 17: return new ArithmeticExpression_AdditionExpressionParserRuleCall(this, this, 17, inst);
+			case 18: return new AdditionExpression_Group(this, this, 18, inst);
+			case 19: return new MultiplicationExpression_Alternatives(this, this, 19, inst);
+			case 20: return new UnaryPreExpression_Group(this, this, 20, inst);
+			case 21: return new UnaryPostExpression_Group(this, this, 21, inst);
+			case 22: return new Operand_Alternatives(this, this, 22, inst);
+			case 23: return new LiteralExpression_Group(this, this, 23, inst);
+			case 24: return new ExtendedTypedNamedElementExpression_Group(this, this, 24, inst);
+			case 25: return new TypedNamedElementExpression_Group(this, this, 25, inst);
+			case 26: return new NoAttributeSelectorExpression_PositionAssignment(this, this, 26, inst);
+			case 27: return new PositionSelectorExpression_Group(this, this, 27, inst);
+			case 28: return new OperationCall_Group(this, this, 28, inst);
+			case 29: return new ParamaterBinding_Group(this, this, 29, inst);
+			case 30: return new TriggerMessageExpression_Group(this, this, 30, inst);
 			default: return null;
 		}	
 	}	
@@ -69,7 +71,6 @@ protected class ThisRootNode extends RootToken {
 /************ begin Rule Block ****************
  *
  * Block returns actionLanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
- * 
  * 	{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=Expression;
  *
  **/
@@ -297,19 +298,14 @@ protected class Block_ExpressionsAssignment_1 extends AssignmentToken  {
 /************ begin Rule ForLoop ****************
  *
  * // TODO: clarify if it makes sense to allow arbitrary expressions for
- * 
- * 
  * // the initializeExpression and countingExpression
- *  ForLoop returns actionLanguage::ForLoop:
- * 
+ * ForLoop returns actionLanguage::ForLoop:
  * 	"for" "(" initializeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
- * 
  * 	block=Block;
  *
  **/
 
 // "for" "(" initializeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
-// 
 // block=Block
 protected class ForLoop_Group extends GroupToken {
 	
@@ -617,15 +613,12 @@ protected class ForLoop_BlockAssignment_7 extends AssignmentToken  {
 /************ begin Rule ForLoopCountingExpression ****************
  *
  * ForLoopCountingExpression returns actionLanguage::Assignment:
- * 
  * 	lhs_typedNamedElementExpression=TypedNamedElementExpression (incrementDecrementOperator=IncrementDecrementOperator |
- * 
  * 	assignOperator=AssignOperator rhs_assignExpression=Expression);
  *
  **/
 
 // lhs_typedNamedElementExpression=TypedNamedElementExpression (incrementDecrementOperator=IncrementDecrementOperator |
-// 
 // assignOperator=AssignOperator rhs_assignExpression=Expression)
 protected class ForLoopCountingExpression_Group extends GroupToken {
 	
@@ -868,7 +861,6 @@ protected class ForLoopCountingExpression_Rhs_assignExpressionAssignment_1_1_1 e
 /************ begin Rule WhileLoop ****************
  *
  * WhileLoop returns actionLanguage::WhileLoop:
- * 
  * 	"while" "(" loopTest=Expression ")" block=Block;
  *
  **/
@@ -1066,7 +1058,6 @@ protected class WhileLoop_BlockAssignment_4 extends AssignmentToken  {
 /************ begin Rule DoWhileLoop ****************
  *
  * DoWhileLoop returns actionLanguage::DoWhileLoop:
- * 
  * 	"do" block=Block "while" "(" loopTest=Expression ");";
  *
  **/
@@ -1286,15 +1277,12 @@ protected class DoWhileLoop_RightParenthesisSemicolonKeyword_5 extends KeywordTo
 /************ begin Rule IfStatement ****************
  *
  * IfStatement returns actionLanguage::IfStatement:
- * 
- * 	"if" "(" ifCondition=Expression ")" ifBlock=Block ("elseif" "(" elseIfConditions+=Expression ")"
- * 
- * 	elseIfBlocks+=Block)* ("else" elseBlock=Block)?;
+ * 	"if" "(" ifCondition=Expression ")" ifBlock=Block ("elseif" "(" elseIfConditions+=Expression ")" elseIfBlocks+=Block)*
+ * 	("else" elseBlock=Block)?;
  *
  **/
 
 // "if" "(" ifCondition=Expression ")" ifBlock=Block ("elseif" "(" elseIfConditions+=Expression ")" elseIfBlocks+=Block)*
-// 
 // ("else" elseBlock=Block)?
 protected class IfStatement_Group extends GroupToken {
 	
@@ -1764,7 +1752,6 @@ protected class IfStatement_ElseBlockAssignment_6_1 extends AssignmentToken  {
 /************ begin Rule ReturnStatement ****************
  *
  * ReturnStatement returns actionLanguage::ReturnStatement:
- * 
  * 	{actionLanguage::ReturnStatement} "return" expression=Expression ";";
  *
  **/
@@ -1921,12 +1908,11 @@ protected class ReturnStatement_SemicolonKeyword_3 extends KeywordToken  {
 /************ begin Rule ExpressionStartRule ****************
  *
  * ExpressionStartRule returns expressions::Expression:
- * 
- * 	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement;
+ * 	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement | LocalVariableDeclarationStatement;
  *
  **/
 
-// Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement
+// Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement | LocalVariableDeclarationStatement
 protected class ExpressionStartRule_Alternatives extends AlternativesToken {
 
 	public ExpressionStartRule_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1947,6 +1933,7 @@ protected class ExpressionStartRule_Alternatives extends AlternativesToken {
 			case 3: return new ExpressionStartRule_DoWhileLoopParserRuleCall_3(lastRuleCallOrigin, this, 3, inst);
 			case 4: return new ExpressionStartRule_IfStatementParserRuleCall_4(lastRuleCallOrigin, this, 4, inst);
 			case 5: return new ExpressionStartRule_ReturnStatementParserRuleCall_5(lastRuleCallOrigin, this, 5, inst);
+			case 6: return new ExpressionStartRule_LocalVariableDeclarationStatementParserRuleCall_6(lastRuleCallOrigin, this, 6, inst);
 			default: return null;
 		}	
 	}
@@ -1957,6 +1944,7 @@ protected class ExpressionStartRule_Alternatives extends AlternativesToken {
 		   getEObject().eClass() != grammarAccess.getDoWhileLoopRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getForLoopRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getIfStatementRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getLocalVariableDeclarationStatementRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getReturnStatementAccess().getReturnStatementAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getWhileLoopRule().getType().getClassifier())
 			return null;
@@ -2181,6 +2169,42 @@ protected class ExpressionStartRule_ReturnStatementParserRuleCall_5 extends Rule
 	}	
 }
 
+// LocalVariableDeclarationStatement
+protected class ExpressionStartRule_LocalVariableDeclarationStatementParserRuleCall_6 extends RuleCallToken {
+	
+	public ExpressionStartRule_LocalVariableDeclarationStatementParserRuleCall_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getExpressionStartRuleAccess().getLocalVariableDeclarationStatementParserRuleCall_6();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new LocalVariableDeclarationStatement_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getLocalVariableDeclarationStatementRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(LocalVariableDeclarationStatement_Group.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
 
 /************ end Rule ExpressionStartRule ****************/
 
@@ -2188,16 +2212,13 @@ protected class ExpressionStartRule_ReturnStatementParserRuleCall_5 extends Rule
 /************ begin Rule Assignment ****************
  *
  * // Assignment
- *  Assignment returns actionLanguage::Assignment:
- * 
+ * Assignment returns actionLanguage::Assignment:
  * 	lhs_typedNamedElementExpression=TypedNamedElementExpression assignOperator=AssignOperator
- * 
  * 	rhs_assignExpression=Expression ";";
  *
  **/
 
 // lhs_typedNamedElementExpression=TypedNamedElementExpression assignOperator=AssignOperator
-// 
 // rhs_assignExpression=Expression ";"
 protected class Assignment_Group extends GroupToken {
 	
@@ -2378,11 +2399,321 @@ protected class Assignment_SemicolonKeyword_3 extends KeywordToken  {
 /************ end Rule Assignment ****************/
 
 
-/************ begin Rule Expression ****************
+/************ begin Rule LocalVariableDeclarationStatement ****************
  *
  * // end of assignment
- *  Expression returns expressions::Expression:
- * 
+ * // local variable declaration
+ * LocalVariableDeclarationStatement returns actionLanguage::LocalVariableDeclarationStatement:
+ * 	variable=LocalVariableDeclaration (":=" initializeExpression=Expression)? ";";
+ *
+ **/
+
+// variable=LocalVariableDeclaration (":=" initializeExpression=Expression)? ";"
+protected class LocalVariableDeclarationStatement_Group extends GroupToken {
+	
+	public LocalVariableDeclarationStatement_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getLocalVariableDeclarationStatementAccess().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new LocalVariableDeclarationStatement_SemicolonKeyword_2(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getLocalVariableDeclarationStatementRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// variable=LocalVariableDeclaration
+protected class LocalVariableDeclarationStatement_VariableAssignment_0 extends AssignmentToken  {
+	
+	public LocalVariableDeclarationStatement_VariableAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getLocalVariableDeclarationStatementAccess().getVariableAssignment_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new LocalVariableDeclaration_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("variable",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("variable");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getLocalVariableDeclarationRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getLocalVariableDeclarationStatementAccess().getVariableLocalVariableDeclarationParserRuleCall_0_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, consumed);
+		}	
+	}	
+}
+
+// (":=" initializeExpression=Expression)?
+protected class LocalVariableDeclarationStatement_Group_1 extends GroupToken {
+	
+	public LocalVariableDeclarationStatement_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getLocalVariableDeclarationStatementAccess().getGroup_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new LocalVariableDeclarationStatement_InitializeExpressionAssignment_1_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// ":="
+protected class LocalVariableDeclarationStatement_ColonEqualsSignKeyword_1_0 extends KeywordToken  {
+	
+	public LocalVariableDeclarationStatement_ColonEqualsSignKeyword_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getLocalVariableDeclarationStatementAccess().getColonEqualsSignKeyword_1_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new LocalVariableDeclarationStatement_VariableAssignment_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// initializeExpression=Expression
+protected class LocalVariableDeclarationStatement_InitializeExpressionAssignment_1_1 extends AssignmentToken  {
+	
+	public LocalVariableDeclarationStatement_InitializeExpressionAssignment_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getLocalVariableDeclarationStatementAccess().getInitializeExpressionAssignment_1_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Expression_LogicalExpressionParserRuleCall(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("initializeExpression",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("initializeExpression");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getExpressionRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getLocalVariableDeclarationStatementAccess().getInitializeExpressionExpressionParserRuleCall_1_1_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new LocalVariableDeclarationStatement_ColonEqualsSignKeyword_1_0(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+
+// ";"
+protected class LocalVariableDeclarationStatement_SemicolonKeyword_2 extends KeywordToken  {
+	
+	public LocalVariableDeclarationStatement_SemicolonKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getLocalVariableDeclarationStatementAccess().getSemicolonKeyword_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new LocalVariableDeclarationStatement_Group_1(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new LocalVariableDeclarationStatement_VariableAssignment_0(lastRuleCallOrigin, this, 1, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+/************ end Rule LocalVariableDeclarationStatement ****************/
+
+
+/************ begin Rule LocalVariableDeclaration ****************
+ *
+ * LocalVariableDeclaration returns behavior::Variable:
+ * 	dataType=[types::DataType] name=ID;
+ *
+ **/
+
+// dataType=[types::DataType] name=ID
+protected class LocalVariableDeclaration_Group extends GroupToken {
+	
+	public LocalVariableDeclaration_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getLocalVariableDeclarationAccess().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new LocalVariableDeclaration_NameAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getLocalVariableDeclarationRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// dataType=[types::DataType]
+protected class LocalVariableDeclaration_DataTypeAssignment_0 extends AssignmentToken  {
+	
+	public LocalVariableDeclaration_DataTypeAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getLocalVariableDeclarationAccess().getDataTypeAssignment_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("dataType",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("dataType");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getLocalVariableDeclarationAccess().getDataTypeDataTypeCrossReference_0_0().getType().getClassifier())) {
+				type = AssignmentType.CROSS_REFERENCE;
+				element = grammarAccess.getLocalVariableDeclarationAccess().getDataTypeDataTypeCrossReference_0_0(); 
+				return obj;
+			}
+		}
+		return null;
+	}
+
+}
+
+// name=ID
+protected class LocalVariableDeclaration_NameAssignment_1 extends AssignmentToken  {
+	
+	public LocalVariableDeclaration_NameAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getLocalVariableDeclarationAccess().getNameAssignment_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new LocalVariableDeclaration_DataTypeAssignment_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("name",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("name");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getLocalVariableDeclarationAccess().getNameIDTerminalRuleCall_1_0(), value, null)) {
+			type = AssignmentType.TERMINAL_RULE_CALL;
+			element = grammarAccess.getLocalVariableDeclarationAccess().getNameIDTerminalRuleCall_1_0();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+
+/************ end Rule LocalVariableDeclaration ****************/
+
+
+/************ begin Rule Expression ****************
+ *
+ * // end of local variable declaration
+ * Expression returns expressions::Expression:
  * 	LogicalExpression;
  *
  **/
@@ -2437,8 +2768,7 @@ protected class Expression_LogicalExpressionParserRuleCall extends RuleCallToken
 /************ begin Rule LogicalExpression ****************
  *
  * // LogicalExpression
- *  LogicalExpression returns expressions::Expression:
- * 
+ * LogicalExpression returns expressions::Expression:
  * 	LogicalOrExpression;
  *
  **/
@@ -2493,15 +2823,12 @@ protected class LogicalExpression_LogicalOrExpressionParserRuleCall extends Rule
 /************ begin Rule LogicalOrExpression ****************
  *
  * LogicalOrExpression returns expressions::Expression:
- * 
  * 	LogicalAndExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalOrOperator
- * 
  * 	rightExpression=LogicalAndExpression)*;
  *
  **/
 
 // LogicalAndExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalOrOperator
-// 
 // rightExpression=LogicalAndExpression)*
 protected class LogicalOrExpression_Group extends GroupToken {
 	
@@ -2575,7 +2902,6 @@ protected class LogicalOrExpression_LogicalAndExpressionParserRuleCall_0 extends
 }
 
 // ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalOrOperator
-// 
 // rightExpression=LogicalAndExpression)*
 protected class LogicalOrExpression_Group_1 extends GroupToken {
 	
@@ -2723,15 +3049,12 @@ protected class LogicalOrExpression_RightExpressionAssignment_1_2 extends Assign
 /************ begin Rule LogicalAndExpression ****************
  *
  * LogicalAndExpression returns expressions::Expression:
- * 
  * 	ComparisonExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalAndOperator
- * 
  * 	rightExpression=ComparisonExpression)*;
  *
  **/
 
 // ComparisonExpression ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalAndOperator
-// 
 // rightExpression=ComparisonExpression)*
 protected class LogicalAndExpression_Group extends GroupToken {
 	
@@ -2805,7 +3128,6 @@ protected class LogicalAndExpression_ComparisonExpressionParserRuleCall_0 extend
 }
 
 // ({commonExpressions::LogicalExpression.leftExpression=current} operator=LogicalAndOperator
-// 
 // rightExpression=ComparisonExpression)*
 protected class LogicalAndExpression_Group_1 extends GroupToken {
 	
@@ -2953,17 +3275,14 @@ protected class LogicalAndExpression_RightExpressionAssignment_1_2 extends Assig
 /************ begin Rule ComparisonExpression ****************
  *
  * // end of LogicalExpression
- *  // ComparisonExpression
- *  ComparisonExpression returns expressions::Expression:
- * 
+ * // ComparisonExpression
+ * ComparisonExpression returns expressions::Expression:
  * 	ComparisonHigherOpExpression ({commonExpressions::ComparisonExpression.leftExpression=current}
- * 
  * 	operator=ComparingEQNEQOperator rightExpression=ComparisonHigherOpExpression)?;
  *
  **/
 
 // ComparisonHigherOpExpression ({commonExpressions::ComparisonExpression.leftExpression=current}
-// 
 // operator=ComparingEQNEQOperator rightExpression=ComparisonHigherOpExpression)?
 protected class ComparisonExpression_Group extends GroupToken {
 	
@@ -3037,7 +3356,6 @@ protected class ComparisonExpression_ComparisonHigherOpExpressionParserRuleCall_
 }
 
 // ({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingEQNEQOperator
-// 
 // rightExpression=ComparisonHigherOpExpression)?
 protected class ComparisonExpression_Group_1 extends GroupToken {
 	
@@ -3184,15 +3502,12 @@ protected class ComparisonExpression_RightExpressionAssignment_1_2 extends Assig
 /************ begin Rule ComparisonHigherOpExpression ****************
  *
  * ComparisonHigherOpExpression returns expressions::Expression:
- * 
  * 	ArithmeticExpression ({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingRelOperator
- * 
  * 	rightExpression=ArithmeticExpression)?;
  *
  **/
 
 // ArithmeticExpression ({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingRelOperator
-// 
 // rightExpression=ArithmeticExpression)?
 protected class ComparisonHigherOpExpression_Group extends GroupToken {
 	
@@ -3266,7 +3581,6 @@ protected class ComparisonHigherOpExpression_ArithmeticExpressionParserRuleCall_
 }
 
 // ({commonExpressions::ComparisonExpression.leftExpression=current} operator=ComparingRelOperator
-// 
 // rightExpression=ArithmeticExpression)?
 protected class ComparisonHigherOpExpression_Group_1 extends GroupToken {
 	
@@ -3413,9 +3727,8 @@ protected class ComparisonHigherOpExpression_RightExpressionAssignment_1_2 exten
 /************ begin Rule ArithmeticExpression ****************
  *
  * // end of ComparisonExpression
- *  // ArithmeticExpression	
- *  ArithmeticExpression returns expressions::Expression:
- * 
+ * // ArithmeticExpression	
+ * ArithmeticExpression returns expressions::Expression:
  * 	AdditionExpression;
  *
  **/
@@ -3470,15 +3783,12 @@ protected class ArithmeticExpression_AdditionExpressionParserRuleCall extends Ru
 /************ begin Rule AdditionExpression ****************
  *
  * AdditionExpression returns expressions::Expression:
- * 
  * 	MultiplicationExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=AdditionOperator
- * 
  * 	rightExpression=MultiplicationExpression)*;
  *
  **/
 
 // MultiplicationExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=AdditionOperator
-// 
 // rightExpression=MultiplicationExpression)*
 protected class AdditionExpression_Group extends GroupToken {
 	
@@ -3552,7 +3862,6 @@ protected class AdditionExpression_MultiplicationExpressionParserRuleCall_0 exte
 }
 
 // ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=AdditionOperator
-// 
 // rightExpression=MultiplicationExpression)*
 protected class AdditionExpression_Group_1 extends GroupToken {
 	
@@ -3700,15 +4009,12 @@ protected class AdditionExpression_RightExpressionAssignment_1_2 extends Assignm
 /************ begin Rule MultiplicationExpression ****************
  *
  * MultiplicationExpression returns expressions::Expression:
- * 
  * 	UnaryPreExpression | UnaryPostExpression ({commonExpressions::ArithmeticExpression.leftExpression=current}
- * 
  * 	operator=MultiplicationOperator rightExpression=(UnaryPreExpression | UnaryPostExpression))*;
  *
  **/
 
 // UnaryPreExpression | UnaryPostExpression ({commonExpressions::ArithmeticExpression.leftExpression=current}
-// 
 // operator=MultiplicationOperator rightExpression=(UnaryPreExpression | UnaryPostExpression))*
 protected class MultiplicationExpression_Alternatives extends AlternativesToken {
 
@@ -3784,7 +4090,6 @@ protected class MultiplicationExpression_UnaryPreExpressionParserRuleCall_0 exte
 }
 
 // UnaryPostExpression ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=MultiplicationOperator
-// 
 // rightExpression=(UnaryPreExpression | UnaryPostExpression))*
 protected class MultiplicationExpression_Group_1 extends GroupToken {
 	
@@ -3843,7 +4148,6 @@ protected class MultiplicationExpression_UnaryPostExpressionParserRuleCall_1_0 e
 }
 
 // ({commonExpressions::ArithmeticExpression.leftExpression=current} operator=MultiplicationOperator
-// 
 // rightExpression=(UnaryPreExpression | UnaryPostExpression))*
 protected class MultiplicationExpression_Group_1_1 extends GroupToken {
 	
@@ -4002,9 +4306,8 @@ protected class MultiplicationExpression_RightExpressionAssignment_1_1_2 extends
 /************ begin Rule UnaryPreExpression ****************
  *
  * // end of ArithmeticExpression
- *  // UnaryPreExpression
- *  UnaryPreExpression returns expressions::Expression:
- * 
+ * // UnaryPreExpression
+ * UnaryPreExpression returns expressions::Expression:
  * 	{commonExpressions::UnaryExpression} operator=UnaryPreOperator enclosedExpression=Operand;
  *
  **/
@@ -4151,9 +4454,8 @@ protected class UnaryPreExpression_EnclosedExpressionAssignment_2 extends Assign
 /************ begin Rule UnaryPostExpression ****************
  *
  * // end of UnaryPreExpression
- *  // UnaryPostExpression
- *  UnaryPostExpression returns expressions::Expression:
- * 
+ * // UnaryPostExpression
+ * UnaryPostExpression returns expressions::Expression:
  * 	Operand ({commonExpressions::UnaryExpression.enclosedExpression=current} operator=UnaryPostOperator)?;
  *
  **/
@@ -4330,17 +4632,14 @@ protected class UnaryPostExpression_OperatorAssignment_1_1 extends AssignmentTok
 /************ begin Rule Operand ****************
  *
  * // end of UnaryPostExpression
- *  // Operand
- *  Operand returns expressions::Expression:
- * 
+ * // Operand
+ * Operand returns expressions::Expression:
  * 	"(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | OperationCall |
- * 
  * 	TriggerMessageExpression | NoAttributeSelectorExpression;
  *
  **/
 
 // "(" Expression ")" | LiteralExpression | ExtendedTypedNamedElementExpression | OperationCall | TriggerMessageExpression
-// 
 // | NoAttributeSelectorExpression
 protected class Operand_Alternatives extends AlternativesToken {
 
@@ -4672,8 +4971,7 @@ protected class Operand_NoAttributeSelectorExpressionParserRuleCall_5 extends Ru
 /************ begin Rule LiteralExpression ****************
  *
  * // end of Operand
- *  LiteralExpression returns commonExpressions::LiteralExpression:
- * 
+ * LiteralExpression returns commonExpressions::LiteralExpression:
  * 	{commonExpressions::LiteralExpression} value=Literal;
  *
  **/
@@ -4775,17 +5073,13 @@ protected class LiteralExpression_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule ExtendedTypedNamedElementExpression ****************
  *
  * ExtendedTypedNamedElementExpression returns expressions::Expression:
- * 
  * 	TypedNamedElementExpression
- * 
  * 	({actionLanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "."
- * 
  * 	position=PositionSelectorExpression)?;
  *
  **/
 
 // TypedNamedElementExpression ({actionLanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
-// 
 // "." position=PositionSelectorExpression)?
 protected class ExtendedTypedNamedElementExpression_Group extends GroupToken {
 	
@@ -4854,7 +5148,6 @@ protected class ExtendedTypedNamedElementExpression_TypedNamedElementExpressionP
 }
 
 // ({actionLanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "."
-// 
 // position=PositionSelectorExpression)?
 protected class ExtendedTypedNamedElementExpression_Group_1 extends GroupToken {
 	
@@ -4989,7 +5282,6 @@ protected class ExtendedTypedNamedElementExpression_PositionAssignment_1_2 exten
 /************ begin Rule TypedNamedElementExpression ****************
  *
  * TypedNamedElementExpression returns actionLanguage::TypedNamedElementExpression:
- * 
  * 	typedNamedElement=[behavior::TypedNamedElement] ("[" indices+=ArithmeticExpression "]")*;
  *
  **/
@@ -5181,7 +5473,6 @@ protected class TypedNamedElementExpression_RightSquareBracketKeyword_1_2 extend
 /************ begin Rule NoAttributeSelectorExpression ****************
  *
  * NoAttributeSelectorExpression returns actionLanguage::DiscreteInteractionEndpointReference:
- * 
  * 	position=PositionSelectorExpression;
  *
  **/
@@ -5239,7 +5530,6 @@ protected class NoAttributeSelectorExpression_PositionAssignment extends Assignm
 /************ begin Rule PositionSelectorExpression ****************
  *
  * PositionSelectorExpression returns actionLanguage::PositionSelector:
- * 
  * 	kind=PositionSelectorKind ("." successor=PositionSelectorExpression)?;
  *
  **/
@@ -5405,9 +5695,7 @@ protected class PositionSelectorExpression_SuccessorAssignment_1_1 extends Assig
 /************ begin Rule OperationCall ****************
  *
  * OperationCall returns actionLanguage::OperationCall:
- * 
  * 	operation=[behavior::Operation] "(" (parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)?
- * 
  * 	")";
  *
  **/
@@ -5691,7 +5979,6 @@ protected class OperationCall_RightParenthesisKeyword_3 extends KeywordToken  {
 /************ begin Rule ParamaterBinding ****************
  *
  * ParamaterBinding returns behavior::ParameterBinding:
- * 
  * 	{behavior::ParameterBinding} parameter=[behavior::Parameter] ":=" value=Expression;
  *
  **/
@@ -5863,8 +6150,7 @@ protected class ParamaterBinding_ValueAssignment_3 extends AssignmentToken  {
 /************ begin Rule TriggerMessageExpression ****************
  *
  * // TriggerMessageExpression
- *  TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
- * 
+ * TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
  * 	messageType=[msgtype::MessageType] "." parameter=[behavior::Parameter];
  *
  **/

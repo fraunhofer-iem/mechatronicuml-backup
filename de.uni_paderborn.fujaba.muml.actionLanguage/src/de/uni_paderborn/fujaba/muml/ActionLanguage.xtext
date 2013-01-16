@@ -11,6 +11,8 @@ import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#/
 
 import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior" as behavior
 
+import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/types" as types
+
 import "platform:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgtype" as msgtype
 
 import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions" as expressions
@@ -66,7 +68,7 @@ ReturnStatement returns actionLanguage::ReturnStatement:
 ExpressionStartRule returns expressions::Expression:
 	Assignment |  ForLoop | 
 	WhileLoop | DoWhileLoop | 
-	IfStatement | ReturnStatement
+	IfStatement | ReturnStatement | LocalVariableDeclarationStatement
 ;
 
 enum IncrementDecrementOperator returns actionLanguage::IncrementDecrementOperator:
@@ -82,9 +84,21 @@ Assignment returns actionLanguage::Assignment:
 
 enum AssignOperator returns actionLanguage::AssignOperator:
 	ASSIGN=':=' | PLUS_EQUAL='+='| EQUAL_PLUS='=+' | MINUS_EQUAL='-='| EQUAL_MINUS='=-'
-;	
+;
 
 // end of assignment
+
+// local variable declaration
+
+LocalVariableDeclarationStatement returns actionLanguage::LocalVariableDeclarationStatement:
+	variable=LocalVariableDeclaration (':=' initializeExpression=Expression)? ';'
+;
+
+LocalVariableDeclaration returns behavior::Variable:
+	dataType=[types::DataType] name=ID
+;
+
+// end of local variable declaration
 
 Expression returns expressions::Expression:
 	LogicalExpression

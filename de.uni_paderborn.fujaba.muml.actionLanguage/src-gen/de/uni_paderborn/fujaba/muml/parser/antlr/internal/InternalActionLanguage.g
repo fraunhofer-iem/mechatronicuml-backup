@@ -756,6 +756,16 @@ ruleExpressionStartRule returns [EObject current=null]
         $current = $this_ReturnStatement_5.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getExpressionStartRuleAccess().getLocalVariableDeclarationStatementParserRuleCall_6()); 
+    }
+    this_LocalVariableDeclarationStatement_6=ruleLocalVariableDeclarationStatement
+    { 
+        $current = $this_LocalVariableDeclarationStatement_6.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -836,6 +846,123 @@ ruleAssignment returns [EObject current=null]
     	newLeafNode(otherlv_3, grammarAccess.getAssignmentAccess().getSemicolonKeyword_3());
     }
 )
+;
+
+
+
+
+
+// Entry rule entryRuleLocalVariableDeclarationStatement
+entryRuleLocalVariableDeclarationStatement returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getLocalVariableDeclarationStatementRule()); }
+	 iv_ruleLocalVariableDeclarationStatement=ruleLocalVariableDeclarationStatement 
+	 { $current=$iv_ruleLocalVariableDeclarationStatement.current; } 
+	 EOF 
+;
+
+// Rule LocalVariableDeclarationStatement
+ruleLocalVariableDeclarationStatement returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getLocalVariableDeclarationStatementAccess().getVariableLocalVariableDeclarationParserRuleCall_0_0()); 
+	    }
+		lv_variable_0_0=ruleLocalVariableDeclaration		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getLocalVariableDeclarationStatementRule());
+	        }
+       		set(
+       			$current, 
+       			"variable",
+        		lv_variable_0_0, 
+        		"LocalVariableDeclaration");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_1=':=' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getLocalVariableDeclarationStatementAccess().getColonEqualsSignKeyword_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getLocalVariableDeclarationStatementAccess().getInitializeExpressionExpressionParserRuleCall_1_1_0()); 
+	    }
+		lv_initializeExpression_2_0=ruleExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getLocalVariableDeclarationStatementRule());
+	        }
+       		set(
+       			$current, 
+       			"initializeExpression",
+        		lv_initializeExpression_2_0, 
+        		"Expression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_3=';' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getLocalVariableDeclarationStatementAccess().getSemicolonKeyword_2());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleLocalVariableDeclaration
+entryRuleLocalVariableDeclaration returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getLocalVariableDeclarationRule()); }
+	 iv_ruleLocalVariableDeclaration=ruleLocalVariableDeclaration 
+	 { $current=$iv_ruleLocalVariableDeclaration.current; } 
+	 EOF 
+;
+
+// Rule LocalVariableDeclaration
+ruleLocalVariableDeclaration returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getLocalVariableDeclarationRule());
+	        }
+        }
+	otherlv_0=RULE_ID
+	{
+		newLeafNode(otherlv_0, grammarAccess.getLocalVariableDeclarationAccess().getDataTypeDataTypeCrossReference_0_0()); 
+	}
+
+)
+)(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getLocalVariableDeclarationAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getLocalVariableDeclarationRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+))
 ;
 
 

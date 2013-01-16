@@ -35,11 +35,6 @@ public abstract class AbstractActionLanguageRuntimeModule extends DefaultRuntime
 	}
 	
 	// contributed by org.eclipse.xtext.generator.grammarAccess.GrammarAccessFragment
-	public java.lang.ClassLoader bindClassLoaderToInstance() {
-		return getClass().getClassLoader();
-	}
-
-	// contributed by org.eclipse.xtext.generator.grammarAccess.GrammarAccessFragment
 	public Class<? extends org.eclipse.xtext.IGrammarAccess> bindIGrammarAccess() {
 		return de.uni_paderborn.fujaba.muml.services.ActionLanguageGrammarAccess.class;
 	}

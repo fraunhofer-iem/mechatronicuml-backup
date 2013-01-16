@@ -12,19 +12,27 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
+import org.storydriven.core.expressions.Expression;
 
+import de.fujaba.modelinstance.ModelElementCategory;
+import de.fujaba.modelinstance.ModelInstancePlugin;
+import de.fujaba.modelinstance.RootNode;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
 import de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.model.behavior.Operation;
 import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.StateEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.model.types.DataType;
 
 /**
  * This class contains custom scoping description.
@@ -35,18 +43,48 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
  */
 public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvider {
 	private List<TypedNamedElement> typedNamedElementList;
+	private List<DataType> typeList;
 	private List<Operation> operationList;
 	private List<MessageType> messageTypeList;
+	
+	// TODO: make this string public in class TypeCategoryInitializer
+	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
 	
 	public ActionLanguageScopeProvider() {
 		super();
 		initLists();
 	}
 	
-	//IScope scope_Assignment_attribute(Assignment assignment, EReference ref) {
-	//IScope scope_EAttribute(Assignment assignment, EReference ref) {
-	IScope scope_TypedNamedElement(Object object, EReference ref) {
-		return createScope(typedNamedElementList);
+	List<TypedNamedElement> getLocalVariables(EObject object) {
+		List<TypedNamedElement> localVariableList = new ArrayList<TypedNamedElement>();
+		EObject container = object;
+		EObject containedExpression = null;
+		while (container != null) {
+			if (container instanceof Block) {
+				// add all local variable declarations which were defined
+				// before the containedExpression
+				for (Expression expression : ((Block) container).getExpressions()) {
+					if (expression == containedExpression) {
+						break;
+					} else if (expression instanceof LocalVariableDeclarationStatement) {
+						localVariableList.add(((LocalVariableDeclarationStatement) expression).getVariable());
+					}
+				}
+			}
+			containedExpression = container;
+			container = container.eContainer();
+		}
+		return localVariableList;
+	}
+	
+	IScope scope_TypedNamedElement(EObject object, EReference ref) {
+		List<TypedNamedElement> localVariableList = getLocalVariables(object);
+		localVariableList.addAll(typedNamedElementList);
+		return createScope(localVariableList);
+	}
+	
+	IScope scope_DataType(Variable variable, EReference ref) {
+		return createScope(typeList);
 	}
 	
 	IScope scope_Operation(Object object, EReference ref) {
@@ -135,8 +173,24 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 			throw new IllegalArgumentException("object is no rtsc: " + object);
 		}
 		RealtimeStatechart rtsc = (RealtimeStatechart) object;
+		typedNamedElementList = new ArrayList<TypedNamedElement>();
 		typedNamedElementList.addAll(rtsc.getAllAvailableVariables());
 		operationList = rtsc.getAllAvailableOperations();
+		initDataTypes(rtsc);
+	}
+	
+	private void initDataTypes(EObject object) {
+		while (!(object instanceof RootNode)) {
+			object = object.eContainer();
+		}
+		RootNode rootNode = (RootNode) object;
+		typeList = new ArrayList<DataType>();
+		ModelElementCategory modelElementCategory = ModelInstancePlugin.getInstance()
+				.getModelElementCategoryRegistry()
+				.getModelElementCategory(rootNode, TYPES_CATEGORY_KEY);
+		for (EObject type : modelElementCategory.getModelElements()) {
+			typeList.add((DataType) type);
+		}
 	}
 	
 	private List<Parameter> getScopeForOperationCall(OperationCall operationCall) {
