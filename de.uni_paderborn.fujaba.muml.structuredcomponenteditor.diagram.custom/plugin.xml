@@ -25,6 +25,16 @@
 		  class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.helpers.ComponentPartEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.AssemblyConnectorAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.AssemblyConnector_4001"
+		  class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.helpers.AssemblyConnectorEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+         <adviceBinding  id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.DelegationConnectorAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DelegationConnector_4002"
+		  class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.helpers.DelegationConnectorEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
 
       </metamodel>
    </extension>
@@ -33,6 +43,14 @@
       <binding context="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ComponentPart_3005"/>
          <advice ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.ComponentPartAdvice"/>
+      </binding>
+      <binding context="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.AssemblyConnector_4001"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.AssemblyConnectorAdvice"/>
+      </binding>
+      <binding context="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DelegationConnector_4002"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.DelegationConnectorAdvice"/>
       </binding>
    </extension>
 

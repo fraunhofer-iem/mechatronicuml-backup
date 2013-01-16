@@ -44,23 +44,4 @@ public class ComponentPartEditHelperAdvice extends AbstractEditHelperAdvice {
 		};
 	}
 
-	// TODO: getBeforeSetCommand() is not called!
-	// /**
-	// * Delete Delegations and Assemblies, before componentType changes.
-	// */
-	// protected ICommand getBeforeSetCommand(final SetRequest request) {
-	// return new SetValueCommand(request) {
-	//
-	// @Override
-	// protected CommandResult doExecuteWithResult(
-	// IProgressMonitor monitor, IAdaptable info)
-	// throws ExecutionException {
-	// ComponentPart componentPart = (ComponentPart) request.getElementToEdit();
-	//
-	// return CommandResult.newOKCommandResult(componentPart);
-	// }
-	//
-	// };
-	// }
-
 }
