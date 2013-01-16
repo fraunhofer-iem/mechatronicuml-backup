@@ -8,51 +8,63 @@ modeltype ComponentPackage uses muml::model::component('http://www.fujaba.de/mum
 modeltype InstancePackage uses muml::model::instance('http://www.fujaba.de/muml/0.2.2');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
+property NULL_COMPONENT_PART_HELPER : ComponentPart = object ComponentPart{};
+
 main() {
 	log("QVT-O Script \"instances.qvto\" started.");
 
 	// process AtomicComponentInstances
 	instance.rootObjects()[AtomicComponentInstance]->forEach(ci) {
-		ci.portInstances := ci.componentType.createPortInstances();
+		ci.portInstances := ci.componentType.createPortInstances(NULL_COMPONENT_PART_HELPER); // using helper instead of "null", because of QVTO-Bug
 	};
 	
 	// process StructuredComponentInstances
 	instance.rootObjects()[StructuredComponentInstance]->forEach(ci) {
-		ci.portInstances := ci.componentType.createPortInstances();
+		ci.portInstances := ci.componentType.createPortInstances(NULL_COMPONENT_PART_HELPER); // using helper instead of "null", because of QVTO-Bug
 		ci.embeddedCIC := new ComponentInstanceConfiguration(ci.componentType.oclAsType(StructuredComponent));
 	};
 }
 
-// Queries
+// Convenience query to cast a natural number as integer, using -1 as value for infinity.
 query NaturalNumber::toInteger() : Integer {
 	if (self.infinity) then {
 		return -1;
 	} endif;
 	return self.value;
 }
-query Component::createPortInstances() : Set(PortInstance) {
+
+// Convenience query to get all Port Instances that have already been created for a port at a given ComponentInstance
+query Port::portInstances(componentInstance : ComponentInstance) : Set(PortInstance) {
+	return componentInstance.portInstances->select(i | i.type = self);
+}
+
+// Creating Port Instances for Components by creating instances for each port.
+query Component::createPortInstances(part : ComponentPart) : Set(PortInstance) {
 	var portInstances : Set(PortInstance);
 	self.ports->forEach(port) {
-		portInstances += port.createPortInstances();
+		portInstances += port.createInstances(part)[PortInstance];
+		
 	};
 	return portInstances;
 }
-query Port::createPortInstances() : Set(PortInstance) {
-	return Set { self.createPortInstance() }
+
+// Creating multiple Port Instances for multi ports and one Port Instance for single ports.
+query ConnectorEndpoint::createInstances(part : ComponentPart) : Set(ConnectorEndpointInstance) {
+	return Set { self.createInstance(part) }
 }
-query DiscretePort::createPortInstances() : Set(PortInstance) {
+query DiscretePort::createInstances(part : ComponentPart) : Set(ConnectorEndpointInstance) {
 	if (self.multiPort) then {
-		var multiPortInstance : DiscreteMultiPortInstance := new DiscreteMultiPortInstance(self);
+		var multiPortInstance : DiscreteMultiPortInstance := self.map multi(part);
 		//return OrderedSet { multiPortInstance }
 		return OrderedSet { multiPortInstance }[PortInstance]->union(multiPortInstance.subInteractionEndpointInstances[PortInstance])
 	} endif;
-	return self.createSubPortInstances();
+	return self.createSubPortInstances(part);
 }
-query DiscretePort::createSubPortInstances() : Set(PortInstance) {
+query DiscretePort::createSubPortInstances(part : ComponentPart) : Set(PortInstance) {
 	var subPortInstances : Set(PortInstance);
 	var count : Integer := 0;
 	while (count < self.cardinality.lowerBound.toInteger()) {
-		var portInstance : PortInstance := self.createPortInstance();
+		var portInstance : PortInstance := self.createInstance(part).oclAsType(PortInstance);
 		portInstance.name := self.name + (count + 1).toString();
 		subPortInstances += portInstance;
 		count := count + 1;
@@ -60,52 +72,96 @@ query DiscretePort::createSubPortInstances() : Set(PortInstance) {
 	return subPortInstances
 }
 
-query Port::createPortInstance() : PortInstance {
-	return null;
+// Primitively creating and initializing one PortInstance by PortType
+query ConnectorEndpoint::createInstance(part : ComponentPart) : ConnectorEndpointInstance {
+	var portInstance : ConnectorEndpointInstance = self.primCreateInstance(part);
+	// initialize port instance by creating connector instances for it.
+	portInstance.connectorInstances := portInstance.createConnectorInstances(part);
+	return portInstance;
 }
-query DiscretePort::createPortInstance() : PortInstance {
-	return new DiscreteSinglePortInstance(self);
-}
-query ContinuousPort::createPortInstance() : PortInstance {
-	return new ContinuousPortInstance(self);
-}
-query HybridPort::createPortInstance() : PortInstance {
-	return new HybridPortInstance(self);
+query ConnectorEndpoint::primCreateInstance(part : ComponentPart) : ConnectorEndpointInstance {
+	return self.map single(part);
 }
 
+// Connector instances
+query Connector::otherEnd(thisEnd : ConnectorEndpoint) : ConnectorEndpoint {
+	return self.connectorEndpoints->select(e | e != thisEnd)->first();
+}
+query ConnectorEndpointInstance::createConnectorInstances(part : ComponentPart) : Set(ConnectorInstance) {
+	var connectorInstances : Set(ConnectorInstance);
+	self.type.connectors[PortConnector]->forEach(portConnector) {
+		var otherEnd : Port := portConnector.otherEnd(self.type).oclAsType(Port);
+		
+		//ComponentInstance.allInstances()->collect(ci | otherEnd.portInstances(ci))->reject(oclIsUndefined())->forEach(otherEndInstance) {
+		otherEnd.resolve(PortInstance)->forEach(otherEndInstance) {
+			connectorInstances += portConnector.createConnectorInstance(Set { self, otherEndInstance });
+		}
+	};
+	return connectorInstances;
+}
+query Connector::createConnectorInstance(endpoints : Set(ConnectorEndpointInstance)) : ConnectorInstance {
+	var connectorInstance : ConnectorInstance := self.primCreateConnectorInstance();
+	connectorInstance.connectorEndpointInstances := endpoints;
+	return connectorInstance;
+}
+query Connector::primCreateConnectorInstance() : ConnectorInstance {
+	assert fatal (false) with log ("Tried to instantiate abstract class Connector.");
+	return null;
+}
+query AssemblyConnector::primCreateConnectorInstance() : ConnectorInstance {
+	return new AssemblyConnectorInstance(self);
+}
+query DelegationConnector::primCreateConnectorInstance() : ConnectorInstance {
+	return new DelegationConnectorInstance(self);
+}
 
 // Constructors
 constructor ComponentInstanceConfiguration::ComponentInstanceConfiguration(component : StructuredComponent) {
 	name := component.name;
-	component.embeddedParts.componentType[AtomicComponent]->forEach(s) {
-		componentInstances += new AtomicComponentInstance(s);
+	component.embeddedParts->select(p | p.componentType.oclIsKindOf(AtomicComponent))->forEach(part) {
+		componentInstances += new AtomicComponentInstance(part.componentType.oclAsType(AtomicComponent), part);
 	};
-	component.embeddedParts.componentType[StructuredComponent]->forEach(s) {
-		componentInstances += new StructuredComponentInstance(s);
+	component.embeddedParts->select(p | p.componentType.oclIsKindOf(StructuredComponent))->forEach(part) {
+		componentInstances += new StructuredComponentInstance(part.componentType.oclAsType(StructuredComponent), part);
 	};
+	// make sure all created connectors are contained
+	portConnectorInstances := componentInstances.portInstances.portConnectorInstances;
 }
-constructor AtomicComponentInstance::AtomicComponentInstance(type : AtomicComponent) {
+constructor AtomicComponentInstance::AtomicComponentInstance(type : AtomicComponent, part : ComponentPart) {
 	componentType := type;
 	name := type.name;
-	portInstances := type.createPortInstances();
+	portInstances := type.createPortInstances(part);
 }
-constructor StructuredComponentInstance::StructuredComponentInstance(type : StructuredComponent) {
+constructor StructuredComponentInstance::StructuredComponentInstance(type : StructuredComponent, part : ComponentPart) {
 	componentType := type;
 	name := type.name;
-	portInstances := type.createPortInstances();
+	portInstances := type.createPortInstances(part);
 	embeddedCIC := new ComponentInstanceConfiguration(type);
 }
-constructor DiscreteMultiPortInstance::DiscreteMultiPortInstance(port : DiscretePort) {
-	type := port;
+
+
+mapping ConnectorEndpoint::single(part : ComponentPart) : ConnectorEndpointInstance
+	disjuncts DiscretePort::singleDiscrete, ContinuousPort::singleContinuous, HybridPort::singleHybrid;
+
+
+mapping DiscretePort::multi(part : ComponentPart) : DiscreteMultiPortInstance {
+	type := self;
 	name := type.name;
-	subInteractionEndpointInstances := port.createSubPortInstances()[DiscreteSinglePortInstance];
+	subInteractionEndpointInstances := self.createSubPortInstances(part)[DiscreteSinglePortInstance];
 }
-constructor DiscreteSinglePortInstance::DiscreteSinglePortInstance(port : DiscretePort) {
-	type := port;
+mapping DiscretePort::singleDiscrete(part : ComponentPart) : DiscreteSinglePortInstance {
+	type := self;
 }
-constructor ContinuousPortInstance::ContinuousPortInstance(port : ContinuousPort) {
-	type := port;
+mapping ContinuousPort::singleContinuous(part : ComponentPart) : ContinuousPortInstance {
+	type := self;
 }
-constructor HybridPortInstance::HybridPortInstance(port : HybridPort) {
-	type := port;
+mapping HybridPort::singleHybrid(part : ComponentPart) : HybridPortInstance {
+	type := self;
+}
+constructor AssemblyConnectorInstance::AssemblyConnectorInstance(assembly : AssemblyConnector) {
+	type := assembly;
+}
+constructor DelegationConnectorInstance::DelegationConnectorInstance(delegation : DelegationConnector) {
+	type := delegation;
+	
 }
