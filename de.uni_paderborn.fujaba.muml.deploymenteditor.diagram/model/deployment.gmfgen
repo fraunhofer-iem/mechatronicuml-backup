@@ -177,9 +177,9 @@
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/deployment/Deployment/communicationLinks"/>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/deployment/CommunicationLink/hardwarePorts"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/connector/Connector/connectorEndpoints"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/deployment/CommunicationLink/hardwarePorts"/>
+            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <creationConstraints
           sourceEnd="//@expressionProviders/@providers.0/@expressions.2"
@@ -313,10 +313,10 @@
           body="'hardwarePort'"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="self.kind = HardwarePortDirectionKind::OUT or self.kind = HardwarePortDirectionKind::IN_OUT"/>
+          body="self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::OUT or self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="if oppositeEnd.kind = HardwarePortDirectionKind::IN_OUT then self.kind = HardwarePortDirectionKind::IN_OUT else self.kind = HardwarePortDirectionKind::IN endif"/>
+          body="if oppositeEnd.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT then self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT else self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN endif"/>
     </providers>
   </expressionProviders>
   <labelParsers

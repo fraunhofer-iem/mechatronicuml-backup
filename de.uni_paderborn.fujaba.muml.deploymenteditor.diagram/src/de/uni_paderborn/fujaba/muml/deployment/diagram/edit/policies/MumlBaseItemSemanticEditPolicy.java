@@ -330,8 +330,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateCommunicationLink_4001(
 				de.uni_paderborn.fujaba.muml.model.deployment.Deployment container,
-				de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort source,
-				de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort target) {
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target) {
 			return canExistCommunicationLink_4001(container, null, source,
 					target);
 		}
@@ -342,20 +342,21 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canExistCommunicationLink_4001(
 				de.uni_paderborn.fujaba.muml.model.deployment.Deployment container,
 				de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink linkInstance,
-				de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort source,
-				de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort target) {
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target) {
 			try {
 				if (source == null) {
 					return true;
 				} else {
 					Map<String, EClassifier> env = Collections
 							.<String, EClassifier> singletonMap(
-									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE.getHardwarePort()); //$NON-NLS-1$
+									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					Object sourceVal = de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlOCLFactory
 							.getExpression(
 									2,
-									de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
-											.getHardwarePort(), env).evaluate(
+									de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpoint(), env)
+							.evaluate(
 									source,
 									Collections.singletonMap(
 											"oppositeEnd", target)); //$NON-NLS-1$
@@ -369,12 +370,13 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				} else {
 					Map<String, EClassifier> env = Collections
 							.<String, EClassifier> singletonMap(
-									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE.getHardwarePort()); //$NON-NLS-1$
+									"oppositeEnd", de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					Object targetVal = de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlOCLFactory
 							.getExpression(
 									3,
-									de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
-											.getHardwarePort(), env).evaluate(
+									de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpoint(), env)
+							.evaluate(
 									target,
 									Collections.singletonMap(
 											"oppositeEnd", source)); //$NON-NLS-1$

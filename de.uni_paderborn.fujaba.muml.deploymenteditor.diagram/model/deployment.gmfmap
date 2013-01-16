@@ -83,15 +83,15 @@
         href="deployment.gmfgraph#CommunicationLink"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/deployment/CommunicationLink/hardwarePorts"/>
+        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
     <creationConstraints>
       <sourceEnd
-          body="self.kind = HardwarePortDirectionKind::OUT or self.kind = HardwarePortDirectionKind::IN_OUT"/>
+          body="self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::OUT or self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT"/>
       <targetEnd
-          body="if oppositeEnd.kind = HardwarePortDirectionKind::IN_OUT then self.kind = HardwarePortDirectionKind::IN_OUT else self.kind = HardwarePortDirectionKind::IN endif"/>
+          body="if oppositeEnd.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT then self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT else self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN endif"/>
     </creationConstraints>
   </links>
   <diagram>

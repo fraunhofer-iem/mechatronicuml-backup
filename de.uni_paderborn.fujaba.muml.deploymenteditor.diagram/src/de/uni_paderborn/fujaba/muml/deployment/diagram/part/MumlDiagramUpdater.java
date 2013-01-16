@@ -251,19 +251,19 @@ public class MumlDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List targets = link.getHardwarePorts();
+			List targets = link.getConnectorEndpoints();
 			Object theTarget = !targets.isEmpty() ? targets
 					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) {
+			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort dst = (de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) theTarget;
-			List sources = link.getHardwarePorts();
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theTarget;
+			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) {
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort src = (de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) theSource;
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlLinkDescriptor(
 					src,
 					dst,
@@ -278,14 +278,14 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlLinkDescriptor> getIncomingTypeModelFacetLinks_CommunicationLink_4001(
-			de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort target,
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
-					.getCommunicationLink_HardwarePorts()
+			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+					.getConnector_ConnectorEndpoints()
 					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink) {
 				continue;
 			}
@@ -295,12 +295,12 @@ public class MumlDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List sources = link.getHardwarePorts();
+			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) {
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort src = (de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) theSource;
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlLinkDescriptor(
 					src,
 					target,
@@ -315,7 +315,7 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlLinkDescriptor> getOutgoingTypeModelFacetLinks_CommunicationLink_4001(
-			de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort source) {
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source) {
 		de.uni_paderborn.fujaba.muml.model.deployment.Deployment container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -341,19 +341,19 @@ public class MumlDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			List targets = link.getHardwarePorts();
+			List targets = link.getConnectorEndpoints();
 			Object theTarget = !targets.isEmpty() ? targets
 					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) {
+			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort dst = (de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) theTarget;
-			List sources = link.getHardwarePorts();
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theTarget;
+			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) {
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort src = (de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) theSource;
+			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
 			if (src != source) {
 				continue;
 			}

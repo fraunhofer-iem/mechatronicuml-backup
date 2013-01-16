@@ -58,17 +58,17 @@ public class CommunicationLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort && newEnd instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
 		/*
-		if (getLink().getHardwarePorts().size() != 1) {
+		if (getLink().getConnectorEndpoints().size() != 1) {
 		  return false;
 		}
 		 */
-		de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort target = (de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) getLink()
-				.getHardwarePorts().get(0);
+		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) getLink()
+				.getConnectorEndpoints().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.deployment.Deployment)) {
 			return false;
 		}
@@ -83,17 +83,17 @@ public class CommunicationLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort && newEnd instanceof de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
 		/*
-		if (getLink().getHardwarePorts().size() != 1) {
+		if (getLink().getConnectorEndpoints().size() != 1) {
 		  return false;
 		}
 		 */
-		de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort source = (de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) getLink()
-				.getHardwarePorts().get(0);
+		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) getLink()
+				.getConnectorEndpoints().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.deployment.Deployment)) {
 			return false;
 		}
@@ -126,14 +126,28 @@ public class CommunicationLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
-		throw new UnsupportedOperationException();
+
+		// Enhancement for MUML-BUG #446
+		if (getLink().getConnectorEndpoints().size() > 1) {
+			getLink().getConnectorEndpoints().remove(getOldSource());
+		}
+		getLink().getConnectorEndpoints().add(getNewSource());
+
+		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
 	 * @generated
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
-		throw new UnsupportedOperationException();
+
+		// Enhancement for MUML-BUG #446
+		if (getLink().getConnectorEndpoints().size() > 1) {
+			getLink().getConnectorEndpoints().remove(getOldTarget());
+		}
+		getLink().getConnectorEndpoints().add(getNewTarget());
+
+		return CommandResult.newOKCommandResult(getLink());
 	}
 
 	/**
@@ -146,29 +160,29 @@ public class CommunicationLinkReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort getOldSource() {
-		return (de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort getNewSource() {
-		return (de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort getOldTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort getNewTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) newEnd;
 	}
 
 	/**
