@@ -8,6 +8,7 @@ import org.eclipse.emf.codegen.ecore.genmodel.GenBase;
 import org.eclipse.emf.codegen.ecore.genmodel.GenFeature;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
+import org.eclipse.emf.codegen.ecore.genmodel.GenPropertyKind;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.ENamedElement;
 import org.eclipse.emf.ecore.EObject;
@@ -25,6 +26,7 @@ import org.junit.Test;
 
 import de.uni_paderborn.fujaba.muml.tests.resource.ILabelProvider;
 import de.uni_paderborn.fujaba.muml.tests.resource.IResourceVisitor;
+import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
 import de.uni_paderborn.fujaba.muml.tests.resource.QualifiedLabelProvider;
 
 /**
@@ -184,6 +186,7 @@ public class GenmodelTest extends TraverseTest {
 	 */
 	@Test
 	public void validChildrenSetting() {
+		final ProblemCollector problems = new ProblemCollector();
 		accept(getRootElement(), new IResourceVisitor() {
 			@Override
 			public boolean visit(EObject element) {
@@ -198,7 +201,7 @@ public class GenmodelTest extends TraverseTest {
 								&& !reference.isDerived();
 
 						if (genFeature.isChildren() != children) {
-							fail(getLabel(genFeature)
+							problems.add(getLabel(genFeature)
 									+ ": 'Children' must be set to "
 									+ Boolean.valueOf(children).toString()
 									+ ".");
@@ -209,6 +212,7 @@ public class GenmodelTest extends TraverseTest {
 			}
 
 		});
+		problems.fail();
 	}
 
 	/**
@@ -216,6 +220,7 @@ public class GenmodelTest extends TraverseTest {
 	 */
 	@Test
 	public void validCreateChildrenSetting() {
+		final ProblemCollector problems = new ProblemCollector();
 		accept(getRootElement(), new IResourceVisitor() {
 			@Override
 			public boolean visit(EObject element) {
@@ -230,7 +235,7 @@ public class GenmodelTest extends TraverseTest {
 								&& !reference.isDerived();
 
 						if (genFeature.isChildren() != createChildren) {
-							fail(getLabel(genFeature)
+							problems.add(getLabel(genFeature)
 									+ ": 'Create Children' must be set to "
 									+ Boolean.valueOf(createChildren)
 											.toString() + ".");
@@ -241,6 +246,7 @@ public class GenmodelTest extends TraverseTest {
 			}
 
 		});
+		problems.fail();
 	}
 
 	/**
@@ -248,6 +254,7 @@ public class GenmodelTest extends TraverseTest {
 	 */
 	@Test
 	public void validNotifySetting() {
+		final ProblemCollector problems = new ProblemCollector();
 		accept(getRootElement(), new IResourceVisitor() {
 			@Override
 			public boolean visit(EObject element) {
@@ -259,7 +266,7 @@ public class GenmodelTest extends TraverseTest {
 						EReference reference = (EReference) ecoreFeature;
 
 						if (reference.isDerived() && !genFeature.isNotify()) {
-							fail(getLabel(genFeature)
+							problems.add(getLabel(genFeature)
 									+ ": 'Notify' must be set to "
 									+ Boolean.valueOf(true).toString() + ".");
 						}
@@ -269,6 +276,31 @@ public class GenmodelTest extends TraverseTest {
 			}
 
 		});
+		problems.fail();
 	}
+	
+	/**
+	 * Tests, if the 'PropertyType' setting is set correctly.
+	 */
+	@Test
+	public void validPropertyTypeSetting() {
+		final ProblemCollector problems = new ProblemCollector();
+		accept(getRootElement(), new IResourceVisitor() {
+			@Override
+			public boolean visit(EObject element) {
+				if (element instanceof GenFeature) {
+					GenFeature genFeature = (GenFeature) element;
+					if (genFeature.getProperty() == GenPropertyKind.NONE_LITERAL) {
+						problems.add(getLabel(genFeature)
+								+ ": 'PropertyType' is set to NONE.");
+					}
+				}
+				return true;
+			}
+
+		});
+		problems.fail();
+	}
+
 
 }
