@@ -1,6 +1,8 @@
-package de.uni_paderborn.fujaba.muml.tests.packages;
+package de.uni_paderborn.fujaba.muml.tests;
 
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EPackage;
 import org.junit.BeforeClass;
@@ -17,7 +19,7 @@ import de.uni_paderborn.fujaba.muml.model.ModelPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
 
-public class DiagramPluginXmlTest extends PackageTest {
+public class DiagramPluginXmlTest {
 	public static final String EDITOR_PLUGINS[] = {
 			"de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram",
 			"de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram",
@@ -41,6 +43,8 @@ public class DiagramPluginXmlTest extends PackageTest {
 		final ProblemCollector problems = new ProblemCollector();
 
 		for (String basePlugin : EDITOR_PLUGINS) {
+			final List<String> allowedMetamodelTypes = new ArrayList<String>();
+			final List<String> usedMetamodelTypes = new ArrayList<String>();
 			for (String suffix : new String[] { "", ".custom" }) {
 				final String pluginName = basePlugin + suffix;
 				XMLReader xmlReader = XMLReaderFactory.createXMLReader();
@@ -53,25 +57,41 @@ public class DiagramPluginXmlTest extends PackageTest {
 					public void startElement(String arg0, String arg1,
 							String arg2, Attributes attributes)
 							throws SAXException {
-						String uri = null;
+						String nsUri = null;
 						if ("metamodel".equals(arg1)) {
-							uri = attributes.getValue("nsURI");
+							nsUri = attributes.getValue("nsURI");
 						} else if ("child".equals(arg1)) {
-							uri = attributes.getValue("packageNsUri");
+							nsUri = attributes.getValue("packageNsUri");
 						} else if ("diagramElement".equals(arg1)) {
-							uri = attributes.getValue("packageNsUri");
+							nsUri = attributes.getValue("packageNsUri");
+						} else if ("metamodelType".equals(arg1) || "specializationType".equals(arg1)) {
+							String type = attributes.getValue("id");
+							if (type != null) {
+								allowedMetamodelTypes.add(type);
+							}
+						} else if ("elementType".equals(arg1)) {
+							String ref = attributes.getValue("ref");
+							if (ref != null) {
+								usedMetamodelTypes.add(ref);
+							}
 						}
-						if (uri != null) {
-							if (!EPackage.Registry.INSTANCE.containsKey(uri)) {
-								problems.add("INVALID: " + pluginName
+						
+						
+						if (nsUri != null) {
+							if (!EPackage.Registry.INSTANCE.containsKey(nsUri)) {
+								problems.add("INVALID nsURI: " + pluginName
 										+ " contains invalid package nsURI: "
-										+ uri);
+										+ nsUri);
 							}
 						}
 					}
-
 				});
 				xmlReader.parse(inputSource);
+			}
+			for (String used : usedMetamodelTypes) {
+				if (!allowedMetamodelTypes.contains(used)) {
+					problems.add("INVALID metamodel type: " + used + " is not defined.");
+				}
 			}
 		}
 		problems.fail();

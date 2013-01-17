@@ -4,7 +4,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import de.uni_paderborn.fujaba.muml.tests.packages.DiagramPluginXmlTest;
 import de.uni_paderborn.fujaba.muml.tests.packages.EditPluginXmlPackageTest;
 import de.uni_paderborn.fujaba.muml.tests.packages.ModelPluginXmlPackageTest;
 
