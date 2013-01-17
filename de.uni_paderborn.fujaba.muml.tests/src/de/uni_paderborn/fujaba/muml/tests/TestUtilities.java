@@ -1,7 +1,5 @@
 package de.uni_paderborn.fujaba.muml.tests;
 
-import static org.junit.Assert.assertNotNull;
-
 import java.io.File;
 
 import org.eclipse.emf.common.util.URI;
@@ -9,7 +7,6 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.junit.Assert;
 
 public class TestUtilities {
 
