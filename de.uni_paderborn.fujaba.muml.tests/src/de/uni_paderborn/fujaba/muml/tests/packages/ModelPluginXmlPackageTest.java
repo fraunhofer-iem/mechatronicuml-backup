@@ -7,6 +7,9 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -16,8 +19,22 @@ import org.xml.sax.helpers.XMLReaderFactory;
 
 public class ModelPluginXmlPackageTest extends PackageTest {
 
+	private static Resource ecoreModel;
+	
 	public static final String PLUGIN_XML_LOCATION = "../de.uni_paderborn.fujaba.muml.model/plugin.xml";
-
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		ecoreModel = loadEcoreResource("de.uni_paderborn.fujaba.muml.model", "/model/muml.ecore");
+	}
+	
+	@Test
+	public void testModelPluginXml() throws SAXException, IOException, Exception {
+		testPluginXml((EPackage) ecoreModel.getContents().get(0), getUris(), "Model Plugin");
+	}
+	
+	
+	
 	protected Collection<String> getUris() throws SAXException, IOException {
 		final List<String> uris = new ArrayList<String>();
 		XMLReader xmlReader = XMLReaderFactory.createXMLReader();
@@ -39,11 +56,6 @@ public class ModelPluginXmlPackageTest extends PackageTest {
 		});
 		xmlReader.parse(inputSource);
 		return uris;
-	}
-
-	@Override
-	protected String getName() {
-		return "Model Plugin";
 	}
 	
 	@Override

@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -15,7 +18,19 @@ import org.xml.sax.helpers.XMLReaderFactory;
 
 public class EditPluginXmlPackageTest extends PackageTest {
 
+	private static Resource ecoreModel;
+	
 	public static final String PLUGIN_XML_LOCATION = "../de.uni_paderborn.fujaba.muml.model.edit/plugin.xml";
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		ecoreModel = loadEcoreResource("de.uni_paderborn.fujaba.muml.model", "/model/muml.ecore");
+	}
+	
+	@Test
+	public void testEditPluginXml() throws SAXException, IOException, Exception {
+		testPluginXml((EPackage) ecoreModel.getContents().get(0), getUris(), "Edit Plugin");
+	}
 	
 	protected List<String> getUris() throws SAXException, IOException {
 		final List<String> uris = new ArrayList<String>();
@@ -38,11 +53,6 @@ public class EditPluginXmlPackageTest extends PackageTest {
 		});
 		xmlReader.parse(inputSource);
 		return uris;
-	}
-
-	@Override
-	protected String getName() {
-		return "Edit Plugin";
 	}
 
 }
