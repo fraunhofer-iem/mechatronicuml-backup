@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:TraceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
+  <nodeTraces visualID="2005" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/component/0.3.1' and _eClass_.name = 'AtomicComponent') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/modelinstance/0.3.1' and _eClass_.name = 'ModelElementCategory') and _containmentMF_.name = 'modelElements')">
+    <nodeLabelTraces visualID="5011" queryText="true"/>
+  </nodeTraces>
+  <childNodeTraces visualID="3005" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/component/0.3.1' and _eClass_.name = 'HybridPort') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/component/0.3.1' and _eClass_.name = 'Component') and _containmentMF_.name = 'ports')">
+    <nodeLabelTraces visualID="5006" queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces visualID="3006" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/component/0.3.1' and _eClass_.name = 'DiscretePort') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/component/0.3.1' and _eClass_.name = 'Component') and _containmentMF_.name = 'ports')">
+    <nodeLabelTraces visualID="5007" queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces visualID="3007" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/component/0.3.1' and _eClass_.name = 'ContinuousPort') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/model/component/0.3.1' and _eClass_.name = 'Component') and _containmentMF_.name = 'ports')">
+    <nodeLabelTraces visualID="5008" queryText="true"/>
+  </childNodeTraces>
+</trace:TraceModel>
