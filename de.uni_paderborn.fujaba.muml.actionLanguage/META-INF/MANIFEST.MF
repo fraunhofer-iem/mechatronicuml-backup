@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML ActionLanguage
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Version: 0.3.2.qualifier
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.actionLanguage; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext.generator;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ de.uni_paderborn.fujaba.muml.model;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml.model.actionLanguage;bundle-version="0.3.1",
+ org.apache.commons.logging;bundle-version="1.0.0",
+ org.apache.log4j;bundle-version="1.2.15",
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.xtext,
+ org.eclipse.xtext.util,
+ org.antlr.runtime,
+ org.eclipse.emf.edit;bundle-version="2.7.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.uni_paderborn.fujaba.muml,
+ de.uni_paderborn.fujaba.muml.common,
+ de.uni_paderborn.fujaba.muml.parseTreeConstruction,
+ de.uni_paderborn.fujaba.muml.parser.antlr,
+ de.uni_paderborn.fujaba.muml.parser.antlr.internal,
+ de.uni_paderborn.fujaba.muml.services,
+ de.uni_paderborn.fujaba.muml.storage,
+ de.uni_paderborn.fujaba.muml.validation
+Import-Package: org.apache.log4j
