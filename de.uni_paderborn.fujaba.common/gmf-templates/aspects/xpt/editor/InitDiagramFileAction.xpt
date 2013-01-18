@@ -1,0 +1,47 @@
+﻿/*
+ * Copyright (c) 2007, 2009 Borland Software Corporation and others
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Alexander Shatalin (Borland) - initial API and implementation
+ *    Dmitry Stadnik (Borland) - rewritten in xpand
+ */
+
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+«EXTENSION xpt::editor::Utils»
+«EXTENSION xpt::StringOperations»
+
+«AROUND InitDiagramFileAction(gmfgen::GenEditorGenerator editorGen, String qualifiedClassName) FOR OclAny-»
+«EXPAND xpt::Common::copyright FOR editorGen-»
+«EXPAND xpt::Common::packageStatement FOR qualifiedClassName»
+
+«EXPAND xpt::Common::generatedClassComment»
+public class «qualifiedClassName.xpandSplit('\\.')->last()» extends de.fujaba.newwizard.ui.commands.AbstractCreateDiagramFileCommand {
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public void setCharset(org.eclipse.core.resources.IFile diagramFile) {
+		«editorGen.diagram.getDiagramEditorUtilQualifiedClassName()».setCharset(diagramFile);
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public String getUniqueFilename(String hint, String extension,
+			org.eclipse.core.runtime.IPath filePath) {
+		return «editorGen.diagram.getDiagramEditorUtilQualifiedClassName()»
+				.getUniqueFileName(filePath, hint, extension);
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public String getEditorId() {
+		return «editorGen.editor.getQualifiedClassName()».ID;
+
+	}
+}
+«ENDAROUND»
