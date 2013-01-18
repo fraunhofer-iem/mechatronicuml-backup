@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <viewProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.providers.CustomRealtimestatechartViewProvider">
+         <Priority name="Low"/>
+		 <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,3010,3001,3002,3003,3004,3005,3006,3007,3008,3009"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
+      </viewProvider>
+   </extension>
+
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.providers.CustomRealtimestatechartEditPartProvider">
+         <Priority
+               name="Medium">
+         </Priority>
+      </editpartProvider>
+   </extension>
+   
+   
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.providers.CustomMumlParserProvider">
+         <Priority name="Low"/>
+      </ParserProvider>
+   </extension>
+
+</plugin>
