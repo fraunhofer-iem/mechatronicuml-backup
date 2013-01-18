@@ -384,6 +384,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				node,
 				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
+		label5025.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		label5025.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
 		Location location5025 = (Location) label5025.getLayoutConstraint();

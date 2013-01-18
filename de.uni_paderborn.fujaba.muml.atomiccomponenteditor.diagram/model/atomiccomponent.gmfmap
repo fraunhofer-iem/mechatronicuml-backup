@@ -125,7 +125,7 @@
             <diagramLabel
                 href="atomiccomponent.gmfgraph#PortExternalLabel"/>
             <viewExpression
-                body="if refines.name.oclIsUndefined() then '' else refines.name endif"/>
+                body="if refines.oclIsUndefined() then '' else ': '.concat(&#xA;&#x9;if refines.name.oclIsUndefined() then '' else refines.name endif&#xA;) endif"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"

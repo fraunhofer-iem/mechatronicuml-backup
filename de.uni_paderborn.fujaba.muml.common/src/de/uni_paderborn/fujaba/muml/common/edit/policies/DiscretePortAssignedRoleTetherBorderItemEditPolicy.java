@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Point;
@@ -15,6 +16,7 @@ import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.BorderedBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.draw2d.ui.geometry.PointListUtilities;
 import org.eclipse.gmf.runtime.notation.View;
 
@@ -33,7 +35,7 @@ public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 		boolean tetherVisible = getSemanticElement().eGet(
 				ComponentPackage.Literals.DISCRETE_PORT__REFINES) != null;
 		getConnection().setVisible(tetherVisible);
-
+		
 		// Add notification listener
 		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
 		if (diagramEventBroker != null) {
@@ -104,5 +106,15 @@ public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 
 		return startPos;
 	}
+
+	@Override
+	public void refresh() {
+		super.refresh();
+		
+		// Underline
+		((WrappingLabel) getHostFigure()).setTextUnderline(true);
+	}
+	
+	
 
 }

@@ -434,7 +434,7 @@
       <expressions
           body="'port'"/>
       <expressions
-          body="if refines.name.oclIsUndefined() then '' else refines.name endif"/>
+          body="if refines.oclIsUndefined() then '' else ': '.concat(&#xA;&#x9;if refines.name.oclIsUndefined then '' else refines.name endif&#xA;) endif"/>
     </providers>
   </expressionProviders>
   <labelParsers
