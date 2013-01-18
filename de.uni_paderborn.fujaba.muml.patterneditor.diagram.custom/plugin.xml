@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+    
+    
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.fujaba.de/muml/model/pattern/0.3.1">
+      
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.RoleAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.patterneditor.diagram.Role_2005"
+		  class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.edit.helpers.RoleEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+
+      </metamodel>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.muml.patterneditor.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.patterneditor.diagram.Role_2005"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.RoleAdvice"/>
+      </binding>
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.providers.CustomPatternEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.contributionItemProviders" id="contributionItemProviders-delete-from-diagram">
+		<contributionItemProvider class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContributionItemProvider"
+   			checkPluginLoaded="false">
+			<Priority name="Low"/>
+			<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
+				<popupStructuredContributionCriteria objectClass="de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart"/>
+				<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
+			</popupContribution>
+		</contributionItemProvider>
+   </extension>
+	
+
+</plugin>
