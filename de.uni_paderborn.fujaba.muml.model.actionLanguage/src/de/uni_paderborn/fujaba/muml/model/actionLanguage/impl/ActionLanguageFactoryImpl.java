@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.actionLanguage.impl;
 
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;

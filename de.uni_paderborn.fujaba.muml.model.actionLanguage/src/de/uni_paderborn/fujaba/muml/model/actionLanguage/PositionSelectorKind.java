@@ -60,7 +60,7 @@ public enum PositionSelectorKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PREV(3, "PREV", ""),
+	PREV(3, "PREV", "PREV"),
 
 	/**
 	 * The '<em><b>NEXT</b></em>' literal object.
@@ -126,7 +126,7 @@ public enum PositionSelectorKind implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PREV
-	 * @model literal=""
+	 * @model
 	 * @generated
 	 * @ordered
 	 */

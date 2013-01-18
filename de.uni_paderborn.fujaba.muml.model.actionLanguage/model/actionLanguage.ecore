@@ -191,7 +191,7 @@
     <eLiterals name="SELF"/>
     <eLiterals name="FIRST" value="1"/>
     <eLiterals name="LAST" value="2"/>
-    <eLiterals name="PREV" value="3" literal=""/>
+    <eLiterals name="PREV" value="3" literal="PREV"/>
     <eLiterals name="NEXT" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PositionSelector" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
