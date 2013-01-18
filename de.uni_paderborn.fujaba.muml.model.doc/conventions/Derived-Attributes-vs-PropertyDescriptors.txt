@@ -1,0 +1,25 @@
+Ingo Budde - 07.06.2011
+
+Given a domain element, which has an Attribute with a non-primitive type.
+But we want this Attribute to be editable in the Properties View, nevertheless.
+
+The default PropertyDescriptor, which is generated for such an Attribute, offers
+a list of possible instances of the type. This is not always the desired way of
+editing such an Attribute, though.
+
+For example:
+A ComponentPart has an Attribute "cardinality:Cardinality". Instead of choosing an
+existing Cardinality, we want to enter lower and upper bounds directly for this
+ComponentPart.
+
+Another example:
+A Port has a 1..n reference "specification:PortSpecification", which can contain many
+PortSpecifications. A DiscretePortSpecification for example has an Attribute
+"requiredMessageInterface:MessageInterface". We want to hide the specifications from
+the user, who just wants to set a requiredMessageInterface.
+
+Both problems can be solved using a derived attribute AND using a customized PropertyDescriptor.
+In order to gain a clean Meta-Model, adding a customized ItemProvider should be the way to
+go, if possible.
+
+In both examples it is possible to use the ItemProvider.

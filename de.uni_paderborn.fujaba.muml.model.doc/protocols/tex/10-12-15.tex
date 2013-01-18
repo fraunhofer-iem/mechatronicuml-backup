@@ -1,0 +1,38 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass[11pt,a4paper]{article}
+\usepackage[ngerman,german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+
+%% Add pix with one line.
+\newcommand{\inclpic}[5]{\begin{figure}[#1]\begin{center}\includegraphics[width=#2\linewidth]{#3}\caption{#4}\label{pic:#5}\end{center}\end{figure}}
+
+\begin{document}
+
+\begin{center}
+
+\textbf{\huge Protokoll SHK-Treffen 15.12.2010}\\[0.9cm]
+
+\end{center}
+
+\begin{itemize}
+  \item Die Action eines RTSCs soll in Zukunft ein Objekt Klassen
+  \emph{MethodCallExpression}, \emph{VariableAssignmentExpression} oder
+  \emph{TextualExpression} aus dem SDM-MM sein können.
+  \item Ein Guard eines RTSCs soll repräsentiert werden durch eine
+  \emph{NotExpression}, eine \emph{BinaryExpression} oder eine
+  \emph{ComparisonExpression}.
+  \item Die Klasse \emph{ParamChannel} wird gelöscht. Stattdessen soll es in
+  Zukunft ermöglicht werden, dass ein Statechart, dass sich in der
+  Empfängerrolle befindet, bestimmte Werte für die Parameter eines Kanals
+  erwarten kann. (Das entspricht sowohl der Semantik von Uppaal als auch der von
+  Spin.) Bsp.: Es sei $s(int\;i)$ ein Synchronisationskanal mit einem Parameter
+  $i$ vom Typ $int$. Ein Statechart in der Empfängerrolle, dass sich nur genau
+  dann synchronisieren soll, falls $i$ den Wert $5$ besitzt, hat eine
+  Transition, die mit $s(5)?$ gelabelt ist.
+\end{itemize}
+
+\end{document}

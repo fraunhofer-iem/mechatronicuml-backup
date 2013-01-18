@@ -1,0 +1,75 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass[11pt,a4paper]{article}
+\usepackage[ngerman,german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+
+%% Add pix with one line.
+\newcommand{\inclpic}[5]{\begin{figure}[#1]\begin{center}\includegraphics[width=#2\linewidth]{#3}\caption{#4}\label{pic:#5}\end{center}\end{figure}}
+
+\begin{document}
+
+\begin{center}
+
+\textbf{\huge Protokoll SHK-Treffen 19.01.2011}\\[0.9cm]
+
+\end{center}
+
+\begin{itemize}
+  \item Folgende Punkte bzgl. des Meta-Modells für Realtime Statecharts wurden
+  besprochen. Es folgt die Text-Datei, die als Diskussionsgrundlage diente.
+\end{itemize}
+
+\begin{verbatim}
+DONE:
+* Deleted 'UMLRealtimeTransition.synchronizationType' since this information is
+included in the assocs 'sendSync' and 'receiveSync'.
+* Deleted 'UMLRealtimeTransition.guard' since it was of type 'String' and
+realised it with a new assoc to 'Expression'.
+
+CONCRETE QUESTIONS CONCERNING THE MM:
+* 'UMLDeadlineAtom' not required anymore?? ##deleted
+* Does 'UMLClockResetAtom' require an 'id'?? ##deleted
+* Still don't know what the assocs 'interfacedStates' and 'interfaceState'
+mean?? 
+* Why does the assoc from 'UMLRealtimeTransition' to 'UMLInvariantAtom' have to
+be qualified?? ##TODO: delete from states and transitions
+* Why does 'UMLInvariantAtom' inherit from 'Deadline'?? ## is quatsch
+* What is 'UMLInterfaceStatechart'?? ##
+* 'UMLInvariantAtom' inherits from 'Deadline' and hence hasn't any relation to
+'UMLClock'. Seems strange for time invariants. ## is quatsch
+* 'UMLInvariantAtom' only inherits from 'Deadline' to introduce the assoc to
+'UMLRealtimeComplexState'. Is this required??
+## Evtl. guards und invarianten über sdm package umsetzen.
+
+* What are 'periodUpperBound' and 'periodLowerBound' in 'UMLRealtimeAction' good
+for? Does not only a do event have a period? Better use assoc to 'Deadline'?
+* 'UMLRealtimeArgument' still required? Don't think so since all expressions and
+invocations are now realised with the sdm mm.
+* 'UMLTimeGuard' not required anymore?? It only inherits from 'AbsoluteDeadline'
+but does not add anything.
+* Does the assoc from 'UMLRealtimeTransition' to 'UMLTimeGuard' have to be
+qualified? ##NO!
+
+GENERAL QUESTIONS:
+* Wondered if clock resets can be realised only with assocs 'resets' to
+'UMLClock'?? 'UMLClockResetAtom' has no special function and could be deleted.
+* Why not realise time guards and time invariants as constraints like in the
+udbm package??
+* Isn't an 'AbsoluteDeadline' what is known as guard (e.g. x<=2) of a
+transition??
+
+TODO:
+Referenzen reparieren.
+\end{verbatim}
+
+\begin{itemize}
+  \item Aufgabe Julian: Besprochene Änderungen am Meta-Modell durchführen.
+  \item Aufgabe Ingo: Versuchen eine Figur für Komponenten zu bauen, die es
+  erlaubt Ports auf den Rand zu setzen.
+\end{itemize}
+
+\end{document}

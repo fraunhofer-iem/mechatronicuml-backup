@@ -1,0 +1,62 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass[11pt,a4paper]{article}
+\usepackage[ngerman,german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm]{geometry}
+
+\begin{document}
+
+\begin{center}
+
+\textbf{\huge Protokoll SHK-Treffen 27.10.10}\\[0.9cm]
+
+\end{center}
+
+\begin{itemize}
+\item  'ASGElementRef'-Äquivalent im neuen MM heißt 'Extension'
+\item  Assoc zwischen Port und Component wird Containment-Beziehung
+\item  'PortRole' im Package 'pattern' wird zu 'Role' umbenannt.
+\item  Es wird in Zukunft Structured und Atomic Components geben.
+\item  Structured Components besitzen kein Statechart, Atomic Components
+besitzen Statecharts.
+\item  Interface werden nicht mehr an den Ports dargestellt.
+\item  Ports erhalten graphischen Repräsentation für die Richtung in From von
+ Pfeilen.
+\item  Typen und Parts sollten in der Doku kommentiert werden.
+\item  Das Komponenten-MM wird wie an der Tafel skizziert umgesetzt.
+\item  Für die Umsetzung von PortParts werden Phantom-Nodes verwendet.
+\item  Die Assoc von Component zu EClass bleibt, Component erbt nicht von
+TypedElement.
+\item  Aufgabenverteilung:
+\begin{itemize}
+\item Julian: Kommentiert das MM.
+\item Ingo: Arbeitet sich in GMF ein.
+\end{itemize}
+\item  Zu GMF gibt es eine gutes Tutorial dessen Beispiel aus Schiffen und
+Routen besteht.
+\item  'UMLRealtimeStatechart' soll von 'NamedElement' und
+'CommentableElement' erben.
+\item  'getTopStatechart()' fliegt raus. Statdessen 'isEmbedded()'. Wird als
+derived umgesetzt in Abhängigkeit davon, ob eine Parent-SC existiert.
+\item  'checkSyntax()' fliegt raus.
+\item  Für die qualifiziert Assoc von 'UMLRealtimeStatechart' zu 'UMLClock'
+überprüfen, ob diese tatsächlich qualifiziert sein muss. Falls nein,
+durch einfache Assoc austauschen.
+\item  'observationMap' fliegt raus.
+\item  Für 'getFirstCalc()' und 'getRefinement()' betrachten und entscheiden,
+ob diese Methoden sind, die im MM untergebracht werden sollten.
+\item  Die Assocs von 'UMLRealtimeStatechart' zu 'UMLRealtimeState' und zu
+'UMLRealtimeTransition' werden zu Containment-Beziehungen. Allgemein
+werden alle Assocs von 'UMLRealtimeState'/'UMLRealtimeTransition' zu
+Elementen die zu Zuständen bzw. Transitionen gehören als
+Containtment-Beziehung umgesetzt.
+\item  Die verschiedenen Actions im RTSC-MM werden durch Enum-Typen umgesetzt.
+\item  Die momentan noch seperaten Ecore-Dateien pro Package sollen in einer
+Ecore-Datei vereinigt werden.
+
+
+\end{itemize}
+
+\end{document}
