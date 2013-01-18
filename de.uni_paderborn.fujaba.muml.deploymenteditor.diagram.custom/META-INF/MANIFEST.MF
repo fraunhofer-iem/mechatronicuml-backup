@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Deployment Diagram-Editor (Customizations)
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.deploymenteditor.diagram.custom;singleton:=true
+Bundle-Version: 0.3.1.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: de.uni_paderborn.fujaba.muml.deployment.diagram;bundle-version="0.3.1",
+ org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.5.0"
