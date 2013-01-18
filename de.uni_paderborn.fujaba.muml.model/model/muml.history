@@ -19556,5 +19556,7 @@
         featureName="value" dataValue="OneDelegationInstancePerPortInstance" oldDataValue=""/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="SameConfiguration" oldDataValue=""/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/PREV"
+        featureName="literal" dataValue="PREV" oldDataValue=""/>
   </releases>
 </history:History>
