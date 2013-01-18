@@ -1,0 +1,7 @@
+# Tracing options for the de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram plug-in
+
+# Common issues
+de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram/debug=false
+
+# Visual IDs
+de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram/debug/visualID=false
