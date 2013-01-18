@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.fujaba.de/muml/0.2.2"
+            class="de.uni_paderborn.fujaba.muml.MumlPackage"
+            genModel="model/muml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.fujaba.de/muml/model/0.2.2"
+            class="de.uni_paderborn.fujaba.muml.model.ModelPackage"
+            genModel="model/muml.genmodel"/>
+   </extension>
+   
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.fujaba.de/muml/model/component/0.3.1"
+            class="de.uni_paderborn.fujaba.muml.model.component.ComponentPackage"
+            genModel="model/muml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.fujaba.de/muml/model/constraint/0.2.2"
+            class="de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage"
+            genModel="model/muml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.fujaba.de/muml/model/core/0.3.1"
+            class="de.uni_paderborn.fujaba.muml.model.core.CorePackage"
+            genModel="model/muml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.fujaba.de/muml/model/instance/0.3.1"
+            class="de.uni_paderborn.fujaba.muml.model.instance.InstancePackage"
+            genModel="model/muml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.fujaba.de/muml/model/pattern/0.3.1"
+            class="de.uni_paderborn.fujaba.muml.model.pattern.PatternPackage"
+            genModel="model/muml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.fujaba.de/muml/model/realtimestatechart/0.3.1"
+            class="de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage"
+            genModel="model/muml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.fujaba.de/muml/model/msgiface/0.3.1"
+            class="de.uni_paderborn.fujaba.muml.model.msgiface.MsgifacePackage"
+            genModel="model/muml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.fujaba.de/muml/model/deployment/0.3.1"
+            class="de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage"
+            genModel="model/muml.genmodel"/>
+   </extension>
+   
+
+
+   <extension
+         point="org.eclipse.emf.edapt.migrators">
+      <!--
+      	bingo: It would be nice to have this extension in the model.edapt plugin so that the model plugin
+      		   has no dependency to edapt.history (it should be possible to use muml without edapt).
+      		   But currently this is not possible, because the extension can only reference history files
+      		   that reside within the same plugin as the extension.
+      -->
+      <migrator
+            path="model/muml.history">
+      </migrator>
+   </extension>
+
+
+</plugin>
