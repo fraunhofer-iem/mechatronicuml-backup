@@ -1,9 +1,9 @@
 package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers;
 
 import java.util.Collections;
-
 import java.util.HashMap;
 import java.util.Map;
+
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IAdaptable;
@@ -26,11 +26,11 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class ComponentPartLabelExpressionLabelParser5017 implements IParser {
+public class HybridPortLabelExpressionLabelParser5027 implements IParser {
 	/**
 	 * @generated
 	 */
-	public ComponentPartLabelExpressionLabelParser5017() {
+	public HybridPortLabelExpressionLabelParser5027() {
 	}
 
 	/**
@@ -84,10 +84,10 @@ public class ComponentPartLabelExpressionLabelParser5017 implements IParser {
 		initializeEnvironment(typeEnv, env, target);
 		Object result = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						8,
+						9,
 						de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
-								.getComponentPart(), typeEnv).evaluate(target,
-						env);
+								.getHybridPort(), typeEnv)
+				.evaluate(target, env);
 		return String.valueOf(result);
 	}
 

@@ -1,43 +1,30 @@
-package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts;
+package de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts;
 
 import java.util.Collections;
 import java.util.List;
 
-import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.Connection;
-import org.eclipse.draw2d.ConnectionAnchor;
-import org.eclipse.draw2d.FigureListener;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
-import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.draw2d.geometry.PrecisionRectangle;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.gef.AccessibleEditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
-import org.eclipse.gef.handles.MoveHandle;
-import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.DirectEditRequest;
 import org.eclipse.gef.tools.DirectEditManager;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.BorderedBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
@@ -59,7 +46,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class ContinuousPortNameEditPart extends LabelEditPart implements
+public class WrappingLabel2EditPart extends LabelEditPart implements
 		ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
@@ -92,15 +79,15 @@ public class ContinuousPortNameEditPart extends LabelEditPart implements
 	 */
 	static {
 		registerSnapBackPosition(
-				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID),
+				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID),
 				new Point(0, 0));
 	}
 
 	/**
 	 * @generated
 	 */
-	public ContinuousPortNameEditPart(View view) {
+	public WrappingLabel2EditPart(View view) {
 		super(view);
 	}
 
@@ -113,137 +100,10 @@ public class ContinuousPortNameEditPart extends LabelEditPart implements
 				new LabelDirectEditPolicy());
 		installEditPolicy(
 				EditPolicy.SELECTION_FEEDBACK_ROLE,
-				new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy());
-
-		installEditPolicy(EditPolicyRoles.TETHER_ROLE,
-				new BorderItemSelectionEditPolicy() {
-
-					private OwnerMovedListener ownerMovedListener = new OwnerMovedListener();
-
-					/**
-					 * Listens to the owner figure being moved so the tether
-					 * position can be updated when this occurs.
-					 */
-					class OwnerMovedListener implements FigureListener {
-
-						/**
-						 * @see org.eclipse.draw2d.FigureListener#figureMoved(org.eclipse.draw2d.IFigure)
-						 */
-						public void figureMoved(IFigure source) {
-							doSome(false);
-						}
-					}
-
-					// BEGIN FIX: Muml-Bug #58
-					// (Copied from NonResizableLabelEditPolicy and slightly
-					// modified, see comments below)
-					private Polyline tether = null;
-
-					protected void eraseChangeBoundsFeedback(
-							ChangeBoundsRequest request) {
-						// magic(request);
-
-						// System.out.println("erase");
-
-						super.eraseChangeBoundsFeedback(request);
-
-						tether.setVisible(true);
-					}
-
-					protected IFigure createDragSourceFeedbackFigure() {
-						IFigure feedback = super
-								.createDragSourceFeedbackFigure();
-						return feedback;
-					}
-
-					private Polyline getConnection() {
-						if (tether == null) {
-							tether = new Polyline();
-							tether.setLineStyle(Graphics.LINE_DASH);
-							tether.setLineDashOffset(1);
-							tether.setLineWidthFloat(0.5f);
-							// tether.setLineWidth(1);
-							// tether.getLineAttributes().dashOffset =
-
-							tether.setForegroundColor(((IGraphicalEditPart) getHost())
-									.getFigure().getForegroundColor());
-						}
-						return tether;
-					}
-
-					@Override
-					public void deactivate() {
-						if (tether != null) {
-							getHostFigure().getParent().remove(tether);
-							((IGraphicalEditPart) getHost()).getFigure()
-									.removeFigureListener(ownerMovedListener);
-							tether = null;
-						}
-						super.deactivate();
-					}
-
-					@Override
-					public void activate() {
-						super.activate();
-						getHostFigure().getParent().add(getConnection());
-						((IGraphicalEditPart) getHost()).getFigure()
-								.addFigureListener(ownerMovedListener);
-						doSome(true);
-					}
-
-					private void doSome(boolean b) {
-						// Get endPos and translate
-						Point endPos;
-//						if (false) {
-//							endPos = getDragSourceFeedbackFigure().getBounds().getLocation();
-//							getHostFigure().getParent().translateToRelative(endPos);	
-//						} else {
-							Rectangle endBounds = getHostFigure().getBounds();
-							endPos = endBounds.getLocation();
-//						}
-						
-						
-
-						// Get startPos from anchor
-//						BorderedBorderItemEditPart whoAmI = (BorderedBorderItemEditPart) getHost()
-//								.getParent();
-//						BorderedNodeFigure fig = (BorderedNodeFigure) whoAmI
-//								.getFigure();
-//						ConnectionAnchor anchor = fig.getConnectionAnchor("");
-//						Point startPos = anchor.getLocation(endPos);
-//							
-//						// Translate startPos
-//						fig.getParent().translateToAbsolute(startPos);
-//						getHostFigure().getParent().translateToRelative(startPos);
-							
-							Point refPoint = ((LabelEditPart) getHost())
-									.getReferencePoint();
-							
-							
-
-						// Set start and end pos
-						getConnection().setStart(refPoint);
-						getConnection().setEnd(endPos);
-					}
-
-					@Override
-					protected void showChangeBoundsFeedback(
-							ChangeBoundsRequest request) {
-						super.showChangeBoundsFeedback(request);
-
-						doSome(true);
-
-						tether.setVisible(false);
-					}
-
-				
-					protected List createSelectionHandles() {
-						MoveHandle mh = new MoveHandle(
-								(GraphicalEditPart) getHost());
-						mh.setBorder(null);
-						return Collections.singletonList(mh);
-					}
-				});
+				new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.TETHER_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.DiscretePortAssignedRoleTetherBorderItemEditPolicy());
 	}
 
 	/**
@@ -382,13 +242,13 @@ public class ContinuousPortNameEditPart extends LabelEditPart implements
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) pdEditPolicy)
+		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) pdEditPolicy)
 					.refreshFeedback();
 		}
 		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) sfEditPolicy)
+		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) sfEditPolicy)
 					.refreshFeedback();
 		}
 	}
@@ -471,12 +331,12 @@ public class ContinuousPortNameEditPart extends LabelEditPart implements
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlParserProvider
+			parser = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.ContinuousPort_3011,
+							de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.providers.MumlElementTypes.DiscretePort_3006,
 							getParserElement(),
-							de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID));
+							de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
+									.getType(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -489,7 +349,7 @@ public class ContinuousPortNameEditPart extends LabelEditPart implements
 			setManager(new TextDirectEditManager(
 					this,
 					TextDirectEditManager.getTextCellEditorClass(this),
-					de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.MumlEditPartFactory
+					de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.MumlEditPartFactory
 							.getTextCellEditorLocator(this)));
 		}
 		return manager;
@@ -581,13 +441,13 @@ public class ContinuousPortNameEditPart extends LabelEditPart implements
 		setLabelTextHelper(getFigure(), getLabelText());
 		setLabelIconHelper(getFigure(), getLabelIcon());
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) pdEditPolicy)
+		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) pdEditPolicy)
 					.refreshFeedback();
 		}
 		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) sfEditPolicy)
+		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) {
+			((de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy) sfEditPolicy)
 					.refreshFeedback();
 		}
 	}

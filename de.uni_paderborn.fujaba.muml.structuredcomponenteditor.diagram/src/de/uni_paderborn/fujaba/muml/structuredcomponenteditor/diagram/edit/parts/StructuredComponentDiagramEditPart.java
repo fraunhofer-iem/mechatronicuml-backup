@@ -10,6 +10,7 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableLabelEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 
 /**
@@ -80,6 +81,23 @@ public class StructuredComponentDiagramEditPart extends DiagramEditPart {
 		 */
 		public boolean understandsRequest(Request request) {
 			return false;
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	/*package-local*/static class LinkLabelDragPolicy extends
+			NonResizableLabelEditPolicy {
+
+		/**
+		 * @generated
+		 */
+		@SuppressWarnings("rawtypes")
+		protected List createSelectionHandles() {
+			MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
+			mh.setBorder(null);
+			return Collections.singletonList(mh);
 		}
 	}
 

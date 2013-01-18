@@ -87,6 +87,13 @@
             <features
                 href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping">
+            <diagramLabel
+                href="structuredcomponent.gmfgraph#PortExternalLabel"/>
+            <viewExpression
+                body="if refines.name.oclIsUndefined() then '' else refines.name endif"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="structuredcomponent.gmftool#//@palette/@tools.1/@tools.0"/>
@@ -239,6 +246,13 @@
   <links>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/AssemblyConnector"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="structuredcomponent.gmfgraph#PortExternalLabel"/>
+      <features
+          href="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+    </labelMappings>
     <containmentFeature
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent/connectors"/>
     <tool
@@ -256,6 +270,13 @@
   <links>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DelegationConnector"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="structuredcomponent.gmfgraph#PortExternalLabel"/>
+      <features
+          href="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
+    </labelMappings>
     <containmentFeature
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent/connectors"/>
     <tool

@@ -61,6 +61,21 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	protected de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.DiscretePortLabelExpressionLabelParser5025 discretePortLabel_5025Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getDiscretePortLabel_5025Parser() {
+		if (discretePortLabel_5025Parser == null) {
+			discretePortLabel_5025Parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.DiscretePortLabelExpressionLabelParser5025();
+		}
+		return discretePortLabel_5025Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser continuousPortName_5013Parser;
 
 	/**
@@ -133,6 +148,21 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	protected de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.DiscretePortLabelExpressionLabelParser5028 discretePortLabel_5028Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getDiscretePortLabel_5028Parser() {
+		if (discretePortLabel_5028Parser == null) {
+			discretePortLabel_5028Parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.DiscretePortLabelExpressionLabelParser5028();
+		}
+		return discretePortLabel_5028Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser continuousPortName_5016Parser;
 
 	/**
@@ -152,12 +182,52 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	protected IParser assemblyConnectorComment_6001Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getAssemblyConnectorComment_6001Parser() {
+		if (assemblyConnectorComment_6001Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getCommentableElement_Comment() };
+			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
+					features);
+			assemblyConnectorComment_6001Parser = parser;
+		}
+		return assemblyConnectorComment_6001Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IParser delegationConnectorComment_6002Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getDelegationConnectorComment_6002Parser() {
+		if (delegationConnectorComment_6002Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getCommentableElement_Comment() };
+			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
+					features);
+			delegationConnectorComment_6002Parser = parser;
+		}
+		return delegationConnectorComment_6002Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID:
 			return getStaticStructuredComponentName_5021Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID:
 			return getDiscretePortName_5012Parser();
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+			return getDiscretePortLabel_5025Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID:
 			return getContinuousPortName_5013Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
@@ -166,8 +236,14 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getHybridPortName_5024Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePortName2EditPart.VISUAL_ID:
 			return getDiscretePortName_5015Parser();
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
+			return getDiscretePortLabel_5028Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ContinuousPortName2EditPart.VISUAL_ID:
 			return getContinuousPortName_5016Parser();
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyConnectorCommentEditPart.VISUAL_ID:
+			return getAssemblyConnectorComment_6001Parser();
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DelegationConnectorCommentEditPart.VISUAL_ID:
+			return getDelegationConnectorComment_6002Parser();
 		}
 		return null;
 	}

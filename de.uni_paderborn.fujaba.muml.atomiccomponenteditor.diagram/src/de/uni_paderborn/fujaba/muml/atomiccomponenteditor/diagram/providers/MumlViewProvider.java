@@ -400,6 +400,15 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		Location location5007 = (Location) label5007.getLayoutConstraint();
 		location5007.setX(0);
 		location5007.setY(5);
+		Node label5013 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID));
+		label5013.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5013 = (Location) label5013.getLayoutConstraint();
+		location5013.setX(0);
+		location5013.setY(5);
 		return node;
 	}
 

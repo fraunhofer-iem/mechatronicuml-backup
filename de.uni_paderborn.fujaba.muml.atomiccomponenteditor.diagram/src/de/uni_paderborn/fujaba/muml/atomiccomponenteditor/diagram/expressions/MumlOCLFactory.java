@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlAbstractExpression[4];
+		this.expressions = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlAbstractExpression[5];
 	}
 
 	/**
@@ -49,10 +49,12 @@ public class MumlOCLFactory {
 			throw new IllegalArgumentException();
 		}
 		if (cached.expressions[index] == null) {
-			final String[] exprBodies = new String[] { "\'comp\'", //$NON-NLS-1$
+			final String[] exprBodies = new String[] {
+					"\'comp\'", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"\'port\'", //$NON-NLS-1$
+					"if refines.name.oclIsUndefined() then \'\' else refines.name endif", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

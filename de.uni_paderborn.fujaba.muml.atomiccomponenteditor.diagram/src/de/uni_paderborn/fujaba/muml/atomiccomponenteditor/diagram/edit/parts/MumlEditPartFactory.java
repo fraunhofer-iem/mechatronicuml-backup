@@ -56,6 +56,10 @@ public class MumlEditPartFactory implements EditPartFactory {
 				return new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortNameEditPart(
 						view);
 
+			case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.WrappingLabel2EditPart(
+						view);
+
 			case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart(
 						view);

@@ -120,6 +120,13 @@
             <features
                 href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping">
+            <diagramLabel
+                href="atomiccomponent.gmfgraph#PortExternalLabel"/>
+            <viewExpression
+                body="if refines.name.oclIsUndefined() then '' else refines.name endif"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="atomiccomponent.gmftool#//@palette/@tools.1/@tools.0"/>

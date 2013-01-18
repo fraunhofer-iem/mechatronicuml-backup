@@ -178,6 +178,25 @@
               href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5013"
+          editPartClassName="WrappingLabel2EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="DiscretePortLabelViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.TETHER_ROLE"
+            editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.DiscretePortAssignedRoleTetherBorderItemEditPolicy"/>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.1"/>
+      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
@@ -414,6 +433,8 @@
           body="1"/>
       <expressions
           body="'port'"/>
+      <expressions
+          body="if refines.name.oclIsUndefined() then '' else refines.name endif"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -421,6 +442,14 @@
     <implementations
         xsi:type="gmfgen:PredefinedParser"
         uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.1/@labels.1/@modelFacet"
+        className="DiscretePortLabelExpressionLabelParser5013"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.4">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/DiscretePort"/>
+    </implementations>
   </labelParsers>
   <contextMenus
       context="//@diagram">

@@ -80,6 +80,21 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	protected de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.DiscretePortLabelExpressionLabelParser5013 discretePortLabel_5013Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getDiscretePortLabel_5013Parser() {
+		if (discretePortLabel_5013Parser == null) {
+			discretePortLabel_5013Parser = new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.parsers.DiscretePortLabelExpressionLabelParser5013();
+		}
+		return discretePortLabel_5013Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser continuousPortName_5008Parser;
 
 	/**
@@ -107,6 +122,8 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getHybridPortName_5006Parser();
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID:
 			return getDiscretePortName_5007Parser();
+		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+			return getDiscretePortLabel_5013Parser();
 		case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID:
 			return getContinuousPortName_5008Parser();
 		}
