@@ -3,23 +3,25 @@ package de.uni_paderborn.fujaba.muml.common.edit.policies;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.FigureListener;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.BorderedBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 
 public class TetherBorderItemEditPolicy extends BorderItemSelectionEditPolicy {
 
 	protected boolean tetherShown = true;
-	
+
 	public boolean isTetherShown() {
 		return tetherShown;
 	}
@@ -66,7 +68,7 @@ public class TetherBorderItemEditPolicy extends BorderItemSelectionEditPolicy {
 		if (tether == null) {
 			tether = new Polyline();
 			tether.setLineStyle(Graphics.LINE_DASH);
-			//tether.setLineDashOffset(1);
+			// tether.setLineDashOffset(1);
 			tether.setLineWidth(2);
 			// tether.setLineWidth(1);
 			// tether.getLineAttributes().dashOffset =
@@ -81,10 +83,10 @@ public class TetherBorderItemEditPolicy extends BorderItemSelectionEditPolicy {
 	public void deactivate() {
 		if (tether != null) {
 			getHostFigure().getParent().remove(tether);
-			((IGraphicalEditPart) getHost()).getFigure().removeFigureListener(
-					ownerMovedListener);
 			tether = null;
 		}
+		getHostFigure().removeFigureListener(
+				ownerMovedListener);
 		super.deactivate();
 	}
 
@@ -92,41 +94,34 @@ public class TetherBorderItemEditPolicy extends BorderItemSelectionEditPolicy {
 	public void activate() {
 		super.activate();
 		getHostFigure().getParent().add(getConnection());
-		((IGraphicalEditPart) getHost()).getFigure().addFigureListener(
+		getHostFigure().addFigureListener(
 				ownerMovedListener);
 		getConnection().setVisible(tetherShown);
 		updatePosition();
 	}
 
 	private void updatePosition() {
-		// Get endPos and translate
-		Point startPos;
-		// if (false) {
-		// endPos = getDragSourceFeedbackFigure().getBounds().getLocation();
-		// getHostFigure().getParent().translateToRelative(endPos);
-		// } else {
-		Rectangle endBounds = getHostFigure().getBounds();
-		startPos = endBounds.getLocation();
-		// }
+		// Get startPos (no need to translate)
+		Point startPos = getHostFigure().getBounds().getLocation();
 
 		// Get endPos from anchor
-		// BorderedBorderItemEditPart whoAmI = (BorderedBorderItemEditPart)
-		// getHost()
-		// .getParent();
-		// BorderedNodeFigure fig = (BorderedNodeFigure) whoAmI
-		// .getFigure();
-		// ConnectionAnchor anchor = fig.getConnectionAnchor("");
-		// Point endPos = anchor.getLocation(startPos);
-		//
-		// // Translate startPos
-		// fig.getParent().translateToAbsolute(endPos);
-		// getHostFigure().getParent().translateToRelative(startPos);
-
-		Point refPoint = ((LabelEditPart) getHost()).getReferencePoint();
-
+		BorderedBorderItemEditPart parentEditPart = (BorderedBorderItemEditPart) getHost()
+				.getParent();
+		BorderedNodeFigure fig = (BorderedNodeFigure) parentEditPart
+				.getFigure();
+		ConnectionAnchor anchor = fig.getConnectionAnchor("");
+		
+		// Get absolute coordinates of startPos to ask anchor
+		Point startPosAbsolute = startPos.getCopy();
+		getHostFigure().translateToAbsolute(startPosAbsolute);
+		
+		// Ask anchor, the anchor works with absolute coordinates, so translate accordingly
+		Point endPos = anchor.getLocation(startPosAbsolute);
+		getHostFigure().translateToRelative(endPos);
+		
 		// Set start and end pos
-		getConnection().setStart(startPos);
-		getConnection().setEnd(refPoint);
+		getConnection().setStart(startPos);		// start from label
+		getConnection().setEnd(endPos);			// end at port 
 	}
 
 	@Override
@@ -137,11 +132,10 @@ public class TetherBorderItemEditPolicy extends BorderItemSelectionEditPolicy {
 
 		tether.setVisible(false);
 	}
-	
+
 	@SuppressWarnings("rawtypes")
 	protected List createSelectionHandles() {
-		MoveHandle mh = new MoveHandle(
-				(GraphicalEditPart) getHost());
+		MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
 		mh.setBorder(null);
 		return Collections.singletonList(mh);
 	}
