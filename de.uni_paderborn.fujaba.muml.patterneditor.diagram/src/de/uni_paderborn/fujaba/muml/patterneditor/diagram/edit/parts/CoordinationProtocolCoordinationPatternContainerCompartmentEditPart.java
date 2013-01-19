@@ -2,6 +2,8 @@ package de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
@@ -13,7 +15,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CoordinationPatternCoordinationPatternContainerCompartmentEditPart
+public class CoordinationProtocolCoordinationPatternContainerCompartmentEditPart
 		extends ShapeCompartmentEditPart {
 
 	/**
@@ -24,7 +26,7 @@ public class CoordinationPatternCoordinationPatternContainerCompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public CoordinationPatternCoordinationPatternContainerCompartmentEditPart(
+	public CoordinationProtocolCoordinationPatternContainerCompartmentEditPart(
 			View view) {
 		super(view);
 	}
@@ -33,7 +35,7 @@ public class CoordinationPatternCoordinationPatternContainerCompartmentEditPart
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.CoordinationPatternCoordinationPatternContainerCompartmentEditPart_title;
+		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.Messages.CoordinationProtocolCoordinationPatternContainerCompartmentEditPart_title;
 	}
 
 	/**
@@ -65,14 +67,14 @@ public class CoordinationPatternCoordinationPatternContainerCompartmentEditPart
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.CoordinationPatternCoordinationPatternContainerCompartmentItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.CoordinationProtocolCoordinationPatternContainerCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.CoordinationPatternCoordinationPatternContainerCompartmentCanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.CoordinationProtocolCoordinationPatternContainerCompartmentCanonicalEditPolicy());
 	}
 
 	/**

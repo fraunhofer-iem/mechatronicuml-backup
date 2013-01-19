@@ -12,17 +12,15 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.fujaba.modelinstance.ModelElementCategory;
-
 /**
  * @generated
  */
-public class CoordinationPatternCreateCommand extends EditElementCommand {
+public class CoordinationProtocol2CreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public CoordinationPatternCreateCommand(CreateElementRequest req) {
+	public CoordinationProtocol2CreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -43,6 +41,10 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
+		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) getElementToEdit();
+		if (container.getGmfCoordinationProtocol() != null) {
+			return false;
+		}
 		return true;
 
 	}
@@ -55,11 +57,8 @@ public class CoordinationPatternCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol newElement = de.uni_paderborn.fujaba.muml.model.protocol.ProtocolFactory.eINSTANCE
 				.createCoordinationProtocol();
 
-		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
-		owner.getModelElements().add(newElement);
-
-		de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.ElementInitializers
-				.getInstance().init_CoordinationProtocol_2005(newElement);
+		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol owner = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) getElementToEdit();
+		owner.setGmfCoordinationProtocol(newElement);
 
 		doConfigure(newElement, monitor, info);
 

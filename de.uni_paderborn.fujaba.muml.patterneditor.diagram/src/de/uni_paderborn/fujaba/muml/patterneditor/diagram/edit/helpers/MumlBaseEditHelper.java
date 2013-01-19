@@ -21,6 +21,7 @@ public class MumlBaseEditHelper extends AbstractEditHelper {
 	 * @generated
 	 */
 	public static final String EDIT_POLICY_COMMAND = "edit policy command"; //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */

@@ -3,7 +3,6 @@ package de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts;
 import java.util.List;
 
 import org.eclipse.draw2d.Connection;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
@@ -51,29 +50,14 @@ public class RoleConnectorEditPart extends ConnectionNodeEditPart implements
 	 * @generated
 	 */
 	protected Connection createConnectionFigure() {
-		return new RolePatternFigure();
+		return new PolylineConnectionEx();
 	}
 
 	/**
 	 * @generated
 	 */
-	public RolePatternFigure getPrimaryShape() {
-		return (RolePatternFigure) getFigure();
-	}
-
-	/**
-	 * @generated
-	 */
-	public class RolePatternFigure extends PolylineConnectionEx {
-
-		/**
-		 * @generated
-		 */
-		public RolePatternFigure() {
-			this.setLineStyle(Graphics.LINE_DASH);
-
-		}
-
+	public PolylineConnectionEx getPrimaryShape() {
+		return (PolylineConnectionEx) getFigure();
 	}
 
 	/**

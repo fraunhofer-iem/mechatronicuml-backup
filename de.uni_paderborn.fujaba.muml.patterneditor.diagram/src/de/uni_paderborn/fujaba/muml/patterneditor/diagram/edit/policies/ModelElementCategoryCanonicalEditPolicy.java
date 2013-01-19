@@ -93,7 +93,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID;
 				if (childElement.eContainer() == containerView.getElement()
 						&& visualID == de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 								.getVisualID(childView)) {
@@ -125,7 +125,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
+		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
 	}
 
@@ -295,7 +295,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			}
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
 						.getCoordinationProtocol_2005ContainedLinks(view));
@@ -306,10 +306,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			}
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
-						.getCoordinationProtocol_3006ContainedLinks(view));
+						.getCoordinationProtocol_3005ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -320,7 +320,18 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
-						.getRole_3005ContainedLinks(view));
+						.getRole_3006ContainedLinks(view));
+			}
+			if (!domain2NotationMap.containsKey(view.getElement())
+					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
+				domain2NotationMap.put(view.getElement(), view);
+			}
+			break;
+		}
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocol3EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
+						.getCoordinationProtocol_4005ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
@@ -331,18 +342,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
-						.getCoordinationProtocol_4006ContainedLinks(view));
-			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
-			break;
-		}
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternRolesEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramUpdater
-						.getRoleConnector_4005ContainedLinks(view));
+						.getRoleConnector_4006ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$

@@ -42,7 +42,7 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) {
+		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -58,19 +58,24 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol && newEnd instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
 		/*
-		if (getLink().getRoles().size() != 1) {
+		if (getLink().getConnectorEndpoints().size() != 1) {
 		  return false;
 		}
 		 */
-		de.uni_paderborn.fujaba.muml.model.protocol.Role target = (de.uni_paderborn.fujaba.muml.model.protocol.Role) getLink()
-				.getRoles().get(0);
+		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) getLink()
+				.getConnectorEndpoints().get(0);
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol)) {
+			return false;
+		}
+		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) getLink()
+				.eContainer();
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistCoordinationProtocol_4006(
+				.getLinkConstraints().canExistRoleConnector_4006(container,
 						getLink(), getNewSource(), target);
 	}
 
@@ -78,16 +83,24 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.protocol.Role && newEnd instanceof de.uni_paderborn.fujaba.muml.model.protocol.Role)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint)) {
 			return false;
 		}
+		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
+		/*
+		if (getLink().getConnectorEndpoints().size() != 1) {
+		  return false;
+		}
+		 */
+		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) getLink()
+				.getConnectorEndpoints().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol source = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) getLink()
+		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) getLink()
 				.eContainer();
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistCoordinationProtocol_4006(
+				.getLinkConstraints().canExistRoleConnector_4006(container,
 						getLink(), source, getNewTarget());
 	}
 
@@ -114,8 +127,11 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
 
-		getOldSource().setGmfCoordinationProtocol(null);
-		getNewSource().setGmfCoordinationProtocol(getLink());
+		// Enhancement for MUML-BUG #446
+		if (getLink().getConnectorEndpoints().size() > 1) {
+			getLink().getConnectorEndpoints().remove(getOldSource());
+		}
+		getLink().getConnectorEndpoints().add(getNewSource());
 
 		return CommandResult.newOKCommandResult(getLink());
 	}
@@ -126,10 +142,10 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	protected CommandResult reorientTarget() throws ExecutionException {
 
 		// Enhancement for MUML-BUG #446
-		if (getLink().getRoles().size() > 1) {
-			getLink().getRoles().remove(getOldTarget());
+		if (getLink().getConnectorEndpoints().size() > 1) {
+			getLink().getConnectorEndpoints().remove(getOldTarget());
 		}
-		getLink().getRoles().add(getNewTarget());
+		getLink().getConnectorEndpoints().add(getNewTarget());
 
 		return CommandResult.newOKCommandResult(getLink());
 	}
@@ -137,36 +153,36 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol getLink() {
-		return (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) getElementToEdit();
+	protected de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector getLink() {
+		return (de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol getOldSource() {
-		return (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol getNewSource() {
-		return (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.protocol.Role getOldTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.protocol.Role) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.protocol.Role getNewTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.protocol.Role) newEnd;
+	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) newEnd;
 	}
 
 	/**

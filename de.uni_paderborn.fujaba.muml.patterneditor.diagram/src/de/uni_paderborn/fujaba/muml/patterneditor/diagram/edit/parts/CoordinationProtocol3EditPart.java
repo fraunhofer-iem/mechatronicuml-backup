@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts;
 import java.util.List;
 
 import org.eclipse.draw2d.Connection;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
@@ -16,7 +17,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CoordinationPatternRolesEditPart extends ConnectionNodeEditPart
+public class CoordinationProtocol3EditPart extends ConnectionNodeEditPart
 		implements ITreeBranchEditPart {
 
 	/**
@@ -27,7 +28,7 @@ public class CoordinationPatternRolesEditPart extends ConnectionNodeEditPart
 	/**
 	 * @generated
 	 */
-	public CoordinationPatternRolesEditPart(View view) {
+	public CoordinationProtocol3EditPart(View view) {
 		super(view);
 	}
 
@@ -38,7 +39,7 @@ public class CoordinationPatternRolesEditPart extends ConnectionNodeEditPart
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.CoordinationPatternRolesItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.CoordinationProtocol3ItemSemanticEditPolicy());
 	}
 
 	/**
@@ -49,15 +50,31 @@ public class CoordinationPatternRolesEditPart extends ConnectionNodeEditPart
 	 * 
 	 * @generated
 	 */
+
 	protected Connection createConnectionFigure() {
-		return new PolylineConnectionEx();
+		return new RolePatternFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public PolylineConnectionEx getPrimaryShape() {
-		return (PolylineConnectionEx) getFigure();
+	public RolePatternFigure getPrimaryShape() {
+		return (RolePatternFigure) getFigure();
+	}
+
+	/**
+	 * @generated
+	 */
+	public class RolePatternFigure extends PolylineConnectionEx {
+
+		/**
+		 * @generated
+		 */
+		public RolePatternFigure() {
+			this.setLineStyle(Graphics.LINE_DASH);
+
+		}
+
 	}
 
 	/**

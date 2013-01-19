@@ -18,14 +18,14 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CoordinationPatternItemSemanticEditPolicy
+public class CoordinationProtocolItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public CoordinationPatternItemSemanticEditPolicy() {
+	public CoordinationProtocolItemSemanticEditPolicy() {
 		super(
 				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_2005);
 	}
@@ -41,7 +41,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
 			if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-					.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID) {
+					.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocol3EditPart.VISUAL_ID) {
 				DestroyElementRequest r = new DestroyElementRequest(
 						outgoingLink.getElement(), false);
 				cmd.add(new DestroyElementCommand(r));
@@ -71,18 +71,18 @@ public class CoordinationPatternItemSemanticEditPolicy
 			Node node = (Node) nit.next();
 			switch (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 					.getVisualID(node)) {
-			case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternCoordinationPatternContainerCompartmentEditPart.VISUAL_ID:
+			case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolCoordinationPatternContainerCompartmentEditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit
 						.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 							.getVisualID(cnode)) {
-					case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
+					case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID:
 						for (Iterator<?> it = cnode.getSourceEdges().iterator(); it
 								.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
 							if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-									.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID) {
+									.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocol3EditPart.VISUAL_ID) {
 								DestroyElementRequest r = new DestroyElementRequest(
 										outgoingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
@@ -102,7 +102,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 								.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID) {
+									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocol3EditPart.VISUAL_ID) {
 								DestroyElementRequest r = new DestroyElementRequest(
 										incomingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
@@ -111,7 +111,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 								continue;
 							}
 							if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternRolesEditPart.VISUAL_ID) {
+									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID) {
 								DestroyElementRequest r = new DestroyElementRequest(
 										incomingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
@@ -124,7 +124,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 								.hasNext();) {
 							Edge outgoingLink = (Edge) it.next();
 							if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-									.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternRolesEditPart.VISUAL_ID) {
+									.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID) {
 								DestroyElementRequest r = new DestroyElementRequest(
 										outgoingLink.getElement(), false);
 								cmd.add(new DestroyElementCommand(r));
@@ -161,9 +161,9 @@ public class CoordinationPatternItemSemanticEditPolicy
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_4006 == req
+		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_4005 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands.RoleConnectorCreateCommand(
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands.CoordinationProtocol3CreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -174,7 +174,7 @@ public class CoordinationPatternItemSemanticEditPolicy
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_4006 == req
+		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_4005 == req
 				.getElementType()) {
 			return null;
 		}
@@ -190,8 +190,8 @@ public class CoordinationPatternItemSemanticEditPolicy
 	protected Command getReorientRelationshipCommand(
 			ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands.RoleConnectorReorientCommand(
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocol3EditPart.VISUAL_ID:
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands.CoordinationProtocolReorientCommand(
 					req));
 		}
 		return super.getReorientRelationshipCommand(req);

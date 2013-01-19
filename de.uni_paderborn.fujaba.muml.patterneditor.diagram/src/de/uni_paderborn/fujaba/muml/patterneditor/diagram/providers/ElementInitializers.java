@@ -153,7 +153,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Role_3005(
+	public void init_Role_3006(
 			de.uni_paderborn.fujaba.muml.model.protocol.Role instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.patterneditor.diagram.expressions.MumlOCLFactory
@@ -204,7 +204,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_RoleConnector_4005(
+	public void init_RoleConnector_4006(
 			de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.model.protocol.ConnectorQualityOfServiceAssumptions newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.protocol.ProtocolFactory.eINSTANCE

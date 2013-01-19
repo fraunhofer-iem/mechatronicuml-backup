@@ -28,7 +28,7 @@ public class ModelElementCategoryItemSemanticEditPolicy
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_2005 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands.CoordinationPatternCreateCommand(
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands.CoordinationProtocolCreateCommand(
 					req));
 		}
 		return super.getCreateCommand(req);

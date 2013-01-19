@@ -16,10 +16,12 @@ public class MumlLinkDescriptor
 	 * @generated
 	 */
 	private EObject mySource;
+
 	/**
 	 * @generated
 	 */
 	private EObject myDestination;
+
 	/**
 	 * @generated
 	 */

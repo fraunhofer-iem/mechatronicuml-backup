@@ -15,7 +15,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 /**
  * @generated
  */
-public class CoordinationPatternRolesCreateCommand extends EditElementCommand {
+public class CoordinationProtocol3CreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -30,17 +30,11 @@ public class CoordinationPatternRolesCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private final de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container;
-
-	/**
-	 * @generated
-	 */
-	public CoordinationPatternRolesCreateCommand(
+	public CoordinationProtocol3CreateCommand(
 			CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
-		container = deduceContainer(source, target);
 	}
 
 	/**
@@ -51,23 +45,20 @@ public class CoordinationPatternRolesCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.protocol.Role) {
 			return false;
 		}
 		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		if (getContainer() == null) {
-			return false;
-		}
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateRoleConnector_4005(
-						getContainer(), getSource(), getTarget());
+				.getLinkConstraints().canCreateCoordinationProtocol_4005(
+						getSource(), getTarget());
 	}
 
 	/**
@@ -80,13 +71,10 @@ public class CoordinationPatternRolesCreateCommand extends EditElementCommand {
 					"Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector newElement = de.uni_paderborn.fujaba.muml.model.protocol.ProtocolFactory.eINSTANCE
-				.createRoleConnector();
-		getContainer().setRoleConnector(newElement);
-		newElement.getConnectorEndpoints().add(getSource());
-		newElement.getConnectorEndpoints().add(getTarget());
-		de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.ElementInitializers
-				.getInstance().init_RoleConnector_4005(newElement);
+		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol newElement = de.uni_paderborn.fujaba.muml.model.protocol.ProtocolFactory.eINSTANCE
+				.createCoordinationProtocol();
+		getSource().setGmfCoordinationProtocol(newElement);
+		newElement.getRoles().add(getTarget());
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
@@ -97,7 +85,7 @@ public class CoordinationPatternRolesCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector newElement,
+			de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
@@ -128,41 +116,15 @@ public class CoordinationPatternRolesCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getSource() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) source;
+	protected de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol getSource() {
+		return (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) target;
-	}
-
-	/**
-	 * @generated
-	 */
-	public de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol getContainer() {
-		return container;
-	}
-
-	/**
-	 * Default approach is to traverse ancestors of the source to find instance of container.
-	 * Modify with appropriate logic.
-	 * @generated
-	 */
-	private static de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol deduceContainer(
-			EObject source, EObject target) {
-		// Find container element for the new link.
-		// Climb up by containment hierarchy starting from the source
-		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null; element = element
-				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) {
-				return (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) element;
-			}
-		}
-		return null;
+	protected de.uni_paderborn.fujaba.muml.model.protocol.Role getTarget() {
+		return (de.uni_paderborn.fujaba.muml.model.protocol.Role) target;
 	}
 
 }

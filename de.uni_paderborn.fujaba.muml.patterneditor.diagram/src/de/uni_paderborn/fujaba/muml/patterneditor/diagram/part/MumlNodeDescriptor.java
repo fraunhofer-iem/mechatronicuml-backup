@@ -11,6 +11,7 @@ public class MumlNodeDescriptor {
 	 * @generated
 	 */
 	private final EObject myModelElement;
+
 	/**
 	 * @generated
 	 */

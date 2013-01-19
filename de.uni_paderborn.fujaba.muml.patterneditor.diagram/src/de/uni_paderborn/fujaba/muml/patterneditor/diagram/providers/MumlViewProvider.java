@@ -138,9 +138,9 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 					return false; // foreign diagram
 				}
 				switch (visualID) {
-				case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID:
 					if (domainElement == null
 							|| visualID != de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 									.getNodeVisualID(op.getContainerView(),
@@ -153,8 +153,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				}
 			}
 		}
-		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID == visualID
-				|| de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID == visualID
+		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID == visualID
+				|| de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID == visualID;
 	}
 
@@ -215,14 +215,14 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 					.getVisualID(semanticHint);
 		}
 		switch (visualID) {
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID:
 			return createCoordinationProtocol_2005(domainElement,
 					containerView, index, persisted, preferencesHint);
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID:
-			return createCoordinationProtocol_3006(domainElement,
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID:
+			return createCoordinationProtocol_3005(domainElement,
 					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart.VISUAL_ID:
-			return createRole_3005(domainElement, containerView, index,
+			return createRole_3006(domainElement, containerView, index,
 					persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
@@ -239,12 +239,12 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
 		switch (de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(elementTypeHint)) {
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
-			return createCoordinationProtocol_4006(
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocol3EditPart.VISUAL_ID:
+			return createCoordinationProtocol_4005(
 					getSemanticElement(semanticAdapter), containerView, index,
 					persisted, preferencesHint);
-		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternRolesEditPart.VISUAL_ID:
-			return createRoleConnector_4005(
+		case de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
+			return createRoleConnector_4006(
 					getSemanticElement(semanticAdapter), containerView, index,
 					persisted, preferencesHint);
 		}
@@ -261,7 +261,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);
@@ -299,7 +299,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternCoordinationPatternContainerCompartmentEditPart.VISUAL_ID),
+						.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolCoordinationPatternContainerCompartmentEditPart.VISUAL_ID),
 				false, false, false, false);
 		return node;
 	}
@@ -307,13 +307,13 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createCoordinationProtocol_3006(EObject domainElement,
+	public Node createCoordinationProtocol_3005(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -347,7 +347,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5006 = createLabel(
+		Node label5005 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID));
@@ -357,7 +357,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createRole_3005(EObject domainElement, View containerView,
+	public Node createRole_3006(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -396,22 +396,22 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5005 = createLabel(
+		Node label5006 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleNameEditPart.VISUAL_ID));
-		label5005.setLayoutConstraint(NotationFactory.eINSTANCE
+		label5006.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location5005 = (Location) label5005.getLayoutConstraint();
-		location5005.setX(0);
-		location5005.setY(5);
+		Location location5006 = (Location) label5006.getLayoutConstraint();
+		location5006.setX(0);
+		location5006.setY(5);
 		return node;
 	}
 
 	/**
 	 * @generated
 	 */
-	public Edge createCoordinationProtocol_4006(EObject domainElement,
+	public Edge createCoordinationProtocol_4005(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
@@ -426,7 +426,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
 		edge.setType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocol3EditPart.VISUAL_ID));
 		edge.setElement(domainElement);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
@@ -467,7 +467,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Edge createRoleConnector_4005(EObject domainElement,
+	public Edge createRoleConnector_4006(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
@@ -482,7 +482,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
 		edge.setType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternRolesEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID));
 		edge.setElement(domainElement);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint

@@ -30,13 +30,12 @@
     <domainDiagramElement
         href="../../de.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
     <childNodes
-        visualID="3006"
-        editPartClassName="CoordinationPattern2EditPart"
-        itemSemanticEditPolicyClassName="CoordinationPattern2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="CoordinationPatternViewFactory"
-        canonicalEditPolicyClassName="CoordinationPattern2CanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="CoordinationPattern2GraphicalNodeEditPolicy"
-        createCommandClassName="CoordinationPattern2CreateCommand"
+        visualID="3005"
+        editPartClassName="CoordinationProtocol2EditPart"
+        itemSemanticEditPolicyClassName="CoordinationProtocol2ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="CoordinationProtocol2CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="CoordinationProtocol2GraphicalNodeEditPolicy"
+        createCommandClassName="CoordinationProtocol2CreateCommand"
         containers="//@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -46,14 +45,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="CoordinationPatternFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CoordinationPatternFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCoordinationPatternNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CoordinationPatternFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCoordinationPatternNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureCoordinationPatternNameFigure.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureCoordinationPatternNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureCoordinationPatternNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationPatternNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationPatternNameFigure.horizontalIndent = 0;&#xA;constraintFFigureCoordinationPatternNameFigure.horizontalSpan = 1;&#xA;constraintFFigureCoordinationPatternNameFigure.verticalSpan = 1;&#xA;constraintFFigureCoordinationPatternNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureCoordinationPatternNameFigure.grabExcessVerticalSpace = true;&#xA;this.add(fFigureCoordinationPatternNameFigure, constraintFFigureCoordinationPatternNameFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCoordinationPatternNameFigure() {&#xA;&#x9;&#x9;return fFigureCoordinationPatternNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:ResizeConstraints"/>
-        <attributes
-            xsi:type="gmfgen:DefaultSizeAttributes"
-            width="20"
-            height="20"/>
-      </viewmap>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CoordinationPatternFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCoordinationPatternNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CoordinationPatternFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCoordinationPatternNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureCoordinationPatternNameFigure.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureCoordinationPatternNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureCoordinationPatternNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationPatternNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationPatternNameFigure.horizontalIndent = 0;&#xA;constraintFFigureCoordinationPatternNameFigure.horizontalSpan = 1;&#xA;constraintFFigureCoordinationPatternNameFigure.verticalSpan = 1;&#xA;constraintFFigureCoordinationPatternNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureCoordinationPatternNameFigure.grabExcessVerticalSpace = true;&#xA;this.add(fFigureCoordinationPatternNameFigure, constraintFFigureCoordinationPatternNameFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCoordinationPatternNameFigure() {&#xA;&#x9;&#x9;return fFigureCoordinationPatternNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol"/>
@@ -63,10 +55,9 @@
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
       </modelFacet>
       <labels
-          visualID="5006"
+          visualID="5005"
           editPartClassName="CoordinationProtocolNameEditPart"
-          itemSemanticEditPolicyClassName="CoordinationProtocolNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="CoordinationProtocolNameViewFactory">
+          itemSemanticEditPolicyClassName="CoordinationProtocolNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -85,10 +76,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3005"
+        visualID="3006"
         editPartClassName="RoleEditPart"
         itemSemanticEditPolicyClassName="RoleItemSemanticEditPolicy"
-        notationViewFactoryClassName="RoleViewFactory"
         canonicalEditPolicyClassName="RoleCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="RoleGraphicalNodeEditPolicy"
         createCommandClassName="RoleCreateCommand"
@@ -163,10 +153,9 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5005"
+          visualID="5006"
           editPartClassName="RoleNameEditPart"
-          itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="RoleNameViewFactory">
+          itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -182,18 +171,17 @@
     </childNodes>
     <topLevelNodes
         visualID="2005"
-        editPartClassName="CoordinationPatternEditPart"
-        itemSemanticEditPolicyClassName="CoordinationPatternItemSemanticEditPolicy"
-        notationViewFactoryClassName="CoordinationPatternViewFactory"
-        canonicalEditPolicyClassName="CoordinationPatternCanonicalEditPolicy"
+        editPartClassName="CoordinationProtocolEditPart"
+        itemSemanticEditPolicyClassName="CoordinationProtocolItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="CoordinationProtocolCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
-        graphicalNodeEditPolicyClassName="CoordinationPatternGraphicalNodeEditPolicy"
-        createCommandClassName="CoordinationPatternCreateCommand">
+        graphicalNodeEditPolicyClassName="CoordinationProtocolGraphicalNodeEditPolicy"
+        createCommandClassName="CoordinationProtocolCreateCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="CoordinationPatternEditHelper"/>
+          editHelperClassName="CoordinationProtocolEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
@@ -337,12 +325,11 @@
       </modelFacet>
     </topLevelNodes>
     <links
-        visualID="4006"
-        editPartClassName="RoleConnectorEditPart"
-        itemSemanticEditPolicyClassName="RoleConnectorItemSemanticEditPolicy"
-        notationViewFactoryClassName="RoleConnectorViewFactory"
-        createCommandClassName="RoleConnectorCreateCommand"
-        reorientCommandClassName="RoleConnectorReorientCommand">
+        visualID="4005"
+        editPartClassName="CoordinationProtocol3EditPart"
+        itemSemanticEditPolicyClassName="CoordinationProtocol3ItemSemanticEditPolicy"
+        createCommandClassName="CoordinationProtocol3CreateCommand"
+        reorientCommandClassName="CoordinationProtocolReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -365,12 +352,11 @@
       </modelFacet>
     </links>
     <links
-        visualID="4005"
-        editPartClassName="CoordinationPatternRolesEditPart"
-        itemSemanticEditPolicyClassName="CoordinationPatternRolesItemSemanticEditPolicy"
-        notationViewFactoryClassName="CoordinationPatternRolesViewFactory"
-        createCommandClassName="CoordinationPatternRolesCreateCommand"
-        reorientCommandClassName="CoordinationPatternRolesReorientCommand">
+        visualID="4006"
+        editPartClassName="RoleConnectorEditPart"
+        itemSemanticEditPolicyClassName="RoleConnectorItemSemanticEditPolicy"
+        createCommandClassName="RoleConnectorCreateCommand"
+        reorientCommandClassName="RoleConnectorReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -413,10 +399,9 @@
     </links>
     <compartments
         visualID="7005"
-        editPartClassName="CoordinationPatternCoordinationPatternContainerCompartmentEditPart"
-        itemSemanticEditPolicyClassName="CoordinationPatternCoordinationPatternContainerCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="CoordinationPatternCoordinationPatternContainerCompartmentViewFactory"
-        canonicalEditPolicyClassName="CoordinationPatternCoordinationPatternContainerCompartmentCanonicalEditPolicy"
+        editPartClassName="CoordinationProtocolCoordinationPatternContainerCompartmentEditPart"
+        itemSemanticEditPolicyClassName="CoordinationProtocolCoordinationPatternContainerCompartmentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="CoordinationProtocolCoordinationPatternContainerCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1"
         title="CoordinationPatternContainerCompartment"
         canCollapse="false"

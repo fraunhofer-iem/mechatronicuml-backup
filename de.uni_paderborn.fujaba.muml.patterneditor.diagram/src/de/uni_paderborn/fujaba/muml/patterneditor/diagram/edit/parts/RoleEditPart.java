@@ -56,7 +56,7 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3005;
+	public static final int VISUAL_ID = 3006;
 
 	/**
 	 * @generated
@@ -86,6 +86,10 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
+		installEditPolicy(
+				EditPolicy.GRAPHICAL_NODE_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 	}
 
 	/**
@@ -366,7 +370,7 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4005);
+		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4006);
 		return types;
 	}
 
@@ -377,7 +381,7 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4005);
+			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4006);
 		}
 		return types;
 	}
@@ -387,8 +391,8 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4005) {
-			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_3005);
+		if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4006) {
+			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_3006);
 		}
 		return types;
 	}
@@ -398,8 +402,8 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_4006);
-		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4005);
+		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_4005);
+		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4006);
 		return types;
 	}
 
@@ -408,11 +412,11 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_4006) {
+		if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_4005) {
 			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_2005);
-			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_3006);
-		} else if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4005) {
-			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_3005);
+			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_3005);
+		} else if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.RoleConnector_4006) {
+			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_3006);
 		}
 		return types;
 	}

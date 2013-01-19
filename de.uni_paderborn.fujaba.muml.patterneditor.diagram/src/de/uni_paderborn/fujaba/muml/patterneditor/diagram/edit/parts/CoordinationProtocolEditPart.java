@@ -4,12 +4,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.draw2d.Ellipse;
-import org.eclipse.draw2d.Graphics;
-import org.eclipse.draw2d.GridData;
-import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -19,13 +15,14 @@ import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.editpolicies.ResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -35,12 +32,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
+public class CoordinationProtocolEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3006;
+	public static final int VISUAL_ID = 2005;
 
 	/**
 	 * @generated
@@ -55,7 +52,7 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public CoordinationPattern2EditPart(View view) {
+	public CoordinationProtocolEditPart(View view) {
 		super(view);
 	}
 
@@ -66,10 +63,14 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.CoordinationPattern2ItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.CoordinationProtocolItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
+		installEditPolicy(
+				EditPolicy.GRAPHICAL_NODE_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 	}
 
 	/**
@@ -102,87 +103,25 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new CoordinationPatternFigure();
+		return primaryShape = new RectangleFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public CoordinationPatternFigure getPrimaryShape() {
-		return (CoordinationPatternFigure) primaryShape;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolNameEditPart) {
-			((de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureCoordinationPatternNameFigure());
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolNameEditPart) {
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
-			return;
-		}
-		super.addChildVisual(childEditPart, -1);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
-			return;
-		}
-		super.removeChildVisual(childEditPart);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		return getContentPane();
+	public RectangleFigure getPrimaryShape() {
+		return (RectangleFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(20, 20);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));
 
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public EditPolicy getPrimaryDragEditPolicy() {
-		EditPolicy result = super.getPrimaryDragEditPolicy();
-		if (result instanceof ResizableEditPolicy) {
-			ResizableEditPolicy ep = (ResizableEditPolicy) result;
-			ep.setResizeDirections(PositionConstants.NONE);
-		}
 		return result;
 	}
 
@@ -267,17 +206,9 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_4006);
+		types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_4005);
 		return types;
 	}
 
@@ -288,7 +219,7 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart) {
-			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_4006);
+			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_4005);
 		}
 		return types;
 	}
@@ -298,64 +229,10 @@ public class CoordinationPattern2EditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_4006) {
-			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_3005);
+		if (relationshipType == de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_4005) {
+			types.add(de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_3006);
 		}
 		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public class CoordinationPatternFigure extends Ellipse {
-
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureCoordinationPatternNameFigure;
-
-		/**
-		 * @generated
-		 */
-		public CoordinationPatternFigure() {
-
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
-			this.setLayoutManager(layoutThis);
-
-			this.setLineStyle(Graphics.LINE_DASH);
-			createContents();
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
-
-			fFigureCoordinationPatternNameFigure = new WrappingLabel();
-			fFigureCoordinationPatternNameFigure.setText("");
-
-			GridData constraintFFigureCoordinationPatternNameFigure = new GridData();
-			constraintFFigureCoordinationPatternNameFigure.verticalAlignment = GridData.CENTER;
-			constraintFFigureCoordinationPatternNameFigure.horizontalAlignment = GridData.CENTER;
-			constraintFFigureCoordinationPatternNameFigure.horizontalIndent = 0;
-			constraintFFigureCoordinationPatternNameFigure.horizontalSpan = 1;
-			constraintFFigureCoordinationPatternNameFigure.verticalSpan = 1;
-			constraintFFigureCoordinationPatternNameFigure.grabExcessHorizontalSpace = true;
-			constraintFFigureCoordinationPatternNameFigure.grabExcessVerticalSpace = true;
-			this.add(fFigureCoordinationPatternNameFigure,
-					constraintFFigureCoordinationPatternNameFigure);
-
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureCoordinationPatternNameFigure() {
-			return fFigureCoordinationPatternNameFigure;
-		}
-
 	}
 
 }

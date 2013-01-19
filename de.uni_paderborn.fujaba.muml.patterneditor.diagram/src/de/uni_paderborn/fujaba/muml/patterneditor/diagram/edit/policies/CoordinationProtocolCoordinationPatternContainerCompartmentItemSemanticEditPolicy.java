@@ -6,14 +6,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 /**
  * @generated
  */
-public class CoordinationPatternCoordinationPatternContainerCompartmentItemSemanticEditPolicy
+public class CoordinationProtocolCoordinationPatternContainerCompartmentItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public CoordinationPatternCoordinationPatternContainerCompartmentItemSemanticEditPolicy() {
+	public CoordinationProtocolCoordinationPatternContainerCompartmentItemSemanticEditPolicy() {
 		super(
 				de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_2005);
 	}
@@ -22,12 +22,12 @@ public class CoordinationPatternCoordinationPatternContainerCompartmentItemSeman
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_3006 == req
+		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.CoordinationProtocol_3005 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands.CoordinationPattern2CreateCommand(
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands.CoordinationProtocol2CreateCommand(
 					req));
 		}
-		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_3005 == req
+		if (de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlElementTypes.Role_3006 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands.RoleCreateCommand(
 					req));

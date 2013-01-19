@@ -278,7 +278,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String CoordinationPatternCoordinationPatternContainerCompartmentEditPart_title;
+	public static String CoordinationProtocolCoordinationPatternContainerCompartmentEditPart_title;
 
 	/**
 	 * @generated
@@ -288,17 +288,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationProtocol_4006_target;
+	public static String NavigatorGroupName_CoordinationProtocol_4005_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationProtocol_4006_source;
+	public static String NavigatorGroupName_CoordinationProtocol_4005_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationProtocol_4006_outgoinglinks;
+	public static String NavigatorGroupName_CoordinationProtocol_4005_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Role_3006_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Role_3006_outgoinglinks;
 
 	/**
 	 * @generated
@@ -308,32 +318,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RoleConnector_4005_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_RoleConnector_4005_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Role_3005_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Role_3005_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_ModelElementCategory_1000_links;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationProtocol_3006_outgoinglinks;
+	public static String NavigatorGroupName_RoleConnector_4006_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_RoleConnector_4006_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CoordinationProtocol_3005_outgoinglinks;
 
 	/**
 	 * @generated

@@ -2,7 +2,7 @@
 <gmfgraph:Canvas xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="patterneditor">
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="protocoleditor">
   <figures
       name="Default">
     <descriptors
@@ -10,33 +10,6 @@
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="RoleConnectorFigure"/>
-    </descriptors>
-    <descriptors
-        name="CoordinationPatternFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Ellipse"
-          name="CoordinationPatternFigure"
-          lineKind="LINE_DASH">
-        <layout
-            xsi:type="gmfgraph:GridLayout"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="CoordinationPatternNameFigure">
-          <layoutData
-              xsi:type="gmfgraph:GridLayoutData"
-              grabExcessHorizontalSpace="true"
-              grabExcessVerticalSpace="true"/>
-        </children>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
-        name="RolePatternFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="RolePatternFigure"
-          lineKind="LINE_DASH"/>
     </descriptors>
     <descriptors
         name="ConstraintLinkFigure">
@@ -75,7 +48,7 @@
             y="40"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="CoordinationPatternContainerFigure">
@@ -93,8 +66,10 @@
     </descriptors>
   </figures>
   <nodes
-      name="CoordinationPattern"
-      figure="CoordinationPatternFigure"/>
+      name="CoordinationPattern">
+    <figure
+        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#CoordinationPatternFigure"/>
+  </nodes>
   <nodes
       name="Role"
       resizeConstraint="NONE">
@@ -117,8 +92,10 @@
       name="RoleConnector"
       figure="RoleConnectorFigure"/>
   <connections
-      name="RolePattern"
-      figure="RolePatternFigure"/>
+      name="RolePattern">
+    <figure
+        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#RolePatternFigure"/>
+  </connections>
   <connections
       name="ConstraintLink"
       figure="ConstraintLinkFigure"/>
@@ -127,9 +104,12 @@
       figure="CoordinationPatternContainerCompartmentFigure"/>
   <labels
       name="CoordinationPatternName"
-      figure="CoordinationPatternFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+      elementIcon="false">
+    <figure
+        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#CoordinationPatternFigure"/>
+    <accessor
+        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#//@figures.0/@descriptors.0/@accessors.0"/>
+  </labels>
   <labels
       name="RoleName"
       elementIcon="false">
@@ -140,5 +120,5 @@
       name="TextualConstraintName"
       figure="TextualConstraintFigure"
       elementIcon="false"
-      accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
 </gmfgraph:Canvas>

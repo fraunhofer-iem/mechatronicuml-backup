@@ -328,7 +328,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateCoordinationProtocol_4006(
+		public boolean canCreateCoordinationProtocol_4005(
 				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol source,
 				de.uni_paderborn.fujaba.muml.model.protocol.Role target) {
 			if (source != null) {
@@ -336,13 +336,13 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-			return canExistCoordinationProtocol_4006(null, source, target);
+			return canExistCoordinationProtocol_4005(null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateRoleConnector_4005(
+		public boolean canCreateRoleConnector_4006(
 				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container,
 				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
 				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target) {
@@ -351,13 +351,13 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-			return canExistRoleConnector_4005(container, null, source, target);
+			return canExistRoleConnector_4006(container, null, source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistCoordinationProtocol_4006(
+		public boolean canExistCoordinationProtocol_4005(
 				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol linkInstance,
 				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol source,
 				de.uni_paderborn.fujaba.muml.model.protocol.Role target) {
@@ -367,7 +367,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistRoleConnector_4005(
+		public boolean canExistRoleConnector_4006(
 				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container,
 				de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector linkInstance,
 				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
