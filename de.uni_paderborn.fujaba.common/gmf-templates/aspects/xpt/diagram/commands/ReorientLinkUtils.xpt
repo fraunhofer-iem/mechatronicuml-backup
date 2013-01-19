@@ -42,7 +42,7 @@
 «IF ecoreFeature.many»
 	«IF ecoreFeature.unique»
 		// Enhancement for MUML-BUG #446
-		if («EXPAND MetaModel::getFeatureValue(oldSourceVar, sourceVarGenClass)» > 1) {
+		if («EXPAND MetaModel::getFeatureValue(oldSourceVar, sourceVarGenClass)».size() > 1) {
 			«EXPAND MetaModel::getFeatureValue(oldSourceVar, sourceVarGenClass)».remove(«targetVar»);
 		}
 		«EXPAND MetaModel::modifyFeature(newSourceVar, sourceVarGenClass, targetVar)-»
