@@ -15,7 +15,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class StateRegionCompartmentEditPart extends ShapeCompartmentEditPart {
+public class StateRegionCompartmentEditPart extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -27,6 +27,13 @@ public class StateRegionCompartmentEditPart extends ShapeCompartmentEditPart {
 	 */
 	public StateRegionCompartmentEditPart(View view) {
 		super(view);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean hasModelChildrenChanged(Notification evt) {
+		return false;
 	}
 
 	/**
@@ -82,6 +89,24 @@ public class StateRegionCompartmentEditPart extends ShapeCompartmentEditPart {
 		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void refreshVisibility() {
+		final View notationView = getNotationView();
+		final boolean hasChildren = notationView.getChildren().size() > 0;
+		setVisibility(hasChildren);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void handleNotificationEvent(Notification event) {
+		refreshVisibility();
+		super.handleNotificationEvent(event);
 	}
 
 }
