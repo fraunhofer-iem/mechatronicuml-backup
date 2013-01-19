@@ -54,7 +54,7 @@ public class MumlOCLFactory {
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"\'port\'", //$NON-NLS-1$
-					"if refines.oclIsUndefined() then \'\' else \': \'.concat(\n\tif refines.name.oclIsUndefined then \'\' else refines.name endif\n) endif", //$NON-NLS-1$
+					"if refines.oclIsUndefined() then \'\' else \': \'.concat(\n\tif refines.name.oclIsUndefined() then \'\' else refines.name endif\n) endif", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],
