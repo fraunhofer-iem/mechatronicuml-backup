@@ -328,7 +328,7 @@
   </links>
   <diagram>
     <diagramCanvas
-        href="pattern.gmfgraph#patterneditor"/>
+        href="pattern.gmfgraph#protocoleditor"/>
     <domainModel
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/protocol"/>
     <domainMetaElement

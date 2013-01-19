@@ -33,6 +33,7 @@
         visualID="3005"
         editPartClassName="CoordinationProtocol2EditPart"
         itemSemanticEditPolicyClassName="CoordinationProtocol2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationProtocolViewFactory"
         canonicalEditPolicyClassName="CoordinationProtocol2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="CoordinationProtocol2GraphicalNodeEditPolicy"
         createCommandClassName="CoordinationProtocol2CreateCommand"
@@ -57,7 +58,8 @@
       <labels
           visualID="5005"
           editPartClassName="CoordinationProtocolNameEditPart"
-          itemSemanticEditPolicyClassName="CoordinationProtocolNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="CoordinationProtocolNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="CoordinationProtocolNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -79,6 +81,7 @@
         visualID="3006"
         editPartClassName="RoleEditPart"
         itemSemanticEditPolicyClassName="RoleItemSemanticEditPolicy"
+        notationViewFactoryClassName="RoleViewFactory"
         canonicalEditPolicyClassName="RoleCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="RoleGraphicalNodeEditPolicy"
         createCommandClassName="RoleCreateCommand"
@@ -155,7 +158,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5006"
           editPartClassName="RoleNameEditPart"
-          itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="RoleNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -173,6 +177,7 @@
         visualID="2005"
         editPartClassName="CoordinationProtocolEditPart"
         itemSemanticEditPolicyClassName="CoordinationProtocolItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationProtocolViewFactory"
         canonicalEditPolicyClassName="CoordinationProtocolCanonicalEditPolicy"
         compartments="//@diagram/@compartments.0"
         graphicalNodeEditPolicyClassName="CoordinationProtocolGraphicalNodeEditPolicy"
@@ -328,6 +333,7 @@
         visualID="4005"
         editPartClassName="CoordinationProtocol3EditPart"
         itemSemanticEditPolicyClassName="CoordinationProtocol3ItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationProtocolViewFactory"
         createCommandClassName="CoordinationProtocol3CreateCommand"
         reorientCommandClassName="CoordinationProtocolReorientCommand">
       <diagramRunTimeClass
@@ -355,6 +361,7 @@
         visualID="4006"
         editPartClassName="RoleConnectorEditPart"
         itemSemanticEditPolicyClassName="RoleConnectorItemSemanticEditPolicy"
+        notationViewFactoryClassName="RoleConnectorViewFactory"
         createCommandClassName="RoleConnectorCreateCommand"
         reorientCommandClassName="RoleConnectorReorientCommand">
       <diagramRunTimeClass
@@ -401,6 +408,7 @@
         visualID="7005"
         editPartClassName="CoordinationProtocolCoordinationPatternContainerCompartmentEditPart"
         itemSemanticEditPolicyClassName="CoordinationProtocolCoordinationPatternContainerCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationProtocolCoordinationPatternContainerCompartmentViewFactory"
         canonicalEditPolicyClassName="CoordinationProtocolCoordinationPatternContainerCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1"
         title="CoordinationPatternContainerCompartment"
