@@ -3,11 +3,7 @@ package de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.edit.parts;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPattern2EditPart;
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternCoordinationPatternContainerCompartmentEditPart;
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.ModelElementCategoryEditPart;
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.MumlEditPartFactory;
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleEditPart;
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegistry;
 
 /**
@@ -17,7 +13,7 @@ import de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlVisualIDRegis
  * @author bingo
  * 
  */
-public class CustomPatternEditPartFactory extends MumlEditPartFactory {
+public class CustomProtocolEditPartFactory extends MumlEditPartFactory {
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {

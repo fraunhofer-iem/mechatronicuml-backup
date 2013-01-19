@@ -8,13 +8,13 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternCoordinationPatternContainerCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolCoordinationPatternContainerCompartmentEditPart;
 
-public class CustomCoordinationPatternCoordinationPatternContainerCompartmentEditPart
+public class CustomCoordinationProtocolCoordinationPatternContainerCompartmentEditPart
 		extends
-		CoordinationPatternCoordinationPatternContainerCompartmentEditPart {
+		CoordinationProtocolCoordinationPatternContainerCompartmentEditPart {
 
-	public CustomCoordinationPatternCoordinationPatternContainerCompartmentEditPart(
+	public CustomCoordinationProtocolCoordinationPatternContainerCompartmentEditPart(
 			View view) {
 		super(view);
 	}

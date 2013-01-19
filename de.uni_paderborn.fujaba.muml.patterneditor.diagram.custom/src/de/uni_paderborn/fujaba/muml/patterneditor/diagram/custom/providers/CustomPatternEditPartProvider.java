@@ -1,6 +1,6 @@
 package de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.providers;
 
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.edit.parts.CustomPatternEditPartFactory;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.custom.edit.parts.CustomProtocolEditPartFactory;
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlEditPartProvider;
 
 /**
@@ -12,7 +12,7 @@ import de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers.MumlEditPart
 public class CustomPatternEditPartProvider extends MumlEditPartProvider {
 
 	public CustomPatternEditPartProvider() {
-		setFactory(new CustomPatternEditPartFactory());
+		setFactory(new CustomProtocolEditPartFactory());
 		setAllowCaching(true);
 	}
 

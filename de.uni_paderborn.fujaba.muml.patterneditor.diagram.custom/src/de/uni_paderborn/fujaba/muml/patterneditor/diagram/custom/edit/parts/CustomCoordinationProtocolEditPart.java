@@ -17,18 +17,17 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationPatternEditPart;
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.CoordinationPattern2ItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolEditPart;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.CoordinationProtocol2ItemSemanticEditPolicy;
 
 /**
- * A custom EditPart for the CoordinationPattern. We replace the NodeFigure
- * here.
+ * A custom EditPart; we replace the NodeFigure here.
  * 
  * @author bingo
  * 
  */
-public class CustomCoordinationPatternEditPart extends
-		CoordinationPatternEditPart {
+public class CustomCoordinationProtocolEditPart extends
+		CoordinationProtocolEditPart {
 
 	@Override
 	public void deactivate() {
@@ -36,7 +35,7 @@ public class CustomCoordinationPatternEditPart extends
 		super.deactivate();
 	}
 
-	public CustomCoordinationPatternEditPart(View view) {
+	public CustomCoordinationProtocolEditPart(View view) {
 		super(view);
 	}
 
@@ -73,7 +72,7 @@ public class CustomCoordinationPatternEditPart extends
 			}
 		});
 		removeEditPolicy(EditPolicyRoles.SEMANTIC_ROLE);
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CoordinationPattern2ItemSemanticEditPolicy() {
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CoordinationProtocol2ItemSemanticEditPolicy() {
 
 			@Override
 			protected Command getSemanticCommand(IEditCommandRequest request) {
