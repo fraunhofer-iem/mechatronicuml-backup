@@ -260,10 +260,6 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 				getConnectors().clear();
 				getConnectors().addAll((Collection<? extends PortConnector>)newValue);
 				return;
-			case ComponentPackage.STRUCTURED_COMPONENT__GMF_PROTOCOLS:
-				getGmfProtocols().clear();
-				getGmfProtocols().addAll((Collection<? extends CoordinationProtocol>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -281,9 +277,6 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 				return;
 			case ComponentPackage.STRUCTURED_COMPONENT__CONNECTORS:
 				getConnectors().clear();
-				return;
-			case ComponentPackage.STRUCTURED_COMPONENT__GMF_PROTOCOLS:
-				getGmfProtocols().clear();
 				return;
 		}
 		super.eUnset(featureID);

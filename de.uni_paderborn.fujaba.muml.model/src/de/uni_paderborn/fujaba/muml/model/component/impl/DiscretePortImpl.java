@@ -538,15 +538,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGmfProtocol(CoordinationProtocol newGmfProtocol) {
-		GMF_PROTOCOL__ESETTING_DELEGATE.dynamicSet(this, null, 0, newGmfProtocol);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -656,9 +647,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				setRefines((Role)newValue);
 				return;
-			case ComponentPackage.DISCRETE_PORT__GMF_PROTOCOL:
-				setGmfProtocol((CoordinationProtocol)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -691,9 +679,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return;
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				setRefines((Role)null);
-				return;
-			case ComponentPackage.DISCRETE_PORT__GMF_PROTOCOL:
-				setGmfProtocol((CoordinationProtocol)null);
 				return;
 		}
 		super.eUnset(featureID);

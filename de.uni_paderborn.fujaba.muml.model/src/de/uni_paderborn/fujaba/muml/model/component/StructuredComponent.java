@@ -137,7 +137,7 @@ public interface StructuredComponent extends Component {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Gmf Protocols</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getStructuredComponent_GmfProtocols()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
+	 * @model containment="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.embeddedParts.componentType->reject(oclIsUndefined()).ports->select(p | p.oclIsKindOf(DiscretePort)).oclAsType(DiscretePort).gmfProtocol->reject(oclIsUndefined())->asOrderedSet()'"
 	 * @generated
 	 */

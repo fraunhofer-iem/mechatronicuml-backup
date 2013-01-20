@@ -19629,5 +19629,9 @@
         featureName="eType" referenceValue="muml.ecore#//model/protocol/CoordinationProtocol"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols"
         featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols"
+        featureName="changeable" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/gmfProtocol"
+        featureName="changeable" dataValue="false" oldDataValue="true"/>
   </releases>
 </history:History>
