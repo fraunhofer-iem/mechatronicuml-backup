@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.component;
 import org.eclipse.emf.common.util.EList;
 
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.protocol.Role;
 
@@ -30,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.model.protocol.Role;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#isIsDiscreteInOutPort <em>Is Discrete In Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#isMultiPort <em>Multi Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getGmfProtocol <em>Gmf Protocol</em>}</li>
  * </ul>
  * </p>
  *
@@ -145,5 +147,31 @@ public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 	 * @generated
 	 */
 	boolean isMultiPort();
+
+	/**
+	 * Returns the value of the '<em><b>Gmf Protocol</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This reference is needed by GMF to visualize the connection from the discrete port to the coordination protocol within the structured component editor.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Gmf Protocol</em>' reference.
+	 * @see #setGmfProtocol(CoordinationProtocol)
+	 * @see de.uni_paderborn.fujaba.muml.model.component.ComponentPackage#getDiscretePort_GmfProtocol()
+	 * @model transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if refines.oclIsUndefined() then\n\tnull\nelse\n\trefines.coordinationProtocol\nendif'"
+	 * @generated
+	 */
+	CoordinationProtocol getGmfProtocol();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getGmfProtocol <em>Gmf Protocol</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Gmf Protocol</em>' reference.
+	 * @see #getGmfProtocol()
+	 * @generated
+	 */
+	void setGmfProtocol(CoordinationProtocol value);
 
 } // DiscretePort

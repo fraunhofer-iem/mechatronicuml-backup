@@ -21,6 +21,7 @@ import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,6 +34,7 @@ import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.StructuredComponentImpl#getConnectors <em>Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.StructuredComponentImpl#getAllStructuredComponents <em>All Structured Components</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.StructuredComponentImpl#getAllAtomicComponents <em>All Atomic Components</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.StructuredComponentImpl#getGmfProtocols <em>Gmf Protocols</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +80,16 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate ALL_ATOMIC_COMPONENTS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getGmfProtocols() <em>Gmf Protocols</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGmfProtocols()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate GMF_PROTOCOLS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.STRUCTURED_COMPONENT__GMF_PROTOCOLS).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,6 +178,16 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	public EList<CoordinationProtocol> getGmfProtocols() {
+		return (EList<CoordinationProtocol>)GMF_PROTOCOLS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -193,6 +215,8 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 				return ((InternalEList<?>)getAllStructuredComponents()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS:
 				return ((InternalEList<?>)getAllAtomicComponents()).basicRemove(otherEnd, msgs);
+			case ComponentPackage.STRUCTURED_COMPONENT__GMF_PROTOCOLS:
+				return ((InternalEList<?>)getGmfProtocols()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -213,6 +237,8 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 				return getAllStructuredComponents();
 			case ComponentPackage.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS:
 				return getAllAtomicComponents();
+			case ComponentPackage.STRUCTURED_COMPONENT__GMF_PROTOCOLS:
+				return getGmfProtocols();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -234,6 +260,10 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 				getConnectors().clear();
 				getConnectors().addAll((Collection<? extends PortConnector>)newValue);
 				return;
+			case ComponentPackage.STRUCTURED_COMPONENT__GMF_PROTOCOLS:
+				getGmfProtocols().clear();
+				getGmfProtocols().addAll((Collection<? extends CoordinationProtocol>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -251,6 +281,9 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 				return;
 			case ComponentPackage.STRUCTURED_COMPONENT__CONNECTORS:
 				getConnectors().clear();
+				return;
+			case ComponentPackage.STRUCTURED_COMPONENT__GMF_PROTOCOLS:
+				getGmfProtocols().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -272,6 +305,8 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 				return isSetAllStructuredComponents();
 			case ComponentPackage.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS:
 				return isSetAllAtomicComponents();
+			case ComponentPackage.STRUCTURED_COMPONENT__GMF_PROTOCOLS:
+				return GMF_PROTOCOLS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

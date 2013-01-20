@@ -189,10 +189,16 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 	public String toString() {
 		// Return value concatenated with unit in lowercase.
 		StringBuffer sb = new StringBuffer();
-		sb.append(value.toString());
-		sb.append(' ');
-		sb.append(unit.toString().toLowerCase());
-		return sb.toString(); 
+		if (value == null) {
+			sb.append("null");
+		} else {
+			sb.append(value.toString());
+		}
+		if (unit != null) {
+			sb.append(' ');
+			sb.append(unit.toString().toLowerCase());
+		}
+		return sb.toString();
 	}
 
 	/**

@@ -25,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.model.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.model.protocol.Role;
@@ -49,6 +50,7 @@ import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#isIsDiscreteInOutPort <em>Is Discrete In Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#isMultiPort <em>Multi Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl#getGmfProtocol <em>Gmf Protocol</em>}</li>
  * </ul>
  * </p>
  *
@@ -174,6 +176,16 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate MULTI_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.DISCRETE_PORT__MULTI_PORT).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getGmfProtocol() <em>Gmf Protocol</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGmfProtocol()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate GMF_PROTOCOL__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.DISCRETE_PORT__GMF_PROTOCOL).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -508,6 +520,33 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public CoordinationProtocol getGmfProtocol() {
+		return (CoordinationProtocol)GMF_PROTOCOL__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CoordinationProtocol basicGetGmfProtocol() {
+		return (CoordinationProtocol)GMF_PROTOCOL__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGmfProtocol(CoordinationProtocol newGmfProtocol) {
+		GMF_PROTOCOL__ESETTING_DELEGATE.dynamicSet(this, null, 0, newGmfProtocol);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -578,6 +617,9 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return getReceiverMessageBuffer();
 			case ComponentPackage.DISCRETE_PORT__MULTI_PORT:
 				return isMultiPort();
+			case ComponentPackage.DISCRETE_PORT__GMF_PROTOCOL:
+				if (resolve) return getGmfProtocol();
+				return basicGetGmfProtocol();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -614,6 +656,9 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				setRefines((Role)newValue);
 				return;
+			case ComponentPackage.DISCRETE_PORT__GMF_PROTOCOL:
+				setGmfProtocol((CoordinationProtocol)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -646,6 +691,9 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return;
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				setRefines((Role)null);
+				return;
+			case ComponentPackage.DISCRETE_PORT__GMF_PROTOCOL:
+				setGmfProtocol((CoordinationProtocol)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -683,6 +731,8 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return RECEIVER_MESSAGE_BUFFER__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.DISCRETE_PORT__MULTI_PORT:
 				return MULTI_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.DISCRETE_PORT__GMF_PROTOCOL:
+				return GMF_PROTOCOL__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

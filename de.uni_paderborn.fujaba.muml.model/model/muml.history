@@ -19558,5 +19558,76 @@
         featureName="value" dataValue="SameConfiguration" oldDataValue=""/>
     <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//PositionSelectorKind/PREV"
         featureName="literal" dataValue="PREV" oldDataValue=""/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/DiscretePort/gmfProtocol"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/gmfProtocol"
+        featureName="derived" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/gmfProtocol"
+        featureName="transient" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/gmfProtocol"
+        featureName="volatile" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/gmfProtocol"
+        featureName="name" dataValue="gmfProtocol"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/gmfProtocol"
+        featureName="eType" referenceValue="muml.ecore#//model/protocol/CoordinationProtocol"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/gmfProtocol"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/DiscretePort/gmfProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/gmfProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/gmfProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/component/DiscretePort/gmfProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/gmfProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="key" dataValue="documentation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/gmfProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="This reference is needed by GMF to visualize the connection from the discrete port to the coordination protocol within the structured component editor."/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/gmfProtocol"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/DiscretePort/gmfProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/gmfProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/DiscretePort/gmfProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/DiscretePort/gmfProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/gmfProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="derivation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/gmfProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if refines.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;refines.coordinationProtocol&#xA;endif"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent"
+        referenceName="eStructuralFeatures" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols"
+        featureName="derived" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols"
+        featureName="volatile" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols"
+        featureName="transient" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent/gmfProtocols"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols"
+        featureName="name" dataValue="gmfProtocols"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent/gmfProtocols/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="key" dataValue="documentation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="This reference is needed by GMF to visualize the CoordinationProtocols within the StructuredComponent."/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent/gmfProtocols"
+        referenceName="eAnnotations" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//model/component/StructuredComponent/gmfProtocols/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="derivation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.embeddedParts.componentType->reject(oclIsUndefined()).ports->select(p | p.oclIsKindOf(DiscretePort)).oclAsType(DiscretePort).gmfProtocol->reject(oclIsUndefined())->asOrderedSet()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/valuetype/TimeValue/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="// Return value concatenated with unit in lowercase.&#xA;StringBuffer sb = new StringBuffer();&#xA;if (value == null) {&#xA;&#x9;sb.append(&quot;null&quot;);&#xA;} else {&#xA;&#x9;sb.append(value.toString());&#xA;}&#xA;if (unit != null) {&#xA;&#x9;sb.append(' ');&#xA;&#x9;sb.append(unit.toString().toLowerCase());&#xA;}&#xA;return sb.toString();"
+        oldDataValue="// Return value concatenated with unit in lowercase.&#xA;StringBuffer sb = new StringBuffer();&#xA;sb.append(value.toString());&#xA;sb.append(' ');&#xA;sb.append(unit.toString().toLowerCase());&#xA;return sb.toString(); "/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols"
+        featureName="eType" referenceValue="muml.ecore#//model/protocol/CoordinationProtocol"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//model/component/StructuredComponent/gmfProtocols"
+        featureName="upperBound" dataValue="-1" oldDataValue="1"/>
   </releases>
 </history:History>

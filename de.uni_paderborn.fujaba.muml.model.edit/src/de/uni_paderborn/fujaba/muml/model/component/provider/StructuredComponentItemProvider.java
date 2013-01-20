@@ -25,6 +25,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentFactory;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.component.StructuredComponent} object.
@@ -102,6 +103,7 @@ public class StructuredComponentItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__EMBEDDED_PARTS);
 			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__CONNECTORS);
+			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__GMF_PROTOCOLS);
 		}
 		return childrenFeatures;
 	}
@@ -162,6 +164,7 @@ public class StructuredComponentItemProvider
 				return;
 			case ComponentPackage.STRUCTURED_COMPONENT__EMBEDDED_PARTS:
 			case ComponentPackage.STRUCTURED_COMPONENT__CONNECTORS:
+			case ComponentPackage.STRUCTURED_COMPONENT__GMF_PROTOCOLS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -193,6 +196,11 @@ public class StructuredComponentItemProvider
 			(createChildParameter
 				(ComponentPackage.Literals.STRUCTURED_COMPONENT__CONNECTORS,
 				 ComponentFactory.eINSTANCE.createDelegationConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentPackage.Literals.STRUCTURED_COMPONENT__GMF_PROTOCOLS,
+				 ProtocolFactory.eINSTANCE.createCoordinationProtocol()));
 	}
 
 }

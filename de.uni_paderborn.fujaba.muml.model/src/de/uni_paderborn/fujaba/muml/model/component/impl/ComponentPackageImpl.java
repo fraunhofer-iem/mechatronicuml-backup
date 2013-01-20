@@ -421,6 +421,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDiscretePort_GmfProtocol() {
+		return (EReference)discretePortEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getComponentPart() {
 		return componentPartEClass;
 	}
@@ -540,6 +549,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 */
 	public EReference getStructuredComponent_AllAtomicComponents() {
 		return (EReference)structuredComponentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStructuredComponent_GmfProtocols() {
+		return (EReference)structuredComponentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -777,6 +795,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEAttribute(discretePortEClass, DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT);
 		createEReference(discretePortEClass, DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER);
 		createEAttribute(discretePortEClass, DISCRETE_PORT__MULTI_PORT);
+		createEReference(discretePortEClass, DISCRETE_PORT__GMF_PROTOCOL);
 
 		componentPartEClass = createEClass(COMPONENT_PART);
 		createEReference(componentPartEClass, COMPONENT_PART__COMPONENT_TYPE);
@@ -814,6 +833,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__CONNECTORS);
 		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__ALL_STRUCTURED_COMPONENTS);
 		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS);
+		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__GMF_PROTOCOLS);
 
 		directedTypedPortEClass = createEClass(DIRECTED_TYPED_PORT);
 		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__KIND);
@@ -907,6 +927,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEAttribute(getDiscretePort_IsDiscreteInOutPort(), ecorePackage.getEBoolean(), "isDiscreteInOutPort", "false", 0, 1, DiscretePort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscretePort_ReceiverMessageBuffer(), theProtocolPackage.getMessageBuffer(), null, "receiverMessageBuffer", null, 0, -1, DiscretePort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDiscretePort_MultiPort(), theEcorePackage.getEBoolean(), "multiPort", "", 0, 1, DiscretePort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscretePort_GmfProtocol(), theProtocolPackage.getCoordinationProtocol(), null, "gmfProtocol", null, 0, 1, DiscretePort.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentPartEClass, ComponentPart.class, "ComponentPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentPart_ComponentType(), this.getComponent(), this.getComponent_ReferencingComponentParts(), "componentType", null, 1, 1, ComponentPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -946,6 +967,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getStructuredComponent_Connectors(), this.getPortConnector(), this.getPortConnector_ParentComponent(), "connectors", null, 0, -1, StructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStructuredComponent_AllStructuredComponents(), this.getStructuredComponent(), null, "allStructuredComponents", null, 0, -1, StructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getStructuredComponent_AllAtomicComponents(), this.getAtomicComponent(), null, "allAtomicComponents", null, 0, -1, StructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getStructuredComponent_GmfProtocols(), theProtocolPackage.getCoordinationProtocol(), null, "gmfProtocols", null, 0, -1, StructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		addEOperation(structuredComponentEClass, theEcorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1002,7 +1024,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "AtLeastOneMessageType DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole"
-		   });														
+		   });																
 		addAnnotation
 		  (componentPartEClass, 
 		   source, 
@@ -1032,7 +1054,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"
-		   });													
+		   });															
 	}
 
 	/**
@@ -1095,6 +1117,12 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "if not (self.cardinality.oclIsUndefined()) then\r\n\t(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity\r\nelse\r\n\tfalse\r\nendif\r\n\r\n"
+		   });			
+		addAnnotation
+		  (getDiscretePort_GmfProtocol(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if refines.oclIsUndefined() then\n\tnull\nelse\n\trefines.coordinationProtocol\nendif"
 		   });				
 		addAnnotation
 		  (componentPartEClass, 
@@ -1203,7 +1231,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "self.allStructuredComponents->collect(\n\tembeddedParts->select(\n\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t)->collect(componentType.oclAsType(component::AtomicComponent))\n)->asOrderedSet()"
-		   });					
+		   });				
+		addAnnotation
+		  (getStructuredComponent_GmfProtocols(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.embeddedParts.componentType->reject(oclIsUndefined()).ports->select(p | p.oclIsKindOf(DiscretePort)).oclAsType(DiscretePort).gmfProtocol->reject(oclIsUndefined())->asOrderedSet()"
+		   });				
 		addAnnotation
 		  (getDirectedTypedPort_OutPort(), 
 		   source, 

@@ -110,7 +110,7 @@ public interface TimeValue extends ExtendableElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='// Return value concatenated with unit in lowercase.\nStringBuffer sb = new StringBuffer();\nsb.append(value.toString());\nsb.append(\' \');\nsb.append(unit.toString().toLowerCase());\nreturn sb.toString(); '"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='// Return value concatenated with unit in lowercase.\nStringBuffer sb = new StringBuffer();\nif (value == null) {\n\tsb.append(\"null\");\n} else {\n\tsb.append(value.toString());\n}\nif (unit != null) {\n\tsb.append(\' \');\n\tsb.append(unit.toString().toLowerCase());\n}\nreturn sb.toString();'"
 	 * @generated
 	 */
 	String toString();

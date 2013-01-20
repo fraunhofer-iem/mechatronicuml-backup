@@ -713,13 +713,22 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__MULTI_PORT = PORT_FEATURE_COUNT + 11;
 
 	/**
+	 * The feature id for the '<em><b>Gmf Protocol</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__GMF_PROTOCOL = PORT_FEATURE_COUNT + 12;
+
+	/**
 	 * The number of structural features of the '<em>Discrete Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 12;
+	int DISCRETE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 13;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl <em>Part</em>}' class.
@@ -958,13 +967,22 @@ public interface ComponentPackage extends EPackage {
 	int STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS = COMPONENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Gmf Protocols</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_COMPONENT__GMF_PROTOCOLS = COMPONENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Structured Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 4;
+	int STRUCTURED_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.StaticStructuredComponentImpl <em>Static Structured Component</em>}' class.
@@ -1083,6 +1101,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATIC_STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS = STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS;
+
+	/**
+	 * The feature id for the '<em><b>Gmf Protocols</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_STRUCTURED_COMPONENT__GMF_PROTOCOLS = STRUCTURED_COMPONENT__GMF_PROTOCOLS;
 
 	/**
 	 * The number of structural features of the '<em>Static Structured Component</em>' class.
@@ -1830,6 +1857,17 @@ public interface ComponentPackage extends EPackage {
 	EAttribute getDiscretePort_MultiPort();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getGmfProtocol <em>Gmf Protocol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Gmf Protocol</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.DiscretePort#getGmfProtocol()
+	 * @see #getDiscretePort()
+	 * @generated
+	 */
+	EReference getDiscretePort_GmfProtocol();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.ComponentPart <em>Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1979,6 +2017,17 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getStructuredComponent_AllAtomicComponents();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getGmfProtocols <em>Gmf Protocols</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Gmf Protocols</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.component.StructuredComponent#getGmfProtocols()
+	 * @see #getStructuredComponent()
+	 * @generated
+	 */
+	EReference getStructuredComponent_GmfProtocols();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort <em>Directed Typed Port</em>}'.
@@ -2353,6 +2402,14 @@ public interface ComponentPackage extends EPackage {
 		EAttribute DISCRETE_PORT__MULTI_PORT = eINSTANCE.getDiscretePort_MultiPort();
 
 		/**
+		 * The meta object literal for the '<em><b>Gmf Protocol</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DISCRETE_PORT__GMF_PROTOCOL = eINSTANCE.getDiscretePort_GmfProtocol();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPartImpl <em>Part</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2469,6 +2526,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS = eINSTANCE.getStructuredComponent_AllAtomicComponents();
+
+		/**
+		 * The meta object literal for the '<em><b>Gmf Protocols</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRUCTURED_COMPONENT__GMF_PROTOCOLS = eINSTANCE.getStructuredComponent_GmfProtocols();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.component.impl.DirectedTypedPortImpl <em>Directed Typed Port</em>}' class.
