@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="componenteditor">
   <nodes
-      name="Component">
+      name="StructuredComponent">
     <figure
         href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#StructuredComponentFigure"/>
     <facets
@@ -49,9 +49,9 @@
     </facets>
   </nodes>
   <nodes
-      name="CoordinationPattern">
+      name="CoordinationProtocol">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.patterneditor.diagram/model/pattern.gmfgraph#CoordinationPatternFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#CoordinationPatternFigure"/>
   </nodes>
   <connections
       name="Delegation">
@@ -64,9 +64,9 @@
         href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#ConnectorFigure"/>
   </connections>
   <connections
-      name="Refinement">
+      name="RolePatternConnection">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.patterneditor.diagram/model/pattern.gmfgraph#RolePatternFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#RolePatternFigure"/>
   </connections>
   <compartments
       name="ComponentCompartment">
@@ -92,9 +92,25 @@
         href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.0/@accessors.0"/>
   </labels>
   <labels
-      name="PortExternalLabel"
+      name="PortRefinementLabel"
       elementIcon="false">
     <figure
         href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortExternalLabelFigure"/>
+  </labels>
+  <labels
+      name="RolePatternLabel"
+      elementIcon="false">
+    <figure
+        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#RolePatternFigure"/>
+    <accessor
+        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#//@figures.0/@descriptors.1/@accessors.0"/>
+  </labels>
+  <labels
+      name="CoordinationProtocolName"
+      elementIcon="false">
+    <figure
+        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#CoordinationPatternFigure"/>
+    <accessor
+        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#//@figures.0/@descriptors.0/@accessors.0"/>
   </labels>
 </gmfgraph:Canvas>

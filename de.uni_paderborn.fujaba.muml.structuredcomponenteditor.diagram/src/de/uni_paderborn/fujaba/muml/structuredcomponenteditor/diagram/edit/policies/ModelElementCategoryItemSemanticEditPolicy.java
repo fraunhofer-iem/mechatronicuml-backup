@@ -10,14 +10,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 /**
  * @generated
  */
-public class StructuredComponentDiagramItemSemanticEditPolicy
+public class ModelElementCategoryItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public StructuredComponentDiagramItemSemanticEditPolicy() {
+	public ModelElementCategoryItemSemanticEditPolicy() {
 		super(
 				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.ModelElementCategory_1000);
 	}

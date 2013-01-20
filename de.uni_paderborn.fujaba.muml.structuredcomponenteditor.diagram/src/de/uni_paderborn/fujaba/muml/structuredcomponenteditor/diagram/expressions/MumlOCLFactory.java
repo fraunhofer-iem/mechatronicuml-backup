@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression[9];
+		this.expressions = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression[13];
 	}
 
 	/**
@@ -58,7 +58,11 @@ public class MumlOCLFactory {
 					"1", //$NON-NLS-1$
 					"1", //$NON-NLS-1$
 					"\'port\'", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
+					"1", //$NON-NLS-1$
+					"\'port\'", //$NON-NLS-1$
 					"let partName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nlet compName : String = if self.componentType.oclIsUndefined() then \'null\' else self.componentType.name endif in\nlet lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then \'null\' else cardinality.lowerBound.toString() endif in\nlet upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then \'null\' else cardinality.upperBound.toString() endif in\r\npartName.concat(\' : \').concat(compName).concat(\' [\').concat(lowerBound).concat(\'..\').concat(upperBound).concat(\']\')", //$NON-NLS-1$
+					"if refines.oclIsUndefined() then \'\' else \': \'.concat(\n\tif refines.name.oclIsUndefined() then \'\' else refines.name endif\n) endif", //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

@@ -30,7 +30,13 @@
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="RolePatternFigure"
-          lineKind="LINE_DASH"/>
+          lineKind="LINE_DASH">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="RolePatternLabel"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
 </gmfgraph:Canvas>

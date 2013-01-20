@@ -347,6 +347,21 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public boolean canCreateDiscretePortGmfProtocol_4005(
+				de.uni_paderborn.fujaba.muml.model.component.DiscretePort source,
+				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol target) {
+			if (source != null) {
+				if (source.getGmfProtocol() != null) {
+					return false;
+				}
+			}
+
+			return canExistDiscretePortGmfProtocol_4005(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canExistAssemblyConnector_4001(
 				de.uni_paderborn.fujaba.muml.model.component.StructuredComponent container,
 				de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector linkInstance,
@@ -363,6 +378,15 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.model.component.DelegationConnector linkInstance,
 				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
 				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistDiscretePortGmfProtocol_4005(
+				de.uni_paderborn.fujaba.muml.model.component.DiscretePort source,
+				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol target) {
 			return true;
 		}
 	}

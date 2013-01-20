@@ -2,11 +2,16 @@ package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.ed
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.common.edit.parts.DiscretePortBehavior;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
+import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePort2EditPart;
 
 /**
@@ -72,6 +77,19 @@ public class CustomDiscretePort2EditPart extends DiscretePort2EditPart {
 	 */
 	@Override
 	protected final void handleNotificationEvent(final Notification notification) {
+		if (notification.getFeature() == ComponentPackage.Literals.DISCRETE_PORT__GMF_PROTOCOL) {
+			View view = (View) getNotationView().eContainer().eContainer();
+			if (view.getElement() instanceof StructuredComponent) {
+				InternalEObject object = (InternalEObject) view.getElement();
+				final EReference ref = ComponentPackage.Literals.STRUCTURED_COMPONENT__GMF_PROTOCOLS;
+				Object value = object.eGet(ref);
+				// Notify
+				object.eNotify(new ENotificationImpl(object,
+						Notification.ADD_MANY, ref, value, value));
+				
+			}
+
+		}
 		getBehavior().handleNotificationEvent(notification);
 		super.handleNotificationEvent(notification);
 	}

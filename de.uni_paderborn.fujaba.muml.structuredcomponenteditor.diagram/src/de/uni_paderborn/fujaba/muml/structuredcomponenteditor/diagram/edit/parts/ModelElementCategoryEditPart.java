@@ -16,7 +16,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class StructuredComponentDiagramEditPart extends DiagramEditPart {
+public class ModelElementCategoryEditPart extends DiagramEditPart {
 
 	/**
 	 * @generated
@@ -31,7 +31,7 @@ public class StructuredComponentDiagramEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public StructuredComponentDiagramEditPart(View view) {
+	public ModelElementCategoryEditPart(View view) {
 		super(view);
 	}
 
@@ -42,12 +42,12 @@ public class StructuredComponentDiagramEditPart extends DiagramEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.StructuredComponentDiagramItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.ModelElementCategoryItemSemanticEditPolicy());
 
 		// Not installing the EditPolicy with the key EditPolicyRoles.CANONICAL_ROLE guarantees that the "Delete from Diagram" Action is visible. 
 		installEditPolicy(
 				"CustomCanonical",
-				new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.StructuredComponentDiagramCanonicalEditPolicy(
+				new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.ModelElementCategoryCanonicalEditPolicy(
 						false));
 
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);

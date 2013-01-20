@@ -34,15 +34,15 @@ import de.fujaba.modelinstance.ModelinstancePackage;
 /**
  * @generated
  */
-public class StructuredComponentDiagramCanonicalEditPolicy extends
+public class ModelElementCategoryCanonicalEditPolicy extends
 		CanonicalEditPolicy {
 
 	private boolean canonicalNodes = true;
 
-	public StructuredComponentDiagramCanonicalEditPolicy() {
+	public ModelElementCategoryCanonicalEditPolicy() {
 	}
 
-	public StructuredComponentDiagramCanonicalEditPolicy(boolean canonicalNodes) {
+	public ModelElementCategoryCanonicalEditPolicy(boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
 
@@ -276,7 +276,7 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 	 */
 	private Collection<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlLinkDescriptor> collectAllLinks(
 			View view, Map<EObject, View> domain2NotationMap) {
-		if (!de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.MODEL_ID
+		if (!de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
 				.equals(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
 						.getModelID(view))) {
 			return Collections.emptyList();
@@ -284,7 +284,7 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlLinkDescriptor>();
 		switch (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StructuredComponentDiagramEditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramUpdater
 						.getModelElementCategory_1000ContainedLinks(view));
@@ -365,6 +365,17 @@ public class StructuredComponentDiagramCanonicalEditPolicy extends
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramUpdater
 						.getContinuousPort_3015ContainedLinks(view));
+			}
+			if (!domain2NotationMap.containsKey(view.getElement())
+					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
+				domain2NotationMap.put(view.getElement(), view);
+			}
+			break;
+		}
+		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramUpdater
+						.getCoordinationProtocol_3016ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$

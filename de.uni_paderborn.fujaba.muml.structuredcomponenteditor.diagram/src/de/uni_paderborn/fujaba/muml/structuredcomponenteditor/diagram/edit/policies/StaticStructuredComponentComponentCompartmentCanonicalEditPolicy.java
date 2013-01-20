@@ -2,9 +2,11 @@ package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.poli
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
@@ -27,6 +29,11 @@ import org.eclipse.gmf.runtime.notation.View;
 public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 		extends CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
+
+	/**
+	 * @generated
+	 */
+	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
 	public StaticStructuredComponentComponentCompartmentCanonicalEditPolicy() {
 	}
@@ -51,9 +58,17 @@ public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 	/**
 	 * @generated
 	 */
-	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
-				.getStructuredComponent_EmbeddedParts();
+	protected Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
+			myFeaturesToSynchronize
+					.add(de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+							.getStructuredComponent_EmbeddedParts());
+			myFeaturesToSynchronize
+					.add(de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+							.getStructuredComponent_GmfProtocols());
+		}
+		return myFeaturesToSynchronize;
 	}
 
 	/**
@@ -115,8 +130,10 @@ public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
+		int visualID = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
+		return visualID == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID
+				|| visualID == de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID;
 	}
 
 	/**

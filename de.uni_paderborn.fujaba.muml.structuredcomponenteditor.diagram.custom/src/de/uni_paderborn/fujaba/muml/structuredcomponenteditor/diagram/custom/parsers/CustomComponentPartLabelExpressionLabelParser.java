@@ -1,9 +1,9 @@
 package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.parsers;
 
-import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser5009;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.ComponentPartLabelExpressionLabelParser5017;
 
 public class CustomComponentPartLabelExpressionLabelParser extends
-		ComponentPartLabelExpressionLabelParser5009 {
+		ComponentPartLabelExpressionLabelParser5017 {
 
 //	@Override
 //	protected IStatus updateValues(EObject target, String newString)

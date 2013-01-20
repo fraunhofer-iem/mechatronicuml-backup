@@ -3,7 +3,7 @@ package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.help
 /**
  * @generated
  */
-public class AssemblyEditHelper
+public class ModelElementCategoryEditHelper
 		extends
 		de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.MumlBaseEditHelper {
 }

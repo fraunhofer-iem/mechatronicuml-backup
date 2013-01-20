@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.muml.model.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
@@ -190,10 +191,14 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected DiscretePortImpl() {
 		super();
+		
+		// Install notification adapters
+		DerivedAttributeAdapter protocolAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.DISCRETE_PORT__GMF_PROTOCOL);
+		protocolAdapter.addNavigatedDependency(ComponentPackage.Literals.DISCRETE_PORT__REFINES, ProtocolPackage.Literals.ROLE__COORDINATION_PROTOCOL);
 	}
 
 	/**

@@ -7,7 +7,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.common.edit.parts.HybridPortBehavior;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
-import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPort2EditPart;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortEditPart;
 
 /**
  * A customized PortEditPart for hybrid ports.
@@ -15,7 +15,7 @@ import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts
  * @author bingo
  * 
  */
-public class CustomHybridPort2EditPart extends HybridPort2EditPart {
+public class CustomHybridPortEditPart extends HybridPortEditPart {
 
 	/**
 	 * All behavior is delegated, to reduce duplicate code.
@@ -28,7 +28,7 @@ public class CustomHybridPort2EditPart extends HybridPort2EditPart {
 	 * @param view
 	 *            The graphical model.
 	 */
-	public CustomHybridPort2EditPart(View view) {
+	public CustomHybridPortEditPart(View view) {
 		super(view);
 	}
 

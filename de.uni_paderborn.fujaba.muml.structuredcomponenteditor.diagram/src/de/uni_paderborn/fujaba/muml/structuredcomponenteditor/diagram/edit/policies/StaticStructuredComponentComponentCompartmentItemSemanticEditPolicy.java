@@ -27,6 +27,11 @@ public class StaticStructuredComponentComponentCompartmentItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.commands.ComponentPartCreateCommand(
 					req));
 		}
+		if (de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlElementTypes.CoordinationProtocol_3016 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.commands.CoordinationProtocolCreateCommand(
+					req));
+		}
 		return super.getCreateCommand(req);
 	}
 
