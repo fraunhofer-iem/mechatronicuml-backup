@@ -37,7 +37,7 @@ public class CustomDiscretePortEditPart extends DiscretePortEditPart {
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		CustomPortFigure portFigure = new CustomPortFigure(getMapMode());
+		CustomPortFigure portFigure = new CustomPortFigure();
 		primaryShape = portFigure;
 		getBehavior().setFigure(portFigure);
 		return primaryShape;

@@ -99,7 +99,7 @@
           </children>
           <children
               xsi:type="gmfgraph:FigureRef"
-              figure="//@figures.0/@descriptors.5/@actualFigure"/>
+              figure="//@figures.0/@descriptors.6/@actualFigure"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -144,7 +144,7 @@
               equalWidth="false"/>
           <children
               xsi:type="gmfgraph:FigureRef"
-              figure="//@figures.0/@descriptors.5/@actualFigure"/>
+              figure="//@figures.0/@descriptors.6/@actualFigure"/>
         </children>
         <children
             xsi:type="gmfgraph:Rectangle"
@@ -348,6 +348,13 @@
           figure="//@figures.0/@descriptors.4/@actualFigure/@children.1/@children.2"/>
       <accessors
           figure="//@figures.0/@descriptors.4/@actualFigure/@children.1/@children.3"/>
+    </descriptors>
+    <descriptors
+        name="PortFigureRef">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="PortFigure"
+          qualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure"/>
     </descriptors>
     <descriptors
         name="ComponentIconFigure">

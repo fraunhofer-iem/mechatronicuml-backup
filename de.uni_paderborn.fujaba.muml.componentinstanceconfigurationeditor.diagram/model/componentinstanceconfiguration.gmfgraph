@@ -61,7 +61,7 @@
       name="Port"
       affixedParentSide="NORTH">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigureRef"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -97,7 +97,7 @@
   <nodes
       name="InnerPort">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigureRef"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize

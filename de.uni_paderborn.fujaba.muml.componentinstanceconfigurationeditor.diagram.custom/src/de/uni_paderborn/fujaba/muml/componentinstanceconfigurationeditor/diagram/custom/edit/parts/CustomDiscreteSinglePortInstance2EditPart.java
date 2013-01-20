@@ -46,7 +46,7 @@ public class CustomDiscreteSinglePortInstance2EditPart extends DiscreteSinglePor
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		CustomPortFigure portFigure = new CustomPortFigure(getMapMode());
+		CustomPortFigure portFigure = new CustomPortFigure();
 		primaryShape = portFigure;
 		getDelegation().setFigure(portFigure);
 		return primaryShape;

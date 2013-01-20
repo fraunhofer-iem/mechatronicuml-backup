@@ -131,10 +131,12 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy
 						continue;
 					}
 				}
+
 				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
-						getEditingDomain(), node.getElement(), false))); // directlyOwned: true
+						getEditingDomain(), node.getElement(), false)));
 				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
+
 				break;
 			case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it
@@ -181,10 +183,12 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy
 						continue;
 					}
 				}
+
 				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
-						getEditingDomain(), node.getElement(), false))); // directlyOwned: true
+						getEditingDomain(), node.getElement(), false)));
 				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
+
 				break;
 			case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it
@@ -231,10 +235,12 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy
 						continue;
 					}
 				}
+
 				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
-						getEditingDomain(), node.getElement(), false))); // directlyOwned: true
+						getEditingDomain(), node.getElement(), false)));
 				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
+
 				break;
 			case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it
@@ -281,10 +287,12 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy
 						continue;
 					}
 				}
+
 				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
-						getEditingDomain(), node.getElement(), false))); // directlyOwned: true
+						getEditingDomain(), node.getElement(), false)));
 				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
+
 				break;
 			case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart.VISUAL_ID:
 				for (Iterator<?> cit = node.getChildren().iterator(); cit
@@ -293,11 +301,13 @@ public class StructuredComponentInstance2ItemSemanticEditPolicy
 					switch (de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.part.MumlVisualIDRegistry
 							.getVisualID(cnode)) {
 					case de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ComponentInstanceConfigurationEditPart.VISUAL_ID:
+
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false))); // directlyOwned: true
+										cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
+
 						break;
 					}
 				}

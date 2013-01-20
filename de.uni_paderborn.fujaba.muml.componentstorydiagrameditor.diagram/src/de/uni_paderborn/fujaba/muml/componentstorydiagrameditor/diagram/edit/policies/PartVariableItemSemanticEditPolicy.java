@@ -121,10 +121,12 @@ public class PartVariableItemSemanticEditPolicy
 						continue;
 					}
 				}
+
 				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
-						getEditingDomain(), node.getElement(), false))); // directlyOwned: true
+						getEditingDomain(), node.getElement(), false)));
 				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
+
 				break;
 			case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.SinglePortVariable2EditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getTargetEdges().iterator(); it
@@ -171,10 +173,12 @@ public class PartVariableItemSemanticEditPolicy
 						continue;
 					}
 				}
+
 				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
-						getEditingDomain(), node.getElement(), false))); // directlyOwned: true
+						getEditingDomain(), node.getElement(), false)));
 				// don't need explicit deletion of node as parent's view deletion would clean child views as well 
 				// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), node));
+
 				break;
 			}
 		}

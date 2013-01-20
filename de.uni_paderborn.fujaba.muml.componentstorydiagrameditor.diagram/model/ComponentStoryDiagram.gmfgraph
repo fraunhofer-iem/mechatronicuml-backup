@@ -211,7 +211,7 @@
                   verticalAlignment="BEGINNING"
                   horizontalAlignment="END"/>
               <figure
-                  xsi:type="gmfgraph:Rectangle"
+                  xsi:type="gmfgraph:CustomFigure"
                   href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.5/@actualFigure"/>
             </children>
           </children>
@@ -362,7 +362,7 @@
             <children
                 xsi:type="gmfgraph:FigureRef">
               <figure
-                  xsi:type="gmfgraph:Rectangle"
+                  xsi:type="gmfgraph:CustomFigure"
                   href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.5/@actualFigure"/>
             </children>
           </children>
@@ -539,7 +539,7 @@
       name="SinglePortVariable"
       affixedParentSide="NORTH">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigureRef"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
@@ -550,7 +550,7 @@
   <nodes
       name="InnerSinglePortVariable">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigureRef"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize

@@ -28,7 +28,7 @@ public class CustomSinglePortVariable3EditPart extends
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		CustomPortFigure portFigure = new CustomPortFigure(getMapMode());
+		CustomPortFigure portFigure = new CustomPortFigure();
 		primaryShape = portFigure;
 		getDelegation().setFigure(portFigure);
 		return primaryShape;

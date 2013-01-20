@@ -40,7 +40,7 @@
       name="Port"
       affixedParentSide="SOUTH">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortFigureRef"/>
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize

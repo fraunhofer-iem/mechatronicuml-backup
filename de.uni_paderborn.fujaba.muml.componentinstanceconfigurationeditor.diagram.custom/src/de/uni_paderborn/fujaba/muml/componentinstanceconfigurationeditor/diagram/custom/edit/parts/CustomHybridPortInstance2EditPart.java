@@ -43,7 +43,7 @@ public class CustomHybridPortInstance2EditPart extends HybridPortInstance2EditPa
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		CustomPortFigure portFigure = new CustomPortFigure(getMapMode());
+		CustomPortFigure portFigure = new CustomPortFigure();
 		primaryShape = portFigure;
 		getDelegation().setFigure(portFigure);
 		return primaryShape;

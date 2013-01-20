@@ -43,7 +43,7 @@ public class CustomDiscreteMultiPortInstanceEditPart extends DiscreteMultiPortIn
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		CustomPortFigure portFigure = new CustomPortFigure(getMapMode());
+		CustomPortFigure portFigure = new CustomPortFigure();
 		primaryShape = portFigure;
 		getDelegation().setFigure(portFigure);
 		return primaryShape;

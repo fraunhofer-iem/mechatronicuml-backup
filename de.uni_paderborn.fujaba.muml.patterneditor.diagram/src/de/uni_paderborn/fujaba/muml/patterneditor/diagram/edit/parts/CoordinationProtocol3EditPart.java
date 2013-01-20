@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 
 /**
@@ -70,9 +71,34 @@ public class CoordinationProtocol3EditPart extends ConnectionNodeEditPart
 		/**
 		 * @generated
 		 */
+		private WrappingLabel fFigureRolePatternLabel;
+
+		/**
+		 * @generated
+		 */
 		public RolePatternFigure() {
 			this.setLineStyle(Graphics.LINE_DASH);
 
+			createContents();
+		}
+
+		/**
+		 * @generated
+		 */
+		private void createContents() {
+
+			fFigureRolePatternLabel = new WrappingLabel();
+			fFigureRolePatternLabel.setText("");
+
+			this.add(fFigureRolePatternLabel);
+
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureRolePatternLabel() {
+			return fFigureRolePatternLabel;
 		}
 
 	}

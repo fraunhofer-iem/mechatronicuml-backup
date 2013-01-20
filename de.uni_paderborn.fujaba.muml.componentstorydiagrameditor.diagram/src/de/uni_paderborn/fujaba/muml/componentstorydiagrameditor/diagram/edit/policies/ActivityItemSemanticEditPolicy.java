@@ -91,11 +91,13 @@ public class ActivityItemSemanticEditPolicy
 								continue;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false))); // directlyOwned: true
+										cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
+
 						break;
 					case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.InitialNodeEditPart.VISUAL_ID:
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
@@ -124,11 +126,13 @@ public class ActivityItemSemanticEditPolicy
 								continue;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false))); // directlyOwned: true
+										cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
+
 						break;
 					case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.JunctionNodeEditPart.VISUAL_ID:
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
@@ -157,11 +161,13 @@ public class ActivityItemSemanticEditPolicy
 								continue;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false))); // directlyOwned: true
+										cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
+
 						break;
 					case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityFinalNodeEditPart.VISUAL_ID:
 						for (Iterator<?> it = cnode.getTargetEdges().iterator(); it
@@ -190,11 +196,13 @@ public class ActivityItemSemanticEditPolicy
 								continue;
 							}
 						}
+
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false))); // directlyOwned: true
+										cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
+
 						break;
 					}
 				}

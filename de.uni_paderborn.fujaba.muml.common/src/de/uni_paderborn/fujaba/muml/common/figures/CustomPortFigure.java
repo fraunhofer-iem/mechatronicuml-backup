@@ -12,6 +12,7 @@ import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.draw2d.ui.mapmode.IMapMode;
+import org.eclipse.gmf.runtime.draw2d.ui.mapmode.MapModeTypes;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -86,29 +87,19 @@ public class CustomPortFigure extends RectangleFigure {
 	 * @generated
 	 */
 	private RectangleFigure fFigureOutPolygonContainer;
+
 	/**
 	 * @generated
 	 */
 	private RectangleFigure fFigureInOutPolygonContainer;
 
 	/**
-	 * The EditPart's MapMode.
-	 */
-	private IMapMode mapMode;
-
-	/**
 	 * Constructs this CustomPortFigure.
-	 * 
-	 * @param mapMode
-	 *            The EditPart's MapMode.
-	 * 
-	 * @generated NOT
 	 */
-	public CustomPortFigure(IMapMode mapMode) {
+	public CustomPortFigure() {
 		this.setLayoutManager(new StackLayout());
 		this.setFill(false);
 		this.setOutline(false);
-		this.mapMode = mapMode;
 		createContents();
 		fFigureHardwareTypeLabel.setAlignment(PositionConstants.CENTER);
 		setMulti(false);
@@ -238,28 +229,15 @@ public class CustomPortFigure extends RectangleFigure {
 		getFigureInOutPolygon().setRotationInDegrees(degrees);
 	}
 
-	/**
-	 * Returns the EditPart's MapMode.
-	 * 
-	 * @return the MapMode to use.
-	 */
-	private IMapMode getMapMode() {
-		return mapMode;
-	}
 
-	/**
-	 * @generated
-	 */
-	/**
-	 * @generated
-	 */
 	private void createContents() {
+		IMapMode mapMode = MapModeTypes.IDENTITY_MM; // MapModeUtil.getMapMode(this);
 
 		RectangleFigure aux10 = new RectangleFigure();
 		aux10.setFill(false);
 		aux10.setOutline(false);
-		aux10.setBorder(new MarginBorder(getMapMode().DPtoLP(0), getMapMode()
-				.DPtoLP(3), getMapMode().DPtoLP(3), getMapMode().DPtoLP(0)));
+		aux10.setBorder(new MarginBorder(mapMode.DPtoLP(0), mapMode
+				.DPtoLP(3), mapMode.DPtoLP(3), mapMode.DPtoLP(0)));
 
 		this.add(aux10);
 		aux10.setLayoutManager(new StackLayout());
@@ -271,9 +249,9 @@ public class CustomPortFigure extends RectangleFigure {
 		fFigureInnerRectContainer = new RectangleFigure();
 		fFigureInnerRectContainer.setFill(false);
 		fFigureInnerRectContainer.setOutline(false);
-		fFigureInnerRectContainer.setBorder(new MarginBorder(getMapMode()
-				.DPtoLP(0), getMapMode().DPtoLP(0), getMapMode().DPtoLP(0),
-				getMapMode().DPtoLP(0)));
+		fFigureInnerRectContainer.setBorder(new MarginBorder(mapMode
+				.DPtoLP(0), mapMode.DPtoLP(0), mapMode.DPtoLP(0),
+				mapMode.DPtoLP(0)));
 
 		this.add(fFigureInnerRectContainer);
 		fFigureInnerRectContainer.setLayoutManager(new StackLayout());
@@ -285,20 +263,20 @@ public class CustomPortFigure extends RectangleFigure {
 		fFigureInPolygonContainer = new RectangleFigure();
 		fFigureInPolygonContainer.setFill(false);
 		fFigureInPolygonContainer.setOutline(false);
-		fFigureInPolygonContainer.setBorder(new MarginBorder(getMapMode()
-				.DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
-				getMapMode().DPtoLP(5)));
+		fFigureInPolygonContainer.setBorder(new MarginBorder(mapMode
+				.DPtoLP(5), mapMode.DPtoLP(5), mapMode.DPtoLP(5),
+				mapMode.DPtoLP(5)));
 
 		fFigureInnerRectContainer.add(fFigureInPolygonContainer);
 		fFigureInPolygonContainer.setLayoutManager(new StackLayout());
 
 		fFigureInPolygon = new ScalableRotableTriangleShape();
-		fFigureInPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
-				getMapMode().DPtoLP(0)));
-		fFigureInPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-				getMapMode().DPtoLP(1)));
-		fFigureInPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
-				getMapMode().DPtoLP(2)));
+		fFigureInPolygon.addPoint(new Point(mapMode.DPtoLP(0),
+				mapMode.DPtoLP(0)));
+		fFigureInPolygon.addPoint(new Point(mapMode.DPtoLP(1),
+				mapMode.DPtoLP(1)));
+		fFigureInPolygon.addPoint(new Point(mapMode.DPtoLP(0),
+				mapMode.DPtoLP(2)));
 		fFigureInPolygon.setFill(true);
 		fFigureInPolygon.setOutline(false);
 		fFigureInPolygon.setBackgroundColor(ColorConstants.black);
@@ -308,20 +286,20 @@ public class CustomPortFigure extends RectangleFigure {
 		fFigureOutPolygonContainer = new RectangleFigure();
 		fFigureOutPolygonContainer.setFill(false);
 		fFigureOutPolygonContainer.setOutline(false);
-		fFigureOutPolygonContainer.setBorder(new MarginBorder(getMapMode()
-				.DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
-				getMapMode().DPtoLP(5)));
+		fFigureOutPolygonContainer.setBorder(new MarginBorder(mapMode
+				.DPtoLP(5), mapMode.DPtoLP(5), mapMode.DPtoLP(5),
+				mapMode.DPtoLP(5)));
 
 		fFigureInnerRectContainer.add(fFigureOutPolygonContainer);
 		fFigureOutPolygonContainer.setLayoutManager(new StackLayout());
 
 		fFigureOutPolygon = new ScalableRotableTriangleShape();
-		fFigureOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-				getMapMode().DPtoLP(0)));
-		fFigureOutPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
-				getMapMode().DPtoLP(1)));
-		fFigureOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-				getMapMode().DPtoLP(2)));
+		fFigureOutPolygon.addPoint(new Point(mapMode.DPtoLP(1),
+				mapMode.DPtoLP(0)));
+		fFigureOutPolygon.addPoint(new Point(mapMode.DPtoLP(0),
+				mapMode.DPtoLP(1)));
+		fFigureOutPolygon.addPoint(new Point(mapMode.DPtoLP(1),
+				mapMode.DPtoLP(2)));
 		fFigureOutPolygon.setFill(true);
 		fFigureOutPolygon.setOutline(false);
 		fFigureOutPolygon.setBackgroundColor(ColorConstants.black);
@@ -331,26 +309,26 @@ public class CustomPortFigure extends RectangleFigure {
 		fFigureInOutPolygonContainer = new RectangleFigure();
 		fFigureInOutPolygonContainer.setFill(false);
 		fFigureInOutPolygonContainer.setOutline(false);
-		fFigureInOutPolygonContainer.setBorder(new MarginBorder(getMapMode()
-				.DPtoLP(3), getMapMode().DPtoLP(3), getMapMode().DPtoLP(3),
-				getMapMode().DPtoLP(3)));
+		fFigureInOutPolygonContainer.setBorder(new MarginBorder(mapMode
+				.DPtoLP(3), mapMode.DPtoLP(3), mapMode.DPtoLP(3),
+				mapMode.DPtoLP(3)));
 
 		fFigureInnerRectContainer.add(fFigureInOutPolygonContainer);
 		fFigureInOutPolygonContainer.setLayoutManager(new StackLayout());
 
 		fFigureInOutPolygon = new ScalableRotableTriangleShape();
-		fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(6),
-				getMapMode().DPtoLP(0)));
-		fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(0),
-				getMapMode().DPtoLP(3)));
-		fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(6),
-				getMapMode().DPtoLP(6)));
-		fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-				getMapMode().DPtoLP(5)));
-		fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(7),
-				getMapMode().DPtoLP(8)));
-		fFigureInOutPolygon.addPoint(new Point(getMapMode().DPtoLP(1),
-				getMapMode().DPtoLP(11)));
+		fFigureInOutPolygon.addPoint(new Point(mapMode.DPtoLP(6),
+				mapMode.DPtoLP(0)));
+		fFigureInOutPolygon.addPoint(new Point(mapMode.DPtoLP(0),
+				mapMode.DPtoLP(3)));
+		fFigureInOutPolygon.addPoint(new Point(mapMode.DPtoLP(6),
+				mapMode.DPtoLP(6)));
+		fFigureInOutPolygon.addPoint(new Point(mapMode.DPtoLP(1),
+				mapMode.DPtoLP(5)));
+		fFigureInOutPolygon.addPoint(new Point(mapMode.DPtoLP(7),
+				mapMode.DPtoLP(8)));
+		fFigureInOutPolygon.addPoint(new Point(mapMode.DPtoLP(1),
+				mapMode.DPtoLP(11)));
 		fFigureInOutPolygon.setFill(true);
 		fFigureInOutPolygon.setOutline(false);
 		fFigureInOutPolygon.setBackgroundColor(ColorConstants.black);

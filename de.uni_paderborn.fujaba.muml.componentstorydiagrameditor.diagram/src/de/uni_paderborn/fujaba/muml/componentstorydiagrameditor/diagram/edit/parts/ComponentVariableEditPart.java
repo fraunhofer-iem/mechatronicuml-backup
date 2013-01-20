@@ -94,6 +94,10 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+
+		installEditPolicy(
+				EditPolicy.GRAPHICAL_NODE_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 	}
 
 	/**
@@ -561,63 +565,9 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 
 			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
-			RectangleFigure componentIconFigure2 = new RectangleFigure();
-			componentIconFigure2.setFill(false);
-			componentIconFigure2.setOutline(false);
-			componentIconFigure2.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(20), getMapMode().DPtoLP(20)));
+			de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure portFigure2 = new de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure();
 
-			GridData constraintComponentIconFigure2 = new GridData();
-			constraintComponentIconFigure2.verticalAlignment = GridData.BEGINNING;
-			constraintComponentIconFigure2.horizontalAlignment = GridData.END;
-			constraintComponentIconFigure2.horizontalIndent = 0;
-			constraintComponentIconFigure2.horizontalSpan = 1;
-			constraintComponentIconFigure2.verticalSpan = 1;
-			constraintComponentIconFigure2.grabExcessHorizontalSpace = true;
-			constraintComponentIconFigure2.grabExcessVerticalSpace = false;
-			container1
-					.add(componentIconFigure2, constraintComponentIconFigure2);
-
-			componentIconFigure2.setLayoutManager(new StackLayout());
-
-			RectangleFigure componentIconOuter3 = new RectangleFigure();
-			componentIconOuter3.setFill(false);
-			componentIconOuter3.setOutline(false);
-
-			componentIconFigure2.add(componentIconOuter3);
-			componentIconOuter3.setLayoutManager(new XYLayout());
-
-			RectangleFigure b14 = new RectangleFigure();
-
-			componentIconOuter3.add(b14, new Rectangle(getMapMode().DPtoLP(4),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(16),
-					getMapMode().DPtoLP(20)));
-
-			RectangleFigure componentIconInner13 = new RectangleFigure();
-			componentIconInner13.setFill(false);
-			componentIconInner13.setOutline(false);
-
-			componentIconFigure2.add(componentIconInner13);
-			componentIconInner13.setLayoutManager(new XYLayout());
-
-			RectangleFigure c14 = new RectangleFigure();
-
-			componentIconInner13.add(c14, new Rectangle(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(2), getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(6)));
-
-			RectangleFigure componentIconInner23 = new RectangleFigure();
-			componentIconInner23.setFill(false);
-			componentIconInner23.setOutline(false);
-
-			componentIconFigure2.add(componentIconInner23);
-			componentIconInner23.setLayoutManager(new XYLayout());
-
-			RectangleFigure d14 = new RectangleFigure();
-
-			componentIconInner23.add(d14, new Rectangle(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(6)));
+			container1.add(portFigure2);
 
 			fFigureChildren = new RectangleFigure();
 			fFigureChildren.setFill(false);

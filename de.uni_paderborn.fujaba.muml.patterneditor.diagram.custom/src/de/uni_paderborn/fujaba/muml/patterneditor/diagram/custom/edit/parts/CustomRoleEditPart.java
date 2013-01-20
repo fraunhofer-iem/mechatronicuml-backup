@@ -27,7 +27,7 @@ public class CustomRoleEditPart extends RoleEditPart {
 	 */
 	@Override
 	protected IFigure createNodeShape() {
-		CustomPortFigure roleFigure = new CustomPortFigure(getMapMode());
+		CustomPortFigure roleFigure = new CustomPortFigure();
 		roleFigure.setPortSide(PositionConstants.WEST);
 		getBehavior().setFigure(roleFigure);
 		primaryShape = roleFigure;
