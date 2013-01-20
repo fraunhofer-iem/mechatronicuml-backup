@@ -13,6 +13,7 @@ import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.HybridPortEditPart;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.MumlEditPartFactory;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StaticStructuredComponentEditPart;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlVisualIDRegistry;
 
 /**
@@ -32,6 +33,8 @@ public class CustomStructuredcomponentEditPartFactory extends
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
 			case CoordinationProtocolEditPart.VISUAL_ID:
 				return new CustomCoordinationProtocolEditPart(view);
+			case StaticStructuredComponentEditPart.VISUAL_ID:
+				return new CustomStaticStructuredComponentEditPart(view);
 			case CustomRolePatternEditPart.VISUAL_ID:
 				return new CustomRolePatternEditPart(view);
 			case DiscretePortEditPart.VISUAL_ID:
