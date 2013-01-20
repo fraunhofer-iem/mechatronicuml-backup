@@ -1,5 +1,7 @@
+«EXTENSION xpt::diagram::editpolicies::LinkUtils»
 
 «AROUND additions FOR gmfgen::GenLink-»
+«IF self.isTypeLink()»
 	«REM»
 		Added handleNotificationEvent method according to MechatronicUML BUG #17
 	«ENDREM»
@@ -7,7 +9,7 @@
 	   'Handles the property changed event.\n' +
 	   'It additionally tests, if the source/target feature was changed and updates\n' +
 	   'the Connection\'s visualization accordingly.\n' +
-	   '@param event The property changed event.'
+	   '@param notification The property changed event.'
 	)»
 	@Override
 	protected void handleNotificationEvent(org.eclipse.emf.common.notify.Notification notification) {
@@ -33,4 +35,6 @@
 
 		super.handleNotificationEvent(notification);
 	}
+«ENDIF»
+«targetDef.proceed()»
 «ENDAROUND»
