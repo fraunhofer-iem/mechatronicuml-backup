@@ -19,6 +19,11 @@
     
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+        <adviceBinding id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.DiscretePortGmfProtocolAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePortGmfProtocol_4005"
+		  class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.helpers.DiscretePortGmfProtocolEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
         <adviceBinding id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.ComponentPartAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ComponentPart_3005"
 		  class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.helpers.ComponentPartEditHelperAdvice"
@@ -39,6 +44,10 @@
    </extension>
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+	  <binding context="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePortGmfProtocol_4005"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.DiscretePortGmfProtocolAdvice"/>
+      </binding>
       <binding context="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ComponentPart_3005"/>
          <advice ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.ComponentPartAdvice"/>

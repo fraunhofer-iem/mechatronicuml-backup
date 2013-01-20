@@ -31,7 +31,7 @@ public class CustomCoordinationProtocolEditPart extends
 	public CustomCoordinationProtocolEditPart(View view) {
 		super(view);
 	}
-	
+
 	/**
 	 * Customized the CoordinationProtocol NodeFigure to have an EllipseAnchor.
 	 */
@@ -46,6 +46,17 @@ public class CustomCoordinationProtocolEditPart extends
 		return result;
 	}
 
+	@Override
+	public void activate() {
+		super.activate();
+		// necessary to show the role pattern connection right after setting the
+		// Port.refines feature
+		java.util.List<org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy> editPolicies = org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy
+				.getRegisteredEditPolicies(getDiagramView().getElement());
+		for (org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy editPolicy : editPolicies) {
+			editPolicy.refresh();
+		}
+	}
 
 	@Override
 	protected void createDefaultEditPolicies() {
@@ -80,10 +91,10 @@ public class CustomCoordinationProtocolEditPart extends
 
 				});
 
+		// TODO: Try to prevent view creation in EditHelper!
 		installEditPolicy(
 				EditPolicy.GRAPHICAL_NODE_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.ConnectionConfigureHelperGraphicalNodeEditPolicy() {
-
 					/*
 					 * Make sure the outer DiscretePorts do not connect to the
 					 * CoordinationProtocol figure. We do this by making the
@@ -104,10 +115,12 @@ public class CustomCoordinationProtocolEditPart extends
 								&& containerView.getElement() instanceof StructuredComponent) {
 							CompositeCommand cc = (CompositeCommand) proxy
 									.getICommand();
-							cc.add(new SetPropertyCommand(getEditingDomain(),
-									"Set invisible", getViewAdapter(),
+							cc.add(new SetPropertyCommand(
+									getEditingDomain(),
+									"Set invisible",
+									getViewAdapter(),
 									"notation.View.visible",
-									// MetamodelManager.getID(NotationPackage.Literals.VIEW__VISIBLE),
+									//MetamodelManager.getID(NotationPackage.Literals.VIEW__VISIBLE),
 									Boolean.FALSE));
 						}
 						return result;

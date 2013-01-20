@@ -9,6 +9,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewAndElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.AbstractEditCommandRequest;
 
+// TODO: Store the notation views instead of edit parts.
+
 /**
  * This GraphicalNodeEditPolicy helps configuring ConnectionRequests by setting
  * the editpart for its source and target. See Muml Bug #455 for detailed

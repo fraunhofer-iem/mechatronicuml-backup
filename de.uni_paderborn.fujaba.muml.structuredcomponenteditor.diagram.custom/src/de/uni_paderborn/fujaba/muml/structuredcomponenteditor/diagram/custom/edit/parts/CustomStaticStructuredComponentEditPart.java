@@ -15,16 +15,8 @@ public class CustomStaticStructuredComponentEditPart extends
 
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
-		// necessary to show the role pattern connection right after setting the
-		// Port.refines feature
-		if (notification.getFeature() == ComponentPackage.Literals.STRUCTURED_COMPONENT__GMF_PROTOCOLS) {
-			java.util.List<org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy> editPolicies = org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy
-					.getRegisteredEditPolicies(getDiagramView().getElement());
-			for (org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy editPolicy : editPolicies) {
-				editPolicy.refresh();
-			}
-		}
 		super.handleNotificationEvent(notification);
+		
 	}
 
 }
