@@ -5,17 +5,13 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
-import org.eclipse.gmf.runtime.common.core.command.ICommand;
-import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
-import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 
 /**
  * @generated
  */
-public class CoordinationProtocol3CreateCommand extends EditElementCommand {
+public class CoordinationProtocolRolesCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -30,7 +26,7 @@ public class CoordinationProtocol3CreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocol3CreateCommand(
+	public CoordinationProtocolRolesCreateCommand(
 			CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
@@ -57,7 +53,7 @@ public class CoordinationProtocol3CreateCommand extends EditElementCommand {
 		}
 		// target may be null here but it's possible to check constraint
 		return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateCoordinationProtocol_4005(
+				.getLinkConstraints().canCreateCoordinationProtocolRoles_4007(
 						getSource(), getTarget());
 	}
 
@@ -71,39 +67,11 @@ public class CoordinationProtocol3CreateCommand extends EditElementCommand {
 					"Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol newElement = de.uni_paderborn.fujaba.muml.model.protocol.ProtocolFactory.eINSTANCE
-				.createCoordinationProtocol();
-		getSource().setGmfCoordinationProtocol(newElement);
-		newElement.getRoles().add(getTarget());
-		doConfigure(newElement, monitor, info);
-		((CreateElementRequest) getRequest()).setNewElement(newElement);
-		return CommandResult.newOKCommandResult(newElement);
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol newElement,
-			IProgressMonitor monitor, IAdaptable info)
-			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
-		configureRequest.addParameters(getRequest().getParameters());
-		configureRequest.setParameter(CreateRelationshipRequest.SOURCE,
-				getSource());
-		configureRequest.setParameter(CreateRelationshipRequest.TARGET,
-				getTarget());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
-		if (configureCommand != null && configureCommand.canExecute()) {
-			configureCommand.execute(monitor, info);
+		if (getSource() != null && getTarget() != null) {
+			getSource().getRoles().add(getTarget());
 		}
+		return CommandResult.newOKCommandResult();
+
 	}
 
 	/**
@@ -126,5 +94,4 @@ public class CoordinationProtocol3CreateCommand extends EditElementCommand {
 	protected de.uni_paderborn.fujaba.muml.model.protocol.Role getTarget() {
 		return (de.uni_paderborn.fujaba.muml.model.protocol.Role) target;
 	}
-
 }

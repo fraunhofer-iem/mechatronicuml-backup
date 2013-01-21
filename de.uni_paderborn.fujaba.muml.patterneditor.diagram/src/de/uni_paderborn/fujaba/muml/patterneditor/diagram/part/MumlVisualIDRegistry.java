@@ -205,11 +205,6 @@ public class MumlVisualIDRegistry {
 			return -1;
 		}
 		if (de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
-				.getCoordinationProtocol()
-				.isSuperTypeOf(domainElement.eClass())) {
-			return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocol3EditPart.VISUAL_ID;
-		}
-		if (de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
 				.getRoleConnector().isSuperTypeOf(domainElement.eClass())) {
 			return de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID;
 		}

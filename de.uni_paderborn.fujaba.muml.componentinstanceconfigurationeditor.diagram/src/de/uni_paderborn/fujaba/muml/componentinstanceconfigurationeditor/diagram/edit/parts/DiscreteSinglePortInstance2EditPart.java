@@ -84,6 +84,12 @@ public class DiscreteSinglePortInstance2EditPart extends ShapeNodeEditPart {
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.DiscreteSinglePortInstance2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortInstanceEditPolicy());
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortInstanceEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 

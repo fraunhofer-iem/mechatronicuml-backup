@@ -328,15 +328,23 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateCoordinationProtocol_4005(
+		public boolean canCreateCoordinationProtocolRoles_4007(
 				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol source,
 				de.uni_paderborn.fujaba.muml.model.protocol.Role target) {
 			if (source != null) {
-				if (source.getGmfCoordinationProtocol() != null) {
+				if (source.getRoles().size() >= 2
+						|| source.getRoles().contains(target)) {
+					return false;
+				}
+				if (source == target) {
 					return false;
 				}
 			}
-			return canExistCoordinationProtocol_4005(null, source, target);
+			if (target != null && (target.getCoordinationProtocol() != null)) {
+				return false;
+			}
+
+			return canExistCoordinationProtocolRoles_4007(source, target);
 		}
 
 		/**
@@ -357,8 +365,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistCoordinationProtocol_4005(
-				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol linkInstance,
+		public boolean canExistCoordinationProtocolRoles_4007(
 				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol source,
 				de.uni_paderborn.fujaba.muml.model.protocol.Role target) {
 			return true;

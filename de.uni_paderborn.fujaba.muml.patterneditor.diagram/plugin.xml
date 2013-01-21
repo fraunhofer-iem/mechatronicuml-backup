@@ -326,7 +326,7 @@
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Pattern"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,3005,3006"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4005,4006"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4007,4006"/>
       </viewProvider>
    </extension>
 
@@ -341,7 +341,7 @@
             <method name="getType()" value="2005,3005,3006"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4005,4006"/>
+            <method name="getType()" value="4007,4006"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5005,5006"/>
@@ -420,11 +420,11 @@
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/protocol/0.3.17">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationProtocol_4005"
-               name="%metatype.name.CoordinationProtocol_4005"
+               id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationProtocolRoles_4007"
+               name="%metatype.name.CoordinationProtocolRoles_4007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationProtocol_2005"/>
-            <param name="semanticHint" value="4005"/>
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4007"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/protocol/0.3.17">
@@ -453,7 +453,7 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationProtocol_2005"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationProtocol_3005"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.patterneditor.diagram.Role_3006"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationProtocol_4005"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.patterneditor.diagram.CoordinationProtocolRoles_4007"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.patterneditor.diagram.RoleConnector_4006"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>

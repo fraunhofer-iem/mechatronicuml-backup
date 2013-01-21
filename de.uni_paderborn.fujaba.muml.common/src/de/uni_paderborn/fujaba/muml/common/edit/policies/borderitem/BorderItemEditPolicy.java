@@ -6,6 +6,7 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gef.editpolicies.GraphicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
@@ -34,7 +35,7 @@ public class BorderItemEditPolicy extends GraphicalEditPolicy implements
 	/**
 	 * The offset that the port lies within it's container.
 	 */
-	public static final Dimension DEFAULT_OFFSET = new Dimension(12, 12);
+	 public static final Dimension DEFAULT_OFFSET = new Dimension(12, 12);
 
 	/**
 	 * The LayoutListener for layouting the port's container.
@@ -44,14 +45,18 @@ public class BorderItemEditPolicy extends GraphicalEditPolicy implements
 	@Override
 	public void activate() {
 		super.activate();
-		addLayoutListener(getContainerFigure());
+		
 		updateBorderItemLocator();
 
-		// Add notification listener
+		IFigure containerFigure = getBorderItemContainerFigure();
+		if (containerFigure != null) {
+			addLayoutListener(containerFigure);
+		}
+
+		// Add notification listeners
 		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
 		if (diagramEventBroker != null) {
-			diagramEventBroker.addNotificationListener(getSemanticElement(),
-					this);
+			addSemanticListeners(diagramEventBroker);
 		}
 	}
 
@@ -59,12 +64,23 @@ public class BorderItemEditPolicy extends GraphicalEditPolicy implements
 	public void deactivate() {
 		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
 		if (diagramEventBroker != null) {
-			diagramEventBroker.removeNotificationListener(getSemanticElement(),
-					this);
+			removeSemanticListeners(diagramEventBroker);
 		}
 
-		removeLayoutListener(getContainerFigure());
+		IFigure containerFigure = getBorderItemContainerFigure();
+		if (containerFigure != null) {
+			removeLayoutListener(containerFigure);
+		}
+
 		super.deactivate();
+	}
+
+	protected void addSemanticListeners(DiagramEventBroker broker) {
+		broker.addNotificationListener(getSemanticElement(), this);
+	}
+
+	protected void removeSemanticListeners(DiagramEventBroker broker) {
+		broker.removeNotificationListener(getSemanticElement(), this);
 	}
 
 	/**
@@ -80,18 +96,25 @@ public class BorderItemEditPolicy extends GraphicalEditPolicy implements
 		}
 		return null;
 	}
-	
+
 	public IFigure getContentPane() {
 		return ((AbstractGraphicalEditPart) getHost()).getContentPane();
 	}
 
 	public void updateBorderItemLocator() {
+		// do not deduce, we would overwrite the offset for the multi port.
+		// only set if we are a border item ourselves.
+		//AbstractBorderItemEditPart borderItemEp = deduceBorderItemEditPart();
 		if (getHost() instanceof AbstractBorderItemEditPart) {
-			IBorderItemLocator locator = ((AbstractBorderItemEditPart) getHost())
-					.getBorderItemLocator();
+			AbstractBorderItemEditPart borderItemEp = (AbstractBorderItemEditPart) getHost();
+			IBorderItemLocator locator = borderItemEp.getBorderItemLocator();
+
 			if (locator instanceof BorderItemLocator) {
-				((BorderItemLocator) locator)
-						.setBorderItemOffset(DEFAULT_OFFSET);
+//				Dimension size = borderItemEp.getContentPane().getSize();
+//				Dimension offset = new Dimension(size.width / 2,
+//						size.height / 2);
+//				((BorderItemLocator) locator).setBorderItemOffset(offset);
+				((BorderItemLocator) locator).setBorderItemOffset(DEFAULT_OFFSET);
 			}
 		}
 	}
@@ -105,8 +128,11 @@ public class BorderItemEditPolicy extends GraphicalEditPolicy implements
 	 *            The figure.
 	 */
 	public void addLayoutListener(IFigure figure) {
-		figure.removeLayoutListener(getContainerLayoutListener());
-		figure.addLayoutListener(getContainerLayoutListener());
+		LayoutListener layoutListener = getContainerLayoutListener();
+		if (layoutListener != null) {
+			figure.removeLayoutListener(layoutListener);
+			figure.addLayoutListener(layoutListener);
+		}
 	}
 
 	/**
@@ -124,29 +150,39 @@ public class BorderItemEditPolicy extends GraphicalEditPolicy implements
 	/**
 	 * Gets and lazily creates the container layout listener.
 	 * 
-	 * @return The container layout listener.
+	 * @return The container layout listener. Can be null, if the host is no
+	 *         border item.
 	 */
 	public LayoutListener getContainerLayoutListener() {
 		if (containerLayoutListener == null) {
+			// can return null
 			containerLayoutListener = createContainerLayoutListener();
 		}
 		return containerLayoutListener;
 	}
 
-	protected LayoutListener createContainerLayoutListener() {
-		return new DefaultLayoutListener((AbstractBorderItemEditPart) getHost());
+	public LayoutListener createContainerLayoutListener() {
+		AbstractBorderItemEditPart part = deduceBorderItemEditPart();
+		if (part != null) {
+			return new DefaultLayoutListener(part);
+		}
+		return null;
 	}
 
 	/**
 	 * Convenience method
 	 */
-	protected IFigure getContainerFigure() {
-		GraphicalEditPart parentEditPart = (GraphicalEditPart) getHost()
-				.getParent();
-		if (parentEditPart.getFigure() instanceof BorderedNodeFigure) {
-			BorderedNodeFigure bnf = (BorderedNodeFigure) parentEditPart
-					.getFigure();
-			return bnf.getBorderItemContainer();
+	protected IFigure getBorderItemContainerFigure() {
+		GraphicalEditPart borderItemEp = deduceBorderItemEditPart();
+		if (borderItemEp != null
+				&& borderItemEp.getParent() instanceof GraphicalEditPart) {
+			GraphicalEditPart parentEditPart = (GraphicalEditPart) borderItemEp
+					.getParent();
+			if (parentEditPart.getFigure() instanceof BorderedNodeFigure) {
+				BorderedNodeFigure bnf = (BorderedNodeFigure) parentEditPart
+						.getFigure();
+				return bnf.getBorderItemContainer();
+			}
 		}
 		return null;
 	}
@@ -161,8 +197,12 @@ public class BorderItemEditPolicy extends GraphicalEditPolicy implements
 	/**
 	 * Convenience method
 	 */
-	protected AbstractBorderItemEditPart getBorderItemEditPart() {
-		return (AbstractBorderItemEditPart) getHost();
+	public AbstractBorderItemEditPart deduceBorderItemEditPart() {
+		EditPart ep = getHost();
+		while (ep != null && false == ep instanceof AbstractBorderItemEditPart) {
+			ep = ep.getParent();
+		}
+		return (AbstractBorderItemEditPart) ep;
 	}
 
 	@Override
@@ -180,6 +220,42 @@ public class BorderItemEditPolicy extends GraphicalEditPolicy implements
 	 *            The notification sent by the model.
 	 */
 	public void handleNotificationEvent(final Notification notification) {
+		// default implementation does nothing
+	}
+
+	/**
+	 * A LayoutListener that listens to changes in the container's layout. After
+	 * the ports are layouted, we check at which side they are, to rotate their
+	 * polygon.
+	 * 
+	 */
+	public class DefaultLayoutListener extends LayoutListener.Stub {
+		private AbstractBorderItemEditPart part;
+
+		public DefaultLayoutListener(AbstractBorderItemEditPart part) {
+			this.part = part;
+		}
+
+		/**
+		 * Rotate the port's figure according to the side that the port
+		 * currently is at.
+		 */
+		@Override
+		public void postLayout(IFigure container) {
+			IBorderItemLocator borderItemLocator = part.getBorderItemLocator();
+			if (borderItemLocator != null) {
+				borderItemLocator.relocate(part.getFigure());
+				int side = borderItemLocator.getCurrentSideOfParent();
+				sideChanged(side);
+			}
+		}
+
+		protected void sideChanged(int side) {
+			BorderItemEditPolicy.this.sideChanged(side);
+		}
+	}
+
+	protected void sideChanged(int side) {
 		// default implementation does nothing
 	}
 

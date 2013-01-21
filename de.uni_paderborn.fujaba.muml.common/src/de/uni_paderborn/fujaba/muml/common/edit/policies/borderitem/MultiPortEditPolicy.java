@@ -6,8 +6,8 @@ import org.eclipse.draw2d.LayoutListener;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 
@@ -16,6 +16,7 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 
 public class MultiPortEditPolicy extends BorderItemEditPolicy {
+	public static final Dimension DEFAULT_MULTI_OFFSET = new Dimension(22, 18);
 
 	public LayoutListener createContainerLayoutListener() {
 
@@ -49,16 +50,15 @@ public class MultiPortEditPolicy extends BorderItemEditPolicy {
 		}
 	}
 
-	@Override
 	public void updateBorderItemLocator() {
-		IBorderItemLocator locator = ((AbstractBorderItemEditPart) getHost())
-				.getBorderItemLocator();
+		if (getHost() instanceof AbstractBorderItemEditPart) {
+			AbstractBorderItemEditPart borderItemEp = (AbstractBorderItemEditPart) getHost();
+			IBorderItemLocator locator = borderItemEp.getBorderItemLocator();
 
-		if (locator instanceof BorderItemLocator) {
-			Dimension size = ((GraphicalEditPart) getHost()).getContentPane()
-					.getSize();
-			Dimension offset = new Dimension(size.width / 2, size.height / 2);
-			((BorderItemLocator) locator).setBorderItemOffset(offset);
+			if (locator instanceof BorderItemLocator) {
+				((BorderItemLocator) locator)
+						.setBorderItemOffset(DEFAULT_MULTI_OFFSET);
+			}
 		}
 	}
 

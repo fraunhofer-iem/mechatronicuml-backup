@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.parts;
 
-import org.eclipse.draw2d.Connection;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;

@@ -17,7 +17,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocolEditPart;
+import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts.CoordinationProtocol2EditPart;
 import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.CoordinationProtocolItemSemanticEditPolicy;
 
 /**
@@ -26,10 +26,10 @@ import de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.Coordina
  * @author bingo
  * 
  */
-public class CustomCoordinationProtocolEditPart extends
-		CoordinationProtocolEditPart {
+public class CustomCoordinationProtocol2EditPart extends
+		CoordinationProtocol2EditPart {
 
-	public CustomCoordinationProtocolEditPart(View view) {
+	public CustomCoordinationProtocol2EditPart(View view) {
 		super(view);
 	}
 

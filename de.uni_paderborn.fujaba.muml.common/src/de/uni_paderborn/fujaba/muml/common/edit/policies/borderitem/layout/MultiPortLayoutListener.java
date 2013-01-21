@@ -150,7 +150,6 @@ public class MultiPortLayoutListener extends LayoutListener.Stub {
 			 * must check, if the value of horizontal has changed here to
 			 * prevent endless calls.
 			 */
-			// horizontal = !toolbarLayout.isHorizontal();
 			if (toolbarLayout.isHorizontal() != horizontal) {
 				toolbarLayout.setHorizontal(horizontal);
 				compartmentFigure.getContentPane().setLayoutManager(

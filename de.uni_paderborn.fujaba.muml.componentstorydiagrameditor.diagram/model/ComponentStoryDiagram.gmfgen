@@ -302,9 +302,13 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MultiPortVariableFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureSinglePortVariablesCompartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MultiPortVariableFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSinglePortVariablesCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureSinglePortVariablesCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureSinglePortVariablesCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureSinglePortVariablesCompartment.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalIndent = 0;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalSpan = 1;&#xA;constraintFFigureSinglePortVariablesCompartment.verticalSpan = 1;&#xA;constraintFFigureSinglePortVariablesCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureSinglePortVariablesCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureSinglePortVariablesCompartment, constraintFFigureSinglePortVariablesCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureSinglePortVariablesCompartment() {&#xA;&#x9;&#x9;return fFigureSinglePortVariablesCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
-            width="24"
-            height="24"/>
+            width="44"
+            height="36"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.MultiPortEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/MultiPortVariable"/>
@@ -380,6 +384,10 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="30"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortVariableEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/SinglePortVariable"/>
@@ -412,6 +420,10 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="30"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortVariableEditPolicy"/>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.6">
         <metaClass
@@ -490,9 +502,13 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class MultiPortVariableFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureSinglePortVariablesCompartment; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public MultiPortVariableFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureSinglePortVariablesCompartment = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureSinglePortVariablesCompartment.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureSinglePortVariablesCompartment = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureSinglePortVariablesCompartment.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalIndent = 0;&#xA;constraintFFigureSinglePortVariablesCompartment.horizontalSpan = 1;&#xA;constraintFFigureSinglePortVariablesCompartment.verticalSpan = 1;&#xA;constraintFFigureSinglePortVariablesCompartment.grabExcessHorizontalSpace = true;&#xA;constraintFFigureSinglePortVariablesCompartment.grabExcessVerticalSpace = true;&#xA;this.add(fFigureSinglePortVariablesCompartment, constraintFFigureSinglePortVariablesCompartment);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureSinglePortVariablesCompartment() {&#xA;&#x9;&#x9;return fFigureSinglePortVariablesCompartment;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:DefaultSizeAttributes"
-            width="24"
-            height="24"/>
+            width="44"
+            height="36"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.MultiPortEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/MultiPortVariable"/>
@@ -570,6 +586,10 @@
             xsi:type="gmfgen:DefaultSizeAttributes"
             width="30"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortVariableEditPolicy"/>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.6">
         <metaClass

@@ -6,7 +6,6 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
@@ -27,14 +26,6 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	public CustomComponentPartEditPart(View view) {
 		super(view);
 	}
-
-	@Override
-	protected NodeFigure createNodePlate() {
-		NodeFigure plate = super.createNodePlate();
-		plate.setMinimumSize(new Dimension(0, 0));
-		return plate;
-	}
-	
 
 	@Override
 	protected void createDefaultEditPolicies() {

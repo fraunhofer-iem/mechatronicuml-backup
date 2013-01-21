@@ -87,6 +87,9 @@ public class DiscreteMultiPortInstance2EditPart extends
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.policies.DiscreteMultiPortInstance2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.MultiPortEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
@@ -331,7 +334,7 @@ public class DiscreteMultiPortInstance2EditPart extends
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(44, 36);
 
 		//FIXME: workaround for #154536
 		result.getBounds().setSize(result.getPreferredSize());

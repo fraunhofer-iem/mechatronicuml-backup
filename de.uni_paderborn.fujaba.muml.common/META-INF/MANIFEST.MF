@@ -20,7 +20,6 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.4.1",
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Export-Package: de.uni_paderborn.fujaba.muml.common,
- de.uni_paderborn.fujaba.muml.common.edit.parts,
  de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem,
  de.uni_paderborn.fujaba.muml.common.edit.policies.node,
  de.uni_paderborn.fujaba.muml.common.edit.policies.tether,

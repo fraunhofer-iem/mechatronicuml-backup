@@ -52,6 +52,10 @@
             width="24"
             height="24"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/DiscretePort"/>
@@ -164,6 +168,10 @@
             width="24"
             height="24"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/ContinuousPort"/>
@@ -313,6 +321,10 @@
             width="24"
             height="24"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/HybridPort"/>
@@ -373,6 +385,10 @@
             width="24"
             height="24"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/DiscretePort"/>
@@ -466,6 +482,10 @@
             width="24"
             height="24"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/ContinuousPort"/>

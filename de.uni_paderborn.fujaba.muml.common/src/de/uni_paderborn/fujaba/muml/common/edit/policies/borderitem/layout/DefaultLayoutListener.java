@@ -5,16 +5,18 @@ import org.eclipse.draw2d.LayoutListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 
+import de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy;
+
 /**
  * A LayoutListener that listens to changes in the container's layout. After the
  * ports are layouted, we check at which side they are, to rotate their polygon.
  * 
  */
 public class DefaultLayoutListener extends LayoutListener.Stub {
-	protected AbstractBorderItemEditPart borderItemEp;
+	private AbstractBorderItemEditPart part;
 
-	public DefaultLayoutListener( AbstractBorderItemEditPart borderItemEp) {
-		this.borderItemEp = borderItemEp;
+	public DefaultLayoutListener(AbstractBorderItemEditPart part) {
+		this.part = part;
 	}
 
 	/**
@@ -23,10 +25,10 @@ public class DefaultLayoutListener extends LayoutListener.Stub {
 	 */
 	@Override
 	public void postLayout(IFigure container) {
-		IBorderItemLocator borderItemLocator = borderItemEp
+		IBorderItemLocator borderItemLocator = part
 				.getBorderItemLocator();
 		if (borderItemLocator != null) {
-			borderItemLocator.relocate(borderItemEp.getFigure());
+			borderItemLocator.relocate(part.getFigure());
 			int side = borderItemLocator.getCurrentSideOfParent();
 			sideChanged(side);
 		}

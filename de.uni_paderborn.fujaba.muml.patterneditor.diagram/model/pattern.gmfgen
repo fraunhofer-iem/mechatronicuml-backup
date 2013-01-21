@@ -101,6 +101,10 @@
             width="20"
             height="20"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.RoleEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/Role"/>
@@ -329,30 +333,22 @@
       </modelFacet>
     </topLevelNodes>
     <links
-        visualID="4005"
-        editPartClassName="CoordinationProtocol3EditPart"
-        itemSemanticEditPolicyClassName="CoordinationProtocol3ItemSemanticEditPolicy"
-        notationViewFactoryClassName="CoordinationProtocolViewFactory"
-        createCommandClassName="CoordinationProtocol3CreateCommand"
-        reorientCommandClassName="CoordinationProtocolReorientCommand">
+        visualID="4007"
+        editPartClassName="CoordinationProtocolRolesEditPart"
+        itemSemanticEditPolicyClassName="CoordinationProtocolRolesItemSemanticEditPolicy"
+        createCommandClassName="CoordinationProtocolRolesCreateCommand"
+        reorientCommandClassName="CoordinationProtocolRolesReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
-          xsi:type="gmfgen:SpecializationType"
-          metamodelType="//@diagram/@topLevelNodes.0/@elementType"/>
+          xsi:type="gmfgen:SpecializationType"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="RolePatternFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RolePatternFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureRolePatternLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RolePatternFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureRolePatternLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureRolePatternLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureRolePatternLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureRolePatternLabel() {&#xA;&#x9;&#x9;return fFigureRolePatternLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet
-          xsi:type="gmfgen:TypeLinkModelFacet">
-        <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol"/>
-        <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
-        <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
-        <targetMetaFeature
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/roles"/>
       </modelFacet>
     </links>
@@ -528,18 +524,6 @@
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@childNodes.0"
-        child="//@diagram/@links.0"
-        referenceType="out_target"
-        groupName="outgoing links"
-        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.0"
-        child="//@diagram/@links.0"
-        referenceType="in_source"
-        groupName="source"
-        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences
-        parent="//@diagram/@links.0"
         child="//@diagram/@links.0"
         referenceType="out_target"
         groupName="outgoing links"

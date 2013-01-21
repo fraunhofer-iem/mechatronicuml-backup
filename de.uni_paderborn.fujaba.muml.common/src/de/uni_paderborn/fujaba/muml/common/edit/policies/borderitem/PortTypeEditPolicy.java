@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
@@ -26,27 +27,42 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 			updatePortType();
 		}
 	}
-
+	@Override
+	protected void addSemanticListeners(DiagramEventBroker broker) {
+		super.addSemanticListeners(broker);
+		// in case getPort() != getSemanticElement() because getPort() was overridden
+		broker.addNotificationListener(getPort(), this);
+	}
+	
+	@Override
+	protected void removeSemanticListeners(DiagramEventBroker broker) {
+		super.removeSemanticListeners(broker);
+		// in case getPort() != getSemanticElement() because getPort() was overridden
+		broker.removeNotificationListener(getPort(), this);
+	}
+	
 	protected void updatePortType() {
-		EObject port = getSemanticElement();
+		EObject port = getPort();
 
-		PortKind portKind = PortKind.CONTINUOUS;
+		PortKind portKind = PortKind.DISCRETE;
 		PortType portType = PortType.NONE;
 
-		if (ComponentPackage.Literals.DISCRETE_PORT
-				.isSuperTypeOf(port.eClass())) {
-			portKind = PortKind.DISCRETE;
-			portType = getDiscretePortType();
-		} else if (ComponentPackage.Literals.CONTINUOUS_PORT.isSuperTypeOf(port
-				.eClass())) {
-			portKind = PortKind.CONTINUOUS;
-			portType = getDirectedPortType();
-		} else if (ComponentPackage.Literals.HYBRID_PORT.isSuperTypeOf(port
-				.eClass())) {
-			portKind = PortKind.HYBRID;
-			portType = getDirectedPortType();
+		if (port != null) {
+			if (ComponentPackage.Literals.DISCRETE_PORT
+					.isSuperTypeOf(port.eClass())) {
+				portKind = PortKind.DISCRETE;
+				portType = getDiscretePortType();
+			} else if (ComponentPackage.Literals.CONTINUOUS_PORT.isSuperTypeOf(port
+					.eClass())) {
+				portKind = PortKind.CONTINUOUS;
+				portType = getDirectedPortType();
+			} else if (ComponentPackage.Literals.HYBRID_PORT.isSuperTypeOf(port
+					.eClass())) {
+				portKind = PortKind.HYBRID;
+				portType = getDirectedPortType();
+			}
 		}
-
+		
 		getPortFigure().setPortKindAndPortType(portKind, portType);
 	}
 

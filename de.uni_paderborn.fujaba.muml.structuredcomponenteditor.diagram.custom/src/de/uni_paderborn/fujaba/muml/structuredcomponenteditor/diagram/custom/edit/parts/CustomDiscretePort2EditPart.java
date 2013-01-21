@@ -1,15 +1,11 @@
 package de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.custom.edit.parts;
 
-import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.common.edit.parts.DiscretePortBehavior;
-import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DiscretePort2EditPart;
@@ -23,11 +19,6 @@ import de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts
 public class CustomDiscretePort2EditPart extends DiscretePort2EditPart {
 
 	/**
-	 * All behavior is delegated, to reduce duplicate code.
-	 */
-	private DiscretePortBehavior behavior;
-
-	/**
 	 * Constructs this EditPart.
 	 * 
 	 * @param view
@@ -35,40 +26,6 @@ public class CustomDiscretePort2EditPart extends DiscretePort2EditPart {
 	 */
 	public CustomDiscretePort2EditPart(View view) {
 		super(view);
-	}
-
-	/**
-	 * Creates the custom figure.
-	 */
-	@Override
-	protected IFigure createNodeShape() {
-		CustomPortFigure portFigure = new CustomPortFigure();
-		primaryShape = portFigure;
-		getBehavior().setFigure(portFigure);
-		return primaryShape;
-	}
-
-	/**
-	 * Creates the node plate, which is defines the size and is responsible to
-	 * return custom PolygonPoints that help connecting Connections at the right
-	 * Point.
-	 */
-	@Override
-	protected NodeFigure createNodePlate() {
-		return getBehavior().createNodePlate();
-	}
-
-	/**
-	 * Gets the PortBehavior object or lazily creates it. It will never return
-	 * null.
-	 * 
-	 * @return The PortBehavior object.
-	 */
-	private DiscretePortBehavior getBehavior() {
-		if (behavior == null) {
-			behavior = new DiscretePortBehavior(this);
-		}
-		return behavior;
 	}
 
 	/**
@@ -90,26 +47,6 @@ public class CustomDiscretePort2EditPart extends DiscretePort2EditPart {
 			}
 
 		}
-		getBehavior().handleNotificationEvent(notification);
 		super.handleNotificationEvent(notification);
 	}
-
-	/**
-	 * Initializes this EditPart, when it is activated.
-	 */
-	@Override
-	public void activate() {
-		getBehavior().activate();
-		super.activate();
-	}
-
-	/**
-	 * Cleanup this EditPart.
-	 */
-	@Override
-	public void deactivate() {
-		getBehavior().deactivate();
-		super.deactivate();
-	}
-
 }

@@ -3,18 +3,12 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.common.edit.parts.MultiPortVariableBehavior;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariable2EditPart;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 
 public class CustomMultiPortVariable2EditPart extends
 		MultiPortVariable2EditPart {
-
-	/**
-	 * All behavior is delegated, to reduce duplicate code.
-	 */
-	private MultiPortVariableBehavior delegation;
 
 	/**
 	 * Constructs this EditPart.
@@ -25,19 +19,6 @@ public class CustomMultiPortVariable2EditPart extends
 	public CustomMultiPortVariable2EditPart(View view) {
 		super(view);
 	}
-	
-	/**
-	 * Gets the PortBehavior object or lazily creates it. It will never return
-	 * null.
-	 * 
-	 * @return The PortBehavior object.
-	 */
-	private MultiPortVariableBehavior getDelegation() {
-		if (delegation == null) {
-			delegation = new MultiPortVariableBehavior(this);
-		}
-		return delegation;
-	}
 
 	/**
 	 * Updates the visual representation of this Port according to model
@@ -45,7 +26,6 @@ public class CustomMultiPortVariable2EditPart extends
 	 */
 	@Override
 	protected final void handleNotificationEvent(final Notification notification) {
-		getDelegation().handleNotificationEvent(notification);
 		super.handleNotificationEvent(notification);
 		
 		if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR
@@ -56,23 +36,5 @@ public class CustomMultiPortVariable2EditPart extends
 			//updateOptional();
 			//updateNegative();
 		}
-	}
-
-	/**
-	 * Initializes this EditPart, when it is activated.
-	 */
-	@Override
-	public void activate() {
-		getDelegation().activate();
-		super.activate();
-	}
-
-	/**
-	 * Cleanup this EditPart.
-	 */
-	@Override
-	public void deactivate() {
-		getDelegation().deactivate();
-		super.deactivate();
 	}
 }

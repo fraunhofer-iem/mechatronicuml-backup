@@ -76,8 +76,8 @@
     <facets
         xsi:type="gmfgraph:DefaultSizeFacet">
       <defaultSize
-          dx="24"
-          dy="24"/>
+          dx="44"
+          dy="36"/>
     </facets>
   </nodes>
   <nodes

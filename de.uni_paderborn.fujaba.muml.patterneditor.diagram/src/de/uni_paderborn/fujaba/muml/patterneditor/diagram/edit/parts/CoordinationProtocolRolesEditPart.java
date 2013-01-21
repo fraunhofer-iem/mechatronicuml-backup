@@ -1,15 +1,9 @@
 package de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts;
 
-import java.util.List;
-
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.Graphics;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionNodeEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITreeBranchEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -18,18 +12,18 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CoordinationProtocol3EditPart extends ConnectionNodeEditPart
+public class CoordinationProtocolRolesEditPart extends ConnectionNodeEditPart
 		implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4005;
+	public static final int VISUAL_ID = 4007;
 
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocol3EditPart(View view) {
+	public CoordinationProtocolRolesEditPart(View view) {
 		super(view);
 	}
 
@@ -40,7 +34,7 @@ public class CoordinationProtocol3EditPart extends ConnectionNodeEditPart
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.CoordinationProtocol3ItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies.CoordinationProtocolRolesItemSemanticEditPolicy());
 	}
 
 	/**
@@ -103,38 +97,4 @@ public class CoordinationProtocol3EditPart extends ConnectionNodeEditPart
 
 	}
 
-	/**
-	 * Handles the property changed event.
-	 * It additionally tests, if the source/target feature was changed and updates
-	 * the Connection's visualization accordingly.
-	 * @param event The property changed event.
-	 * @generated
-	 */
-	@Override
-	protected void handleNotificationEvent(Notification notification) {
-
-		// Fix for MechatronicUML BUG #17:
-		// Connection does not refresh, after changing its source or target via
-		// Properties View.
-		EObject sourceElement = null;
-		if (getSource() instanceof GraphicalEditPart) {
-			sourceElement = ((GraphicalEditPart) getSource()).getNotationView()
-					.getElement();
-		}
-		EObject targetElement = null;
-		if (getTarget() instanceof GraphicalEditPart) {
-			targetElement = ((GraphicalEditPart) getTarget()).getNotationView()
-					.getElement();
-		}
-		if (notification.getOldValue() == sourceElement
-				|| notification.getOldValue() == targetElement) {
-			List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
-					.getRegisteredEditPolicies(getDiagramView().getElement());
-			for (CanonicalEditPolicy editPolicy : editPolicies) {
-				editPolicy.refresh();
-			}
-		}
-
-		super.handleNotificationEvent(notification);
-	}
 }

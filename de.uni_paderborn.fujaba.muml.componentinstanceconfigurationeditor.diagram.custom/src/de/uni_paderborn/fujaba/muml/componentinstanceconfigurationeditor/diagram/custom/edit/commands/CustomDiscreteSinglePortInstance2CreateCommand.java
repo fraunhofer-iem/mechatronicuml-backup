@@ -7,9 +7,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.commands.DiscreteSinglePortInstance2CreateCommand;
 
-/**
- * @generated
- */
+// TODO: Replace by edit helper
 public class CustomDiscreteSinglePortInstance2CreateCommand extends
 		DiscreteSinglePortInstance2CreateCommand {
 

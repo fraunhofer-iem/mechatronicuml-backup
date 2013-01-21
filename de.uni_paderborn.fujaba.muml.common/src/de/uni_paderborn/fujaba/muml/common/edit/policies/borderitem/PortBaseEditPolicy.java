@@ -1,7 +1,9 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem;
 
 import org.eclipse.draw2d.LayoutListener;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.PointList;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 
@@ -23,19 +25,17 @@ public class PortBaseEditPolicy extends BorderItemEditPolicy{
 
 	public void activate() {
 		super.activate();
+		if (deduceBorderItemEditPart() == null) {
+			getPortFigure().setPortSide(PositionConstants.WEST);
+		}
 		updatePortType();
 		updateCardinality();
 	}
-
-	public LayoutListener createContainerLayoutListener() {
-		return new DefaultLayoutListener(getBorderItemEditPart()) {
-			@Override
-			protected void sideChanged(int side) {
-				getPortFigure().setPortSide(side);
-			}
-		};
+	@Override
+	protected void sideChanged(int side) {
+		getPortFigure().setPortSide(side);
+		super.sideChanged(side);
 	}
-
 	protected void updateCardinality() {
 		getPortFigure().setMulti(false);
 		getPortFigure().setMandatory(true);

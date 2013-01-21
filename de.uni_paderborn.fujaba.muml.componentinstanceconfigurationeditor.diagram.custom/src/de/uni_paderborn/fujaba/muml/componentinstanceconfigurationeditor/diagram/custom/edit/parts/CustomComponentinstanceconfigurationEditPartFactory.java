@@ -4,17 +4,9 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.AtomicComponentInstanceEditPart;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstance2EditPart;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.ContinuousPortInstanceEditPart;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteMultiPortInstanceEditPart;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance2EditPart;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstance3EditPart;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.DiscreteSinglePortInstanceEditPart;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstance2EditPart;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.HybridPortInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.MumlEditPartFactory;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart;
@@ -37,52 +29,28 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
 			case DiscreteMultiPortInstanceEditPart.VISUAL_ID:
-				return new CustomDiscreteMultiPortInstanceEditPart(view);
-				
-			case DiscreteMultiPortInstance2EditPart.VISUAL_ID:
-				return new CustomDiscreteMultiPortInstance2EditPart(view);
-			
-			case DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart.VISUAL_ID:
-				return new CustomDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart(view);
-				
-			case DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart.VISUAL_ID:
-				return new CustomDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart(view);
-			
-			case DiscreteSinglePortInstanceEditPart.VISUAL_ID:
-				return new CustomDiscreteSinglePortInstanceEditPart(view);
-				
-			case DiscreteSinglePortInstance2EditPart.VISUAL_ID:
-				return new CustomDiscreteSinglePortInstance2EditPart(view);
 
-			case DiscreteSinglePortInstance3EditPart.VISUAL_ID:
-				return new CustomDiscreteSinglePortInstance3EditPart(view);
-				
-			case ContinuousPortInstanceEditPart.VISUAL_ID:
-				return new CustomContinuousPortInstanceEditPart(view);
-				
-			case ContinuousPortInstance2EditPart.VISUAL_ID:
-				return new CustomContinuousPortInstance2EditPart(view);
-				
-			case HybridPortInstanceEditPart.VISUAL_ID:
-				return new CustomHybridPortInstanceEditPart(view);
-				
-			case HybridPortInstance2EditPart.VISUAL_ID:
-				return new CustomHybridPortInstance2EditPart(view);
+			case DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart.VISUAL_ID:
+				return new CustomDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart(
+						view);
+
+			case DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart.VISUAL_ID:
+				return new CustomDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart(
+						view);
 
 			case StructuredComponentInstanceEditPart.VISUAL_ID:
 				return new CustomStructuredComponentInstanceEditPart(view);
 
 			case AtomicComponentInstanceEditPart.VISUAL_ID:
 				return new CustomAtomicComponentInstanceEditPart(view);
-				
+
 			case StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart.VISUAL_ID:
-				return new CustomStructuredComponentInstanceComponentInstanceContentsCompartmentEditPart(view);
+				return new CustomStructuredComponentInstanceComponentInstanceContentsCompartmentEditPart(
+						view);
 
 			case StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart.VISUAL_ID:
-				return new CustomStructuredComponentInstanceComponentInstanceContentsCompartment2EditPart(view);
-//			case ComponentInstanceComponentInstanceCompartmentEditPart.VISUAL_ID:
-//				return new CustomComponentInstanceComponentInstanceCompartmentEditPart(
-//						view);
+				return new CustomStructuredComponentInstanceComponentInstanceContentsCompartment2EditPart(
+						view);
 			}
 		}
 		return super.createEditPart(context, model);
