@@ -1,25 +1,36 @@
 package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.parsers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
+import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.core.expressions.common.LiteralExpression;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.parsers.TransitionLabelExpressionLabelParser6005;
 
 /**
  * @generated
  */
-public class CustomTransitionLabelExpressionLabelParser6005 extends TransitionLabelExpressionLabelParser6005 {
+public class CustomTransitionLabelExpressionLabelParser6005 extends
+		TransitionLabelExpressionLabelParser6005 implements ISemanticParser {
 
 	@Override
 	protected void initializeEnvironment(Map<String, EClassifier> typeEnv,
@@ -29,11 +40,14 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends TransitionLa
 
 		typeEnv.put("guardExpression", EcorePackage.Literals.ESTRING);
 		env.put("guardExpression", getGuardExpression(transition));
-		typeEnv.put("raiseMessageEventParameterBinding", EcorePackage.Literals.ESTRING);
+		typeEnv.put("raiseMessageEventParameterBinding",
+				EcorePackage.Literals.ESTRING);
 		env.put("raiseMessageEventParameterBinding",
-				getMessageParameterBindingExpression(transition,
-						transition.getRaiseMessageEvent() == null ? null : transition.getRaiseMessageEvent().getMessage()));
-		typeEnv.put("synchronizationParameterBinding", EcorePackage.Literals.ESTRING);
+				getMessageParameterBindingExpression(transition, transition
+						.getRaiseMessageEvent() == null ? null : transition
+						.getRaiseMessageEvent().getMessage()));
+		typeEnv.put("synchronizationParameterBinding",
+				EcorePackage.Literals.ESTRING);
 
 	}
 
@@ -62,20 +76,25 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends TransitionLa
 		}
 		return "";
 	}
-	
-	private String getParameterBindingExpression(Transition transition, ParameterBinding parameterBinding) {
-		String value = LanguageResource.serializeEObject(parameterBinding.getValue(), transition);
-		if (value == null && (parameterBinding.getValue() instanceof LiteralExpression)) {
+
+	private String getParameterBindingExpression(Transition transition,
+			ParameterBinding parameterBinding) {
+		String value = LanguageResource.serializeEObject(
+				parameterBinding.getValue(), transition);
+		if (value == null
+				&& (parameterBinding.getValue() instanceof LiteralExpression)) {
 			// just keep the LiteralExpression
 			return ((LiteralExpression) parameterBinding.getValue()).getValue();
 		}
 		return value;
 	}
-	
-	private String getParameterBindingExpressionFromList(Transition transition, List<ParameterBinding> parameterBindingList) {
+
+	private String getParameterBindingExpressionFromList(Transition transition,
+			List<ParameterBinding> parameterBindingList) {
 		StringBuffer buffer = new StringBuffer();
 		for (ParameterBinding parameterBinding : parameterBindingList) {
-			buffer.append(getParameterBindingExpression(transition, parameterBinding) + ", ");
+			buffer.append(getParameterBindingExpression(transition,
+					parameterBinding) + ", ");
 		}
 		if (buffer.length() > 1) {
 			// remove last comma
@@ -83,13 +102,87 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends TransitionLa
 		}
 		return "";
 	}
-	
-	private String getMessageParameterBindingExpression(Transition transition, Message message) {
+
+	private String getMessageParameterBindingExpression(Transition transition,
+			Message message) {
 		if (message == null) {
 			return "";
 		}
-		return getParameterBindingExpressionFromList(transition, message.getParameterBinding());
+		return getParameterBindingExpressionFromList(transition,
+				message.getParameterBinding());
 	}
-	
 
+	// TODO: Replace this implementation by the OCL impact analyzer!
+	final static Collection<EStructuralFeature> FEATURES = Arrays
+			.asList(new EStructuralFeature[] {
+					CorePackage.Literals.NAMED_ELEMENT__NAME,
+					RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINTS,
+					RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__CLOCK,
+					RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__OPERATOR,
+					RealtimestatechartPackage.Literals.CLOCK_CONSTRAINT__BOUND,
+					RealtimestatechartPackage.Literals.TRANSITION__GUARD,
+					RealtimestatechartPackage.Literals.TRANSITION__TRIGGER_MESSAGE_EVENT,
+					RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT__MESSAGE,
+					RealtimestatechartPackage.Literals.MESSAGE__INSTANCE_OF,
+					RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION,
+					RealtimestatechartPackage.Literals.SYNCHRONIZATION__SYNC_CHANNEL,
+					RealtimestatechartPackage.Literals.SYNCHRONIZATION__KIND,
+					RealtimestatechartPackage.Literals.TRANSITION__ACTION,
+					RealtimestatechartPackage.Literals.TRANSITION__RAISE_MESSAGE_EVENT,
+					RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS,
+					RealtimestatechartPackage.Literals.MESSAGE__PARAMETER_BINDING,
+					BehaviorPackage.Literals.PARAMETER_BINDING__VALUE,//
+			});
+
+	final static Collection<EReference> REFERENCES = getReferences(FEATURES);
+
+	private static Collection<EReference> getReferences(
+			Collection<EStructuralFeature> features) {
+		List<EReference> references = new ArrayList<EReference>(features.size());
+		for (EStructuralFeature feature : features) {
+			if (feature instanceof EReference) {
+				references.add((EReference) feature);
+			}
+		}
+		return references;
+	}
+
+	@Override
+	public List<EObject> getSemanticElementsBeingParsed(EObject semanticElement) {
+		// deduce semantic elements
+		List<EObject> elements = new ArrayList<EObject>();
+		elements.add(semanticElement); // start with the parser element
+
+		// deduce other elements
+		List<EObject> foundElements;
+		List<EObject> lastElements = new ArrayList<EObject>(elements);
+		do {
+			foundElements = new ArrayList<EObject>();
+			for (EObject element : lastElements) {
+				for (EReference reference : REFERENCES) {
+					if (reference.getEContainingClass().equals(element.eClass())) {
+						Object value = element.eGet(reference);
+						if (value instanceof Collection) {
+							foundElements.addAll((Collection<EObject>) value);
+						} else if (value instanceof EObject) {
+							foundElements.add((EObject) value);
+						} else if (value != null) {
+							throw new UnsupportedOperationException("Invalid reference value");
+						}
+					}
+				}
+			}
+			elements.addAll(foundElements);
+			lastElements = foundElements;
+		} while (!foundElements.isEmpty());
+
+		return elements;
+	}
+
+	@Override
+	public boolean areSemanticElementsAffected(EObject listener,
+			Object notification) {
+		return FEATURES.contains(((ENotificationImpl) notification)
+				.getFeature());
+	}
 }
