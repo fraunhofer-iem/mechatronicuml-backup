@@ -64,11 +64,13 @@ public class MessageTypeRepositoryItemSemanticEditPolicy
 					switch (de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.part.MumlVisualIDRegistry
 							.getVisualID(cnode)) {
 					case de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
+
 						cmd.add(new DestroyElementCommand(
 								new DestroyElementRequest(getEditingDomain(),
-										cnode.getElement(), false))); // directlyOwned: true
+										cnode.getElement(), false)));
 						// don't need explicit deletion of cnode as parent's view deletion would clean child views as well 
 						// cmd.add(new org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(), cnode));
+
 						break;
 					}
 				}
