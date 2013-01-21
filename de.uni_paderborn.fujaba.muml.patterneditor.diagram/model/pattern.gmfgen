@@ -336,6 +336,7 @@
         visualID="4007"
         editPartClassName="CoordinationProtocolRolesEditPart"
         itemSemanticEditPolicyClassName="CoordinationProtocolRolesItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationProtocolRolesViewFactory"
         createCommandClassName="CoordinationProtocolRolesCreateCommand"
         reorientCommandClassName="CoordinationProtocolRolesReorientCommand">
       <diagramRunTimeClass

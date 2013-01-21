@@ -1,6 +1,12 @@
 modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
 
-transformation preRec(inout gmfgenModel : GMFGEN);
+transformation trafo(inout gmfgenModel : GMFGEN);
 
 main() {
+  --fix BUG 331875
+  gmfgenModel.objectsOfType(ExpressionLabelParser)->forEach(parser)
+    {
+        parser.className :=
+parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBase).visualID.toString());
+    };
 }

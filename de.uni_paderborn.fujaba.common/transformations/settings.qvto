@@ -1,0 +1,11 @@
+modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
+
+transformation  common(inout gmfgen : GMFGEN);
+
+main() {
+
+}
+
+mapping inout GenCompartment::compartmentSettings(){
+	
+}

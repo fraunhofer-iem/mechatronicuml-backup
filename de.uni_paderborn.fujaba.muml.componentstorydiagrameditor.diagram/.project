@@ -20,8 +20,18 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.m2m.qvt.oml.project.QVTOBuilder</name>
+			<arguments>
+				<dictionary>
+					<key>src_container</key>
+					<value>model</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>org.eclipse.m2m.qvt.oml.project.QVTONature</nature>
 		<nature>org.eclipse.pde.PluginNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
