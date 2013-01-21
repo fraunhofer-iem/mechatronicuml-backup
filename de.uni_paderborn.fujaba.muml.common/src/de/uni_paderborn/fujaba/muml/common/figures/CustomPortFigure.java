@@ -42,8 +42,6 @@ public class CustomPortFigure extends RectangleFigure {
 	}
 
 	private boolean multiPort;
-	
-	private boolean mandatoryPort;
 
 	/**
 	 * @generated
@@ -120,9 +118,15 @@ public class CustomPortFigure extends RectangleFigure {
 
 		// Update Margin
 		boolean fullsize = portKind != PortKind.DISCRETE;
-		setMarginBorder(fullsize ? 0 : 5, getFigureInPolygonContainer());
-		setMarginBorder(fullsize ? 0 : 5, getFigureOutPolygonContainer());
-		setMarginBorder(fullsize ? 0 : 4, getFigureInOutPolygonContainer());
+		if (fullsize) {
+			getFigureInPolygonContainer().setBorder(new MarginBorder(0));
+			getFigureOutPolygonContainer().setBorder(new MarginBorder(0));
+			getFigureInOutPolygonContainer().setBorder(new MarginBorder(0));
+		} else {
+			getFigureInPolygonContainer().setBorder(new MarginBorder(5));
+			getFigureOutPolygonContainer().setBorder(new MarginBorder(5));
+			getFigureInOutPolygonContainer().setBorder(new MarginBorder(4));
+		}
 
 		// Set the Text for Hareware Ports
 		String hardwareTypeText = "";
@@ -138,9 +142,6 @@ public class CustomPortFigure extends RectangleFigure {
 		getFigureHardwareTypeLabel().setText(hardwareTypeText);
 	}
 
-	private void setMarginBorder(int inset, IFigure figure) {
-		figure.setBorder(new MarginBorder(inset, inset, inset, inset));
-	}
 
 	/**
 	 * Sets the side that this Port lies at.
@@ -194,18 +195,18 @@ public class CustomPortFigure extends RectangleFigure {
 
 			// Set the new margin and the new preferred size.
 			RectangleFigure innerRectContainer = getFigureInnerRectContainer();
-			innerRectContainer.setBorder(new MarginBorder(marginTopRight, 0, 0, marginTopRight));
+			innerRectContainer.setBorder(new MarginBorder(marginTopRight, 0, 0,
+					marginTopRight));
 			innerRectContainer.setPreferredSize(preferredSize);
 		}
 	}
-	
+
 	public void setMandatory(boolean mandatory) {
-		this.mandatoryPort = mandatory;
 		Color backgroundColor = ColorConstants.black;
 		if (!mandatory) {
 			backgroundColor = ColorConstants.white;
 		}
-		
+
 		getFigureInPolygon().setOutline(true);
 		getFigureInPolygon().setForegroundColor(ColorConstants.black);
 		getFigureInPolygon().setBackgroundColor(backgroundColor);
@@ -229,15 +230,11 @@ public class CustomPortFigure extends RectangleFigure {
 		getFigureInOutPolygon().setRotationInDegrees(degrees);
 	}
 
-
 	private void createContents() {
-		IMapMode mapMode = MapModeTypes.IDENTITY_MM; // MapModeUtil.getMapMode(this);
-
 		RectangleFigure aux10 = new RectangleFigure();
 		aux10.setFill(false);
 		aux10.setOutline(false);
-		aux10.setBorder(new MarginBorder(mapMode.DPtoLP(0), mapMode
-				.DPtoLP(3), mapMode.DPtoLP(3), mapMode.DPtoLP(0)));
+		aux10.setBorder(new MarginBorder(0, 3, 3, 0));
 
 		this.add(aux10);
 		aux10.setLayoutManager(new StackLayout());
@@ -249,9 +246,7 @@ public class CustomPortFigure extends RectangleFigure {
 		fFigureInnerRectContainer = new RectangleFigure();
 		fFigureInnerRectContainer.setFill(false);
 		fFigureInnerRectContainer.setOutline(false);
-		fFigureInnerRectContainer.setBorder(new MarginBorder(mapMode
-				.DPtoLP(0), mapMode.DPtoLP(0), mapMode.DPtoLP(0),
-				mapMode.DPtoLP(0)));
+		fFigureInnerRectContainer.setBorder(new MarginBorder(0));
 
 		this.add(fFigureInnerRectContainer);
 		fFigureInnerRectContainer.setLayoutManager(new StackLayout());
@@ -263,20 +258,14 @@ public class CustomPortFigure extends RectangleFigure {
 		fFigureInPolygonContainer = new RectangleFigure();
 		fFigureInPolygonContainer.setFill(false);
 		fFigureInPolygonContainer.setOutline(false);
-		fFigureInPolygonContainer.setBorder(new MarginBorder(mapMode
-				.DPtoLP(5), mapMode.DPtoLP(5), mapMode.DPtoLP(5),
-				mapMode.DPtoLP(5)));
-
+		
 		fFigureInnerRectContainer.add(fFigureInPolygonContainer);
 		fFigureInPolygonContainer.setLayoutManager(new StackLayout());
 
 		fFigureInPolygon = new ScalableRotableTriangleShape();
-		fFigureInPolygon.addPoint(new Point(mapMode.DPtoLP(0),
-				mapMode.DPtoLP(0)));
-		fFigureInPolygon.addPoint(new Point(mapMode.DPtoLP(1),
-				mapMode.DPtoLP(1)));
-		fFigureInPolygon.addPoint(new Point(mapMode.DPtoLP(0),
-				mapMode.DPtoLP(2)));
+		fFigureInPolygon.addPoint(new Point(0, 0));
+		fFigureInPolygon.addPoint(new Point(1, 1));
+		fFigureInPolygon.addPoint(new Point(0, 2));
 		fFigureInPolygon.setFill(true);
 		fFigureInPolygon.setOutline(false);
 		fFigureInPolygon.setBackgroundColor(ColorConstants.black);
@@ -286,20 +275,13 @@ public class CustomPortFigure extends RectangleFigure {
 		fFigureOutPolygonContainer = new RectangleFigure();
 		fFigureOutPolygonContainer.setFill(false);
 		fFigureOutPolygonContainer.setOutline(false);
-		fFigureOutPolygonContainer.setBorder(new MarginBorder(mapMode
-				.DPtoLP(5), mapMode.DPtoLP(5), mapMode.DPtoLP(5),
-				mapMode.DPtoLP(5)));
-
 		fFigureInnerRectContainer.add(fFigureOutPolygonContainer);
 		fFigureOutPolygonContainer.setLayoutManager(new StackLayout());
 
 		fFigureOutPolygon = new ScalableRotableTriangleShape();
-		fFigureOutPolygon.addPoint(new Point(mapMode.DPtoLP(1),
-				mapMode.DPtoLP(0)));
-		fFigureOutPolygon.addPoint(new Point(mapMode.DPtoLP(0),
-				mapMode.DPtoLP(1)));
-		fFigureOutPolygon.addPoint(new Point(mapMode.DPtoLP(1),
-				mapMode.DPtoLP(2)));
+		fFigureOutPolygon.addPoint(new Point(1, 0));
+		fFigureOutPolygon.addPoint(new Point(0, 1));
+		fFigureOutPolygon.addPoint(new Point(1, 2));
 		fFigureOutPolygon.setFill(true);
 		fFigureOutPolygon.setOutline(false);
 		fFigureOutPolygon.setBackgroundColor(ColorConstants.black);
@@ -309,26 +291,16 @@ public class CustomPortFigure extends RectangleFigure {
 		fFigureInOutPolygonContainer = new RectangleFigure();
 		fFigureInOutPolygonContainer.setFill(false);
 		fFigureInOutPolygonContainer.setOutline(false);
-		fFigureInOutPolygonContainer.setBorder(new MarginBorder(mapMode
-				.DPtoLP(3), mapMode.DPtoLP(3), mapMode.DPtoLP(3),
-				mapMode.DPtoLP(3)));
-
 		fFigureInnerRectContainer.add(fFigureInOutPolygonContainer);
 		fFigureInOutPolygonContainer.setLayoutManager(new StackLayout());
 
 		fFigureInOutPolygon = new ScalableRotableTriangleShape();
-		fFigureInOutPolygon.addPoint(new Point(mapMode.DPtoLP(6),
-				mapMode.DPtoLP(0)));
-		fFigureInOutPolygon.addPoint(new Point(mapMode.DPtoLP(0),
-				mapMode.DPtoLP(3)));
-		fFigureInOutPolygon.addPoint(new Point(mapMode.DPtoLP(6),
-				mapMode.DPtoLP(6)));
-		fFigureInOutPolygon.addPoint(new Point(mapMode.DPtoLP(1),
-				mapMode.DPtoLP(5)));
-		fFigureInOutPolygon.addPoint(new Point(mapMode.DPtoLP(7),
-				mapMode.DPtoLP(8)));
-		fFigureInOutPolygon.addPoint(new Point(mapMode.DPtoLP(1),
-				mapMode.DPtoLP(11)));
+		fFigureInOutPolygon.addPoint(new Point(6, 0));
+		fFigureInOutPolygon.addPoint(new Point(0, 3));
+		fFigureInOutPolygon.addPoint(new Point(6, 6));
+		fFigureInOutPolygon.addPoint(new Point(1, 6));
+		fFigureInOutPolygon.addPoint(new Point(7, 9));
+		fFigureInOutPolygon.addPoint(new Point(1, 12));
 		fFigureInOutPolygon.setFill(true);
 		fFigureInOutPolygon.setOutline(false);
 		fFigureInOutPolygon.setBackgroundColor(ColorConstants.black);
