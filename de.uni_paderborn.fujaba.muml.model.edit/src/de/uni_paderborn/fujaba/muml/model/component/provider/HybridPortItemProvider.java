@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.model.component.provider;
 
 
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -24,9 +23,13 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypeFactory;
+import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
 import de.uni_paderborn.fujaba.muml.model.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
@@ -76,7 +79,7 @@ public class HybridPortItemProvider
 	 * @generated NOT
 	 */
 	protected void addSamplingIntervalPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor
+		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_HybridPort_samplingInterval_feature"),
@@ -87,7 +90,36 @@ public class HybridPortItemProvider
 				 false,
 				 null,
 				 null,
-				 null));
+				 null);
+		itemPropertyDescriptors.add
+		(new NaturalNumberPropertyDescriptor
+			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_TimeValue_value_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
+			 ValuetypePackage.Literals.TIME_VALUE__VALUE,
+			 true,
+			 false,
+			 false,
+			 null,
+			 "Sampling Interval",
+			 null,
+			 rootPropertyDescriptor));
+
+	itemPropertyDescriptors.add
+		(new EnumerationPropertyDescriptor
+			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_TimeValue_unit_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
+			 ValuetypePackage.Literals.TIME_VALUE__UNIT,
+			 true,
+			 false,
+			 false,
+			 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+			 "Sampling Interval",
+			 null,
+			 rootPropertyDescriptor));
 	}
 
 	/**
