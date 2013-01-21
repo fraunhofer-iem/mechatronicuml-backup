@@ -33,6 +33,24 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_HybridPort_3005(
+			de.uni_paderborn.fujaba.muml.model.component.HybridPort instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							1,
+							de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+									.getHybridPort(), null).evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public void init_DiscretePort_3006(
 			de.uni_paderborn.fujaba.muml.model.component.DiscretePort instance) {
 		try {
@@ -44,7 +62,7 @@ public class ElementInitializers {
 			newInstance_0_0.setLowerBound(newInstance_0_0_0_0);
 			Object value_0_0_0_0_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							1,
+							2,
 							de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_0_0);
@@ -59,7 +77,7 @@ public class ElementInitializers {
 			newInstance_0_0.setUpperBound(newInstance_0_0_1_0);
 			Object value_0_0_1_0_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							2,
+							3,
 							de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_0_0_1_0);
@@ -71,11 +89,30 @@ public class ElementInitializers {
 
 			Object value_1 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							3,
+							4,
 							de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 									.getDiscretePort(), null)
 					.evaluate(instance);
 			instance.setName((String) value_1);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_ContinuousPort_3007(
+			de.uni_paderborn.fujaba.muml.model.component.ContinuousPort instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							6,
+							de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+									.getContinuousPort(), null).evaluate(
+							instance);
+			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						

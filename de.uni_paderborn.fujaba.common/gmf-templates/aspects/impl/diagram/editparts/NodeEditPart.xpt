@@ -131,5 +131,5 @@ new org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolic
 «AROUND createDefaultEditPoliciesBody FOR gmfgen::GenNode-»
 	«targetDef.proceed()»
 	installEditPolicy(org.eclipse.gef.EditPolicy.GRAPHICAL_NODE_ROLE,
-		new de.uni_paderborn.fujaba.muml.common.edit.policies.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+		new de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 «ENDAROUND»

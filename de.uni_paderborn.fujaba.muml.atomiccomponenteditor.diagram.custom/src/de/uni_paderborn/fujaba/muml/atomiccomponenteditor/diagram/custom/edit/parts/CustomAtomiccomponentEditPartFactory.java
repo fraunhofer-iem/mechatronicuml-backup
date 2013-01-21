@@ -3,10 +3,6 @@ package de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.edit.p
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.AtomicComponentEditPart;
-import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortEditPart;
-import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart;
-import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.HybridPortEditPart;
 import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.MumlEditPartFactory;
 import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry;
 
@@ -24,14 +20,7 @@ public class CustomAtomiccomponentEditPartFactory extends MumlEditPartFactory {
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
-			case AtomicComponentEditPart.VISUAL_ID:
-				return new CustomAtomicComponentEditPart(view);
-			case DiscretePortEditPart.VISUAL_ID:
-				return new CustomDiscretePortEditPart(view);
-			case ContinuousPortEditPart.VISUAL_ID:
-				return new CustomContinuousPortEditPart(view);
-			case HybridPortEditPart.VISUAL_ID:
-				return new CustomHybridPortEditPart(view);
+			default:
 			}
 		}
 		return super.createEditPart(context, model);

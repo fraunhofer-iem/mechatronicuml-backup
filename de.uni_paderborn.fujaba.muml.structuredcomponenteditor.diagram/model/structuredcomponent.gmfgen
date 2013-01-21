@@ -134,7 +134,7 @@
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
             key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.TETHER_ROLE"
-            editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.DiscretePortAssignedRoleTetherBorderItemEditPolicy"/>
+            editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.tether.DiscretePortAssignedRoleTetherBorderItemEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
             parser="//@labelParsers/@implementations.1"/>

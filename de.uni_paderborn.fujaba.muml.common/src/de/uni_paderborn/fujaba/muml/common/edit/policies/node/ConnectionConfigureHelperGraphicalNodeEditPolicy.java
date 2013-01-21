@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.edit.policies;
+package de.uni_paderborn.fujaba.muml.common.edit.policies.node;
 
 import java.util.Map;
 

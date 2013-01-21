@@ -103,7 +103,7 @@ public class WrappingLabel2EditPart extends LabelEditPart implements
 				new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.MumlTextSelectionEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.TETHER_ROLE,
-				new de.uni_paderborn.fujaba.muml.common.edit.policies.DiscretePortAssignedRoleTetherBorderItemEditPolicy());
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.tether.DiscretePortAssignedRoleTetherBorderItemEditPolicy());
 	}
 
 	/**

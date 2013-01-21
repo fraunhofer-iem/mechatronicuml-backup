@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.commands;
 
 import java.util.Collection;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -13,21 +14,18 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
-import org.eclipse.gmf.runtime.notation.Node;
-
-import de.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.edit.parts.CustomDiscretePortEditPart;
-import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex;
-
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
+
+import de.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.DiscretePortEditPart;
+import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 
 public class CopyRolePropertiesToPort extends AbstractHandler {
 
@@ -84,20 +82,19 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 	 * Returns the selected discrete port
 	 */
 	public DiscretePort getPort(ExecutionEvent event) {
-		CustomDiscretePortEditPart editPart = this.getEditPart(event);
-		return (DiscretePort) ((Node) editPart.getModel()).getElement();
+		DiscretePortEditPart editPart = this.getEditPart(event);
+		return (DiscretePort) editPart.getNotationView().getElement();
 	}
 
 	/**
 	 * Returns the selected editpart
 	 */
-	public CustomDiscretePortEditPart getEditPart(ExecutionEvent event) {
+	public DiscretePortEditPart getEditPart(ExecutionEvent event) {
 		EvaluationContext evalCtx = (EvaluationContext) event
 				.getApplicationContext();
-		@SuppressWarnings("unchecked")
-		Collection<CustomDiscretePortEditPart> defVar = (Collection<CustomDiscretePortEditPart>) evalCtx
+		Collection<?> defVar = (Collection<?>) evalCtx
 				.getDefaultVariable();
-		return defVar.iterator().next();
+		return (DiscretePortEditPart) defVar.iterator().next();
 	}
 
 	/**

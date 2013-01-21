@@ -24,14 +24,6 @@ import org.storydriven.core.expressions.common.provider.CommonExpressionsItemPro
 import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
 
-import org.storydriven.storydiagrams.activities.expressions.provider.ActivitiesExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.activities.provider.ActivitiesItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.calls.expressions.provider.CallsExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.calls.provider.CallsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.patterns.provider.PatternsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.provider.StorydiagramsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAdapterFactory;
 import de.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 
 /**
