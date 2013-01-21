@@ -106,20 +106,20 @@ public class HybridPortItemProvider
 			 null,
 			 rootPropertyDescriptor));
 
-	itemPropertyDescriptors.add
-		(new EnumerationPropertyDescriptor
-			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_TimeValue_unit_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
-			 ValuetypePackage.Literals.TIME_VALUE__UNIT,
-			 true,
-			 false,
-			 false,
-			 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-			 "Sampling Interval",
-			 null,
-			 rootPropertyDescriptor));
+		itemPropertyDescriptors.add
+			(new EnumerationPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeValue_unit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
+				 ValuetypePackage.Literals.TIME_VALUE__UNIT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 "Sampling Interval",
+				 null,
+				 rootPropertyDescriptor));
 	}
 
 	/**
