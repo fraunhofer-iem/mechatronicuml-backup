@@ -85,7 +85,7 @@ public class StructuredComponentInstanceLabelExpressionLabelParser5029
 		initializeEnvironment(typeEnv, env, target);
 		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						11,
+						15,
 						de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 								.getStructuredComponentInstance(), typeEnv)
 				.evaluate(target, env);

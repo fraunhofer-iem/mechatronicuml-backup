@@ -525,7 +525,7 @@ public class MumlVisualIDRegistry {
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance domainElement) {
 		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						1,
+						2,
 						de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 								.getDiscreteSinglePortInstance(), null)
 				.evaluate(domainElement);
@@ -539,7 +539,7 @@ public class MumlVisualIDRegistry {
 			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance domainElement) {
 		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						1,
+						2,
 						de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
 								.getDiscreteSinglePortInstance(), null)
 				.evaluate(domainElement);

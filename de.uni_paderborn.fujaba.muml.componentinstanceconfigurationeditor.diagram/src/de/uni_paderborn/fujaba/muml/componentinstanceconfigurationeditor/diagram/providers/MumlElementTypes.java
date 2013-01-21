@@ -50,22 +50,18 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType HybridPortInstance_2021 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_2021"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType DiscreteSinglePortInstance_2022 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_2022"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType DiscreteMultiPortInstance_2023 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteMultiPortInstance_2023"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType ContinuousPortInstance_2024 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_2024"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
@@ -82,22 +78,18 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType HybridPortInstance_3031 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.HybridPortInstance_3031"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType DiscreteSinglePortInstance_3032 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteSinglePortInstance_3032"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType DiscreteMultiPortInstance_3033 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.DiscreteMultiPortInstance_3033"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType ContinuousPortInstance_3034 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.ContinuousPortInstance_3034"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
@@ -110,12 +102,10 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType StructuredComponentInstance_3025 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.StructuredComponentInstance_3025"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
 	public static final IElementType AssemblyConnectorInstance_4001 = getElementType("de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.AssemblyConnectorInstance_4001"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */

@@ -23,11 +23,11 @@
         </initializers>
       </domainInitializer>
       <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
+          xsi:type="gmfmap:ExpressionLabelMapping">
         <diagramLabel
             href="componentinstanceconfiguration.gmfgraph#PortInstanceLabel"/>
-        <features
-            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        <viewExpression
+            body="if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -56,11 +56,11 @@
         </initializers>
       </domainInitializer>
       <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
+          xsi:type="gmfmap:ExpressionLabelMapping">
         <diagramLabel
             href="componentinstanceconfiguration.gmfgraph#PortInstanceLabel"/>
-        <features
-            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        <viewExpression
+            body="if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -87,11 +87,11 @@
         </initializers>
       </domainInitializer>
       <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
+          xsi:type="gmfmap:ExpressionLabelMapping">
         <diagramLabel
             href="componentinstanceconfiguration.gmfgraph#PortInstanceLabel"/>
-        <features
-            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        <viewExpression
+            body="if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -156,11 +156,11 @@
         </initializers>
       </domainInitializer>
       <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
+          xsi:type="gmfmap:ExpressionLabelMapping">
         <diagramLabel
             href="componentinstanceconfiguration.gmfgraph#PortInstanceLabel"/>
-        <features
-            href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+        <viewExpression
+            body="if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"

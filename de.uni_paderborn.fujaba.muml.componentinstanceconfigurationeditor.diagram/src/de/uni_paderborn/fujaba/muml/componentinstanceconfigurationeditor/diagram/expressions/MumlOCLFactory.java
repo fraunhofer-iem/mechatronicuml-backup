@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlAbstractExpression[12];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlAbstractExpression[16];
 	}
 
 	/**
@@ -51,12 +51,16 @@ public class MumlOCLFactory {
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
 					"\'portinstance\'", //$NON-NLS-1$
+					"if self.type.name.oclIsUndefined() then \'\' else \': \'.concat(self.type.name) endif", //$NON-NLS-1$
 					"self.multiInteractionEndpointInstance.oclIsUndefined()", //$NON-NLS-1$
 					"\'portinstance\'", //$NON-NLS-1$
+					"if self.type.name.oclIsUndefined() then \'\' else \': \'.concat(self.type.name) endif", //$NON-NLS-1$
 					"\'portinstance\'", //$NON-NLS-1$
 					"\'portinstance\'", //$NON-NLS-1$
 					"if self.multiInteractionEndpointInstance.oclIsUndefined() then\n\tnull\nelse\n\tif  self.multiInteractionEndpointInstance.oclIsKindOf(DiscreteMultiPortInstance) then\n\t\tself.multiInteractionEndpointInstance.oclAsType(DiscreteMultiPortInstance).componentInstance\n\telse\n\t\tnull\n\tendif\nendif", //$NON-NLS-1$
+					"if self.type.name.oclIsUndefined() then \'\' else \': \'.concat(self.type.name) endif", //$NON-NLS-1$
 					"\'portinstance\'", //$NON-NLS-1$
+					"if self.type.name.oclIsUndefined() then \'\' else \': \'.concat(self.type.name) endif", //$NON-NLS-1$
 					"\'instance\'", //$NON-NLS-1$
 					"let compName : String = if self.componentType.name.oclIsUndefined() then \'null\' else\tself.componentType.name endif in\r\nlet partName : String = if self.componentPart.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPart.name) endif in\r\n(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(partName.concat(\' : \'.concat(compName)))", //$NON-NLS-1$
 					"\'instance\'", //$NON-NLS-1$

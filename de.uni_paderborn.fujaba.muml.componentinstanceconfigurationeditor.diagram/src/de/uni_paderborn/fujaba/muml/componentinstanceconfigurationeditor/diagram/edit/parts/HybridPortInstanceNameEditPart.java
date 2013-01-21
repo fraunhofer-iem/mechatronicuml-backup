@@ -452,11 +452,15 @@ public class HybridPortInstanceNameEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected void refreshUnderline() {
-		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(
-				NotationPackage.eINSTANCE.getFontStyle());
-		if (style != null && getFigure() instanceof WrappingLabel) {
-			((WrappingLabel) getFigure()).setTextUnderline(style.isUnderline());
-		}
+		// Deactivated this method because of Muml bug #461.
+		// TextUnderline is determined statically, not dynamically.
+
+		// org.eclipse.gmf.runtime.notation.FontStyle style =
+		//	(org.eclipse.gmf.runtime.notation.FontStyle) getFontStyleOwnerView().getStyle(
+		//		org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getFontStyle());
+		//if (style != null && getFigure() instanceof org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) {
+		//	((org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel) getFigure()).setTextUnderline(style.isUnderline());
+		//}
 	}
 
 	/**
@@ -601,7 +605,23 @@ public class HybridPortInstanceNameEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrappingLabel();
+		return new UnderlinedLabelFigure();
+	}
+
+	/**
+	 * @generated
+	 */
+	public class UnderlinedLabelFigure extends WrappingLabel {
+
+		/**
+		 * @generated
+		 */
+		public UnderlinedLabelFigure() {
+
+			this.setTextUnderline(true);
+
+		}
+
 	}
 
 }

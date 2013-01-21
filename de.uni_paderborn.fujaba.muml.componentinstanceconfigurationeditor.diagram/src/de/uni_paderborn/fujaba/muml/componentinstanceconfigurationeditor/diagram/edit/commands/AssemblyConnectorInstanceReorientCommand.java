@@ -127,9 +127,7 @@ public class AssemblyConnectorInstanceReorientCommand extends
 	/**
 	 * @generated
 	 */
-	protected CommandResult reorientSource()
-			throws org.eclipse.core.commands.ExecutionException,
-			ExecutionException {
+	protected CommandResult reorientSource() throws ExecutionException {
 
 		// Enhancement for MUML-BUG #446
 		if (getLink().getConnectorEndpointInstances().size() > 1) {
@@ -143,9 +141,7 @@ public class AssemblyConnectorInstanceReorientCommand extends
 	/**
 	 * @generated
 	 */
-	protected CommandResult reorientTarget()
-			throws org.eclipse.core.commands.ExecutionException,
-			ExecutionException {
+	protected CommandResult reorientTarget() throws ExecutionException {
 
 		// Enhancement for MUML-BUG #446
 		if (getLink().getConnectorEndpointInstances().size() > 1) {

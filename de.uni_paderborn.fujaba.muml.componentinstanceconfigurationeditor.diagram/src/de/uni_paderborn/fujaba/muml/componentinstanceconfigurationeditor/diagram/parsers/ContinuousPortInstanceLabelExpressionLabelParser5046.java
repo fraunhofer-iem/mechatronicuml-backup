@@ -26,12 +26,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class AtomicComponentInstanceLabelExpressionLabelParser5027 implements
+public class ContinuousPortInstanceLabelExpressionLabelParser5046 implements
 		IParser {
 	/**
 	 * @generated
 	 */
-	public AtomicComponentInstanceLabelExpressionLabelParser5027() {
+	public ContinuousPortInstanceLabelExpressionLabelParser5046() {
 	}
 
 	/**
@@ -85,9 +85,9 @@ public class AtomicComponentInstanceLabelExpressionLabelParser5027 implements
 		initializeEnvironment(typeEnv, env, target);
 		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						12,
+						10,
 						de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
-								.getAtomicComponentInstance(), typeEnv)
+								.getContinuousPortInstance(), typeEnv)
 				.evaluate(target, env);
 		return String.valueOf(result);
 	}

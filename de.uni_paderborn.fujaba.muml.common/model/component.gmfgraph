@@ -436,10 +436,21 @@
       </actualFigure>
     </descriptors>
     <descriptors
-        name="PortExternalLabelFigure">
+        name="LabelFigure">
       <actualFigure
           xsi:type="gmfgraph:Label"
-          name="PortExternalLabelFigure"/>
+          name="LabelFigure"/>
+    </descriptors>
+    <descriptors
+        name="UnderlinedLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="WrappingLabel"
+          qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+        <attributes
+            name="textUnderline"
+            value="true"/>
+      </actualFigure>
     </descriptors>
   </figures>
 </gmfgraph:Canvas>

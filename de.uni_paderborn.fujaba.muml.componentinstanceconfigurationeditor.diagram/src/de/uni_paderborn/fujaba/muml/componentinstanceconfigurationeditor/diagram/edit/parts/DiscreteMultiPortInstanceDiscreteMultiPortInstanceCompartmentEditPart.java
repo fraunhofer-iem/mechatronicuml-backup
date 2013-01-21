@@ -105,6 +105,7 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPa
 		setVisibility(hasChildren);
 	}
 
+	// This is also part of the fix mentioned above.
 	/**
 	 * @generated
 	 */
