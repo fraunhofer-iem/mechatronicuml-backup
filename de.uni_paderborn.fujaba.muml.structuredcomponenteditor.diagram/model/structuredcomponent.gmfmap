@@ -351,6 +351,10 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
+    <creationConstraints>
+      <targetEnd
+          body="view &lt;> oppositeView"/>
+    </creationConstraints>
   </links>
   <links>
     <domainMetaElement
@@ -375,6 +379,12 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
+    <creationConstraints>
+      <sourceEnd
+          body="'test' &lt;> 'okay'"/>
+      <targetEnd
+          body="view &lt;> oppositeView"/>
+    </creationConstraints>
   </links>
   <links>
     <labelMappings

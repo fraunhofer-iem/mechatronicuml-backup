@@ -2,14 +2,12 @@ package de.uni_paderborn.fujaba.muml.common.edit.policies.node;
 
 import java.util.Map;
 
-import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewAndElementRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.AbstractEditCommandRequest;
-
-// TODO: Store the notation views instead of edit parts.
+import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
+import org.eclipse.gmf.runtime.notation.View;
 
 /**
  * This GraphicalNodeEditPolicy helps configuring ConnectionRequests by setting
@@ -22,8 +20,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.AbstractEditCommandRequest
 public class ConnectionConfigureHelperGraphicalNodeEditPolicy extends
 		GraphicalNodeEditPolicy {
 
-	public static String SOURCE_EDITPART_ID = "SOURCE_EDITPART";
-	public static String TARGET_EDITPART_ID = "TARGET_EDITPART";
+	public static String SOURCE_VIEW_ID = "SOURCE_VIEW";
+	public static String TARGET_VIEW_ID = "TARGET_VIEW";
 
 	@Override
 	protected Command getConnectionAndRelationshipCreateCommand(
@@ -32,8 +30,8 @@ public class ConnectionConfigureHelperGraphicalNodeEditPolicy extends
 		Map<Object, Object> data = (Map<Object, Object>) request
 				.getExtendedData();
 		if (data != null) {
-			data.put(SOURCE_EDITPART_ID, getHost());
-			data.put(TARGET_EDITPART_ID, null);
+			data.put(SOURCE_VIEW_ID, getHost().getModel());
+			data.put(TARGET_VIEW_ID, null);
 		}
 		return super.getConnectionAndRelationshipCreateCommand(request);
 	}
@@ -45,7 +43,7 @@ public class ConnectionConfigureHelperGraphicalNodeEditPolicy extends
 		Map<Object, Object> data = (Map<Object, Object>) request
 				.getExtendedData();
 		if (data != null) {
-			data.put(TARGET_EDITPART_ID, getHost());
+			data.put(TARGET_VIEW_ID, getHost().getModel());
 		}
 		return super.getConnectionAndRelationshipCompleteCommand(request);
 	}
@@ -53,11 +51,11 @@ public class ConnectionConfigureHelperGraphicalNodeEditPolicy extends
 	/**
 	 * Convenience method for getting the source edit part stored in a gef request.
 	 */
-	public static EditPart getSourceEditPartFor(Request request) {
+	public static View getSourceView(Request request) {
 		@SuppressWarnings("rawtypes")
 		Map data =  request.getExtendedData();
 		if (data != null) {
-			return getSourceEditPartFor(data);
+			return getSourceView(data);
 		}
 		return null;
 	}
@@ -65,11 +63,11 @@ public class ConnectionConfigureHelperGraphicalNodeEditPolicy extends
 	/**
 	 * Convenience method for getting the target edit part stored in a gef request.
 	 */
-	public static EditPart getTargetEditPartFor(Request request) {
+	public static View getTargetView(Request request) {
 		@SuppressWarnings("rawtypes")
 		Map data =  request.getExtendedData();
 		if (data != null) {
-			return getTargetEditPartFor(data);
+			return getTargetView(data);
 		}
 		return null;
 	}
@@ -77,28 +75,28 @@ public class ConnectionConfigureHelperGraphicalNodeEditPolicy extends
 	/**
 	 * Convenience method for getting the source edit part stored in a map.
 	 */
-	public static EditPart getSourceEditPartFor(Map<?,?> data) {
-		return (EditPart) data.get(SOURCE_EDITPART_ID);
+	public static View getSourceView(Map<?,?> data) {
+		return (View) data.get(SOURCE_VIEW_ID);
 	}
 
 	/**
 	 * Convenience method for getting the target edit part stored in a map.
 	 */
-	public static EditPart getTargetEditPartFor(Map<?,?> data) {
-		return (EditPart) data.get(TARGET_EDITPART_ID);
+	public static View getTargetView(Map<?,?> data) {
+		return (View) data.get(TARGET_VIEW_ID);
 	}
-	
+
 	/**
 	 * Convenience method for getting the source edit part stored in a gmf request.
 	 */
-	public static EditPart getSourceEditPartFor(AbstractEditCommandRequest request) {
-		return (EditPart) request.getParameter(SOURCE_EDITPART_ID);
+	public static View getSourceView(IEditCommandRequest request) {
+		return (View) request.getParameter(SOURCE_VIEW_ID);
 	}
 	
 	/**
 	 * Convenience method for getting the target edit part stored in a gmf request.
 	 */
-	public static EditPart getTargetEditPartFor(AbstractEditCommandRequest request) {
-		return (EditPart) request.getParameter(TARGET_EDITPART_ID);
+	public static View getTargetView(IEditCommandRequest request) {
+		return (View) request.getParameter(TARGET_VIEW_ID);
 	}
 }

@@ -671,6 +671,8 @@
               href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
         </modelFacet>
       </labels>
+      <creationConstraints
+          targetEnd="//@expressionProviders/@providers.0/@expressions.12"/>
     </links>
     <links
         visualID="4002"
@@ -721,6 +723,9 @@
               href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
         </modelFacet>
       </labels>
+      <creationConstraints
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.13"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.14"/>
     </links>
     <links
         visualID="4005"
@@ -899,31 +904,40 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="'port'"/>
+          body="--'port'"/>
       <expressions
-          body="if refines.oclIsUndefined() then '' else ': '.concat(&#xA;&#x9;if refines.name.oclIsUndefined() then '' else refines.name endif&#xA;) endif"/>
+          body="--if refines.oclIsUndefined() then '' else ': '.concat(&#xA;&#x9;if refines.name.oclIsUndefined() then '' else refines.name endif&#xA;) endif"/>
       <expressions
-          body="'port'"/>
+          body="--'port'"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="'port'"/>
+          body="--'port'"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="'port'"/>
+          body="--'port'"/>
       <expressions
-          body="let partName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;let compName : String = if self.componentType.oclIsUndefined() then 'null' else self.componentType.name endif in&#xA;let lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then 'null' else cardinality.lowerBound.toString() endif in&#xA;let upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then 'null' else cardinality.upperBound.toString() endif in&#xD;&#xA;partName.concat(' : ').concat(compName).concat(' [').concat(lowerBound).concat('..').concat(upperBound).concat(']')"/>
+          body="--let partName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;let compName : String = if self.componentType.oclIsUndefined() then 'null' else self.componentType.name endif in&#xA;let lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then 'null' else cardinality.lowerBound.toString() endif in&#xA;let upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then 'null' else cardinality.upperBound.toString() endif in&#xD;&#xA;partName.concat(' : ').concat(compName).concat(' [').concat(lowerBound).concat('..').concat(upperBound).concat(']')"/>
       <expressions
-          body="if refines.oclIsUndefined() then '' else ': '.concat(&#xA;&#x9;if refines.name.oclIsUndefined() then '' else refines.name endif&#xA;) endif"/>
+          xsi:type="gmfgen:GenConstraint"
+          body="--view &lt;> oppositeView"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="--'test' &lt;> 'okay'"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="--view &lt;> oppositeView"/>
+      <expressions
+          body="--if refines.oclIsUndefined() then '' else ': '.concat(&#xA;&#x9;if refines.name.oclIsUndefined() then '' else refines.name endif&#xA;) endif"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -951,7 +965,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.2/@labels.0/@modelFacet"
         className="DiscretePortGmfProtocolLabelExpressionLabelParser6003"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.12">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/DiscretePort"/>
     </implementations>

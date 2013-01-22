@@ -95,7 +95,7 @@
       name="PortRefinementLabel"
       elementIcon="false">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#PortExternalLabelFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#LabelFigure"/>
   </labels>
   <labels
       name="RolePatternLabel"

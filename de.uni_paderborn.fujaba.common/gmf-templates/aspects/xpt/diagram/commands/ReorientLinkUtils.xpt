@@ -70,3 +70,33 @@
 		«EXPAND MetaModel::DeclareAndAssign(_var, containerVar, containerMetaClass, self) FOR varMetaClass»
 	«ENDIF-»
 «ENDAROUND»
+
+
+«REM» Need to provide the View for LinkConstraints (Muml Bug #462) «ENDREM»
+«AROUND checkLinkConstraint(link : gmfgen::GenLink, sourceVar : String, targetVar : String) FOR gmfgen::TypeLinkModelFacet-»
+«IF hasContainerOtherThanSource(self)-»
+	if (!(«EXPAND MetaModel::IsContainerInstance('getLink()', metaClass) FOR containmentMetaFeature.genClass»)) {
+		return false;
+	}
+	«EXPAND MetaModel::DeclareAndAssignContainer('container', 'getLink()', metaClass) FOR containmentMetaFeature.genClass»
+«ENDIF-»
+	org.eclipse.gmf.runtime.notation.View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+	org.eclipse.gmf.runtime.notation.View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+	return «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canExistCall(link, 'container', 'getLink()', sourceVar, targetVar + ', sourceView, targetView')»;
+«ENDAROUND»
+«AROUND checkSourceRequestValidity(link : gmfgen::GenLink) FOR gmfgen::FeatureLinkModelFacet-»
+	if (!(«EXPAND MetaModel::IsInstance('oldEnd') FOR getTargetType()» && «EXPAND MetaModel::IsInstance('newEnd') FOR getSourceType()»)) {
+		return false;
+	}
+	org.eclipse.gmf.runtime.notation.View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+	org.eclipse.gmf.runtime.notation.View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+	return «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canExistCall(link, 'getNewSource()', 'getOldTarget(), sourceView, targetView')»;
+«ENDAROUND»
+«AROUND checkTargetRequestValidity(link : gmfgen::GenLink) FOR gmfgen::FeatureLinkModelFacet-»
+	if (!(«EXPAND MetaModel::IsInstance('oldEnd') FOR getTargetType()» && «EXPAND MetaModel::IsInstance('newEnd') FOR getTargetType()»)) {
+		return false;
+	}
+	org.eclipse.gmf.runtime.notation.View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
+	org.eclipse.gmf.runtime.notation.View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
+	return «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canExistCall(link, 'getOldSource()', 'getNewTarget(), sourceView, targetView')»;
+«ENDAROUND»

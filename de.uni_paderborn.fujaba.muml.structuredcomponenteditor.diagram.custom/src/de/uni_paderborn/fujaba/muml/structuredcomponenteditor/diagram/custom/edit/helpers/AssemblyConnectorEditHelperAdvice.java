@@ -5,7 +5,6 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.commands.ConfigureElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
@@ -28,15 +27,15 @@ public class AssemblyConnectorEditHelperAdvice extends AbstractEditHelperAdvice 
 						.getElementToConfigure();
 
 				// Add component part of source port, if exists
-				GraphicalEditPart sourceEditPart = (GraphicalEditPart) ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceEditPartFor(request);
-				ComponentPart sourceComponentPart = getComponentPart(sourceEditPart);
+				View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(request);
+				ComponentPart sourceComponentPart = getComponentPart(sourceView);
 				if (sourceComponentPart != null) {
 					assemblyConnector.getComponentParts().add(sourceComponentPart);
 				}
 				
 				// Add component part of target port, if exists
-				GraphicalEditPart targetEditPart = (GraphicalEditPart) ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetEditPartFor(request);
-				ComponentPart targetComponentPart = getComponentPart(targetEditPart);
+				View targetView = (View) ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(request);
+				ComponentPart targetComponentPart = getComponentPart(targetView);
 				if (targetComponentPart != null) {
 					assemblyConnector.getComponentParts().add(targetComponentPart);					
 				}
@@ -44,8 +43,8 @@ public class AssemblyConnectorEditHelperAdvice extends AbstractEditHelperAdvice 
 				return CommandResult.newOKCommandResult(assemblyConnector);
 			}
 			
-			private ComponentPart getComponentPart(GraphicalEditPart portEditPart) {
-				View containerView = (View) portEditPart.getNotationView().eContainer();
+			private ComponentPart getComponentPart(View view) {
+				View containerView = (View) view.eContainer();
 				if (containerView.getElement() instanceof ComponentPart) {
 					return (ComponentPart) containerView.getElement();
 				}

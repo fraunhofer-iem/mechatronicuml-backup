@@ -1,0 +1,45 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«IMPORT 'http://www.eclipse.org/emf/2002/GenModel'»
+
+«EXTENSION xpt::diagram::editpolicies::Utils»
+«EXTENSION xpt::diagram::Utils»
+«EXTENSION xpt::GenModelUtils»
+«EXTENSION xpt::OclMigrationProblems»
+
+«REM»Add view parameters«ENDREM»
+«AROUND sourceTargetParameters FOR gmfgen::LinkModelFacet-»«targetDef.proceed()», org.eclipse.gmf.runtime.notation.View sourceView, org.eclipse.gmf.runtime.notation.View targetView«-»«ENDAROUND»
+«AROUND canCreateValues FOR gmfgen::LinkModelFacet»«targetDef.proceed()», sourceView, targetView«ENDAROUND»
+
+«REM»«ENDREM»
+«AROUND _checkAdditionalConstraint(gmfgen::ValueExpression valueExpr, String sourceEndVar, String targetEndVar, genmodel::GenClass context, genmodel::GenClass oppositeEndContext) FOR gmfgen::GenExpressionInterpreter-»
+	if («sourceEndVar» == null) {
+		return true;
+	} else {«REM»else is important here as it gives scope for the env variable«ENDREM»
+		java.util.Map«EXPAND CodeStyle::G2('String', 'org.eclipse.emf.ecore.EClassifier') FOR container.editorGen.diagram» envType = new java.util.HashMap«EXPAND CodeStyle::G2('String', 'org.eclipse.emf.ecore.EClassifier') FOR container.editorGen.diagram»();
+		java.util.Map«EXPAND CodeStyle::G2('String', 'Object') FOR container.editorGen.diagram» env = new java.util.HashMap«EXPAND CodeStyle::G2('String', 'Object') FOR container.editorGen.diagram»();
+		«EXPAND addEnvironmentVariables('envType', 'env', sourceEndVar, targetEndVar, context, oppositeEndContext)»
+		Object «sourceEndVar»Val = «EXPAND xpt::expressions::getExpression::getExpression(valueExpr, context, 'envType')».evaluate(«sourceEndVar», env);«EXPAND xpt::Common::nonNLS»
+		if (false == «sourceEndVar»Val instanceof Boolean || !((Boolean) «sourceEndVar»Val).booleanValue()) {
+			return false;
+		} // else fall-through
+	}
+«ENDAROUND»
+
+«DEFINE addEnvironmentVariables(String envTypeMap, String envMap, String sourceEndVar, String targetEndVar, genmodel::GenClass context, genmodel::GenClass oppositeEndContext) FOR gmfgen::GenExpressionInterpreter-»
+«envTypeMap».put(«EXPAND oppositeEndVariableNameValue», «EXPAND MetaModel::MetaClass FOR oppositeEndContext»);«EXPAND xpt::Common::nonNLS»
+«envMap».put(«EXPAND oppositeEndVariableNameValue», «targetEndVar»);
+«envTypeMap».put("view", org.eclipse.gmf.runtime.notation.NotationPackage.Literals.VIEW);
+«envMap».put("view", «sourceEndVar»View);
+«envTypeMap».put("oppositeView", org.eclipse.gmf.runtime.notation.NotationPackage.Literals.VIEW);
+«envMap».put("oppositeView", «targetEndVar»View);
+«-»
+«ENDDEFINE»
+
+
+
+
+«REM»Copied these to make them callable«ENDREM»
+«DEFINE oppositeEndVariableNameValue FOR OclAny»"oppositeEnd"«ENDDEFINE»
+«DEFINE _accessLinkConstraints FOR gmfgen::GenDiagram-»
+«getBaseItemSemanticEditPolicyQualifiedClassName()».getLinkConstraints()«-»
+«ENDDEFINE»

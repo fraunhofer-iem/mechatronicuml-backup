@@ -36,6 +36,11 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 	protected void initializeEnvironment(Map<String, EClassifier> typeEnv,
 			Map<String, Object> env, EObject context) {
 		super.initializeEnvironment(typeEnv, env, context);
+
+		// TODO: Instead of building the expression here, we should just provide
+		// a method Expression.toString() in the OCL environment and use it in
+		// the OCL statement.
+
 		Transition transition = (Transition) context;
 
 		typeEnv.put("guardExpression", EcorePackage.Literals.ESTRING);
@@ -160,16 +165,22 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 			foundElements = new ArrayList<EObject>();
 			for (EObject element : lastElements) {
 				for (EReference reference : REFERENCES) {
-					if (reference.getEContainingClass().equals(element.eClass())) {
+					if (reference.getEContainingClass()
+							.equals(element.eClass())) {
 						Object value = element.eGet(reference);
 						if (value instanceof Collection) {
 							foundElements.addAll((Collection<EObject>) value);
 						} else if (value instanceof EObject) {
 							foundElements.add((EObject) value);
 						} else if (value != null) {
-							throw new UnsupportedOperationException("Invalid reference value");
+							throw new UnsupportedOperationException(
+									"Invalid reference value");
 						}
 					}
+				}
+				// Watch complete expression hierarchy
+				if (element instanceof Expression) {
+					foundElements.addAll(element.eContents());
 				}
 			}
 			elements.addAll(foundElements);

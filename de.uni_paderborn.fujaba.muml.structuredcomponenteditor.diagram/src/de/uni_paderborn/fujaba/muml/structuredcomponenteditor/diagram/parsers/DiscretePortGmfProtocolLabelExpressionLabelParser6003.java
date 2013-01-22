@@ -85,7 +85,7 @@ public class DiscretePortGmfProtocolLabelExpressionLabelParser6003 implements
 		initializeEnvironment(typeEnv, env, target);
 		Object result = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						12,
+						15,
 						de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
 								.getDiscretePort(), typeEnv).evaluate(target,
 						env);

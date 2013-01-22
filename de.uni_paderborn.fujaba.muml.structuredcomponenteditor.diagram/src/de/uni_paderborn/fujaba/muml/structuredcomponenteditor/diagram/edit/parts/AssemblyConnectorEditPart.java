@@ -64,7 +64,7 @@ public class AssemblyConnectorEditPart extends ConnectionNodeEditPart implements
 	 * Handles the property changed event.
 	 * It additionally tests, if the source/target feature was changed and updates
 	 * the Connection's visualization accordingly.
-	 * @param event The property changed event.
+	 * @param notification The property changed event.
 	 * @generated
 	 */
 	@Override
@@ -94,4 +94,5 @@ public class AssemblyConnectorEditPart extends ConnectionNodeEditPart implements
 
 		super.handleNotificationEvent(notification);
 	}
+
 }
