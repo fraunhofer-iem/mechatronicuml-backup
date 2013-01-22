@@ -26,6 +26,9 @@ import de.uni_paderborn.fujaba.muml.model.behavior.Operation;
 import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.model.component.AtomicComponent;
+import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
+import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
@@ -175,8 +178,20 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		RealtimeStatechart rtsc = (RealtimeStatechart) object;
 		typedNamedElementList = new ArrayList<TypedNamedElement>();
 		typedNamedElementList.addAll(rtsc.getAllAvailableVariables());
+		addHybridPorts(rtsc);
 		operationList = rtsc.getAllAvailableOperations();
 		initDataTypes(rtsc);
+	}
+	
+	private void addHybridPorts(RealtimeStatechart rtsc) {
+		if (rtsc.getBehavioralElement() instanceof AtomicComponent) {
+			AtomicComponent atomicComponent = (AtomicComponent) rtsc.getBehavioralElement();
+			for (Port port : atomicComponent.getPorts()) {
+				if (port instanceof HybridPort) {
+					typedNamedElementList.add((TypedNamedElement) port);
+				}
+			}
+		}
 	}
 	
 	private void initDataTypes(EObject object) {
