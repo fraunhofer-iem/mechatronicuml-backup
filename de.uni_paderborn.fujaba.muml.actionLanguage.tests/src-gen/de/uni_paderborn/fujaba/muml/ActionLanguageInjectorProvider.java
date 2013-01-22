@@ -3,43 +3,34 @@
 */
 package de.uni_paderborn.fujaba.muml;
 
-import org.eclipse.xtext.junit4.GlobalRegistries;
-import org.eclipse.xtext.junit4.GlobalRegistries.GlobalStateMemento;
+import org.eclipse.xtext.junit.GlobalRegistries;
+import org.eclipse.xtext.junit.GlobalRegistries.GlobalStateMemento;
 import org.eclipse.xtext.junit4.IInjectorProvider;
 import org.eclipse.xtext.junit4.IRegistryConfigurator;
 
 import com.google.inject.Injector;
 
 public class ActionLanguageInjectorProvider implements IInjectorProvider, IRegistryConfigurator {
-	
-    protected GlobalStateMemento stateBeforeInjectorCreation;
-	protected GlobalStateMemento stateAfterInjectorCreation;
-	protected Injector injector;
+	private GlobalStateMemento globalStateMemento;
+	private Injector injector;
 
 	static {
 		GlobalRegistries.initializeDefaults();
 	}
-
-	public Injector getInjector()
-	{
+	
+	public Injector getInjector() {
 		if (injector == null) {
-			stateBeforeInjectorCreation = GlobalRegistries.makeCopyOfGlobalState();
-			this.injector = internalCreateInjector();
-			stateAfterInjectorCreation = GlobalRegistries.makeCopyOfGlobalState();
+			this.injector = new ActionLanguageStandaloneSetup().createInjectorAndDoEMFRegistration();
 		}
 		return injector;
 	}
 	
-	protected Injector internalCreateInjector() {
-	    return new ActionLanguageStandaloneSetup().createInjectorAndDoEMFRegistration();
-	}
-
 	public void restoreRegistry() {
-		stateBeforeInjectorCreation.restoreGlobalState();
+		globalStateMemento.restoreGlobalState();
 	}
 
 	public void setupRegistry() {
-		getInjector();
-		stateAfterInjectorCreation.restoreGlobalState();
+		globalStateMemento = GlobalRegistries.makeCopyOfGlobalState();
 	}
+	
 }
