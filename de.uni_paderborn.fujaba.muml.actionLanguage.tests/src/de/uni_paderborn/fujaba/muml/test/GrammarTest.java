@@ -36,6 +36,7 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOpera
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression;
+import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 /* commented out by cbr
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression;
 	commented out by cbr */
@@ -349,6 +350,31 @@ public class GrammarTest {
 		triggerMessageExpression = (TriggerMessageExpression) expression.getRightExpression();
 		assertEquals("m1", triggerMessageExpression.getMessageType().getName());
 		assertEquals("test", triggerMessageExpression.getParameter().getName());
+	}
+	
+	@Test
+	public void testHybridPortRead() {
+		TypedNamedElementExpression typedNamedElementExpression = (TypedNamedElementExpression) getAssignmentRHS("{ foo := hybridIn ; }");
+		assertTrue(typedNamedElementExpression.getTypedNamedElement() instanceof HybridPort);
+		assertEquals("hybridIn", typedNamedElementExpression.getTypedNamedElement().getName());
+	}
+	
+	@Test
+	public void testHybridPortWrite() {
+		Assignment assignment = (Assignment) getModel("{ hybridOut := foo; }");
+		assertTrue(assignment.getLhs_typedNamedElementExpression().getTypedNamedElement() instanceof HybridPort);
+		assertEquals("hybridOut", assignment.getLhs_typedNamedElementExpression().getTypedNamedElement().getName());
+	}
+	
+	@Test
+	public void testInvalidHybridPortReadWrite() {
+		// TODO: this should be forbidden
+		// the best is to add a check for this to the type analysis phase.
+		// We could also disallow such an assignment with the help of the scope provider
+		// but such checks are better done in the type analysis phase (IMHO)
+		TypedNamedElementExpression typedNamedElementExpression = (TypedNamedElementExpression) getAssignmentRHS("{ hybridIn := hybridOut ; }");
+		assertTrue(typedNamedElementExpression.getTypedNamedElement() instanceof HybridPort);
+		assertEquals("hybridOut", typedNamedElementExpression.getTypedNamedElement().getName());
 	}
 	
 	protected EObject getAssignmentRHS(String text) {

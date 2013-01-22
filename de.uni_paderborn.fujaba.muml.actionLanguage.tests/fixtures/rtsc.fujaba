@@ -19,12 +19,14 @@
     </modelElements>
   </categories>
   <categories xmi:id="_KR8_QAICEeKaS_lxYydiOQ" key="de.uni_paderborn.fujaba.muml.components.category" name="component">
-    <modelElements xsi:type="component:AtomicComponent" xmi:id="_KnGI0AICEeKaS_lxYydiOQ" name="comp">
-      <ports xsi:type="component:DiscretePort" xmi:id="_gSV58GR-EeKanMCYE9vikw" name="port" behavior="_yTXPYGR-EeKanMCYE9vikw" receiverMessageTypes="_N7XYEGR9EeKanMCYE9vikw"/>
+    <modelElements xsi:type="component:AtomicComponent" xmi:id="_KnGI0AICEeKaS_lxYydiOQ" name="comp" behavior="_yTXPYGR-EeKanMCYE9vikw">
+      <ports xsi:type="component:DiscretePort" xmi:id="_gSV58GR-EeKanMCYE9vikw" name="port" receiverMessageTypes="_N7XYEGR9EeKanMCYE9vikw"/>
+      <ports xsi:type="component:HybridPort" xmi:id="_1JoVEWSCEeKvMbFsl4NsNA" name="hybridOut" dataType="_tr4Dt2R6EeKY55P-MU7VOg" kind="OUT"/>
+      <ports xsi:type="component:HybridPort" xmi:id="_5npYgGSCEeKvMbFsl4NsNA" name="hybridIn" dataType="_tr4Dt2R6EeKY55P-MU7VOg"/>
     </modelElements>
   </categories>
   <categories xmi:id="_yTWoUGR-EeKanMCYE9vikw" key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
-    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_yTXPYGR-EeKanMCYE9vikw" behavioralElement="_gSV58GR-EeKanMCYE9vikw">
+    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" xmi:id="_yTXPYGR-EeKanMCYE9vikw" behavioralElement="_KnGI0AICEeKaS_lxYydiOQ">
       <operations xmi:id="_25lzoGR-EeKanMCYE9vikw" name="call"/>
       <operations xmi:id="_6YPr0GR-EeKanMCYE9vikw" name="callp">
         <parameters xmi:id="_AMosUGR_EeKanMCYE9vikw" name="p1" dataType="_tr4Dt2R6EeKY55P-MU7VOg"/>
