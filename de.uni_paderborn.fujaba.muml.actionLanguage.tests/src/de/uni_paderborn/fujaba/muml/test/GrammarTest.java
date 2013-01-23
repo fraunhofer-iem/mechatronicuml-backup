@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.muml.test;
 
 import static org.junit.Assert.*;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -9,6 +10,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.xtext.junit4.XtextRunner;
 import org.junit.Before;
@@ -375,6 +377,57 @@ public class GrammarTest {
 		TypedNamedElementExpression typedNamedElementExpression = (TypedNamedElementExpression) getAssignmentRHS("{ hybridIn := hybridOut ; }");
 		assertTrue(typedNamedElementExpression.getTypedNamedElement() instanceof HybridPort);
 		assertEquals("hybridOut", typedNamedElementExpression.getTypedNamedElement().getName());
+	}
+	
+	@Test
+	public void testLocalVariableDecl() {
+		loadFromString("{ INT i; INT xyz := 42; }");
+		assertFalse(loadResult.hasError());
+		assertNotNull(loadResult.getEObject());
+		assertValidEObject(loadResult.getEObject());
+	}
+	
+	@Test
+	public void testLocalVariableDDiagnosticeclInDifferentBlocks() {
+		loadFromString("{ INT i; if (2 == 2) { INT q := 42; } }");
+		assertFalse(loadResult.hasError());
+		assertNotNull(loadResult.getEObject());
+		assertValidEObject(loadResult.getEObject());
+	}
+	
+	@Test
+	public void testLocalVariableDeclUniqueNamesViolated() {
+		loadFromString("{ INT i; INT i := 0; }");
+		// the next two assertions hold because it is no parse error
+		assertFalse(loadResult.hasError());
+		assertNotNull(loadResult.getEObject());
+		// validation is supposed to fail
+		assertInvalidEObject(loadResult.getEObject());
+	}
+	
+	@Test
+	public void testLocalVariableDeclInDifferentBlocksUniqueNamesViolated() {
+		loadFromString("{ INT i; if (2 == 2) { INT i := 42; } }");
+		// the next two assertions hold because it is no parse error
+		assertFalse(loadResult.hasError());
+		assertNotNull(loadResult.getEObject());
+		// validation is supposed to fail
+		assertInvalidEObject(loadResult.getEObject());
+	}
+	
+	protected static void assertValidEObject(EObject object) {
+		assertTrue(validEObject(object));
+	}
+	
+	protected static void assertInvalidEObject(EObject object) {
+		assertFalse(validEObject(object));
+	}
+	
+	protected static boolean validEObject(EObject object) {
+		// TODO: file bug: we cannot pass null as context object
+		// (although according to the EValidator interface it is ok)
+		Map<Object, Object> context = new HashMap<Object, Object>();
+		return Diagnostician.INSTANCE.validate(object, null, context);
 	}
 	
 	protected EObject getAssignmentRHS(String text) {
