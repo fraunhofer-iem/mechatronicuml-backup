@@ -19633,5 +19633,70 @@
         featureName="changeable" dataValue="false" oldDataValue="true"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component/DiscretePort/gmfProtocol"
         featureName="changeable" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/"
+        referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        referenceName="details" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="key" dataValue="validationDelegates"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement"
+        referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks"
+        featureName="derived" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks"
+        featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//Block"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks"
+        featureName="name" dataValue="surroundingBlocks"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks"
+        featureName="transient" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks"
+        featureName="changeable" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks"
+        featureName="name" dataValue="allSurroundingBlocks" oldDataValue="surroundingBlocks"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks"
+        featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks"
+        referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="derivation"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- collect all blocks which surround this LocalVariableDeclarationStatement&#xA;self.eContainer()->closure(c : ecore::EObject |&#xA;&#x9;if c.eContainer().oclIsKindOf(core::expressions::Expression) then&#xA;&#x9;&#x9;eContainer()&#xA;&#x9;else&#xA;&#x9;&#x9;c&#xA;&#x9;endif&#xA;)->union(&#xA;&#x9;Set{eContainer()}&#xA;)->select(oclIsKindOf(Block))->collect(&#xA;&#x9;oclAsType(Block)&#xA;)->asOrderedSet()"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement"
+        referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        referenceName="details" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="key" dataValue="constraints"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="UniqueName"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement"
+        referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="UniqueName"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- check if no variable with the same name was defined before&#xA;self.allSurroundingBlocks->collect(&#xA;&#x9;expressions&#xA;)->select(&#xA;&#x9;oclIsKindOf(LocalVariableDeclarationStatement)&#xA;)->collect(&#xA;&#x9;oclAsType(LocalVariableDeclarationStatement)&#xA;)->isUnique(variable.name)"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- check if no variable with the same name was defined before&#xA;self.allSurroundingBlocks->collect(&#xA;&#x9;expressions&#xA;)->select(&#xA;&#x9;oclIsKindOf(LocalVariableDeclarationStatement)&#xA;)->collect(&#xA;&#x9;oclAsType(LocalVariableDeclarationStatement)&#xA;)select(&#xA;&#x9;variable.name = self.variable.name&#xA;)->isUnique(variable.name)"
+        oldDataValue="-- check if no variable with the same name was defined before&#xA;self.allSurroundingBlocks->collect(&#xA;&#x9;expressions&#xA;)->select(&#xA;&#x9;oclIsKindOf(LocalVariableDeclarationStatement)&#xA;)->collect(&#xA;&#x9;oclAsType(LocalVariableDeclarationStatement)&#xA;)->isUnique(variable.name)"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- check if no variable with the same name was defined before&#xA;self.allSurroundingBlocks->collect(&#xA;&#x9;expressions&#xA;)->select(&#xA;&#x9;oclIsKindOf(LocalVariableDeclarationStatement)&#xA;)->collect(&#xA;&#x9;oclAsType(LocalVariableDeclarationStatement)&#xA;)->select(&#xA;&#x9;variable.name = self.variable.name&#xA;)->isUnique(variable.name)"
+        oldDataValue="-- check if no variable with the same name was defined before&#xA;self.allSurroundingBlocks->collect(&#xA;&#x9;expressions&#xA;)->select(&#xA;&#x9;oclIsKindOf(LocalVariableDeclarationStatement)&#xA;)->collect(&#xA;&#x9;oclAsType(LocalVariableDeclarationStatement)&#xA;)select(&#xA;&#x9;variable.name = self.variable.name&#xA;)->isUnique(variable.name)"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- collect all blocks which surround this LocalVariableDeclarationStatement&#xA;self.eContainer()->closure(c : ecore::EObject |&#xA;&#x9;if c.eContainer().oclIsKindOf(core::expressions::Expression) then&#xA;&#x9;&#x9;c.eContainer()&#xA;&#x9;else&#xA;&#x9;&#x9;c&#xA;&#x9;endif&#xA;)->union(&#xA;&#x9;Set{eContainer()}&#xA;)->select(oclIsKindOf(Block))->collect(&#xA;&#x9;oclAsType(Block)&#xA;)->asOrderedSet()"
+        oldDataValue="-- collect all blocks which surround this LocalVariableDeclarationStatement&#xA;self.eContainer()->closure(c : ecore::EObject |&#xA;&#x9;if c.eContainer().oclIsKindOf(core::expressions::Expression) then&#xA;&#x9;&#x9;eContainer()&#xA;&#x9;else&#xA;&#x9;&#x9;c&#xA;&#x9;endif&#xA;)->union(&#xA;&#x9;Set{eContainer()}&#xA;)->select(oclIsKindOf(Block))->collect(&#xA;&#x9;oclAsType(Block)&#xA;)->asOrderedSet()"/>
   </releases>
 </history:History>

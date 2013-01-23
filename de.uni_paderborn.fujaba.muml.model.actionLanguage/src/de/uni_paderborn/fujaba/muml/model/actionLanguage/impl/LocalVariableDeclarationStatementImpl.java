@@ -8,13 +8,16 @@ package de.uni_paderborn.fujaba.muml.model.actionLanguage.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
 
@@ -27,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.LocalVariableDeclarationStatementImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.LocalVariableDeclarationStatementImpl#getInitializeExpression <em>Initialize Expression</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.LocalVariableDeclarationStatementImpl#getAllSurroundingBlocks <em>All Surrounding Blocks</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,6 +56,16 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	 * @ordered
 	 */
 	protected Expression initializeExpression;
+
+	/**
+	 * The cached value of the '{@link #getAllSurroundingBlocks() <em>All Surrounding Blocks</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllSurroundingBlocks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Block> allSurroundingBlocks;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,6 +177,18 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Block> getAllSurroundingBlocks() {
+		if (allSurroundingBlocks == null) {
+			allSurroundingBlocks = new EObjectResolvingEList<Block>(Block.class, this, ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS);
+		}
+		return allSurroundingBlocks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -186,6 +212,8 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 				return getVariable();
 			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
 				return getInitializeExpression();
+			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS:
+				return getAllSurroundingBlocks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -238,6 +266,8 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 				return variable != null;
 			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
 				return initializeExpression != null;
+			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS:
+				return allSurroundingBlocks != null && !allSurroundingBlocks.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

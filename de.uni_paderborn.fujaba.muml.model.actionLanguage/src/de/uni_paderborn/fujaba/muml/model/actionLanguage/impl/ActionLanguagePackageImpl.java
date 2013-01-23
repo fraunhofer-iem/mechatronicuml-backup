@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.expressions.ExpressionsPackage;
 
@@ -33,6 +34,7 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.ReturnStatement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.WhileLoop;
+import de.uni_paderborn.fujaba.muml.model.actionLanguage.util.ActionLanguageValidator;
 import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
@@ -236,6 +238,15 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 
 		// Initialize created meta-data
 		theActionLanguagePackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theActionLanguagePackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return ActionLanguageValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theActionLanguagePackage.freeze();
@@ -614,6 +625,15 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getLocalVariableDeclarationStatement_AllSurroundingBlocks() {
+		return (EReference)localVariableDeclarationStatementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTypedNamedElementExpression() {
 		return typedNamedElementExpressionEClass;
 	}
@@ -744,6 +764,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		localVariableDeclarationStatementEClass = createEClass(LOCAL_VARIABLE_DECLARATION_STATEMENT);
 		createEReference(localVariableDeclarationStatementEClass, LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE);
 		createEReference(localVariableDeclarationStatementEClass, LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION);
+		createEReference(localVariableDeclarationStatementEClass, LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS);
 
 		typedNamedElementExpressionEClass = createEClass(TYPED_NAMED_ELEMENT_EXPRESSION);
 		createEReference(typedNamedElementExpressionEClass, TYPED_NAMED_ELEMENT_EXPRESSION__TYPED_NAMED_ELEMENT);
@@ -854,6 +875,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		initEClass(localVariableDeclarationStatementEClass, LocalVariableDeclarationStatement.class, "LocalVariableDeclarationStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLocalVariableDeclarationStatement_Variable(), theBehaviorPackage.getVariable(), null, "variable", null, 1, 1, LocalVariableDeclarationStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocalVariableDeclarationStatement_InitializeExpression(), theExpressionsPackage.getExpression(), null, "initializeExpression", null, 0, 1, LocalVariableDeclarationStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLocalVariableDeclarationStatement_AllSurroundingBlocks(), this.getBlock(), null, "allSurroundingBlocks", null, 0, -1, LocalVariableDeclarationStatement.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(typedNamedElementExpressionEClass, TypedNamedElementExpression.class, "TypedNamedElementExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTypedNamedElementExpression_TypedNamedElement(), theBehaviorPackage.getTypedNamedElement(), null, "typedNamedElement", null, 0, 1, TypedNamedElementExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -886,6 +908,10 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		// Create annotations
 		// http://www.eclipse.org/edapt
 		createEdaptAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
 	}
 
 	/**
@@ -901,7 +927,51 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		   source, 
 		   new String[] {
 			 "historyURI", "../../de.uni_paderborn.fujaba.muml.model/model/muml.history"
+		   });																																	
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";				
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
 		   });																													
+		addAnnotation
+		  (localVariableDeclarationStatementEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "UniqueName"
+		   });				
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																																	
+		addAnnotation
+		  (localVariableDeclarationStatementEClass, 
+		   source, 
+		   new String[] {
+			 "UniqueName", "-- check if no variable with the same name was defined before\nself.allSurroundingBlocks->collect(\n\texpressions\n)->select(\n\toclIsKindOf(LocalVariableDeclarationStatement)\n)->collect(\n\toclAsType(LocalVariableDeclarationStatement)\n)->select(\n\tvariable.name = self.variable.name\n)->isUnique(variable.name)"
+		   });		
+		addAnnotation
+		  (getLocalVariableDeclarationStatement_AllSurroundingBlocks(), 
+		   source, 
+		   new String[] {
+			 "derivation", "-- collect all blocks which surround this LocalVariableDeclarationStatement\nself.eContainer()->closure(c : ecore::EObject |\n\tif c.eContainer().oclIsKindOf(core::expressions::Expression) then\n\t\tc.eContainer()\n\telse\n\t\tc\n\tendif\n)->union(\n\tSet{eContainer()}\n)->select(oclIsKindOf(Block))->collect(\n\toclAsType(Block)\n)->asOrderedSet()"
+		   });		
 	}
 
 } //ActionLanguagePackageImpl

@@ -31,6 +31,7 @@ import org.storydriven.core.expressions.ExpressionsPackage;
  * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/edapt historyURI='../../de.uni_paderborn.fujaba.muml.model/model/muml.history'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface ActionLanguagePackage extends EPackage {
@@ -981,13 +982,22 @@ public interface ActionLanguagePackage extends EPackage {
 	int LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>All Surrounding Blocks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Local Variable Declaration Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_VARIABLE_DECLARATION_STATEMENT_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1479,6 +1489,17 @@ public interface ActionLanguagePackage extends EPackage {
 	EReference getLocalVariableDeclarationStatement_InitializeExpression();
 
 	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement#getAllSurroundingBlocks <em>All Surrounding Blocks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>All Surrounding Blocks</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement#getAllSurroundingBlocks()
+	 * @see #getLocalVariableDeclarationStatement()
+	 * @generated
+	 */
+	EReference getLocalVariableDeclarationStatement_AllSurroundingBlocks();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression <em>Typed Named Element Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1891,6 +1912,14 @@ public interface ActionLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION = eINSTANCE.getLocalVariableDeclarationStatement_InitializeExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>All Surrounding Blocks</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS = eINSTANCE.getLocalVariableDeclarationStatement_AllSurroundingBlocks();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.model.actionLanguage.impl.TypedNamedElementExpressionImpl <em>Typed Named Element Expression</em>}' class.
