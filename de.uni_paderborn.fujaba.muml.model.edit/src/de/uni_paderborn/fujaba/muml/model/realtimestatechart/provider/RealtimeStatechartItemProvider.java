@@ -70,6 +70,8 @@ public class RealtimeStatechartItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addBehavioralElementPropertyDescriptor(object);
+			addOperationsPropertyDescriptor(object);
+			addVariablesPropertyDescriptor(object);
 			addClocksPropertyDescriptor(object);
 			addHistoryPropertyDescriptor(object);
 			addEventQueueSizePropertyDescriptor(object);
@@ -120,6 +122,50 @@ public class RealtimeStatechartItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Operations feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOperationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Behavior_operations_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Behavior_operations_feature", "_UI_Behavior_type"),
+				 BehaviorPackage.Literals.BEHAVIOR__OPERATIONS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Variables feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVariablesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Behavior_variables_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Behavior_variables_feature", "_UI_Behavior_type"),
+				 BehaviorPackage.Literals.BEHAVIOR__VARIABLES,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

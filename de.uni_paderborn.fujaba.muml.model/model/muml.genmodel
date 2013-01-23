@@ -537,8 +537,8 @@
         <genClasses image="false" ecoreClass="muml.ecore#//model/behavior/Behavior">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Behavior/behavioralElement"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Behavior/operations"/>
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Behavior/variables"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Behavior/operations"/>
+          <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//model/behavior/Behavior/variables"/>
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//model/behavior/Variable">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
