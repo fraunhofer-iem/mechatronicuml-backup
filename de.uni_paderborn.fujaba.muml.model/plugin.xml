@@ -9,6 +9,20 @@
 -->
 <plugin>
 <!-- manual extensions -->
+   <extension
+         point="de.uni_paderborn.fujaba.common.version">
+      <artefact
+            id="de.uni_paderborn.fujaba.muml.model.metamodel"
+            name="generated muml metamodel"
+            resource="plugin.xml"
+            version="0.3.2">
+         <lastchange
+               committer="$LastChangedBy$"
+               date="$LastChangedDate$"
+               revision="$LastChangedRevision$">
+         </lastchange>
+      </artefact>
+   </extension>
 <extension point="org.eclipse.emf.ecore.generated_package">
       <package class="de.uni_paderborn.fujaba.muml.MumlPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/0.2.2"/>
    </extension>
@@ -81,5 +95,6 @@
       <?emfgen generated="true"?>
       <package class="de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/behavior/0.3.17"/>
    </extension>
+
 
 </plugin>

@@ -2,5 +2,6 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension-point id="customItemProviderAdapterFactories" name="Custom ItemProviderAdapterFactories" schema="schema/customItemProviderAdapterFactories.exsd"/>
+   <extension-point id="version" name="version" schema="schema/version.exsd"/>
 
 </plugin>
