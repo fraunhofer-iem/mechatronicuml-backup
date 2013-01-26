@@ -22,6 +22,8 @@ public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 	@Override
 	public void activate() {
 		super.activate();
+		
+		getHost().getViewer().getVisualPartMap().put(getConnection(), getHost());
 
 		// Set initial tether visibility
 		boolean tetherVisible = getSemanticElement().eGet(
@@ -43,6 +45,8 @@ public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 			diagramEventBroker.removeNotificationListener(getSemanticElement(),
 					ComponentPackage.Literals.DISCRETE_PORT__REFINES, this);
 		}
+		
+		getHost().getViewer().getVisualPartMap().remove(getConnection());
 
 		super.deactivate();
 	}
