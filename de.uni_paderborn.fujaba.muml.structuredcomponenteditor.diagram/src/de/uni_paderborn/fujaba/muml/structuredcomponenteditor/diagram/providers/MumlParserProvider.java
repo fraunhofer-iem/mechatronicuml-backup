@@ -186,44 +186,6 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser assemblyConnectorComment_6001Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getAssemblyConnectorComment_6001Parser() {
-		if (assemblyConnectorComment_6001Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getCommentableElement_Comment() };
-			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
-					features);
-			assemblyConnectorComment_6001Parser = parser;
-		}
-		return assemblyConnectorComment_6001Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected IParser delegationConnectorComment_6002Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getDelegationConnectorComment_6002Parser() {
-		if (delegationConnectorComment_6002Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getCommentableElement_Comment() };
-			de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.MessageFormatParser(
-					features);
-			delegationConnectorComment_6002Parser = parser;
-		}
-		return delegationConnectorComment_6002Parser;
-	}
-
-	/**
-	 * @generated
-	 */
 	protected de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers.DiscretePortGmfProtocolLabelExpressionLabelParser6003 discretePortGmfProtocolLabel_6003Parser;
 
 	/**
@@ -259,10 +221,6 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getContinuousPortName_5016Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID:
 			return getCoordinationProtocolName_5026Parser();
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.AssemblyConnectorCommentEditPart.VISUAL_ID:
-			return getAssemblyConnectorComment_6001Parser();
-		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.DelegationConnectorCommentEditPart.VISUAL_ID:
-			return getDelegationConnectorComment_6002Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
 			return getDiscretePortGmfProtocolLabel_6003Parser();
 		}

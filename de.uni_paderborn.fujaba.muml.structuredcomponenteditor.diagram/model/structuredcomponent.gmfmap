@@ -331,13 +331,6 @@
   <links>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/AssemblyConnector"/>
-    <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping">
-      <diagramLabel
-          href="structuredcomponent.gmfgraph#PortRefinementLabel"/>
-      <features
-          href="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
-    </labelMappings>
     <containmentFeature
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent/connectors"/>
     <tool
@@ -359,13 +352,6 @@
   <links>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DelegationConnector"/>
-    <labelMappings
-        xsi:type="gmfmap:FeatureLabelMapping">
-      <diagramLabel
-          href="structuredcomponent.gmfgraph#PortRefinementLabel"/>
-      <features
-          href="../../org.storydriven.core/model/core.ecore#//CommentableElement/comment"/>
-    </labelMappings>
     <containmentFeature
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent/connectors"/>
     <tool
