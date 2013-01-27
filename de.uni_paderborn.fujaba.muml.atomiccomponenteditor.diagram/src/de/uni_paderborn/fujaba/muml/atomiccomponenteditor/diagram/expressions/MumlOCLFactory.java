@@ -50,13 +50,13 @@ public class MumlOCLFactory {
 		}
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
-					"\'comp\'", //$NON-NLS-1$
-					"\'port\'", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"\'port\'", //$NON-NLS-1$
-					"if refines.oclIsUndefined() then \'\' else \': \'.concat(\n\tif refines.name.oclIsUndefined() then \'\' else refines.name endif\n) endif", //$NON-NLS-1$
-					"\'port\'", //$NON-NLS-1$
+					"--\'comp\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'port\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'port\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--if refines.oclIsUndefined() then \'\' else \': \'.concat(\n--\tif refines.name.oclIsUndefined() then \'\' else refines.name endif\n--) endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'port\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

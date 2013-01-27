@@ -353,7 +353,7 @@
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
     <creationConstraints>
       <targetEnd
-          body="view &lt;> oppositeView"/>
+          body="self.oclAsType(component::Port).component = oppositeEnd.oclAsType(component::Port).component"/>
     </creationConstraints>
   </links>
   <links>
@@ -380,10 +380,8 @@
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
     <creationConstraints>
-      <sourceEnd
-          body="'test' &lt;> 'okay'"/>
       <targetEnd
-          body="view &lt;> oppositeView"/>
+          body="-- Example error message&#xA;-- The source port's StructuredComponent must embed the ComponentPart that the Target Port is floating around.&#xA;--let containers : ecore::EObject = { view, oppositeView }.eContainer().oclAsType(notation::View).eContainer() in&#xA;--containers->notEmpty()&#xA;false"/>
     </creationConstraints>
   </links>
   <links>

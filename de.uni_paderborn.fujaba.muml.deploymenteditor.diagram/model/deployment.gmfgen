@@ -308,15 +308,15 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="'hardwareNode'"/>
+          body="--'hardwareNode'"/>
       <expressions
-          body="'hardwarePort'"/>
-      <expressions
-          xsi:type="gmfgen:GenConstraint"
-          body="self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::OUT or self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT"/>
+          body="--'hardwarePort'"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="if oppositeEnd.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT then self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT else self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN endif"/>
+          body="--self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::OUT or self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="--if oppositeEnd.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT then self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT else self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN endif"/>
     </providers>
   </expressionProviders>
   <labelParsers

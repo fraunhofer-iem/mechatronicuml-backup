@@ -3,7 +3,7 @@
 «AROUND additions FOR gmfgen::GenLink-»
 «IF self.isTypeLink()»
 	«REM»
-		Added handleNotificationEvent method according to MechatronicUML BUG #17
+		Added handleNotificationEvent method according to MechatronicUML BUG #17. TODO: Implement as in NodeEditPart by comparing EStructuralFeatures.
 	«ENDREM»
 	«EXPAND xpt::Common::generatedMemberComment(
 	   'Handles the property changed event.\n' +

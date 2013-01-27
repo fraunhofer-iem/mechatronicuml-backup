@@ -103,13 +103,17 @@ public class SinglePortVariableItemSemanticEditPolicy
 			CreateRelationshipRequest req) {
 		if (de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.AssemblyVariableCreateCommand(
-					req, req.getSource(), req.getTarget()));
+			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.AssemblyVariableCreateCommand command = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.AssemblyVariableCreateCommand(
+					req, req.getSource(), req.getTarget());
+			command.setHost(getHost());
+			return getGEFWrapper(command);
 		}
 		if (de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.DelegationVariableCreateCommand(
-					req, req.getSource(), req.getTarget()));
+			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.DelegationVariableCreateCommand command = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.DelegationVariableCreateCommand(
+					req, req.getSource(), req.getTarget());
+			command.setHost(getHost());
+			return getGEFWrapper(command);
 		}
 		return null;
 	}
@@ -121,13 +125,17 @@ public class SinglePortVariableItemSemanticEditPolicy
 			CreateRelationshipRequest req) {
 		if (de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.AssemblyVariable_4004 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.AssemblyVariableCreateCommand(
-					req, req.getSource(), req.getTarget()));
+			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.AssemblyVariableCreateCommand command = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.AssemblyVariableCreateCommand(
+					req, req.getSource(), req.getTarget());
+			command.setHost(getHost());
+			return getGEFWrapper(command);
 		}
 		if (de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.DelegationVariable_4005 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.DelegationVariableCreateCommand(
-					req, req.getSource(), req.getTarget()));
+			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.DelegationVariableCreateCommand command = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.DelegationVariableCreateCommand(
+					req, req.getSource(), req.getTarget());
+			command.setHost(getHost());
+			return getGEFWrapper(command);
 		}
 		return null;
 	}
@@ -141,12 +149,18 @@ public class SinglePortVariableItemSemanticEditPolicy
 	protected Command getReorientRelationshipCommand(
 			ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID:
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.AssemblyVariableReorientCommand(
-					req));
-		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID:
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.DelegationVariableReorientCommand(
-					req));
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID: {
+			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.AssemblyVariableReorientCommand command = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.AssemblyVariableReorientCommand(
+					req);
+			command.setHost(getHost());
+			return getGEFWrapper(command);
+		}
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID: {
+			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.DelegationVariableReorientCommand command = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.DelegationVariableReorientCommand(
+					req);
+			command.setHost(getHost());
+			return getGEFWrapper(command);
+		}
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

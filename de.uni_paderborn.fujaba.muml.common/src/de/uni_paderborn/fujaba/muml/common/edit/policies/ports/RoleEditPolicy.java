@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem;
+package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 
 import org.eclipse.emf.common.notify.Notification;
 

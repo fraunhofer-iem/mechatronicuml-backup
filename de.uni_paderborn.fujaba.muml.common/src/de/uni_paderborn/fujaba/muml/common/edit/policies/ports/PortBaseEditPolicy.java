@@ -1,13 +1,10 @@
-package de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem;
+package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 
-import org.eclipse.draw2d.LayoutListener;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.PointList;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 
-import de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.layout.DefaultLayoutListener;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
@@ -21,8 +18,14 @@ import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
  * @author bingo
  * 
  */
-public class PortBaseEditPolicy extends BorderItemEditPolicy{
+public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy{
 
+	/**
+	 * Edit policy role for registering this edit policy or a subclass.
+	 */
+	public static final String PORT_VISUALIZATION_ROLE = "PortVisualizationRole"; //$NON-NLS-1$
+
+	
 	public void activate() {
 		super.activate();
 		if (deduceBorderItemEditPart() == null) {
@@ -59,7 +62,7 @@ public class PortBaseEditPolicy extends BorderItemEditPolicy{
 	 * 
 	 * @return The Port's Node Plate to use.
 	 */
-	public NodeFigure createNodePlate() {
+	private NodeFigure createNodePlate() {
 		// Copied from generated PortEditPart.java.
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(24, 24) {
 			public PointList getPolygonPoints() {

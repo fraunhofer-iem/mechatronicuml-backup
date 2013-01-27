@@ -50,20 +50,20 @@ public class MumlOCLFactory {
 		}
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
-					"\'pattern\'", //$NON-NLS-1$
-					"\'role1\'", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"\'role2\'", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }", //$NON-NLS-1$
-					"\'\'", //$NON-NLS-1$
-					"\'role\'", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"1", //$NON-NLS-1$
-					"\'\'", //$NON-NLS-1$
-					"self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol", //$NON-NLS-1$
+					"--\'pattern\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'role1\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'role2\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'role\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

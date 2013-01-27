@@ -328,9 +328,10 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canCreateAssemblyConnectorInstance_4001(
 				de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target) {
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
 			return canExistAssemblyConnectorInstance_4001(container, null,
-					source, target);
+					source, target, sourceView, targetView);
 		}
 
 		/**
@@ -339,9 +340,10 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canCreateDelegationConnectorInstance_4002(
 				de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target) {
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
 			return canExistDelegationConnectorInstance_4002(container, null,
-					source, target);
+					source, target, sourceView, targetView);
 		}
 
 		/**
@@ -351,8 +353,20 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance linkInstance,
 				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target) {
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
 			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorAssemblyConnectorInstance_4001(
+				de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance source,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
+			return null;
 		}
 
 		/**
@@ -362,8 +376,20 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container,
 				de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance linkInstance,
 				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target) {
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
 			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorDelegationConnectorInstance_4002(
+				de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance source,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target,
+				View sourceView, View targetView) {
+			return null;
 		}
 	}
 

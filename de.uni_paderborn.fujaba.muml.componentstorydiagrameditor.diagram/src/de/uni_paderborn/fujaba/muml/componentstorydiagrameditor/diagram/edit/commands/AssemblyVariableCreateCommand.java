@@ -4,6 +4,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -11,6 +12,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.gmf.runtime.notation.View;
 
 /**
  * @generated
@@ -35,12 +37,27 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	private EditPart host;
+
+	/**
+	 * @generated
+	 */
 	public AssemblyVariableCreateCommand(CreateRelationshipRequest request,
 			EObject source, EObject target) {
 		super(request.getLabel(), null, request);
+		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
+
+		if (container == null) {
+			View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+					.getSourceView(getRequest());
+			View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+					.getTargetView(getRequest());
+			container = deduceContainerUsingViews(sourceView, targetView);
+		}
+		this.container = container;
 	}
 
 	/**
@@ -65,9 +82,31 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getSourceView(getRequest());
+		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getTargetView(getRequest());
+		if (!de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
 				.getLinkConstraints().canCreateAssemblyVariable_4004(
-						getContainer(), getSource(), getTarget());
+						getContainer(), getSource(), getTarget(), sourceView,
+						targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorAssemblyVariable_4004(
+							getContainer(), getSource(), getTarget(),
+							sourceView, targetView);
+
+			if (errorMessage != null && errorMessage.length() > 0
+					&& host != null) {
+				de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy errorFeedbackPolicy = (de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy) host
+						.getEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.ERROR_FEEDBACK_ROLE);
+				if (errorFeedbackPolicy != null) {
+					errorFeedbackPolicy.showErrorMessage(errorMessage);
+				}
+			}
+
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -161,6 +200,30 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 			}
 		}
 		return null;
+	}
+
+	/**
+	 * Traverse the notation view hierarchy.
+	 * 
+	 * @generated
+	 */
+	private static de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable deduceContainerUsingViews(
+			View sourceView, View targetView) {
+		for (View view = sourceView; view != null; view = (View) view
+				.eContainer()) {
+			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) {
+				return (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) view
+						.getElement();
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setHost(EditPart host) {
+		this.host = host;
 	}
 
 }

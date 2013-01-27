@@ -70,14 +70,19 @@ public class SinglePortVariableEditPart extends ShapeNodeEditPart {
 				new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.SinglePortVariableItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE,
-				new de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortVariableEditPolicy());
+				de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortVariableEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
 		installEditPolicy(
 				EditPolicy.GRAPHICAL_NODE_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.ERROR_FEEDBACK_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy());
+
 	}
 
 	/**

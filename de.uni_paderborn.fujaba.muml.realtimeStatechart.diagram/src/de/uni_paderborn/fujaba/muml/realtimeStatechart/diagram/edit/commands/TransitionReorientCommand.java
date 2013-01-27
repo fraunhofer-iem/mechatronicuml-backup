@@ -4,9 +4,11 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.notation.View;
 
 /**
  * @generated
@@ -68,9 +70,22 @@ public class TransitionReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getSourceView(getRequest());
+		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getTargetView(getRequest());
+		if (!de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistTransition_4003(container,
-						getLink(), getNewSource(), target);
+						getLink(), getNewSource(), target, sourceView,
+						targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorTransition_4003(container,
+							getNewSource(), target, sourceView, targetView);
+			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(sourceView, errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -87,9 +102,22 @@ public class TransitionReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) getLink()
 				.eContainer();
-		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getSourceView(getRequest());
+		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getTargetView(getRequest());
+		if (!de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistTransition_4003(container,
-						getLink(), source, getNewTarget());
+						getLink(), source, getNewTarget(), sourceView,
+						targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorTransition_4003(container,
+							source, getNewTarget(), sourceView, targetView);
+			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(sourceView, errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -164,6 +192,8 @@ public class TransitionReorientCommand extends EditElementCommand {
 	protected de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex getNewTarget() {
 		return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) newEnd;
 	}
+
+	private EditPart host;
 
 	/**
 	 * @generated

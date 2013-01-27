@@ -74,9 +74,18 @@ public class DiscretePortGmfProtocolReorientCommand extends EditElementCommand {
 				.getSourceView(getRequest());
 		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
-		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+		if (!de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistDiscretePortGmfProtocol_4005(
-						getNewSource(), getOldTarget(), sourceView, targetView);
+						getNewSource(), getOldTarget(), sourceView, targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorDiscretePortGmfProtocol_4005(
+							getNewSource(), getOldTarget(), sourceView,
+							targetView);
+			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(sourceView, errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -90,9 +99,18 @@ public class DiscretePortGmfProtocolReorientCommand extends EditElementCommand {
 				.getSourceView(getRequest());
 		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
-		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+		if (!de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistDiscretePortGmfProtocol_4005(
-						getOldSource(), getNewTarget(), sourceView, targetView);
+						getOldSource(), getNewTarget(), sourceView, targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorDiscretePortGmfProtocol_4005(
+							getOldSource(), getNewTarget(), sourceView,
+							targetView);
+			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(targetView, errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**

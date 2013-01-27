@@ -1,11 +1,11 @@
-package de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.layout;
+package de.uni_paderborn.fujaba.muml.common.edit.policies.ports.layout;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 
-import de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy;
+import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.AbstractRotatingBorderItemEditPolicy;
 
 /**
  * A LayoutListener that listens to changes in the container's layout. After the

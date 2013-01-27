@@ -26,20 +26,13 @@
      </category>
      <command
            categoryId="de.fujaba"
-           defaultHandler="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+           defaultHandler="de.uni_paderborn.fujaba.muml.common.internal.ui.commands.OpenTypeDialogCommand"
            description="Open Type Dialog"
            id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
            name="Open Type Dialog">
      </command>
   </extension>
- <extension
-       point="de.fujaba.newwizard.modelinitializer">
-    <initializer
-          initializer="de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer">
-    </initializer>
- </extension>
- 
- 
+
  <!-- make sure that the "types" modelelementcategory is accepted as valid -->
  <extension
          point="de.fujaba.modelinstance.modelelementcategory">

@@ -59,8 +59,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortTypeEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/HybridPort"/>
@@ -123,8 +123,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortTypeEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/DiscretePort"/>
@@ -239,8 +239,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortTypeEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/component/ContinuousPort"/>
@@ -453,19 +453,19 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="'comp'"/>
+          body="--'comp'"/>
       <expressions
-          body="'port'"/>
+          body="--'port'"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="'port'"/>
+          body="--'port'"/>
       <expressions
-          body="if refines.oclIsUndefined() then '' else ': '.concat(&#xA;&#x9;if refines.name.oclIsUndefined() then '' else refines.name endif&#xA;) endif"/>
+          body="--if refines.oclIsUndefined() then '' else ': '.concat(&#xA;--&#x9;if refines.name.oclIsUndefined() then '' else refines.name endif&#xA;--) endif"/>
       <expressions
-          body="'port'"/>
+          body="--'port'"/>
     </providers>
   </expressionProviders>
   <labelParsers

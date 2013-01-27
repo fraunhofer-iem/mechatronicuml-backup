@@ -121,8 +121,10 @@ public class ComponentStoryNodeItemSemanticEditPolicy
 			CreateRelationshipRequest req) {
 		if (de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.ActivityEdgeCreateCommand(
-					req, req.getSource(), req.getTarget()));
+			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.ActivityEdgeCreateCommand command = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.ActivityEdgeCreateCommand(
+					req, req.getSource(), req.getTarget());
+			command.setHost(getHost());
+			return getGEFWrapper(command);
 		}
 		return null;
 	}
@@ -134,8 +136,10 @@ public class ComponentStoryNodeItemSemanticEditPolicy
 			CreateRelationshipRequest req) {
 		if (de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.ActivityEdgeCreateCommand(
-					req, req.getSource(), req.getTarget()));
+			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.ActivityEdgeCreateCommand command = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.ActivityEdgeCreateCommand(
+					req, req.getSource(), req.getTarget());
+			command.setHost(getHost());
+			return getGEFWrapper(command);
 		}
 		return null;
 	}
@@ -149,9 +153,12 @@ public class ComponentStoryNodeItemSemanticEditPolicy
 	protected Command getReorientRelationshipCommand(
 			ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityEdgeEditPart.VISUAL_ID:
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.ActivityEdgeReorientCommand(
-					req));
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityEdgeEditPart.VISUAL_ID: {
+			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.ActivityEdgeReorientCommand command = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.ActivityEdgeReorientCommand(
+					req);
+			command.setHost(getHost());
+			return getGEFWrapper(command);
+		}
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

@@ -75,14 +75,19 @@ public class ContinuousPortEditPart extends BorderedBorderItemEditPart {
 				new de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.policies.ContinuousPortItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE,
-				new de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortTypeEditPolicy());
+				de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
 		installEditPolicy(
 				EditPolicy.GRAPHICAL_NODE_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.ERROR_FEEDBACK_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy());
+
 	}
 
 	/**
@@ -96,114 +101,7 @@ public class ContinuousPortEditPart extends BorderedBorderItemEditPart {
 				switch (de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.edit.parts.ContinuousPortNameEditPart.VISUAL_ID:
-					return new BorderItemSelectionEditPolicy() {
-
-						// BEGIN FIX: Muml-Bug #58
-						// (Copied from NonResizableLabelEditPolicy and slightly modified, see comments below)
-						private Polyline tether = null;
-
-						protected void eraseChangeBoundsFeedback(
-								ChangeBoundsRequest request) {
-							super.eraseChangeBoundsFeedback(request);
-							if (tether != null)
-								removeFeedback(tether);
-							tether = null;
-						}
-
-						protected IFigure createDragSourceFeedbackFigure() {
-							IFigure feedback = super
-									.createDragSourceFeedbackFigure();
-							tether = new Polyline();
-							tether.setLineStyle(Graphics.LINE_DASHDOT);
-							tether.setForegroundColor(((IGraphicalEditPart) getHost())
-									.getFigure().getForegroundColor());
-							addFeedback(tether);
-							return feedback;
-						}
-
-						protected void showChangeBoundsFeedback(
-								ChangeBoundsRequest request) {
-
-							IFigure p = getDragSourceFeedbackFigure();
-							Rectangle r = p.getBounds();
-							Point refPoint = ((LabelEditPart) getHost())
-									.getReferencePoint();
-
-							// translate the feedback figure
-							PrecisionRectangle rect = new PrecisionRectangle(
-									getInitialFeedbackBounds().getCopy());
-							getHostFigure().translateToAbsolute(rect);
-							rect.translate(request.getMoveDelta());
-							rect.resize(request.getSizeDelta());
-							p.translateToRelative(rect);
-
-							/* BEGIN MODIFIED for Muml-Bug #58 */
-							/* Commented out the following line ... */
-
-							//p.setBounds(rect);
-
-							/* ... and replaced it with super call */
-							super.showChangeBoundsFeedback(request);
-							/* END MODIFIED for Muml-Bug #58 */
-
-							Rectangle centerMain = null;
-							// TODO: remove this hack. We should be using the reference point for
-							// the teher end, however,
-							// the reference point is causing miscaculation when positioning. This
-							// has to be redone in version 2.
-							if (((IGraphicalEditPart) getHost().getParent())
-									.getFigure() instanceof Connection) {
-								centerMain = new Rectangle(refPoint.x,
-										refPoint.y, 0, 0);
-								getHostFigure().translateToAbsolute(centerMain);
-								p.translateToRelative(centerMain);
-							} else {
-								centerMain = ((IGraphicalEditPart) getHost()
-										.getParent()).getFigure().getBounds()
-										.getCopy();
-								centerMain.translate(centerMain.width / 2,
-										centerMain.height / 2);
-								getHostFigure().translateToAbsolute(centerMain);
-								p.translateToRelative(centerMain);
-							}
-
-							PrecisionRectangle ref = new PrecisionRectangle(
-									centerMain);
-
-							Point midTop = new Point(r.x + r.width / 2, r.y);
-							Point midBottom = new Point(r.x + r.width / 2, r.y
-									+ r.height);
-							Point midLeft = new Point(r.x, r.y + r.height / 2);
-							Point midRight = new Point(r.x + r.width, r.y
-									+ r.height / 2);
-
-							Point startPoint = midTop;
-
-							int x = r.x + r.width / 2 - refPoint.x;
-							int y = r.y + r.height / 2 - refPoint.y;
-
-							if (y > 0 && y > x && y > -x)
-								startPoint = midTop;
-							else if (y < 0 && y < x && y < -x)
-								startPoint = midBottom;
-							else if (x < 0 && y > x && y < -x)
-								startPoint = midRight;
-							else
-								startPoint = midLeft;
-
-							tether.setStart(startPoint);
-							tether.setEnd(ref.getLocation());
-						}
-
-						// END FIX: Muml-Bug #58
-
-						protected List createSelectionHandles() {
-							MoveHandle mh = new MoveHandle(
-									(GraphicalEditPart) getHost());
-							mh.setBorder(null);
-							return Collections.singletonList(mh);
-						}
-					};
+					return new de.uni_paderborn.fujaba.muml.common.edit.policies.BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
 						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);

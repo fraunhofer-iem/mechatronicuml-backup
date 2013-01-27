@@ -334,8 +334,10 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 		 * @generated
 		 */
 		public boolean canCreateActivityEdge_4001(Activity container,
-				ActivityNode source, ActivityNode target) {
-			return canExistActivityEdge_4001(container, null, source, target);
+				ActivityNode source, ActivityNode target, View sourceView,
+				View targetView) {
+			return canExistActivityEdge_4001(container, null, source, target,
+					sourceView, targetView);
 		}
 
 		/**
@@ -344,9 +346,10 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 		public boolean canCreateAssemblyVariable_4004(
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
 				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target) {
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				View sourceView, View targetView) {
 			return canExistAssemblyVariable_4004(container, null, source,
-					target);
+					target, sourceView, targetView);
 		}
 
 		/**
@@ -355,9 +358,10 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 		public boolean canCreateDelegationVariable_4005(
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
 				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target) {
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				View sourceView, View targetView) {
 			return canExistDelegationVariable_4005(container, null, source,
-					target);
+					target, sourceView, targetView);
 		}
 
 		/**
@@ -365,8 +369,17 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 		 */
 		public boolean canExistActivityEdge_4001(Activity container,
 				ActivityEdge linkInstance, ActivityNode source,
-				ActivityNode target) {
+				ActivityNode target, View sourceView, View targetView) {
 			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorActivityEdge_4001(Activity container,
+				ActivityNode source, ActivityNode target, View sourceView,
+				View targetView) {
+			return null;
 		}
 
 		/**
@@ -376,8 +389,20 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable linkInstance,
 				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target) {
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				View sourceView, View targetView) {
 			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorAssemblyVariable_4004(
+				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				View sourceView, View targetView) {
+			return null;
 		}
 
 		/**
@@ -387,8 +412,20 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable linkInstance,
 				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target) {
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				View sourceView, View targetView) {
 			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorDelegationVariable_4005(
+				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				View sourceView, View targetView) {
+			return null;
 		}
 	}
 

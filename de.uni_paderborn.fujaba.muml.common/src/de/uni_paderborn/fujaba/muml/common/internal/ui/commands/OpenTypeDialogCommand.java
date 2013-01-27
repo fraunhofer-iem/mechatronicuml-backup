@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.commands;
+package de.uni_paderborn.fujaba.muml.common.internal.ui.commands;
 
 import java.io.IOException;
 import java.util.ArrayList;

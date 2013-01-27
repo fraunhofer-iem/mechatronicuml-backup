@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem;
+package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutListener;
@@ -17,25 +17,20 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 
-import de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.layout.DefaultLayoutListener;
-
 /**
- * This class contains all the behavior for border items.
+ * This class contains all the behavior for rotated border items.
  * 
  * @author bingo
  * 
  */
-public class BorderItemEditPolicy extends GraphicalEditPolicy implements
+public abstract class AbstractRotatingBorderItemEditPolicy extends GraphicalEditPolicy implements
 		NotificationListener {
-	/**
-	 * Edit policy role for registering this edit policy or a subclass.
-	 */
-	public static final String BORDER_ITEM_ROLE = "BorderItemRole"; //$NON-NLS-1$
 
+	
 	/**
 	 * The offset that the port lies within it's container.
 	 */
-	 public static final Dimension DEFAULT_OFFSET = new Dimension(12, 12);
+	public static final Dimension DEFAULT_OFFSET = new Dimension(12, 12);
 
 	/**
 	 * The LayoutListener for layouting the port's container.
@@ -251,7 +246,7 @@ public class BorderItemEditPolicy extends GraphicalEditPolicy implements
 		}
 
 		protected void sideChanged(int side) {
-			BorderItemEditPolicy.this.sideChanged(side);
+			AbstractRotatingBorderItemEditPolicy.this.sideChanged(side);
 		}
 	}
 

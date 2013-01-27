@@ -4,9 +4,11 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.ActivityNode;
@@ -69,9 +71,30 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Activity container = (Activity) getLink().eContainer();
-		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getSourceView(getRequest());
+		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getTargetView(getRequest());
+		if (!de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistActivityEdge_4001(container,
-						getLink(), getNewSource(), target);
+						getLink(), getNewSource(), target, sourceView,
+						targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorActivityEdge_4001(container,
+							getNewSource(), target, sourceView, targetView);
+
+			if (errorMessage != null && errorMessage.length() > 0
+					&& host != null) {
+				de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy errorFeedbackPolicy = (de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy) host
+						.getEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.ERROR_FEEDBACK_ROLE);
+				if (errorFeedbackPolicy != null) {
+					errorFeedbackPolicy.showErrorMessage(errorMessage);
+				}
+			}
+
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -86,9 +109,30 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 			return false;
 		}
 		Activity container = (Activity) getLink().eContainer();
-		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getSourceView(getRequest());
+		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getTargetView(getRequest());
+		if (!de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistActivityEdge_4001(container,
-						getLink(), source, getNewTarget());
+						getLink(), source, getNewTarget(), sourceView,
+						targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorActivityEdge_4001(container,
+							source, getNewTarget(), sourceView, targetView);
+
+			if (errorMessage != null && errorMessage.length() > 0
+					&& host != null) {
+				de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy errorFeedbackPolicy = (de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy) host
+						.getEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.ERROR_FEEDBACK_ROLE);
+				if (errorFeedbackPolicy != null) {
+					errorFeedbackPolicy.showErrorMessage(errorMessage);
+				}
+			}
+
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -162,6 +206,15 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 	 */
 	protected ActivityNode getNewTarget() {
 		return (ActivityNode) newEnd;
+	}
+
+	private EditPart host;
+
+	/**
+	 * @generated
+	 */
+	public void setHost(EditPart host) {
+		this.host = host;
 	}
 
 	/**

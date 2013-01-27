@@ -80,10 +80,19 @@ public class DelegationConnectorReorientCommand extends EditElementCommand {
 				.getSourceView(getRequest());
 		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
-		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+		if (!de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistDelegationConnector_4002(
 						container, getLink(), getNewSource(), target,
-						sourceView, targetView);
+						sourceView, targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorDelegationConnector_4002(
+							container, getNewSource(), target, sourceView,
+							targetView);
+			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(sourceView, errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -110,10 +119,19 @@ public class DelegationConnectorReorientCommand extends EditElementCommand {
 				.getSourceView(getRequest());
 		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
-		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+		if (!de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canExistDelegationConnector_4002(
 						container, getLink(), source, getNewTarget(),
-						sourceView, targetView);
+						sourceView, targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorDelegationConnector_4002(
+							container, source, getNewTarget(), sourceView,
+							targetView);
+			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(sourceView, errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**

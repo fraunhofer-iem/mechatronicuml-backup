@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem;
+package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 
 import java.util.Arrays;
 
@@ -11,11 +11,11 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 
-import de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.layout.MultiPortLayoutListener;
+import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.layout.MultiPortLayoutListener;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
 
-public class MultiPortEditPolicy extends BorderItemEditPolicy {
+public class MultiPortEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 	public static final Dimension DEFAULT_MULTI_OFFSET = new Dimension(22, 18);
 
 	public LayoutListener createContainerLayoutListener() {

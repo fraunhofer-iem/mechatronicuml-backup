@@ -57,12 +57,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortInstanceEditPolicy"/>
-      <behaviour
-          xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortInstanceEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortInstanceEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/DiscreteSinglePortInstance"/>
@@ -113,8 +109,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortInstanceEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortInstanceEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/HybridPortInstance"/>
@@ -175,8 +171,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortInstanceEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortInstanceEditPolicy"/>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.2">
         <metaClass
@@ -240,8 +236,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.MultiPortEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.MultiPortEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/DiscreteMultiPortInstance"/>
@@ -302,8 +298,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortInstanceEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortInstanceEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ContinuousPortInstance"/>
@@ -525,8 +521,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortInstanceEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortInstanceEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/HybridPortInstance"/>
@@ -584,8 +580,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortInstanceEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortInstanceEditPolicy"/>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.2">
         <metaClass
@@ -646,8 +642,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.MultiPortEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.MultiPortEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/DiscreteMultiPortInstance"/>
@@ -705,8 +701,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortInstanceEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortInstanceEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/instance/ContinuousPortInstance"/>
@@ -1682,38 +1678,38 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="'portinstance'"/>
+          body="--'portinstance'"/>
       <expressions
-          body="if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
+          body="--if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="self.multiInteractionEndpointInstance.oclIsUndefined()"/>
+          body="--self.multiInteractionEndpointInstance.oclIsUndefined()"/>
       <expressions
-          body="'portinstance'"/>
+          body="--'portinstance'"/>
       <expressions
-          body="if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
+          body="--if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
       <expressions
-          body="'portinstance'"/>
+          body="--'portinstance'"/>
       <expressions
-          body="'portinstance'"/>
+          body="--'portinstance'"/>
       <expressions
-          body="if self.multiInteractionEndpointInstance.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;if  self.multiInteractionEndpointInstance.oclIsKindOf(DiscreteMultiPortInstance) then&#xA;&#x9;&#x9;self.multiInteractionEndpointInstance.oclAsType(DiscreteMultiPortInstance).componentInstance&#xA;&#x9;else&#xA;&#x9;&#x9;null&#xA;&#x9;endif&#xA;endif"/>
+          body="--if self.multiInteractionEndpointInstance.oclIsUndefined() then&#xA;--&#x9;null&#xA;--else&#xA;--&#x9;if  self.multiInteractionEndpointInstance.oclIsKindOf(DiscreteMultiPortInstance) then&#xA;--&#x9;&#x9;self.multiInteractionEndpointInstance.oclAsType(DiscreteMultiPortInstance).componentInstance&#xA;--&#x9;else&#xA;--&#x9;&#x9;null&#xA;--&#x9;endif&#xA;--endif"/>
       <expressions
-          body="if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
+          body="--if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
       <expressions
-          body="'portinstance'"/>
+          body="--'portinstance'"/>
       <expressions
-          body="if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
+          body="--if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
       <expressions
-          body="'instance'"/>
+          body="--'instance'"/>
       <expressions
-          body="let compName : String = if self.componentType.name.oclIsUndefined() then 'null' else&#x9;self.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPart.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPart.name) endif in&#xD;&#xA;(if self.name.oclIsUndefined() then 'null' else self.name endif).concat(partName.concat(' : '.concat(compName)))"/>
+          body="--let compName : String = if self.componentType.name.oclIsUndefined() then 'null' else&#x9;self.componentType.name endif in&#xD;&#xA;--let partName : String = if self.componentPart.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPart.name) endif in&#xD;&#xA;--(if self.name.oclIsUndefined() then 'null' else self.name endif).concat(partName.concat(' : '.concat(compName)))"/>
       <expressions
-          body="'instance'"/>
+          body="--'instance'"/>
       <expressions
-          body="'configuration'"/>
+          body="--'configuration'"/>
       <expressions
-          body="let compName : String = if self.componentType.name.oclIsUndefined() then 'null' else&#x9;self.componentType.name endif in&#xD;&#xA;let partName : String = if self.componentPart.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPart.name) endif in&#xD;&#xA;(if self.name.oclIsUndefined() then 'null' else self.name endif).concat(partName.concat(' : '.concat(compName)))"/>
+          body="--let compName : String = if self.componentType.name.oclIsUndefined() then 'null' else&#x9;self.componentType.name endif in&#xD;&#xA;--let partName : String = if self.componentPart.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.componentPart.name) endif in&#xD;&#xA;--(if self.name.oclIsUndefined() then 'null' else self.name endif).concat(partName.concat(' : '.concat(compName)))"/>
     </providers>
   </expressionProviders>
   <labelParsers

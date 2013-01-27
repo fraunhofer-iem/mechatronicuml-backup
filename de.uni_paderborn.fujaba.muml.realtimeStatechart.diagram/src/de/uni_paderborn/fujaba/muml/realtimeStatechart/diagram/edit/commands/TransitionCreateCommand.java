@@ -4,6 +4,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -11,6 +12,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
+import org.eclipse.gmf.runtime.notation.View;
 
 /**
  * @generated
@@ -38,9 +40,19 @@ public class TransitionCreateCommand extends EditElementCommand {
 	public TransitionCreateCommand(CreateRelationshipRequest request,
 			EObject source, EObject target) {
 		super(request.getLabel(), null, request);
+		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
+
+		if (container == null) {
+			View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+					.getSourceView(getRequest());
+			View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+					.getTargetView(getRequest());
+			container = deduceContainerUsingViews(sourceView, targetView);
+		}
+		this.container = container;
 	}
 
 	/**
@@ -65,9 +77,23 @@ public class TransitionCreateCommand extends EditElementCommand {
 		if (getContainer() == null) {
 			return false;
 		}
-		return de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getSourceView(getRequest());
+		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+				.getTargetView(getRequest());
+		if (!de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canCreateTransition_4003(getContainer(),
-						getSource(), getTarget());
+						getSource(), getTarget(), sourceView, targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorTransition_4003(
+							getContainer(), getSource(), getTarget(),
+							sourceView, targetView);
+			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(targetView != null ? targetView : sourceView,
+							errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -160,6 +186,23 @@ public class TransitionCreateCommand extends EditElementCommand {
 				.eContainer()) {
 			if (element instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) {
 				return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) element;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Traverse the notation view hierarchy.
+	 * 
+	 * @generated
+	 */
+	private static de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart deduceContainerUsingViews(
+			View sourceView, View targetView) {
+		for (View view = sourceView; view != null; view = (View) view
+				.eContainer()) {
+			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) {
+				return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) view
+						.getElement();
 			}
 		}
 		return null;

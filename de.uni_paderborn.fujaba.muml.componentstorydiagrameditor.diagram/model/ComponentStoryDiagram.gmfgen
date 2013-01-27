@@ -307,8 +307,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.MultiPortEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.MultiPortEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/MultiPortVariable"/>
@@ -386,8 +386,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortVariableEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortVariableEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/SinglePortVariable"/>
@@ -422,8 +422,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortVariableEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortVariableEditPolicy"/>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.6">
         <metaClass
@@ -507,8 +507,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.MultiPortEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.MultiPortEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/MultiPortVariable"/>
@@ -588,8 +588,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.PortVariableEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortVariableEditPolicy"/>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.6">
         <metaClass
@@ -1197,22 +1197,22 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="'activity'"/>
+          body="--'activity'"/>
       <expressions
-          body="'componentStoryPattern'"/>
+          body="--'componentStoryPattern'"/>
       <expressions
-          body="'this'"/>
+          body="--'this'"/>
       <expressions
-          body="storydiagrams::patterns::BindingState::BOUND"/>
+          body="--storydiagrams::patterns::BindingState::BOUND"/>
       <expressions
-          body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+          body="--storydiagrams::patterns::BindingSemantics::MANDATORY"/>
       <expressions
-          body="'componentStoryNode'"/>
+          body="--'componentStoryNode'"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="self.multiPortVariable.oclIsUndefined()"/>
+          body="--self.multiPortVariable.oclIsUndefined()"/>
       <expressions
-          body="let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
+          body="--let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;--let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;--let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;--if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;--selfName&#xD;&#xA;--else&#xD;&#xA;--selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;--endif"/>
     </providers>
   </expressionProviders>
   <labelParsers

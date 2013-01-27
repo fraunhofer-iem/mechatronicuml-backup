@@ -50,10 +50,10 @@ public class MumlOCLFactory {
 		}
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
-					"\'hardwareNode\'", //$NON-NLS-1$
-					"\'hardwarePort\'", //$NON-NLS-1$
-					"self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::OUT or self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT", //$NON-NLS-1$
-					"if oppositeEnd.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT then self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT else self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN endif", //$NON-NLS-1$
+					"--\'hardwareNode\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'hardwarePort\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::OUT or self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--if oppositeEnd.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT then self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT else self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

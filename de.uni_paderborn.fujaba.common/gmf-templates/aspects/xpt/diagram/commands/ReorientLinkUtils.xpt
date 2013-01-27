@@ -82,7 +82,12 @@
 «ENDIF-»
 	org.eclipse.gmf.runtime.notation.View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
 	org.eclipse.gmf.runtime.notation.View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
-	return «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canExistCall(link, 'container', 'getLink()', sourceVar, targetVar + ', sourceView, targetView')»;
+	if (!«EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canExistCall(link, 'container', 'getLink()', sourceVar, targetVar + ', sourceView, targetView')») {
+		String errorMessage = «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::getErrorCall(link, 'container', sourceVar, targetVar + ', sourceView, targetView')»;
+		de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+		return false;
+	}
+	return true;
 «ENDAROUND»
 «AROUND checkSourceRequestValidity(link : gmfgen::GenLink) FOR gmfgen::FeatureLinkModelFacet-»
 	if (!(«EXPAND MetaModel::IsInstance('oldEnd') FOR getTargetType()» && «EXPAND MetaModel::IsInstance('newEnd') FOR getSourceType()»)) {
@@ -90,7 +95,12 @@
 	}
 	org.eclipse.gmf.runtime.notation.View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
 	org.eclipse.gmf.runtime.notation.View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
-	return «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canExistCall(link, 'getNewSource()', 'getOldTarget(), sourceView, targetView')»;
+	if (!«EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canExistCall(link, 'getNewSource()', 'getOldTarget(), sourceView, targetView')») {
+		String errorMessage = «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::getErrorCall(link, 'getNewSource()', 'getOldTarget(), sourceView, targetView')»;
+		de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(sourceView, errorMessage);
+		return false;
+	}
+	return true;
 «ENDAROUND»
 «AROUND checkTargetRequestValidity(link : gmfgen::GenLink) FOR gmfgen::FeatureLinkModelFacet-»
 	if (!(«EXPAND MetaModel::IsInstance('oldEnd') FOR getTargetType()» && «EXPAND MetaModel::IsInstance('newEnd') FOR getTargetType()»)) {
@@ -98,5 +108,10 @@
 	}
 	org.eclipse.gmf.runtime.notation.View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getSourceView(getRequest());
 	org.eclipse.gmf.runtime.notation.View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy.getTargetView(getRequest());
-	return «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canExistCall(link, 'getOldSource()', 'getNewTarget(), sourceView, targetView')»;
+	if (!«EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::canExistCall(link, 'getOldSource()', 'getNewTarget(), sourceView, targetView')») {
+		String errorMessage = «EXPAND xpt::diagram::editpolicies::BaseItemSemanticEditPolicy::getErrorCall(link, 'getOldSource()', 'getNewTarget(), sourceView, targetView')»;
+		de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.showMessage(targetView, errorMessage);
+		return false;
+	}
+	return true;
 «ENDAROUND»

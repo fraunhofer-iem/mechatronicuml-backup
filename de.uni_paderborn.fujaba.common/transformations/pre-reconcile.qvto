@@ -1,5 +1,7 @@
 modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
 
+
+
 transformation trafo(inout gmfgenModel : GMFGEN);
 
 main() {
@@ -14,6 +16,6 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
   -- we deactivate it by adding "--" in front of all expressions; the templates are adapted to remove it afterwards.
   -- see /de.uni_paderborn.fujaba.common/gmf-templates/aspects/xpt/expressions/OCLExpressionFactory.xpt
   gmfgenModel.objectsOfType(ValueExpression)->forEach(expression) {
-  	expression.body := '--'.concat(expression.body);
+    expression.body := '--'.concat(expression.body.replace('\n','\n--'));
   }
 }

@@ -20,7 +20,7 @@
 		}
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
-				«FOREACH expressions.getBodyString() AS b»«b».substring(2), «EXPAND xpt::Common::nonNLS»
+				«FOREACH expressions.getBodyString() AS b»«b».substring(2).replaceAll("\n--", "\n"), «EXPAND xpt::Common::nonNLS»
 				«ENDFOREACH-»
 			};
 			cached.expressions[index] = getExpression(exprBodies[index], context, environment == null ? «EXPAND CodeStyle::emptyMap('String, org.eclipse.emf.ecore.EClassifier') FOR container.editorGen.diagram» : environment);

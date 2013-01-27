@@ -39,9 +39,19 @@ public class AssemblyConnectorCreateCommand extends EditElementCommand {
 	public AssemblyConnectorCreateCommand(CreateRelationshipRequest request,
 			EObject source, EObject target) {
 		super(request.getLabel(), null, request);
+		de.uni_paderborn.fujaba.muml.model.component.StructuredComponent container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
+
+		if (container == null) {
+			View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+					.getSourceView(getRequest());
+			View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
+					.getTargetView(getRequest());
+			container = deduceContainerUsingViews(sourceView, targetView);
+		}
+		this.container = container;
 	}
 
 	/**
@@ -70,10 +80,20 @@ public class AssemblyConnectorCreateCommand extends EditElementCommand {
 				.getSourceView(getRequest());
 		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
-		return de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+		if (!de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints().canCreateAssemblyConnector_4001(
 						getContainer(), getSource(), getTarget(), sourceView,
-						targetView);
+						targetView)) {
+			String errorMessage = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
+					.getLinkConstraints().getErrorAssemblyConnector_4001(
+							getContainer(), getSource(), getTarget(),
+							sourceView, targetView);
+			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(targetView != null ? targetView : sourceView,
+							errorMessage);
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -164,6 +184,23 @@ public class AssemblyConnectorCreateCommand extends EditElementCommand {
 				.eContainer()) {
 			if (element instanceof de.uni_paderborn.fujaba.muml.model.component.StructuredComponent) {
 				return (de.uni_paderborn.fujaba.muml.model.component.StructuredComponent) element;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Traverse the notation view hierarchy.
+	 * 
+	 * @generated
+	 */
+	private static de.uni_paderborn.fujaba.muml.model.component.StructuredComponent deduceContainerUsingViews(
+			View sourceView, View targetView) {
+		for (View view = sourceView; view != null; view = (View) view
+				.eContainer()) {
+			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.model.component.StructuredComponent) {
+				return (de.uni_paderborn.fujaba.muml.model.component.StructuredComponent) view
+						.getElement();
 			}
 		}
 		return null;

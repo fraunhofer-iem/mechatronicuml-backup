@@ -390,12 +390,13 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					Object targetVal = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
+					de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 							.getExpression(
 									12,
 									de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
-											.getConnectorEndpoint(), envType)
-							.evaluate(target, env); //$NON-NLS-1$
+											.getConnectorEndpoint(), envType);
+					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
+
 					if (false == targetVal instanceof Boolean
 							|| !((Boolean) targetVal).booleanValue()) {
 						return false;
@@ -407,6 +408,61 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
+			}
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorAssemblyConnector_4001(
+				de.uni_paderborn.fujaba.muml.model.component.StructuredComponent container,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				View sourceView, View targetView) {
+			try {
+				if (target == null) {
+					return null;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					env.put("oppositeEnd", source);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", targetView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", sourceView);
+
+					de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
+							.getExpression(
+									12,
+									de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpoint(), envType);
+					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
+
+					if (false == targetVal instanceof Boolean
+							|| !((Boolean) targetVal).booleanValue()) {
+						String body = expression.body().trim();
+						if (body.startsWith("--")) {
+							int end = body.indexOf('\n');
+							if (end < 0) {
+								end = body.length() - 1;
+							} else {
+								if (body.charAt(end - 1) == '\r') {
+									end--;
+								}
+							}
+							return body.substring(2, end);
+						}
+						return "Creation is not allowed.";
+					} // else fall-through
+				}
+				return null;
+			} catch (Exception e) {
+				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
+						.getInstance().logError(
+								"Link constraint evaluation error", e); //$NON-NLS-1$
+				return "Link constraint evaluation error";
 			}
 		}
 
@@ -420,30 +476,6 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			try {
-				if (source == null) {
-					return true;
-				} else {
-					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
-					Map<String, Object> env = new HashMap<String, Object>();
-					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
-					env.put("oppositeEnd", target);
-					envType.put("view", NotationPackage.Literals.VIEW);
-					env.put("view", sourceView);
-					envType.put("oppositeView", NotationPackage.Literals.VIEW);
-					env.put("oppositeView", targetView);
-
-					Object sourceVal = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
-							.getExpression(
-									13,
-									de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
-											.getConnectorEndpoint(), envType)
-							.evaluate(source, env); //$NON-NLS-1$
-					if (false == sourceVal instanceof Boolean
-							|| !((Boolean) sourceVal).booleanValue()) {
-						return false;
-					} // else fall-through
-				}
 				if (target == null) {
 					return true;
 				} else {
@@ -457,12 +489,13 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					envType.put("oppositeView", NotationPackage.Literals.VIEW);
 					env.put("oppositeView", sourceView);
 
-					Object targetVal = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
+					de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									14,
+									13,
 									de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
-											.getConnectorEndpoint(), envType)
-							.evaluate(target, env); //$NON-NLS-1$
+											.getConnectorEndpoint(), envType);
+					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
+
 					if (false == targetVal instanceof Boolean
 							|| !((Boolean) targetVal).booleanValue()) {
 						return false;
@@ -480,11 +513,76 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public java.lang.String getErrorDelegationConnector_4002(
+				de.uni_paderborn.fujaba.muml.model.component.StructuredComponent container,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				View sourceView, View targetView) {
+			try {
+				if (target == null) {
+					return null;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					env.put("oppositeEnd", source);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", targetView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", sourceView);
+
+					de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.expressions.MumlOCLFactory
+							.getExpression(
+									13,
+									de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpoint(), envType);
+					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
+
+					if (false == targetVal instanceof Boolean
+							|| !((Boolean) targetVal).booleanValue()) {
+						String body = expression.body().trim();
+						if (body.startsWith("--")) {
+							int end = body.indexOf('\n');
+							if (end < 0) {
+								end = body.length() - 1;
+							} else {
+								if (body.charAt(end - 1) == '\r') {
+									end--;
+								}
+							}
+							return body.substring(2, end);
+						}
+						return "Creation is not allowed.";
+					} // else fall-through
+				}
+				return null;
+			} catch (Exception e) {
+				de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
+						.getInstance().logError(
+								"Link constraint evaluation error", e); //$NON-NLS-1$
+				return "Link constraint evaluation error";
+			}
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canExistDiscretePortGmfProtocol_4005(
 				de.uni_paderborn.fujaba.muml.model.component.DiscretePort source,
 				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol target,
 				View sourceView, View targetView) {
 			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorDiscretePortGmfProtocol_4005(
+				de.uni_paderborn.fujaba.muml.model.component.DiscretePort source,
+				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol target,
+				View sourceView, View targetView) {
+			return null;
 		}
 	}
 

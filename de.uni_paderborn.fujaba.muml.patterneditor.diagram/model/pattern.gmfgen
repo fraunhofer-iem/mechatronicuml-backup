@@ -103,8 +103,8 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy.BORDER_ITEM_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.RoleEditPolicy"/>
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.RoleEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/Role"/>
@@ -585,34 +585,34 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="'pattern'"/>
+          body="--'pattern'"/>
       <expressions
-          body="'role1'"/>
+          body="--'role1'"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="'role2'"/>
+          body="--'role2'"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }"/>
+          body="--OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }"/>
       <expressions
-          body="''"/>
+          body="--''"/>
       <expressions
-          body="'role'"/>
+          body="--'role'"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="''"/>
+          body="--''"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol"/>
+          body="--self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol"/>
     </providers>
   </expressionProviders>
   <labelParsers

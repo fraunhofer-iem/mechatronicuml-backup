@@ -87,8 +87,10 @@ public class HardwarePortItemSemanticEditPolicy
 			CreateRelationshipRequest req) {
 		if (de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes.CommunicationLink_4001 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.deployment.diagram.edit.commands.CommunicationLinkCreateCommand(
-					req, req.getSource(), req.getTarget()));
+			de.uni_paderborn.fujaba.muml.deployment.diagram.edit.commands.CommunicationLinkCreateCommand command = new de.uni_paderborn.fujaba.muml.deployment.diagram.edit.commands.CommunicationLinkCreateCommand(
+					req, req.getSource(), req.getTarget());
+			command.setHost(getHost());
+			return getGEFWrapper(command);
 		}
 		return null;
 	}
@@ -100,8 +102,10 @@ public class HardwarePortItemSemanticEditPolicy
 			CreateRelationshipRequest req) {
 		if (de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes.CommunicationLink_4001 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.deployment.diagram.edit.commands.CommunicationLinkCreateCommand(
-					req, req.getSource(), req.getTarget()));
+			de.uni_paderborn.fujaba.muml.deployment.diagram.edit.commands.CommunicationLinkCreateCommand command = new de.uni_paderborn.fujaba.muml.deployment.diagram.edit.commands.CommunicationLinkCreateCommand(
+					req, req.getSource(), req.getTarget());
+			command.setHost(getHost());
+			return getGEFWrapper(command);
 		}
 		return null;
 	}
@@ -115,9 +119,12 @@ public class HardwarePortItemSemanticEditPolicy
 	protected Command getReorientRelationshipCommand(
 			ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID:
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.deployment.diagram.edit.commands.CommunicationLinkReorientCommand(
-					req));
+		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID: {
+			de.uni_paderborn.fujaba.muml.deployment.diagram.edit.commands.CommunicationLinkReorientCommand command = new de.uni_paderborn.fujaba.muml.deployment.diagram.edit.commands.CommunicationLinkReorientCommand(
+					req);
+			command.setHost(getHost());
+			return getGEFWrapper(command);
+		}
 		}
 		return super.getReorientRelationshipCommand(req);
 	}

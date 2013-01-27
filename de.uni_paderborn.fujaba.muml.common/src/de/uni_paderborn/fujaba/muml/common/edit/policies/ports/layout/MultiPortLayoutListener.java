@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.layout;
+package de.uni_paderborn.fujaba.muml.common.edit.policies.ports.layout;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutListener;
@@ -12,7 +12,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 
-import de.uni_paderborn.fujaba.muml.common.edit.policies.borderitem.BorderItemEditPolicy;
+import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.AbstractRotatingBorderItemEditPolicy;
 
 /**
  * A LayoutListener that listens to changes in the container's layout. After the
@@ -47,9 +47,9 @@ public class MultiPortLayoutListener extends LayoutListener.Stub {
 	 */
 	private Dimension parentSize = null;
 
-	private BorderItemEditPolicy ep;
+	private AbstractRotatingBorderItemEditPolicy ep;
 
-	public MultiPortLayoutListener(BorderItemEditPolicy ep) {
+	public MultiPortLayoutListener(AbstractRotatingBorderItemEditPolicy ep) {
 		this.ep = ep;
 	}
 
