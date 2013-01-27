@@ -928,7 +928,7 @@ public class ModelinstanceEditor
 		URI resourceURI = EditUIUtil.getURI(getEditorInput());
 		
 		// Begin ADDED
-		checkMigration(resourceURI);
+		// checkMigration(resourceURI);
 		// End ADDED
 		
 		Exception exception = null;
