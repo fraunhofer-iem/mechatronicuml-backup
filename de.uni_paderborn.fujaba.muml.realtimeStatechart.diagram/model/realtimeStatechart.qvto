@@ -24,4 +24,9 @@ mapping inout GenEditorGenerator::general() {
 
 mapping inout GenEditorGenerator::editorSpecific() {
 	-- put settings here, that are often lost to apply them permanently
+	self.diagram.compartments->select(c | c.editPartClassName = 'RegionRegionContentsCompartmentEditPart')->map listLayout(true);
+}
+
+mapping inout GenCompartment::listLayout(value : Boolean) {
+	self.listLayout := value;
 }
