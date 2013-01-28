@@ -1,5 +1,7 @@
 package de.uni_paderborn.fujaba.muml.common.modelinitializer;
 
+import org.eclipse.emf.ecore.EObject;
+
 import de.fujaba.modelinstance.ModelElementCategory;
 import de.fujaba.modelinstance.ModelinstanceFactory;
 import de.fujaba.modelinstance.RootNode;
@@ -13,7 +15,12 @@ public class TypeCategoryInitializer implements IModelInitializer {
 	private static final String TYPES_CATEGORY_NAME = "types";
 
 	@Override
-	public void initialize(RootNode rootNode) {
+	public boolean supports(EObject object) {
+		return object instanceof RootNode;
+	}
+
+	@Override
+	public void initialize(EObject rootNode) {
 		ModelElementCategory typesCategory = ModelinstanceFactory.eINSTANCE
 				.createModelElementCategory();
 		typesCategory.setName(TYPES_CATEGORY_NAME);
@@ -27,7 +34,8 @@ public class TypeCategoryInitializer implements IModelInitializer {
 			typesCategory.getModelElements().add(primitiveDataType);
 		}
 
-		rootNode.getCategories().add(typesCategory);
+		// This cast is okay, because supports() already checked the type.
+		((RootNode) rootNode).getCategories().add(typesCategory);
 	}
 
 }

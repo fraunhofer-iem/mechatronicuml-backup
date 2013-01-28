@@ -230,6 +230,30 @@
                       <value
                           body="'statechart'"/>
                     </initializers>
+                    <initializers
+                        xsi:type="gmfmap:ReferenceNewElementSpec">
+                      <feature
+                          xsi:type="ecore:EReference"
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"/>
+                      <newElementInitializers>
+                        <initializers
+                            xsi:type="gmfmap:FeatureValueSpec">
+                          <feature
+                              xsi:type="ecore:EAttribute"
+                              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                          <value
+                              body="'init'"/>
+                        </initializers>
+                        <initializers
+                            xsi:type="gmfmap:FeatureValueSpec">
+                          <feature
+                              xsi:type="ecore:EAttribute"
+                              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/initial"/>
+                          <value
+                              body="true"/>
+                        </initializers>
+                      </newElementInitializers>
+                    </initializers>
                   </newElementInitializers>
                 </initializers>
               </domainInitializer>
@@ -269,6 +293,33 @@
                 <ownedChild>
                   <domainMetaElement
                       href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
+                  <domainInitializer
+                      xsi:type="gmfmap:FeatureSeqInitializer">
+                    <initializers
+                        xsi:type="gmfmap:ReferenceNewElementSpec">
+                      <feature
+                          xsi:type="ecore:EReference"
+                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"/>
+                      <newElementInitializers>
+                        <initializers
+                            xsi:type="gmfmap:FeatureValueSpec">
+                          <feature
+                              xsi:type="ecore:EAttribute"
+                              href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                          <value
+                              body="'init'"/>
+                        </initializers>
+                        <initializers
+                            xsi:type="gmfmap:FeatureValueSpec">
+                          <feature
+                              xsi:type="ecore:EAttribute"
+                              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/initial"/>
+                          <value
+                              body="true"/>
+                        </initializers>
+                      </newElementInitializers>
+                    </initializers>
+                  </domainInitializer>
                   <diagramNode
                       href="realtimeStatechart.gmfgraph#InnerStatechart"/>
                   <children

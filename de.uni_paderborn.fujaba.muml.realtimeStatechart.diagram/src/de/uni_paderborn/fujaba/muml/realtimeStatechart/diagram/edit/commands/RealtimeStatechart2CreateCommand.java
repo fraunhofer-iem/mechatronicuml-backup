@@ -60,6 +60,9 @@ public class RealtimeStatechart2CreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region) getElementToEdit();
 		owner.setStatechart(newElement);
 
+		de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.ElementInitializers
+				.getInstance().init_RealtimeStatechart_3039(newElement);
+
 		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);

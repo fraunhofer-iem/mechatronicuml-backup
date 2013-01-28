@@ -84,7 +84,7 @@ public class TransitionLabelExpressionLabelParser6005 implements IParser {
 		initializeEnvironment(typeEnv, env, target);
 		Object result = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						16,
+						20,
 						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getTransition(), typeEnv)
 				.evaluate(target, env);

@@ -102,6 +102,54 @@ public class ElementInitializers {
 									.getRealtimeStatechart(), null).evaluate(
 							newInstance_2_0);
 			newInstance_2_0.setName((String) value_2_0_0);
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.State newInstance_2_0_1_0 = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+					.createState();
+			newInstance_2_0.getStates().add(newInstance_2_0_1_0);
+			Object value_2_0_1_0_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							11,
+							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getState(), null).evaluate(
+							newInstance_2_0_1_0);
+			newInstance_2_0_1_0.setName((String) value_2_0_1_0_0);
+			Object value_2_0_1_0_1 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							12,
+							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getState(), null).evaluate(
+							newInstance_2_0_1_0);
+			newInstance_2_0_1_0.setInitial(((Boolean) value_2_0_1_0_1)
+					.booleanValue());
+
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_RealtimeStatechart_3039(
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart instance) {
+		try {
+			de.uni_paderborn.fujaba.muml.model.realtimestatechart.State newInstance_0_0 = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+					.createState();
+			instance.getStates().add(newInstance_0_0);
+			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							13,
+							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getState(), null)
+					.evaluate(newInstance_0_0);
+			newInstance_0_0.setName((String) value_0_0_0);
+			Object value_0_0_1 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							14,
+							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									.getState(), null)
+					.evaluate(newInstance_0_0);
+			newInstance_0_0.setInitial(((Boolean) value_0_0_1).booleanValue());
 
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
@@ -117,7 +165,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							12,
+							16,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getEntryPoint(), null).evaluate(instance);
 			instance.setName((String) value_0);
@@ -135,7 +183,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							13,
+							17,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getExitPoint(), null).evaluate(instance);
 			instance.setName((String) value_0);
@@ -153,7 +201,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							15,
+							19,
 							de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getTransition(), null).evaluate(instance);
 

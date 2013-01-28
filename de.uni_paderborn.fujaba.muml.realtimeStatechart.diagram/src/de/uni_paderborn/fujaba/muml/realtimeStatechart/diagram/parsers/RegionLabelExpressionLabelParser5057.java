@@ -84,7 +84,7 @@ public class RegionLabelExpressionLabelParser5057 implements IParser {
 		initializeEnvironment(typeEnv, env, target);
 		Object result = de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						11,
+						15,
 						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getRegion(), typeEnv).evaluate(target, env);
 		return String.valueOf(result);
