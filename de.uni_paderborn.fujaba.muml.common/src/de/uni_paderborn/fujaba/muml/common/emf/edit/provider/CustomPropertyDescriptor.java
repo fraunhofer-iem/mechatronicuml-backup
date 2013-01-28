@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -26,6 +27,7 @@ import org.eclipse.jface.action.StatusLineManager;
 import org.eclipse.jface.action.ToolBarManager;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ICellEditorListener;
+import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
@@ -198,15 +200,21 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 		protected Object openDialogBox(Control cellEditorWindow) {
 
 			// Open the dialog and retrieve the user selection
-			int result = dialog.open();
+			ChangeCommand changeCommand = new ChangeCommand((EObject) object) {
+
+				@Override
+				protected void doExecute() {
+					dialog.open();
+				}
+				
+			};
+			editingDomain.getCommandStack().execute(changeCommand);
 			labelProvider.dispose();
 
-			// Currently Cancel is disabled:
-			// if (result == Window.OK) {
-			// return getResult();
-			// }
-			//
-			// return null;
+			if (dialog.getReturnCode() != Window.OK) {			
+				editingDomain.getCommandStack().undo();
+				return null;
+			}
 			return getResult();
 		}
 
@@ -338,21 +346,22 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 				statusLineManager.getControl().setLayoutData(
 						new GridData(SWT.FILL, SWT.FILL, true, false));
 				// the MenuManager and ToolBarManager are just "dummies"
-				page.makeContributions(new MenuManager(),
-						new ToolBarManager(), statusLineManager);
+				page.makeContributions(new MenuManager(), new ToolBarManager(),
+						statusLineManager);
 			}
 
 			@Override
-			public void okPressed() {
-				super.okPressed();
-				
-				// Prevent NullPointerException; if the object is null, we do not need to set anything
+			public void close() {
+				super.close();
+
+				// Prevent NullPointerException; if the object is null, we do
+				// not need to set anything
 				if (parameterBindingsObject != null) {
 					@SuppressWarnings("unchecked")
 					Collection<ParameterBinding> parameterBindings = (Collection<ParameterBinding>) parameterBindingsObject
 							.eGet(feature);
 					Collection<ParameterBinding> filteredParameterBindings = new ArrayList<ParameterBinding>();
-	
+
 					// Filter ParameterBindings (remove those that have no valid
 					// Parameter associated) and sort them so that the order of
 					// ParameterBindings
@@ -360,7 +369,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 					// the order in which they were created.
 					Collection<Parameter> allParameters = ParameterBindingCreationCellEditor.this
 							.getParameters(parameterBindingsObject);
-	
+
 					for (Parameter parameter : allParameters) {
 						for (ParameterBinding parameterBinding : parameterBindings) {
 							if (parameter == parameterBinding.getParameter()
@@ -370,7 +379,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 							}
 						}
 					}
-	
+
 					Command setCommand = SetCommand.create(editingDomain,
 							parameterBindingsObject, feature,
 							filteredParameterBindings);
@@ -422,8 +431,9 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			provider = new ParameterBindingPropertySourceProvider(
 					editingDomain, this);
 
-			propertySheetDialogExtension = new ParameterBindingPropertySheetDialogExtension(provider, dialog);
-			
+			propertySheetDialogExtension = new ParameterBindingPropertySheetDialogExtension(
+					provider, dialog);
+
 			Object actualObject = object;
 			if (itemPropertyDescriptor instanceof IDifferentObjectItemPropertyDescriptor) {
 				actualObject = ((IDifferentObjectItemPropertyDescriptor) itemPropertyDescriptor)

@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
@@ -168,7 +169,7 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 			return;
 		}
 
-		ExtensibleCreationDialog dialog = new ExtensibleCreationDialog(
+		final ExtensibleCreationDialog dialog = new ExtensibleCreationDialog(
 				shell,
 				labelProvider,
 				typeCategory,
@@ -244,7 +245,21 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 		dialog.addExtension(propertySheetDialogExtension,
 				ExtensibleCreationDialog.EXTENSION_GROUP_DEFAULT);
 
-		if (dialog.open() == Window.OK) {
+		// Open the dialog and retrieve the user selection
+		ChangeCommand changeCommand = new ChangeCommand(typeCategory) {
+
+			@Override
+			protected void doExecute() {
+				dialog.open();
+			}
+			
+		};
+		editingDomain.getCommandStack().execute(changeCommand);
+
+		if (dialog.getReturnCode() != Window.OK) {			
+			editingDomain.getCommandStack().undo();
+
+		} else {
 			org.eclipse.emf.common.command.Command setCommand = org.eclipse.emf.edit.command.SetCommand
 					.create(editingDomain,
 							typeCategory,
