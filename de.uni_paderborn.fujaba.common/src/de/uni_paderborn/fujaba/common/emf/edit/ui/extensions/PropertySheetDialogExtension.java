@@ -95,7 +95,7 @@ public class PropertySheetDialogExtension extends AbstractDialogExtension {
 	}
 
 	@Override
-	public void okPressed() {
+	public void close() {
 
 	}
 

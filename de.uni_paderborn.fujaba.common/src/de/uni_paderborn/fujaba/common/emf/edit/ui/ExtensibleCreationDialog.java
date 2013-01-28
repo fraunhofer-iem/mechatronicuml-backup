@@ -16,14 +16,13 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.ui.EMFEditUIPlugin;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.jface.dialogs.Dialog;
-import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.viewers.IContentProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
@@ -44,16 +43,6 @@ public class ExtensibleCreationDialog extends Dialog {
 	private Composite container;
 
 	private IRefreshProhibitedPropertySection mainPropertySection;
-
-	@Override
-	protected Button createButton(Composite parent, int id, String label,
-			boolean defaultButton) {
-		Button button = super.createButton(parent, id, label, defaultButton);
-		if (id == IDialogConstants.CANCEL_ID) {
-			button.setEnabled(false);
-		}
-		return button;
-	}
 
 	private Map<Object, List<IDialogExtension>> groupToExtensions = new LinkedHashMap<Object, List<IDialogExtension>>();
 
@@ -210,25 +199,16 @@ public class ExtensibleCreationDialog extends Dialog {
 		return INITIAL_DIALOG_SIZE;
 	}
 
-	// Begin removed because of #204
-	// @Override
-	// protected void okPressed() {
-	// for (IDialogExtension extension : extensions) {
-	// extension.okPressed();
-	// }
-	// super.okPressed();
-	// }
-	// End removed
-
 	@Override
 	public boolean close() {
 		// Execute everything within a try-catch block to prevent problems to
 		// close the window.
 		try {
+
 			// Begin added because of #204
 			for (List<IDialogExtension> extensions : groupToExtensions.values()) {
 				for (IDialogExtension extension : extensions) {
-					extension.okPressed();
+					extension.close();
 				}
 			}
 

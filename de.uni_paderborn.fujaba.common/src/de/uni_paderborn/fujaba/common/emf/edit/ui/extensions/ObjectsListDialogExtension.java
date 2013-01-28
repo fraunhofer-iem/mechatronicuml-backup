@@ -300,7 +300,7 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 
 
 	@Override
-	public void okPressed() {
+	public void close() {
 		result = new BasicEList<Object>(values.getChildren());
 	}
 

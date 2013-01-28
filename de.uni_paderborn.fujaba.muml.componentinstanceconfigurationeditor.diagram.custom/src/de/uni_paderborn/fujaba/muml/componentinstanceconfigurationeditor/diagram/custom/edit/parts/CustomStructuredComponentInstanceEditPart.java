@@ -7,6 +7,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -58,6 +59,19 @@ public class CustomStructuredComponentInstanceEditPart extends
 				CreateInstancesCommand command = new CreateInstancesCommand(
 						componentInstance);
 				editingDomain.getCommandStack().execute(command);
+				
+				// refresh connections
+				View view = getNotationView();
+				while (view != null) {
+					List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
+							.getRegisteredEditPolicies(view.getElement());
+					for (Iterator<CanonicalEditPolicy> it = editPolicies.iterator(); it
+							.hasNext();) {
+						CanonicalEditPolicy nextEditPolicy = it.next();
+						nextEditPolicy.refresh();
+					}
+					view = (View) view.eContainer();
+				}
 			}
 		}
 

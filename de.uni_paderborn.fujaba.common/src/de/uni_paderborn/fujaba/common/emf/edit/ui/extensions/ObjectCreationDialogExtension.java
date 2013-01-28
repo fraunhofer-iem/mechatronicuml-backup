@@ -151,7 +151,7 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 	}
 
 	@Override
-	public void okPressed() {
+	public void close() {
 	}
 
 	public void setObjectsListDialogExtension(

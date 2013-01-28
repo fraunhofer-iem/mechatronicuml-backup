@@ -38,7 +38,7 @@ public class SimpleTextualDialogExtension extends AbstractDialogExtension {
 	}
 
 	@Override
-	public void okPressed() {
+	public void close() {
 		//XtextResource res = new XtextResource();
 		//System.out.println(getContainerObject());
 		resultString = textfield.getText();

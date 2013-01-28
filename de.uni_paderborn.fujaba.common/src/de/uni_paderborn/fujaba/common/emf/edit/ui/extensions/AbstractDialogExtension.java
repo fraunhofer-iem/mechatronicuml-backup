@@ -41,7 +41,7 @@ public abstract class AbstractDialogExtension implements IDialogExtension {
 	}
 
 	@Override
-	public void okPressed() {
+	public void close() {
 		// do nothing by default
 	}
 

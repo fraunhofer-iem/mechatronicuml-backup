@@ -58,7 +58,7 @@ public class UseParserDialogExtension extends AbstractDialogExtension {
 	}
 	
 	@Override
-	public void okPressed() {
+	public void close() {
 		useXtextParser = checkBox.getSelection();
 	}
 	
