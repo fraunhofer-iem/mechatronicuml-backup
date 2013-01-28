@@ -22,7 +22,7 @@ public class ComponentPartEditHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * Make sure, the component type is undefined, before destroying a
 	 * ComponentPart. This is necessary to prevent deletion of all Ports that
-	 * were derived.
+	 * were derived (fix for bug #40).
 	 */
 	protected ICommand getBeforeDestroyElementCommand(
 			final DestroyElementRequest request) {
