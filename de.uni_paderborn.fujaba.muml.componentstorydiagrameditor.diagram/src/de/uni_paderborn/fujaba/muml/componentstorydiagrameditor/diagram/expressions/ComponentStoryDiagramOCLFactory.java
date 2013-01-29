@@ -57,7 +57,7 @@ public class ComponentStoryDiagramOCLFactory {
 					"storydiagrams::patterns::BindingSemantics::MANDATORY".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"\'componentStoryNode\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\r\nself.multiPortVariable.oclIsUndefined()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"let compName : String = if self.type.componentType.name.oclIsUndefined() then \'null\' else\tself.type.componentType.name endif in\r\nlet partName : String = if self.type.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.type.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagrams::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\r\nlet compName : String = if self.type.componentType.name.oclIsUndefined() then \'null\' else\tself.type.componentType.name endif in\r\nlet partName : String = if self.type.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.type.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagrams::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

@@ -1,9 +1,15 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util;
 
+import org.eclipse.draw2d.IFigure;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.RGB;
+import org.storydriven.core.expressions.Expression;
 import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityEdge;
+import org.storydriven.storydiagrams.activities.EdgeGuard;
+import org.storydriven.storydiagrams.patterns.BindingOperator;
 
 import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.model.component.Component;
@@ -73,6 +79,47 @@ public class CsdmUtility {
 						org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities
 								.RGBToInteger(lineRGB));
 
+	}
+	
+	public static void adaptColor(IFigure figure, BindingOperator spMod) {
+		switch (spMod) {
+		case CREATE:
+			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_CREATE));
+			break;
+		case DESTROY:
+			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_DESTROY));
+			break;
+		case CHECK_ONLY:
+			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_CHECK));
+			break;
+		default:
+			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_CHECK));
+			break;
+		}
+	}
+	
+	public static String getText(ActivityEdge bo) {
+		EdgeGuard guard = bo.getGuard();
+		if (guard != null && !EdgeGuard.NONE.equals(guard)) {
+			StringBuilder builder = new StringBuilder();
+
+			builder.append('[');
+			builder.append(' ');
+			if (EdgeGuard.BOOL.equals(guard)) {
+				append(builder, bo.getGuardExpression());
+			} else {
+				builder.append(guard);
+			}
+			builder.append(' ');
+			builder.append(']');
+
+			return builder.toString();
+		}
+		return null;
+	}
+
+	private static void append(StringBuilder builder, Expression expression) {
+		TextUtil.append(builder, expression);
 	}
 
 	private static Component getComponentFromComponentStoryRule(

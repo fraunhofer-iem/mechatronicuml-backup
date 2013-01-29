@@ -3,8 +3,8 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.activities.ActivityFinalNode;
-import org.storydriven.storydiagrams.diagram.custom.util.TextUtil;
 
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.TextUtil;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel4EditPart;
 
 public class CustomWrappingLabel4EditPart extends WrappingLabel4EditPart {

@@ -3,8 +3,8 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
-import org.storydriven.storydiagrams.diagram.custom.util.LabelUtil;
 
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityEdgeGuardEditPart;
 
 public class CustomActivityEdgeGuardEditPart extends ActivityEdgeGuardEditPart {
@@ -29,7 +29,7 @@ public class CustomActivityEdgeGuardEditPart extends ActivityEdgeGuardEditPart {
 	{
 		ActivityEdge edge = (ActivityEdge) ((View) getModel()).getElement();
 
-		setLabelText(LabelUtil.getText(edge));
+		setLabelText(CsdmUtility.getText(edge));
 	}	
 	
 }

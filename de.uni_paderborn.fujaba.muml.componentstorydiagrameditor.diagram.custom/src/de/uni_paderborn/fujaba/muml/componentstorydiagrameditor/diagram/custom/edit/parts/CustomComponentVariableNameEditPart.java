@@ -2,7 +2,7 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.storydiagrams.diagram.custom.util.SdmUtility;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableNameEditPart;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable;
@@ -20,7 +20,7 @@ public class CustomComponentVariableNameEditPart extends
 		super.handleNotificationEvent(notification);
 		if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR
 				.equals(notification.getFeature())) {
-			SdmUtility.adaptColor(getFigure(), ((ComponentVariable) ((View) this
+			CsdmUtility.adaptColor(getFigure(), ((ComponentVariable) ((View) this
 					.getModel()).getElement()).getBindingOperator());
 		}
 	}
@@ -28,7 +28,7 @@ public class CustomComponentVariableNameEditPart extends
 	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
-		SdmUtility.adaptColor(getFigure(), ((ComponentVariable) ((View) this
+		CsdmUtility.adaptColor(getFigure(), ((ComponentVariable) ((View) this
 				.getModel()).getElement()).getBindingOperator());
 	}
 

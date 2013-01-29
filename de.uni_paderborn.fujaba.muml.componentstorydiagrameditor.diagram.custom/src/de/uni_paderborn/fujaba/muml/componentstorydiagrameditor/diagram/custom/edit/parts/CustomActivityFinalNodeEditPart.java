@@ -10,8 +10,8 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.NonResizableEditPolicyEx;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.activities.ActivityFinalNode;
-import org.storydriven.storydiagrams.diagram.custom.util.TextUtil;
 
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.TextUtil;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityFinalNodeEditPart;
 
 public class CustomActivityFinalNodeEditPart extends ActivityFinalNodeEditPart {

@@ -2,7 +2,7 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.storydiagrams.diagram.custom.util.SdmUtility;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.PortVariableOperator4EditPart;
@@ -25,7 +25,7 @@ public class CustomPortVariableOperator4EditPart extends
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 		updateText();
-		SdmUtility.adaptColor(getFigure(), ((PortVariable) ((View) this
+		CsdmUtility.adaptColor(getFigure(), ((PortVariable) ((View) this
 				.getModel()).getElement()).getBindingOperator());
 	}
 	

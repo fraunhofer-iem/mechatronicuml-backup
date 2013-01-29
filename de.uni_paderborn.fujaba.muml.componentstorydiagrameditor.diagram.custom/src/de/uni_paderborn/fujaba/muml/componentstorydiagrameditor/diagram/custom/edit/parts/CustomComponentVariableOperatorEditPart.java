@@ -2,7 +2,7 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.storydiagrams.diagram.custom.util.SdmUtility;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableOperatorEditPart;
@@ -25,7 +25,7 @@ public class CustomComponentVariableOperatorEditPart extends
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 		updateText();
-		SdmUtility.adaptColor(getFigure(), ((ComponentVariable) ((View) this
+		CsdmUtility.adaptColor(getFigure(), ((ComponentVariable) ((View) this
 				.getModel()).getElement()).getBindingOperator());
 	}
 	

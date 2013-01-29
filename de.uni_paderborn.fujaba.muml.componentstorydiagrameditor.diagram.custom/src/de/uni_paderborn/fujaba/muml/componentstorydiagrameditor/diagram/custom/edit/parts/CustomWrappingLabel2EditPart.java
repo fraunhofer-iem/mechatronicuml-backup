@@ -3,7 +3,7 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.storydiagrams.diagram.custom.util.SdmUtility;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
 import org.storydriven.storydiagrams.patterns.BindingState;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel2EditPart;
@@ -21,7 +21,7 @@ public class CustomWrappingLabel2EditPart extends WrappingLabel2EditPart {
 	protected void handleNotificationEvent(Notification notification) {
 		if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR
 				.equals(notification.getFeature())) {
-			SdmUtility.adaptColor(getFigure(), ((PartVariable) ((View) this
+			CsdmUtility.adaptColor(getFigure(), ((PartVariable) ((View) this
 					.getModel()).getElement()).getBindingOperator());
 		} else if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_STATE
 				.equals(notification.getFeature())) {
@@ -33,7 +33,7 @@ public class CustomWrappingLabel2EditPart extends WrappingLabel2EditPart {
 	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
-		SdmUtility.adaptColor(getFigure(), ((PartVariable) ((View) this
+		CsdmUtility.adaptColor(getFigure(), ((PartVariable) ((View) this
 				.getModel()).getElement()).getBindingOperator());
 		updateBound();
 
