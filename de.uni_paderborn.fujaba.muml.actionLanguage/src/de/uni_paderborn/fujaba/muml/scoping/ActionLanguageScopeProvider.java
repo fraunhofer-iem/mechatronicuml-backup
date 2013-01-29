@@ -110,7 +110,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		List<Parameter> parameterList = Collections.<Parameter>emptyList();
 		if ((eObject instanceof ParameterBinding) && eObject.eContainer() instanceof OperationCall) {
 			OperationCall operationCall = (OperationCall) ((EObject) object).eContainer();
-			parameterList = getScopeForOperationCall(operationCall);
+			parameterList = getScopeForOperation(operationCall.getOperation());
 		} else if (eObject instanceof TriggerMessageExpression) {
 			parameterList = getScopeForTriggerMessageExpression((TriggerMessageExpression) eObject);
 		}
@@ -133,10 +133,12 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 			setScopeForEObject((Synchronization) object);
 		} else if (object instanceof ParameterBinding) {
 			setScopeForEObject((ParameterBinding) object);
+		} else if (object instanceof Operation) {
+			setScopeForEObject((Operation) object);
 		} else if (object instanceof RealtimeStatechart) {
 			setScopeForRTSC((RealtimeStatechart) object);
 		} else {
-			throw new IllegalArgumentException("scope requested for unsupported object" + object);
+			throw new IllegalArgumentException("scope requested for unsupported object: " + object);
 		}
 	}
 	
@@ -169,6 +171,14 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	public void setScopeForEObject(ParameterBinding parameterBinding) {
 		// either a transition or rtsc
 		setScopeForEObject(parameterBinding.eContainer().eContainer().eContainer());
+	}
+	
+	public void setScopeForEObject(Operation operation) {
+		setScopeForRTSC(operation.eContainer());
+		List<Parameter> parameterList = getScopeForOperation(operation);
+		for (Parameter parameter : parameterList) {
+			typedNamedElementList.add(parameter);
+		}
 	}
 	
 	private void setScopeForRTSC(EObject object) {
@@ -208,12 +218,11 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		}
 	}
 	
-	private List<Parameter> getScopeForOperationCall(OperationCall operationCall) {
-		if (operationCall.getOperation() == null) {
-			// should not happen
+	private List<Parameter> getScopeForOperation(Operation operation) {
+		if (operation == null) {
 			return Collections.<Parameter>emptyList();
 		}
-		return operationCall.getOperation().getParameters();
+		return operation.getParameters();
 	}
 	
 	private List<Parameter> getScopeForTriggerMessageExpression(TriggerMessageExpression triggerMessageExpression) {

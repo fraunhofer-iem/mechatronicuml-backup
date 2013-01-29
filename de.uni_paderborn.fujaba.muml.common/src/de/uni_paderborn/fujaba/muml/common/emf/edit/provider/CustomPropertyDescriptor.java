@@ -47,6 +47,7 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertySheetDialog
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.SimpleTextualDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.UseParserDialogExtension;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
+import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
@@ -114,7 +115,8 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			if (create) {
 				// Which creation dialog should be shown?
 				if (RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS
-						.equals(feature)) {
+						.equals(feature)
+						|| BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS.equals(feature)) {
 					return new ActionCellEditor(parent, feature);
 				} else if (RealtimestatechartPackage.Literals.MESSAGE__PARAMETER_BINDING
 						.equals(feature)) {
