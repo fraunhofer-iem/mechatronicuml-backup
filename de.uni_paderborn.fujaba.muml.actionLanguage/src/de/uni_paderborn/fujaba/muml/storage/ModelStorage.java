@@ -105,7 +105,7 @@ public abstract class ModelStorage<T extends EObject> implements IModelStorage {
 		Expression expression = parseExpression(text);
 		//TextualExpression textualExpression = ExpressionsFactory.eINSTANCE.createTextualExpression();
 		//textualExpression.setExpressionText(text);
-		setFeature(getModel(), getFeatureName(), expression);
+		setFeature(getModel(), getFeature(), expression);
 	}
 	
 	@Override
@@ -114,7 +114,7 @@ public abstract class ModelStorage<T extends EObject> implements IModelStorage {
 		save(text);
 	}
 	
-	protected abstract String getFeatureName();
+	protected abstract EStructuralFeature getFeature();
 
 	protected static EStructuralFeature getFeatureByName(EObject object, String name) {
 		EStructuralFeature feature = null;
@@ -127,8 +127,13 @@ public abstract class ModelStorage<T extends EObject> implements IModelStorage {
 		return feature;
 	}
 
+	// this is not needed anymore
 	protected static void setFeature(EObject object, String name, Object value) {
 		EStructuralFeature feature = getFeatureByName(object, name);
+		setFeature(object, feature, value);
+	}
+	
+	protected static void setFeature(EObject object, EStructuralFeature feature, Object value) {
 		EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(object);
 		Command command = SetCommand.create(editingDomain, object, feature, value);
 		editingDomain.getCommandStack().execute(command);

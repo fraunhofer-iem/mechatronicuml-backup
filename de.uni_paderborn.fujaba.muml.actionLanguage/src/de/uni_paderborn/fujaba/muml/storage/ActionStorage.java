@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
@@ -15,10 +16,11 @@ import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 public class ActionStorage extends ModelStorage<Action> {
-	
+	private static final String name = "action";
 	private Expression currentExpression;
 	
 	public ActionStorage(EObject model) {
@@ -75,20 +77,20 @@ public class ActionStorage extends ModelStorage<Action> {
 		}
 		list.add(index, expression);
 		currentExpression = expression;
-		setFeature(getModel(), getFeatureName(), list);
+		setFeature(getModel(), getFeature(), list);
 	}
 
 	@Override
 	public String getName() {
 		if (getModel().getName() == null || getModel().getName().equals("")) {
-			return "action";
+			return name;
 		}
 		return getModel().getName();
 	}
 	
 	@Override
-	public String getFeatureName() {
-		return "expressions";
+	public EStructuralFeature getFeature() {
+		return RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS;
 	}
 	
 }

@@ -5,14 +5,17 @@ import java.io.InputStream;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 public class SynchronizationStorage extends ModelStorage<Synchronization> {
+	private static final String name = "selector";
 
 	public SynchronizationStorage(EObject model) {
 		super(model);
@@ -28,7 +31,8 @@ public class SynchronizationStorage extends ModelStorage<Synchronization> {
 	
 	private Synchronization addSynchronization(EObject model) {
 		Synchronization synchronization = RealtimestatechartFactory.eINSTANCE.createSynchronization();
-		setFeature(model, "synchronization", synchronization);
+		setFeature(model, RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION,
+				synchronization);
 		return synchronization;
 	}
 
@@ -44,12 +48,12 @@ public class SynchronizationStorage extends ModelStorage<Synchronization> {
 
 	@Override
 	public String getName() {
-		return "selector";
+		return name;
 	}
 
 	@Override
-	protected String getFeatureName() {
-		return "selectorExpression";
+	protected EStructuralFeature getFeature() {
+		return RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION;
 	}
 
 }

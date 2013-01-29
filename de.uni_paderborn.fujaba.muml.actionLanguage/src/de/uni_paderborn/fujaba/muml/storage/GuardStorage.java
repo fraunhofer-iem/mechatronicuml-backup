@@ -5,13 +5,16 @@ import java.io.InputStream;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.TextualExpression;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
 
 public class GuardStorage extends ModelStorage<Transition> {
+	private static final String name = "guard";
 	
 	public GuardStorage(EObject model) {
 		super(model);
@@ -39,12 +42,12 @@ public class GuardStorage extends ModelStorage<Transition> {
 
 	@Override
 	public String getName() {
-		return getFeatureName();
+		return name;
 	}
 
 	@Override
-	protected String getFeatureName() {
-		return "guard";
+	protected EStructuralFeature getFeature() {
+		return RealtimestatechartPackage.Literals.TRANSITION__GUARD;
 	}
 
 }
