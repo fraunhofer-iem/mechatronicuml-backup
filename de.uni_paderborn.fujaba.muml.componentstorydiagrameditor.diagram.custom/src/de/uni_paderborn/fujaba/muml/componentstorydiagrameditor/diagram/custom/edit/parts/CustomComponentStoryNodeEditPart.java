@@ -44,9 +44,11 @@ public class CustomComponentStoryNodeEditPart extends
 				patternCompartment.getScrollPane().setVerticalScrollBarVisibility(ScrollPane.NEVER);
 				patternCompartment.setLayoutManager(new BorderLayout());
 
-				if (!((EditPart) getChildren().get(1)).getChildren().isEmpty()) {
-					patternCompartment.add(((AbstractGraphicalEditPart) ((EditPart) getChildren().get(1)).getChildren()
+				if (!getChildren().isEmpty()){
+					if (!((EditPart) getChildren().get(1)).getChildren().isEmpty()) {
+						patternCompartment.add(((AbstractGraphicalEditPart) ((EditPart) getChildren().get(1)).getChildren()
 							.get(0)).getFigure(), BorderLayout.CENTER);
+					}
 				}
 			}
 		}

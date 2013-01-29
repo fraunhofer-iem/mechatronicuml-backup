@@ -14,12 +14,6 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a component story rule which is used to specifiy reconfiguration of a MechatronicUML component. The actual reconfiguration operation is encapsulated in the contained Activity in order to reuse the existing meta-model for story diagrams. The ComponentStoryRule contains an activity rather than inheriting from an activity to distinguish between the parameter sets."/>
       </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="AllThisVariablesHaveSameType" value="if not self.activity.oclIsUndefined() then&#xD;&#xA;&#x9;self.activity.oclAsType(storydiagrams::activities::Activity).ownedActivityNode->collect(oclAsType(ComponentStoryNode).componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type)->asSet()->size() = 1&#xD;&#xA;else&#xD;&#xA;&#x9;false&#xD;&#xA;endif"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="AllThisVariablesHaveSameType"/>
-      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
           eType="ecore:EClass ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity"
           containment="true"/>
@@ -93,7 +87,12 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectorVariables" upperBound="-1"
           eType="#//componentstorypattern/ConnectorVariable" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurableComponent"
+          volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.eContainer().eContainer().eContainer().eContainer().oclAsType(reconfiguration::ReconfigurationRule).reconfiguredComponent"/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PortVariable" abstract="true" eSuperTypes="#//componentstorypattern/ComponentStoryPatternVariable ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/connector/ConnectorEndpoint">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">

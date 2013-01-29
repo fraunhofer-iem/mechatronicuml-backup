@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -23,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ConnectorVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable;
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent;
 
 /**
  * <!-- begin-user-doc -->
@@ -72,14 +74,14 @@ public class ComponentVariableImpl extends ComponentStoryPatternVariableImpl imp
 	protected EList<ConnectorVariable> connectorVariables;
 
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * The cached setting delegate for the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected Component type;
+	protected EStructuralFeature.Internal.SettingDelegate TYPE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentstorypatternPackage.Literals.COMPONENT_VARIABLE__TYPE).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,16 +143,8 @@ public class ComponentVariableImpl extends ComponentStoryPatternVariableImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component getType() {
-		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (Component)eResolveProxy(oldType);
-			if (type != oldType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentstorypatternPackage.COMPONENT_VARIABLE__TYPE, oldType, type));
-			}
-		}
-		return type;
+	public ReconfigurableComponent getType() {
+		return (ReconfigurableComponent)TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -158,8 +152,8 @@ public class ComponentVariableImpl extends ComponentStoryPatternVariableImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component basicGetType() {
-		return type;
+	public ReconfigurableComponent basicGetType() {
+		return (ReconfigurableComponent)TYPE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -167,11 +161,8 @@ public class ComponentVariableImpl extends ComponentStoryPatternVariableImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(Component newType) {
-		Component oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.COMPONENT_VARIABLE__TYPE, oldType, type));
+	public void setType(ReconfigurableComponent newType) {
+		TYPE__ESETTING_DELEGATE.dynamicSet(this, null, 0, newType);
 	}
 
 	/**
@@ -235,7 +226,7 @@ public class ComponentVariableImpl extends ComponentStoryPatternVariableImpl imp
 				getConnectorVariables().addAll((Collection<? extends ConnectorVariable>)newValue);
 				return;
 			case ComponentstorypatternPackage.COMPONENT_VARIABLE__TYPE:
-				setType((Component)newValue);
+				setType((ReconfigurableComponent)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -259,7 +250,7 @@ public class ComponentVariableImpl extends ComponentStoryPatternVariableImpl imp
 				getConnectorVariables().clear();
 				return;
 			case ComponentstorypatternPackage.COMPONENT_VARIABLE__TYPE:
-				setType((Component)null);
+				setType((ReconfigurableComponent)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -280,7 +271,7 @@ public class ComponentVariableImpl extends ComponentStoryPatternVariableImpl imp
 			case ComponentstorypatternPackage.COMPONENT_VARIABLE__CONNECTOR_VARIABLES:
 				return connectorVariables != null && !connectorVariables.isEmpty();
 			case ComponentstorypatternPackage.COMPONENT_VARIABLE__TYPE:
-				return type != null;
+				return TYPE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

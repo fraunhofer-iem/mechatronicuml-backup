@@ -211,8 +211,8 @@
                   verticalAlignment="BEGINNING"
                   horizontalAlignment="END"/>
               <figure
-                  xsi:type="gmfgraph:CustomFigure"
-                  href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.5/@actualFigure"/>
+                  xsi:type="gmfgraph:Rectangle"
+                  href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.6/@actualFigure"/>
             </children>
           </children>
           <children
@@ -362,8 +362,8 @@
             <children
                 xsi:type="gmfgraph:FigureRef">
               <figure
-                  xsi:type="gmfgraph:CustomFigure"
-                  href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.5/@actualFigure"/>
+                  xsi:type="gmfgraph:Rectangle"
+                  href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.6/@actualFigure"/>
             </children>
           </children>
           <children

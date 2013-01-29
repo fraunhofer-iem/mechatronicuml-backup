@@ -174,6 +174,11 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 			case ReconfigurationPackage.RECONFIGURABLE_COMPONENT: {
 				ReconfigurableComponent reconfigurableComponent = (ReconfigurableComponent)theEObject;
 				T result = caseReconfigurableComponent(reconfigurableComponent);
+				if (result == null) result = caseComponent(reconfigurableComponent);
+				if (result == null) result = caseNamedElement(reconfigurableComponent);
+				if (result == null) result = caseCommentableElement(reconfigurableComponent);
+				if (result == null) result = caseConstrainableElement(reconfigurableComponent);
+				if (result == null) result = caseExtendableElement(reconfigurableComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

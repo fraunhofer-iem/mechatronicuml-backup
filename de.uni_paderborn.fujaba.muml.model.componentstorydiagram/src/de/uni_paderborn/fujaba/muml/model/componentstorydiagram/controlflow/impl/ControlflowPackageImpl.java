@@ -122,15 +122,6 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 		theControlflowPackage.initializePackageContents();
 		theComponentstorypatternPackage.initializePackageContents();
 
-		// Register package validator
-		EValidator.Registry.INSTANCE.put
-			(theControlflowPackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
-					 return ControlflowValidator.INSTANCE;
-				 }
-			 });
-
 		// Mark meta-data to indicate it can't be changed
 		theControlflowPackage.freeze();
 
@@ -337,8 +328,6 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL
-		createOCLAnnotations();
 	}
 
 	/**
@@ -356,28 +345,6 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });				
-		addAnnotation
-		  (componentStoryRuleEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "AllThisVariablesHaveSameType"
-		   });				
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";				
-		addAnnotation
-		  (componentStoryRuleEClass, 
-		   source, 
-		   new String[] {
-			 "AllThisVariablesHaveSameType", "if not self.activity.oclIsUndefined() then\r\n\tself.activity.oclAsType(storydiagrams::activities::Activity).ownedActivityNode->collect(oclAsType(ComponentStoryNode).componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type)->asSet()->size() = 1\r\nelse\r\n\tfalse\r\nendif"
 		   });					
 	}
 

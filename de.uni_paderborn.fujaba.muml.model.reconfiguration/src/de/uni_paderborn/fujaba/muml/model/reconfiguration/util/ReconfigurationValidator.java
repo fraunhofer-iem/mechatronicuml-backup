@@ -320,7 +320,17 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReconfigurableComponent(ReconfigurableComponent reconfigurableComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(reconfigurableComponent, diagnostics, context);
+		if (!validate_NoCircularContainment(reconfigurableComponent, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(reconfigurableComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reconfigurableComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reconfigurableComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(reconfigurableComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(reconfigurableComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(reconfigurableComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurableComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurableComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateComponent_UniquePortNames(reconfigurableComponent, diagnostics, context);
+		return result;
 	}
 
 	/**

@@ -76,7 +76,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableComponent" abstract="true"
-      interface="true">
+      interface="true" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This interface needs to be implemented by all reconfigurable component types in order to distinguish them from static component types."/>
     </eAnnotations>

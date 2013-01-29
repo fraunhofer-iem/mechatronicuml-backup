@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration;
 
+import de.uni_paderborn.fujaba.muml.model.component.Component;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,5 +23,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model interface="true" abstract="true"
  * @generated
  */
-public interface ReconfigurableComponent extends EObject {
+public interface ReconfigurableComponent extends Component {
 } // ReconfigurableComponent

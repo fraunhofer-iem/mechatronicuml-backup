@@ -82,16 +82,8 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 			String errorMessage = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorActivityEdge_4001(container,
 							getNewSource(), target, sourceView, targetView);
-
-			if (errorMessage != null && errorMessage.length() > 0
-					&& host != null) {
-				de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy errorFeedbackPolicy = (de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy) host
-						.getEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.ERROR_FEEDBACK_ROLE);
-				if (errorFeedbackPolicy != null) {
-					errorFeedbackPolicy.showErrorMessage(errorMessage);
-				}
-			}
-
+			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -120,16 +112,8 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 			String errorMessage = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy
 					.getLinkConstraints().getErrorActivityEdge_4001(container,
 							source, getNewTarget(), sourceView, targetView);
-
-			if (errorMessage != null && errorMessage.length() > 0
-					&& host != null) {
-				de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy errorFeedbackPolicy = (de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy) host
-						.getEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.ERROR_FEEDBACK_ROLE);
-				if (errorFeedbackPolicy != null) {
-					errorFeedbackPolicy.showErrorMessage(errorMessage);
-				}
-			}
-
+			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(sourceView, errorMessage);
 			return false;
 		}
 		return true;
@@ -209,13 +193,6 @@ public class ActivityEdgeReorientCommand extends EditElementCommand {
 	}
 
 	private EditPart host;
-
-	/**
-	 * @generated
-	 */
-	public void setHost(EditPart host) {
-		this.host = host;
-	}
 
 	/**
 	 * @generated

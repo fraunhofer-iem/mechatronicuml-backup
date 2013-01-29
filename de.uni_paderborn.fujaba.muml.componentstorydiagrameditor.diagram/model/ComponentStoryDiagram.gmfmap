@@ -228,7 +228,7 @@
                       <domainMetaElement
                           href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/SinglePortVariable"/>
                       <domainSpecialization
-                          body="self.multiPortVariable.oclIsUndefined()"/>
+                          body="--&#xD;&#xA;self.multiPortVariable.oclIsUndefined()"/>
                       <labelMappings
                           readOnly="true">
                         <diagramLabel

@@ -37,11 +37,6 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private EditPart host;
-
-	/**
-	 * @generated
-	 */
 	public AssemblyVariableCreateCommand(CreateRelationshipRequest request,
 			EObject source, EObject target) {
 		super(request.getLabel(), null, request);
@@ -94,16 +89,9 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 					.getLinkConstraints().getErrorAssemblyVariable_4004(
 							getContainer(), getSource(), getTarget(),
 							sourceView, targetView);
-
-			if (errorMessage != null && errorMessage.length() > 0
-					&& host != null) {
-				de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy errorFeedbackPolicy = (de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy) host
-						.getEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.ERROR_FEEDBACK_ROLE);
-				if (errorFeedbackPolicy != null) {
-					errorFeedbackPolicy.showErrorMessage(errorMessage);
-				}
-			}
-
+			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
+					.showMessage(targetView != null ? targetView : sourceView,
+							errorMessage);
 			return false;
 		}
 		return true;
@@ -217,13 +205,6 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 			}
 		}
 		return null;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setHost(EditPart host) {
-		this.host = host;
 	}
 
 }

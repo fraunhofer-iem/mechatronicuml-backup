@@ -27,8 +27,7 @@ import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage#getComponentStoryRule()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AllThisVariablesHaveSameType='if not self.activity.oclIsUndefined() then\r\n\tself.activity.oclAsType(storydiagrams::activities::Activity).ownedActivityNode->collect(oclAsType(ComponentStoryNode).componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type)->asSet()->size() = 1\r\nelse\r\n\tfalse\r\nendif'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AllThisVariablesHaveSameType'"
+ * @model
  * @generated
  */
 public interface ComponentStoryRule extends ReconfigurationRule {

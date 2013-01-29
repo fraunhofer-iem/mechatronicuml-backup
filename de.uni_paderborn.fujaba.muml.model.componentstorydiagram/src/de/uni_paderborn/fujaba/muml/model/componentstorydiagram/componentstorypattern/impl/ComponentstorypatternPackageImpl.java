@@ -615,8 +615,9 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		PatternsPackage thePatternsPackage = (PatternsPackage)EPackage.Registry.INSTANCE.getEPackage(PatternsPackage.eNS_URI);
-		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
+		ReconfigurationPackage theReconfigurationPackage = (ReconfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI);
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
+		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		ControlflowPackage theControlflowPackage = (ControlflowPackage)EPackage.Registry.INSTANCE.getEPackage(ControlflowPackage.eNS_URI);
 		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 
@@ -656,7 +657,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		initEReference(getComponentVariable_PortVariables(), this.getPortVariable(), null, "portVariables", null, 0, -1, ComponentVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentVariable_PartVariables(), this.getPartVariable(), null, "partVariables", null, 0, -1, ComponentVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentVariable_ConnectorVariables(), this.getConnectorVariable(), null, "connectorVariables", null, 0, -1, ComponentVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentVariable_Type(), theComponentPackage.getComponent(), null, "type", null, 1, 1, ComponentVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentVariable_Type(), theReconfigurationPackage.getReconfigurableComponent(), null, "type", null, 1, 1, ComponentVariable.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(portVariableEClass, PortVariable.class, "PortVariable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortVariable_Type(), theComponentPackage.getPort(), null, "type", null, 1, 1, PortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -722,7 +723,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		   source, 
 		   new String[] {
 			 "constraints", "AtLeastOnePartVariableOrPortVariable OnlyPartVariablesIfTypeIsStructuredComponent"
-		   });			
+		   });				
 		addAnnotation
 		  (portVariableEClass, 
 		   source, 
@@ -758,6 +759,12 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 			 "AtLeastOnePartVariableOrPortVariable", "self.portVariables->size() > 0 or self.partVariables->size() > 0",
 			 "OnlyPartVariablesIfTypeIsStructuredComponent", "self.type.oclIsKindOf(muml::model::component::StructuredComponent) or self.partVariables->size()=0\r\n"
 		   });			
+		addAnnotation
+		  (getComponentVariable_Type(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.eContainer().eContainer().eContainer().eContainer().oclAsType(reconfiguration::ReconfigurationRule).reconfiguredComponent"
+		   });		
 		addAnnotation
 		  (portVariableEClass, 
 		   source, 

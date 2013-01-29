@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern;
 
+import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent;
 import org.eclipse.emf.common.util.EList;
 
 import de.uni_paderborn.fujaba.muml.model.component.Component;
@@ -88,12 +89,13 @@ public interface ComponentVariable extends ComponentStoryPatternVariable {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(Component)
+	 * @see #setType(ReconfigurableComponent)
 	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage#getComponentVariable_Type()
-	 * @model required="true"
+	 * @model required="true" transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.eContainer().eContainer().eContainer().eContainer().oclAsType(reconfiguration::ReconfigurationRule).reconfiguredComponent'"
 	 * @generated
 	 */
-	Component getType();
+	ReconfigurableComponent getType();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable#getType <em>Type</em>}' reference.
@@ -103,6 +105,6 @@ public interface ComponentVariable extends ComponentStoryPatternVariable {
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(Component value);
+	void setType(ReconfigurableComponent value);
 
 } // ComponentVariable

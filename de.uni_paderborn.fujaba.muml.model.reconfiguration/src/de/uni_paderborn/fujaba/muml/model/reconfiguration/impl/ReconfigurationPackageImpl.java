@@ -763,6 +763,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		reconfigurationRuleEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		reconfigurationConditionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		reconfigurationConditionEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		reconfigurableComponentEClass.getESuperTypes().add(theComponentPackage.getComponent());
 		reconfigurationMessagePortEClass.getESuperTypes().add(this.getReconfigurationPort());
 		reconfigurationExecutionPortEClass.getESuperTypes().add(this.getReconfigurationPort());
 		executorSpecificationEntryEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
