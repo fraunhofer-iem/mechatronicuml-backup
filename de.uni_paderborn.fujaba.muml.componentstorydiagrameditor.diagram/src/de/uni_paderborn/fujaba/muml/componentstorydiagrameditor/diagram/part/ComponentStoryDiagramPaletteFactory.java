@@ -36,10 +36,11 @@ public class ComponentStoryDiagramPaletteFactory {
 		paletteContainer.setId("createComponentStoryDiagram1Group"); //$NON-NLS-1$
 		paletteContainer.add(createActivity1CreationTool());
 		paletteContainer.add(createComponentStoryNode2CreationTool());
-		paletteContainer.add(createActivityEdge3CreationTool());
-		paletteContainer.add(createInitialNode4CreationTool());
-		paletteContainer.add(createJunctionNode5CreationTool());
-		paletteContainer.add(createActivityFinalNode6CreationTool());
+		paletteContainer.add(createControllerExchangeNode3CreationTool());
+		paletteContainer.add(createActivityEdge4CreationTool());
+		paletteContainer.add(createInitialNode5CreationTool());
+		paletteContainer.add(createJunctionNode6CreationTool());
+		paletteContainer.add(createActivityFinalNode7CreationTool());
 		return paletteContainer;
 	}
 
@@ -94,15 +95,15 @@ public class ComponentStoryDiagramPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createActivityEdge3CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ActivityEdge3CreationTool_title,
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ActivityEdge3CreationTool_desc,
+	private ToolEntry createControllerExchangeNode3CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ControllerExchangeNode3CreationTool_title,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ControllerExchangeNode3CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001));
-		entry.setId("createActivityEdge3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityEdge_4001));
+						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ControllerExchangeNode_3021));
+		entry.setId("createControllerExchangeNode3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram/icons/obj16/ComponentStoryDiagramFile.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -110,13 +111,13 @@ public class ComponentStoryDiagramPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createInitialNode4CreationTool() {
+	private ToolEntry createActivityEdge4CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.InitialNode4CreationTool_title,
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.InitialNode4CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ActivityEdge4CreationTool_title,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ActivityEdge4CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.InitialNode_3007));
-		entry.setId("createInitialNode4CreationTool"); //$NON-NLS-1$
+		entry.setId("createActivityEdge4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes
 				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.InitialNode_3007));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -126,13 +127,13 @@ public class ComponentStoryDiagramPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createJunctionNode5CreationTool() {
+	private ToolEntry createInitialNode5CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.JunctionNode5CreationTool_title,
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.JunctionNode5CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.InitialNode5CreationTool_title,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.InitialNode5CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.JunctionNode_3008));
-		entry.setId("createJunctionNode5CreationTool"); //$NON-NLS-1$
+		entry.setId("createInitialNode5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes
 				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.JunctionNode_3008));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -142,16 +143,29 @@ public class ComponentStoryDiagramPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createActivityFinalNode6CreationTool() {
+	private ToolEntry createJunctionNode6CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ActivityFinalNode6CreationTool_title,
-				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ActivityFinalNode6CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.JunctionNode6CreationTool_title,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.JunctionNode6CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityFinalNode_3010));
-		entry.setId("createActivityFinalNode6CreationTool"); //$NON-NLS-1$
+		entry.setId("createJunctionNode6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes
 				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ActivityFinalNode_3010));
 		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createActivityFinalNode7CreationTool() {
+		ToolEntry entry = new ToolEntry(
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ActivityFinalNode7CreationTool_title,
+				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ActivityFinalNode7CreationTool_desc,
+				null, null) {
+		};
+		entry.setId("createActivityFinalNode7CreationTool"); //$NON-NLS-1$
 		return entry;
 	}
 

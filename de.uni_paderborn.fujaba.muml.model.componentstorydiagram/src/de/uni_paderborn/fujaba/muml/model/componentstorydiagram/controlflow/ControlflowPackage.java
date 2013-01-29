@@ -347,7 +347,7 @@ public interface ControlflowPackage extends EPackage {
 	int CONTROLLER_EXCHANGE_NODE__DEADLINE = ActivitiesPackage.ACTIVITY_NODE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Component Story Pattern</b></em>' reference.
+	 * The feature id for the '<em><b>Component Story Pattern</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -457,10 +457,10 @@ public interface ControlflowPackage extends EPackage {
 	EReference getControllerExchangeNode_Deadline();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode#getComponentStoryPattern <em>Component Story Pattern</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode#getComponentStoryPattern <em>Component Story Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Component Story Pattern</em>'.
+	 * @return the meta object for the containment reference '<em>Component Story Pattern</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode#getComponentStoryPattern()
 	 * @see #getControllerExchangeNode()
 	 * @generated
@@ -576,7 +576,7 @@ public interface ControlflowPackage extends EPackage {
 		EReference CONTROLLER_EXCHANGE_NODE__DEADLINE = eINSTANCE.getControllerExchangeNode_Deadline();
 
 		/**
-		 * The meta object literal for the '<em><b>Component Story Pattern</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Component Story Pattern</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

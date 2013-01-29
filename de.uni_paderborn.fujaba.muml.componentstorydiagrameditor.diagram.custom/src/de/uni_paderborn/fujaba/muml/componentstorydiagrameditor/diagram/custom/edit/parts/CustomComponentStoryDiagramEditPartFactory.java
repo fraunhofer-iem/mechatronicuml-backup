@@ -13,6 +13,8 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.par
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryDiagramEditPartFactory;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryNodeEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPattern2EditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartment2EditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryRuleEditPart;
@@ -20,6 +22,8 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.par
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableNameEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableOperatorEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeComponentStoryNodeCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.DelegationVariableEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.DelegationVariableNameEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariable2EditPart;
@@ -77,6 +81,16 @@ public class CustomComponentStoryDiagramEditPartFactory extends
 			case ComponentStoryPatternComponentStoryPatternCompartmentEditPart.VISUAL_ID:
 				return new CustomComponentStoryPatternComponentStoryPatternCompartmentEditPart(view);
 
+			case ControllerExchangeNodeEditPart.VISUAL_ID:
+				return new CustomControllerExchangeNodeEditPart(view);
+			case ControllerExchangeNodeComponentStoryNodeCompartmentEditPart.VISUAL_ID:
+				return new CustomControllerExchangeNodeComponentStoryNodeCompartmentEditPart(
+						view);	
+			case ComponentStoryPattern2EditPart.VISUAL_ID:
+				return new CustomComponentStoryPattern2EditPart(view);
+			case ComponentStoryPatternComponentStoryPatternCompartment2EditPart.VISUAL_ID:
+				return new CustomComponentStoryPatternComponentStoryPatternCompartment2EditPart(view);
+				
 			case ComponentVariableEditPart.VISUAL_ID:
 				return new CustomComponentVariableEditPart(view);
 			case ComponentVariableOperatorEditPart.VISUAL_ID:

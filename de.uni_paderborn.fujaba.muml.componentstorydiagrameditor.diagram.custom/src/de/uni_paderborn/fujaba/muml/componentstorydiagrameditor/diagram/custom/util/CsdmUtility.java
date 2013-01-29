@@ -122,36 +122,38 @@ public class CsdmUtility {
 		TextUtil.append(builder, expression);
 	}
 
-	private static Component getComponentFromComponentStoryRule(
-			ComponentStoryRule componentStoryRule) {
-		if (componentStoryRule.getActivity() != null) {
-			Activity activity = componentStoryRule.getActivity();
-			if (!activity.getOwnedActivityNodes().isEmpty()) {
-				for (int i = 0; i < activity.getOwnedActivityNodes().size(); i++) {
-					ComponentStoryNode componentStoryNode = (ComponentStoryNode) activity
-							.getOwnedActivityNodes().get(i);
-					if (componentStoryNode.getComponentStoryPattern() != null) {
-						ComponentStoryPattern componentStoryPattern = componentStoryNode
-								.getComponentStoryPattern();
-						if (componentStoryPattern.getThisVariable() != null) {
-							ComponentVariable componentVariable = componentStoryPattern
-									.getThisVariable();
-							if (componentVariable.getType() != null) {
-								return componentVariable.getType();
-							}
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
+//	private static Component getComponentFromComponentStoryRule(
+//			ComponentStoryRule componentStoryRule) {
+//		if (componentStoryRule.getActivity() != null) {
+//			Activity activity = componentStoryRule.getActivity();
+//			if (!activity.getOwnedActivityNodes().isEmpty()) {
+//				for (int i = 0; i < activity.getOwnedActivityNodes().size(); i++) {
+//					ComponentStoryNode componentStoryNode = (ComponentStoryNode) activity
+//							.getOwnedActivityNodes().get(i);
+//					if (componentStoryNode.getComponentStoryPattern() != null) {
+//						ComponentStoryPattern componentStoryPattern = componentStoryNode
+//								.getComponentStoryPattern();
+//						if (componentStoryPattern.getThisVariable() != null) {
+//							ComponentVariable componentVariable = componentStoryPattern
+//									.getThisVariable();
+//							if (componentVariable.getType() != null) {
+//								return componentVariable.getType();
+//							}
+//						}
+//					}
+//				}
+//			}
+//		}
+//		return null;
+//	}
 
 	public static String getSignature(ComponentStoryRule componentStoryRule) {
 
-		Component component = CsdmUtility
-				.getComponentFromComponentStoryRule(componentStoryRule);
+//		Component component = CsdmUtility
+//				.getComponentFromComponentStoryRule(componentStoryRule);
 
+		Component component = componentStoryRule.getReconfiguredComponent();
+		
 		String type = "";
 		String name = "";
 		String parameters = "";

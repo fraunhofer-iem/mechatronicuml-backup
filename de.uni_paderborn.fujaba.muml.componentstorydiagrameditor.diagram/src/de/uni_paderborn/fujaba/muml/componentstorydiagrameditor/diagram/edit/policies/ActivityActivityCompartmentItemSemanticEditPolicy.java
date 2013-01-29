@@ -42,6 +42,11 @@ public class ActivityActivityCompartmentItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.ActivityFinalNodeCreateCommand(
 					req));
 		}
+		if (de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ControllerExchangeNode_3021 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.ControllerExchangeNodeCreateCommand(
+					req));
+		}
 		return super.getCreateCommand(req);
 	}
 

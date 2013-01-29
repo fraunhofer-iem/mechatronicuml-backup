@@ -273,42 +273,52 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ActivityEdge3CreationTool_title;
+	public static String ControllerExchangeNode3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ActivityEdge3CreationTool_desc;
+	public static String ControllerExchangeNode3CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String InitialNode4CreationTool_title;
+	public static String ActivityEdge4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String InitialNode4CreationTool_desc;
+	public static String ActivityEdge4CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String JunctionNode5CreationTool_title;
+	public static String InitialNode5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String JunctionNode5CreationTool_desc;
+	public static String InitialNode5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ActivityFinalNode6CreationTool_title;
+	public static String JunctionNode6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ActivityFinalNode6CreationTool_desc;
+	public static String JunctionNode6CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityFinalNode7CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityFinalNode7CreationTool_desc;
 
 	/**
 	 * @generated
@@ -389,6 +399,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String MultiPortVariableMultiPortVariablesCompartment2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ControllerExchangeNodeComponentStoryNodeCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ComponentStoryPatternComponentStoryPatternCompartment2EditPart_title;
 
 	/**
 	 * @generated

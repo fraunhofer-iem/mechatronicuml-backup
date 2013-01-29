@@ -158,7 +158,7 @@
         compartments="//@diagram/@compartments.3"
         graphicalNodeEditPolicyClassName="ComponentVariableGraphicalNodeEditPolicy"
         createCommandClassName="ComponentVariableCreateCommand"
-        containers="//@diagram/@compartments.2">
+        containers="//@diagram/@compartments.2 //@diagram/@compartments.7">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -749,6 +749,148 @@
             parser="//@labelParsers/@implementations.0"/>
       </labels>
     </childNodes>
+    <childNodes
+        visualID="3021"
+        editPartClassName="ControllerExchangeNodeEditPart"
+        itemSemanticEditPolicyClassName="ControllerExchangeNodeItemSemanticEditPolicy"
+        notationViewFactoryClassName="ControllerExchangeNodeViewFactory"
+        canonicalEditPolicyClassName="ControllerExchangeNodeCanonicalEditPolicy"
+        compartments="//@diagram/@compartments.6"
+        graphicalNodeEditPolicyClassName="ControllerExchangeNodeGraphicalNodeEditPolicy"
+        createCommandClassName="ControllerExchangeNodeCreateCommand"
+        containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="ControllerExchangeNodeEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ComponentStoryNodeRoundedFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentStoryNodeRoundedFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureComponentStoryNodeName; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureComponentStoryNodePatternContainer; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentStoryNodeRoundedFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;this.setFill(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure storyNodeNameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;storyNodeNameContainer0.setFill(false);&#xA;storyNodeNameContainer0.setOutline(false);&#xA;storyNodeNameContainer0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(30)&#xA;));&#xA;&#xA;this.add(storyNodeNameContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStoryNodeNameContainer0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStoryNodeNameContainer0.numColumns = 1;&#xA;&#x9;layoutStoryNodeNameContainer0.makeColumnsEqualWidth = true;&#xA;&#x9;storyNodeNameContainer0.setLayoutManager(layoutStoryNodeNameContainer0);&#xA;&#xA;&#xA;&#xA;fFigureComponentStoryNodeName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureComponentStoryNodeName.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureComponentStoryNodeName = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureComponentStoryNodeName.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureComponentStoryNodeName.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureComponentStoryNodeName.horizontalIndent = 0;&#xA;constraintFFigureComponentStoryNodeName.horizontalSpan = 1;&#xA;constraintFFigureComponentStoryNodeName.verticalSpan = 1;&#xA;constraintFFigureComponentStoryNodeName.grabExcessHorizontalSpace = true;&#xA;constraintFFigureComponentStoryNodeName.grabExcessVerticalSpace = true;&#xA;storyNodeNameContainer0.add(fFigureComponentStoryNodeName, constraintFFigureComponentStoryNodeName);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentStoryNodeContentContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;componentStoryNodeContentContainer0.setFill(false);&#xA;componentStoryNodeContentContainer0.setOutline(false);&#xA;&#xA;this.add(componentStoryNodeContentContainer0, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutComponentStoryNodeContentContainer0 = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;componentStoryNodeContentContainer0.setLayoutManager(layoutComponentStoryNodeContentContainer0);&#xA;&#xA;&#xA;&#xA;fFigureComponentStoryNodePatternContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureComponentStoryNodePatternContainer.setFill(false);&#xA;fFigureComponentStoryNodePatternContainer.setOutline(false);&#xA;&#xA;componentStoryNodeContentContainer0.add(fFigureComponentStoryNodePatternContainer, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureComponentStoryNodeName() {&#xA;&#x9;&#x9;return fFigureComponentStoryNodeName;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureComponentStoryNodePatternContainer() {&#xA;&#x9;&#x9;return fFigureComponentStoryNodePatternContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/controlflow/ControllerExchangeNode"/>
+        <containmentMetaFeature
+            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
+        <childMetaFeature
+            href="../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams/activities/Activity/ownedActivityNode"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenReferenceNewElementSpec">
+            <feature
+                href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/controlflow/ControllerExchangeNode/componentStoryPattern"/>
+            <newElementInitializers>
+              <initializers
+                  xsi:type="gmfgen:GenFeatureValueSpec"
+                  value="//@expressionProviders/@providers.0/@expressions.8">
+                <feature
+                    href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              </initializers>
+              <initializers
+                  xsi:type="gmfgen:GenReferenceNewElementSpec">
+                <feature
+                    href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentStoryPattern/thisVariable"/>
+                <newElementInitializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.9">
+                    <feature
+                        href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+                  </initializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.10">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
+                  </initializers>
+                  <initializers
+                      xsi:type="gmfgen:GenFeatureValueSpec"
+                      value="//@expressionProviders/@providers.0/@expressions.11">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
+                  </initializers>
+                  <initializers
+                      xsi:type="gmfgen:GenReferenceNewElementSpec">
+                    <feature
+                        href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentVariable/partVariables"/>
+                    <newElementInitializers>
+                      <initializers
+                          xsi:type="gmfgen:GenFeatureValueSpec"
+                          value="//@expressionProviders/@providers.0/@expressions.12">
+                        <feature
+                            href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
+                      </initializers>
+                    </newElementInitializers>
+                    <newElementInitializers>
+                      <initializers
+                          xsi:type="gmfgen:GenFeatureValueSpec"
+                          value="//@expressionProviders/@providers.0/@expressions.13">
+                        <feature
+                            href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
+                      </initializers>
+                    </newElementInitializers>
+                  </initializers>
+                </newElementInitializers>
+              </initializers>
+            </newElementInitializers>
+          </initializers>
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.14">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          visualID="5041"
+          editPartClassName="ControllerExchangeNodeNameEditPart"
+          itemSemanticEditPolicyClassName="ControllerExchangeNodeNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="ControllerExchangeNodeNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureComponentStoryNodeName"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes
+        visualID="3022"
+        editPartClassName="ComponentStoryPattern2EditPart"
+        itemSemanticEditPolicyClassName="ComponentStoryPattern2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="ComponentStoryPatternViewFactory"
+        canonicalEditPolicyClassName="ComponentStoryPattern2CanonicalEditPolicy"
+        compartments="//@diagram/@compartments.7"
+        graphicalNodeEditPolicyClassName="ComponentStoryPattern2GraphicalNodeEditPolicy"
+        createCommandClassName="ComponentStoryPattern2CreateCommand"
+        containers="//@diagram/@compartments.6">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@childNodes.1/@elementType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ComponentStoryPatternFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentStoryPatternFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RoundedRectangle fFigureComponentStoryPatternContainer; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentStoryPatternFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureComponentStoryPatternContainer = new org.eclipse.draw2d.RoundedRectangle();&#xA;fFigureComponentStoryPatternContainer.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;fFigureComponentStoryPatternContainer.setFill(false);&#xA;fFigureComponentStoryPatternContainer.setOutline(false);&#xA;&#xA;this.add(fFigureComponentStoryPatternContainer, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RoundedRectangle getFigureComponentStoryPatternContainer() {&#xA;&#x9;&#x9;return fFigureComponentStoryPatternContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentStoryPattern"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/controlflow/ControllerExchangeNode/componentStoryPattern"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/controlflow/ControllerExchangeNode/componentStoryPattern"/>
+      </modelFacet>
+    </childNodes>
     <topLevelNodes
         visualID="2003"
         editPartClassName="ActivityEditPart"
@@ -962,7 +1104,7 @@
         itemSemanticEditPolicyClassName="ActivityActivityCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="ActivityActivityCompartmentViewFactory"
         canonicalEditPolicyClassName="ActivityActivityCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.9 //@diagram/@childNodes.10 //@diagram/@childNodes.11"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.9 //@diagram/@childNodes.10 //@diagram/@childNodes.11 //@diagram/@childNodes.12"
         title="ActivityCompartment"
         canCollapse="false"
         needsTitle="false"
@@ -1068,6 +1210,44 @@
           getterName="getFigureSinglePortVariablesCompartment"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
+    <compartments
+        visualID="7009"
+        editPartClassName="ControllerExchangeNodeComponentStoryNodeCompartmentEditPart"
+        itemSemanticEditPolicyClassName="ControllerExchangeNodeComponentStoryNodeCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="ControllerExchangeNodeComponentStoryNodeCompartmentViewFactory"
+        canonicalEditPolicyClassName="ControllerExchangeNodeComponentStoryNodeCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.13"
+        title="ComponentStoryNodeCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@childNodes.12"
+        listLayout="false">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:ParentAssignedViewmap"
+          getterName="getFigureComponentStoryNodePatternContainer"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments
+        visualID="7010"
+        editPartClassName="ComponentStoryPatternComponentStoryPatternCompartment2EditPart"
+        itemSemanticEditPolicyClassName="ComponentStoryPatternComponentStoryPatternCompartment2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="ComponentStoryPatternComponentStoryPatternCompartmentViewFactory"
+        canonicalEditPolicyClassName="ComponentStoryPatternComponentStoryPatternCompartment2CanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.2"
+        title="ComponentStoryPatternCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@childNodes.13"
+        listLayout="false">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:ParentAssignedViewmap"
+          getterName="getFigureComponentStoryPatternContainer"
+          figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
+    </compartments>
     <palette>
       <groups
           title="Component Story Diagram"
@@ -1085,24 +1265,30 @@
             genNodes="//@diagram/@childNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
+            title="ControllerExchangeNode"
+            description="Create new ControllerExchangeNode"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram/icons/obj16/ComponentStoryDiagramFile.gif"
+            genNodes="//@diagram/@childNodes.12"
+            genLinks="//@diagram/@links.0"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
             title="ActivityEdge"
             description="Create new ActivityEdge"
-            genLinks="//@diagram/@links.0"/>
+            genNodes="//@diagram/@childNodes.9"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="InitialNode"
             description="Create new InitialNode"
-            genNodes="//@diagram/@childNodes.9"/>
+            genNodes="//@diagram/@childNodes.10"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="JunctionNode"
             description="Create new JunctionNode"
-            genNodes="//@diagram/@childNodes.10"/>
+            genNodes="//@diagram/@childNodes.11"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ActivityFinalNode"
-            description="Create new ActivityFinalNode"
-            genNodes="//@diagram/@childNodes.11"/>
+            description="Create new ActivityFinalNode"/>
       </groups>
       <groups
           title="Component Story Pattern"
@@ -1197,22 +1383,36 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="'activity'"/>
+          body="--&#xD;&#xA;'activity'"/>
       <expressions
-          body="'componentStoryPattern'"/>
+          body="--&#xD;&#xA;'componentStoryPattern'"/>
       <expressions
-          body="'this'"/>
+          body="--&#xD;&#xA;'this'"/>
       <expressions
-          body="storydiagrams::patterns::BindingState::BOUND"/>
+          body="--&#xD;&#xA;storydiagrams::patterns::BindingState::BOUND"/>
       <expressions
-          body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+          body="--&#xD;&#xA;storydiagrams::patterns::BindingSemantics::MANDATORY"/>
       <expressions
-          body="'componentStoryNode'"/>
+          body="--&#xD;&#xA;'componentStoryNode'"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="--&#xD;&#xA;self.multiPortVariable.oclIsUndefined()"/>
       <expressions
           body="--&#xD;&#xA;let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
+      <expressions
+          body="--&#xD;&#xA;'componentStoryPattern'"/>
+      <expressions
+          body="--&#xD;&#xA;'this'"/>
+      <expressions
+          body="--&#xD;&#xA;storydiagrams::patterns::BindingState::BOUND"/>
+      <expressions
+          body="--&#xD;&#xA;storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+      <expressions
+          body="--&#xD;&#xA;storydiagrams::patterns::BindingOperator::DESTROY"/>
+      <expressions
+          body="--&#xD;&#xA;storydiagrams::patterns::BindingOperator::CREATE"/>
+      <expressions
+          body="--&#xD;&#xA;'controllerExchangeNode'"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -1222,7 +1422,7 @@
         uses="//@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.1/@modelFacet //@diagram/@childNodes.11/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@links.0/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.4/@labels.1/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@childNodes.8/@labels.1/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.4/@labels.1/@modelFacet //@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.7/@labels.1/@modelFacet //@diagram/@childNodes.8/@labels.1/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.12/@labels.0/@modelFacet //@diagram/@links.1/@labels.0/@modelFacet //@diagram/@links.2/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.1/@modelFacet"

@@ -102,6 +102,16 @@ public class ComponentStoryDiagramElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ControllerExchangeNode_3021 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.ControllerExchangeNode_3021"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ComponentStoryPattern_3022 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.ComponentStoryPattern_3022"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ActivityEdge_4001 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.ActivityEdge_4001"); //$NON-NLS-1$
 	/**
 	 * @generated
@@ -285,6 +295,16 @@ public class ComponentStoryDiagramElementTypes {
 			elements.put(ActivityFinalNode_3010,
 					ActivitiesPackage.eINSTANCE.getActivityFinalNode());
 
+			elements.put(
+					ControllerExchangeNode_3021,
+					de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage.eINSTANCE
+							.getControllerExchangeNode());
+
+			elements.put(
+					ComponentStoryPattern_3022,
+					de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+							.getComponentStoryPattern());
+
 			elements.put(ActivityEdge_4001,
 					ActivitiesPackage.eINSTANCE.getActivityEdge());
 
@@ -328,6 +348,8 @@ public class ComponentStoryDiagramElementTypes {
 			KNOWN_ELEMENT_TYPES.add(InitialNode_3007);
 			KNOWN_ELEMENT_TYPES.add(JunctionNode_3008);
 			KNOWN_ELEMENT_TYPES.add(ActivityFinalNode_3010);
+			KNOWN_ELEMENT_TYPES.add(ControllerExchangeNode_3021);
+			KNOWN_ELEMENT_TYPES.add(ComponentStoryPattern_3022);
 			KNOWN_ELEMENT_TYPES.add(ActivityEdge_4001);
 			KNOWN_ELEMENT_TYPES.add(AssemblyVariable_4004);
 			KNOWN_ELEMENT_TYPES.add(DelegationVariable_4005);
@@ -368,6 +390,10 @@ public class ComponentStoryDiagramElementTypes {
 			return JunctionNode_3008;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityFinalNodeEditPart.VISUAL_ID:
 			return ActivityFinalNode_3010;
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeEditPart.VISUAL_ID:
+			return ControllerExchangeNode_3021;
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPattern2EditPart.VISUAL_ID:
+			return ComponentStoryPattern_3022;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityEdgeEditPart.VISUAL_ID:
 			return ActivityEdge_4001;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID:

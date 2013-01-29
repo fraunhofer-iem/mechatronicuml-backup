@@ -53,7 +53,7 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 	protected RelativeDeadline deadline;
 
 	/**
-	 * The cached value of the '{@link #getComponentStoryPattern() <em>Component Story Pattern</em>}' reference.
+	 * The cached value of the '{@link #getComponentStoryPattern() <em>Component Story Pattern</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getComponentStoryPattern()
@@ -160,14 +160,6 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 	 * @generated
 	 */
 	public ComponentStoryPattern getComponentStoryPattern() {
-		if (componentStoryPattern != null && componentStoryPattern.eIsProxy()) {
-			InternalEObject oldComponentStoryPattern = (InternalEObject)componentStoryPattern;
-			componentStoryPattern = (ComponentStoryPattern)eResolveProxy(oldComponentStoryPattern);
-			if (componentStoryPattern != oldComponentStoryPattern) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN, oldComponentStoryPattern, componentStoryPattern));
-			}
-		}
 		return componentStoryPattern;
 	}
 
@@ -176,8 +168,14 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentStoryPattern basicGetComponentStoryPattern() {
-		return componentStoryPattern;
+	public NotificationChain basicSetComponentStoryPattern(ComponentStoryPattern newComponentStoryPattern, NotificationChain msgs) {
+		ComponentStoryPattern oldComponentStoryPattern = componentStoryPattern;
+		componentStoryPattern = newComponentStoryPattern;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN, oldComponentStoryPattern, newComponentStoryPattern);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -186,10 +184,17 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 	 * @generated
 	 */
 	public void setComponentStoryPattern(ComponentStoryPattern newComponentStoryPattern) {
-		ComponentStoryPattern oldComponentStoryPattern = componentStoryPattern;
-		componentStoryPattern = newComponentStoryPattern;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN, oldComponentStoryPattern, componentStoryPattern));
+		if (newComponentStoryPattern != componentStoryPattern) {
+			NotificationChain msgs = null;
+			if (componentStoryPattern != null)
+				msgs = ((InternalEObject)componentStoryPattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN, null, msgs);
+			if (newComponentStoryPattern != null)
+				msgs = ((InternalEObject)newComponentStoryPattern).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN, null, msgs);
+			msgs = basicSetComponentStoryPattern(newComponentStoryPattern, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN, newComponentStoryPattern, newComponentStoryPattern));
 	}
 
 	/**
@@ -235,6 +240,8 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 		switch (featureID) {
 			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
 				return basicSetDeadline(null, msgs);
+			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
+				return basicSetComponentStoryPattern(null, msgs);
 			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS:
 				return ((InternalEList<?>)getFadingFunctions()).basicRemove(otherEnd, msgs);
 		}
@@ -252,8 +259,7 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
 				return getDeadline();
 			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
-				if (resolve) return getComponentStoryPattern();
-				return basicGetComponentStoryPattern();
+				return getComponentStoryPattern();
 			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__CONTROLLER_EXCHANGE_STRATEGY:
 				return getControllerExchangeStrategy();
 			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS:

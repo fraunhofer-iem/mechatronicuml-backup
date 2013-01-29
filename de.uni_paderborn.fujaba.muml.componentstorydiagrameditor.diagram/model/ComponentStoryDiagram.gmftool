@@ -29,6 +29,15 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="ControllerExchangeNode"
+          description="Create new ControllerExchangeNode">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/ComponentStoryDiagramFile.gif"
+            bundle="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="ActivityEdge"
           description="Create new ActivityEdge">
         <smallIcon

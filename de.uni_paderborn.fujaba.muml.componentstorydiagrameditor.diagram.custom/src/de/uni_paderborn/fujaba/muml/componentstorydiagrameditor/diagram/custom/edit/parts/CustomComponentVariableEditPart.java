@@ -11,6 +11,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.LineAttributes;
 import org.storydriven.core.CorePackage;
 import org.storydriven.storydiagrams.activities.Activity;
+import org.storydriven.storydiagrams.activities.ActivityNode;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
@@ -22,11 +23,12 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.par
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeComponentStoryNodeCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentVariableItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
 
 public class CustomComponentVariableEditPart extends ComponentVariableEditPart {
@@ -134,16 +136,12 @@ public class CustomComponentVariableEditPart extends ComponentVariableEditPart {
 	private void updateActivityNameLabel() {
 
 		ComponentVariable componentVariable = (ComponentVariable) ((View) getModel()).getElement();
-		ComponentStoryPattern componentStoryPattern = (ComponentStoryPattern) componentVariable.eContainer();
-		ComponentStoryNode componentStoryNode = (ComponentStoryNode) componentStoryPattern.eContainer();
-		Activity activity = (Activity) componentStoryNode.eContainer();
+		ComponentStoryPattern componentStoryPattern = (ComponentStoryPattern) componentVariable.eContainer();		
+		ActivityNode activityNode = (ActivityNode) componentStoryPattern.eContainer();
+		Activity activity = (Activity) activityNode.eContainer();
 		ComponentStoryRule componentStoryRule = (ComponentStoryRule) activity.eContainer();
 		
-		ComponentStoryPatternComponentStoryPatternCompartmentEditPart componentStoryPatternComponentStoryPatternCompartmentEditPart = (ComponentStoryPatternComponentStoryPatternCompartmentEditPart) getParent();
-		ComponentStoryPatternEditPart componentStoryPatternEditPart= (ComponentStoryPatternEditPart) componentStoryPatternComponentStoryPatternCompartmentEditPart.getParent();
-		ComponentStoryNodeComponentStoryNodeCompartmentEditPart componentStoryNodeComponentStoryNodeCompartmentEditPart = (ComponentStoryNodeComponentStoryNodeCompartmentEditPart) componentStoryPatternEditPart.getParent();
-		ComponentStoryNodeEditPart componentStoryNodeEditPart = (ComponentStoryNodeEditPart) componentStoryNodeComponentStoryNodeCompartmentEditPart.getParent();
-		ActivityActivityCompartmentEditPart activityActivityCompartmentEditPart = (ActivityActivityCompartmentEditPart) componentStoryNodeEditPart.getParent();
+		ActivityActivityCompartmentEditPart activityActivityCompartmentEditPart = (ActivityActivityCompartmentEditPart) getParent().getParent().getParent().getParent().getParent();	
 		ActivityEditPart activityEditPart = (ActivityEditPart) activityActivityCompartmentEditPart.getParent();
 
 		WrappingLabel activityNameLabel = ((ActivityFigure) activityEditPart

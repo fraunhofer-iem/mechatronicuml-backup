@@ -20,19 +20,19 @@ import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 
 /**
  * @generated
  */
-public class ActivityActivityCompartmentCanonicalEditPolicy extends
-		CanonicalEditPolicy {
+public class ComponentStoryPatternComponentStoryPatternCompartment2CanonicalEditPolicy
+		extends CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
 
-	public ActivityActivityCompartmentCanonicalEditPolicy() {
+	public ComponentStoryPatternComponentStoryPatternCompartment2CanonicalEditPolicy() {
 	}
 
-	public ActivityActivityCompartmentCanonicalEditPolicy(boolean canonicalNodes) {
+	public ComponentStoryPatternComponentStoryPatternCompartment2CanonicalEditPolicy(
+			boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
 
@@ -52,7 +52,8 @@ public class ActivityActivityCompartmentCanonicalEditPolicy extends
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return ActivitiesPackage.eINSTANCE.getActivity_OwnedActivityNode();
+		return de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+				.getComponentStoryPattern_ThisVariable();
 	}
 
 	/**
@@ -82,7 +83,7 @@ public class ActivityActivityCompartmentCanonicalEditPolicy extends
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryNodeEditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID;
 				if (childElement.eContainer() == containerView.getElement()
 						&& visualID == de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
 								.getVisualID(childView)) {
@@ -97,7 +98,7 @@ public class ActivityActivityCompartmentCanonicalEditPolicy extends
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramUpdater
-				.getActivityActivityCompartment_7001SemanticChildren(viewObject);
+				.getComponentStoryPatternComponentStoryPatternCompartment_7010SemanticChildren(viewObject);
 
 	}
 
@@ -114,17 +115,8 @@ public class ActivityActivityCompartmentCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
+		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
 				.getVisualID(view);
-		switch (visualID) {
-		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryNodeEditPart.VISUAL_ID:
-		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.InitialNodeEditPart.VISUAL_ID:
-		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.JunctionNodeEditPart.VISUAL_ID:
-		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityFinalNodeEditPart.VISUAL_ID:
-		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeEditPart.VISUAL_ID:
-			return true;
-		}
-		return false;
 	}
 
 	/**

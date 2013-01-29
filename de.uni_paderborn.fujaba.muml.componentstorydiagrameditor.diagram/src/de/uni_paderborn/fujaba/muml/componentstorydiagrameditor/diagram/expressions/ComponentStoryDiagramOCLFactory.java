@@ -30,7 +30,7 @@ public class ComponentStoryDiagramOCLFactory {
 	 * @generated
 	 */
 	protected ComponentStoryDiagramOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramAbstractExpression[8];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.expressions.ComponentStoryDiagramAbstractExpression[15];
 	}
 
 	/**
@@ -50,14 +50,21 @@ public class ComponentStoryDiagramOCLFactory {
 		}
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
-					"\'activity\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"\'componentStoryPattern\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"\'this\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"storydiagrams::patterns::BindingState::BOUND".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"storydiagrams::patterns::BindingSemantics::MANDATORY".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"\'componentStoryNode\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\r\n\'activity\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\r\n\'componentStoryPattern\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\r\n\'this\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\r\nstorydiagrams::patterns::BindingState::BOUND".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\r\nstorydiagrams::patterns::BindingSemantics::MANDATORY".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\r\n\'componentStoryNode\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\r\nself.multiPortVariable.oclIsUndefined()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\r\nlet compName : String = if self.type.componentType.name.oclIsUndefined() then \'null\' else\tself.type.componentType.name endif in\r\nlet partName : String = if self.type.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.type.name) endif in\r\nlet selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\nif bindingState = storydiagrams::patterns::BindingState::BOUND then\r\nselfName\r\nelse\r\nselfName.concat(partName.concat(\' : \'.concat(compName)))\r\nendif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\r\n\'componentStoryPattern\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\r\n\'this\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\r\nstorydiagrams::patterns::BindingState::BOUND".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\r\nstorydiagrams::patterns::BindingSemantics::MANDATORY".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\r\nstorydiagrams::patterns::BindingOperator::DESTROY".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\r\nstorydiagrams::patterns::BindingOperator::CREATE".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\r\n\'controllerExchangeNode\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

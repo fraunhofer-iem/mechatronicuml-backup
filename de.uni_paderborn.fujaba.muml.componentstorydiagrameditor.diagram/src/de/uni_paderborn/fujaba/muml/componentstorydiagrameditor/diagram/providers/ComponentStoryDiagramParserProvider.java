@@ -141,6 +141,25 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
+	protected IParser controllerExchangeNodeName_5041Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getControllerExchangeNodeName_5041Parser() {
+		if (controllerExchangeNodeName_5041Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.MessageFormatParser(
+					features);
+			controllerExchangeNodeName_5041Parser = parser;
+		}
+		return controllerExchangeNodeName_5041Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser assemblyVariableName_6004Parser;
 
 	/**
@@ -197,6 +216,8 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 			return getMultiPortVariableName_5026Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.SinglePortVariableName2EditPart.VISUAL_ID:
 			return getSinglePortVariableName_5028Parser();
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeNameEditPart.VISUAL_ID:
+			return getControllerExchangeNodeName_5041Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.AssemblyVariableNameEditPart.VISUAL_ID:
 			return getAssemblyVariableName_6004Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.DelegationVariableNameEditPart.VISUAL_ID:

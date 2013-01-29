@@ -112,50 +112,7 @@ public class ControlflowValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateComponentStoryRule(ComponentStoryRule componentStoryRule, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(componentStoryRule, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(componentStoryRule, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(componentStoryRule, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(componentStoryRule, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(componentStoryRule, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(componentStoryRule, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(componentStoryRule, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(componentStoryRule, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(componentStoryRule, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponentStoryRule_AllThisVariablesHaveSameType(componentStoryRule, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the AllThisVariablesHaveSameType constraint of '<em>Component Story Rule</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String COMPONENT_STORY_RULE__ALL_THIS_VARIABLES_HAVE_SAME_TYPE__EEXPRESSION = "if not self.activity.oclIsUndefined() then\r\n" +
-		"\tself.activity.oclAsType(storydiagrams::activities::Activity).ownedActivityNode->collect(oclAsType(ComponentStoryNode).componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type)->asSet()->size() = 1\r\n" +
-		"else\r\n" +
-		"\tfalse\r\n" +
-		"endif";
-
-	/**
-	 * Validates the AllThisVariablesHaveSameType constraint of '<em>Component Story Rule</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateComponentStoryRule_AllThisVariablesHaveSameType(ComponentStoryRule componentStoryRule, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ControlflowPackage.Literals.COMPONENT_STORY_RULE,
-				 componentStoryRule,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "AllThisVariablesHaveSameType",
-				 COMPONENT_STORY_RULE__ALL_THIS_VARIABLES_HAVE_SAME_TYPE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return validate_EveryDefaultConstraint(componentStoryRule, diagnostics, context);
 	}
 
 	/**
@@ -173,7 +130,51 @@ public class ControlflowValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateControllerExchangeNode(ControllerExchangeNode controllerExchangeNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(controllerExchangeNode, diagnostics, context);
+		if (!validate_NoCircularContainment(controllerExchangeNode, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(controllerExchangeNode, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(controllerExchangeNode, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(controllerExchangeNode, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(controllerExchangeNode, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(controllerExchangeNode, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(controllerExchangeNode, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(controllerExchangeNode, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(controllerExchangeNode, diagnostics, context);
+		if (result || diagnostics != null) result &= validateControllerExchangeNode_HasOnlyOneCreateAndOneDestroyPartVariable(controllerExchangeNode, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the HasOnlyOneCreateAndOneDestroyPartVariable constraint of '<em>Controller Exchange Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CONTROLLER_EXCHANGE_NODE__HAS_ONLY_ONE_CREATE_AND_ONE_DESTROY_PART_VARIABLE__EEXPRESSION = "let partVariables : OrderedSet(componentstorypattern::PartVariable) = self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).partVariables->asOrderedSet() in\r\n" +
+		"partVariables->size() = 2 and\r\n" +
+		"if partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY else\r\n" +
+		"if partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE else\r\n" +
+		"false endif endif\r\n" +
+		"";
+
+	/**
+	 * Validates the HasOnlyOneCreateAndOneDestroyPartVariable constraint of '<em>Controller Exchange Node</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateControllerExchangeNode_HasOnlyOneCreateAndOneDestroyPartVariable(ControllerExchangeNode controllerExchangeNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE,
+				 controllerExchangeNode,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "HasOnlyOneCreateAndOneDestroyPartVariable",
+				 CONTROLLER_EXCHANGE_NODE__HAS_ONLY_ONE_CREATE_AND_ONE_DESTROY_PART_VARIABLE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

@@ -29,6 +29,12 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Controller Exchange Activity Nodes are used to exchange controllers modeled by continuous components. The controller exchange node either applies a fading function or a flat switching to the out-ports of the continuous component. "/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="HasOnlyOneCreateAndOneDestroyPartVariable" value="let partVariables : OrderedSet(componentstorypattern::PartVariable) = self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).partVariables->asOrderedSet() in&#xD;&#xA;partVariables->size() = 2 and&#xD;&#xA;if partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY else&#xD;&#xA;if partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE else&#xD;&#xA;false endif endif&#xD;&#xA;"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="HasOnlyOneCreateAndOneDestroyPartVariable"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="deadline" lowerBound="1"
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RelativeDeadline"
           containment="true">
@@ -37,7 +43,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="componentStoryPattern"
-          lowerBound="1" eType="#//componentstorypattern/ComponentStoryPattern"/>
+          lowerBound="1" eType="#//componentstorypattern/ComponentStoryPattern" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="controllerExchangeStrategy"
           lowerBound="1" eType="#//controlflow/ControllerExchangeStrategy" defaultValueLiteral="ControllerExchangeStrategy.ATOMIC_SWITCHING"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="fadingFunctions" upperBound="-1"

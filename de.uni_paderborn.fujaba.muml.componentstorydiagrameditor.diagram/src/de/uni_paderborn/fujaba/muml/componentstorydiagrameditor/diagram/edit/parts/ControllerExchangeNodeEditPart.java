@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.Ellipse;
+import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -23,6 +23,7 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
@@ -33,12 +34,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class InitialNodeEditPart extends ShapeNodeEditPart {
+public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3007;
+	public static final int VISUAL_ID = 3021;
 
 	/**
 	 * @generated
@@ -53,7 +54,7 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public InitialNodeEditPart(View view) {
+	public ControllerExchangeNodeEditPart(View view) {
 		super(view);
 	}
 
@@ -64,7 +65,7 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.InitialNodeItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ControllerExchangeNodeItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -109,14 +110,84 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new InitialNodeFigure();
+		return primaryShape = new ComponentStoryNodeRoundedFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public InitialNodeFigure getPrimaryShape() {
-		return (InitialNodeFigure) primaryShape;
+	public ComponentStoryNodeRoundedFigure getPrimaryShape() {
+		return (ComponentStoryNodeRoundedFigure) primaryShape;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeNameEditPart) {
+			((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeNameEditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureComponentStoryNodeName());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeComponentStoryNodeCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureComponentStoryNodePatternContainer();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeComponentStoryNodeCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeNameEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeComponentStoryNodeCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureComponentStoryNodePatternContainer();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.remove(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeComponentStoryNodeCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		if (editPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeComponentStoryNodeCompartmentEditPart) {
+			return getPrimaryShape()
+					.getFigureComponentStoryNodePatternContainer();
+		}
+		return getContentPane();
 	}
 
 	/**
@@ -155,6 +226,11 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
+		if (nodeShape.getLayoutManager() == null) {
+			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
+			layout.setSpacing(5);
+			nodeShape.setLayoutManager(layout);
+		}
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
@@ -202,6 +278,14 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineStyle(style);
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
+				.getType(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeNameEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -279,25 +363,28 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class InitialNodeFigure extends RectangleFigure {
+	public class ComponentStoryNodeRoundedFigure extends RoundedRectangle {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fInitialNodeLabel;
+		private WrappingLabel fFigureComponentStoryNodeName;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureComponentStoryNodePatternContainer;
 
 		/**
 		 * @generated
 		 */
-		public InitialNodeFigure() {
+		public ComponentStoryNodeRoundedFigure() {
 
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = false;
+			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
 
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
+					getMapMode().DPtoLP(12)));
 			this.setFill(false);
-			this.setOutline(false);
 			createContents();
 		}
 
@@ -306,46 +393,66 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			Ellipse startNodeEllipse0 = new Ellipse();
-			startNodeEllipse0.setForegroundColor(ColorConstants.black);
-			startNodeEllipse0.setBackgroundColor(ColorConstants.black);
-			startNodeEllipse0.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(15), getMapMode().DPtoLP(15)));
-			startNodeEllipse0.setMaximumSize(new Dimension(getMapMode().DPtoLP(
-					15), getMapMode().DPtoLP(15)));
-			startNodeEllipse0.setMinimumSize(new Dimension(getMapMode().DPtoLP(
-					15), getMapMode().DPtoLP(15)));
+			RectangleFigure storyNodeNameContainer0 = new RectangleFigure();
+			storyNodeNameContainer0.setFill(false);
+			storyNodeNameContainer0.setOutline(false);
+			storyNodeNameContainer0.setPreferredSize(new Dimension(getMapMode()
+					.DPtoLP(100), getMapMode().DPtoLP(30)));
 
-			GridData constraintStartNodeEllipse0 = new GridData();
-			constraintStartNodeEllipse0.verticalAlignment = GridData.CENTER;
-			constraintStartNodeEllipse0.horizontalAlignment = GridData.CENTER;
-			constraintStartNodeEllipse0.horizontalIndent = 0;
-			constraintStartNodeEllipse0.horizontalSpan = 1;
-			constraintStartNodeEllipse0.verticalSpan = 1;
-			constraintStartNodeEllipse0.grabExcessHorizontalSpace = false;
-			constraintStartNodeEllipse0.grabExcessVerticalSpace = false;
-			this.add(startNodeEllipse0, constraintStartNodeEllipse0);
+			this.add(storyNodeNameContainer0, BorderLayout.TOP);
 
-			fInitialNodeLabel = new WrappingLabel();
-			fInitialNodeLabel.setText("");
+			GridLayout layoutStoryNodeNameContainer0 = new GridLayout();
+			layoutStoryNodeNameContainer0.numColumns = 1;
+			layoutStoryNodeNameContainer0.makeColumnsEqualWidth = true;
+			storyNodeNameContainer0
+					.setLayoutManager(layoutStoryNodeNameContainer0);
 
-			GridData constraintFInitialNodeLabel = new GridData();
-			constraintFInitialNodeLabel.verticalAlignment = GridData.CENTER;
-			constraintFInitialNodeLabel.horizontalAlignment = GridData.CENTER;
-			constraintFInitialNodeLabel.horizontalIndent = 0;
-			constraintFInitialNodeLabel.horizontalSpan = 1;
-			constraintFInitialNodeLabel.verticalSpan = 1;
-			constraintFInitialNodeLabel.grabExcessHorizontalSpace = true;
-			constraintFInitialNodeLabel.grabExcessVerticalSpace = false;
-			this.add(fInitialNodeLabel, constraintFInitialNodeLabel);
+			fFigureComponentStoryNodeName = new WrappingLabel();
+			fFigureComponentStoryNodeName.setText("");
+
+			GridData constraintFFigureComponentStoryNodeName = new GridData();
+			constraintFFigureComponentStoryNodeName.verticalAlignment = GridData.CENTER;
+			constraintFFigureComponentStoryNodeName.horizontalAlignment = GridData.BEGINNING;
+			constraintFFigureComponentStoryNodeName.horizontalIndent = 0;
+			constraintFFigureComponentStoryNodeName.horizontalSpan = 1;
+			constraintFFigureComponentStoryNodeName.verticalSpan = 1;
+			constraintFFigureComponentStoryNodeName.grabExcessHorizontalSpace = true;
+			constraintFFigureComponentStoryNodeName.grabExcessVerticalSpace = true;
+			storyNodeNameContainer0.add(fFigureComponentStoryNodeName,
+					constraintFFigureComponentStoryNodeName);
+
+			RectangleFigure componentStoryNodeContentContainer0 = new RectangleFigure();
+			componentStoryNodeContentContainer0.setFill(false);
+			componentStoryNodeContentContainer0.setOutline(false);
+
+			this.add(componentStoryNodeContentContainer0, BorderLayout.CENTER);
+
+			BorderLayout layoutComponentStoryNodeContentContainer0 = new BorderLayout();
+			componentStoryNodeContentContainer0
+					.setLayoutManager(layoutComponentStoryNodeContentContainer0);
+
+			fFigureComponentStoryNodePatternContainer = new RectangleFigure();
+			fFigureComponentStoryNodePatternContainer.setFill(false);
+			fFigureComponentStoryNodePatternContainer.setOutline(false);
+
+			componentStoryNodeContentContainer0.add(
+					fFigureComponentStoryNodePatternContainer,
+					BorderLayout.CENTER);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getInitialNodeLabel() {
-			return fInitialNodeLabel;
+		public WrappingLabel getFigureComponentStoryNodeName() {
+			return fFigureComponentStoryNodeName;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureComponentStoryNodePatternContainer() {
+			return fFigureComponentStoryNodePatternContainer;
 		}
 
 	}

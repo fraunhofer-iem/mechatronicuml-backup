@@ -19,7 +19,7 @@
               xsi:type="ecore:EAttribute"
               href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           <value
-              body="'activity'"/>
+              body="--&#xD;&#xA;'activity'"/>
         </initializers>
       </domainInitializer>
       <labelMappings
@@ -53,7 +53,7 @@
                       xsi:type="ecore:EAttribute"
                       href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
                   <value
-                      body="'componentStoryPattern'"/>
+                      body="--&#xD;&#xA;'componentStoryPattern'"/>
                 </initializers>
                 <initializers
                     xsi:type="gmfmap:ReferenceNewElementSpec">
@@ -67,7 +67,7 @@
                           xsi:type="ecore:EAttribute"
                           href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
                       <value
-                          body="'this'"/>
+                          body="--&#xD;&#xA;'this'"/>
                     </initializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
@@ -75,7 +75,7 @@
                           xsi:type="ecore:EAttribute"
                           href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
                       <value
-                          body="storydiagrams::patterns::BindingState::BOUND"/>
+                          body="--&#xD;&#xA;storydiagrams::patterns::BindingState::BOUND"/>
                     </initializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
@@ -83,7 +83,7 @@
                           xsi:type="ecore:EAttribute"
                           href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
                       <value
-                          body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+                          body="--&#xD;&#xA;storydiagrams::patterns::BindingSemantics::MANDATORY"/>
                     </initializers>
                   </newElementInitializers>
                 </initializers>
@@ -95,7 +95,7 @@
                   xsi:type="ecore:EAttribute"
                   href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               <value
-                  body="'componentStoryNode'"/>
+                  body="--&#xD;&#xA;'componentStoryNode'"/>
             </initializers>
           </domainInitializer>
           <labelMappings
@@ -318,8 +318,125 @@
               href="ComponentStoryDiagram.gmfgraph#ActivityFinalNode"/>
         </ownedChild>
       </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity/ownedActivityNode"/>
+        <ownedChild>
+          <domainMetaElement
+              href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeNode"/>
+          <domainInitializer
+              xsi:type="gmfmap:FeatureSeqInitializer">
+            <initializers
+                xsi:type="gmfmap:ReferenceNewElementSpec">
+              <feature
+                  xsi:type="ecore:EReference"
+                  href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeNode/componentStoryPattern"/>
+              <newElementInitializers>
+                <initializers
+                    xsi:type="gmfmap:FeatureValueSpec">
+                  <feature
+                      xsi:type="ecore:EAttribute"
+                      href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                  <value
+                      body="--&#xD;&#xA;'componentStoryPattern'"/>
+                </initializers>
+                <initializers
+                    xsi:type="gmfmap:ReferenceNewElementSpec">
+                  <feature
+                      xsi:type="ecore:EReference"
+                      href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
+                  <newElementInitializers>
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec">
+                      <feature
+                          xsi:type="ecore:EAttribute"
+                          href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                      <value
+                          body="--&#xD;&#xA;'this'"/>
+                    </initializers>
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec">
+                      <feature
+                          xsi:type="ecore:EAttribute"
+                          href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
+                      <value
+                          body="--&#xD;&#xA;storydiagrams::patterns::BindingState::BOUND"/>
+                    </initializers>
+                    <initializers
+                        xsi:type="gmfmap:FeatureValueSpec">
+                      <feature
+                          xsi:type="ecore:EAttribute"
+                          href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
+                      <value
+                          body="--&#xD;&#xA;storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+                    </initializers>
+                    <initializers
+                        xsi:type="gmfmap:ReferenceNewElementSpec">
+                      <feature
+                          xsi:type="ecore:EReference"
+                          href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/partVariables"/>
+                      <newElementInitializers>
+                        <initializers
+                            xsi:type="gmfmap:FeatureValueSpec">
+                          <feature
+                              xsi:type="ecore:EAttribute"
+                              href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
+                          <value
+                              body="--&#xD;&#xA;storydiagrams::patterns::BindingOperator::DESTROY"/>
+                        </initializers>
+                      </newElementInitializers>
+                      <newElementInitializers>
+                        <initializers
+                            xsi:type="gmfmap:FeatureValueSpec">
+                          <feature
+                              xsi:type="ecore:EAttribute"
+                              href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
+                          <value
+                              body="--&#xD;&#xA;storydiagrams::patterns::BindingOperator::CREATE"/>
+                        </initializers>
+                      </newElementInitializers>
+                    </initializers>
+                  </newElementInitializers>
+                </initializers>
+              </newElementInitializers>
+            </initializers>
+            <initializers
+                xsi:type="gmfmap:FeatureValueSpec">
+              <feature
+                  xsi:type="ecore:EAttribute"
+                  href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+              <value
+                  body="--&#xD;&#xA;'controllerExchangeNode'"/>
+            </initializers>
+          </domainInitializer>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="ComponentStoryDiagram.gmfgraph#ComponentStoryNodeLabel"/>
+            <features
+                href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.2"/>
+          <diagramNode
+              href="ComponentStoryDiagram.gmfgraph#ComponentStoryNode"/>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.4/@ownedChild/@compartments.0"
+              referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
+            <containmentFeature
+                href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeNode/componentStoryPattern"/>
+          </children>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.4/@ownedChild/@children.0">
+            <compartment
+                href="ComponentStoryDiagram.gmfgraph#ComponentStoryNodeCompartment"/>
+          </compartments>
+        </ownedChild>
+      </children>
       <compartments
-          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3">
+          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.4">
         <compartment
             href="ComponentStoryDiagram.gmfgraph#ActivityCompartment"/>
       </compartments>
