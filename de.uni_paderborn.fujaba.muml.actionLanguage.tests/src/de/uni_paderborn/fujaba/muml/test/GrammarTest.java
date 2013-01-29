@@ -38,6 +38,9 @@ import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOpera
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression;
+import de.uni_paderborn.fujaba.muml.model.behavior.Operation;
+import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
+import de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.model.component.HybridPort;
 /* commented out by cbr
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression;
@@ -413,6 +416,20 @@ public class GrammarTest {
 		assertNotNull(loadResult.getEObject());
 		// validation is supposed to fail
 		assertInvalidEObject(loadResult.getEObject());
+	}
+	
+	@Test
+	public void testOperationImplementation() {
+		Operation operation = rtsc.getOperations().get(1);
+		assertTrue(operation.getParameters().size() == 2);
+		loadFromString("{ p1 := p2 + 3; }", operation);
+		assertFalse(loadResult.hasError());
+		Block block = (Block) loadResult.getEObject();
+		assertTrue(block.getExpressions().get(0) instanceof Assignment);
+		Assignment assignment = (Assignment) block.getExpressions().get(0);
+		TypedNamedElement lhs = assignment.getLhs_typedNamedElementExpression().getTypedNamedElement();
+		assertTrue(lhs instanceof Parameter);
+		assertEquals("p1", lhs.getName());
 	}
 	
 	protected static void assertValidEObject(EObject object) {
