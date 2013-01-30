@@ -1,0 +1,367 @@
+package de.uni_paderborn.fujaba.muml.common.edit.policies.statechart;
+
+import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Ellipse;
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.PolylineShape;
+import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.RoundedRectangle;
+import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.XYLayout;
+import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.PointList;
+import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gef.EditPart;
+import org.eclipse.gef.editpolicies.GraphicalEditPolicy;
+import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
+import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
+import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+import org.eclipse.gmf.runtime.notation.View;
+
+import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.ConnectionPointEditPolicy;
+import de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
+
+public class StateEditPolicy extends GraphicalEditPolicy implements
+		NotificationListener {
+
+	/**
+	 * Edit policy role for registering this edit policy or a subclass.
+	 */
+	public static final String STATE_VISUALIZATION_ROLE = "StateVisualizationRole"; //$NON-NLS-1$
+
+	public static final int INITIAL_STATE_MARGIN_TOP = 13;
+
+	// TODO:
+	//
+	// public static final Dimension DEFAULT_BORDER_ITEM_OFFSET = new Dimension(
+	// 12, 12);
+
+	private StateDecorationFigure decorationFigure;
+
+	private IFigure undecoratedFigure;
+
+	protected StateDecorationFigure createDecorationFigure() {
+		return new StateDecorationFigure();
+	}
+
+	@Override
+	public void activate() {
+		super.activate();
+
+		// create decoration figure
+		decorationFigure = createDecorationFigure();
+		decorationFigure.setInitial(getState().isInitial());
+		decorationFigure.setFinal(getState().isFinal());
+
+		// add decoration
+		addDecoration();
+
+		// add semantic listeners
+		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
+		if (diagramEventBroker != null) {
+			addSemanticListeners(diagramEventBroker);
+		}
+	}
+
+	@Override
+	public void deactivate() {
+		// remove semantic listeners
+		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
+		if (diagramEventBroker != null) {
+			removeSemanticListeners(diagramEventBroker);
+		}
+
+		// remove decoration
+		removeDecoration();
+		decorationFigure = null;
+
+		super.deactivate();
+	}
+
+	private void addDecoration() {
+		// Remove undecorated figure from the container.
+		undecoratedFigure = (IFigure) getContentPane().getChildren().get(0);
+		getContentPane().remove(undecoratedFigure);
+		getContentPane().getLayoutManager().remove(undecoratedFigure);
+
+		// Add decoration to the container
+		getContentPane().add(decorationFigure);
+		decorationFigure.getFigureInnerContainer().add(undecoratedFigure);
+	}
+
+	private void removeDecoration() {
+		// Remove decoration figure from the container
+		getContentPane().remove(decorationFigure);
+		getContentPane().getLayoutManager().remove(decorationFigure);
+		decorationFigure.getFigureInnerContainer().remove(undecoratedFigure);
+		decorationFigure.getFigureInnerContainer().getLayoutManager()
+				.remove(undecoratedFigure);
+
+		// Add undecorated figure to the container
+		getContentPane().add(undecoratedFigure);
+		undecoratedFigure = null;
+	}
+
+	/**
+	 * Convenience method that returns the hosts content pane.
+	 * 
+	 * @return the hosts content pane
+	 */
+	protected IFigure getContentPane() {
+		return ((GraphicalEditPart) getHost()).getContentPane();
+	}
+
+	/**
+	 * Convenience method that casts the hosts semantic element to a State.
+	 * 
+	 * @return the state object.
+	 */
+	protected State getState() {
+		return (State) ((View) getHost().getModel()).getElement();
+	}
+
+	/**
+	 * Gets the diagram event broker from the editing domain.
+	 * 
+	 * @return the diagram event broker
+	 */
+	private DiagramEventBroker getDiagramEventBroker() {
+		TransactionalEditingDomain theEditingDomain = ((GraphicalEditPart) getHost())
+				.getEditingDomain();
+		if (theEditingDomain != null) {
+			return DiagramEventBroker.getInstance(theEditingDomain);
+		}
+		return null;
+	}
+
+	protected void addSemanticListeners(DiagramEventBroker broker) {
+		broker.addNotificationListener(getState(),
+				RealtimestatechartPackage.Literals.STATE__INITIAL, this);
+		broker.addNotificationListener(getState(),
+				RealtimestatechartPackage.Literals.STATE__FINAL, this);
+	}
+
+	protected void removeSemanticListeners(DiagramEventBroker broker) {
+		broker.removeNotificationListener(getState(),
+				RealtimestatechartPackage.Literals.STATE__INITIAL, this);
+		broker.removeNotificationListener(getState(),
+				RealtimestatechartPackage.Literals.STATE__FINAL, this);
+	}
+
+	@Override
+	public void notifyChanged(Notification notification) {
+		if (getHost().isActive()) {
+			handleNotificationEvent(notification);
+		}
+	}
+
+	/**
+	 * Handle model-change event.
+	 * 
+	 * @param notification
+	 *            The notification sent by the model.
+	 */
+	public void handleNotificationEvent(Notification notification) {
+
+		Object feature = notification.getFeature();
+		if (RealtimestatechartPackage.Literals.STATE__INITIAL.equals(feature)) {
+			setInitial(notification.getNewBooleanValue());
+			return;
+		}
+		if (RealtimestatechartPackage.Literals.STATE__FINAL.equals(feature)) {
+			setFinal(notification.getNewBooleanValue());
+			return;
+		}
+	}
+	
+	public int getBorderItemUpperOffset() {
+		if (getState().isInitial()) {
+			return INITIAL_STATE_MARGIN_TOP;
+		}
+		return 0;
+	}
+
+	protected void setInitial(boolean initial) {
+		decorationFigure.setInitial(initial);
+		
+		// let connection point border items update their locators
+		for (Object child : getHost().getChildren()) {
+			EditPart childEp = (EditPart) child;
+			ConnectionPointEditPolicy connectionPointEditPolicy = (ConnectionPointEditPolicy) childEp
+					.getEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.ports.ConnectionPointEditPolicy.CONNECTION_POINT_VISUALIZATION_ROLE);
+			if (connectionPointEditPolicy != null) {
+				connectionPointEditPolicy.updateBorderItemLocator();
+			}
+		}
+
+	}
+
+	protected void setFinal(boolean finalState) {
+		decorationFigure.setFinal(finalState);
+	}
+
+	// TODO: Not yet used.
+
+	private NodeFigure createNodePlate() {
+		DefaultSizeNodeFigure plate = new DefaultSizeNodeFigure(40, 40) {
+
+			public PointList getPolygonPoints() {
+				int verticalOffset = 0;
+				if (getState().isInitial()) {
+					verticalOffset = INITIAL_STATE_MARGIN_TOP;
+				}
+
+				// Copied from default implementation in DefaultSizeNodeFigure
+				// and modified to keep track of the vertical offset.
+				PointList points = new PointList(5);
+				Rectangle anchorableRectangle = getHandleBounds();
+				points.addPoint(anchorableRectangle.x, anchorableRectangle.y
+						+ verticalOffset);
+				points.addPoint(anchorableRectangle.x
+						+ anchorableRectangle.width, anchorableRectangle.y
+						+ verticalOffset);
+				points.addPoint(anchorableRectangle.x
+						+ anchorableRectangle.width, anchorableRectangle.y
+						+ anchorableRectangle.height);
+				points.addPoint(anchorableRectangle.x, anchorableRectangle.y
+						+ anchorableRectangle.height);
+				points.addPoint(anchorableRectangle.x, anchorableRectangle.y
+						+ verticalOffset);
+				return points;
+			}
+		};
+		plate.setMinimumSize(new Dimension(0, 0));
+		return plate;
+	}
+
+	// @Override
+	// protected Dimension getTopLeftOffset() {
+	// int verticalOffset = 0;
+	// if (initialState) {
+	// verticalOffset = INITIAL_STATE_MARGIN_TOP;
+	// }
+	// // This magical -1 fixes a bug that the border item cannot reside at
+	// // the top border...
+	// int magicalVerticalOffset = verticalOffset - 1;
+	// return DEFAULT_BORDER_ITEM_OFFSET.getExpanded(0, magicalVerticalOffset);
+	// }
+	//
+	// @Override
+	// protected Dimension getBottomRightOffset() {
+	// return DEFAULT_BORDER_ITEM_OFFSET;
+	// }
+
+	private class StateDecorationFigure extends RectangleFigure {
+
+		private RectangleFigure fFigureInnerContainer;
+
+		private RoundedRectangle fFigureFinalStateOutline;
+
+		private RectangleFigure fFigureStateContainer;
+
+		private PolylineShape fFigureInitialStateArrow;
+
+		private Ellipse fFigureInitialStateEllipse;
+
+		private PolyarcFigure fFigureInitialStateArc;
+
+		public StateDecorationFigure() {
+			this.setLayoutManager(new StackLayout());
+			this.setFill(false);
+			this.setOutline(false);
+			createContents();
+		}
+
+		private void createContents() {
+
+			fFigureInitialStateArc = new PolyarcFigure();
+
+			this.add(fFigureInitialStateArc);
+
+			fFigureInitialStateArrow = new PolylineShape();
+			fFigureInitialStateArrow.addPoint(new Point(26, 8));
+			fFigureInitialStateArrow.addPoint(new Point(31, 13));
+			fFigureInitialStateArrow.addPoint(new Point(33, 6));
+
+			fFigureInitialStateArc.addPoint(new Point(13, 9));
+			fFigureInitialStateArc.addPoint(new Point(30, 16));
+
+			this.add(fFigureInitialStateArrow);
+
+			RectangleFigure initialStateContainer = new RectangleFigure();
+			initialStateContainer.setFill(false);
+			initialStateContainer.setOutline(false);
+
+			this.add(initialStateContainer);
+			initialStateContainer.setLayoutManager(new XYLayout());
+
+			fFigureInitialStateEllipse = new Ellipse();
+			fFigureInitialStateEllipse.setBackgroundColor(ColorConstants.black);
+
+			initialStateContainer.add(fFigureInitialStateEllipse,
+					new Rectangle(10, 0, 10, 10));
+
+			fFigureStateContainer = new RectangleFigure();
+			fFigureStateContainer.setFill(false);
+			fFigureStateContainer.setOutline(false);
+			fFigureStateContainer.setBorder(new MarginBorder(0, 30, 0, 0));
+
+			this.add(fFigureStateContainer);
+			fFigureStateContainer.setLayoutManager(new StackLayout());
+
+			fFigureFinalStateOutline = new RoundedRectangle();
+			fFigureFinalStateOutline.setCornerDimensions(new Dimension(12, 12));
+
+			fFigureStateContainer.add(fFigureFinalStateOutline);
+
+			fFigureInnerContainer = new RectangleFigure();
+			fFigureInnerContainer.setFill(false);
+			fFigureInnerContainer.setOutline(false);
+			fFigureInnerContainer.setBorder(new MarginBorder(4));
+
+			fFigureStateContainer.add(fFigureInnerContainer);
+			fFigureInnerContainer.setLayoutManager(new StackLayout());
+		}
+
+		public RectangleFigure getFigureInnerContainer() {
+			return fFigureInnerContainer;
+		}
+
+		public void setInitial(boolean initial) {
+			fFigureInitialStateArrow.setVisible(initial);
+			fFigureInitialStateArc.setVisible(initial);
+
+			MarginBorder marginBorder;
+			if (initial) {
+				marginBorder = new MarginBorder(INITIAL_STATE_MARGIN_TOP, 0, 0,
+						0);
+			} else {
+				marginBorder = new MarginBorder(0);
+			}
+
+			fFigureStateContainer.setBorder(marginBorder);
+			fFigureInitialStateEllipse.setVisible(initial);
+		}
+
+		public void setFinal(boolean finalState) {
+			fFigureFinalStateOutline.setOutline(finalState);
+
+			MarginBorder marginBorder;
+			if (finalState) {
+				marginBorder = new MarginBorder(4);
+			} else {
+				marginBorder = new MarginBorder(0);
+			}
+			decorationFigure.getFigureInnerContainer().setBorder(marginBorder);
+		}
+	}
+
+}
