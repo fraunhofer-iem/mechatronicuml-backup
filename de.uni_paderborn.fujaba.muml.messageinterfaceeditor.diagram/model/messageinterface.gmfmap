@@ -87,9 +87,9 @@
                 <diagramLabel
                     href="messageinterface.gmfgraph#ParameterName"/>
                 <viewExpression
-                    body="(&#xA;if self.eContainer().oclAsType(msgtype::MessageType).parameters->first() = self then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' '&#xA;&#x9;endif&#xA;).concat(&#xA;&#x9;if self.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.name&#xA;&#x9;endif&#xA;).concat(&#xA;&#x9;if self.dataType.name.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' : '.concat(self.dataType.name)&#xA;&#x9;endif&#xA;).concat(&#xA;&#x9;if self.eContainer().oclAsType(msgtype::MessageType).parameters->last() = self then&#xA;-- NOTE: normally we should use the empty string here, but then we need to update labels of other Parameters to prevent missing comma-delimiters.&#xA;&#x9;&#x9;','&#xA;&#x9;else&#xA;&#x9;&#x9;','&#xA;&#x9;endif&#xA;)&#xA;&#xA;"/>
+                    body="(&#xA;if self.eContainer().oclAsType(msgtype::MessageType).parameters->first() = self then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' '&#xA;&#x9;endif&#xA;).concat(&#xA;&#x9;if self.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.name&#xA;&#x9;endif&#xA;).concat(&#xA;&#x9;if self.dataType.name.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' : '.concat(self.dataType.name)&#xA;&#x9;endif&#xA;).concat(&#xA;&#x9;if self.eContainer().oclAsType(msgtype::MessageType).parameters->last() = self then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;','&#xA;&#x9;endif&#xA;)&#xA;&#xA;"/>
                 <editExpression
-                    body="if self.name.oclIsUndefined() then&#xA;&#x9;'null'&#xA;else&#xA;&#x9;self.name&#xA;endif"/>
+                    body="if self.name.oclIsUndefined() then&#xA;&#x9;''&#xA;else&#xA;&#x9;self.name&#xA;endif"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
