@@ -122,11 +122,11 @@ public class ComponentStoryPatternVariableItemProvider
 	 * This adds a property descriptor for the Binding Operator feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addBindingOperatorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new BindingOperatorPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ComponentStoryPatternVariable_bindingOperator_feature"),
@@ -144,11 +144,11 @@ public class ComponentStoryPatternVariableItemProvider
 	 * This adds a property descriptor for the Binding State feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addBindingStatePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new BindingStatePropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ComponentStoryPatternVariable_bindingState_feature"),

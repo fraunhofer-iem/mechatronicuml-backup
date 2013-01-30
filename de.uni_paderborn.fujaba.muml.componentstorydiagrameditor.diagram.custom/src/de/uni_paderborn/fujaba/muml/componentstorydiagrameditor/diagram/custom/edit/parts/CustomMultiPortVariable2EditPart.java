@@ -6,6 +6,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariable2EditPart;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable;
 
 public class CustomMultiPortVariable2EditPart extends
 		MultiPortVariable2EditPart {
@@ -31,10 +33,16 @@ public class CustomMultiPortVariable2EditPart extends
 		if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR
 				.equals(notification.getFeature())) {
 			CsdmUtility.adaptColor(this);
-		} else if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_SEMANTICS
+		} else if (ComponentstorypatternPackage.Literals.PORT_VARIABLE__TYPE
 				.equals(notification.getFeature())) {
-			//updateOptional();
-			//updateNegative();
+			updateSinglePortVariableTypes();
+		}
+	}
+	
+	private void updateSinglePortVariableTypes(){
+		MultiPortVariable multiPortVariable = (MultiPortVariable) getNotationView().getElement();
+		for (SinglePortVariable singlePortVariable : multiPortVariable.getSubPortVariables()){
+			singlePortVariable.setType(multiPortVariable.getType());
 		}
 	}
 }

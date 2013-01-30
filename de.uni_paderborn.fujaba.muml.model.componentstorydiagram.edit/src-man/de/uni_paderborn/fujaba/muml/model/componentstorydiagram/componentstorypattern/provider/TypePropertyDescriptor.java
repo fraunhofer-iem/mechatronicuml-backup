@@ -9,13 +9,11 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.storydriven.storydiagrams.patterns.BindingSemantics;
 
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable;
+import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable;
 
-public class BindingSemanticsPropertyDescriptor extends ItemPropertyDescriptor {
-	public BindingSemanticsPropertyDescriptor(AdapterFactory adapterFactory,
+public class TypePropertyDescriptor extends ItemPropertyDescriptor {
+	public TypePropertyDescriptor(AdapterFactory adapterFactory,
 			ResourceLocator resourceLocator, String displayName,
 			String description, EStructuralFeature feature, boolean isSettable,
 			boolean multiLine, boolean sortChoices, Object staticImage,
@@ -28,21 +26,19 @@ public class BindingSemanticsPropertyDescriptor extends ItemPropertyDescriptor {
 	@Override
 	public Collection<?> getChoiceOfValues(Object object) {
 
-		if (object instanceof ComponentVariable) {
-			return Collections.singletonList(BindingSemantics.MANDATORY);
+		if (object instanceof SinglePortVariable) {
+			SinglePortVariable singlePortVariable = (SinglePortVariable) object;
+			if ((singlePortVariable).getMultiPortVariable() != null) {
+				return Collections.singletonList(singlePortVariable.getMultiPortVariable().getType());
+			}
 		}
-		
-		if (object instanceof MultiPortVariable){
-			return Collections.singletonList(BindingSemantics.MANDATORY);
-		}
-		
-		// originalObjects must not be changed; therefore we create another ArrayList and copy the elements.
+
+		// originalObjects must not be changed; therefore we create another
+		// ArrayList and copy the elements.
 		@SuppressWarnings("unchecked")
 		Collection<Object> originalObjects = (Collection<Object>) super.getChoiceOfValues(object);
 		List<Object> objects = new ArrayList<Object>(originalObjects);
 		return objects;
 	}
-	
-	
-	
+
 }
