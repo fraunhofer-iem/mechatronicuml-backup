@@ -1,5 +1,8 @@
 
-«REM» Make "updateValues" and "validateValues" protected. «ENDREM»
+«AROUND implementsList FOR gmfgen::ExpressionLabelParser» «targetDef.proceed()», org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser«ENDAROUND»
+
+
+«REM» Make methods protected. «ENDREM»
 «AROUND body FOR gmfgen::ExpressionLabelParser»
 	«EXPAND xpt::Common::generatedMemberComment»
 	public String getEditString(org.eclipse.core.runtime.IAdaptable element, int flags) {
@@ -47,7 +50,7 @@
 	}
 	
 	«EXPAND xpt::Common::generatedMemberComment»
-	private boolean validateValues(org.eclipse.emf.ecore.EObject target, String newString) {
+	protected boolean validateValues(org.eclipse.emf.ecore.EObject target, String newString) {
 		// TODO implement as needed«REM»with default 'true' I assume isValidEditString() has been called prior to getParseCommand and generally I don't need to do anything else here«ENDREM»
 		return true;
 	}
@@ -65,6 +68,18 @@
 «REM» Added empty method "initializeEnvironment" to be overriden by subclasses «ENDREM»
 «AROUND additions FOR gmfgen::ExpressionLabelParser-»
 	«targetDef.proceed()»
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public java.util.List<org.eclipse.emf.ecore.EObject> getSemanticElementsBeingParsed(org.eclipse.emf.ecore.EObject element) {
+		return java.util.Arrays.asList(new org.eclipse.emf.ecore.EObject[] { element, element.eContainer() });
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public boolean areSemanticElementsAffected(org.eclipse.emf.ecore.EObject listener, Object notification) {
+		return false;
+	}
 	
 	«EXPAND xpt::Common::generatedMemberComment»
 	protected void initializeEnvironment(java.util.Map<java.lang.String, org.eclipse.emf.ecore.EClassifier> typeEnv,
