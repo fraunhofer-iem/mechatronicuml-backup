@@ -21,7 +21,6 @@ import org.storydriven.storydiagrams.provider.StorydiagramsItemProviderAdapterFa
 import org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAdapterFactory;
 
 import de.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
-import de.uni_paderborn.fujaba.muml.model.connector.provider.ConnectorItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.model.protocol.provider.ProtocolItemProviderAdapterFactory;
 
 public class MumlCommonPlugin implements BundleActivator {

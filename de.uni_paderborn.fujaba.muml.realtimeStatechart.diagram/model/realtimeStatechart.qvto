@@ -25,8 +25,21 @@ mapping inout GenEditorGenerator::general() {
 mapping inout GenEditorGenerator::editorSpecific() {
 	-- put settings here, that are often lost to apply them permanently
 	self.diagram.compartments->select(c | c.editPartClassName = 'RegionRegionContentsCompartmentEditPart')->map listLayout(true);
+	self.diagram.childNodes[GenChildSideAffixedNode]->select(n | n.editPartClassName = 'EntryPointEditPart' or n.editPartClassName = 'ExitPointEditPart')->map connectionPoint();
 }
+
 
 mapping inout GenCompartment::listLayout(value : Boolean) {
 	self.listLayout := value;
 }
+
+
+mapping inout GenChildSideAffixedNode::connectionPoint() {
+	-- self.behaviour[CustomBehaviour]->reject(b | b.key = 'de.uni_paderborn.fujaba.muml.common.edit.policies.ports.ConnectionPointEditPolicy.CONNECTION_POINT_VISUALIZATION_ROLE');
+	-- self.behaviour += new CustomBehaviour('de.uni_paderborn.fujaba.muml.common.edit.policies.ports.ConnectionPointEditPolicy.CONNECTION_POINT_VISUALIZATION_ROLE', 'de.uni_paderborn.fujaba.muml.common.edit.policies.ports.ConnectionPointEditPolicy');
+}
+
+--constructor CustomBehaviour::CustomBehaviour(_key : String, editPolicy : String) {
+--	key := _key;
+--	editPolicyQualifiedClassName := editPolicy;
+--}

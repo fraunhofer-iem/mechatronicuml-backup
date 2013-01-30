@@ -5,9 +5,7 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.parsers.CustomTransitionLabelExpressionLabelParser6005;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.providers.MumlParserProvider;
 
-/**
- * @generated
- */
+
 public class CustomMumlParserProvider extends MumlParserProvider {
 
 	@Override
@@ -17,4 +15,12 @@ public class CustomMumlParserProvider extends MumlParserProvider {
 		}
 		return transitionLabel_6005Parser;
 	}
+//
+//	@Override
+//	protected IParser getVariableLabel_5066Parser() {
+//		if (variableLabel_5066Parser == null) {
+//			variableLabel_5066Parser = new CustomVariableLabelExpressionLabelParser5066();
+//		}
+//		return variableLabel_5066Parser;
+//	}
 }

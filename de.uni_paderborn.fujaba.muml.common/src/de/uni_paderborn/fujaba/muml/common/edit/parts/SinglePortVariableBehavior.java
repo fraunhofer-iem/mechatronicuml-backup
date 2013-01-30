@@ -15,7 +15,6 @@ import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable;
-import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
 
 public class SinglePortVariableBehavior extends AbstractPortBehavior {
 	

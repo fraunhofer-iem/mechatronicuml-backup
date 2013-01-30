@@ -172,171 +172,85 @@
         name="StateFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="StateFigure"
+          name="UnchangableStateFigure"
           outline="false"
           fill="false">
         <layout
             xsi:type="gmfgraph:StackLayout"/>
         <children
-            xsi:type="gmfgraph:CustomFigure"
-            name="InitialStateArc"
-            qualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure"/>
-        <children
-            xsi:type="gmfgraph:Polyline"
-            name="InitialStateArrow">
-          <template
-              x="26"
-              y="8"/>
-          <template
-              x="31"
-              y="13"/>
-          <template
-              x="33"
-              y="6"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="InitialStateFigureContainer"
-            outline="false"
-            fill="false">
+            xsi:type="gmfgraph:RoundedRectangle"
+            name="UndecoratedStateFigure"
+            cornerWidth="12"
+            cornerHeight="12">
           <layout
-              xsi:type="gmfgraph:XYLayout"/>
+              xsi:type="gmfgraph:GridLayout"
+              equalWidth="false"/>
           <children
-              xsi:type="gmfgraph:Ellipse"
-              name="InitialStateEllipse">
+              xsi:type="gmfgraph:Label"
+              name="StateNameLabel"
+              text="">
             <layoutData
-                xsi:type="gmfgraph:XYLayoutData">
-              <topLeft
-                  x="10"/>
-              <size
-                  dx="10"
-                  dy="10"/>
-            </layoutData>
-            <backgroundColor
-                xsi:type="gmfgraph:ConstantColor"
-                value="gray"/>
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"/>
+            <font
+                xsi:type="gmfgraph:BasicFont"
+                height="10"
+                style="BOLD"/>
           </children>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="StateContainer"
-            outline="false"
-            fill="false">
-          <layout
-              xsi:type="gmfgraph:StackLayout"/>
-          <border
-              xsi:type="gmfgraph:MarginBorder">
-            <insets
-                left="30"/>
-          </border>
-          <children
-              xsi:type="gmfgraph:RoundedRectangle"
-              name="FinalStateOutline"
-              cornerWidth="12"
-              cornerHeight="12"/>
           <children
               xsi:type="gmfgraph:Rectangle"
-              name="InnerContainer"
-              outline="false"
-              fill="false">
-            <layout
-                xsi:type="gmfgraph:StackLayout"/>
-            <border
-                xsi:type="gmfgraph:MarginBorder">
-              <insets
-                  top="4"
-                  left="4"
-                  bottom="4"
-                  right="4"/>
-            </border>
-            <children
-                xsi:type="gmfgraph:RoundedRectangle"
-                name="StateFigure"
-                cornerWidth="12"
-                cornerHeight="12">
-              <layout
-                  xsi:type="gmfgraph:GridLayout"
-                  equalWidth="false"/>
-              <children
-                  xsi:type="gmfgraph:Label"
-                  name="StateNameLabel"
-                  text="">
-                <layoutData
-                    xsi:type="gmfgraph:GridLayoutData"
-                    grabExcessHorizontalSpace="true"/>
-                <font
-                    xsi:type="gmfgraph:BasicFont"
-                    height="10"
-                    style="BOLD"/>
-              </children>
-              <children
-                  xsi:type="gmfgraph:Rectangle"
-                  name="InvariantCompartment"
-                  outline="false">
-                <layoutData
-                    xsi:type="gmfgraph:GridLayoutData"
-                    horizontalAlignment="FILL"/>
-              </children>
-              <children
-                  xsi:type="gmfgraph:Rectangle"
-                  name="ChannelCompartment"
-                  outline="false">
-                <layoutData
-                    xsi:type="gmfgraph:GridLayoutData"
-                    grabExcessHorizontalSpace="true"
-                    horizontalAlignment="FILL"/>
-              </children>
-              <children
-                  xsi:type="gmfgraph:Rectangle"
-                  name="ActionCompartment"
-                  outline="false">
-                <layoutData
-                    xsi:type="gmfgraph:GridLayoutData"
-                    grabExcessHorizontalSpace="true"
-                    horizontalAlignment="FILL"/>
-              </children>
-              <children
-                  xsi:type="gmfgraph:Rectangle"
-                  name="RegionsCompartment"
-                  outline="false">
-                <layoutData
-                    xsi:type="gmfgraph:GridLayoutData"
-                    grabExcessHorizontalSpace="true"
-                    grabExcessVerticalSpace="true"
-                    verticalAlignment="FILL"
-                    horizontalAlignment="FILL"/>
-              </children>
-            </children>
+              name="InvariantCompartment"
+              outline="false">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                horizontalAlignment="FILL"/>
+          </children>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="ChannelCompartment"
+              outline="false">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"
+                horizontalAlignment="FILL"/>
+          </children>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="ActionCompartment"
+              outline="false">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"
+                horizontalAlignment="FILL"/>
+          </children>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="RegionsCompartment"
+              outline="false">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"
+                grabExcessVerticalSpace="true"
+                verticalAlignment="FILL"
+                horizontalAlignment="FILL"/>
           </children>
         </children>
       </actualFigure>
       <accessors
           accessor="getFigureStateNameLabel"
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.0"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0/@children.0"/>
       <accessors
           accessor="getFigureActionCompartment"
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.3"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0/@children.3"/>
       <accessors
           accessor="getFigureRegionsCompartment"
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.4"/>
-      <accessors
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1"/>
-      <accessors
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3"/>
-      <accessors
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1"/>
-      <accessors
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.2/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0/@children.4"/>
       <accessors
           accessor="getFigureChannelCompartment"
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.2"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0/@children.2"/>
       <accessors
           accessor="getFigureInvariantCompartment"
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.3/@children.1/@children.0/@children.1"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0/@children.1"/>
     </descriptors>
     <descriptors
         name="RegionFigure">
@@ -568,11 +482,11 @@
   <compartments
       name="ChannelCompartment"
       figure="StateFigure"
-      accessor="//@figures.0/@descriptors.4/@accessors.9"/>
+      accessor="//@figures.0/@descriptors.4/@accessors.3"/>
   <compartments
       name="InvariantCompartment"
       figure="StateFigure"
-      accessor="//@figures.0/@descriptors.4/@accessors.10"/>
+      accessor="//@figures.0/@descriptors.4/@accessors.4"/>
   <labels
       name="TransitionLabel"
       figure="TransitionFigure"

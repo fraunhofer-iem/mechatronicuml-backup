@@ -38,10 +38,8 @@ public class CustomRealtimeStatechartEditPartFactory extends
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
 			case RealtimeStatechartEditPart.VISUAL_ID:
 				return new CustomRealtimeStatechartEditPart(view);
-				
-			case RealtimeStatechart2EditPart.VISUAL_ID:
-				return new CustomRealtimeStatechart2EditPart(view);
-				
+			case RegionEditPart.VISUAL_ID:
+				return new CustomRegionEditPart(view);
 			case StateEditPart.VISUAL_ID:
 				return new CustomStateEditPart(view);
 			case EntryPointEditPart.VISUAL_ID:
@@ -58,18 +56,6 @@ public class CustomRealtimeStatechartEditPartFactory extends
 				return new CustomStateChannelCompartmentEditPart(view);
 			case StateInvariantCompartmentEditPart.VISUAL_ID:
 				return new CustomStateInvariantCompartmentEditPart(view);
-//			case StateEntryPointEditPart.VISUAL_ID:
-//				return new CustomStateEntryPointEditPart(view);
-//			case StateExitPointEditPart.VISUAL_ID:
-//				return new CustomStateExitPointEditPart(view);
-				
-//			case StateEntryPoint2EditPart.VISUAL_ID:
-//				return new CustomStateEntryPoint2EditPart(view);
-//			case StateExitPoint2EditPart.VISUAL_ID:
-//				return new CustomStateExitPoint2EditPart(view);
-				
-			case RegionEditPart.VISUAL_ID:
-				return new CustomRegionEditPart(view);
 			case RegionRegionContentsCompartmentEditPart.VISUAL_ID:
 				return new CustomRegionRegionContentsCompartmentEditPart(view);
 			case RealtimeStatechartStatechartContentsCompartmentEditPart.VISUAL_ID:
@@ -78,8 +64,6 @@ public class CustomRealtimeStatechartEditPartFactory extends
 			case RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
 				return new CustomRealtimeStatechartStatechartContentsCompartment2EditPart(
 						view);
-				
-			
 				
 			case WrappingLabel6EditPart.VISUAL_ID:
 				return new CustomWrappingLabel6EditPart(view);

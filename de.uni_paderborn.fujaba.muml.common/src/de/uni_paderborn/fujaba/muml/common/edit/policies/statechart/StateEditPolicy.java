@@ -39,11 +39,6 @@ public class StateEditPolicy extends GraphicalEditPolicy implements
 
 	public static final int INITIAL_STATE_MARGIN_TOP = 13;
 
-	// TODO:
-	//
-	// public static final Dimension DEFAULT_BORDER_ITEM_OFFSET = new Dimension(
-	// 12, 12);
-
 	private StateDecorationFigure decorationFigure;
 
 	private IFigure undecoratedFigure;
@@ -196,7 +191,7 @@ public class StateEditPolicy extends GraphicalEditPolicy implements
 		for (Object child : getHost().getChildren()) {
 			EditPart childEp = (EditPart) child;
 			ConnectionPointEditPolicy connectionPointEditPolicy = (ConnectionPointEditPolicy) childEp
-					.getEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.ports.ConnectionPointEditPolicy.CONNECTION_POINT_VISUALIZATION_ROLE);
+					.getEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.CONNECTION_POINT_VISUALIZATION_ROLE);
 			if (connectionPointEditPolicy != null) {
 				connectionPointEditPolicy.updateBorderItemLocator();
 			}
@@ -208,57 +203,34 @@ public class StateEditPolicy extends GraphicalEditPolicy implements
 		decorationFigure.setFinal(finalState);
 	}
 
-	// TODO: Not yet used.
+	/**
+	 * List of polygon points to use as boundaries for a node figure (this makes the connections go at the right position for initial states).
+	 */
+	public PointList getPolygonPoints(NodeFigure nodeFigure) {
+		int verticalOffset = 0;
+		if (getState().isInitial()) {
+			verticalOffset = INITIAL_STATE_MARGIN_TOP;
+		}
 
-	private NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure plate = new DefaultSizeNodeFigure(40, 40) {
-
-			public PointList getPolygonPoints() {
-				int verticalOffset = 0;
-				if (getState().isInitial()) {
-					verticalOffset = INITIAL_STATE_MARGIN_TOP;
-				}
-
-				// Copied from default implementation in DefaultSizeNodeFigure
-				// and modified to keep track of the vertical offset.
-				PointList points = new PointList(5);
-				Rectangle anchorableRectangle = getHandleBounds();
-				points.addPoint(anchorableRectangle.x, anchorableRectangle.y
-						+ verticalOffset);
-				points.addPoint(anchorableRectangle.x
-						+ anchorableRectangle.width, anchorableRectangle.y
-						+ verticalOffset);
-				points.addPoint(anchorableRectangle.x
-						+ anchorableRectangle.width, anchorableRectangle.y
-						+ anchorableRectangle.height);
-				points.addPoint(anchorableRectangle.x, anchorableRectangle.y
-						+ anchorableRectangle.height);
-				points.addPoint(anchorableRectangle.x, anchorableRectangle.y
-						+ verticalOffset);
-				return points;
-			}
-		};
-		plate.setMinimumSize(new Dimension(0, 0));
-		return plate;
+		// Copied from default implementation in DefaultSizeNodeFigure
+		// and modified to keep track of the vertical offset.
+		PointList points = new PointList(5);
+		Rectangle anchorableRectangle = nodeFigure.getHandleBounds();
+		points.addPoint(anchorableRectangle.x, anchorableRectangle.y
+				+ verticalOffset);
+		points.addPoint(anchorableRectangle.x
+				+ anchorableRectangle.width, anchorableRectangle.y
+				+ verticalOffset);
+		points.addPoint(anchorableRectangle.x
+				+ anchorableRectangle.width, anchorableRectangle.y
+				+ anchorableRectangle.height);
+		points.addPoint(anchorableRectangle.x, anchorableRectangle.y
+				+ anchorableRectangle.height);
+		points.addPoint(anchorableRectangle.x, anchorableRectangle.y
+				+ verticalOffset);
+		return points;
 	}
-
-	// @Override
-	// protected Dimension getTopLeftOffset() {
-	// int verticalOffset = 0;
-	// if (initialState) {
-	// verticalOffset = INITIAL_STATE_MARGIN_TOP;
-	// }
-	// // This magical -1 fixes a bug that the border item cannot reside at
-	// // the top border...
-	// int magicalVerticalOffset = verticalOffset - 1;
-	// return DEFAULT_BORDER_ITEM_OFFSET.getExpanded(0, magicalVerticalOffset);
-	// }
-	//
-	// @Override
-	// protected Dimension getBottomRightOffset() {
-	// return DEFAULT_BORDER_ITEM_OFFSET;
-	// }
-
+	
 	private class StateDecorationFigure extends RectangleFigure {
 
 		private RectangleFigure fFigureInnerContainer;

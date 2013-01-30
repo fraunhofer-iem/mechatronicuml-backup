@@ -3,29 +3,13 @@ package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.edit.part
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.RegionEditPart;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.WrappingLabel7EditPart;
 
 public class CustomRegionEditPart extends RegionEditPart {
-	//
-	// private RealtimeStatechart statechart = null;
-	// private AdapterImpl rtscAdapter = new AdapterImpl() {
-	// @Override
-	// public void notifyChanged(Notification notification) {
-	// for(Object child : getChildren()) {
-	// if (child instanceof WrappingLabel7EditPart) {
-	// WrappingLabel7EditPart editPart = (WrappingLabel7EditPart) child;
-	// editPart.refresh();
-	// }
-	// }
-	// }
-	// };
 
 	public CustomRegionEditPart(View view) {
 		super(view);
@@ -47,37 +31,10 @@ public class CustomRegionEditPart extends RegionEditPart {
 	}
 
 	@Override
-	public void activate() {
-		super.activate();
-		statechartChanged(getRegion().getStatechart());
-	}
-
-	@Override
-	public void deactivate() {
-		statechartChanged(null);
-		super.deactivate();
-	}
-
-	private void statechartChanged(RealtimeStatechart newStatechart) {
-		// if (statechart != null) {
-		// statechart.eAdapters().remove(rtscAdapter);
-		// }
-		//
-		// statechart = newStatechart;
-		//
-		// if (statechart != null) {
-		// statechart.eAdapters().add(rtscAdapter);
-		// }
-	}
-
-	@Override
 	protected void handleNotificationEvent(Notification notification) {
 		Object feature = notification.getFeature();
-		if (RealtimestatechartPackage.Literals.REGION__STATECHART
+		if (RealtimestatechartPackage.Literals.REGION__GMF_HISTORY
 				.equals(feature)) {
-			statechartChanged((RealtimeStatechart) notification.getNewValue());
-		} else if (RealtimestatechartPackage.Literals.REGION__GMF_HISTORY
-				.equals(notification.getFeature())) {
 			updateHistory();
 		}
 
@@ -91,7 +48,7 @@ public class CustomRegionEditPart extends RegionEditPart {
 	}
 
 	private void updateHistory() {
-		Region region = (Region) ((View) getModel()).getElement();
-		getPrimaryShape().getFigureHistoryFigure().setVisible(region.isGmfHistory());
+		getPrimaryShape().getFigureHistoryFigure().setVisible(
+				getRegion().isGmfHistory());
 	}
 }

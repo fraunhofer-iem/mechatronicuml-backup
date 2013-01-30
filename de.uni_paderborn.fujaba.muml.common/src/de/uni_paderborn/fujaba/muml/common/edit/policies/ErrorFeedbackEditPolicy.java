@@ -1,7 +1,5 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies;
 
-import javax.swing.text.StyleConstants.FontConstants;
-
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;

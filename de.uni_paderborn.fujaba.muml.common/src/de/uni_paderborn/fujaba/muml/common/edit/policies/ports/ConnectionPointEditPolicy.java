@@ -3,7 +3,6 @@ package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
-import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 
 import de.uni_paderborn.fujaba.muml.common.edit.policies.statechart.StateEditPolicy;
@@ -12,10 +11,6 @@ import de.uni_paderborn.fujaba.muml.common.figures.CustomBorderItemLocator;
 public class ConnectionPointEditPolicy extends
 		AbstractRotatingBorderItemEditPolicy {
 
-	/**
-	 * Edit policy role for registering this edit policy or a subclass.
-	 */
-	public static final String CONNECTION_POINT_VISUALIZATION_ROLE = "ConnectionPointVisualizationRole"; //$NON-NLS-1$
 
 	private BorderItemLocator originalBorderItemLocator;
 	private CustomBorderItemLocator customBorderItemLocator;

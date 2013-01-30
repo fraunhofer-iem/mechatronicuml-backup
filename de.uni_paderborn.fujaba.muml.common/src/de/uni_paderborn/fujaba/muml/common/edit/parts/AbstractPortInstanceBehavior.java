@@ -3,7 +3,6 @@ package de.uni_paderborn.fujaba.muml.common.edit.parts;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 
 import de.uni_paderborn.fujaba.muml.model.instance.PortInstance;
 

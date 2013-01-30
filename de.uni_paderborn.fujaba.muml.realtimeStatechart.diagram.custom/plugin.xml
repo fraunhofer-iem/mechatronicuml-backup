@@ -6,8 +6,8 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.providers.CustomRealtimestatechartViewProvider">
          <Priority name="Low"/>
 		 <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2002,3010,3001,3002,3003,3004,3005,3006,3007,3008,3009"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
       </viewProvider>
    </extension>
 

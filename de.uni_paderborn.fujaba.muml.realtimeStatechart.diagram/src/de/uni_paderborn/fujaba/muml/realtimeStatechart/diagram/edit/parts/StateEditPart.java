@@ -91,6 +91,9 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 				EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.policies.StateCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.STATE_VISUALIZATION_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.statechart.StateEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
@@ -307,6 +310,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
+		
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
@@ -521,30 +525,6 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureInnerContainer;
-		/**
-		 * @generated
-		 */
-		private RoundedRectangle fFigureFinalStateOutline;
-		/**
-		 * @generated
-		 */
-		private RectangleFigure fFigureStateContainer;
-		/**
-		 * @generated
-		 */
-		private PolylineShape fFigureInitialStateArrow;
-		/**
-		 * @generated
-		 */
-		private Ellipse fFigureInitialStateEllipse;
-		/**
-		 * @generated
-		 */
-		private de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure fFigureInitialStateArc;
-		/**
-		 * @generated
-		 */
 		private RectangleFigure fFigureChannelCompartment;
 		/**
 		 * @generated
@@ -566,72 +546,17 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureInitialStateArc = new de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure();
-
-			this.add(fFigureInitialStateArc);
-
-			fFigureInitialStateArrow = new PolylineShape();
-			fFigureInitialStateArrow.addPoint(new Point(
-					getMapMode().DPtoLP(26), getMapMode().DPtoLP(8)));
-			fFigureInitialStateArrow.addPoint(new Point(
-					getMapMode().DPtoLP(31), getMapMode().DPtoLP(13)));
-			fFigureInitialStateArrow.addPoint(new Point(
-					getMapMode().DPtoLP(33), getMapMode().DPtoLP(6)));
-
-			this.add(fFigureInitialStateArrow);
-
-			RectangleFigure initialStateFigureContainer0 = new RectangleFigure();
-			initialStateFigureContainer0.setFill(false);
-			initialStateFigureContainer0.setOutline(false);
-
-			this.add(initialStateFigureContainer0);
-			initialStateFigureContainer0.setLayoutManager(new XYLayout());
-
-			fFigureInitialStateEllipse = new Ellipse();
-			fFigureInitialStateEllipse.setBackgroundColor(ColorConstants.gray);
-
-			initialStateFigureContainer0.add(
-					fFigureInitialStateEllipse,
-					new Rectangle(getMapMode().DPtoLP(10), getMapMode().DPtoLP(
-							0), getMapMode().DPtoLP(10), getMapMode()
-							.DPtoLP(10)));
-
-			fFigureStateContainer = new RectangleFigure();
-			fFigureStateContainer.setFill(false);
-			fFigureStateContainer.setOutline(false);
-			fFigureStateContainer.setBorder(new MarginBorder(getMapMode()
-					.DPtoLP(0), getMapMode().DPtoLP(30),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
-
-			this.add(fFigureStateContainer);
-			fFigureStateContainer.setLayoutManager(new StackLayout());
-
-			fFigureFinalStateOutline = new RoundedRectangle();
-			fFigureFinalStateOutline.setCornerDimensions(new Dimension(
+			RoundedRectangle undecoratedStateFigure0 = new RoundedRectangle();
+			undecoratedStateFigure0.setCornerDimensions(new Dimension(
 					getMapMode().DPtoLP(12), getMapMode().DPtoLP(12)));
 
-			fFigureStateContainer.add(fFigureFinalStateOutline);
+			this.add(undecoratedStateFigure0);
 
-			fFigureInnerContainer = new RectangleFigure();
-			fFigureInnerContainer.setFill(false);
-			fFigureInnerContainer.setOutline(false);
-			fFigureInnerContainer.setBorder(new MarginBorder(getMapMode()
-					.DPtoLP(4), getMapMode().DPtoLP(4), getMapMode().DPtoLP(4),
-					getMapMode().DPtoLP(4)));
-
-			fFigureStateContainer.add(fFigureInnerContainer);
-			fFigureInnerContainer.setLayoutManager(new StackLayout());
-
-			RoundedRectangle stateFigure2 = new RoundedRectangle();
-			stateFigure2.setCornerDimensions(new Dimension(getMapMode().DPtoLP(
-					12), getMapMode().DPtoLP(12)));
-
-			fFigureInnerContainer.add(stateFigure2);
-
-			GridLayout layoutStateFigure2 = new GridLayout();
-			layoutStateFigure2.numColumns = 1;
-			layoutStateFigure2.makeColumnsEqualWidth = false;
-			stateFigure2.setLayoutManager(layoutStateFigure2);
+			GridLayout layoutUndecoratedStateFigure0 = new GridLayout();
+			layoutUndecoratedStateFigure0.numColumns = 1;
+			layoutUndecoratedStateFigure0.makeColumnsEqualWidth = false;
+			undecoratedStateFigure0
+					.setLayoutManager(layoutUndecoratedStateFigure0);
 
 			fFigureStateNameLabel = new WrappingLabel();
 			fFigureStateNameLabel.setText("");
@@ -646,7 +571,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureStateNameLabel.verticalSpan = 1;
 			constraintFFigureStateNameLabel.grabExcessHorizontalSpace = true;
 			constraintFFigureStateNameLabel.grabExcessVerticalSpace = false;
-			stateFigure2.add(fFigureStateNameLabel,
+			undecoratedStateFigure0.add(fFigureStateNameLabel,
 					constraintFFigureStateNameLabel);
 
 			fFigureInvariantCompartment = new RectangleFigure();
@@ -660,7 +585,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureInvariantCompartment.verticalSpan = 1;
 			constraintFFigureInvariantCompartment.grabExcessHorizontalSpace = false;
 			constraintFFigureInvariantCompartment.grabExcessVerticalSpace = false;
-			stateFigure2.add(fFigureInvariantCompartment,
+			undecoratedStateFigure0.add(fFigureInvariantCompartment,
 					constraintFFigureInvariantCompartment);
 
 			fFigureChannelCompartment = new RectangleFigure();
@@ -674,7 +599,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureChannelCompartment.verticalSpan = 1;
 			constraintFFigureChannelCompartment.grabExcessHorizontalSpace = true;
 			constraintFFigureChannelCompartment.grabExcessVerticalSpace = false;
-			stateFigure2.add(fFigureChannelCompartment,
+			undecoratedStateFigure0.add(fFigureChannelCompartment,
 					constraintFFigureChannelCompartment);
 
 			fFigureActionCompartment = new RectangleFigure();
@@ -688,7 +613,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureActionCompartment.verticalSpan = 1;
 			constraintFFigureActionCompartment.grabExcessHorizontalSpace = true;
 			constraintFFigureActionCompartment.grabExcessVerticalSpace = false;
-			stateFigure2.add(fFigureActionCompartment,
+			undecoratedStateFigure0.add(fFigureActionCompartment,
 					constraintFFigureActionCompartment);
 
 			fFigureRegionsCompartment = new RectangleFigure();
@@ -702,7 +627,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureRegionsCompartment.verticalSpan = 1;
 			constraintFFigureRegionsCompartment.grabExcessHorizontalSpace = true;
 			constraintFFigureRegionsCompartment.grabExcessVerticalSpace = true;
-			stateFigure2.add(fFigureRegionsCompartment,
+			undecoratedStateFigure0.add(fFigureRegionsCompartment,
 					constraintFFigureRegionsCompartment);
 
 		}
@@ -726,48 +651,6 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public RectangleFigure getFigureRegionsCompartment() {
 			return fFigureRegionsCompartment;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureInnerContainer() {
-			return fFigureInnerContainer;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RoundedRectangle getFigureFinalStateOutline() {
-			return fFigureFinalStateOutline;
-		}
-
-		/**
-		 * @generated
-		 */
-		public RectangleFigure getFigureStateContainer() {
-			return fFigureStateContainer;
-		}
-
-		/**
-		 * @generated
-		 */
-		public PolylineShape getFigureInitialStateArrow() {
-			return fFigureInitialStateArrow;
-		}
-
-		/**
-		 * @generated
-		 */
-		public Ellipse getFigureInitialStateEllipse() {
-			return fFigureInitialStateEllipse;
-		}
-
-		/**
-		 * @generated
-		 */
-		public de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure getFigureInitialStateArc() {
-			return fFigureInitialStateArc;
 		}
 
 		/**
