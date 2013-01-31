@@ -6,7 +6,6 @@ import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.RGB;
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.EdgeGuard;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
@@ -15,10 +14,7 @@ import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.model.component.Component;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
 
 public class CsdmUtility {
@@ -52,10 +48,14 @@ public class CsdmUtility {
 		}
 		}
 	}
-
+	
 	public static void adaptColor(IGraphicalEditPart editPart) {
-		ComponentStoryPatternVariable cspVar = (ComponentStoryPatternVariable) ((View) editPart
-				.getModel()).getElement();
+		adaptColor((View) editPart.getModel());
+	}
+
+
+	public static void adaptColor(View view) {
+		ComponentStoryPatternVariable cspVar = (ComponentStoryPatternVariable) view.getElement();
 		org.eclipse.swt.graphics.RGB lineRGB;
 
 		switch (cspVar.getBindingOperator()) {
@@ -73,7 +73,7 @@ public class CsdmUtility {
 
 		org.eclipse.gmf.runtime.diagram.core.util.ViewUtil
 				.setStructuralFeatureValue(
-						(View) editPart.getModel(),
+						view,
 						org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE
 								.getLineStyle_LineColor(),
 						org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities

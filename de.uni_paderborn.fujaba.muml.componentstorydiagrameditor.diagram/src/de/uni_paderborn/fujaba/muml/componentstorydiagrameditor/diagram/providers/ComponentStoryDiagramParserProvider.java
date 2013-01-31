@@ -42,14 +42,14 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.PartVariableLabelExpressionLabelParser partVariableLabel_5018Parser;
+	protected de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.PartVariableLabelExpressionLabelParser5018 partVariableLabel_5018Parser;
 
 	/**
 	 * @generated
 	 */
 	protected IParser getPartVariableLabel_5018Parser() {
 		if (partVariableLabel_5018Parser == null) {
-			partVariableLabel_5018Parser = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.PartVariableLabelExpressionLabelParser();
+			partVariableLabel_5018Parser = new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers.PartVariableLabelExpressionLabelParser5018();
 		}
 		return partVariableLabel_5018Parser;
 	}

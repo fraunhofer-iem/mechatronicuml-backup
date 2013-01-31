@@ -1268,27 +1268,27 @@
             title="ControllerExchangeNode"
             description="Create new ControllerExchangeNode"
             smallIconPath="/de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram/icons/obj16/ComponentStoryDiagramFile.gif"
-            genNodes="//@diagram/@childNodes.12"
-            genLinks="//@diagram/@links.0"/>
+            genNodes="//@diagram/@childNodes.12"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ActivityEdge"
             description="Create new ActivityEdge"
-            genNodes="//@diagram/@childNodes.9"/>
+            genLinks="//@diagram/@links.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="InitialNode"
             description="Create new InitialNode"
-            genNodes="//@diagram/@childNodes.10"/>
+            genNodes="//@diagram/@childNodes.9"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="JunctionNode"
             description="Create new JunctionNode"
-            genNodes="//@diagram/@childNodes.11"/>
+            genNodes="//@diagram/@childNodes.10"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ActivityFinalNode"
-            description="Create new ActivityFinalNode"/>
+            description="Create new ActivityFinalNode"
+            genNodes="//@diagram/@childNodes.11"/>
       </groups>
       <groups
           title="Component Story Pattern"
@@ -1383,36 +1383,36 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="--&#xD;&#xA;'activity'"/>
+          body="--'activity'"/>
       <expressions
-          body="--&#xD;&#xA;'componentStoryPattern'"/>
+          body="--'componentStoryPattern'"/>
       <expressions
-          body="--&#xD;&#xA;'this'"/>
+          body="--'this'"/>
       <expressions
-          body="--&#xD;&#xA;storydiagrams::patterns::BindingState::BOUND"/>
+          body="--storydiagrams::patterns::BindingState::BOUND"/>
       <expressions
-          body="--&#xD;&#xA;storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+          body="--storydiagrams::patterns::BindingSemantics::MANDATORY"/>
       <expressions
-          body="--&#xD;&#xA;'componentStoryNode'"/>
+          body="--'componentStoryNode'"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="--&#xD;&#xA;self.multiPortVariable.oclIsUndefined()"/>
+          body="--self.multiPortVariable.oclIsUndefined()"/>
       <expressions
-          body="--&#xD;&#xA;let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
+          body="--let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;--let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;--let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;--if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;--selfName&#xD;&#xA;--else&#xD;&#xA;--selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;--endif"/>
       <expressions
-          body="--&#xD;&#xA;'componentStoryPattern'"/>
+          body="--'componentStoryPattern'"/>
       <expressions
-          body="--&#xD;&#xA;'this'"/>
+          body="--'this'"/>
       <expressions
-          body="--&#xD;&#xA;storydiagrams::patterns::BindingState::BOUND"/>
+          body="--storydiagrams::patterns::BindingState::BOUND"/>
       <expressions
-          body="--&#xD;&#xA;storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+          body="--storydiagrams::patterns::BindingSemantics::MANDATORY"/>
       <expressions
-          body="--&#xD;&#xA;storydiagrams::patterns::BindingOperator::DESTROY"/>
+          body="--storydiagrams::patterns::BindingOperator::DESTROY"/>
       <expressions
-          body="--&#xD;&#xA;storydiagrams::patterns::BindingOperator::CREATE"/>
+          body="--storydiagrams::patterns::BindingOperator::CREATE"/>
       <expressions
-          body="--&#xD;&#xA;'controllerExchangeNode'"/>
+          body="--'controllerExchangeNode'"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -1426,6 +1426,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.1/@modelFacet"
+        className="PartVariableLabelExpressionLabelParser5018"
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/PartVariable"/>

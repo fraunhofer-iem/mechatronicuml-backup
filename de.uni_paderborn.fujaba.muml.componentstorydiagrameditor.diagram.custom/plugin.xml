@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+
+
+
+   <extension-point id="expressionSourceViewerExtension" name="Expression Source Viewer Extension" schema="schema/expressionSourceViewerExtension.exsd"/>
+
+   <!-- copied from diagram.ocl plugin -->
+   <extension point="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.expressionSourceViewerExtension">
+		<expressionSourceViewer
+			expressionLanguage="OCL"
+			sourceViewerProvider="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.ocl.OCLSourceViewerProvider"
+			version="1.0"/>
+	</extension>
+
+
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
@@ -58,5 +72,89 @@
       		<advice ref="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.SinglePortVariable_3020Advice"/>
       	</binding>
       </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.providers.CustomComponentStoryDiagramViewProvider">
+         <Priority name="Low"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Component Story"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2003,3001,3011,3012,3014,3016,3017,3018,3019,3020,3007,3008,3010,3021,3022"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4004,4005"/>
+      </viewProvider>
+   </extension>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram">
+          <propertyTab
+                afterTab="property.tab.domain"
+                category="domain"
+                id="general"
+                label="Expression"/>
+
+      </propertyTabs>
+   </extension>
+
+   <extension
+         id="activities"
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram">
+         <propertySection
+               class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.properties.sections.ActivityFinalNodeExpressionSection"
+               filter="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.properties.filters.ActivityFinalNodeFilter"
+               id="ActivityFinalNode.expression"
+               tab="general">
+         </propertySection>
+      </propertySections>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram"
+            labelProvider="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.properties.StorydiagramsPropertiesLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory
+               category="diagram">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+
 </plugin>
 
