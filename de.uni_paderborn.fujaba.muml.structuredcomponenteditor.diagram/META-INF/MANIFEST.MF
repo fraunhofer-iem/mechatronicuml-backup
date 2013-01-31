@@ -53,7 +53,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gef;visibility:=reexport,
  de.uni_paderborn.fujaba.common,
  de.uni_paderborn.fujaba.muml.common,
- de.fujaba.newwizard,
+ de.uni_paderborn.fujaba.modelinstance.ui,
  org.eclipse.gmf.runtime.notation;visibility:=reexport,
  org.eclipse.emf.validation.ocl;visibility:=reexport
 Bundle-ActivationPolicy: lazy

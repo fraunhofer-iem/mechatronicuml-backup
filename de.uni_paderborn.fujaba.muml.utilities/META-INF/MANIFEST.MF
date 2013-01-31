@@ -9,7 +9,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.ide;bundle-version="3.6.2",
  de.uni_paderborn.fujaba.muml.model.edit;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.common;bundle-version="0.3.1",
- de.fujaba.newwizard;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.modelinstance.ui;bundle-version="0.3.1",
  org.storydriven.storydiagrams.edit;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.muml.common;bundle-version="0.3.1"
 Bundle-ActivationPolicy: lazy

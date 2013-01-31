@@ -1,5 +1,5 @@
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
-
+«REM» TODO: remove this and use post-reconcile transformation to add required plugins to gmfgen «ENDREM»
 «EXTENSION xpt::GenEditorGenerator»
 «EXTENSION xpt::StringOperations»
 
@@ -82,5 +82,5 @@ Bundle-ActivationPolicy: lazy
  org.eclipse.gef;visibility:=reexport,
  de.uni_paderborn.fujaba.common,
  de.uni_paderborn.fujaba.muml.common,
- de.fujaba.newwizard«REM» #266
+ de.uni_paderborn.fujaba.modelinstance.ui«REM» #266
  org.eclipse.emf.eef.runtime«ENDREM»«ENDDEFINE»
