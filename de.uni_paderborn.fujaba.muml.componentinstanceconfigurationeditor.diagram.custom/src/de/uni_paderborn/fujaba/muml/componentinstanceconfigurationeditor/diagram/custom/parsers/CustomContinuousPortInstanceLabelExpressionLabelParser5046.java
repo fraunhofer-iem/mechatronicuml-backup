@@ -1,0 +1,7 @@
+package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.parsers;
+
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.ContinuousPortInstanceLabelExpressionLabelParser5046;
+
+public class CustomContinuousPortInstanceLabelExpressionLabelParser5046 extends
+		ContinuousPortInstanceLabelExpressionLabelParser5046 {
+}

@@ -1,0 +1,7 @@
+package de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.parsers;
+
+import de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.parsers.DiscreteMultiPortInstanceLabelExpressionLabelParser5041;
+
+public class CustomDiscreteMultiPortInstanceLabelExpressionLabelParser5041 extends DiscreteMultiPortInstanceLabelExpressionLabelParser5041  {
+	
+}

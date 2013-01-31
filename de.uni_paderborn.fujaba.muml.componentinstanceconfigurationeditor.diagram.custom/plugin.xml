@@ -49,15 +49,10 @@
    
    
    
-
-<!--
-   deactivated because of muml bug #339
-
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.providers.CustomComponentinstanceconfigurationParserProvider">
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram.custom.providers.CustomMumlParserProvider">
          <Priority name="Low"/>
       </ParserProvider>
    </extension>
--->
 
 </plugin>
