@@ -112,6 +112,11 @@ public class ComponentStoryDiagramElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType FadingFunction_3023 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.FadingFunction_3023"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType ActivityEdge_4001 = getElementType("de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.ActivityEdge_4001"); //$NON-NLS-1$
 	/**
 	 * @generated
@@ -305,6 +310,11 @@ public class ComponentStoryDiagramElementTypes {
 					de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getComponentStoryPattern());
 
+			elements.put(
+					FadingFunction_3023,
+					de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+							.getFadingFunction());
+
 			elements.put(ActivityEdge_4001,
 					ActivitiesPackage.eINSTANCE.getActivityEdge());
 
@@ -350,6 +360,7 @@ public class ComponentStoryDiagramElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ActivityFinalNode_3010);
 			KNOWN_ELEMENT_TYPES.add(ControllerExchangeNode_3021);
 			KNOWN_ELEMENT_TYPES.add(ComponentStoryPattern_3022);
+			KNOWN_ELEMENT_TYPES.add(FadingFunction_3023);
 			KNOWN_ELEMENT_TYPES.add(ActivityEdge_4001);
 			KNOWN_ELEMENT_TYPES.add(AssemblyVariable_4004);
 			KNOWN_ELEMENT_TYPES.add(DelegationVariable_4005);
@@ -394,6 +405,8 @@ public class ComponentStoryDiagramElementTypes {
 			return ControllerExchangeNode_3021;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPattern2EditPart.VISUAL_ID:
 			return ComponentStoryPattern_3022;
+		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.FadingFunctionEditPart.VISUAL_ID:
+			return FadingFunction_3023;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ActivityEdgeEditPart.VISUAL_ID:
 			return ActivityEdge_4001;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID:

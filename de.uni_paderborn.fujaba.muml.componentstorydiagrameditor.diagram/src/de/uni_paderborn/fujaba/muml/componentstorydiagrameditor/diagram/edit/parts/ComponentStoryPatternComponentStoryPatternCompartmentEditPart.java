@@ -73,6 +73,9 @@ public class ComponentStoryPatternComponentStoryPatternCompartmentEditPart
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryPatternComponentStoryPatternCompartmentCanonicalEditPolicy());
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
 	}
 
 	/**

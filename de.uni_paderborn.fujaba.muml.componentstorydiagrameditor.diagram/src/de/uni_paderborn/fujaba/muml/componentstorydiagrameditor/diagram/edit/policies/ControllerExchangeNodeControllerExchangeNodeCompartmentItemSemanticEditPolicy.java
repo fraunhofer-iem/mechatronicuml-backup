@@ -6,14 +6,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 /**
  * @generated
  */
-public class ControllerExchangeNodeComponentStoryNodeCompartmentItemSemanticEditPolicy
+public class ControllerExchangeNodeControllerExchangeNodeCompartmentItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryDiagramBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public ControllerExchangeNodeComponentStoryNodeCompartmentItemSemanticEditPolicy() {
+	public ControllerExchangeNodeControllerExchangeNodeCompartmentItemSemanticEditPolicy() {
 		super(
 				de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ControllerExchangeNode_3021);
 	}
@@ -22,9 +22,9 @@ public class ControllerExchangeNodeComponentStoryNodeCompartmentItemSemanticEdit
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.FadingFunction_3023 == req
+		if (de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryPattern_3022 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.FadingFunctionCreateCommand(
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands.ComponentStoryPattern2CreateCommand(
 					req));
 		}
 		return super.getCreateCommand(req);

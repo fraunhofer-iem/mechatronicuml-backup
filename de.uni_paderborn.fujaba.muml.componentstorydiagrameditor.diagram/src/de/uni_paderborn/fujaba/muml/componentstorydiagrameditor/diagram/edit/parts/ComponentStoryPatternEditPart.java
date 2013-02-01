@@ -1,6 +1,8 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts;
 
 import org.eclipse.draw2d.BorderLayout;
+import org.eclipse.draw2d.GridData;
+import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
@@ -276,7 +278,9 @@ public class ComponentStoryPatternEditPart extends ShapeNodeEditPart {
 		 */
 		public ComponentStoryPatternFigure() {
 
-			BorderLayout layoutThis = new BorderLayout();
+			GridLayout layoutThis = new GridLayout();
+			layoutThis.numColumns = 1;
+			layoutThis.makeColumnsEqualWidth = true;
 			this.setLayoutManager(layoutThis);
 
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
@@ -298,7 +302,16 @@ public class ComponentStoryPatternEditPart extends ShapeNodeEditPart {
 			fFigureComponentStoryPatternContainer.setFill(false);
 			fFigureComponentStoryPatternContainer.setOutline(false);
 
-			this.add(fFigureComponentStoryPatternContainer, BorderLayout.CENTER);
+			GridData constraintFFigureComponentStoryPatternContainer = new GridData();
+			constraintFFigureComponentStoryPatternContainer.verticalAlignment = GridData.FILL;
+			constraintFFigureComponentStoryPatternContainer.horizontalAlignment = GridData.FILL;
+			constraintFFigureComponentStoryPatternContainer.horizontalIndent = 0;
+			constraintFFigureComponentStoryPatternContainer.horizontalSpan = 1;
+			constraintFFigureComponentStoryPatternContainer.verticalSpan = 1;
+			constraintFFigureComponentStoryPatternContainer.grabExcessHorizontalSpace = true;
+			constraintFFigureComponentStoryPatternContainer.grabExcessVerticalSpace = true;
+			this.add(fFigureComponentStoryPatternContainer,
+					constraintFFigureComponentStoryPatternContainer);
 
 		}
 

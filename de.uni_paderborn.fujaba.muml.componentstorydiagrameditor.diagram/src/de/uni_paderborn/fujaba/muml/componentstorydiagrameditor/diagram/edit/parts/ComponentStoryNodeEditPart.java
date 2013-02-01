@@ -20,9 +20,12 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -62,6 +65,8 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicy());
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -363,6 +368,24 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
+					.getViewAndElementDescriptor()
+					.getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter
+					.getAdapter(IElementType.class);
+			if (type == de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryPattern_3011) {
+				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart.VISUAL_ID));
+			}
+		}
+		return super.getTargetEditPart(request);
+	}
+
+	/**
+	 * @generated
+	 */
 	public class ComponentStoryNodeRoundedFigure extends RoundedRectangle {
 
 		/**
@@ -396,8 +419,6 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 			RectangleFigure storyNodeNameContainer0 = new RectangleFigure();
 			storyNodeNameContainer0.setFill(false);
 			storyNodeNameContainer0.setOutline(false);
-			storyNodeNameContainer0.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(100), getMapMode().DPtoLP(30)));
 
 			this.add(storyNodeNameContainer0, BorderLayout.TOP);
 
@@ -416,8 +437,8 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 			constraintFFigureComponentStoryNodeName.horizontalIndent = 0;
 			constraintFFigureComponentStoryNodeName.horizontalSpan = 1;
 			constraintFFigureComponentStoryNodeName.verticalSpan = 1;
-			constraintFFigureComponentStoryNodeName.grabExcessHorizontalSpace = true;
-			constraintFFigureComponentStoryNodeName.grabExcessVerticalSpace = true;
+			constraintFFigureComponentStoryNodeName.grabExcessHorizontalSpace = false;
+			constraintFFigureComponentStoryNodeName.grabExcessVerticalSpace = false;
 			storyNodeNameContainer0.add(fFigureComponentStoryNodeName,
 					constraintFFigureComponentStoryNodeName);
 
@@ -427,7 +448,9 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 
 			this.add(componentStoryNodeContentContainer0, BorderLayout.CENTER);
 
-			BorderLayout layoutComponentStoryNodeContentContainer0 = new BorderLayout();
+			GridLayout layoutComponentStoryNodeContentContainer0 = new GridLayout();
+			layoutComponentStoryNodeContentContainer0.numColumns = 1;
+			layoutComponentStoryNodeContentContainer0.makeColumnsEqualWidth = true;
 			componentStoryNodeContentContainer0
 					.setLayoutManager(layoutComponentStoryNodeContentContainer0);
 
@@ -435,9 +458,17 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 			fFigureComponentStoryNodePatternContainer.setFill(false);
 			fFigureComponentStoryNodePatternContainer.setOutline(false);
 
+			GridData constraintFFigureComponentStoryNodePatternContainer = new GridData();
+			constraintFFigureComponentStoryNodePatternContainer.verticalAlignment = GridData.FILL;
+			constraintFFigureComponentStoryNodePatternContainer.horizontalAlignment = GridData.FILL;
+			constraintFFigureComponentStoryNodePatternContainer.horizontalIndent = 0;
+			constraintFFigureComponentStoryNodePatternContainer.horizontalSpan = 1;
+			constraintFFigureComponentStoryNodePatternContainer.verticalSpan = 1;
+			constraintFFigureComponentStoryNodePatternContainer.grabExcessHorizontalSpace = true;
+			constraintFFigureComponentStoryNodePatternContainer.grabExcessVerticalSpace = true;
 			componentStoryNodeContentContainer0.add(
 					fFigureComponentStoryNodePatternContainer,
-					BorderLayout.CENTER);
+					constraintFFigureComponentStoryNodePatternContainer);
 
 		}
 

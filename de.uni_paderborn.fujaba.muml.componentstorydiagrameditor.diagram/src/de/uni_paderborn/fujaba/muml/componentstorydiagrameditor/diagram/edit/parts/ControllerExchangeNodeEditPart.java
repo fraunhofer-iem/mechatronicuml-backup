@@ -20,9 +20,12 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -62,6 +65,8 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
+		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicy());
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -110,14 +115,14 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new ComponentStoryNodeRoundedFigure();
+		return primaryShape = new ControllerExchangeNodeFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public ComponentStoryNodeRoundedFigure getPrimaryShape() {
-		return (ComponentStoryNodeRoundedFigure) primaryShape;
+	public ControllerExchangeNodeFigure getPrimaryShape() {
+		return (ControllerExchangeNodeFigure) primaryShape;
 	}
 
 	/**
@@ -127,14 +132,22 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeNameEditPart) {
 			((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeNameEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureComponentStoryNodeName());
+							.getFigureControllerExchangeNodeName());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeComponentStoryNodeCompartmentEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
-					.getFigureComponentStoryNodePatternContainer();
+					.getFigureControllerExchangeNodeFadingFunctionsContainer();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeComponentStoryNodeCompartmentEditPart) childEditPart)
+			pane.add(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureControllerExchangeNodePatternContainer();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -148,11 +161,19 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeComponentStoryNodeCompartmentEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
-					.getFigureComponentStoryNodePatternContainer();
+					.getFigureControllerExchangeNodeFadingFunctionsContainer();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeComponentStoryNodeCompartmentEditPart) childEditPart)
+			pane.remove(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart) {
+			IFigure pane = getPrimaryShape()
+					.getFigureControllerExchangeNodePatternContainer();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.remove(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -183,9 +204,13 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeComponentStoryNodeCompartmentEditPart) {
+		if (editPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) {
 			return getPrimaryShape()
-					.getFigureComponentStoryNodePatternContainer();
+					.getFigureControllerExchangeNodeFadingFunctionsContainer();
+		}
+		if (editPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart) {
+			return getPrimaryShape()
+					.getFigureControllerExchangeNodePatternContainer();
 		}
 		return getContentPane();
 	}
@@ -363,21 +388,47 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ComponentStoryNodeRoundedFigure extends RoundedRectangle {
+	public EditPart getTargetEditPart(Request request) {
+		if (request instanceof CreateViewAndElementRequest) {
+			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request)
+					.getViewAndElementDescriptor()
+					.getCreateElementRequestAdapter();
+			IElementType type = (IElementType) adapter
+					.getAdapter(IElementType.class);
+			if (type == de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.FadingFunction_3023) {
+				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart.VISUAL_ID));
+			}
+			if (type == de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryPattern_3022) {
+				return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart.VISUAL_ID));
+			}
+		}
+		return super.getTargetEditPart(request);
+	}
+
+	/**
+	 * @generated
+	 */
+	public class ControllerExchangeNodeFigure extends RoundedRectangle {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureComponentStoryNodeName;
+		private WrappingLabel fFigureControllerExchangeNodeName;
 		/**
 		 * @generated
 		 */
-		private RectangleFigure fFigureComponentStoryNodePatternContainer;
+		private RectangleFigure fFigureControllerExchangeNodePatternContainer;
+		/**
+		 * @generated
+		 */
+		private RectangleFigure fFigureControllerExchangeNodeFadingFunctionsContainer;
 
 		/**
 		 * @generated
 		 */
-		public ComponentStoryNodeRoundedFigure() {
+		public ControllerExchangeNodeFigure() {
 
 			BorderLayout layoutThis = new BorderLayout();
 			this.setLayoutManager(layoutThis);
@@ -393,66 +444,99 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure storyNodeNameContainer0 = new RectangleFigure();
-			storyNodeNameContainer0.setFill(false);
-			storyNodeNameContainer0.setOutline(false);
-			storyNodeNameContainer0.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(100), getMapMode().DPtoLP(30)));
+			RectangleFigure controllerExchangeNodeNameContainer0 = new RectangleFigure();
+			controllerExchangeNodeNameContainer0.setFill(false);
+			controllerExchangeNodeNameContainer0.setOutline(false);
 
-			this.add(storyNodeNameContainer0, BorderLayout.TOP);
+			this.add(controllerExchangeNodeNameContainer0, BorderLayout.TOP);
 
-			GridLayout layoutStoryNodeNameContainer0 = new GridLayout();
-			layoutStoryNodeNameContainer0.numColumns = 1;
-			layoutStoryNodeNameContainer0.makeColumnsEqualWidth = true;
-			storyNodeNameContainer0
-					.setLayoutManager(layoutStoryNodeNameContainer0);
+			GridLayout layoutControllerExchangeNodeNameContainer0 = new GridLayout();
+			layoutControllerExchangeNodeNameContainer0.numColumns = 1;
+			layoutControllerExchangeNodeNameContainer0.makeColumnsEqualWidth = true;
+			controllerExchangeNodeNameContainer0
+					.setLayoutManager(layoutControllerExchangeNodeNameContainer0);
 
-			fFigureComponentStoryNodeName = new WrappingLabel();
-			fFigureComponentStoryNodeName.setText("");
+			fFigureControllerExchangeNodeName = new WrappingLabel();
+			fFigureControllerExchangeNodeName.setText("");
 
-			GridData constraintFFigureComponentStoryNodeName = new GridData();
-			constraintFFigureComponentStoryNodeName.verticalAlignment = GridData.CENTER;
-			constraintFFigureComponentStoryNodeName.horizontalAlignment = GridData.BEGINNING;
-			constraintFFigureComponentStoryNodeName.horizontalIndent = 0;
-			constraintFFigureComponentStoryNodeName.horizontalSpan = 1;
-			constraintFFigureComponentStoryNodeName.verticalSpan = 1;
-			constraintFFigureComponentStoryNodeName.grabExcessHorizontalSpace = true;
-			constraintFFigureComponentStoryNodeName.grabExcessVerticalSpace = true;
-			storyNodeNameContainer0.add(fFigureComponentStoryNodeName,
-					constraintFFigureComponentStoryNodeName);
+			GridData constraintFFigureControllerExchangeNodeName = new GridData();
+			constraintFFigureControllerExchangeNodeName.verticalAlignment = GridData.CENTER;
+			constraintFFigureControllerExchangeNodeName.horizontalAlignment = GridData.BEGINNING;
+			constraintFFigureControllerExchangeNodeName.horizontalIndent = 0;
+			constraintFFigureControllerExchangeNodeName.horizontalSpan = 1;
+			constraintFFigureControllerExchangeNodeName.verticalSpan = 1;
+			constraintFFigureControllerExchangeNodeName.grabExcessHorizontalSpace = true;
+			constraintFFigureControllerExchangeNodeName.grabExcessVerticalSpace = true;
+			controllerExchangeNodeNameContainer0.add(
+					fFigureControllerExchangeNodeName,
+					constraintFFigureControllerExchangeNodeName);
 
-			RectangleFigure componentStoryNodeContentContainer0 = new RectangleFigure();
-			componentStoryNodeContentContainer0.setFill(false);
-			componentStoryNodeContentContainer0.setOutline(false);
+			RectangleFigure controllerExchangeNodeContentContainer0 = new RectangleFigure();
+			controllerExchangeNodeContentContainer0.setFill(false);
+			controllerExchangeNodeContentContainer0.setOutline(false);
 
-			this.add(componentStoryNodeContentContainer0, BorderLayout.CENTER);
-
-			BorderLayout layoutComponentStoryNodeContentContainer0 = new BorderLayout();
-			componentStoryNodeContentContainer0
-					.setLayoutManager(layoutComponentStoryNodeContentContainer0);
-
-			fFigureComponentStoryNodePatternContainer = new RectangleFigure();
-			fFigureComponentStoryNodePatternContainer.setFill(false);
-			fFigureComponentStoryNodePatternContainer.setOutline(false);
-
-			componentStoryNodeContentContainer0.add(
-					fFigureComponentStoryNodePatternContainer,
+			this.add(controllerExchangeNodeContentContainer0,
 					BorderLayout.CENTER);
 
+			GridLayout layoutControllerExchangeNodeContentContainer0 = new GridLayout();
+			layoutControllerExchangeNodeContentContainer0.numColumns = 1;
+			layoutControllerExchangeNodeContentContainer0.makeColumnsEqualWidth = true;
+			controllerExchangeNodeContentContainer0
+					.setLayoutManager(layoutControllerExchangeNodeContentContainer0);
+
+			fFigureControllerExchangeNodeFadingFunctionsContainer = new RectangleFigure();
+			fFigureControllerExchangeNodeFadingFunctionsContainer
+					.setOutline(false);
+
+			GridData constraintFFigureControllerExchangeNodeFadingFunctionsContainer = new GridData();
+			constraintFFigureControllerExchangeNodeFadingFunctionsContainer.verticalAlignment = GridData.BEGINNING;
+			constraintFFigureControllerExchangeNodeFadingFunctionsContainer.horizontalAlignment = GridData.FILL;
+			constraintFFigureControllerExchangeNodeFadingFunctionsContainer.horizontalIndent = 0;
+			constraintFFigureControllerExchangeNodeFadingFunctionsContainer.horizontalSpan = 1;
+			constraintFFigureControllerExchangeNodeFadingFunctionsContainer.verticalSpan = 1;
+			constraintFFigureControllerExchangeNodeFadingFunctionsContainer.grabExcessHorizontalSpace = true;
+			constraintFFigureControllerExchangeNodeFadingFunctionsContainer.grabExcessVerticalSpace = false;
+			controllerExchangeNodeContentContainer0
+					.add(fFigureControllerExchangeNodeFadingFunctionsContainer,
+							constraintFFigureControllerExchangeNodeFadingFunctionsContainer);
+
+			fFigureControllerExchangeNodePatternContainer = new RectangleFigure();
+			fFigureControllerExchangeNodePatternContainer.setFill(false);
+			fFigureControllerExchangeNodePatternContainer.setOutline(false);
+
+			GridData constraintFFigureControllerExchangeNodePatternContainer = new GridData();
+			constraintFFigureControllerExchangeNodePatternContainer.verticalAlignment = GridData.FILL;
+			constraintFFigureControllerExchangeNodePatternContainer.horizontalAlignment = GridData.FILL;
+			constraintFFigureControllerExchangeNodePatternContainer.horizontalIndent = 0;
+			constraintFFigureControllerExchangeNodePatternContainer.horizontalSpan = 1;
+			constraintFFigureControllerExchangeNodePatternContainer.verticalSpan = 1;
+			constraintFFigureControllerExchangeNodePatternContainer.grabExcessHorizontalSpace = true;
+			constraintFFigureControllerExchangeNodePatternContainer.grabExcessVerticalSpace = true;
+			controllerExchangeNodeContentContainer0.add(
+					fFigureControllerExchangeNodePatternContainer,
+					constraintFFigureControllerExchangeNodePatternContainer);
+
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureComponentStoryNodeName() {
-			return fFigureComponentStoryNodeName;
+		public WrappingLabel getFigureControllerExchangeNodeName() {
+			return fFigureControllerExchangeNodeName;
 		}
 
 		/**
 		 * @generated
 		 */
-		public RectangleFigure getFigureComponentStoryNodePatternContainer() {
-			return fFigureComponentStoryNodePatternContainer;
+		public RectangleFigure getFigureControllerExchangeNodePatternContainer() {
+			return fFigureControllerExchangeNodePatternContainer;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureControllerExchangeNodeFadingFunctionsContainer() {
+			return fFigureControllerExchangeNodeFadingFunctionsContainer;
 		}
 
 	}

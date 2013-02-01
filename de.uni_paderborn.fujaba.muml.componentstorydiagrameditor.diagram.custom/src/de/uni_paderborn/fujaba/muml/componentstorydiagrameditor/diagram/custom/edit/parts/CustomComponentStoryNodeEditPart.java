@@ -22,13 +22,13 @@ public class CustomComponentStoryNodeEditPart extends
 	@Override
 	public void refresh() {
 		super.refresh();
-		updateFigure();
+//		updateFigure();
 	}
 
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
-		updateFigure();
+//		updateFigure();
 		super.refreshVisuals();
 	}
 

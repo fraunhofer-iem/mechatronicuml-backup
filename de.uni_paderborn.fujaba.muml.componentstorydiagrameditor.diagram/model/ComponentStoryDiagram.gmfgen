@@ -45,7 +45,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ComponentStoryNodeRoundedFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentStoryNodeRoundedFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureComponentStoryNodeName; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureComponentStoryNodePatternContainer; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentStoryNodeRoundedFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;this.setFill(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure storyNodeNameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;storyNodeNameContainer0.setFill(false);&#xA;storyNodeNameContainer0.setOutline(false);&#xA;storyNodeNameContainer0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(30)&#xA;));&#xA;&#xA;this.add(storyNodeNameContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStoryNodeNameContainer0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStoryNodeNameContainer0.numColumns = 1;&#xA;&#x9;layoutStoryNodeNameContainer0.makeColumnsEqualWidth = true;&#xA;&#x9;storyNodeNameContainer0.setLayoutManager(layoutStoryNodeNameContainer0);&#xA;&#xA;&#xA;&#xA;fFigureComponentStoryNodeName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureComponentStoryNodeName.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureComponentStoryNodeName = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureComponentStoryNodeName.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureComponentStoryNodeName.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureComponentStoryNodeName.horizontalIndent = 0;&#xA;constraintFFigureComponentStoryNodeName.horizontalSpan = 1;&#xA;constraintFFigureComponentStoryNodeName.verticalSpan = 1;&#xA;constraintFFigureComponentStoryNodeName.grabExcessHorizontalSpace = true;&#xA;constraintFFigureComponentStoryNodeName.grabExcessVerticalSpace = true;&#xA;storyNodeNameContainer0.add(fFigureComponentStoryNodeName, constraintFFigureComponentStoryNodeName);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentStoryNodeContentContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;componentStoryNodeContentContainer0.setFill(false);&#xA;componentStoryNodeContentContainer0.setOutline(false);&#xA;&#xA;this.add(componentStoryNodeContentContainer0, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutComponentStoryNodeContentContainer0 = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;componentStoryNodeContentContainer0.setLayoutManager(layoutComponentStoryNodeContentContainer0);&#xA;&#xA;&#xA;&#xA;fFigureComponentStoryNodePatternContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureComponentStoryNodePatternContainer.setFill(false);&#xA;fFigureComponentStoryNodePatternContainer.setOutline(false);&#xA;&#xA;componentStoryNodeContentContainer0.add(fFigureComponentStoryNodePatternContainer, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureComponentStoryNodeName() {&#xA;&#x9;&#x9;return fFigureComponentStoryNodeName;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureComponentStoryNodePatternContainer() {&#xA;&#x9;&#x9;return fFigureComponentStoryNodePatternContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentStoryNodeRoundedFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureComponentStoryNodeName; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureComponentStoryNodePatternContainer; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentStoryNodeRoundedFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;this.setFill(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure storyNodeNameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;storyNodeNameContainer0.setFill(false);&#xA;storyNodeNameContainer0.setOutline(false);&#xA;&#xA;this.add(storyNodeNameContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStoryNodeNameContainer0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStoryNodeNameContainer0.numColumns = 1;&#xA;&#x9;layoutStoryNodeNameContainer0.makeColumnsEqualWidth = true;&#xA;&#x9;storyNodeNameContainer0.setLayoutManager(layoutStoryNodeNameContainer0);&#xA;&#xA;&#xA;&#xA;fFigureComponentStoryNodeName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureComponentStoryNodeName.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureComponentStoryNodeName = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureComponentStoryNodeName.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureComponentStoryNodeName.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureComponentStoryNodeName.horizontalIndent = 0;&#xA;constraintFFigureComponentStoryNodeName.horizontalSpan = 1;&#xA;constraintFFigureComponentStoryNodeName.verticalSpan = 1;&#xA;constraintFFigureComponentStoryNodeName.grabExcessHorizontalSpace = false;&#xA;constraintFFigureComponentStoryNodeName.grabExcessVerticalSpace = false;&#xA;storyNodeNameContainer0.add(fFigureComponentStoryNodeName, constraintFFigureComponentStoryNodeName);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentStoryNodeContentContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;componentStoryNodeContentContainer0.setFill(false);&#xA;componentStoryNodeContentContainer0.setOutline(false);&#xA;&#xA;this.add(componentStoryNodeContentContainer0, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutComponentStoryNodeContentContainer0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutComponentStoryNodeContentContainer0.numColumns = 1;&#xA;&#x9;layoutComponentStoryNodeContentContainer0.makeColumnsEqualWidth = true;&#xA;&#x9;componentStoryNodeContentContainer0.setLayoutManager(layoutComponentStoryNodeContentContainer0);&#xA;&#xA;&#xA;&#xA;fFigureComponentStoryNodePatternContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureComponentStoryNodePatternContainer.setFill(false);&#xA;fFigureComponentStoryNodePatternContainer.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureComponentStoryNodePatternContainer = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureComponentStoryNodePatternContainer.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureComponentStoryNodePatternContainer.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureComponentStoryNodePatternContainer.horizontalIndent = 0;&#xA;constraintFFigureComponentStoryNodePatternContainer.horizontalSpan = 1;&#xA;constraintFFigureComponentStoryNodePatternContainer.verticalSpan = 1;&#xA;constraintFFigureComponentStoryNodePatternContainer.grabExcessHorizontalSpace = true;&#xA;constraintFFigureComponentStoryNodePatternContainer.grabExcessVerticalSpace = true;&#xA;componentStoryNodeContentContainer0.add(fFigureComponentStoryNodePatternContainer, constraintFFigureComponentStoryNodePatternContainer);&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureComponentStoryNodeName() {&#xA;&#x9;&#x9;return fFigureComponentStoryNodeName;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureComponentStoryNodePatternContainer() {&#xA;&#x9;&#x9;return fFigureComponentStoryNodePatternContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/controlflow/ComponentStoryNode"/>
@@ -138,7 +138,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ComponentStoryPatternFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentStoryPatternFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RoundedRectangle fFigureComponentStoryPatternContainer; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentStoryPatternFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureComponentStoryPatternContainer = new org.eclipse.draw2d.RoundedRectangle();&#xA;fFigureComponentStoryPatternContainer.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;fFigureComponentStoryPatternContainer.setFill(false);&#xA;fFigureComponentStoryPatternContainer.setOutline(false);&#xA;&#xA;this.add(fFigureComponentStoryPatternContainer, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RoundedRectangle getFigureComponentStoryPatternContainer() {&#xA;&#x9;&#x9;return fFigureComponentStoryPatternContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentStoryPatternFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RoundedRectangle fFigureComponentStoryPatternContainer; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentStoryPatternFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureComponentStoryPatternContainer = new org.eclipse.draw2d.RoundedRectangle();&#xA;fFigureComponentStoryPatternContainer.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;fFigureComponentStoryPatternContainer.setFill(false);&#xA;fFigureComponentStoryPatternContainer.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureComponentStoryPatternContainer = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureComponentStoryPatternContainer.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureComponentStoryPatternContainer.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureComponentStoryPatternContainer.horizontalIndent = 0;&#xA;constraintFFigureComponentStoryPatternContainer.horizontalSpan = 1;&#xA;constraintFFigureComponentStoryPatternContainer.verticalSpan = 1;&#xA;constraintFFigureComponentStoryPatternContainer.grabExcessHorizontalSpace = true;&#xA;constraintFFigureComponentStoryPatternContainer.grabExcessVerticalSpace = true;&#xA;this.add(fFigureComponentStoryPatternContainer, constraintFFigureComponentStoryPatternContainer);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RoundedRectangle getFigureComponentStoryPatternContainer() {&#xA;&#x9;&#x9;return fFigureComponentStoryPatternContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentStoryPattern"/>
@@ -158,7 +158,7 @@
         compartments="//@diagram/@compartments.3"
         graphicalNodeEditPolicyClassName="ComponentVariableGraphicalNodeEditPolicy"
         createCommandClassName="ComponentVariableCreateCommand"
-        containers="//@diagram/@compartments.2 //@diagram/@compartments.7">
+        containers="//@diagram/@compartments.2 //@diagram/@compartments.8">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -755,7 +755,7 @@
         itemSemanticEditPolicyClassName="ControllerExchangeNodeItemSemanticEditPolicy"
         notationViewFactoryClassName="ControllerExchangeNodeViewFactory"
         canonicalEditPolicyClassName="ControllerExchangeNodeCanonicalEditPolicy"
-        compartments="//@diagram/@compartments.6"
+        compartments="//@diagram/@compartments.6 //@diagram/@compartments.7"
         graphicalNodeEditPolicyClassName="ControllerExchangeNodeGraphicalNodeEditPolicy"
         createCommandClassName="ControllerExchangeNodeCreateCommand"
         containers="//@diagram/@compartments.0">
@@ -766,8 +766,8 @@
           editHelperClassName="ControllerExchangeNodeEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
-          className="ComponentStoryNodeRoundedFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentStoryNodeRoundedFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureComponentStoryNodeName; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureComponentStoryNodePatternContainer; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentStoryNodeRoundedFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;this.setFill(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure storyNodeNameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;storyNodeNameContainer0.setFill(false);&#xA;storyNodeNameContainer0.setOutline(false);&#xA;storyNodeNameContainer0.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(100)&#xA;, getMapMode().DPtoLP(30)&#xA;));&#xA;&#xA;this.add(storyNodeNameContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutStoryNodeNameContainer0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutStoryNodeNameContainer0.numColumns = 1;&#xA;&#x9;layoutStoryNodeNameContainer0.makeColumnsEqualWidth = true;&#xA;&#x9;storyNodeNameContainer0.setLayoutManager(layoutStoryNodeNameContainer0);&#xA;&#xA;&#xA;&#xA;fFigureComponentStoryNodeName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureComponentStoryNodeName.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureComponentStoryNodeName = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureComponentStoryNodeName.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureComponentStoryNodeName.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureComponentStoryNodeName.horizontalIndent = 0;&#xA;constraintFFigureComponentStoryNodeName.horizontalSpan = 1;&#xA;constraintFFigureComponentStoryNodeName.verticalSpan = 1;&#xA;constraintFFigureComponentStoryNodeName.grabExcessHorizontalSpace = true;&#xA;constraintFFigureComponentStoryNodeName.grabExcessVerticalSpace = true;&#xA;storyNodeNameContainer0.add(fFigureComponentStoryNodeName, constraintFFigureComponentStoryNodeName);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentStoryNodeContentContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;componentStoryNodeContentContainer0.setFill(false);&#xA;componentStoryNodeContentContainer0.setOutline(false);&#xA;&#xA;this.add(componentStoryNodeContentContainer0, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutComponentStoryNodeContentContainer0 = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;componentStoryNodeContentContainer0.setLayoutManager(layoutComponentStoryNodeContentContainer0);&#xA;&#xA;&#xA;&#xA;fFigureComponentStoryNodePatternContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureComponentStoryNodePatternContainer.setFill(false);&#xA;fFigureComponentStoryNodePatternContainer.setOutline(false);&#xA;&#xA;componentStoryNodeContentContainer0.add(fFigureComponentStoryNodePatternContainer, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureComponentStoryNodeName() {&#xA;&#x9;&#x9;return fFigureComponentStoryNodeName;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureComponentStoryNodePatternContainer() {&#xA;&#x9;&#x9;return fFigureComponentStoryNodePatternContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          className="ControllerExchangeNodeFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ControllerExchangeNodeFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureControllerExchangeNodeName; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureControllerExchangeNodePatternContainer; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureControllerExchangeNodeFadingFunctionsContainer; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ControllerExchangeNodeFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;this.setFill(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure controllerExchangeNodeNameContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;controllerExchangeNodeNameContainer0.setFill(false);&#xA;controllerExchangeNodeNameContainer0.setOutline(false);&#xA;&#xA;this.add(controllerExchangeNodeNameContainer0, org.eclipse.draw2d.BorderLayout.TOP);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutControllerExchangeNodeNameContainer0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutControllerExchangeNodeNameContainer0.numColumns = 1;&#xA;&#x9;layoutControllerExchangeNodeNameContainer0.makeColumnsEqualWidth = true;&#xA;&#x9;controllerExchangeNodeNameContainer0.setLayoutManager(layoutControllerExchangeNodeNameContainer0);&#xA;&#xA;&#xA;&#xA;fFigureControllerExchangeNodeName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureControllerExchangeNodeName.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureControllerExchangeNodeName = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureControllerExchangeNodeName.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureControllerExchangeNodeName.horizontalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureControllerExchangeNodeName.horizontalIndent = 0;&#xA;constraintFFigureControllerExchangeNodeName.horizontalSpan = 1;&#xA;constraintFFigureControllerExchangeNodeName.verticalSpan = 1;&#xA;constraintFFigureControllerExchangeNodeName.grabExcessHorizontalSpace = true;&#xA;constraintFFigureControllerExchangeNodeName.grabExcessVerticalSpace = true;&#xA;controllerExchangeNodeNameContainer0.add(fFigureControllerExchangeNodeName, constraintFFigureControllerExchangeNodeName);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure controllerExchangeNodeContentContainer0 = new org.eclipse.draw2d.RectangleFigure();&#xA;controllerExchangeNodeContentContainer0.setFill(false);&#xA;controllerExchangeNodeContentContainer0.setOutline(false);&#xA;&#xA;this.add(controllerExchangeNodeContentContainer0, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutControllerExchangeNodeContentContainer0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutControllerExchangeNodeContentContainer0.numColumns = 1;&#xA;&#x9;layoutControllerExchangeNodeContentContainer0.makeColumnsEqualWidth = true;&#xA;&#x9;controllerExchangeNodeContentContainer0.setLayoutManager(layoutControllerExchangeNodeContentContainer0);&#xA;&#xA;&#xA;&#xA;fFigureControllerExchangeNodeFadingFunctionsContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureControllerExchangeNodeFadingFunctionsContainer.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureControllerExchangeNodeFadingFunctionsContainer = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureControllerExchangeNodeFadingFunctionsContainer.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintFFigureControllerExchangeNodeFadingFunctionsContainer.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureControllerExchangeNodeFadingFunctionsContainer.horizontalIndent = 0;&#xA;constraintFFigureControllerExchangeNodeFadingFunctionsContainer.horizontalSpan = 1;&#xA;constraintFFigureControllerExchangeNodeFadingFunctionsContainer.verticalSpan = 1;&#xA;constraintFFigureControllerExchangeNodeFadingFunctionsContainer.grabExcessHorizontalSpace = true;&#xA;constraintFFigureControllerExchangeNodeFadingFunctionsContainer.grabExcessVerticalSpace = false;&#xA;controllerExchangeNodeContentContainer0.add(fFigureControllerExchangeNodeFadingFunctionsContainer, constraintFFigureControllerExchangeNodeFadingFunctionsContainer);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureControllerExchangeNodePatternContainer = new org.eclipse.draw2d.RectangleFigure();&#xA;fFigureControllerExchangeNodePatternContainer.setFill(false);&#xA;fFigureControllerExchangeNodePatternContainer.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureControllerExchangeNodePatternContainer = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureControllerExchangeNodePatternContainer.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureControllerExchangeNodePatternContainer.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureControllerExchangeNodePatternContainer.horizontalIndent = 0;&#xA;constraintFFigureControllerExchangeNodePatternContainer.horizontalSpan = 1;&#xA;constraintFFigureControllerExchangeNodePatternContainer.verticalSpan = 1;&#xA;constraintFFigureControllerExchangeNodePatternContainer.grabExcessHorizontalSpace = true;&#xA;constraintFFigureControllerExchangeNodePatternContainer.grabExcessVerticalSpace = true;&#xA;controllerExchangeNodeContentContainer0.add(fFigureControllerExchangeNodePatternContainer, constraintFFigureControllerExchangeNodePatternContainer);&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureControllerExchangeNodeName() {&#xA;&#x9;&#x9;return fFigureControllerExchangeNodeName;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureControllerExchangeNodePatternContainer() {&#xA;&#x9;&#x9;return fFigureControllerExchangeNodePatternContainer;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureControllerExchangeNodeFadingFunctionsContainer() {&#xA;&#x9;&#x9;return fFigureControllerExchangeNodeFadingFunctionsContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/controlflow/ControllerExchangeNode"/>
@@ -853,7 +853,7 @@
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureComponentStoryNodeName"
+            getterName="getFigureControllerExchangeNodeName"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -869,10 +869,10 @@
         itemSemanticEditPolicyClassName="ComponentStoryPattern2ItemSemanticEditPolicy"
         notationViewFactoryClassName="ComponentStoryPatternViewFactory"
         canonicalEditPolicyClassName="ComponentStoryPattern2CanonicalEditPolicy"
-        compartments="//@diagram/@compartments.7"
+        compartments="//@diagram/@compartments.8"
         graphicalNodeEditPolicyClassName="ComponentStoryPattern2GraphicalNodeEditPolicy"
         createCommandClassName="ComponentStoryPattern2CreateCommand"
-        containers="//@diagram/@compartments.6">
+        containers="//@diagram/@compartments.7">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -881,7 +881,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="ComponentStoryPatternFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentStoryPatternFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RoundedRectangle fFigureComponentStoryPatternContainer; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentStoryPatternFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutThis = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureComponentStoryPatternContainer = new org.eclipse.draw2d.RoundedRectangle();&#xA;fFigureComponentStoryPatternContainer.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;fFigureComponentStoryPatternContainer.setFill(false);&#xA;fFigureComponentStoryPatternContainer.setOutline(false);&#xA;&#xA;this.add(fFigureComponentStoryPatternContainer, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RoundedRectangle getFigureComponentStoryPatternContainer() {&#xA;&#x9;&#x9;return fFigureComponentStoryPatternContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentStoryPatternFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RoundedRectangle fFigureComponentStoryPatternContainer; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentStoryPatternFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureComponentStoryPatternContainer = new org.eclipse.draw2d.RoundedRectangle();&#xA;fFigureComponentStoryPatternContainer.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(12)&#xA;));&#xA;fFigureComponentStoryPatternContainer.setFill(false);&#xA;fFigureComponentStoryPatternContainer.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureComponentStoryPatternContainer = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureComponentStoryPatternContainer.verticalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureComponentStoryPatternContainer.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureComponentStoryPatternContainer.horizontalIndent = 0;&#xA;constraintFFigureComponentStoryPatternContainer.horizontalSpan = 1;&#xA;constraintFFigureComponentStoryPatternContainer.verticalSpan = 1;&#xA;constraintFFigureComponentStoryPatternContainer.grabExcessHorizontalSpace = true;&#xA;constraintFFigureComponentStoryPatternContainer.grabExcessVerticalSpace = true;&#xA;this.add(fFigureComponentStoryPatternContainer, constraintFFigureComponentStoryPatternContainer);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RoundedRectangle getFigureComponentStoryPatternContainer() {&#xA;&#x9;&#x9;return fFigureComponentStoryPatternContainer;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/ComponentStoryPattern"/>
@@ -890,6 +890,62 @@
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/controlflow/ControllerExchangeNode/componentStoryPattern"/>
       </modelFacet>
+    </childNodes>
+    <childNodes
+        visualID="3023"
+        editPartClassName="FadingFunctionEditPart"
+        itemSemanticEditPolicyClassName="FadingFunctionItemSemanticEditPolicy"
+        notationViewFactoryClassName="FadingFunctionViewFactory"
+        canonicalEditPolicyClassName="FadingFunctionCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="FadingFunctionGraphicalNodeEditPolicy"
+        createCommandClassName="FadingFunctionCreateCommand"
+        containers="//@diagram/@compartments.6">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="FadingFunctionEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="FadingFunctionFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class FadingFunctionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureFadingFunctionLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public FadingFunctionFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureFadingFunctionLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureFadingFunctionLabel.setText(&quot;FadingFunction&quot;);&#xA;&#xA;this.add(fFigureFadingFunctionLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureFadingFunctionLabel() {&#xA;&#x9;&#x9;return fFigureFadingFunctionLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="-1"
+            height="-1"/>
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedBackground="true"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/FadingFunction"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/controlflow/ControllerExchangeNode/fadingFunctions"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/controlflow/ControllerExchangeNode/fadingFunctions"/>
+      </modelFacet>
+      <labels
+          visualID="5042"
+          editPartClassName="WrappingLabel3EditPart"
+          itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy"
+          notationViewFactoryClassName="FadingFunctionLabelViewFactory"
+          readOnly="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureFadingFunctionLabel"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedForeground="true"
+              fixedBackground="true"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.3"/>
+      </labels>
     </childNodes>
     <topLevelNodes
         visualID="2003"
@@ -1127,8 +1183,7 @@
         title="ComponentStoryNodeCompartment"
         canCollapse="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.0"
-        listLayout="false">
+        node="//@diagram/@childNodes.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -1154,6 +1209,10 @@
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureComponentStoryPatternContainer"
           figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
     </compartments>
     <compartments
         visualID="7006"
@@ -1212,22 +1271,44 @@
     </compartments>
     <compartments
         visualID="7009"
-        editPartClassName="ControllerExchangeNodeComponentStoryNodeCompartmentEditPart"
-        itemSemanticEditPolicyClassName="ControllerExchangeNodeComponentStoryNodeCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="ControllerExchangeNodeComponentStoryNodeCompartmentViewFactory"
-        canonicalEditPolicyClassName="ControllerExchangeNodeComponentStoryNodeCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.13"
-        title="ComponentStoryNodeCompartment"
+        editPartClassName="ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart"
+        itemSemanticEditPolicyClassName="ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentViewFactory"
+        canonicalEditPolicyClassName="ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.14"
+        title="ControllerExchangeNodeFadingFunctionsCompartment"
         canCollapse="false"
+        hideIfEmpty="false"
         needsTitle="false"
-        node="//@diagram/@childNodes.12"
-        listLayout="false">
+        node="//@diagram/@childNodes.12">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
           xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getFigureComponentStoryNodePatternContainer"
+          getterName="getFigureControllerExchangeNodeFadingFunctionsContainer"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
+    <compartments
+        visualID="7011"
+        editPartClassName="ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart"
+        itemSemanticEditPolicyClassName="ControllerExchangeNodeControllerExchangeNodeCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="ControllerExchangeNodeControllerExchangeNodeCompartmentViewFactory"
+        canonicalEditPolicyClassName="ControllerExchangeNodeControllerExchangeNodeCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.13"
+        title="ControllerExchangeNodeCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@childNodes.12">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:ParentAssignedViewmap"
+          getterName="getFigureControllerExchangeNodePatternContainer"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
     </compartments>
     <compartments
         visualID="7010"
@@ -1247,6 +1328,10 @@
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureComponentStoryPatternContainer"
           figureQualifiedClassName="org.eclipse.draw2d.RoundedRectangle"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
     </compartments>
     <palette>
       <groups
@@ -1269,6 +1354,12 @@
             description="Create new ControllerExchangeNode"
             smallIconPath="/de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram/icons/obj16/ComponentStoryDiagramFile.gif"
             genNodes="//@diagram/@childNodes.12"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="FadingFunction"
+            description="Create new FadingFunction"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram/icons/obj16/ComponentStoryDiagramFile.gif"
+            genNodes="//@diagram/@childNodes.14"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ActivityEdge"
@@ -1413,6 +1504,8 @@
           body="--storydiagrams::patterns::BindingOperator::CREATE"/>
       <expressions
           body="--'controllerExchangeNode'"/>
+      <expressions
+          body="----self.fromPort.oclAsType(PortVariable).name.concat(' → ').concat(self.toPort.oclAsType(PortVariable).name).concat(' : ').concat(self.name)&#xD;&#xA;---- 'hallo'&#xD;&#xA;--&#xD;&#xA;--&#xD;&#xA;--(&#xD;&#xA;--&#x9;if self.fromPort.name.oclIsUndefined() then&#xD;&#xA;--&#x9;&#x9;'null'&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;self.fromPort.name&#xD;&#xA;--&#x9;endif&#xD;&#xA;--).concat(' → ').concat(&#xD;&#xA;--&#x9;if self.toPort.name.oclIsUndefined() then&#xD;&#xA;--&#x9;&#x9;'null'&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;self.toPort.name&#xD;&#xA;--&#x9;endif&#xD;&#xA;--).concat(' : ').concat(&#xD;&#xA;--&#x9;if self.name.oclIsUndefined() then&#xD;&#xA;--&#x9;&#x9;'null'&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;self.name&#xD;&#xA;--&#x9;endif&#xD;&#xA;--)"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -1430,6 +1523,14 @@
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/PartVariable"/>
+    </implementations>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@childNodes.14/@labels.0/@modelFacet"
+        className="FadingFunctionLabelExpressionLabelParser5042"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
+      <expressionContext
+          href="../../de.uni_paderborn.fujaba.muml.model.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/FadingFunction"/>
     </implementations>
   </labelParsers>
   <contextMenus

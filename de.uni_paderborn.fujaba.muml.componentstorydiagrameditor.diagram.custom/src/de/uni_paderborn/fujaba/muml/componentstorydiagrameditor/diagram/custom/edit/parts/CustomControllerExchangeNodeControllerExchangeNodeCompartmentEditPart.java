@@ -11,13 +11,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeComponentStoryNodeCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ControllerExchangeNodeComponentStoryNodeCompartmentItemSemanticEditPolicy;
 
-public class CustomControllerExchangeNodeComponentStoryNodeCompartmentEditPart
-		extends ControllerExchangeNodeComponentStoryNodeCompartmentEditPart {
+public class CustomControllerExchangeNodeControllerExchangeNodeCompartmentEditPart
+		extends ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart {
 
-	public CustomControllerExchangeNodeComponentStoryNodeCompartmentEditPart(
+	public CustomControllerExchangeNodeControllerExchangeNodeCompartmentEditPart(
 			View view) {
 		super(view);
 		
@@ -34,15 +34,6 @@ public class CustomControllerExchangeNodeComponentStoryNodeCompartmentEditPart
 		};
 
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, resizePolicy);
-	}
-	
-	@Override
-	public IFigure createFigure(){
-		IFigure result = super.createFigure();
-		
-		result.setBorder(null);
-		
-		return result;
 	}
 	
 	protected void createDefaultEditPolicies() {

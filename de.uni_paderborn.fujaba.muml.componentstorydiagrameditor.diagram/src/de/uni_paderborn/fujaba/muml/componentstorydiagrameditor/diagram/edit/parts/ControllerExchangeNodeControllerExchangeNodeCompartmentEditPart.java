@@ -2,6 +2,8 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.pa
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
@@ -13,18 +15,18 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class ComponentStoryPatternComponentStoryPatternCompartment2EditPart
-		extends ShapeCompartmentEditPart {
+public class ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart
+		extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7010;
+	public static final int VISUAL_ID = 7011;
 
 	/**
 	 * @generated
 	 */
-	public ComponentStoryPatternComponentStoryPatternCompartment2EditPart(
+	public ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart(
 			View view) {
 		super(view);
 	}
@@ -32,8 +34,15 @@ public class ComponentStoryPatternComponentStoryPatternCompartment2EditPart
 	/**
 	 * @generated
 	 */
+	protected boolean hasModelChildrenChanged(Notification evt) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
 	public String getCompartmentName() {
-		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ComponentStoryPatternComponentStoryPatternCompartment2EditPart_title;
+		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.Messages.ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart_title;
 	}
 
 	/**
@@ -65,14 +74,14 @@ public class ComponentStoryPatternComponentStoryPatternCompartment2EditPart
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryPatternComponentStoryPatternCompartment2ItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ControllerExchangeNodeControllerExchangeNodeCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryPatternComponentStoryPatternCompartment2CanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ControllerExchangeNodeControllerExchangeNodeCompartmentCanonicalEditPolicy());
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
@@ -85,6 +94,24 @@ public class ComponentStoryPatternComponentStoryPatternCompartment2EditPart
 		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void refreshVisibility() {
+		final View notationView = getNotationView();
+		final boolean hasChildren = notationView.getChildren().size() > 0;
+		setVisibility(hasChildren);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void handleNotificationEvent(Notification event) {
+		refreshVisibility();
+		super.handleNotificationEvent(event);
 	}
 
 }

@@ -10,15 +10,19 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart;
-import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryNodeComponentStoryNodeCompartmentItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ControllerExchangeNodeComponentStoryNodeCompartmentItemSemanticEditPolicy;
 
-public class CustomComponentStoryNodeComponentStoryNodeCompartmentEditPart
-		extends ComponentStoryNodeComponentStoryNodeCompartmentEditPart {
+public class CustomControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart
+		extends
+		ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart {
 
-	public CustomComponentStoryNodeComponentStoryNodeCompartmentEditPart(
+	public CustomControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart(
 			View view) {
 		super(view);
+	}
+	
+	protected void createDefaultEditPolicies() {
 		
 		EditPolicy resizePolicy = new NonResizableEditPolicy() {
 			@Override
@@ -33,13 +37,11 @@ public class CustomComponentStoryNodeComponentStoryNodeCompartmentEditPart
 		};
 
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, resizePolicy);
-	}
-	
-	protected void createDefaultEditPolicies() {
+		
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new ComponentStoryNodeComponentStoryNodeCompartmentItemSemanticEditPolicy() {
+				new ControllerExchangeNodeComponentStoryNodeCompartmentItemSemanticEditPolicy() {
 					protected Command getSemanticCommand(
 							IEditCommandRequest request) {
 						if (request instanceof DestroyRequest) {

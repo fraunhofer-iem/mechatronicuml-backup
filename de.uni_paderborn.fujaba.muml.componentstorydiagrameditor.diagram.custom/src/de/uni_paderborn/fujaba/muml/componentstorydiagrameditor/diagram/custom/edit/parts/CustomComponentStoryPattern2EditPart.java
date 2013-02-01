@@ -14,7 +14,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPattern2EditPart;
-import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeComponentStoryNodeCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryPatternItemSemanticEditPolicy;
 
@@ -59,17 +59,17 @@ public class CustomComponentStoryPattern2EditPart extends
 	@Override
 	public void refresh() {
 		super.refresh();
-		updateFigure();
+//		updateFigure();
 	}
 	
 	private void updateFigure(){
-		ControllerExchangeNodeComponentStoryNodeCompartmentEditPart compartmentEditPart = (ControllerExchangeNodeComponentStoryNodeCompartmentEditPart) this.getParent();
+		ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart compartmentEditPart = (ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart) this.getParent();
 		ControllerExchangeNodeEditPart controllerExchangeNodeEditPart = (ControllerExchangeNodeEditPart) compartmentEditPart
 				.getParent();
 
 		RectangleFigure patternRectangle = controllerExchangeNodeEditPart
 				.getPrimaryShape()
-				.getFigureComponentStoryNodePatternContainer();
+				.getFigureControllerExchangeNodePatternContainer();
 		if (!patternRectangle.getChildren().isEmpty()) {
 			ResizableCompartmentFigure patternCompartment = (ResizableCompartmentFigure) patternRectangle
 					.getChildren().get(0);

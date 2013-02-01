@@ -283,42 +283,52 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ActivityEdge4CreationTool_title;
+	public static String FadingFunction4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ActivityEdge4CreationTool_desc;
+	public static String FadingFunction4CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String InitialNode5CreationTool_title;
+	public static String ActivityEdge5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String InitialNode5CreationTool_desc;
+	public static String ActivityEdge5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String JunctionNode6CreationTool_title;
+	public static String InitialNode6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String JunctionNode6CreationTool_desc;
+	public static String InitialNode6CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ActivityFinalNode7CreationTool_title;
+	public static String JunctionNode7CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ActivityFinalNode7CreationTool_desc;
+	public static String JunctionNode7CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityFinalNode8CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ActivityFinalNode8CreationTool_desc;
 
 	/**
 	 * @generated
@@ -403,7 +413,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ControllerExchangeNodeComponentStoryNodeCompartmentEditPart_title;
+	public static String ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart_title;
 
 	/**
 	 * @generated

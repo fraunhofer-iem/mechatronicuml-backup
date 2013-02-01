@@ -59,7 +59,7 @@ public class CustomComponentStoryPatternEditPart extends
 	@Override
 	public void refresh() {
 		super.refresh();
-		updateFigure();
+//		updateFigure();
 	}
 	
 	private void updateFigure(){

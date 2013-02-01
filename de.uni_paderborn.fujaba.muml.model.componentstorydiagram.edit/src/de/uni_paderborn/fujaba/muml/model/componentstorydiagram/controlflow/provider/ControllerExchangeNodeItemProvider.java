@@ -25,10 +25,15 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.storydiagrams.activities.provider.ActivityNodeItemProvider;
 
+import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.model.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode} object.
@@ -65,10 +70,118 @@ public class ControllerExchangeNodeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addDeadlinePropertyDescriptor(object);
 			addComponentStoryPatternPropertyDescriptor(object);
 			addControllerExchangeStrategyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Deadline feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addDeadlinePropertyDescriptor(Object object) {
+		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ControllerExchangeNode_deadline_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ControllerExchangeNode_deadline_feature", "_UI_ControllerExchangeNode_type"),
+				 ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__DEADLINE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null);
+		
+		IChainedPropertyDescriptor lowerBoundPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Deadline_lowerBound_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_Deadline_lowerBound_feature",
+						"_UI_Deadline_type"),
+				RealtimestatechartPackage.Literals.DEADLINE__LOWER_BOUND,
+				true, false, true, null,
+				getString("_UI_RelativeDeadlinePropertyCategory"),
+				null, rootPropertyDescriptor);
+		
+		itemPropertyDescriptors.add
+			(new NaturalNumberPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeValue_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
+				 de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.TIME_VALUE__VALUE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 "Relative Deadline - Lower Bound",
+				 null,
+				 lowerBoundPropertyDescriptor));
+		
+		itemPropertyDescriptors.add
+			(new EnumerationPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeValue_unit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
+				 de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.TIME_VALUE__UNIT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 "Relative Deadline - Lower Bound",
+				 null,
+				 lowerBoundPropertyDescriptor));
+		
+		IChainedPropertyDescriptor upperBoundPropertyDescriptor = new DefaultChainedPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Deadline_upperBound_feature"),
+						getString("_UI_PropertyDescriptor_description",
+								"_UI_Deadline_upperBound_feature",
+								"_UI_Deadline_type"),
+						RealtimestatechartPackage.Literals.DEADLINE__UPPER_BOUND,
+						true, false, true, null,
+						getString("_UI_RelativeDeadlinePropertyCategory"),
+						null, rootPropertyDescriptor);
+		
+		itemPropertyDescriptors.add
+			(new NaturalNumberPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeValue_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
+				 de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.TIME_VALUE__VALUE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 "Relative Deadline - Upper Bound",
+				 null,
+				 upperBoundPropertyDescriptor));
+		
+		itemPropertyDescriptors.add
+			(new EnumerationPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TimeValue_unit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
+				 de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.TIME_VALUE__UNIT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 "Relative Deadline - Upper Bound",
+				 null,
+				 upperBoundPropertyDescriptor));
 	}
 
 	/**

@@ -1,10 +1,11 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts;
 
-import org.eclipse.draw2d.BorderLayout;
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.RoundedRectangle;
+import org.eclipse.draw2d.LineBorder;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -19,6 +20,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -27,12 +29,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class ComponentStoryPattern2EditPart extends ShapeNodeEditPart {
+public class FadingFunctionEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3022;
+	public static final int VISUAL_ID = 3023;
 
 	/**
 	 * @generated
@@ -47,7 +49,7 @@ public class ComponentStoryPattern2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public ComponentStoryPattern2EditPart(View view) {
+	public FadingFunctionEditPart(View view) {
 		super(view);
 	}
 
@@ -58,7 +60,7 @@ public class ComponentStoryPattern2EditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ComponentStoryPattern2ItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.FadingFunctionItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -103,26 +105,23 @@ public class ComponentStoryPattern2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new ComponentStoryPatternFigure();
+		return primaryShape = new FadingFunctionFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public ComponentStoryPatternFigure getPrimaryShape() {
-		return (ComponentStoryPatternFigure) primaryShape;
+	public FadingFunctionFigure getPrimaryShape() {
+		return (FadingFunctionFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartment2EditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureComponentStoryPatternContainer();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartment2EditPart) childEditPart)
-					.getFigure());
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel3EditPart) {
+			((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel3EditPart) childEditPart)
+					.setLabel(getPrimaryShape().getFigureFadingFunctionLabel());
 			return true;
 		}
 		return false;
@@ -132,12 +131,7 @@ public class ComponentStoryPattern2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartment2EditPart) {
-			IFigure pane = getPrimaryShape()
-					.getFigureComponentStoryPatternContainer();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartment2EditPart) childEditPart)
-					.getFigure());
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel3EditPart) {
 			return true;
 		}
 		return false;
@@ -167,9 +161,6 @@ public class ComponentStoryPattern2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartment2EditPart) {
-			return getPrimaryShape().getFigureComponentStoryPatternContainer();
-		}
 		return getContentPane();
 	}
 
@@ -177,7 +168,7 @@ public class ComponentStoryPattern2EditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(-1, -1);
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));
@@ -266,26 +257,25 @@ public class ComponentStoryPattern2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ComponentStoryPatternFigure extends RoundedRectangle {
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
+				.getType(de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
+	public class FadingFunctionFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
-		private RoundedRectangle fFigureComponentStoryPatternContainer;
+		private WrappingLabel fFigureFadingFunctionLabel;
 
 		/**
 		 * @generated
 		 */
-		public ComponentStoryPatternFigure() {
-
-			GridLayout layoutThis = new GridLayout();
-			layoutThis.numColumns = 1;
-			layoutThis.makeColumnsEqualWidth = true;
-			this.setLayoutManager(layoutThis);
-
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(12)));
-			this.setFill(false);
+		public FadingFunctionFigure() {
 			this.setOutline(false);
 			createContents();
 		}
@@ -295,31 +285,18 @@ public class ComponentStoryPattern2EditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureComponentStoryPatternContainer = new RoundedRectangle();
-			fFigureComponentStoryPatternContainer
-					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
-							getMapMode().DPtoLP(12)));
-			fFigureComponentStoryPatternContainer.setFill(false);
-			fFigureComponentStoryPatternContainer.setOutline(false);
+			fFigureFadingFunctionLabel = new WrappingLabel();
+			fFigureFadingFunctionLabel.setText("FadingFunction");
 
-			GridData constraintFFigureComponentStoryPatternContainer = new GridData();
-			constraintFFigureComponentStoryPatternContainer.verticalAlignment = GridData.FILL;
-			constraintFFigureComponentStoryPatternContainer.horizontalAlignment = GridData.FILL;
-			constraintFFigureComponentStoryPatternContainer.horizontalIndent = 0;
-			constraintFFigureComponentStoryPatternContainer.horizontalSpan = 1;
-			constraintFFigureComponentStoryPatternContainer.verticalSpan = 1;
-			constraintFFigureComponentStoryPatternContainer.grabExcessHorizontalSpace = true;
-			constraintFFigureComponentStoryPatternContainer.grabExcessVerticalSpace = true;
-			this.add(fFigureComponentStoryPatternContainer,
-					constraintFFigureComponentStoryPatternContainer);
+			this.add(fFigureFadingFunctionLabel);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public RoundedRectangle getFigureComponentStoryPatternContainer() {
-			return fFigureComponentStoryPatternContainer;
+		public WrappingLabel getFigureFadingFunctionLabel() {
+			return fFigureFadingFunctionLabel;
 		}
 
 	}

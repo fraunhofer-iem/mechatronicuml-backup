@@ -24,14 +24,14 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class ControllerExchangeNodeComponentStoryNodeCompartmentCanonicalEditPolicy
+public class ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentCanonicalEditPolicy
 		extends CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
 
-	public ControllerExchangeNodeComponentStoryNodeCompartmentCanonicalEditPolicy() {
+	public ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentCanonicalEditPolicy() {
 	}
 
-	public ControllerExchangeNodeComponentStoryNodeCompartmentCanonicalEditPolicy(
+	public ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentCanonicalEditPolicy(
 			boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}

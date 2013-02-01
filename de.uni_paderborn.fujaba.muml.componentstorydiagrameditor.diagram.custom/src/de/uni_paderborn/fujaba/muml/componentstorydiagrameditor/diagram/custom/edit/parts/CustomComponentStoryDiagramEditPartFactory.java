@@ -22,10 +22,12 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.par
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableNameEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentVariableOperatorEditPart;
-import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeComponentStoryNodeCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ControllerExchangeNodeEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.DelegationVariableEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.DelegationVariableNameEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.FadingFunctionEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariable2EditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariableEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.MultiPortVariableName2EditPart;
@@ -83,13 +85,18 @@ public class CustomComponentStoryDiagramEditPartFactory extends
 
 			case ControllerExchangeNodeEditPart.VISUAL_ID:
 				return new CustomControllerExchangeNodeEditPart(view);
-			case ControllerExchangeNodeComponentStoryNodeCompartmentEditPart.VISUAL_ID:
-				return new CustomControllerExchangeNodeComponentStoryNodeCompartmentEditPart(
+			case ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart.VISUAL_ID:
+				return new CustomControllerExchangeNodeControllerExchangeNodeCompartmentEditPart(
 						view);	
 			case ComponentStoryPattern2EditPart.VISUAL_ID:
 				return new CustomComponentStoryPattern2EditPart(view);
 			case ComponentStoryPatternComponentStoryPatternCompartment2EditPart.VISUAL_ID:
 				return new CustomComponentStoryPatternComponentStoryPatternCompartment2EditPart(view);
+			
+			case ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart.VISUAL_ID:
+				return new CustomControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart(view);
+			case FadingFunctionEditPart.VISUAL_ID:
+				return new CustomFadingFunctionEditPart(view);
 				
 			case ComponentVariableEditPart.VISUAL_ID:
 				return new CustomComponentVariableEditPart(view);

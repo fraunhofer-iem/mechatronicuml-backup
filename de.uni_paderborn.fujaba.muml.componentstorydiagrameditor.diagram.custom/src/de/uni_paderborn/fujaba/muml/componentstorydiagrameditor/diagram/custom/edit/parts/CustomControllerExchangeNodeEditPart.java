@@ -22,13 +22,13 @@ public class CustomControllerExchangeNodeEditPart extends
 	@Override
 	public void refresh() {
 		super.refresh();
-		updateFigure();
+//		updateFigure();
 	}
 
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
-		updateFigure();
+//		updateFigure();
 		super.refreshVisuals();
 	}
 
@@ -36,7 +36,7 @@ public class CustomControllerExchangeNodeEditPart extends
 		if (((ControllerExchangeNode) ((View) getModel()).getElement()) != null) {
 
 			// resize the pattern compartment
-			RectangleFigure patternRectangle = getPrimaryShape().getFigureComponentStoryNodePatternContainer();
+			RectangleFigure patternRectangle = getPrimaryShape().getFigureControllerExchangeNodePatternContainer();
 			if (!patternRectangle.getChildren().isEmpty()) {
 				ResizableCompartmentFigure patternCompartment = (ResizableCompartmentFigure) patternRectangle
 						.getChildren().get(0);

@@ -23,7 +23,7 @@
             ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//controlflow/ComponentStoryNode/componentStoryPattern"/>
       </genClasses>
       <genClasses ecoreClass="ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeNode">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeNode/deadline"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeNode/deadline"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeNode/componentStoryPattern"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeNode/controllerExchangeStrategy"/>

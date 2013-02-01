@@ -24,14 +24,14 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class ControllerExchangeNodeComponentStoryNodeCompartmentCanonicalEditPolicy
+public class ControllerExchangeNodeControllerExchangeNodeCompartmentCanonicalEditPolicy
 		extends CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
 
-	public ControllerExchangeNodeComponentStoryNodeCompartmentCanonicalEditPolicy() {
+	public ControllerExchangeNodeControllerExchangeNodeCompartmentCanonicalEditPolicy() {
 	}
 
-	public ControllerExchangeNodeComponentStoryNodeCompartmentCanonicalEditPolicy(
+	public ControllerExchangeNodeControllerExchangeNodeCompartmentCanonicalEditPolicy(
 			boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
@@ -53,7 +53,7 @@ public class ControllerExchangeNodeComponentStoryNodeCompartmentCanonicalEditPol
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage.eINSTANCE
-				.getControllerExchangeNode_FadingFunctions();
+				.getControllerExchangeNode_ComponentStoryPattern();
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class ControllerExchangeNodeComponentStoryNodeCompartmentCanonicalEditPol
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.FadingFunctionEditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPattern2EditPart.VISUAL_ID;
 				if (childElement.eContainer() == containerView.getElement()
 						&& visualID == de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
 								.getVisualID(childView)) {
@@ -98,7 +98,7 @@ public class ControllerExchangeNodeComponentStoryNodeCompartmentCanonicalEditPol
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramUpdater
-				.getControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartment_7009SemanticChildren(viewObject);
+				.getControllerExchangeNodeControllerExchangeNodeCompartment_7011SemanticChildren(viewObject);
 
 	}
 
@@ -115,7 +115,7 @@ public class ControllerExchangeNodeComponentStoryNodeCompartmentCanonicalEditPol
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.FadingFunctionEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
+		return de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts.ComponentStoryPattern2EditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramVisualIDRegistry
 				.getVisualID(view);
 	}
 
