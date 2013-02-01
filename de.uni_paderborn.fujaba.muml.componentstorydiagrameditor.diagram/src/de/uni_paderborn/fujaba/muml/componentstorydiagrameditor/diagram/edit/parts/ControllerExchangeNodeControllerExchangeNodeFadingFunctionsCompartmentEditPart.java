@@ -81,6 +81,9 @@ public class ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartm
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentCanonicalEditPolicy());
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.BorderlessCompartmentEditPolicy());
 	}
 
 	/**
@@ -90,6 +93,24 @@ public class ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartm
 		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);
 		}
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void refreshVisibility() {
+		final View notationView = getNotationView();
+		final boolean hasChildren = notationView.getChildren().size() > 0;
+		setVisibility(hasChildren);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void handleNotificationEvent(Notification event) {
+		refreshVisibility();
+		super.handleNotificationEvent(event);
 	}
 
 }

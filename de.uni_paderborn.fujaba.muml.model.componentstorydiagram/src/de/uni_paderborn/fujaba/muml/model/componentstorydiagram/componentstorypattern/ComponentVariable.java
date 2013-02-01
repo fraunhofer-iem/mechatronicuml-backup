@@ -27,8 +27,8 @@ import de.uni_paderborn.fujaba.muml.model.component.Component;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage#getComponentVariable()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOnePartVariableOrPortVariable='self.portVariables->size() > 0 or self.partVariables->size() > 0' OnlyPartVariablesIfTypeIsStructuredComponent='self.type.oclIsKindOf(muml::model::component::StructuredComponent) or self.partVariables->size()=0\r\n'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtLeastOnePartVariableOrPortVariable OnlyPartVariablesIfTypeIsStructuredComponent'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOnePartVariableOrPortVariable='self.portVariables->size() > 0 or self.partVariables->size() > 0'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtLeastOnePartVariableOrPortVariable'"
  * @generated
  */
 public interface ComponentVariable extends ComponentStoryPatternVariable {

@@ -448,9 +448,7 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 
 			this.add(componentStoryNodeContentContainer0, BorderLayout.CENTER);
 
-			GridLayout layoutComponentStoryNodeContentContainer0 = new GridLayout();
-			layoutComponentStoryNodeContentContainer0.numColumns = 1;
-			layoutComponentStoryNodeContentContainer0.makeColumnsEqualWidth = true;
+			BorderLayout layoutComponentStoryNodeContentContainer0 = new BorderLayout();
 			componentStoryNodeContentContainer0
 					.setLayoutManager(layoutComponentStoryNodeContentContainer0);
 
@@ -458,17 +456,9 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 			fFigureComponentStoryNodePatternContainer.setFill(false);
 			fFigureComponentStoryNodePatternContainer.setOutline(false);
 
-			GridData constraintFFigureComponentStoryNodePatternContainer = new GridData();
-			constraintFFigureComponentStoryNodePatternContainer.verticalAlignment = GridData.FILL;
-			constraintFFigureComponentStoryNodePatternContainer.horizontalAlignment = GridData.FILL;
-			constraintFFigureComponentStoryNodePatternContainer.horizontalIndent = 0;
-			constraintFFigureComponentStoryNodePatternContainer.horizontalSpan = 1;
-			constraintFFigureComponentStoryNodePatternContainer.verticalSpan = 1;
-			constraintFFigureComponentStoryNodePatternContainer.grabExcessHorizontalSpace = true;
-			constraintFFigureComponentStoryNodePatternContainer.grabExcessVerticalSpace = true;
 			componentStoryNodeContentContainer0.add(
 					fFigureComponentStoryNodePatternContainer,
-					constraintFFigureComponentStoryNodePatternContainer);
+					BorderLayout.CENTER);
 
 		}
 

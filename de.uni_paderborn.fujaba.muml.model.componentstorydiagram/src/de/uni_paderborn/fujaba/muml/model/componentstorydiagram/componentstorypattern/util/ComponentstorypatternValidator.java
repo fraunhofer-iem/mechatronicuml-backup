@@ -162,7 +162,6 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(componentVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(componentVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponentVariable_AtLeastOnePartVariableOrPortVariable(componentVariable, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponentVariable_OnlyPartVariablesIfTypeIsStructuredComponent(componentVariable, diagnostics, context);
 		return result;
 	}
 
@@ -190,36 +189,6 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "AtLeastOnePartVariableOrPortVariable",
 				 COMPONENT_VARIABLE__AT_LEAST_ONE_PART_VARIABLE_OR_PORT_VARIABLE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the OnlyPartVariablesIfTypeIsStructuredComponent constraint of '<em>Component Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String COMPONENT_VARIABLE__ONLY_PART_VARIABLES_IF_TYPE_IS_STRUCTURED_COMPONENT__EEXPRESSION = "self.type.oclIsKindOf(muml::model::component::StructuredComponent) or self.partVariables->size()=0\r\n" +
-		"";
-
-	/**
-	 * Validates the OnlyPartVariablesIfTypeIsStructuredComponent constraint of '<em>Component Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateComponentVariable_OnlyPartVariablesIfTypeIsStructuredComponent(ComponentVariable componentVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentstorypatternPackage.Literals.COMPONENT_VARIABLE,
-				 componentVariable,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "OnlyPartVariablesIfTypeIsStructuredComponent",
-				 COMPONENT_VARIABLE__ONLY_PART_VARIABLES_IF_TYPE_IS_STRUCTURED_COMPONENT__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

@@ -722,7 +722,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (componentVariableEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AtLeastOnePartVariableOrPortVariable OnlyPartVariablesIfTypeIsStructuredComponent"
+			 "constraints", "AtLeastOnePartVariableOrPortVariable"
 		   });				
 		addAnnotation
 		  (portVariableEClass, 
@@ -756,8 +756,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		  (componentVariableEClass, 
 		   source, 
 		   new String[] {
-			 "AtLeastOnePartVariableOrPortVariable", "self.portVariables->size() > 0 or self.partVariables->size() > 0",
-			 "OnlyPartVariablesIfTypeIsStructuredComponent", "self.type.oclIsKindOf(muml::model::component::StructuredComponent) or self.partVariables->size()=0\r\n"
+			 "AtLeastOnePartVariableOrPortVariable", "self.portVariables->size() > 0 or self.partVariables->size() > 0"
 		   });			
 		addAnnotation
 		  (getComponentVariable_Type(), 
