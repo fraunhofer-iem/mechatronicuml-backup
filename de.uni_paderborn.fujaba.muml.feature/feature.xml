@@ -72,8 +72,8 @@
       <import plugin="org.eclipse.m2m.qvt.oml"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.6.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.common" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.fujaba.modelinstance" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.fujaba.modelinstance.edit" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.modelinstance" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.modelinstance.edit" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.model.edit" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.edit" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="de.fujaba.newwizard" version="0.3.1" match="greaterOrEqual"/>
@@ -428,21 +428,21 @@
          unpack="false"/>
 
    <plugin
-         id="de.fujaba.modelinstance"
+         id="de.uni_paderborn.fujaba.modelinstance"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.fujaba.modelinstance.edit"
+         id="de.uni_paderborn.fujaba.modelinstance.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.fujaba.modelinstance.editor"
+         id="de.uni_paderborn.fujaba.modelinstance.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"

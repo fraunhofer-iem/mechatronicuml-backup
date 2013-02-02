@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.fujaba.modelinstance.presentation;
+package de.uni_paderborn.fujaba.modelinstance.presentation;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -177,7 +177,7 @@ public class ModelinstanceActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(ModelinstanceEditorPlugin.INSTANCE.getString("_UI_ModelinstanceEditor_menu"), "de.fujaba.modelinstanceMenuID");
+		IMenuManager submenuManager = new MenuManager(ModelinstanceEditorPlugin.INSTANCE.getString("_UI_ModelinstanceEditor_menu"), "de.uni_paderborn.fujaba.modelinstanceMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

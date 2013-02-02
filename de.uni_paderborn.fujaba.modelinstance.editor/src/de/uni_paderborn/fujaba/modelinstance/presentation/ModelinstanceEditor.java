@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.fujaba.modelinstance.presentation;
+package de.uni_paderborn.fujaba.modelinstance.presentation;
 
 
 import java.io.IOException;
@@ -594,7 +594,7 @@ public class ModelinstanceEditor
 			BasicDiagnostic diagnostic =
 				new BasicDiagnostic
 					(Diagnostic.OK,
-					 "de.fujaba.modelinstance.editor",
+					 "de.uni_paderborn.fujaba.modelinstance.editor",
 					 0,
 					 null,
 					 new Object [] { editingDomain.getResourceSet() });
@@ -1031,7 +1031,7 @@ public class ModelinstanceEditor
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "de.fujaba.modelinstance.editor",
+					 "de.uni_paderborn.fujaba.modelinstance.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object [] { exception == null ? (Object)resource : exception });
@@ -1042,7 +1042,7 @@ public class ModelinstanceEditor
 			return
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "de.fujaba.modelinstance.editor",
+					 "de.uni_paderborn.fujaba.modelinstance.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object[] { exception });

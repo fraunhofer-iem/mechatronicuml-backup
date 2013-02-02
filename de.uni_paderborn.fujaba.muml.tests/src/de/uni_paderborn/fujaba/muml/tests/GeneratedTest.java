@@ -66,7 +66,7 @@ public class GeneratedTest {
 		// Register projects of dependant metamodels
 		TestUtilities.registerWorkspaceProject("org.storydriven.core");
 		TestUtilities.registerWorkspaceProject("org.storydriven.storydiagrams");
-		TestUtilities.registerWorkspaceProject("de.fujaba.modelinstance");
+		TestUtilities.registerWorkspaceProject("de.uni_paderborn.fujaba.modelinstance");
 		TestUtilities
 				.registerWorkspaceProject("de.uni_paderborn.fujaba.muml.model.actionLanguage");
 

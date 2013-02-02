@@ -15,9 +15,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="de.fujaba.modelinstance.presentation.ModelinstanceModelWizardID"
+            id="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceModelWizardID"
             name="%_UI_ModelinstanceModelWizard_label"
-            class="de.fujaba.modelinstance.presentation.ModelinstanceModelWizard"
+            class="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/ModelinstanceModelFile.gif">
          <description>%_UI_ModelinstanceModelWizard_description</description>
@@ -27,12 +27,12 @@
 
    <extension point="org.eclipse.ui.editors">
       <editor
-            id="de.fujaba.modelinstance.presentation.ModelinstanceEditorID"
+            id="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceEditorID"
             name="%_UI_ModelinstanceEditor_label"
             icon="icons/full/obj16/ModelinstanceModelFile.gif"
             extensions="fujaba"
-            class="de.fujaba.modelinstance.presentation.ModelinstanceEditor"
-            contributorClass="de.fujaba.modelinstance.presentation.ModelinstanceActionBarContributor">
+            class="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceEditor"
+            contributorClass="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceActionBarContributor">
       </editor>
    </extension>
 

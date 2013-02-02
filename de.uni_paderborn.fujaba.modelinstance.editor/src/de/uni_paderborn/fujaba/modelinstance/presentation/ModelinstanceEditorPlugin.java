@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.fujaba.modelinstance.presentation;
+package de.uni_paderborn.fujaba.modelinstance.presentation;
 
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
@@ -21,7 +21,7 @@ import org.storydriven.core.provider.CoreEditPlugin;
  */
 public final class ModelinstanceEditorPlugin extends EMFPlugin {
 	
-	public static final String ID = "de.fujaba.modelinstance.editor";
+	public static final String ID = "de.uni_paderborn.fujaba.modelinstance.editor";
 	
 	public static ComposedAdapterFactory adapterFactory;
 	

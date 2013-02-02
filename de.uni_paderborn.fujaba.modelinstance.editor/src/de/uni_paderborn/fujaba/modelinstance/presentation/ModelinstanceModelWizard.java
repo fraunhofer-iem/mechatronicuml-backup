@@ -4,7 +4,7 @@
  *
  * $Id$
  */
-package de.fujaba.modelinstance.presentation;
+package de.uni_paderborn.fujaba.modelinstance.presentation;
 
 
 import java.util.ArrayList;
