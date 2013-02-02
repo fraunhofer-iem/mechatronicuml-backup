@@ -25,15 +25,15 @@
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="messageinterface.gmfgraph#MessageInterfaceName"/>
+            href="messagetype.gmfgraph#MessageInterfaceName"/>
         <features
             href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="messageinterface.gmftool#//@palette/@tools.0/@tools.0"/>
+          href="messagetype.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
-          href="messageinterface.gmfgraph#MessageTypeRepository"/>
+          href="messagetype.gmfgraph#MessageTypeRepository"/>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
@@ -55,15 +55,15 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="messageinterface.gmfgraph#MessageTypeName"/>
+                href="messagetype.gmfgraph#MessageTypeName"/>
             <features
                 href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="messageinterface.gmftool#//@palette/@tools.0/@tools.1"/>
+              href="messagetype.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
-              href="messageinterface.gmfgraph#MessageType"/>
+              href="messagetype.gmfgraph#MessageType"/>
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
@@ -85,7 +85,7 @@
               <labelMappings
                   xsi:type="gmfmap:ExpressionLabelMapping">
                 <diagramLabel
-                    href="messageinterface.gmfgraph#ParameterName"/>
+                    href="messagetype.gmfgraph#ParameterName"/>
                 <viewExpression
                     body="(&#xA;if self.eContainer().oclAsType(msgtype::MessageType).parameters->first() = self then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' '&#xA;&#x9;endif&#xA;).concat(&#xA;&#x9;if self.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.name&#xA;&#x9;endif&#xA;).concat(&#xA;&#x9;if self.dataType.name.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' : '.concat(self.dataType.name)&#xA;&#x9;endif&#xA;).concat(&#xA;&#x9;if self.eContainer().oclAsType(msgtype::MessageType).parameters->last() = self then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;','&#xA;&#x9;endif&#xA;)&#xA;&#xA;"/>
                 <editExpression
@@ -93,33 +93,33 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="messageinterface.gmftool#//@palette/@tools.0/@tools.2"/>
+                  href="messagetype.gmftool#//@palette/@tools.0/@tools.2"/>
               <diagramNode
-                  href="messageinterface.gmfgraph#Parameter"/>
+                  href="messagetype.gmfgraph#Parameter"/>
             </ownedChild>
           </children>
           <compartments
               children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0">
             <compartment
-                href="messageinterface.gmfgraph#ParametersCompartment"/>
+                href="messagetype.gmfgraph#ParametersCompartment"/>
           </compartments>
         </ownedChild>
       </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.0">
         <compartment
-            href="messageinterface.gmfgraph#MessageTypesCompartment"/>
+            href="messagetype.gmfgraph#MessageTypesCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
   <diagram>
     <diagramCanvas
-        href="messageinterface.gmfgraph#messageinterfaceeditor"/>
+        href="messagetype.gmfgraph#messageinterfaceeditor"/>
     <domainModel
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype"/>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
     <palette
-        href="messageinterface.gmftool#//@palette"/>
+        href="messagetype.gmftool#//@palette"/>
   </diagram>
 </gmfmap:Mapping>
