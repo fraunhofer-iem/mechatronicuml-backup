@@ -9,7 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.impl;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import de.fujaba.modelinstance.ModelinstancePackage;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.MumlPackage;
 import de.uni_paderborn.fujaba.muml.impl.MumlPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.ModelFactory;

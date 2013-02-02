@@ -89,7 +89,7 @@
 
 «DEFINE modelelementcategory FOR gmfgen::GenEditorGenerator»
 	<extension
-         point="de.fujaba.modelinstance.modelelementcategory">
+         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
       «EXPAND xpt::Common::xmlGeneratedTag»  
       <category
             key="«modelElementCategoryKey(diagram)»"

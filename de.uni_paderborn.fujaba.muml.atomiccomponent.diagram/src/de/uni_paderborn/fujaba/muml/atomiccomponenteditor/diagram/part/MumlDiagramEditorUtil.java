@@ -49,8 +49,8 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
 
-import de.fujaba.modelinstance.ModelElementCategory;
-import de.fujaba.modelinstance.ModelinstanceFactory;
+import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
 
 /**
  * @generated

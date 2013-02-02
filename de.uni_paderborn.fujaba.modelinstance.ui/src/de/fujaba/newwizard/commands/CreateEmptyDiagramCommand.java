@@ -17,11 +17,11 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.storydriven.core.ExtendableElement;
 
-import de.fujaba.modelinstance.ModelElementCategory;
-import de.fujaba.modelinstance.ModelInstancePlugin;
-import de.fujaba.modelinstance.ModelinstancePackage;
-import de.fujaba.modelinstance.RootNode;
 import de.fujaba.newwizard.FujabaNewwizardPlugin;
+import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
 
 /**
  * Creates a new empty Diagram.

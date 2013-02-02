@@ -7,7 +7,7 @@ Bundle-Activator: de.fujaba.newwizard.FujabaNewwizardPlugin
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.ui.ide,
  org.eclipse.emf.edit.ui;bundle-version="2.6.0",
- de.fujaba.modelinstance;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.modelinstance;bundle-version="0.3.1",
  org.storydriven.core
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -14240,246 +14240,246 @@
         <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//patterns/StoryPattern/templateSignature"
             featureName="eOpposite" referenceValue="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//templates/TemplateSignature/pattern"/>
       </changes>
-      <changes xsi:type="history:Create" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+      <changes xsi:type="history:Create" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
             featureName="name" dataValue="modelinstance"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
             featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.2"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
             featureName="nsPrefix" dataValue="modelinstance"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
-          referenceName="eAnnotations" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
             featureName="key" dataValue="invocationDelegates"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
             featureName="value" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1"
             featureName="key" dataValue="settingDelegates"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1"
             featureName="value" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2"
             featureName="key" dataValue="validationDelegates"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2"
             featureName="value" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
-          referenceName="eAnnotations" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The package modelinstance defines the base classes for the FUJABA xmi format.&#xD;&#xA;In detail, it defines a root node and model element categories in order to serialize&#xD;&#xA;the model elements that may be contained in a FUJABA model."/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
-          referenceName="eAnnotations" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%"
             featureName="source" dataValue="http://www.eclipse.org/edapt"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%"
-          referenceName="details" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
             featureName="key" dataValue="historyURI"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
             featureName="value" dataValue="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
-          referenceName="eClassifiers" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
+          referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode"
             featureName="name" dataValue="RootNode"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode"
-          referenceName="eAnnotations" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The RootNode is the single root element of the XMI file which is generated for&#xD;&#xA;the FUJABA model."/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode"
-          referenceName="eStructuralFeatures" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/ecoreDataTypes">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/ecoreDataTypes"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/ecoreDataTypes">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/ecoreDataTypes"
             featureName="name" dataValue="ecoreDataTypes"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/ecoreDataTypes"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/ecoreDataTypes"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/ecoreDataTypes"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/ecoreDataTypes"
             featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
-          referenceName="eClassifiers" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
+          referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
             featureName="name" dataValue="ModelElementCategory"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode"
-          referenceName="eStructuralFeatures" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories"
             featureName="name" dataValue="categories"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories"
-            featureName="eType" referenceValue="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories"
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories"
-          referenceName="eAnnotations" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode/categories/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The model element categories which are contained in this RootNode."/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
-          referenceName="eAnnotations" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
             featureName="key" dataValue="constraints"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
             featureName="value" dataValue="ExclusivelyContainsValidElements"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
-          referenceName="eAnnotations" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="ExclusivelyContainsValidElements"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="self.modelElements->select (e | not isValidElement(e))->isEmpty()"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
-          referenceName="eAnnotations" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The ModelElementCategory contains all model elements of a FUJABA model that&#xD;&#xA;have the same type and will be opened by the same editor. A ModelElementCategory&#xD;&#xA;may only store subclasses of NamedElement."/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
-          referenceName="eOperations" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
+          referenceName="eOperations" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement"
             featureName="name" dataValue="isValidElement"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement"
             featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement"
-          referenceName="eAnnotations" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Evaluates for the passed object whether it is a valid model element for this &#xD;&#xA;ModelElementCategory."/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
             featureName="key" dataValue="body"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
             featureName="value" dataValue="boolean valid = false;&#xD;&#xA;&#xD;&#xA;ModelInstancePlugin plugin = ModelInstancePlugin.getInstance();&#xD;&#xA;if (plugin != null) {&#xD;&#xA;&#x9;ModelElementCategoryRegistry registry = plugin.getModelElementCategoryRegistry();&#xD;&#xA;&#x9;valid = registry.isValidCategory(key, object);&#xD;&#xA;}&#xD;&#xA;return valid;"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement"
-          referenceName="eParameters" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/object">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/object"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement"
+          referenceName="eParameters" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/object">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/object"
             featureName="name" dataValue="object"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/object"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/isValidElement/object"
             featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
-          referenceName="eStructuralFeatures" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"
             featureName="name" dataValue="modelElements"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"
             featureName="eType" referenceValue="../../org.storydriven.core/model/core.ecore#//ExtendableElement"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"
-          referenceName="eAnnotations" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The ModelElements which are contained in this category. All model elements&#xD;&#xA;must be of the same type."/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
-          referenceName="eStructuralFeatures" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key"
             featureName="name" dataValue="key"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key"
-          referenceName="eAnnotations" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/key/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The uniquely identifying key of this category. The key of the category may be&#xD;&#xA;used by editors to register for the model elements contained in this section."/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
-          referenceName="eStructuralFeatures" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name"
             featureName="name" dataValue="name"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name"
             featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name"
-          referenceName="eAnnotations" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/name/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="A human readable name for this category."/>
       </changes>
       <changes xsi:type="history:Create" element="../../de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.ecore#/">
@@ -15707,7 +15707,7 @@
         dataValue="http://www.fujaba.de/muml/model/instance/0.3.3" oldDataValue="http://www.fujaba.de/muml/model/instance/0.3.1"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/protocol" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/pattern/0.3.3" oldDataValue="http://www.fujaba.de/muml/model/pattern/0.3.2"/>
-    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.3" oldDataValue="http://www.fujaba.de/modelinstance/0.3.2"/>
   </releases>
   <releases date="2012-11-23T15:46:42.326+0100" label="0.3.4">
@@ -15804,7 +15804,7 @@
     <changes xsi:type="history:Set" element="#//@releases.8/@changes.24/@element"
         featureName="nsURI" dataValue="http://www.fujaba.de/muml/model/core/0.3.4"
         oldDataValue="http://www.fujaba.de/muml/model/core/0.3.3"/>
-    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.4" oldDataValue="http://www.fujaba.de/modelinstance/0.3.3"/>
   </releases>
   <releases date="2012-11-23T17:09:06.803+0100" label="0.3.5">
@@ -15966,7 +15966,7 @@
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart"
         featureName="nsURI" dataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.3.5"
         oldDataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.3.4"/>
-    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.5" oldDataValue="http://www.fujaba.de/modelinstance/0.3.4"/>
   </releases>
   <releases date="2012-12-04T13:08:46.915+0100" label="0.3.6">
@@ -16005,7 +16005,7 @@
         oldDataValue="http://www.fujaba.de/muml/model/core/0.3.5"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/component" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/component/0.3.6" oldDataValue="http://www.fujaba.de/muml/model/component/0.3.3"/>
-    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.6" oldDataValue="http://www.fujaba.de/modelinstance/0.3.5"/>
     <changes xsi:type="history:Remove" element="muml.ecore#//model/component/HybridPort"
         featureName="eSuperTypes" referenceValue="muml.ecore#//model/component/ContinuousPort"/>
@@ -17336,7 +17336,7 @@
         </eStructuralFeatures>
       </element>
     </changes>
-    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.8" oldDataValue="http://www.fujaba.de/modelinstance/0.3.7"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/realtimestatechart"
         featureName="nsURI" dataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.3.8"
@@ -18472,7 +18472,7 @@
         featureName="eSuperTypes" referenceValue="muml.ecore#//model/behavior/TypedNamedElement"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/behavior" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/model/behavior/0.3.13" oldDataValue="http://www.fujaba.de/muml/model/behavior/0.3.10"/>
-    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.12"
         oldDataValue="http://www.fujaba.de/modelinstance/0.3.8"/>
     <changes xsi:type="history:Create" target="muml.ecore#//model/component/DirectedTypedPort"
@@ -19007,7 +19007,7 @@
         featureName="eOpposite" referenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/previous"/>
     <changes xsi:type="history:Set" element="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/previous"
         featureName="eOpposite" referenceValue="muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance/next"/>
-    <changes xsi:type="history:Set" element="../../de.fujaba.modelinstance/model/modelinstance.ecore#/"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.3.15"
         oldDataValue="http://www.fujaba.de/modelinstance/0.3.12"/>
   </releases>

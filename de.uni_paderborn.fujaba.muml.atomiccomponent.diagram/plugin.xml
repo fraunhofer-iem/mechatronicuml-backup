@@ -90,7 +90,7 @@
 
 	
 	<extension
-         point="de.fujaba.modelinstance.modelelementcategory">
+         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
       <?gmfgen generated="true"?>  
       <category
             key="de.uni_paderborn.fujaba.muml.components.category"

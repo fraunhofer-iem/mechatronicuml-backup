@@ -8,7 +8,7 @@
 
 «DEFINE installCanonicalEditPolicy FOR gmfgen::GenDiagram-»
 	«IF needsCanonicalEditPolicy()-»
-		«IF getQualifiedInterfaceName(domainDiagramElement) = 'de.fujaba.modelinstance.ModelElementCategory'»
+		«IF getQualifiedInterfaceName(domainDiagramElement) = 'de.uni_paderborn.fujaba.modelinstance.ModelElementCategory'»
 			// Not installing the EditPolicy with the key EditPolicyRoles.CANONICAL_ROLE guarantees that the "Delete from Diagram" Action is visible. 
 			installEditPolicy("CustomCanonical", new «getCanonicalEditPolicyQualifiedClassName()»(false));
 		«ELSE»

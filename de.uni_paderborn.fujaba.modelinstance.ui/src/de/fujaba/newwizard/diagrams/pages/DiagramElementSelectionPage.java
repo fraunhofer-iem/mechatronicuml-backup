@@ -22,10 +22,10 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 
-import de.fujaba.modelinstance.ModelElementCategory;
-import de.fujaba.modelinstance.RootNode;
 import de.fujaba.newwizard.Messages;
 import de.fujaba.newwizard.diagrams.IDiagramElementValidator;
+import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
 
 public class DiagramElementSelectionPage extends WizardPage implements
 		IResourceChangedListener {

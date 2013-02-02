@@ -11,7 +11,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.storydriven.core.provider.CoreEditPlugin;
 
-import de.fujaba.modelinstance.provider.ModelinstanceEditPlugin;
+import de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceEditPlugin;
 
 /**
  * This is the central singleton for the Muml edit plugin.

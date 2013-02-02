@@ -7,7 +7,7 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
+        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
     <ownedChild>
       <domainMetaElement
           href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/AtomicComponent"/>
@@ -185,7 +185,7 @@
     <domainModel
         href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component"/>
     <domainMetaElement
-        href="../../de.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
+        href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
     <palette
         href="atomiccomponent.gmftool#//@palette"/>
   </diagram>

@@ -19,8 +19,8 @@ import org.storydriven.storydiagrams.patterns.expressions.provider.PatternsExpre
 import org.storydriven.storydiagrams.patterns.provider.PatternsItemProviderAdapterFactory;
 import org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAdapterFactory;
 
-import de.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.common.FujabaCommonPlugin;
+import de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.common.MumlCommonPlugin;
 
 /**

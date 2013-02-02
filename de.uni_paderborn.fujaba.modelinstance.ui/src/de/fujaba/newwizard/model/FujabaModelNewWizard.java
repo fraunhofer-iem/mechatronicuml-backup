@@ -21,12 +21,12 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 
-import de.fujaba.modelinstance.ModelinstanceFactory;
-import de.fujaba.modelinstance.RootNode;
 import de.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.fujaba.newwizard.Messages;
 import de.fujaba.newwizard.diagrams.DiagramEditorUtil;
 import de.fujaba.newwizard.diagrams.pages.NewExtendedFileCreationPage;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
 
 /**
  * A New Wizard for the Fujaba Model.

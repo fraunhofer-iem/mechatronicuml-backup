@@ -35,7 +35,7 @@
 
   <!-- make sure that the "types" modelelementcategory is accepted as valid -->
   <extension
-          point="de.fujaba.modelinstance.modelelementcategory">
+          point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
       <category
               key="de.uni_paderborn.fujaba.muml.types.category"
               name="types">

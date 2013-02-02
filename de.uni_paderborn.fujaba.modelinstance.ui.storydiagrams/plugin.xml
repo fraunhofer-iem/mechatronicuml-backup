@@ -40,7 +40,7 @@
 	   </menuContribution>
 	</extension>
 
-    <extension point="de.fujaba.modelinstance.modelelementcategory">
+    <extension point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
       <category
             key="org.storydriven.storydiagrams.category"
             name="storydiagrams">

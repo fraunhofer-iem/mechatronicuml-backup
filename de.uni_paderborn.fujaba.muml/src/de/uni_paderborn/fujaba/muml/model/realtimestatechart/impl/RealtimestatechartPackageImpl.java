@@ -19,7 +19,7 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.core.expressions.common.CommonExpressionsPackage;
 
-import de.fujaba.modelinstance.ModelinstancePackage;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.model.behavior.impl.BehaviorPackageImpl;
 import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;

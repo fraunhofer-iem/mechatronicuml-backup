@@ -40,15 +40,15 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.storydriven.core.ExtendableElement;
 
-import de.fujaba.modelinstance.ModelElementCategory;
-import de.fujaba.modelinstance.ModelInstancePlugin;
-import de.fujaba.modelinstance.ModelinstanceFactory;
-import de.fujaba.modelinstance.ModelinstancePackage;
-import de.fujaba.modelinstance.RootNode;
-import de.fujaba.modelinstance.categories.ModelElementCategoryRegistry;
 import de.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.fujaba.newwizard.diagrams.DiagramEditorUtil;
 import de.fujaba.newwizard.diagrams.IDiagramInformation;
+import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
+import de.uni_paderborn.fujaba.modelinstance.categories.ModelElementCategoryRegistry;
 
 /**
  * Creates a new Diagram with initial contents.

@@ -32,7 +32,7 @@ import org.storydriven.storydiagrams.patterns.provider.PatternsItemProviderAdapt
 import org.storydriven.storydiagrams.provider.StorydiagramsItemProviderAdapterFactory;
 import org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAdapterFactory;
 
-import de.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
+import de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 
 /**
  * @generated

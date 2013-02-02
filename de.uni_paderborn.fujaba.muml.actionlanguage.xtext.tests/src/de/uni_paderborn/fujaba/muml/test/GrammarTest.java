@@ -26,9 +26,9 @@ import org.storydriven.core.expressions.common.LogicalExpression;
 import org.storydriven.core.expressions.common.UnaryExpression;
 import org.storydriven.core.expressions.common.UnaryOperator;
 
-import de.fujaba.modelinstance.ModelElementCategory;
-import de.fujaba.modelinstance.RootNode;
-import de.fujaba.modelinstance.categories.ModelElementCategoryRegistry;
+import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
+import de.uni_paderborn.fujaba.modelinstance.categories.ModelElementCategoryRegistry;
 import de.uni_paderborn.fujaba.muml.common.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator;

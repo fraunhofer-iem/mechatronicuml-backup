@@ -31,12 +31,12 @@ import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCo
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
-import de.fujaba.modelinstance.ModelinstanceFactory;
-import de.fujaba.modelinstance.RootNode;
 import de.fujaba.newwizard.diagrams.DiagramEditorUtil;
 import de.fujaba.newwizard.diagrams.DiagramInformation;
 import de.fujaba.newwizard.diagrams.IDiagramInformation;
 import de.fujaba.newwizard.initializer.IModelInitializer;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
 
 /**
  * The activator class controls the plug-in life cycle

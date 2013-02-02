@@ -10,7 +10,7 @@
 <plugin>
 <!-- manual extensions -->
    <extension
-         point="de.fujaba.modelinstance.version">
+         point="de.uni_paderborn.fujaba.modelinstance.version">
       <artefact
             id="de.uni_paderborn.fujaba.muml.model.metamodel"
             name="muml metamodel"

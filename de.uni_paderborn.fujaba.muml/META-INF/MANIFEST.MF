@@ -10,7 +10,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  de.uni_paderborn.fujaba.common,
- de.fujaba.modelinstance,
+ de.uni_paderborn.fujaba.modelinstance,
  org.eclipse.emf.edapt.history,
  org.storydriven.core;visibility:=reexport
 Bundle-ActivationPolicy: lazy

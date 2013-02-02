@@ -24,7 +24,7 @@ import org.storydriven.core.expressions.common.provider.CommonExpressionsItemPro
 import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
 
-import de.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
+import de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 
 /**
  * @generated

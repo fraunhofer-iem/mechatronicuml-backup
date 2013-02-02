@@ -35,7 +35,6 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
-import de.fujaba.modelinstance.ModelinstancePackage;
 import de.fujaba.newwizard.FujabaNewwizardPlugin;
 import de.fujaba.newwizard.Messages;
 import de.fujaba.newwizard.commands.CreateDiagramCommand;
@@ -44,6 +43,7 @@ import de.fujaba.newwizard.diagrams.pages.DiagramElementSelectionPage;
 import de.fujaba.newwizard.diagrams.pages.DiagramModelSelectionPage;
 import de.fujaba.newwizard.diagrams.pages.NewExtendedFileCreationPage;
 import de.fujaba.newwizard.ui.ResourceLocationProvider;
+import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 
 /**
  * A fujaba diagram new-wizard suitable for usage by editors; it has to supply
