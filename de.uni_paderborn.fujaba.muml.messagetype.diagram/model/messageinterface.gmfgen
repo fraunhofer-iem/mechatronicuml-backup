@@ -61,11 +61,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/msgtype/MessageType"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/msgtype/MessageType"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/msgtype/MessageTypeRepository/messageTypes"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/msgtype/MessageTypeRepository/messageTypes"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/msgtype/MessageTypeRepository/messageTypes"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/msgtype/MessageTypeRepository/messageTypes"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -122,11 +122,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/behavior/Parameter"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/behavior/Parameter"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/msgtype/MessageType/parameters"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/msgtype/MessageType/parameters"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/msgtype/MessageType/parameters"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/msgtype/MessageType/parameters"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -178,7 +178,7 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/msgtype/MessageTypeRepository"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/msgtype/MessageTypeRepository"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
@@ -366,7 +366,7 @@
         viewExpression="//@expressionProviders/@providers.0/@expressions.3"
         editExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/behavior/Parameter"/>
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/behavior/Parameter"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
