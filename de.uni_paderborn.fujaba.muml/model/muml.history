@@ -1683,7 +1683,7 @@
         <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
             featureName="key" dataValue="historyURI"/>
         <changes xsi:type="history:Set" element="../../org.storydriven.core/model/core.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
-            featureName="value" dataValue="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
+            featureName="value" dataValue="../../de.uni_paderborn.fujaba.muml/model/muml.history"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#/"
           referenceName="eClassifiers" element="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
@@ -10513,7 +10513,7 @@
         <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
             featureName="key" dataValue="historyURI"/>
         <changes xsi:type="history:Set" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
-            featureName="value" dataValue="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
+            featureName="value" dataValue="../../de.uni_paderborn.fujaba.muml/model/muml.history"/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#/"
           referenceName="eClassifiers" element="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//Variable">
@@ -14296,7 +14296,7 @@
         <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
             featureName="key" dataValue="historyURI"/>
         <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
-            featureName="value" dataValue="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
+            featureName="value" dataValue="../../de.uni_paderborn.fujaba.muml/model/muml.history"/>
       </changes>
       <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
           referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//RootNode">
@@ -14512,7 +14512,7 @@
         <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
             featureName="key" dataValue="historyURI"/>
         <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
-            featureName="value" dataValue="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
+            featureName="value" dataValue="../../de.uni_paderborn.fujaba.muml/model/muml.history"/>
       </changes>
       <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#/"
           referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//AssignOperator">

@@ -21,7 +21,7 @@ public class ModelPluginXmlPackageTest extends PackageTest {
 
 	private static Resource ecoreModel;
 	
-	public static final String PLUGIN_XML_LOCATION = "../de.uni_paderborn.fujaba.muml.model/plugin.xml";
+	public static final String PLUGIN_XML_LOCATION = "../de.uni_paderborn.fujaba.muml/plugin.xml";
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {

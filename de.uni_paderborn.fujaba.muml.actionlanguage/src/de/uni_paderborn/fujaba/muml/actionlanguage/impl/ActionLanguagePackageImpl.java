@@ -926,7 +926,7 @@ public class ActionLanguagePackageImpl extends EPackageImpl implements ActionLan
 		  (this, 
 		   source, 
 		   new String[] {
-			 "historyURI", "../../de.uni_paderborn.fujaba.muml.model/model/muml.history"
+			 "historyURI", "../../de.uni_paderborn.fujaba.muml/model/muml.history"
 		   });																																	
 	}
 

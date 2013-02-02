@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="actionlanguage"
@@ -7,7 +6,7 @@
     <details key="documentation" value="The base package for the muml action language. It is an extension to the core.ecore expression package.&#xD;&#xA;The action language contains block definition, control structures like conditional statements and loops, assignments, and variable and operation call expressions. "/>
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/edapt">
-    <details key="historyURI" value="../../de.uni_paderborn.fujaba.muml.model/model/muml.history"/>
+    <details key="historyURI" value="../../de.uni_paderborn.fujaba.muml/model/muml.history"/>
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -150,13 +149,13 @@
       <details key="documentation" value="Operation calls are used to call an operation with concrete parameter bindings. "/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//behavior/Operation">
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Operation">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Operation which belongs to an operation call."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBinding" upperBound="-1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//behavior/ParameterBinding"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/ParameterBinding"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Parameter bindings which belongs to an operation call."/>
@@ -179,9 +178,9 @@
       <details key="documentation" value="Represents a parameter of a transition's trigger message."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//msgtype/MessageType"/>
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//behavior/Parameter"/>
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Parameter"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpointReference"
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
@@ -210,7 +209,7 @@
       <details key="UniqueName" value="-- check if no variable with the same name was defined before&#xA;self.allSurroundingBlocks->collect(&#xA;&#x9;expressions&#xA;)->select(&#xA;&#x9;oclIsKindOf(LocalVariableDeclarationStatement)&#xA;)->collect(&#xA;&#x9;oclAsType(LocalVariableDeclarationStatement)&#xA;)->select(&#xA;&#x9;variable.name = self.variable.name&#xA;)->isUnique(variable.name)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//behavior/Variable"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Variable"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initializeExpression" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
         containment="true"/>
@@ -225,7 +224,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="To perform an action on a value of a variable of a \rtsc we use the typed named element expression, which has a reference to a typed named element and optional indicies if a concrete array element should be referenced."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="typedNamedElement" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//behavior/TypedNamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typedNamedElement" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/TypedNamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="indices" upperBound="-1"
         eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
         containment="true">

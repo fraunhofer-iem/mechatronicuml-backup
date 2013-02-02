@@ -49,11 +49,11 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CoordinationPatternFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCoordinationPatternNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CoordinationPatternFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCoordinationPatternNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureCoordinationPatternNameFigure.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureCoordinationPatternNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureCoordinationPatternNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationPatternNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationPatternNameFigure.horizontalIndent = 0;&#xA;constraintFFigureCoordinationPatternNameFigure.horizontalSpan = 1;&#xA;constraintFFigureCoordinationPatternNameFigure.verticalSpan = 1;&#xA;constraintFFigureCoordinationPatternNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureCoordinationPatternNameFigure.grabExcessVerticalSpace = true;&#xA;this.add(fFigureCoordinationPatternNameFigure, constraintFFigureCoordinationPatternNameFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCoordinationPatternNameFigure() {&#xA;&#x9;&#x9;return fFigureCoordinationPatternNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
       </modelFacet>
       <labels
           visualID="5005"
@@ -107,11 +107,11 @@
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.RoleEditPolicy"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/Role"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/Role"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/roles"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/roles"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/roles"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/roles"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -123,36 +123,36 @@
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/connector/DiscreteInteractionEndpoint/cardinality"/>
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/connector/DiscreteInteractionEndpoint/cardinality"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range/lowerBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/valuetype/Range/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.10">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range/upperBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/valuetype/Range/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
                       value="//@expressionProviders/@providers.0/@expressions.11">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
                   </initializers>
                 </newElementInitializers>
               </initializers>
               <elementClass
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range"/>
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/valuetype/Range"/>
             </newElementInitializers>
           </initializers>
         </modelElementInitializer>
@@ -195,7 +195,7 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
         <childMetaFeature
@@ -211,7 +211,7 @@
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/roles"/>
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/roles"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
@@ -222,40 +222,40 @@
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/connector/DiscreteInteractionEndpoint/cardinality"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/connector/DiscreteInteractionEndpoint/cardinality"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenReferenceNewElementSpec">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range/lowerBound"/>
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/valuetype/Range/lowerBound"/>
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
                           value="//@expressionProviders/@providers.0/@expressions.2">
                         <feature
-                            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
+                            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
                       </initializers>
                     </newElementInitializers>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenReferenceNewElementSpec">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range/upperBound"/>
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/valuetype/Range/upperBound"/>
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
                           value="//@expressionProviders/@providers.0/@expressions.3">
                         <feature
-                            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
+                            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
                       </initializers>
                     </newElementInitializers>
                   </initializers>
                   <elementClass
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range"/>
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/valuetype/Range"/>
                 </newElementInitializers>
               </initializers>
               <elementClass
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/Role"/>
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/Role"/>
             </newElementInitializers>
             <newElementInitializers>
               <initializers
@@ -267,36 +267,36 @@
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/connector/DiscreteInteractionEndpoint/cardinality"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/connector/DiscreteInteractionEndpoint/cardinality"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenReferenceNewElementSpec">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range/lowerBound"/>
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/valuetype/Range/lowerBound"/>
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
                           value="//@expressionProviders/@providers.0/@expressions.5">
                         <feature
-                            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
+                            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
                       </initializers>
                     </newElementInitializers>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenReferenceNewElementSpec">
                     <feature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range/upperBound"/>
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/valuetype/Range/upperBound"/>
                     <newElementInitializers>
                       <initializers
                           xsi:type="gmfgen:GenFeatureValueSpec"
                           value="//@expressionProviders/@providers.0/@expressions.6">
                         <feature
-                            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
+                            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/valuetype/NaturalNumber/value"/>
                       </initializers>
                     </newElementInitializers>
                   </initializers>
                   <elementClass
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/valuetype/Range"/>
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/valuetype/Range"/>
                 </newElementInitializers>
               </initializers>
             </newElementInitializers>
@@ -304,18 +304,18 @@
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/roleConnector"/>
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/roleConnector"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
                   value="//@expressionProviders/@providers.0/@expressions.7">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/connector/Connector/connectorEndpoints"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/connector/Connector/connectorEndpoints"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
@@ -326,7 +326,7 @@
                 </newElementInitializers>
               </initializers>
               <elementClass
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/RoleConnector"/>
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/RoleConnector"/>
             </newElementInitializers>
           </initializers>
         </modelElementInitializer>
@@ -350,7 +350,7 @@
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/roles"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/roles"/>
       </modelFacet>
     </links>
     <links
@@ -371,17 +371,17 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/RoleConnector"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/RoleConnector"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/roleConnector"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/roleConnector"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/roleConnector"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/CoordinationProtocol/roleConnector"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
@@ -393,9 +393,9 @@
           </initializers>
         </modelElementInitializer>
         <sourceMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/connector/Connector/connectorEndpoints"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/connector/Connector/connectorEndpoints"/>
         <targetMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml/model/connector/Connector/connectorEndpoints"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/model/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <creationConstraints
           targetEnd="//@expressionProviders/@providers.0/@expressions.13"/>
@@ -580,7 +580,7 @@
     </tabs>
   </propertySheet>
   <domainGenModel
-      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#/"/>
+      href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#/"/>
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">

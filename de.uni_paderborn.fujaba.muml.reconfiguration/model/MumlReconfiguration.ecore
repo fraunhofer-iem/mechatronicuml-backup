@@ -11,7 +11,7 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="This package contains all classes which are needed to define reconfigurable components in MechatronicUML. A reconfigurable component may change its ports and, in case of a structured component, its inner structure. The supported structural changes include adding or removing embedded component instances, adding or removing port instances, adding or removing or redirecting assemblies and delegations."/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableStructuredComponent" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/StructuredComponent #//ReconfigurableComponent">
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableStructuredComponent" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/component/StructuredComponent #//ReconfigurableComponent">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A reconfigurable structured component may change its internal structure at run-time. Therefore, it may instantiate or remove component instances that are typed over embedded component parts. In addition, assemblies and delegations in the structured component may be added, removed or redirected. The reconfiguration behavior in encapsulated in the reconfiguration controllers which are contained in the reconfigurable structured component."/>
     </eAnnotations>
@@ -31,12 +31,12 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPort" abstract="true"
-      eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/DiscretePort">
+      eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/component/DiscretePort">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A reconfiguration port defines the external interface for accessing the reconfiguration capabilities of a reconfigurable structured component. In case of a reconfigurable structured component, they are delegated to one of the controllers of the component. In case of a reconfigurable atomic component, the reconfiguration port is directly implemented."/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Controller" abstract="true" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/BehavioralElement ../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Controller" abstract="true" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/behavior/BehavioralElement ../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Reconfiguration controllers encapsulate the reconfiguration behavior of a reconfigurable structured component."/>
     </eAnnotations>
@@ -61,10 +61,10 @@
       <details key="documentation" value="A reconfiguration rule describes a modification of the internal structure of a reconfigurable structured component or of a reconfigurable atomic component."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/Parameter"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/behavior/Parameter"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnParameters" upperBound="-1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/Parameter"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/behavior/Parameter"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reconfiguredComponent"
         eType="#//ReconfigurableComponent"/>
@@ -72,11 +72,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationCondition" abstract="true"
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/Parameter"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/behavior/Parameter"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurableComponent" abstract="true"
-      interface="true" eSuperTypes="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/component/Component">
+      interface="true" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/component/Component">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="This interface needs to be implemented by all reconfigurable component types in order to distinguish them from static component types."/>
     </eAnnotations>
@@ -110,7 +110,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="manager" lowerBound="1"
         eType="#//Manager" eOpposite="#//Manager/specificationEntries"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/msgtype/MessageType"/>
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/msgtype/MessageType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="#//ReconfigurationCondition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationController" abstract="true"
@@ -140,7 +140,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
           eType="ecore:EClass ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/ParameterBinding"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/behavior/ParameterBinding"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationRuleCallExpression"
@@ -148,7 +148,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationRule"
           lowerBound="1" eType="#//ReconfigurationRule"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBindings" upperBound="-1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/behavior/ParameterBinding"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/behavior/ParameterBinding"
           containment="true"/>
     </eClassifiers>
   </eSubpackages>

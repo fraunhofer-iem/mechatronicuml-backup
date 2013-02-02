@@ -311,7 +311,7 @@ public class ModelinstancePackageImpl extends EPackageImpl implements Modelinsta
 		  (this, 
 		   source, 
 		   new String[] {
-			 "historyURI", "../../de.uni_paderborn.fujaba.muml.model/model/muml.history"
+			 "historyURI", "../../de.uni_paderborn.fujaba.muml/model/muml.history"
 		   });									
 	}
 

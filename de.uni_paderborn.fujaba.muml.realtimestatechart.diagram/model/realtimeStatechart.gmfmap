@@ -8,7 +8,7 @@
   <nodes>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
@@ -29,10 +29,10 @@
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State"/>
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/State"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -59,10 +59,10 @@
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/entryEvent"/>
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/State/entryEvent"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/EntryEvent"/>
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/EntryEvent"/>
               <labelMappings
                   xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
@@ -81,17 +81,17 @@
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/doEvent"/>
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/State/doEvent"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/DoEvent"/>
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/DoEvent"/>
               <domainInitializer
                   xsi:type="gmfmap:FeatureSeqInitializer">
                 <initializers
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/DoEvent/action"/>
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/DoEvent/action"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
@@ -122,10 +122,10 @@
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/exitEvent"/>
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/State/exitEvent"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ExitEvent"/>
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/ExitEvent"/>
               <labelMappings
                   xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
@@ -144,10 +144,10 @@
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.3">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/invariants"/>
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/State/invariants"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ClockConstraint"/>
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/ClockConstraint"/>
               <labelMappings
                   xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
@@ -163,10 +163,10 @@
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.2">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/channels"/>
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/State/channels"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/SynchronizationChannel"/>
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/SynchronizationChannel"/>
               <domainInitializer
                   xsi:type="gmfmap:FeatureSeqInitializer">
                 <initializers
@@ -194,10 +194,10 @@
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.1"
               referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild">
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/regions"/>
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/State/regions"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Region"/>
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/Region"/>
               <domainInitializer
                   xsi:type="gmfmap:FeatureSeqInitializer">
                 <initializers
@@ -212,7 +212,7 @@
                     xsi:type="gmfmap:FeatureValueSpec">
                   <feature
                       xsi:type="ecore:EAttribute"
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/PrioritizedElement/priority"/>
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/PrioritizedElement/priority"/>
                   <value
                       body="self.parentState.getUniqueRegionPriority(0)"/>
                 </initializers>
@@ -220,7 +220,7 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Region/statechart"/>
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/Region/statechart"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
@@ -234,7 +234,7 @@
                         xsi:type="gmfmap:ReferenceNewElementSpec">
                       <feature
                           xsi:type="ecore:EReference"
-                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"/>
+                          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"/>
                       <newElementInitializers>
                         <initializers
                             xsi:type="gmfmap:FeatureValueSpec">
@@ -248,7 +248,7 @@
                             xsi:type="gmfmap:FeatureValueSpec">
                           <feature
                               xsi:type="ecore:EAttribute"
-                              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/initial"/>
+                              href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/State/initial"/>
                           <value
                               body="true"/>
                         </initializers>
@@ -271,7 +271,7 @@
                 <diagramLabel
                     href="realtimeStatechart.gmfgraph#RegionPriorityLabel"/>
                 <features
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/PrioritizedElement/priority"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/PrioritizedElement/priority"/>
               </labelMappings>
               <labelMappings
                   xsi:type="gmfmap:ExpressionLabelMapping"
@@ -289,17 +289,17 @@
               <children
                   compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@compartments.0">
                 <containmentFeature
-                    href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Region/statechart"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/Region/statechart"/>
                 <ownedChild>
                   <domainMetaElement
-                      href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
                   <domainInitializer
                       xsi:type="gmfmap:FeatureSeqInitializer">
                     <initializers
                         xsi:type="gmfmap:ReferenceNewElementSpec">
                       <feature
                           xsi:type="ecore:EReference"
-                          href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"/>
+                          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"/>
                       <newElementInitializers>
                         <initializers
                             xsi:type="gmfmap:FeatureValueSpec">
@@ -313,7 +313,7 @@
                             xsi:type="gmfmap:FeatureValueSpec">
                           <feature
                               xsi:type="ecore:EAttribute"
-                              href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/initial"/>
+                              href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/State/initial"/>
                           <value
                               body="true"/>
                         </initializers>
@@ -326,7 +326,7 @@
                       compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@compartments.0"
                       referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
                     <containmentFeature
-                        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"/>
+                        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/states"/>
                   </children>
                   <compartments
                       children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@children.0">
@@ -344,10 +344,10 @@
           </children>
           <children>
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/connectionPoints"/>
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/State/connectionPoints"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/EntryPoint"/>
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/EntryPoint"/>
               <domainInitializer
                   xsi:type="gmfmap:FeatureSeqInitializer">
                 <initializers
@@ -375,10 +375,10 @@
           </children>
           <children>
             <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/State/connectionPoints"/>
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/State/connectionPoints"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/ExitPoint"/>
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/ExitPoint"/>
               <domainInitializer
                   xsi:type="gmfmap:FeatureSeqInitializer">
                 <initializers
@@ -435,14 +435,14 @@
   </nodes>
   <links>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/Transition"/>
     <domainInitializer
         xsi:type="gmfmap:FeatureSeqInitializer">
       <initializers
           xsi:type="gmfmap:FeatureValueSpec">
         <feature
             xsi:type="ecore:EAttribute"
-            href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/PrioritizedElement/priority"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/PrioritizedElement/priority"/>
         <value
             body="self.source.getUniqueTransitionPriority(0)"/>
       </initializers>
@@ -464,7 +464,7 @@
           body="(&#xA;&#xA;-- Relative Deadline&#xA;&#xA;&#x9;if self.relativeDeadline.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;if self.relativeDeadline.lowerBound.oclIsUndefined() then 'null' else self.relativeDeadline.lowerBound.toString() endif&#xA;&#x9;&#x9;).concat(';').concat(&#xA;&#x9;&#x9;&#x9;if self.relativeDeadline.upperBound.oclIsUndefined() then 'null' else self.relativeDeadline.upperBound.toString() endif&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Absolute Deadlines&#xA;&#xA;&#x9;self.absoluteDeadlines->iterate(absoluteDeadline; result : String = '' |&#xA;&#x9;&#x9;(if result = '\n' then '' else result.concat('\n') endif).concat(&#xA;&#x9;&#x9;&#x9;if absoluteDeadline.clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;absoluteDeadline.clock.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(' ∈ [').concat(&#xA;&#x9;&#x9;&#x9;if absoluteDeadline.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;absoluteDeadline.lowerBound.toString()&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(';').concat(&#xA;&#x9;&#x9;&#x9;if absoluteDeadline.upperBound.oclIsUndefined() then &#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;absoluteDeadline.upperBound.toString()&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;)&#xA;)"/>
     </labelMappings>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/transitions"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart/transitions"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.1"/>
@@ -472,10 +472,10 @@
         href="realtimeStatechart.gmfgraph#Transition"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition/source"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/Transition/source"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/Transition/target"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/Transition/target"/>
     <creationConstraints>
       <sourceEnd
           body="not (self.oclIsKindOf(EntryPoint) and (not oppositeEnd.oclIsKindOf(State))) and&#xA;not (self.oclIsKindOf(ExitPoint) and (not oppositeEnd.oclIsKindOf(State)))"/>
@@ -485,9 +485,9 @@
     <diagramCanvas
         href="realtimeStatechart.gmfgraph#statechart"/>
     <domainModel
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart"/>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.model/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
     <palette
         href="realtimeStatechart.gmftool#//@palette"/>
   </diagram>
