@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.model/src"
-    modelPluginID="de.uni_paderborn.fujaba.muml.model" modelName="Muml" importerID="org.eclipse.emf.importer.ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml/src"
+    modelPluginID="de.uni_paderborn.fujaba.muml" modelName="Muml" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance">
   <foreignModel>muml.ecore</foreignModel>
   <foreignModel>../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore</foreignModel>
   <genPackages prefix="Muml" basePackage="de.uni_paderborn.fujaba" disposableProviderFactory="true"
       ecorePackage="muml.ecore#/">
    
-      <nestedGenPackages prefix="Component" basePackage="de.uni_paderborn.fujaba.muml.model"
+      <nestedGenPackages prefix="Component" basePackage="de.uni_paderborn.fujaba.muml"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//component">
         <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//component/ComponentKind">
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//component/ComponentKind/SOFTWARE_COMPONENT"/>
@@ -97,7 +97,7 @@
           <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DirectedTypedPort/inPort"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages prefix="Constraint" basePackage="de.uni_paderborn.fujaba.muml.model"
+      <nestedGenPackages prefix="Constraint" basePackage="de.uni_paderborn.fujaba.muml"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//constraint">
         <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//constraint/Correctness">
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//constraint/Correctness/UNKNOWN"/>
@@ -121,7 +121,7 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//constraint/ConstrainableElement/constraint"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.muml.model"
+      <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.muml"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//instance">
         <genClasses ecoreClass="muml.ecore#//instance/ComponentInstance">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -173,7 +173,7 @@
         </genClasses>
         <genClasses ecoreClass="muml.ecore#//instance/AtomicComponentInstance"/>
       </nestedGenPackages>
-      <nestedGenPackages prefix="Protocol" basePackage="de.uni_paderborn.fujaba.muml.model"
+      <nestedGenPackages prefix="Protocol" basePackage="de.uni_paderborn.fujaba.muml"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//protocol">
         <genClasses ecoreClass="muml.ecore#//protocol/RoleConnector">
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/RoleConnector/coordinationProtocol"/>
@@ -205,7 +205,7 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages prefix="Realtimestatechart" basePackage="de.uni_paderborn.fujaba.muml.model"
+      <nestedGenPackages prefix="Realtimestatechart" basePackage="de.uni_paderborn.fujaba.muml"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//realtimestatechart">
         <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//realtimestatechart/SynchronizationKind">
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//realtimestatechart/SynchronizationKind/SEND"/>
@@ -372,7 +372,7 @@
         <genClasses ecoreClass="muml.ecore#//realtimestatechart/EntryPoint"/>
         <genClasses ecoreClass="muml.ecore#//realtimestatechart/ExitPoint"/>
       </nestedGenPackages>
-      <nestedGenPackages prefix="Msgtype" basePackage="de.uni_paderborn.fujaba.muml.model"
+      <nestedGenPackages prefix="Msgtype" basePackage="de.uni_paderborn.fujaba.muml"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//msgtype">
         <genClasses ecoreClass="muml.ecore#//msgtype/MessageType">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//msgtype/MessageType/parameters"/>
@@ -382,7 +382,7 @@
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//msgtype/MessageTypeRepository/messageTypes"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages prefix="Deployment" basePackage="de.uni_paderborn.fujaba.muml.model"
+      <nestedGenPackages prefix="Deployment" basePackage="de.uni_paderborn.fujaba.muml"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//deployment">
         <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//deployment/HardwareNodeKind">
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//deployment/HardwareNodeKind/COMPUTATIONAL_RESOURCE"/>
@@ -430,7 +430,7 @@
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//deployment/LinkQualityOfService/deployment"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages prefix="Types" basePackage="de.uni_paderborn.fujaba.muml.model"
+      <nestedGenPackages prefix="Types" basePackage="de.uni_paderborn.fujaba.muml"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//types">
         <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//types/PrimitiveTypes">
           <genEnumLiterals ecoreEnumLiteral="muml.ecore#//types/PrimitiveTypes/VOID"/>
@@ -452,7 +452,7 @@
         </genClasses>
         <genClasses image="false" ecoreClass="muml.ecore#//types/DataType"/>
       </nestedGenPackages>
-      <nestedGenPackages prefix="Connector" basePackage="de.uni_paderborn.fujaba.muml.model"
+      <nestedGenPackages prefix="Connector" basePackage="de.uni_paderborn.fujaba.muml"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//connector">
         <genClasses image="false" ecoreClass="muml.ecore#//connector/ConnectorEndpoint">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -503,7 +503,7 @@
               ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteMultiInteractionEndpointInstance/last"/>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages prefix="Valuetype" basePackage="de.uni_paderborn.fujaba.muml.model"
+      <nestedGenPackages prefix="Valuetype" basePackage="de.uni_paderborn.fujaba.muml"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//valuetype">
         <genDataTypes ecoreDataType="muml.ecore#//valuetype/TimeUnit"/>
         <genClasses ecoreClass="muml.ecore#//valuetype/Range">
@@ -527,7 +527,7 @@
           </genOperations>
         </genClasses>
       </nestedGenPackages>
-      <nestedGenPackages prefix="Behavior" basePackage="de.uni_paderborn.fujaba.muml.model"
+      <nestedGenPackages prefix="Behavior" basePackage="de.uni_paderborn.fujaba.muml"
           disposableProviderFactory="true" ecorePackage="muml.ecore#//behavior">
         <genClasses image="false" ecoreClass="muml.ecore#//behavior/BehavioralElement">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
