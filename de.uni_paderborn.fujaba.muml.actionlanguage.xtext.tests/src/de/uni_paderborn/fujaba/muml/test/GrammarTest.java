@@ -35,15 +35,15 @@ import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.common.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.component.HybridPort;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.AssignOperator;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.Assignment;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.IncrementDecrementOperator;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression;
+import de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator;
+import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
+import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
+import de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator;
+import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
+import de.uni_paderborn.fujaba.muml.actionlanguage.TriggerMessageExpression;
+import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
 /* commented out by cbr
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.VariableExpression;
+import de.uni_paderborn.fujaba.muml.actionlanguage.VariableExpression;
 	commented out by cbr */
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;

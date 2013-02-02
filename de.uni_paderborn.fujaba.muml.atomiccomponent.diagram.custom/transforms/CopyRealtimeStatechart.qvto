@@ -4,7 +4,7 @@ modeltype rtsc uses "http://www.fujaba.de/muml/model/realtimestatechart/0.3.1";
 modeltype msgIFace uses "http://www.fujaba.de/muml/model/msgiface/0.3.1";
 modeltype mumlCore uses "http://www.fujaba.de/muml/model/core/0.3.1";
 modeltype ecore uses ecore;
-modeltype actionLanguage uses "http://www.fujaba.de/muml/actionlanguage/0.2.0";
+modeltype actionlanguage uses "http://www.fujaba.de/muml/actionlanguage/0.2.0";
 modeltype sdmCore uses "http://www.storydriven.org/core/0.3.1";
 modeltype sdmExpressions uses "http://www.storydriven.org/core/expressions/0.2.0";
 

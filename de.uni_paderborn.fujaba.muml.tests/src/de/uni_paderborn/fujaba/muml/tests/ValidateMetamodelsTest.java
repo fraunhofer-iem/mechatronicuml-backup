@@ -52,11 +52,11 @@ public class ValidateMetamodelsTest {
 		TestUtilities.loadResource(resourceSet,
 				"org.storydriven.storydiagrams", "/model/storydiagrams.ecore");
 		TestUtilities.loadResource(resourceSet,
-				"de.uni_paderborn.fujaba.muml.model", "/model/muml.ecore");
+				"de.uni_paderborn.fujaba.muml", "/model/muml.ecore");
 		TestUtilities.loadResource(resourceSet,
-				"de.uni_paderborn.fujaba.muml.model.actionLanguage", "/model/actionLanguage.ecore");
+				"de.uni_paderborn.fujaba.muml.actionlanguage", "/model/actionlanguage.ecore");
 		TestUtilities.loadResource(resourceSet,
-				"de.uni_paderborn.fujaba.muml.model.componentstorydiagram", "/model/ComponentStoryDiagram.ecore");
+				"de.uni_paderborn.fujaba.muml.componentstorydiagram", "/model/ComponentStoryDiagram.ecore");
 		TestUtilities.loadResource(resourceSet,
 				"de.uni_paderborn.fujaba.muml.reconfiguration", "/model/MumlReconfiguration.ecore");
 		

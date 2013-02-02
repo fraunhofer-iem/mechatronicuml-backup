@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.model.componentstorydiagram/src"
-    modelPluginID="de.uni_paderborn.fujaba.muml.model.componentstorydiagram" modelName="ComponentStoryDiagram"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.componentstorydiagram/src"
+    modelPluginID="de.uni_paderborn.fujaba.muml.componentstorydiagram" modelName="ComponentStoryDiagram"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml ../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.genmodel#//reconfiguration ../../org.storydriven.storydiagrams/model/storydiagrams.uml.genmodel#//storydiagrams">
   <foreignModel>ComponentStoryDiagram.ecore</foreignModel>
-  <genPackages prefix="Componentstorydiagram" basePackage="de.uni_paderborn.fujaba.muml.model"
+  <genPackages prefix="Componentstorydiagram" basePackage="de.uni_paderborn.fujaba.muml"
       disposableProviderFactory="true" ecorePackage="ComponentStoryDiagram.ecore#/">
-    <nestedGenPackages prefix="Controlflow" basePackage="de.uni_paderborn.fujaba.muml.model.componentstorydiagram"
+    <nestedGenPackages prefix="Controlflow" basePackage="de.uni_paderborn.fujaba.muml.componentstorydiagram"
         disposableProviderFactory="true" ecorePackage="ComponentStoryDiagram.ecore#//controlflow">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeStrategy">
         <genEnumLiterals ecoreEnumLiteral="ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeStrategy/ATOMIC_SWITCHING"/>
@@ -30,7 +30,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeNode/fadingFunctions"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Componentstorypattern" basePackage="de.uni_paderborn.fujaba.muml.model.componentstorydiagram"
+    <nestedGenPackages prefix="Componentstorypattern" basePackage="de.uni_paderborn.fujaba.muml.componentstorydiagram"
         disposableProviderFactory="true" ecorePackage="ComponentStoryDiagram.ecore#//componentstorypattern">
       <genClasses ecoreClass="ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPattern">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPattern/thisVariable"/>

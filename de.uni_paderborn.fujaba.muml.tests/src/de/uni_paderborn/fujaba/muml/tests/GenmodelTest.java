@@ -50,7 +50,7 @@ public class GenmodelTest extends TraverseTest {
 	/**
 	 * The workspace-relative path to the muml.model project.
 	 */
-	private static final String GENMODEL_PROJECT = "de.uni_paderborn.fujaba.muml.model";
+	private static final String GENMODEL_PROJECT = "de.uni_paderborn.fujaba.muml";
 
 	/**
 	 * The project-relative path to the muml.genmodel file.

@@ -1,87 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.model.actionLanguage/src"
-    modelPluginID="de.uni_paderborn.fujaba.muml.model.actionLanguage" modelName="Actionlanguage"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.actionlanguage/src"
+    modelPluginID="de.uni_paderborn.fujaba.muml.actionlanguage" modelName="Actionlanguage"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml ../../org.storydriven.core/model/core.uml.genmodel#//core">
-  <foreignModel>actionLanguage.ecore</foreignModel>
-  <genPackages prefix="Actionlanguage" basePackage="de.uni_paderborn.fujaba.muml.model"
-      disposableProviderFactory="true" ecorePackage="actionLanguage.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionLanguage.ecore#//AssignOperator">
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/UNSET"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/ASSIGN"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/PLUS_EQUAL"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/EQUAL_PLUS"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/MINUS_EQUAL"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//AssignOperator/EQUAL_MINUS"/>
+  <foreignModel>actionlanguage.ecore</foreignModel>
+  <genPackages prefix="Actionlanguage" basePackage="de.uni_paderborn.fujaba.muml"
+      disposableProviderFactory="true" ecorePackage="actionlanguage.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionlanguage.ecore#//AssignOperator">
+      <genEnumLiterals ecoreEnumLiteral="actionlanguage.ecore#//AssignOperator/UNSET"/>
+      <genEnumLiterals ecoreEnumLiteral="actionlanguage.ecore#//AssignOperator/ASSIGN"/>
+      <genEnumLiterals ecoreEnumLiteral="actionlanguage.ecore#//AssignOperator/PLUS_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="actionlanguage.ecore#//AssignOperator/EQUAL_PLUS"/>
+      <genEnumLiterals ecoreEnumLiteral="actionlanguage.ecore#//AssignOperator/MINUS_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="actionlanguage.ecore#//AssignOperator/EQUAL_MINUS"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionLanguage.ecore#//IncrementDecrementOperator">
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//IncrementDecrementOperator/UNSET"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//IncrementDecrementOperator/INCREMENT"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//IncrementDecrementOperator/DECREMENT"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionlanguage.ecore#//IncrementDecrementOperator">
+      <genEnumLiterals ecoreEnumLiteral="actionlanguage.ecore#//IncrementDecrementOperator/UNSET"/>
+      <genEnumLiterals ecoreEnumLiteral="actionlanguage.ecore#//IncrementDecrementOperator/INCREMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="actionlanguage.ecore#//IncrementDecrementOperator/DECREMENT"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionLanguage.ecore#//PositionSelectorKind">
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//PositionSelectorKind/SELF"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//PositionSelectorKind/FIRST"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//PositionSelectorKind/LAST"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//PositionSelectorKind/PREV"/>
-      <genEnumLiterals ecoreEnumLiteral="actionLanguage.ecore#//PositionSelectorKind/NEXT"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="actionlanguage.ecore#//PositionSelectorKind">
+      <genEnumLiterals ecoreEnumLiteral="actionlanguage.ecore#//PositionSelectorKind/SELF"/>
+      <genEnumLiterals ecoreEnumLiteral="actionlanguage.ecore#//PositionSelectorKind/FIRST"/>
+      <genEnumLiterals ecoreEnumLiteral="actionlanguage.ecore#//PositionSelectorKind/LAST"/>
+      <genEnumLiterals ecoreEnumLiteral="actionlanguage.ecore#//PositionSelectorKind/PREV"/>
+      <genEnumLiterals ecoreEnumLiteral="actionlanguage.ecore#//PositionSelectorKind/NEXT"/>
     </genEnums>
-    <genClasses ecoreClass="actionLanguage.ecore#//Block">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Block/expressions"/>
+    <genClasses ecoreClass="actionlanguage.ecore#//Block">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//Block/expressions"/>
     </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//Loop">
+    <genClasses ecoreClass="actionlanguage.ecore#//Loop">
       <genFeatures property="None" children="true" createChild="true" propertyDescription=""
-          ecoreFeature="ecore:EReference actionLanguage.ecore#//Loop/block"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Loop/loopTest"/>
+          ecoreFeature="ecore:EReference actionlanguage.ecore#//Loop/block"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//Loop/loopTest"/>
     </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//WhileLoop"/>
-    <genClasses ecoreClass="actionLanguage.ecore#//DoWhileLoop"/>
-    <genClasses ecoreClass="actionLanguage.ecore#//Assignment">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//Assignment/assignOperator"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Assignment/rhs_assignExpression"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//Assignment/incrementDecrementOperator"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//Assignment/lhs_typedNamedElementExpression"/>
+    <genClasses ecoreClass="actionlanguage.ecore#//WhileLoop"/>
+    <genClasses ecoreClass="actionlanguage.ecore#//DoWhileLoop"/>
+    <genClasses ecoreClass="actionlanguage.ecore#//Assignment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionlanguage.ecore#//Assignment/assignOperator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//Assignment/rhs_assignExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionlanguage.ecore#//Assignment/incrementDecrementOperator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//Assignment/lhs_typedNamedElementExpression"/>
     </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//ForLoop">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//ForLoop/initializeExpression"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//ForLoop/countingExpression"/>
+    <genClasses ecoreClass="actionlanguage.ecore#//ForLoop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//ForLoop/initializeExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//ForLoop/countingExpression"/>
     </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//IfStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//IfStatement/ifCondition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//IfStatement/ifBlock"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//IfStatement/elseIfConditions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//IfStatement/elseIfBlocks"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//IfStatement/elseBlock"/>
+    <genClasses ecoreClass="actionlanguage.ecore#//IfStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//IfStatement/ifCondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//IfStatement/ifBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//IfStatement/elseIfConditions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//IfStatement/elseIfBlocks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//IfStatement/elseBlock"/>
     </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//OperationCall">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//OperationCall/operation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//OperationCall/parameterBinding"/>
+    <genClasses ecoreClass="actionlanguage.ecore#//OperationCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//OperationCall/operation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//OperationCall/parameterBinding"/>
     </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//ReturnStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//ReturnStatement/expression"/>
+    <genClasses ecoreClass="actionlanguage.ecore#//ReturnStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//ReturnStatement/expression"/>
     </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//TriggerMessageExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//TriggerMessageExpression/messageType"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//TriggerMessageExpression/parameter"/>
+    <genClasses ecoreClass="actionlanguage.ecore#//TriggerMessageExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//TriggerMessageExpression/messageType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//TriggerMessageExpression/parameter"/>
     </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//DiscreteInteractionEndpointReference">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//DiscreteInteractionEndpointReference/typedNamedElementExpression"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//DiscreteInteractionEndpointReference/position"/>
+    <genClasses ecoreClass="actionlanguage.ecore#//DiscreteInteractionEndpointReference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//DiscreteInteractionEndpointReference/typedNamedElementExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//DiscreteInteractionEndpointReference/position"/>
     </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//PositionSelector">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionLanguage.ecore#//PositionSelector/kind"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//PositionSelector/successor"/>
+    <genClasses ecoreClass="actionlanguage.ecore#//PositionSelector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actionlanguage.ecore#//PositionSelector/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//PositionSelector/successor"/>
     </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//LocalVariableDeclarationStatement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//LocalVariableDeclarationStatement/variable"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//LocalVariableDeclarationStatement/initializeExpression"/>
-      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference actionLanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks"/>
+    <genClasses ecoreClass="actionlanguage.ecore#//LocalVariableDeclarationStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//LocalVariableDeclarationStatement/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//LocalVariableDeclarationStatement/initializeExpression"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference actionlanguage.ecore#//LocalVariableDeclarationStatement/allSurroundingBlocks"/>
     </genClasses>
-    <genClasses ecoreClass="actionLanguage.ecore#//TypedNamedElementExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//TypedNamedElementExpression/typedNamedElement"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionLanguage.ecore#//TypedNamedElementExpression/indices"/>
+    <genClasses ecoreClass="actionlanguage.ecore#//TypedNamedElementExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//TypedNamedElementExpression/typedNamedElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actionlanguage.ecore#//TypedNamedElementExpression/indices"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

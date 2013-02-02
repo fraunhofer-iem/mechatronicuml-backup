@@ -6,7 +6,7 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.muml.model/model/muml.genmodel#//muml ../../org.storydriven.core/model/core.uml.genmodel#//core">
   <foreignModel>RuntimeModel.ecore</foreignModel>
-  <genPackages prefix="Runtime" basePackage="de.uni_paderborn.fujaba.muml.model" disposableProviderFactory="true"
+  <genPackages prefix="Runtime" basePackage="de.uni_paderborn.fujaba.muml" disposableProviderFactory="true"
       ecorePackage="RuntimeModel.ecore#/">
     <genDataTypes ecoreDataType="RuntimeModel.ecore#//JavaObject"/>
     <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeComponentInstance"/>

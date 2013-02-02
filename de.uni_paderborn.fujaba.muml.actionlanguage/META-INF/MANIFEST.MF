@@ -10,6 +10,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.storydriven.core;visibility:=reexport,
  de.uni_paderborn.fujaba.muml;bundle-version="0.3.1"
 Bundle-ActivationPolicy: lazy
-Export-Package: de.uni_paderborn.fujaba.muml.model.actionLanguage,
- de.uni_paderborn.fujaba.muml.model.actionLanguage.impl,
- de.uni_paderborn.fujaba.muml.model.actionLanguage.util
+Export-Package: de.uni_paderborn.fujaba.muml.actionlanguage,
+ de.uni_paderborn.fujaba.muml.actionlanguage.impl,
+ de.uni_paderborn.fujaba.muml.actionlanguage.util

@@ -20,11 +20,11 @@ public class EditPluginXmlPackageTest extends PackageTest {
 
 	private static Resource ecoreModel;
 	
-	public static final String PLUGIN_XML_LOCATION = "../de.uni_paderborn.fujaba.muml.model.edit/plugin.xml";
+	public static final String PLUGIN_XML_LOCATION = "../de.uni_paderborn.fujaba.muml.edit/plugin.xml";
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		ecoreModel = loadEcoreResource("de.uni_paderborn.fujaba.muml.model", "/model/muml.ecore");
+		ecoreModel = loadEcoreResource("de.uni_paderborn.fujaba.muml", "/model/muml.ecore");
 	}
 	
 	@Test

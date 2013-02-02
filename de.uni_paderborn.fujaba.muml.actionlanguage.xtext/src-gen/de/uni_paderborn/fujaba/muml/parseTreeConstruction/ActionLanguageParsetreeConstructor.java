@@ -70,12 +70,12 @@ protected class ThisRootNode extends RootToken {
 
 /************ begin Rule Block ****************
  *
- * Block returns actionLanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
- * 	{actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=Expression;
+ * Block returns actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
+ * 	{actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=Expression;
  *
  **/
 
-// {actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=Expression
+// {actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=Expression
 protected class Block_Alternatives extends AlternativesToken {
 
 	public Block_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -105,7 +105,7 @@ protected class Block_Alternatives extends AlternativesToken {
 
 }
 
-// {actionLanguage::Block} "{" expressions+=ExpressionStartRule* "}"
+// {actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}"
 protected class Block_Group_0 extends GroupToken {
 	
 	public Block_Group_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -127,7 +127,7 @@ protected class Block_Group_0 extends GroupToken {
 
 }
 
-// {actionLanguage::Block}
+// {actionlanguage::Block}
 protected class Block_BlockAction_0_0 extends ActionToken  {
 
 	public Block_BlockAction_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -299,7 +299,7 @@ protected class Block_ExpressionsAssignment_1 extends AssignmentToken  {
  *
  * // TODO: clarify if it makes sense to allow arbitrary expressions for
  * // the initializeExpression and countingExpression
- * ForLoop returns actionLanguage::ForLoop:
+ * ForLoop returns actionlanguage::ForLoop:
  * 	"for" "(" initializeExpression=Assignment loopTest=Expression ";" countingExpression=ForLoopCountingExpression ")"
  * 	block=Block;
  *
@@ -612,7 +612,7 @@ protected class ForLoop_BlockAssignment_7 extends AssignmentToken  {
 
 /************ begin Rule ForLoopCountingExpression ****************
  *
- * ForLoopCountingExpression returns actionLanguage::Assignment:
+ * ForLoopCountingExpression returns actionlanguage::Assignment:
  * 	lhs_typedNamedElementExpression=TypedNamedElementExpression (incrementDecrementOperator=IncrementDecrementOperator |
  * 	assignOperator=AssignOperator rhs_assignExpression=Expression);
  *
@@ -860,7 +860,7 @@ protected class ForLoopCountingExpression_Rhs_assignExpressionAssignment_1_1_1 e
 
 /************ begin Rule WhileLoop ****************
  *
- * WhileLoop returns actionLanguage::WhileLoop:
+ * WhileLoop returns actionlanguage::WhileLoop:
  * 	"while" "(" loopTest=Expression ")" block=Block;
  *
  **/
@@ -1057,7 +1057,7 @@ protected class WhileLoop_BlockAssignment_4 extends AssignmentToken  {
 
 /************ begin Rule DoWhileLoop ****************
  *
- * DoWhileLoop returns actionLanguage::DoWhileLoop:
+ * DoWhileLoop returns actionlanguage::DoWhileLoop:
  * 	"do" block=Block "while" "(" loopTest=Expression ");";
  *
  **/
@@ -1276,7 +1276,7 @@ protected class DoWhileLoop_RightParenthesisSemicolonKeyword_5 extends KeywordTo
 
 /************ begin Rule IfStatement ****************
  *
- * IfStatement returns actionLanguage::IfStatement:
+ * IfStatement returns actionlanguage::IfStatement:
  * 	"if" "(" ifCondition=Expression ")" ifBlock=Block ("elseif" "(" elseIfConditions+=Expression ")" elseIfBlocks+=Block)*
  * 	("else" elseBlock=Block)?;
  *
@@ -1751,12 +1751,12 @@ protected class IfStatement_ElseBlockAssignment_6_1 extends AssignmentToken  {
 
 /************ begin Rule ReturnStatement ****************
  *
- * ReturnStatement returns actionLanguage::ReturnStatement:
- * 	{actionLanguage::ReturnStatement} "return" expression=Expression ";";
+ * ReturnStatement returns actionlanguage::ReturnStatement:
+ * 	{actionlanguage::ReturnStatement} "return" expression=Expression ";";
  *
  **/
 
-// {actionLanguage::ReturnStatement} "return" expression=Expression ";"
+// {actionlanguage::ReturnStatement} "return" expression=Expression ";"
 protected class ReturnStatement_Group extends GroupToken {
 	
 	public ReturnStatement_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1785,7 +1785,7 @@ protected class ReturnStatement_Group extends GroupToken {
 
 }
 
-// {actionLanguage::ReturnStatement}
+// {actionlanguage::ReturnStatement}
 protected class ReturnStatement_ReturnStatementAction_0 extends ActionToken  {
 
 	public ReturnStatement_ReturnStatementAction_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2212,7 +2212,7 @@ protected class ExpressionStartRule_LocalVariableDeclarationStatementParserRuleC
 /************ begin Rule Assignment ****************
  *
  * // Assignment
- * Assignment returns actionLanguage::Assignment:
+ * Assignment returns actionlanguage::Assignment:
  * 	lhs_typedNamedElementExpression=TypedNamedElementExpression assignOperator=AssignOperator
  * 	rhs_assignExpression=Expression ";";
  *
@@ -2403,7 +2403,7 @@ protected class Assignment_SemicolonKeyword_3 extends KeywordToken  {
  *
  * // end of assignment
  * // local variable declaration
- * LocalVariableDeclarationStatement returns actionLanguage::LocalVariableDeclarationStatement:
+ * LocalVariableDeclarationStatement returns actionlanguage::LocalVariableDeclarationStatement:
  * 	variable=LocalVariableDeclaration (":=" initializeExpression=Expression)? ";";
  *
  **/
@@ -5074,12 +5074,12 @@ protected class LiteralExpression_ValueAssignment_1 extends AssignmentToken  {
  *
  * ExtendedTypedNamedElementExpression returns expressions::Expression:
  * 	TypedNamedElementExpression
- * 	({actionLanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "."
+ * 	({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "."
  * 	position=PositionSelectorExpression)?;
  *
  **/
 
-// TypedNamedElementExpression ({actionLanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
+// TypedNamedElementExpression ({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
 // "." position=PositionSelectorExpression)?
 protected class ExtendedTypedNamedElementExpression_Group extends GroupToken {
 	
@@ -5147,7 +5147,7 @@ protected class ExtendedTypedNamedElementExpression_TypedNamedElementExpressionP
 	}	
 }
 
-// ({actionLanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "."
+// ({actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current} "."
 // position=PositionSelectorExpression)?
 protected class ExtendedTypedNamedElementExpression_Group_1 extends GroupToken {
 	
@@ -5177,7 +5177,7 @@ protected class ExtendedTypedNamedElementExpression_Group_1 extends GroupToken {
 
 }
 
-// {actionLanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
+// {actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression=current}
 protected class ExtendedTypedNamedElementExpression_DiscreteInteractionEndpointReferenceTypedNamedElementExpressionAction_1_0 extends ActionToken  {
 
 	public ExtendedTypedNamedElementExpression_DiscreteInteractionEndpointReferenceTypedNamedElementExpressionAction_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5281,7 +5281,7 @@ protected class ExtendedTypedNamedElementExpression_PositionAssignment_1_2 exten
 
 /************ begin Rule TypedNamedElementExpression ****************
  *
- * TypedNamedElementExpression returns actionLanguage::TypedNamedElementExpression:
+ * TypedNamedElementExpression returns actionlanguage::TypedNamedElementExpression:
  * 	typedNamedElement=[behavior::TypedNamedElement] ("[" indices+=ArithmeticExpression "]")*;
  *
  **/
@@ -5472,7 +5472,7 @@ protected class TypedNamedElementExpression_RightSquareBracketKeyword_1_2 extend
 
 /************ begin Rule NoAttributeSelectorExpression ****************
  *
- * NoAttributeSelectorExpression returns actionLanguage::DiscreteInteractionEndpointReference:
+ * NoAttributeSelectorExpression returns actionlanguage::DiscreteInteractionEndpointReference:
  * 	position=PositionSelectorExpression;
  *
  **/
@@ -5529,7 +5529,7 @@ protected class NoAttributeSelectorExpression_PositionAssignment extends Assignm
 
 /************ begin Rule PositionSelectorExpression ****************
  *
- * PositionSelectorExpression returns actionLanguage::PositionSelector:
+ * PositionSelectorExpression returns actionlanguage::PositionSelector:
  * 	kind=PositionSelectorKind ("." successor=PositionSelectorExpression)?;
  *
  **/
@@ -5694,7 +5694,7 @@ protected class PositionSelectorExpression_SuccessorAssignment_1_1 extends Assig
 
 /************ begin Rule OperationCall ****************
  *
- * OperationCall returns actionLanguage::OperationCall:
+ * OperationCall returns actionlanguage::OperationCall:
  * 	operation=[behavior::Operation] "(" (parameterBinding+=ParamaterBinding ("," parameterBinding+=ParamaterBinding)*)?
  * 	")";
  *
@@ -6150,7 +6150,7 @@ protected class ParamaterBinding_ValueAssignment_3 extends AssignmentToken  {
 /************ begin Rule TriggerMessageExpression ****************
  *
  * // TriggerMessageExpression
- * TriggerMessageExpression returns actionLanguage::TriggerMessageExpression:
+ * TriggerMessageExpression returns actionlanguage::TriggerMessageExpression:
  * 	messageType=[msgtype::MessageType] "." parameter=[behavior::Parameter];
  *
  **/

@@ -25,7 +25,7 @@ public class ModelPluginXmlPackageTest extends PackageTest {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		ecoreModel = loadEcoreResource("de.uni_paderborn.fujaba.muml.model", "/model/muml.ecore");
+		ecoreModel = loadEcoreResource("de.uni_paderborn.fujaba.muml", "/model/muml.ecore");
 	}
 	
 	@Test

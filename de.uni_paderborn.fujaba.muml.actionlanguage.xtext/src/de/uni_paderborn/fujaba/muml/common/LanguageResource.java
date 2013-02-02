@@ -21,7 +21,7 @@ import com.google.inject.name.Names;
 
 import de.uni_paderborn.fujaba.muml.ActionLanguageStandaloneSetup;
 import de.uni_paderborn.fujaba.muml.scoping.ActionLanguageScopeProviderFactory;
-import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
+import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 
 public class LanguageResource {
 	private static Injector injector = null;

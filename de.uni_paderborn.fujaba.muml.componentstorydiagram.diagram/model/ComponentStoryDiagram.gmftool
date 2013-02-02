@@ -25,7 +25,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/obj16/ComponentStoryDiagramFile.gif"
-            bundle="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram"/>
+            bundle="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -34,7 +34,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/obj16/ComponentStoryDiagramFile.gif"
-            bundle="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram"/>
+            bundle="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -43,7 +43,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/obj16/ComponentStoryDiagramFile.gif"
-            bundle="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram"/>
+            bundle="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"

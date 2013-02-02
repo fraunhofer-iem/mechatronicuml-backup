@@ -12,7 +12,7 @@
    <extension
          point="de.uni_paderborn.fujaba.modelinstance.version">
       <artefact
-            id="de.uni_paderborn.fujaba.muml.model.metamodel"
+            id="de.uni_paderborn.fujaba.muml.metamodel"
             name="muml metamodel"
             resource="plugin.xml"
             version="0.3.2">

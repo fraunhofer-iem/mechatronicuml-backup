@@ -40,7 +40,7 @@ public class ComponentStoryDiagramDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram"; //$NON-NLS-1$
+	public static final String ID = "de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram"; //$NON-NLS-1$
 
 	/**
 	 * @generated

@@ -108,7 +108,7 @@ public class MetamodelOCLTest extends TraverseTest {
 
 		// Load resource and add model package
 		Resource mumlModel = TestUtilities.loadResource(resourceSet,
-				"de.uni_paderborn.fujaba.muml.model", "/model/muml.ecore");
+				"de.uni_paderborn.fujaba.muml", "/model/muml.ecore");
 		EPackage muml = (EPackage) mumlModel.getContents().get(0);
 		packages.add(muml.getESubpackages().get(0));
 

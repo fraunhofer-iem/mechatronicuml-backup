@@ -13,9 +13,9 @@ Workflow {
 	bean = StandaloneSetup {
 		scanClassPath  = true
 		platformUri = "${runtimeProject}/.."
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage"
+		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage"
 	
-		// registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.muml.model.actionLanguage/model/actionLanguage.genmodel"
+		// registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.genmodel"
 	
 	}
 

@@ -28,7 +28,7 @@ public class GeneratedTest {
 	/**
 	 * The workspace-relative path to the muml.model project.
 	 */
-	private static final String ECORE_MODEL_PROJECT = "de.uni_paderborn.fujaba.muml.model";
+	private static final String ECORE_MODEL_PROJECT = "de.uni_paderborn.fujaba.muml";
 
 	/**
 	 * The project-relative path to the muml.ecore file.
@@ -68,7 +68,7 @@ public class GeneratedTest {
 		TestUtilities.registerWorkspaceProject("org.storydriven.storydiagrams");
 		TestUtilities.registerWorkspaceProject("de.uni_paderborn.fujaba.modelinstance");
 		TestUtilities
-				.registerWorkspaceProject("de.uni_paderborn.fujaba.muml.model.actionLanguage");
+				.registerWorkspaceProject("de.uni_paderborn.fujaba.muml.actionlanguage");
 
 		// Add URIMap for Ecore.ecore to local file
 		TestUtilities

@@ -1,14 +1,14 @@
-«IMPORT de::uni_paderborn::fujaba::muml::actionLanguage»
+ï¿½IMPORT de::uni_paderborn::fujaba::muml::actionlanguageï¿½
 
-«EXTENSION templates::Extensions»
+ï¿½EXTENSION templates::Extensionsï¿½
 
-«DEFINE main FOR Greeting-»
-«FILE name+".txt"-»
+ï¿½DEFINE main FOR Greeting-ï¿½
+ï¿½FILE name+".txt"-ï¿½
 This is an example of a generated file.
 
-The input element was "Hello «name»!"
+The input element was "Hello ï¿½nameï¿½!"
 
 All greetings in the same file:
-«FOREACH ((Model)eContainer()).sortedGreetings() AS g SEPARATOR ', '»«g.name»«ENDFOREACH»
-«ENDFILE-»
-«ENDDEFINE»
+ï¿½FOREACH ((Model)eContainer()).sortedGreetings() AS g SEPARATOR ', 'ï¿½ï¿½g.nameï¿½ï¿½ENDFOREACHï¿½
+ï¿½ENDFILE-ï¿½
+ï¿½ENDDEFINEï¿½

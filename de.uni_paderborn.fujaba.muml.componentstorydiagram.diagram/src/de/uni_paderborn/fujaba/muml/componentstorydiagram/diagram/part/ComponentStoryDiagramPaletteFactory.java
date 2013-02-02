@@ -88,7 +88,7 @@ public class ComponentStoryDiagramPaletteFactory {
 						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentStoryNode_3001));
 		entry.setId("createComponentStoryNode2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram/icons/obj16/ComponentStoryDiagramFile.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/icons/obj16/ComponentStoryDiagramFile.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -104,7 +104,7 @@ public class ComponentStoryDiagramPaletteFactory {
 						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ControllerExchangeNode_3021));
 		entry.setId("createControllerExchangeNode3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram/icons/obj16/ComponentStoryDiagramFile.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/icons/obj16/ComponentStoryDiagramFile.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -120,7 +120,7 @@ public class ComponentStoryDiagramPaletteFactory {
 						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.FadingFunction_3023));
 		entry.setId("createFadingFunction4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram/icons/obj16/ComponentStoryDiagramFile.gif")); //$NON-NLS-1$
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/icons/obj16/ComponentStoryDiagramFile.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
