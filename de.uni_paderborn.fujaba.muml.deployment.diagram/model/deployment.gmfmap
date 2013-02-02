@@ -7,10 +7,10 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/deployment/Deployment/hardwareNodes"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//deployment/Deployment/hardwareNodes"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/deployment/HardwareNode"/>
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//deployment/HardwareNode"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers
@@ -38,10 +38,10 @@
           href="deployment.gmfgraph#HardwareNode"/>
       <children>
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/deployment/HardwareNode/hardwarePorts"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//deployment/HardwareNode/hardwarePorts"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/deployment/HardwarePort"/>
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//deployment/HardwarePort"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -73,9 +73,9 @@
   </nodes>
   <links>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/deployment/CommunicationLink"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//deployment/CommunicationLink"/>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/deployment/Deployment/communicationLinks"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//deployment/Deployment/communicationLinks"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="deployment.gmftool#//@palette/@tools.0/@tools.2"/>
@@ -83,10 +83,10 @@
         href="deployment.gmfgraph#CommunicationLink"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
     <creationConstraints>
       <sourceEnd
           body="self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::OUT or self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT"/>
@@ -98,9 +98,9 @@
     <diagramCanvas
         href="deployment.gmfgraph#deployment"/>
     <domainModel
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/deployment"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//deployment"/>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/deployment/Deployment"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//deployment/Deployment"/>
     <palette
         href="deployment.gmftool#//@palette"/>
   </diagram>

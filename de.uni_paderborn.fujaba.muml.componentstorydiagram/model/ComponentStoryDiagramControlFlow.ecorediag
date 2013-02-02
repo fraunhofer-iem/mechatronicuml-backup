@@ -316,7 +316,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_lxpDW7xNEeG9csLsexCudA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_lxpDUbxNEeG9csLsexCudA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/core/Parameter"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//core/Parameter"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lxpDUrxNEeG9csLsexCudA" x="1270" y="100" width="102" height="60"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_VULLUbxNEeG9csLsexCudA"/>

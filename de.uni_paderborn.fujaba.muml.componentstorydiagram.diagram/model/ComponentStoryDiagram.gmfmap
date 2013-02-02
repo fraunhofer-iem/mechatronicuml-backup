@@ -512,10 +512,10 @@
         href="ComponentStoryDiagram.gmfgraph#AssemblyVariable"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
   </links>
   <links>
     <domainMetaElement
@@ -538,10 +538,10 @@
         href="ComponentStoryDiagram.gmfgraph#DelegationVariable"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/connector/Connector/connectorEndpoints"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
   </links>
   <diagram>
     <diagramCanvas

@@ -10,7 +10,7 @@
         href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/component/AtomicComponent"/>
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/AtomicComponent"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers
@@ -37,10 +37,10 @@
       <children
           referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/component/Component/ports"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Component/ports"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/component/HybridPort"/>
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/HybridPort"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -69,29 +69,29 @@
       <children
           referencedChild="//@nodes.0/@ownedChild/@children.1/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/component/Component/ports"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Component/ports"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/component/DiscretePort"/>
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DiscretePort"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
                 xsi:type="gmfmap:ReferenceNewElementSpec">
               <feature
                   xsi:type="ecore:EReference"
-                  href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/connector/DiscreteInteractionEndpoint/cardinality"/>
+                  href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpoint/cardinality"/>
               <newElementInitializers>
                 <initializers
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/valuetype/Range/lowerBound"/>
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range/lowerBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/valuetype/NaturalNumber/value"/>
+                          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber/value"/>
                       <value
                           body="1"/>
                     </initializers>
@@ -101,13 +101,13 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/valuetype/Range/upperBound"/>
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range/upperBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/valuetype/NaturalNumber/value"/>
+                          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/NaturalNumber/value"/>
                       <value
                           body="1"/>
                     </initializers>
@@ -148,10 +148,10 @@
       <children
           referencedChild="//@nodes.0/@ownedChild/@children.2/@ownedChild">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/component/Component/ports"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Component/ports"/>
         <ownedChild>
           <domainMetaElement
-              href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/component/ContinuousPort"/>
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/ContinuousPort"/>
           <domainInitializer
               xsi:type="gmfmap:FeatureSeqInitializer">
             <initializers
@@ -183,7 +183,7 @@
     <diagramCanvas
         href="atomiccomponent.gmfgraph#componenteditor"/>
     <domainModel
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/component"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component"/>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
     <palette
