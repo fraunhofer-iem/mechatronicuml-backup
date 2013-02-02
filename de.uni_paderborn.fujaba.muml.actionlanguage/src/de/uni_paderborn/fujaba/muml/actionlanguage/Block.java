@@ -25,7 +25,7 @@ import org.storydriven.core.expressions.Expression;
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getBlock()
+ * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getBlock()
  * @model
  * @generated
  */
@@ -43,7 +43,7 @@ public interface Block extends Expression {
 	 * List of expressions may be attached as a body of a loop or represent a path of a conditional statement.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Expressions</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getBlock_Expressions()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getBlock_Expressions()
 	 * @model containment="true"
 	 * @generated
 	 */

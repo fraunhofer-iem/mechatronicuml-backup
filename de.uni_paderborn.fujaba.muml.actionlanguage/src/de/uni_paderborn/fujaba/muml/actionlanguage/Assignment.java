@@ -27,7 +27,7 @@ import org.storydriven.core.expressions.Expression;
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getAssignment()
+ * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getAssignment()
  * @model
  * @generated
  */
@@ -47,7 +47,7 @@ public interface Assignment extends Expression {
 	 * @return the value of the '<em>Assign Operator</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator
 	 * @see #setAssignOperator(AssignOperator)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getAssignment_AssignOperator()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getAssignment_AssignOperator()
 	 * @model
 	 * @generated
 	 */
@@ -77,7 +77,7 @@ public interface Assignment extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Rhs assign Expression</em>' containment reference.
 	 * @see #setRhs_assignExpression(Expression)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getAssignment_Rhs_assignExpression()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getAssignment_Rhs_assignExpression()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -108,7 +108,7 @@ public interface Assignment extends Expression {
 	 * @return the value of the '<em>Increment Decrement Operator</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator
 	 * @see #setIncrementDecrementOperator(IncrementDecrementOperator)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getAssignment_IncrementDecrementOperator()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getAssignment_IncrementDecrementOperator()
 	 * @model
 	 * @generated
 	 */
@@ -134,7 +134,7 @@ public interface Assignment extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Lhs typed Named Element Expression</em>' containment reference.
 	 * @see #setLhs_typedNamedElementExpression(TypedNamedElementExpression)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getAssignment_Lhs_typedNamedElementExpression()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getAssignment_Lhs_typedNamedElementExpression()
 	 * @model containment="true"
 	 * @generated
 	 */

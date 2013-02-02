@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.storydriven.core.impl.ExtendableElementImpl;
 import de.uni_paderborn.fujaba.muml.runtime.MessageOnConnector;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeConnectorInstance;
@@ -35,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
  *
  * @generated
  */
-public class MessageOnConnectorImpl extends EObjectImpl implements MessageOnConnector {
+public class MessageOnConnectorImpl extends ExtendableElementImpl implements MessageOnConnector {
 	/**
 	 * The cached value of the '{@link #getReceiver() <em>Receiver</em>}' reference.
 	 * <!-- begin-user-doc -->

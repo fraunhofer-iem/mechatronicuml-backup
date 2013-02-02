@@ -6,11 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.actionlanguage;
 
+import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
-
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getLocalVariableDeclarationStatement()
+ * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getLocalVariableDeclarationStatement()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueName'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueName='-- check if no variable with the same name was defined before\nself.allSurroundingBlocks->collect(\n\texpressions\n)->select(\n\toclIsKindOf(LocalVariableDeclarationStatement)\n)->collect(\n\toclAsType(LocalVariableDeclarationStatement)\n)->select(\n\tvariable.name = self.variable.name\n)->isUnique(variable.name)'"
  * @generated
@@ -42,7 +41,7 @@ public interface LocalVariableDeclarationStatement extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Variable</em>' containment reference.
 	 * @see #setVariable(Variable)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getLocalVariableDeclarationStatement_Variable()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getLocalVariableDeclarationStatement_Variable()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
@@ -68,7 +67,7 @@ public interface LocalVariableDeclarationStatement extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Initialize Expression</em>' containment reference.
 	 * @see #setInitializeExpression(Expression)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getLocalVariableDeclarationStatement_InitializeExpression()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getLocalVariableDeclarationStatement_InitializeExpression()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -94,7 +93,7 @@ public interface LocalVariableDeclarationStatement extends Expression {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>All Surrounding Blocks</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getLocalVariableDeclarationStatement_AllSurroundingBlocks()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getLocalVariableDeclarationStatement_AllSurroundingBlocks()
 	 * @model transient="true" changeable="false" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- collect all blocks which surround this LocalVariableDeclarationStatement\nself.eContainer()->closure(c : ecore::EObject |\n\tif c.eContainer().oclIsKindOf(core::expressions::Expression) then\n\t\tc.eContainer()\n\telse\n\t\tc\n\tendif\n)->union(\n\tSet{eContainer()}\n)->select(oclIsKindOf(Block))->collect(\n\toclAsType(Block)\n)->asOrderedSet()'"
 	 * @generated

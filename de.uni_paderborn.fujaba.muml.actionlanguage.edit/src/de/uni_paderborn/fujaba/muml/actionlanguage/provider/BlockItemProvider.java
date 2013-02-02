@@ -25,8 +25,8 @@ import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguageFactory;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 
 
@@ -82,7 +82,7 @@ public class BlockItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS);
+			childrenFeatures.add(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS);
 		}
 		return childrenFeatures;
 	}
@@ -137,7 +137,7 @@ public class BlockItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Block.class)) {
-			case ActionLanguagePackage.BLOCK__EXPRESSIONS:
+			case ActionlanguagePackage.BLOCK__EXPRESSIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -157,97 +157,97 @@ public class BlockItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createBlock()));
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createBlock()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createWhileLoop()));
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createDoWhileLoop()));
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createDoWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createAssignment()));
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createAssignment()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createForLoop()));
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createForLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createIfStatement()));
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createIfStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createOperationCall()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createReturnStatement()));
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createReturnStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createTriggerMessageExpression()));
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createTriggerMessageExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createPositionSelector()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
-				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				 ActionlanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
 				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
 				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
 				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
 				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS,
+				(ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS,
 				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
@@ -259,7 +259,7 @@ public class BlockItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ActionLanguageEditPlugin.INSTANCE;
+		return ActionlanguageEditPlugin.INSTANCE;
 	}
 
 }

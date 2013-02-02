@@ -22,7 +22,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TriggerMessageExpression;
 
 /**
@@ -79,7 +79,7 @@ public class TriggerMessageExpressionItemProvider
 				 getResourceLocator(),
 				 getString("_UI_TriggerMessageExpression_messageType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TriggerMessageExpression_messageType_feature", "_UI_TriggerMessageExpression_type"),
-				 ActionLanguagePackage.Literals.TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE,
+				 ActionlanguagePackage.Literals.TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE,
 				 true,
 				 false,
 				 true,
@@ -101,7 +101,7 @@ public class TriggerMessageExpressionItemProvider
 				 getResourceLocator(),
 				 getString("_UI_TriggerMessageExpression_parameter_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TriggerMessageExpression_parameter_feature", "_UI_TriggerMessageExpression_type"),
-				 ActionLanguagePackage.Literals.TRIGGER_MESSAGE_EXPRESSION__PARAMETER,
+				 ActionlanguagePackage.Literals.TRIGGER_MESSAGE_EXPRESSION__PARAMETER,
 				 true,
 				 false,
 				 true,
@@ -168,7 +168,7 @@ public class TriggerMessageExpressionItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ActionLanguageEditPlugin.INSTANCE;
+		return ActionlanguageEditPlugin.INSTANCE;
 	}
 
 }

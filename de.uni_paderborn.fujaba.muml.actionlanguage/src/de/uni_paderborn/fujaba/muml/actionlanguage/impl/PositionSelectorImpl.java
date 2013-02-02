@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelector;
 import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelectorKind;
 
@@ -78,7 +78,7 @@ public class PositionSelectorImpl extends ExpressionImpl implements PositionSele
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ActionLanguagePackage.Literals.POSITION_SELECTOR;
+		return ActionlanguagePackage.Literals.POSITION_SELECTOR;
 	}
 
 	/**
@@ -99,7 +99,7 @@ public class PositionSelectorImpl extends ExpressionImpl implements PositionSele
 		PositionSelectorKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.POSITION_SELECTOR__KIND, oldKind, kind));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.POSITION_SELECTOR__KIND, oldKind, kind));
 	}
 
 	/**
@@ -120,7 +120,7 @@ public class PositionSelectorImpl extends ExpressionImpl implements PositionSele
 		PositionSelector oldSuccessor = successor;
 		successor = newSuccessor;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.POSITION_SELECTOR__SUCCESSOR, oldSuccessor, newSuccessor);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.POSITION_SELECTOR__SUCCESSOR, oldSuccessor, newSuccessor);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -135,14 +135,14 @@ public class PositionSelectorImpl extends ExpressionImpl implements PositionSele
 		if (newSuccessor != successor) {
 			NotificationChain msgs = null;
 			if (successor != null)
-				msgs = ((InternalEObject)successor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.POSITION_SELECTOR__SUCCESSOR, null, msgs);
+				msgs = ((InternalEObject)successor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.POSITION_SELECTOR__SUCCESSOR, null, msgs);
 			if (newSuccessor != null)
-				msgs = ((InternalEObject)newSuccessor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.POSITION_SELECTOR__SUCCESSOR, null, msgs);
+				msgs = ((InternalEObject)newSuccessor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.POSITION_SELECTOR__SUCCESSOR, null, msgs);
 			msgs = basicSetSuccessor(newSuccessor, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.POSITION_SELECTOR__SUCCESSOR, newSuccessor, newSuccessor));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.POSITION_SELECTOR__SUCCESSOR, newSuccessor, newSuccessor));
 	}
 
 	/**
@@ -153,7 +153,7 @@ public class PositionSelectorImpl extends ExpressionImpl implements PositionSele
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActionLanguagePackage.POSITION_SELECTOR__SUCCESSOR:
+			case ActionlanguagePackage.POSITION_SELECTOR__SUCCESSOR:
 				return basicSetSuccessor(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -167,9 +167,9 @@ public class PositionSelectorImpl extends ExpressionImpl implements PositionSele
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActionLanguagePackage.POSITION_SELECTOR__KIND:
+			case ActionlanguagePackage.POSITION_SELECTOR__KIND:
 				return getKind();
-			case ActionLanguagePackage.POSITION_SELECTOR__SUCCESSOR:
+			case ActionlanguagePackage.POSITION_SELECTOR__SUCCESSOR:
 				return getSuccessor();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -183,10 +183,10 @@ public class PositionSelectorImpl extends ExpressionImpl implements PositionSele
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActionLanguagePackage.POSITION_SELECTOR__KIND:
+			case ActionlanguagePackage.POSITION_SELECTOR__KIND:
 				setKind((PositionSelectorKind)newValue);
 				return;
-			case ActionLanguagePackage.POSITION_SELECTOR__SUCCESSOR:
+			case ActionlanguagePackage.POSITION_SELECTOR__SUCCESSOR:
 				setSuccessor((PositionSelector)newValue);
 				return;
 		}
@@ -201,10 +201,10 @@ public class PositionSelectorImpl extends ExpressionImpl implements PositionSele
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.POSITION_SELECTOR__KIND:
+			case ActionlanguagePackage.POSITION_SELECTOR__KIND:
 				setKind(KIND_EDEFAULT);
 				return;
-			case ActionLanguagePackage.POSITION_SELECTOR__SUCCESSOR:
+			case ActionlanguagePackage.POSITION_SELECTOR__SUCCESSOR:
 				setSuccessor((PositionSelector)null);
 				return;
 		}
@@ -219,9 +219,9 @@ public class PositionSelectorImpl extends ExpressionImpl implements PositionSele
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.POSITION_SELECTOR__KIND:
+			case ActionlanguagePackage.POSITION_SELECTOR__KIND:
 				return kind != KIND_EDEFAULT;
-			case ActionLanguagePackage.POSITION_SELECTOR__SUCCESSOR:
+			case ActionlanguagePackage.POSITION_SELECTOR__SUCCESSOR:
 				return successor != null;
 		}
 		return super.eIsSet(featureID);

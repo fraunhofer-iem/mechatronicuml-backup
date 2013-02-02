@@ -1332,13 +1332,31 @@ public interface RuntimePackage extends EPackage {
 	int MESSAGE_ON_CONNECTOR = 14;
 
 	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_ON_CONNECTOR__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_ON_CONNECTOR__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+
+	/**
 	 * The feature id for the '<em><b>Receiver</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_ON_CONNECTOR__RECEIVER = 0;
+	int MESSAGE_ON_CONNECTOR__RECEIVER = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Message</b></em>' containment reference.
@@ -1347,7 +1365,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_ON_CONNECTOR__MESSAGE = 1;
+	int MESSAGE_ON_CONNECTOR__MESSAGE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Runtime Connector Instance</b></em>' container reference.
@@ -1356,7 +1374,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE = 2;
+	int MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Message On Connector</em>' class.
@@ -1365,7 +1383,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_ON_CONNECTOR_FEATURE_COUNT = 3;
+	int MESSAGE_ON_CONNECTOR_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '<em>Java Object</em>' data type.

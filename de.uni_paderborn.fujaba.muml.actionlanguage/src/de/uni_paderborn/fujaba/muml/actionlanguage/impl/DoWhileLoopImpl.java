@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.actionlanguage.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.DoWhileLoop;
 
 /**
@@ -37,7 +37,7 @@ public class DoWhileLoopImpl extends LoopImpl implements DoWhileLoop {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ActionLanguagePackage.Literals.DO_WHILE_LOOP;
+		return ActionlanguagePackage.Literals.DO_WHILE_LOOP;
 	}
 
 } //DoWhileLoopImpl

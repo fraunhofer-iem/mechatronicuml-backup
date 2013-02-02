@@ -12,9 +12,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TriggerMessageExpression;
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 
 /**
@@ -68,7 +68,7 @@ public class TriggerMessageExpressionImpl extends ExpressionImpl implements Trig
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ActionLanguagePackage.Literals.TRIGGER_MESSAGE_EXPRESSION;
+		return ActionlanguagePackage.Literals.TRIGGER_MESSAGE_EXPRESSION;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class TriggerMessageExpressionImpl extends ExpressionImpl implements Trig
 			messageType = (MessageType)eResolveProxy(oldMessageType);
 			if (messageType != oldMessageType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE, oldMessageType, messageType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionlanguagePackage.TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE, oldMessageType, messageType));
 			}
 		}
 		return messageType;
@@ -106,7 +106,7 @@ public class TriggerMessageExpressionImpl extends ExpressionImpl implements Trig
 		MessageType oldMessageType = messageType;
 		messageType = newMessageType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE, oldMessageType, messageType));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE, oldMessageType, messageType));
 	}
 
 	/**
@@ -120,7 +120,7 @@ public class TriggerMessageExpressionImpl extends ExpressionImpl implements Trig
 			parameter = (Parameter)eResolveProxy(oldParameter);
 			if (parameter != oldParameter) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION__PARAMETER, oldParameter, parameter));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionlanguagePackage.TRIGGER_MESSAGE_EXPRESSION__PARAMETER, oldParameter, parameter));
 			}
 		}
 		return parameter;
@@ -144,7 +144,7 @@ public class TriggerMessageExpressionImpl extends ExpressionImpl implements Trig
 		Parameter oldParameter = parameter;
 		parameter = newParameter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION__PARAMETER, oldParameter, parameter));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.TRIGGER_MESSAGE_EXPRESSION__PARAMETER, oldParameter, parameter));
 	}
 
 	/**
@@ -155,10 +155,10 @@ public class TriggerMessageExpressionImpl extends ExpressionImpl implements Trig
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE:
+			case ActionlanguagePackage.TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE:
 				if (resolve) return getMessageType();
 				return basicGetMessageType();
-			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION__PARAMETER:
+			case ActionlanguagePackage.TRIGGER_MESSAGE_EXPRESSION__PARAMETER:
 				if (resolve) return getParameter();
 				return basicGetParameter();
 		}
@@ -173,10 +173,10 @@ public class TriggerMessageExpressionImpl extends ExpressionImpl implements Trig
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE:
+			case ActionlanguagePackage.TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE:
 				setMessageType((MessageType)newValue);
 				return;
-			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION__PARAMETER:
+			case ActionlanguagePackage.TRIGGER_MESSAGE_EXPRESSION__PARAMETER:
 				setParameter((Parameter)newValue);
 				return;
 		}
@@ -191,10 +191,10 @@ public class TriggerMessageExpressionImpl extends ExpressionImpl implements Trig
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE:
+			case ActionlanguagePackage.TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE:
 				setMessageType((MessageType)null);
 				return;
-			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION__PARAMETER:
+			case ActionlanguagePackage.TRIGGER_MESSAGE_EXPRESSION__PARAMETER:
 				setParameter((Parameter)null);
 				return;
 		}
@@ -209,9 +209,9 @@ public class TriggerMessageExpressionImpl extends ExpressionImpl implements Trig
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE:
+			case ActionlanguagePackage.TRIGGER_MESSAGE_EXPRESSION__MESSAGE_TYPE:
 				return messageType != null;
-			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION__PARAMETER:
+			case ActionlanguagePackage.TRIGGER_MESSAGE_EXPRESSION__PARAMETER:
 				return parameter != null;
 		}
 		return super.eIsSet(featureID);

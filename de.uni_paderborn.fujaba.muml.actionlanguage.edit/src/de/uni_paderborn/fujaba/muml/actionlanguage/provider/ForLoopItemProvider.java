@@ -21,8 +21,8 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguageFactory;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ForLoop;
 
 /**
@@ -76,8 +76,8 @@ public class ForLoopItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionLanguagePackage.Literals.FOR_LOOP__INITIALIZE_EXPRESSION);
-			childrenFeatures.add(ActionLanguagePackage.Literals.FOR_LOOP__COUNTING_EXPRESSION);
+			childrenFeatures.add(ActionlanguagePackage.Literals.FOR_LOOP__INITIALIZE_EXPRESSION);
+			childrenFeatures.add(ActionlanguagePackage.Literals.FOR_LOOP__COUNTING_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -132,8 +132,8 @@ public class ForLoopItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ForLoop.class)) {
-			case ActionLanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION:
-			case ActionLanguagePackage.FOR_LOOP__COUNTING_EXPRESSION:
+			case ActionlanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION:
+			case ActionlanguagePackage.FOR_LOOP__COUNTING_EXPRESSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -153,13 +153,13 @@ public class ForLoopItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.FOR_LOOP__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createAssignment()));
+				(ActionlanguagePackage.Literals.FOR_LOOP__INITIALIZE_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createAssignment()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.FOR_LOOP__COUNTING_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createAssignment()));
+				(ActionlanguagePackage.Literals.FOR_LOOP__COUNTING_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createAssignment()));
 	}
 
 	/**
@@ -174,11 +174,11 @@ public class ForLoopItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS ||
-			childFeature == ActionLanguagePackage.Literals.LOOP__BLOCK ||
-			childFeature == ActionLanguagePackage.Literals.LOOP__LOOP_TEST ||
-			childFeature == ActionLanguagePackage.Literals.FOR_LOOP__INITIALIZE_EXPRESSION ||
-			childFeature == ActionLanguagePackage.Literals.FOR_LOOP__COUNTING_EXPRESSION;
+			childFeature == ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS ||
+			childFeature == ActionlanguagePackage.Literals.LOOP__BLOCK ||
+			childFeature == ActionlanguagePackage.Literals.LOOP__LOOP_TEST ||
+			childFeature == ActionlanguagePackage.Literals.FOR_LOOP__INITIALIZE_EXPRESSION ||
+			childFeature == ActionlanguagePackage.Literals.FOR_LOOP__COUNTING_EXPRESSION;
 
 		if (qualify) {
 			return getString

@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getTypedNamedElementExpression()
+ * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTypedNamedElementExpression()
  * @model
  * @generated
  */
@@ -43,7 +43,7 @@ public interface TypedNamedElementExpression extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Typed Named Element</em>' reference.
 	 * @see #setTypedNamedElement(TypedNamedElement)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getTypedNamedElementExpression_TypedNamedElement()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTypedNamedElementExpression_TypedNamedElement()
 	 * @model
 	 * @generated
 	 */
@@ -68,7 +68,7 @@ public interface TypedNamedElementExpression extends Expression {
 	 * Indices which refer to an concrete index of an array.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Indices</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getTypedNamedElementExpression_Indices()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTypedNamedElementExpression_Indices()
 	 * @model containment="true"
 	 * @generated
 	 */

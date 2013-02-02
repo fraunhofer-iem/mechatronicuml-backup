@@ -186,6 +186,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURABLE_STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS = ComponentPackage.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS;
 
 	/**
+	 * The feature id for the '<em><b>Gmf Protocols</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURABLE_STRUCTURED_COMPONENT__GMF_PROTOCOLS = ComponentPackage.STRUCTURED_COMPONENT__GMF_PROTOCOLS;
+
+	/**
 	 * The feature id for the '<em><b>Controllers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -410,6 +419,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_PORT__MULTI_PORT = ComponentPackage.DISCRETE_PORT__MULTI_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Gmf Protocol</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__GMF_PROTOCOL = ComponentPackage.DISCRETE_PORT__GMF_PROTOCOL;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -1091,6 +1109,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__MULTI_PORT = RECONFIGURATION_PORT__MULTI_PORT;
 
 	/**
+	 * The feature id for the '<em><b>Gmf Protocol</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__GMF_PROTOCOL = RECONFIGURATION_PORT__GMF_PROTOCOL;
+
+	/**
 	 * The number of structural features of the '<em>Message Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1288,6 +1315,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_EXECUTION_PORT__MULTI_PORT = RECONFIGURATION_PORT__MULTI_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Gmf Protocol</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__GMF_PROTOCOL = RECONFIGURATION_PORT__GMF_PROTOCOL;
 
 	/**
 	 * The number of structural features of the '<em>Execution Port</em>' class.
@@ -1796,6 +1832,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__MULTI_PORT = RECONFIGURATION_EXECUTION_PORT__MULTI_PORT;
 
 	/**
+	 * The feature id for the '<em><b>Gmf Protocol</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__GMF_PROTOCOL = RECONFIGURATION_EXECUTION_PORT__GMF_PROTOCOL;
+
+	/**
 	 * The feature id for the '<em><b>Specification Entries</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1992,6 +2037,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__MULTI_PORT = RECONFIGURATION_EXECUTION_PORT__MULTI_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Gmf Protocol</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__GMF_PROTOCOL = RECONFIGURATION_EXECUTION_PORT__GMF_PROTOCOL;
 
 	/**
 	 * The number of structural features of the '<em>Internal Reconfiguration Execution Port</em>' class.

@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.actionlanguage.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.WhileLoop;
 
 /**
@@ -37,7 +37,7 @@ public class WhileLoopImpl extends LoopImpl implements WhileLoop {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ActionLanguagePackage.Literals.WHILE_LOOP;
+		return ActionlanguagePackage.Literals.WHILE_LOOP;
 	}
 
 } //WhileLoopImpl

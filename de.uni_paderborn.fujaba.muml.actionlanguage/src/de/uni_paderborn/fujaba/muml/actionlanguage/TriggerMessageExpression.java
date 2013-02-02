@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getTriggerMessageExpression()
+ * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTriggerMessageExpression()
  * @model
  * @generated
  */
@@ -43,7 +43,7 @@ public interface TriggerMessageExpression extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Message Type</em>' reference.
 	 * @see #setMessageType(MessageType)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getTriggerMessageExpression_MessageType()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTriggerMessageExpression_MessageType()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -69,7 +69,7 @@ public interface TriggerMessageExpression extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameter</em>' reference.
 	 * @see #setParameter(Parameter)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getTriggerMessageExpression_Parameter()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTriggerMessageExpression_Parameter()
 	 * @model required="true"
 	 * @generated
 	 */

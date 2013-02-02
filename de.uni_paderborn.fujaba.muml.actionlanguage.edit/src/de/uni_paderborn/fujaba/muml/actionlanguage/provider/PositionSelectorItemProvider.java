@@ -25,8 +25,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguageFactory;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelector;
 
 /**
@@ -82,7 +82,7 @@ public class PositionSelectorItemProvider
 				 getResourceLocator(),
 				 getString("_UI_PositionSelector_kind_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PositionSelector_kind_feature", "_UI_PositionSelector_type"),
-				 ActionLanguagePackage.Literals.POSITION_SELECTOR__KIND,
+				 ActionlanguagePackage.Literals.POSITION_SELECTOR__KIND,
 				 true,
 				 false,
 				 false,
@@ -103,7 +103,7 @@ public class PositionSelectorItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionLanguagePackage.Literals.POSITION_SELECTOR__SUCCESSOR);
+			childrenFeatures.add(ActionlanguagePackage.Literals.POSITION_SELECTOR__SUCCESSOR);
 		}
 		return childrenFeatures;
 	}
@@ -158,10 +158,10 @@ public class PositionSelectorItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PositionSelector.class)) {
-			case ActionLanguagePackage.POSITION_SELECTOR__KIND:
+			case ActionlanguagePackage.POSITION_SELECTOR__KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ActionLanguagePackage.POSITION_SELECTOR__SUCCESSOR:
+			case ActionlanguagePackage.POSITION_SELECTOR__SUCCESSOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -181,8 +181,8 @@ public class PositionSelectorItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.POSITION_SELECTOR__SUCCESSOR,
-				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
+				(ActionlanguagePackage.Literals.POSITION_SELECTOR__SUCCESSOR,
+				 ActionlanguageFactory.eINSTANCE.createPositionSelector()));
 	}
 
 	/**
@@ -193,7 +193,7 @@ public class PositionSelectorItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ActionLanguageEditPlugin.INSTANCE;
+		return ActionlanguageEditPlugin.INSTANCE;
 	}
 
 }

@@ -6,33 +6,48 @@
  */
 package de.uni_paderborn.fujaba.muml.actionlanguage.util;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.*;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator;
+import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
+import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
+import de.uni_paderborn.fujaba.muml.actionlanguage.DiscreteInteractionEndpointReference;
+import de.uni_paderborn.fujaba.muml.actionlanguage.DoWhileLoop;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ForLoop;
+import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
+import de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator;
+import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
+import de.uni_paderborn.fujaba.muml.actionlanguage.Loop;
+import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
+import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelector;
+import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelectorKind;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ReturnStatement;
+import de.uni_paderborn.fujaba.muml.actionlanguage.TriggerMessageExpression;
+import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
+import de.uni_paderborn.fujaba.muml.actionlanguage.WhileLoop;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
- * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage
+ * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage
  * @generated
  */
-public class ActionLanguageValidator extends EObjectValidator {
+public class ActionlanguageValidator extends EObjectValidator {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final ActionLanguageValidator INSTANCE = new ActionLanguageValidator();
+	public static final ActionlanguageValidator INSTANCE = new ActionlanguageValidator();
 
 	/**
 	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
@@ -66,7 +81,7 @@ public class ActionLanguageValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActionLanguageValidator() {
+	public ActionlanguageValidator() {
 		super();
 	}
 
@@ -78,7 +93,7 @@ public class ActionLanguageValidator extends EObjectValidator {
 	 */
 	@Override
 	protected EPackage getEPackage() {
-	  return ActionLanguagePackage.eINSTANCE;
+	  return ActionlanguagePackage.eINSTANCE;
 	}
 
 	/**
@@ -90,39 +105,39 @@ public class ActionLanguageValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case ActionLanguagePackage.BLOCK:
+			case ActionlanguagePackage.BLOCK:
 				return validateBlock((Block)value, diagnostics, context);
-			case ActionLanguagePackage.LOOP:
+			case ActionlanguagePackage.LOOP:
 				return validateLoop((Loop)value, diagnostics, context);
-			case ActionLanguagePackage.WHILE_LOOP:
+			case ActionlanguagePackage.WHILE_LOOP:
 				return validateWhileLoop((WhileLoop)value, diagnostics, context);
-			case ActionLanguagePackage.DO_WHILE_LOOP:
+			case ActionlanguagePackage.DO_WHILE_LOOP:
 				return validateDoWhileLoop((DoWhileLoop)value, diagnostics, context);
-			case ActionLanguagePackage.ASSIGNMENT:
+			case ActionlanguagePackage.ASSIGNMENT:
 				return validateAssignment((Assignment)value, diagnostics, context);
-			case ActionLanguagePackage.FOR_LOOP:
+			case ActionlanguagePackage.FOR_LOOP:
 				return validateForLoop((ForLoop)value, diagnostics, context);
-			case ActionLanguagePackage.IF_STATEMENT:
+			case ActionlanguagePackage.IF_STATEMENT:
 				return validateIfStatement((IfStatement)value, diagnostics, context);
-			case ActionLanguagePackage.OPERATION_CALL:
+			case ActionlanguagePackage.OPERATION_CALL:
 				return validateOperationCall((OperationCall)value, diagnostics, context);
-			case ActionLanguagePackage.RETURN_STATEMENT:
+			case ActionlanguagePackage.RETURN_STATEMENT:
 				return validateReturnStatement((ReturnStatement)value, diagnostics, context);
-			case ActionLanguagePackage.TRIGGER_MESSAGE_EXPRESSION:
+			case ActionlanguagePackage.TRIGGER_MESSAGE_EXPRESSION:
 				return validateTriggerMessageExpression((TriggerMessageExpression)value, diagnostics, context);
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE:
+			case ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE:
 				return validateDiscreteInteractionEndpointReference((DiscreteInteractionEndpointReference)value, diagnostics, context);
-			case ActionLanguagePackage.POSITION_SELECTOR:
+			case ActionlanguagePackage.POSITION_SELECTOR:
 				return validatePositionSelector((PositionSelector)value, diagnostics, context);
-			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT:
+			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT:
 				return validateLocalVariableDeclarationStatement((LocalVariableDeclarationStatement)value, diagnostics, context);
-			case ActionLanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION:
+			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION:
 				return validateTypedNamedElementExpression((TypedNamedElementExpression)value, diagnostics, context);
-			case ActionLanguagePackage.ASSIGN_OPERATOR:
+			case ActionlanguagePackage.ASSIGN_OPERATOR:
 				return validateAssignOperator((AssignOperator)value, diagnostics, context);
-			case ActionLanguagePackage.INCREMENT_DECREMENT_OPERATOR:
+			case ActionlanguagePackage.INCREMENT_DECREMENT_OPERATOR:
 				return validateIncrementDecrementOperator((IncrementDecrementOperator)value, diagnostics, context);
-			case ActionLanguagePackage.POSITION_SELECTOR_KIND:
+			case ActionlanguagePackage.POSITION_SELECTOR_KIND:
 				return validatePositionSelectorKind((PositionSelectorKind)value, diagnostics, context);
 			default:
 				return true;
@@ -282,7 +297,7 @@ public class ActionLanguageValidator extends EObjectValidator {
 	public boolean validateLocalVariableDeclarationStatement_UniqueName(LocalVariableDeclarationStatement localVariableDeclarationStatement, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT,
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT,
 				 localVariableDeclarationStatement,
 				 diagnostics,
 				 context,
@@ -344,4 +359,4 @@ public class ActionLanguageValidator extends EObjectValidator {
 		return super.getResourceLocator();
 	}
 
-} //ActionLanguageValidator
+} //ActionlanguageValidator

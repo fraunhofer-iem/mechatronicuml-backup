@@ -31,7 +31,7 @@ import org.storydriven.core.expressions.Expression;
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getIfStatement()
+ * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getIfStatement()
  * @model
  * @generated
  */
@@ -49,7 +49,7 @@ public interface IfStatement extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>If Condition</em>' containment reference.
 	 * @see #setIfCondition(Expression)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getIfStatement_IfCondition()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getIfStatement_IfCondition()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -78,7 +78,7 @@ public interface IfStatement extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>If Block</em>' containment reference.
 	 * @see #setIfBlock(Block)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getIfStatement_IfBlock()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getIfStatement_IfBlock()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -107,7 +107,7 @@ public interface IfStatement extends Expression {
 	 * ElseIf condition of the if statement.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Else If Conditions</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getIfStatement_ElseIfConditions()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getIfStatement_ElseIfConditions()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -126,7 +126,7 @@ public interface IfStatement extends Expression {
 	 * Block which is executed if the corresponding elseif condition evaluates to true.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Else If Blocks</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getIfStatement_ElseIfBlocks()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getIfStatement_ElseIfBlocks()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -145,7 +145,7 @@ public interface IfStatement extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Else Block</em>' containment reference.
 	 * @see #setElseBlock(Block)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getIfStatement_ElseBlock()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getIfStatement_ElseBlock()
 	 * @model containment="true"
 	 * @generated
 	 */

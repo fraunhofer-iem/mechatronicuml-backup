@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator;
@@ -114,7 +114,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ActionLanguagePackage.Literals.ASSIGNMENT;
+		return ActionlanguagePackage.Literals.ASSIGNMENT;
 	}
 
 	/**
@@ -135,7 +135,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 		AssignOperator oldAssignOperator = assignOperator;
 		assignOperator = newAssignOperator == null ? ASSIGN_OPERATOR_EDEFAULT : newAssignOperator;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR, oldAssignOperator, assignOperator));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR, oldAssignOperator, assignOperator));
 	}
 
 	/**
@@ -156,7 +156,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 		Expression oldRhs_assignExpression = rhs_assignExpression;
 		rhs_assignExpression = newRhs_assignExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION, oldRhs_assignExpression, newRhs_assignExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION, oldRhs_assignExpression, newRhs_assignExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -171,14 +171,14 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 		if (newRhs_assignExpression != rhs_assignExpression) {
 			NotificationChain msgs = null;
 			if (rhs_assignExpression != null)
-				msgs = ((InternalEObject)rhs_assignExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)rhs_assignExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION, null, msgs);
 			if (newRhs_assignExpression != null)
-				msgs = ((InternalEObject)newRhs_assignExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)newRhs_assignExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION, null, msgs);
 			msgs = basicSetRhs_assignExpression(newRhs_assignExpression, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION, newRhs_assignExpression, newRhs_assignExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION, newRhs_assignExpression, newRhs_assignExpression));
 	}
 
 	/**
@@ -199,7 +199,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 		IncrementDecrementOperator oldIncrementDecrementOperator = incrementDecrementOperator;
 		incrementDecrementOperator = newIncrementDecrementOperator == null ? INCREMENT_DECREMENT_OPERATOR_EDEFAULT : newIncrementDecrementOperator;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR, oldIncrementDecrementOperator, incrementDecrementOperator));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR, oldIncrementDecrementOperator, incrementDecrementOperator));
 	}
 
 	/**
@@ -220,7 +220,7 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 		TypedNamedElementExpression oldLhs_typedNamedElementExpression = lhs_typedNamedElementExpression;
 		lhs_typedNamedElementExpression = newLhs_typedNamedElementExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION, oldLhs_typedNamedElementExpression, newLhs_typedNamedElementExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION, oldLhs_typedNamedElementExpression, newLhs_typedNamedElementExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -235,14 +235,14 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 		if (newLhs_typedNamedElementExpression != lhs_typedNamedElementExpression) {
 			NotificationChain msgs = null;
 			if (lhs_typedNamedElementExpression != null)
-				msgs = ((InternalEObject)lhs_typedNamedElementExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)lhs_typedNamedElementExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION, null, msgs);
 			if (newLhs_typedNamedElementExpression != null)
-				msgs = ((InternalEObject)newLhs_typedNamedElementExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)newLhs_typedNamedElementExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION, null, msgs);
 			msgs = basicSetLhs_typedNamedElementExpression(newLhs_typedNamedElementExpression, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION, newLhs_typedNamedElementExpression, newLhs_typedNamedElementExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION, newLhs_typedNamedElementExpression, newLhs_typedNamedElementExpression));
 	}
 
 	/**
@@ -253,9 +253,9 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActionLanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION:
+			case ActionlanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION:
 				return basicSetRhs_assignExpression(null, msgs);
-			case ActionLanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION:
+			case ActionlanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION:
 				return basicSetLhs_typedNamedElementExpression(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -269,13 +269,13 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActionLanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR:
+			case ActionlanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR:
 				return getAssignOperator();
-			case ActionLanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION:
+			case ActionlanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION:
 				return getRhs_assignExpression();
-			case ActionLanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
+			case ActionlanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
 				return getIncrementDecrementOperator();
-			case ActionLanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION:
+			case ActionlanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION:
 				return getLhs_typedNamedElementExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -289,16 +289,16 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActionLanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR:
+			case ActionlanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR:
 				setAssignOperator((AssignOperator)newValue);
 				return;
-			case ActionLanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION:
+			case ActionlanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION:
 				setRhs_assignExpression((Expression)newValue);
 				return;
-			case ActionLanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
+			case ActionlanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
 				setIncrementDecrementOperator((IncrementDecrementOperator)newValue);
 				return;
-			case ActionLanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION:
+			case ActionlanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION:
 				setLhs_typedNamedElementExpression((TypedNamedElementExpression)newValue);
 				return;
 		}
@@ -313,16 +313,16 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR:
+			case ActionlanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR:
 				setAssignOperator(ASSIGN_OPERATOR_EDEFAULT);
 				return;
-			case ActionLanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION:
+			case ActionlanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION:
 				setRhs_assignExpression((Expression)null);
 				return;
-			case ActionLanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
+			case ActionlanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
 				setIncrementDecrementOperator(INCREMENT_DECREMENT_OPERATOR_EDEFAULT);
 				return;
-			case ActionLanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION:
+			case ActionlanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION:
 				setLhs_typedNamedElementExpression((TypedNamedElementExpression)null);
 				return;
 		}
@@ -337,13 +337,13 @@ public class AssignmentImpl extends ExpressionImpl implements Assignment {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR:
+			case ActionlanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR:
 				return assignOperator != ASSIGN_OPERATOR_EDEFAULT;
-			case ActionLanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION:
+			case ActionlanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION:
 				return rhs_assignExpression != null;
-			case ActionLanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
+			case ActionlanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
 				return incrementDecrementOperator != INCREMENT_DECREMENT_OPERATOR_EDEFAULT;
-			case ActionLanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION:
+			case ActionlanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION:
 				return lhs_typedNamedElementExpression != null;
 		}
 		return super.eIsSet(featureID);

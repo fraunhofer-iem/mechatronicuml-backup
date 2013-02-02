@@ -26,10 +26,10 @@ import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguageFactory;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement} object.
@@ -84,7 +84,7 @@ public class LocalVariableDeclarationStatementItemProvider
 				 getResourceLocator(),
 				 getString("_UI_LocalVariableDeclarationStatement_allSurroundingBlocks_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_LocalVariableDeclarationStatement_allSurroundingBlocks_feature", "_UI_LocalVariableDeclarationStatement_type"),
-				 ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS,
+				 ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS,
 				 false,
 				 false,
 				 false,
@@ -105,8 +105,8 @@ public class LocalVariableDeclarationStatementItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE);
-			childrenFeatures.add(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION);
+			childrenFeatures.add(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE);
+			childrenFeatures.add(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -161,8 +161,8 @@ public class LocalVariableDeclarationStatementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(LocalVariableDeclarationStatement.class)) {
-			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
-			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
+			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
+			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -182,102 +182,102 @@ public class LocalVariableDeclarationStatementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE,
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE,
 				 BehaviorFactory.eINSTANCE.createVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createBlock()));
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createBlock()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createWhileLoop()));
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createDoWhileLoop()));
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createDoWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createAssignment()));
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createAssignment()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createForLoop()));
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createForLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createIfStatement()));
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createIfStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createOperationCall()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createReturnStatement()));
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createReturnStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createTriggerMessageExpression()));
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createTriggerMessageExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createPositionSelector()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
@@ -289,7 +289,7 @@ public class LocalVariableDeclarationStatementItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ActionLanguageEditPlugin.INSTANCE;
+		return ActionlanguageEditPlugin.INSTANCE;
 	}
 
 }

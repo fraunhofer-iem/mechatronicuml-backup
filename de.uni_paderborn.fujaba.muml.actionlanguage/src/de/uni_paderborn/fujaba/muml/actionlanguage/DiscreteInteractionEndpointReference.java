@@ -21,7 +21,7 @@ import org.storydriven.core.expressions.Expression;
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getDiscreteInteractionEndpointReference()
+ * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getDiscreteInteractionEndpointReference()
  * @model
  * @generated
  */
@@ -36,7 +36,7 @@ public interface DiscreteInteractionEndpointReference extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Typed Named Element Expression</em>' containment reference.
 	 * @see #setTypedNamedElementExpression(TypedNamedElementExpression)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getDiscreteInteractionEndpointReference_TypedNamedElementExpression()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getDiscreteInteractionEndpointReference_TypedNamedElementExpression()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -62,7 +62,7 @@ public interface DiscreteInteractionEndpointReference extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Position</em>' containment reference.
 	 * @see #setPosition(PositionSelector)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getDiscreteInteractionEndpointReference_Position()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getDiscreteInteractionEndpointReference_Position()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */

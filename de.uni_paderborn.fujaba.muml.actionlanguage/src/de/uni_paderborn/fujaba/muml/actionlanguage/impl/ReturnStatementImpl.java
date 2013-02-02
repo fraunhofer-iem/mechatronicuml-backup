@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ReturnStatement;
 
 /**
@@ -56,7 +56,7 @@ public class ReturnStatementImpl extends ExpressionImpl implements ReturnStateme
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ActionLanguagePackage.Literals.RETURN_STATEMENT;
+		return ActionlanguagePackage.Literals.RETURN_STATEMENT;
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class ReturnStatementImpl extends ExpressionImpl implements ReturnStateme
 		Expression oldExpression = expression;
 		expression = newExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.RETURN_STATEMENT__EXPRESSION, oldExpression, newExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.RETURN_STATEMENT__EXPRESSION, oldExpression, newExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -92,14 +92,14 @@ public class ReturnStatementImpl extends ExpressionImpl implements ReturnStateme
 		if (newExpression != expression) {
 			NotificationChain msgs = null;
 			if (expression != null)
-				msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.RETURN_STATEMENT__EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.RETURN_STATEMENT__EXPRESSION, null, msgs);
 			if (newExpression != null)
-				msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.RETURN_STATEMENT__EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.RETURN_STATEMENT__EXPRESSION, null, msgs);
 			msgs = basicSetExpression(newExpression, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.RETURN_STATEMENT__EXPRESSION, newExpression, newExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.RETURN_STATEMENT__EXPRESSION, newExpression, newExpression));
 	}
 
 	/**
@@ -110,7 +110,7 @@ public class ReturnStatementImpl extends ExpressionImpl implements ReturnStateme
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActionLanguagePackage.RETURN_STATEMENT__EXPRESSION:
+			case ActionlanguagePackage.RETURN_STATEMENT__EXPRESSION:
 				return basicSetExpression(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -124,7 +124,7 @@ public class ReturnStatementImpl extends ExpressionImpl implements ReturnStateme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActionLanguagePackage.RETURN_STATEMENT__EXPRESSION:
+			case ActionlanguagePackage.RETURN_STATEMENT__EXPRESSION:
 				return getExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -139,7 +139,7 @@ public class ReturnStatementImpl extends ExpressionImpl implements ReturnStateme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActionLanguagePackage.RETURN_STATEMENT__EXPRESSION:
+			case ActionlanguagePackage.RETURN_STATEMENT__EXPRESSION:
 				setExpression((Expression)newValue);
 				return;
 		}
@@ -154,7 +154,7 @@ public class ReturnStatementImpl extends ExpressionImpl implements ReturnStateme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.RETURN_STATEMENT__EXPRESSION:
+			case ActionlanguagePackage.RETURN_STATEMENT__EXPRESSION:
 				setExpression((Expression)null);
 				return;
 		}
@@ -169,7 +169,7 @@ public class ReturnStatementImpl extends ExpressionImpl implements ReturnStateme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.RETURN_STATEMENT__EXPRESSION:
+			case ActionlanguagePackage.RETURN_STATEMENT__EXPRESSION:
 				return expression != null;
 		}
 		return super.eIsSet(featureID);

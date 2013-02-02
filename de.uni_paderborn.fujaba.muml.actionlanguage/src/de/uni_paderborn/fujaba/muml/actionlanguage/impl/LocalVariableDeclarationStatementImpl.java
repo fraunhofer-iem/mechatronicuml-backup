@@ -16,10 +16,10 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
-import de.uni_paderborn.fujaba.muml.behavior.Variable;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
+import de.uni_paderborn.fujaba.muml.behavior.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,7 +83,7 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ActionLanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT;
+		return ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 		Variable oldVariable = variable;
 		variable = newVariable;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE, oldVariable, newVariable);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE, oldVariable, newVariable);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -119,14 +119,14 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 		if (newVariable != variable) {
 			NotificationChain msgs = null;
 			if (variable != null)
-				msgs = ((InternalEObject)variable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE, null, msgs);
+				msgs = ((InternalEObject)variable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE, null, msgs);
 			if (newVariable != null)
-				msgs = ((InternalEObject)newVariable).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE, null, msgs);
+				msgs = ((InternalEObject)newVariable).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE, null, msgs);
 			msgs = basicSetVariable(newVariable, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE, newVariable, newVariable));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE, newVariable, newVariable));
 	}
 
 	/**
@@ -147,7 +147,7 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 		Expression oldInitializeExpression = initializeExpression;
 		initializeExpression = newInitializeExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION, oldInitializeExpression, newInitializeExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION, oldInitializeExpression, newInitializeExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -162,14 +162,14 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 		if (newInitializeExpression != initializeExpression) {
 			NotificationChain msgs = null;
 			if (initializeExpression != null)
-				msgs = ((InternalEObject)initializeExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)initializeExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION, null, msgs);
 			if (newInitializeExpression != null)
-				msgs = ((InternalEObject)newInitializeExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)newInitializeExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION, null, msgs);
 			msgs = basicSetInitializeExpression(newInitializeExpression, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION, newInitializeExpression, newInitializeExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION, newInitializeExpression, newInitializeExpression));
 	}
 
 	/**
@@ -179,7 +179,7 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	 */
 	public EList<Block> getAllSurroundingBlocks() {
 		if (allSurroundingBlocks == null) {
-			allSurroundingBlocks = new EObjectResolvingEList<Block>(Block.class, this, ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS);
+			allSurroundingBlocks = new EObjectResolvingEList<Block>(Block.class, this, ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS);
 		}
 		return allSurroundingBlocks;
 	}
@@ -192,9 +192,9 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
+			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
 				return basicSetVariable(null, msgs);
-			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
+			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
 				return basicSetInitializeExpression(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -208,11 +208,11 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
+			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
 				return getVariable();
-			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
+			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
 				return getInitializeExpression();
-			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS:
+			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS:
 				return getAllSurroundingBlocks();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -226,10 +226,10 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
+			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
 				setVariable((Variable)newValue);
 				return;
-			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
+			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
 				setInitializeExpression((Expression)newValue);
 				return;
 		}
@@ -244,10 +244,10 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
+			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
 				setVariable((Variable)null);
 				return;
-			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
+			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
 				setInitializeExpression((Expression)null);
 				return;
 		}
@@ -262,11 +262,11 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
+			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
 				return variable != null;
-			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
+			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
 				return initializeExpression != null;
-			case ActionLanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS:
+			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS:
 				return allSurroundingBlocks != null && !allSurroundingBlocks.isEmpty();
 		}
 		return super.eIsSet(featureID);

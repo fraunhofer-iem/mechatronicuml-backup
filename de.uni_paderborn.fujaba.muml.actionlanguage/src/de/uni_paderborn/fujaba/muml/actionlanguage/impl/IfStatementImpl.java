@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
 
@@ -108,7 +108,7 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ActionLanguagePackage.Literals.IF_STATEMENT;
+		return ActionlanguagePackage.Literals.IF_STATEMENT;
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 		Expression oldIfCondition = ifCondition;
 		ifCondition = newIfCondition;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.IF_STATEMENT__IF_CONDITION, oldIfCondition, newIfCondition);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.IF_STATEMENT__IF_CONDITION, oldIfCondition, newIfCondition);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -144,14 +144,14 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 		if (newIfCondition != ifCondition) {
 			NotificationChain msgs = null;
 			if (ifCondition != null)
-				msgs = ((InternalEObject)ifCondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.IF_STATEMENT__IF_CONDITION, null, msgs);
+				msgs = ((InternalEObject)ifCondition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.IF_STATEMENT__IF_CONDITION, null, msgs);
 			if (newIfCondition != null)
-				msgs = ((InternalEObject)newIfCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.IF_STATEMENT__IF_CONDITION, null, msgs);
+				msgs = ((InternalEObject)newIfCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.IF_STATEMENT__IF_CONDITION, null, msgs);
 			msgs = basicSetIfCondition(newIfCondition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.IF_STATEMENT__IF_CONDITION, newIfCondition, newIfCondition));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.IF_STATEMENT__IF_CONDITION, newIfCondition, newIfCondition));
 	}
 
 	/**
@@ -172,7 +172,7 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 		Block oldIfBlock = ifBlock;
 		ifBlock = newIfBlock;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.IF_STATEMENT__IF_BLOCK, oldIfBlock, newIfBlock);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.IF_STATEMENT__IF_BLOCK, oldIfBlock, newIfBlock);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -187,14 +187,14 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 		if (newIfBlock != ifBlock) {
 			NotificationChain msgs = null;
 			if (ifBlock != null)
-				msgs = ((InternalEObject)ifBlock).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.IF_STATEMENT__IF_BLOCK, null, msgs);
+				msgs = ((InternalEObject)ifBlock).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.IF_STATEMENT__IF_BLOCK, null, msgs);
 			if (newIfBlock != null)
-				msgs = ((InternalEObject)newIfBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.IF_STATEMENT__IF_BLOCK, null, msgs);
+				msgs = ((InternalEObject)newIfBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.IF_STATEMENT__IF_BLOCK, null, msgs);
 			msgs = basicSetIfBlock(newIfBlock, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.IF_STATEMENT__IF_BLOCK, newIfBlock, newIfBlock));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.IF_STATEMENT__IF_BLOCK, newIfBlock, newIfBlock));
 	}
 
 	/**
@@ -204,7 +204,7 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 	 */
 	public EList<Expression> getElseIfConditions() {
 		if (elseIfConditions == null) {
-			elseIfConditions = new EObjectContainmentEList<Expression>(Expression.class, this, ActionLanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS);
+			elseIfConditions = new EObjectContainmentEList<Expression>(Expression.class, this, ActionlanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS);
 		}
 		return elseIfConditions;
 	}
@@ -216,7 +216,7 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 	 */
 	public EList<Block> getElseIfBlocks() {
 		if (elseIfBlocks == null) {
-			elseIfBlocks = new EObjectContainmentEList<Block>(Block.class, this, ActionLanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS);
+			elseIfBlocks = new EObjectContainmentEList<Block>(Block.class, this, ActionlanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS);
 		}
 		return elseIfBlocks;
 	}
@@ -239,7 +239,7 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 		Block oldElseBlock = elseBlock;
 		elseBlock = newElseBlock;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.IF_STATEMENT__ELSE_BLOCK, oldElseBlock, newElseBlock);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.IF_STATEMENT__ELSE_BLOCK, oldElseBlock, newElseBlock);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -254,14 +254,14 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 		if (newElseBlock != elseBlock) {
 			NotificationChain msgs = null;
 			if (elseBlock != null)
-				msgs = ((InternalEObject)elseBlock).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.IF_STATEMENT__ELSE_BLOCK, null, msgs);
+				msgs = ((InternalEObject)elseBlock).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.IF_STATEMENT__ELSE_BLOCK, null, msgs);
 			if (newElseBlock != null)
-				msgs = ((InternalEObject)newElseBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.IF_STATEMENT__ELSE_BLOCK, null, msgs);
+				msgs = ((InternalEObject)newElseBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.IF_STATEMENT__ELSE_BLOCK, null, msgs);
 			msgs = basicSetElseBlock(newElseBlock, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.IF_STATEMENT__ELSE_BLOCK, newElseBlock, newElseBlock));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.IF_STATEMENT__ELSE_BLOCK, newElseBlock, newElseBlock));
 	}
 
 	/**
@@ -272,15 +272,15 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActionLanguagePackage.IF_STATEMENT__IF_CONDITION:
+			case ActionlanguagePackage.IF_STATEMENT__IF_CONDITION:
 				return basicSetIfCondition(null, msgs);
-			case ActionLanguagePackage.IF_STATEMENT__IF_BLOCK:
+			case ActionlanguagePackage.IF_STATEMENT__IF_BLOCK:
 				return basicSetIfBlock(null, msgs);
-			case ActionLanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
 				return ((InternalEList<?>)getElseIfConditions()).basicRemove(otherEnd, msgs);
-			case ActionLanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
 				return ((InternalEList<?>)getElseIfBlocks()).basicRemove(otherEnd, msgs);
-			case ActionLanguagePackage.IF_STATEMENT__ELSE_BLOCK:
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_BLOCK:
 				return basicSetElseBlock(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -294,15 +294,15 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActionLanguagePackage.IF_STATEMENT__IF_CONDITION:
+			case ActionlanguagePackage.IF_STATEMENT__IF_CONDITION:
 				return getIfCondition();
-			case ActionLanguagePackage.IF_STATEMENT__IF_BLOCK:
+			case ActionlanguagePackage.IF_STATEMENT__IF_BLOCK:
 				return getIfBlock();
-			case ActionLanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
 				return getElseIfConditions();
-			case ActionLanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
 				return getElseIfBlocks();
-			case ActionLanguagePackage.IF_STATEMENT__ELSE_BLOCK:
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_BLOCK:
 				return getElseBlock();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -317,21 +317,21 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActionLanguagePackage.IF_STATEMENT__IF_CONDITION:
+			case ActionlanguagePackage.IF_STATEMENT__IF_CONDITION:
 				setIfCondition((Expression)newValue);
 				return;
-			case ActionLanguagePackage.IF_STATEMENT__IF_BLOCK:
+			case ActionlanguagePackage.IF_STATEMENT__IF_BLOCK:
 				setIfBlock((Block)newValue);
 				return;
-			case ActionLanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
 				getElseIfConditions().clear();
 				getElseIfConditions().addAll((Collection<? extends Expression>)newValue);
 				return;
-			case ActionLanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
 				getElseIfBlocks().clear();
 				getElseIfBlocks().addAll((Collection<? extends Block>)newValue);
 				return;
-			case ActionLanguagePackage.IF_STATEMENT__ELSE_BLOCK:
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_BLOCK:
 				setElseBlock((Block)newValue);
 				return;
 		}
@@ -346,19 +346,19 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.IF_STATEMENT__IF_CONDITION:
+			case ActionlanguagePackage.IF_STATEMENT__IF_CONDITION:
 				setIfCondition((Expression)null);
 				return;
-			case ActionLanguagePackage.IF_STATEMENT__IF_BLOCK:
+			case ActionlanguagePackage.IF_STATEMENT__IF_BLOCK:
 				setIfBlock((Block)null);
 				return;
-			case ActionLanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
 				getElseIfConditions().clear();
 				return;
-			case ActionLanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
 				getElseIfBlocks().clear();
 				return;
-			case ActionLanguagePackage.IF_STATEMENT__ELSE_BLOCK:
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_BLOCK:
 				setElseBlock((Block)null);
 				return;
 		}
@@ -373,15 +373,15 @@ public class IfStatementImpl extends ExpressionImpl implements IfStatement {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.IF_STATEMENT__IF_CONDITION:
+			case ActionlanguagePackage.IF_STATEMENT__IF_CONDITION:
 				return ifCondition != null;
-			case ActionLanguagePackage.IF_STATEMENT__IF_BLOCK:
+			case ActionlanguagePackage.IF_STATEMENT__IF_BLOCK:
 				return ifBlock != null;
-			case ActionLanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_CONDITIONS:
 				return elseIfConditions != null && !elseIfConditions.isEmpty();
-			case ActionLanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_IF_BLOCKS:
 				return elseIfBlocks != null && !elseIfBlocks.isEmpty();
-			case ActionLanguagePackage.IF_STATEMENT__ELSE_BLOCK:
+			case ActionlanguagePackage.IF_STATEMENT__ELSE_BLOCK:
 				return elseBlock != null;
 		}
 		return super.eIsSet(featureID);

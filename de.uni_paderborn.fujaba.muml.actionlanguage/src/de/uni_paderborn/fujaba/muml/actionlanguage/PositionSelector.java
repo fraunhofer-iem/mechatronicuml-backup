@@ -21,7 +21,7 @@ import org.storydriven.core.expressions.Expression;
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getPositionSelector()
+ * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getPositionSelector()
  * @model
  * @generated
  */
@@ -38,7 +38,7 @@ public interface PositionSelector extends Expression {
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelectorKind
 	 * @see #setKind(PositionSelectorKind)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getPositionSelector_Kind()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getPositionSelector_Kind()
 	 * @model
 	 * @generated
 	 */
@@ -65,7 +65,7 @@ public interface PositionSelector extends Expression {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Successor</em>' containment reference.
 	 * @see #setSuccessor(PositionSelector)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getPositionSelector_Successor()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getPositionSelector_Successor()
 	 * @model containment="true"
 	 * @generated
 	 */

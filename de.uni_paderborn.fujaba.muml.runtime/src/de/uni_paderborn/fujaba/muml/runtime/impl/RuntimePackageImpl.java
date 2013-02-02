@@ -710,6 +710,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		runtimeConnectorInstanceEClass.getESuperTypes().add(theConnectorPackage.getConnectorInstance());
 		runtimeAssemblyConnectorInstanceEClass.getESuperTypes().add(theInstancePackage.getAssemblyConnectorInstance());
 		runtimeAssemblyConnectorInstanceEClass.getESuperTypes().add(this.getRuntimeConnectorInstance());
+		messageOnConnectorEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(runtimeComponentInstanceEClass, RuntimeComponentInstance.class, "RuntimeComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

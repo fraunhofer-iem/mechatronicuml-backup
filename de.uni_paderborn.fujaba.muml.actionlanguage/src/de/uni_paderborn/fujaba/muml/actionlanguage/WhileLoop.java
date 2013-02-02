@@ -17,7 +17,7 @@ package de.uni_paderborn.fujaba.muml.actionlanguage;
  * <!-- end-model-doc -->
  *
  *
- * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getWhileLoop()
+ * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getWhileLoop()
  * @model
  * @generated
  */

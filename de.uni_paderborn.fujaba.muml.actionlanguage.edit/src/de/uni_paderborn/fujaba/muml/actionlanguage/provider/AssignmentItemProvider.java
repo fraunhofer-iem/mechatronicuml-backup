@@ -27,8 +27,8 @@ import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguageFactory;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 
 
@@ -86,7 +86,7 @@ public class AssignmentItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Assignment_assignOperator_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Assignment_assignOperator_feature", "_UI_Assignment_type"),
-				 ActionLanguagePackage.Literals.ASSIGNMENT__ASSIGN_OPERATOR,
+				 ActionlanguagePackage.Literals.ASSIGNMENT__ASSIGN_OPERATOR,
 				 true,
 				 false,
 				 false,
@@ -108,7 +108,7 @@ public class AssignmentItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Assignment_incrementDecrementOperator_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Assignment_incrementDecrementOperator_feature", "_UI_Assignment_type"),
-				 ActionLanguagePackage.Literals.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR,
+				 ActionlanguagePackage.Literals.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR,
 				 true,
 				 false,
 				 false,
@@ -129,8 +129,8 @@ public class AssignmentItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION);
-			childrenFeatures.add(ActionLanguagePackage.Literals.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION);
+			childrenFeatures.add(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION);
+			childrenFeatures.add(ActionlanguagePackage.Literals.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -185,12 +185,12 @@ public class AssignmentItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Assignment.class)) {
-			case ActionLanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR:
-			case ActionLanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
+			case ActionlanguagePackage.ASSIGNMENT__ASSIGN_OPERATOR:
+			case ActionlanguagePackage.ASSIGNMENT__INCREMENT_DECREMENT_OPERATOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ActionLanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION:
-			case ActionLanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION:
+			case ActionlanguagePackage.ASSIGNMENT__RHS_ASSIGN_EXPRESSION:
+			case ActionlanguagePackage.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -210,103 +210,103 @@ public class AssignmentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createBlock()));
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createBlock()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createWhileLoop()));
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createDoWhileLoop()));
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createDoWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createAssignment()));
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createAssignment()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createForLoop()));
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createForLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createIfStatement()));
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createIfStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createOperationCall()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createReturnStatement()));
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createReturnStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createTriggerMessageExpression()));
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createTriggerMessageExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createPositionSelector()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
+				(ActionlanguagePackage.Literals.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
 	}
 
 	/**
@@ -321,8 +321,8 @@ public class AssignmentItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == ActionLanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION ||
-			childFeature == ActionLanguagePackage.Literals.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION;
+			childFeature == ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION ||
+			childFeature == ActionlanguagePackage.Literals.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION;
 
 		if (qualify) {
 			return getString
@@ -340,7 +340,7 @@ public class AssignmentItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ActionLanguageEditPlugin.INSTANCE;
+		return ActionlanguageEditPlugin.INSTANCE;
 	}
 
 }

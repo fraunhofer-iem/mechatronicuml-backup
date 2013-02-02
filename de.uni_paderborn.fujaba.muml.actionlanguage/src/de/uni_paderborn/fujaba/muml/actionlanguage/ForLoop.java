@@ -24,7 +24,7 @@ package de.uni_paderborn.fujaba.muml.actionlanguage;
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getForLoop()
+ * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getForLoop()
  * @model
  * @generated
  */
@@ -38,7 +38,7 @@ public interface ForLoop extends Loop {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Initialize Expression</em>' containment reference.
 	 * @see #setInitializeExpression(Assignment)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getForLoop_InitializeExpression()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getForLoop_InitializeExpression()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -67,7 +67,7 @@ public interface ForLoop extends Loop {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Counting Expression</em>' containment reference.
 	 * @see #setCountingExpression(Assignment)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getForLoop_CountingExpression()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getForLoop_CountingExpression()
 	 * @model containment="true"
 	 * @generated
 	 */

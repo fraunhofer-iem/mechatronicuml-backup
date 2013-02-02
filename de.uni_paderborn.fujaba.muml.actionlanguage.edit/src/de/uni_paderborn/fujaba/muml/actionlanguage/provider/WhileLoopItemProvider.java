@@ -19,7 +19,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.WhileLoop;
 
 /**
@@ -123,9 +123,9 @@ public class WhileLoopItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS ||
-			childFeature == ActionLanguagePackage.Literals.LOOP__BLOCK ||
-			childFeature == ActionLanguagePackage.Literals.LOOP__LOOP_TEST;
+			childFeature == ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS ||
+			childFeature == ActionlanguagePackage.Literals.LOOP__BLOCK ||
+			childFeature == ActionlanguagePackage.Literals.LOOP__LOOP_TEST;
 
 		if (qualify) {
 			return getString

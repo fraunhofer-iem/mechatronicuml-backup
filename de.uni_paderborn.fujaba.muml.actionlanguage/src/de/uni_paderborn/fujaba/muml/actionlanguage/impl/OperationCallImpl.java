@@ -18,10 +18,10 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.behavior.Operation;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
-import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public class OperationCallImpl extends ExpressionImpl implements OperationCall {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ActionLanguagePackage.Literals.OPERATION_CALL;
+		return ActionlanguagePackage.Literals.OPERATION_CALL;
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class OperationCallImpl extends ExpressionImpl implements OperationCall {
 			operation = (Operation)eResolveProxy(oldOperation);
 			if (operation != oldOperation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionLanguagePackage.OPERATION_CALL__OPERATION, oldOperation, operation));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActionlanguagePackage.OPERATION_CALL__OPERATION, oldOperation, operation));
 			}
 		}
 		return operation;
@@ -112,7 +112,7 @@ public class OperationCallImpl extends ExpressionImpl implements OperationCall {
 		Operation oldOperation = operation;
 		operation = newOperation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.OPERATION_CALL__OPERATION, oldOperation, operation));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.OPERATION_CALL__OPERATION, oldOperation, operation));
 	}
 
 	/**
@@ -122,7 +122,7 @@ public class OperationCallImpl extends ExpressionImpl implements OperationCall {
 	 */
 	public EList<ParameterBinding> getParameterBinding() {
 		if (parameterBinding == null) {
-			parameterBinding = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this, ActionLanguagePackage.OPERATION_CALL__PARAMETER_BINDING);
+			parameterBinding = new EObjectContainmentEList<ParameterBinding>(ParameterBinding.class, this, ActionlanguagePackage.OPERATION_CALL__PARAMETER_BINDING);
 		}
 		return parameterBinding;
 	}
@@ -135,7 +135,7 @@ public class OperationCallImpl extends ExpressionImpl implements OperationCall {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
+			case ActionlanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
 				return ((InternalEList<?>)getParameterBinding()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -149,10 +149,10 @@ public class OperationCallImpl extends ExpressionImpl implements OperationCall {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActionLanguagePackage.OPERATION_CALL__OPERATION:
+			case ActionlanguagePackage.OPERATION_CALL__OPERATION:
 				if (resolve) return getOperation();
 				return basicGetOperation();
-			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
+			case ActionlanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
 				return getParameterBinding();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -167,10 +167,10 @@ public class OperationCallImpl extends ExpressionImpl implements OperationCall {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActionLanguagePackage.OPERATION_CALL__OPERATION:
+			case ActionlanguagePackage.OPERATION_CALL__OPERATION:
 				setOperation((Operation)newValue);
 				return;
-			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
+			case ActionlanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
 				getParameterBinding().clear();
 				getParameterBinding().addAll((Collection<? extends ParameterBinding>)newValue);
 				return;
@@ -186,10 +186,10 @@ public class OperationCallImpl extends ExpressionImpl implements OperationCall {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.OPERATION_CALL__OPERATION:
+			case ActionlanguagePackage.OPERATION_CALL__OPERATION:
 				setOperation((Operation)null);
 				return;
-			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
+			case ActionlanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
 				getParameterBinding().clear();
 				return;
 		}
@@ -204,9 +204,9 @@ public class OperationCallImpl extends ExpressionImpl implements OperationCall {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.OPERATION_CALL__OPERATION:
+			case ActionlanguagePackage.OPERATION_CALL__OPERATION:
 				return operation != null;
-			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
+			case ActionlanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
 				return parameterBinding != null && !parameterBinding.isEmpty();
 		}
 		return super.eIsSet(featureID);

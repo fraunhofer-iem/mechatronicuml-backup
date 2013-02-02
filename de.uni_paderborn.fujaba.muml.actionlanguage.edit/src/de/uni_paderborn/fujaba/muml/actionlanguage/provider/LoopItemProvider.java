@@ -23,8 +23,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguageFactory;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Loop;
 
 /**
@@ -78,8 +78,8 @@ public class LoopItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionLanguagePackage.Literals.LOOP__BLOCK);
-			childrenFeatures.add(ActionLanguagePackage.Literals.LOOP__LOOP_TEST);
+			childrenFeatures.add(ActionlanguagePackage.Literals.LOOP__BLOCK);
+			childrenFeatures.add(ActionlanguagePackage.Literals.LOOP__LOOP_TEST);
 		}
 		return childrenFeatures;
 	}
@@ -134,8 +134,8 @@ public class LoopItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Loop.class)) {
-			case ActionLanguagePackage.LOOP__BLOCK:
-			case ActionLanguagePackage.LOOP__LOOP_TEST:
+			case ActionlanguagePackage.LOOP__BLOCK:
+			case ActionlanguagePackage.LOOP__LOOP_TEST:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -155,117 +155,117 @@ public class LoopItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__BLOCK,
-				 ActionLanguageFactory.eINSTANCE.createBlock()));
+				(ActionlanguagePackage.Literals.LOOP__BLOCK,
+				 ActionlanguageFactory.eINSTANCE.createBlock()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__BLOCK,
-				 ActionLanguageFactory.eINSTANCE.createWhileLoop()));
+				(ActionlanguagePackage.Literals.LOOP__BLOCK,
+				 ActionlanguageFactory.eINSTANCE.createWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__BLOCK,
-				 ActionLanguageFactory.eINSTANCE.createDoWhileLoop()));
+				(ActionlanguagePackage.Literals.LOOP__BLOCK,
+				 ActionlanguageFactory.eINSTANCE.createDoWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__BLOCK,
-				 ActionLanguageFactory.eINSTANCE.createForLoop()));
+				(ActionlanguagePackage.Literals.LOOP__BLOCK,
+				 ActionlanguageFactory.eINSTANCE.createForLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createBlock()));
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionlanguageFactory.eINSTANCE.createBlock()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createWhileLoop()));
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionlanguageFactory.eINSTANCE.createWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createDoWhileLoop()));
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionlanguageFactory.eINSTANCE.createDoWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createAssignment()));
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionlanguageFactory.eINSTANCE.createAssignment()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createForLoop()));
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionlanguageFactory.eINSTANCE.createForLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createIfStatement()));
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionlanguageFactory.eINSTANCE.createIfStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionlanguageFactory.eINSTANCE.createOperationCall()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createReturnStatement()));
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionlanguageFactory.eINSTANCE.createReturnStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createTriggerMessageExpression()));
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionlanguageFactory.eINSTANCE.createTriggerMessageExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionlanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionlanguageFactory.eINSTANCE.createPositionSelector()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionlanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
-				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionlanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
 				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
 				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
 				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
 				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.LOOP__LOOP_TEST,
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
 				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
@@ -281,9 +281,9 @@ public class LoopItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == ActionLanguagePackage.Literals.BLOCK__EXPRESSIONS ||
-			childFeature == ActionLanguagePackage.Literals.LOOP__BLOCK ||
-			childFeature == ActionLanguagePackage.Literals.LOOP__LOOP_TEST;
+			childFeature == ActionlanguagePackage.Literals.BLOCK__EXPRESSIONS ||
+			childFeature == ActionlanguagePackage.Literals.LOOP__BLOCK ||
+			childFeature == ActionlanguagePackage.Literals.LOOP__LOOP_TEST;
 
 		if (qualify) {
 			return getString

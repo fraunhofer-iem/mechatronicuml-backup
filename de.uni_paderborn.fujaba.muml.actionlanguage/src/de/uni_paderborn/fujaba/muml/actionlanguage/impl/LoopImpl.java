@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.expressions.Expression;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Loop;
 
@@ -68,7 +68,7 @@ public abstract class LoopImpl extends BlockImpl implements Loop {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ActionLanguagePackage.Literals.LOOP;
+		return ActionlanguagePackage.Literals.LOOP;
 	}
 
 	/**
@@ -89,7 +89,7 @@ public abstract class LoopImpl extends BlockImpl implements Loop {
 		Block oldBlock = block;
 		block = newBlock;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.LOOP__BLOCK, oldBlock, newBlock);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.LOOP__BLOCK, oldBlock, newBlock);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -104,14 +104,14 @@ public abstract class LoopImpl extends BlockImpl implements Loop {
 		if (newBlock != block) {
 			NotificationChain msgs = null;
 			if (block != null)
-				msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.LOOP__BLOCK, null, msgs);
+				msgs = ((InternalEObject)block).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.LOOP__BLOCK, null, msgs);
 			if (newBlock != null)
-				msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.LOOP__BLOCK, null, msgs);
+				msgs = ((InternalEObject)newBlock).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.LOOP__BLOCK, null, msgs);
 			msgs = basicSetBlock(newBlock, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.LOOP__BLOCK, newBlock, newBlock));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.LOOP__BLOCK, newBlock, newBlock));
 	}
 
 	/**
@@ -132,7 +132,7 @@ public abstract class LoopImpl extends BlockImpl implements Loop {
 		Expression oldLoopTest = loopTest;
 		loopTest = newLoopTest;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.LOOP__LOOP_TEST, oldLoopTest, newLoopTest);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.LOOP__LOOP_TEST, oldLoopTest, newLoopTest);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -147,14 +147,14 @@ public abstract class LoopImpl extends BlockImpl implements Loop {
 		if (newLoopTest != loopTest) {
 			NotificationChain msgs = null;
 			if (loopTest != null)
-				msgs = ((InternalEObject)loopTest).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.LOOP__LOOP_TEST, null, msgs);
+				msgs = ((InternalEObject)loopTest).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.LOOP__LOOP_TEST, null, msgs);
 			if (newLoopTest != null)
-				msgs = ((InternalEObject)newLoopTest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.LOOP__LOOP_TEST, null, msgs);
+				msgs = ((InternalEObject)newLoopTest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.LOOP__LOOP_TEST, null, msgs);
 			msgs = basicSetLoopTest(newLoopTest, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.LOOP__LOOP_TEST, newLoopTest, newLoopTest));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.LOOP__LOOP_TEST, newLoopTest, newLoopTest));
 	}
 
 	/**
@@ -165,9 +165,9 @@ public abstract class LoopImpl extends BlockImpl implements Loop {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActionLanguagePackage.LOOP__BLOCK:
+			case ActionlanguagePackage.LOOP__BLOCK:
 				return basicSetBlock(null, msgs);
-			case ActionLanguagePackage.LOOP__LOOP_TEST:
+			case ActionlanguagePackage.LOOP__LOOP_TEST:
 				return basicSetLoopTest(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -181,9 +181,9 @@ public abstract class LoopImpl extends BlockImpl implements Loop {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActionLanguagePackage.LOOP__BLOCK:
+			case ActionlanguagePackage.LOOP__BLOCK:
 				return getBlock();
-			case ActionLanguagePackage.LOOP__LOOP_TEST:
+			case ActionlanguagePackage.LOOP__LOOP_TEST:
 				return getLoopTest();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -198,10 +198,10 @@ public abstract class LoopImpl extends BlockImpl implements Loop {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActionLanguagePackage.LOOP__BLOCK:
+			case ActionlanguagePackage.LOOP__BLOCK:
 				setBlock((Block)newValue);
 				return;
-			case ActionLanguagePackage.LOOP__LOOP_TEST:
+			case ActionlanguagePackage.LOOP__LOOP_TEST:
 				setLoopTest((Expression)newValue);
 				return;
 		}
@@ -216,10 +216,10 @@ public abstract class LoopImpl extends BlockImpl implements Loop {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.LOOP__BLOCK:
+			case ActionlanguagePackage.LOOP__BLOCK:
 				setBlock((Block)null);
 				return;
-			case ActionLanguagePackage.LOOP__LOOP_TEST:
+			case ActionlanguagePackage.LOOP__LOOP_TEST:
 				setLoopTest((Expression)null);
 				return;
 		}
@@ -234,9 +234,9 @@ public abstract class LoopImpl extends BlockImpl implements Loop {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.LOOP__BLOCK:
+			case ActionlanguagePackage.LOOP__BLOCK:
 				return block != null;
-			case ActionLanguagePackage.LOOP__LOOP_TEST:
+			case ActionlanguagePackage.LOOP__LOOP_TEST:
 				return loopTest != null;
 		}
 		return super.eIsSet(featureID);

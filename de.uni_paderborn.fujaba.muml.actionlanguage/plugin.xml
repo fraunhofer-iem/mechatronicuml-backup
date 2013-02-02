@@ -11,7 +11,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage" genModel="model/actionlanguage.genmodel" uri="http://www.fujaba.de/muml/actionlanguage/0.3.16"/>
+      <package class="de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage" genModel="model/actionlanguage.genmodel" uri="http://www.fujaba.de/muml/actionlanguage/0.3.16"/>
    </extension>
 
 </plugin>

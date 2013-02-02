@@ -25,7 +25,7 @@ import org.storydriven.core.expressions.Expression;
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getLoop()
+ * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getLoop()
  * @model abstract="true"
  * @generated
  */
@@ -43,7 +43,7 @@ public interface Loop extends Block {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Block</em>' containment reference.
 	 * @see #setBlock(Block)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getLoop_Block()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getLoop_Block()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -72,7 +72,7 @@ public interface Loop extends Block {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Loop Test</em>' containment reference.
 	 * @see #setLoopTest(Expression)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getLoop_LoopTest()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getLoop_LoopTest()
 	 * @model containment="true"
 	 * @generated
 	 */

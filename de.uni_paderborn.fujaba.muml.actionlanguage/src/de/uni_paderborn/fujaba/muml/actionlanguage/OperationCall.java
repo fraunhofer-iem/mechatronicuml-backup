@@ -29,7 +29,7 @@ import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getOperationCall()
+ * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getOperationCall()
  * @model
  * @generated
  */
@@ -47,7 +47,7 @@ public interface OperationCall extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Operation</em>' reference.
 	 * @see #setOperation(Operation)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getOperationCall_Operation()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getOperationCall_Operation()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -76,7 +76,7 @@ public interface OperationCall extends Expression {
 	 * Parameter bindings which belongs to an operation call.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameter Binding</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getOperationCall_ParameterBinding()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getOperationCall_ParameterBinding()
 	 * @model containment="true"
 	 * @generated
 	 */

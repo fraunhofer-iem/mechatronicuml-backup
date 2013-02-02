@@ -9,25 +9,16 @@
 -->
 <plugin>
 <!-- manual extensions -->
-   <extension
-         point="de.uni_paderborn.fujaba.modelinstance.version">
-      <artefact
-            id="de.uni_paderborn.fujaba.muml.metamodel"
-            name="muml metamodel"
-            resource="plugin.xml"
-            version="0.3.2">
+<extension point="de.uni_paderborn.fujaba.modelinstance.version">
+      <artefact id="de.uni_paderborn.fujaba.muml.metamodel" name="muml metamodel" resource="plugin.xml" version="0.3.2">
          <!-- these following values are automatically modified by svn after committing a change in this file; see svn:keywords -->
-         <lastchange
-               committer="$LastChangedBy$"
-               date="$LastChangedDate$"
-               revision="$LastChangedRevision$">
+         <lastchange committer="$LastChangedBy$" date="$LastChangedDate$" revision="$LastChangedRevision$">
          </lastchange>
       </artefact>
    </extension>
 <extension point="org.eclipse.emf.ecore.generated_package">
       <package class="de.uni_paderborn.fujaba.muml.MumlPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/0.2.2"/>
    </extension>
-
 <extension point="org.eclipse.emf.edapt.migrators">
       <!--
       	bingo: It would be nice to have this extension in the model.edapt plugin so that the model plugin
@@ -94,6 +85,5 @@
       <?emfgen generated="true"?>
       <package class="de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/behavior/0.3.17"/>
    </extension>
-
 
 </plugin>

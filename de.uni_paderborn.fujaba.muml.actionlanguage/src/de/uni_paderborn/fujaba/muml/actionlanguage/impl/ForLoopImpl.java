@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ForLoop;
 
@@ -67,7 +67,7 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ActionLanguagePackage.Literals.FOR_LOOP;
+		return ActionlanguagePackage.Literals.FOR_LOOP;
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 		Assignment oldInitializeExpression = initializeExpression;
 		initializeExpression = newInitializeExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION, oldInitializeExpression, newInitializeExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION, oldInitializeExpression, newInitializeExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -103,14 +103,14 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 		if (newInitializeExpression != initializeExpression) {
 			NotificationChain msgs = null;
 			if (initializeExpression != null)
-				msgs = ((InternalEObject)initializeExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)initializeExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION, null, msgs);
 			if (newInitializeExpression != null)
-				msgs = ((InternalEObject)newInitializeExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)newInitializeExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION, null, msgs);
 			msgs = basicSetInitializeExpression(newInitializeExpression, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION, newInitializeExpression, newInitializeExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION, newInitializeExpression, newInitializeExpression));
 	}
 
 	/**
@@ -131,7 +131,7 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 		Assignment oldCountingExpression = countingExpression;
 		countingExpression = newCountingExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.FOR_LOOP__COUNTING_EXPRESSION, oldCountingExpression, newCountingExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.FOR_LOOP__COUNTING_EXPRESSION, oldCountingExpression, newCountingExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -146,14 +146,14 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 		if (newCountingExpression != countingExpression) {
 			NotificationChain msgs = null;
 			if (countingExpression != null)
-				msgs = ((InternalEObject)countingExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.FOR_LOOP__COUNTING_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)countingExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.FOR_LOOP__COUNTING_EXPRESSION, null, msgs);
 			if (newCountingExpression != null)
-				msgs = ((InternalEObject)newCountingExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.FOR_LOOP__COUNTING_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)newCountingExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.FOR_LOOP__COUNTING_EXPRESSION, null, msgs);
 			msgs = basicSetCountingExpression(newCountingExpression, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.FOR_LOOP__COUNTING_EXPRESSION, newCountingExpression, newCountingExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.FOR_LOOP__COUNTING_EXPRESSION, newCountingExpression, newCountingExpression));
 	}
 
 	/**
@@ -164,9 +164,9 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActionLanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION:
+			case ActionlanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION:
 				return basicSetInitializeExpression(null, msgs);
-			case ActionLanguagePackage.FOR_LOOP__COUNTING_EXPRESSION:
+			case ActionlanguagePackage.FOR_LOOP__COUNTING_EXPRESSION:
 				return basicSetCountingExpression(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -180,9 +180,9 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActionLanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION:
+			case ActionlanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION:
 				return getInitializeExpression();
-			case ActionLanguagePackage.FOR_LOOP__COUNTING_EXPRESSION:
+			case ActionlanguagePackage.FOR_LOOP__COUNTING_EXPRESSION:
 				return getCountingExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -196,10 +196,10 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActionLanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION:
+			case ActionlanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION:
 				setInitializeExpression((Assignment)newValue);
 				return;
-			case ActionLanguagePackage.FOR_LOOP__COUNTING_EXPRESSION:
+			case ActionlanguagePackage.FOR_LOOP__COUNTING_EXPRESSION:
 				setCountingExpression((Assignment)newValue);
 				return;
 		}
@@ -214,10 +214,10 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION:
+			case ActionlanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION:
 				setInitializeExpression((Assignment)null);
 				return;
-			case ActionLanguagePackage.FOR_LOOP__COUNTING_EXPRESSION:
+			case ActionlanguagePackage.FOR_LOOP__COUNTING_EXPRESSION:
 				setCountingExpression((Assignment)null);
 				return;
 		}
@@ -232,9 +232,9 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION:
+			case ActionlanguagePackage.FOR_LOOP__INITIALIZE_EXPRESSION:
 				return initializeExpression != null;
-			case ActionLanguagePackage.FOR_LOOP__COUNTING_EXPRESSION:
+			case ActionlanguagePackage.FOR_LOOP__COUNTING_EXPRESSION:
 				return countingExpression != null;
 		}
 		return super.eIsSet(featureID);

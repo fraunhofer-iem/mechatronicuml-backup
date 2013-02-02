@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 
 
@@ -61,7 +61,7 @@ public class BlockImpl extends ExpressionImpl implements Block {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ActionLanguagePackage.Literals.BLOCK;
+		return ActionlanguagePackage.Literals.BLOCK;
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class BlockImpl extends ExpressionImpl implements Block {
 	 */
 	public EList<Expression> getExpressions() {
 		if (expressions == null) {
-			expressions = new EObjectContainmentEList<Expression>(Expression.class, this, ActionLanguagePackage.BLOCK__EXPRESSIONS);
+			expressions = new EObjectContainmentEList<Expression>(Expression.class, this, ActionlanguagePackage.BLOCK__EXPRESSIONS);
 		}
 		return expressions;
 	}
@@ -84,7 +84,7 @@ public class BlockImpl extends ExpressionImpl implements Block {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActionLanguagePackage.BLOCK__EXPRESSIONS:
+			case ActionlanguagePackage.BLOCK__EXPRESSIONS:
 				return ((InternalEList<?>)getExpressions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -98,7 +98,7 @@ public class BlockImpl extends ExpressionImpl implements Block {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActionLanguagePackage.BLOCK__EXPRESSIONS:
+			case ActionlanguagePackage.BLOCK__EXPRESSIONS:
 				return getExpressions();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -113,7 +113,7 @@ public class BlockImpl extends ExpressionImpl implements Block {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActionLanguagePackage.BLOCK__EXPRESSIONS:
+			case ActionlanguagePackage.BLOCK__EXPRESSIONS:
 				getExpressions().clear();
 				getExpressions().addAll((Collection<? extends Expression>)newValue);
 				return;
@@ -129,7 +129,7 @@ public class BlockImpl extends ExpressionImpl implements Block {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.BLOCK__EXPRESSIONS:
+			case ActionlanguagePackage.BLOCK__EXPRESSIONS:
 				getExpressions().clear();
 				return;
 		}
@@ -144,7 +144,7 @@ public class BlockImpl extends ExpressionImpl implements Block {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.BLOCK__EXPRESSIONS:
+			case ActionlanguagePackage.BLOCK__EXPRESSIONS:
 				return expressions != null && !expressions.isEmpty();
 		}
 		return super.eIsSet(featureID);

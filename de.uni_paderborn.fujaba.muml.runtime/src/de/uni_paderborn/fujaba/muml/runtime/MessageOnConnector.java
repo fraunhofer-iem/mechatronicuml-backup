@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime;
 
+import org.storydriven.core.ExtendableElement;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -26,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface MessageOnConnector extends EObject {
+public interface MessageOnConnector extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Receiver</b></em>' reference.
 	 * <!-- begin-user-doc -->

@@ -23,6 +23,7 @@ import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.runtime.*;
 import de.uni_paderborn.fujaba.muml.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.MessageOnConnector;
 import de.uni_paderborn.fujaba.muml.runtime.MultiRoleInstance;
@@ -240,6 +241,7 @@ public class RuntimeSwitch<T> extends Switch<T> {
 			case RuntimePackage.MESSAGE_ON_CONNECTOR: {
 				MessageOnConnector messageOnConnector = (MessageOnConnector)theEObject;
 				T result = caseMessageOnConnector(messageOnConnector);
+				if (result == null) result = caseExtendableElement(messageOnConnector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

@@ -24,9 +24,9 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall} object.
@@ -81,7 +81,7 @@ public class OperationCallItemProvider
 				 getResourceLocator(),
 				 getString("_UI_OperationCall_operation_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_OperationCall_operation_feature", "_UI_OperationCall_type"),
-				 ActionLanguagePackage.Literals.OPERATION_CALL__OPERATION,
+				 ActionlanguagePackage.Literals.OPERATION_CALL__OPERATION,
 				 true,
 				 false,
 				 true,
@@ -102,7 +102,7 @@ public class OperationCallItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_BINDING);
+			childrenFeatures.add(ActionlanguagePackage.Literals.OPERATION_CALL__PARAMETER_BINDING);
 		}
 		return childrenFeatures;
 	}
@@ -157,7 +157,7 @@ public class OperationCallItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(OperationCall.class)) {
-			case ActionLanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
+			case ActionlanguagePackage.OPERATION_CALL__PARAMETER_BINDING:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -177,7 +177,7 @@ public class OperationCallItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.OPERATION_CALL__PARAMETER_BINDING,
+				(ActionlanguagePackage.Literals.OPERATION_CALL__PARAMETER_BINDING,
 				 BehaviorFactory.eINSTANCE.createParameterBinding()));
 	}
 
@@ -189,7 +189,7 @@ public class OperationCallItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ActionLanguageEditPlugin.INSTANCE;
+		return ActionlanguageEditPlugin.INSTANCE;
 	}
 
 }

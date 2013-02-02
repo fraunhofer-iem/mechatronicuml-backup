@@ -24,7 +24,6 @@ import de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin;
 /**
  * <!-- begin-user-doc --> The <b>Resource </b> associated with the package.
  * <!-- end-user-doc -->
- * 
  * @see de.uni_paderborn.fujaba.modelinstance.util.ModelinstanceResourceFactoryImpl
  * @generated
  */
@@ -32,11 +31,10 @@ public class ModelinstanceResourceImpl extends XMIResourceImpl {
 	public static String versionInformation = null;
 
 	/**
-	 * Creates an instance of the resource. <!-- begin-user-doc --> <!--
+	 * Creates an instance of the resource.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
-	 * @param uri
-	 *            the URI of the new resource.
+	 * @param uri the URI of the new resource.
 	 * @generated
 	 */
 	public ModelinstanceResourceImpl(URI uri) {

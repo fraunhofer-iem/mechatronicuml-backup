@@ -24,7 +24,7 @@ import org.storydriven.core.expressions.Expression;
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getReturnStatement()
+ * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getReturnStatement()
  * @model
  * @generated
  */
@@ -42,7 +42,7 @@ public interface ReturnStatement extends Expression {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Expression</em>' containment reference.
 	 * @see #setExpression(Expression)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage#getReturnStatement_Expression()
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getReturnStatement_Expression()
 	 * @model containment="true"
 	 * @generated
 	 */

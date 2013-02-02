@@ -25,8 +25,8 @@ import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguageFactory;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ReturnStatement;
 
 /**
@@ -80,7 +80,7 @@ public class ReturnStatementItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION);
+			childrenFeatures.add(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -135,7 +135,7 @@ public class ReturnStatementItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ReturnStatement.class)) {
-			case ActionLanguagePackage.RETURN_STATEMENT__EXPRESSION:
+			case ActionlanguagePackage.RETURN_STATEMENT__EXPRESSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -155,97 +155,97 @@ public class ReturnStatementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createBlock()));
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createBlock()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createWhileLoop()));
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createDoWhileLoop()));
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createDoWhileLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createAssignment()));
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createAssignment()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createForLoop()));
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createForLoop()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createIfStatement()));
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createIfStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createOperationCall()));
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createOperationCall()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createReturnStatement()));
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createReturnStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createTriggerMessageExpression()));
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createTriggerMessageExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createDiscreteInteractionEndpointReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createPositionSelector()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createLocalVariableDeclarationStatement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
+				(ActionlanguagePackage.Literals.RETURN_STATEMENT__EXPRESSION,
 				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
@@ -257,7 +257,7 @@ public class ReturnStatementItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ActionLanguageEditPlugin.INSTANCE;
+		return ActionlanguageEditPlugin.INSTANCE;
 	}
 
 }

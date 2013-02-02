@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.DiscreteInteractionEndpointReference;
 import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelector;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
@@ -69,7 +69,7 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE;
+		return ActionlanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE;
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 		TypedNamedElementExpression oldTypedNamedElementExpression = typedNamedElementExpression;
 		typedNamedElementExpression = newTypedNamedElementExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION, oldTypedNamedElementExpression, newTypedNamedElementExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION, oldTypedNamedElementExpression, newTypedNamedElementExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -105,14 +105,14 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 		if (newTypedNamedElementExpression != typedNamedElementExpression) {
 			NotificationChain msgs = null;
 			if (typedNamedElementExpression != null)
-				msgs = ((InternalEObject)typedNamedElementExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)typedNamedElementExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION, null, msgs);
 			if (newTypedNamedElementExpression != null)
-				msgs = ((InternalEObject)newTypedNamedElementExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION, null, msgs);
+				msgs = ((InternalEObject)newTypedNamedElementExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION, null, msgs);
 			msgs = basicSetTypedNamedElementExpression(newTypedNamedElementExpression, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION, newTypedNamedElementExpression, newTypedNamedElementExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION, newTypedNamedElementExpression, newTypedNamedElementExpression));
 	}
 
 	/**
@@ -133,7 +133,7 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 		PositionSelector oldPosition = position;
 		position = newPosition;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION, oldPosition, newPosition);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION, oldPosition, newPosition);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -148,14 +148,14 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 		if (newPosition != position) {
 			NotificationChain msgs = null;
 			if (position != null)
-				msgs = ((InternalEObject)position).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION, null, msgs);
+				msgs = ((InternalEObject)position).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION, null, msgs);
 			if (newPosition != null)
-				msgs = ((InternalEObject)newPosition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION, null, msgs);
+				msgs = ((InternalEObject)newPosition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION, null, msgs);
 			msgs = basicSetPosition(newPosition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION, newPosition, newPosition));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION, newPosition, newPosition));
 	}
 
 	/**
@@ -166,9 +166,9 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
+			case ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
 				return basicSetTypedNamedElementExpression(null, msgs);
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
+			case ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				return basicSetPosition(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -182,9 +182,9 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
+			case ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
 				return getTypedNamedElementExpression();
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
+			case ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				return getPosition();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -198,10 +198,10 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
+			case ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
 				setTypedNamedElementExpression((TypedNamedElementExpression)newValue);
 				return;
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
+			case ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				setPosition((PositionSelector)newValue);
 				return;
 		}
@@ -216,10 +216,10 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
+			case ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
 				setTypedNamedElementExpression((TypedNamedElementExpression)null);
 				return;
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
+			case ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				setPosition((PositionSelector)null);
 				return;
 		}
@@ -234,9 +234,9 @@ public class DiscreteInteractionEndpointReferenceImpl extends ExpressionImpl imp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
+			case ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
 				return typedNamedElementExpression != null;
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
+			case ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				return position != null;
 		}
 		return super.eIsSet(featureID);

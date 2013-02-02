@@ -23,8 +23,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguageFactory;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.DiscreteInteractionEndpointReference;
 
 /**
@@ -78,8 +78,8 @@ public class DiscreteInteractionEndpointReferenceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION);
-			childrenFeatures.add(ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION);
+			childrenFeatures.add(ActionlanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION);
+			childrenFeatures.add(ActionlanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION);
 		}
 		return childrenFeatures;
 	}
@@ -134,8 +134,8 @@ public class DiscreteInteractionEndpointReferenceItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DiscreteInteractionEndpointReference.class)) {
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
-			case ActionLanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
+			case ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION:
+			case ActionlanguagePackage.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -155,13 +155,13 @@ public class DiscreteInteractionEndpointReferenceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION,
-				 ActionLanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
+				(ActionlanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__TYPED_NAMED_ELEMENT_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createTypedNamedElementExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ActionLanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION,
-				 ActionLanguageFactory.eINSTANCE.createPositionSelector()));
+				(ActionlanguagePackage.Literals.DISCRETE_INTERACTION_ENDPOINT_REFERENCE__POSITION,
+				 ActionlanguageFactory.eINSTANCE.createPositionSelector()));
 	}
 
 	/**
@@ -172,7 +172,7 @@ public class DiscreteInteractionEndpointReferenceItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ActionLanguageEditPlugin.INSTANCE;
+		return ActionlanguageEditPlugin.INSTANCE;
 	}
 
 }
