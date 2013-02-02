@@ -23,21 +23,21 @@
 	<extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="true"?>
       <editor
-         id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID"
+         id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/ModelinstanceDiagramFile.gif"
          extensions="structuredcomponent_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditor"
-         matchingStrategy="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlMatchingStrategy"
-         contributorClass="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramActionBarContributor">
+         class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlDiagramActionBarContributor">
       </editor>
    	</extension>
    	<extension point="org.eclipse.ui.contexts" id="ui-context">
       <?gmfgen generated="true"?>
       <context
          description="%context.description"
-         id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ui.diagramContext"
+         id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ui.diagramContext"
          name="%context.name"
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
@@ -49,8 +49,8 @@
   	     name="%newWizardName"
   	     icon="icons/obj16/ModelinstanceDiagramFile.gif"
   	     category="org.eclipse.ui.Examples"
-  	     class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlCreationWizard"
-  	     id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlCreationWizardID">
+  	     class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlCreationWizard"
+  	     id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
    	</extension>
@@ -64,9 +64,9 @@
 	         allPopups="false"
 	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
 	      <command
-	            commandId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.createDiagram"
+	            commandId="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.createDiagram"
 	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
-	            id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.createDiagram"
+	            id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.createDiagram"
 	            label="Initialize Structuredcomponent Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
@@ -82,8 +82,8 @@
 		<command
 			categoryId="de.uni_paderborn.fujaba"
 			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlInitDiagramFileAction"
-			id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.createDiagram"
+			defaultHandler="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlInitDiagramFileAction"
+			id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.createDiagram"
 			name="%initDiagramActionLabel">
 		</command>
 	</extension>
@@ -109,8 +109,8 @@
          point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
       <?gmfgen generated="true"?>
       <editor
-            preferencesHint="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram"
-            editorId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID"
+            preferencesHint="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram"
+            editorId="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorID"
             editorName="Structuredcomponent Editor"
             fileExtension="structuredcomponent_diagram"
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.components.category"
@@ -135,7 +135,7 @@
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
          id="StructuredcomponentPresentation">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID">
+         <ViewId id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="delete"/>
             </ElementType>
@@ -152,7 +152,7 @@
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
          id="StructuredcomponentPresentationIDE">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID">
+         <ViewId id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="bookmark"/>
             </ElementType>
@@ -162,7 +162,7 @@
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
             id="StructuredcomponentRender">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID">
+         <ViewId id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="cut"/>
                <GlobalActionId actionId="copy"/>
@@ -179,7 +179,7 @@
    
    <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
-      <initializer class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.preferences.DiagramPreferenceInitializer"/>
+      <initializer class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
@@ -187,39 +187,39 @@
       <page
             id="de.uni_paderborn.fujaba.muml.diagram.general"
             name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.preferences.DiagramGeneralPreferencePage">
+            class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.diagram.appearance"
             name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.appearance"
             category="de.uni_paderborn.fujaba.muml.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.preferences.DiagramAppearancePreferencePage">
+            class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.diagram.connections"
             name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.connections"
             category="de.uni_paderborn.fujaba.muml.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.preferences.DiagramConnectionsPreferencePage">
+            class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.diagram.printing"
             name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.printing"
             category="de.uni_paderborn.fujaba.muml.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.preferences.DiagramPrintingPreferencePage">
+            class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.diagram.rulersAndGrid"
             name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.rulersAndGrid"
             category="de.uni_paderborn.fujaba.muml.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.preferences.DiagramRulersAndGridPreferencePage">
+            class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
       <?gmfgen generated="true"?>
       <propertyContributor
-            contributorId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram"
-            labelProvider="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.sheet.MumlSheetLabelProvider">
+            contributorId="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram"
+            labelProvider="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.sheet.MumlSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -228,7 +228,7 @@
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
       <?gmfgen generated="true"?>   
-      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram">
+      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram">
          <propertyTab
              category="visual"
              id="property.tab.AppearancePropertySection"
@@ -247,7 +247,7 @@
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
       <?gmfgen generated="true"?>   
-      <propertySections contributorId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram">
+      <propertySections contributorId="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram">
          <propertySection id="property.section.ConnectorAppearancePropertySection" 
             filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
             class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
@@ -271,7 +271,7 @@
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.sheet.MumlPropertySection">
+            class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.sheet.MumlPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
          </propertySection>
@@ -283,7 +283,7 @@
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <?gmfgen generated="true"?>
       <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram">
+            contributorId="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram">
          <propertyTab
                label="Base"
                category="domain"
@@ -300,7 +300,7 @@
       
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
-      <viewProvider class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlViewProvider">
+      <viewProvider class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Structuredcomponent"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,3010,3011,3012,3013,3014,3015,3016"/>
@@ -310,7 +310,7 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
-      <editpartProvider class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlEditPartProvider">
+      <editpartProvider class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
             <method name="getType()" value="Structuredcomponent"/>
@@ -333,24 +333,24 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlModelingAssistantProvider">
+      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlModelingAssistantProvider">
          <Priority name="Lowest"/>
-         <object class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ModelElementCategoryEditPart" id="ModelElementCategory_1000"/>
-         <object class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.StaticStructuredComponentEditPart" id="StaticStructuredComponent_2005"/>
+         <object class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ModelElementCategoryEditPart" id="ModelElementCategory_1000"/>
+         <object class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.StaticStructuredComponentEditPart" id="StaticStructuredComponent_2005"/>
          <context elements="ModelElementCategory_1000,StaticStructuredComponent_2005"/>
       </modelingAssistantProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlIconProvider">
+      <IconProvider class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlParserProvider">
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
@@ -359,115 +359,115 @@
       <?gmfgen generated="true"?>
       <metamodel nsURI="http://www.fujaba.de/modelinstance/0.3.15">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ModelElementCategory_1000"
+               id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ModelElementCategory_1000"
                name="%metatype.name.ModelElementCategory_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ModelElementCategory"
-               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.ModelElementCategoryEditHelper">
+               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.helpers.ModelElementCategoryEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.StaticStructuredComponent_2005"
+               id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.StaticStructuredComponent_2005"
                name="%metatype.name.StaticStructuredComponent_2005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="StaticStructuredComponent"
-               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.StaticStructuredComponentEditHelper">
+               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.helpers.StaticStructuredComponentEditHelper">
             <param name="semanticHint" value="2005"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePort_3010"
+               id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.DiscretePort_3010"
                name="%metatype.name.DiscretePort_3010"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="DiscretePort"
-               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.DiscretePortEditHelper">
+               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.helpers.DiscretePortEditHelper">
             <param name="semanticHint" value="3010"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ContinuousPort_3011"
+               id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ContinuousPort_3011"
                name="%metatype.name.ContinuousPort_3011"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ContinuousPort"
-               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.ContinuousPortEditHelper">
+               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.helpers.ContinuousPortEditHelper">
             <param name="semanticHint" value="3011"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ComponentPart_3012"
+               id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ComponentPart_3012"
                name="%metatype.name.ComponentPart_3012"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComponentPart"
-               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.ComponentPartEditHelper">
+               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.helpers.ComponentPartEditHelper">
             <param name="semanticHint" value="3012"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HybridPort_3013"
+               id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.HybridPort_3013"
                name="%metatype.name.HybridPort_3013"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="HybridPort"
-               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.HybridPortEditHelper">
+               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.helpers.HybridPortEditHelper">
             <param name="semanticHint" value="3013"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePort_3014"
+               id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.DiscretePort_3014"
                name="%metatype.name.DiscretePort_3014"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePort_3010"/>
+            <specializes id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.DiscretePort_3010"/>
             <param name="semanticHint" value="3014"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ContinuousPort_3015"
+               id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ContinuousPort_3015"
                name="%metatype.name.ContinuousPort_3015"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ContinuousPort_3011"/>
+            <specializes id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ContinuousPort_3011"/>
             <param name="semanticHint" value="3015"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/protocol/0.3.17">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.CoordinationProtocol_3016"
+               id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.CoordinationProtocol_3016"
                name="%metatype.name.CoordinationProtocol_3016"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="CoordinationProtocol"
-               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.CoordinationProtocolEditHelper">
+               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.helpers.CoordinationProtocolEditHelper">
             <param name="semanticHint" value="3016"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.AssemblyConnector_4001"
+               id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.AssemblyConnector_4001"
                name="%metatype.name.AssemblyConnector_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="AssemblyConnector"
-               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.AssemblyConnectorEditHelper">
+               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.helpers.AssemblyConnectorEditHelper">
             <param name="semanticHint" value="4001"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DelegationConnector_4002"
+               id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.DelegationConnector_4002"
                name="%metatype.name.DelegationConnector_4002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="DelegationConnector"
-               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.helpers.DelegationConnectorEditHelper">
+               edithelper="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.helpers.DelegationConnectorEditHelper">
             <param name="semanticHint" value="4002"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePortGmfProtocol_4005"
+               id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.DiscretePortGmfProtocol_4005"
                name="%metatype.name.DiscretePortGmfProtocol_4005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
@@ -478,26 +478,26 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
       <?gmfgen generated="true"?>
-      <clientContext id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.TypeContext">
+      <clientContext id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.TypeContext">
          <enablement>
             <test
                property="org.eclipse.gmf.runtime.emf.core.editingDomain"
-               value="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.EditingDomain"/>
+               value="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.EditingDomain"/>
          </enablement>
       </clientContext> 
-      <binding context="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ModelElementCategory_1000"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.StaticStructuredComponent_2005"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePort_3010"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ContinuousPort_3011"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ComponentPart_3012"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.HybridPort_3013"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePort_3014"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ContinuousPort_3015"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.CoordinationProtocol_3016"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.AssemblyConnector_4001"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DelegationConnector_4002"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.DiscretePortGmfProtocol_4005"/>
+      <binding context="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ModelElementCategory_1000"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.StaticStructuredComponent_2005"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.DiscretePort_3010"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ContinuousPort_3011"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ComponentPart_3012"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.HybridPort_3013"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.DiscretePort_3014"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ContinuousPort_3015"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.CoordinationProtocol_3016"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.AssemblyConnector_4001"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.DelegationConnector_4002"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.DiscretePortGmfProtocol_4005"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -505,17 +505,17 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.MumlDiagramUpdateCommand"
+         defaultHandler="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlDiagramUpdateCommand"
          description="%update.diagram.description"
-         id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.updateDiagram"
+         id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.updateDiagram"
          name="%update.diagram.name"/>
    </extension>
    
    <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
       <?gmfgen generated="true"?>
       <key 
-         commandId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.updateDiagram"
-         contextId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.ui.diagramContext"
+         commandId="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.updateDiagram"
+         contextId="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ui.diagramContext"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
    </extension>
@@ -527,12 +527,12 @@
       <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
       </menuContribution -->
       <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
-         <command commandId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.LoadResourceAction">
+         <command commandId="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.LoadResourceAction">
             <visibleWhen>
                <and>
-                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts.ModelElementCategoryEditPart"/>
+                     <instanceof value="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ModelElementCategoryEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
@@ -542,11 +542,11 @@
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
-      <category id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
-      <command id="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.LoadResourceAction"
+      <category id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.LoadResourceAction"
          name="Load Resource"
-         categoryId="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorID"
-         defaultHandler="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.LoadResourceAction"/>
+         categoryId="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorID"
+         defaultHandler="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.LoadResourceAction"/>
    </extension>
 
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
@@ -554,8 +554,8 @@
    </extension>
 <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlMarkerNavigationProvider">
-         <MarkerType name="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.diagnostic"/>
+      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlMarkerNavigationProvider">
+         <MarkerType name="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
    </extension>
@@ -567,7 +567,7 @@
       <persistent value="true"/>
    </extension><extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers.MumlValidationDecoratorProvider">
+      <decoratorProvider class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlValidationDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>

@@ -2,13 +2,13 @@
 <gmfgen:GenEditorGenerator xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram"
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram"
     modelID="Structuredcomponent"
     diagramFileExtension="structuredcomponent_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
     templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates"
-    pluginDirectory="/de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram/src">
+    pluginDirectory="/de.uni_paderborn.fujaba.muml.structuredcomponent.diagram/src">
   <diagram
       visualID="1000"
       editPartClassName="ModelElementCategoryEditPart"
@@ -825,7 +825,7 @@
     </preferencePages>
   </diagram>
   <plugin
-      iD="de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram"
+      iD="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram"
       name="Structured Component Diagram-Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.3.1.qualifier"

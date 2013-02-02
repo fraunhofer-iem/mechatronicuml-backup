@@ -1,19 +1,19 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram; singleton:=true
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.structuredcomponent.diagram;singleton:=true
 Bundle-Version: 0.3.1.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part.StructuredcomponentDiagramEditorPlugin
+Bundle-Activator: de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.parts,
- de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.policies,
- de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.edit.commands,
- de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.part,
- de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.providers,
- de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.sheet,
- de.uni_paderborn.fujaba.muml.structuredcomponenteditor.diagram.parsers
+Export-Package: de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.commands,
+ de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts,
+ de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.policies,
+ de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.parsers,
+ de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part,
+ de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers,
+ de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.sheet
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,
