@@ -1,7 +1,7 @@
 eclipse.preferences.version=1
 gmf_dashboard/domainGenerationModel=platform\:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.genmodel
 gmf_dashboard/domainModel=platform\:/resource/de.uni_paderborn.fujaba.muml.model/model/muml.ecore
-gmf_dashboard/generationModel=platform\:/resource/de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram/model/messageinterface.gmfgen
-gmf_dashboard/graphicalDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram/model/messageinterface.gmfgraph
-gmf_dashboard/mappingModel=platform\:/resource/de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram/model/messageinterface.gmfmap
-gmf_dashboard/toolingDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram/model/messageinterface.gmftool
+gmf_dashboard/generationModel=platform\:/resource/de.uni_paderborn.fujaba.muml.messagetype.diagram/model/messageinterface.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.messagetype.diagram/model/messageinterface.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/de.uni_paderborn.fujaba.muml.messagetype.diagram/model/messageinterface.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.messagetype.diagram/model/messageinterface.gmftool

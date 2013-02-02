@@ -2,13 +2,13 @@
 <gmfgen:GenEditorGenerator xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram"
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.muml.messagetype.diagram"
     modelID="Messageinterface"
     diagramFileExtension="messageinterface_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
     templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates"
-    pluginDirectory="/de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram/src">
+    pluginDirectory="/de.uni_paderborn.fujaba.muml.messagetype.diagram/src">
   <diagram
       visualID="1000"
       editPartClassName="MessageInterfaceDiagramEditPart"
@@ -258,7 +258,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="MessageTypeRepository"
             description="Create new MessageInterface"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom/icons/MessageInterface.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.messagetype.diagram.custom/icons/MessageInterface.gif"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
@@ -299,7 +299,7 @@
     </preferencePages>
   </diagram>
   <plugin
-      iD="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram"
+      iD="de.uni_paderborn.fujaba.muml.messagetype.diagram"
       name="Message Type Diagram-Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.3.1.qualifier"

@@ -15,7 +15,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/MessageInterface.gif"
-            bundle="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom"/>
+            bundle="de.uni_paderborn.fujaba.muml.messagetype.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"

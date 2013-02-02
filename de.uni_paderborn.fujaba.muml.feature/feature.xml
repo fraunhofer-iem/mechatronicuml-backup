@@ -83,7 +83,7 @@
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edapt.migration" version="0.3.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edapt.declaration" version="0.3.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.messagetype.diagram" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edapt.history"/>
       <import plugin="org.eclipse.swt" version="3.7.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.7.0" match="greaterOrEqual"/>
@@ -225,14 +225,14 @@
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram"
+         id="de.uni_paderborn.fujaba.muml.messagetype.diagram"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.messageinterfaceeditor.diagram.custom"
+         id="de.uni_paderborn.fujaba.muml.messagetype.diagram.custom"
          download-size="0"
          install-size="0"
          version="0.0.0"
