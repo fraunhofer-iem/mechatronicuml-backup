@@ -41,7 +41,7 @@ public class ComponentStoryPatternCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode container = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode container = (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode) getElementToEdit();
 		if (container.getComponentStoryPattern() != null) {
 			return false;
 		}
@@ -54,10 +54,10 @@ public class ComponentStoryPatternCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern newElement = de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern newElement = de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
 				.createComponentStoryPattern();
 
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode owner = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode owner = (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode) getElementToEdit();
 		owner.setComponentStoryPattern(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -70,7 +70,7 @@ public class ComponentStoryPatternCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern newElement,
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

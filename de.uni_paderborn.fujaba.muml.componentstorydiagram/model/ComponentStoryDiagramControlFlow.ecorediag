@@ -164,7 +164,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_YgmEGbxNEeG9csLsexCudA"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_YgmED7xNEeG9csLsexCudA" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.model.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurationRule"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurationRule"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YgmEELxNEeG9csLsexCudA" x="999" y="108" width="136" height="60"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_YgmEHLxNEeG9csLsexCudA" type="1001">
@@ -522,7 +522,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_lxy0UbxNEeG9csLsexCudA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_lxy0UrxNEeG9csLsexCudA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurationRule/parameters"/>
+    <element xmi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurationRule/parameters"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lxy0U7xNEeG9csLsexCudA" points="[0, 0, -123, -11]$[123, 11, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lyFvRLxNEeG9csLsexCudA" id="(1.0,0.1999998728434245)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lyFvRbxNEeG9csLsexCudA" id="(0.0,0.33333346048990886)"/>
@@ -536,7 +536,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_lxy0WbxNEeG9csLsexCudA" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_lxy0WrxNEeG9csLsexCudA" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.model.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurationRule/returnParameters"/>
+    <element xmi:type="ecore:EReference" href="platform:/resource/de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.ecore#//ReconfigurationRule/returnParameters"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lxy0W7xNEeG9csLsexCudA" points="[0, 0, -123, -19]$[123, 19, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lyFvSLxNEeG9csLsexCudA" id="(1.0,0.3999998728434245)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lyFvSbxNEeG9csLsexCudA" id="(0.0,0.6666667938232422)"/>

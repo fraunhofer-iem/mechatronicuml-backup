@@ -11,8 +11,8 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 
 import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.layout.MultiPortLayoutListener;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 
 public class MultiPortEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 	public static final Dimension DEFAULT_MULTI_OFFSET = new Dimension(22, 18);

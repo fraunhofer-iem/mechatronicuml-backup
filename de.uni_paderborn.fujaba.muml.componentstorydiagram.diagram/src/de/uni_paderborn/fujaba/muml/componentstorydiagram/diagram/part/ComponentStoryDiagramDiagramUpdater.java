@@ -67,7 +67,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor>();
 		{
@@ -91,12 +91,12 @@ public class ComponentStoryDiagramDiagramUpdater {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getPortVariables().iterator(); it
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable childElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) it
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PortVariable childElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PortVariable) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -123,12 +123,12 @@ public class ComponentStoryDiagramDiagramUpdater {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getPortVariables().iterator(); it
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable childElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable) it
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PortVariable childElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PortVariable) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -208,11 +208,11 @@ public class ComponentStoryDiagramDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode) containerView
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor>();
 		{
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern childElement = modelElement
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern childElement = modelElement
 					.getComponentStoryPattern();
 			int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -237,11 +237,11 @@ public class ComponentStoryDiagramDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern) containerView
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor>();
 		{
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable childElement = modelElement
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable childElement = modelElement
 					.getThisVariable();
 			int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -266,12 +266,12 @@ public class ComponentStoryDiagramDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) containerView
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getPartVariables().iterator(); it
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable childElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable) it
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable childElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -297,12 +297,12 @@ public class ComponentStoryDiagramDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable) containerView
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getGmfSubPortVariables().iterator(); it
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable childElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable) it
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable childElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -328,12 +328,12 @@ public class ComponentStoryDiagramDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable) containerView
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getGmfSubPortVariables().iterator(); it
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable childElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable) it
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable childElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -359,12 +359,12 @@ public class ComponentStoryDiagramDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode) containerView
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getFadingFunctions().iterator(); it
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction childElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction) it
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction childElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -390,11 +390,11 @@ public class ComponentStoryDiagramDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode) containerView
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor>();
 		{
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern childElement = modelElement
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern childElement = modelElement
 					.getComponentStoryPattern();
 			int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -419,11 +419,11 @@ public class ComponentStoryDiagramDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern) containerView
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor>();
 		{
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable childElement = modelElement
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable childElement = modelElement
 					.getThisVariable();
 			int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -625,7 +625,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getComponentVariable_3012ContainedLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_AssemblyVariable_4004(modelElement));
@@ -766,7 +766,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getComponentStoryNode_3001IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -805,7 +805,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getMultiPortVariable_3016IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -822,7 +822,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getSinglePortVariable_3017IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -839,7 +839,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getSinglePortVariable_3018IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -856,7 +856,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getMultiPortVariable_3019IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -873,7 +873,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getSinglePortVariable_3020IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -932,7 +932,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getControllerExchangeNode_3021IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -995,7 +995,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getComponentStoryNode_3001OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
@@ -1031,7 +1031,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getMultiPortVariable_3016OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_AssemblyVariable_4004(modelElement));
@@ -1044,7 +1044,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getSinglePortVariable_3017OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_AssemblyVariable_4004(modelElement));
@@ -1057,7 +1057,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getSinglePortVariable_3018OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_AssemblyVariable_4004(modelElement));
@@ -1070,7 +1070,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getMultiPortVariable_3019OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.MultiPortVariable) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_AssemblyVariable_4004(modelElement));
@@ -1083,7 +1083,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getSinglePortVariable_3020OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.SinglePortVariable) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_AssemblyVariable_4004(modelElement));
@@ -1129,7 +1129,7 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getControllerExchangeNode_3021OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode modelElement = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode) view
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode modelElement = (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_ActivityEdge_4001(modelElement));
@@ -1209,15 +1209,15 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getContainedTypeModelFacetLinks_AssemblyVariable_4004(
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container) {
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable container) {
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor>();
 		for (Iterator<?> links = container.getConnectorVariables().iterator(); links
 				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable) {
+			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable link = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable) linkObject;
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable link = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable) linkObject;
 			if (de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
 				continue;
@@ -1249,15 +1249,15 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getContainedTypeModelFacetLinks_DelegationVariable_4005(
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container) {
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable container) {
 		LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor>();
 		for (Iterator<?> links = container.getConnectorVariables().iterator(); links
 				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable) {
+			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable link = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable) linkObject;
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable link = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable) linkObject;
 			if (de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
 				continue;
@@ -1328,10 +1328,10 @@ public class ComponentStoryDiagramDiagramUpdater {
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 					.getConnector_ConnectorEndpoints()
-					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable) {
+					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable link = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable) setting
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable link = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable) setting
 					.getEObject();
 			if (de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
@@ -1365,10 +1365,10 @@ public class ComponentStoryDiagramDiagramUpdater {
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 					.getConnector_ConnectorEndpoints()
-					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable) {
+					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable link = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable) setting
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable link = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable) setting
 					.getEObject();
 			if (de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
@@ -1440,14 +1440,14 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getOutgoingTypeModelFacetLinks_AssemblyVariable_4004(
 			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container = null;
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null && container == null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) {
-				container = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) element;
+			if (element instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable) {
+				container = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable) element;
 			}
 		}
 		if (container == null) {
@@ -1457,10 +1457,10 @@ public class ComponentStoryDiagramDiagramUpdater {
 		for (Iterator<?> links = container.getConnectorVariables().iterator(); links
 				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable) {
+			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable link = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable) linkObject;
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable link = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable) linkObject;
 			if (de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
 				continue;
@@ -1496,14 +1496,14 @@ public class ComponentStoryDiagramDiagramUpdater {
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getOutgoingTypeModelFacetLinks_DelegationVariable_4005(
 			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source) {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container = null;
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null && container == null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) {
-				container = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) element;
+			if (element instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable) {
+				container = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable) element;
 			}
 		}
 		if (container == null) {
@@ -1513,10 +1513,10 @@ public class ComponentStoryDiagramDiagramUpdater {
 		for (Iterator<?> links = container.getConnectorVariables().iterator(); links
 				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable) {
+			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable link = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable) linkObject;
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable link = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable) linkObject;
 			if (de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.DelegationVariableEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
 				continue;

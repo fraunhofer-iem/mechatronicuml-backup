@@ -32,7 +32,7 @@ public class DelegationVariableCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private final de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container;
+	private final de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable container;
 
 	/**
 	 * @generated
@@ -40,7 +40,7 @@ public class DelegationVariableCreateCommand extends EditElementCommand {
 	public DelegationVariableCreateCommand(CreateRelationshipRequest request,
 			EObject source, EObject target) {
 		super(request.getLabel(), null, request);
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container = null;
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
@@ -107,7 +107,7 @@ public class DelegationVariableCreateCommand extends EditElementCommand {
 					"Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable newElement = de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable newElement = de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
 				.createDelegationVariable();
 		getContainer().getConnectorVariables().add(newElement);
 		newElement.getConnectorEndpoints().add(getSource());
@@ -122,7 +122,7 @@ public class DelegationVariableCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable newElement,
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
@@ -167,7 +167,7 @@ public class DelegationVariableCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable getContainer() {
+	public de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable getContainer() {
 		return container;
 	}
 
@@ -176,15 +176,15 @@ public class DelegationVariableCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable deduceContainer(
+	private static de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable deduceContainer(
 			EObject source, EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) {
-				return (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) element;
+			if (element instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable) {
+				return (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable) element;
 			}
 		}
 		return null;
@@ -195,12 +195,12 @@ public class DelegationVariableCreateCommand extends EditElementCommand {
 	 * 
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable deduceContainerUsingViews(
+	private static de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable deduceContainerUsingViews(
 			View sourceView, View targetView) {
 		for (View view = sourceView; view != null; view = (View) view
 				.eContainer()) {
-			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) {
-				return (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) view
+			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable) {
+				return (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable) view
 						.getElement();
 			}
 		}

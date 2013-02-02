@@ -43,7 +43,7 @@ public class ActivityCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule container = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule container = (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule) getElementToEdit();
 		if (container.getActivity() != null) {
 			return false;
 		}
@@ -58,7 +58,7 @@ public class ActivityCreateCommand extends EditElementCommand {
 			IAdaptable info) throws ExecutionException {
 		Activity newElement = ActivitiesFactory.eINSTANCE.createActivity();
 
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule owner = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule owner = (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule) getElementToEdit();
 		owner.setActivity(newElement);
 
 		de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ElementInitializers

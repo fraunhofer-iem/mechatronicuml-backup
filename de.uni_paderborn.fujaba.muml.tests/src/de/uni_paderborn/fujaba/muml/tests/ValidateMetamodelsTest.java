@@ -58,7 +58,7 @@ public class ValidateMetamodelsTest {
 		TestUtilities.loadResource(resourceSet,
 				"de.uni_paderborn.fujaba.muml.model.componentstorydiagram", "/model/ComponentStoryDiagram.ecore");
 		TestUtilities.loadResource(resourceSet,
-				"de.uni_paderborn.fujaba.muml.model.reconfiguration", "/model/MumlReconfiguration.ecore");
+				"de.uni_paderborn.fujaba.muml.reconfiguration", "/model/MumlReconfiguration.ecore");
 		
 	}
 

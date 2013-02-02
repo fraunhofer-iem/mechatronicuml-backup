@@ -12,8 +12,8 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.p
 //
 //import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.util.CsdmUtility;
 //import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.PortVariable2EditPart;
-//import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
-//import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable;
+//import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
+//import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PortVariable;
 //
 //public class CustomPortVariable2EditPart extends PortVariable2EditPart {
 //

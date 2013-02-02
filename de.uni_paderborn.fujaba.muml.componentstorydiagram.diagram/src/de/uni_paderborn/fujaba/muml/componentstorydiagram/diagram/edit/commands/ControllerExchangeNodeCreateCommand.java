@@ -51,7 +51,7 @@ public class ControllerExchangeNodeCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode newElement = de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode newElement = de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowFactory.eINSTANCE
 				.createControllerExchangeNode();
 
 		Activity owner = (Activity) getElementToEdit();
@@ -70,7 +70,7 @@ public class ControllerExchangeNodeCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode newElement,
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

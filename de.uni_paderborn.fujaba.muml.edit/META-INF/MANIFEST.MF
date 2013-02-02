@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML Edit-Support
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.model.edit;singleton:=true
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.edit;singleton:=true
 Bundle-Version: 0.3.1.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin$Implementation
@@ -23,7 +23,7 @@ Export-Package: de.uni_paderborn.fujaba.muml.behavior.provider,
  de.uni_paderborn.fujaba.muml.valuetype.descriptor,
  de.uni_paderborn.fujaba.muml.valuetype.provider
 Require-Bundle: de.uni_paderborn.fujaba.common;bundle-version="0.3.1",
- de.uni_paderborn.fujaba.muml.model;bundle-version="0.3.1";visibility:=reexport,
+ de.uni_paderborn.fujaba.muml;bundle-version="0.3.1";visibility:=reexport,
  de.uni_paderborn.fujaba.modelinstance.edit;bundle-version="0.3.1";visibility:=reexport,
  org.storydriven.core.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.actionlanguage.xtext;bundle-version="0.3.1",

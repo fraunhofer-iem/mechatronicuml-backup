@@ -7,7 +7,7 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.p
 //
 //import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.util.CsdmUtility;
 //import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabelEditPart;
-//import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable;
+//import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PortVariable;
 //
 //public class CustomWrappingLabel5EditPart extends WrappingLabel5EditPart {
 //

@@ -50,10 +50,10 @@ public class FadingFunctionCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction newElement = de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction newElement = de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
 				.createFadingFunction();
 
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode owner = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode owner = (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode) getElementToEdit();
 		owner.getFadingFunctions().add(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -66,7 +66,7 @@ public class FadingFunctionCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction newElement,
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

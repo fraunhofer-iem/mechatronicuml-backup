@@ -138,9 +138,9 @@ public class ComponentStoryDiagramDiagramEditorPlugin extends AbstractUIPlugin {
 
 		// Default Factories
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.provider.ControlflowItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.provider.ControlflowItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.provider.ComponentstorypatternItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.provider.ComponentstorypatternItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
@@ -168,9 +168,9 @@ public class ComponentStoryDiagramDiagramEditorPlugin extends AbstractUIPlugin {
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.reconfiguration.provider.ReconfigurationItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.provider.ReconfigurationItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.provider.ExpressionItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.expression.provider.ExpressionItemProviderAdapterFactory());
 		factories.add(new StorydiagramsItemProviderAdapterFactory());
 		factories.add(new ActivitiesItemProviderAdapterFactory());
 		factories.add(new ActivitiesExpressionsItemProviderAdapterFactory());

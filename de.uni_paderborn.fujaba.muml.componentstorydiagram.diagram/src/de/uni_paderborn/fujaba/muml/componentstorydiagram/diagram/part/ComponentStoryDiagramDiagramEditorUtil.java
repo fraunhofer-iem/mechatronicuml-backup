@@ -175,7 +175,7 @@ public class ComponentStoryDiagramDiagramEditorUtil {
 			protected CommandResult doExecuteWithResult(
 					IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule model = createInitialModel();
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule model = createInitialModel();
 				attachModelToResource(model, modelResource);
 
 				Diagram diagram = ViewService
@@ -225,8 +225,8 @@ public class ComponentStoryDiagramDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule createInitialModel() {
-		return de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowFactory.eINSTANCE
+	private static de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule createInitialModel() {
+		return de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowFactory.eINSTANCE
 				.createComponentStoryRule();
 	}
 
@@ -237,7 +237,7 @@ public class ComponentStoryDiagramDiagramEditorUtil {
 	 * @generated
 	 */
 	private static void attachModelToResource(
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule model,
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule model,
 			Resource resource) {
 		resource.getContents().add(model);
 	}

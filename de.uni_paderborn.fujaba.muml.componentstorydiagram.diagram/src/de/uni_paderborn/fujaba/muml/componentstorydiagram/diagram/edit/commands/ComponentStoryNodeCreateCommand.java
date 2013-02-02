@@ -51,7 +51,7 @@ public class ComponentStoryNodeCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode newElement = de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode newElement = de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowFactory.eINSTANCE
 				.createComponentStoryNode();
 
 		Activity owner = (Activity) getElementToEdit();
@@ -70,7 +70,7 @@ public class ComponentStoryNodeCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryNode newElement,
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

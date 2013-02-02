@@ -1,21 +1,21 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.model.reconfiguration;singleton:=true
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.reconfiguration;singleton:=true
 Bundle-Version: 0.3.1.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.model.reconfiguration,
- de.uni_paderborn.fujaba.muml.model.reconfiguration.expression,
- de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.impl,
- de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.util,
- de.uni_paderborn.fujaba.muml.model.reconfiguration.impl,
- de.uni_paderborn.fujaba.muml.model.reconfiguration.util
+Export-Package: de.uni_paderborn.fujaba.muml.reconfiguration,
+ de.uni_paderborn.fujaba.muml.reconfiguration.expression,
+ de.uni_paderborn.fujaba.muml.reconfiguration.expression.impl,
+ de.uni_paderborn.fujaba.muml.reconfiguration.expression.util,
+ de.uni_paderborn.fujaba.muml.reconfiguration.impl,
+ de.uni_paderborn.fujaba.muml.reconfiguration.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.storydriven.core;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.model;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml;visibility:=reexport,
  org.storydriven.storydiagrams;visibility:=reexport
 Bundle-ActivationPolicy: lazy

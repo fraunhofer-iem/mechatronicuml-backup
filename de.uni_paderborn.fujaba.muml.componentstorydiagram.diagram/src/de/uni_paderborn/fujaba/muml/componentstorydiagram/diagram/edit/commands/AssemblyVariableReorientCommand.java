@@ -44,7 +44,7 @@ public class AssemblyVariableReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable) {
+		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -71,10 +71,10 @@ public class AssemblyVariableReorientCommand extends EditElementCommand {
 		 */
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) getLink()
 				.getConnectorEndpoints().get(0);
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) getLink()
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable container = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable) getLink()
 				.eContainer();
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
@@ -110,10 +110,10 @@ public class AssemblyVariableReorientCommand extends EditElementCommand {
 		 */
 		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) getLink()
 				.getConnectorEndpoints().get(0);
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container = (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable) getLink()
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable container = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable) getLink()
 				.eContainer();
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
@@ -183,8 +183,8 @@ public class AssemblyVariableReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable getLink() {
-		return (de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable) getElementToEdit();
+	protected de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable getLink() {
+		return (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable) getElementToEdit();
 	}
 
 	/**

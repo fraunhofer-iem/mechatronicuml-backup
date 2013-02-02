@@ -11,7 +11,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage" genModel="model/RuntimeModel.genmodel" uri="http://www.fujaba.de/muml/model/runtime/0.3.14"/>
+      <package class="de.uni_paderborn.fujaba.muml.runtime.RuntimePackage" genModel="model/RuntimeModel.genmodel" uri="http://www.fujaba.de/muml/model/runtime/0.3.14"/>
    </extension>
 
 </plugin>

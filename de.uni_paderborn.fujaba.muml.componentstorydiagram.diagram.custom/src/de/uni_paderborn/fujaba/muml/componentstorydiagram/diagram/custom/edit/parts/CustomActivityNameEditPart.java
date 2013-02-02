@@ -5,9 +5,9 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.activities.Activity;
 
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityNameEditPart;
-import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
 
 public class CustomActivityNameEditPart extends ActivityNameEditPart {
 
