@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension-point id="de.fujaba.newwizard.diagraminformation" name="DiagramInformation" schema="schema/de.fujaba.newwizard.diagraminformation.exsd"/>
-   <extension-point id="de.fujaba.newwizard.modelinitializer" name="de.fujaba.newwizard.modelinitializer" schema="schema/de.fujaba.newwizard.modelinitializer.exsd"/>
+   <extension-point id="de.uni_paderborn.fujaba.newwizard.diagraminformation" name="DiagramInformation" schema="schema/de.uni_paderborn.fujaba.newwizard.diagraminformation.exsd"/>
+   <extension-point id="de.uni_paderborn.fujaba.newwizard.modelinitializer" name="de.uni_paderborn.fujaba.newwizard.modelinitializer" schema="schema/de.uni_paderborn.fujaba.newwizard.modelinitializer.exsd"/>
   <extension point="org.eclipse.ui.newWizards" >
-    <category name="Fujaba" id="de.fujaba" />
-    <category name="Diagrams" id="de.fujaba.diagrams"
-         parentCategory="de.fujaba"/>
+    <category name="Fujaba" id="de.uni_paderborn.fujaba" />
+    <category name="Diagrams" id="de.uni_paderborn.fujaba.diagrams"
+         parentCategory="de.uni_paderborn.fujaba"/>
 
     <wizard
-           category="de.fujaba"
-           class="de.fujaba.newwizard.model.FujabaModelNewWizard"
+           category="de.uni_paderborn.fujaba"
+           class="de.uni_paderborn.fujaba.newwizard.model.FujabaModelNewWizard"
            icon="icons/newfujabamodel.gif"
-           id="de.fujaba.muml.modelwizard.FujabaNewModelWizardID"
+           id="de.uni_paderborn.fujaba.muml.modelwizard.FujabaNewModelWizardID"
            name="Fujaba Model">
          <description>
             Creates a new Fujaba model file
@@ -26,12 +26,12 @@
            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
         <menu
               icon="icons/newfujabamodel.gif"
-              id="de.fujaba"
+              id="de.uni_paderborn.fujaba"
               label="Fujaba">
            <command
-                 commandId="de.fujaba.core.ui.command.newmodel"
+                 commandId="de.uni_paderborn.fujaba.core.ui.command.newmodel"
                  icon="icons/newfujabamodel.gif"
-                 id="de.fujaba.core.ui.command.newmodel"
+                 id="de.uni_paderborn.fujaba.core.ui.command.newmodel"
                  label="Create new Fujaba Model"
                  style="push">
               <visibleWhen
@@ -60,7 +60,7 @@
   <extension
         point="org.eclipse.core.expressions.definitions">
      <definition
-           id="de.fujaba.expression.fujabafile">
+           id="de.uni_paderborn.fujaba.expression.fujabafile">
 	    <iterate
            ifEmpty="false"
            operator="and">
@@ -74,14 +74,14 @@
   <extension
         point="org.eclipse.ui.commands">
      <category
-           id="de.fujaba"
+           id="de.uni_paderborn.fujaba"
            name="Fujaba">
      </category>
      <command
-           categoryId="de.fujaba"
-           defaultHandler="de.fujaba.newwizard.ui.commands.CreateModelFileCommand"
+           categoryId="de.uni_paderborn.fujaba"
+           defaultHandler="de.uni_paderborn.fujaba.newwizard.ui.commands.CreateModelFileCommand"
            description="Create new Fujaba Model"
-           id="de.fujaba.core.ui.command.newmodel"
+           id="de.uni_paderborn.fujaba.core.ui.command.newmodel"
            name="Create new Fujaba Model">
      </command>
   </extension>

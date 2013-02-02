@@ -48,7 +48,7 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/ModelinstanceDiagramFile.gif"
-  	     category="de.fujaba/de.fujaba.diagrams"
+  	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
   	     class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
@@ -62,7 +62,7 @@
 	   <?gmfgen generated="true"?>   
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.fujaba?after=diagrams">
+	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.createDiagram"
 	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
@@ -70,7 +70,7 @@
 	            label="Initialize Atomiccomponent Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
-						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
+						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
           			</visibleWhen>
 	      </command>
 	   </menuContribution>
@@ -80,7 +80,7 @@
 	<extension point="org.eclipse.ui.commands">
 		<?gmfgen generated="true"?>
 		<command
-			categoryId="de.fujaba"
+			categoryId="de.uni_paderborn.fujaba"
 			description="Initialize realtimestatechart_diagram"
 			defaultHandler="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlInitDiagramFileAction"
 			id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.createDiagram"
@@ -106,7 +106,7 @@
 
 	
 	<extension
-         point="de.fujaba.newwizard.diagraminformation">
+         point="de.uni_paderborn.fujaba.newwizard.diagraminformation">
       <?gmfgen generated="true"?>
       <editor
             preferencesHint="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram"

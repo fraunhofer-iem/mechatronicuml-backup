@@ -15,7 +15,7 @@
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
-            locationURI="popup:de.fujaba">
+            locationURI="popup:de.uni_paderborn.fujaba">
          <separator
                name="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.separator1"
                visible="true">

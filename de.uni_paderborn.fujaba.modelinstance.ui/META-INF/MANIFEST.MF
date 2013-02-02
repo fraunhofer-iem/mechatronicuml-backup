@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Fujaba New-Wizard
 Bundle-SymbolicName: de.uni_paderborn.fujaba.modelinstance.ui;singleton:=true
 Bundle-Version: 0.3.1.qualifier
-Bundle-Activator: de.fujaba.newwizard.FujabaNewwizardPlugin
+Bundle-Activator: de.uni_paderborn.fujaba.newwizard.FujabaNewwizardPlugin
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.ui.ide,
  org.eclipse.emf.edit.ui;bundle-version="2.6.0",
@@ -11,10 +11,10 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui,
  org.storydriven.core
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.fujaba.newwizard,
- de.fujaba.newwizard.commands,
- de.fujaba.newwizard.diagrams,
- de.fujaba.newwizard.diagrams.pages,
- de.fujaba.newwizard.initializer,
- de.fujaba.newwizard.ui.commands
+Export-Package: de.uni_paderborn.fujaba.newwizard,
+ de.uni_paderborn.fujaba.newwizard.commands,
+ de.uni_paderborn.fujaba.newwizard.diagrams,
+ de.uni_paderborn.fujaba.newwizard.diagrams.pages,
+ de.uni_paderborn.fujaba.newwizard.initializer,
+ de.uni_paderborn.fujaba.newwizard.ui.commands
 Bundle-Vendor: Fujaba Community made up of Heinz Nixdorf Institute Paderborn, Technische Universität Darmstadt, University of Kassel, Hasso Plattner Institute Potsdam, Yatta Solutions GmbH

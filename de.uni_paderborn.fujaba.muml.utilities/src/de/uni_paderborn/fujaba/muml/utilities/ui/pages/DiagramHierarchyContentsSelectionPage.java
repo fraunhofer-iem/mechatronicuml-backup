@@ -8,8 +8,8 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 
-import de.fujaba.newwizard.diagrams.IDiagramElementValidator;
-import de.fujaba.newwizard.diagrams.pages.DiagramContentsSelectionPage;
+import de.uni_paderborn.fujaba.newwizard.diagrams.IDiagramElementValidator;
+import de.uni_paderborn.fujaba.newwizard.diagrams.pages.DiagramContentsSelectionPage;
 import de.uni_paderborn.fujaba.muml.utilities.ui.HierarchyCheckedTreeViewer;
 
 public class DiagramHierarchyContentsSelectionPage extends

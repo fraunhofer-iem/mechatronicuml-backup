@@ -4,9 +4,9 @@
 
     <extension point="org.eclipse.ui.commands">
 		<command
-			categoryId="de.fujaba"
+			categoryId="de.uni_paderborn.fujaba"
 			description="Initialize Story Diagram"
-			defaultHandler="de.fujaba.newwizard.storydiagrams.SDMFujabaDiagramFileAction"
+			defaultHandler="de.uni_paderborn.fujaba.newwizard.storydiagrams.SDMFujabaDiagramFileAction"
 			id="org.storydriven.storydiagrams.diagram.createDiagram"
 			name="%initDiagramActionLabel">
 		</command>
@@ -14,8 +14,8 @@
 
    <extension id="creation-wizard" point="org.eclipse.ui.newWizards">
       <wizard
-            category="de.fujaba/de.fujaba.diagrams"
-            class="de.fujaba.newwizard.storydiagrams.CustomActivityDiagramCreationWizard"
+            category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+            class="de.uni_paderborn.fujaba.newwizard.storydiagrams.CustomActivityDiagramCreationWizard"
             id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramCreationWizard"
             name="Activity Diagram">
          <description>
@@ -25,7 +25,7 @@
    </extension>
 
     <extension point="org.eclipse.ui.menus">
-	   <menuContribution allPopups="false" locationURI="popup:de.fujaba?after=additions">
+	   <menuContribution allPopups="false" locationURI="popup:de.uni_paderborn.fujaba?after=additions">
 	      <command
              commandId="org.storydriven.storydiagrams.diagram.createDiagram"
              icon="icons/sdm_diagram.png"
@@ -33,7 +33,7 @@
              label="%initDiagramActionLabel"
              style="push">
 	         <visibleWhen checkEnabled="false">
-	            <reference definitionId="de.fujaba.expression.fujabafile">
+	            <reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile">
 	            </reference>
 	         </visibleWhen>
 	      </command>
@@ -71,7 +71,7 @@
       </category>
    </extension>
 
-   <extension point="de.fujaba.newwizard.diagraminformation">
+   <extension point="de.uni_paderborn.fujaba.newwizard.diagraminformation">
       <editor
             preferencesHint="org.storydriven.storydiagrams.diagram"
             editorId="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"

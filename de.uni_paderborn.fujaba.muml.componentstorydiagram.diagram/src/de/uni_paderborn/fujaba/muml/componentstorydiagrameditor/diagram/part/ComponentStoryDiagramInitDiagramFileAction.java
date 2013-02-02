@@ -3,7 +3,7 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
 
-import de.fujaba.newwizard.ui.commands.AbstractCreateDiagramFileCommand;
+import de.uni_paderborn.fujaba.newwizard.ui.commands.AbstractCreateDiagramFileCommand;
 
 /**
  * @generated

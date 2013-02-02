@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="de.fujaba.newwizard" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="de.uni_paderborn.fujaba.newwizard" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="de.fujaba.newwizard" id="de.fujaba.newwizard.modelinitializer" name="de.fujaba.newwizard.modelinitializer"/>
+         <meta.schema plugin="de.uni_paderborn.fujaba.newwizard" id="de.uni_paderborn.fujaba.newwizard.modelinitializer" name="de.uni_paderborn.fujaba.newwizard.modelinitializer"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]
@@ -55,7 +55,7 @@
                   Initialize the newly created Fujaba Model.
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":de.fujaba.newwizard.initializer.IModelInitializer"/>
+                  <meta.attribute kind="java" basedOn=":de.uni_paderborn.fujaba.newwizard.initializer.IModelInitializer"/>
                </appinfo>
             </annotation>
          </attribute>

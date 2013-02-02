@@ -15,7 +15,7 @@
       itemSemanticEditPolicyClassName="ModelElementCategoryItemSemanticEditPolicy"
       canonicalEditPolicyClassName="ModelElementCategoryCanonicalEditPolicy"
       iconProviderPriority="Low"
-      creationWizardCategoryID="de.fujaba/de.fujaba.diagrams"
+      creationWizardCategoryID="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
       validationProviderPriority="Low"
       validationEnabled="true"
       validationDecorators="true">

@@ -21,7 +21,7 @@
 «EXPAND xpt::Common::packageStatement FOR qualifiedClassName»
 
 «EXPAND xpt::Common::generatedClassComment»
-public class «qualifiedClassName.xpandSplit('\\.')->last()» extends de.fujaba.newwizard.ui.commands.AbstractCreateDiagramFileCommand {
+public class «qualifiedClassName.xpandSplit('\\.')->last()» extends de.uni_paderborn.fujaba.newwizard.ui.commands.AbstractCreateDiagramFileCommand {
 
 	«EXPAND xpt::Common::generatedMemberComment»
 	@Override

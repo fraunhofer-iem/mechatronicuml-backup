@@ -35,7 +35,7 @@ public class «creationWizardClassName» extends «EXPAND superClass» {
 	}
 «ENDDEFINE»
 
-«DEFINE superClass FOR gmfgen::GenDiagram»de.fujaba.newwizard.diagrams.AbstractFujabaDiagramNewWizard«ENDDEFINE»
+«DEFINE superClass FOR gmfgen::GenDiagram»de.uni_paderborn.fujaba.newwizard.diagrams.AbstractFujabaDiagramNewWizard«ENDDEFINE»
 
 «DEFINE initialize FOR gmfgen::GenDiagram»
 	«EXPAND xpt::Common::generatedMemberComment»

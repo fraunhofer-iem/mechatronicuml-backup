@@ -4,7 +4,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbench;
 
-import de.fujaba.newwizard.diagrams.AbstractFujabaDiagramNewWizard;
+import de.uni_paderborn.fujaba.newwizard.diagrams.AbstractFujabaDiagramNewWizard;
 
 /**
  * @generated

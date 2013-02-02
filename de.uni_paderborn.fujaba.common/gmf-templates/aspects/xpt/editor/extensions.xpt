@@ -59,7 +59,7 @@
 	   «EXPAND xpt::Common::xmlGeneratedTag»   
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.fujaba?after=diagrams">
+	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
 	      <command
 	            commandId="«plugin.iD».createDiagram"
 	            icon="«diagram.creationWizardIconPathX»"
@@ -67,7 +67,7 @@
 	            label="Initialize «modelID» Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
-						<reference definitionId="de.fujaba.expression.fujabafile"></reference>
+						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
           			</visibleWhen>
 	      </command>
 	   </menuContribution>
@@ -78,7 +78,7 @@
 	<extension point="org.eclipse.ui.commands">
 		«EXPAND xpt::Common::xmlGeneratedTag»
 		<command
-			categoryId="de.fujaba"
+			categoryId="de.uni_paderborn.fujaba"
 			description="Initialize realtimestatechart_diagram"
 			defaultHandler="«diagram.getInitDiagramFileActionQualifiedClassName()»"
 			id="«plugin.iD».createDiagram"
@@ -106,7 +106,7 @@
 
 «DEFINE diagraminformation FOR gmfgen::GenEditorGenerator»
 	<extension
-         point="de.fujaba.newwizard.diagraminformation">
+         point="de.uni_paderborn.fujaba.newwizard.diagraminformation">
       «EXPAND xpt::Common::xmlGeneratedTag»
       <editor
             preferencesHint="«plugin.iD»"

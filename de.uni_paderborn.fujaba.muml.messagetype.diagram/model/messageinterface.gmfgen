@@ -16,7 +16,7 @@
       canonicalEditPolicyClassName="MessageInterfaceDiagramCanonicalEditPolicy"
       iconProviderPriority="Low"
       creationWizardIconPath="icons/obj16/MessageinterfaceDiagramFile.gif"
-      creationWizardCategoryID="de.fujaba/de.fujaba.diagrams"
+      creationWizardCategoryID="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
       validationProviderClassName="MessageinterfaceValidationProvider"
       validationProviderPriority="Low"
       validationEnabled="true"

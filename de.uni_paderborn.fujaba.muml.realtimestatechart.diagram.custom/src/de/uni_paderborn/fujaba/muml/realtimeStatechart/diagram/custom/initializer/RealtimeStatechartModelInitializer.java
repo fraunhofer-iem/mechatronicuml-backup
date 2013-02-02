@@ -2,7 +2,7 @@ package de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.initializ
 
 import org.eclipse.emf.ecore.EObject;
 
-import de.fujaba.newwizard.initializer.IModelInitializer;
+import de.uni_paderborn.fujaba.newwizard.initializer.IModelInitializer;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;

@@ -76,7 +76,7 @@
       <import plugin="de.uni_paderborn.fujaba.modelinstance.edit" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.model.edit" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.edit" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.fujaba.newwizard" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.newwizard" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.0.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.deployment.diagram" version="0.3.1" match="greaterOrEqual"/>
@@ -106,7 +106,7 @@
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
       <import plugin="org.fujaba.commons" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.fujaba.newwizard" version="0.2.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.newwizard" version="0.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.2" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.diagram" version="0.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.5.0" match="greaterOrEqual"/>
@@ -449,7 +449,7 @@
          unpack="false"/>
 
    <plugin
-         id="de.fujaba.newwizard"
+         id="de.uni_paderborn.fujaba.newwizard"
          download-size="0"
          install-size="0"
          version="0.0.0"

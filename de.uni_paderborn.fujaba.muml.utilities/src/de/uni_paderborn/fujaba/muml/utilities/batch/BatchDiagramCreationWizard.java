@@ -41,11 +41,11 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.storydriven.core.NamedElement;
 
-import de.fujaba.newwizard.FujabaNewwizardPlugin;
-import de.fujaba.newwizard.Messages;
-import de.fujaba.newwizard.commands.CreateDiagramCommand;
-import de.fujaba.newwizard.diagrams.DiagramEditorUtil;
-import de.fujaba.newwizard.diagrams.IDiagramInformation;
+import de.uni_paderborn.fujaba.newwizard.FujabaNewwizardPlugin;
+import de.uni_paderborn.fujaba.newwizard.Messages;
+import de.uni_paderborn.fujaba.newwizard.commands.CreateDiagramCommand;
+import de.uni_paderborn.fujaba.newwizard.diagrams.DiagramEditorUtil;
+import de.uni_paderborn.fujaba.newwizard.diagrams.IDiagramInformation;
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;

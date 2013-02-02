@@ -6,16 +6,16 @@
       point="org.eclipse.ui.menus">
    <menuContribution
          allPopups="false"
-         locationURI="popup:de.fujaba?after=utilities">
+         locationURI="popup:de.uni_paderborn.fujaba?after=utilities">
       <separator
             name="beforeMumlUtilities"
             visible="true">
       </separator>
         <command
-                 commandId="de.fujaba.core.ui.command.modelrefresh"
+                 commandId="de.uni_paderborn.fujaba.core.ui.command.modelrefresh"
                  disabledIcon="icons/refresh_nav_dis.gif"
                  icon="icons/refresh_nav.gif"
-                 id="de.fujaba.core.ui.command.modelrefresh"
+                 id="de.uni_paderborn.fujaba.core.ui.command.modelrefresh"
                  label="Refresh Models"
                  style="push">
               <visibleWhen
@@ -27,9 +27,9 @@
               </visibleWhen>
            </command>
            <command
-                 commandId="de.fujaba.core.ui.command.batchdiagramcreation"
+                 commandId="de.uni_paderborn.fujaba.core.ui.command.batchdiagramcreation"
                  icon="icons/batchdiagram.gif"
-                 id="de.fujaba.core.ui.command.batchdiagramcreation"
+                 id="de.uni_paderborn.fujaba.core.ui.command.batchdiagramcreation"
                  label="Batch Diagram Creation..."
                  style="push">
               <visibleWhen
@@ -48,17 +48,17 @@
         point="org.eclipse.ui.commands">
 
      <command
-           categoryId="de.fujaba"
+           categoryId="de.uni_paderborn.fujaba"
            defaultHandler="de.uni_paderborn.fujaba.muml.utilities.ui.ModelRefreshCommand"
            description="Refresh Models"
-           id="de.fujaba.core.ui.command.modelrefresh"
+           id="de.uni_paderborn.fujaba.core.ui.command.modelrefresh"
            name="Refresh Models">
      </command>
      <command
-           categoryId="de.fujaba"
+           categoryId="de.uni_paderborn.fujaba"
            defaultHandler="de.uni_paderborn.fujaba.muml.utilities.ui.BatchDiagramCreationCommand"
            description="Refresh Models"
-           id="de.fujaba.core.ui.command.batchdiagramcreation"
+           id="de.uni_paderborn.fujaba.core.ui.command.batchdiagramcreation"
            name="Refresh Models">
      </command>
   </extension>
