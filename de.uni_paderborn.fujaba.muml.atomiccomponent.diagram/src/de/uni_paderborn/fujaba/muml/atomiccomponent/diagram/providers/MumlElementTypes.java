@@ -181,22 +181,22 @@ public class MumlElementTypes {
 
 			elements.put(
 					AtomicComponent_2005,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getAtomicComponent());
 
 			elements.put(
 					HybridPort_3005,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getHybridPort());
 
 			elements.put(
 					DiscretePort_3006,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getDiscretePort());
 
 			elements.put(
 					ContinuousPort_3007,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getContinuousPort());
 		}
 		return (ENamedElement) elements.get(type);

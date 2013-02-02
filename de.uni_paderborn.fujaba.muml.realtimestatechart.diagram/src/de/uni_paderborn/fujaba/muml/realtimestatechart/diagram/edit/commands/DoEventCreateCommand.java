@@ -41,7 +41,7 @@ public class DoEventCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.realtimestatechart.State container = (de.uni_paderborn.fujaba.muml.realtimestatechart.State) getElementToEdit();
 		if (container.getDoEvent() != null) {
 			return false;
 		}
@@ -54,10 +54,10 @@ public class DoEventCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent newElement = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createDoEvent();
 
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.realtimestatechart.State owner = (de.uni_paderborn.fujaba.muml.realtimestatechart.State) getElementToEdit();
 		owner.setDoEvent(newElement);
 
 		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.ElementInitializers
@@ -73,7 +73,7 @@ public class DoEventCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent newElement,
+			de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

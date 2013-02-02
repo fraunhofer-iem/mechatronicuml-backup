@@ -63,11 +63,11 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -153,15 +153,15 @@ public class AssemblyVariableCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getSource() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) source;
+	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getSource() {
+		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) target;
+	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getTarget() {
+		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) target;
 	}
 
 	/**

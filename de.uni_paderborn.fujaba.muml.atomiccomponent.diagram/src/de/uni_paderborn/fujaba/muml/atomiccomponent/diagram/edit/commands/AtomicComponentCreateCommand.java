@@ -52,7 +52,7 @@ public class AtomicComponentCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.component.AtomicComponent newElement = de.uni_paderborn.fujaba.muml.model.component.ComponentFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.component.AtomicComponent newElement = de.uni_paderborn.fujaba.muml.component.ComponentFactory.eINSTANCE
 				.createAtomicComponent();
 
 		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
@@ -71,7 +71,7 @@ public class AtomicComponentCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.component.AtomicComponent newElement,
+			de.uni_paderborn.fujaba.muml.component.AtomicComponent newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

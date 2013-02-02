@@ -86,7 +86,7 @@ public class DiscreteSinglePortInstanceLabelExpressionLabelParser5040 implements
 		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						4,
-						de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 								.getDiscreteSinglePortInstance(), typeEnv)
 				.evaluate(target, env);
 		return String.valueOf(result);

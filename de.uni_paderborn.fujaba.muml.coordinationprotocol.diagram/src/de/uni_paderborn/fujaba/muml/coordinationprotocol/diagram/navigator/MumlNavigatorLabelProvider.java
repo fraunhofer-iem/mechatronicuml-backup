@@ -173,7 +173,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getRoleConnector_4006Text(View view) {
-		de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector domainModelElement = (de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector) view
+		de.uni_paderborn.fujaba.muml.protocol.RoleConnector domainModelElement = (de.uni_paderborn.fujaba.muml.protocol.RoleConnector) view
 				.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getComment();
@@ -219,7 +219,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getCoordinationProtocol_2005Text(View view) {
-		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol domainModelElement = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) view
+		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol domainModelElement = (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) view
 				.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();

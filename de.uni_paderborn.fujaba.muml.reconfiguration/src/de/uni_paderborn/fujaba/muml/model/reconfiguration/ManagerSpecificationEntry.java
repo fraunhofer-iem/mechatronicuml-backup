@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.reconfiguration;
 
 import org.storydriven.core.CommentableElement;
 
-import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 
 /**
  * <!-- begin-user-doc -->

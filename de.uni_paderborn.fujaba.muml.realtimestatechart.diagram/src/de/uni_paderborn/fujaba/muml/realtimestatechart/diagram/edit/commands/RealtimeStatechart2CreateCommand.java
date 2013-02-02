@@ -41,7 +41,7 @@ public class RealtimeStatechart2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.realtimestatechart.Region container = (de.uni_paderborn.fujaba.muml.realtimestatechart.Region) getElementToEdit();
 		if (container.getStatechart() != null) {
 			return false;
 		}
@@ -54,10 +54,10 @@ public class RealtimeStatechart2CreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart newElement = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createRealtimeStatechart();
 
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.realtimestatechart.Region owner = (de.uni_paderborn.fujaba.muml.realtimestatechart.Region) getElementToEdit();
 		owner.setStatechart(newElement);
 
 		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.ElementInitializers
@@ -73,7 +73,7 @@ public class RealtimeStatechart2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart newElement,
+			de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

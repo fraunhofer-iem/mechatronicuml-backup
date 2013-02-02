@@ -89,7 +89,7 @@ public class RegionLabelExpressionLabelParser5057 implements IParser,
 		Object result = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						15,
-						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getRegion(), typeEnv).evaluate(target, env);
 		return String.valueOf(result);
 	}

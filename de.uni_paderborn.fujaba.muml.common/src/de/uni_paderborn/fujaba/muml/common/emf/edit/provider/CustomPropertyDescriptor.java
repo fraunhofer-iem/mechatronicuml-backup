@@ -46,14 +46,14 @@ import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectsListDialogEx
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertySheetDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.SimpleTextualDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.UseParserDialogExtension;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
+import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
-import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 public class CustomPropertyDescriptor extends PropertyDescriptor {
 

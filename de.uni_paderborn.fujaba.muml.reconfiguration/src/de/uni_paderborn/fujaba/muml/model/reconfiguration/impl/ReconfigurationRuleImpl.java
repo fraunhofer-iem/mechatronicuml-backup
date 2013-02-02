@@ -20,7 +20,7 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
-import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;

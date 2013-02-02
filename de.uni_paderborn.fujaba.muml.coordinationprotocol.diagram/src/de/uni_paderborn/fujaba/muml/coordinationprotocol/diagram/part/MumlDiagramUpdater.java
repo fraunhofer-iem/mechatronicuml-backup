@@ -73,11 +73,11 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol modelElement = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) containerView
+		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol modelElement = (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlNodeDescriptor>();
 		{
-			de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol childElement = modelElement
+			de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol childElement = modelElement
 					.getGmfCoordinationProtocol();
 			int visualID = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -87,7 +87,7 @@ public class MumlDiagramUpdater {
 			}
 		}
 		for (Iterator<?> it = modelElement.getRoles().iterator(); it.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.protocol.Role childElement = (de.uni_paderborn.fujaba.muml.model.protocol.Role) it
+			de.uni_paderborn.fujaba.muml.protocol.Role childElement = (de.uni_paderborn.fujaba.muml.protocol.Role) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -173,7 +173,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getCoordinationProtocol_2005ContainedLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol modelElement = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) view
+		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol modelElement = (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_CoordinationProtocol_Roles_4007(modelElement));
@@ -186,7 +186,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getCoordinationProtocol_3005ContainedLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol modelElement = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) view
+		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol modelElement = (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_CoordinationProtocol_Roles_4007(modelElement));
@@ -231,7 +231,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getRole_3006IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.protocol.Role modelElement = (de.uni_paderborn.fujaba.muml.model.protocol.Role) view
+		de.uni_paderborn.fujaba.muml.protocol.Role modelElement = (de.uni_paderborn.fujaba.muml.protocol.Role) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -256,7 +256,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getCoordinationProtocol_2005OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol modelElement = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) view
+		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol modelElement = (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_CoordinationProtocol_Roles_4007(modelElement));
@@ -268,7 +268,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getCoordinationProtocol_3005OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol modelElement = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) view
+		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol modelElement = (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_CoordinationProtocol_Roles_4007(modelElement));
@@ -280,7 +280,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getRole_3006OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.protocol.Role modelElement = (de.uni_paderborn.fujaba.muml.model.protocol.Role) view
+		de.uni_paderborn.fujaba.muml.protocol.Role modelElement = (de.uni_paderborn.fujaba.muml.protocol.Role) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_RoleConnector_4006(modelElement));
@@ -299,9 +299,9 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_RoleConnector_4006(
-			de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container) {
+			de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol container) {
 		LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor>();
-		de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector link = container
+		de.uni_paderborn.fujaba.muml.protocol.RoleConnector link = container
 				.getRoleConnector();
 		if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
 				.getLinkWithClassVisualID(link)) {
@@ -310,16 +310,16 @@ public class MumlDiagramUpdater {
 		List targets = link.getConnectorEndpoints();
 		Object theTarget = !targets.isEmpty() ? targets.get(targets.size() - 1)
 				: null; // Adapted for MUML-BUG #446
-		if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+		if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 			return result;
 		}
-		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theTarget;
+		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
 		List sources = link.getConnectorEndpoints();
 		Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-		if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+		if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 			return result;
 		}
-		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
+		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
 		result.add(new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor(
 				src,
 				dst,
@@ -333,13 +333,13 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getIncomingFeatureModelFacetLinks_CoordinationProtocol_Roles_4007(
-			de.uni_paderborn.fujaba.muml.model.protocol.Role target,
+			de.uni_paderborn.fujaba.muml.protocol.Role target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() == de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+			if (setting.getEStructuralFeature() == de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 					.getCoordinationProtocol_Roles()) {
 				result.add(new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor(
 						setting.getEObject(),
@@ -355,18 +355,18 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getIncomingTypeModelFacetLinks_RoleConnector_4006(
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 					.getConnector_ConnectorEndpoints()
-					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector) {
+					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.protocol.RoleConnector) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector link = (de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector) setting
+			de.uni_paderborn.fujaba.muml.protocol.RoleConnector link = (de.uni_paderborn.fujaba.muml.protocol.RoleConnector) setting
 					.getEObject();
 			if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
@@ -374,10 +374,10 @@ public class MumlDiagramUpdater {
 			}
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor(
 					src,
 					target,
@@ -392,11 +392,11 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getOutgoingFeatureModelFacetLinks_CoordinationProtocol_Roles_4007(
-			de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol source) {
+			de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol source) {
 		LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor>();
 		for (Iterator<?> destinations = source.getRoles().iterator(); destinations
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.protocol.Role destination = (de.uni_paderborn.fujaba.muml.model.protocol.Role) destinations
+			de.uni_paderborn.fujaba.muml.protocol.Role destination = (de.uni_paderborn.fujaba.muml.protocol.Role) destinations
 					.next();
 			result.add(new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor(
 					source,
@@ -411,22 +411,22 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> getOutgoingTypeModelFacetLinks_RoleConnector_4006(
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source) {
-		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container = null;
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source) {
+		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null && container == null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) {
-				container = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) element;
+			if (element instanceof de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) {
+				container = (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) element;
 			}
 		}
 		if (container == null) {
 			return Collections.emptyList();
 		}
 		LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlLinkDescriptor>();
-		de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector link = container
+		de.uni_paderborn.fujaba.muml.protocol.RoleConnector link = container
 				.getRoleConnector();
 		if (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
 				.getLinkWithClassVisualID(link)) {
@@ -435,16 +435,16 @@ public class MumlDiagramUpdater {
 		List targets = link.getConnectorEndpoints();
 		Object theTarget = !targets.isEmpty() ? targets.get(targets.size() - 1)
 				: null; // Adapted for MUML-BUG #446
-		if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+		if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 			return result;
 		}
-		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theTarget;
+		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
 		List sources = link.getConnectorEndpoints();
 		Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-		if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+		if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 			return result;
 		}
-		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
+		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
 		if (src != source) {
 			return result;
 		}

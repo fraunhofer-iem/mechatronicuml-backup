@@ -345,8 +345,8 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 		 */
 		public boolean canCreateAssemblyVariable_4004(
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			return canExistAssemblyVariable_4004(container, null, source,
 					target, sourceView, targetView);
@@ -357,8 +357,8 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 		 */
 		public boolean canCreateDelegationVariable_4005(
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			return canExistDelegationVariable_4005(container, null, source,
 					target, sourceView, targetView);
@@ -388,8 +388,8 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 		public boolean canExistAssemblyVariable_4004(
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.AssemblyVariable linkInstance,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			return true;
 		}
@@ -399,8 +399,8 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 		 */
 		public java.lang.String getErrorAssemblyVariable_4004(
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			return null;
 		}
@@ -411,8 +411,8 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 		public boolean canExistDelegationVariable_4005(
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.DelegationVariable linkInstance,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			return true;
 		}
@@ -422,8 +422,8 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 		 */
 		public java.lang.String getErrorDelegationVariable_4005(
 				de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentVariable container,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			return null;
 		}

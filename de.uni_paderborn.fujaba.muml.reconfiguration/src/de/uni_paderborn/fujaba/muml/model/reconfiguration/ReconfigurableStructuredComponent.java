@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.reconfiguration;
 
 import org.eclipse.emf.common.util.EList;
 
-import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 
 /**
  * <!-- begin-user-doc -->

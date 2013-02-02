@@ -27,9 +27,7 @@
 <extension point="org.eclipse.emf.ecore.generated_package">
       <package class="de.uni_paderborn.fujaba.muml.MumlPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/0.2.2"/>
    </extension>
-<extension point="org.eclipse.emf.ecore.generated_package">
-      <package class="de.uni_paderborn.fujaba.muml.model.ModelPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/0.2.2"/>
-   </extension>
+
 <extension point="org.eclipse.emf.edapt.migrators">
       <!--
       	bingo: It would be nice to have this extension in the model.edapt plugin so that the model plugin
@@ -44,57 +42,57 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.component.ComponentPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/component/0.3.17"/>
+      <package class="de.uni_paderborn.fujaba.muml.component.ComponentPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/component/0.3.17"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/constraint/0.3.13"/>
+      <package class="de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/constraint/0.3.13"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.instance.InstancePackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/instance/0.3.15"/>
+      <package class="de.uni_paderborn.fujaba.muml.instance.InstancePackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/instance/0.3.15"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/protocol/0.3.17"/>
+      <package class="de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/protocol/0.3.17"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17"/>
+      <package class="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/msgtype/0.3.6"/>
+      <package class="de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/msgtype/0.3.6"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/deployment/0.3.11"/>
+      <package class="de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/deployment/0.3.11"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.types.TypesPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/types/0.3.6"/>
+      <package class="de.uni_paderborn.fujaba.muml.types.TypesPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/types/0.3.6"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/connector/0.3.15"/>
+      <package class="de.uni_paderborn.fujaba.muml.connector.ConnectorPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/connector/0.3.15"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/valuetype/0.3.13"/>
+      <package class="de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/valuetype/0.3.13"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/behavior/0.3.17"/>
+      <package class="de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/model/behavior/0.3.17"/>
    </extension>
 
 

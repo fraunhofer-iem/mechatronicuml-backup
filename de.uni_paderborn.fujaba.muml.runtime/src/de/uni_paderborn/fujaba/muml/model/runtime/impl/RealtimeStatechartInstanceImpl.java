@@ -20,12 +20,12 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.ExtendableElementImpl;
 
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 
 /**
  * <!-- begin-user-doc -->

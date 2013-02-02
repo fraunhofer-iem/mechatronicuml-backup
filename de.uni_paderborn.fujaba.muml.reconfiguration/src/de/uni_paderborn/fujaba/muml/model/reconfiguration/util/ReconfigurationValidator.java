@@ -14,25 +14,8 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.fujaba.muml.model.component.util.ComponentValidator;
+import de.uni_paderborn.fujaba.muml.component.util.ComponentValidator;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.*;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfigurationExecutionPort;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.InternalReconfigurationExecutionPort;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationCondition;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationExecutionPort;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePort;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController;
 
 /**
  * <!-- begin-user-doc -->

@@ -9,8 +9,8 @@ package de.uni_paderborn.fujaba.muml.model.runtime;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.ExtendableElement;
 
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 
 /**
  * <!-- begin-user-doc -->

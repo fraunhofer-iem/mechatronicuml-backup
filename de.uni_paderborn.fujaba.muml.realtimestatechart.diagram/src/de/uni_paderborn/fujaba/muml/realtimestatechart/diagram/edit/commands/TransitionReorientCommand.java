@@ -44,7 +44,7 @@ public class TransitionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition) {
+		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Transition) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -60,15 +60,15 @@ public class TransitionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex && newEnd instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex && newEnd instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex target = getLink()
+		de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex target = getLink()
 				.getTarget();
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) getLink()
+		de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart container = (de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart) getLink()
 				.eContainer();
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
@@ -92,15 +92,15 @@ public class TransitionReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex && newEnd instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex && newEnd instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex source = getLink()
+		de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex source = getLink()
 				.getSource();
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart container = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) getLink()
+		de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart container = (de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart) getLink()
 				.eContainer();
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
@@ -161,36 +161,36 @@ public class TransitionReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition getLink() {
-		return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition) getElementToEdit();
+	protected de.uni_paderborn.fujaba.muml.realtimestatechart.Transition getLink() {
+		return (de.uni_paderborn.fujaba.muml.realtimestatechart.Transition) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex getOldSource() {
-		return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex getNewSource() {
-		return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) newEnd;
+	protected de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex getOldTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex getNewTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex) newEnd;
+	protected de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex) newEnd;
 	}
 
 	private EditPart host;

@@ -41,7 +41,7 @@ public class CoordinationProtocol2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol container = (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) getElementToEdit();
 		if (container.getGmfCoordinationProtocol() != null) {
 			return false;
 		}
@@ -54,10 +54,10 @@ public class CoordinationProtocol2CreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol newElement = de.uni_paderborn.fujaba.muml.model.protocol.ProtocolFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol newElement = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE
 				.createCoordinationProtocol();
 
-		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol owner = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol owner = (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) getElementToEdit();
 		owner.setGmfCoordinationProtocol(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -70,7 +70,7 @@ public class CoordinationProtocol2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol newElement,
+			de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

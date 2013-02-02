@@ -64,11 +64,11 @@ public class MumlDiagramUpdater {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.component.AtomicComponent modelElement = (de.uni_paderborn.fujaba.muml.model.component.AtomicComponent) view
+		de.uni_paderborn.fujaba.muml.component.AtomicComponent modelElement = (de.uni_paderborn.fujaba.muml.component.AtomicComponent) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getPorts().iterator(); it.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.component.Port childElement = (de.uni_paderborn.fujaba.muml.model.component.Port) it
+			de.uni_paderborn.fujaba.muml.component.Port childElement = (de.uni_paderborn.fujaba.muml.component.Port) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);

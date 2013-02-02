@@ -47,10 +47,10 @@ public class HybridPortCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.component.HybridPort newElement = de.uni_paderborn.fujaba.muml.model.component.ComponentFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.component.HybridPort newElement = de.uni_paderborn.fujaba.muml.component.ComponentFactory.eINSTANCE
 				.createHybridPort();
 
-		de.uni_paderborn.fujaba.muml.model.component.ComponentPart owner = (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.component.ComponentPart owner = (de.uni_paderborn.fujaba.muml.component.ComponentPart) getElementToEdit();
 		owner.getPorts().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.ElementInitializers
@@ -66,7 +66,7 @@ public class HybridPortCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.component.HybridPort newElement,
+			de.uni_paderborn.fujaba.muml.component.HybridPort newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

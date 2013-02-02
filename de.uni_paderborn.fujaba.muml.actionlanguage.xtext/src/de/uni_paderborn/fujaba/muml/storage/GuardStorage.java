@@ -10,8 +10,8 @@ import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.TextualExpression;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 
 public class GuardStorage extends ModelStorage<Transition> {
 	private static final String name = "guard";

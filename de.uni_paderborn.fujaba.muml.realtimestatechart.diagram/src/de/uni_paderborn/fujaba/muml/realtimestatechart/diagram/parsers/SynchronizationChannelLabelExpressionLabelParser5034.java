@@ -86,7 +86,7 @@ public class SynchronizationChannelLabelExpressionLabelParser5034 implements
 		Object result = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						7,
-						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getSynchronizationChannel(), typeEnv)
 				.evaluate(target, env);
 		return String.valueOf(result);

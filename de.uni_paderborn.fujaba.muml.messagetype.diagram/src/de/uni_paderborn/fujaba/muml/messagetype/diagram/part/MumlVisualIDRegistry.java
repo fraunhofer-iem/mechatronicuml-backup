@@ -121,20 +121,20 @@ public class MumlVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
 					.getMessageTypeRepository().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
 					.getMessageType().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeParametersCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 					.getParameter().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID;
 			}

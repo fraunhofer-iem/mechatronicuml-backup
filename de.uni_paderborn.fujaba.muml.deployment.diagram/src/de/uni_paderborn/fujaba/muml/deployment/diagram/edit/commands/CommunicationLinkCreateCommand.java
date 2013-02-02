@@ -32,7 +32,7 @@ public class CommunicationLinkCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	private final de.uni_paderborn.fujaba.muml.model.deployment.Deployment container;
+	private final de.uni_paderborn.fujaba.muml.deployment.Deployment container;
 
 	/**
 	 * @generated
@@ -40,7 +40,7 @@ public class CommunicationLinkCreateCommand extends EditElementCommand {
 	public CommunicationLinkCreateCommand(CreateRelationshipRequest request,
 			EObject source, EObject target) {
 		super(request.getLabel(), null, request);
-		de.uni_paderborn.fujaba.muml.model.deployment.Deployment container = null;
+		de.uni_paderborn.fujaba.muml.deployment.Deployment container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
@@ -63,11 +63,11 @@ public class CommunicationLinkCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -107,7 +107,7 @@ public class CommunicationLinkCreateCommand extends EditElementCommand {
 					"Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink newElement = de.uni_paderborn.fujaba.muml.model.deployment.DeploymentFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.deployment.CommunicationLink newElement = de.uni_paderborn.fujaba.muml.deployment.DeploymentFactory.eINSTANCE
 				.createCommunicationLink();
 		getContainer().getCommunicationLinks().add(newElement);
 		newElement.getConnectorEndpoints().add(getSource());
@@ -122,7 +122,7 @@ public class CommunicationLinkCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink newElement,
+			de.uni_paderborn.fujaba.muml.deployment.CommunicationLink newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
@@ -153,21 +153,21 @@ public class CommunicationLinkCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getSource() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) source;
+	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getSource() {
+		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) target;
+	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getTarget() {
+		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) target;
 	}
 
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.model.deployment.Deployment getContainer() {
+	public de.uni_paderborn.fujaba.muml.deployment.Deployment getContainer() {
 		return container;
 	}
 
@@ -176,15 +176,15 @@ public class CommunicationLinkCreateCommand extends EditElementCommand {
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.muml.model.deployment.Deployment deduceContainer(
+	private static de.uni_paderborn.fujaba.muml.deployment.Deployment deduceContainer(
 			EObject source, EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.muml.model.deployment.Deployment) {
-				return (de.uni_paderborn.fujaba.muml.model.deployment.Deployment) element;
+			if (element instanceof de.uni_paderborn.fujaba.muml.deployment.Deployment) {
+				return (de.uni_paderborn.fujaba.muml.deployment.Deployment) element;
 			}
 		}
 		return null;
@@ -195,12 +195,12 @@ public class CommunicationLinkCreateCommand extends EditElementCommand {
 	 * 
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.muml.model.deployment.Deployment deduceContainerUsingViews(
+	private static de.uni_paderborn.fujaba.muml.deployment.Deployment deduceContainerUsingViews(
 			View sourceView, View targetView) {
 		for (View view = sourceView; view != null; view = (View) view
 				.eContainer()) {
-			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.model.deployment.Deployment) {
-				return (de.uni_paderborn.fujaba.muml.model.deployment.Deployment) view
+			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.deployment.Deployment) {
+				return (de.uni_paderborn.fujaba.muml.deployment.Deployment) view
 						.getElement();
 			}
 		}

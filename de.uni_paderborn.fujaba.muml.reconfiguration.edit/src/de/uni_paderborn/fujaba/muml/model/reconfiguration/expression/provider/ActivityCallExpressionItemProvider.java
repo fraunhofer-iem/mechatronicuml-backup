@@ -27,7 +27,7 @@ import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ActivityCallExpression;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ExpressionPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.provider.MumlReconfigurationEditPlugin;

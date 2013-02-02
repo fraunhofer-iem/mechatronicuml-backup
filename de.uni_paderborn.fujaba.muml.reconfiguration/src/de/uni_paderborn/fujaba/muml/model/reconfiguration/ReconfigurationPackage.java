@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
 
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 
 /**
  * <!-- begin-user-doc -->

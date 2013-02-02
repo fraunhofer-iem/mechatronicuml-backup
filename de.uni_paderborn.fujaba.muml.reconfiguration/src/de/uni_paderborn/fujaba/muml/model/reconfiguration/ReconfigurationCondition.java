@@ -10,7 +10,7 @@ import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
 public interface ReconfigurationCondition extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.model.behavior.Parameter}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,

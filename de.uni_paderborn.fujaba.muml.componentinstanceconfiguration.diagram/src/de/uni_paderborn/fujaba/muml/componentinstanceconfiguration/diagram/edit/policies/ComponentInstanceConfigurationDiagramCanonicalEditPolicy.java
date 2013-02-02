@@ -71,10 +71,10 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					.add(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getComponentInstanceConfiguration_ParentPortInstances());
 			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					.add(de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getComponentInstanceConfiguration_ComponentInstances());
 		}
 		return myFeaturesToSynchronize;

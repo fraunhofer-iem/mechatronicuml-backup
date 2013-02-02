@@ -10,7 +10,7 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.part.Activator;
-import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 
 public class CreateInstancesCommand extends ChangeCommand {
 

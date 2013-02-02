@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
+import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TypedNamedElementExpression;
-import de.uni_paderborn.fujaba.muml.model.behavior.TypedNamedElement;
 
 /**
  * <!-- begin-user-doc -->

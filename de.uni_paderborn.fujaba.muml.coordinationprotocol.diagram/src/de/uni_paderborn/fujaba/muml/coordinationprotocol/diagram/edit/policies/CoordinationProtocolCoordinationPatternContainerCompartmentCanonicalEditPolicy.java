@@ -62,10 +62,10 @@ public class CoordinationProtocolCoordinationPatternContainerCompartmentCanonica
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getCoordinationProtocol_GmfCoordinationProtocol());
 			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getCoordinationProtocol_Roles());
 		}
 		return myFeaturesToSynchronize;

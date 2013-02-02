@@ -121,19 +121,19 @@ public class MumlVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 					.getCoordinationProtocol().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationPatternContainerCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 					.getCoordinationProtocol().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 					.getRole().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID;
 			}
@@ -204,7 +204,7 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+		if (de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 				.getRoleConnector().isSuperTypeOf(domainElement.eClass())) {
 			return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID;
 		}

@@ -52,7 +52,7 @@ public class DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentCanoni
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+		return de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 				.getDiscreteMultiPortInstance_GmfSubPortInstances();
 	}
 

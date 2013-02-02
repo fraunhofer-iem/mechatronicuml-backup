@@ -61,13 +61,13 @@ public class StateActionCompartmentCanonicalEditPolicy extends
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.add(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getState_EntryEvent());
 			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.add(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getState_DoEvent());
 			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.add(de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getState_ExitEvent());
 		}
 		return myFeaturesToSynchronize;

@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.reconfiguration.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import de.uni_paderborn.fujaba.muml.model.component.impl.DiscretePortImpl;
+import de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
 

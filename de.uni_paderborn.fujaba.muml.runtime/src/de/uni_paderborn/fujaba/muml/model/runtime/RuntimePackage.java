@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
 
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
 /**
  * <!-- begin-user-doc -->

@@ -24,8 +24,8 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.Cont
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeStrategy;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.util.ControlflowValidator;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 
 /**
  * <!-- begin-user-doc -->

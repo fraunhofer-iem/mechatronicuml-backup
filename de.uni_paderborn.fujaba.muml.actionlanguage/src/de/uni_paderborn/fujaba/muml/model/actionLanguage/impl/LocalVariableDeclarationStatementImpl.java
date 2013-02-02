@@ -16,10 +16,10 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
+import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement;
-import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
 
 /**
  * <!-- begin-user-doc -->

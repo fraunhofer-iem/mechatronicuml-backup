@@ -331,9 +331,9 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateCommunicationLink_4001(
-				de.uni_paderborn.fujaba.muml.model.deployment.Deployment container,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				de.uni_paderborn.fujaba.muml.deployment.Deployment container,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			return canExistCommunicationLink_4001(container, null, source,
 					target, sourceView, targetView);
@@ -343,10 +343,10 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canExistCommunicationLink_4001(
-				de.uni_paderborn.fujaba.muml.model.deployment.Deployment container,
-				de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink linkInstance,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				de.uni_paderborn.fujaba.muml.deployment.Deployment container,
+				de.uni_paderborn.fujaba.muml.deployment.CommunicationLink linkInstance,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			try {
 				if (source == null) {
@@ -355,7 +355,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
@@ -365,7 +365,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlOCLFactory
 							.getExpression(
 									2,
-									de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
@@ -380,7 +380,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -390,7 +390,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlOCLFactory
 							.getExpression(
 									3,
-									de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
@@ -412,9 +412,9 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public java.lang.String getErrorCommunicationLink_4001(
-				de.uni_paderborn.fujaba.muml.model.deployment.Deployment container,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				de.uni_paderborn.fujaba.muml.deployment.Deployment container,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			try {
 				if (source == null) {
@@ -423,7 +423,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
@@ -433,7 +433,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlOCLFactory
 							.getExpression(
 									2,
-									de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
@@ -460,7 +460,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -470,7 +470,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlOCLFactory
 							.getExpression(
 									3,
-									de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 

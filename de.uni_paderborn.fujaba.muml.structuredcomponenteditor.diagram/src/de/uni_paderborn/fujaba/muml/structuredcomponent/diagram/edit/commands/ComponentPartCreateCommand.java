@@ -50,10 +50,10 @@ public class ComponentPartCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.component.ComponentPart newElement = de.uni_paderborn.fujaba.muml.model.component.ComponentFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.component.ComponentPart newElement = de.uni_paderborn.fujaba.muml.component.ComponentFactory.eINSTANCE
 				.createComponentPart();
 
-		de.uni_paderborn.fujaba.muml.model.component.StructuredComponent owner = (de.uni_paderborn.fujaba.muml.model.component.StructuredComponent) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.component.StructuredComponent owner = (de.uni_paderborn.fujaba.muml.component.StructuredComponent) getElementToEdit();
 		owner.getEmbeddedParts().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.ElementInitializers
@@ -69,7 +69,7 @@ public class ComponentPartCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.component.ComponentPart newElement,
+			de.uni_paderborn.fujaba.muml.component.ComponentPart newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

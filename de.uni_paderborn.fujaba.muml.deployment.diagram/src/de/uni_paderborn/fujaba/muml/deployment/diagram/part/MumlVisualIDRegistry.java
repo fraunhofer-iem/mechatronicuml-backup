@@ -83,9 +83,9 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
+		if (de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage.eINSTANCE
 				.getDeployment().isSuperTypeOf(domainElement.eClass())
-				&& isDiagram((de.uni_paderborn.fujaba.muml.model.deployment.Deployment) domainElement)) {
+				&& isDiagram((de.uni_paderborn.fujaba.muml.deployment.Deployment) domainElement)) {
 			return de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.DeploymentEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -118,13 +118,13 @@ public class MumlVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.DeploymentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage.eINSTANCE
 					.getHardwareNode().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwareNodeEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwareNodeEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage.eINSTANCE
 					.getHardwarePort().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID;
 			}
@@ -185,7 +185,7 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
+		if (de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage.eINSTANCE
 				.getCommunicationLink().isSuperTypeOf(domainElement.eClass())) {
 			return de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID;
 		}
@@ -199,7 +199,7 @@ public class MumlVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDiagram(
-			de.uni_paderborn.fujaba.muml.model.deployment.Deployment element) {
+			de.uni_paderborn.fujaba.muml.deployment.Deployment element) {
 		return true;
 	}
 

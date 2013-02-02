@@ -10,10 +10,10 @@ import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.EdgeGuard;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 
-import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
-import de.uni_paderborn.fujaba.muml.model.component.Component;
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
+import de.uni_paderborn.fujaba.muml.component.Component;
+import de.uni_paderborn.fujaba.muml.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;
 

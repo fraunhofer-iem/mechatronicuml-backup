@@ -6,8 +6,8 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
-import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
+import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.valuetype.Range;
 
 /**
  * Base edit policy for all border items that use the CustomPortFigure. Provides

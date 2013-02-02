@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration;
 
-import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 
 /**
  * <!-- begin-user-doc -->

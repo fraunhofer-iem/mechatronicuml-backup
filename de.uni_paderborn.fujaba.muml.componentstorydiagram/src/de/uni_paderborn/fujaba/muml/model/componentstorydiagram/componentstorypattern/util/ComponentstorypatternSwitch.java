@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.util;
 
+import de.uni_paderborn.fujaba.muml.connector.Connector;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -25,8 +27,6 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable;
-import de.uni_paderborn.fujaba.muml.model.connector.Connector;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
 
 /**
  * <!-- begin-user-doc -->

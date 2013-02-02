@@ -12,30 +12,28 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.MumlFactory;
 import de.uni_paderborn.fujaba.muml.MumlPackage;
-import de.uni_paderborn.fujaba.muml.model.ModelPackage;
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.model.behavior.impl.BehaviorPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.component.impl.ComponentPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.model.connector.impl.ConnectorPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.model.constraint.impl.ConstraintPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
-import de.uni_paderborn.fujaba.muml.model.deployment.impl.DeploymentPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.impl.ModelPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.instance.impl.InstancePackageImpl;
-import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
-import de.uni_paderborn.fujaba.muml.model.msgtype.impl.MsgtypePackageImpl;
-import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
-import de.uni_paderborn.fujaba.muml.model.protocol.impl.ProtocolPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.impl.RealtimestatechartPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
-import de.uni_paderborn.fujaba.muml.model.types.impl.TypesPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
-import de.uni_paderborn.fujaba.muml.model.valuetype.impl.ValuetypePackageImpl;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.behavior.impl.BehaviorPackageImpl;
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.component.impl.ComponentPackageImpl;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorPackageImpl;
+import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.constraint.impl.ConstraintPackageImpl;
+import de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage;
+import de.uni_paderborn.fujaba.muml.deployment.impl.DeploymentPackageImpl;
+import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.instance.impl.InstancePackageImpl;
+import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
+import de.uni_paderborn.fujaba.muml.msgtype.impl.MsgtypePackageImpl;
+import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
+import de.uni_paderborn.fujaba.muml.protocol.impl.ProtocolPackageImpl;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimestatechartPackageImpl;
+import de.uni_paderborn.fujaba.muml.types.TypesPackage;
+import de.uni_paderborn.fujaba.muml.types.impl.TypesPackageImpl;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
+import de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypePackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,7 +93,6 @@ public class MumlPackageImpl extends EPackageImpl implements MumlPackage {
 		ModelinstancePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		ModelPackageImpl theModelPackage = (ModelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ModelPackage.eNS_URI) instanceof ModelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ModelPackage.eNS_URI) : ModelPackage.eINSTANCE);
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
 		ConstraintPackageImpl theConstraintPackage = (ConstraintPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) instanceof ConstraintPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI) : ConstraintPackage.eINSTANCE);
 		InstancePackageImpl theInstancePackage = (InstancePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) instanceof InstancePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI) : InstancePackage.eINSTANCE);
@@ -110,7 +107,6 @@ public class MumlPackageImpl extends EPackageImpl implements MumlPackage {
 
 		// Create package meta-data objects
 		theMumlPackage.createPackageContents();
-		theModelPackage.createPackageContents();
 		theComponentPackage.createPackageContents();
 		theConstraintPackage.createPackageContents();
 		theInstancePackage.createPackageContents();
@@ -125,7 +121,6 @@ public class MumlPackageImpl extends EPackageImpl implements MumlPackage {
 
 		// Initialize created meta-data
 		theMumlPackage.initializePackageContents();
-		theModelPackage.initializePackageContents();
 		theComponentPackage.initializePackageContents();
 		theConstraintPackage.initializePackageContents();
 		theInstancePackage.initializePackageContents();
@@ -201,11 +196,6 @@ public class MumlPackageImpl extends EPackageImpl implements MumlPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
-		// Obtain other dependent packages
-		ModelPackage theModelPackage = (ModelPackage)EPackage.Registry.INSTANCE.getEPackage(ModelPackage.eNS_URI);
-
-		// Add subpackages
-		getESubpackages().add(theModelPackage);
 
 		// Create type parameters
 

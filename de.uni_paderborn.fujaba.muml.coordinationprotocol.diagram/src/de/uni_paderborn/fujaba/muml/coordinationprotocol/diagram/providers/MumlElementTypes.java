@@ -185,27 +185,27 @@ public class MumlElementTypes {
 
 			elements.put(
 					CoordinationProtocol_2005,
-					de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getCoordinationProtocol());
 
 			elements.put(
 					CoordinationProtocol_3005,
-					de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getCoordinationProtocol());
 
 			elements.put(
 					Role_3006,
-					de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getRole());
 
 			elements.put(
 					CoordinationProtocolRoles_4007,
-					de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getCoordinationProtocol_Roles());
 
 			elements.put(
 					RoleConnector_4006,
-					de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getRoleConnector());
 		}
 		return (ENamedElement) elements.get(type);

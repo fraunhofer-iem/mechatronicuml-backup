@@ -209,57 +209,57 @@ public class MumlElementTypes {
 
 			elements.put(
 					StaticStructuredComponent_2005,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getStaticStructuredComponent());
 
 			elements.put(
 					DiscretePort_3010,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getDiscretePort());
 
 			elements.put(
 					ContinuousPort_3011,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getContinuousPort());
 
 			elements.put(
 					ComponentPart_3012,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getComponentPart());
 
 			elements.put(
 					HybridPort_3013,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getHybridPort());
 
 			elements.put(
 					DiscretePort_3014,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getDiscretePort());
 
 			elements.put(
 					ContinuousPort_3015,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getContinuousPort());
 
 			elements.put(
 					CoordinationProtocol_3016,
-					de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 							.getCoordinationProtocol());
 
 			elements.put(
 					AssemblyConnector_4001,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getAssemblyConnector());
 
 			elements.put(
 					DelegationConnector_4002,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getDelegationConnector());
 
 			elements.put(
 					DiscretePortGmfProtocol_4005,
-					de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getDiscretePort_GmfProtocol());
 		}
 		return (ENamedElement) elements.get(type);

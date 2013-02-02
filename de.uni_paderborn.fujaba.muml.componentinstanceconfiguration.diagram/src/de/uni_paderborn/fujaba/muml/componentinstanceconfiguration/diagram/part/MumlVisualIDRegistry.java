@@ -83,10 +83,10 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+		if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 				.getComponentInstanceConfiguration().isSuperTypeOf(
 						domainElement.eClass())
-				&& isDiagram((de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) domainElement)) {
+				&& isDiagram((de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) domainElement)) {
 			return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -119,165 +119,165 @@ public class MumlVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getHybridPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getDiscreteSinglePortInstance().isSuperTypeOf(
 							domainElement.eClass())
-					&& isDiscreteSinglePortInstance_2022((de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance) domainElement)) {
+					&& isDiscreteSinglePortInstance_2022((de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance) domainElement)) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getDiscreteMultiPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getContinuousPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getAtomicComponentInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getStructuredComponentInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getHybridPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getDiscreteSinglePortInstance().isSuperTypeOf(
 							domainElement.eClass())
-					&& isDiscreteSinglePortInstance_3032((de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance) domainElement)) {
+					&& isDiscreteSinglePortInstance_3032((de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance) domainElement)) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getDiscreteMultiPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getContinuousPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getHybridPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getDiscreteSinglePortInstance().isSuperTypeOf(
 							domainElement.eClass())
-					&& isDiscreteSinglePortInstance_3032((de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance) domainElement)) {
+					&& isDiscreteSinglePortInstance_3032((de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance) domainElement)) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getDiscreteMultiPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getContinuousPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getHybridPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getDiscreteSinglePortInstance().isSuperTypeOf(
 							domainElement.eClass())
-					&& isDiscreteSinglePortInstance_3032((de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance) domainElement)) {
+					&& isDiscreteSinglePortInstance_3032((de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance) domainElement)) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getDiscreteMultiPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getContinuousPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getHybridPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getDiscreteSinglePortInstance().isSuperTypeOf(
 							domainElement.eClass())
-					&& isDiscreteSinglePortInstance_3032((de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance) domainElement)) {
+					&& isDiscreteSinglePortInstance_3032((de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance) domainElement)) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getDiscreteMultiPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getContinuousPortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getDiscreteSinglePortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getDiscreteSinglePortInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getComponentInstanceConfiguration().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getAtomicComponentInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getStructuredComponentInstance().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 					.getComponentInstanceConfiguration().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart.VISUAL_ID;
@@ -494,12 +494,12 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+		if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 				.getAssemblyConnectorInstance().isSuperTypeOf(
 						domainElement.eClass())) {
 			return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID;
 		}
-		if (de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+		if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 				.getDelegationConnectorInstance().isSuperTypeOf(
 						domainElement.eClass())) {
 			return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID;
@@ -514,7 +514,7 @@ public class MumlVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDiagram(
-			de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration element) {
+			de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration element) {
 		return true;
 	}
 
@@ -522,11 +522,11 @@ public class MumlVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDiscreteSinglePortInstance_2022(
-			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance domainElement) {
+			de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance domainElement) {
 		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						2,
-						de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 								.getDiscreteSinglePortInstance(), null)
 				.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
@@ -536,11 +536,11 @@ public class MumlVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDiscreteSinglePortInstance_3032(
-			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance domainElement) {
+			de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance domainElement) {
 		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						2,
-						de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 								.getDiscreteSinglePortInstance(), null)
 				.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();

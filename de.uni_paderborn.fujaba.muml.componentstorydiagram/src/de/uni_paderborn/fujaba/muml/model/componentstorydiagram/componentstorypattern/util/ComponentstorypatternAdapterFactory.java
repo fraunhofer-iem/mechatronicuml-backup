@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.util;
 
+import de.uni_paderborn.fujaba.muml.connector.Connector;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -26,8 +28,6 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.PortVariable;
-import de.uni_paderborn.fujaba.muml.model.connector.Connector;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
 
 /**
  * <!-- begin-user-doc -->
@@ -384,13 +384,13 @@ public class ComponentstorypatternAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint <em>Endpoint</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint <em>Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint
+	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint
 	 * @generated
 	 */
 	public Adapter createConnectorEndpointAdapter() {
@@ -398,13 +398,13 @@ public class ComponentstorypatternAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.model.connector.Connector <em>Connector</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.connector.Connector <em>Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.model.connector.Connector
+	 * @see de.uni_paderborn.fujaba.muml.connector.Connector
 	 * @generated
 	 */
 	public Adapter createConnectorAdapter() {

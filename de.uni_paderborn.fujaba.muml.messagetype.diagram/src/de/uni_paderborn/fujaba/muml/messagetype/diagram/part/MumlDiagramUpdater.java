@@ -70,12 +70,12 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.msgtype.MessageTypeRepository modelElement = (de.uni_paderborn.fujaba.muml.model.msgtype.MessageTypeRepository) containerView
+		de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository modelElement = (de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getMessageTypes().iterator(); it
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.msgtype.MessageType childElement = (de.uni_paderborn.fujaba.muml.model.msgtype.MessageType) it
+			de.uni_paderborn.fujaba.muml.msgtype.MessageType childElement = (de.uni_paderborn.fujaba.muml.msgtype.MessageType) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -101,12 +101,12 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.msgtype.MessageType modelElement = (de.uni_paderborn.fujaba.muml.model.msgtype.MessageType) containerView
+		de.uni_paderborn.fujaba.muml.msgtype.MessageType modelElement = (de.uni_paderborn.fujaba.muml.msgtype.MessageType) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getParameters().iterator(); it
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.behavior.Parameter childElement = (de.uni_paderborn.fujaba.muml.model.behavior.Parameter) it
+			de.uni_paderborn.fujaba.muml.behavior.Parameter childElement = (de.uni_paderborn.fujaba.muml.behavior.Parameter) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);

@@ -14,8 +14,8 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.edit.commands.CreateInstancesCommand;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart;
-import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
 /**
  * A customized EditPart for ComponentInstances. A customized Figure will be

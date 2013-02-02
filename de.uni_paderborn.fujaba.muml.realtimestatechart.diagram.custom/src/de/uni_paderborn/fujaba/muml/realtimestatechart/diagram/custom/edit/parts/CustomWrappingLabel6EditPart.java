@@ -2,7 +2,7 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.part
 
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.SynchronizationChannel;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel6EditPart;
 
 /**

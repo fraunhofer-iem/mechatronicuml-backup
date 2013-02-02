@@ -14,23 +14,23 @@ import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
-import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
-import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage;
+import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ActivityCallExpression;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ExpressionFactory;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ExpressionPackage;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.expression.ReconfigurationRuleCallExpression;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.impl.ReconfigurationPackageImpl;
-import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
-import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
+import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
+import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.types.TypesPackage;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->

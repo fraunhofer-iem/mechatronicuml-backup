@@ -73,11 +73,11 @@ public class MumlDiagramUpdater {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent modelElement = (de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent) view
+		de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent modelElement = (de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getPorts().iterator(); it.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.component.Port childElement = (de.uni_paderborn.fujaba.muml.model.component.Port) it
+			de.uni_paderborn.fujaba.muml.component.Port childElement = (de.uni_paderborn.fujaba.muml.component.Port) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -104,11 +104,11 @@ public class MumlDiagramUpdater {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.component.ComponentPart modelElement = (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) view
+		de.uni_paderborn.fujaba.muml.component.ComponentPart modelElement = (de.uni_paderborn.fujaba.muml.component.ComponentPart) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getPorts().iterator(); it.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.component.Port childElement = (de.uni_paderborn.fujaba.muml.model.component.Port) it
+			de.uni_paderborn.fujaba.muml.component.Port childElement = (de.uni_paderborn.fujaba.muml.component.Port) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -144,12 +144,12 @@ public class MumlDiagramUpdater {
 		if (!containerView.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent modelElement = (de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent) containerView
+		de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent modelElement = (de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getEmbeddedParts().iterator(); it
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.component.ComponentPart childElement = (de.uni_paderborn.fujaba.muml.model.component.ComponentPart) it
+			de.uni_paderborn.fujaba.muml.component.ComponentPart childElement = (de.uni_paderborn.fujaba.muml.component.ComponentPart) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -161,7 +161,7 @@ public class MumlDiagramUpdater {
 		}
 		for (Iterator<?> it = modelElement.getGmfProtocols().iterator(); it
 				.hasNext();) {
-			de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol childElement = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) it
+			de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol childElement = (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
@@ -283,7 +283,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getStaticStructuredComponent_2005ContainedLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent modelElement = (de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent) view
+		de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent modelElement = (de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getContainedTypeModelFacetLinks_AssemblyConnector_4001(modelElement));
@@ -296,7 +296,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getDiscretePort_3010ContainedLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.DiscretePort modelElement = (de.uni_paderborn.fujaba.muml.model.component.DiscretePort) view
+		de.uni_paderborn.fujaba.muml.component.DiscretePort modelElement = (de.uni_paderborn.fujaba.muml.component.DiscretePort) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_DiscretePort_GmfProtocol_4005(modelElement));
@@ -332,7 +332,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getDiscretePort_3014ContainedLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.DiscretePort modelElement = (de.uni_paderborn.fujaba.muml.model.component.DiscretePort) view
+		de.uni_paderborn.fujaba.muml.component.DiscretePort modelElement = (de.uni_paderborn.fujaba.muml.component.DiscretePort) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_DiscretePort_GmfProtocol_4005(modelElement));
@@ -384,7 +384,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getDiscretePort_3010IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.DiscretePort modelElement = (de.uni_paderborn.fujaba.muml.model.component.DiscretePort) view
+		de.uni_paderborn.fujaba.muml.component.DiscretePort modelElement = (de.uni_paderborn.fujaba.muml.component.DiscretePort) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -401,7 +401,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getContinuousPort_3011IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.ContinuousPort modelElement = (de.uni_paderborn.fujaba.muml.model.component.ContinuousPort) view
+		de.uni_paderborn.fujaba.muml.component.ContinuousPort modelElement = (de.uni_paderborn.fujaba.muml.component.ContinuousPort) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -426,7 +426,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getHybridPort_3013IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.HybridPort modelElement = (de.uni_paderborn.fujaba.muml.model.component.HybridPort) view
+		de.uni_paderborn.fujaba.muml.component.HybridPort modelElement = (de.uni_paderborn.fujaba.muml.component.HybridPort) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -443,7 +443,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getDiscretePort_3014IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.DiscretePort modelElement = (de.uni_paderborn.fujaba.muml.model.component.DiscretePort) view
+		de.uni_paderborn.fujaba.muml.component.DiscretePort modelElement = (de.uni_paderborn.fujaba.muml.component.DiscretePort) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -460,7 +460,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getContinuousPort_3015IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.ContinuousPort modelElement = (de.uni_paderborn.fujaba.muml.model.component.ContinuousPort) view
+		de.uni_paderborn.fujaba.muml.component.ContinuousPort modelElement = (de.uni_paderborn.fujaba.muml.component.ContinuousPort) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -477,7 +477,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getCoordinationProtocol_3016IncomingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol modelElement = (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) view
+		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol modelElement = (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) view
 				.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -516,7 +516,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getDiscretePort_3010OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.DiscretePort modelElement = (de.uni_paderborn.fujaba.muml.model.component.DiscretePort) view
+		de.uni_paderborn.fujaba.muml.component.DiscretePort modelElement = (de.uni_paderborn.fujaba.muml.component.DiscretePort) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_AssemblyConnector_4001(modelElement));
@@ -530,7 +530,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getContinuousPort_3011OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.ContinuousPort modelElement = (de.uni_paderborn.fujaba.muml.model.component.ContinuousPort) view
+		de.uni_paderborn.fujaba.muml.component.ContinuousPort modelElement = (de.uni_paderborn.fujaba.muml.component.ContinuousPort) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_AssemblyConnector_4001(modelElement));
@@ -551,7 +551,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getHybridPort_3013OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.HybridPort modelElement = (de.uni_paderborn.fujaba.muml.model.component.HybridPort) view
+		de.uni_paderborn.fujaba.muml.component.HybridPort modelElement = (de.uni_paderborn.fujaba.muml.component.HybridPort) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_AssemblyConnector_4001(modelElement));
@@ -564,7 +564,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getDiscretePort_3014OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.DiscretePort modelElement = (de.uni_paderborn.fujaba.muml.model.component.DiscretePort) view
+		de.uni_paderborn.fujaba.muml.component.DiscretePort modelElement = (de.uni_paderborn.fujaba.muml.component.DiscretePort) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_AssemblyConnector_4001(modelElement));
@@ -578,7 +578,7 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getContinuousPort_3015OutgoingLinks(
 			View view) {
-		de.uni_paderborn.fujaba.muml.model.component.ContinuousPort modelElement = (de.uni_paderborn.fujaba.muml.model.component.ContinuousPort) view
+		de.uni_paderborn.fujaba.muml.component.ContinuousPort modelElement = (de.uni_paderborn.fujaba.muml.component.ContinuousPort) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_AssemblyConnector_4001(modelElement));
@@ -614,15 +614,15 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_AssemblyConnector_4001(
-			de.uni_paderborn.fujaba.muml.model.component.StructuredComponent container) {
+			de.uni_paderborn.fujaba.muml.component.StructuredComponent container) {
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor>();
 		for (Iterator<?> links = container.getConnectors().iterator(); links
 				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector) {
+			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.component.AssemblyConnector) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector link = (de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector) linkObject;
+			de.uni_paderborn.fujaba.muml.component.AssemblyConnector link = (de.uni_paderborn.fujaba.muml.component.AssemblyConnector) linkObject;
 			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
 				continue;
@@ -630,16 +630,16 @@ public class MumlDiagramUpdater {
 			List targets = link.getConnectorEndpoints();
 			Object theTarget = !targets.isEmpty() ? targets
 					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theTarget;
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor(
 					src,
 					dst,
@@ -654,15 +654,15 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_DelegationConnector_4002(
-			de.uni_paderborn.fujaba.muml.model.component.StructuredComponent container) {
+			de.uni_paderborn.fujaba.muml.component.StructuredComponent container) {
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor>();
 		for (Iterator<?> links = container.getConnectors().iterator(); links
 				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.model.component.DelegationConnector) {
+			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.component.DelegationConnector) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.component.DelegationConnector link = (de.uni_paderborn.fujaba.muml.model.component.DelegationConnector) linkObject;
+			de.uni_paderborn.fujaba.muml.component.DelegationConnector link = (de.uni_paderborn.fujaba.muml.component.DelegationConnector) linkObject;
 			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
 				continue;
@@ -670,16 +670,16 @@ public class MumlDiagramUpdater {
 			List targets = link.getConnectorEndpoints();
 			Object theTarget = !targets.isEmpty() ? targets
 					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theTarget;
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor(
 					src,
 					dst,
@@ -694,18 +694,18 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getIncomingTypeModelFacetLinks_AssemblyConnector_4001(
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 					.getConnector_ConnectorEndpoints()
-					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector) {
+					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.component.AssemblyConnector) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector link = (de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector) setting
+			de.uni_paderborn.fujaba.muml.component.AssemblyConnector link = (de.uni_paderborn.fujaba.muml.component.AssemblyConnector) setting
 					.getEObject();
 			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
@@ -713,10 +713,10 @@ public class MumlDiagramUpdater {
 			}
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor(
 					src,
 					target,
@@ -731,18 +731,18 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getIncomingTypeModelFacetLinks_DelegationConnector_4002(
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+			if (setting.getEStructuralFeature() != de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 					.getConnector_ConnectorEndpoints()
-					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.model.component.DelegationConnector) {
+					|| false == setting.getEObject() instanceof de.uni_paderborn.fujaba.muml.component.DelegationConnector) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.component.DelegationConnector link = (de.uni_paderborn.fujaba.muml.model.component.DelegationConnector) setting
+			de.uni_paderborn.fujaba.muml.component.DelegationConnector link = (de.uni_paderborn.fujaba.muml.component.DelegationConnector) setting
 					.getEObject();
 			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
@@ -750,10 +750,10 @@ public class MumlDiagramUpdater {
 			}
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
 			result.add(new de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor(
 					src,
 					target,
@@ -768,13 +768,13 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getIncomingFeatureModelFacetLinks_DiscretePort_GmfProtocol_4005(
-			de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol target,
+			de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() == de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+			if (setting.getEStructuralFeature() == de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 					.getDiscretePort_GmfProtocol()) {
 				result.add(new de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor(
 						setting.getEObject(),
@@ -790,15 +790,15 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getOutgoingTypeModelFacetLinks_AssemblyConnector_4001(
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source) {
-		de.uni_paderborn.fujaba.muml.model.component.StructuredComponent container = null;
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source) {
+		de.uni_paderborn.fujaba.muml.component.StructuredComponent container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null && container == null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.muml.model.component.StructuredComponent) {
-				container = (de.uni_paderborn.fujaba.muml.model.component.StructuredComponent) element;
+			if (element instanceof de.uni_paderborn.fujaba.muml.component.StructuredComponent) {
+				container = (de.uni_paderborn.fujaba.muml.component.StructuredComponent) element;
 			}
 		}
 		if (container == null) {
@@ -808,10 +808,10 @@ public class MumlDiagramUpdater {
 		for (Iterator<?> links = container.getConnectors().iterator(); links
 				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector) {
+			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.component.AssemblyConnector) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector link = (de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector) linkObject;
+			de.uni_paderborn.fujaba.muml.component.AssemblyConnector link = (de.uni_paderborn.fujaba.muml.component.AssemblyConnector) linkObject;
 			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
 				continue;
@@ -819,16 +819,16 @@ public class MumlDiagramUpdater {
 			List targets = link.getConnectorEndpoints();
 			Object theTarget = !targets.isEmpty() ? targets
 					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theTarget;
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
 			if (src != source) {
 				continue;
 			}
@@ -846,15 +846,15 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getOutgoingTypeModelFacetLinks_DelegationConnector_4002(
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source) {
-		de.uni_paderborn.fujaba.muml.model.component.StructuredComponent container = null;
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source) {
+		de.uni_paderborn.fujaba.muml.component.StructuredComponent container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null && container == null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.muml.model.component.StructuredComponent) {
-				container = (de.uni_paderborn.fujaba.muml.model.component.StructuredComponent) element;
+			if (element instanceof de.uni_paderborn.fujaba.muml.component.StructuredComponent) {
+				container = (de.uni_paderborn.fujaba.muml.component.StructuredComponent) element;
 			}
 		}
 		if (container == null) {
@@ -864,10 +864,10 @@ public class MumlDiagramUpdater {
 		for (Iterator<?> links = container.getConnectors().iterator(); links
 				.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.model.component.DelegationConnector) {
+			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.component.DelegationConnector) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.component.DelegationConnector link = (de.uni_paderborn.fujaba.muml.model.component.DelegationConnector) linkObject;
+			de.uni_paderborn.fujaba.muml.component.DelegationConnector link = (de.uni_paderborn.fujaba.muml.component.DelegationConnector) linkObject;
 			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
 					.getLinkWithClassVisualID(link)) {
 				continue;
@@ -875,16 +875,16 @@ public class MumlDiagramUpdater {
 			List targets = link.getConnectorEndpoints();
 			Object theTarget = !targets.isEmpty() ? targets
 					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
-			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theTarget;
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
 			List sources = link.getConnectorEndpoints();
 			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
-			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) {
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) theSource;
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
 			if (src != source) {
 				continue;
 			}
@@ -902,9 +902,9 @@ public class MumlDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> getOutgoingFeatureModelFacetLinks_DiscretePort_GmfProtocol_4005(
-			de.uni_paderborn.fujaba.muml.model.component.DiscretePort source) {
+			de.uni_paderborn.fujaba.muml.component.DiscretePort source) {
 		LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlLinkDescriptor>();
-		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol destination = source
+		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol destination = source
 				.getGmfProtocol();
 		if (destination == null) {
 			return result;

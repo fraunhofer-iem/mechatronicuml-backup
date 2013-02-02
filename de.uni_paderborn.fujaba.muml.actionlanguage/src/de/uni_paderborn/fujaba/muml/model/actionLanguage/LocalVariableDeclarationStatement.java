@@ -8,7 +8,8 @@ package de.uni_paderborn.fujaba.muml.model.actionLanguage;
 
 import org.storydriven.core.expressions.Expression;
 
-import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.behavior.Variable;
+
 import org.eclipse.emf.common.util.EList;
 
 /**

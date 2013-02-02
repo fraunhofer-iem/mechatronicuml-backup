@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime;
 
-import de.uni_paderborn.fujaba.muml.model.connector.DiscreteMultiInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 
 /**
  * <!-- begin-user-doc -->

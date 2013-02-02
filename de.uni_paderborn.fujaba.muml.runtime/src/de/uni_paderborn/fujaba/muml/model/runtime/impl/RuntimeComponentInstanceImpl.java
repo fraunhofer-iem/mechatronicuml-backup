@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import de.uni_paderborn.fujaba.muml.model.instance.impl.ComponentInstanceImpl;
+import de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceImpl;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeBehavioralElement;

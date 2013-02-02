@@ -11,8 +11,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy;
-import de.uni_paderborn.fujaba.muml.model.component.AssemblyConnector;
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
+import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 
 public class AssemblyConnectorEditHelperAdvice extends AbstractEditHelperAdvice {
 

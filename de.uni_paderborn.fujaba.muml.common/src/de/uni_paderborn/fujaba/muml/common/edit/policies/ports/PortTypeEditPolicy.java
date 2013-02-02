@@ -7,13 +7,13 @@ import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortType;
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.component.ContinuousPortDirectionKind;
-import de.uni_paderborn.fujaba.muml.model.component.DirectedTypedPort;
-import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.model.valuetype.Range;
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.component.ContinuousPortDirectionKind;
+import de.uni_paderborn.fujaba.muml.component.DirectedTypedPort;
+import de.uni_paderborn.fujaba.muml.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.valuetype.Range;
 
 public class PortTypeEditPolicy extends PortBaseEditPolicy {
 

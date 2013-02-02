@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime;
 
-import de.uni_paderborn.fujaba.muml.model.instance.DiscretePortInstance;
+import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
 
 /**
  * <!-- begin-user-doc -->

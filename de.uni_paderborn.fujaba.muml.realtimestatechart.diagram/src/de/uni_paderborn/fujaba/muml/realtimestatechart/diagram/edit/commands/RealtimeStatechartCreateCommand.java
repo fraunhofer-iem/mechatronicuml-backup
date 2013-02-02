@@ -58,7 +58,7 @@ public class RealtimeStatechartCreateCommand extends EditElementCommand {
 		// 	return null;
 		// }
 		Resource resource = getElementToEdit().eResource();
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart newElement = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createRealtimeStatechart();
 
 		resource.getContents().add(newElement);
@@ -73,7 +73,7 @@ public class RealtimeStatechartCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart newElement,
+			de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

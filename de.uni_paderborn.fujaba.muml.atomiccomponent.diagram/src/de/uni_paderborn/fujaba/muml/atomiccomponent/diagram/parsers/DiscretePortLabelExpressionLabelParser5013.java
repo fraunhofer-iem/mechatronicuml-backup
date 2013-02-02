@@ -85,7 +85,7 @@ public class DiscretePortLabelExpressionLabelParser5013 implements IParser {
 		Object result = de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						5,
-						de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+						de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 								.getDiscretePort(), typeEnv).evaluate(target,
 						env);
 		return String.valueOf(result);

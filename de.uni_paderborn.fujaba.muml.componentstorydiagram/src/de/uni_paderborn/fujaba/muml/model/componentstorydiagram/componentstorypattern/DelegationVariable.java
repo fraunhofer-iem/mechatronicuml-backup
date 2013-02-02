@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern;
 
-import de.uni_paderborn.fujaba.muml.model.component.DelegationConnector;
+import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
 
 /**
  * <!-- begin-user-doc -->

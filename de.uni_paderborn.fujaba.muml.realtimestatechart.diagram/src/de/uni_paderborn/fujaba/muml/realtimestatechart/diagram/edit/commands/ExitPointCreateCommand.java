@@ -50,10 +50,10 @@ public class ExitPointCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint newElement = de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.realtimestatechart.ExitPoint newElement = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createExitPoint();
 
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.State owner = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.State) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.realtimestatechart.State owner = (de.uni_paderborn.fujaba.muml.realtimestatechart.State) getElementToEdit();
 		owner.getConnectionPoints().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.ElementInitializers
@@ -69,7 +69,7 @@ public class ExitPointCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitPoint newElement,
+			de.uni_paderborn.fujaba.muml.realtimestatechart.ExitPoint newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

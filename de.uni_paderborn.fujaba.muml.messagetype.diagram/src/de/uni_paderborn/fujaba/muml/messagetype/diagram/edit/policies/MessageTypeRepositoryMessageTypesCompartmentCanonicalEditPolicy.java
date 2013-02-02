@@ -52,7 +52,7 @@ public class MessageTypeRepositoryMessageTypesCompartmentCanonicalEditPolicy
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage.eINSTANCE
+		return de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
 				.getMessageTypeRepository_MessageTypes();
 	}
 

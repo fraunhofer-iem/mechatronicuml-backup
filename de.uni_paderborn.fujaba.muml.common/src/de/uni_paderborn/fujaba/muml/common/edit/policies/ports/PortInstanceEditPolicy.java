@@ -3,9 +3,9 @@ package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 
-import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
 public class PortInstanceEditPolicy extends PortTypeEditPolicy {
 	@Override

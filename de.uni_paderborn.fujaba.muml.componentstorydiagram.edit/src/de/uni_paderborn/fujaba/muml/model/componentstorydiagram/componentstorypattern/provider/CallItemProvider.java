@@ -27,7 +27,7 @@ import org.storydriven.core.provider.ExtendableElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.Call;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.provider.ComponentStoryDiagramEditPlugin;

@@ -44,7 +44,7 @@ public class ParameterLabelExpressionLabelParser5013 implements IParser {
 		Object result = de.uni_paderborn.fujaba.muml.messagetype.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						4,
-						de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage.eINSTANCE
+						de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 								.getParameter(), typeEnv).evaluate(target, env);
 		return String.valueOf(result);
 	}
@@ -94,7 +94,7 @@ public class ParameterLabelExpressionLabelParser5013 implements IParser {
 		Object result = de.uni_paderborn.fujaba.muml.messagetype.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						3,
-						de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage.eINSTANCE
+						de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 								.getParameter(), typeEnv).evaluate(target, env);
 		return String.valueOf(result);
 	}

@@ -13,33 +13,16 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.model.component.Component;
-import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
-import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.model.constraint.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.component.Component;
+import de.uni_paderborn.fujaba.muml.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.*;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExecutorSpecificationEntry;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ExternalReconfigurationExecutionPort;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.InternalReconfigurationExecutionPort;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ManagerSpecificationEntry;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableComponent;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurableStructuredComponent;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationCondition;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationController;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationExecutionPort;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationMessagePort;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPackage;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationPort;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.ReconfigurationRule;
-import de.uni_paderborn.fujaba.muml.model.reconfiguration.RuleBasedReconfigurationController;
-import de.uni_paderborn.fujaba.muml.model.types.DataType;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

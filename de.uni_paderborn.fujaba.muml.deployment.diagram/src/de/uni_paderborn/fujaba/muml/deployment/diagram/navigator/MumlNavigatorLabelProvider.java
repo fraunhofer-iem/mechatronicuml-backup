@@ -183,7 +183,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getCommunicationLink_4001Text(View view) {
-		de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink domainModelElement = (de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink) view
+		de.uni_paderborn.fujaba.muml.deployment.CommunicationLink domainModelElement = (de.uni_paderborn.fujaba.muml.deployment.CommunicationLink) view
 				.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getComment();
@@ -200,7 +200,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getDeployment_1000Text(View view) {
-		de.uni_paderborn.fujaba.muml.model.deployment.Deployment domainModelElement = (de.uni_paderborn.fujaba.muml.model.deployment.Deployment) view
+		de.uni_paderborn.fujaba.muml.deployment.Deployment domainModelElement = (de.uni_paderborn.fujaba.muml.deployment.Deployment) view
 				.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();

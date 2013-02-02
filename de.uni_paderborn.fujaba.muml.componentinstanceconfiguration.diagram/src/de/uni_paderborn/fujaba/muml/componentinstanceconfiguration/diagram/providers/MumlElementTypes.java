@@ -224,87 +224,87 @@ public class MumlElementTypes {
 
 			elements.put(
 					ComponentInstanceConfiguration_1000,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getComponentInstanceConfiguration());
 
 			elements.put(
 					HybridPortInstance_2021,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getHybridPortInstance());
 
 			elements.put(
 					DiscreteSinglePortInstance_2022,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getDiscreteSinglePortInstance());
 
 			elements.put(
 					DiscreteMultiPortInstance_2023,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getDiscreteMultiPortInstance());
 
 			elements.put(
 					ContinuousPortInstance_2024,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getContinuousPortInstance());
 
 			elements.put(
 					AtomicComponentInstance_2016,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getAtomicComponentInstance());
 
 			elements.put(
 					StructuredComponentInstance_2015,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getStructuredComponentInstance());
 
 			elements.put(
 					DiscreteSinglePortInstance_3026,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getDiscreteSinglePortInstance());
 
 			elements.put(
 					HybridPortInstance_3031,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getHybridPortInstance());
 
 			elements.put(
 					DiscreteSinglePortInstance_3032,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getDiscreteSinglePortInstance());
 
 			elements.put(
 					DiscreteMultiPortInstance_3033,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getDiscreteMultiPortInstance());
 
 			elements.put(
 					ContinuousPortInstance_3034,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getContinuousPortInstance());
 
 			elements.put(
 					ComponentInstanceConfiguration_3023,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getComponentInstanceConfiguration());
 
 			elements.put(
 					AtomicComponentInstance_3024,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getAtomicComponentInstance());
 
 			elements.put(
 					StructuredComponentInstance_3025,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getStructuredComponentInstance());
 
 			elements.put(
 					AssemblyConnectorInstance_4001,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getAssemblyConnectorInstance());
 
 			elements.put(
 					DelegationConnectorInstance_4002,
-					de.uni_paderborn.fujaba.muml.model.instance.InstancePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 							.getDelegationConnectorInstance());
 		}
 		return (ENamedElement) elements.get(type);

@@ -7,9 +7,9 @@ import org.eclipse.gmf.runtime.notation.Shape;
 import org.eclipse.gmf.runtime.notation.SortingDirection;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.ExitEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart;
 
 public class CustomStateActionCompartmentEditPart extends

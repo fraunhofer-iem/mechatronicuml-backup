@@ -52,7 +52,7 @@ public class StateCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+		return de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 				.getState_ConnectionPoints();
 	}
 

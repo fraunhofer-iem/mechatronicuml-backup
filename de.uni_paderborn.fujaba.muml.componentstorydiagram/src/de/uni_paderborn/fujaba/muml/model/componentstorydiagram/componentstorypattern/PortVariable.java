@@ -8,8 +8,8 @@ package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstoryp
 
 import org.eclipse.emf.common.util.EList;
 
-import de.uni_paderborn.fujaba.muml.model.component.Port;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
+import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 
 /**
  * <!-- begin-user-doc -->

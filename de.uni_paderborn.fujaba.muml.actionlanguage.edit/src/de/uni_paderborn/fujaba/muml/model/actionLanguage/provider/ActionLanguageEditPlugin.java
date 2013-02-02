@@ -11,7 +11,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
 import org.storydriven.core.provider.CoreEditPlugin;
 
-import de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 
 /**
  * This is the central singleton for the ActionLanguage edit plugin.

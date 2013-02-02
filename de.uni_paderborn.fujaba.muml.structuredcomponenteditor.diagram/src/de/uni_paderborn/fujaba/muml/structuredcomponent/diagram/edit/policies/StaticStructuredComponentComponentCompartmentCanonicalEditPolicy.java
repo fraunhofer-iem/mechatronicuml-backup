@@ -62,10 +62,10 @@ public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					.add(de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getStructuredComponent_EmbeddedParts());
 			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+					.add(de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getStructuredComponent_GmfProtocols());
 		}
 		return myFeaturesToSynchronize;

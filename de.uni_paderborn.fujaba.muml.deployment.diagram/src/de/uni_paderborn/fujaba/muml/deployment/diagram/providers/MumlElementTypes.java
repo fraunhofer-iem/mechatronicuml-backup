@@ -172,22 +172,22 @@ public class MumlElementTypes {
 
 			elements.put(
 					Deployment_1000,
-					de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage.eINSTANCE
 							.getDeployment());
 
 			elements.put(
 					HardwareNode_2001,
-					de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage.eINSTANCE
 							.getHardwareNode());
 
 			elements.put(
 					HardwarePort_3001,
-					de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage.eINSTANCE
 							.getHardwarePort());
 
 			elements.put(
 					CommunicationLink_4001,
-					de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage.eINSTANCE
 							.getCommunicationLink());
 		}
 		return (ENamedElement) elements.get(type);

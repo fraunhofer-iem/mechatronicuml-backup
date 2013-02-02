@@ -59,7 +59,7 @@ public class DeploymentCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
+		return de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage.eINSTANCE
 				.getDeployment_HardwareNodes();
 	}
 

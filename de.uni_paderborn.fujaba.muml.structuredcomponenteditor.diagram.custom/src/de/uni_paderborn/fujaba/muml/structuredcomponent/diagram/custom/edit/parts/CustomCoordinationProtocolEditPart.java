@@ -21,7 +21,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.model.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.CoordinationProtocolEditPart;
 import de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.policies.CoordinationProtocolItemSemanticEditPolicy;
 

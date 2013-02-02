@@ -52,7 +52,7 @@ public class StaticStructuredComponentCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent newElement = de.uni_paderborn.fujaba.muml.model.component.ComponentFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent newElement = de.uni_paderborn.fujaba.muml.component.ComponentFactory.eINSTANCE
 				.createStaticStructuredComponent();
 
 		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
@@ -68,7 +68,7 @@ public class StaticStructuredComponentCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.component.StaticStructuredComponent newElement,
+			de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

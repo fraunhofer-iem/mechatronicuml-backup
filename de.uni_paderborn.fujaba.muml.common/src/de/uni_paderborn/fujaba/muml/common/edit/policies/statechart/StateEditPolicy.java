@@ -22,8 +22,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import de.uni_paderborn.fujaba.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.ConnectionPointEditPolicy;
 import de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 
 public class StateEditPolicy extends NotifyingGraphicalEditPolicy {
 

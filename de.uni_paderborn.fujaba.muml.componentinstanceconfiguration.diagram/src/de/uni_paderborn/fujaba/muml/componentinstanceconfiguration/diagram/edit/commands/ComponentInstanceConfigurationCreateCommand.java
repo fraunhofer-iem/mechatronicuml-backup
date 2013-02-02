@@ -42,7 +42,7 @@ public class ComponentInstanceConfigurationCreateCommand extends
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance container = (de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance container = (de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance) getElementToEdit();
 		if (container.getEmbeddedCIC() != null) {
 			return false;
 		}
@@ -55,10 +55,10 @@ public class ComponentInstanceConfigurationCreateCommand extends
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration newElement = de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration newElement = de.uni_paderborn.fujaba.muml.instance.InstanceFactory.eINSTANCE
 				.createComponentInstanceConfiguration();
 
-		de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance owner = (de.uni_paderborn.fujaba.muml.model.instance.StructuredComponentInstance) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance owner = (de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance) getElementToEdit();
 		owner.setEmbeddedCIC(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -71,7 +71,7 @@ public class ComponentInstanceConfigurationCreateCommand extends
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration newElement,
+			de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

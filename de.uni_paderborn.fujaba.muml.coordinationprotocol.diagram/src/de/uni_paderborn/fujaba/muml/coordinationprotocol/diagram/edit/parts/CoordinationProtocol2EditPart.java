@@ -361,7 +361,7 @@ public class CoordinationProtocol2EditPart extends ShapeNodeEditPart {
 	protected void handleNotificationEvent(Notification event) {
 		boolean update = false;
 
-		if (event.getFeature() == de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+		if (event.getFeature() == de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 				.getCoordinationProtocol_Roles()) {
 			update = true;
 		}

@@ -49,7 +49,7 @@ import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.common.MumlCommonPlugin;
 import de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource;
 import de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer;
-import de.uni_paderborn.fujaba.muml.model.types.PrimitiveDataType;
+import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 
 public class OpenTypeDialogCommand extends AbstractHandler {
 
@@ -186,9 +186,9 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 
 			@Override
 			protected List<EClass> getInstanceClasses() {
-				List<EClass> subClasses = getSubClasses(de.uni_paderborn.fujaba.muml.model.types.TypesPackage.Literals.DATA_TYPE);
+				List<EClass> subClasses = getSubClasses(de.uni_paderborn.fujaba.muml.types.TypesPackage.Literals.DATA_TYPE);
 				subClasses
-						.remove(de.uni_paderborn.fujaba.muml.model.types.TypesPackage.Literals.PRIMITIVE_DATA_TYPE);
+						.remove(de.uni_paderborn.fujaba.muml.types.TypesPackage.Literals.PRIMITIVE_DATA_TYPE);
 				return subClasses;
 			}
 
@@ -197,7 +197,7 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 
 				// TODO: Provide Extension Point, which fills packages array
 
-				EPackage packages[] = new EPackage[] { de.uni_paderborn.fujaba.muml.model.types.TypesPackage.eINSTANCE };
+				EPackage packages[] = new EPackage[] { de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE };
 				for (EPackage _package : packages) {
 					EList<EClassifier> classifiers = _package.getEClassifiers();
 

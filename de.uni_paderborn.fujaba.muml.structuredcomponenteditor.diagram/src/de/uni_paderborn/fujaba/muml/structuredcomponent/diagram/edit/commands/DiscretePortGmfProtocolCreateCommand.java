@@ -42,11 +42,11 @@ public class DiscretePortGmfProtocolCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.component.DiscretePort) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.component.DiscretePort) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -95,14 +95,14 @@ public class DiscretePortGmfProtocolCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.component.DiscretePort getSource() {
-		return (de.uni_paderborn.fujaba.muml.model.component.DiscretePort) source;
+	protected de.uni_paderborn.fujaba.muml.component.DiscretePort getSource() {
+		return (de.uni_paderborn.fujaba.muml.component.DiscretePort) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol getTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) target;
+	protected de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol getTarget() {
+		return (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) target;
 	}
 }

@@ -23,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeStrategy;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline;
 
 /**
  * <!-- begin-user-doc -->

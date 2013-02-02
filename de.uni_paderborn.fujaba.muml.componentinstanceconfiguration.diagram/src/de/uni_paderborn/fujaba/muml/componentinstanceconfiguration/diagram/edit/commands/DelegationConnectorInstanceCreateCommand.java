@@ -33,7 +33,7 @@ public class DelegationConnectorInstanceCreateCommand extends
 	/**
 	 * @generated
 	 */
-	private final de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container;
+	private final de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration container;
 
 	/**
 	 * @generated
@@ -41,7 +41,7 @@ public class DelegationConnectorInstanceCreateCommand extends
 	public DelegationConnectorInstanceCreateCommand(
 			CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
-		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container = null;
+		de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration container = null;
 		this.source = source;
 		this.target = target;
 		container = deduceContainer(source, target);
@@ -64,11 +64,11 @@ public class DelegationConnectorInstanceCreateCommand extends
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -108,7 +108,7 @@ public class DelegationConnectorInstanceCreateCommand extends
 					"Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
-		de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance newElement = de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.instance.DelegationConnectorInstance newElement = de.uni_paderborn.fujaba.muml.instance.InstanceFactory.eINSTANCE
 				.createDelegationConnectorInstance();
 		getContainer().getPortConnectorInstances().add(newElement);
 		newElement.getConnectorEndpointInstances().add(getSource());
@@ -123,7 +123,7 @@ public class DelegationConnectorInstanceCreateCommand extends
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance newElement,
+			de.uni_paderborn.fujaba.muml.instance.DelegationConnectorInstance newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
@@ -154,21 +154,21 @@ public class DelegationConnectorInstanceCreateCommand extends
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance getSource() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance) source;
+	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance getSource() {
+		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance getTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance) target;
+	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance getTarget() {
+		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) target;
 	}
 
 	/**
 	 * @generated
 	 */
-	public de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration getContainer() {
+	public de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration getContainer() {
 		return container;
 	}
 
@@ -177,15 +177,15 @@ public class DelegationConnectorInstanceCreateCommand extends
 	 * Modify with appropriate logic.
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration deduceContainer(
+	private static de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration deduceContainer(
 			EObject source, EObject target) {
 		// Find container element for the new link.
 		// Climb up by containment hierarchy starting from the source
 		// and return the first element that is instance of the container class.
 		for (EObject element = source; element != null; element = element
 				.eContainer()) {
-			if (element instanceof de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) {
-				return (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) element;
+			if (element instanceof de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) {
+				return (de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) element;
 			}
 		}
 		return null;
@@ -196,12 +196,12 @@ public class DelegationConnectorInstanceCreateCommand extends
 	 * 
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration deduceContainerUsingViews(
+	private static de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration deduceContainerUsingViews(
 			View sourceView, View targetView) {
 		for (View view = sourceView; view != null; view = (View) view
 				.eContainer()) {
-			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) {
-				return (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) view
+			if (view.getElement() instanceof de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) {
+				return (de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) view
 						.getElement();
 			}
 		}

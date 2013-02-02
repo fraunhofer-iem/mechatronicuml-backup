@@ -9,9 +9,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 
-import de.uni_paderborn.fujaba.muml.model.connector.DiscreteSingleInteractionEndpointInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance;
-import de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance;
+import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
 
 /**
  * An EditHelperAdvice for the DiscreteMultiPortInstance.

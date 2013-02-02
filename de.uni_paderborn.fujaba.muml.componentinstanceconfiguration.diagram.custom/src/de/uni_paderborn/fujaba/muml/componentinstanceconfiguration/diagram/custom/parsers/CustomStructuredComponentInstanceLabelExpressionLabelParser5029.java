@@ -6,7 +6,7 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
 
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.StructuredComponentInstanceLabelExpressionLabelParser5029;
-import de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 
 public class CustomStructuredComponentInstanceLabelExpressionLabelParser5029
 		extends StructuredComponentInstanceLabelExpressionLabelParser5029 {

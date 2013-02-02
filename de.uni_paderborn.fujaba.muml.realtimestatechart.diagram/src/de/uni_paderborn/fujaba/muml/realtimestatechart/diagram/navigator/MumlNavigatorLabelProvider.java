@@ -250,7 +250,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getRealtimeStatechart_3039Text(View view) {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart domainModelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) view
+		de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart domainModelElement = (de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart) view
 				.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
@@ -289,7 +289,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getRealtimeStatechart_1000Text(View view) {
-		de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart domainModelElement = (de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart) view
+		de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart domainModelElement = (de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart) view
 				.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();

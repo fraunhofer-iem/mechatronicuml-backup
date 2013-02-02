@@ -46,7 +46,7 @@ public class AssemblyConnectorInstanceReorientCommand extends
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance) {
+		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -62,7 +62,7 @@ public class AssemblyConnectorInstanceReorientCommand extends
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -71,12 +71,12 @@ public class AssemblyConnectorInstanceReorientCommand extends
 		  return false;
 		}
 		 */
-		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance target = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance) getLink()
+		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance target = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) getLink()
 				.getConnectorEndpointInstances().get(0);
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) getLink()
+		de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) getLink()
 				.eContainer();
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
@@ -101,7 +101,7 @@ public class AssemblyConnectorInstanceReorientCommand extends
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -110,12 +110,12 @@ public class AssemblyConnectorInstanceReorientCommand extends
 		  return false;
 		}
 		 */
-		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance source = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance) getLink()
+		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance source = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) getLink()
 				.getConnectorEndpointInstances().get(0);
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) getLink()
+		de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration container = (de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) getLink()
 				.eContainer();
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
@@ -185,36 +185,36 @@ public class AssemblyConnectorInstanceReorientCommand extends
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance getLink() {
-		return (de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance) getElementToEdit();
+	protected de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance getLink() {
+		return (de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance getOldSource() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance getNewSource() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance) newEnd;
+	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance getOldTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance getNewTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance) newEnd;
+	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance) newEnd;
 	}
 
 	private EditPart host;

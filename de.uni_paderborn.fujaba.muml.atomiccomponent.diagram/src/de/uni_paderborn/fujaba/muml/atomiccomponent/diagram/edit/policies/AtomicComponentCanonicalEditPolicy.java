@@ -50,7 +50,7 @@ public class AtomicComponentCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+		return de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 				.getComponent_Ports();
 	}
 

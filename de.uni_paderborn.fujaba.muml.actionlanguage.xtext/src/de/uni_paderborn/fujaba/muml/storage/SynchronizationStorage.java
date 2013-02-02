@@ -9,10 +9,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Synchronization;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 
 public class SynchronizationStorage extends ModelStorage<Synchronization> {
 	private static final String name = "selector";

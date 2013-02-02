@@ -8,7 +8,7 @@ package de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstoryp
 
 import org.eclipse.emf.common.util.EList;
 
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 
 /**
  * <!-- begin-user-doc -->

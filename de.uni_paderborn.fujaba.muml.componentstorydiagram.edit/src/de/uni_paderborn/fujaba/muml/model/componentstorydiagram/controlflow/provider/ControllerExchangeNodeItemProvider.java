@@ -30,10 +30,10 @@ import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControlflowPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.model.valuetype.descriptor.NaturalNumberPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ControllerExchangeNode} object.
@@ -116,7 +116,7 @@ public class ControllerExchangeNodeItemProvider
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
-				 de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.TIME_VALUE__VALUE,
+				 de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.Literals.TIME_VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -131,7 +131,7 @@ public class ControllerExchangeNodeItemProvider
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_unit_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
-				 de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.TIME_VALUE__UNIT,
+				 de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.Literals.TIME_VALUE__UNIT,
 				 true,
 				 false,
 				 false,
@@ -159,7 +159,7 @@ public class ControllerExchangeNodeItemProvider
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
-				 de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.TIME_VALUE__VALUE,
+				 de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.Literals.TIME_VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -174,7 +174,7 @@ public class ControllerExchangeNodeItemProvider
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_unit_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
-				 de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage.Literals.TIME_VALUE__UNIT,
+				 de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.Literals.TIME_VALUE__UNIT,
 				 true,
 				 false,
 				 false,

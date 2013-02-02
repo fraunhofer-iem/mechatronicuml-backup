@@ -11,7 +11,7 @@ import org.storydriven.storydiagrams.activities.ActivityNode;
 
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.FadingFunction;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RelativeDeadline;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline;
 
 /**
  * <!-- begin-user-doc -->

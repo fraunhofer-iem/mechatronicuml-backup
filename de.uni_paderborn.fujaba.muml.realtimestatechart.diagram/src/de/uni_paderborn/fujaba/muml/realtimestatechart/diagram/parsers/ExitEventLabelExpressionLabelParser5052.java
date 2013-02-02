@@ -89,7 +89,7 @@ public class ExitEventLabelExpressionLabelParser5052 implements IParser,
 		Object result = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						4,
-						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getExitEvent(), typeEnv).evaluate(target, env);
 		return String.valueOf(result);
 	}

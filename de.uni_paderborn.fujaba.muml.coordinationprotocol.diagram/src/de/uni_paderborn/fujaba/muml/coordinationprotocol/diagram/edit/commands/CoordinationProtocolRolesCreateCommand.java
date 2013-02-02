@@ -43,11 +43,11 @@ public class CoordinationProtocolRolesCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.model.protocol.Role) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.protocol.Role) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -100,14 +100,14 @@ public class CoordinationProtocolRolesCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol getSource() {
-		return (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) source;
+	protected de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol getSource() {
+		return (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.protocol.Role getTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.protocol.Role) target;
+	protected de.uni_paderborn.fujaba.muml.protocol.Role getTarget() {
+		return (de.uni_paderborn.fujaba.muml.protocol.Role) target;
 	}
 }

@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import de.uni_paderborn.fujaba.muml.model.component.impl.StructuredComponentImpl;
+import de.uni_paderborn.fujaba.muml.component.impl.StructuredComponentImpl;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.Controller;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.model.reconfiguration.Manager;

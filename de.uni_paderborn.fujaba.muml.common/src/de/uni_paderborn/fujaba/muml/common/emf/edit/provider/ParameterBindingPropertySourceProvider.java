@@ -25,11 +25,11 @@ import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.common.LiteralExpression;
 
 import de.uni_paderborn.fujaba.common.descriptor.AbstractItemPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
+import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.common.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
-import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
 
 public class ParameterBindingPropertySourceProvider implements
 		IPropertySourceProvider {
@@ -249,7 +249,7 @@ public class ParameterBindingPropertySourceProvider implements
 			EStructuralFeature feature = parameterBindingsElement.getParameterBindingFeature();
 			ParameterBinding parameterBinding = getParameterBinding(parameter);
 			if (parameterBinding == null) {
-				parameterBinding = de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory.eINSTANCE
+				parameterBinding = de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory.eINSTANCE
 						.createParameterBinding();
 				parameterBinding.setParameter(parameter);
 

@@ -4,24 +4,24 @@ Bundle-Name: MechatronicUML Edit-Support
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.model.edit;singleton:=true
 Bundle-Version: 0.3.1.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.model.component.provider.MumlEditPlugin$Implementation
+Bundle-Activator: de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin$Implementation
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.model.behavior.provider,
- de.uni_paderborn.fujaba.muml.model.component.provider,
- de.uni_paderborn.fujaba.muml.model.connector.provider,
- de.uni_paderborn.fujaba.muml.model.constraint.provider,
- de.uni_paderborn.fujaba.muml.model.deployment.provider,
- de.uni_paderborn.fujaba.muml.model.instance.provider,
- de.uni_paderborn.fujaba.muml.model.msgtype.provider,
- de.uni_paderborn.fujaba.muml.model.protocol.provider,
- de.uni_paderborn.fujaba.muml.model.realtimestatechart.descriptor,
- de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider,
- de.uni_paderborn.fujaba.muml.model.types.descriptor,
- de.uni_paderborn.fujaba.muml.model.types.provider,
- de.uni_paderborn.fujaba.muml.model.valuetype.descriptor,
- de.uni_paderborn.fujaba.muml.model.valuetype.provider
+Export-Package: de.uni_paderborn.fujaba.muml.behavior.provider,
+ de.uni_paderborn.fujaba.muml.component.provider,
+ de.uni_paderborn.fujaba.muml.connector.provider,
+ de.uni_paderborn.fujaba.muml.constraint.provider,
+ de.uni_paderborn.fujaba.muml.deployment.provider,
+ de.uni_paderborn.fujaba.muml.instance.provider,
+ de.uni_paderborn.fujaba.muml.msgtype.provider,
+ de.uni_paderborn.fujaba.muml.protocol.provider,
+ de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor,
+ de.uni_paderborn.fujaba.muml.realtimestatechart.provider,
+ de.uni_paderborn.fujaba.muml.types.descriptor,
+ de.uni_paderborn.fujaba.muml.types.provider,
+ de.uni_paderborn.fujaba.muml.valuetype.descriptor,
+ de.uni_paderborn.fujaba.muml.valuetype.provider
 Require-Bundle: de.uni_paderborn.fujaba.common;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.muml.model;bundle-version="0.3.1";visibility:=reexport,
  de.uni_paderborn.fujaba.modelinstance.edit;bundle-version="0.3.1";visibility:=reexport,
@@ -30,4 +30,4 @@ Require-Bundle: de.uni_paderborn.fujaba.common;bundle-version="0.3.1",
  org.eclipse.swt;bundle-version="3.7.2",
  org.eclipse.ui;bundle-version="3.7.0"
 Bundle-ActivationPolicy: lazy
-Import-Package: de.uni_paderborn.fujaba.muml.model.component.provider
+Import-Package: de.uni_paderborn.fujaba.muml.component.provider

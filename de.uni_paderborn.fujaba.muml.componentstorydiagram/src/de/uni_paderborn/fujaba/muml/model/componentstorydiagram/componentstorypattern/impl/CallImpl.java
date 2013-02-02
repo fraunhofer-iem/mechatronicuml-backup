@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.ExtendableElementImpl;
 
-import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.Call;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.controlflow.ComponentStoryRule;

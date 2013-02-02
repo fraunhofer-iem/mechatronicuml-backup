@@ -8,11 +8,11 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.custom.edit.policies.CustomComponentPartItemSemanticEditPolicy;
 import de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ComponentPartEditPart;
+import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
 
 /**
  * A customized EditPart for ComponentParts. A customized Figure will be used,

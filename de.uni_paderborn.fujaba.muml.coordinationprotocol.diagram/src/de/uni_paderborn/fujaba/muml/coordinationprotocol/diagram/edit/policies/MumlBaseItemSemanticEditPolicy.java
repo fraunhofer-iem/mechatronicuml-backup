@@ -331,8 +331,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateCoordinationProtocolRoles_4007(
-				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol source,
-				de.uni_paderborn.fujaba.muml.model.protocol.Role target,
+				de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol source,
+				de.uni_paderborn.fujaba.muml.protocol.Role target,
 				View sourceView, View targetView) {
 			if (source != null) {
 				if (source.getRoles().size() >= 2
@@ -355,9 +355,9 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateRoleConnector_4006(
-				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol container,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			if (container != null) {
 				if (container.getRoleConnector() != null) {
@@ -372,8 +372,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canExistCoordinationProtocolRoles_4007(
-				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol source,
-				de.uni_paderborn.fujaba.muml.model.protocol.Role target,
+				de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol source,
+				de.uni_paderborn.fujaba.muml.protocol.Role target,
 				View sourceView, View targetView) {
 			return true;
 		}
@@ -382,8 +382,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public java.lang.String getErrorCoordinationProtocolRoles_4007(
-				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol source,
-				de.uni_paderborn.fujaba.muml.model.protocol.Role target,
+				de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol source,
+				de.uni_paderborn.fujaba.muml.protocol.Role target,
 				View sourceView, View targetView) {
 			return null;
 		}
@@ -392,10 +392,10 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canExistRoleConnector_4006(
-				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container,
-				de.uni_paderborn.fujaba.muml.model.protocol.RoleConnector linkInstance,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol container,
+				de.uni_paderborn.fujaba.muml.protocol.RoleConnector linkInstance,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			try {
 				if (target == null) {
@@ -404,7 +404,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -414,7 +414,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 							.getExpression(
 									13,
-									de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
@@ -436,9 +436,9 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public java.lang.String getErrorRoleConnector_4006(
-				de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol container,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source,
-				de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target,
+				de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol container,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
 			try {
 				if (target == null) {
@@ -447,7 +447,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -457,7 +457,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
 							.getExpression(
 									13,
-									de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage.eINSTANCE
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 

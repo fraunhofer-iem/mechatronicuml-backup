@@ -121,42 +121,42 @@ public class MumlVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 					.getStaticStructuredComponent().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 					.getDiscretePort().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 					.getContinuousPort().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 					.getHybridPort().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.HybridPortEditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 					.getDiscretePort().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.DiscretePort2EditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 					.getContinuousPort().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ContinuousPort2EditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 					.getComponentPart().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 					.getCoordinationProtocol().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID;
@@ -279,11 +279,11 @@ public class MumlVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+		if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 				.getAssemblyConnector().isSuperTypeOf(domainElement.eClass())) {
 			return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID;
 		}
-		if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+		if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 				.getDelegationConnector().isSuperTypeOf(domainElement.eClass())) {
 			return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID;
 		}

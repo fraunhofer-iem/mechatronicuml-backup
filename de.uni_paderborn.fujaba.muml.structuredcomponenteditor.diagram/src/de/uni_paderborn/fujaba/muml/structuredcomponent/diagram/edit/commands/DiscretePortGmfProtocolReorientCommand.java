@@ -51,7 +51,7 @@ public class DiscretePortGmfProtocolReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof de.uni_paderborn.fujaba.muml.model.component.DiscretePort) {
+		if (false == referenceOwner instanceof de.uni_paderborn.fujaba.muml.component.DiscretePort) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -67,7 +67,7 @@ public class DiscretePortGmfProtocolReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol && newEnd instanceof de.uni_paderborn.fujaba.muml.model.component.DiscretePort)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol && newEnd instanceof de.uni_paderborn.fujaba.muml.component.DiscretePort)) {
 			return false;
 		}
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
@@ -92,7 +92,7 @@ public class DiscretePortGmfProtocolReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol && newEnd instanceof de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol && newEnd instanceof de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol)) {
 			return false;
 		}
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
@@ -148,29 +148,29 @@ public class DiscretePortGmfProtocolReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.component.DiscretePort getOldSource() {
-		return (de.uni_paderborn.fujaba.muml.model.component.DiscretePort) referenceOwner;
+	protected de.uni_paderborn.fujaba.muml.component.DiscretePort getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.component.DiscretePort) referenceOwner;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.component.DiscretePort getNewSource() {
-		return (de.uni_paderborn.fujaba.muml.model.component.DiscretePort) newEnd;
+	protected de.uni_paderborn.fujaba.muml.component.DiscretePort getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.component.DiscretePort) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol getOldTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol getNewTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol) newEnd;
+	protected de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) newEnd;
 	}
 
 	/**

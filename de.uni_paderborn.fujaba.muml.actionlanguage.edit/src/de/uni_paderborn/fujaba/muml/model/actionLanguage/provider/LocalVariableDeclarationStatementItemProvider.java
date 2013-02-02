@@ -26,10 +26,10 @@ import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguageFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement;
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.LocalVariableDeclarationStatement} object.

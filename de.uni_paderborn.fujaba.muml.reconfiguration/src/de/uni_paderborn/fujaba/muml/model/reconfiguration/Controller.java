@@ -9,7 +9,7 @@ package de.uni_paderborn.fujaba.muml.model.reconfiguration;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.model.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 
 /**
  * <!-- begin-user-doc -->

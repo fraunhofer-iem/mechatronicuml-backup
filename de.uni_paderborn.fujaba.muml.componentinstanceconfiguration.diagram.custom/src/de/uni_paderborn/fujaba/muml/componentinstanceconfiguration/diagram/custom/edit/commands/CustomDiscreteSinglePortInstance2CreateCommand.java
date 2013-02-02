@@ -17,10 +17,10 @@ public class CustomDiscreteSinglePortInstance2CreateCommand extends
 	}
 
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance newElement,
+			de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance owner = (de.uni_paderborn.fujaba.muml.model.instance.DiscreteMultiPortInstance) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance owner = (de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance) getElementToEdit();
 		newElement.setMultiInteractionEndpointInstance(owner);
 		super.doConfigure(newElement, monitor, info);
 	}

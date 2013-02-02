@@ -22,10 +22,10 @@ import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.edit.parts.DiscretePortEditPart;
-import de.uni_paderborn.fujaba.muml.model.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Region;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 
 public class CopyRolePropertiesToPort extends AbstractHandler {
 

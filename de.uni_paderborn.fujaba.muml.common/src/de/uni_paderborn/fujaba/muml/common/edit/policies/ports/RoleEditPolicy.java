@@ -3,9 +3,9 @@ package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 import org.eclipse.emf.common.notify.Notification;
 
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.model.protocol.Role;
-import de.uni_paderborn.fujaba.muml.model.valuetype.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.protocol.Role;
+import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
 
 public class RoleEditPolicy extends PortBaseEditPolicy {
 

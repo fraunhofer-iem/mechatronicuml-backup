@@ -50,10 +50,10 @@ public class HardwareNodeCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode newElement = de.uni_paderborn.fujaba.muml.model.deployment.DeploymentFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.deployment.HardwareNode newElement = de.uni_paderborn.fujaba.muml.deployment.DeploymentFactory.eINSTANCE
 				.createHardwareNode();
 
-		de.uni_paderborn.fujaba.muml.model.deployment.Deployment owner = (de.uni_paderborn.fujaba.muml.model.deployment.Deployment) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.deployment.Deployment owner = (de.uni_paderborn.fujaba.muml.deployment.Deployment) getElementToEdit();
 		owner.getHardwareNodes().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.deployment.diagram.providers.ElementInitializers
@@ -69,7 +69,7 @@ public class HardwareNodeCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode newElement,
+			de.uni_paderborn.fujaba.muml.deployment.HardwareNode newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

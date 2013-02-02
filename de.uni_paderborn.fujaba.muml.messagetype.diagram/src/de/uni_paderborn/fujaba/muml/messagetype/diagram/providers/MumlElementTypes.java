@@ -178,17 +178,17 @@ public class MumlElementTypes {
 
 			elements.put(
 					MessageTypeRepository_2008,
-					de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
 							.getMessageTypeRepository());
 
 			elements.put(
 					MessageType_3007,
-					de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
 							.getMessageType());
 
 			elements.put(
 					Parameter_3009,
-					de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 							.getParameter());
 		}
 		return (ENamedElement) elements.get(type);

@@ -12,10 +12,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.TriggerMessageExpression;
-import de.uni_paderborn.fujaba.muml.model.behavior.Parameter;
-import de.uni_paderborn.fujaba.muml.model.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 
 /**
  * <!-- begin-user-doc -->

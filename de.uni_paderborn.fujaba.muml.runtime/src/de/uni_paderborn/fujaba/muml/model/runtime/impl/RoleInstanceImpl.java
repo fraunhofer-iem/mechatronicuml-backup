@@ -19,15 +19,15 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpointInstance;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorInstance;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpointInstance;
-import de.uni_paderborn.fujaba.muml.model.protocol.Role;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleConnectorInstance;
+import de.uni_paderborn.fujaba.muml.protocol.Role;
 
 /**
  * <!-- begin-user-doc -->

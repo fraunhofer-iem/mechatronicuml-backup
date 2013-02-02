@@ -24,9 +24,9 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.ActionLanguagePackage;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall;
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.model.actionLanguage.OperationCall} object.

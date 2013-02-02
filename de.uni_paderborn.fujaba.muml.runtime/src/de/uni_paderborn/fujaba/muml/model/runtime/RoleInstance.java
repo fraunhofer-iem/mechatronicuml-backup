@@ -6,8 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.runtime;
 
-import de.uni_paderborn.fujaba.muml.model.connector.DiscreteInteractionEndpointInstance;
-import de.uni_paderborn.fujaba.muml.model.protocol.Role;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.protocol.Role;
 
 /**
  * <!-- begin-user-doc -->

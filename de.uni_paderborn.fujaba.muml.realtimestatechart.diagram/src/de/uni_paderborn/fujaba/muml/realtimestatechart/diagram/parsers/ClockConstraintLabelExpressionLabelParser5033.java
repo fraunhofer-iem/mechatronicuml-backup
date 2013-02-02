@@ -85,7 +85,7 @@ public class ClockConstraintLabelExpressionLabelParser5033 implements IParser {
 		Object result = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						5,
-						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getClockConstraint(), typeEnv).evaluate(
 						target, env);
 		return String.valueOf(result);

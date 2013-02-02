@@ -314,7 +314,7 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends
 	 * @generated
 	 */
 	private String getDelegationConnectorInstance_4002Text(View view) {
-		de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance domainModelElement = (de.uni_paderborn.fujaba.muml.model.instance.DelegationConnectorInstance) view
+		de.uni_paderborn.fujaba.muml.instance.DelegationConnectorInstance domainModelElement = (de.uni_paderborn.fujaba.muml.instance.DelegationConnectorInstance) view
 				.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getComment();
@@ -375,7 +375,7 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends
 	 * @generated
 	 */
 	private String getAssemblyConnectorInstance_4001Text(View view) {
-		de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance domainModelElement = (de.uni_paderborn.fujaba.muml.model.instance.AssemblyConnectorInstance) view
+		de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance domainModelElement = (de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance) view
 				.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getComment();
@@ -414,7 +414,7 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends
 	 * @generated
 	 */
 	private String getComponentInstanceConfiguration_3023Text(View view) {
-		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration domainModelElement = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) view
+		de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration domainModelElement = (de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) view
 				.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
@@ -497,7 +497,7 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends
 	 * @generated
 	 */
 	private String getDiscreteSinglePortInstance_3026Text(View view) {
-		de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance domainModelElement = (de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance) view
+		de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance domainModelElement = (de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance) view
 				.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();
@@ -558,7 +558,7 @@ public class ComponentinstanceconfigurationNavigatorLabelProvider extends
 	 * @generated
 	 */
 	private String getComponentInstanceConfiguration_1000Text(View view) {
-		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration domainModelElement = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstanceConfiguration) view
+		de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration domainModelElement = (de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) view
 				.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();

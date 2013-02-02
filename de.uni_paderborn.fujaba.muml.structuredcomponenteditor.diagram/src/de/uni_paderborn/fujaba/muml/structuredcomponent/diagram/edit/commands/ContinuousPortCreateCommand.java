@@ -50,10 +50,10 @@ public class ContinuousPortCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.component.ContinuousPort newElement = de.uni_paderborn.fujaba.muml.model.component.ComponentFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.component.ContinuousPort newElement = de.uni_paderborn.fujaba.muml.component.ComponentFactory.eINSTANCE
 				.createContinuousPort();
 
-		de.uni_paderborn.fujaba.muml.model.component.Component owner = (de.uni_paderborn.fujaba.muml.model.component.Component) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.component.Component owner = (de.uni_paderborn.fujaba.muml.component.Component) getElementToEdit();
 		owner.getPorts().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.ElementInitializers
@@ -69,7 +69,7 @@ public class ContinuousPortCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.component.ContinuousPort newElement,
+			de.uni_paderborn.fujaba.muml.component.ContinuousPort newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

@@ -50,10 +50,10 @@ public class ParameterCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.behavior.Parameter newElement = de.uni_paderborn.fujaba.muml.model.behavior.BehaviorFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.behavior.Parameter newElement = de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory.eINSTANCE
 				.createParameter();
 
-		de.uni_paderborn.fujaba.muml.model.msgtype.MessageType owner = (de.uni_paderborn.fujaba.muml.model.msgtype.MessageType) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.msgtype.MessageType owner = (de.uni_paderborn.fujaba.muml.msgtype.MessageType) getElementToEdit();
 		owner.getParameters().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.ElementInitializers
@@ -69,7 +69,7 @@ public class ParameterCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.behavior.Parameter newElement,
+			de.uni_paderborn.fujaba.muml.behavior.Parameter newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

@@ -133,27 +133,27 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 
 		// Default Factories
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.component.provider.ComponentItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.constraint.provider.ConstraintItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.constraint.provider.ConstraintItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.instance.provider.InstanceItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.instance.provider.InstanceItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.protocol.provider.ProtocolItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.msgtype.provider.MsgtypeItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.msgtype.provider.MsgtypeItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.deployment.provider.DeploymentItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.deployment.provider.DeploymentItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.types.provider.TypesItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.types.provider.TypesItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.connector.provider.ConnectorItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.valuetype.provider.ValuetypeItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.model.behavior.provider.BehaviorItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.behavior.provider.BehaviorItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());

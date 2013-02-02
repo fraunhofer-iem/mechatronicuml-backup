@@ -3,7 +3,7 @@ package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 
-import de.uni_paderborn.fujaba.muml.model.component.Port;
+import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 
 public class PortVariableEditPolicy extends PortTypeEditPolicy {

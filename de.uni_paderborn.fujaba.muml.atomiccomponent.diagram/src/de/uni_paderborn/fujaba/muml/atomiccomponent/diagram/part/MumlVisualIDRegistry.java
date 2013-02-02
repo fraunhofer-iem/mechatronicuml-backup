@@ -121,21 +121,21 @@ public class MumlVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.edit.parts.AtomicComponentDiagramEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 					.getAtomicComponent().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 					.getHybridPort().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.edit.parts.HybridPortEditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 					.getDiscretePort().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 					.getContinuousPort().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID;
 			}

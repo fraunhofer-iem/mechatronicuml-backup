@@ -51,10 +51,10 @@ public class DiscreteSinglePortInstance3CreateCommand extends
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance newElement = de.uni_paderborn.fujaba.muml.model.instance.InstanceFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance newElement = de.uni_paderborn.fujaba.muml.instance.InstanceFactory.eINSTANCE
 				.createDiscreteSinglePortInstance();
 
-		de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance owner = (de.uni_paderborn.fujaba.muml.model.instance.ComponentInstance) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.instance.ComponentInstance owner = (de.uni_paderborn.fujaba.muml.instance.ComponentInstance) getElementToEdit();
 		owner.getPortInstances().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.ElementInitializers
@@ -70,7 +70,7 @@ public class DiscreteSinglePortInstance3CreateCommand extends
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.instance.DiscreteSinglePortInstance newElement,
+			de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

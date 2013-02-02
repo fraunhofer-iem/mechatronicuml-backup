@@ -15,7 +15,7 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
 
-import de.uni_paderborn.fujaba.muml.model.ModelPackage;
+import de.uni_paderborn.fujaba.muml.MumlPackage;
 import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
 
@@ -33,7 +33,7 @@ public class DiagramPluginXmlTest {
 	@BeforeClass
 	public static void setUpBeforeClass() {
 		// Initialize all packages
-		ModelPackage.eINSTANCE.eClass();
+		MumlPackage.eINSTANCE.eClass();
 		StorydiagramsPackage.eINSTANCE.eClass();
 		ComponentstorypatternPackage.eINSTANCE.eClass();
 	}

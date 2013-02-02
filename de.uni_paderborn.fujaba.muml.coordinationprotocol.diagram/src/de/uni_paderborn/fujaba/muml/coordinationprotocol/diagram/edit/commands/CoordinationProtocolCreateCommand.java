@@ -52,7 +52,7 @@ public class CoordinationProtocolCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol newElement = de.uni_paderborn.fujaba.muml.model.protocol.ProtocolFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol newElement = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE
 				.createCoordinationProtocol();
 
 		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
@@ -71,7 +71,7 @@ public class CoordinationProtocolCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.protocol.CoordinationProtocol newElement,
+			de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

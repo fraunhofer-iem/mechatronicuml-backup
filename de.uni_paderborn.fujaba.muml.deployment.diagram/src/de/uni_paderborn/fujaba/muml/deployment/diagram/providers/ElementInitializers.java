@@ -13,12 +13,12 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public void init_HardwareNode_2001(
-			de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode instance) {
+			de.uni_paderborn.fujaba.muml.deployment.HardwareNode instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							0,
-							de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
+							de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage.eINSTANCE
 									.getHardwareNode(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);
@@ -32,12 +32,12 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public void init_HardwarePort_3001(
-			de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort instance) {
+			de.uni_paderborn.fujaba.muml.deployment.HardwarePort instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.deployment.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							1,
-							de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage.eINSTANCE
+							de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage.eINSTANCE
 									.getHardwarePort(), null)
 					.evaluate(instance);
 			instance.setName((String) value_0);

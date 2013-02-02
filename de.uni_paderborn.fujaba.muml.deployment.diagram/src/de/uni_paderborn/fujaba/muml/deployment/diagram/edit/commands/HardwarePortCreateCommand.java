@@ -50,10 +50,10 @@ public class HardwarePortCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort newElement = de.uni_paderborn.fujaba.muml.model.deployment.DeploymentFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.deployment.HardwarePort newElement = de.uni_paderborn.fujaba.muml.deployment.DeploymentFactory.eINSTANCE
 				.createHardwarePort();
 
-		de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode owner = (de.uni_paderborn.fujaba.muml.model.deployment.HardwareNode) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.deployment.HardwareNode owner = (de.uni_paderborn.fujaba.muml.deployment.HardwareNode) getElementToEdit();
 		owner.getHardwarePorts().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.deployment.diagram.providers.ElementInitializers
@@ -69,7 +69,7 @@ public class HardwarePortCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.model.deployment.HardwarePort newElement,
+			de.uni_paderborn.fujaba.muml.deployment.HardwarePort newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

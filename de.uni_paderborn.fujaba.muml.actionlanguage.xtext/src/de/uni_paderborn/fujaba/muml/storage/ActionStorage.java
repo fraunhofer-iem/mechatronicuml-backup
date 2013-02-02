@@ -12,12 +12,12 @@ import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.model.actionLanguage.Block;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Action;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryOrExitEvent;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryOrExitEvent;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 
 public class ActionStorage extends ModelStorage<Action> {
 	private static final String name = "action";

@@ -364,7 +364,7 @@ public class DiscretePortEditPart extends BorderedBorderItemEditPart {
 	protected void handleNotificationEvent(Notification event) {
 		boolean update = false;
 
-		if (event.getFeature() == de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+		if (event.getFeature() == de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 				.getDiscretePort_GmfProtocol()) {
 			update = true;
 		}

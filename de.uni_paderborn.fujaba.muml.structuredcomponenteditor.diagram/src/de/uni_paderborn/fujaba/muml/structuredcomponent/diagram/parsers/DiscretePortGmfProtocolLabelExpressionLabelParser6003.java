@@ -86,7 +86,7 @@ public class DiscretePortGmfProtocolLabelExpressionLabelParser6003 implements
 		Object result = de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						14,
-						de.uni_paderborn.fujaba.muml.model.component.ComponentPackage.eINSTANCE
+						de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 								.getDiscretePort(), typeEnv).evaluate(target,
 						env);
 		return String.valueOf(result);

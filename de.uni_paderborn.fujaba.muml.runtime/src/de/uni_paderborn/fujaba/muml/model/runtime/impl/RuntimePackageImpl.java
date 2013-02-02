@@ -15,15 +15,12 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.model.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.model.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.model.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.model.deployment.DeploymentPackage;
-import de.uni_paderborn.fujaba.muml.model.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.model.msgtype.MsgtypePackage;
-import de.uni_paderborn.fujaba.muml.model.protocol.ProtocolPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage;
+import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.model.runtime.MessageOnConnector;
 import de.uni_paderborn.fujaba.muml.model.runtime.MultiRoleInstance;
@@ -41,8 +38,11 @@ import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeParameter;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimeRoleConnectorInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.SingleRoleInstance;
 import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
-import de.uni_paderborn.fujaba.muml.model.types.TypesPackage;
-import de.uni_paderborn.fujaba.muml.model.valuetype.ValuetypePackage;
+import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
+import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.types.TypesPackage;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->

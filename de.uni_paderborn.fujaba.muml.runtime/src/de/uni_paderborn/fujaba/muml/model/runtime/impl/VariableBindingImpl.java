@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.impl.ExtendableElementImpl;
 
-import de.uni_paderborn.fujaba.muml.model.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.model.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.model.runtime.VariableBinding;
 

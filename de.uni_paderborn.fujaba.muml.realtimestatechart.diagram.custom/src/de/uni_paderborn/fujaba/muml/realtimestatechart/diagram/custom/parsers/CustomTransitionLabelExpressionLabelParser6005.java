@@ -18,12 +18,12 @@ import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.core.expressions.common.LiteralExpression;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.model.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.model.behavior.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Message;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.TransitionLabelExpressionLabelParser6005;
 
 /**

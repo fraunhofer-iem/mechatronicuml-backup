@@ -44,7 +44,7 @@ public class CommunicationLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink) {
+		if (false == getElementToEdit() instanceof de.uni_paderborn.fujaba.muml.deployment.CommunicationLink) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -60,7 +60,7 @@ public class CommunicationLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -69,12 +69,12 @@ public class CommunicationLinkReorientCommand extends EditElementCommand {
 		  return false;
 		}
 		 */
-		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint target = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) getLink()
+		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) getLink()
 				.getConnectorEndpoints().get(0);
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.deployment.Deployment)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.deployment.Deployment)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.deployment.Deployment container = (de.uni_paderborn.fujaba.muml.model.deployment.Deployment) getLink()
+		de.uni_paderborn.fujaba.muml.deployment.Deployment container = (de.uni_paderborn.fujaba.muml.deployment.Deployment) getLink()
 				.eContainer();
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
@@ -99,7 +99,7 @@ public class CommunicationLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint && newEnd instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -108,12 +108,12 @@ public class CommunicationLinkReorientCommand extends EditElementCommand {
 		  return false;
 		}
 		 */
-		de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint source = (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) getLink()
+		de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) getLink()
 				.getConnectorEndpoints().get(0);
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.model.deployment.Deployment)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.deployment.Deployment)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.model.deployment.Deployment container = (de.uni_paderborn.fujaba.muml.model.deployment.Deployment) getLink()
+		de.uni_paderborn.fujaba.muml.deployment.Deployment container = (de.uni_paderborn.fujaba.muml.deployment.Deployment) getLink()
 				.eContainer();
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
@@ -183,36 +183,36 @@ public class CommunicationLinkReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink getLink() {
-		return (de.uni_paderborn.fujaba.muml.model.deployment.CommunicationLink) getElementToEdit();
+	protected de.uni_paderborn.fujaba.muml.deployment.CommunicationLink getLink() {
+		return (de.uni_paderborn.fujaba.muml.deployment.CommunicationLink) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getOldSource() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getNewSource() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) newEnd;
+	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getOldTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint getNewTarget() {
-		return (de.uni_paderborn.fujaba.muml.model.connector.ConnectorEndpoint) newEnd;
+	protected de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) newEnd;
 	}
 
 	private EditPart host;

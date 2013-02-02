@@ -9,7 +9,7 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.ConfigureElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 
-import de.uni_paderborn.fujaba.muml.model.protocol.Role;
+import de.uni_paderborn.fujaba.muml.protocol.Role;
 
 /**
  * An EditHelperAdvice for Roles. It makes sure newly created Roles are

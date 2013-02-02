@@ -3,9 +3,9 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.initializ
 import org.eclipse.emf.ecore.EObject;
 
 import de.uni_paderborn.fujaba.modelinstance.ui.initializer.IModelInitializer;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory;
-import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 
 
 public class RealtimeStatechartModelInitializer implements IModelInitializer {

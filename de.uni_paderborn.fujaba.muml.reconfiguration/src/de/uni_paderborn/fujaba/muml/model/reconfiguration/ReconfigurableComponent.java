@@ -6,7 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.model.reconfiguration;
 
-import de.uni_paderborn.fujaba.muml.model.component.Component;
+import de.uni_paderborn.fujaba.muml.component.Component;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

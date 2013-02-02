@@ -175,7 +175,7 @@ public class MumlDiagramEditorUtil {
 			protected CommandResult doExecuteWithResult(
 					IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart model = createInitialModel();
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart model = createInitialModel();
 				attachModelToResource(model, modelResource);
 
 				Diagram diagram = ViewService
@@ -225,8 +225,8 @@ public class MumlDiagramEditorUtil {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart createInitialModel() {
-		return de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+	private static de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart createInitialModel() {
+		return de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory.eINSTANCE
 				.createRealtimeStatechart();
 	}
 
@@ -237,7 +237,7 @@ public class MumlDiagramEditorUtil {
 	 * @generated
 	 */
 	private static void attachModelToResource(
-			de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart model,
+			de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart model,
 			Resource resource) {
 		resource.getContents().add(model);
 	}

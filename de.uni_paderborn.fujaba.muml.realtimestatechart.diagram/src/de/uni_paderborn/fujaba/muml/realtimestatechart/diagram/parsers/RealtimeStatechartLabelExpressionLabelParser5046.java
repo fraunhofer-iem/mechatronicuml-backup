@@ -86,7 +86,7 @@ public class RealtimeStatechartLabelExpressionLabelParser5046 implements
 		Object result = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						14,
-						de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getRealtimeStatechart(), typeEnv).evaluate(
 						target, env);
 		return String.valueOf(result);

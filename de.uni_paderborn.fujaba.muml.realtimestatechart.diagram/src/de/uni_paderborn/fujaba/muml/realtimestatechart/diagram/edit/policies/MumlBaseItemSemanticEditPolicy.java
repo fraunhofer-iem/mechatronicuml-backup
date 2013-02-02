@@ -331,9 +331,9 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateTransition_4003(
-				de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart container,
-				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex source,
-				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex target,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart container,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex source,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex target,
 				View sourceView, View targetView) {
 			return canExistTransition_4003(container, null, source, target,
 					sourceView, targetView);
@@ -343,10 +343,10 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canExistTransition_4003(
-				de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart container,
-				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Transition linkInstance,
-				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex source,
-				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex target,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart container,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.Transition linkInstance,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex source,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex target,
 				View sourceView, View targetView) {
 			try {
 				if (source == null) {
@@ -355,7 +355,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getVertex()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getVertex()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
@@ -365,7 +365,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 							.getExpression(
 									22,
-									de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 											.getVertex(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
@@ -387,9 +387,9 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public java.lang.String getErrorTransition_4003(
-				de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimeStatechart container,
-				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex source,
-				de.uni_paderborn.fujaba.muml.model.realtimestatechart.Vertex target,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart container,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex source,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex target,
 				View sourceView, View targetView) {
 			try {
 				if (source == null) {
@@ -398,7 +398,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getVertex()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE.getVertex()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
@@ -408,7 +408,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 							.getExpression(
 									22,
-									de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+									de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 											.getVertex(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
