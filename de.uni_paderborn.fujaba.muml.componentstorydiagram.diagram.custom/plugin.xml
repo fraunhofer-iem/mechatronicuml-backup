@@ -7,10 +7,10 @@
    <extension-point id="expressionSourceViewerExtension" name="Expression Source Viewer Extension" schema="schema/expressionSourceViewerExtension.exsd"/>
 
    <!-- copied from diagram.ocl plugin -->
-   <extension point="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.expressionSourceViewerExtension">
+   <extension point="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.expressionSourceViewerExtension">
 		<expressionSourceViewer
 			expressionLanguage="OCL"
-			sourceViewerProvider="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.ocl.OCLSourceViewerProvider"
+			sourceViewerProvider="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.ocl.OCLSourceViewerProvider"
 			version="1.0"/>
 	</extension>
 
@@ -18,7 +18,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.providers.CustomComponentStoryDiagramEditPartProvider">
+            class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.providers.CustomComponentStoryDiagramEditPartProvider">
          <Priority
                name="Low">
          </Priority>
@@ -28,24 +28,24 @@
 <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
 	      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3">
 	         <adviceBinding
-                class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
-                id="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.SinglePortVariable_3017Advice"
+                class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
+                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3017Advice"
                 inheritance="all"
                 typeId="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3017">
 	         </adviceBinding>
 	      </metamodel>
 	    <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3">
 	         <adviceBinding
-                class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
-                id="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.SinglePortVariable_3018Advice"
+                class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
+                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3018Advice"
                 inheritance="all"
                 typeId="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3018">
 	         </adviceBinding>
 	      </metamodel>
 	      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3">
 	         <adviceBinding
-                class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
-                id="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.SinglePortVariable_3020Advice"
+                class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.helpers.SinglePortVariableEditHelperAdvice"
+                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3020Advice"
                 inheritance="all"
                 typeId="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3020">
 	         </adviceBinding>
@@ -55,28 +55,28 @@
       <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
       	<binding context="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.TypeContext">
       		<elementType ref="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3017"/>
-      		<advice ref="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.SinglePortVariable_3017Advice"/>
+      		<advice ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3017Advice"/>
       	</binding>
       </extension>
       
       <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
       	<binding context="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.TypeContext">
       		<elementType ref="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3018"/>
-      		<advice ref="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.SinglePortVariable_3018Advice"/>
+      		<advice ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3018Advice"/>
       	</binding>
       </extension>
       
       <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
       	<binding context="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.TypeContext">
       		<elementType ref="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram.SinglePortVariable_3020"/>
-      		<advice ref="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.SinglePortVariable_3020Advice"/>
+      		<advice ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3020Advice"/>
       	</binding>
       </extension>
 
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
-      <viewProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.providers.CustomComponentStoryDiagramViewProvider">
+      <viewProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.providers.CustomComponentStoryDiagramViewProvider">
          <Priority name="Low"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Component Story"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2003,3001,3011,3012,3014,3016,3017,3018,3019,3020,3007,3008,3010,3021,3022"/>
@@ -136,8 +136,8 @@
       <propertySections
             contributorId="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram">
          <propertySection
-               class="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.properties.sections.ActivityFinalNodeExpressionSection"
-               filter="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.properties.filters.ActivityFinalNodeFilter"
+               class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.properties.sections.ActivityFinalNodeExpressionSection"
+               filter="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.properties.filters.ActivityFinalNodeFilter"
                id="ActivityFinalNode.expression"
                tab="general">
          </propertySection>
@@ -148,7 +148,7 @@
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
             contributorId="de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram"
-            labelProvider="de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.custom.properties.StorydiagramsPropertiesLabelProvider">
+            labelProvider="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.properties.StorydiagramsPropertiesLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory
                category="diagram">

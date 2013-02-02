@@ -4,16 +4,16 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.model.componentstorydiagram.diagram; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
+Bundle-Activator: de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.parts,
- de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.policies,
- de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.edit.commands,
- de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.part,
- de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.providers,
- de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.parsers,
- de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram.sheet
+Export-Package: de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.commands,
+ de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts,
+ de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies,
+ de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers,
+ de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part,
+ de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers,
+ de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.sheet
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,
