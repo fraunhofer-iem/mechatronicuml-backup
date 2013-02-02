@@ -12,7 +12,7 @@
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="realtimeStatechart.gmfgraph#StatechartNameLabel"/>
+            href="realtimestatechart.gmfgraph#StatechartNameLabel"/>
         <features
             href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
       </labelMappings>
@@ -20,12 +20,12 @@
           xsi:type="gmfmap:ExpressionLabelMapping"
           readOnly="true">
         <diagramLabel
-            href="realtimeStatechart.gmfgraph#StatechartVariablesLabel"/>
+            href="realtimestatechart.gmfgraph#StatechartVariablesLabel"/>
         <viewExpression
             body="self->collect(&#xA;(&#xA;&#xA;-- Attributes&#xA;&#xA;&#x9;if variables->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'var: '.concat(&#xA;&#x9;&#x9;&#x9;variables->iterate(attribute; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.dataType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.dataType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Operations&#xA;&#xA;&#x9;if operations->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'op: '.concat(&#xA;&#x9;&#x9;&#x9;operations->iterate(operation; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.returnType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.returnType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;).concat('(').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;-- parameters&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;operation.parameters->iterate(parameter; result2 : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(if result2 = '' then '' else result2.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.dataType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.dataType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;).concat(')')&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Clocks&#xA;&#xA;&#x9;if clocks->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'cl: '.concat(&#xA;&#x9;&#x9;&#x9;clocks->iterate(clock; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;)&#xA;)"/>
       </labelMappings>
       <diagramNode
-          href="realtimeStatechart.gmfgraph#Statechart"/>
+          href="realtimestatechart.gmfgraph#Statechart"/>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
@@ -47,15 +47,15 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="realtimeStatechart.gmfgraph#StateNameLabel"/>
+                href="realtimestatechart.gmfgraph#StateNameLabel"/>
             <features
                 href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.0"/>
+              href="realtimestatechart.gmftool#//@palette/@tools.0/@tools.0"/>
           <diagramNode
-              href="realtimeStatechart.gmfgraph#State"/>
+              href="realtimestatechart.gmfgraph#State"/>
           <children
               compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
             <containmentFeature
@@ -67,15 +67,15 @@
                   xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
                 <diagramLabel
-                    href="realtimeStatechart.gmfgraph#StateItemLabel"/>
+                    href="realtimestatechart.gmfgraph#StateItemLabel"/>
                 <viewExpression
                     body="'entry /'.concat(&#xA;&#x9;(&#xA;&#x9;if self.action.oclIsUndefined() or self.action.name = '' then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' {'.concat(self.action.name).concat('}')&#xA;&#x9;endif&#xA;&#x9;).concat(&#xA;&#x9;&#x9;if self.clockResets->isEmpty() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;' {reset: '.concat(self.clockResets->iterate(c : Clock; s : String = '' | if s = '' then s.concat(c.name) else s.concat(', ').concat(c.name) endif)).concat('}')&#xA;&#x9;&#x9;endif&#xA;&#x9;)&#xA;)"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.0"/>
+                  href="realtimestatechart.gmftool#//@palette/@tools.1/@tools.0"/>
               <diagramNode
-                  href="realtimeStatechart.gmfgraph#StateItem"/>
+                  href="realtimestatechart.gmfgraph#StateItem"/>
             </ownedChild>
           </children>
           <children
@@ -108,15 +108,15 @@
                   xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
                 <diagramLabel
-                    href="realtimeStatechart.gmfgraph#StateItemLabel"/>
+                    href="realtimestatechart.gmfgraph#StateItemLabel"/>
                 <viewExpression
                     body="'do / '.concat(&#xA;&#x9;if self.action.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'{'.concat(self.action.name).concat('}')&#xA;&#x9;endif&#xA;).concat(' [').concat(&#xA;&#x9;if self.periodLower.oclIsUndefined() then '' else self.periodLower.toString() endif&#xA;).concat(';').concat(&#xA;&#x9;if self.periodUpper.oclIsUndefined() then '' else self.periodUpper.toString() endif&#xA;).concat(']')"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.1"/>
+                  href="realtimestatechart.gmftool#//@palette/@tools.1/@tools.1"/>
               <diagramNode
-                  href="realtimeStatechart.gmfgraph#StateItem"/>
+                  href="realtimestatechart.gmfgraph#StateItem"/>
             </ownedChild>
           </children>
           <children
@@ -130,15 +130,15 @@
                   xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
                 <diagramLabel
-                    href="realtimeStatechart.gmfgraph#StateItemLabel"/>
+                    href="realtimestatechart.gmfgraph#StateItemLabel"/>
                 <viewExpression
                     body="'exit /'.concat(&#xA;&#x9;(&#xA;&#x9;if self.action.oclIsUndefined() or self.action.name = '' then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' {'.concat(self.action.name).concat('}')&#xA;&#x9;endif&#xA;&#x9;).concat(&#xA;&#x9;&#x9;if self.clockResets->isEmpty() then&#xA;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;' {reset: '.concat(self.clockResets->iterate(c : Clock; s : String = '' | if s = '' then s.concat(c.name) else s.concat(', ').concat(c.name) endif)).concat('}')&#xA;&#x9;&#x9;endif&#xA;&#x9;)&#xA;)"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.2"/>
+                  href="realtimestatechart.gmftool#//@palette/@tools.1/@tools.2"/>
               <diagramNode
-                  href="realtimeStatechart.gmfgraph#StateItem"/>
+                  href="realtimestatechart.gmfgraph#StateItem"/>
             </ownedChild>
           </children>
           <children
@@ -152,12 +152,12 @@
                   xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
                 <diagramLabel
-                    href="realtimeStatechart.gmfgraph#StateItemLabel"/>
+                    href="realtimestatechart.gmfgraph#StateItemLabel"/>
                 <viewExpression
                     body="(&#xA;if self.eContainer().oclAsType(State).invariants->first() = self then&#xA;&#x9;'inv: '&#xA;else&#xA;&#x9;''&#xA;endif&#xA;).concat(&#xA;&#xA;-- BEGIN: The actual name of the Invariant&#xA;&#xA;&#x9;if self.clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.clock.name&#xA;&#x9;endif&#xA;).concat(' ').concat(&#xA;&#x9;if self.operator.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;let array : Set(Tuple(s : String, d : core::expressions::common::ComparingOperator)) = Set{&#xA;&#x9;&#x9;&#x9;Tuple{s = '&lt;', d = core::expressions::common::ComparingOperator::LESS },&#xA;&#x9;&#x9;&#x9;Tuple{s = '≤', d = core::expressions::common::ComparingOperator::LESS_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = '=', d = core::expressions::common::ComparingOperator::EQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = '≥', d = core::expressions::common::ComparingOperator::GREATER_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = '>', d = core::expressions::common::ComparingOperator::GREATER },&#xA;&#x9;&#x9;&#x9;Tuple{s = '≠', d = core::expressions::common::ComparingOperator::UNEQUAL },&#xA;&#x9;&#x9;&#x9;Tuple{s = 'regexp', d = core::expressions::common::ComparingOperator::REGULAR_EXPRESSION }&#xA;&#x9;&#x9;} in array->any(t | t.d = self.operator).s&#xA;&#x9;endif&#xA;).concat(' ').concat(&#xA;&#x9;if self.bound.oclIsUndefined() then&#xA;&#x9;&#x9;'null'&#xA;&#x9;else&#xA;&#x9;&#x9;self.bound.toString()&#xA;&#x9;endif&#xA;&#xA;-- END: The actual name of the invariant&#xA;&#xA;).concat(&#xA;if self.eContainer().oclAsType(State).invariants->last() = self then&#xA;&#x9;';'&#xA;else&#xA;&#x9;','&#xA;endif&#xA;)&#xA;&#xA;"/>
               </labelMappings>
               <diagramNode
-                  href="realtimeStatechart.gmfgraph#StateItem"/>
+                  href="realtimestatechart.gmfgraph#StateItem"/>
             </ownedChild>
           </children>
           <children
@@ -182,12 +182,12 @@
                   xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
                 <diagramLabel
-                    href="realtimeStatechart.gmfgraph#StateItemLabel"/>
+                    href="realtimestatechart.gmfgraph#StateItemLabel"/>
                 <viewExpression
                     body="(&#xA;if self.state.channels->first() = self then&#xA;&#x9;'ch: '&#xA;else&#xA;&#x9;''&#xA;endif&#xA;).concat(&#xA;&#xA;-- BEGIN: The actual name of the Clock&#xA;&#xA;if self.name.oclIsUndefined() then 'null' else self.name endif).concat(&#xA;&#x9;'('.concat(&#xA;&#x9;&#x9;self.parameters->iterate(param; result : String = '' | &#xA;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;param.name.concat(' : ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if param.type.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;param.type.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;).concat(')')&#xA;&#xA;-- END: The actual name of the Clock&#xA;&#xA;).concat(&#xA;if self.state.channels->last() = self then&#xA;&#x9;';'&#xA;else&#xA;&#x9;','&#xA;endif&#xA;)"/>
               </labelMappings>
               <diagramNode
-                  href="realtimeStatechart.gmfgraph#StateItem"/>
+                  href="realtimestatechart.gmfgraph#StateItem"/>
             </ownedChild>
           </children>
           <children
@@ -261,7 +261,7 @@
                   xsi:type="gmfmap:FeatureLabelMapping"
                   viewPattern="">
                 <diagramLabel
-                    href="realtimeStatechart.gmfgraph#RegionNameLabel"/>
+                    href="realtimestatechart.gmfgraph#RegionNameLabel"/>
                 <features
                     href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               </labelMappings>
@@ -269,7 +269,7 @@
                   xsi:type="gmfmap:FeatureLabelMapping"
                   viewPattern="">
                 <diagramLabel
-                    href="realtimeStatechart.gmfgraph#RegionPriorityLabel"/>
+                    href="realtimestatechart.gmfgraph#RegionPriorityLabel"/>
                 <features
                     href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/PrioritizedElement/priority"/>
               </labelMappings>
@@ -277,15 +277,15 @@
                   xsi:type="gmfmap:ExpressionLabelMapping"
                   readOnly="true">
                 <diagramLabel
-                    href="realtimeStatechart.gmfgraph#RegionVariablesLabel"/>
+                    href="realtimestatechart.gmfgraph#RegionVariablesLabel"/>
                 <viewExpression
                     body="statechart->collect(&#xA;(&#xA;&#xA;-- Attributes&#xA;&#xA;&#x9;if variables->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'var: '.concat(&#xA;&#x9;&#x9;&#x9;variables->iterate(attribute; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.dataType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.dataType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Operations&#xA;&#xA;&#x9;if operations->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'op: '.concat(&#xA;&#x9;&#x9;&#x9;operations->iterate(operation; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.returnType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.returnType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;).concat('(').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;-- parameters&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;operation.parameters->iterate(parameter; result2 : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(if result2 = '' then '' else result2.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.dataType.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.dataType.name.concat(' ')&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;).concat(')')&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Clocks&#xA;&#xA;&#x9;if clocks->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'cl: '.concat(&#xA;&#x9;&#x9;&#x9;clocks->iterate(clock; result : String = '' |&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('; ')&#xA;&#x9;endif&#xA;)&#xA;)"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.3"/>
+                  href="realtimestatechart.gmftool#//@palette/@tools.1/@tools.3"/>
               <diagramNode
-                  href="realtimeStatechart.gmfgraph#Region"/>
+                  href="realtimestatechart.gmfgraph#Region"/>
               <children
                   compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@compartments.0">
                 <containmentFeature
@@ -321,7 +321,7 @@
                     </initializers>
                   </domainInitializer>
                   <diagramNode
-                      href="realtimeStatechart.gmfgraph#InnerStatechart"/>
+                      href="realtimestatechart.gmfgraph#InnerStatechart"/>
                   <children
                       compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@compartments.0"
                       referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild">
@@ -331,14 +331,14 @@
                   <compartments
                       children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0/@ownedChild/@children.0">
                     <compartment
-                        href="realtimeStatechart.gmfgraph#StatechartContentsCompartment"/>
+                        href="realtimestatechart.gmfgraph#StatechartContentsCompartment"/>
                   </compartments>
                 </ownedChild>
               </children>
               <compartments
                   children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5/@ownedChild/@children.0">
                 <compartment
-                    href="realtimeStatechart.gmfgraph#RegionContentsCompartment"/>
+                    href="realtimestatechart.gmfgraph#RegionContentsCompartment"/>
               </compartments>
             </ownedChild>
           </children>
@@ -362,15 +362,15 @@
               <labelMappings
                   xsi:type="gmfmap:FeatureLabelMapping">
                 <diagramLabel
-                    href="realtimeStatechart.gmfgraph#EntryExitPointExternalLabel"/>
+                    href="realtimestatechart.gmfgraph#EntryExitPointExternalLabel"/>
                 <features
                     href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.4"/>
+                  href="realtimestatechart.gmftool#//@palette/@tools.1/@tools.4"/>
               <diagramNode
-                  href="realtimeStatechart.gmfgraph#EntryPoint"/>
+                  href="realtimestatechart.gmfgraph#EntryPoint"/>
             </ownedChild>
           </children>
           <children>
@@ -393,43 +393,43 @@
               <labelMappings
                   xsi:type="gmfmap:FeatureLabelMapping">
                 <diagramLabel
-                    href="realtimeStatechart.gmfgraph#EntryExitPointExternalLabel"/>
+                    href="realtimestatechart.gmfgraph#EntryExitPointExternalLabel"/>
                 <features
                     href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="realtimeStatechart.gmftool#//@palette/@tools.1/@tools.5"/>
+                  href="realtimestatechart.gmftool#//@palette/@tools.1/@tools.5"/>
               <diagramNode
-                  href="realtimeStatechart.gmfgraph#ExitPoint"/>
+                  href="realtimestatechart.gmfgraph#ExitPoint"/>
             </ownedChild>
           </children>
           <compartments
               children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.0/@ownedChild/@children.2">
             <compartment
-                href="realtimeStatechart.gmfgraph#ActionCompartment"/>
+                href="realtimestatechart.gmfgraph#ActionCompartment"/>
           </compartments>
           <compartments
               children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.5">
             <compartment
-                href="realtimeStatechart.gmfgraph#RegionCompartment"/>
+                href="realtimestatechart.gmfgraph#RegionCompartment"/>
           </compartments>
           <compartments
               children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.4">
             <compartment
-                href="realtimeStatechart.gmfgraph#ChannelCompartment"/>
+                href="realtimestatechart.gmfgraph#ChannelCompartment"/>
           </compartments>
           <compartments
               children="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.3">
             <compartment
-                href="realtimeStatechart.gmfgraph#InvariantCompartment"/>
+                href="realtimestatechart.gmfgraph#InvariantCompartment"/>
           </compartments>
         </ownedChild>
       </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.0">
         <compartment
-            href="realtimeStatechart.gmfgraph#StatechartContentsCompartment"/>
+            href="realtimestatechart.gmfgraph#StatechartContentsCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
@@ -451,7 +451,7 @@
         xsi:type="gmfmap:ExpressionLabelMapping"
         readOnly="true">
       <diagramLabel
-          href="realtimeStatechart.gmfgraph#TransitionLabel"/>
+          href="realtimestatechart.gmfgraph#TransitionLabel"/>
       <viewExpression
           body="(&#xA;-- Clock Constraints&#xA;&#xA;&#x9;if self.clockConstraints->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;self.clockConstraints->iterate(clockConstraint; result : String = '' | (&#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if clockConstraint.clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clockConstraint.clock.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(' ').concat(&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if clockConstraint.operator.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;let array : Set(Tuple(s : String, d : core::expressions::common::ComparingOperator)) = Set{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '&lt;', d = core::expressions::common::ComparingOperator::LESS },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≤', d = core::expressions::common::ComparingOperator::LESS_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '=', d = core::expressions::common::ComparingOperator::EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≥', d = core::expressions::common::ComparingOperator::GREATER_OR_EQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '>', d = core::expressions::common::ComparingOperator::GREATER },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = '≠', d = core::expressions::common::ComparingOperator::UNEQUAL },&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Tuple{s = 'regexp', d = core::expressions::common::ComparingOperator::REGULAR_EXPRESSION }&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;} in array->any(t | t.d = clockConstraint.operator).s&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(' ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if clockConstraint.bound.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clockConstraint.bound.toString()&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;))&#xA;&#x9;&#x9;).concat('] ')&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;&#x9;-- Guard&#xA;&#xA;&#x9;-- Note: We use the XText Parser to build a String for the Guard Model-Element.&#xA;&#x9;-- For this purpose, the variable &quot;guardExpression&quot; has been defined in the Custom OCL-Environment in the &quot;realtimestatechart.diagram.custom&quot; project.&#xA;&#x9;if guardExpression.oclIsUndefined() or guardExpression = '' then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'['.concat(guardExpression).concat('] ')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Trigger Event&#xA;&#xA;&#x9;if self.triggerMessageEvent.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;if self.triggerMessageEvent.message.instanceOf.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;self.triggerMessageEvent.message.instanceOf.name.concat(' ')&#xA;&#x9;&#x9;endif&#xA;&#x9;endif&#xA;).concat(&#xA;&#xA;-- Synchronizations&#xA;&#xA;&#x9;if self.synchronization.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;if self.synchronization.syncChannel.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.synchronization.syncChannel.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(&#xA;--&#x9;&#x9;&#x9;if self.synchronization.parameterBinding->isEmpty() then&#xA;--&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;'('&#xA;--&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;).concat(&#xA;--&#x9;&#x9;&#x9;-- defined in a custom OCL env&#xA;--&#x9;&#x9;&#x9;synchronizationParameterBinding&#xA;--&#x9;&#x9;).concat(&#xA;--&#x9;&#x9;&#x9;if self.synchronization.parameterBinding->isEmpty() then&#xA;--&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;')'&#xA;--&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;).concat(&#xA;&#x9;&#x9;&#x9;if self.synchronization.kind = SynchronizationKind::SEND then&#xA;&#x9;&#x9;&#x9;&#x9;'!'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;'?'&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;)&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Slash (only shown, if one of the next parts is not null&#xA;&#xA;&#x9;if self.action.oclIsUndefined() and self.raiseMessageEvent.oclIsUndefined() and self.clockResets->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;' / '&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Action&#xA;&#xA;&#x9;if self.action.name.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'{ '.concat(&#xA;&#x9;&#x9;&#x9;self.action.name&#xA;&#x9;&#x9;).concat(' }')&#xA;&#x9;endif&#xA;&#xA;&#xA;).concat(&#xA;&#xA;-- Raise Event&#xA;&#xA;&#x9;if self.raiseMessageEvent.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;if self.raiseMessageEvent.message.instanceOf.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;self.raiseMessageEvent.message.instanceOf.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat('(').concat(&#xA;&#x9;&#x9;&#x9;-- defined in a custom OCL env&#xA;&#x9;&#x9;&#x9;raiseMessageEventParameterBinding&#xA;&#x9;&#x9;).concat(') ')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Clock Resets&#xA;&#xA;&#x9;if self.clockResets->isEmpty() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'{reset: '.concat(&#xA;&#x9;&#x9;&#x9;self.clockResets->iterate(clockReset; result : String = '' | &#xA;&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if clockReset.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clockReset.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;).concat('}')&#xA;&#x9;endif&#xA;&#xA;)"/>
     </labelMappings>
@@ -459,7 +459,7 @@
         xsi:type="gmfmap:ExpressionLabelMapping"
         readOnly="true">
       <diagramLabel
-          href="realtimeStatechart.gmfgraph#TransitionDeadlineLabel"/>
+          href="realtimestatechart.gmfgraph#TransitionDeadlineLabel"/>
       <viewExpression
           body="(&#xA;&#xA;-- Relative Deadline&#xA;&#xA;&#x9;if self.relativeDeadline.oclIsUndefined() then&#xA;&#x9;&#x9;''&#xA;&#x9;else&#xA;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;if self.relativeDeadline.lowerBound.oclIsUndefined() then 'null' else self.relativeDeadline.lowerBound.toString() endif&#xA;&#x9;&#x9;).concat(';').concat(&#xA;&#x9;&#x9;&#x9;if self.relativeDeadline.upperBound.oclIsUndefined() then 'null' else self.relativeDeadline.upperBound.toString() endif&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;endif&#xA;&#xA;).concat(&#xA;&#xA;-- Absolute Deadlines&#xA;&#xA;&#x9;self.absoluteDeadlines->iterate(absoluteDeadline; result : String = '' |&#xA;&#x9;&#x9;(if result = '\n' then '' else result.concat('\n') endif).concat(&#xA;&#x9;&#x9;&#x9;if absoluteDeadline.clock.name.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;''&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;absoluteDeadline.clock.name&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(' ∈ [').concat(&#xA;&#x9;&#x9;&#x9;if absoluteDeadline.lowerBound.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;absoluteDeadline.lowerBound.toString()&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(';').concat(&#xA;&#x9;&#x9;&#x9;if absoluteDeadline.upperBound.oclIsUndefined() then &#xA;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;absoluteDeadline.upperBound.toString()&#xA;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;).concat(']')&#xA;&#x9;)&#xA;)"/>
     </labelMappings>
@@ -467,9 +467,9 @@
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart/transitions"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="realtimeStatechart.gmftool#//@palette/@tools.0/@tools.1"/>
+        href="realtimestatechart.gmftool#//@palette/@tools.0/@tools.1"/>
     <diagramLink
-        href="realtimeStatechart.gmfgraph#Transition"/>
+        href="realtimestatechart.gmfgraph#Transition"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition/source"/>
@@ -483,12 +483,12 @@
   </links>
   <diagram>
     <diagramCanvas
-        href="realtimeStatechart.gmfgraph#statechart"/>
+        href="realtimestatechart.gmfgraph#statechart"/>
     <domainModel
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart"/>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart"/>
     <palette
-        href="realtimeStatechart.gmftool#//@palette"/>
+        href="realtimestatechart.gmftool#//@palette"/>
   </diagram>
 </gmfmap:Mapping>
