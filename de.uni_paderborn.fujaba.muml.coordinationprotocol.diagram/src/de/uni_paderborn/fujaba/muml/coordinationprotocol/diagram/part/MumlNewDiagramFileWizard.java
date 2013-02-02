@@ -83,7 +83,7 @@ public class MumlNewDiagramFileWizard extends Wizard {
 		myFileCreationPage
 				.setFileName(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramEditorUtil
 						.getUniqueFileName(filePath, fileName,
-								"pattern_diagram")); //$NON-NLS-1$
+								"coordinationprotocol_diagram")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
 				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.MumlNewDiagramFileWizard_RootSelectionPageName);

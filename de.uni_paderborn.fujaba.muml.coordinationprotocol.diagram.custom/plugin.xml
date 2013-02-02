@@ -40,7 +40,7 @@
    			checkPluginLoaded="false">
 			<Priority name="Low"/>
 			<popupContribution class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramContextMenuProvider">
-				<popupStructuredContributionCriteria objectClass="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationPattern2EditPart"/>
+				<popupStructuredContributionCriteria objectClass="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart"/>
 				<popupPredefinedItem id="deleteFromDiagramAction" remove="true"/>
 			</popupContribution>
 		</contributionItemProvider>

@@ -203,27 +203,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String PatternDiagramEditor_SavingDeletedFile;
+	public static String CoordinationProtocolDiagramEditor_SavingDeletedFile;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDiagramEditor_SaveAsErrorTitle;
+	public static String CoordinationProtocolDiagramEditor_SaveAsErrorTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDiagramEditor_SaveAsErrorMessage;
+	public static String CoordinationProtocolDiagramEditor_SaveAsErrorMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDiagramEditor_SaveErrorTitle;
+	public static String CoordinationProtocolDiagramEditor_SaveErrorTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String PatternDiagramEditor_SaveErrorMessage;
+	public static String CoordinationProtocolDiagramEditor_SaveErrorMessage;
 
 	/**
 	 * @generated
@@ -248,12 +248,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String CoordinationPattern1CreationTool_title;
+	public static String CoordinationProtocol1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String CoordinationPattern1CreationTool_desc;
+	public static String CoordinationProtocol1CreationTool_desc;
 
 	/**
 	 * @generated
@@ -278,7 +278,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String CoordinationProtocolCoordinationPatternContainerCompartmentEditPart_title;
+	public static String CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart_title;
 
 	/**
 	 * @generated

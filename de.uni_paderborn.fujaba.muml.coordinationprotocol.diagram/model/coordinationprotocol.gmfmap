@@ -19,7 +19,7 @@
               xsi:type="ecore:EAttribute"
               href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           <value
-              body="'pattern'"/>
+              body="'proto'"/>
         </initializers>
         <initializers
             xsi:type="gmfmap:ReferenceNewElementSpec">
@@ -172,7 +172,7 @@
           xsi:type="gmftool:CreationTool"
           href="coordinationprotocol.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
-          href="coordinationprotocol.gmfgraph#CoordinationPatternContainer"/>
+          href="coordinationprotocol.gmfgraph#CoordinationProtocolContainer"/>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
@@ -186,12 +186,12 @@
               editorPattern=""
               editPattern="">
             <diagramLabel
-                href="coordinationprotocol.gmfgraph#CoordinationPatternName"/>
+                href="coordinationprotocol.gmfgraph#CoordinationProtocolName"/>
             <features
                 href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <diagramNode
-              href="coordinationprotocol.gmfgraph#CoordinationPattern"/>
+              href="coordinationprotocol.gmfgraph#CoordinationProtocol"/>
         </ownedChild>
       </children>
       <children
@@ -271,7 +271,7 @@
       <compartments
           children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1">
         <compartment
-            href="coordinationprotocol.gmfgraph#CoordinationPatternContainerCompartment"/>
+            href="coordinationprotocol.gmfgraph#CoordinationProtocolContainerCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>

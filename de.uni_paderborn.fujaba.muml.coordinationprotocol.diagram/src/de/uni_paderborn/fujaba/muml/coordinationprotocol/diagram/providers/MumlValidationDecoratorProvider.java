@@ -84,7 +84,7 @@ public class MumlValidationDecoratorProvider extends AbstractProvider implements
 			if (!(ed instanceof DiagramEditDomain)) {
 				return;
 			}
-			if (((DiagramEditDomain) ed).getEditorPart() instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.PatternDiagramEditor) {
+			if (((DiagramEditDomain) ed).getEditorPart() instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditor) {
 				decoratorTarget.installDecorator(KEY, new StatusDecorator(
 						decoratorTarget));
 			}

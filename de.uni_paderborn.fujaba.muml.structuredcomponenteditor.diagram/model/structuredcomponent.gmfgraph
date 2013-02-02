@@ -51,7 +51,7 @@
   <nodes
       name="CoordinationProtocol">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#CoordinationPatternFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#CoordinationProtocolFigure"/>
   </nodes>
   <connections
       name="Delegation">
@@ -109,7 +109,7 @@
       name="CoordinationProtocolName"
       elementIcon="false">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#CoordinationPatternFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#CoordinationProtocolFigure"/>
     <accessor
         href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#//@figures.0/@descriptors.0/@accessors.0"/>
   </labels>

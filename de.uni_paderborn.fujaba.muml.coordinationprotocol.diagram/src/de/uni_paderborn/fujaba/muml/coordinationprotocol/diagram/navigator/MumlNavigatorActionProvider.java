@@ -142,7 +142,7 @@ public class MumlNavigatorActionProvider extends CommonActionProvider {
 			try {
 				page.openEditor(
 						editorInput,
-						de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.PatternDiagramEditor.ID);
+						de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditor.ID);
 			} catch (PartInitException e) {
 				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin
 						.getInstance().logError(

@@ -51,24 +51,24 @@
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
-        name="CoordinationPatternContainerFigure">
+        name="CoordinationProtocolContainerFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="CoordinationPatternContainerFigure"/>
+          name="CoordinationProtocolContainerFigure"/>
     </descriptors>
     <descriptors
-        name="CoordinationPatternContainerCompartmentFigure">
+        name="CoordinationProtocolContainerCompartmentFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="CoordinationPatternContainerCompartmentFigure"
+          name="CoordinationProtocolContainerCompartmentFigure"
           outline="false"
           fill="false"/>
     </descriptors>
   </figures>
   <nodes
-      name="CoordinationPattern">
+      name="CoordinationProtocol">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#CoordinationPatternFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#CoordinationProtocolFigure"/>
   </nodes>
   <nodes
       name="Role"
@@ -86,8 +86,8 @@
       name="TextualConstraint"
       figure="TextualConstraintFigure"/>
   <nodes
-      name="CoordinationPatternContainer"
-      figure="CoordinationPatternContainerFigure"/>
+      name="CoordinationProtocolContainer"
+      figure="CoordinationProtocolContainerFigure"/>
   <connections
       name="RoleConnector"
       figure="RoleConnectorFigure"/>
@@ -100,13 +100,13 @@
       name="ConstraintLink"
       figure="ConstraintLinkFigure"/>
   <compartments
-      name="CoordinationPatternContainerCompartment"
-      figure="CoordinationPatternContainerCompartmentFigure"/>
+      name="CoordinationProtocolContainerCompartment"
+      figure="CoordinationProtocolContainerCompartmentFigure"/>
   <labels
-      name="CoordinationPatternName"
+      name="CoordinationProtocolName"
       elementIcon="false">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#CoordinationPatternFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#CoordinationProtocolFigure"/>
     <accessor
         href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#//@figures.0/@descriptors.0/@accessors.0"/>
   </labels>

@@ -109,14 +109,14 @@ public class CoordinationProtocolEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new CoordinationPatternFigure();
+		return primaryShape = new CoordinationProtocolFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public CoordinationPatternFigure getPrimaryShape() {
-		return (CoordinationPatternFigure) primaryShape;
+	public CoordinationProtocolFigure getPrimaryShape() {
+		return (CoordinationProtocolFigure) primaryShape;
 	}
 
 	/**
@@ -126,7 +126,7 @@ public class CoordinationProtocolEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.CoordinationProtocolNameEditPart) {
 			((de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.CoordinationProtocolNameEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
-							.getFigureCoordinationPatternNameFigure());
+							.getFigureCoordinationProtocolNameFigure());
 			return true;
 		}
 		return false;
@@ -291,17 +291,17 @@ public class CoordinationProtocolEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class CoordinationPatternFigure extends Ellipse {
+	public class CoordinationProtocolFigure extends Ellipse {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureCoordinationPatternNameFigure;
+		private WrappingLabel fFigureCoordinationProtocolNameFigure;
 
 		/**
 		 * @generated
 		 */
-		public CoordinationPatternFigure() {
+		public CoordinationProtocolFigure() {
 
 			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
@@ -317,27 +317,27 @@ public class CoordinationProtocolEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			fFigureCoordinationPatternNameFigure = new WrappingLabel();
-			fFigureCoordinationPatternNameFigure.setText("");
+			fFigureCoordinationProtocolNameFigure = new WrappingLabel();
+			fFigureCoordinationProtocolNameFigure.setText("");
 
-			GridData constraintFFigureCoordinationPatternNameFigure = new GridData();
-			constraintFFigureCoordinationPatternNameFigure.verticalAlignment = GridData.CENTER;
-			constraintFFigureCoordinationPatternNameFigure.horizontalAlignment = GridData.CENTER;
-			constraintFFigureCoordinationPatternNameFigure.horizontalIndent = 0;
-			constraintFFigureCoordinationPatternNameFigure.horizontalSpan = 1;
-			constraintFFigureCoordinationPatternNameFigure.verticalSpan = 1;
-			constraintFFigureCoordinationPatternNameFigure.grabExcessHorizontalSpace = true;
-			constraintFFigureCoordinationPatternNameFigure.grabExcessVerticalSpace = true;
-			this.add(fFigureCoordinationPatternNameFigure,
-					constraintFFigureCoordinationPatternNameFigure);
+			GridData constraintFFigureCoordinationProtocolNameFigure = new GridData();
+			constraintFFigureCoordinationProtocolNameFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigureCoordinationProtocolNameFigure.horizontalAlignment = GridData.CENTER;
+			constraintFFigureCoordinationProtocolNameFigure.horizontalIndent = 0;
+			constraintFFigureCoordinationProtocolNameFigure.horizontalSpan = 1;
+			constraintFFigureCoordinationProtocolNameFigure.verticalSpan = 1;
+			constraintFFigureCoordinationProtocolNameFigure.grabExcessHorizontalSpace = true;
+			constraintFFigureCoordinationProtocolNameFigure.grabExcessVerticalSpace = true;
+			this.add(fFigureCoordinationProtocolNameFigure,
+					constraintFFigureCoordinationProtocolNameFigure);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureCoordinationPatternNameFigure() {
-			return fFigureCoordinationPatternNameFigure;
+		public WrappingLabel getFigureCoordinationProtocolNameFigure() {
+			return fFigureCoordinationProtocolNameFigure;
 		}
 
 	}

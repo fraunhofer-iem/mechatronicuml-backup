@@ -26,7 +26,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CoordinationProtocolCoordinationPatternContainerCompartmentCanonicalEditPolicy
+public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy
 		extends CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
 
@@ -35,10 +35,10 @@ public class CoordinationProtocolCoordinationPatternContainerCompartmentCanonica
 	 */
 	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
-	public CoordinationProtocolCoordinationPatternContainerCompartmentCanonicalEditPolicy() {
+	public CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy() {
 	}
 
-	public CoordinationProtocolCoordinationPatternContainerCompartmentCanonicalEditPolicy(
+	public CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy(
 			boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
@@ -113,7 +113,7 @@ public class CoordinationProtocolCoordinationPatternContainerCompartmentCanonica
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
-				.getCoordinationProtocolCoordinationPatternContainerCompartment_7005SemanticChildren(viewObject);
+				.getCoordinationProtocolCoordinationProtocolContainerCompartment_7005SemanticChildren(viewObject);
 
 	}
 

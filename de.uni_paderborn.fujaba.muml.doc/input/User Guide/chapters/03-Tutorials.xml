@@ -40,7 +40,7 @@
 		
 		<listitem>
 			<para>
-			Create a Real-Time Coordination Pattern "Delegation" defining how the master and the
+			Create a Real-Time Coordination Protocol "Delegation" defining how the master and the
 			slave BeBots can communicate using the Message Interfaces
 			</para>
 		</listitem>
@@ -274,19 +274,19 @@
 		</para>
 	</sect2>
 	
-	<!-- Step 4: Create a Real-Time Coordination Pattern "Delegation" -->
-	<sect2><title>Step 4: Create a Real-Time Coordination Pattern "Delegation"</title>
+	<!-- Step 4: Create a Real-Time Coordination Protocol "Delegation" -->
+	<sect2><title>Step 4: Create a Real-Time Coordination Protocol "Delegation"</title>
 		<para>
 			To define how the master and the slave BeBots of our example can communicate
-			we need to create a Real-Time Coordination Pattern.
+			we need to create a Real-Time Coordination Protocol.
 			As said before we need a pattern named "Delegation".
 			This pattern defines the coordination of how a master part delegates work to the slave part.
 			Therefore, create a Pattern diagram analogously to the way of generating a Message Interface
 			diagram with the name "delegation.pattern_diagram".
 		</para>
 		<para>
-			In the editor that opens in a new tab we can now define Coordination Patterns.
-			Click on "CoordinationPattern" and then onto the drawing surface to add a new pattern.
+			In the editor that opens in a new tab we can now define Coordination Protocols.
+			Click on "CoordinationProtocol" and then onto the drawing surface to add a new pattern.
 			Change the name "pattern" to "Delegation" and the names "role1" and "role2" to "master"
 			and "slave". At this moment your diagram should look like this:
 			<figure id="img:step010">

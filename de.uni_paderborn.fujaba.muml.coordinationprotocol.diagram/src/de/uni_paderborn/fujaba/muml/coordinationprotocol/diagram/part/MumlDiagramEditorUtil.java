@@ -82,7 +82,7 @@ public class MumlDiagramEditorUtil {
 			return null != page
 					.openEditor(
 							new FileEditorInput((IFile) workspaceResource),
-							de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.PatternDiagramEditor.ID);
+							de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditor.ID);
 		}
 		return false;
 	}

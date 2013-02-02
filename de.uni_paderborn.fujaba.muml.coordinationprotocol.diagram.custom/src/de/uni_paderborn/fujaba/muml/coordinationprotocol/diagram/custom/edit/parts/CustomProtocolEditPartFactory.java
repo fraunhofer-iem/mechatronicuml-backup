@@ -4,7 +4,7 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart;
-import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationPatternContainerCompartmentEditPart;
+import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.MumlEditPartFactory;
 import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry;
 
@@ -24,8 +24,8 @@ public class CustomProtocolEditPartFactory extends MumlEditPartFactory {
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
 			case CoordinationProtocol2EditPart.VISUAL_ID:
 				return new CustomCoordinationProtocol2EditPart(view);
-//			case CoordinationProtocolCoordinationPatternContainerCompartmentEditPart.VISUAL_ID:
-//				return new CustomCoordinationProtocolCoordinationPatternContainerCompartmentEditPart(view);				
+//			case CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart.VISUAL_ID:
+//				return new CustomCoordinationProtocolCoordinationProtocolContainerCompartmentEditPart(view);				
 			}
 		}
 		return super.createEditPart(context, model);

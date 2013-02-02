@@ -47,13 +47,13 @@ import org.eclipse.ui.part.ShowInContext;
 /**
  * @generated
  */
-public class PatternDiagramEditor extends DiagramDocumentEditor implements
-		IGotoMarker {
+public class CoordinationProtocolDiagramEditor extends DiagramDocumentEditor
+		implements IGotoMarker {
 
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.PatternDiagramEditorID"; //$NON-NLS-1$
+	public static final String ID = "de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -63,7 +63,7 @@ public class PatternDiagramEditor extends DiagramDocumentEditor implements
 	/**
 	 * @generated
 	 */
-	public PatternDiagramEditor() {
+	public CoordinationProtocolDiagramEditor() {
 		super(true);
 	}
 
@@ -191,7 +191,7 @@ public class PatternDiagramEditor extends DiagramDocumentEditor implements
 		}
 		if (provider.isDeleted(input) && original != null) {
 			String message = NLS
-					.bind(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.PatternDiagramEditor_SavingDeletedFile,
+					.bind(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.CoordinationProtocolDiagramEditor_SavingDeletedFile,
 							original.getName());
 			dialog.setErrorMessage(null);
 			dialog.setMessage(message, IMessageProvider.WARNING);
@@ -223,8 +223,8 @@ public class PatternDiagramEditor extends DiagramDocumentEditor implements
 				MessageDialog
 						.openWarning(
 								shell,
-								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.PatternDiagramEditor_SaveAsErrorTitle,
-								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.PatternDiagramEditor_SaveAsErrorMessage);
+								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.CoordinationProtocolDiagramEditor_SaveAsErrorTitle,
+								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.CoordinationProtocolDiagramEditor_SaveAsErrorMessage);
 				return;
 			}
 		}
@@ -241,8 +241,8 @@ public class PatternDiagramEditor extends DiagramDocumentEditor implements
 				ErrorDialog
 						.openError(
 								shell,
-								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.PatternDiagramEditor_SaveErrorTitle,
-								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.PatternDiagramEditor_SaveErrorMessage,
+								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.CoordinationProtocolDiagramEditor_SaveErrorTitle,
+								de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.CoordinationProtocolDiagramEditor_SaveErrorMessage,
 								x.getStatus());
 			}
 		} finally {

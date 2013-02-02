@@ -13,7 +13,7 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
 
 /**
  * An EditHelperAdvice for Roles. It makes sure newly created Roles are
- * automatically connected to the CoordinationPattern.
+ * automatically connected to the CoordinationProtocol.
  * 
  * @author bingo
  * 
@@ -33,7 +33,7 @@ public class RoleEditHelperAdvice extends AbstractEditHelperAdvice {
 //				EObject eContainer = role.eContainer();
 //				if (eContainer instanceof PatternDiagram) {
 //					PatternDiagram patternDiagram = (PatternDiagram) eContainer;
-//					role.setPattern(patternDiagram.getCoordinationPattern());
+//					role.setPattern(patternDiagram.getCoordinationProtocol());
 //				}
 				return CommandResult.newOKCommandResult(role);
 			}

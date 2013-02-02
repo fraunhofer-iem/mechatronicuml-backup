@@ -6,14 +6,14 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 /**
  * @generated
  */
-public class CoordinationProtocolCoordinationPatternContainerCompartmentItemSemanticEditPolicy
+public class CoordinationProtocolCoordinationProtocolContainerCompartmentItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolCoordinationPatternContainerCompartmentItemSemanticEditPolicy() {
+	public CoordinationProtocolCoordinationProtocolContainerCompartmentItemSemanticEditPolicy() {
 		super(
 				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_2005);
 	}

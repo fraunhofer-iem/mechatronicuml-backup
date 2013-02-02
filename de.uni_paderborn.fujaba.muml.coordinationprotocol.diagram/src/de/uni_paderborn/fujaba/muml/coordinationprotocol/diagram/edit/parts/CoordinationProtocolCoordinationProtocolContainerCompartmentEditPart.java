@@ -13,7 +13,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CoordinationProtocolCoordinationPatternContainerCompartmentEditPart
+public class CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart
 		extends ShapeCompartmentEditPart {
 
 	/**
@@ -24,7 +24,7 @@ public class CoordinationProtocolCoordinationPatternContainerCompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolCoordinationPatternContainerCompartmentEditPart(
+	public CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart(
 			View view) {
 		super(view);
 	}
@@ -33,7 +33,7 @@ public class CoordinationProtocolCoordinationPatternContainerCompartmentEditPart
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.CoordinationProtocolCoordinationPatternContainerCompartmentEditPart_title;
+		return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart_title;
 	}
 
 	/**
@@ -65,14 +65,14 @@ public class CoordinationProtocolCoordinationPatternContainerCompartmentEditPart
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.CoordinationProtocolCoordinationPatternContainerCompartmentItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.CoordinationProtocolCoordinationProtocolContainerCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.CoordinationProtocolCoordinationPatternContainerCompartmentCanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy());
 	}
 
 	/**

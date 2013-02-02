@@ -36,7 +36,7 @@ public class MumlInitDiagramFileAction
 	 */
 	@Override
 	public String getEditorId() {
-		return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.PatternDiagramEditor.ID;
+		return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditor.ID;
 
 	}
 }

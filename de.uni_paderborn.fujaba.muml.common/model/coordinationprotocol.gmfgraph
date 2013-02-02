@@ -6,16 +6,16 @@
   <figures
       name="Protocol Gallery">
     <descriptors
-        name="CoordinationPatternFigure">
+        name="CoordinationProtocolFigure">
       <actualFigure
           xsi:type="gmfgraph:Ellipse"
-          name="CoordinationPatternFigure"
+          name="CoordinationProtocolFigure"
           lineKind="LINE_DASH">
         <layout
             xsi:type="gmfgraph:GridLayout"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="CoordinationPatternNameFigure">
+            name="CoordinationProtocolNameFigure">
           <layoutData
               xsi:type="gmfgraph:GridLayoutData"
               grabExcessHorizontalSpace="true"

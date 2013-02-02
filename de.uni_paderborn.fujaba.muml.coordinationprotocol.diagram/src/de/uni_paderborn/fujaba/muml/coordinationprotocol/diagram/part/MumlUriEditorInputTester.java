@@ -17,7 +17,7 @@ public class MumlUriEditorInputTester extends PropertyTester {
 			return false;
 		}
 		URIEditorInput editorInput = (URIEditorInput) receiver;
-		return "pattern_diagram".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
+		return "coordinationprotocol_diagram".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
 	}
 
 }

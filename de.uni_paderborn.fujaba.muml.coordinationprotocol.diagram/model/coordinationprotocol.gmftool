@@ -10,8 +10,8 @@
         title="de">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="CoordinationPattern"
-          description="Create new CoordinationPattern">
+          title="CoordinationProtocol"
+          description="Create new CoordinationProtocol">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

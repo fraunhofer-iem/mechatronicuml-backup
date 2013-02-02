@@ -4,13 +4,13 @@
 
    <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
       <?gmfgen generated="true"?>
-      <fileTypes type="text" extension="pattern_diagram"/>
+      <fileTypes type="text" extension="coordinationprotocol_diagram"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
       <?gmfgen generated="true"?>
       <parser
-         type="pattern_diagram"
+         type="coordinationprotocol_diagram"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
@@ -23,12 +23,12 @@
 	<extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="true"?>
       <editor
-         id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.PatternDiagramEditorID"
+         id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/ModelinstanceDiagramFile.gif"
-         extensions="pattern_diagram"
+         extensions="coordinationprotocol_diagram"
          default="true"
-         class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.PatternDiagramEditor"
+         class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditor"
          matchingStrategy="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlMatchingStrategy"
          contributorClass="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramActionBarContributor">
       </editor>
@@ -67,7 +67,7 @@
 	            commandId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.createDiagram"
 	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.createDiagram"
-	            label="Initialize Pattern Diagram"
+	            label="Initialize CoordinationProtocol Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
@@ -110,11 +110,11 @@
       <?gmfgen generated="true"?>
       <editor
             preferencesHint="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram"
-            editorId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.PatternDiagramEditorID"
-            editorName="Pattern Editor"
-            fileExtension="pattern_diagram"
+            editorId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
+            editorName="CoordinationProtocol Editor"
+            fileExtension="coordinationprotocol_diagram"
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.protocol.category"
-            modelId="Pattern">
+            modelId="CoordinationProtocol">
          <diagramElement
                packageNsURI="http://www.fujaba.de/modelinstance/0.3.15"
                className="ModelElementCategory">
@@ -133,9 +133,9 @@
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="PatternPresentation">
+         id="CoordinationProtocolPresentation">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.PatternDiagramEditorID">
+         <ViewId id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="delete"/>
             </ElementType>
@@ -150,9 +150,9 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="PatternPresentationIDE">
+         id="CoordinationProtocolPresentationIDE">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.PatternDiagramEditorID">
+         <ViewId id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="bookmark"/>
             </ElementType>
@@ -160,9 +160,9 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="PatternRender">
+            id="CoordinationProtocolRender">
          <Priority name="Lowest"/>
-         <ViewId id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.PatternDiagramEditorID">
+         <ViewId id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="cut"/>
                <GlobalActionId actionId="copy"/>
@@ -181,7 +181,7 @@
       </MarkerNavigationProvider>
    </extension>
 
-   <extension id="diagnostic" name="Coordination Pattern Diagram-Editor problems" point="org.eclipse.core.resources.markers">
+   <extension id="diagnostic" name="Coordination Protocol Diagram-Editor problems" point="org.eclipse.core.resources.markers">
       <?gmfgen generated="true"?>
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
@@ -324,7 +324,7 @@
       <?gmfgen generated="true"?>
       <viewProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Pattern"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="CoordinationProtocol"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,3005,3006"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4007,4006"/>
       </viewProvider>
@@ -335,7 +335,7 @@
       <editpartProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="Pattern"/>
+            <method name="getType()" value="CoordinationProtocol"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
             <method name="getType()" value="2005,3005,3006"/>
@@ -499,7 +499,7 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="pattern_diagram"/>
+        	      <test property="org.eclipse.core.resources.extension" value="coordinationprotocol_diagram"/>
                </and>
                <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlAbstractNavigatorItem"/>
             </or>
@@ -516,7 +516,7 @@
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
-        	         <test property="org.eclipse.core.resources.extension" value="pattern_diagram"/>
+        	         <test property="org.eclipse.core.resources.extension" value="coordinationprotocol_diagram"/>
                   </and>
                   <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlAbstractNavigatorItem"/>
                </or>
@@ -600,7 +600,7 @@
          <command commandId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.LoadResourceAction">
             <visibleWhen>
                <and>
-                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.PatternDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
                      <instanceof value="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart"/>
                   </iterate></with>
@@ -612,10 +612,10 @@
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
-      <category id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.PatternDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <category id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
       <command id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.LoadResourceAction"
          name="Load Resource"
-         categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.PatternDiagramEditorID"
+         categoryId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
          defaultHandler="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.LoadResourceAction"/>
    </extension>
 
