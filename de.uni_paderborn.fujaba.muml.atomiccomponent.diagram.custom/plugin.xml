@@ -5,7 +5,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.providers.CustomAtomiccomponentEditPartProvider">
+            class="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.custom.providers.CustomAtomiccomponentEditPartProvider">
          <Priority
                name="Low">
          </Priority>
@@ -17,11 +17,11 @@
             allPopups="false"
             locationURI="popup:de.uni_paderborn.fujaba">
          <separator
-               name="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.separator1"
+               name="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.custom.separator1"
                visible="true">
          </separator>
          <command
-               commandId="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.copyRolePropertiesToPort"
+               commandId="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.custom.copyRolePropertiesToPort"
                label="Copy Role Properties To Port"
                style="push">
             <visibleWhen>
@@ -29,7 +29,7 @@
                   <with
                         variable="activePartId">
                      <equals
-                           value="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.part.MumlDiagramEditorID">
+                           value="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.part.MumlDiagramEditorID">
                      </equals>
                   </with>
                   <with
@@ -37,7 +37,7 @@
                      <iterate
                            ifEmpty="false">
                         <instanceof
-                              value="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.edit.parts.CustomDiscretePortEditPart">
+                              value="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.custom.edit.parts.CustomDiscretePortEditPart">
                         </instanceof>
                      </iterate>
                   </with></and>
@@ -48,8 +48,8 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            defaultHandler="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.commands.CopyRolePropertiesToPort"
-            id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.copyRolePropertiesToPort"
+            defaultHandler="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.custom.commands.CopyRolePropertiesToPort"
+            id="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.custom.copyRolePropertiesToPort"
             name="Copy Role Properties To Port">
       </command>
    </extension>

@@ -16,7 +16,7 @@
       <wizard
             category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
             class="de.uni_paderborn.fujaba.modelinstance.ui.storydiagrams.CustomActivityDiagramCreationWizard"
-            id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramCreationWizard"
+            id="sdmcreationwizard"
             name="Activity Diagram">
          <description>
             Creates a new Activity Diagram.

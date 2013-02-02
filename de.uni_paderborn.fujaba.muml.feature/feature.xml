@@ -68,7 +68,7 @@
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.common" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.storydriven.core" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.6.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.common" version="0.3.1" match="greaterOrEqual"/>
@@ -169,14 +169,14 @@
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram"
+         id="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom"
+         id="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.custom"
          download-size="0"
          install-size="0"
          version="0.0.0"

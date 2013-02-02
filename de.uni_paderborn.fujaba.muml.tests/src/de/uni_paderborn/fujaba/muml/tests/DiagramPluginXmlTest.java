@@ -21,7 +21,7 @@ import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
 
 public class DiagramPluginXmlTest {
 	public static final String EDITOR_PLUGINS[] = {
-			"de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram",
+			"de.uni_paderborn.fujaba.muml.atomiccomponent.diagram",
 			"de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram",
 			"de.uni_paderborn.fujaba.muml.componentstorydiagrameditor.diagram",
 			"de.uni_paderborn.fujaba.muml.deploymenteditor.diagram",
