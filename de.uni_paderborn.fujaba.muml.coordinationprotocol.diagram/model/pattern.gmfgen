@@ -2,13 +2,13 @@
 <gmfgen:GenEditorGenerator xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.muml.patterneditor.diagram"
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram"
     modelID="Pattern"
     diagramFileExtension="pattern_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
     templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates"
-    pluginDirectory="/de.uni_paderborn.fujaba.muml.patterneditor.diagram/src">
+    pluginDirectory="/de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/src">
   <diagram
       visualID="1000"
       editPartClassName="ModelElementCategoryEditPart"
@@ -466,7 +466,7 @@
     </preferencePages>
   </diagram>
   <plugin
-      iD="de.uni_paderborn.fujaba.muml.patterneditor.diagram"
+      iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram"
       name="Coordination Pattern Diagram-Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.3.1.qualifier">
@@ -475,7 +475,7 @@
   </plugin>
   <editor
       className="PatternDiagramEditor"
-      iD="de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.PatternDiagramEditorID"/>
+      iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.PatternDiagramEditorID"/>
   <navigator>
     <childReferences
         child="//@diagram"/>

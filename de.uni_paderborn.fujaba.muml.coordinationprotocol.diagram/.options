@@ -1,7 +1,7 @@
-# Tracing options for the de.uni_paderborn.fujaba.muml.patterneditor.diagram plug-in
+# Tracing options for the de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram plug-in
 
 # Common issues
-de.uni_paderborn.fujaba.muml.patterneditor.diagram/debug=false
+de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/debug=false
 
 # Visual IDs
-de.uni_paderborn.fujaba.muml.patterneditor.diagram/debug/visualID=false
+de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/debug/visualID=false

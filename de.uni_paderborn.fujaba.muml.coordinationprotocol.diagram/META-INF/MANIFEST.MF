@@ -1,19 +1,19 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.patterneditor.diagram; singleton:=true
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram;singleton:=true
 Bundle-Version: 0.3.1.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.patterneditor.diagram.part.MumlDiagramEditorPlugin
+Bundle-Activator: de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.parts,
- de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.policies,
- de.uni_paderborn.fujaba.muml.patterneditor.diagram.edit.commands,
- de.uni_paderborn.fujaba.muml.patterneditor.diagram.part,
- de.uni_paderborn.fujaba.muml.patterneditor.diagram.providers,
- de.uni_paderborn.fujaba.muml.patterneditor.diagram.parsers,
- de.uni_paderborn.fujaba.muml.patterneditor.diagram.sheet
+Export-Package: de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.commands,
+ de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts,
+ de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies,
+ de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers,
+ de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part,
+ de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers,
+ de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.sheet
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,
