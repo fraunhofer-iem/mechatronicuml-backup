@@ -170,9 +170,9 @@
       </domainInitializer>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="pattern.gmftool#//@palette/@tools.0/@tools.0"/>
+          href="coordinationprotocol.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
-          href="pattern.gmfgraph#CoordinationPatternContainer"/>
+          href="coordinationprotocol.gmfgraph#CoordinationPatternContainer"/>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
         <containmentFeature
@@ -186,12 +186,12 @@
               editorPattern=""
               editPattern="">
             <diagramLabel
-                href="pattern.gmfgraph#CoordinationPatternName"/>
+                href="coordinationprotocol.gmfgraph#CoordinationPatternName"/>
             <features
                 href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <diagramNode
-              href="pattern.gmfgraph#CoordinationPattern"/>
+              href="coordinationprotocol.gmfgraph#CoordinationPattern"/>
         </ownedChild>
       </children>
       <children
@@ -257,27 +257,27 @@
           <labelMappings
               xsi:type="gmfmap:FeatureLabelMapping">
             <diagramLabel
-                href="pattern.gmfgraph#RoleName"/>
+                href="coordinationprotocol.gmfgraph#RoleName"/>
             <features
                 href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="pattern.gmftool#//@palette/@tools.0/@tools.1"/>
+              href="coordinationprotocol.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
-              href="pattern.gmfgraph#Role"/>
+              href="coordinationprotocol.gmfgraph#Role"/>
         </ownedChild>
       </children>
       <compartments
           children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1">
         <compartment
-            href="pattern.gmfgraph#CoordinationPatternContainerCompartment"/>
+            href="coordinationprotocol.gmfgraph#CoordinationPatternContainerCompartment"/>
       </compartments>
     </ownedChild>
   </nodes>
   <links>
     <diagramLink
-        href="pattern.gmfgraph#RolePattern"/>
+        href="coordinationprotocol.gmfgraph#RolePattern"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/CoordinationProtocol/roles"/>
@@ -308,9 +308,9 @@
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/CoordinationProtocol/roleConnector"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="pattern.gmftool#//@palette/@tools.0/@tools.2"/>
+        href="coordinationprotocol.gmftool#//@palette/@tools.0/@tools.2"/>
     <diagramLink
-        href="pattern.gmfgraph#RoleConnector"/>
+        href="coordinationprotocol.gmfgraph#RoleConnector"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
@@ -324,12 +324,12 @@
   </links>
   <diagram>
     <diagramCanvas
-        href="pattern.gmfgraph#protocoleditor"/>
+        href="coordinationprotocol.gmfgraph#protocoleditor"/>
     <domainModel
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol"/>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory"/>
     <palette
-        href="pattern.gmftool#//@palette"/>
+        href="coordinationprotocol.gmftool#//@palette"/>
   </diagram>
 </gmfmap:Mapping>
