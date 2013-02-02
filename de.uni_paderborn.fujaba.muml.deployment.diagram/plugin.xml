@@ -106,7 +106,7 @@
 
 	
 	<extension
-         point="de.uni_paderborn.fujaba.newwizard.diagraminformation">
+         point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
       <?gmfgen generated="true"?>
       <editor
             preferencesHint="de.uni_paderborn.fujaba.muml.deployment.diagram"

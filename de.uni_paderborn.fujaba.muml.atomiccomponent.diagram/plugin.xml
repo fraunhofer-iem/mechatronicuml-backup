@@ -106,7 +106,7 @@
 
 	
 	<extension
-         point="de.uni_paderborn.fujaba.newwizard.diagraminformation">
+         point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
       <?gmfgen generated="true"?>
       <editor
             preferencesHint="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram"
@@ -611,7 +611,7 @@
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
-
+  
    <!-- optionally, specify keybindings -->
 
    </plugin>

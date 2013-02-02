@@ -29,7 +29,7 @@
    </extension>
    
    <extension
-       point="de.uni_paderborn.fujaba.newwizard.modelinitializer">
+       point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
       <initializer
           initializer="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.initializer.RealtimeStatechartModelInitializer">
       </initializer>

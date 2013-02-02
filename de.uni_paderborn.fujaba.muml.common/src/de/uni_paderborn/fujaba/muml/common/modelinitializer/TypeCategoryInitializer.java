@@ -2,10 +2,10 @@ package de.uni_paderborn.fujaba.muml.common.modelinitializer;
 
 import org.eclipse.emf.ecore.EObject;
 
-import de.uni_paderborn.fujaba.newwizard.initializer.IModelInitializer;
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
+import de.uni_paderborn.fujaba.modelinstance.ui.initializer.IModelInitializer;
 import de.uni_paderborn.fujaba.muml.model.types.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.model.types.PrimitiveTypes;
 import de.uni_paderborn.fujaba.muml.model.types.TypesFactory;

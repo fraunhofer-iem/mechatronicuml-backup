@@ -6,7 +6,7 @@
 		<command
 			categoryId="de.uni_paderborn.fujaba"
 			description="Initialize Story Diagram"
-			defaultHandler="de.uni_paderborn.fujaba.newwizard.storydiagrams.SDMFujabaDiagramFileAction"
+			defaultHandler="de.uni_paderborn.fujaba.modelinstance.ui.storydiagrams.SDMFujabaDiagramFileAction"
 			id="org.storydriven.storydiagrams.diagram.createDiagram"
 			name="%initDiagramActionLabel">
 		</command>
@@ -15,7 +15,7 @@
    <extension id="creation-wizard" point="org.eclipse.ui.newWizards">
       <wizard
             category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
-            class="de.uni_paderborn.fujaba.newwizard.storydiagrams.CustomActivityDiagramCreationWizard"
+            class="de.uni_paderborn.fujaba.modelinstance.ui.storydiagrams.CustomActivityDiagramCreationWizard"
             id="de.uni_paderborn.fujaba.muml.atomiccomponenteditor.diagram.custom.part.CustomAtomiccomponentDiagramCreationWizard"
             name="Activity Diagram">
          <description>
@@ -71,7 +71,7 @@
       </category>
    </extension>
 
-   <extension point="de.uni_paderborn.fujaba.newwizard.diagraminformation">
+   <extension point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
       <editor
             preferencesHint="org.storydriven.storydiagrams.diagram"
             editorId="org.storydriven.storydiagrams.diagram.part.StorydiagramsDiagramEditorID"

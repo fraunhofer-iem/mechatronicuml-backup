@@ -35,7 +35,7 @@
       <import plugin="org.eclipse.xtext.builder"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.compare"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.actionLanguage" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage.xtext" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.editors"/>
       <import plugin="org.eclipse.ui"/>
@@ -76,7 +76,7 @@
       <import plugin="de.uni_paderborn.fujaba.modelinstance.edit" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.model.edit" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.edit" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.newwizard" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.modelinstance.ui" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.componentinstanceconfigurationeditor.diagram" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.0.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.deployment.diagram" version="0.3.1" match="greaterOrEqual"/>
@@ -106,7 +106,7 @@
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
       <import plugin="org.fujaba.commons" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.newwizard" version="0.2.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.modelinstance.ui" version="0.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.4.2" match="greaterOrEqual"/>
       <import plugin="org.storydriven.storydiagrams.diagram" version="0.2.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers" version="1.5.0" match="greaterOrEqual"/>
@@ -148,21 +148,21 @@
    </requires>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.actionLanguage"
+         id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.actionLanguage.generator"
+         id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.generator"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.actionLanguage.ui"
+         id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -449,7 +449,7 @@
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.newwizard"
+         id="de.uni_paderborn.fujaba.modelinstance.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"

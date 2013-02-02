@@ -3,10 +3,10 @@ Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML ActionLanguage Tests
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Bundle-Version: 0.3.1.qualifier
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.actionLanguage.tests; singleton:=true
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.actionlanguage.xtext.tests;singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: de.uni_paderborn.fujaba.muml.actionLanguage,
- de.uni_paderborn.fujaba.muml.actionLanguage.ui,
+Require-Bundle: de.uni_paderborn.fujaba.muml.actionlanguage.xtext,
+ de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui,
  org.eclipse.core.runtime,
  org.eclipse.xtext,
  org.eclipse.xtext.junit4,

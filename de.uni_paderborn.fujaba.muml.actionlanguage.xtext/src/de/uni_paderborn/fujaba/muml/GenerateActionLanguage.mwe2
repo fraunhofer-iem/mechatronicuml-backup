@@ -6,7 +6,7 @@ import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/de/uni_paderborn/fujaba/muml/ActionLanguage.xtext"
 var file.extensions = "action"
-var projectName = "de.uni_paderborn.fujaba.muml.actionLanguage"
+var projectName = "de.uni_paderborn.fujaba.muml.actionlanguage"
 var runtimeProject = "../${projectName}"
 
 Workflow {

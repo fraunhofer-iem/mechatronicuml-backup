@@ -26,7 +26,7 @@ Require-Bundle: de.uni_paderborn.fujaba.common;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.muml.model;bundle-version="0.3.1";visibility:=reexport,
  de.uni_paderborn.fujaba.modelinstance.edit;bundle-version="0.3.1";visibility:=reexport,
  org.storydriven.core.edit;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.actionLanguage;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml.actionlanguage.xtext;bundle-version="0.3.1",
  org.eclipse.swt;bundle-version="3.7.2",
  org.eclipse.ui;bundle-version="3.7.0"
 Bundle-ActivationPolicy: lazy
