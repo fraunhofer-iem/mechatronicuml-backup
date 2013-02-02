@@ -37,7 +37,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="HasOnlyOneCreateAndOneDestroyPartVariable CorrectNumberOfFadingFunctions NoDeadlineIfStrategyIsATOMIC_SWITCHING"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="deadline" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/RelativeDeadline"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="deadline" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RelativeDeadline"
           containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The relative deadline denotes the minimum and maximum duration of the controller exchange. In case of a fading function, the deadline denotes the time interval in which both controllers are active and during which their out-ports are faded. In case of a flat switching, the deadline denotes the time interval in which the spline computing by the flat switching is used as a value of the out-port."/>
@@ -100,7 +100,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PortVariable" abstract="true" eSuperTypes="#//componentstorypattern/ComponentStoryPatternVariable ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/connector/ConnectorEndpoint">
+    <eClassifiers xsi:type="ecore:EClass" name="PortVariable" abstract="true" eSuperTypes="#//componentstorypattern/ComponentStoryPatternVariable ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorEndpoint">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="SameBindingOperatorAsParent" value="if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CHECK_ONLY then&#xD;&#xA;&#x9;self.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
         <details key="SameBindingSemanticsAsParent" value="if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics=storydiagrams::patterns::BindingSemantics::OPTIONAL then&#xD;&#xA;&#x9;self.bindingSemantics = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingSemantics&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
@@ -110,7 +110,7 @@
         <details key="constraints" value="SameBindingOperatorAsParent SameBindingSemanticsAsParent ValidTypeOfPortVariable"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/component/Port"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Port"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectorVariables" upperBound="-1"
           eType="#//componentstorypattern/ConnectorVariable" changeable="false" volatile="true"
           transient="true" derived="true">
@@ -130,11 +130,11 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="portVariables" upperBound="-1"
           eType="#//componentstorypattern/PortVariable" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/component/ComponentPart"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/ComponentPart"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="call" eType="#//componentstorypattern/Call"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ConnectorVariable" abstract="true"
-        eSuperTypes="#//componentstorypattern/ComponentStoryPatternVariable ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/connector/Connector">
+        eSuperTypes="#//componentstorypattern/ComponentStoryPatternVariable ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="MustNotConnectCreateAndDestroyPorts" value="if self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::CREATE then&#xD;&#xA;&#x9;self.target.oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::DESTROY&#xD;&#xA;else&#xD;&#xA;&#x9;if self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::DESTROY then&#xD;&#xA;&#x9;&#x9;self.target.oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CREATE&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
         <details key="SameBindingOperatorAsPortVariable" value="if self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CHECK_ONLY then&#xD;&#xA;&#x9;self.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator&#xD;&#xA;else&#xD;&#xA;&#x9;if self.target.oclAsType(ComponentStoryPatternVariable).bindingOperator&lt;>storydiagrams::patterns::BindingOperator::CHECK_ONLY then&#xD;&#xA;&#x9;&#x9;self.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.target.oclAsType(ComponentStoryPatternVariable).bindingOperator&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;true&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
@@ -153,17 +153,17 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AssemblyVariable" eSuperTypes="#//componentstorypattern/ConnectorVariable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/component/AssemblyConnector"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/AssemblyConnector"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DelegationVariable" eSuperTypes="#//componentstorypattern/ConnectorVariable">
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/component/DelegationConnector"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DelegationConnector"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Call" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="callee" lowerBound="1"
           eType="#//controlflow/ComponentStoryRule"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBinding" upperBound="-1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/behavior/ParameterBinding"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/ParameterBinding"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FadingFunction" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">

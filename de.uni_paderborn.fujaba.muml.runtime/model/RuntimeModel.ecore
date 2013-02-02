@@ -3,11 +3,11 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="runtime"
     nsURI="http://www.fujaba.de/muml/model/runtime/0.3.14" nsPrefix="runtime">
-  <eClassifiers xsi:type="ecore:EClass" name="RuntimeComponentInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/instance/ComponentInstance #//RuntimeBehavioralElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscretePortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/instance/DiscretePortInstance #//RuntimeBehavioralElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RoleInstance" abstract="true" eSuperTypes="#//RuntimeBehavioralElement ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/connector/DiscreteInteractionEndpointInstance">
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeComponentInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance #//RuntimeBehavioralElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscretePortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscretePortInstance #//RuntimeBehavioralElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RoleInstance" abstract="true" eSuperTypes="#//RuntimeBehavioralElement ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpointInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/protocol/Role"/>
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/Role"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="assembly" eType="#//RuntimeRoleConnectorInstance"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MessageBuffer" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
@@ -21,9 +21,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeBehavioralElement"
         eType="#//RuntimeBehavioralElement" eOpposite="#//RuntimeBehavioralElement/statechartInstance"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/RealtimeStatechart"/>
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/RealtimeStatechart"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="active" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/realtimestatechart/State"/>
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subRealtimeStatechartInstances"
         upperBound="-1" eType="#//RealtimeStatechartInstance" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variableBindings" upperBound="-1"
@@ -41,7 +41,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableBinding" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
-        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/behavior/Variable"/>
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Variable"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//JavaObject"
         transient="true"/>
   </eClassifiers>
@@ -54,15 +54,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="JavaObject" instanceClassName="java.lang.Object"
       serializable="false"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SingleRoleInstance" eSuperTypes="#//RoleInstance ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/connector/DiscreteSingleInteractionEndpointInstance"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MultiRoleInstance" eSuperTypes="#//RoleInstance ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/connector/DiscreteMultiInteractionEndpointInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleRoleInstance" eSuperTypes="#//RoleInstance ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiRoleInstance" eSuperTypes="#//RoleInstance ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteMultiInteractionEndpointInstance"/>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeRoleConnectorInstance" eSuperTypes="#//RuntimeConnectorInstance"/>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeConnectorInstance" abstract="true"
-      eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/connector/ConnectorInstance">
+      eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/ConnectorInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="transientMessages" upperBound="-1"
         eType="#//MessageOnConnector" containment="true" eOpposite="#//MessageOnConnector/runtimeConnectorInstance"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RuntimeAssemblyConnectorInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//model/instance/AssemblyConnectorInstance #//RuntimeConnectorInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeAssemblyConnectorInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/AssemblyConnectorInstance #//RuntimeConnectorInstance"/>
   <eClassifiers xsi:type="ecore:EClass" name="MessageOnConnector" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" lowerBound="1"
         eType="#//RuntimeBehavioralElement"/>
