@@ -1,7 +1,9 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -21,13 +23,14 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
+import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 
 /**
  * @generated
  */
 public class DiscreteSinglePortInstanceLabelExpressionLabelParser5044 implements
-		IParser {
+		IParser, ISemanticParser {
 	/**
 	 * @generated
 	 */
@@ -111,7 +114,7 @@ public class DiscreteSinglePortInstanceLabelExpressionLabelParser5044 implements
 	/**
 	 * @generated
 	 */
-	private boolean validateValues(EObject target, String newString) {
+	protected boolean validateValues(EObject target, String newString) {
 		// TODO implement as needed
 		return true;
 	}
@@ -125,6 +128,23 @@ public class DiscreteSinglePortInstanceLabelExpressionLabelParser5044 implements
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
 		throw new ExecutionException(
 				"Please implement parsing and value modification");
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
+		return Arrays.asList(new EObject[] { element, element.eContainer() });
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public boolean areSemanticElementsAffected(EObject listener,
+			Object notification) {
+		return false;
 	}
 
 	/**

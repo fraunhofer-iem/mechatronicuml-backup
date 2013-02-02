@@ -180,8 +180,10 @@ public class MumlElementTypes {
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-			elements.put(ModelElementCategory_1000,
-					ModelinstancePackage.eINSTANCE.getModelElementCategory());
+			elements.put(
+					ModelElementCategory_1000,
+					de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
+							.getModelElementCategory());
 
 			elements.put(
 					CoordinationProtocol_2005,

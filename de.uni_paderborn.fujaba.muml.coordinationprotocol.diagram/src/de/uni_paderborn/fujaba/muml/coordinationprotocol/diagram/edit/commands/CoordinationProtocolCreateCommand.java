@@ -55,7 +55,7 @@ public class CoordinationProtocolCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol newElement = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE
 				.createCoordinationProtocol();
 
-		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
+		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory owner = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.ElementInitializers

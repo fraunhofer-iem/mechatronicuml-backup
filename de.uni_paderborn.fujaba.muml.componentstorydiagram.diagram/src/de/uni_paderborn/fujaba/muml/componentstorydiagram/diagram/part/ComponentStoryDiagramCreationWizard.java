@@ -9,8 +9,9 @@ import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.AbstractFujabaDiagramNe
 /**
  * @generated
  */
-public class ComponentStoryDiagramCreationWizard extends
-		AbstractFujabaDiagramNewWizard {
+public class ComponentStoryDiagramCreationWizard
+		extends
+		de.uni_paderborn.fujaba.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
 
 	/**
 	 * @generated

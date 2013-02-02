@@ -157,7 +157,8 @@ public class MumlDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
-		factories.add(new ModelinstanceItemProviderAdapterFactory());
+		factories
+				.add(new de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory());
 
 		// Custom Factories with negative priority
 		factories.addAll(negativePriorityFactories);

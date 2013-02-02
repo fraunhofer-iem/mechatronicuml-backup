@@ -8,8 +8,9 @@ import de.uni_paderborn.fujaba.modelinstance.ui.ui.commands.AbstractCreateDiagra
 /**
  * @generated
  */
-public class ComponentStoryDiagramInitDiagramFileAction extends
-		AbstractCreateDiagramFileCommand {
+public class ComponentStoryDiagramInitDiagramFileAction
+		extends
+		de.uni_paderborn.fujaba.modelinstance.ui.ui.commands.AbstractCreateDiagramFileCommand {
 
 	/**
 	 * @generated

@@ -310,7 +310,6 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 
 		// Ensures that the element can be shrinked (Muml Bug #62).

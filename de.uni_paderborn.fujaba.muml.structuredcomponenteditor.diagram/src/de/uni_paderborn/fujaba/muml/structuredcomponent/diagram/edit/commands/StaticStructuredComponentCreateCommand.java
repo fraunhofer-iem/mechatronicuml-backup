@@ -55,7 +55,7 @@ public class StaticStructuredComponentCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent newElement = de.uni_paderborn.fujaba.muml.component.ComponentFactory.eINSTANCE
 				.createStaticStructuredComponent();
 
-		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
+		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory owner = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
 
 		doConfigure(newElement, monitor, info);

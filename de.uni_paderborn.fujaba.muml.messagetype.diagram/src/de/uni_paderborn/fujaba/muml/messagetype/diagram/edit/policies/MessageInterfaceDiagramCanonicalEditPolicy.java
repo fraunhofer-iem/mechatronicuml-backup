@@ -54,7 +54,7 @@ public class MessageInterfaceDiagramCanonicalEditPolicy extends
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return ModelinstancePackage.eINSTANCE
+		return de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage.eINSTANCE
 				.getModelElementCategory_ModelElements();
 	}
 

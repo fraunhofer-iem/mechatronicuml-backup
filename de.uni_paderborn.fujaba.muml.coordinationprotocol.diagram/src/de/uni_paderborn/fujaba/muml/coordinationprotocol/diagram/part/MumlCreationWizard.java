@@ -9,7 +9,9 @@ import de.uni_paderborn.fujaba.modelinstance.ui.diagrams.AbstractFujabaDiagramNe
 /**
  * @generated
  */
-public class MumlCreationWizard extends AbstractFujabaDiagramNewWizard {
+public class MumlCreationWizard
+		extends
+		de.uni_paderborn.fujaba.modelinstance.ui.diagrams.AbstractFujabaDiagramNewWizard {
 
 	/**
 	 * @generated

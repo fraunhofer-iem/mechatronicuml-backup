@@ -55,7 +55,7 @@ public class AtomicComponentCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.component.AtomicComponent newElement = de.uni_paderborn.fujaba.muml.component.ComponentFactory.eINSTANCE
 				.createAtomicComponent();
 
-		ModelElementCategory owner = (ModelElementCategory) getElementToEdit();
+		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory owner = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.providers.ElementInitializers

@@ -163,7 +163,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getModelElementCategory_1000Text(View view) {
-		ModelElementCategory domainModelElement = (ModelElementCategory) view
+		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory domainModelElement = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) view
 				.getElement();
 		if (domainModelElement != null) {
 			return domainModelElement.getName();

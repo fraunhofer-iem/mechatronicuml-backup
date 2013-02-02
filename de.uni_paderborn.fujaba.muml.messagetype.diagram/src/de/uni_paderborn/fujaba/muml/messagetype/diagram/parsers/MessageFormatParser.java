@@ -15,8 +15,7 @@ import org.eclipse.osgi.util.NLS;
 /**
  * @generated
  */
-public class MessageFormatParser
-		extends
+public class MessageFormatParser extends
 		de.uni_paderborn.fujaba.muml.messagetype.diagram.parsers.AbstractParser {
 
 	/**

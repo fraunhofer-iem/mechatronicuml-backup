@@ -51,7 +51,7 @@
   <nodes
       name="CoordinationProtocol">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#CoordinationPatternFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#CoordinationPatternFigure"/>
   </nodes>
   <connections
       name="Delegation">
@@ -66,7 +66,7 @@
   <connections
       name="RolePatternConnection">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#RolePatternFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#RolePatternFigure"/>
   </connections>
   <compartments
       name="ComponentCompartment">
@@ -101,16 +101,16 @@
       name="RolePatternLabel"
       elementIcon="false">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#RolePatternFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#RolePatternFigure"/>
     <accessor
-        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#//@figures.0/@descriptors.1/@accessors.0"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#//@figures.0/@descriptors.1/@accessors.0"/>
   </labels>
   <labels
       name="CoordinationProtocolName"
       elementIcon="false">
     <figure
-        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#CoordinationPatternFigure"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#CoordinationPatternFigure"/>
     <accessor
-        href="../../de.uni_paderborn.fujaba.muml.common/model/pattern.gmfgraph#//@figures.0/@descriptors.0/@accessors.0"/>
+        href="../../de.uni_paderborn.fujaba.muml.common/model/coordinationprotocol.gmfgraph#//@figures.0/@descriptors.0/@accessors.0"/>
   </labels>
 </gmfgraph:Canvas>
