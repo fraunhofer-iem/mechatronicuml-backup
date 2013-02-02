@@ -2,13 +2,13 @@
 <gmfgen:GenEditorGenerator xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"
     modelID="Realtimestatechart"
     diagramFileExtension="realtimestatechart_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
     templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates"
-    pluginDirectory="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/src">
+    pluginDirectory="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/src">
   <diagram
       visualID="1000"
       editPartClassName="ModelElementCategoryEditPart"
@@ -973,24 +973,24 @@
             xsi:type="gmfgen:ToolEntry"
             title="State"
             description="Creates a new State"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/c_state16.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/c_state16.gif"
             genNodes="//@diagram/@childNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Transition"
             description="Creates a new Transition"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/transition16.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/transition16.gif"
             genLinks="//@diagram/@links.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Entry Point"
             description="Create Entry Point"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/state_entry_point.gif"/>
+            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/state_entry_point.gif"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Exit Point"
             description="Create Exit Point"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/state_exit_point.gif"/>
+            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/state_exit_point.gif"/>
       </groups>
       <groups
           title="Real-Time State"
@@ -1000,37 +1000,37 @@
             xsi:type="gmfgen:ToolEntry"
             title="Entry Action"
             description="Creates an EntryAction"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/entry_action16.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/entry_action16.gif"
             genNodes="//@diagram/@childNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Do Action"
             description="Creates a Do Action"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/do_action16.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/do_action16.gif"
             genNodes="//@diagram/@childNodes.2"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Exit Action"
             description="Creates an Exit Action"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/exit_action16.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/exit_action16.gif"
             genNodes="//@diagram/@childNodes.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Region"
             description="Creates an inner Region for a State"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/region.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/region.gif"
             genNodes="//@diagram/@childNodes.6"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="State Entry Point"
             description="Create State Entry Point"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/state_entry_point.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/state_entry_point.gif"
             genNodes="//@diagram/@childNodes.8"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="State Exit Point"
             description="Create State Exit Point"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/icon/state_exit_point.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/state_exit_point.gif"
             genNodes="//@diagram/@childNodes.9"/>
       </groups>
     </palette>
@@ -1061,7 +1061,7 @@
     </preferencePages>
   </diagram>
   <plugin
-      iD="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"
+      iD="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"
       name="Realtime Statechart Diagram-Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.3.1.qualifier"

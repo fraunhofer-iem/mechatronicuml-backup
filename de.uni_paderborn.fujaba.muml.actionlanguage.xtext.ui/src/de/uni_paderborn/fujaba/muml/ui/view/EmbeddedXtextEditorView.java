@@ -33,10 +33,10 @@ import de.uni_paderborn.fujaba.muml.storage.SynchronizationStorage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.EntryEvent;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.ExitEvent;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.DoEventEditPart;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.EntryEventEditPart;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.ExitEventEditPart;
-import de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.edit.parts.TransitionEditPart;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEventEditPart;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart;
 import de.uni_paderborn.fujaba.muml.ui.internal.ActionLanguageActivator;
 import de.uni_paderborn.fujaba.muml.ui.xtfo.EmbeddedXtextEditor;
 

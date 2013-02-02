@@ -17,7 +17,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/c_state16.gif"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+            bundle="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -26,7 +26,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/transition16.gif"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+            bundle="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -35,7 +35,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/state_entry_point.gif"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+            bundle="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -44,7 +44,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/state_exit_point.gif"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+            bundle="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"/>
       </tools>
     </tools>
     <tools
@@ -59,7 +59,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/entry_action16.gif"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+            bundle="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -68,7 +68,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/do_action16.gif"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+            bundle="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -77,7 +77,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/exit_action16.gif"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+            bundle="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -86,7 +86,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/region.gif"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+            bundle="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -95,7 +95,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/state_entry_point.gif"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+            bundle="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -104,7 +104,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icon/state_exit_point.gif"
-            bundle="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+            bundle="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"/>
       </tools>
     </tools>
   </palette>

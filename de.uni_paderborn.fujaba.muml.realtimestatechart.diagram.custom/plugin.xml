@@ -3,9 +3,9 @@
 <plugin>
   
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
-      <viewProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.providers.CustomRealtimestatechartViewProvider">
+      <viewProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.providers.CustomRealtimestatechartViewProvider">
          <Priority name="Low"/>
-		 <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram"/>
+		 <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
       </viewProvider>
@@ -14,7 +14,7 @@
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
-            class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.providers.CustomRealtimestatechartEditPartProvider">
+            class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.providers.CustomRealtimestatechartEditPartProvider">
          <Priority
                name="Medium">
          </Priority>
@@ -23,7 +23,7 @@
    
    
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
-      <ParserProvider class="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.providers.CustomMumlParserProvider">
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.providers.CustomMumlParserProvider">
          <Priority name="Low"/>
       </ParserProvider>
    </extension>
@@ -31,7 +31,7 @@
    <extension
        point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
       <initializer
-          initializer="de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram.custom.initializer.RealtimeStatechartModelInitializer">
+          initializer="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.initializer.RealtimeStatechartModelInitializer">
       </initializer>
    </extension>
 

@@ -1,7 +1,7 @@
-# Tracing options for the de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram plug-in
+# Tracing options for the de.uni_paderborn.fujaba.muml.realtimestatechart.diagram plug-in
 
 # Common issues
-de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/debug=false
+de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/debug=false
 
 # Visual IDs
-de.uni_paderborn.fujaba.muml.realtimeStatechart.diagram/debug/visualID=false
+de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/debug/visualID=false
