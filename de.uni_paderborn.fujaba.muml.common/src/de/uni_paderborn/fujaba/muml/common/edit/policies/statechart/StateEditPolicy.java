@@ -14,23 +14,18 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
-import org.eclipse.gef.editpolicies.GraphicalEditPolicy;
-import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
-import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
-import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.ConnectionPointEditPolicy;
 import de.uni_paderborn.fujaba.muml.common.figures.PolyarcFigure;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.model.realtimestatechart.State;
 
-public class StateEditPolicy extends GraphicalEditPolicy implements
-		NotificationListener {
+public class StateEditPolicy extends NotifyingGraphicalEditPolicy {
 
 	/**
 	 * Edit policy role for registering this edit policy or a subclass.
@@ -58,22 +53,10 @@ public class StateEditPolicy extends GraphicalEditPolicy implements
 
 		// add decoration
 		addDecoration();
-
-		// add semantic listeners
-		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
-		if (diagramEventBroker != null) {
-			addSemanticListeners(diagramEventBroker);
-		}
 	}
 
 	@Override
 	public void deactivate() {
-		// remove semantic listeners
-		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
-		if (diagramEventBroker != null) {
-			removeSemanticListeners(diagramEventBroker);
-		}
-
 		// remove decoration
 		removeDecoration();
 		decorationFigure = null;
@@ -123,40 +106,6 @@ public class StateEditPolicy extends GraphicalEditPolicy implements
 		return (State) ((View) getHost().getModel()).getElement();
 	}
 
-	/**
-	 * Gets the diagram event broker from the editing domain.
-	 * 
-	 * @return the diagram event broker
-	 */
-	private DiagramEventBroker getDiagramEventBroker() {
-		TransactionalEditingDomain theEditingDomain = ((GraphicalEditPart) getHost())
-				.getEditingDomain();
-		if (theEditingDomain != null) {
-			return DiagramEventBroker.getInstance(theEditingDomain);
-		}
-		return null;
-	}
-
-	protected void addSemanticListeners(DiagramEventBroker broker) {
-		broker.addNotificationListener(getState(),
-				RealtimestatechartPackage.Literals.STATE__INITIAL, this);
-		broker.addNotificationListener(getState(),
-				RealtimestatechartPackage.Literals.STATE__FINAL, this);
-	}
-
-	protected void removeSemanticListeners(DiagramEventBroker broker) {
-		broker.removeNotificationListener(getState(),
-				RealtimestatechartPackage.Literals.STATE__INITIAL, this);
-		broker.removeNotificationListener(getState(),
-				RealtimestatechartPackage.Literals.STATE__FINAL, this);
-	}
-
-	@Override
-	public void notifyChanged(Notification notification) {
-		if (getHost().isActive()) {
-			handleNotificationEvent(notification);
-		}
-	}
 
 	/**
 	 * Handle model-change event.
@@ -164,6 +113,7 @@ public class StateEditPolicy extends GraphicalEditPolicy implements
 	 * @param notification
 	 *            The notification sent by the model.
 	 */
+	@Override
 	public void handleNotificationEvent(Notification notification) {
 
 		Object feature = notification.getFeature();

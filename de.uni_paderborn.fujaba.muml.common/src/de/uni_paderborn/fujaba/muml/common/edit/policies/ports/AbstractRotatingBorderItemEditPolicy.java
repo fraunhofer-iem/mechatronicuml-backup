@@ -3,19 +3,18 @@ package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutListener;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
-import org.eclipse.gef.editpolicies.GraphicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
-import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
+
+import de.uni_paderborn.fujaba.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
 
 /**
  * This class contains all the behavior for rotated border items.
@@ -23,9 +22,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
  * @author bingo
  * 
  */
-public abstract class AbstractRotatingBorderItemEditPolicy extends GraphicalEditPolicy implements
-		NotificationListener {
-
+public abstract class AbstractRotatingBorderItemEditPolicy extends NotifyingGraphicalEditPolicy {
 	
 	/**
 	 * The offset that the port lies within it's container.
@@ -47,20 +44,10 @@ public abstract class AbstractRotatingBorderItemEditPolicy extends GraphicalEdit
 		if (containerFigure != null) {
 			addLayoutListener(containerFigure);
 		}
-
-		// Add notification listeners
-		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
-		if (diagramEventBroker != null) {
-			addSemanticListeners(diagramEventBroker);
-		}
 	}
 
 	@Override
 	public void deactivate() {
-		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
-		if (diagramEventBroker != null) {
-			removeSemanticListeners(diagramEventBroker);
-		}
 
 		IFigure containerFigure = getBorderItemContainerFigure();
 		if (containerFigure != null) {
@@ -70,27 +57,6 @@ public abstract class AbstractRotatingBorderItemEditPolicy extends GraphicalEdit
 		super.deactivate();
 	}
 
-	protected void addSemanticListeners(DiagramEventBroker broker) {
-		broker.addNotificationListener(getSemanticElement(), this);
-	}
-
-	protected void removeSemanticListeners(DiagramEventBroker broker) {
-		broker.removeNotificationListener(getSemanticElement(), this);
-	}
-
-	/**
-	 * Gets the diagram event broker from the editing domain.
-	 * 
-	 * @return the diagram event broker
-	 */
-	private DiagramEventBroker getDiagramEventBroker() {
-		TransactionalEditingDomain theEditingDomain = ((GraphicalEditPart) getHost())
-				.getEditingDomain();
-		if (theEditingDomain != null) {
-			return DiagramEventBroker.getInstance(theEditingDomain);
-		}
-		return null;
-	}
 
 	public IFigure getContentPane() {
 		return ((AbstractGraphicalEditPart) getHost()).getContentPane();
@@ -198,24 +164,6 @@ public abstract class AbstractRotatingBorderItemEditPolicy extends GraphicalEdit
 			ep = ep.getParent();
 		}
 		return (AbstractBorderItemEditPart) ep;
-	}
-
-	@Override
-	public void notifyChanged(Notification notification) {
-		if (getHost().isActive()) {
-			handleNotificationEvent(notification);
-		}
-	}
-
-	/**
-	 * Handle model-change event. We update the PortFigure's visualization
-	 * according to the current state of the model.
-	 * 
-	 * @param notification
-	 *            The notification sent by the model.
-	 */
-	public void handleNotificationEvent(final Notification notification) {
-		// default implementation does nothing
 	}
 
 	/**
