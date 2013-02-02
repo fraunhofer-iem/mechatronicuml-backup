@@ -8,7 +8,7 @@
     domainFileExtension="fujaba"
     dynamicTemplates="true"
     templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates"
-    pluginDirectory="/de.uni_paderborn.fujaba.muml.deploymenteditor.diagram/src">
+    pluginDirectory="/de.uni_paderborn.fujaba.muml.deployment.diagram/src">
   <diagram
       visualID="1000"
       editPartClassName="DeploymentEditPart"
