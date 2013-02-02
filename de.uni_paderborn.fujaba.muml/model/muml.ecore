@@ -4,7 +4,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="muml"
     nsURI="http://www.fujaba.de/muml/0.2.2" nsPrefix="muml">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-    <details key="documentation" value="The muml package contains the core meta-model of MechatronicUML. The&#xD;&#xA;subpackages define the base classes for the component model, real-time &#xD;&#xA;statecharts, message interfaces and coordination pattern."/>
+    <details key="documentation" value="The muml package contains the core meta-model of MechatronicUML. The&#xD;&#xA;subpackages define the base classes for the component model, real-time &#xD;&#xA;statecharts, message interfaces and coordination protocol."/>
   </eAnnotations>
   <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/model/component/0.3.17"
       nsPrefix="component">
@@ -85,7 +85,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="refines" eType="#//protocol/Role"
           eOpposite="#//protocol/Role/port">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The role of a coordination pattern that this port refines."/>
+          <details key="documentation" value="The role of a coordination protocol that this port refines."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDiscreteInPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -268,15 +268,15 @@
         <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
+        <details key="constraints" value="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationProtocol AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="NoSelfAssembliesForSinglePortsOfSingleParts" value="(self.ports[0].cardinality.upperBound.value &lt;= 1 and self.ports[0].cardinality.upperBound.value &lt;= 1)&#xD;&#xA;implies&#xD;&#xA;self.ports[0] &lt;> self.ports[1]"/>
         <details key="ValidContinuousPortDirections" value="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind &lt;> self.toContinuousPort.kind"/>
-        <details key="AssemblyBetweenDiscretePortsRequiresCoordinationPattern" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- assembly between two discrete ports requires a coordination pattern&#xA;&#x9;not self.coordinationPattern.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"/>
-        <details key="AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern"
-            value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"/>
-        <details key="AssemblyBetweenDiscretePortsRequiresDifferentRoles" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;(self.fromDiscretePort.refines.coordinationPattern.roles->size() = 2 implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name))&#xA;else&#xA;&#x9;true&#xA;endif"/>
+        <details key="AssemblyBetweenDiscretePortsRequiresCoordinationProtocol" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- assembly between two discrete ports requires a coordination protocol&#xA;&#x9;not self.coordinationProtocol.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"/>
+        <details key="AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol"
+            value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same coordination protocol&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationProtocol = self.toDiscretePort.refines.coordinationProtocol&#xA;else&#xA;&#x9;true&#xA;endif"/>
+        <details key="AssemblyBetweenDiscretePortsRequiresDifferentRoles" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the coordination protocol has only one role)&#xA;&#x9;&#x9;(self.fromDiscretePort.refines.coordinationProtocol.roles->size() = 2 implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name))&#xA;else&#xA;&#x9;true&#xA;endif"/>
         <details key="AssemblyBetweenDiscretePortsSameMessageInterfaces" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- message interfaces must be compatible&#xA;&#x9;self.fromDiscretePort.senderMessageInterface = self.toDiscretePort.receiverMessageInterface&#xA;&#x9;and&#xA;&#x9;self.fromDiscretePort.receiverMessageInterface = self.toDiscretePort.senderMessageInterface&#xA;else&#xA;&#x9;true&#xA;endif"/>
         <details key="ValidDiscreteInPortCombination" value="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort&#xA;&#x9;)"/>
         <details key="ValidDiscreteOutPortCombination" value="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort&#xA;&#x9;)"/>
@@ -289,7 +289,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
           eType="#//protocol/CoordinationProtocol">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The coordination pattern that defines the protocol of this assembly.&#xD;&#xA;&#xD;&#xA;\todosd{Why does it reference the CoordinationPattern and not the PatternOccurence?}"/>
+          <details key="documentation" value="The coordination protocol that defines the protocol of this assembly.&#xD;&#xA;&#xD;&#xA;\todosd{Why does it reference the CoordinationProtocol and not the CoordinationProtocolOccurence?}"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="componentParts" lowerBound="2"
@@ -300,13 +300,13 @@
         <details key="documentation" value="This class represents a delegation connector. A delegation connector &#xD;&#xA;connects a port of a structured component type and a port part of &#xD;&#xA;component part the structured component contains.&#xD;&#xA;The delegation has no behavior. In a running system, the port of the structured&#xD;&#xA;component and the port of the component part will be the same object like &#xD;&#xA;interfaces of classes where interface and class are the same object at runtime."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
+        <details key="constraints" value="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="ValidContinuousPortDirections" value="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind = self.toContinuousPort.kind"/>
         <details key="DelegationBetweenContinuousPortsRequiresSameDataType" value="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.type = self.toContinuousPort.type"/>
-        <details key="DelegationBetweenDiscretePortsRequiresSameCoordinationPattern"
-            value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"/>
+        <details key="DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol"
+            value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same coordination protocol&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationProtocol = self.toDiscretePort.refines.coordinationProtocol&#xA;else&#xA;&#x9;true&#xA;endif"/>
         <details key="DelegationBetweenDiscretePortsRequiresSameRoles" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have the same roles&#xA;&#x9;&#x9;self.fromDiscretePort.refines.name = self.toDiscretePort.refines.name&#xA;else&#xA;&#x9;true&#xA;endif"/>
         <details key="DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"
             value="not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined()&#xA;and self.fromPort.isMultiPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;-- the target port is a multi port&#xA;&#x9;&#x9;self.toPort.isMultiPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;-- the target part is a multi part&#xA;&#x9;&#x9;self.componentPart.isMultiPart&#xA;&#x9;)"/>
@@ -378,7 +378,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
           lowerBound="1" eType="#//protocol/CoordinationProtocol">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The coordination protocol (pattern) of this PatternOccurence."/>
+          <details key="documentation" value="The coordination protocol (pattern) of this CoordinationProtocolOccurence."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ports" lowerBound="1"
@@ -764,7 +764,7 @@
           <details key="derivation" value="if not self.portType.oclIsUndefined() and self.portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.portType.oclAsType(component::DiscretePort).refines&#xA;else&#xA;&#x9;null&#xA;endif"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The role of a coordination pattern that the port type of this port instance refines."/>
+          <details key="documentation" value="The role of a coordination protocol that the port type of this port instance refines."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -790,18 +790,18 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocolInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An instance of a pattern occurence. It specifies the behavior of discrete (single/multi) port instances that are connected with each other."/>
+        <details key="documentation" value="An instance of a coordination protocol occurence. It specifies the behavior of discrete (single/multi) port instances that are connected with each other."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" lowerBound="1"
           upperBound="-1" eType="#//instance/PortInstance">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The port instance that uses this pattern instance.&#xD;&#xA;&#xD;&#xA;\todosd{I suggest to change this reference so that it references a DiscretePortInstance.}"/>
+          <details key="documentation" value="The port instances that use this coordination protocol instance.&#xD;&#xA;&#xD;&#xA;\todosd{I suggest to change this reference so that it references a DiscretePortInstance.}"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolOccurrence"
           lowerBound="1" eType="#//component/CoordinationProtocolOccurrence">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The PatternOccurence of that instance."/>
+          <details key="documentation" value="The CoordinationProtocolOccurence of that instance."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -831,7 +831,7 @@
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="RoleConnector" eSuperTypes="#//connector/Connector">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a communication channel connecting two roles of a coordination pattern."/>
+        <details key="documentation" value="This class represents a communication channel connecting two roles of a coordination protocol."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="OnlyRolesOfSameCoordinationProtocol"/>
@@ -842,7 +842,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
           lowerBound="1" eType="#//protocol/CoordinationProtocol" eOpposite="#//protocol/CoordinationProtocol/roleConnector">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The coordination pattern this role connector is part of."/>
+          <details key="documentation" value="The coordination protocol this role connector is part of."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectorQualityOfServiceAssumptions"
@@ -862,7 +862,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocol" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement #//constraint/ConstrainableElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A coordination protocol specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination patterns. Constraints specify certain properties the coordination specified by the pattern has to fullfill."/>
+        <details key="documentation" value="A coordination protocol specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination protocols. Constraints specify certain properties the coordination specified by the protocol has to fullfill."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="UniqueRoleNames CoordinationProtocolNamesMustBeUnique"/>
@@ -874,13 +874,13 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="1"
           upperBound="2" eType="#//protocol/Role" containment="true" eOpposite="#//protocol/Role/coordinationProtocol">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The roles belonging to this pattern."/>
+          <details key="documentation" value="The roles belonging to this coordination protocol."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" lowerBound="1"
           eType="#//protocol/RoleConnector" containment="true" eOpposite="#//protocol/RoleConnector/coordinationProtocol">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Each coordination pattern has exactly one role connector.&#xD;&#xA;Cardinality is 1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, than change cardinality to 1..*"/>
+          <details key="documentation" value="Each coordination protocol has exactly one role connector.&#xD;&#xA;Cardinality is 1 because there exists no useful protocol with more than two roles. If a useful protocol exists with more than 2 roles, then change cardinality to 1..*"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="gmfCoordinationProtocol"
@@ -890,13 +890,13 @@
           <details key="derivation" value="self"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This derived reference only exists because GMF needs it to visualize the inner ellipse of a Real-Time Coordination Pattern."/>
+          <details key="documentation" value="This derived reference only exists because GMF needs it to visualize the inner ellipse of a Real-Time Coordination Protocol."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//connector/DiscreteInteractionEndpoint #//types/DataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a role of a coordination pattern."/>
+        <details key="documentation" value="This class represents a role of a coordination protocol."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="RoleRequiresBehavior RoleRequiresMessageTypes"/>
@@ -908,7 +908,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
           lowerBound="1" eType="#//protocol/CoordinationProtocol" eOpposite="#//protocol/CoordinationProtocol/roles">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The coordination pattern this role belongs to."/>
+          <details key="documentation" value="The coordination protocol this role belongs to."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="port" upperBound="-1"
@@ -944,7 +944,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MessageBuffer" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A message buffer may contains message types. A message buffer has a specified size and is associtated to a role of a coordination pattern. Message types are always stored in FIFO order."/>
+        <details key="documentation" value="A message buffer may contains message types. A message buffer has a specified size and is associtated to a role of a coordination protocol. Message types are always stored in FIFO order."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bufferSize" lowerBound="1"
           eType="#//valuetype/NaturalNumber" containment="true">
