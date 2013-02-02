@@ -19,10 +19,12 @@ public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 		de.uni_paderborn.fujaba.muml.common.edit.policies.tether.TetherConnectionEditPolicy
 		implements NotificationListener {
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void activate() {
 		super.activate();
 		
+		// Fix: Moving the refinement connection of DiscretePort that points to the refinement label, should not move the port, but the label.
 		getHost().getViewer().getVisualPartMap().put(getConnection(), getHost());
 
 		// Set initial tether visibility
@@ -46,6 +48,7 @@ public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 					ComponentPackage.Literals.DISCRETE_PORT__REFINES, this);
 		}
 		
+		// Fix: Moving the refinement connection of DiscretePort that points to the refinement label, should not move the port, but the label.
 		getHost().getViewer().getVisualPartMap().remove(getConnection());
 
 		super.deactivate();

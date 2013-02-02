@@ -13,6 +13,13 @@ import de.uni_paderborn.fujaba.muml.model.componentstorydiagram.componentstorypa
  * 
  * The binding semantics decides if the figure is shown as optional (dashed) or
  * negative (strike-through).
+ * 
+ * Strike-through is implemented by adding a figure to the edit parts
+ * content-pane, which looks like an X. For this to work okay, it is necessary
+ * that the content-pane's root figure has a stack layout assigned.
+ * 
+ * Dashed outlines are implemented by setting the line style of the outline to
+ * dashed.
  */
 public class ComponentStoryPatternVariableEditPolicy extends
 		NotifyingGraphicalEditPolicy {
