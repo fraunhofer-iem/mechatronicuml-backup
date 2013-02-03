@@ -64,9 +64,6 @@ public class CustomRealtimeStatechartEditPartFactory extends
 			case RealtimeStatechartStatechartContentsCompartment2EditPart.VISUAL_ID:
 				return new CustomRealtimeStatechartStatechartContentsCompartment2EditPart(
 						view);
-				
-			case WrappingLabel6EditPart.VISUAL_ID:
-				return new CustomWrappingLabel6EditPart(view);
 			default:
 				break;
 			}
