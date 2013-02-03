@@ -2,10 +2,10 @@ modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
 
 
 
-transformation trafo(inout gmfgenModel : GMFGEN);
+transformation transform(inout gmfgenModel : GMFGEN);
 
 main() {
-  --fix BUG 331875
+  --fix GMF BUG 331875
   gmfgenModel.objectsOfType(ExpressionLabelParser)->forEach(parser)
     {
         parser.className :=
@@ -17,5 +17,12 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
   -- see /de.uni_paderborn.fujaba.common/gmf-templates/aspects/xpt/expressions/OCLExpressionFactory.xpt
   gmfgenModel.objectsOfType(ValueExpression)->forEach(expression) {
     expression.body := '--'.concat(expression.body.replace('\n','\n--'));
+    
+
+    -- Add dependant plugins
+    var model = gmfgenModel.rootObjects()![GenEditorGenerator];
+    model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.common";
+    model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.muml.common";
+    model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.modelinstance.ui";
   }
 }
