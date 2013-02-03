@@ -43,8 +43,11 @@ public class StateEditPolicy extends NotifyingGraphicalEditPolicy {
 
 		// create decoration figure
 		decorationFigure = createDecorationFigure();
-		decorationFigure.setInitial(getState().isInitial());
-		decorationFigure.setFinal(getState().isFinal());
+		State state = getState();
+		if (state != null) {
+			decorationFigure.setInitial(state.isInitial());
+			decorationFigure.setFinal(state.isFinal());
+		}
 
 		// add decoration
 		addDecoration();

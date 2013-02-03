@@ -19,7 +19,9 @@ public class CustomRealtimeStatechartEditPart extends
 		super.activate();
 		RealtimeStatechart statechart = (RealtimeStatechart) getNotationView()
 				.getElement();
-		updateHistory(statechart.isHistory());
+		if (statechart != null) {
+			updateHistory(statechart.isHistory());
+		}
 	}
 
 	@Override
