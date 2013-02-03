@@ -48,7 +48,11 @@ public class CustomRegionEditPart extends RegionEditPart {
 	}
 
 	private void updateHistory() {
-		getPrimaryShape().getFigureHistoryFigure().setVisible(
-				getRegion().isGmfHistory());
+		Region region = (Region) getRegion();
+		RegionFigure regionFigure = getPrimaryShape();
+		if (region != null && regionFigure != null) {
+			regionFigure.getFigureHistoryFigure().setVisible(
+					getRegion().isGmfHistory());
+		}
 	}
 }
