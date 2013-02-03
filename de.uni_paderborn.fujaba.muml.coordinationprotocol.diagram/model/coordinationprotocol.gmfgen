@@ -70,7 +70,10 @@
               figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
           <modelFacet
               xsi:type="gmfgen:FeatureLabelModelFacet"
-              parser="/0/@labelParsers/@implementations.0">
+              parser="/0/@labelParsers/@implementations.0"
+              viewPattern=""
+              editorPattern=""
+              editPattern="">
             <metaFeatures
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </modelFacet>
@@ -102,7 +105,7 @@
         </viewmap>
         <behaviour
             xsi:type="gmfgen:CustomBehaviour"
-            key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+            key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
             editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.RoleEditPolicy"/>
         <modelFacet>
           <metaClass
@@ -344,8 +347,8 @@
             xsi:type="gmfgen:SpecializationType"/>
         <viewmap
             xsi:type="gmfgen:InnerClassViewmap"
-            className="RoleCoordinationProtocolFigure"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RoleCoordinationProtocolFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureRoleCoordinationProtocolLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RoleCoordinationProtocolFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureRoleCoordinationProtocolLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureRoleCoordinationProtocolLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureRoleCoordinationProtocolLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureRoleCoordinationProtocolLabel() {&#xA;&#x9;&#x9;return fFigureRoleCoordinationProtocolLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+            className="RolePatternFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RolePatternFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureRolePatternLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RolePatternFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureRolePatternLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureRolePatternLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureRolePatternLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureRolePatternLabel() {&#xA;&#x9;&#x9;return fFigureRolePatternLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLinkModelFacet">
           <metaFeature
@@ -438,6 +441,23 @@
               genLinks="/0/@diagram/@links.1"/>
         </groups>
       </palette>
+      <preferences>
+        <fontColor
+            xsi:type="gmfgen:GenConstantColor"
+            name="black"/>
+        <fillColor
+            xsi:type="gmfgen:GenConstantColor"
+            name="white"/>
+        <lineColor
+            xsi:type="gmfgen:GenConstantColor"
+            name="black"/>
+        <noteFillColor
+            xsi:type="gmfgen:GenConstantColor"
+            name="yellow"/>
+        <noteLineColor
+            xsi:type="gmfgen:GenConstantColor"
+            name="orange"/>
+      </preferences>
       <preferencePages
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.diagram.general"
@@ -471,6 +491,9 @@
         version="0.3.1.qualifier">
       <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
       <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
+      <requiredPlugins>de.uni_paderborn.fujaba.common</requiredPlugins>
+      <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
+      <requiredPlugins>de.uni_paderborn.fujaba.modelinstance.ui</requiredPlugins>
     </plugin>
     <editor
         className="CoordinationProtocolDiagramEditor"
@@ -584,7 +607,7 @@
       <providers
           xsi:type="gmfgen:GenExpressionInterpreter">
         <expressions
-            body="--'pattern'"/>
+            body="--'proto'"/>
         <expressions
             body="--'role1'"/>
         <expressions

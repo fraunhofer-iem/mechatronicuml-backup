@@ -272,6 +272,23 @@
             genNodes="//@diagram/@childNodes.1"/>
       </groups>
     </palette>
+    <preferences>
+      <fontColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="black"/>
+      <fillColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="white"/>
+      <lineColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="black"/>
+      <noteFillColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="yellow"/>
+      <noteLineColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="orange"/>
+    </preferences>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="messagetype.diagram.general"
@@ -305,6 +322,9 @@
       version="0.3.1.qualifier"
       activatorClassName="MessageTypeDiagramEditorPlugin">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.common</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.modelinstance.ui</requiredPlugins>
   </plugin>
   <editor/>
   <navigator>

@@ -24,5 +24,16 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
     model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.common";
     model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.muml.common";
     model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.modelinstance.ui";
+    
+    
+    -- set default colors
+    if (model.diagram.preferences.oclIsUndefined()) then {
+    	model.diagram.preferences := object GenDiagramPreferences{};
+    } endif;
+    model.diagram.preferences.lineColor := object GenConstantColor{name := DiagramColors::black;};
+    model.diagram.preferences.fillColor := object GenConstantColor{name := DiagramColors::white;};
+    model.diagram.preferences.fontColor := object GenConstantColor{name := DiagramColors::black;};
+    model.diagram.preferences.noteFillColor := object GenConstantColor{name := DiagramColors::yellow;};
+    model.diagram.preferences.noteLineColor := object GenConstantColor{name := DiagramColors::orange;};
   }
 }

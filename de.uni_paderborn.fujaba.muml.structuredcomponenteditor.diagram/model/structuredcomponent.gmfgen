@@ -54,7 +54,7 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
@@ -170,7 +170,7 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
@@ -323,7 +323,7 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
@@ -387,7 +387,7 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
@@ -484,7 +484,7 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
@@ -798,6 +798,23 @@
             genLinks="//@diagram/@links.1"/>
       </groups>
     </palette>
+    <preferences>
+      <fontColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="black"/>
+      <fillColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="white"/>
+      <lineColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="black"/>
+      <noteFillColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="yellow"/>
+      <noteLineColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="orange"/>
+    </preferences>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="de.uni_paderborn.fujaba.muml.diagram.general"
@@ -832,6 +849,9 @@
       activatorClassName="StructuredcomponentDiagramEditorPlugin">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.common</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.modelinstance.ui</requiredPlugins>
   </plugin>
   <editor
       className="StructuredcomponentDiagramEditor"/>

@@ -50,7 +50,7 @@ public class MumlOCLFactory {
 		}
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
-					"--\'pattern\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'proto\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'role1\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$

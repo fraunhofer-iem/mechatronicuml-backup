@@ -77,15 +77,15 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 	public Image getImage(View view) {
 		switch (de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
+		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.fujaba.de/muml/model/deployment/0.3.11?CommunicationLink", de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes.CommunicationLink_4001); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.fujaba.de/muml/model/deployment/0.3.11?HardwarePort", de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes.HardwarePort_3001); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwareNodeEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.fujaba.de/muml/model/deployment/0.3.11?HardwareNode", de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes.HardwareNode_2001); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?http://www.fujaba.de/muml/model/deployment/0.3.11?CommunicationLink", de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes.CommunicationLink_4001); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.DeploymentEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Diagram?http://www.fujaba.de/muml/model/deployment/0.3.11?Deployment", de.uni_paderborn.fujaba.muml.deployment.diagram.providers.MumlElementTypes.Deployment_1000); //$NON-NLS-1$
@@ -145,12 +145,12 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 		}
 		switch (de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
+		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID:
+			return getCommunicationLink_4001Text(view);
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID:
 			return getHardwarePort_3001Text(view);
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwareNodeEditPart.VISUAL_ID:
 			return getHardwareNode_2001Text(view);
-		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID:
-			return getCommunicationLink_4001Text(view);
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.DeploymentEditPart.VISUAL_ID:
 			return getDeployment_1000Text(view);
 		}

@@ -1431,6 +1431,23 @@
             genLinks="//@diagram/@links.2"/>
       </groups>
     </palette>
+    <preferences>
+      <fontColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="black"/>
+      <fillColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="white"/>
+      <lineColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="black"/>
+      <noteFillColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="yellow"/>
+      <noteLineColor
+          xsi:type="gmfgen:GenConstantColor"
+          name="orange"/>
+    </preferences>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.general"

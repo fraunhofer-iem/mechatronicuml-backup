@@ -72,7 +72,7 @@ public class MessageTypeEditPart extends ShapeNodeEditPart {
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.ERROR_FEEDBACK_ROLE,
+				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}

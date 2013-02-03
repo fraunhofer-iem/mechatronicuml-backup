@@ -75,7 +75,7 @@ public class ContinuousPortEditPart extends BorderedBorderItemEditPart {
 				new de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.edit.policies.ContinuousPortItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE,
+				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -85,7 +85,7 @@ public class ContinuousPortEditPart extends BorderedBorderItemEditPart {
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
 
 		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.ERROR_FEEDBACK_ROLE,
+				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}

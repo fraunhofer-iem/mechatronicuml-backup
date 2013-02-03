@@ -268,11 +268,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		// org.eclipse.swt.graphics.RGB lineRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_COLOR);
-
-		// All lines should be black, see bug #46 of Mechatronic UML.
-		org.eclipse.swt.graphics.RGB lineRGB = ColorConstants.black.getRGB();
-
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -319,11 +316,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		// org.eclipse.swt.graphics.RGB lineRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_COLOR);
-
-		// All lines should be black, see bug #46 of Mechatronic UML.
-		org.eclipse.swt.graphics.RGB lineRGB = ColorConstants.black.getRGB();
-
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -368,11 +362,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		// org.eclipse.swt.graphics.RGB lineRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_COLOR);
-
-		// All lines should be black, see bug #46 of Mechatronic UML.
-		org.eclipse.swt.graphics.RGB lineRGB = ColorConstants.black.getRGB();
-
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -430,11 +421,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		// org.eclipse.swt.graphics.RGB lineRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_COLOR);
-
-		// All lines should be black, see bug #46 of Mechatronic UML.
-		org.eclipse.swt.graphics.RGB lineRGB = ColorConstants.black.getRGB();
-
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
 		ViewUtil.setStructuralFeatureValue(edge,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));
@@ -486,11 +474,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
-		// org.eclipse.swt.graphics.RGB lineRGB = org.eclipse.jface.preference.PreferenceConverter.getColor(prefStore, org.eclipse.gmf.runtime.diagram.ui.preferences.IPreferenceConstants.PREF_LINE_COLOR);
-
-		// All lines should be black, see bug #46 of Mechatronic UML.
-		org.eclipse.swt.graphics.RGB lineRGB = ColorConstants.black.getRGB();
-
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
 		ViewUtil.setStructuralFeatureValue(edge,
 				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
 				FigureUtilities.RGBToInteger(lineRGB));

@@ -47,30 +47,30 @@ public class CoordinationProtocolRolesEditPart extends ConnectionNodeEditPart
 	 */
 
 	protected Connection createConnectionFigure() {
-		return new RoleCoordinationProtocolFigure();
+		return new RolePatternFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public RoleCoordinationProtocolFigure getPrimaryShape() {
-		return (RoleCoordinationProtocolFigure) getFigure();
+	public RolePatternFigure getPrimaryShape() {
+		return (RolePatternFigure) getFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public class RoleCoordinationProtocolFigure extends PolylineConnectionEx {
+	public class RolePatternFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureRoleCoordinationProtocolLabel;
+		private WrappingLabel fFigureRolePatternLabel;
 
 		/**
 		 * @generated
 		 */
-		public RoleCoordinationProtocolFigure() {
+		public RolePatternFigure() {
 			this.setLineStyle(Graphics.LINE_DASH);
 
 			createContents();
@@ -81,18 +81,18 @@ public class CoordinationProtocolRolesEditPart extends ConnectionNodeEditPart
 		 */
 		private void createContents() {
 
-			fFigureRoleCoordinationProtocolLabel = new WrappingLabel();
-			fFigureRoleCoordinationProtocolLabel.setText("");
+			fFigureRolePatternLabel = new WrappingLabel();
+			fFigureRolePatternLabel.setText("");
 
-			this.add(fFigureRoleCoordinationProtocolLabel);
+			this.add(fFigureRolePatternLabel);
 
 		}
 
 		/**
 		 * @generated
 		 */
-		public WrappingLabel getFigureRoleCoordinationProtocolLabel() {
-			return fFigureRoleCoordinationProtocolLabel;
+		public WrappingLabel getFigureRolePatternLabel() {
+			return fFigureRolePatternLabel;
 		}
 
 	}
