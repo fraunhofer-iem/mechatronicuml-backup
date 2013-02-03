@@ -55,47 +55,47 @@ public class CsdmUtility {
 
 
 	public static void adaptColor(View view) {
-		ComponentStoryPatternVariable cspVar = (ComponentStoryPatternVariable) view.getElement();
-		org.eclipse.swt.graphics.RGB lineRGB;
-
-		switch (cspVar.getBindingOperator()) {
-		case CREATE:
-			lineRGB = RGB_CREATE;
-			break;
-		case DESTROY:
-			lineRGB = RGB_DESTROY;
-			break;
-		default:
-		case CHECK_ONLY:
-			lineRGB = RGB_CHECK;
-			break;
-		}
-
-		org.eclipse.gmf.runtime.diagram.core.util.ViewUtil
-				.setStructuralFeatureValue(
-						view,
-						org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE
-								.getLineStyle_LineColor(),
-						org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities
-								.RGBToInteger(lineRGB));
+//		ComponentStoryPatternVariable cspVar = (ComponentStoryPatternVariable) view.getElement();
+//		org.eclipse.swt.graphics.RGB lineRGB;
+//
+//		switch (cspVar.getBindingOperator()) {
+//		case CREATE:
+//			lineRGB = RGB_CREATE;
+//			break;
+//		case DESTROY:
+//			lineRGB = RGB_DESTROY;
+//			break;
+//		default:
+//		case CHECK_ONLY:
+//			lineRGB = RGB_CHECK;
+//			break;
+//		}
+//
+//		org.eclipse.gmf.runtime.diagram.core.util.ViewUtil
+//				.setStructuralFeatureValue(
+//						view,
+//						org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE
+//								.getLineStyle_LineColor(),
+//						org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities
+//								.RGBToInteger(lineRGB));
 
 	}
 	
 	public static void adaptColor(IFigure figure, BindingOperator spMod) {
-		switch (spMod) {
-		case CREATE:
-			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_CREATE));
-			break;
-		case DESTROY:
-			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_DESTROY));
-			break;
-		case CHECK_ONLY:
-			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_CHECK));
-			break;
-		default:
-			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_CHECK));
-			break;
-		}
+//		switch (spMod) {
+//		case CREATE:
+//			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_CREATE));
+//			break;
+//		case DESTROY:
+//			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_DESTROY));
+//			break;
+//		case CHECK_ONLY:
+//			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_CHECK));
+//			break;
+//		default:
+//			figure.setForegroundColor(DiagramColorRegistry.getInstance().getColor(RGB_CHECK));
+//			break;
+//		}
 	}
 	
 	public static String getText(ActivityEdge bo) {

@@ -11,8 +11,8 @@ public class PortInstanceEditPolicy extends PortTypeEditPolicy {
 	@Override
 	public void handleNotificationEvent(Notification notification) {
 		if (notification.getFeature() == ConnectorPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE__TYPE) {
-			updateCardinality();
-			updatePortType();
+			refreshCardinality();
+			refreshPortType();
 		}
 		super.handleNotificationEvent(notification);
 	}

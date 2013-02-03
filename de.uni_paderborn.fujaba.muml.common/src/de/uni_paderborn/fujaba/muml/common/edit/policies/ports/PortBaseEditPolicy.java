@@ -1,9 +1,15 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 
+import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.PointList;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
+import org.eclipse.gmf.runtime.notation.LineStyle;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
@@ -18,33 +24,30 @@ import de.uni_paderborn.fujaba.muml.valuetype.Range;
  * @author bingo
  * 
  */
-public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy{
+public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 
-	/**
-	 * Edit policy role for registering this edit policy or a subclass.
-	 */
-	public static final String PORT_VISUALIZATION_ROLE = "PortVisualizationRole"; //$NON-NLS-1$
-
-	
 	public void activate() {
 		super.activate();
 		if (deduceBorderItemEditPart() == null) {
 			getPortFigure().setPortSide(PositionConstants.WEST);
 		}
-		updatePortType();
-		updateCardinality();
+		refreshPortType();
+		refreshCardinality();
 	}
+
 	@Override
 	protected void sideChanged(int side) {
 		getPortFigure().setPortSide(side);
 		super.sideChanged(side);
 	}
-	protected void updateCardinality() {
+
+	protected void refreshCardinality() {
 		getPortFigure().setMulti(false);
-		getPortFigure().setMandatory(true);
+		Color color = getForegroundColor();
+		getPortFigure().setArrowColors(color, color);
 	}
 
-	protected void updatePortType() {
+	protected void refreshPortType() {
 		getPortFigure().setPortKindAndPortType(
 				CustomPortFigure.PortKind.CONTINUOUS,
 				CustomPortFigure.PortType.NONE);
@@ -52,6 +55,15 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy{
 
 	public CustomPortFigure getPortFigure() {
 		return (CustomPortFigure) getContentPane();
+	}
+	
+	@Override
+	public void handleNotificationEvent(Notification notification) {
+		if (notification.getFeature() == NotationPackage.Literals.LINE_STYLE__LINE_COLOR) {
+			// our getDefaultBackgroundColor() method depends on this value; so we recalculate it.
+			refreshCardinality();
+		}
+		super.handleNotificationEvent(notification);
 	}
 
 	// TODO: Not yet used:
@@ -81,7 +93,24 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy{
 	}
 
 	/**
-	 * Convenience method to use a range as cardinality
+	 * Gets the current foreground color of the primary view.
+	 * 
+	 * @return the foreground color
+	 */
+	protected Color getForegroundColor() {
+		Color backgroundColor = ColorConstants.black;
+		LineStyle style = (LineStyle) getPrimaryView().getStyle(
+				NotationPackage.Literals.LINE_STYLE);
+		if (style != null) {
+			backgroundColor = DiagramColorRegistry.getInstance().getColor(
+					Integer.valueOf(style.getLineColor()));
+		}
+
+		return backgroundColor;
+	}
+
+	/**
+	 * Convenience method to use a range as cardinality; can be used by subclasses
 	 */
 	protected void setCardinality(Range cardinality) {
 		if (cardinality == null) {
@@ -101,6 +130,13 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy{
 			mandatory = true;
 		}
 		getPortFigure().setMulti(isMulti);
-		getPortFigure().setMandatory(mandatory);
+
+		// Update background color
+		Color foregroundColor = getForegroundColor();
+		Color backgroundColor = foregroundColor;
+		if (!mandatory) {
+			backgroundColor = ColorConstants.white;
+		}
+		getPortFigure().setArrowColors(foregroundColor, backgroundColor);
 	}
 }

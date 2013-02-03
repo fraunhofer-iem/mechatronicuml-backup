@@ -37,11 +37,6 @@ import org.eclipse.ui.progress.UIJob;
 public class ErrorFeedbackEditPolicy extends GraphicalEditPolicy {
 
 	/**
-	 * The key used to install a <i>ErrorFeedbackEditPolicy</i>.
-	 */
-	public static final String ERROR_FEEDBACK_ROLE = "ErrorFeedbackPolicy"; //$NON-NLS-1$
-
-	/**
 	 * The default time that a message should be visible, if not set otherwise.
 	 */
 	private static final long DEFAULT_HIDE_MILLIS = 2000;
@@ -231,8 +226,8 @@ public class ErrorFeedbackEditPolicy extends GraphicalEditPolicy {
 	 */
 	public static void showMessage(EditPart editPart, String message) {
 		if (editPart != null) {
-			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy errorFeedbackPolicy = (de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy) editPart
-					.getEditPolicy(de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy.ERROR_FEEDBACK_ROLE);
+			ErrorFeedbackEditPolicy errorFeedbackPolicy = (ErrorFeedbackEditPolicy) editPart
+					.getEditPolicy(EditPolicyRoles.ERROR_FEEDBACK_ROLE);
 			if (errorFeedbackPolicy != null) {
 				errorFeedbackPolicy.showErrorMessage(message);
 			}

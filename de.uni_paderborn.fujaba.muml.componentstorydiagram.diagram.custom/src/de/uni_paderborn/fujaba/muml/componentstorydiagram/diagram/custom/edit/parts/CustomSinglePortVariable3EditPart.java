@@ -13,6 +13,13 @@ public class CustomSinglePortVariable3EditPart extends
 	public CustomSinglePortVariable3EditPart(View view) {
 		super(view);
 	}
+	
+	/**
+	 * Refresh the line type of the shape.
+	 */
+	protected void refreshLineType() {
+		super.refreshLineType();
+	}
 
 	/**
 	 * Updates the visual representation of this Port according to model

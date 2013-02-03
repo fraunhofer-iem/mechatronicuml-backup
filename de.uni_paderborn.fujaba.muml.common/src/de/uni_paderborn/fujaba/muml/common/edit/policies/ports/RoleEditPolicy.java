@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
@@ -12,15 +13,15 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 	@Override
 	public void handleNotificationEvent(Notification notification) {
 		if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY) {
-			updateCardinality();
+			refreshCardinality();
 		} else if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES
 				|| notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES) {
-			updatePortType();
+			refreshPortType();
 		}
 	}
 
 	@Override
-	protected void updatePortType() {
+	protected void refreshPortType() {
 		CustomPortFigure.PortType type = CustomPortFigure.PortType.NONE;
 		Role role = (Role) getRole();
 		if (role != null) {
@@ -44,7 +45,7 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 	}
 	
 	@Override
-	protected void updateCardinality() {
+	protected void refreshCardinality() {
 		boolean isMulti = false;
 		Role role = getRole();
 		if (role != null && role.getCardinality() != null) {
@@ -55,7 +56,8 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 			}
 		}
 		getPortFigure().setMulti(isMulti);
-		getPortFigure().setMandatory(true);
+		Color color = getForegroundColor();
+		getPortFigure().setArrowColors(color, color);
 	}
 
 	protected Role getRole() {

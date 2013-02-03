@@ -307,7 +307,7 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.MultiPortEditPolicy"/>
       <modelFacet>
         <metaClass
@@ -386,8 +386,12 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortVariableEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.storydiagram.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/SinglePortVariable"/>
@@ -422,8 +426,12 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortVariableEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.storydiagram.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.6">
         <metaClass
@@ -507,7 +515,7 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.MultiPortEditPolicy"/>
       <modelFacet>
         <metaClass
@@ -588,8 +596,12 @@
       </viewmap>
       <behaviour
           xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortBaseEditPolicy.PORT_VISUALIZATION_ROLE"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortVariableEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.storydiagram.ComponentStoryPatternVariableEditPolicy"/>
       <modelFacet
           modelElementSelector="//@expressionProviders/@providers.0/@expressions.6">
         <metaClass
@@ -1448,6 +1460,9 @@
   <plugin>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.common</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.modelinstance.ui</requiredPlugins>
   </plugin>
   <editor
       iconPath="icons/obj16/ComponentStoryDiagramFile.gif"/>

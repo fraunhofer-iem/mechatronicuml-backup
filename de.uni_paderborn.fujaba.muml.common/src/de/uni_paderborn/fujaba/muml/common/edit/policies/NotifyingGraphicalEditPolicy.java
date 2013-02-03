@@ -7,6 +7,7 @@ import org.eclipse.gef.editpolicies.GraphicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.notation.View;
 
 /**
  * This class provides convenience methods for graphical edit policies that need
@@ -28,7 +29,7 @@ public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 		// add semantic listeners
 		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
 		if (diagramEventBroker != null) {
-			addSemanticListeners(diagramEventBroker);
+			addListeners(diagramEventBroker);
 		}
 	}
 
@@ -41,7 +42,7 @@ public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 		// remove semantic listeners
 		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
 		if (diagramEventBroker != null) {
-			removeSemanticListeners(diagramEventBroker);
+			removeListeners(diagramEventBroker);
 		}
 		super.deactivate();
 	}
@@ -52,12 +53,20 @@ public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 	 * @return the diagram event broker
 	 */
 	private DiagramEventBroker getDiagramEventBroker() {
-		TransactionalEditingDomain theEditingDomain = ((GraphicalEditPart) getHost())
-				.getEditingDomain();
+		TransactionalEditingDomain theEditingDomain = getEditingDomain();
 		if (theEditingDomain != null) {
 			return DiagramEventBroker.getInstance(theEditingDomain);
 		}
 		return null;
+	}
+
+	/**
+	 * Convenience method.
+	 * 
+	 * @return The host edit part's editing domain.
+	 */
+	protected TransactionalEditingDomain getEditingDomain() {
+		return ((GraphicalEditPart) getHost()).getEditingDomain();
 	}
 
 	/**
@@ -68,6 +77,16 @@ public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 	protected EObject getSemanticElement() {
 		return ((GraphicalEditPart) getHost()).getNotationView().getElement();
 	}
+	
+	/**
+	 * Convenience method to return the host's notation view.
+	 * 
+	 * @return notation view.
+	 */
+	protected View getNotationView() {
+		return ((GraphicalEditPart) getHost()).getNotationView();
+	}
+	
 
 	/**
 	 * Delegates the notification to the handleNotificationEvent method.
@@ -90,25 +109,27 @@ public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 	}
 
 	/**
-	 * Add semantic listeners to the event broker.
+	 * Add listeners to the event broker.
 	 * 
 	 * @param broker
 	 *            The broker to add listeners to.
 	 */
-	protected void addSemanticListeners(DiagramEventBroker broker) {
-		// default implementation listens to all model changes
+	protected void addListeners(DiagramEventBroker broker) {
+		// default implementation listens to all model and notation view changes
 		broker.addNotificationListener(getSemanticElement(), this);
+		broker.addNotificationListener(getNotationView(), this);
 	}
 
 	/**
-	 * Remove semantic listeners to the event broker.
+	 * Remove listeners to the event broker.
 	 * 
 	 * @param broker
 	 *            The broker to remove listeners from.
 	 */
-	protected void removeSemanticListeners(DiagramEventBroker broker) {
-		// default implementation listens to all model changes
+	protected void removeListeners(DiagramEventBroker broker) {
+		// default implementation listens to all model and notation view changes
 		broker.removeNotificationListener(getSemanticElement(), this);
+		broker.removeNotificationListener(getNotationView(), this);
 	}
 
 }

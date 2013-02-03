@@ -18,7 +18,7 @@ public class CustomComponentStoryDiagramViewProvider extends
 				index, persisted, preferencesHint);
 
 		// adapt color
-		CsdmUtility.adaptColor(node);
+//		CsdmUtility.adaptColor(node);
 
 		return node;
 	}

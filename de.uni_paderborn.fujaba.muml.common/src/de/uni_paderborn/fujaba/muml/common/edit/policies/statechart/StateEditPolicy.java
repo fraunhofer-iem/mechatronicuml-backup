@@ -27,11 +27,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 
 public class StateEditPolicy extends NotifyingGraphicalEditPolicy {
 
-	/**
-	 * Edit policy role for registering this edit policy or a subclass.
-	 */
-	public static final String STATE_VISUALIZATION_ROLE = "StateVisualizationRole"; //$NON-NLS-1$
-
 	public static final int INITIAL_STATE_MARGIN_TOP = 13;
 
 	private StateDecorationFigure decorationFigure;

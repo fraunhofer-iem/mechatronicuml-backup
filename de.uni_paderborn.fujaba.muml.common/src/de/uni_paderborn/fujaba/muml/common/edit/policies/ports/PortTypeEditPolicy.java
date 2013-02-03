@@ -20,28 +20,30 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 	@Override
 	public void handleNotificationEvent(Notification notification) {
 		if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY) {
-			updateCardinality();
+			refreshCardinality();
+		//} else if (notification.getFeature() == C){ 
 		} else if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES
 				|| notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES
 				|| notification.getFeature() == ComponentPackage.Literals.DIRECTED_TYPED_PORT__KIND) {
-			updatePortType();
+			refreshPortType();
 		}
+		super.handleNotificationEvent(notification);
 	}
 	@Override
-	protected void addSemanticListeners(DiagramEventBroker broker) {
-		super.addSemanticListeners(broker);
+	protected void addListeners(DiagramEventBroker broker) {
+		super.addListeners(broker);
 		// in case getPort() != getSemanticElement() because getPort() was overridden
 		broker.addNotificationListener(getPort(), this);
 	}
 	
 	@Override
-	protected void removeSemanticListeners(DiagramEventBroker broker) {
-		super.removeSemanticListeners(broker);
+	protected void removeListeners(DiagramEventBroker broker) {
+		super.removeListeners(broker);
 		// in case getPort() != getSemanticElement() because getPort() was overridden
 		broker.removeNotificationListener(getPort(), this);
 	}
 	
-	protected void updatePortType() {
+	protected void refreshPortType() {
 		EObject port = getPort();
 
 		PortKind portKind = PortKind.DISCRETE;
@@ -67,7 +69,7 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 	}
 
 	@Override
-	protected void updateCardinality() {
+	protected void refreshCardinality() {
 		Port port = getPort();
 		if (port != null
 				&& ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT

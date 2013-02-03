@@ -25,6 +25,7 @@ Export-Package: de.uni_paderborn.fujaba.muml.common,
  de.uni_paderborn.fujaba.muml.common.edit.policies.node,
  de.uni_paderborn.fujaba.muml.common.edit.policies.ports,
  de.uni_paderborn.fujaba.muml.common.edit.policies.statechart,
+ de.uni_paderborn.fujaba.muml.common.edit.policies.storydiagram,
  de.uni_paderborn.fujaba.muml.common.edit.policies.tether,
  de.uni_paderborn.fujaba.muml.common.emf.edit.provider,
  de.uni_paderborn.fujaba.muml.common.figures

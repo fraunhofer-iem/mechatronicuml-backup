@@ -3,16 +3,14 @@ package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutListener;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderedNodeFigure;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
+import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
 
@@ -22,8 +20,9 @@ import de.uni_paderborn.fujaba.muml.common.edit.policies.NotifyingGraphicalEditP
  * @author bingo
  * 
  */
-public abstract class AbstractRotatingBorderItemEditPolicy extends NotifyingGraphicalEditPolicy {
-	
+public abstract class AbstractRotatingBorderItemEditPolicy extends
+		NotifyingGraphicalEditPolicy {
+
 	/**
 	 * The offset that the port lies within it's container.
 	 */
@@ -37,7 +36,7 @@ public abstract class AbstractRotatingBorderItemEditPolicy extends NotifyingGrap
 	@Override
 	public void activate() {
 		super.activate();
-		
+
 		updateBorderItemLocator();
 
 		IFigure containerFigure = getBorderItemContainerFigure();
@@ -57,7 +56,6 @@ public abstract class AbstractRotatingBorderItemEditPolicy extends NotifyingGrap
 		super.deactivate();
 	}
 
-
 	public IFigure getContentPane() {
 		return ((AbstractGraphicalEditPart) getHost()).getContentPane();
 	}
@@ -65,21 +63,23 @@ public abstract class AbstractRotatingBorderItemEditPolicy extends NotifyingGrap
 	public void updateBorderItemLocator() {
 		// do not deduce, we would overwrite the offset for the multi port.
 		// only set if we are a border item ourselves.
-		//AbstractBorderItemEditPart borderItemEp = deduceBorderItemEditPart();
+		// AbstractBorderItemEditPart borderItemEp = deduceBorderItemEditPart();
 		if (getHost() instanceof AbstractBorderItemEditPart) {
 			AbstractBorderItemEditPart borderItemEp = (AbstractBorderItemEditPart) getHost();
 			IBorderItemLocator locator = borderItemEp.getBorderItemLocator();
 
 			if (locator instanceof BorderItemLocator) {
-//				Dimension size = borderItemEp.getContentPane().getSize();
-//				Dimension offset = new Dimension(size.width / 2,
-//						size.height / 2);
-//				((BorderItemLocator) locator).setBorderItemOffset(offset);
-				((BorderItemLocator) locator).setBorderItemOffset(DEFAULT_OFFSET);
+				// Dimension size = borderItemEp.getContentPane().getSize();
+				// Dimension offset = new Dimension(size.width / 2,
+				// size.height / 2);
+				// ((BorderItemLocator) locator).setBorderItemOffset(offset);
+				((BorderItemLocator) locator)
+						.setBorderItemOffset(DEFAULT_OFFSET);
 			}
 		}
 	}
 
+	
 	/**
 	 * Adds a LayoutListener to the given figure. This listener will hook into
 	 * layout changes (movements) and update the port's visual orientation
@@ -149,11 +149,15 @@ public abstract class AbstractRotatingBorderItemEditPolicy extends NotifyingGrap
 	}
 
 	/**
-	 * Convenience method
+	 * Convenience method to return the host's primary view.
+	 * 
+	 * @return primary view.
 	 */
-	protected EObject getSemanticElement() {
-		return ((GraphicalEditPart) getHost()).getNotationView().getElement();
+	protected View getPrimaryView() {
+		return ((GraphicalEditPart) getHost()).getPrimaryView();
 	}
+
+
 
 	/**
 	 * Convenience method

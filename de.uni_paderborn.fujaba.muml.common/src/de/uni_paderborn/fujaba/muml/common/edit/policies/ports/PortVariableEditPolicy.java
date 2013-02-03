@@ -11,8 +11,8 @@ public class PortVariableEditPolicy extends PortTypeEditPolicy {
 	public void handleNotificationEvent(Notification notification) {
 		if (ComponentstorypatternPackage.Literals.PORT_VARIABLE__TYPE
 				.equals(notification.getFeature())) {
-			updateCardinality();
-			updatePortType();
+			refreshCardinality();
+			refreshPortType();
 		}
 		super.handleNotificationEvent(notification);
 	}

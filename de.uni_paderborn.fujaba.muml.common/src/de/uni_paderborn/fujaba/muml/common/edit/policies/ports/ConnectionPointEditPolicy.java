@@ -5,6 +5,7 @@ import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 
+import de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles;
 import de.uni_paderborn.fujaba.muml.common.edit.policies.statechart.StateEditPolicy;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomBorderItemLocator;
 
@@ -22,7 +23,7 @@ public class ConnectionPointEditPolicy extends
 		// store access to the StateEditPolicy, if found
 		EditPart ep = getHost().getParent();
 		while (ep != null) {
-			StateEditPolicy editPolicy = (StateEditPolicy) ep.getEditPolicy(StateEditPolicy.STATE_VISUALIZATION_ROLE);
+			StateEditPolicy editPolicy = (StateEditPolicy) ep.getEditPolicy(EditPolicyRoles.STATE_VISUALIZATION_ROLE);
 			if (editPolicy != null) {
 				this.stateEditPolicy = editPolicy;
 				break;

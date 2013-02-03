@@ -198,20 +198,15 @@ public class CustomPortFigure extends RectangleFigure {
 		}
 	}
 
-	public void setMandatory(boolean mandatory) {
-		Color backgroundColor = ColorConstants.black;
-		if (!mandatory) {
-			backgroundColor = ColorConstants.white;
-		}
-
+	public void setArrowColors(Color foregroundColor, Color backgroundColor) {
 		getFigureInPolygon().setOutline(true);
-		getFigureInPolygon().setForegroundColor(ColorConstants.black);
+		getFigureInPolygon().setForegroundColor(foregroundColor);
 		getFigureInPolygon().setBackgroundColor(backgroundColor);
 		getFigureOutPolygon().setOutline(true);
-		getFigureOutPolygon().setForegroundColor(ColorConstants.black);
+		getFigureOutPolygon().setForegroundColor(foregroundColor);
 		getFigureOutPolygon().setBackgroundColor(backgroundColor);
 		getFigureInOutPolygon().setOutline(true);
-		getFigureInOutPolygon().setForegroundColor(ColorConstants.black);
+		getFigureInOutPolygon().setForegroundColor(foregroundColor);
 		getFigureInOutPolygon().setBackgroundColor(backgroundColor);
 	}
 

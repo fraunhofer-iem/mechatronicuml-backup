@@ -1,6 +1,22 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies.storydiagram;
 
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.ScalablePolygonShape;
+import org.eclipse.draw2d.Shape;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.edit.command.ChangeCommand;
+import org.eclipse.emf.edit.command.RemoveCommand;
+import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
+import org.eclipse.gmf.runtime.notation.LineType;
+import org.eclipse.gmf.runtime.notation.LineTypeStyle;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.RGB;
+import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
 
 import de.uni_paderborn.fujaba.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
@@ -24,6 +40,23 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.
 public class ComponentStoryPatternVariableEditPolicy extends
 		NotifyingGraphicalEditPolicy {
 
+	public static final RGB RGB_CHECK = new RGB(0, 0, 0);
+	public static final RGB RGB_CREATE = new RGB(0, 192, 0);
+	public static final RGB RGB_DESTROY = new RGB(192, 0, 0);
+
+//	protected LineTypeStyle lineTypeStyle;
+
+	/**
+	 * This field stores if the X figure is currently added.
+	 */
+	private boolean negative = false;
+
+	/**
+	 * The X figure that is added to the host's content pane, if
+	 * bindingSemantics are negative.
+	 */
+	private ScalableXFigure negativeFigure;
+
 	/**
 	 * Convenience method, is designed to be overriden by subclasses.
 	 * 
@@ -33,12 +66,82 @@ public class ComponentStoryPatternVariableEditPolicy extends
 		return (ComponentStoryPatternVariable) getSemanticElement();
 	}
 
+	/**
+	 * Initializes this edit policy.
+	 */
 	@Override
 	public void activate() {
 		super.activate();
+
+//		registerLineTypeStyle();
+		negativeFigure = createFigureNegative();
+
 		// Initially show the correct visualization.
 		updateBindingSemantics((BindingSemantics) getSemanticElement()
 				.eGet(ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_SEMANTICS));
+		updateBindingOperator((BindingOperator) getSemanticElement()
+				.eGet(ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR));
+	}
+
+	/**
+	 * Cleanup this edit policy, remove all modifications from the host's
+	 * content pane.
+	 */
+	@Override
+	public void deactivate() {
+		// Remove all visualizations
+		updateBindingSemantics(null);
+		updateBindingOperator(null);
+//		unregisterLineTypeStyle();
+		negativeFigure = null;
+
+		super.deactivate();
+	}
+
+//	protected void registerLineTypeStyle() {
+//		final View view = getNotationView();
+//
+//		// Check if we already have a LineTypeStyle registered
+//		if (!ViewUtil.isPropertySupported(view,
+//				NotationPackage.Literals.LINE_TYPE_STYLE__LINE_TYPE,
+//				NotationPackage.Literals.LINE_TYPE_STYLE)) {
+//
+//			// None registered; register one ourselves
+//			CommandStack stack = getEditingDomain().getCommandStack();
+//			stack.execute(new ChangeCommand(view) {
+//
+//				@Override
+//				protected void doExecute() {
+//					lineTypeStyle = (LineTypeStyle) view
+//							.createStyle(NotationPackage.Literals.LINE_TYPE_STYLE);
+//				}
+//			});
+//
+//		}
+//
+//	}
+//
+//	protected void unregisterLineTypeStyle() {
+//		View view = getNotationView();
+//
+//		// Check if we previously registered a LineTypeStyle, if so unregister.
+//		if (lineTypeStyle != null) {
+//			getEditingDomain().getCommandStack().execute(
+//					RemoveCommand.create(getEditingDomain(), view,
+//							NotationPackage.Literals.VIEW__STYLES,
+//							lineTypeStyle));
+//
+//		}
+//
+//	}
+
+	/**
+	 * Creates a figure for the negative visualization; can be overridden.
+	 * 
+	 * @return The negative figure.
+	 */
+	protected ScalableXFigure createFigureNegative() {
+		return new ScalableXFigure();
 	}
 
 	/**
@@ -50,18 +153,161 @@ public class ComponentStoryPatternVariableEditPolicy extends
 				.equals(notification.getFeature())) {
 			updateBindingSemantics((BindingSemantics) notification
 					.getNewValue());
+		} else if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR
+				.equals(notification.getFeature())) {
+			updateBindingOperator((BindingOperator) notification.getNewValue());
 		}
 
 		super.handleNotificationEvent(notification);
 	}
 
 	/**
-	 * Update visualization.
+	 * Update visualization for a changed binding semantics.
 	 * 
 	 * @param bindingSemantics
 	 *            The current value of binding semantics.
 	 */
 	protected void updateBindingSemantics(BindingSemantics bindingSemantics) {
+		setNegative(bindingSemantics == BindingSemantics.NEGATIVE);
+		setOptional(bindingSemantics == BindingSemantics.OPTIONAL);
+	}
+
+	/**
+	 * Update view's foreground color depending on the binding operator.
+	 * 
+	 * @param bindingOperator
+	 *            The current value of binding operator.
+	 */
+	private void updateBindingOperator(BindingOperator bindingOperator) {
+		// Set the view's color based on the bindingOperator value.
+		final org.eclipse.swt.graphics.RGB lineRGB = getLineColor(bindingOperator);
+		final View view = ((GraphicalEditPart) getHost()).getNotationView();
+
+		getEditingDomain().getCommandStack().execute(new ChangeCommand(view) {
+
+			@Override
+			protected void doExecute() {
+
+				ViewUtil.setStructuralFeatureValue(
+						view,
+						org.eclipse.gmf.runtime.notation.NotationPackage.Literals.LINE_STYLE__LINE_COLOR,
+						org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities
+								.RGBToInteger(lineRGB));
+			}
+
+		});
+	}
+
+	/**
+	 * Gets the line color depending on the binding operator; can be overriden.
+	 * 
+	 * @return the line color
+	 */
+	protected RGB getLineColor(BindingOperator bindingOperator) {
+		org.eclipse.swt.graphics.RGB lineRGB = RGB_CHECK;
+
+		if (BindingOperator.CREATE.equals(bindingOperator)) {
+			lineRGB = RGB_CREATE;
+		} else if (BindingOperator.DESTROY.equals(bindingOperator)) { 
+			lineRGB = RGB_DESTROY;
+		}
+		return lineRGB;
+	}
+
+	/**
+	 * Adds the X figure to the host's content pane, or removes it.
+	 * 
+	 * @param negative
+	 *            Add or remove?
+	 */
+	private void setNegative(boolean negative) {
+		if (negative != this.negative) {
+			this.negative = negative;
+
+			// Add or remove the negative figure from the content pane and its
+			// layout
+			IFigure contentPane = getContentPane();
+			if (negative) {
+				contentPane.add(negativeFigure);
+
+			} else {
+				contentPane.remove(negativeFigure);
+				if (contentPane.getLayoutManager() != null) {
+					contentPane.getLayoutManager().remove(negativeFigure);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Makes the content pane figure dashed, if optional is <code>true</code>.
+	 */
+	private void setOptional(boolean optional) {
+		IFigure contentPane = getContentPane();
+
+//		final LineType lineType = optional ? LineType.DASH_LITERAL
+//				: LineType.SOLID_LITERAL;
+//
+//		final View view = ((GraphicalEditPart) getHost()).getNotationView();
+//
+//		getEditingDomain().getCommandStack().execute(new ChangeCommand(view) {
+//
+//			@Override
+//			protected void doExecute() {
+//
+//				ViewUtil.setStructuralFeatureValue(view,
+//						NotationPackage.Literals.LINE_TYPE_STYLE__LINE_TYPE,
+//						lineType);
+//			}
+//
+//		});
+		
+		makeOptional(contentPane, optional);
+
+	}
+
+	/**
+	 * Makes the given figure dashed and recursively does it for its children,
+	 * 
+	 * @param figure
+	 *            The figure to change.
+	 * @param optional
+	 *            Add or remove the dash?
+	 */
+	private void makeOptional(IFigure figure, boolean optional) {
+		if (figure instanceof Shape) {
+			Shape shape = (Shape) figure;
+			shape.setLineStyle(optional ? SWT.LINE_DASH : SWT.LINE_SOLID);
+		}
+		for (Object child : figure.getChildren()) {
+			makeOptional((IFigure) child, optional);
+		}
+	}
+
+	/**
+	 * Convenience method.
+	 * 
+	 * @return The host's content pane.
+	 */
+	private IFigure getContentPane() {
+		return ((GraphicalEditPart) getHost()).getContentPane();
+	}
+
+	/**
+	 * The scalable figure that displays an X.
+	 */
+	public class ScalableXFigure extends ScalablePolygonShape {
+
+		public ScalableXFigure() {
+			setFill(false);
+			setOutline(true);
+
+			addPoint(new Point(0, 0));
+			addPoint(new Point(2, 2));
+			addPoint(new Point(1, 1));
+			addPoint(new Point(2, 0));
+			addPoint(new Point(0, 2));
+		}
 
 	}
 }
