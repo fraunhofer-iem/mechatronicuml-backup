@@ -17,7 +17,7 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * Copied code from generated class
- * structuredcomponenteditor.diagram.edit.parts.PortEditPart
+ * structuredcomponent.diagram.edit.parts.PortEditPart
  * 
  * @author bingo
  * 
