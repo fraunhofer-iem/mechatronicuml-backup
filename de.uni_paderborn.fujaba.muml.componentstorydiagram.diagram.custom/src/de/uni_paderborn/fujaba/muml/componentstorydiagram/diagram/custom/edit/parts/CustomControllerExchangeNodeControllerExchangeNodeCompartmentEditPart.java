@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.parts;
 
-import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.UnexecutableCommand;
@@ -12,7 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ControllerExchangeNodeComponentStoryNodeCompartmentItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ControllerExchangeNodeControllerExchangeNodeCompartmentItemSemanticEditPolicy;
 
 public class CustomControllerExchangeNodeControllerExchangeNodeCompartmentEditPart
 		extends ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart {
@@ -40,7 +39,7 @@ public class CustomControllerExchangeNodeControllerExchangeNodeCompartmentEditPa
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new ControllerExchangeNodeComponentStoryNodeCompartmentItemSemanticEditPolicy() {
+				new ControllerExchangeNodeControllerExchangeNodeCompartmentItemSemanticEditPolicy() {
 					protected Command getSemanticCommand(
 							IEditCommandRequest request) {
 						if (request instanceof DestroyRequest) {

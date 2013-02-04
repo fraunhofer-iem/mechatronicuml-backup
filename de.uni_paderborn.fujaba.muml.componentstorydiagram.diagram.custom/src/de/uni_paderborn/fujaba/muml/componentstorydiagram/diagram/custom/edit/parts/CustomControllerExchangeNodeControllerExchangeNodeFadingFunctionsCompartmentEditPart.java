@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ControllerExchangeNodeComponentStoryNodeCompartmentItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ControllerExchangeNodeControllerExchangeNodeCompartmentItemSemanticEditPolicy;
 
 public class CustomControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart
 		extends
@@ -41,7 +41,7 @@ public class CustomControllerExchangeNodeControllerExchangeNodeFadingFunctionsCo
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new ControllerExchangeNodeComponentStoryNodeCompartmentItemSemanticEditPolicy() {
+				new ControllerExchangeNodeControllerExchangeNodeCompartmentItemSemanticEditPolicy() {
 					protected Command getSemanticCommand(
 							IEditCommandRequest request) {
 						if (request instanceof DestroyRequest) {
