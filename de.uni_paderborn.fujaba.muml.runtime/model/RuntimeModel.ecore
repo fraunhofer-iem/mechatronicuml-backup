@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="runtime"
-    nsURI="http://www.fujaba.de/muml/model/runtime/0.3.14" nsPrefix="runtime">
+    nsURI="http://www.fujaba.de/muml/runtime/0.3.14" nsPrefix="runtime">
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeComponentInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance #//RuntimeBehavioralElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscretePortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscretePortInstance #//RuntimeBehavioralElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="RoleInstance" abstract="true" eSuperTypes="#//RuntimeBehavioralElement ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpointInstance">

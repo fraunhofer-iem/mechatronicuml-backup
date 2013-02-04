@@ -44,7 +44,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	 */
 	public static RuntimeFactory init() {
 		try {
-			RuntimeFactory theRuntimeFactory = (RuntimeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/runtime/0.3.14"); 
+			RuntimeFactory theRuntimeFactory = (RuntimeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/runtime/0.3.14"); 
 			if (theRuntimeFactory != null) {
 				return theRuntimeFactory;
 			}

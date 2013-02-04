@@ -84,13 +84,13 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 					"Navigator?Diagram?http://www.fujaba.de/modelinstance/0.3.15?ModelElementCategory", de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/model/msgtype/0.3.6?MessageTypeRepository", de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes.MessageTypeRepository_2008); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.fujaba.de/muml/msgtype/0.3.6?MessageTypeRepository", de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes.MessageTypeRepository_2008); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/model/msgtype/0.3.6?MessageType", de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes.MessageType_3007); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/msgtype/0.3.6?MessageType", de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes.MessageType_3007); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.ParameterEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/model/behavior/0.3.17?Parameter", de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes.Parameter_3009); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/behavior/0.3.17?Parameter", de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes.Parameter_3009); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}

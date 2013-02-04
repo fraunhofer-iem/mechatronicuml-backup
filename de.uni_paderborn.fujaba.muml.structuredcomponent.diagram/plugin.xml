@@ -98,7 +98,7 @@
          
          <child
                class="StaticStructuredComponent"
-               packageNsUri="http://www.fujaba.de/muml/model/component/0.3.17">
+               packageNsUri="http://www.fujaba.de/muml/component/0.3.17">
          </child>
          
       </category>
@@ -367,7 +367,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.StaticStructuredComponent_2005"
                name="%metatype.name.StaticStructuredComponent_2005"
@@ -377,7 +377,7 @@
             <param name="semanticHint" value="2005"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.DiscretePort_3010"
                name="%metatype.name.DiscretePort_3010"
@@ -387,7 +387,7 @@
             <param name="semanticHint" value="3010"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ContinuousPort_3011"
                name="%metatype.name.ContinuousPort_3011"
@@ -397,7 +397,7 @@
             <param name="semanticHint" value="3011"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ComponentPart_3012"
                name="%metatype.name.ComponentPart_3012"
@@ -407,7 +407,7 @@
             <param name="semanticHint" value="3012"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.HybridPort_3013"
                name="%metatype.name.HybridPort_3013"
@@ -417,7 +417,7 @@
             <param name="semanticHint" value="3013"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.DiscretePort_3014"
                name="%metatype.name.DiscretePort_3014"
@@ -426,7 +426,7 @@
             <param name="semanticHint" value="3014"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ContinuousPort_3015"
                name="%metatype.name.ContinuousPort_3015"
@@ -435,7 +435,7 @@
             <param name="semanticHint" value="3015"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/protocol/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.3.17">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.CoordinationProtocol_3016"
                name="%metatype.name.CoordinationProtocol_3016"
@@ -445,7 +445,7 @@
             <param name="semanticHint" value="3016"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.AssemblyConnector_4001"
                name="%metatype.name.AssemblyConnector_4001"
@@ -455,7 +455,7 @@
             <param name="semanticHint" value="4001"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.DelegationConnector_4002"
                name="%metatype.name.DelegationConnector_4002"
@@ -465,7 +465,7 @@
             <param name="semanticHint" value="4002"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.DiscretePortGmfProtocol_4005"
                name="%metatype.name.DiscretePortGmfProtocol_4005"

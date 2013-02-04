@@ -1,8 +1,8 @@
 
-modeltype transformationHelper uses "http://www.fujaba.de/muml/model/component/0.3.1";
-modeltype rtsc uses "http://www.fujaba.de/muml/model/realtimestatechart/0.3.1";
-modeltype msgIFace uses "http://www.fujaba.de/muml/model/msgiface/0.3.1";
-modeltype mumlCore uses "http://www.fujaba.de/muml/model/core/0.3.1";
+modeltype transformationHelper uses "http://www.fujaba.de/muml/component/0.3.1";
+modeltype rtsc uses "http://www.fujaba.de/muml/realtimestatechart/0.3.1";
+modeltype msgIFace uses "http://www.fujaba.de/muml/msgiface/0.3.1";
+modeltype mumlCore uses "http://www.fujaba.de/muml/core/0.3.1";
 modeltype ecore uses ecore;
 modeltype actionlanguage uses "http://www.fujaba.de/muml/actionlanguage/0.2.0";
 modeltype sdmCore uses "http://www.storydriven.org/core/0.3.1";

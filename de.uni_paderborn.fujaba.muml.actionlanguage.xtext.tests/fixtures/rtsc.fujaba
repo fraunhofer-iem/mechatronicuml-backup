@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.fujaba.de/muml/model/component/0.3.17" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.8" xmlns:msgtype="http://www.fujaba.de/muml/model/msgtype/0.3.6" xmlns:realtimestatechart="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17" xmlns:types="http://www.fujaba.de/muml/model/types/0.3.6" xmi:id="_tr4DsWR6EeKY55P-MU7VOg">
+<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.fujaba.de/muml/component/0.3.17" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.8" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.3.6" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.3.17" xmlns:types="http://www.fujaba.de/muml/types/0.3.6" xmi:id="_tr4DsWR6EeKY55P-MU7VOg">
   <categories xmi:id="_tr4DsmR6EeKY55P-MU7VOg" key="de.uni_paderborn.fujaba.muml.types.category" name="types">
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_tr4Ds2R6EeKY55P-MU7VOg" name="VOID"/>
     <modelElements xsi:type="types:PrimitiveDataType" xmi:id="_tr4DtGR6EeKY55P-MU7VOg" name="BOOLEAN" primitiveType="BOOLEAN"/>

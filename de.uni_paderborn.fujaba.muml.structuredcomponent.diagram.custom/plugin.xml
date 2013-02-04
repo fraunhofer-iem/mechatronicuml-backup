@@ -18,7 +18,7 @@
    
     
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
         <adviceBinding id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.custom.DiscretePortGmfProtocolAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.DiscretePortGmfProtocol_4005"
 		  class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.custom.edit.helpers.DiscretePortGmfProtocolEditHelperAdvice"

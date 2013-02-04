@@ -46,7 +46,7 @@ public interface RuntimePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/runtime/0.3.14";
+	String eNS_URI = "http://www.fujaba.de/muml/runtime/0.3.14";
 
 	/**
 	 * The package namespace name.

@@ -41,7 +41,7 @@
               name="types">
           <child
               class="DataType"
-              packageNsUri="http://www.fujaba.de/muml/model/core/0.3.1">
+              packageNsUri="http://www.fujaba.de/muml/core/0.3.1">
           </child>
       </category>
   </extension>

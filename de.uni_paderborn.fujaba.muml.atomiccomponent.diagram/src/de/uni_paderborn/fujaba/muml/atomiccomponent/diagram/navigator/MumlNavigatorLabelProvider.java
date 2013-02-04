@@ -84,16 +84,16 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 					"Navigator?Diagram?http://www.fujaba.de/modelinstance/0.3.15?ModelElementCategory", de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.providers.MumlElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/model/component/0.3.17?AtomicComponent", de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.providers.MumlElementTypes.AtomicComponent_2005); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.fujaba.de/muml/component/0.3.17?AtomicComponent", de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.providers.MumlElementTypes.AtomicComponent_2005); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/model/component/0.3.17?HybridPort", de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.providers.MumlElementTypes.HybridPort_3005); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/component/0.3.17?HybridPort", de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.providers.MumlElementTypes.HybridPort_3005); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/model/component/0.3.17?DiscretePort", de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.providers.MumlElementTypes.DiscretePort_3006); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/component/0.3.17?DiscretePort", de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.providers.MumlElementTypes.DiscretePort_3006); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/model/component/0.3.17?ContinuousPort", de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.providers.MumlElementTypes.ContinuousPort_3007); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/component/0.3.17?ContinuousPort", de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.providers.MumlElementTypes.ContinuousPort_3007); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}

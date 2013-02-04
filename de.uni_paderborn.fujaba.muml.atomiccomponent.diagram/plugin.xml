@@ -98,7 +98,7 @@
          
          <child
                class="AtomicComponent"
-               packageNsUri="http://www.fujaba.de/muml/model/component/0.3.17">
+               packageNsUri="http://www.fujaba.de/muml/component/0.3.17">
          </child>
          
       </category>
@@ -387,7 +387,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.AtomicComponent_2005"
                name="%metatype.name.AtomicComponent_2005"
@@ -397,7 +397,7 @@
             <param name="semanticHint" value="2005"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.HybridPort_3005"
                name="%metatype.name.HybridPort_3005"
@@ -407,7 +407,7 @@
             <param name="semanticHint" value="3005"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.DiscretePort_3006"
                name="%metatype.name.DiscretePort_3006"
@@ -417,7 +417,7 @@
             <param name="semanticHint" value="3006"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/component/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.ContinuousPort_3007"
                name="%metatype.name.ContinuousPort_3007"

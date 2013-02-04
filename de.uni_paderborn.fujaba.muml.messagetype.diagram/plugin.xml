@@ -98,7 +98,7 @@
          
          <child
                class="MessageTypeRepository"
-               packageNsUri="http://www.fujaba.de/muml/model/msgtype/0.3.6">
+               packageNsUri="http://www.fujaba.de/muml/msgtype/0.3.6">
          </child>
          
       </category>
@@ -387,7 +387,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/msgtype/0.3.6">
+      <metamodel nsURI="http://www.fujaba.de/muml/msgtype/0.3.6">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messagetype.diagram.MessageTypeRepository_2008"
                name="%metatype.name.MessageTypeRepository_2008"
@@ -397,7 +397,7 @@
             <param name="semanticHint" value="2008"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/msgtype/0.3.6">
+      <metamodel nsURI="http://www.fujaba.de/muml/msgtype/0.3.6">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messagetype.diagram.MessageType_3007"
                name="%metatype.name.MessageType_3007"
@@ -407,7 +407,7 @@
             <param name="semanticHint" value="3007"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/model/behavior/0.3.17">
+      <metamodel nsURI="http://www.fujaba.de/muml/behavior/0.3.17">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.messagetype.diagram.Parameter_3009"
                name="%metatype.name.Parameter_3009"
