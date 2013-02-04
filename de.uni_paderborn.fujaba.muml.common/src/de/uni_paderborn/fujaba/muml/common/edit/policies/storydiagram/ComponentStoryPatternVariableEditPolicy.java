@@ -4,7 +4,6 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.ScalablePolygonShape;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
@@ -71,11 +70,10 @@ public class ComponentStoryPatternVariableEditPolicy extends
 
 		negativeFigure = createFigureNegative();
 
-		// Initially show the correct visualization.
-		updateBindingSemantics((BindingSemantics) getSemanticElement()
-				.eGet(ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_SEMANTICS));
-		updateBindingOperator((BindingOperator) getSemanticElement()
-				.eGet(ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR));
+		// Initially show the correct visualization for negative
+		BindingSemantics bindingSemantics = (BindingSemantics) getSemanticElement()
+				.eGet(ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_SEMANTICS);
+		setNegative(bindingSemantics == BindingSemantics.NEGATIVE);
 	}
 
 	/**
@@ -91,27 +89,6 @@ public class ComponentStoryPatternVariableEditPolicy extends
 		super.deactivate();
 	}
 
-	protected void registerLineTypeStyle() {
-		final View view = getNotationView();
-
-		// Check if we already have a LineTypeStyle registered
-		if (!ViewUtil.isPropertySupported(view,
-				NotationPackage.Literals.LINE_TYPE_STYLE__LINE_TYPE,
-				NotationPackage.Literals.LINE_TYPE_STYLE)) {
-
-			// None registered; register one ourselves
-			CommandStack stack = getEditingDomain().getCommandStack();
-			stack.execute(new ChangeCommand(view) {
-
-				@Override
-				protected void doExecute() {
-					view.createStyle(NotationPackage.Literals.LINE_TYPE_STYLE);
-				}
-			});
-
-		}
-
-	}
 
 	/**
 	 * Creates a figure for the negative visualization; can be overridden.
@@ -228,7 +205,8 @@ public class ComponentStoryPatternVariableEditPolicy extends
 	 */
 	private void setOptional(boolean optional) {
 		// Make sure a LineTypeStyle is registered in the view.
-		registerLineTypeStyle();
+		// Deactivated; we require one to be installed
+		//registerLineTypeStyle();
 		
 		// Set LineTypeStyle for view
 		final View view = ((GraphicalEditPart) getHost()).getNotationView();
