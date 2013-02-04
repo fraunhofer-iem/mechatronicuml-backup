@@ -7,11 +7,9 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.command.ChangeCommand;
-import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.LineType;
-import org.eclipse.gmf.runtime.notation.LineTypeStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.SWT;
@@ -44,8 +42,6 @@ public class ComponentStoryPatternVariableEditPolicy extends
 	public static final RGB RGB_CREATE = new RGB(0, 192, 0);
 	public static final RGB RGB_DESTROY = new RGB(192, 0, 0);
 
-//	protected LineTypeStyle lineTypeStyle;
-
 	/**
 	 * This field stores if the X figure is currently added.
 	 */
@@ -73,7 +69,6 @@ public class ComponentStoryPatternVariableEditPolicy extends
 	public void activate() {
 		super.activate();
 
-//		registerLineTypeStyle();
 		negativeFigure = createFigureNegative();
 
 		// Initially show the correct visualization.
@@ -90,50 +85,33 @@ public class ComponentStoryPatternVariableEditPolicy extends
 	@Override
 	public void deactivate() {
 		// Remove all visualizations
-		updateBindingSemantics(null);
-		updateBindingOperator(null);
-//		unregisterLineTypeStyle();
+		setNegative(false);
 		negativeFigure = null;
 
 		super.deactivate();
 	}
 
-//	protected void registerLineTypeStyle() {
-//		final View view = getNotationView();
-//
-//		// Check if we already have a LineTypeStyle registered
-//		if (!ViewUtil.isPropertySupported(view,
-//				NotationPackage.Literals.LINE_TYPE_STYLE__LINE_TYPE,
-//				NotationPackage.Literals.LINE_TYPE_STYLE)) {
-//
-//			// None registered; register one ourselves
-//			CommandStack stack = getEditingDomain().getCommandStack();
-//			stack.execute(new ChangeCommand(view) {
-//
-//				@Override
-//				protected void doExecute() {
-//					lineTypeStyle = (LineTypeStyle) view
-//							.createStyle(NotationPackage.Literals.LINE_TYPE_STYLE);
-//				}
-//			});
-//
-//		}
-//
-//	}
-//
-//	protected void unregisterLineTypeStyle() {
-//		View view = getNotationView();
-//
-//		// Check if we previously registered a LineTypeStyle, if so unregister.
-//		if (lineTypeStyle != null) {
-//			getEditingDomain().getCommandStack().execute(
-//					RemoveCommand.create(getEditingDomain(), view,
-//							NotationPackage.Literals.VIEW__STYLES,
-//							lineTypeStyle));
-//
-//		}
-//
-//	}
+	protected void registerLineTypeStyle() {
+		final View view = getNotationView();
+
+		// Check if we already have a LineTypeStyle registered
+		if (!ViewUtil.isPropertySupported(view,
+				NotationPackage.Literals.LINE_TYPE_STYLE__LINE_TYPE,
+				NotationPackage.Literals.LINE_TYPE_STYLE)) {
+
+			// None registered; register one ourselves
+			CommandStack stack = getEditingDomain().getCommandStack();
+			stack.execute(new ChangeCommand(view) {
+
+				@Override
+				protected void doExecute() {
+					view.createStyle(NotationPackage.Literals.LINE_TYPE_STYLE);
+				}
+			});
+
+		}
+
+	}
 
 	/**
 	 * Creates a figure for the negative visualization; can be overridden.
@@ -193,6 +171,12 @@ public class ComponentStoryPatternVariableEditPolicy extends
 						org.eclipse.gmf.runtime.notation.NotationPackage.Literals.LINE_STYLE__LINE_COLOR,
 						org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities
 								.RGBToInteger(lineRGB));
+				
+				ViewUtil.setStructuralFeatureValue(
+						view,
+						org.eclipse.gmf.runtime.notation.NotationPackage.Literals.FONT_STYLE__FONT_COLOR,
+						org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities
+								.RGBToInteger(lineRGB));
 			}
 
 		});
@@ -243,46 +227,32 @@ public class ComponentStoryPatternVariableEditPolicy extends
 	 * Makes the content pane figure dashed, if optional is <code>true</code>.
 	 */
 	private void setOptional(boolean optional) {
-		IFigure contentPane = getContentPane();
-
-//		final LineType lineType = optional ? LineType.DASH_LITERAL
-//				: LineType.SOLID_LITERAL;
-//
-//		final View view = ((GraphicalEditPart) getHost()).getNotationView();
-//
-//		getEditingDomain().getCommandStack().execute(new ChangeCommand(view) {
-//
-//			@Override
-//			protected void doExecute() {
-//
-//				ViewUtil.setStructuralFeatureValue(view,
-//						NotationPackage.Literals.LINE_TYPE_STYLE__LINE_TYPE,
-//						lineType);
-//			}
-//
-//		});
+		// Make sure a LineTypeStyle is registered in the view.
+		registerLineTypeStyle();
 		
-		makeOptional(contentPane, optional);
+		// Set LineTypeStyle for view
+		final View view = ((GraphicalEditPart) getHost()).getNotationView();
+		final LineType lineType = optional ? LineType.DASH_LITERAL
+				: LineType.SOLID_LITERAL;
+		getEditingDomain().getCommandStack().execute(new ChangeCommand(view) {
+			@Override
+			protected void doExecute() {
+				// This also sends a notification which the PortBaseEditPolicy receives.
+				ViewUtil.setStructuralFeatureValue(view,
+						NotationPackage.Literals.LINE_TYPE_STYLE__LINE_TYPE,
+						lineType);
+			}
+		});
 
+		// Some nasty EditParts do not refresh their primary shape; so we do this always.
+		int lineStyle = optional ? SWT.LINE_DASH : SWT.LINE_SOLID;
+		IFigure contentPane = getContentPane();
+		if (contentPane instanceof Shape) {
+			Shape shape = (Shape) contentPane;
+			shape.setLineStyle(lineStyle);
+		}
 	}
 
-	/**
-	 * Makes the given figure dashed and recursively does it for its children,
-	 * 
-	 * @param figure
-	 *            The figure to change.
-	 * @param optional
-	 *            Add or remove the dash?
-	 */
-	private void makeOptional(IFigure figure, boolean optional) {
-		if (figure instanceof Shape) {
-			Shape shape = (Shape) figure;
-			shape.setLineStyle(optional ? SWT.LINE_DASH : SWT.LINE_SOLID);
-		}
-		for (Object child : figure.getChildren()) {
-			makeOptional((IFigure) child, optional);
-		}
-	}
 
 	/**
 	 * Convenience method.

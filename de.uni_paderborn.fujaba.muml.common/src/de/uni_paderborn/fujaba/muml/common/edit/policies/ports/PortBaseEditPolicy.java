@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 
 import org.eclipse.draw2d.ColorConstants;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.emf.common.notify.Notification;
@@ -8,7 +9,10 @@ import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.LineStyle;
+import org.eclipse.gmf.runtime.notation.LineType;
+import org.eclipse.gmf.runtime.notation.LineTypeStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
@@ -35,6 +39,7 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 		refreshCardinality();
 	}
 
+
 	@Override
 	protected void sideChanged(int side) {
 		getPortFigure().setPortSide(side);
@@ -44,7 +49,8 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 	protected void refreshCardinality() {
 		getPortFigure().setMulti(false);
 		Color color = getForegroundColor();
-		getPortFigure().setArrowColors(color, color);
+		getPortFigure().setLineStyle(getLineType());
+		getPortFigure().configureArrows(color, color);
 	}
 
 	protected void refreshPortType() {
@@ -56,11 +62,14 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 	public CustomPortFigure getPortFigure() {
 		return (CustomPortFigure) getContentPane();
 	}
-	
+
 	@Override
 	public void handleNotificationEvent(Notification notification) {
 		if (notification.getFeature() == NotationPackage.Literals.LINE_STYLE__LINE_COLOR) {
-			// our getDefaultBackgroundColor() method depends on this value; so we recalculate it.
+			// our getDefaultBackgroundColor() method depends on this value; so
+			// we recalculate it.
+			refreshCardinality();
+		} else if (notification.getFeature() == NotationPackage.Literals.LINE_TYPE_STYLE__LINE_TYPE) {
 			refreshCardinality();
 		}
 		super.handleNotificationEvent(notification);
@@ -110,7 +119,8 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 	}
 
 	/**
-	 * Convenience method to use a range as cardinality; can be used by subclasses
+	 * Convenience method to use a range as cardinality; can be used by
+	 * subclasses
 	 */
 	protected void setCardinality(Range cardinality) {
 		if (cardinality == null) {
@@ -132,11 +142,48 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 		getPortFigure().setMulti(isMulti);
 
 		// Update background color
+		int lineType = getLineType();
+		int innerLineType = SWT.NORMAL;
 		Color foregroundColor = getForegroundColor();
 		Color backgroundColor = foregroundColor;
 		if (!mandatory) {
 			backgroundColor = ColorConstants.white;
+			innerLineType = lineType;
 		}
-		getPortFigure().setArrowColors(foregroundColor, backgroundColor);
+		
+		getPortFigure().configureArrows(foregroundColor, backgroundColor);
+		getPortFigure().setLineStyle(lineType);
+		getPortFigure().getFigureInPolygon().setLineStyle(innerLineType);
+		getPortFigure().getFigureOutPolygon().setLineStyle(innerLineType);
+		getPortFigure().getFigureInOutPolygon().setLineStyle(innerLineType);
 	}
+
+	/**
+	 * Get the line type of the shape.
+	 * 
+	 * @return the line type.
+	 */
+	protected int getLineType() { // copied from gmf's GraphicalEditPart
+		// default to a solid line.
+		int lineType = Graphics.LINE_SOLID;
+
+		LineTypeStyle style = (LineTypeStyle) getPrimaryView().getStyle(
+				NotationPackage.eINSTANCE.getLineTypeStyle());
+		if (style != null) {
+			if (style.getLineType() == LineType.SOLID_LITERAL) {
+				lineType = Graphics.LINE_SOLID;
+			} else if (style.getLineType() == LineType.DASH_LITERAL) {
+				lineType = Graphics.LINE_DASH;
+			} else if (style.getLineType() == LineType.DOT_LITERAL) {
+				lineType = Graphics.LINE_DOT;
+			} else if (style.getLineType() == LineType.DASH_DOT_LITERAL) {
+				lineType = Graphics.LINE_DASHDOT;
+			} else if (style.getLineType() == LineType.DASH_DOT_DOT_LITERAL) {
+				lineType = Graphics.LINE_DASHDOTDOT;
+			}
+		}
+
+		return lineType;
+	}
+
 }

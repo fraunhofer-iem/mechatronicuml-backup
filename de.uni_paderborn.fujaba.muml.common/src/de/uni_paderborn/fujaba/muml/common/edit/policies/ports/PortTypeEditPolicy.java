@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
+import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
@@ -21,7 +22,7 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 	public void handleNotificationEvent(Notification notification) {
 		if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY) {
 			refreshCardinality();
-		//} else if (notification.getFeature() == C){ 
+			// } else if (notification.getFeature() == C){
 		} else if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES
 				|| notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES
 				|| notification.getFeature() == ComponentPackage.Literals.DIRECTED_TYPED_PORT__KIND) {
@@ -29,20 +30,23 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 		}
 		super.handleNotificationEvent(notification);
 	}
+
 	@Override
 	protected void addListeners(DiagramEventBroker broker) {
 		super.addListeners(broker);
-		// in case getPort() != getSemanticElement() because getPort() was overridden
+		// in case getPort() != getSemanticElement() because getPort() was
+		// overridden
 		broker.addNotificationListener(getPort(), this);
 	}
-	
+
 	@Override
 	protected void removeListeners(DiagramEventBroker broker) {
 		super.removeListeners(broker);
-		// in case getPort() != getSemanticElement() because getPort() was overridden
+		// in case getPort() != getSemanticElement() because getPort() was
+		// overridden
 		broker.removeNotificationListener(getPort(), this);
 	}
-	
+
 	protected void refreshPortType() {
 		EObject port = getPort();
 
@@ -50,12 +54,12 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 		PortType portType = PortType.NONE;
 
 		if (port != null) {
-			if (ComponentPackage.Literals.DISCRETE_PORT
-					.isSuperTypeOf(port.eClass())) {
+			if (ComponentPackage.Literals.DISCRETE_PORT.isSuperTypeOf(port
+					.eClass())) {
 				portKind = PortKind.DISCRETE;
 				portType = getDiscretePortType();
-			} else if (ComponentPackage.Literals.CONTINUOUS_PORT.isSuperTypeOf(port
-					.eClass())) {
+			} else if (ComponentPackage.Literals.CONTINUOUS_PORT
+					.isSuperTypeOf(port.eClass())) {
 				portKind = PortKind.CONTINUOUS;
 				portType = getDirectedPortType();
 			} else if (ComponentPackage.Literals.HYBRID_PORT.isSuperTypeOf(port
@@ -64,7 +68,7 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 				portType = getDirectedPortType();
 			}
 		}
-		
+
 		getPortFigure().setPortKindAndPortType(portKind, portType);
 	}
 
@@ -77,6 +81,11 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 			Range cardinality = (Range) port
 					.eGet(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY);
 			setCardinality(cardinality);
+		} else {
+			// setCardinality also does this, so do it here
+			Color color = getForegroundColor();
+			getPortFigure().configureArrows(color, color);
+			getPortFigure().setLineStyle(getLineType());
 		}
 	}
 

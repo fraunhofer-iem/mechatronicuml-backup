@@ -198,7 +198,7 @@ public class CustomPortFigure extends RectangleFigure {
 		}
 	}
 
-	public void setArrowColors(Color foregroundColor, Color backgroundColor) {
+	public void configureArrows(Color foregroundColor, Color backgroundColor) {
 		getFigureInPolygon().setOutline(true);
 		getFigureInPolygon().setForegroundColor(foregroundColor);
 		getFigureInPolygon().setBackgroundColor(backgroundColor);
@@ -209,7 +209,7 @@ public class CustomPortFigure extends RectangleFigure {
 		getFigureInOutPolygon().setForegroundColor(foregroundColor);
 		getFigureInOutPolygon().setBackgroundColor(backgroundColor);
 	}
-
+	
 	/**
 	 * Sets the Rotation in degrees.
 	 * 
@@ -401,6 +401,13 @@ public class CustomPortFigure extends RectangleFigure {
 			return points;
 		}
 		return null;
+	}
+	
+	@Override
+	public void setLineStyle(int style) {
+		super.setLineStyle(style);
+		getFigureShadowRectangle().setLineStyle(style);
+		getFigureOutlineRectangle().setLineStyle(style);
 	}
 
 }

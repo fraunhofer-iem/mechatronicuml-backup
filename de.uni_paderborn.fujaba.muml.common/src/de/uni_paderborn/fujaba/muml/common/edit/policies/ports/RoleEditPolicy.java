@@ -57,7 +57,8 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 		}
 		getPortFigure().setMulti(isMulti);
 		Color color = getForegroundColor();
-		getPortFigure().setArrowColors(color, color);
+		getPortFigure().setLineStyle(getLineType());
+		getPortFigure().configureArrows(color, color);
 	}
 
 	protected Role getRole() {
