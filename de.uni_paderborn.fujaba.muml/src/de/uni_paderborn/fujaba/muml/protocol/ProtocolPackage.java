@@ -45,7 +45,7 @@ public interface ProtocolPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/protocol/0.3.17";
+	String eNS_URI = "http://www.fujaba.de/muml/protocol/0.3.17";
 
 	/**
 	 * The package namespace name.

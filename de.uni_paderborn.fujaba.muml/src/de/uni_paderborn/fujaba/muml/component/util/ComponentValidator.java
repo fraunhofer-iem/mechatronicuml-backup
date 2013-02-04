@@ -1029,8 +1029,8 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyConnector_NoSelfAssembliesForSinglePortsOfSingleParts(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyConnector_ValidContinuousPortDirections(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresCoordinationPattern(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresCoordinationProtocol(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresDifferentRoles(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsSameMessageInterfaces(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyConnector_ValidDiscreteInPortCombination(assemblyConnector, diagnostics, context);
@@ -1106,25 +1106,25 @@ public class ComponentValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the AssemblyBetweenDiscretePortsRequiresCoordinationPattern constraint of '<em>Assembly Connector</em>'.
+	 * The cached validation expression for the AssemblyBetweenDiscretePortsRequiresCoordinationProtocol constraint of '<em>Assembly Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_COORDINATION_PATTERN__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
-		"\t-- assembly between two discrete ports requires a coordination pattern\n" +
-		"\tnot self.coordinationPattern.oclIsUndefined()\n" +
+	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_COORDINATION_PROTOCOL__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
+		"\t-- assembly between two discrete ports requires a coordination protocol\n" +
+		"\tnot self.coordinationProtocol.oclIsUndefined()\n" +
 		"else\n" +
 		"\ttrue\n" +
 		"endif";
 
 	/**
-	 * Validates the AssemblyBetweenDiscretePortsRequiresCoordinationPattern constraint of '<em>Assembly Connector</em>'.
+	 * Validates the AssemblyBetweenDiscretePortsRequiresCoordinationProtocol constraint of '<em>Assembly Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresCoordinationPattern(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresCoordinationProtocol(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
@@ -1132,35 +1132,35 @@ public class ComponentValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "AssemblyBetweenDiscretePortsRequiresCoordinationPattern",
-				 ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_COORDINATION_PATTERN__EEXPRESSION,
+				 "AssemblyBetweenDiscretePortsRequiresCoordinationProtocol",
+				 ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_COORDINATION_PROTOCOL__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
 	}
 
 	/**
-	 * The cached validation expression for the AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern constraint of '<em>Assembly Connector</em>'.
+	 * The cached validation expression for the AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol constraint of '<em>Assembly Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PATTERN__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
+	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PROTOCOL__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
 		"\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n" +
 		"\t\tand\n" +
-		"\t\t-- both refinements must belong to the same pattern\n" +
-		"\t\tself.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern\n" +
+		"\t\t-- both refinements must belong to the same coordination protocol\n" +
+		"\t\tself.fromDiscretePort.refines.coordinationProtocol = self.toDiscretePort.refines.coordinationProtocol\n" +
 		"else\n" +
 		"\ttrue\n" +
 		"endif";
 
 	/**
-	 * Validates the AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern constraint of '<em>Assembly Connector</em>'.
+	 * Validates the AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol constraint of '<em>Assembly Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
@@ -1168,8 +1168,8 @@ public class ComponentValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern",
-				 ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PATTERN__EEXPRESSION,
+				 "AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol",
+				 ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PROTOCOL__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -1184,8 +1184,8 @@ public class ComponentValidator extends EObjectValidator {
 	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_DIFFERENT_ROLES__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
 		"\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n" +
 		"\t\tand\n" +
-		"\t\t-- both ports should have different roles (unless the pattern has only one role)\n" +
-		"\t\t(self.fromDiscretePort.refines.coordinationPattern.roles->size() = 2 implies (self.fromDiscretePort.refines.name <> self.toDiscretePort.refines.name))\n" +
+		"\t\t-- both ports should have different roles (unless the coordination protocol has only one role)\n" +
+		"\t\t(self.fromDiscretePort.refines.coordinationProtocol.roles->size() = 2 implies (self.fromDiscretePort.refines.name <> self.toDiscretePort.refines.name))\n" +
 		"else\n" +
 		"\ttrue\n" +
 		"endif";
@@ -1492,7 +1492,7 @@ public class ComponentValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegationConnector_ValidContinuousPortDirections(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenContinuousPortsRequiresSameDataType(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDiscretePortsRequiresSameCoordinationPattern(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDiscretePortsRequiresSameRoles(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegationConnector_DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegationConnector_ValidDiscreteInPortCombination(delegationConnector, diagnostics, context);
@@ -1568,27 +1568,27 @@ public class ComponentValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the DelegationBetweenDiscretePortsRequiresSameCoordinationPattern constraint of '<em>Delegation Connector</em>'.
+	 * The cached validation expression for the DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol constraint of '<em>Delegation Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PATTERN__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
+	protected static final String DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PROTOCOL__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
 		"\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n" +
 		"\t\tand\n" +
-		"\t\t-- both refinements must belong to the same pattern\n" +
-		"\t\tself.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern\n" +
+		"\t\t-- both refinements must belong to the same coordination protocol\n" +
+		"\t\tself.fromDiscretePort.refines.coordinationProtocol = self.toDiscretePort.refines.coordinationProtocol\n" +
 		"else\n" +
 		"\ttrue\n" +
 		"endif";
 
 	/**
-	 * Validates the DelegationBetweenDiscretePortsRequiresSameCoordinationPattern constraint of '<em>Delegation Connector</em>'.
+	 * Validates the DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol constraint of '<em>Delegation Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDelegationConnector_DelegationBetweenDiscretePortsRequiresSameCoordinationPattern(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDelegationConnector_DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
@@ -1596,8 +1596,8 @@ public class ComponentValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "DelegationBetweenDiscretePortsRequiresSameCoordinationPattern",
-				 DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PATTERN__EEXPRESSION,
+				 "DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol",
+				 DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PROTOCOL__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

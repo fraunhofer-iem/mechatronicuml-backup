@@ -18,7 +18,7 @@ import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A coordination protocol specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination patterns. Constraints specify certain properties the coordination specified by the pattern has to fullfill.
+ * A coordination protocol specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination protocols. Constraints specify certain properties the coordination specified by the protocol has to fullfill.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -43,7 +43,7 @@ public interface CoordinationProtocol extends NamedElement, ConstrainableElement
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The roles belonging to this pattern.
+	 * The roles belonging to this coordination protocol.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Roles</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getCoordinationProtocol_Roles()
@@ -59,8 +59,8 @@ public interface CoordinationProtocol extends NamedElement, ConstrainableElement
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Each coordination pattern has exactly one role connector.
-	 * Cardinality is 1 because there exists no useful pattern wir more than two roles. If a useful pattern exists with more than 2 roles, than change cardinality to 1..*
+	 * Each coordination protocol has exactly one role connector.
+	 * Cardinality is 1 because there exists no useful protocol with more than two roles. If a useful protocol exists with more than 2 roles, then change cardinality to 1..*
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Role Connector</em>' containment reference.
 	 * @see #setRoleConnector(RoleConnector)
@@ -86,7 +86,7 @@ public interface CoordinationProtocol extends NamedElement, ConstrainableElement
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This derived reference only exists because GMF needs it to visualize the inner ellipse of a Real-Time Coordination Pattern.
+	 * This derived reference only exists because GMF needs it to visualize the inner ellipse of a Real-Time Coordination Protocol.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Gmf Coordination Protocol</em>' containment reference.
 	 * @see #setGmfCoordinationProtocol(CoordinationProtocol)

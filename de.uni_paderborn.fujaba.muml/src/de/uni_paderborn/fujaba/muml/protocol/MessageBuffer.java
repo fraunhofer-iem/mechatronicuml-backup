@@ -19,7 +19,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A message buffer may contains message types. A message buffer has a specified size and is associtated to a role of a coordination pattern. Message types are always stored in FIFO order.
+ * A message buffer may contains message types. A message buffer has a specified size and is associtated to a role of a coordination protocol. Message types are always stored in FIFO order.
  * <!-- end-model-doc -->
  *
  * <p>

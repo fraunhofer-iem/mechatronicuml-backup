@@ -99,7 +99,7 @@ public interface DiscretePortInstance extends PortInstance, DiscreteInteractionE
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The role of a coordination pattern that the port type of this port instance refines.
+	 * The role of a coordination protocol that the port type of this port instance refines.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Refines</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getDiscretePortInstance_Refines()

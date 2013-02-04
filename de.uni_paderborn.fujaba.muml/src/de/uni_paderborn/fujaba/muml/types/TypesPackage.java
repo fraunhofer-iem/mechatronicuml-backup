@@ -43,7 +43,7 @@ public interface TypesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/types/0.3.6";
+	String eNS_URI = "http://www.fujaba.de/muml/types/0.3.6";
 
 	/**
 	 * The package namespace name.

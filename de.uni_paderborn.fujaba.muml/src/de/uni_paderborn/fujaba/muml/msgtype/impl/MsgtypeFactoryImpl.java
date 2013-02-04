@@ -29,7 +29,7 @@ public class MsgtypeFactoryImpl extends EFactoryImpl implements MsgtypeFactory {
 	 */
 	public static MsgtypeFactory init() {
 		try {
-			MsgtypeFactory theMsgtypeFactory = (MsgtypeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/msgtype/0.3.6"); 
+			MsgtypeFactory theMsgtypeFactory = (MsgtypeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/msgtype/0.3.6"); 
 			if (theMsgtypeFactory != null) {
 				return theMsgtypeFactory;
 			}

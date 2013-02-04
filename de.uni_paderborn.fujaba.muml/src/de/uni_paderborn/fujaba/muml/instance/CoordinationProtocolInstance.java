@@ -17,7 +17,7 @@ import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An instance of a pattern occurence. It specifies the behavior of discrete (single/multi) port instances that are connected with each other.
+ * An instance of a coordination protocol occurence. It specifies the behavior of discrete (single/multi) port instances that are connected with each other.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -39,7 +39,7 @@ public interface CoordinationProtocolInstance extends NamedElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The port instance that uses this pattern instance.
+	 * The port instances that use this coordination protocol instance.
 	 * 
 	 * \todosd{I suggest to change this reference so that it references a DiscretePortInstance.}
 	 * <!-- end-model-doc -->
@@ -55,7 +55,7 @@ public interface CoordinationProtocolInstance extends NamedElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The PatternOccurence of that instance.
+	 * The CoordinationProtocolOccurence of that instance.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Coordination Protocol Occurrence</em>' reference.
 	 * @see #setCoordinationProtocolOccurrence(CoordinationProtocolOccurrence)

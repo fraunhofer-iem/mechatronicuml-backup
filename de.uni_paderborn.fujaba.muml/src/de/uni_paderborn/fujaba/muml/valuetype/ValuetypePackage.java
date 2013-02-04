@@ -44,7 +44,7 @@ public interface ValuetypePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/model/valuetype/0.3.13";
+	String eNS_URI = "http://www.fujaba.de/muml/valuetype/0.3.13";
 
 	/**
 	 * The package namespace name.

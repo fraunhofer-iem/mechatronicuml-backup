@@ -69,6 +69,7 @@ public class DiscretePortItemProvider
 			addReceiverMessageTypesPropertyDescriptor(object);
 			addAdaptationBehaviorPropertyDescriptor(object);
 			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
+			addCardinalityPropertyDescriptor(object);
 			addRefinesPropertyDescriptor(object);
 			addIsDiscreteInPortPropertyDescriptor(object);
 			addIsDiscreteOutPortPropertyDescriptor(object);
@@ -211,6 +212,28 @@ public class DiscretePortItemProvider
 				 null));
 	}
 
+
+	/**
+	 * This adds a property descriptor for the Cardinality feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCardinalityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscreteInteractionEndpoint_cardinality_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_cardinality_feature", "_UI_DiscreteInteractionEndpoint_type"),
+				 ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
 
 	/**
 	 * This adds a property descriptor for the Is Discrete In Port feature.

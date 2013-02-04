@@ -47,7 +47,7 @@ public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The role of a coordination pattern that this port refines.
+	 * The role of a coordination protocol that this port refines.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Refines</em>' reference.
 	 * @see #setRefines(Role)

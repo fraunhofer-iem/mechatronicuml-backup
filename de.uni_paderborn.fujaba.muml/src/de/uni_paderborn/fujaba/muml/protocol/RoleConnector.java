@@ -16,7 +16,7 @@ import de.uni_paderborn.fujaba.muml.connector.Connector;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a communication channel connecting two roles of a coordination pattern.
+ * This class represents a communication channel connecting two roles of a coordination protocol.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -40,7 +40,7 @@ public interface RoleConnector extends Connector {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The coordination pattern this role connector is part of.
+	 * The coordination protocol this role connector is part of.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Coordination Protocol</em>' container reference.
 	 * @see #setCoordinationProtocol(CoordinationProtocol)

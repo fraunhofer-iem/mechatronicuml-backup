@@ -18,7 +18,7 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a role of a coordination pattern.
+ * This class represents a role of a coordination protocol.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -44,7 +44,7 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The coordination pattern this role belongs to.
+	 * The coordination protocol this role belongs to.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Coordination Protocol</em>' container reference.
 	 * @see #setCoordinationProtocol(CoordinationProtocol)

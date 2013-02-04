@@ -31,7 +31,7 @@ public class DeploymentFactoryImpl extends EFactoryImpl implements DeploymentFac
 	 */
 	public static DeploymentFactory init() {
 		try {
-			DeploymentFactory theDeploymentFactory = (DeploymentFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/deployment/0.3.11"); 
+			DeploymentFactory theDeploymentFactory = (DeploymentFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/deployment/0.3.11"); 
 			if (theDeploymentFactory != null) {
 				return theDeploymentFactory;
 			}

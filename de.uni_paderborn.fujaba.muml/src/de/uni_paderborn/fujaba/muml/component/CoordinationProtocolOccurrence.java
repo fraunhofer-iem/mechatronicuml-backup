@@ -38,7 +38,7 @@ public interface CoordinationProtocolOccurrence extends CommentableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The coordination protocol (pattern) of this PatternOccurence.
+	 * The coordination protocol (pattern) of this CoordinationProtocolOccurence.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Coordination Protocol</em>' reference.
 	 * @see #setCoordinationProtocol(CoordinationProtocol)

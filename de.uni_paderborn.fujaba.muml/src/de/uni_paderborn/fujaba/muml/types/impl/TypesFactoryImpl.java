@@ -30,7 +30,7 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	 */
 	public static TypesFactory init() {
 		try {
-			TypesFactory theTypesFactory = (TypesFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/types/0.3.6"); 
+			TypesFactory theTypesFactory = (TypesFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/types/0.3.6"); 
 			if (theTypesFactory != null) {
 				return theTypesFactory;
 			}

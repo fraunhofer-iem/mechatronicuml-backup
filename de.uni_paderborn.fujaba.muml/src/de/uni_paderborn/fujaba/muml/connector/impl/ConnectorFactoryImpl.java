@@ -30,7 +30,7 @@ public class ConnectorFactoryImpl extends EFactoryImpl implements ConnectorFacto
 	 */
 	public static ConnectorFactory init() {
 		try {
-			ConnectorFactory theConnectorFactory = (ConnectorFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/model/connector/0.3.15"); 
+			ConnectorFactory theConnectorFactory = (ConnectorFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/connector/0.3.15"); 
 			if (theConnectorFactory != null) {
 				return theConnectorFactory;
 			}
