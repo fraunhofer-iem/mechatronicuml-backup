@@ -26,7 +26,7 @@ import de.uni_paderborn.fujaba.muml.tests.emfcompare.Comparer;
 public class GeneratedTest {
 
 	/**
-	 * The workspace-relative path to the muml.model project.
+	 * The workspace-relative path to the muml project.
 	 */
 	private static final String ECORE_MODEL_PROJECT = "de.uni_paderborn.fujaba.muml";
 
