@@ -56,8 +56,8 @@ public class CustomComponentVariableEditPart extends ComponentVariableEditPart {
 			CsdmUtility.adaptColor(this);
 		} else if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_SEMANTICS
 				.equals(notification.getFeature())) {
-			updateOptional();
-			updateNegative();
+//			updateOptional();
+//			updateNegative();
 		} else if (ComponentstorypatternPackage.Literals.COMPONENT_VARIABLE__TYPE.equals(notification.getFeature())){
 			updateActivityNameLabel();
 		} else if (CorePackage.Literals.NAMED_ELEMENT__NAME.equals(notification.getFeature())){
@@ -70,8 +70,8 @@ public class CustomComponentVariableEditPart extends ComponentVariableEditPart {
 		super.refreshVisuals();
 		((ComponentVariableFigure) primaryShape)
 				.getFigureComponentVariableNameFigure().setTextUnderline(true);
-		updateNegative();
-		updateOptional();
+//		updateNegative();
+//		updateOptional();
 		updateActivityNameLabel();
 	}
 	
@@ -81,15 +81,15 @@ public class CustomComponentVariableEditPart extends ComponentVariableEditPart {
 	}
 
 	private void updateNegative() {
-		ComponentVariable componentVariable = (ComponentVariable) ((View) getModel())
-				.getElement();
-		BindingSemantics semantics = componentVariable.getBindingSemantics();
-
-		boolean negative = semantics == BindingSemantics.NEGATIVE;
-		((ComponentVariableFigure) primaryShape).getFigureComponentNegative1()
-				.setVisible(negative);
-		((ComponentVariableFigure) primaryShape).getFigureComponentNegative2()
-				.setVisible(negative);
+//		ComponentVariable componentVariable = (ComponentVariable) ((View) getModel())
+//				.getElement();
+//		BindingSemantics semantics = componentVariable.getBindingSemantics();
+//
+//		boolean negative = semantics == BindingSemantics.NEGATIVE;
+//		((ComponentVariableFigure) primaryShape).getFigureComponentNegative1()
+//				.setVisible(negative);
+//		((ComponentVariableFigure) primaryShape).getFigureComponentNegative2()
+//				.setVisible(negative);
 
 	}
 

@@ -225,33 +225,12 @@
                 horizontalAlignment="FILL"/>
           </children>
         </children>
-        <children
-            xsi:type="gmfgraph:ScalablePolygon"
-            name="ComponentNegative1"
-            fill="false">
-          <template/>
-          <template
-              x="1"
-              y="1"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:ScalablePolygon"
-            name="ComponentNegative2">
-          <template
-              x="1"/>
-          <template
-              y="1"/>
-        </children>
       </actualFigure>
       <accessors
           accessor="getFigureComponentVariableNameFigure"
           figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.0/@children.1"/>
       <accessors
           figure="//@figures.0/@descriptors.3/@actualFigure/@children.0/@children.1"/>
-      <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
-      <accessors
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors
         name="ComponentVariableOperatorFigure">
@@ -383,31 +362,10 @@
             </children>
           </children>
         </children>
-        <children
-            xsi:type="gmfgraph:ScalablePolygon"
-            name="PartNegative1"
-            fill="false">
-          <template/>
-          <template
-              x="1"
-              y="1"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:ScalablePolygon"
-            name="PartNegative2">
-          <template
-              x="1"/>
-          <template
-              y="1"/>
-        </children>
       </actualFigure>
       <accessors
           accessor="getFigurePartVariableNameFigure"
           figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.1/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
-      <accessors
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors
         name="PartVariableOperatorFigure">

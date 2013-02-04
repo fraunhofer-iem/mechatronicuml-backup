@@ -25,16 +25,16 @@ public class CustomPartVariableEditPart extends PartVariableEditPart {
 			CsdmUtility.adaptColor(this);
 		} else if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_SEMANTICS
 				.equals(notification.getFeature())) {
-			updateOptional();
-			updateNegative();
+//			updateOptional();
+//			updateNegative();
 		}
 	}
 
 	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
-		updateOptional();
-		updateNegative();
+//		updateOptional();
+//		updateNegative();
 	}
 
 	private void updateOptional() {
@@ -71,15 +71,15 @@ public class CustomPartVariableEditPart extends PartVariableEditPart {
 	}
 
 	private void updateNegative() {
-		PartVariable partVariable = (PartVariable) ((View) getModel())
-				.getElement();
-		BindingSemantics semantics = partVariable.getBindingSemantics();
-
-		boolean negative = semantics == BindingSemantics.NEGATIVE;
-		((PartVariableFigure) primaryShape).getFigurePartNegative1().setVisible(
-				negative);
-		((PartVariableFigure) primaryShape).getFigurePartNegative2().setVisible(
-				negative);
+//		PartVariable partVariable = (PartVariable) ((View) getModel())
+//				.getElement();
+//		BindingSemantics semantics = partVariable.getBindingSemantics();
+//
+//		boolean negative = semantics == BindingSemantics.NEGATIVE;
+//		((PartVariableFigure) primaryShape).getFigurePartNegative1().setVisible(
+//				negative);
+//		((PartVariableFigure) primaryShape).getFigurePartNegative2().setVisible(
+//				negative);
 	}
 
 

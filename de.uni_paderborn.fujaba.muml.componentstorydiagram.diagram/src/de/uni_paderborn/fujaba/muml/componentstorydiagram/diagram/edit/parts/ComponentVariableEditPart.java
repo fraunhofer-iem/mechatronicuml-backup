@@ -92,6 +92,9 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 				EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ComponentVariableCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.storydiagram.ComponentStoryPatternVariableEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
@@ -382,14 +385,6 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 		 * @generated
 		 */
 		private RectangleFigure fFigureChildren;
-		/**
-		 * @generated
-		 */
-		private ScalablePolygonShape fFigureComponentNegative1;
-		/**
-		 * @generated
-		 */
-		private ScalablePolygonShape fFigureComponentNegative2;
 
 		/**
 		 * @generated
@@ -536,23 +531,6 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 			componentVariableContent0.add(fFigureChildren,
 					constraintFFigureChildren);
 
-			fFigureComponentNegative1 = new ScalablePolygonShape();
-			fFigureComponentNegative1.addPoint(new Point(
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(0)));
-			fFigureComponentNegative1.addPoint(new Point(
-					getMapMode().DPtoLP(1), getMapMode().DPtoLP(1)));
-
-			this.add(fFigureComponentNegative1);
-
-			fFigureComponentNegative2 = new ScalablePolygonShape();
-			fFigureComponentNegative2.addPoint(new Point(
-					getMapMode().DPtoLP(1), getMapMode().DPtoLP(0)));
-			fFigureComponentNegative2.addPoint(new Point(
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(1)));
-			fFigureComponentNegative2.setFill(true);
-
-			this.add(fFigureComponentNegative2);
-
 		}
 
 		/**
@@ -567,20 +545,6 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public RectangleFigure getFigureChildren() {
 			return fFigureChildren;
-		}
-
-		/**
-		 * @generated
-		 */
-		public ScalablePolygonShape getFigureComponentNegative1() {
-			return fFigureComponentNegative1;
-		}
-
-		/**
-		 * @generated
-		 */
-		public ScalablePolygonShape getFigureComponentNegative2() {
-			return fFigureComponentNegative2;
 		}
 
 	}

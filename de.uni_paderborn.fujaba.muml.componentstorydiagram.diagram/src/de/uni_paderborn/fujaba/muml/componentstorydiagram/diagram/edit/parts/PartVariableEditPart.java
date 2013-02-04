@@ -91,6 +91,9 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 				EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.PartVariableCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPONENTSTORYPATTERNVARIABLE_VISUALIZATION_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.storydiagram.ComponentStoryPatternVariableEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
@@ -360,14 +363,6 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 		 * @generated
 		 */
 		private WrappingLabel fFigurePartVariableNameFigure;
-		/**
-		 * @generated
-		 */
-		private ScalablePolygonShape fFigurePartNegative1;
-		/**
-		 * @generated
-		 */
-		private ScalablePolygonShape fFigurePartNegative2;
 
 		/**
 		 * @generated
@@ -488,23 +483,6 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 			nameContainer1.add(fFigurePartVariableNameFigure,
 					constraintFFigurePartVariableNameFigure);
 
-			fFigurePartNegative1 = new ScalablePolygonShape();
-			fFigurePartNegative1.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0)));
-			fFigurePartNegative1.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(1)));
-
-			this.add(fFigurePartNegative1);
-
-			fFigurePartNegative2 = new ScalablePolygonShape();
-			fFigurePartNegative2.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(0)));
-			fFigurePartNegative2.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(1)));
-			fFigurePartNegative2.setFill(true);
-
-			this.add(fFigurePartNegative2);
-
 		}
 
 		/**
@@ -512,20 +490,6 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public WrappingLabel getFigurePartVariableNameFigure() {
 			return fFigurePartVariableNameFigure;
-		}
-
-		/**
-		 * @generated
-		 */
-		public ScalablePolygonShape getFigurePartNegative1() {
-			return fFigurePartNegative1;
-		}
-
-		/**
-		 * @generated
-		 */
-		public ScalablePolygonShape getFigurePartNegative2() {
-			return fFigurePartNegative2;
 		}
 
 	}
