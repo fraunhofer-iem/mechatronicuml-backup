@@ -30,7 +30,7 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	 */
 	public static InstanceFactory init() {
 		try {
-			InstanceFactory theInstanceFactory = (InstanceFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/model/instance/0.3.15"); 
+			InstanceFactory theInstanceFactory = (InstanceFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/instance/0.3.15"); 
 			if (theInstanceFactory != null) {
 				return theInstanceFactory;
 			}

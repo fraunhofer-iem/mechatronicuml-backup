@@ -43,7 +43,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.instance.InstancePackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/model/instance/0.3.15"/>
+      <package class="de.uni_paderborn.fujaba.muml.instance.InstancePackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/instance/0.3.15"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">

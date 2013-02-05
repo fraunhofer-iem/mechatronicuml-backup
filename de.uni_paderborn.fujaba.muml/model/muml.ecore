@@ -570,7 +570,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="instance" nsURI="http://www.fujaba.de/model/instance/0.3.15"
+  <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/instance/0.3.15"
       nsPrefix="instance">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
