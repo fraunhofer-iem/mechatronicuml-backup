@@ -22,12 +22,17 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
+import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint} object.
@@ -188,11 +193,10 @@ public class DiscreteInteractionEndpointItemProvider
 	 * This adds a property descriptor for the Cardinality feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addCardinalityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_DiscreteInteractionEndpoint_cardinality_feature"),
@@ -203,7 +207,35 @@ public class DiscreteInteractionEndpointItemProvider
 				 false,
 				 null,
 				 null,
-				 null));
+				 null);
+
+		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Range_lowerBound_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Range_lowerBound_feature", "_UI_Range_type"),
+				 ValuetypePackage.Literals.RANGE__LOWER_BOUND,
+				 true,
+				 false,
+				 false,
+				 null,
+				 getString("_UI_CardinalityPropertyCategory"),
+				 null,
+				 rootPropertyDescriptor));
+
+		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Range_upperBound_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Range_upperBound_feature", "_UI_Range_type"),
+				 ValuetypePackage.Literals.RANGE__UPPER_BOUND,
+				 true,
+				 false,
+				 false,
+				 null,
+				 getString("_UI_CardinalityPropertyCategory"),
+				 null,
+				 rootPropertyDescriptor));
 	}
 
 	/**
