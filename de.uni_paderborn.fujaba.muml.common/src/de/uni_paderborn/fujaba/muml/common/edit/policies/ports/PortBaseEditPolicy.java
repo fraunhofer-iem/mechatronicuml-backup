@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 
+import de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyUtils;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.valuetype.Range;
@@ -49,7 +50,7 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 	protected void refreshCardinality() {
 		getPortFigure().setMulti(false);
 		Color color = getForegroundColor();
-		getPortFigure().setLineStyle(getLineType());
+		getPortFigure().setLineStyle(EditPolicyUtils.getLineType(getPrimaryView()));
 		getPortFigure().configureArrows(color, color);
 	}
 
@@ -142,7 +143,7 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 		getPortFigure().setMulti(isMulti);
 
 		// Update background color
-		int lineType = getLineType();
+		int lineType = EditPolicyUtils.getLineType(getPrimaryView());
 		int innerLineType = Graphics.LINE_SOLID;
 		Color foregroundColor = getForegroundColor();
 		Color backgroundColor = foregroundColor;
@@ -158,32 +159,6 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 		getPortFigure().getFigureInOutPolygon().setLineStyle(innerLineType);
 	}
 
-	/**
-	 * Get the line type of the shape.
-	 * 
-	 * @return the line type.
-	 */
-	protected int getLineType() { // copied from gmf's GraphicalEditPart
-		// default to a solid line.
-		int lineType = Graphics.LINE_SOLID;
 
-		LineTypeStyle style = (LineTypeStyle) getPrimaryView().getStyle(
-				NotationPackage.eINSTANCE.getLineTypeStyle());
-		if (style != null) {
-			if (style.getLineType() == LineType.SOLID_LITERAL) {
-				lineType = Graphics.LINE_SOLID;
-			} else if (style.getLineType() == LineType.DASH_LITERAL) {
-				lineType = Graphics.LINE_DASH;
-			} else if (style.getLineType() == LineType.DOT_LITERAL) {
-				lineType = Graphics.LINE_DOT;
-			} else if (style.getLineType() == LineType.DASH_DOT_LITERAL) {
-				lineType = Graphics.LINE_DASHDOT;
-			} else if (style.getLineType() == LineType.DASH_DOT_DOT_LITERAL) {
-				lineType = Graphics.LINE_DASHDOTDOT;
-			}
-		}
-
-		return lineType;
-	}
 
 }

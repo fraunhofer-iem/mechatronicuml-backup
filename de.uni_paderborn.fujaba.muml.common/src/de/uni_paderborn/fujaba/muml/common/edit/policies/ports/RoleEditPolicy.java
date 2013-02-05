@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.swt.graphics.Color;
 
+import de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyUtils;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
@@ -57,7 +58,7 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 		}
 		getPortFigure().setMulti(isMulti);
 		Color color = getForegroundColor();
-		getPortFigure().setLineStyle(getLineType());
+		getPortFigure().setLineStyle(EditPolicyUtils.getLineType(getPrimaryView()));
 		getPortFigure().configureArrows(color, color);
 	}
 

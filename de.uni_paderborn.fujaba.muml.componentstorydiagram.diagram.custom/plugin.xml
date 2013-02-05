@@ -75,12 +75,8 @@
 
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
-      <?gmfgen generated="true"?>
       <viewProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.providers.CustomComponentStoryDiagramViewProvider">
          <Priority name="Low"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Component Story"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2003,3001,3011,3012,3014,3016,3017,3018,3019,3020,3007,3008,3010,3021,3022"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4004,4005"/>
       </viewProvider>
    </extension>
 

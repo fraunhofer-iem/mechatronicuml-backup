@@ -16,6 +16,7 @@ import org.eclipse.swt.graphics.RGB;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
 
+import de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyUtils;
 import de.uni_paderborn.fujaba.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
@@ -111,6 +112,15 @@ public class ComponentStoryPatternVariableEditPolicy extends
 		} else if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR
 				.equals(notification.getFeature())) {
 			updateBindingOperator((BindingOperator) notification.getNewValue());
+		} else if (NotationPackage.Literals.LINE_TYPE_STYLE__LINE_TYPE == notification.getFeature()) {
+
+			// Some nasty EditParts do not refresh their primary shape; so we do this always.
+			int lineType = EditPolicyUtils.getLineType(getPrimaryView());
+			IFigure contentPane = getContentPane();
+			if (contentPane instanceof Shape) {
+				Shape shape = (Shape) contentPane;
+				shape.setLineStyle(lineType);
+			}
 		}
 
 		super.handleNotificationEvent(notification);
@@ -222,13 +232,6 @@ public class ComponentStoryPatternVariableEditPolicy extends
 			}
 		});
 
-		// Some nasty EditParts do not refresh their primary shape; so we do this always.
-		int lineStyle = optional ? SWT.LINE_DASH : SWT.LINE_SOLID;
-		IFigure contentPane = getContentPane();
-		if (contentPane instanceof Shape) {
-			Shape shape = (Shape) contentPane;
-			shape.setLineStyle(lineStyle);
-		}
 	}
 
 
@@ -258,4 +261,15 @@ public class ComponentStoryPatternVariableEditPolicy extends
 		}
 
 	}
+	
+
+	/**
+	 * Convenience method to return the host's primary view.
+	 * 
+	 * @return primary view.
+	 */
+	protected View getPrimaryView() {
+		return ((GraphicalEditPart) getHost()).getPrimaryView();
+	}
+
 }

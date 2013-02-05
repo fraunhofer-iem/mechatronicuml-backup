@@ -5,6 +5,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.swt.graphics.Color;
 
+import de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyUtils;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortType;
@@ -85,7 +86,7 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 			// setCardinality also does this, so do it here
 			Color color = getForegroundColor();
 			getPortFigure().configureArrows(color, color);
-			getPortFigure().setLineStyle(getLineType());
+			getPortFigure().setLineStyle(EditPolicyUtils.getLineType(getPrimaryView()));
 		}
 	}
 
