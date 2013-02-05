@@ -143,7 +143,7 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 
 		// Update background color
 		int lineType = getLineType();
-		int innerLineType = SWT.NORMAL;
+		int innerLineType = Graphics.LINE_SOLID;
 		Color foregroundColor = getForegroundColor();
 		Color backgroundColor = foregroundColor;
 		if (!mandatory) {
