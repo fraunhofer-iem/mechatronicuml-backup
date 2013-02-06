@@ -6,14 +6,14 @@ import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/de/uni_paderborn/fujaba/muml/ActionLanguage.xtext"
 var file.extensions = "action"
-var projectName = "de.uni_paderborn.fujaba.muml.actionlanguage"
+var projectName = "de.uni_paderborn.fujaba.muml.actionlanguage.xtext"
 var runtimeProject = "../${projectName}"
 
 Workflow {
 	bean = StandaloneSetup {
 		scanClassPath  = true
 		platformUri = "${runtimeProject}/.."
-		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.actionlanguage.ActionLanguagePackage"
+		registerGeneratedEPackage = "de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage"
 	
 		// registerGenModelFile = "platform:/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.genmodel"
 	
