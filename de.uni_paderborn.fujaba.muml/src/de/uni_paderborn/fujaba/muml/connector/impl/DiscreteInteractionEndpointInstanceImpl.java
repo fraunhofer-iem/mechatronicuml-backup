@@ -6,10 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.connector.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

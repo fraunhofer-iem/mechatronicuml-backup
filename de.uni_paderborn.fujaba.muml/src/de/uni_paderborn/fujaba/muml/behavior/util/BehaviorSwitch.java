@@ -7,13 +7,21 @@
 package de.uni_paderborn.fujaba.muml.behavior.util;
 
 import de.uni_paderborn.fujaba.muml.behavior.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.behavior.Behavior;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.behavior.Operation;
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
+import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
+import de.uni_paderborn.fujaba.muml.behavior.Variable;
 
 
 /**

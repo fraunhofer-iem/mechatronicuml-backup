@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.protocol.util;
 
+import de.uni_paderborn.fujaba.muml.protocol.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -14,7 +15,12 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.fujaba.muml.protocol.*;
+import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
+import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
+import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
+import de.uni_paderborn.fujaba.muml.protocol.Role;
+import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
 
 /**
  * <!-- begin-user-doc -->

@@ -7,12 +7,18 @@
 package de.uni_paderborn.fujaba.muml.behavior.impl;
 
 import de.uni_paderborn.fujaba.muml.behavior.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.behavior.Operation;
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
+import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
+import de.uni_paderborn.fujaba.muml.behavior.Variable;
 
 
 /**

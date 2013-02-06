@@ -20,6 +20,21 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstanc
 import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.instance.*;
+import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
+import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
+import de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance;
+import de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance;
+import de.uni_paderborn.fujaba.muml.instance.DelegationConnectorInstance;
+import de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance;
+import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
+import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
+import de.uni_paderborn.fujaba.muml.instance.HybridPortInstance;
+import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance;
+import de.uni_paderborn.fujaba.muml.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
 
 /**
  * <!-- begin-user-doc -->

@@ -7,13 +7,17 @@
 package de.uni_paderborn.fujaba.muml.constraint.impl;
 
 import de.uni_paderborn.fujaba.muml.constraint.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.constraint.ConstraintFactory;
+import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.constraint.Correctness;
+import de.uni_paderborn.fujaba.muml.constraint.TextualConstraint;
 
 
 /**

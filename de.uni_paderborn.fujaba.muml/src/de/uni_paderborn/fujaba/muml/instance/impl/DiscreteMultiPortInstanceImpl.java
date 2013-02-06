@@ -22,7 +22,6 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance;
-import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
 /**

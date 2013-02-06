@@ -2,8 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart;
 
-import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

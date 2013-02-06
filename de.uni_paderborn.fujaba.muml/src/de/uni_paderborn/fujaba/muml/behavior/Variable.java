@@ -8,7 +8,6 @@ package de.uni_paderborn.fujaba.muml.behavior;
 
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->

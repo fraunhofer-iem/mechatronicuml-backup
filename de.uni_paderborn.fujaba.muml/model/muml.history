@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<history:History xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<history:History xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:history="http://www.eclipse.org/emf/edapt/history/0.3">
   <releases date="2012-11-07T14:51:41.065+0100" label="0.3.2">
     <changes xsi:type="history:CompositeChange">
@@ -19826,5 +19825,12 @@
         dataValue="http://www.fujaba.de/muml/behavior/0.3.17" oldDataValue="http://www.fujaba.de/muml/model/behavior/0.3.17"/>
     <changes xsi:type="history:Set" element="muml.ecore#//instance" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/instance/0.3.15" oldDataValue="http://www.fujaba.de/model/instance/0.3.15"/>
+    <changes xsi:type="history:Create" target="muml.ecore#/" referenceName="eClassifiers"
+        element="#//@releases.15/@changes.158/@element"/>
+    <changes xsi:type="history:Set" element="#//@releases.15/@changes.158/@element"
+        featureName="name" dataValue="Tmp"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#/" referenceName="eClassifiers">
+      <element xsi:type="ecore:EClass" name="Tmp"/>
+    </changes>
   </releases>
 </history:History>

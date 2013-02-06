@@ -6,13 +6,17 @@
  */
 package de.uni_paderborn.fujaba.muml.valuetype.util;
 
+import de.uni_paderborn.fujaba.muml.valuetype.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.ExtendableElement;
 
-import de.uni_paderborn.fujaba.muml.valuetype.*;
+import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.valuetype.Range;
+import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->

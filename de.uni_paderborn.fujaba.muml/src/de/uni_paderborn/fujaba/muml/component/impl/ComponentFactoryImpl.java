@@ -7,13 +7,26 @@
 package de.uni_paderborn.fujaba.muml.component.impl;
 
 import de.uni_paderborn.fujaba.muml.component.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
+import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
+import de.uni_paderborn.fujaba.muml.component.ComponentFactory;
+import de.uni_paderborn.fujaba.muml.component.ComponentKind;
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.component.ContinuousPort;
+import de.uni_paderborn.fujaba.muml.component.ContinuousPortDirectionKind;
+import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
+import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
+import de.uni_paderborn.fujaba.muml.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.component.HybridPort;
+import de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent;
 
 
 /**

@@ -6,13 +6,17 @@
  */
 package de.uni_paderborn.fujaba.muml.msgtype.impl;
 
+import de.uni_paderborn.fujaba.muml.msgtype.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.fujaba.muml.msgtype.*;
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository;
+import de.uni_paderborn.fujaba.muml.msgtype.MsgtypeFactory;
+import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 
 /**
  * <!-- begin-user-doc -->

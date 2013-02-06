@@ -16,6 +16,33 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.*;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.AbsoluteDeadline;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.ConnectionPoint;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Deadline;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryOrExitEvent;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryPoint;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Event;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.ExitEvent;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.ExitPoint;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.PrioritizedElement;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.StateEvent;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.TransitionEvent;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
 
 /**
  * <!-- begin-user-doc -->

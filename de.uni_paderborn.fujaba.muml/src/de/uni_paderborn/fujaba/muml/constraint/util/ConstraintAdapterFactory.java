@@ -7,12 +7,18 @@
 package de.uni_paderborn.fujaba.muml.constraint.util;
 
 import de.uni_paderborn.fujaba.muml.constraint.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.ExtendableElement;
+
+import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.constraint.Constraint;
+import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.constraint.ModelingConstraint;
+import de.uni_paderborn.fujaba.muml.constraint.TextualConstraint;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableConstraint;
 
 
 /**

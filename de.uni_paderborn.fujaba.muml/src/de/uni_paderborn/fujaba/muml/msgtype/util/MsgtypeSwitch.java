@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.msgtype.util;
 
+import de.uni_paderborn.fujaba.muml.msgtype.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -13,7 +14,9 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.msgtype.*;
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository;
+import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 
 /**
  * <!-- begin-user-doc -->

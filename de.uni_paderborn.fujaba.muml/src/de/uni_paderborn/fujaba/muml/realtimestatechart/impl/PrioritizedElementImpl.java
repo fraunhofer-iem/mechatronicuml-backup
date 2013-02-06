@@ -2,15 +2,13 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.impl;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.PrioritizedElement;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import de.uni_paderborn.fujaba.muml.realtimestatechart.PrioritizedElement;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 
 /**
  * <!-- begin-user-doc -->

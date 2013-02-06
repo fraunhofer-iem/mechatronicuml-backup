@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.component.util;
 
 import de.uni_paderborn.fujaba.muml.component.*;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -15,6 +14,24 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
+import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
+import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
+import de.uni_paderborn.fujaba.muml.component.Component;
+import de.uni_paderborn.fujaba.muml.component.ComponentKind;
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.component.ContinuousPort;
+import de.uni_paderborn.fujaba.muml.component.ContinuousPortDirectionKind;
+import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
+import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
+import de.uni_paderborn.fujaba.muml.component.DirectedTypedPort;
+import de.uni_paderborn.fujaba.muml.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.component.HybridPort;
+import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.component.PortConnector;
+import de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent;
+import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 
 
 /**

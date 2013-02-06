@@ -15,6 +15,15 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.connector.*;
+import de.uni_paderborn.fujaba.muml.connector.Connector;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 
 /**

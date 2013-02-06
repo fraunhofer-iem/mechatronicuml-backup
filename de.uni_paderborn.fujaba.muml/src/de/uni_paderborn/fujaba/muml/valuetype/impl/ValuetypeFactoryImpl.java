@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.valuetype.impl;
 
+import de.uni_paderborn.fujaba.muml.valuetype.*;
 import java.util.concurrent.TimeUnit;
 
 import org.eclipse.emf.ecore.EClass;
@@ -15,7 +16,11 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.fujaba.muml.valuetype.*;
+import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.valuetype.Range;
+import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->

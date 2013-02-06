@@ -7,11 +7,17 @@
 package de.uni_paderborn.fujaba.muml.constraint.util;
 
 import de.uni_paderborn.fujaba.muml.constraint.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.ExtendableElement;
+
+import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.constraint.Constraint;
+import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.constraint.ModelingConstraint;
+import de.uni_paderborn.fujaba.muml.constraint.TextualConstraint;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableConstraint;
 
 
 /**

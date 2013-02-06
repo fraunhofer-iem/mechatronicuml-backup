@@ -19,6 +19,11 @@ import org.eclipse.emf.ecore.EPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * The muml package contains the core meta-model of MechatronicUML. The
+ * subpackages define the base classes for the component model, real-time 
+ * statecharts, message interfaces and coordination protocol.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.MumlFactory
  * @model kind="package"
  * @generated

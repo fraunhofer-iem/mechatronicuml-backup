@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.deployment.util;
 
 import de.uni_paderborn.fujaba.muml.deployment.*;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -15,6 +14,15 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
+import de.uni_paderborn.fujaba.muml.deployment.CommunicationLink;
+import de.uni_paderborn.fujaba.muml.deployment.Deployment;
+import de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage;
+import de.uni_paderborn.fujaba.muml.deployment.HardwareNode;
+import de.uni_paderborn.fujaba.muml.deployment.HardwareNodeKind;
+import de.uni_paderborn.fujaba.muml.deployment.HardwarePort;
+import de.uni_paderborn.fujaba.muml.deployment.HardwarePortDirectionKind;
+import de.uni_paderborn.fujaba.muml.deployment.LinkQualityOfService;
 
 
 /**

@@ -6,17 +6,15 @@
  */
 package de.uni_paderborn.fujaba.muml.instance.impl;
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 

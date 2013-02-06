@@ -7,12 +7,14 @@
 package de.uni_paderborn.fujaba.muml.connector.impl;
 
 import de.uni_paderborn.fujaba.muml.connector.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.connector.ConnectorFactory;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 
 
 /**

@@ -6,13 +6,20 @@
  */
 package de.uni_paderborn.fujaba.muml.protocol.impl;
 
+import de.uni_paderborn.fujaba.muml.protocol.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.fujaba.muml.protocol.*;
+import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
+import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
+import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory;
+import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
+import de.uni_paderborn.fujaba.muml.protocol.Role;
+import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
 
 /**
  * <!-- begin-user-doc -->

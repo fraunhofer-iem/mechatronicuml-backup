@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.msgtype.util;
 
+import de.uni_paderborn.fujaba.muml.msgtype.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -14,7 +15,9 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.fujaba.muml.msgtype.*;
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository;
+import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 
 /**
  * <!-- begin-user-doc -->

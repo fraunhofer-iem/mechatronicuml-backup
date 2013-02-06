@@ -6,10 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.instance;
 
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
-
 import org.eclipse.emf.common.util.EList;
 
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.protocol.Role;

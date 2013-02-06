@@ -20,6 +20,12 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.protocol.*;
+import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
+import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
+import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
+import de.uni_paderborn.fujaba.muml.protocol.Role;
+import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**

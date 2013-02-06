@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.types.impl;
 
+import de.uni_paderborn.fujaba.muml.types.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -13,7 +14,11 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.fujaba.muml.types.*;
+import de.uni_paderborn.fujaba.muml.types.ArrayDataType;
+import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
+import de.uni_paderborn.fujaba.muml.types.PrimitiveTypes;
+import de.uni_paderborn.fujaba.muml.types.TypesFactory;
+import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->
