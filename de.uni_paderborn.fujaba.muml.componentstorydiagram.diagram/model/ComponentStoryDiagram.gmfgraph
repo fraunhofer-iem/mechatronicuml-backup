@@ -326,27 +326,17 @@
             outline="false"
             fill="false">
           <layout
-              xsi:type="gmfgraph:StackLayout"/>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="IconContainer"
-              outline="false"
-              fill="false">
-            <layout
-                xsi:type="gmfgraph:GridLayout"
-                equalWidth="false"/>
-            <children
-                xsi:type="gmfgraph:FigureRef">
-              <figure
-                  xsi:type="gmfgraph:Rectangle"
-                  href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.6/@actualFigure"/>
-            </children>
-          </children>
+              xsi:type="gmfgraph:GridLayout"
+              numColumns="2"
+              equalWidth="false"/>
           <children
               xsi:type="gmfgraph:Rectangle"
               name="NameContainer"
               outline="false"
               fill="false">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"/>
             <layout
                 xsi:type="gmfgraph:GridLayout"
                 equalWidth="false"/>
@@ -361,11 +351,29 @@
                   xsi:type="gmfgraph:BasicFont"/>
             </children>
           </children>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="IconContainer"
+              outline="false"
+              fill="false">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                horizontalAlignment="END"/>
+            <layout
+                xsi:type="gmfgraph:GridLayout"
+                equalWidth="false"/>
+            <children
+                xsi:type="gmfgraph:FigureRef">
+              <figure
+                  xsi:type="gmfgraph:Rectangle"
+                  href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.6/@actualFigure"/>
+            </children>
+          </children>
         </children>
       </actualFigure>
       <accessors
           accessor="getFigurePartVariableNameFigure"
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.1/@children.0"/>
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.0/@children.0"/>
     </descriptors>
     <descriptors
         name="PartVariableOperatorFigure">

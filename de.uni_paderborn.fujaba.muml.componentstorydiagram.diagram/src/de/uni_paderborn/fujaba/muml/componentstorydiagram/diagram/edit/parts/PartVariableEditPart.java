@@ -382,13 +382,61 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 			partVariable0.setOutline(false);
 
 			this.add(partVariable0);
-			partVariable0.setLayoutManager(new StackLayout());
+
+			GridLayout layoutPartVariable0 = new GridLayout();
+			layoutPartVariable0.numColumns = 2;
+			layoutPartVariable0.makeColumnsEqualWidth = false;
+			partVariable0.setLayoutManager(layoutPartVariable0);
+
+			RectangleFigure nameContainer1 = new RectangleFigure();
+			nameContainer1.setFill(false);
+			nameContainer1.setOutline(false);
+
+			GridData constraintNameContainer1 = new GridData();
+			constraintNameContainer1.verticalAlignment = GridData.CENTER;
+			constraintNameContainer1.horizontalAlignment = GridData.CENTER;
+			constraintNameContainer1.horizontalIndent = 0;
+			constraintNameContainer1.horizontalSpan = 1;
+			constraintNameContainer1.verticalSpan = 1;
+			constraintNameContainer1.grabExcessHorizontalSpace = true;
+			constraintNameContainer1.grabExcessVerticalSpace = false;
+			partVariable0.add(nameContainer1, constraintNameContainer1);
+
+			GridLayout layoutNameContainer1 = new GridLayout();
+			layoutNameContainer1.numColumns = 1;
+			layoutNameContainer1.makeColumnsEqualWidth = false;
+			nameContainer1.setLayoutManager(layoutNameContainer1);
+
+			fFigurePartVariableNameFigure = new WrappingLabel();
+			fFigurePartVariableNameFigure.setText("");
+
+			fFigurePartVariableNameFigure
+					.setFont(FFIGUREPARTVARIABLENAMEFIGURE_FONT);
+
+			GridData constraintFFigurePartVariableNameFigure = new GridData();
+			constraintFFigurePartVariableNameFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigurePartVariableNameFigure.horizontalAlignment = GridData.CENTER;
+			constraintFFigurePartVariableNameFigure.horizontalIndent = 0;
+			constraintFFigurePartVariableNameFigure.horizontalSpan = 1;
+			constraintFFigurePartVariableNameFigure.verticalSpan = 1;
+			constraintFFigurePartVariableNameFigure.grabExcessHorizontalSpace = true;
+			constraintFFigurePartVariableNameFigure.grabExcessVerticalSpace = true;
+			nameContainer1.add(fFigurePartVariableNameFigure,
+					constraintFFigurePartVariableNameFigure);
 
 			RectangleFigure iconContainer1 = new RectangleFigure();
 			iconContainer1.setFill(false);
 			iconContainer1.setOutline(false);
 
-			partVariable0.add(iconContainer1);
+			GridData constraintIconContainer1 = new GridData();
+			constraintIconContainer1.verticalAlignment = GridData.CENTER;
+			constraintIconContainer1.horizontalAlignment = GridData.END;
+			constraintIconContainer1.horizontalIndent = 0;
+			constraintIconContainer1.horizontalSpan = 1;
+			constraintIconContainer1.verticalSpan = 1;
+			constraintIconContainer1.grabExcessHorizontalSpace = false;
+			constraintIconContainer1.grabExcessVerticalSpace = false;
+			partVariable0.add(iconContainer1, constraintIconContainer1);
 
 			GridLayout layoutIconContainer1 = new GridLayout();
 			layoutIconContainer1.numColumns = 1;
@@ -454,34 +502,6 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 			componentIconInner23.add(d14, new Rectangle(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
-
-			RectangleFigure nameContainer1 = new RectangleFigure();
-			nameContainer1.setFill(false);
-			nameContainer1.setOutline(false);
-
-			partVariable0.add(nameContainer1);
-
-			GridLayout layoutNameContainer1 = new GridLayout();
-			layoutNameContainer1.numColumns = 1;
-			layoutNameContainer1.makeColumnsEqualWidth = false;
-			nameContainer1.setLayoutManager(layoutNameContainer1);
-
-			fFigurePartVariableNameFigure = new WrappingLabel();
-			fFigurePartVariableNameFigure.setText("");
-
-			fFigurePartVariableNameFigure
-					.setFont(FFIGUREPARTVARIABLENAMEFIGURE_FONT);
-
-			GridData constraintFFigurePartVariableNameFigure = new GridData();
-			constraintFFigurePartVariableNameFigure.verticalAlignment = GridData.CENTER;
-			constraintFFigurePartVariableNameFigure.horizontalAlignment = GridData.CENTER;
-			constraintFFigurePartVariableNameFigure.horizontalIndent = 0;
-			constraintFFigurePartVariableNameFigure.horizontalSpan = 1;
-			constraintFFigurePartVariableNameFigure.verticalSpan = 1;
-			constraintFFigurePartVariableNameFigure.grabExcessHorizontalSpace = true;
-			constraintFFigurePartVariableNameFigure.grabExcessVerticalSpace = true;
-			nameContainer1.add(fFigurePartVariableNameFigure,
-					constraintFFigurePartVariableNameFigure);
 
 		}
 
