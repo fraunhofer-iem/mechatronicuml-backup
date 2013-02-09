@@ -184,8 +184,8 @@ public class ControlflowValidator extends EObjectValidator {
 	protected static final String CONTROLLER_EXCHANGE_NODE__CORRECT_NUMBER_OF_FADING_FUNCTIONS__EEXPRESSION = "if self.controllerExchangeStrategy <> ControllerExchangeStrategy::FADING_FUNCTION then\r\n" +
 		"self.fadingFunctions->size()=0\r\n" +
 		"else\r\n" +
-		"\tif self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type.oclIsKindOf(muml::model::component::StructuredComponent) then\r\n" +
-		"\t\t--self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type.oclAsType(muml::model::component::StructuredComponent).ports->select(i : muml::model::component::Port | i.oclIsKindOf(muml::model::component::ContinuousPort))->select(i : muml::model::component::ContinuousPort | i.outPort = true)->size() = self.fadingFunctions->size()\r\n" +
+		"\tif self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type.oclIsKindOf(muml::component::StructuredComponent) then\r\n" +
+		"\t\t--self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type.oclAsType(muml::component::StructuredComponent).ports->select(i : muml::component::Port | i.oclIsKindOf(muml::component::ContinuousPort))->select(i : muml::component::ContinuousPort | i.outPort = true)->size() = self.fadingFunctions->size()\r\n" +
 		"\t\tself.fadingFunctions->size()>0\r\n" +
 		"\telse\r\n" +
 		"\t\tfalse\r\n" +

@@ -615,16 +615,16 @@
                 <layoutData
                     xsi:type="gmfgraph:BorderLayoutData"/>
                 <layout
-                    xsi:type="gmfgraph:BorderLayout"/>
+                    xsi:type="gmfgraph:GridLayout"/>
                 <children
                     xsi:type="gmfgraph:Rectangle"
                     name="UpperLineHelper"
                     outline="false"
                     fill="false">
                   <layoutData
-                      xsi:type="gmfgraph:BorderLayoutData"
-                      alignment="BEGINNING"
-                      vertical="true"/>
+                      xsi:type="gmfgraph:GridLayoutData"
+                      verticalAlignment="BEGINNING"
+                      horizontalAlignment="BEGINNING"/>
                   <maximumSize
                       dx="1"
                       dy="6"/>
@@ -639,37 +639,50 @@
                       y="6"/>
                 </children>
                 <children
+                    xsi:type="gmfgraph:ScalablePolygon"
+                    name="LinePolygon"
+                    lineWidth="2">
+                  <layoutData
+                      xsi:type="gmfgraph:GridLayoutData"
+                      grabExcessVerticalSpace="true"
+                      verticalAlignment="FILL"/>
+                  <template/>
+                  <template
+                      x="1"/>
+                </children>
+                <children
                     xsi:type="gmfgraph:Rectangle"
-                    name="LinePolygonRectangle"
+                    name="LabelRectangle"
                     outline="false">
                   <layoutData
-                      xsi:type="gmfgraph:BorderLayoutData"
-                      vertical="true"/>
+                      xsi:type="gmfgraph:GridLayoutData"
+                      verticalAlignment="END"
+                      horizontalAlignment="FILL"/>
                   <layout
                       xsi:type="gmfgraph:BorderLayout"/>
                   <children
-                      xsi:type="gmfgraph:ScalablePolygon"
-                      name="LinePolygon"
-                      lineWidth="2">
+                      xsi:type="gmfgraph:Label"
+                      name="ControllerExchangeNodeIconLabel"
+                      text="Atomic">
                     <layoutData
                         xsi:type="gmfgraph:BorderLayoutData"
-                        alignment="FILL"/>
-                    <template/>
-                    <template
-                        x="1"/>
+                        alignment="BEGINNING"/>
+                    <font
+                        xsi:type="gmfgraph:BasicFont"
+                        height="8"
+                        style="ITALIC"/>
                   </children>
-                </children>
-                <children
-                    xsi:type="gmfgraph:Label"
-                    name="ControllerExchangeNodeIconLabel"
-                    text="Atomic">
-                  <layoutData
-                      xsi:type="gmfgraph:BorderLayoutData"
-                      alignment="END"/>
-                  <font
-                      xsi:type="gmfgraph:BasicFont"
-                      height="8"
-                      style="ITALIC"/>
+                  <children
+                      xsi:type="gmfgraph:Label"
+                      name="ControllerExchangeNodeIconDeadline"
+                      text="[0;0]">
+                    <layoutData
+                        xsi:type="gmfgraph:BorderLayoutData"
+                        alignment="END"/>
+                    <font
+                        xsi:type="gmfgraph:BasicFont"
+                        height="8"/>
+                  </children>
                 </children>
               </children>
               <children

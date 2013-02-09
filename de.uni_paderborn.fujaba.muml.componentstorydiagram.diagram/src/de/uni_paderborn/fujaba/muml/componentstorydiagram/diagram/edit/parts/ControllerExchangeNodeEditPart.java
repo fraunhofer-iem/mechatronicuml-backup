@@ -605,7 +605,9 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			controllerExchangeNodeIcon2.add(middleIconRectangle3,
 					BorderLayout.CENTER);
 
-			BorderLayout layoutMiddleIconRectangle3 = new BorderLayout();
+			GridLayout layoutMiddleIconRectangle3 = new GridLayout();
+			layoutMiddleIconRectangle3.numColumns = 1;
+			layoutMiddleIconRectangle3.makeColumnsEqualWidth = true;
 			middleIconRectangle3.setLayoutManager(layoutMiddleIconRectangle3);
 
 			RectangleFigure upperLineHelper4 = new RectangleFigure();
@@ -620,34 +622,68 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			upperLineHelper4.setSize(getMapMode().DPtoLP(1), getMapMode()
 					.DPtoLP(6));
 
-			middleIconRectangle3.add(upperLineHelper4, BorderLayout.TOP);
+			GridData constraintUpperLineHelper4 = new GridData();
+			constraintUpperLineHelper4.verticalAlignment = GridData.BEGINNING;
+			constraintUpperLineHelper4.horizontalAlignment = GridData.BEGINNING;
+			constraintUpperLineHelper4.horizontalIndent = 0;
+			constraintUpperLineHelper4.horizontalSpan = 1;
+			constraintUpperLineHelper4.verticalSpan = 1;
+			constraintUpperLineHelper4.grabExcessHorizontalSpace = false;
+			constraintUpperLineHelper4.grabExcessVerticalSpace = false;
+			middleIconRectangle3.add(upperLineHelper4,
+					constraintUpperLineHelper4);
 
-			RectangleFigure linePolygonRectangle4 = new RectangleFigure();
-			linePolygonRectangle4.setOutline(false);
+			ScalablePolygonShape linePolygon4 = new ScalablePolygonShape();
+			linePolygon4.addPoint(new Point(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(0)));
+			linePolygon4.addPoint(new Point(getMapMode().DPtoLP(1),
+					getMapMode().DPtoLP(0)));
+			linePolygon4.setFill(true);
+			linePolygon4.setLineWidth(2);
 
+			GridData constraintLinePolygon4 = new GridData();
+			constraintLinePolygon4.verticalAlignment = GridData.FILL;
+			constraintLinePolygon4.horizontalAlignment = GridData.CENTER;
+			constraintLinePolygon4.horizontalIndent = 0;
+			constraintLinePolygon4.horizontalSpan = 1;
+			constraintLinePolygon4.verticalSpan = 1;
+			constraintLinePolygon4.grabExcessHorizontalSpace = false;
+			constraintLinePolygon4.grabExcessVerticalSpace = true;
+			middleIconRectangle3.add(linePolygon4, constraintLinePolygon4);
+
+			RectangleFigure labelRectangle4 = new RectangleFigure();
+			labelRectangle4.setOutline(false);
+
+			GridData constraintLabelRectangle4 = new GridData();
+			constraintLabelRectangle4.verticalAlignment = GridData.END;
+			constraintLabelRectangle4.horizontalAlignment = GridData.FILL;
+			constraintLabelRectangle4.horizontalIndent = 0;
+			constraintLabelRectangle4.horizontalSpan = 1;
+			constraintLabelRectangle4.verticalSpan = 1;
+			constraintLabelRectangle4.grabExcessHorizontalSpace = false;
+			constraintLabelRectangle4.grabExcessVerticalSpace = false;
 			middleIconRectangle3
-					.add(linePolygonRectangle4, BorderLayout.CENTER);
+					.add(labelRectangle4, constraintLabelRectangle4);
 
-			BorderLayout layoutLinePolygonRectangle4 = new BorderLayout();
-			linePolygonRectangle4.setLayoutManager(layoutLinePolygonRectangle4);
+			BorderLayout layoutLabelRectangle4 = new BorderLayout();
+			labelRectangle4.setLayoutManager(layoutLabelRectangle4);
 
-			ScalablePolygonShape linePolygon5 = new ScalablePolygonShape();
-			linePolygon5.addPoint(new Point(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(0)));
-			linePolygon5.addPoint(new Point(getMapMode().DPtoLP(1),
-					getMapMode().DPtoLP(0)));
-			linePolygon5.setFill(true);
-			linePolygon5.setLineWidth(2);
+			WrappingLabel controllerExchangeNodeIconLabel5 = new WrappingLabel();
+			controllerExchangeNodeIconLabel5.setText("Atomic");
 
-			linePolygonRectangle4.add(linePolygon5, BorderLayout.CENTER);
+			controllerExchangeNodeIconLabel5
+					.setFont(CONTROLLEREXCHANGENODEICONLABEL5_FONT);
 
-			WrappingLabel controllerExchangeNodeIconLabel4 = new WrappingLabel();
-			controllerExchangeNodeIconLabel4.setText("Atomic");
+			labelRectangle4.add(controllerExchangeNodeIconLabel5,
+					BorderLayout.LEFT);
 
-			controllerExchangeNodeIconLabel4
-					.setFont(CONTROLLEREXCHANGENODEICONLABEL4_FONT);
+			WrappingLabel controllerExchangeNodeIconDeadline5 = new WrappingLabel();
+			controllerExchangeNodeIconDeadline5.setText("[0;0]");
 
-			middleIconRectangle3.add(controllerExchangeNodeIconLabel4,
+			controllerExchangeNodeIconDeadline5
+					.setFont(CONTROLLEREXCHANGENODEICONDEADLINE5_FONT);
+
+			labelRectangle4.add(controllerExchangeNodeIconDeadline5,
 					BorderLayout.RIGHT);
 
 			RectangleFigure rightIconRectangle3 = new RectangleFigure();
@@ -789,9 +825,16 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font CONTROLLEREXCHANGENODEICONLABEL4_FONT = new Font(
+	static final Font CONTROLLEREXCHANGENODEICONLABEL5_FONT = new Font(
 			Display.getCurrent(), Display.getDefault().getSystemFont()
 					.getFontData()[0].getName(), 8, SWT.ITALIC);
+
+	/**
+	 * @generated
+	 */
+	static final Font CONTROLLEREXCHANGENODEICONDEADLINE5_FONT = new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 8, SWT.NORMAL);
 
 	/**
 	 * @generated
