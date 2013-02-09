@@ -30,7 +30,7 @@ public class ComponentStoryDiagramOCLFactory {
 	 * @generated
 	 */
 	protected ComponentStoryDiagramOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression[16];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression[18];
 	}
 
 	/**
@@ -66,6 +66,8 @@ public class ComponentStoryDiagramOCLFactory {
 					"--storydiagrams::patterns::BindingOperator::CREATE".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'controllerExchangeNode\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"----self.fromPort.oclAsType(PortVariable).name.concat(\' \u2192 \').concat(self.toPort.oclAsType(PortVariable).name).concat(\' : \').concat(self.name)\r\n---- \'hallo\'\r\n--\r\n--\r\n--(\r\n--\tif self.fromPort.name.oclIsUndefined() then\r\n--\t\t\'null\'\r\n--\telse\r\n--\t\tself.fromPort.name\r\n--\tendif\r\n--).concat(\' \u2192 \').concat(\r\n--\tif self.toPort.name.oclIsUndefined() then\r\n--\t\t\'null\'\r\n--\telse\r\n--\t\tself.toPort.name\r\n--\tendif\r\n--).concat(\' : \').concat(\r\n--\tif self.name.oclIsUndefined() then\r\n--\t\t\'null\'\r\n--\telse\r\n--\t\tself.name\r\n--\tendif\r\n--)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--if self.controllerExchangeStrategy <> ControllerExchangeStrategy::ATOMIC_SWITCHING then\r\n--\t\r\n--\tif self.deadline.oclIsUndefined() then\r\n--\t\t\'\'\r\n--\telse\r\n--\t\t\'[\'.concat(\r\n--\t\t\tif self.deadline.lowerBound.oclIsUndefined() then \'null\' else self.deadline.lowerBound.toString() endif\r\n--\t\t).concat(\';\').concat(\r\n--\t\t\tif self.deadline.upperBound.oclIsUndefined() then \'null\' else self.deadline.upperBound.toString() endif\r\n--\t\t).concat(\']\')\r\n--\tendif\r\n--\r\n--else\r\n--\t\'\'\r\n--endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--if ControllerExchangeStrategy::FADING_FUNCTION = self.controllerExchangeStrategy then\r\n--\t\'Cross\'\r\n--else\r\n--\tif ControllerExchangeStrategy::FLAT_SWITCHING = self.controllerExchangeStrategy then\r\n--\t\t\'Flat\'\r\n--\telse\r\n--\t\t\'Atomic\'\r\n--\tendif\r\n--endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

@@ -160,6 +160,36 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
+	protected de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser5043 controllerExchangeNodeLabel_5043Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getControllerExchangeNodeLabel_5043Parser() {
+		if (controllerExchangeNodeLabel_5043Parser == null) {
+			controllerExchangeNodeLabel_5043Parser = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser5043();
+		}
+		return controllerExchangeNodeLabel_5043Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser5044 controllerExchangeNodeLabel_5044Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getControllerExchangeNodeLabel_5044Parser() {
+		if (controllerExchangeNodeLabel_5044Parser == null) {
+			controllerExchangeNodeLabel_5044Parser = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser5044();
+		}
+		return controllerExchangeNodeLabel_5044Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.FadingFunctionLabelExpressionLabelParser5042 fadingFunctionLabel_5042Parser;
 
 	/**
@@ -233,6 +263,10 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 			return getSinglePortVariableName_5028Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeNameEditPart.VISUAL_ID:
 			return getControllerExchangeNodeName_5041Parser();
+		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
+			return getControllerExchangeNodeLabel_5043Parser();
+		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
+			return getControllerExchangeNodeLabel_5044Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
 			return getFadingFunctionLabel_5042Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.AssemblyVariableNameEditPart.VISUAL_ID:

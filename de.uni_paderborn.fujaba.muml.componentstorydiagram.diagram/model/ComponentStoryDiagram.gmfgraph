@@ -663,7 +663,7 @@
                   <children
                       xsi:type="gmfgraph:Label"
                       name="ControllerExchangeNodeIconLabel"
-                      text="Atomic">
+                      text="">
                     <layoutData
                         xsi:type="gmfgraph:BorderLayoutData"
                         alignment="BEGINNING"/>
@@ -675,7 +675,7 @@
                   <children
                       xsi:type="gmfgraph:Label"
                       name="ControllerExchangeNodeIconDeadline"
-                      text="[0;0]">
+                      text="">
                     <layoutData
                         xsi:type="gmfgraph:BorderLayoutData"
                         alignment="END"/>
@@ -800,6 +800,10 @@
           figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.2"/>
       <accessors
           figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.0/@children.1/@children.1/@children.2/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.14/@actualFigure/@children.1/@children.0/@children.1/@children.1/@children.2/@children.1"/>
     </descriptors>
     <descriptors
         name="FadingFunctionFigure">
@@ -1022,4 +1026,14 @@
           dy="-1"/>
     </facets>
   </labels>
+  <labels
+      name="ControllerExchangeNodeIconLabel"
+      figure="ControllerExchangeNodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.14/@accessors.3"/>
+  <labels
+      name="ControllerExchangeNodeIconDeadline"
+      figure="ControllerExchangeNodeFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.14/@accessors.4"/>
 </gmfgraph:Canvas>

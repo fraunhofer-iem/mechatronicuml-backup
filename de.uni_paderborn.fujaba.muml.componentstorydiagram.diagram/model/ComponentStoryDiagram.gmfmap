@@ -417,6 +417,22 @@
             <features
                 href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping"
+              readOnly="true">
+            <diagramLabel
+                href="ComponentStoryDiagram.gmfgraph#ControllerExchangeNodeIconDeadline"/>
+            <viewExpression
+                body="if self.controllerExchangeStrategy &lt;> ControllerExchangeStrategy::ATOMIC_SWITCHING then&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;if self.deadline.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'['.concat(&#xD;&#xA;&#x9;&#x9;&#x9;if self.deadline.lowerBound.oclIsUndefined() then 'null' else self.deadline.lowerBound.toString() endif&#xD;&#xA;&#x9;&#x9;).concat(';').concat(&#xD;&#xA;&#x9;&#x9;&#x9;if self.deadline.upperBound.oclIsUndefined() then 'null' else self.deadline.upperBound.toString() endif&#xD;&#xA;&#x9;&#x9;).concat(']')&#xD;&#xA;&#x9;endif&#xD;&#xA;&#xD;&#xA;else&#xD;&#xA;&#x9;''&#xD;&#xA;endif"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:ExpressionLabelMapping"
+              readOnly="true">
+            <diagramLabel
+                href="ComponentStoryDiagram.gmfgraph#ControllerExchangeNodeIconLabel"/>
+            <viewExpression
+                body="if ControllerExchangeStrategy::FADING_FUNCTION = self.controllerExchangeStrategy then&#xD;&#xA;&#x9;'Cross'&#xD;&#xA;else&#xD;&#xA;&#x9;if ControllerExchangeStrategy::FLAT_SWITCHING = self.controllerExchangeStrategy then&#xD;&#xA;&#x9;&#x9;'Flat'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'Atomic'&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
+          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.2"/>

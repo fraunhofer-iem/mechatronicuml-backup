@@ -146,6 +146,18 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 							.getFigureControllerExchangeNodeName());
 			return true;
 		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel5EditPart) {
+			((de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel5EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureControllerExchangeNodeIconDeadline());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel6EditPart) {
+			((de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel6EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureControllerExchangeNodeIconLabel());
+			return true;
+		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureControllerExchangeNodeFadingFunctionsContainer();
@@ -170,6 +182,12 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeNameEditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel5EditPart) {
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel6EditPart) {
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) {
@@ -439,6 +457,15 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
+		private WrappingLabel fFigureControllerExchangeNodeIconLabel;
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureControllerExchangeNodeIconDeadline;
+
+		/**
+		 * @generated
+		 */
 		public ControllerExchangeNodeFigure() {
 
 			BorderLayout layoutThis = new BorderLayout();
@@ -668,22 +695,22 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			BorderLayout layoutLabelRectangle4 = new BorderLayout();
 			labelRectangle4.setLayoutManager(layoutLabelRectangle4);
 
-			WrappingLabel controllerExchangeNodeIconLabel5 = new WrappingLabel();
-			controllerExchangeNodeIconLabel5.setText("Atomic");
+			fFigureControllerExchangeNodeIconLabel = new WrappingLabel();
+			fFigureControllerExchangeNodeIconLabel.setText("");
 
-			controllerExchangeNodeIconLabel5
-					.setFont(CONTROLLEREXCHANGENODEICONLABEL5_FONT);
+			fFigureControllerExchangeNodeIconLabel
+					.setFont(FFIGURECONTROLLEREXCHANGENODEICONLABEL_FONT);
 
-			labelRectangle4.add(controllerExchangeNodeIconLabel5,
+			labelRectangle4.add(fFigureControllerExchangeNodeIconLabel,
 					BorderLayout.LEFT);
 
-			WrappingLabel controllerExchangeNodeIconDeadline5 = new WrappingLabel();
-			controllerExchangeNodeIconDeadline5.setText("[0;0]");
+			fFigureControllerExchangeNodeIconDeadline = new WrappingLabel();
+			fFigureControllerExchangeNodeIconDeadline.setText("");
 
-			controllerExchangeNodeIconDeadline5
-					.setFont(CONTROLLEREXCHANGENODEICONDEADLINE5_FONT);
+			fFigureControllerExchangeNodeIconDeadline
+					.setFont(FFIGURECONTROLLEREXCHANGENODEICONDEADLINE_FONT);
 
-			labelRectangle4.add(controllerExchangeNodeIconDeadline5,
+			labelRectangle4.add(fFigureControllerExchangeNodeIconDeadline,
 					BorderLayout.RIGHT);
 
 			RectangleFigure rightIconRectangle3 = new RectangleFigure();
@@ -815,6 +842,20 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			return fFigureControllerExchangeNodeFadingFunctionsContainer;
 		}
 
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureControllerExchangeNodeIconLabel() {
+			return fFigureControllerExchangeNodeIconLabel;
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureControllerExchangeNodeIconDeadline() {
+			return fFigureControllerExchangeNodeIconDeadline;
+		}
+
 	}
 
 	/**
@@ -825,14 +866,14 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font CONTROLLEREXCHANGENODEICONLABEL5_FONT = new Font(
+	static final Font FFIGURECONTROLLEREXCHANGENODEICONLABEL_FONT = new Font(
 			Display.getCurrent(), Display.getDefault().getSystemFont()
 					.getFontData()[0].getName(), 8, SWT.ITALIC);
 
 	/**
 	 * @generated
 	 */
-	static final Font CONTROLLEREXCHANGENODEICONDEADLINE5_FONT = new Font(
+	static final Font FFIGURECONTROLLEREXCHANGENODEICONDEADLINE_FONT = new Font(
 			Display.getCurrent(), Display.getDefault().getSystemFont()
 					.getFontData()[0].getName(), 8, SWT.NORMAL);
 
