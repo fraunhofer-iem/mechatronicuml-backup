@@ -54,6 +54,11 @@ public class ComponentStoryPatternVariableEditPolicy extends
 	private ScalableXFigure negativeFigure;
 
 	/**
+	 * Remembers if we already initialized the view.
+	 */
+	private boolean viewInitialized;
+
+	/**
 	 * Convenience method, is designed to be overriden by subclasses.
 	 * 
 	 * @return The ComponentStoryPatternVariable.
@@ -90,7 +95,6 @@ public class ComponentStoryPatternVariableEditPolicy extends
 		super.deactivate();
 	}
 
-
 	/**
 	 * Creates a figure for the negative visualization; can be overridden.
 	 * 
@@ -112,9 +116,11 @@ public class ComponentStoryPatternVariableEditPolicy extends
 		} else if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR
 				.equals(notification.getFeature())) {
 			updateBindingOperator((BindingOperator) notification.getNewValue());
-		} else if (NotationPackage.Literals.LINE_TYPE_STYLE__LINE_TYPE == notification.getFeature()) {
+		} else if (NotationPackage.Literals.LINE_TYPE_STYLE__LINE_TYPE == notification
+				.getFeature()) {
 
-			// Some nasty EditParts do not refresh their primary shape; so we do this always.
+			// Some nasty EditParts do not refresh their primary shape; so we do
+			// this always.
 			int lineType = EditPolicyUtils.getLineType(getPrimaryView());
 			IFigure contentPane = getContentPane();
 			if (contentPane instanceof Shape) {
@@ -123,7 +129,28 @@ public class ComponentStoryPatternVariableEditPolicy extends
 			}
 		}
 
+		// We abuse this notification event to initialize the view within a
+		// write-enabled transaction.
+		if (!viewInitialized) {
+			initializeView();
+		}
+
 		super.handleNotificationEvent(notification);
+	}
+
+	protected void initializeView() {
+		View view = getNotationView();
+
+		if (view.getStyle(NotationPackage.Literals.LINE_TYPE_STYLE) == null) {
+			view.createStyle(NotationPackage.Literals.LINE_TYPE_STYLE);
+		}
+
+		updateBindingOperator((BindingOperator) getSemanticElement()
+				.eGet(ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR));
+		updateBindingSemantics((BindingSemantics) getSemanticElement()
+				.eGet(ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_SEMANTICS));
+
+		viewInitialized = true;
 	}
 
 	/**
@@ -143,7 +170,7 @@ public class ComponentStoryPatternVariableEditPolicy extends
 	 * @param bindingOperator
 	 *            The current value of binding operator.
 	 */
-	private void updateBindingOperator(BindingOperator bindingOperator) {
+	protected void updateBindingOperator(BindingOperator bindingOperator) {
 		// Set the view's color based on the bindingOperator value.
 		final org.eclipse.swt.graphics.RGB lineRGB = getLineColor(bindingOperator);
 		final View view = ((GraphicalEditPart) getHost()).getNotationView();
@@ -158,7 +185,7 @@ public class ComponentStoryPatternVariableEditPolicy extends
 						org.eclipse.gmf.runtime.notation.NotationPackage.Literals.LINE_STYLE__LINE_COLOR,
 						org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities
 								.RGBToInteger(lineRGB));
-				
+
 				ViewUtil.setStructuralFeatureValue(
 						view,
 						org.eclipse.gmf.runtime.notation.NotationPackage.Literals.FONT_STYLE__FONT_COLOR,
@@ -179,7 +206,7 @@ public class ComponentStoryPatternVariableEditPolicy extends
 
 		if (BindingOperator.CREATE.equals(bindingOperator)) {
 			lineRGB = RGB_CREATE;
-		} else if (BindingOperator.DESTROY.equals(bindingOperator)) { 
+		} else if (BindingOperator.DESTROY.equals(bindingOperator)) {
 			lineRGB = RGB_DESTROY;
 		}
 		return lineRGB;
@@ -216,8 +243,8 @@ public class ComponentStoryPatternVariableEditPolicy extends
 	private void setOptional(boolean optional) {
 		// Make sure a LineTypeStyle is registered in the view.
 		// Deactivated; we require one to be installed
-		//registerLineTypeStyle();
-		
+		// registerLineTypeStyle();
+
 		// Set LineTypeStyle for view
 		final View view = ((GraphicalEditPart) getHost()).getNotationView();
 		final LineType lineType = optional ? LineType.DASH_LITERAL
@@ -225,7 +252,8 @@ public class ComponentStoryPatternVariableEditPolicy extends
 		getEditingDomain().getCommandStack().execute(new ChangeCommand(view) {
 			@Override
 			protected void doExecute() {
-				// This also sends a notification which the PortBaseEditPolicy receives.
+				// This also sends a notification which the PortBaseEditPolicy
+				// receives.
 				ViewUtil.setStructuralFeatureValue(view,
 						NotationPackage.Literals.LINE_TYPE_STYLE__LINE_TYPE,
 						lineType);
@@ -233,7 +261,6 @@ public class ComponentStoryPatternVariableEditPolicy extends
 		});
 
 	}
-
 
 	/**
 	 * Convenience method.
@@ -261,7 +288,6 @@ public class ComponentStoryPatternVariableEditPolicy extends
 		}
 
 	}
-	
 
 	/**
 	 * Convenience method to return the host's primary view.
