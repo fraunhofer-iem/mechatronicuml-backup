@@ -1159,6 +1159,9 @@
               href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <creationConstraints
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.18"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.19"/>
     </links>
     <links
         visualID="4005"
@@ -1213,6 +1216,9 @@
               href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
         </modelFacet>
       </labels>
+      <creationConstraints
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.20"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.21"/>
     </links>
     <compartments
         visualID="7001"
@@ -1232,6 +1238,10 @@
           xsi:type="gmfgen:ParentAssignedViewmap"
           getterName="getFigureActivityContainer"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
     </compartments>
     <compartments
         visualID="7002"
@@ -1593,6 +1603,18 @@
           body="--if self.controllerExchangeStrategy &lt;> ControllerExchangeStrategy::ATOMIC_SWITCHING then&#xD;&#xA;--&#x9;&#xD;&#xA;--&#x9;if self.deadline.oclIsUndefined() then&#xD;&#xA;--&#x9;&#x9;''&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;'['.concat(&#xD;&#xA;--&#x9;&#x9;&#x9;if self.deadline.lowerBound.oclIsUndefined() then 'null' else self.deadline.lowerBound.toString() endif&#xD;&#xA;--&#x9;&#x9;).concat(';').concat(&#xD;&#xA;--&#x9;&#x9;&#x9;if self.deadline.upperBound.oclIsUndefined() then 'null' else self.deadline.upperBound.toString() endif&#xD;&#xA;--&#x9;&#x9;).concat(']')&#xD;&#xA;--&#x9;endif&#xD;&#xA;--&#xD;&#xA;--else&#xD;&#xA;--&#x9;''&#xD;&#xA;--endif"/>
       <expressions
           body="--if ControllerExchangeStrategy::FADING_FUNCTION = self.controllerExchangeStrategy then&#xD;&#xA;--&#x9;'Cross'&#xD;&#xA;--else&#xD;&#xA;--&#x9;if ControllerExchangeStrategy::FLAT_SWITCHING = self.controllerExchangeStrategy then&#xD;&#xA;--&#x9;&#x9;'Flat'&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;'Atomic'&#xD;&#xA;--&#x9;endif&#xD;&#xA;--endif"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="----Create AssemblyVariable between PortVariables of PartVariables&#xD;&#xA;--not self.eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="----Create AssemblyVariable between PortVariables of different PartVariables&#xD;&#xA;--self.eContainer().eContainer() = oppositeEnd.eContainer().eContainer() and self.eContainer() &lt;> oppositeEnd.eContainer()"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="----Start creation of DelegationVariable at PortVariable of ComponentVariable&#xD;&#xA;--self.eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="----End creation of DelegationVariable at PortVariable of PartVariable&#xD;&#xA;--self.eContainer().eContainer().eContainer() = oppositeEnd.eContainer().eContainer()"/>
     </providers>
   </expressionProviders>
   <labelParsers

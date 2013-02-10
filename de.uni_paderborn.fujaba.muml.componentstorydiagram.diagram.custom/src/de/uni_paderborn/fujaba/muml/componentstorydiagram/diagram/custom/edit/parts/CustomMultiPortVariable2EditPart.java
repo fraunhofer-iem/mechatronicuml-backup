@@ -32,7 +32,7 @@ public class CustomMultiPortVariable2EditPart extends
 		
 		if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR
 				.equals(notification.getFeature())) {
-			CsdmUtility.adaptColor(this);
+//			CsdmUtility.adaptColor(this);
 		} else if (ComponentstorypatternPackage.Literals.PORT_VARIABLE__TYPE
 				.equals(notification.getFeature())) {
 			updateSinglePortVariableTypes();

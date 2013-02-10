@@ -433,11 +433,11 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CONNECTOR_VARIABLE__MUST_NOT_CONNECT_CREATE_AND_DESTROY_PORTS__EEXPRESSION = "if self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::CREATE then\r\n" +
-		"\tself.target.oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::DESTROY\r\n" +
+	protected static final String CONNECTOR_VARIABLE__MUST_NOT_CONNECT_CREATE_AND_DESTROY_PORTS__EEXPRESSION = "if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::CREATE then\r\n" +
+		"\tself.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::DESTROY\r\n" +
 		"else\r\n" +
-		"\tif self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::DESTROY then\r\n" +
-		"\t\tself.target.oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CREATE\r\n" +
+		"\tif self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator=storydiagrams::patterns::BindingOperator::DESTROY then\r\n" +
+		"\t\tself.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CREATE\r\n" +
 		"\telse\r\n" +
 		"\t\ttrue\r\n" +
 		"\tendif\r\n" +
@@ -470,11 +470,11 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CONNECTOR_VARIABLE__SAME_BINDING_OPERATOR_AS_PORT_VARIABLE__EEXPRESSION = "if self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n" +
-		"\tself.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.source.oclAsType(ComponentStoryPatternVariable).bindingOperator\r\n" +
+	protected static final String CONNECTOR_VARIABLE__SAME_BINDING_OPERATOR_AS_PORT_VARIABLE__EEXPRESSION = "if self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n" +
+		"\tself.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.portVariables->asOrderedSet()->first().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\n" +
 		"else\r\n" +
-		"\tif self.target.oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n" +
-		"\t\tself.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.target.oclAsType(ComponentStoryPatternVariable).bindingOperator\r\n" +
+		"\tif self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n" +
+		"\t\tself.oclAsType(ComponentStoryPatternVariable).bindingOperator = self.portVariables->asOrderedSet()->last().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\n" +
 		"\telse\r\n" +
 		"\t\ttrue\r\n" +
 		"\tendif\r\n" +
@@ -509,20 +509,20 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 */
 	protected static final String CONNECTOR_VARIABLE__EXISTING_CONNECTOR_BETWEEN_PORT_VARIABLE_TYPES__EEXPRESSION = "if self.oclIsKindOf(AssemblyVariable) then\r\n" +
 		"\tif not self.oclAsType(AssemblyVariable).type.oclIsUndefined() then\r\n" +
-		"\t\t(self.oclAsType(AssemblyVariable).type.oclAsType(muml::component::ConnectorType).fromPort = self.source.oclAsType(PortVariable).type and\r\n" +
-		"\t\tself.oclAsType(AssemblyVariable).type.oclAsType(muml::component::ConnectorType).toPort = self.target.oclAsType(PortVariable).type) or\r\n" +
-		"\t\t(self.oclAsType(AssemblyVariable).type.oclAsType(muml::component::ConnectorType).toPort = self.source.oclAsType(PortVariable).type and\r\n" +
-		"\t\tself.oclAsType(AssemblyVariable).type.oclAsType(muml::component::ConnectorType).fromPort = self.target.oclAsType(PortVariable).type)\r\n" +
+		"\t\t(self.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->first() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
+		"\t\tself.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->last()= self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type) or\r\n" +
+		"\t\t(self.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->last() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
+		"\t\tself.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->first() = self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type)\r\n" +
 		"\telse\r\n" +
 		"\t\tfalse\r\n" +
 		"\tendif\r\n" +
 		"else\r\n" +
 		"\tif self.oclIsKindOf(DelegationVariable) then\r\n" +
 		"\t\tif not self.oclAsType(DelegationVariable).type.oclIsUndefined() then\r\n" +
-		"\t\t\t(self.oclAsType(DelegationVariable).type.oclAsType(muml::component::ConnectorType).fromPort = self.source.oclAsType(PortVariable).type and\r\n" +
-		"\t\t\tself.oclAsType(DelegationVariable).type.oclAsType(muml:::component::ConnectorType).toPort = self.target.oclAsType(PortVariable).type) or\r\n" +
-		"\t\t\t(self.oclAsType(DelegationVariable).type.oclAsType(muml::component::ConnectorType).toPort = self.source.oclAsType(PortVariable).type and\r\n" +
-		"\t\t\tself.oclAsType(DelegationVariable).type.oclAsType(muml::component::ConnectorType).fromPort = self.target.oclAsType(PortVariable).type)\r\n" +
+		"\t\t\t(self.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->first() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
+		"\t\t\tself.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->last() = self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type) or\r\n" +
+		"\t\t\t(self.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->last() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
+		"\t\t\tself.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->first() = self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type)\r\n" +
 		"\t\telse\r\n" +
 		"\t\t\tfalse\r\n" +
 		"\t\tendif\t\r\n" +

@@ -532,6 +532,12 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+    <creationConstraints>
+      <sourceEnd
+          body="--Create AssemblyVariable between PortVariables of PartVariables&#xD;&#xA;not self.eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
+      <targetEnd
+          body="--Create AssemblyVariable between PortVariables of different PartVariables&#xD;&#xA;self.eContainer().eContainer() = oppositeEnd.eContainer().eContainer() and self.eContainer() &lt;> oppositeEnd.eContainer()"/>
+    </creationConstraints>
   </links>
   <links>
     <domainMetaElement
@@ -558,6 +564,12 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
+    <creationConstraints>
+      <sourceEnd
+          body="--Start creation of DelegationVariable at PortVariable of ComponentVariable&#xD;&#xA;self.eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
+      <targetEnd
+          body="--End creation of DelegationVariable at PortVariable of PartVariable&#xD;&#xA;self.eContainer().eContainer().eContainer() = oppositeEnd.eContainer().eContainer()"/>
+    </creationConstraints>
   </links>
   <diagram>
     <diagramCanvas

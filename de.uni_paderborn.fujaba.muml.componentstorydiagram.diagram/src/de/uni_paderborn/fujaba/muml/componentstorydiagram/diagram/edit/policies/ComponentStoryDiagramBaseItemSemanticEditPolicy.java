@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -32,6 +33,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
@@ -391,7 +393,64 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
-			return true;
+			try {
+				if (source == null) {
+					return true;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					env.put("oppositeEnd", target);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", sourceView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", targetView);
+
+					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
+							.getExpression(
+									18,
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpoint(), envType);
+					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
+
+					if (false == sourceVal instanceof Boolean
+							|| !((Boolean) sourceVal).booleanValue()) {
+						return false;
+					} // else fall-through
+				}
+				if (target == null) {
+					return true;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					env.put("oppositeEnd", source);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", targetView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", sourceView);
+
+					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
+							.getExpression(
+									19,
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpoint(), envType);
+					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
+
+					if (false == targetVal instanceof Boolean
+							|| !((Boolean) targetVal).booleanValue()) {
+						return false;
+					} // else fall-through
+				}
+				return true;
+			} catch (Exception e) {
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
+						.getInstance().logError(
+								"Link constraint evaluation error", e); //$NON-NLS-1$
+				return false;
+			}
 		}
 
 		/**
@@ -402,7 +461,88 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
-			return null;
+			try {
+				if (source == null) {
+					return null;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					env.put("oppositeEnd", target);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", sourceView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", targetView);
+
+					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
+							.getExpression(
+									18,
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpoint(), envType);
+					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
+
+					if (false == sourceVal instanceof Boolean
+							|| !((Boolean) sourceVal).booleanValue()) {
+						String body = expression.body().trim();
+						if (body.startsWith("--")) {
+							int end = body.indexOf('\n');
+							if (end < 0) {
+								end = body.length() - 1;
+							} else {
+								if (body.charAt(end - 1) == '\r') {
+									end--;
+								}
+							}
+							return body.substring(2, end);
+						}
+						return "Creation is not allowed.";
+					} // else fall-through
+				}
+				if (target == null) {
+					return null;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					env.put("oppositeEnd", source);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", targetView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", sourceView);
+
+					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
+							.getExpression(
+									19,
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpoint(), envType);
+					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
+
+					if (false == targetVal instanceof Boolean
+							|| !((Boolean) targetVal).booleanValue()) {
+						String body = expression.body().trim();
+						if (body.startsWith("--")) {
+							int end = body.indexOf('\n');
+							if (end < 0) {
+								end = body.length() - 1;
+							} else {
+								if (body.charAt(end - 1) == '\r') {
+									end--;
+								}
+							}
+							return body.substring(2, end);
+						}
+						return "Creation is not allowed.";
+					} // else fall-through
+				}
+				return null;
+			} catch (Exception e) {
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
+						.getInstance().logError(
+								"Link constraint evaluation error", e); //$NON-NLS-1$
+				return "Link constraint evaluation error";
+			}
 		}
 
 		/**
@@ -414,7 +554,64 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
-			return true;
+			try {
+				if (source == null) {
+					return true;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					env.put("oppositeEnd", target);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", sourceView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", targetView);
+
+					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
+							.getExpression(
+									20,
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpoint(), envType);
+					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
+
+					if (false == sourceVal instanceof Boolean
+							|| !((Boolean) sourceVal).booleanValue()) {
+						return false;
+					} // else fall-through
+				}
+				if (target == null) {
+					return true;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					env.put("oppositeEnd", source);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", targetView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", sourceView);
+
+					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
+							.getExpression(
+									21,
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpoint(), envType);
+					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
+
+					if (false == targetVal instanceof Boolean
+							|| !((Boolean) targetVal).booleanValue()) {
+						return false;
+					} // else fall-through
+				}
+				return true;
+			} catch (Exception e) {
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
+						.getInstance().logError(
+								"Link constraint evaluation error", e); //$NON-NLS-1$
+				return false;
+			}
 		}
 
 		/**
@@ -425,7 +622,88 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
-			return null;
+			try {
+				if (source == null) {
+					return null;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					env.put("oppositeEnd", target);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", sourceView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", targetView);
+
+					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
+							.getExpression(
+									20,
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpoint(), envType);
+					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
+
+					if (false == sourceVal instanceof Boolean
+							|| !((Boolean) sourceVal).booleanValue()) {
+						String body = expression.body().trim();
+						if (body.startsWith("--")) {
+							int end = body.indexOf('\n');
+							if (end < 0) {
+								end = body.length() - 1;
+							} else {
+								if (body.charAt(end - 1) == '\r') {
+									end--;
+								}
+							}
+							return body.substring(2, end);
+						}
+						return "Creation is not allowed.";
+					} // else fall-through
+				}
+				if (target == null) {
+					return null;
+				} else {
+					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
+					Map<String, Object> env = new HashMap<String, Object>();
+					envType.put(
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE.getConnectorEndpoint()); //$NON-NLS-1$
+					env.put("oppositeEnd", source);
+					envType.put("view", NotationPackage.Literals.VIEW);
+					env.put("view", targetView);
+					envType.put("oppositeView", NotationPackage.Literals.VIEW);
+					env.put("oppositeView", sourceView);
+
+					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression expression = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
+							.getExpression(
+									21,
+									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+											.getConnectorEndpoint(), envType);
+					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
+
+					if (false == targetVal instanceof Boolean
+							|| !((Boolean) targetVal).booleanValue()) {
+						String body = expression.body().trim();
+						if (body.startsWith("--")) {
+							int end = body.indexOf('\n');
+							if (end < 0) {
+								end = body.length() - 1;
+							} else {
+								if (body.charAt(end - 1) == '\r') {
+									end--;
+								}
+							}
+							return body.substring(2, end);
+						}
+						return "Creation is not allowed.";
+					} // else fall-through
+				}
+				return null;
+			} catch (Exception e) {
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
+						.getInstance().logError(
+								"Link constraint evaluation error", e); //$NON-NLS-1$
+				return "Link constraint evaluation error";
+			}
 		}
 	}
 

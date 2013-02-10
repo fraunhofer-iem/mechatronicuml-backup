@@ -24,8 +24,8 @@ public class CustomComponentVariableOperatorEditPart extends
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 		updateText();
-		CsdmUtility.adaptColor(getFigure(), ((ComponentVariable) ((View) this
-				.getModel()).getElement()).getBindingOperator());
+//		CsdmUtility.adaptColor(getFigure(), ((ComponentVariable) ((View) this
+//				.getModel()).getElement()).getBindingOperator());
 	}
 	
 	private void updateText(){

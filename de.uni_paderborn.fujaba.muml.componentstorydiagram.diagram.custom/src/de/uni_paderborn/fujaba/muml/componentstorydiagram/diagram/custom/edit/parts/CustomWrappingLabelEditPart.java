@@ -23,8 +23,8 @@ public class CustomWrappingLabelEditPart extends WrappingLabelEditPart {
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 		updateText();
-		CsdmUtility.adaptColor(getFigure(), ((PartVariable) ((View) this
-				.getModel()).getElement()).getBindingOperator());
+//		CsdmUtility.adaptColor(getFigure(), ((PartVariable) ((View) this
+//				.getModel()).getElement()).getBindingOperator());
 	}
 	
 	private void updateText(){

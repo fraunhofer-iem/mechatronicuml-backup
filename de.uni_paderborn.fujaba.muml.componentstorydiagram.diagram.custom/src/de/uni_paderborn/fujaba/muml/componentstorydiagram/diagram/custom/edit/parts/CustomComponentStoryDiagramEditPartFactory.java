@@ -73,8 +73,6 @@ public class CustomComponentStoryDiagramEditPartFactory extends
 			case ActivityFinalNodeEditPart.VISUAL_ID:
 				return new CustomActivityFinalNodeEditPart(view);
 
-			case ComponentStoryNodeEditPart.VISUAL_ID:
-				return new CustomComponentStoryNodeEditPart(view);
 			case ComponentStoryNodeComponentStoryNodeCompartmentEditPart.VISUAL_ID:
 				return new CustomComponentStoryNodeComponentStoryNodeCompartmentEditPart(
 						view);	
@@ -83,8 +81,6 @@ public class CustomComponentStoryDiagramEditPartFactory extends
 			case ComponentStoryPatternComponentStoryPatternCompartmentEditPart.VISUAL_ID:
 				return new CustomComponentStoryPatternComponentStoryPatternCompartmentEditPart(view);
 
-			case ControllerExchangeNodeEditPart.VISUAL_ID:
-				return new CustomControllerExchangeNodeEditPart(view);
 			case ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart.VISUAL_ID:
 				return new CustomControllerExchangeNodeControllerExchangeNodeCompartmentEditPart(
 						view);	

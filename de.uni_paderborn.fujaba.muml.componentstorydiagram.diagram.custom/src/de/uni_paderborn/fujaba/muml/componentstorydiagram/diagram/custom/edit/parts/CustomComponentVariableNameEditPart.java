@@ -20,16 +20,16 @@ public class CustomComponentVariableNameEditPart extends
 		super.handleNotificationEvent(notification);
 		if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR
 				.equals(notification.getFeature())) {
-			CsdmUtility.adaptColor(getFigure(), ((ComponentVariable) ((View) this
-					.getModel()).getElement()).getBindingOperator());
+//			CsdmUtility.adaptColor(getFigure(), ((ComponentVariable) ((View) this
+//					.getModel()).getElement()).getBindingOperator());
 		}
 	}
 	
 	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
-		CsdmUtility.adaptColor(getFigure(), ((ComponentVariable) ((View) this
-				.getModel()).getElement()).getBindingOperator());
+//		CsdmUtility.adaptColor(getFigure(), ((ComponentVariable) ((View) this
+//				.getModel()).getElement()).getBindingOperator());
 	}
 
 

@@ -21,8 +21,8 @@ public class CustomWrappingLabel2EditPart extends WrappingLabel2EditPart {
 	protected void handleNotificationEvent(Notification notification) {
 		if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR
 				.equals(notification.getFeature())) {
-			CsdmUtility.adaptColor(getFigure(), ((PartVariable) ((View) this
-					.getModel()).getElement()).getBindingOperator());
+//			CsdmUtility.adaptColor(getFigure(), ((PartVariable) ((View) this
+//					.getModel()).getElement()).getBindingOperator());
 		} else if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_STATE
 				.equals(notification.getFeature())) {
 			updateBound();
@@ -33,8 +33,8 @@ public class CustomWrappingLabel2EditPart extends WrappingLabel2EditPart {
 	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
-		CsdmUtility.adaptColor(getFigure(), ((PartVariable) ((View) this
-				.getModel()).getElement()).getBindingOperator());
+//		CsdmUtility.adaptColor(getFigure(), ((PartVariable) ((View) this
+//				.getModel()).getElement()).getBindingOperator());
 		updateBound();
 
 	}

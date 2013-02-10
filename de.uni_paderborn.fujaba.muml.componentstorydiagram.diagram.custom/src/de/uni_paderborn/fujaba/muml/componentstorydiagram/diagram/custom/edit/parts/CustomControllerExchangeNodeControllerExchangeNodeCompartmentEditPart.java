@@ -19,7 +19,9 @@ public class CustomControllerExchangeNodeControllerExchangeNodeCompartmentEditPa
 	public CustomControllerExchangeNodeControllerExchangeNodeCompartmentEditPart(
 			View view) {
 		super(view);
-		
+	}
+	
+	protected void createDefaultEditPolicies() {
 		EditPolicy resizePolicy = new NonResizableEditPolicy() {
 			@Override
 			protected Command getMoveCommand(ChangeBoundsRequest request) {
@@ -33,9 +35,7 @@ public class CustomControllerExchangeNodeControllerExchangeNodeCompartmentEditPa
 		};
 
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, resizePolicy);
-	}
-	
-	protected void createDefaultEditPolicies() {
+		
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,

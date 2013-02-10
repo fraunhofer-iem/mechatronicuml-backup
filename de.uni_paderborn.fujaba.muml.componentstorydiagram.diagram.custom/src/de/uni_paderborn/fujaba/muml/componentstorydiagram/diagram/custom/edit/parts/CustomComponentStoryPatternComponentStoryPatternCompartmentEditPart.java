@@ -18,7 +18,9 @@ public class CustomComponentStoryPatternComponentStoryPatternCompartmentEditPart
 	public CustomComponentStoryPatternComponentStoryPatternCompartmentEditPart(
 			View view) {
 		super(view);
-		
+	}
+
+	protected void createDefaultEditPolicies() {
 		EditPolicy resizePolicy = new NonResizableEditPolicy() {
 			@Override
 			protected Command getMoveCommand(ChangeBoundsRequest request) {
@@ -32,9 +34,7 @@ public class CustomComponentStoryPatternComponentStoryPatternCompartmentEditPart
 		};
 
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, resizePolicy);
-	}
-
-	protected void createDefaultEditPolicies() {
+		
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,

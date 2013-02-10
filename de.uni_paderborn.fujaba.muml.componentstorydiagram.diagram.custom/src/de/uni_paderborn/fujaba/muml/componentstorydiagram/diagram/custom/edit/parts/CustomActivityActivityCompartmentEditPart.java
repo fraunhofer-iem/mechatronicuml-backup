@@ -16,16 +16,7 @@ public class CustomActivityActivityCompartmentEditPart extends
 	public CustomActivityActivityCompartmentEditPart(View view) {
 		super(view);
 	}
-	
-	@Override
-	public IFigure createFigure(){
-		IFigure result = super.createFigure();
-		
-		result.setBorder(null);
-		
-		return result;
-	}
-	
+
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(

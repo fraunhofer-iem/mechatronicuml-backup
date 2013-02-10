@@ -24,7 +24,7 @@ public class CustomSinglePortVariableEditPart extends
 		
 		if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR
 				.equals(notification.getFeature())) {
-			CsdmUtility.adaptColor(this);
+//			CsdmUtility.adaptColor(this);
 		} else if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_SEMANTICS
 				.equals(notification.getFeature())) {
 			//updateOptional();

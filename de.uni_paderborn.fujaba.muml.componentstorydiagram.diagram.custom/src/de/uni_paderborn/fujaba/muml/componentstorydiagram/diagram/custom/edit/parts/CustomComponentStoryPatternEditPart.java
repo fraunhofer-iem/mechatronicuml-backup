@@ -23,7 +23,9 @@ public class CustomComponentStoryPatternEditPart extends
 
 	public CustomComponentStoryPatternEditPart(View view) {
 		super(view);
+	}
 
+	protected void createDefaultEditPolicies() {
 		EditPolicy resizePolicy = new NonResizableEditPolicy() {
 			@Override
 			protected Command getMoveCommand(ChangeBoundsRequest request) {
@@ -37,9 +39,7 @@ public class CustomComponentStoryPatternEditPart extends
 		};
 
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, resizePolicy);
-	}
-
-	protected void createDefaultEditPolicies() {
+		
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new ComponentStoryPatternItemSemanticEditPolicy() {
@@ -53,30 +53,6 @@ public class CustomComponentStoryPatternEditPart extends
 
 				});
 
-	}
-
-	//needed to display pattern and componentVariable correctly at reopening
-	@Override
-	public void refresh() {
-		super.refresh();
-//		updateFigure();
-	}
-	
-	private void updateFigure(){
-		ComponentStoryNodeComponentStoryNodeCompartmentEditPart compartmentEditPart = (ComponentStoryNodeComponentStoryNodeCompartmentEditPart) this.getParent();
-		ComponentStoryNodeEditPart componentStoryNodeEditPart = (ComponentStoryNodeEditPart) compartmentEditPart
-				.getParent();
-
-		RectangleFigure patternRectangle = componentStoryNodeEditPart
-				.getPrimaryShape()
-				.getFigureComponentStoryNodePatternContainer();
-		if (!patternRectangle.getChildren().isEmpty()) {
-			ResizableCompartmentFigure patternCompartment = (ResizableCompartmentFigure) patternRectangle
-					.getChildren().get(0);
-			
-			//add the Pattern figure to the StoryNode's compartment
-			patternCompartment.add(this.getFigure(), BorderLayout.CENTER);
-		}
 	}
 
 }

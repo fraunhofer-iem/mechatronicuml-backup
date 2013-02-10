@@ -11,14 +11,16 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartment2EditPart;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ComponentStoryPatternComponentStoryPatternCompartmentItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ComponentStoryPatternComponentStoryPatternCompartment2ItemSemanticEditPolicy;
 
 public class CustomComponentStoryPatternComponentStoryPatternCompartment2EditPart
 		extends ComponentStoryPatternComponentStoryPatternCompartment2EditPart {
 	public CustomComponentStoryPatternComponentStoryPatternCompartment2EditPart(
 			View view) {
 		super(view);
-		
+	}
+
+	protected void createDefaultEditPolicies() {
 		EditPolicy resizePolicy = new NonResizableEditPolicy() {
 			@Override
 			protected Command getMoveCommand(ChangeBoundsRequest request) {
@@ -32,13 +34,11 @@ public class CustomComponentStoryPatternComponentStoryPatternCompartment2EditPar
 		};
 
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, resizePolicy);
-	}
-
-	protected void createDefaultEditPolicies() {
+		
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new ComponentStoryPatternComponentStoryPatternCompartmentItemSemanticEditPolicy() {
+				new ComponentStoryPatternComponentStoryPatternCompartment2ItemSemanticEditPolicy() {
 					protected Command getSemanticCommand(
 							IEditCommandRequest request) {
 						if (request instanceof DestroyRequest) {

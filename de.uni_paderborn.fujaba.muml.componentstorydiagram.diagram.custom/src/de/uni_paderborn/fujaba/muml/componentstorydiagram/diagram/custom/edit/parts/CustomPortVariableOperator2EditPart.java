@@ -24,8 +24,8 @@ public class CustomPortVariableOperator2EditPart extends
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 		updateText();
-		CsdmUtility.adaptColor(getFigure(), ((PortVariable) ((View) this
-				.getModel()).getElement()).getBindingOperator());
+//		CsdmUtility.adaptColor(getFigure(), ((PortVariable) ((View) this
+//				.getModel()).getElement()).getBindingOperator());
 	}
 	
 	private void updateText(){
