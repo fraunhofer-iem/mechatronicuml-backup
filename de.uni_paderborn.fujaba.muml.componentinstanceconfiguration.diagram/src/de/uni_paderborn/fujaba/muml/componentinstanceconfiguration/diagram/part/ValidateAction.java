@@ -139,7 +139,7 @@ public class ValidateAction extends Action {
 				public String getObjectLabel(EObject eObject) {
 					// BEGIN Fix for muml bug #341:
 					try {
-						return EMFCoreUtil.getQualifiedName(eObject, true);
+						return EMFCoreUtil.getName(eObject);
 					} catch (NullPointerException e) {
 						return "null";
 					}

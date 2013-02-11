@@ -16,6 +16,9 @@ public class MumlValidator extends EObjectValidator {
 			Map<Object, Object> context, String constraint, int severity,
 			String source, int code) {
 
+		String message = "";
+		
+		// Try to create message by using the comment in the OCL.
 		String ocl = getOCL(eClass, constraint);
 		if (ocl != null) {
 			ocl = ocl.trim();
@@ -31,18 +34,27 @@ public class MumlValidator extends EObjectValidator {
 					}
 				}
 			}
-			String message = builder.toString().trim();
-
-			if (message.length() > 0) {
-				diagnostics.add(new BasicDiagnostic(severity, source, code,
-						message, new Object[] { eObject }));
-				return;
+			message = builder.toString();
+		}
+		
+		// If we have no message, create one by using the constraint name.
+		if (message.length() == 0) {
+			StringBuilder builder = new StringBuilder();
+			String lowerCaseName = constraint.toLowerCase();
+			for (int i = 0; i < lowerCaseName.length(); i++) {
+				if (constraint.charAt(i) != lowerCaseName.charAt(i)) {
+					builder.append(' ');
+				}
+				builder.append(constraint.charAt(i));
 			}
-
+			message = builder.toString();
 		}
 
-		super.reportConstraintDelegateViolation(eClass, eObject, diagnostics,
-				context, constraint, severity, source, code);
+		diagnostics.add(new BasicDiagnostic(severity, source, code,
+				message.trim(), new Object[] { eObject }));
+		
+//		super.reportConstraintDelegateViolation(eClass, eObject, diagnostics,
+//				context, constraint, severity, source, code);
 	}
 
 	private static String getOCL(EClass eClass, String name) {
