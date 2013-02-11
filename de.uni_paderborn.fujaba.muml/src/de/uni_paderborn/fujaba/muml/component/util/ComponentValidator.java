@@ -6,15 +6,18 @@
  */
 package de.uni_paderborn.fujaba.muml.component.util;
 
+import de.uni_paderborn.fujaba.muml.behavior.util.BehaviorValidator;
 import de.uni_paderborn.fujaba.muml.component.*;
+import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
+import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
@@ -39,9 +42,8 @@ import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage
- * @generated
  */
-public class ComponentValidator extends EObjectValidator {
+public class ComponentValidator extends MumlValidator {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -168,7 +170,8 @@ public class ComponentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COMPONENT__UNIQUE_PORT_NAMES__EEXPRESSION = "self.ports->isUnique(name)";
+	protected static final String COMPONENT__UNIQUE_PORT_NAMES__EEXPRESSION = "-- Name of ports must be unique.\n" +
+		"self.ports->isUnique(name)";
 
 	/**
 	 * Validates the UniquePortNames constraint of '<em>Component</em>'.

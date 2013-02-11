@@ -13,8 +13,9 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
+import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
@@ -37,9 +38,8 @@ import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage
- * @generated
  */
-public class InstanceValidator extends EObjectValidator {
+public class InstanceValidator extends MumlValidator {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->

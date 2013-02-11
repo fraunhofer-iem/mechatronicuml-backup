@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 
@@ -39,6 +40,7 @@ import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveTypes;
 import de.uni_paderborn.fujaba.muml.types.TypesFactory;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
+import de.uni_paderborn.fujaba.muml.types.util.TypesValidator;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypePackageImpl;
 

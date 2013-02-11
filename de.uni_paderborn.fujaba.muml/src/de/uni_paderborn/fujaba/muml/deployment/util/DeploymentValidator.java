@@ -6,15 +6,17 @@
  */
 package de.uni_paderborn.fujaba.muml.deployment.util;
 
-import de.uni_paderborn.fujaba.muml.deployment.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
+import de.uni_paderborn.fujaba.common.validator.MumlValidator;
+import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
+import de.uni_paderborn.fujaba.muml.deployment.*;
 import de.uni_paderborn.fujaba.muml.deployment.CommunicationLink;
 import de.uni_paderborn.fujaba.muml.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage;
@@ -30,9 +32,8 @@ import de.uni_paderborn.fujaba.muml.deployment.LinkQualityOfService;
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
  * @see de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage
- * @generated
  */
-public class DeploymentValidator extends EObjectValidator {
+public class DeploymentValidator extends MumlValidator {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->

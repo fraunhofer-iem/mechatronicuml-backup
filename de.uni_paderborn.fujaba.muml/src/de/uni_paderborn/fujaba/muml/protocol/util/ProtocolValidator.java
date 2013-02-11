@@ -6,15 +6,18 @@
  */
 package de.uni_paderborn.fujaba.muml.protocol.util;
 
-import de.uni_paderborn.fujaba.muml.protocol.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
+import de.uni_paderborn.fujaba.common.validator.MumlValidator;
+import de.uni_paderborn.fujaba.muml.behavior.util.BehaviorValidator;
+import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
+import de.uni_paderborn.fujaba.muml.protocol.*;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
@@ -27,9 +30,8 @@ import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage
- * @generated
  */
-public class ProtocolValidator extends EObjectValidator {
+public class ProtocolValidator extends MumlValidator {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->

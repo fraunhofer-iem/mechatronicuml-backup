@@ -17,4 +17,5 @@ Export-Package: de.uni_paderborn.fujaba.common,
  de.uni_paderborn.fujaba.common.descriptor,
  de.uni_paderborn.fujaba.common.emf.edit.ui,
  de.uni_paderborn.fujaba.common.emf.edit.ui.extensions,
- de.uni_paderborn.fujaba.common.utils
+ de.uni_paderborn.fujaba.common.utils,
+ de.uni_paderborn.fujaba.common.validator
