@@ -1419,20 +1419,14 @@
             xsi:type="gmfgen:ToolEntry"
             title="ComponentStoryNode"
             description="Create new ComponentStoryNode"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/icons/obj16/ComponentStoryDiagramFile.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom/icons/ComponentStoryNode.png"
             genNodes="//@diagram/@childNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ControllerExchangeNode"
             description="Create new ControllerExchangeNode"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/icons/obj16/ComponentStoryDiagramFile.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom/icons/ControllerExchangeNode.png"
             genNodes="//@diagram/@childNodes.12"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="FadingFunction"
-            description="Create new FadingFunction"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram/icons/obj16/ComponentStoryDiagramFile.gif"
-            genNodes="//@diagram/@childNodes.14"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ActivityEdge"
@@ -1459,16 +1453,22 @@
           collapse="true">
         <entries
             xsi:type="gmfgen:ToolEntry"
+            title="FadingFunction"
+            description="Create new FadingFunction"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom/icons/FadingFunction.png"
+            genNodes="//@diagram/@childNodes.14"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
             title="PartVariable"
             description="Create new PartVariable"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/ComponentPart.gif"
-            genNodes="//@diagram/@childNodes.3"/>
+            genNodes="//@diagram/@childNodes.3 //@diagram/@childNodes.5"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="SinglePortVariable"
             description="Create new SinglePortVariable"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/Port.gif"
-            genNodes="//@diagram/@childNodes.5 //@diagram/@childNodes.6 //@diagram/@childNodes.8"/>
+            genNodes="//@diagram/@childNodes.6 //@diagram/@childNodes.8"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="MultiPortVariable"

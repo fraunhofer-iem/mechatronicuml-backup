@@ -160,7 +160,7 @@
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
-                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.0"/>
+                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
                       <diagramNode
                           href="ComponentStoryDiagram.gmfgraph#PartVariable"/>
                       <children
@@ -197,7 +197,7 @@
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
-                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
+                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.3"/>
                       <diagramNode
                           href="ComponentStoryDiagram.gmfgraph#MultiPortVariable"/>
                       <children
@@ -245,7 +245,7 @@
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
-                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
+                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
                       <diagramNode
                           href="ComponentStoryDiagram.gmfgraph#SinglePortVariable"/>
                     </ownedChild>
@@ -280,7 +280,7 @@
               href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/InitialNode"/>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
+              href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.4"/>
           <diagramNode
               href="ComponentStoryDiagram.gmfgraph#InitialNode"/>
         </ownedChild>
@@ -294,7 +294,7 @@
               href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/JunctionNode"/>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.6"/>
+              href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.5"/>
           <diagramNode
               href="ComponentStoryDiagram.gmfgraph#JunctionNode"/>
         </ownedChild>
@@ -313,7 +313,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.7"/>
+              href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.6"/>
           <diagramNode
               href="ComponentStoryDiagram.gmfgraph#ActivityFinalNode"/>
         </ownedChild>
@@ -461,7 +461,7 @@
               </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
-                  href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.3"/>
+                  href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.0"/>
               <diagramNode
                   href="ComponentStoryDiagram.gmfgraph#FadingFunctionNode"/>
             </ownedChild>
@@ -497,7 +497,7 @@
         href="../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity/ownedActivityEdge"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.4"/>
+        href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.3"/>
     <diagramLink
         href="ComponentStoryDiagram.gmfgraph#ActivityEdge"/>
     <sourceMetaFeature
@@ -523,7 +523,7 @@
         href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/connectorVariables"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.3"/>
+        href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.4"/>
     <diagramLink
         href="ComponentStoryDiagram.gmfgraph#AssemblyVariable"/>
     <sourceMetaFeature
@@ -555,7 +555,7 @@
         href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/connectorVariables"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.4"/>
+        href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.5"/>
     <diagramLink
         href="ComponentStoryDiagram.gmfgraph#DelegationVariable"/>
     <sourceMetaFeature

@@ -24,8 +24,8 @@
           description="Create new ComponentStoryNode">
         <smallIcon
             xsi:type="gmftool:BundleImage"
-            path="icons/obj16/ComponentStoryDiagramFile.gif"
-            bundle="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram"/>
+            path="icons/ComponentStoryNode.png"
+            bundle="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -33,17 +33,8 @@
           description="Create new ControllerExchangeNode">
         <smallIcon
             xsi:type="gmftool:BundleImage"
-            path="icons/obj16/ComponentStoryDiagramFile.gif"
-            bundle="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="FadingFunction"
-          description="Create new FadingFunction">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/obj16/ComponentStoryDiagramFile.gif"
-            bundle="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram"/>
+            path="icons/ControllerExchangeNode.png"
+            bundle="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
@@ -86,6 +77,15 @@
         xsi:type="gmftool:ToolGroup"
         title="Component Story Pattern"
         collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="FadingFunction"
+          description="Create new FadingFunction">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/FadingFunction.png"
+            bundle="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom"/>
+      </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="PartVariable"
