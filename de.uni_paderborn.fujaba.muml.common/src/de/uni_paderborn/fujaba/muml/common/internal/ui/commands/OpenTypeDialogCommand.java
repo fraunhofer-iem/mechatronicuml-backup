@@ -53,8 +53,6 @@ import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 
 public class OpenTypeDialogCommand extends AbstractHandler {
 
-	private Shell shell;
-
 	private AdapterFactory adapterFactory;
 
 	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
@@ -67,7 +65,7 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 	@Override
 	public Object execute(ExecutionEvent event) {
 		// Get shell
-		shell = HandlerUtil.getActiveWorkbenchWindow(event).getShell();
+		Shell shell = HandlerUtil.getActiveWorkbenchWindow(event).getShell();
 		if (shell == null) {
 			shell = PlatformUI.getWorkbench().getDisplay().getActiveShell();
 		}
@@ -138,7 +136,7 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 						.createEditingDomain(rset);
 			}
 
-			openTypeDialog(typeCategory, editingDomain);
+			openTypeDialog(shell, typeCategory, editingDomain);
 
 			for (Resource resource : rset.getResources()) {
 				try {
@@ -155,7 +153,7 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 		return null;
 	}
 
-	private void openTypeDialog(ModelElementCategory typeCategory,
+	private void openTypeDialog(Shell shell, ModelElementCategory typeCategory,
 			AdapterFactoryEditingDomain editingDomain) {
 
 		ILabelProvider labelProvider = null;
