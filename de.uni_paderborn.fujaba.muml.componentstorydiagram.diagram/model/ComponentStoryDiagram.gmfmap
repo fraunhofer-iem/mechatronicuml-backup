@@ -209,7 +209,7 @@
                               href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/SinglePortVariable"/>
                           <tool
                               xsi:type="gmftool:CreationTool"
-                              href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
+                              href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
                           <diagramNode
                               href="ComponentStoryDiagram.gmfgraph#InnerSinglePortVariable"/>
                         </ownedChild>

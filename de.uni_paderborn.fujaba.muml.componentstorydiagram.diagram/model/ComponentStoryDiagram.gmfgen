@@ -1462,13 +1462,13 @@
             title="PartVariable"
             description="Create new PartVariable"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/ComponentPart.gif"
-            genNodes="//@diagram/@childNodes.3 //@diagram/@childNodes.5"/>
+            genNodes="//@diagram/@childNodes.3"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="SinglePortVariable"
             description="Create new SinglePortVariable"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/Port.gif"
-            genNodes="//@diagram/@childNodes.6 //@diagram/@childNodes.8"/>
+            genNodes="//@diagram/@childNodes.5 //@diagram/@childNodes.6 //@diagram/@childNodes.8"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="MultiPortVariable"
