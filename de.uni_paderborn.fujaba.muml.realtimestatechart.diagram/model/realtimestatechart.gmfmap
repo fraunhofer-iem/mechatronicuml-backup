@@ -356,7 +356,7 @@
                       xsi:type="ecore:EAttribute"
                       href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
                   <value
-                      body="'stateentrypoint'"/>
+                      body="'entry'"/>
                 </initializers>
               </domainInitializer>
               <labelMappings
@@ -387,7 +387,7 @@
                       xsi:type="ecore:EAttribute"
                       href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
                   <value
-                      body="'stateexitpoint'"/>
+                      body="'exit'"/>
                 </initializers>
               </domainInitializer>
               <labelMappings

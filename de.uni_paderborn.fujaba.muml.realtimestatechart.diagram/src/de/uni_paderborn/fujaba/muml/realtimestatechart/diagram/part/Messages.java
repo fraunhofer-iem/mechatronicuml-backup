@@ -283,26 +283,6 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String EntryPoint3CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String EntryPoint3CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String ExitPoint4CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ExitPoint4CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
 	public static String EntryAction1CreationTool_title;
 
 	/**
@@ -343,22 +323,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StateEntryPoint5CreationTool_title;
+	public static String EntryPoint5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StateEntryPoint5CreationTool_desc;
+	public static String EntryPoint5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String StateExitPoint6CreationTool_title;
+	public static String ExitPoint6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StateExitPoint6CreationTool_desc;
+	public static String ExitPoint6CreationTool_desc;
 
 	/**
 	 * @generated

@@ -37,8 +37,6 @@ public class MumlPaletteFactory {
 				.setDescription(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.RealTimeStatechart1Group_desc);
 		paletteContainer.add(createState1CreationTool());
 		paletteContainer.add(createTransition2CreationTool());
-		paletteContainer.add(createEntryPoint3CreationTool());
-		paletteContainer.add(createExitPoint4CreationTool());
 		return paletteContainer;
 	}
 
@@ -56,8 +54,8 @@ public class MumlPaletteFactory {
 		paletteContainer.add(createDoAction2CreationTool());
 		paletteContainer.add(createExitAction3CreationTool());
 		paletteContainer.add(createRegion4CreationTool());
-		paletteContainer.add(createStateEntryPoint5CreationTool());
-		paletteContainer.add(createStateExitPoint6CreationTool());
+		paletteContainer.add(createEntryPoint5CreationTool());
+		paletteContainer.add(createExitPoint6CreationTool());
 		return paletteContainer;
 	}
 
@@ -90,36 +88,6 @@ public class MumlPaletteFactory {
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/transition16.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createEntryPoint3CreationTool() {
-		ToolEntry entry = new ToolEntry(
-				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.EntryPoint3CreationTool_title,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.EntryPoint3CreationTool_desc,
-				null, null) {
-		};
-		entry.setId("createEntryPoint3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/state_entry_point.gif")); //$NON-NLS-1$
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createExitPoint4CreationTool() {
-		ToolEntry entry = new ToolEntry(
-				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.ExitPoint4CreationTool_title,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.ExitPoint4CreationTool_desc,
-				null, null) {
-		};
-		entry.setId("createExitPoint4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/state_exit_point.gif")); //$NON-NLS-1$
 		return entry;
 	}
 
@@ -190,13 +158,13 @@ public class MumlPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStateEntryPoint5CreationTool() {
+	private ToolEntry createEntryPoint5CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.StateEntryPoint5CreationTool_title,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.StateEntryPoint5CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.EntryPoint5CreationTool_title,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.EntryPoint5CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryPoint_3040));
-		entry.setId("createStateEntryPoint5CreationTool"); //$NON-NLS-1$
+		entry.setId("createEntryPoint5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/state_entry_point.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -206,13 +174,13 @@ public class MumlPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStateExitPoint6CreationTool() {
+	private ToolEntry createExitPoint6CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.StateExitPoint6CreationTool_title,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.StateExitPoint6CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.ExitPoint6CreationTool_title,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.ExitPoint6CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041));
-		entry.setId("createStateExitPoint6CreationTool"); //$NON-NLS-1$
+		entry.setId("createExitPoint6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/state_exit_point.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
