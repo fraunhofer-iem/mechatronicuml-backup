@@ -6,7 +6,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart;
 
 public class CustomMultiPortVariable2EditPart extends
@@ -29,11 +28,7 @@ public class CustomMultiPortVariable2EditPart extends
 	@Override
 	protected final void handleNotificationEvent(final Notification notification) {
 		super.handleNotificationEvent(notification);
-		
-		if (ComponentstorypatternPackage.Literals.COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR
-				.equals(notification.getFeature())) {
-//			CsdmUtility.adaptColor(this);
-		} else if (ComponentstorypatternPackage.Literals.PORT_VARIABLE__TYPE
+		if (ComponentstorypatternPackage.Literals.PORT_VARIABLE__TYPE
 				.equals(notification.getFeature())) {
 			updateSinglePortVariableTypes();
 		}

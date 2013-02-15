@@ -98,17 +98,17 @@ public class CsdmUtility {
 		}
 	}
 	
-	public static String getText(ActivityEdge bo) {
-		EdgeGuard guard = bo.getGuard();
-		if (guard != null && !EdgeGuard.NONE.equals(guard)) {
+	public static String getText(ActivityEdge activityEdge) {
+		EdgeGuard edgeGuard = activityEdge.getGuard();
+		if (edgeGuard != null && !EdgeGuard.NONE.equals(edgeGuard)) {
 			StringBuilder builder = new StringBuilder();
 
 			builder.append('[');
 			builder.append(' ');
-			if (EdgeGuard.BOOL.equals(guard)) {
-				append(builder, bo.getGuardExpression());
+			if (EdgeGuard.BOOL.equals(edgeGuard)) {
+				append(builder, activityEdge.getGuardExpression());
 			} else {
-				builder.append(guard);
+				builder.append(edgeGuard);
 			}
 			builder.append(' ');
 			builder.append(']');

@@ -7,12 +7,9 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.LineAttributes;
 import org.storydriven.core.CorePackage;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityNode;
-import org.storydriven.storydiagrams.patterns.BindingSemantics;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable;
@@ -70,61 +67,12 @@ public class CustomComponentVariableEditPart extends ComponentVariableEditPart {
 		super.refreshVisuals();
 		((ComponentVariableFigure) primaryShape)
 				.getFigureComponentVariableNameFigure().setTextUnderline(true);
-//		updateNegative();
-//		updateOptional();
 		updateActivityNameLabel();
 	}
 	
 	private void updateComponentVariableName(){
 		ComponentVariable componentVariable = (ComponentVariable) ((View) getModel()).getElement();
 		componentVariable.setName("this");
-	}
-
-	private void updateNegative() {
-//		ComponentVariable componentVariable = (ComponentVariable) ((View) getModel())
-//				.getElement();
-//		BindingSemantics semantics = componentVariable.getBindingSemantics();
-//
-//		boolean negative = semantics == BindingSemantics.NEGATIVE;
-//		((ComponentVariableFigure) primaryShape).getFigureComponentNegative1()
-//				.setVisible(negative);
-//		((ComponentVariableFigure) primaryShape).getFigureComponentNegative2()
-//				.setVisible(negative);
-
-	}
-
-	private void updateOptional() {
-		ComponentVariable componentVariable = (ComponentVariable) ((View) getModel())
-				.getElement();
-		BindingSemantics semantics = componentVariable.getBindingSemantics();
-
-		LineAttributes lineAttributes = ((ComponentVariableFigure) primaryShape)
-				.getLineAttributes();
-
-		if (semantics == BindingSemantics.OPTIONAL) {
-			lineAttributes.style = SWT.LINE_DASH;
-		} else {
-			lineAttributes.style = SWT.LINE_SOLID;
-		}
-		((ComponentVariableFigure) primaryShape)
-				.setLineAttributes(lineAttributes);
-
-		// setLineType(SWT.LINE_DASH);
-
-		//
-		// Using styles:
-		//
-		//
-		// ((View) getModel()).getStyles().add(
-		// NotationFactory.eINSTANCE.createLineTypeStyle());
-		//
-		// org.eclipse.gmf.runtime.diagram.core.util.ViewUtil
-		// .setStructuralFeatureValue(
-		// (View) getModel(),
-		// org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE
-		// .getLineTypeStyle_LineType(),
-		// LineType.DASH_LITERAL);
-
 	}
 
 	private void updateActivityNameLabel() {

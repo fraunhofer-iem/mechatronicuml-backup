@@ -26,17 +26,13 @@ public class CustomComponentStoryRuleEditPart extends
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
 		super.handleNotificationEvent(notification);
-//		if (ReconfigurationPackage.Literals.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT.equals(notification.getFeature())) {
-//			updateComponentVariableTypes();
-//		}
 		updateActivityNameLabel();
 	}
 
 	private void updateActivityNameLabel() {
 		if (!getChildren().isEmpty()) {
 
-			ActivityEditPart activityEditPart = (ActivityEditPart) getChildren()
-					.get(0);
+			ActivityEditPart activityEditPart = (ActivityEditPart) getChildren().get(0);
 			WrappingLabel activityNameLabel = ((ActivityFigure) activityEditPart
 					.getPrimaryShape()).getFigureActivityName();
 			
@@ -46,30 +42,4 @@ public class CustomComponentStoryRuleEditPart extends
 		}
 
 	}
-	
-//	private void updateComponentVariableTypes(){
-//		ComponentStoryRule componentStoryRule = (ComponentStoryRule) getNotationView().getElement();
-//		ReconfigurableStructuredComponent reconfigurableComponent = (ReconfigurableStructuredComponent) componentStoryRule.getReconfiguredComponent();
-//		if (reconfigurableComponent instanceof Component){
-//			Component component = (Component) reconfigurableComponent;
-//			Activity activity = (Activity) componentStoryRule.getActivity();
-//			if (activity != null){
-//				EList<ActivityNode> componentStoryNodes = activity.getOwnedActivityNodes();
-//				if (!componentStoryNodes.isEmpty()){
-//					for (ActivityNode node : componentStoryNodes){
-//						if (node instanceof ComponentStoryNode){
-//							ComponentStoryNode componentStoryNode = (ComponentStoryNode) node;
-//							ComponentStoryPattern componentStoryPattern = componentStoryNode.getComponentStoryPattern();
-//							if (componentStoryPattern != null){
-//								ComponentVariable componentVariable = componentStoryPattern.getThisVariable();
-//								if (componentVariable != null){
-//									componentVariable.setType(component);
-//								}
-//							}
-//						}
-//					}
-//				}
-//			}
-//		}
-//	}
 }

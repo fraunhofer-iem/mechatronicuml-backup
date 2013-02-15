@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.parts;
 
-import org.eclipse.draw2d.IFigure;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest;

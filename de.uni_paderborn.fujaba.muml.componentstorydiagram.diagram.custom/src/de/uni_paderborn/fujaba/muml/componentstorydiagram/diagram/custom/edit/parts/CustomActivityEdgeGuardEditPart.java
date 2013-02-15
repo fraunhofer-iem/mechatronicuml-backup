@@ -25,10 +25,8 @@ public class CustomActivityEdgeGuardEditPart extends ActivityEdgeGuardEditPart {
 		updateLabel();
 	}
 	
-	private void updateLabel()
-	{
+	private void updateLabel(){
 		ActivityEdge edge = (ActivityEdge) ((View) getModel()).getElement();
-
 		setLabelText(CsdmUtility.getText(edge));
 	}	
 	
