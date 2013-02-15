@@ -2,6 +2,8 @@ package de.uni_paderborn.fujaba.muml.tests;
 
 import static org.junit.Assert.fail;
 
+import java.io.IOException;
+import java.util.Collections;
 import java.util.Map;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenBase;
@@ -283,22 +285,29 @@ public class GenmodelTest extends TraverseTest {
 	 * Tests, if the 'PropertyType' setting is set correctly.
 	 */
 	@Test
-	public void validPropertyTypeSetting() {
+	public void validPropertyTypeSetting() throws IOException {
 		final ProblemCollector problems = new ProblemCollector();
 		accept(getRootElement(), new IResourceVisitor() {
 			@Override
 			public boolean visit(EObject element) {
 				if (element instanceof GenFeature) {
 					GenFeature genFeature = (GenFeature) element;
-					if (genFeature.getProperty() == GenPropertyKind.NONE_LITERAL) {
+					if (!genFeature.isDerived() && genFeature.getProperty() == GenPropertyKind.NONE_LITERAL) {
 						problems.add(getLabel(genFeature)
-								+ ": 'PropertyType' is set to NONE.");
+								+ ": derive = false AND 'PropertyType' is set to NONE.");
+						
+						if ("true".equals(System.getProperty("de.uni_paderborn.muml.tests.repair"))) {
+							genFeature.setProperty(GenPropertyKind.READONLY_LITERAL);
+						}
 					}
 				}
 				return true;
 			}
 
 		});
+		if ("true".equals(System.getProperty("de.uni_paderborn.muml.tests.repair"))) {
+			genmodel.save(Collections.emptyMap());
+		}
 		problems.fail();
 	}
 
