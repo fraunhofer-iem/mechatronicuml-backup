@@ -25,7 +25,7 @@
 		  inheritance="all">
         </adviceBinding>
         <adviceBinding id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.custom.ComponentPartAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ComponentPart_3005"
+		  typeId="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ComponentPart_3012"
 		  class="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.custom.edit.helpers.ComponentPartEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
@@ -49,7 +49,7 @@
          <advice ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.custom.DiscretePortGmfProtocolAdvice"/>
       </binding>
       <binding context="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ComponentPart_3005"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.ComponentPart_3012"/>
          <advice ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.custom.ComponentPartAdvice"/>
       </binding>
       <binding context="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.TypeContext">
