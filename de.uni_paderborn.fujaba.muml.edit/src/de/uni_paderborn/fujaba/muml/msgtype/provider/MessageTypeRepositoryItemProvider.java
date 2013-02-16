@@ -67,6 +67,7 @@ public class MessageTypeRepositoryItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addMessageTypesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,6 +90,28 @@ public class MessageTypeRepositoryItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Message Types feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMessageTypesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageTypeRepository_messageTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageTypeRepository_messageTypes_feature", "_UI_MessageTypeRepository_type"),
+				 MsgtypePackage.Literals.MESSAGE_TYPE_REPOSITORY__MESSAGE_TYPES,
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

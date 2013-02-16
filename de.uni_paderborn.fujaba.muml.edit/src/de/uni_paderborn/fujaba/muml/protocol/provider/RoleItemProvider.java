@@ -65,11 +65,35 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addCoordinationProtocolPropertyDescriptor(object);
 			addPortPropertyDescriptor(object);
 			addRoleConnectorPropertyDescriptor(object);
 			addMultiRolePropertyDescriptor(object);
+			addReceiverMessageBufferPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Coordination Protocol feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCoordinationProtocolPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Role_coordinationProtocol_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_coordinationProtocol_feature", "_UI_Role_type"),
+				 ProtocolPackage.Literals.ROLE__COORDINATION_PROTOCOL,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -180,6 +204,28 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Receiver Message Buffer feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReceiverMessageBufferPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Role_receiverMessageBuffer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_receiverMessageBuffer_feature", "_UI_Role_type"),
+				 ProtocolPackage.Literals.ROLE__RECEIVER_MESSAGE_BUFFER,
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

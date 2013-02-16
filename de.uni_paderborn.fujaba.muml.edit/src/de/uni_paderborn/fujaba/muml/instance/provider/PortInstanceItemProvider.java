@@ -67,6 +67,7 @@ public class PortInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPortTypePropertyDescriptor(object);
+			addComponentInstancePropertyDescriptor(object);
 			addPortConnectorInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -114,6 +115,28 @@ public class PortInstanceItemProvider
 			}
 		
 		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Component Instance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addComponentInstancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortInstance_componentInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_componentInstance_feature", "_UI_PortInstance_type"),
+				 InstancePackage.Literals.PORT_INSTANCE__COMPONENT_INSTANCE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

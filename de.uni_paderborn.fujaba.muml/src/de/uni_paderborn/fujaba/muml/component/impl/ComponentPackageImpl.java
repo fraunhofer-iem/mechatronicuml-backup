@@ -1069,7 +1069,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (componentEClass, 
 		   source, 
 		   new String[] {
-			 "UniquePortNames", "-- Name of ports must be unique.\nself.ports->isUnique(name)"
+			 "UniquePortNames", "self.ports->isUnique(name)"
 		   });							
 		addAnnotation
 		  (getPort_PortConnectors(), 

@@ -67,7 +67,10 @@ public class DeploymentItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addCommunicationLinksPropertyDescriptor(object);
+			addHardwareNodesPropertyDescriptor(object);
 			addComponentInstanceConfigurationPropertyDescriptor(object);
+			addQualityOfLinkServicesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -95,6 +98,50 @@ public class DeploymentItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Communication Links feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCommunicationLinksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Deployment_communicationLinks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Deployment_communicationLinks_feature", "_UI_Deployment_type"),
+				 DeploymentPackage.Literals.DEPLOYMENT__COMMUNICATION_LINKS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Hardware Nodes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHardwareNodesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Deployment_hardwareNodes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Deployment_hardwareNodes_feature", "_UI_Deployment_type"),
+				 DeploymentPackage.Literals.DEPLOYMENT__HARDWARE_NODES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Component Instance Configuration feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -111,6 +158,28 @@ public class DeploymentItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Quality Of Link Services feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addQualityOfLinkServicesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Deployment_qualityOfLinkServices_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Deployment_qualityOfLinkServices_feature", "_UI_Deployment_type"),
+				 DeploymentPackage.Literals.DEPLOYMENT__QUALITY_OF_LINK_SERVICES,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

@@ -67,6 +67,9 @@ public class LinkQualityOfServiceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addPacketDelayVariationPropertyDescriptor(object);
+			addLatencyPropertyDescriptor(object);
+			addDeploymentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,6 +92,72 @@ public class LinkQualityOfServiceItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Packet Delay Variation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPacketDelayVariationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LinkQualityOfService_packetDelayVariation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LinkQualityOfService_packetDelayVariation_feature", "_UI_LinkQualityOfService_type"),
+				 DeploymentPackage.Literals.LINK_QUALITY_OF_SERVICE__PACKET_DELAY_VARIATION,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Latency feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLatencyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LinkQualityOfService_latency_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LinkQualityOfService_latency_feature", "_UI_LinkQualityOfService_type"),
+				 DeploymentPackage.Literals.LINK_QUALITY_OF_SERVICE__LATENCY,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Deployment feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDeploymentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LinkQualityOfService_deployment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LinkQualityOfService_deployment_feature", "_UI_LinkQualityOfService_type"),
+				 DeploymentPackage.Literals.LINK_QUALITY_OF_SERVICE__DEPLOYMENT,
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

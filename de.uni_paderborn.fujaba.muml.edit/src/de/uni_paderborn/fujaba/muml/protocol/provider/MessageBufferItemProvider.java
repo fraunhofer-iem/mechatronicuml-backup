@@ -67,7 +67,9 @@ public class MessageBufferItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addBufferSizePropertyDescriptor(object);
 			addMessageTypePropertyDescriptor(object);
+			addRolePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -95,6 +97,28 @@ public class MessageBufferItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Buffer Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBufferSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageBuffer_bufferSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageBuffer_bufferSize_feature", "_UI_MessageBuffer_type"),
+				 ProtocolPackage.Literals.MESSAGE_BUFFER__BUFFER_SIZE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Message Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -111,6 +135,28 @@ public class MessageBufferItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageBuffer_role_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageBuffer_role_feature", "_UI_MessageBuffer_type"),
+				 ProtocolPackage.Literals.MESSAGE_BUFFER__ROLE,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

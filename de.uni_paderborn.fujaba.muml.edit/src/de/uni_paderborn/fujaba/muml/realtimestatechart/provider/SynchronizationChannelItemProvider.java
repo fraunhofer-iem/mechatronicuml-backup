@@ -65,6 +65,7 @@ public class SynchronizationChannelItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addStatePropertyDescriptor(object);
 			addSelectorTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -88,6 +89,28 @@ public class SynchronizationChannelItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the State feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SynchronizationChannel_state_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SynchronizationChannel_state_feature", "_UI_SynchronizationChannel_type"),
+				 RealtimestatechartPackage.Literals.SYNCHRONIZATION_CHANNEL__STATE,
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

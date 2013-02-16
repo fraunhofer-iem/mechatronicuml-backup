@@ -170,8 +170,7 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COMPONENT__UNIQUE_PORT_NAMES__EEXPRESSION = "-- Name of ports must be unique.\n" +
-		"self.ports->isUnique(name)";
+	protected static final String COMPONENT__UNIQUE_PORT_NAMES__EEXPRESSION = "self.ports->isUnique(name)";
 
 	/**
 	 * Validates the UniquePortNames constraint of '<em>Component</em>'.

@@ -35,7 +35,7 @@ import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponent()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniquePortNames'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePortNames='-- Name of ports must be unique.\nself.ports->isUnique(name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePortNames='self.ports->isUnique(name)'"
  * @generated
  */
 public interface Component extends NamedElement, CommentableElement, ConstrainableElement {

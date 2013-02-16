@@ -67,6 +67,7 @@ public class CommunicationLinkItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addConnectorEndpointsPropertyDescriptor(object);
+			addDeploymentPropertyDescriptor(object);
 			addQualityOfServicePropertyDescriptor(object);
 			addDeployedAssemblyInstancesPropertyDescriptor(object);
 			addHardwarePortsPropertyDescriptor(object);
@@ -113,6 +114,28 @@ public class CommunicationLinkItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Deployment feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDeploymentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CommunicationLink_deployment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommunicationLink_deployment_feature", "_UI_CommunicationLink_type"),
+				 DeploymentPackage.Literals.COMMUNICATION_LINK__DEPLOYMENT,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

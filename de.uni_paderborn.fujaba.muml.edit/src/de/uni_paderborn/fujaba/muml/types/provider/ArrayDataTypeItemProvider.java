@@ -62,6 +62,7 @@ public class ArrayDataTypeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
+			addCardinalityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -83,6 +84,28 @@ public class ArrayDataTypeItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Cardinality feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCardinalityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ArrayDataType_cardinality_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ArrayDataType_cardinality_feature", "_UI_ArrayDataType_type"),
+				 TypesPackage.Literals.ARRAY_DATA_TYPE__CARDINALITY,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

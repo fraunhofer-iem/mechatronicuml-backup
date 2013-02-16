@@ -70,6 +70,7 @@ public class RegionItemProvider
 
 			addPriorityPropertyDescriptor(object);
 			addStatechartPropertyDescriptor(object);
+			addParentStatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -148,6 +149,28 @@ public class RegionItemProvider
 		};
 		
 		itemPropertyDescriptors.add(statechartPropertyDescriptor);
+	}
+
+	/**
+	 * This adds a property descriptor for the Parent State feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParentStatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Region_parentState_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Region_parentState_feature", "_UI_Region_type"),
+				 RealtimestatechartPackage.Literals.REGION__PARENT_STATE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

@@ -71,6 +71,7 @@ public class HardwarePortItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addConnectorsPropertyDescriptor(object);
+			addHardwareNodePropertyDescriptor(object);
 			addDeployedPortInstancePropertyDescriptor(object);
 			addKindPropertyDescriptor(object);
 			addCommunicationLinksPropertyDescriptor(object);
@@ -117,6 +118,28 @@ public class HardwarePortItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Hardware Node feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHardwareNodePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HardwarePort_hardwareNode_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HardwarePort_hardwareNode_feature", "_UI_HardwarePort_type"),
+				 DeploymentPackage.Literals.HARDWARE_PORT__HARDWARE_NODE,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

@@ -84,6 +84,7 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 			addSynchronizationPropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
 			addSourcePropertyDescriptor(object);
+			addStatechartPropertyDescriptor(object);
 			addClockResetsPropertyDescriptor(object);
 			addTriggerMessageEventPropertyDescriptor(object);
 			addRaiseMessageEventPropertyDescriptor(object);
@@ -92,6 +93,7 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 			addRelativeDeadlinePropertyDescriptor(object);
 			addBlockablePropertyDescriptor(object);
 			addGuardPropertyDescriptor(object);
+			addEventsPropertyDescriptor(object);
 			addActionPropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
 			addReceiverMessageTypesPropertyDescriptor(object);
@@ -257,6 +259,28 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Statechart feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStatechartPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_statechart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_statechart_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__STATECHART,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
@@ -695,6 +719,28 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 						true, false, false, null,
 						getString("_UI_GuardPropertyCategory"), null,
 						rootPropertyDescriptor));
+	}
+
+	/**
+	 * This adds a property descriptor for the Events feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEventsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_events_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_events_feature", "_UI_Transition_type"),
+				 RealtimestatechartPackage.Literals.TRANSITION__EVENTS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

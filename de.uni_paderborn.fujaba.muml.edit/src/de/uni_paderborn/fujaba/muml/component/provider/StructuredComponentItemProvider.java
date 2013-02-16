@@ -63,6 +63,7 @@ public class StructuredComponentItemProvider
 			super.getPropertyDescriptors(object);
 
 			addEmbeddedPartsPropertyDescriptor(object);
+			addConnectorsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,6 +91,28 @@ public class StructuredComponentItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Connectors feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConnectorsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StructuredComponent_connectors_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StructuredComponent_connectors_feature", "_UI_StructuredComponent_type"),
+				 ComponentPackage.Literals.STRUCTURED_COMPONENT__CONNECTORS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -103,7 +126,6 @@ public class StructuredComponentItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__EMBEDDED_PARTS);
 			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__CONNECTORS);
-			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__GMF_PROTOCOLS);
 		}
 		return childrenFeatures;
 	}
@@ -160,11 +182,11 @@ public class StructuredComponentItemProvider
 		switch (notification.getFeatureID(StructuredComponent.class)) {
 			case ComponentPackage.STRUCTURED_COMPONENT__ALL_STRUCTURED_COMPONENTS:
 			case ComponentPackage.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS:
+			case ComponentPackage.STRUCTURED_COMPONENT__GMF_PROTOCOLS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.STRUCTURED_COMPONENT__EMBEDDED_PARTS:
 			case ComponentPackage.STRUCTURED_COMPONENT__CONNECTORS:
-			case ComponentPackage.STRUCTURED_COMPONENT__GMF_PROTOCOLS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -196,11 +218,6 @@ public class StructuredComponentItemProvider
 			(createChildParameter
 				(ComponentPackage.Literals.STRUCTURED_COMPONENT__CONNECTORS,
 				 ComponentFactory.eINSTANCE.createDelegationConnector()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.STRUCTURED_COMPONENT__GMF_PROTOCOLS,
-				 ProtocolFactory.eINSTANCE.createCoordinationProtocol()));
 	}
 
 }

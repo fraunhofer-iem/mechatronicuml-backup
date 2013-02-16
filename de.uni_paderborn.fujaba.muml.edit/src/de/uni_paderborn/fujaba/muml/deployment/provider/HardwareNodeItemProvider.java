@@ -70,6 +70,8 @@ public class HardwareNodeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addDeploymentPropertyDescriptor(object);
+			addHardwarePortsPropertyDescriptor(object);
 			addDeployedInstancesPropertyDescriptor(object);
 			addHardwareNodeKindPropertyDescriptor(object);
 		}
@@ -94,6 +96,50 @@ public class HardwareNodeItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Deployment feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDeploymentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HardwareNode_deployment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HardwareNode_deployment_feature", "_UI_HardwareNode_type"),
+				 DeploymentPackage.Literals.HARDWARE_NODE__DEPLOYMENT,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Hardware Ports feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHardwarePortsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_HardwareNode_hardwarePorts_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HardwareNode_hardwarePorts_feature", "_UI_HardwareNode_type"),
+				 DeploymentPackage.Literals.HARDWARE_NODE__HARDWARE_PORTS,
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

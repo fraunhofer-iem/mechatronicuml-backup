@@ -72,6 +72,7 @@ public class ComponentItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addConstraintPropertyDescriptor(object);
 			addPortsPropertyDescriptor(object);
 			addReferencingComponentPartsPropertyDescriptor(object);
 			addComponentTypePropertyDescriptor(object);
@@ -97,6 +98,28 @@ public class ComponentItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Constraint feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConstraintPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConstrainableElement_constraint_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
+				 ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

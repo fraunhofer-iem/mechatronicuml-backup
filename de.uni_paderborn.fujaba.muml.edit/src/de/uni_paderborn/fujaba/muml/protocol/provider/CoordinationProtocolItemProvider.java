@@ -68,9 +68,34 @@ public class CoordinationProtocolItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addConstraintPropertyDescriptor(object);
 			addCommentPropertyDescriptor(object);
+			addRolesPropertyDescriptor(object);
+			addRoleConnectorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Constraint feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConstraintPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConstrainableElement_constraint_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
+				 ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -91,6 +116,50 @@ public class CoordinationProtocolItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Roles feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRolesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CoordinationProtocol_roles_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationProtocol_roles_feature", "_UI_CoordinationProtocol_type"),
+				 ProtocolPackage.Literals.COORDINATION_PROTOCOL__ROLES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Role Connector feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRoleConnectorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CoordinationProtocol_roleConnector_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationProtocol_roleConnector_feature", "_UI_CoordinationProtocol_type"),
+				 ProtocolPackage.Literals.COORDINATION_PROTOCOL__ROLE_CONNECTOR,
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

@@ -62,6 +62,7 @@ public class StateItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRegionsPropertyDescriptor(object);
 			addDoEventPropertyDescriptor(object);
 			addExitEventPropertyDescriptor(object);
 			addEntryEventPropertyDescriptor(object);
@@ -70,9 +71,33 @@ public class StateItemProvider
 			addFinalPropertyDescriptor(object);
 			addUrgentPropertyDescriptor(object);
 			addChannelsPropertyDescriptor(object);
+			addConnectionPointsPropertyDescriptor(object);
 			addSimplePropertyDescriptor(object);
+			addStatechartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Regions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRegionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_regions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_regions_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__REGIONS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -252,6 +277,28 @@ public class StateItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Connection Points feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConnectionPointsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_connectionPoints_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_connectionPoints_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__CONNECTION_POINTS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Simple feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -269,6 +316,28 @@ public class StateItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Statechart feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStatechartPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_statechart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_statechart_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__STATECHART,
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

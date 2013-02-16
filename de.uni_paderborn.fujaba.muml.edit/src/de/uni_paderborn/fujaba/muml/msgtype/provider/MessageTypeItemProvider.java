@@ -67,6 +67,8 @@ public class MessageTypeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addParametersPropertyDescriptor(object);
+			addRepositoryPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,6 +91,50 @@ public class MessageTypeItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parameters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParametersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageType_parameters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageType_parameters_feature", "_UI_MessageType_type"),
+				 MsgtypePackage.Literals.MESSAGE_TYPE__PARAMETERS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Repository feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRepositoryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageType_repository_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageType_repository_feature", "_UI_MessageType_type"),
+				 MsgtypePackage.Literals.MESSAGE_TYPE__REPOSITORY,
+				 false,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

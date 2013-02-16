@@ -307,7 +307,7 @@
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Action/expressions"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//realtimestatechart/AsynchronousMessageEvent">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/AsynchronousMessageEvent/message"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/AsynchronousMessageEvent/message"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//realtimestatechart/DoEvent">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/DoEvent/action"/>
