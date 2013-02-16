@@ -16,13 +16,15 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.4.1",
  de.uni_paderborn.fujaba.muml.edit;bundle-version="0.3.1",
  org.storydriven.storydiagrams.edit;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.modelinstance.ui;bundle-version="0.3.1",
- de.uni_paderborn.fujaba.muml.componentstorydiagram;bundle-version="0.3.2"
+ de.uni_paderborn.fujaba.muml.componentstorydiagram;bundle-version="0.3.2",
+ org.eclipse.ui.ide;bundle-version="3.7.0"
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Export-Package: de.uni_paderborn.fujaba.muml.common,
  de.uni_paderborn.fujaba.muml.common.edit.policies,
  de.uni_paderborn.fujaba.muml.common.edit.policies.compartment,
  de.uni_paderborn.fujaba.muml.common.edit.policies.node,
+ de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram,
  de.uni_paderborn.fujaba.muml.common.edit.policies.ports,
  de.uni_paderborn.fujaba.muml.common.edit.policies.statechart,
  de.uni_paderborn.fujaba.muml.common.edit.policies.storydiagram,

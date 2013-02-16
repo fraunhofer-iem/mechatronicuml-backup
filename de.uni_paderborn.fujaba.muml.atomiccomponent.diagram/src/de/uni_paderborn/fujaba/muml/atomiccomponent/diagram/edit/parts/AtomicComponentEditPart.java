@@ -79,6 +79,9 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 				EditPolicyRoles.CANONICAL_ROLE,
 				new de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.edit.policies.AtomicComponentCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.OPEN_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
