@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.parts;
 
+import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 
@@ -12,6 +13,13 @@ public class CustomRealtimeStatechartEditPart extends
 
 	public CustomRealtimeStatechartEditPart(View view) {
 		super(view);
+	}
+	
+	@Override
+	protected IFigure createNodeShape() {
+		StatechartFigure figure = (StatechartFigure) super.createNodeShape();
+		figure.getFigureStatechartVariablesLabel().setTextWrap(true);
+		return figure;
 	}
 
 	@Override

@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionEditPart;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.StatechartFigure;
 
 public class CustomRegionEditPart extends RegionEditPart {
 
@@ -22,6 +23,9 @@ public class CustomRegionEditPart extends RegionEditPart {
 		regionFigure.getFigureStatechartVariablesLabel().setTextJustification(
 				PositionConstants.RIGHT);
 
+		regionFigure.getFigureStatechartVariablesLabel().setTextWrap(true);
+
+		
 		primaryShape = regionFigure;
 		return regionFigure;
 	}
@@ -29,6 +33,8 @@ public class CustomRegionEditPart extends RegionEditPart {
 	private Region getRegion() {
 		return (Region) getNotationView().getElement();
 	}
+
+
 
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
