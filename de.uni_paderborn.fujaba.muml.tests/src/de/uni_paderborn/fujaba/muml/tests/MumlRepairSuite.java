@@ -3,9 +3,15 @@ package de.uni_paderborn.fujaba.muml.tests;
 import org.junit.BeforeClass;
 
 public class MumlRepairSuite extends MumlTestSuite {
+	private static boolean repairMode = false; 
+	
 	@BeforeClass
 	public static void init() {
-		System.setProperty("de.uni_paderborn.muml.tests.repair", "true");
+		repairMode = true;
+	}
+	
+	public static boolean isRepairMode() {
+		return repairMode;
 	}
 
 }

@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.tests.resource;
 
+import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.ecore.EObject;
 
 public class QualifiedLabelProvider implements ILabelProvider {
@@ -19,12 +20,17 @@ public class QualifiedLabelProvider implements ILabelProvider {
 	 */
 	@Override
 	public String getLabel(EObject element) {
-		StringBuffer buffer = new StringBuffer();
+		StringBuffer buffer = null;
 
-		while (element != null) {
+		
+		while (element != null  && false == element instanceof GenModel) {
 			String label = defaultLabelProvider.getLabel(element);
 			if (label != null) {
-				buffer.insert(0, '.');
+				if (buffer == null) {
+					buffer = new StringBuffer();
+				} else {
+					buffer.insert(0, '.');
+				}
 				buffer.insert(0, label);
 			}
 			element = element.eContainer();

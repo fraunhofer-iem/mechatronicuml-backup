@@ -129,6 +129,9 @@ public class GenmodelTest extends TraverseTest {
 	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		if (MumlRepairSuite.isRepairMode()) {
+			genmodel.save(Collections.emptyMap());
+		}
 		genmodel = null;
 	}
 
@@ -296,7 +299,7 @@ public class GenmodelTest extends TraverseTest {
 						problems.add(getLabel(genFeature)
 								+ ": derive = false AND 'PropertyType' is set to NONE.");
 						
-						if ("true".equals(System.getProperty("de.uni_paderborn.muml.tests.repair"))) {
+						if (MumlRepairSuite.isRepairMode()) {
 							genFeature.setProperty(GenPropertyKind.READONLY_LITERAL);
 						}
 					}
@@ -305,9 +308,6 @@ public class GenmodelTest extends TraverseTest {
 			}
 
 		});
-		if ("true".equals(System.getProperty("de.uni_paderborn.muml.tests.repair"))) {
-			genmodel.save(Collections.emptyMap());
-		}
 		problems.fail();
 	}
 
