@@ -242,15 +242,16 @@ public class MetamodelOCLTest extends TraverseTest {
 								try {
 									EClass eClass = feature
 											.getEContainingClass();
-									EObject object = null;
+									EClass clazz = eClass;
 									if (eClass.isAbstract()) {
-										EClass concrete = findConcreteClass(eClass);
-										if (concrete != null) {
-											object = eClass.getEPackage()
-													.getEFactoryInstance()
-													.create(concrete);
+										clazz = findConcreteClass(eClass);
+									}
+									EObject object = null;
+									if (clazz != null) {
+										object = eClass.getEPackage()
+												.getEFactoryInstance()
+												.create(clazz);
 
-										}
 									}
 									validateOCLDerivation(eClass, feature,
 											object, derivationOCL);
