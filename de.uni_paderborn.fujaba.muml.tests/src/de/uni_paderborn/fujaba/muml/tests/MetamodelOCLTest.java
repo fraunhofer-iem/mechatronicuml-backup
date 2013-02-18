@@ -110,7 +110,7 @@ public class MetamodelOCLTest extends TraverseTest {
 		Resource mumlModel = TestUtilities.loadResource(resourceSet,
 				"de.uni_paderborn.fujaba.muml", "/model/muml.ecore");
 		EPackage muml = (EPackage) mumlModel.getContents().get(0);
-		packages.add(muml.getESubpackages().get(0));
+		packages.add(muml);
 
 		// TODO: set a different label provider
 		// setLabelProvider(qualifiedLabelProvider);
@@ -165,14 +165,16 @@ public class MetamodelOCLTest extends TraverseTest {
 							String constraintOCL = constraints
 									.get(constraintName);
 							try {
-								EObject object = null;
+								EClass clazz = eClass;
 								if (eClass.isAbstract()) {
-									EClass concrete = findConcreteClass(eClass);
-									if (concrete != null) {
-										object = eClass.getEPackage()
-												.getEFactoryInstance()
-												.create(concrete);
-									}
+									clazz = findConcreteClass(eClass);
+								
+								}
+								EObject object = null;
+								if (clazz != null) {
+									object = eClass.getEPackage()
+											.getEFactoryInstance()
+											.create(clazz);
 								}
 
 								validateOCLConstraint(eClass, object,
