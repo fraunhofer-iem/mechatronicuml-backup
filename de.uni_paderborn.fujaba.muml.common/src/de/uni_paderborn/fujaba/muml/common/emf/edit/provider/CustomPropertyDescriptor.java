@@ -26,7 +26,6 @@ import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.StatusLineManager;
 import org.eclipse.jface.action.ToolBarManager;
 import org.eclipse.jface.viewers.CellEditor;
-import org.eclipse.jface.viewers.ICellEditorListener;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -40,7 +39,6 @@ import org.eclipse.ui.views.properties.PropertySheetSorter;
 
 import de.uni_paderborn.fujaba.common.descriptor.IDifferentObjectItemPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
-import de.uni_paderborn.fujaba.common.emf.edit.ui.IRefreshProhibitedPropertySection;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectCreationDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.ObjectsListDialogExtension;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.extensions.PropertySheetDialogExtension;
@@ -60,18 +58,17 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 	private EditingDomain editingDomain;
 	private AdapterFactory adapterFactory;
 	private IPropertySourceProvider propertySourceProvider;
-	private IRefreshProhibitedPropertySection mainPropertySection;
+	//private IRefreshProhibitedPropertySection mainPropertySection;
 
 	public CustomPropertyDescriptor(Object object,
 			IItemPropertyDescriptor itemPropertyDescriptor,
 			AdapterFactory adapterFactory, EditingDomain editingDomain,
-			IPropertySourceProvider propertySourceProvider,
-			IRefreshProhibitedPropertySection mainPropertySection) {
+			IPropertySourceProvider propertySourceProvider) {
 		super(object, itemPropertyDescriptor);
 		this.adapterFactory = adapterFactory;
 		this.propertySourceProvider = propertySourceProvider;
 		this.editingDomain = editingDomain;
-		this.mainPropertySection = mainPropertySection;
+		//this.mainPropertySection = mainPropertySection;
 	}
 
 	@Override
@@ -170,31 +167,32 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 				EStructuralFeature feature) {
 			super(composite, getLabelProvider());
 			this.feature = feature;
-			addListener(new ICellEditorListener() {
-				@Override
-				public void applyEditorValue() {
-					// We must call refresh, after it is allowed again (part of
-					// the fix of the Widget-Disposed bug).
-					if (mainPropertySection != null) {
-						mainPropertySection.refresh();
-					}
-				}
 
-				@Override
-				public void cancelEditor() {
-				}
-
-				@Override
-				public void editorValueChanged(boolean oldValidState,
-						boolean newValidState) {
-				}
-			});
+			// TODO: Removed this hack; evaluate if "Widget-Disposed-Bug" reappears now!
+//			addListener(new ICellEditorListener() {
+//				@Override
+//				public void applyEditorValue() {
+//					// We must call refresh, after it is allowed again (part of
+//					// the fix of the Widget-Disposed bug).
+//					if (mainPropertySection != null) {
+//						mainPropertySection.refresh();
+//					}
+//				}
+//
+//				@Override
+//				public void cancelEditor() {
+//				}
+//
+//				@Override
+//				public void editorValueChanged(boolean oldValidState,
+//						boolean newValidState) {
+//				}
+//			});
 
 			// Dialog creation
 			dialog = new ExtensibleCreationDialog(PlatformUI.getWorkbench()
 					.getDisplay().getActiveShell(), labelProvider,
-					(EObject) object, feature, adapterFactory,
-					mainPropertySection);
+					(EObject) object, feature, adapterFactory);
 			addExtensions();
 		}
 

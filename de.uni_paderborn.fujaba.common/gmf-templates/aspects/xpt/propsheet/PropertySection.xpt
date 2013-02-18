@@ -1,5 +1,6 @@
+«REM»
 «AROUND implementsClause FOR gmfgen::GenCustomPropertyTab»«targetDef.proceed()», de.uni_paderborn.fujaba.common.emf.edit.ui.IRefreshProhibitedPropertySection«ENDAROUND»
-
+«ENDREM»
 
 ﻿«AROUND getAdapterFactoryMethod FOR gmfgen::GenCustomPropertyTab»
 	«EXPAND xpt::Common::generatedMemberComment»
@@ -43,7 +44,7 @@
 			org.eclipse.emf.edit.provider.IItemPropertySource ips = (org.eclipse.emf.edit.provider.IItemPropertySource) af.adapt(object, org.eclipse.emf.edit.provider.IItemPropertySource.class);
 			if (ips != null) {
 				org.eclipse.emf.edit.domain.EditingDomain ed = getEditingDomainFor(object);
-				return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(object, ips, af, ed, this, this);
+				return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(object, ips, af, ed, this);
 			}
 		}
 		if (object instanceof org.eclipse.core.runtime.IAdaptable) {
@@ -53,6 +54,7 @@
 	}
 «ENDAROUND»
 
+«REM»
 «AROUND additions FOR gmfgen::GenCustomPropertyTab-»
 
 	«EXPAND xpt::Common::generatedMemberComment»
@@ -79,3 +81,4 @@
 	}
 	
 «ENDAROUND»
+«ENDREM»

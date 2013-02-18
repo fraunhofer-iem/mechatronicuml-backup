@@ -1474,7 +1474,7 @@ public class ModelinstanceEditor
 						if (ips != null) {
 							EditingDomain ed = editingDomain;
 							return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(
-									object, ips, af, ed, this, null);
+									object, ips, af, ed, this);
 						}
 					}
 					if (object instanceof IAdaptable) {

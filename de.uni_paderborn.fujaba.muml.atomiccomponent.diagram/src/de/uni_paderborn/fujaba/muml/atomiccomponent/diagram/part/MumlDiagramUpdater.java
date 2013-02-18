@@ -8,8 +8,6 @@ import java.util.List;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.core.ExtendableElement;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-
 /**
  * @generated
  */

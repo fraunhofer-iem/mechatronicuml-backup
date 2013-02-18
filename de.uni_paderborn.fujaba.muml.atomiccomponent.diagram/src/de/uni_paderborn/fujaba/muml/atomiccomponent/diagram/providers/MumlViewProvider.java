@@ -1,7 +1,6 @@
 package de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.providers;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcoreFactory;

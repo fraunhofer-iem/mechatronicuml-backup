@@ -21,8 +21,6 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
-
 /**
  * @generated
  */

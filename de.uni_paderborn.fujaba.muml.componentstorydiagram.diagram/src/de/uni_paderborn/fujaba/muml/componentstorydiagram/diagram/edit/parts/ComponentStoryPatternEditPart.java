@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts;
 
-import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;

@@ -172,7 +172,7 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 				labelProvider,
 				typeCategory,
 				ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY__MODEL_ELEMENTS,
-				adapterFactory, null);
+				adapterFactory);
 
 		// Create Extensions:
 		// Copied from
@@ -283,7 +283,7 @@ public class OpenTypeDialogCommand extends AbstractHandler {
 					if (ips != null) {
 						EditingDomain ed = getEditingDomainFor(object);
 						return new CustomPropertySource(object, ips, af, ed,
-								this, null);
+								this);
 					}
 				}
 				if (object instanceof IAdaptable) {

@@ -42,7 +42,7 @@ public class ExtensibleCreationDialog extends Dialog {
 
 	private Composite container;
 
-	private IRefreshProhibitedPropertySection mainPropertySection;
+//	private IRefreshProhibitedPropertySection mainPropertySection;
 
 	private Map<Object, List<IDialogExtension>> groupToExtensions = new LinkedHashMap<Object, List<IDialogExtension>>();
 
@@ -93,14 +93,13 @@ public class ExtensibleCreationDialog extends Dialog {
 	public ExtensibleCreationDialog(Shell parentShell,
 			ILabelProvider labelProvider, EObject containerObject,
 			EStructuralFeature structuralFeature,
-			AdapterFactory adapterFactory,
-			IRefreshProhibitedPropertySection mainPropertySection) {
+			AdapterFactory adapterFactory) {
 		super(parentShell);
 		setShellStyle(getShellStyle() | SWT.RESIZE | SWT.MAX);
 		this.labelProvider = labelProvider;
 		this.structuralFeature = structuralFeature;
 		this.containerObject = containerObject;
-		this.mainPropertySection = mainPropertySection;
+//		this.mainPropertySection = mainPropertySection;
 		this.adapterFactory = adapterFactory;
 
 		contentProvider = new AdapterFactoryContentProvider(adapterFactory);
@@ -237,17 +236,18 @@ public class ExtensibleCreationDialog extends Dialog {
 		return super.close();
 	}
 
+	// TODO: Removed this hack; evaluate if "Widget-Disposed-Bug" reappears now!
 	// We must forbid calling refresh on the main Property Section, while the
 	// dialog is open (part of the fix of the Widget-Disposed bug).
 	@Override
 	public int open() {
-		if (mainPropertySection != null) {
-			mainPropertySection.pushRefreshProhibition();
-		}
+//		if (mainPropertySection != null) {
+//			mainPropertySection.pushRefreshProhibition();
+//		}
 		int result = super.open();
-		if (mainPropertySection != null) {
-			mainPropertySection.popRefreshProhibition();
-		}
+//		if (mainPropertySection != null) {
+//			mainPropertySection.popRefreshProhibition();
+//		}
 		return result;
 	}
 
