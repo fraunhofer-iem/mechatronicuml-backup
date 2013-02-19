@@ -29,6 +29,7 @@ import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
  * <!-- end-user-doc -->
  * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface RuntimePackage extends EPackage {
@@ -517,13 +518,13 @@ public interface RuntimePackage extends EPackage {
 	int ROLE_INSTANCE__TYPE = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Instance Of</b></em>' reference.
+	 * The feature id for the '<em><b>Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_INSTANCE__INSTANCE_OF = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
+	int ROLE_INSTANCE__ROLE = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Assembly</b></em>' reference.
@@ -896,13 +897,13 @@ public interface RuntimePackage extends EPackage {
 	int SINGLE_ROLE_INSTANCE__TYPE = ROLE_INSTANCE__TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Instance Of</b></em>' reference.
+	 * The feature id for the '<em><b>Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_ROLE_INSTANCE__INSTANCE_OF = ROLE_INSTANCE__INSTANCE_OF;
+	int SINGLE_ROLE_INSTANCE__ROLE = ROLE_INSTANCE__ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Assembly</b></em>' reference.
@@ -1022,13 +1023,13 @@ public interface RuntimePackage extends EPackage {
 	int MULTI_ROLE_INSTANCE__TYPE = ROLE_INSTANCE__TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Instance Of</b></em>' reference.
+	 * The feature id for the '<em><b>Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MULTI_ROLE_INSTANCE__INSTANCE_OF = ROLE_INSTANCE__INSTANCE_OF;
+	int MULTI_ROLE_INSTANCE__ROLE = ROLE_INSTANCE__ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Assembly</b></em>' reference.
@@ -1427,15 +1428,15 @@ public interface RuntimePackage extends EPackage {
 	EClass getRoleInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.runtime.RoleInstance#getInstanceOf <em>Instance Of</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.runtime.RoleInstance#getRole <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Instance Of</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.runtime.RoleInstance#getInstanceOf()
+	 * @return the meta object for the reference '<em>Role</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RoleInstance#getRole()
 	 * @see #getRoleInstance()
 	 * @generated
 	 */
-	EReference getRoleInstance_InstanceOf();
+	EReference getRoleInstance_Role();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.runtime.RoleInstance#getAssembly <em>Assembly</em>}'.
@@ -1841,12 +1842,12 @@ public interface RuntimePackage extends EPackage {
 		EClass ROLE_INSTANCE = eINSTANCE.getRoleInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Instance Of</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Role</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROLE_INSTANCE__INSTANCE_OF = eINSTANCE.getRoleInstance_InstanceOf();
+		EReference ROLE_INSTANCE__ROLE = eINSTANCE.getRoleInstance_Role();
 
 		/**
 		 * The meta object literal for the '<em><b>Assembly</b></em>' reference feature.

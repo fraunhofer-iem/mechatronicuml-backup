@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
@@ -39,7 +40,7 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeRoleConnectorInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RoleInstanceImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RoleInstanceImpl#getConnectorInstances <em>Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RoleInstanceImpl#getType <em>Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RoleInstanceImpl#getInstanceOf <em>Instance Of</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RoleInstanceImpl#getRole <em>Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RoleInstanceImpl#getAssembly <em>Assembly</em>}</li>
  * </ul>
  * </p>
@@ -88,24 +89,24 @@ public abstract class RoleInstanceImpl extends RuntimeBehavioralElementImpl impl
 	protected ConnectorEndpoint type;
 
 	/**
-	 * The cached value of the '{@link #getInstanceOf() <em>Instance Of</em>}' reference.
+	 * The cached setting delegate for the '{@link #getRole() <em>Role</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInstanceOf()
+	 * @see #getRole()
 	 * @generated
 	 * @ordered
 	 */
-	protected Role instanceOf;
+	protected EStructuralFeature.Internal.SettingDelegate ROLE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RuntimePackage.Literals.ROLE_INSTANCE__ROLE).getSettingDelegate();
 
 	/**
-	 * The cached value of the '{@link #getAssembly() <em>Assembly</em>}' reference.
+	 * The cached setting delegate for the '{@link #getAssembly() <em>Assembly</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAssembly()
 	 * @generated
 	 * @ordered
 	 */
-	protected RuntimeRoleConnectorInstance assembly;
+	protected EStructuralFeature.Internal.SettingDelegate ASSEMBLY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RuntimePackage.Literals.ROLE_INSTANCE__ASSEMBLY).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,16 +203,8 @@ public abstract class RoleInstanceImpl extends RuntimeBehavioralElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Role getInstanceOf() {
-		if (instanceOf != null && instanceOf.eIsProxy()) {
-			InternalEObject oldInstanceOf = (InternalEObject)instanceOf;
-			instanceOf = (Role)eResolveProxy(oldInstanceOf);
-			if (instanceOf != oldInstanceOf) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.ROLE_INSTANCE__INSTANCE_OF, oldInstanceOf, instanceOf));
-			}
-		}
-		return instanceOf;
+	public Role getRole() {
+		return (Role)ROLE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -219,20 +212,8 @@ public abstract class RoleInstanceImpl extends RuntimeBehavioralElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Role basicGetInstanceOf() {
-		return instanceOf;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setInstanceOf(Role newInstanceOf) {
-		Role oldInstanceOf = instanceOf;
-		instanceOf = newInstanceOf;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.ROLE_INSTANCE__INSTANCE_OF, oldInstanceOf, instanceOf));
+	public Role basicGetRole() {
+		return (Role)ROLE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -241,15 +222,7 @@ public abstract class RoleInstanceImpl extends RuntimeBehavioralElementImpl impl
 	 * @generated
 	 */
 	public RuntimeRoleConnectorInstance getAssembly() {
-		if (assembly != null && assembly.eIsProxy()) {
-			InternalEObject oldAssembly = (InternalEObject)assembly;
-			assembly = (RuntimeRoleConnectorInstance)eResolveProxy(oldAssembly);
-			if (assembly != oldAssembly) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.ROLE_INSTANCE__ASSEMBLY, oldAssembly, assembly));
-			}
-		}
-		return assembly;
+		return (RuntimeRoleConnectorInstance)ASSEMBLY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -258,19 +231,7 @@ public abstract class RoleInstanceImpl extends RuntimeBehavioralElementImpl impl
 	 * @generated
 	 */
 	public RuntimeRoleConnectorInstance basicGetAssembly() {
-		return assembly;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAssembly(RuntimeRoleConnectorInstance newAssembly) {
-		RuntimeRoleConnectorInstance oldAssembly = assembly;
-		assembly = newAssembly;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.ROLE_INSTANCE__ASSEMBLY, oldAssembly, assembly));
+		return (RuntimeRoleConnectorInstance)ASSEMBLY__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -317,9 +278,9 @@ public abstract class RoleInstanceImpl extends RuntimeBehavioralElementImpl impl
 			case RuntimePackage.ROLE_INSTANCE__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
-			case RuntimePackage.ROLE_INSTANCE__INSTANCE_OF:
-				if (resolve) return getInstanceOf();
-				return basicGetInstanceOf();
+			case RuntimePackage.ROLE_INSTANCE__ROLE:
+				if (resolve) return getRole();
+				return basicGetRole();
 			case RuntimePackage.ROLE_INSTANCE__ASSEMBLY:
 				if (resolve) return getAssembly();
 				return basicGetAssembly();
@@ -346,12 +307,6 @@ public abstract class RoleInstanceImpl extends RuntimeBehavioralElementImpl impl
 			case RuntimePackage.ROLE_INSTANCE__TYPE:
 				setType((ConnectorEndpoint)newValue);
 				return;
-			case RuntimePackage.ROLE_INSTANCE__INSTANCE_OF:
-				setInstanceOf((Role)newValue);
-				return;
-			case RuntimePackage.ROLE_INSTANCE__ASSEMBLY:
-				setAssembly((RuntimeRoleConnectorInstance)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -373,12 +328,6 @@ public abstract class RoleInstanceImpl extends RuntimeBehavioralElementImpl impl
 			case RuntimePackage.ROLE_INSTANCE__TYPE:
 				setType((ConnectorEndpoint)null);
 				return;
-			case RuntimePackage.ROLE_INSTANCE__INSTANCE_OF:
-				setInstanceOf((Role)null);
-				return;
-			case RuntimePackage.ROLE_INSTANCE__ASSEMBLY:
-				setAssembly((RuntimeRoleConnectorInstance)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -397,10 +346,10 @@ public abstract class RoleInstanceImpl extends RuntimeBehavioralElementImpl impl
 				return connectorInstances != null && !connectorInstances.isEmpty();
 			case RuntimePackage.ROLE_INSTANCE__TYPE:
 				return type != null;
-			case RuntimePackage.ROLE_INSTANCE__INSTANCE_OF:
-				return instanceOf != null;
+			case RuntimePackage.ROLE_INSTANCE__ROLE:
+				return ROLE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RuntimePackage.ROLE_INSTANCE__ASSEMBLY:
-				return assembly != null;
+				return ASSEMBLY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

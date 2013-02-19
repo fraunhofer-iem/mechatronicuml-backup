@@ -269,7 +269,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoleInstance_InstanceOf() {
+	public EReference getRoleInstance_Role() {
 		return (EReference)roleInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -603,7 +603,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		runtimeDiscretePortInstanceEClass = createEClass(RUNTIME_DISCRETE_PORT_INSTANCE);
 
 		roleInstanceEClass = createEClass(ROLE_INSTANCE);
-		createEReference(roleInstanceEClass, ROLE_INSTANCE__INSTANCE_OF);
+		createEReference(roleInstanceEClass, ROLE_INSTANCE__ROLE);
 		createEReference(roleInstanceEClass, ROLE_INSTANCE__ASSEMBLY);
 
 		messageBufferEClass = createEClass(MESSAGE_BUFFER);
@@ -718,8 +718,8 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		initEClass(runtimeDiscretePortInstanceEClass, RuntimeDiscretePortInstance.class, "RuntimeDiscretePortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(roleInstanceEClass, RoleInstance.class, "RoleInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRoleInstance_InstanceOf(), theProtocolPackage.getRole(), null, "instanceOf", null, 1, 1, RoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRoleInstance_Assembly(), this.getRuntimeRoleConnectorInstance(), null, "assembly", null, 0, 1, RoleInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoleInstance_Role(), theProtocolPackage.getRole(), null, "role", null, 1, 1, RoleInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getRoleInstance_Assembly(), this.getRuntimeRoleConnectorInstance(), null, "assembly", null, 0, 1, RoleInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageBufferEClass, MessageBuffer.class, "MessageBuffer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessageBuffer_BufferSize(), theEcorePackage.getEInt(), "bufferSize", null, 0, 1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -769,6 +769,52 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });		
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";			
+		addAnnotation
+		  (getRoleInstance_Role(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.type.oclAsType(muml::protocol::Role)"
+		   });		
+		addAnnotation
+		  (getRoleInstance_Assembly(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.connectorInstances->first().oclAsType(RuntimeRoleConnectorInstance)"
+		   });
 	}
 
 } //RuntimePackageImpl
