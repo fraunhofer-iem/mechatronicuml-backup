@@ -64,6 +64,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIfStatementAccess().getGroup_5(), "rule__IfStatement__Group_5__0");
 					put(grammarAccess.getIfStatementAccess().getGroup_6(), "rule__IfStatement__Group_6__0");
 					put(grammarAccess.getReturnStatementAccess().getGroup(), "rule__ReturnStatement__Group__0");
+					put(grammarAccess.getOperationCallStatementAccess().getGroup(), "rule__OperationCallStatement__Group__0");
 					put(grammarAccess.getAssignmentAccess().getGroup(), "rule__Assignment__Group__0");
 					put(grammarAccess.getLocalVariableDeclarationStatementAccess().getGroup(), "rule__LocalVariableDeclarationStatement__Group__0");
 					put(grammarAccess.getLocalVariableDeclarationStatementAccess().getGroup_1(), "rule__LocalVariableDeclarationStatement__Group_1__0");

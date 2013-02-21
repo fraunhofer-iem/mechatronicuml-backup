@@ -8,8 +8,6 @@ import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
-import de.uni_paderborn.fujaba.muml.ui.internal.ActionLanguageActivator;
-
 /**
  * This class was generated. Customizations should only happen in a newly
  * introduced subclass. 
@@ -18,12 +16,12 @@ public class ActionLanguageExecutableExtensionFactory extends AbstractGuiceAware
 
 	@Override
 	protected Bundle getBundle() {
-		return ActionLanguageActivator.getInstance().getBundle();
+		return de.uni_paderborn.fujaba.muml.ui.internal.ActionLanguageActivator.getInstance().getBundle();
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return ActionLanguageActivator.getInstance().getInjector(ActionLanguageActivator.DE_UNI_PADERBORN_FUJABA_MUML_ACTIONLANGUAGE);
+		return de.uni_paderborn.fujaba.muml.ui.internal.ActionLanguageActivator.getInstance().getInjector("de.uni_paderborn.fujaba.muml.ActionLanguage");
 	}
 	
 }

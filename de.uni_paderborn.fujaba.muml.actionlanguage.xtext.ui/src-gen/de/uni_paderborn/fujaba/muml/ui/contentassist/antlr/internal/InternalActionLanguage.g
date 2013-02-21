@@ -260,6 +260,34 @@ finally {
 
 
 
+// Entry rule entryRuleOperationCallStatement
+entryRuleOperationCallStatement 
+:
+{ before(grammarAccess.getOperationCallStatementRule()); }
+	 ruleOperationCallStatement
+{ after(grammarAccess.getOperationCallStatementRule()); } 
+	 EOF 
+;
+
+// Rule OperationCallStatement
+ruleOperationCallStatement
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getOperationCallStatementAccess().getGroup()); }
+(rule__OperationCallStatement__Group__0)
+{ after(grammarAccess.getOperationCallStatementAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleExpressionStartRule
 entryRuleExpressionStartRule 
 :
@@ -1263,6 +1291,12 @@ rule__ExpressionStartRule__Alternatives
 { before(grammarAccess.getExpressionStartRuleAccess().getLocalVariableDeclarationStatementParserRuleCall_6()); }
 	ruleLocalVariableDeclarationStatement
 { after(grammarAccess.getExpressionStartRuleAccess().getLocalVariableDeclarationStatementParserRuleCall_6()); }
+)
+
+    |(
+{ before(grammarAccess.getExpressionStartRuleAccess().getOperationCallStatementParserRuleCall_7()); }
+	ruleOperationCallStatement
+{ after(grammarAccess.getExpressionStartRuleAccess().getOperationCallStatementParserRuleCall_7()); }
 )
 
 ;
@@ -3103,6 +3137,69 @@ finally {
 
 
 
+
+
+
+
+
+
+rule__OperationCallStatement__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__OperationCallStatement__Group__0__Impl
+	rule__OperationCallStatement__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__OperationCallStatement__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getOperationCallStatementAccess().getOperationCallParserRuleCall_0()); }
+	ruleOperationCall
+{ after(grammarAccess.getOperationCallStatementAccess().getOperationCallParserRuleCall_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__OperationCallStatement__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__OperationCallStatement__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__OperationCallStatement__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getOperationCallStatementAccess().getSemicolonKeyword_1()); }
+
+	';' 
+
+{ after(grammarAccess.getOperationCallStatementAccess().getSemicolonKeyword_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
 
 

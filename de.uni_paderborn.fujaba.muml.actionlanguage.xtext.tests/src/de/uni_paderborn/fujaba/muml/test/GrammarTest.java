@@ -432,6 +432,12 @@ public class GrammarTest {
 		assertEquals("p1", lhs.getName());
 	}
 	
+	@Test
+	public void testOperationCallStatement() {
+		loadFromString("{ callp(p1 := 42, p2 := 21) ; }");
+		assertFalse(loadResult.hasError());
+	}
+	
 	protected static void assertValidEObject(EObject object) {
 		assertTrue(validEObject(object));
 	}

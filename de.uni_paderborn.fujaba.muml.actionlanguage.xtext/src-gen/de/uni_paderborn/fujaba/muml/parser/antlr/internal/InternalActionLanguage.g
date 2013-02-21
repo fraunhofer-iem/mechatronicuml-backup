@@ -683,6 +683,40 @@ ruleReturnStatement returns [EObject current=null]
 
 
 
+// Entry rule entryRuleOperationCallStatement
+entryRuleOperationCallStatement returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getOperationCallStatementRule()); }
+	 iv_ruleOperationCallStatement=ruleOperationCallStatement 
+	 { $current=$iv_ruleOperationCallStatement.current; } 
+	 EOF 
+;
+
+// Rule OperationCallStatement
+ruleOperationCallStatement returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getOperationCallStatementAccess().getOperationCallParserRuleCall_0()); 
+    }
+    this_OperationCall_0=ruleOperationCall
+    { 
+        $current = $this_OperationCall_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+	otherlv_1=';' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getOperationCallStatementAccess().getSemicolonKeyword_1());
+    }
+)
+;
+
+
+
+
+
 // Entry rule entryRuleExpressionStartRule
 entryRuleExpressionStartRule returns [EObject current=null] 
 	:
@@ -764,6 +798,16 @@ ruleExpressionStartRule returns [EObject current=null]
     this_LocalVariableDeclarationStatement_6=ruleLocalVariableDeclarationStatement
     { 
         $current = $this_LocalVariableDeclarationStatement_6.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getExpressionStartRuleAccess().getOperationCallStatementParserRuleCall_7()); 
+    }
+    this_OperationCallStatement_7=ruleOperationCallStatement
+    { 
+        $current = $this_OperationCallStatement_7.current; 
         afterParserOrEnumRuleCall();
     }
 )

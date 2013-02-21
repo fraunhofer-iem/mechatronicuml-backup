@@ -64,11 +64,16 @@ ReturnStatement returns actionlanguage::ReturnStatement:
 	{actionlanguage::ReturnStatement}
 	'return' expression=Expression ';'
 ;
+
+OperationCallStatement returns actionlanguage::OperationCall:
+	OperationCall ';'
+;
 	
 ExpressionStartRule returns expressions::Expression:
 	Assignment |  ForLoop | 
 	WhileLoop | DoWhileLoop | 
-	IfStatement | ReturnStatement | LocalVariableDeclarationStatement
+	IfStatement | ReturnStatement | LocalVariableDeclarationStatement |
+	OperationCallStatement
 ;
 
 enum IncrementDecrementOperator returns actionlanguage::IncrementDecrementOperator:
