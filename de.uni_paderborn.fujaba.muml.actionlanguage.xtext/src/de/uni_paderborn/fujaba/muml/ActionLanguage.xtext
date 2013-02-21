@@ -290,11 +290,6 @@ TriggerMessageExpression returns actionlanguage::TriggerMessageExpression:
 ;
 
 // end of TriggerMessageExpression
-	
-	
-IdentifierOrValue returns ecore::EString:
-	NUMBER | BOOLEAN | INT | STRING
-;	
 
 terminal NUMBER returns ecore::EBigDecimal:
 	INT'.' INT

@@ -989,8 +989,6 @@ finally {
 
 
 
-
-
 // Rule IncrementDecrementOperator
 ruleIncrementDecrementOperator
     @init {
@@ -1427,7 +1425,6 @@ rule__Literal__Alternatives
 finally {
 	restoreStackSize(stackSize);
 }
-
 
 rule__IncrementDecrementOperator__Alternatives
     @init {

@@ -2278,8 +2278,6 @@ ruleTriggerMessageExpression returns [EObject current=null]
 
 
 
-
-
 // Rule IncrementDecrementOperator
 ruleIncrementDecrementOperator returns [Enumerator current=null] 
     @init { enterRule(); }

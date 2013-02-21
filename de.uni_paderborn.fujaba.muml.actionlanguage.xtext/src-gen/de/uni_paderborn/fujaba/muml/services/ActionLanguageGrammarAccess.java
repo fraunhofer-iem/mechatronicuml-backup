@@ -1335,35 +1335,6 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getParameterParameterIDTerminalRuleCall_2_0_1() { return cParameterParameterIDTerminalRuleCall_2_0_1; }
 	}
-
-	public class IdentifierOrValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "IdentifierOrValue");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cNUMBERTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cBOOLEANTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cSTRINGTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		
-		//// end of TriggerMessageExpression
-		//IdentifierOrValue returns ecore::EString:
-		//	NUMBER | BOOLEAN | INT | STRING;
-		public ParserRule getRule() { return rule; }
-
-		//NUMBER | BOOLEAN | INT | STRING
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//NUMBER
-		public RuleCall getNUMBERTerminalRuleCall_0() { return cNUMBERTerminalRuleCall_0; }
-
-		//BOOLEAN
-		public RuleCall getBOOLEANTerminalRuleCall_1() { return cBOOLEANTerminalRuleCall_1; }
-
-		//INT
-		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
-
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_3() { return cSTRINGTerminalRuleCall_3; }
-	}
 	
 	
 	public class IncrementDecrementOperatorElements extends AbstractEnumRuleElementFinder {
@@ -1766,7 +1737,6 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private OperationCallElements pOperationCall;
 	private ParamaterBindingElements pParamaterBinding;
 	private TriggerMessageExpressionElements pTriggerMessageExpression;
-	private IdentifierOrValueElements pIdentifierOrValue;
 	private TerminalRule tNUMBER;
 	private TerminalRule tBOOLEAN;
 	
@@ -2266,16 +2236,6 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// end of TriggerMessageExpression
-	//IdentifierOrValue returns ecore::EString:
-	//	NUMBER | BOOLEAN | INT | STRING;
-	public IdentifierOrValueElements getIdentifierOrValueAccess() {
-		return (pIdentifierOrValue != null) ? pIdentifierOrValue : (pIdentifierOrValue = new IdentifierOrValueElements());
-	}
-	
-	public ParserRule getIdentifierOrValueRule() {
-		return getIdentifierOrValueAccess().getRule();
-	}
-
 	//terminal NUMBER returns ecore::EBigDecimal:
 	//	INT "." INT;
 	public TerminalRule getNUMBERRule() {

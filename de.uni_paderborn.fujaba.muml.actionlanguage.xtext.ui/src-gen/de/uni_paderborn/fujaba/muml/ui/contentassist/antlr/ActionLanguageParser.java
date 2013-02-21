@@ -44,7 +44,6 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicationExpressionAccess().getRightExpressionAlternatives_1_1_2_0(), "rule__MultiplicationExpression__RightExpressionAlternatives_1_1_2_0");
 					put(grammarAccess.getOperandAccess().getAlternatives(), "rule__Operand__Alternatives");
 					put(grammarAccess.getLiteralAccess().getAlternatives(), "rule__Literal__Alternatives");
-					put(grammarAccess.getIdentifierOrValueAccess().getAlternatives(), "rule__IdentifierOrValue__Alternatives");
 					put(grammarAccess.getIncrementDecrementOperatorAccess().getAlternatives(), "rule__IncrementDecrementOperator__Alternatives");
 					put(grammarAccess.getAssignOperatorAccess().getAlternatives(), "rule__AssignOperator__Alternatives");
 					put(grammarAccess.getComparingEQNEQOperatorAccess().getAlternatives(), "rule__ComparingEQNEQOperator__Alternatives");

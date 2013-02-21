@@ -6419,5 +6419,4 @@ protected class TriggerMessageExpression_ParameterAssignment_2 extends Assignmen
 
 /************ end Rule TriggerMessageExpression ****************/
 
-
 }
