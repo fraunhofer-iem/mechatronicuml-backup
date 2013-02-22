@@ -438,6 +438,12 @@ public class GrammarTest {
 		assertFalse(loadResult.hasError());
 	}
 	
+	@Test
+	public void testOperationCallAsParameter() {
+		loadFromString("{ callp(p1 := call(), p2 := callp(p1 := 3, p2 := 4)) ; }");
+		assertFalse(loadResult.hasError());
+	}
+	
 	protected static void assertValidEObject(EObject object) {
 		assertTrue(validEObject(object));
 	}
