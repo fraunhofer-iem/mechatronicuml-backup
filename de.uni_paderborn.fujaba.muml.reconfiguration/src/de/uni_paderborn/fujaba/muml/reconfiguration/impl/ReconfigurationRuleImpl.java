@@ -24,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
+import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,6 +37,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl#getReturnParameters <em>Return Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl#getReconfiguredComponent <em>Reconfigured Component</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl#getWcet <em>Wcet</em>}</li>
  * </ul>
  * </p>
  *
@@ -91,6 +93,16 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	 * @ordered
 	 */
 	protected ReconfigurableComponent reconfiguredComponent;
+
+	/**
+	 * The cached value of the '{@link #getWcet() <em>Wcet</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWcet()
+	 * @generated
+	 * @ordered
+	 */
+	protected TimeValue wcet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -199,6 +211,49 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TimeValue getWcet() {
+		return wcet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetWcet(TimeValue newWcet, NotificationChain msgs) {
+		TimeValue oldWcet = wcet;
+		wcet = newWcet;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_RULE__WCET, oldWcet, newWcet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setWcet(TimeValue newWcet) {
+		if (newWcet != wcet) {
+			NotificationChain msgs = null;
+			if (wcet != null)
+				msgs = ((InternalEObject)wcet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_RULE__WCET, null, msgs);
+			if (newWcet != null)
+				msgs = ((InternalEObject)newWcet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_RULE__WCET, null, msgs);
+			msgs = basicSetWcet(newWcet, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_RULE__WCET, newWcet, newWcet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -206,6 +261,8 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS:
 				return ((InternalEList<?>)getReturnParameters()).basicRemove(otherEnd, msgs);
+			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
+				return basicSetWcet(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -227,6 +284,8 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
 				if (resolve) return getReconfiguredComponent();
 				return basicGetReconfiguredComponent();
+			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
+				return getWcet();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -254,6 +313,9 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
 				setReconfiguredComponent((ReconfigurableComponent)newValue);
 				return;
+			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
+				setWcet((TimeValue)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -278,6 +340,9 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
 				setReconfiguredComponent((ReconfigurableComponent)null);
 				return;
+			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
+				setWcet((TimeValue)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -298,6 +363,8 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 				return returnParameters != null && !returnParameters.isEmpty();
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
 				return reconfiguredComponent != null;
+			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
+				return wcet != null;
 		}
 		return super.eIsSet(featureID);
 	}

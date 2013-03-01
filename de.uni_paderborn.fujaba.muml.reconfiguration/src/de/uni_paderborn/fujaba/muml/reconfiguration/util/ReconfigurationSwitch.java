@@ -237,39 +237,26 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.EXTERNAL_RECONFIGURATION_EXECUTION_PORT: {
-				ExternalReconfigurationExecutionPort externalReconfigurationExecutionPort = (ExternalReconfigurationExecutionPort)theEObject;
-				T result = caseExternalReconfigurationExecutionPort(externalReconfigurationExecutionPort);
-				if (result == null) result = caseReconfigurationExecutionPort(externalReconfigurationExecutionPort);
-				if (result == null) result = caseReconfigurationPort(externalReconfigurationExecutionPort);
-				if (result == null) result = caseDiscretePort(externalReconfigurationExecutionPort);
-				if (result == null) result = casePort(externalReconfigurationExecutionPort);
-				if (result == null) result = caseDiscreteInteractionEndpoint(externalReconfigurationExecutionPort);
-				if (result == null) result = caseConnectorEndpoint(externalReconfigurationExecutionPort);
-				if (result == null) result = caseConstrainableElement(externalReconfigurationExecutionPort);
-				if (result == null) result = caseDataType(externalReconfigurationExecutionPort);
-				if (result == null) result = caseBehavioralElement(externalReconfigurationExecutionPort);
-				if (result == null) result = caseNamedElement(externalReconfigurationExecutionPort);
-				if (result == null) result = caseCommentableElement(externalReconfigurationExecutionPort);
-				if (result == null) result = caseExtendableElement(externalReconfigurationExecutionPort);
+			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY: {
+				ReconfigurationPortInterfaceEntry reconfigurationPortInterfaceEntry = (ReconfigurationPortInterfaceEntry)theEObject;
+				T result = caseReconfigurationPortInterfaceEntry(reconfigurationPortInterfaceEntry);
+				if (result == null) result = caseExtendableElement(reconfigurationPortInterfaceEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_EXECUTION_PORT: {
-				InternalReconfigurationExecutionPort internalReconfigurationExecutionPort = (InternalReconfigurationExecutionPort)theEObject;
-				T result = caseInternalReconfigurationExecutionPort(internalReconfigurationExecutionPort);
-				if (result == null) result = caseReconfigurationExecutionPort(internalReconfigurationExecutionPort);
-				if (result == null) result = caseReconfigurationPort(internalReconfigurationExecutionPort);
-				if (result == null) result = caseDiscretePort(internalReconfigurationExecutionPort);
-				if (result == null) result = casePort(internalReconfigurationExecutionPort);
-				if (result == null) result = caseDiscreteInteractionEndpoint(internalReconfigurationExecutionPort);
-				if (result == null) result = caseConnectorEndpoint(internalReconfigurationExecutionPort);
-				if (result == null) result = caseConstrainableElement(internalReconfigurationExecutionPort);
-				if (result == null) result = caseDataType(internalReconfigurationExecutionPort);
-				if (result == null) result = caseBehavioralElement(internalReconfigurationExecutionPort);
-				if (result == null) result = caseNamedElement(internalReconfigurationExecutionPort);
-				if (result == null) result = caseCommentableElement(internalReconfigurationExecutionPort);
-				if (result == null) result = caseExtendableElement(internalReconfigurationExecutionPort);
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY: {
+				ReconfigurationMessagePortInterfaceEntry reconfigurationMessagePortInterfaceEntry = (ReconfigurationMessagePortInterfaceEntry)theEObject;
+				T result = caseReconfigurationMessagePortInterfaceEntry(reconfigurationMessagePortInterfaceEntry);
+				if (result == null) result = caseReconfigurationPortInterfaceEntry(reconfigurationMessagePortInterfaceEntry);
+				if (result == null) result = caseExtendableElement(reconfigurationMessagePortInterfaceEntry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY: {
+				ReconfigurationExecutionPortInterfaceEntry reconfigurationExecutionPortInterfaceEntry = (ReconfigurationExecutionPortInterfaceEntry)theEObject;
+				T result = caseReconfigurationExecutionPortInterfaceEntry(reconfigurationExecutionPortInterfaceEntry);
+				if (result == null) result = caseReconfigurationPortInterfaceEntry(reconfigurationExecutionPortInterfaceEntry);
+				if (result == null) result = caseExtendableElement(reconfigurationExecutionPortInterfaceEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -353,32 +340,47 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>External Reconfiguration Execution Port</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Port Interface Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>External Reconfiguration Execution Port</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Port Interface Entry</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseExternalReconfigurationExecutionPort(ExternalReconfigurationExecutionPort object) {
+	public T caseReconfigurationPortInterfaceEntry(ReconfigurationPortInterfaceEntry object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Internal Reconfiguration Execution Port</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Message Port Interface Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Internal Reconfiguration Execution Port</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Message Port Interface Entry</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseInternalReconfigurationExecutionPort(InternalReconfigurationExecutionPort object) {
+	public T caseReconfigurationMessagePortInterfaceEntry(ReconfigurationMessagePortInterfaceEntry object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Execution Port Interface Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Execution Port Interface Entry</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReconfigurationExecutionPortInterfaceEntry(ReconfigurationExecutionPortInterfaceEntry object) {
 		return null;
 	}
 

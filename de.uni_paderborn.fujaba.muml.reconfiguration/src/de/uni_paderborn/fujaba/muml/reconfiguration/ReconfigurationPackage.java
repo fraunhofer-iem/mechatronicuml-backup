@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
@@ -49,7 +50,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/reconfiguration/0.3.7";
+	String eNS_URI = "http://www.fujaba.de/muml/reconfiguration/0.3.8";
 
 	/**
 	 * The package namespace name.
@@ -430,13 +431,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT__GMF_PROTOCOL = ComponentPackage.DISCRETE_PORT__GMF_PROTOCOL;
 
 	/**
+	 * The feature id for the '<em><b>Interface Entries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__INTERFACE_ENTRIES = ComponentPackage.DISCRETE_PORT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_FEATURE_COUNT = ComponentPackage.DISCRETE_PORT_FEATURE_COUNT + 0;
+	int RECONFIGURATION_PORT_FEATURE_COUNT = ComponentPackage.DISCRETE_PORT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ControllerImpl <em>Controller</em>}' class.
@@ -530,26 +540,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	int RULE_BASED_RECONFIGURATION_CONTROLLER = 13;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExternalReconfigurationExecutionPortImpl <em>External Reconfiguration Execution Port</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExternalReconfigurationExecutionPortImpl
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getExternalReconfigurationExecutionPort()
-	 * @generated
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT = 14;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.InternalReconfigurationExecutionPortImpl <em>Internal Reconfiguration Execution Port</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.InternalReconfigurationExecutionPortImpl
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getInternalReconfigurationExecutionPort()
-	 * @generated
-	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT = 15;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerImpl <em>Manager</em>}' class.
@@ -754,13 +744,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_RULE__RECONFIGURED_COMPONENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Wcet</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_RULE__WCET = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_RULE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int RECONFIGURATION_RULE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 
 	/**
@@ -1118,6 +1117,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__GMF_PROTOCOL = RECONFIGURATION_PORT__GMF_PROTOCOL;
 
 	/**
+	 * The feature id for the '<em><b>Interface Entries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__INTERFACE_ENTRIES = RECONFIGURATION_PORT__INTERFACE_ENTRIES;
+
+	/**
 	 * The number of structural features of the '<em>Message Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1326,6 +1334,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__GMF_PROTOCOL = RECONFIGURATION_PORT__GMF_PROTOCOL;
 
 	/**
+	 * The feature id for the '<em><b>Interface Entries</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__INTERFACE_ENTRIES = RECONFIGURATION_PORT__INTERFACE_ENTRIES;
+
+	/**
 	 * The number of structural features of the '<em>Execution Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1381,40 +1398,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Externally Visible</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Time To Failure</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Time To Success</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_SUCCESS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
 	 * The number of structural features of the '<em>Executor Specification Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
+	int EXECUTOR_SPECIFICATION_ENTRY_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl <em>Manager Specification Entry</em>}' class.
@@ -1499,13 +1489,40 @@ public interface ReconfigurationPackage extends EPackage {
 	int MANAGER_SPECIFICATION_ENTRY__GUARD = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Reconfiguration Rule</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Invoke Planner</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGER_SPECIFICATION_ENTRY__INVOKE_PLANNER = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Time For Planning</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Manager Specification Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 5;
+	int MANAGER_SPECIFICATION_ENTRY_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -1652,211 +1669,14 @@ public interface ReconfigurationPackage extends EPackage {
 	int RULE_BASED_RECONFIGURATION_CONTROLLER_FEATURE_COUNT = RECONFIGURATION_CONTROLLER_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortInterfaceEntryImpl <em>Port Interface Entry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortInterfaceEntryImpl
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationPortInterfaceEntry()
 	 * @generated
-	 * @ordered
 	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__ANNOTATION = RECONFIGURATION_EXECUTION_PORT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__EXTENSION = RECONFIGURATION_EXECUTION_PORT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__NAME = RECONFIGURATION_EXECUTION_PORT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__COMMENT = RECONFIGURATION_EXECUTION_PORT__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__CONNECTORS = RECONFIGURATION_EXECUTION_PORT__CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__CONSTRAINT = RECONFIGURATION_EXECUTION_PORT__CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Component</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__COMPONENT = RECONFIGURATION_EXECUTION_PORT__COMPONENT;
-
-	/**
-	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__PORT_CONNECTORS = RECONFIGURATION_EXECUTION_PORT__PORT_CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__BEHAVIOR;
-
-	/**
-	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_TYPES = RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_TYPES;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_TYPES = RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_TYPES;
-
-	/**
-	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__ADAPTATION_BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__ADAPTATION_BEHAVIOR;
-
-	/**
-	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
-
-	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__CARDINALITY = RECONFIGURATION_EXECUTION_PORT__CARDINALITY;
-
-	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__REFINES = RECONFIGURATION_EXECUTION_PORT__REFINES;
-
-	/**
-	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_PORT = RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Is Discrete Out Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_OUT_PORT = RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Is Discrete In Out Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER;
-
-	/**
-	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__MULTI_PORT = RECONFIGURATION_EXECUTION_PORT__MULTI_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Gmf Protocol</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__GMF_PROTOCOL = RECONFIGURATION_EXECUTION_PORT__GMF_PROTOCOL;
-
-	/**
-	 * The feature id for the '<em><b>Specification Entries</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT__SPECIFICATION_ENTRIES = RECONFIGURATION_EXECUTION_PORT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>External Reconfiguration Execution Port</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXTERNAL_RECONFIGURATION_EXECUTION_PORT_FEATURE_COUNT = RECONFIGURATION_EXECUTION_PORT_FEATURE_COUNT + 1;
+	int RECONFIGURATION_PORT_INTERFACE_ENTRY = 14;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1865,7 +1685,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__ANNOTATION = RECONFIGURATION_EXECUTION_PORT__ANNOTATION;
+	int RECONFIGURATION_PORT_INTERFACE_ENTRY__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1874,188 +1694,217 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__EXTENSION = RECONFIGURATION_EXECUTION_PORT__EXTENSION;
+	int RECONFIGURATION_PORT_INTERFACE_ENTRY__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Port</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__NAME = RECONFIGURATION_EXECUTION_PORT__NAME;
+	int RECONFIGURATION_PORT_INTERFACE_ENTRY__PORT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__COMMENT = RECONFIGURATION_EXECUTION_PORT__COMMENT;
+	int RECONFIGURATION_PORT_INTERFACE_ENTRY__DESCRIPTION = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Message Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__CONNECTORS = RECONFIGURATION_EXECUTION_PORT__CONNECTORS;
+	int RECONFIGURATION_PORT_INTERFACE_ENTRY__MESSAGE_TYPE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * The number of structural features of the '<em>Port Interface Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__CONSTRAINT = RECONFIGURATION_EXECUTION_PORT__CONSTRAINT;
+	int RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Component</b></em>' container reference.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationMessagePortInterfaceEntryImpl <em>Message Port Interface Entry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationMessagePortInterfaceEntryImpl
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationMessagePortInterfaceEntry()
+	 * @generated
+	 */
+	int RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY = 15;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__COMPONENT = RECONFIGURATION_EXECUTION_PORT__COMPONENT;
+	int RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__ANNOTATION = RECONFIGURATION_PORT_INTERFACE_ENTRY__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__PORT_CONNECTORS = RECONFIGURATION_EXECUTION_PORT__PORT_CONNECTORS;
+	int RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__EXTENSION = RECONFIGURATION_PORT_INTERFACE_ENTRY__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Port</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__BEHAVIOR;
+	int RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__PORT = RECONFIGURATION_PORT_INTERFACE_ENTRY__PORT;
 
 	/**
-	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_TYPES = RECONFIGURATION_EXECUTION_PORT__SENDER_MESSAGE_TYPES;
+	int RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__DESCRIPTION = RECONFIGURATION_PORT_INTERFACE_ENTRY__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
+	 * The feature id for the '<em><b>Message Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_TYPES = RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_TYPES;
+	int RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__MESSAGE_TYPE = RECONFIGURATION_PORT_INTERFACE_ENTRY__MESSAGE_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Message Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__ADAPTATION_BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__ADAPTATION_BEHAVIOR;
+	int RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__MESSAGE_KIND = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Expected Response Time</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = RECONFIGURATION_EXECUTION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
+	int RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__EXPECTED_RESPONSE_TIME = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * The number of structural features of the '<em>Message Port Interface Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__CARDINALITY = RECONFIGURATION_EXECUTION_PORT__CARDINALITY;
+	int RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY_FEATURE_COUNT = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl <em>Execution Port Interface Entry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationExecutionPortInterfaceEntry()
+	 * @generated
+	 */
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY = 16;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__REFINES = RECONFIGURATION_EXECUTION_PORT__REFINES;
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__ANNOTATION = RECONFIGURATION_PORT_INTERFACE_ENTRY__ANNOTATION;
 
 	/**
-	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_PORT = RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_PORT;
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__EXTENSION = RECONFIGURATION_PORT_INTERFACE_ENTRY__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Is Discrete Out Port</b></em>' attribute.
+	 * The feature id for the '<em><b>Port</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_OUT_PORT = RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_OUT_PORT;
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__PORT = RECONFIGURATION_PORT_INTERFACE_ENTRY__PORT;
 
 	/**
-	 * The feature id for the '<em><b>Is Discrete In Out Port</b></em>' attribute.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT;
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__DESCRIPTION = RECONFIGURATION_PORT_INTERFACE_ENTRY__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
+	 * The feature id for the '<em><b>Message Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER;
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MESSAGE_TYPE = RECONFIGURATION_PORT_INTERFACE_ENTRY__MESSAGE_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
+	 * The feature id for the '<em><b>Time For Decision</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__MULTI_PORT = RECONFIGURATION_EXECUTION_PORT__MULTI_PORT;
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Gmf Protocol</b></em>' reference.
+	 * The feature id for the '<em><b>Time For Execution</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT__GMF_PROTOCOL = RECONFIGURATION_EXECUTION_PORT__GMF_PROTOCOL;
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Internal Reconfiguration Execution Port</em>' class.
+	 * The number of structural features of the '<em>Execution Port Interface Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_EXECUTION_PORT_FEATURE_COUNT = RECONFIGURATION_EXECUTION_PORT_FEATURE_COUNT + 0;
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY_FEATURE_COUNT = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 2;
 
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageKind <em>Message Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageKind
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationMessageKind()
+	 * @generated
+	 */
+	int RECONFIGURATION_MESSAGE_KIND = 17;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent <em>Reconfigurable Structured Component</em>}'.
@@ -2109,6 +1958,17 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getReconfigurationPort();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort#getInterfaceEntries <em>Interface Entries</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Interface Entries</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort#getInterfaceEntries()
+	 * @see #getReconfigurationPort()
+	 * @generated
+	 */
+	EReference getReconfigurationPort_InterfaceEntries();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.Controller <em>Controller</em>}'.
@@ -2174,35 +2034,121 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getRuleBasedReconfigurationController_Manager();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExternalReconfigurationExecutionPort <em>External Reconfiguration Execution Port</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry <em>Port Interface Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>External Reconfiguration Execution Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExternalReconfigurationExecutionPort
+	 * @return the meta object for class '<em>Port Interface Entry</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry
 	 * @generated
 	 */
-	EClass getExternalReconfigurationExecutionPort();
+	EClass getReconfigurationPortInterfaceEntry();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExternalReconfigurationExecutionPort#getSpecificationEntries <em>Specification Entries</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Specification Entries</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExternalReconfigurationExecutionPort#getSpecificationEntries()
-	 * @see #getExternalReconfigurationExecutionPort()
+	 * @return the meta object for the container reference '<em>Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry#getPort()
+	 * @see #getReconfigurationPortInterfaceEntry()
 	 * @generated
 	 */
-	EReference getExternalReconfigurationExecutionPort_SpecificationEntries();
+	EReference getReconfigurationPortInterfaceEntry_Port();
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationExecutionPort <em>Internal Reconfiguration Execution Port</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Internal Reconfiguration Execution Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationExecutionPort
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry#getDescription()
+	 * @see #getReconfigurationPortInterfaceEntry()
 	 * @generated
 	 */
-	EClass getInternalReconfigurationExecutionPort();
+	EAttribute getReconfigurationPortInterfaceEntry_Description();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry#getMessageType <em>Message Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Message Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry#getMessageType()
+	 * @see #getReconfigurationPortInterfaceEntry()
+	 * @generated
+	 */
+	EReference getReconfigurationPortInterfaceEntry_MessageType();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry <em>Message Port Interface Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Message Port Interface Entry</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry
+	 * @generated
+	 */
+	EClass getReconfigurationMessagePortInterfaceEntry();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry#getMessageKind <em>Message Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Message Kind</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry#getMessageKind()
+	 * @see #getReconfigurationMessagePortInterfaceEntry()
+	 * @generated
+	 */
+	EAttribute getReconfigurationMessagePortInterfaceEntry_MessageKind();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry#getExpectedResponseTime <em>Expected Response Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expected Response Time</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry#getExpectedResponseTime()
+	 * @see #getReconfigurationMessagePortInterfaceEntry()
+	 * @generated
+	 */
+	EReference getReconfigurationMessagePortInterfaceEntry_ExpectedResponseTime();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry <em>Execution Port Interface Entry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Execution Port Interface Entry</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry
+	 * @generated
+	 */
+	EClass getReconfigurationExecutionPortInterfaceEntry();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForDecision <em>Time For Decision</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Time For Decision</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForDecision()
+	 * @see #getReconfigurationExecutionPortInterfaceEntry()
+	 * @generated
+	 */
+	EReference getReconfigurationExecutionPortInterfaceEntry_TimeForDecision();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForExecution <em>Time For Execution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Time For Execution</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForExecution()
+	 * @see #getReconfigurationExecutionPortInterfaceEntry()
+	 * @generated
+	 */
+	EReference getReconfigurationExecutionPortInterfaceEntry_TimeForExecution();
+
+	/**
+	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageKind <em>Message Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Message Kind</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageKind
+	 * @generated
+	 */
+	EEnum getReconfigurationMessageKind();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.Manager <em>Manager</em>}'.
@@ -2312,6 +2258,17 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getReconfigurationRule_ReconfiguredComponent();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule#getWcet <em>Wcet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Wcet</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule#getWcet()
+	 * @see #getReconfigurationRule()
+	 * @generated
+	 */
+	EReference getReconfigurationRule_Wcet();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationCondition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2395,39 +2352,6 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getExecutorSpecificationEntry_ReconfigurationRule();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#isExternallyVisible <em>Externally Visible</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Externally Visible</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#isExternallyVisible()
-	 * @see #getExecutorSpecificationEntry()
-	 * @generated
-	 */
-	EAttribute getExecutorSpecificationEntry_ExternallyVisible();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getTimeToFailure <em>Time To Failure</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Time To Failure</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getTimeToFailure()
-	 * @see #getExecutorSpecificationEntry()
-	 * @generated
-	 */
-	EAttribute getExecutorSpecificationEntry_TimeToFailure();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getTimeToSuccess <em>Time To Success</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Time To Success</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getTimeToSuccess()
-	 * @see #getExecutorSpecificationEntry()
-	 * @generated
-	 */
-	EAttribute getExecutorSpecificationEntry_TimeToSuccess();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry <em>Manager Specification Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2491,6 +2415,39 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getManagerSpecificationEntry_Guard();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getReconfigurationRule <em>Reconfiguration Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Reconfiguration Rule</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getReconfigurationRule()
+	 * @see #getManagerSpecificationEntry()
+	 * @generated
+	 */
+	EReference getManagerSpecificationEntry_ReconfigurationRule();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#isInvokePlanner <em>Invoke Planner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Invoke Planner</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#isInvokePlanner()
+	 * @see #getManagerSpecificationEntry()
+	 * @generated
+	 */
+	EAttribute getManagerSpecificationEntry_InvokePlanner();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getTimeForPlanning <em>Time For Planning</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Time For Planning</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getTimeForPlanning()
+	 * @see #getManagerSpecificationEntry()
+	 * @generated
+	 */
+	EReference getManagerSpecificationEntry_TimeForPlanning();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2559,6 +2516,14 @@ public interface ReconfigurationPackage extends EPackage {
 		EClass RECONFIGURATION_PORT = eINSTANCE.getReconfigurationPort();
 
 		/**
+		 * The meta object literal for the '<em><b>Interface Entries</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_PORT__INTERFACE_ENTRIES = eINSTANCE.getReconfigurationPort_InterfaceEntries();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ControllerImpl <em>Controller</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2613,32 +2578,100 @@ public interface ReconfigurationPackage extends EPackage {
 		EReference RULE_BASED_RECONFIGURATION_CONTROLLER__MANAGER = eINSTANCE.getRuleBasedReconfigurationController_Manager();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExternalReconfigurationExecutionPortImpl <em>External Reconfiguration Execution Port</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortInterfaceEntryImpl <em>Port Interface Entry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExternalReconfigurationExecutionPortImpl
-		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getExternalReconfigurationExecutionPort()
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortInterfaceEntryImpl
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationPortInterfaceEntry()
 		 * @generated
 		 */
-		EClass EXTERNAL_RECONFIGURATION_EXECUTION_PORT = eINSTANCE.getExternalReconfigurationExecutionPort();
+		EClass RECONFIGURATION_PORT_INTERFACE_ENTRY = eINSTANCE.getReconfigurationPortInterfaceEntry();
 
 		/**
-		 * The meta object literal for the '<em><b>Specification Entries</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Port</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXTERNAL_RECONFIGURATION_EXECUTION_PORT__SPECIFICATION_ENTRIES = eINSTANCE.getExternalReconfigurationExecutionPort_SpecificationEntries();
+		EReference RECONFIGURATION_PORT_INTERFACE_ENTRY__PORT = eINSTANCE.getReconfigurationPortInterfaceEntry_Port();
 
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.InternalReconfigurationExecutionPortImpl <em>Internal Reconfiguration Execution Port</em>}' class.
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.InternalReconfigurationExecutionPortImpl
-		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getInternalReconfigurationExecutionPort()
 		 * @generated
 		 */
-		EClass INTERNAL_RECONFIGURATION_EXECUTION_PORT = eINSTANCE.getInternalReconfigurationExecutionPort();
+		EAttribute RECONFIGURATION_PORT_INTERFACE_ENTRY__DESCRIPTION = eINSTANCE.getReconfigurationPortInterfaceEntry_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_PORT_INTERFACE_ENTRY__MESSAGE_TYPE = eINSTANCE.getReconfigurationPortInterfaceEntry_MessageType();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationMessagePortInterfaceEntryImpl <em>Message Port Interface Entry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationMessagePortInterfaceEntryImpl
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationMessagePortInterfaceEntry()
+		 * @generated
+		 */
+		EClass RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY = eINSTANCE.getReconfigurationMessagePortInterfaceEntry();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Kind</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__MESSAGE_KIND = eINSTANCE.getReconfigurationMessagePortInterfaceEntry_MessageKind();
+
+		/**
+		 * The meta object literal for the '<em><b>Expected Response Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__EXPECTED_RESPONSE_TIME = eINSTANCE.getReconfigurationMessagePortInterfaceEntry_ExpectedResponseTime();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl <em>Execution Port Interface Entry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationExecutionPortInterfaceEntry()
+		 * @generated
+		 */
+		EClass RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY = eINSTANCE.getReconfigurationExecutionPortInterfaceEntry();
+
+		/**
+		 * The meta object literal for the '<em><b>Time For Decision</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION = eINSTANCE.getReconfigurationExecutionPortInterfaceEntry_TimeForDecision();
+
+		/**
+		 * The meta object literal for the '<em><b>Time For Execution</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION = eINSTANCE.getReconfigurationExecutionPortInterfaceEntry_TimeForExecution();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageKind <em>Message Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageKind
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationMessageKind()
+		 * @generated
+		 */
+		EEnum RECONFIGURATION_MESSAGE_KIND = eINSTANCE.getReconfigurationMessageKind();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerImpl <em>Manager</em>}' class.
@@ -2727,6 +2760,14 @@ public interface ReconfigurationPackage extends EPackage {
 		EReference RECONFIGURATION_RULE__RECONFIGURED_COMPONENT = eINSTANCE.getReconfigurationRule_ReconfiguredComponent();
 
 		/**
+		 * The meta object literal for the '<em><b>Wcet</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_RULE__WCET = eINSTANCE.getReconfigurationRule_Wcet();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationConditionImpl <em>Condition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2801,30 +2842,6 @@ public interface ReconfigurationPackage extends EPackage {
 		EReference EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = eINSTANCE.getExecutorSpecificationEntry_ReconfigurationRule();
 
 		/**
-		 * The meta object literal for the '<em><b>Externally Visible</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE = eINSTANCE.getExecutorSpecificationEntry_ExternallyVisible();
-
-		/**
-		 * The meta object literal for the '<em><b>Time To Failure</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE = eINSTANCE.getExecutorSpecificationEntry_TimeToFailure();
-
-		/**
-		 * The meta object literal for the '<em><b>Time To Success</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_SUCCESS = eINSTANCE.getExecutorSpecificationEntry_TimeToSuccess();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl <em>Manager Specification Entry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2873,6 +2890,30 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MANAGER_SPECIFICATION_ENTRY__GUARD = eINSTANCE.getManagerSpecificationEntry_Guard();
+
+		/**
+		 * The meta object literal for the '<em><b>Reconfiguration Rule</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = eINSTANCE.getManagerSpecificationEntry_ReconfigurationRule();
+
+		/**
+		 * The meta object literal for the '<em><b>Invoke Planner</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MANAGER_SPECIFICATION_ENTRY__INVOKE_PLANNER = eINSTANCE.getManagerSpecificationEntry_InvokePlanner();
+
+		/**
+		 * The meta object literal for the '<em><b>Time For Planning</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING = eINSTANCE.getManagerSpecificationEntry_TimeForPlanning();
 
 	}
 

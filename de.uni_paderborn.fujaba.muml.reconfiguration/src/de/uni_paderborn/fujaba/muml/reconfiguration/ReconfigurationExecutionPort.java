@@ -14,7 +14,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration;
  *
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationExecutionPort()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface ReconfigurationExecutionPort extends ReconfigurationPort {

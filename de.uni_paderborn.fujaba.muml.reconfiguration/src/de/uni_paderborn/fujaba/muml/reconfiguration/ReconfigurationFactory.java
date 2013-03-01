@@ -62,6 +62,15 @@ public interface ReconfigurationFactory extends EFactory {
 	ReconfigurationMessagePort createReconfigurationMessagePort();
 
 	/**
+	 * Returns a new object of class '<em>Execution Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Execution Port</em>'.
+	 * @generated
+	 */
+	ReconfigurationExecutionPort createReconfigurationExecutionPort();
+
+	/**
 	 * Returns a new object of class '<em>Executor Specification Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -89,22 +98,31 @@ public interface ReconfigurationFactory extends EFactory {
 	RuleBasedReconfigurationController createRuleBasedReconfigurationController();
 
 	/**
-	 * Returns a new object of class '<em>External Reconfiguration Execution Port</em>'.
+	 * Returns a new object of class '<em>Port Interface Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>External Reconfiguration Execution Port</em>'.
+	 * @return a new object of class '<em>Port Interface Entry</em>'.
 	 * @generated
 	 */
-	ExternalReconfigurationExecutionPort createExternalReconfigurationExecutionPort();
+	ReconfigurationPortInterfaceEntry createReconfigurationPortInterfaceEntry();
 
 	/**
-	 * Returns a new object of class '<em>Internal Reconfiguration Execution Port</em>'.
+	 * Returns a new object of class '<em>Message Port Interface Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Internal Reconfiguration Execution Port</em>'.
+	 * @return a new object of class '<em>Message Port Interface Entry</em>'.
 	 * @generated
 	 */
-	InternalReconfigurationExecutionPort createInternalReconfigurationExecutionPort();
+	ReconfigurationMessagePortInterfaceEntry createReconfigurationMessagePortInterfaceEntry();
+
+	/**
+	 * Returns a new object of class '<em>Execution Port Interface Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Execution Port Interface Entry</em>'.
+	 * @generated
+	 */
+	ReconfigurationExecutionPortInterfaceEntry createReconfigurationExecutionPortInterfaceEntry();
 
 	/**
 	 * Returns the package supported by this factory.

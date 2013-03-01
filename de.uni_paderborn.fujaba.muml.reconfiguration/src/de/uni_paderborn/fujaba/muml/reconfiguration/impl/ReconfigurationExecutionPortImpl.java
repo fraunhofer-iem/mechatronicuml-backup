@@ -20,7 +20,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
  *
  * @generated
  */
-public abstract class ReconfigurationExecutionPortImpl extends ReconfigurationPortImpl implements ReconfigurationExecutionPort {
+public class ReconfigurationExecutionPortImpl extends ReconfigurationPortImpl implements ReconfigurationExecutionPort {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -28,9 +28,6 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorSpecificationEntryImpl#getExecutor <em>Executor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorSpecificationEntryImpl#getReconfigurationRule <em>Reconfiguration Rule</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorSpecificationEntryImpl#isExternallyVisible <em>Externally Visible</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorSpecificationEntryImpl#getTimeToFailure <em>Time To Failure</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorSpecificationEntryImpl#getTimeToSuccess <em>Time To Success</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,66 +43,6 @@ public class ExecutorSpecificationEntryImpl extends ExtendableElementImpl implem
 	 * @ordered
 	 */
 	protected ReconfigurationRule reconfigurationRule;
-
-	/**
-	 * The default value of the '{@link #isExternallyVisible() <em>Externally Visible</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isExternallyVisible()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean EXTERNALLY_VISIBLE_EDEFAULT = true;
-
-	/**
-	 * The cached value of the '{@link #isExternallyVisible() <em>Externally Visible</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isExternallyVisible()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean externallyVisible = EXTERNALLY_VISIBLE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTimeToFailure() <em>Time To Failure</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTimeToFailure()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int TIME_TO_FAILURE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getTimeToFailure() <em>Time To Failure</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTimeToFailure()
-	 * @generated
-	 * @ordered
-	 */
-	protected int timeToFailure = TIME_TO_FAILURE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTimeToSuccess() <em>Time To Success</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTimeToSuccess()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int TIME_TO_SUCCESS_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getTimeToSuccess() <em>Time To Success</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTimeToSuccess()
-	 * @generated
-	 * @ordered
-	 */
-	protected int timeToSuccess = TIME_TO_SUCCESS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,69 +147,6 @@ public class ExecutorSpecificationEntryImpl extends ExtendableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isExternallyVisible() {
-		return externallyVisible;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setExternallyVisible(boolean newExternallyVisible) {
-		boolean oldExternallyVisible = externallyVisible;
-		externallyVisible = newExternallyVisible;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE, oldExternallyVisible, externallyVisible));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getTimeToFailure() {
-		return timeToFailure;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTimeToFailure(int newTimeToFailure) {
-		int oldTimeToFailure = timeToFailure;
-		timeToFailure = newTimeToFailure;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE, oldTimeToFailure, timeToFailure));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getTimeToSuccess() {
-		return timeToSuccess;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTimeToSuccess(int newTimeToSuccess) {
-		int oldTimeToSuccess = timeToSuccess;
-		timeToSuccess = newTimeToSuccess;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_SUCCESS, oldTimeToSuccess, timeToSuccess));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -325,12 +199,6 @@ public class ExecutorSpecificationEntryImpl extends ExtendableElementImpl implem
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				if (resolve) return getReconfigurationRule();
 				return basicGetReconfigurationRule();
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE:
-				return isExternallyVisible();
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE:
-				return getTimeToFailure();
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_SUCCESS:
-				return getTimeToSuccess();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -350,15 +218,6 @@ public class ExecutorSpecificationEntryImpl extends ExtendableElementImpl implem
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				setReconfigurationRule((ReconfigurationRule)newValue);
 				return;
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE:
-				setExternallyVisible((Boolean)newValue);
-				return;
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE:
-				setTimeToFailure((Integer)newValue);
-				return;
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_SUCCESS:
-				setTimeToSuccess((Integer)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -377,15 +236,6 @@ public class ExecutorSpecificationEntryImpl extends ExtendableElementImpl implem
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				setReconfigurationRule((ReconfigurationRule)null);
 				return;
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE:
-				setExternallyVisible(EXTERNALLY_VISIBLE_EDEFAULT);
-				return;
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE:
-				setTimeToFailure(TIME_TO_FAILURE_EDEFAULT);
-				return;
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_SUCCESS:
-				setTimeToSuccess(TIME_TO_SUCCESS_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -402,34 +252,8 @@ public class ExecutorSpecificationEntryImpl extends ExtendableElementImpl implem
 				return getExecutor() != null;
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				return reconfigurationRule != null;
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__EXTERNALLY_VISIBLE:
-				return externallyVisible != EXTERNALLY_VISIBLE_EDEFAULT;
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE:
-				return timeToFailure != TIME_TO_FAILURE_EDEFAULT;
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_SUCCESS:
-				return timeToSuccess != TIME_TO_SUCCESS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (externallyVisible: ");
-		result.append(externallyVisible);
-		result.append(", timeToFailure: ");
-		result.append(timeToFailure);
-		result.append(", timeToSuccess: ");
-		result.append(timeToSuccess);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ExecutorSpecificationEntryImpl

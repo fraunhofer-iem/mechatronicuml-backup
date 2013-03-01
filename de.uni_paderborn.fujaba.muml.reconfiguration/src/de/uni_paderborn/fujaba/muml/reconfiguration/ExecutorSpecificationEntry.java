@@ -18,15 +18,11 @@ import org.storydriven.core.ExtendableElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getExecutor <em>Executor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getReconfigurationRule <em>Reconfiguration Rule</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#isExternallyVisible <em>Externally Visible</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getTimeToFailure <em>Time To Failure</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getTimeToSuccess <em>Time To Success</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutorSpecificationEntry()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='TimeToFailureLessOrEqualToTimeToSuccess'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL TimeToFailureLessOrEqualToTimeToSuccess='self.timeToFailure <= self.timeToSuccess'"
  * @generated
  */
 public interface ExecutorSpecificationEntry extends ExtendableElement {
@@ -83,86 +79,5 @@ public interface ExecutorSpecificationEntry extends ExtendableElement {
 	 * @generated
 	 */
 	void setReconfigurationRule(ReconfigurationRule value);
-
-	/**
-	 * Returns the value of the '<em><b>Externally Visible</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Externally Visible</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Externally Visible</em>' attribute.
-	 * @see #setExternallyVisible(boolean)
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutorSpecificationEntry_ExternallyVisible()
-	 * @model default="true"
-	 * @generated
-	 */
-	boolean isExternallyVisible();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#isExternallyVisible <em>Externally Visible</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Externally Visible</em>' attribute.
-	 * @see #isExternallyVisible()
-	 * @generated
-	 */
-	void setExternallyVisible(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Time To Failure</b></em>' attribute.
-	 * The default value is <code>"0"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Time To Failure</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Time To Failure</em>' attribute.
-	 * @see #setTimeToFailure(int)
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutorSpecificationEntry_TimeToFailure()
-	 * @model default="0"
-	 * @generated
-	 */
-	int getTimeToFailure();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getTimeToFailure <em>Time To Failure</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Time To Failure</em>' attribute.
-	 * @see #getTimeToFailure()
-	 * @generated
-	 */
-	void setTimeToFailure(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Time To Success</b></em>' attribute.
-	 * The default value is <code>"0"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Time To Success</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Time To Success</em>' attribute.
-	 * @see #setTimeToSuccess(int)
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutorSpecificationEntry_TimeToSuccess()
-	 * @model default="0"
-	 * @generated
-	 */
-	int getTimeToSuccess();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getTimeToSuccess <em>Time To Success</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Time To Success</em>' attribute.
-	 * @see #getTimeToSuccess()
-	 * @generated
-	 */
-	void setTimeToSuccess(int value);
 
 } // ExecutorSpecificationEntry

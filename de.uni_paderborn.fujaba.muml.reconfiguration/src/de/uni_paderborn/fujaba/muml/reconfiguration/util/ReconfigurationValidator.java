@@ -126,10 +126,14 @@ public class ReconfigurationValidator extends EObjectValidator {
 				return validateReconfigurationController((ReconfigurationController)value, diagnostics, context);
 			case ReconfigurationPackage.RULE_BASED_RECONFIGURATION_CONTROLLER:
 				return validateRuleBasedReconfigurationController((RuleBasedReconfigurationController)value, diagnostics, context);
-			case ReconfigurationPackage.EXTERNAL_RECONFIGURATION_EXECUTION_PORT:
-				return validateExternalReconfigurationExecutionPort((ExternalReconfigurationExecutionPort)value, diagnostics, context);
-			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_EXECUTION_PORT:
-				return validateInternalReconfigurationExecutionPort((InternalReconfigurationExecutionPort)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY:
+				return validateReconfigurationPortInterfaceEntry((ReconfigurationPortInterfaceEntry)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY:
+				return validateReconfigurationMessagePortInterfaceEntry((ReconfigurationMessagePortInterfaceEntry)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY:
+				return validateReconfigurationExecutionPortInterfaceEntry((ReconfigurationExecutionPortInterfaceEntry)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_KIND:
+				return validateReconfigurationMessageKind((ReconfigurationMessageKind)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -218,23 +222,8 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateExternalReconfigurationExecutionPort(ExternalReconfigurationExecutionPort externalReconfigurationExecutionPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(externalReconfigurationExecutionPort, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(externalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(externalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(externalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(externalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(externalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(externalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(externalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(externalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_AtLeastOneMessageType(externalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAndRoleSameMessageTypes(externalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresBehavior(externalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(externalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresRole(externalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortMustRefineMultiRole(externalReconfigurationExecutionPort, diagnostics, context);
-		return result;
+	public boolean validateReconfigurationPortInterfaceEntry(ReconfigurationPortInterfaceEntry reconfigurationPortInterfaceEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(reconfigurationPortInterfaceEntry, diagnostics, context);
 	}
 
 	/**
@@ -242,23 +231,26 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateInternalReconfigurationExecutionPort(InternalReconfigurationExecutionPort internalReconfigurationExecutionPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(internalReconfigurationExecutionPort, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(internalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(internalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(internalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(internalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(internalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(internalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(internalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(internalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_AtLeastOneMessageType(internalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAndRoleSameMessageTypes(internalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresBehavior(internalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(internalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresRole(internalReconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortMustRefineMultiRole(internalReconfigurationExecutionPort, diagnostics, context);
-		return result;
+	public boolean validateReconfigurationMessagePortInterfaceEntry(ReconfigurationMessagePortInterfaceEntry reconfigurationMessagePortInterfaceEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(reconfigurationMessagePortInterfaceEntry, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReconfigurationExecutionPortInterfaceEntry(ReconfigurationExecutionPortInterfaceEntry reconfigurationExecutionPortInterfaceEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(reconfigurationExecutionPortInterfaceEntry, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReconfigurationMessageKind(ReconfigurationMessageKind reconfigurationMessageKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
 	}
 
 	/**
@@ -384,32 +376,31 @@ public class ReconfigurationValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the TimeToFailureLessOrEqualToTimeToSuccess constraint of '<em>Executor Specification Entry</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE_LESS_OR_EQUAL_TO_TIME_TO_SUCCESS__EEXPRESSION = "self.timeToFailure <= self.timeToSuccess";
-
-	/**
 	 * Validates the TimeToFailureLessOrEqualToTimeToSuccess constraint of '<em>Executor Specification Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateExecutorSpecificationEntry_TimeToFailureLessOrEqualToTimeToSuccess(ExecutorSpecificationEntry executorSpecificationEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ReconfigurationPackage.Literals.EXECUTOR_SPECIFICATION_ENTRY,
-				 executorSpecificationEntry,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "TimeToFailureLessOrEqualToTimeToSuccess",
-				 EXECUTOR_SPECIFICATION_ENTRY__TIME_TO_FAILURE_LESS_OR_EQUAL_TO_TIME_TO_SUCCESS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "TimeToFailureLessOrEqualToTimeToSuccess", getObjectLabel(executorSpecificationEntry, context) },
+						 new Object[] { executorSpecificationEntry },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**

@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="reconfiguration"
-    nsURI="http://www.fujaba.de/muml/reconfiguration/0.3.7" nsPrefix="reconfiguration">
+    nsURI="http://www.fujaba.de/muml/reconfiguration/0.3.8" nsPrefix="reconfiguration">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -35,6 +35,8 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A reconfiguration port defines the external interface for accessing the reconfiguration capabilities of a reconfigurable structured component. In case of a reconfigurable structured component, they are delegated to one of the controllers of the component. In case of a reconfigurable atomic component, the reconfiguration port is directly implemented."/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceEntries" upperBound="-1"
+        eType="#//ReconfigurationPortInterfaceEntry" containment="true" eOpposite="#//ReconfigurationPortInterfaceEntry/port"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Controller" abstract="true" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/BehavioralElement ../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -68,6 +70,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reconfiguredComponent"
         eType="#//ReconfigurableComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wcet" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationCondition" abstract="true"
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
@@ -82,25 +86,15 @@
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationMessagePort" eSuperTypes="#//ReconfigurationPort"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationExecutionPort" abstract="true"
-      eSuperTypes="#//ReconfigurationPort"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationExecutionPort" eSuperTypes="#//ReconfigurationPort"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExecutorSpecificationEntry" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="TimeToFailureLessOrEqualToTimeToSuccess"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="TimeToFailureLessOrEqualToTimeToSuccess" value="self.timeToFailure &lt;= self.timeToSuccess"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="executor" lowerBound="1"
         eType="#//Executor" eOpposite="#//Executor/specificationEntries"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationRule" lowerBound="1"
         eType="#//ReconfigurationRule"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="externallyVisible" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-        defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeToFailure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="0"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeToSuccess" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="0"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ManagerSpecificationEntry" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="treat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -112,6 +106,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="#//ReconfigurationCondition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationRule" eType="#//ReconfigurationRule"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="invokePlanner" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeForPlanning" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationController" abstract="true"
       eSuperTypes="#//Controller"/>
@@ -122,18 +120,32 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="manager" lowerBound="1"
         eType="#//Manager" containment="true" eOpposite="#//Manager/reconfigurationController"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExternalReconfigurationExecutionPort"
-      eSuperTypes="#//ReconfigurationExecutionPort">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specificationEntries" lowerBound="1"
-        upperBound="-1" eType="#//ExecutorSpecificationEntry" changeable="false" volatile="true"
-        transient="true" derived="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="((((self.component.oclAsType(ReconfigurableStructuredComponent)).controllers -> select(m | m.oclIsKindOf(RuleBasedReconfigurationController))) -> any(true)).oclAsType(RuleBasedReconfigurationController)).executor.specificationEntries -> select(externallyVisible)"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortInterfaceEntry" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" eType="#//ReconfigurationPort"
+        eOpposite="#//ReconfigurationPort/interfaceEntries"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InternalReconfigurationExecutionPort"
-      eSuperTypes="#//ReconfigurationExecutionPort"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationMessagePortInterfaceEntry"
+      eSuperTypes="#//ReconfigurationPortInterfaceEntry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageKind" eType="#//ReconfigurationMessageKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expectedResponseTime" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ReconfigurationMessageKind">
+    <eLiterals name="INFO" literal="INFO"/>
+    <eLiterals name="REQUEST" value="1" literal="REQUEST"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationExecutionPortInterfaceEntry"
+      eSuperTypes="#//ReconfigurationPortInterfaceEntry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeForDecision" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeForExecution" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
+        containment="true"/>
+  </eClassifiers>
   <eSubpackages name="expression" nsURI="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"
       nsPrefix="expression">
     <eClassifiers xsi:type="ecore:EClass" name="ActivityCallExpression" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">

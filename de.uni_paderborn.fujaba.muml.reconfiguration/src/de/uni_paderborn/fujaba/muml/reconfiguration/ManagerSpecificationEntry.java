@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration;
 import org.storydriven.core.CommentableElement;
 
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +24,9 @@ import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getManager <em>Manager</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getGuard <em>Guard</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getReconfigurationRule <em>Reconfiguration Rule</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#isInvokePlanner <em>Invoke Planner</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getTimeForPlanning <em>Time For Planning</em>}</li>
  * </ul>
  * </p>
  *
@@ -164,5 +168,83 @@ public interface ManagerSpecificationEntry extends CommentableElement {
 	 * @generated
 	 */
 	void setGuard(ReconfigurationCondition value);
+
+	/**
+	 * Returns the value of the '<em><b>Reconfiguration Rule</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reconfiguration Rule</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reconfiguration Rule</em>' reference.
+	 * @see #setReconfigurationRule(ReconfigurationRule)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getManagerSpecificationEntry_ReconfigurationRule()
+	 * @model
+	 * @generated
+	 */
+	ReconfigurationRule getReconfigurationRule();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getReconfigurationRule <em>Reconfiguration Rule</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reconfiguration Rule</em>' reference.
+	 * @see #getReconfigurationRule()
+	 * @generated
+	 */
+	void setReconfigurationRule(ReconfigurationRule value);
+
+	/**
+	 * Returns the value of the '<em><b>Invoke Planner</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Invoke Planner</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Invoke Planner</em>' attribute.
+	 * @see #setInvokePlanner(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getManagerSpecificationEntry_InvokePlanner()
+	 * @model
+	 * @generated
+	 */
+	boolean isInvokePlanner();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#isInvokePlanner <em>Invoke Planner</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Invoke Planner</em>' attribute.
+	 * @see #isInvokePlanner()
+	 * @generated
+	 */
+	void setInvokePlanner(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Time For Planning</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Time For Planning</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Time For Planning</em>' containment reference.
+	 * @see #setTimeForPlanning(TimeValue)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getManagerSpecificationEntry_TimeForPlanning()
+	 * @model containment="true"
+	 * @generated
+	 */
+	TimeValue getTimeForPlanning();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getTimeForPlanning <em>Time For Planning</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Time For Planning</em>' containment reference.
+	 * @see #getTimeForPlanning()
+	 * @generated
+	 */
+	void setTimeForPlanning(TimeValue value);
 
 } // ManagerSpecificationEntry

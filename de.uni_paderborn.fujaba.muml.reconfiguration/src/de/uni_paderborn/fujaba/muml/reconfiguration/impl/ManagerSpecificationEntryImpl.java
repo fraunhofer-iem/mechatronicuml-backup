@@ -19,6 +19,8 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationCondition;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
+import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +34,9 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#getManager <em>Manager</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#getGuard <em>Guard</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#getReconfigurationRule <em>Reconfiguration Rule</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#isInvokePlanner <em>Invoke Planner</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#getTimeForPlanning <em>Time For Planning</em>}</li>
  * </ul>
  * </p>
  *
@@ -97,6 +102,46 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 	 * @ordered
 	 */
 	protected ReconfigurationCondition guard;
+
+	/**
+	 * The cached value of the '{@link #getReconfigurationRule() <em>Reconfiguration Rule</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReconfigurationRule()
+	 * @generated
+	 * @ordered
+	 */
+	protected ReconfigurationRule reconfigurationRule;
+
+	/**
+	 * The default value of the '{@link #isInvokePlanner() <em>Invoke Planner</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isInvokePlanner()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean INVOKE_PLANNER_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isInvokePlanner() <em>Invoke Planner</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isInvokePlanner()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean invokePlanner = INVOKE_PLANNER_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTimeForPlanning() <em>Time For Planning</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeForPlanning()
+	 * @generated
+	 * @ordered
+	 */
+	protected TimeValue timeForPlanning;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -281,6 +326,108 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ReconfigurationRule getReconfigurationRule() {
+		if (reconfigurationRule != null && reconfigurationRule.eIsProxy()) {
+			InternalEObject oldReconfigurationRule = (InternalEObject)reconfigurationRule;
+			reconfigurationRule = (ReconfigurationRule)eResolveProxy(oldReconfigurationRule);
+			if (reconfigurationRule != oldReconfigurationRule) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_RULE, oldReconfigurationRule, reconfigurationRule));
+			}
+		}
+		return reconfigurationRule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurationRule basicGetReconfigurationRule() {
+		return reconfigurationRule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReconfigurationRule(ReconfigurationRule newReconfigurationRule) {
+		ReconfigurationRule oldReconfigurationRule = reconfigurationRule;
+		reconfigurationRule = newReconfigurationRule;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_RULE, oldReconfigurationRule, reconfigurationRule));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isInvokePlanner() {
+		return invokePlanner;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInvokePlanner(boolean newInvokePlanner) {
+		boolean oldInvokePlanner = invokePlanner;
+		invokePlanner = newInvokePlanner;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__INVOKE_PLANNER, oldInvokePlanner, invokePlanner));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TimeValue getTimeForPlanning() {
+		return timeForPlanning;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTimeForPlanning(TimeValue newTimeForPlanning, NotificationChain msgs) {
+		TimeValue oldTimeForPlanning = timeForPlanning;
+		timeForPlanning = newTimeForPlanning;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING, oldTimeForPlanning, newTimeForPlanning);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTimeForPlanning(TimeValue newTimeForPlanning) {
+		if (newTimeForPlanning != timeForPlanning) {
+			NotificationChain msgs = null;
+			if (timeForPlanning != null)
+				msgs = ((InternalEObject)timeForPlanning).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING, null, msgs);
+			if (newTimeForPlanning != null)
+				msgs = ((InternalEObject)newTimeForPlanning).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING, null, msgs);
+			msgs = basicSetTimeForPlanning(newTimeForPlanning, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING, newTimeForPlanning, newTimeForPlanning));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -302,6 +449,8 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 		switch (featureID) {
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MANAGER:
 				return basicSetManager(null, msgs);
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING:
+				return basicSetTimeForPlanning(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -340,6 +489,13 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__GUARD:
 				if (resolve) return getGuard();
 				return basicGetGuard();
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
+				if (resolve) return getReconfigurationRule();
+				return basicGetReconfigurationRule();
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__INVOKE_PLANNER:
+				return isInvokePlanner();
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING:
+				return getTimeForPlanning();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -366,6 +522,15 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 				return;
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__GUARD:
 				setGuard((ReconfigurationCondition)newValue);
+				return;
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
+				setReconfigurationRule((ReconfigurationRule)newValue);
+				return;
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__INVOKE_PLANNER:
+				setInvokePlanner((Boolean)newValue);
+				return;
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING:
+				setTimeForPlanning((TimeValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -394,6 +559,15 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__GUARD:
 				setGuard((ReconfigurationCondition)null);
 				return;
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
+				setReconfigurationRule((ReconfigurationRule)null);
+				return;
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__INVOKE_PLANNER:
+				setInvokePlanner(INVOKE_PLANNER_EDEFAULT);
+				return;
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING:
+				setTimeForPlanning((TimeValue)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -416,6 +590,12 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 				return messageType != null;
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__GUARD:
 				return guard != null;
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
+				return reconfigurationRule != null;
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__INVOKE_PLANNER:
+				return invokePlanner != INVOKE_PLANNER_EDEFAULT;
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING:
+				return timeForPlanning != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -434,6 +614,8 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 		result.append(treat);
 		result.append(", propagate: ");
 		result.append(propagate);
+		result.append(", invokePlanner: ");
+		result.append(invokePlanner);
 		result.append(')');
 		return result.toString();
 	}

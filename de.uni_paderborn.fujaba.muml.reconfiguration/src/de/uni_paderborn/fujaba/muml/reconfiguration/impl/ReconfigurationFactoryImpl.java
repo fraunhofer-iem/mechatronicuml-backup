@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
@@ -29,7 +30,7 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	 */
 	public static ReconfigurationFactory init() {
 		try {
-			ReconfigurationFactory theReconfigurationFactory = (ReconfigurationFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/0.3.7"); 
+			ReconfigurationFactory theReconfigurationFactory = (ReconfigurationFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/0.3.8"); 
 			if (theReconfigurationFactory != null) {
 				return theReconfigurationFactory;
 			}
@@ -62,13 +63,45 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 			case ReconfigurationPackage.MANAGER: return createManager();
 			case ReconfigurationPackage.EXECUTOR: return createExecutor();
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT: return createReconfigurationMessagePort();
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT: return createReconfigurationExecutionPort();
 			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY: return createExecutorSpecificationEntry();
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY: return createManagerSpecificationEntry();
 			case ReconfigurationPackage.RULE_BASED_RECONFIGURATION_CONTROLLER: return createRuleBasedReconfigurationController();
-			case ReconfigurationPackage.EXTERNAL_RECONFIGURATION_EXECUTION_PORT: return createExternalReconfigurationExecutionPort();
-			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_EXECUTION_PORT: return createInternalReconfigurationExecutionPort();
+			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY: return createReconfigurationPortInterfaceEntry();
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY: return createReconfigurationMessagePortInterfaceEntry();
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY: return createReconfigurationExecutionPortInterfaceEntry();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_KIND:
+				return createReconfigurationMessageKindFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_KIND:
+				return convertReconfigurationMessageKindToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -117,6 +150,16 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ReconfigurationExecutionPort createReconfigurationExecutionPort() {
+		ReconfigurationExecutionPortImpl reconfigurationExecutionPort = new ReconfigurationExecutionPortImpl();
+		return reconfigurationExecutionPort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ExecutorSpecificationEntry createExecutorSpecificationEntry() {
 		ExecutorSpecificationEntryImpl executorSpecificationEntry = new ExecutorSpecificationEntryImpl();
 		return executorSpecificationEntry;
@@ -147,9 +190,9 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExternalReconfigurationExecutionPort createExternalReconfigurationExecutionPort() {
-		ExternalReconfigurationExecutionPortImpl externalReconfigurationExecutionPort = new ExternalReconfigurationExecutionPortImpl();
-		return externalReconfigurationExecutionPort;
+	public ReconfigurationPortInterfaceEntry createReconfigurationPortInterfaceEntry() {
+		ReconfigurationPortInterfaceEntryImpl reconfigurationPortInterfaceEntry = new ReconfigurationPortInterfaceEntryImpl();
+		return reconfigurationPortInterfaceEntry;
 	}
 
 	/**
@@ -157,9 +200,39 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InternalReconfigurationExecutionPort createInternalReconfigurationExecutionPort() {
-		InternalReconfigurationExecutionPortImpl internalReconfigurationExecutionPort = new InternalReconfigurationExecutionPortImpl();
-		return internalReconfigurationExecutionPort;
+	public ReconfigurationMessagePortInterfaceEntry createReconfigurationMessagePortInterfaceEntry() {
+		ReconfigurationMessagePortInterfaceEntryImpl reconfigurationMessagePortInterfaceEntry = new ReconfigurationMessagePortInterfaceEntryImpl();
+		return reconfigurationMessagePortInterfaceEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurationExecutionPortInterfaceEntry createReconfigurationExecutionPortInterfaceEntry() {
+		ReconfigurationExecutionPortInterfaceEntryImpl reconfigurationExecutionPortInterfaceEntry = new ReconfigurationExecutionPortInterfaceEntryImpl();
+		return reconfigurationExecutionPortInterfaceEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurationMessageKind createReconfigurationMessageKindFromString(EDataType eDataType, String initialValue) {
+		ReconfigurationMessageKind result = ReconfigurationMessageKind.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertReconfigurationMessageKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
