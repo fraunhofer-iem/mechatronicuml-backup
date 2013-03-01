@@ -7,6 +7,8 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.component.ComponentFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -14,6 +16,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -65,8 +68,31 @@ public class ExecutorItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addBehaviorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Behavior feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBehaviorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BehavioralElement_behavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_behavior_feature", "_UI_BehavioralElement_type"),
+				 BehaviorPackage.Literals.BEHAVIORAL_ELEMENT__BEHAVIOR,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -82,6 +108,7 @@ public class ExecutorItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ReconfigurationPackage.Literals.EXECUTOR__SPECIFICATION_ENTRIES);
+			childrenFeatures.add(ReconfigurationPackage.Literals.EXECUTOR__PORTS);
 		}
 		return childrenFeatures;
 	}
@@ -137,6 +164,7 @@ public class ExecutorItemProvider
 
 		switch (notification.getFeatureID(Executor.class)) {
 			case ReconfigurationPackage.EXECUTOR__SPECIFICATION_ENTRIES:
+			case ReconfigurationPackage.EXECUTOR__PORTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -168,6 +196,21 @@ public class ExecutorItemProvider
 			(createChildParameter
 				(ReconfigurationPackage.Literals.EXECUTOR__SPECIFICATION_ENTRIES,
 				 ReconfigurationFactory.eINSTANCE.createExecutorSpecificationEntry()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ReconfigurationPackage.Literals.EXECUTOR__PORTS,
+				 ReconfigurationFactory.eINSTANCE.createReconfigurationMessagePort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ReconfigurationPackage.Literals.EXECUTOR__PORTS,
+				 ReconfigurationFactory.eINSTANCE.createReconfigurationExecutionPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ReconfigurationPackage.Literals.EXECUTOR__PORTS,
+				 ComponentFactory.eINSTANCE.createDiscretePort()));
 	}
 
 	/**
