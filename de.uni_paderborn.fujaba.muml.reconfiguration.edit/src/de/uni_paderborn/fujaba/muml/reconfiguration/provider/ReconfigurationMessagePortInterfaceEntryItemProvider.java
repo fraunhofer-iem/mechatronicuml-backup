@@ -7,13 +7,19 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -23,24 +29,15 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.provider.NamedElementItemProvider;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
-
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReconfigurationRuleItemProvider
-	extends NamedElementItemProvider
+public class ReconfigurationMessagePortInterfaceEntryItemProvider
+	extends ReconfigurationPortInterfaceEntryItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -53,7 +50,7 @@ public class ReconfigurationRuleItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationRuleItemProvider(AdapterFactory adapterFactory) {
+	public ReconfigurationMessagePortInterfaceEntryItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -68,75 +65,29 @@ public class ReconfigurationRuleItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
-			addReturnParametersPropertyDescriptor(object);
-			addReconfiguredComponentPropertyDescriptor(object);
+			addMessageKindPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Comment feature.
+	 * This adds a property descriptor for the Message Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommentPropertyDescriptor(Object object) {
+	protected void addMessageKindPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
+				 getString("_UI_ReconfigurationMessagePortInterfaceEntry_messageKind_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationMessagePortInterfaceEntry_messageKind_feature", "_UI_ReconfigurationMessagePortInterfaceEntry_type"),
+				 ReconfigurationPackage.Literals.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__MESSAGE_KIND,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Return Parameters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReturnParametersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ReconfigurationRule_returnParameters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationRule_returnParameters_feature", "_UI_ReconfigurationRule_type"),
-				 ReconfigurationPackage.Literals.RECONFIGURATION_RULE__RETURN_PARAMETERS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Reconfigured Component feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReconfiguredComponentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ReconfigurationRule_reconfiguredComponent_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationRule_reconfiguredComponent_feature", "_UI_ReconfigurationRule_type"),
-				 ReconfigurationPackage.Literals.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
@@ -153,8 +104,7 @@ public class ReconfigurationRuleItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__PARAMETERS);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__WCET);
+			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__EXPECTED_RESPONSE_TIME);
 		}
 		return childrenFeatures;
 	}
@@ -173,6 +123,17 @@ public class ReconfigurationRuleItemProvider
 	}
 
 	/**
+	 * This returns ReconfigurationMessagePortInterfaceEntry.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReconfigurationMessagePortInterfaceEntry"));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -180,10 +141,10 @@ public class ReconfigurationRuleItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReconfigurationRule)object).getName();
+		String label = ((ReconfigurationMessagePortInterfaceEntry)object).getDescription();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ReconfigurationRule_type") :
-			getString("_UI_ReconfigurationRule_type") + " " + label;
+			getString("_UI_ReconfigurationMessagePortInterfaceEntry_type") :
+			getString("_UI_ReconfigurationMessagePortInterfaceEntry_type") + " " + label;
 	}
 
 	/**
@@ -197,12 +158,11 @@ public class ReconfigurationRuleItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ReconfigurationRule.class)) {
-			case ReconfigurationPackage.RECONFIGURATION_RULE__COMMENT:
+		switch (notification.getFeatureID(ReconfigurationMessagePortInterfaceEntry.class)) {
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__MESSAGE_KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS:
-			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__EXPECTED_RESPONSE_TIME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -222,34 +182,8 @@ public class ReconfigurationRuleItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__PARAMETERS,
-				 BehaviorFactory.eINSTANCE.createParameter()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__WCET,
+				(ReconfigurationPackage.Literals.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__EXPECTED_RESPONSE_TIME,
 				 ValuetypeFactory.eINSTANCE.createTimeValue()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return MumlReconfigurationEditPlugin.INSTANCE;
 	}
 
 }

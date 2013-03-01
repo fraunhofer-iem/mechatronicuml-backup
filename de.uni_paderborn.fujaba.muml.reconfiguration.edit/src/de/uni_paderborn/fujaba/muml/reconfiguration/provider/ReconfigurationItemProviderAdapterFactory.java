@@ -167,6 +167,29 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReconfigurationExecutionPortItemProvider reconfigurationExecutionPortItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReconfigurationExecutionPortAdapter() {
+		if (reconfigurationExecutionPortItemProvider == null) {
+			reconfigurationExecutionPortItemProvider = new ReconfigurationExecutionPortItemProvider(this);
+		}
+
+		return reconfigurationExecutionPortItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,49 +259,72 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.ExternalReconfigurationExecutionPort} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExternalReconfigurationExecutionPortItemProvider externalReconfigurationExecutionPortItemProvider;
+	protected ReconfigurationPortInterfaceEntryItemProvider reconfigurationPortInterfaceEntryItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ExternalReconfigurationExecutionPort}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createExternalReconfigurationExecutionPortAdapter() {
-		if (externalReconfigurationExecutionPortItemProvider == null) {
-			externalReconfigurationExecutionPortItemProvider = new ExternalReconfigurationExecutionPortItemProvider(this);
+	public Adapter createReconfigurationPortInterfaceEntryAdapter() {
+		if (reconfigurationPortInterfaceEntryItemProvider == null) {
+			reconfigurationPortInterfaceEntryItemProvider = new ReconfigurationPortInterfaceEntryItemProvider(this);
 		}
 
-		return externalReconfigurationExecutionPortItemProvider;
+		return reconfigurationPortInterfaceEntryItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationExecutionPort} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InternalReconfigurationExecutionPortItemProvider internalReconfigurationExecutionPortItemProvider;
+	protected ReconfigurationMessagePortInterfaceEntryItemProvider reconfigurationMessagePortInterfaceEntryItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationExecutionPort}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createInternalReconfigurationExecutionPortAdapter() {
-		if (internalReconfigurationExecutionPortItemProvider == null) {
-			internalReconfigurationExecutionPortItemProvider = new InternalReconfigurationExecutionPortItemProvider(this);
+	public Adapter createReconfigurationMessagePortInterfaceEntryAdapter() {
+		if (reconfigurationMessagePortInterfaceEntryItemProvider == null) {
+			reconfigurationMessagePortInterfaceEntryItemProvider = new ReconfigurationMessagePortInterfaceEntryItemProvider(this);
 		}
 
-		return internalReconfigurationExecutionPortItemProvider;
+		return reconfigurationMessagePortInterfaceEntryItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReconfigurationExecutionPortInterfaceEntryItemProvider reconfigurationExecutionPortInterfaceEntryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReconfigurationExecutionPortInterfaceEntryAdapter() {
+		if (reconfigurationExecutionPortInterfaceEntryItemProvider == null) {
+			reconfigurationExecutionPortInterfaceEntryItemProvider = new ReconfigurationExecutionPortInterfaceEntryItemProvider(this);
+		}
+
+		return reconfigurationExecutionPortInterfaceEntryItemProvider;
 	}
 
 	/**
@@ -384,11 +430,13 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 		if (managerItemProvider != null) managerItemProvider.dispose();
 		if (executorItemProvider != null) executorItemProvider.dispose();
 		if (reconfigurationMessagePortItemProvider != null) reconfigurationMessagePortItemProvider.dispose();
+		if (reconfigurationExecutionPortItemProvider != null) reconfigurationExecutionPortItemProvider.dispose();
 		if (executorSpecificationEntryItemProvider != null) executorSpecificationEntryItemProvider.dispose();
 		if (managerSpecificationEntryItemProvider != null) managerSpecificationEntryItemProvider.dispose();
 		if (ruleBasedReconfigurationControllerItemProvider != null) ruleBasedReconfigurationControllerItemProvider.dispose();
-		if (externalReconfigurationExecutionPortItemProvider != null) externalReconfigurationExecutionPortItemProvider.dispose();
-		if (internalReconfigurationExecutionPortItemProvider != null) internalReconfigurationExecutionPortItemProvider.dispose();
+		if (reconfigurationPortInterfaceEntryItemProvider != null) reconfigurationPortInterfaceEntryItemProvider.dispose();
+		if (reconfigurationMessagePortInterfaceEntryItemProvider != null) reconfigurationMessagePortInterfaceEntryItemProvider.dispose();
+		if (reconfigurationExecutionPortInterfaceEntryItemProvider != null) reconfigurationExecutionPortInterfaceEntryItemProvider.dispose();
 	}
 
 }

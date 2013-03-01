@@ -220,12 +220,7 @@ public class ReconfigurableStructuredComponentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createExternalReconfigurationExecutionPort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createInternalReconfigurationExecutionPort()));
+				 ReconfigurationFactory.eINSTANCE.createReconfigurationExecutionPort()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -7,13 +7,19 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -21,23 +27,15 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
-
-import de.uni_paderborn.fujaba.muml.component.provider.DiscretePortItemProvider;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReconfigurationPortItemProvider
-	extends DiscretePortItemProvider
+public class ReconfigurationExecutionPortInterfaceEntryItemProvider
+	extends ReconfigurationPortInterfaceEntryItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -50,7 +48,7 @@ public class ReconfigurationPortItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationPortItemProvider(AdapterFactory adapterFactory) {
+	public ReconfigurationExecutionPortInterfaceEntryItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -81,7 +79,8 @@ public class ReconfigurationPortItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_PORT__INTERFACE_ENTRIES);
+			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION);
+			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION);
 		}
 		return childrenFeatures;
 	}
@@ -100,14 +99,14 @@ public class ReconfigurationPortItemProvider
 	}
 
 	/**
-	 * This returns ReconfigurationPort.gif.
+	 * This returns ReconfigurationExecutionPortInterfaceEntry.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReconfigurationPort"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReconfigurationExecutionPortInterfaceEntry"));
 	}
 
 	/**
@@ -118,10 +117,10 @@ public class ReconfigurationPortItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReconfigurationPort)object).getName();
+		String label = ((ReconfigurationExecutionPortInterfaceEntry)object).getDescription();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ReconfigurationPort_type") :
-			getString("_UI_ReconfigurationPort_type") + " " + label;
+			getString("_UI_ReconfigurationExecutionPortInterfaceEntry_type") :
+			getString("_UI_ReconfigurationExecutionPortInterfaceEntry_type") + " " + label;
 	}
 
 	/**
@@ -135,8 +134,9 @@ public class ReconfigurationPortItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ReconfigurationPort.class)) {
-			case ReconfigurationPackage.RECONFIGURATION_PORT__INTERFACE_ENTRIES:
+		switch (notification.getFeatureID(ReconfigurationExecutionPortInterfaceEntry.class)) {
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION:
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -156,39 +156,36 @@ public class ReconfigurationPortItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+				(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION,
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_PORT__INTERFACE_ENTRIES,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationPortInterfaceEntry()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_PORT__INTERFACE_ENTRIES,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationMessagePortInterfaceEntry()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_PORT__INTERFACE_ENTRIES,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationExecutionPortInterfaceEntry()));
+				(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION,
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 	}
 
 	/**
-	 * Return the resource locator for this item provider's resources.
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator() {
-		return MumlReconfigurationEditPlugin.INSTANCE;
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION ||
+			childFeature == ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }
