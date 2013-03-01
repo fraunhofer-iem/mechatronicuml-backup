@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 
@@ -20,6 +22,7 @@ import org.storydriven.core.CommentableElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.Manager#getSpecificationEntries <em>Specification Entries</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.Manager#getReconfigurationController <em>Reconfiguration Controller</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.Manager#getPorts <em>Ports</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,7 +30,7 @@ import org.storydriven.core.CommentableElement;
  * @model
  * @generated
  */
-public interface Manager extends CommentableElement {
+public interface Manager extends CommentableElement, BehavioralElement {
 
 	/**
 	 * Returns the value of the '<em><b>Specification Entries</b></em>' containment reference list.
@@ -74,4 +77,20 @@ public interface Manager extends CommentableElement {
 	 * @generated
 	 */
 	void setReconfigurationController(RuleBasedReconfigurationController value);
+
+	/**
+	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.DiscretePort}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ports</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ports</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getManager_Ports()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<DiscretePort> getPorts();
 } // Manager

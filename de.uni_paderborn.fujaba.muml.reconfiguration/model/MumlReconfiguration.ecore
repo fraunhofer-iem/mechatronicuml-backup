@@ -45,17 +45,23 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="structuredComponent" lowerBound="1"
         eType="#//ReconfigurableStructuredComponent" eOpposite="#//ReconfigurableStructuredComponent/controllers"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Manager" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Manager" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/BehavioralElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="specificationEntries" upperBound="-1"
         eType="#//ManagerSpecificationEntry" containment="true" eOpposite="#//ManagerSpecificationEntry/manager"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationController"
         lowerBound="1" eType="#//RuleBasedReconfigurationController" eOpposite="#//RuleBasedReconfigurationController/manager"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DiscretePort"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Executor" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Executor" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/BehavioralElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="specificationEntries" lowerBound="1"
         upperBound="-1" eType="#//ExecutorSpecificationEntry" containment="true" eOpposite="#//ExecutorSpecificationEntry/executor"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationController"
         lowerBound="1" eType="#//RuleBasedReconfigurationController" eOpposite="#//RuleBasedReconfigurationController/executor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DiscretePort"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationRule" abstract="true"
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">

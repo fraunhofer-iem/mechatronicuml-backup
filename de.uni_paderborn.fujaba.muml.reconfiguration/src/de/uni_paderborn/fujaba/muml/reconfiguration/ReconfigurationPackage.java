@@ -579,13 +579,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int MANAGER__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGER__BEHAVIOR = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Specification Entries</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__SPECIFICATION_ENTRIES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int MANAGER__SPECIFICATION_ENTRIES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Reconfiguration Controller</b></em>' container reference.
@@ -594,7 +603,16 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER__RECONFIGURATION_CONTROLLER = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int MANAGER__RECONFIGURATION_CONTROLLER = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGER__PORTS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Manager</em>' class.
@@ -603,7 +621,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int MANAGER_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorImpl <em>Executor</em>}' class.
@@ -643,13 +661,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXECUTOR__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTOR__BEHAVIOR = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Specification Entries</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR__SPECIFICATION_ENTRIES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int EXECUTOR__SPECIFICATION_ENTRIES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Reconfiguration Controller</b></em>' container reference.
@@ -658,7 +685,16 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR__RECONFIGURATION_CONTROLLER = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int EXECUTOR__RECONFIGURATION_CONTROLLER = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTOR__PORTS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Executor</em>' class.
@@ -667,7 +703,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int EXECUTOR_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
 
 
 	/**
@@ -2183,6 +2219,17 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getManager_ReconfigurationController();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.reconfiguration.Manager#getPorts <em>Ports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ports</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.Manager#getPorts()
+	 * @see #getManager()
+	 * @generated
+	 */
+	EReference getManager_Ports();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.Executor <em>Executor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2213,6 +2260,17 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getExecutor_ReconfigurationController();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.reconfiguration.Executor#getPorts <em>Ports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ports</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.Executor#getPorts()
+	 * @see #getExecutor()
+	 * @generated
+	 */
+	EReference getExecutor_Ports();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule <em>Rule</em>}'.
@@ -2700,6 +2758,14 @@ public interface ReconfigurationPackage extends EPackage {
 		EReference MANAGER__RECONFIGURATION_CONTROLLER = eINSTANCE.getManager_ReconfigurationController();
 
 		/**
+		 * The meta object literal for the '<em><b>Ports</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MANAGER__PORTS = eINSTANCE.getManager_Ports();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorImpl <em>Executor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2724,6 +2790,14 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EXECUTOR__RECONFIGURATION_CONTROLLER = eINSTANCE.getExecutor_ReconfigurationController();
+
+		/**
+		 * The meta object literal for the '<em><b>Ports</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXECUTOR__PORTS = eINSTANCE.getExecutor_Ports();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl <em>Rule</em>}' class.

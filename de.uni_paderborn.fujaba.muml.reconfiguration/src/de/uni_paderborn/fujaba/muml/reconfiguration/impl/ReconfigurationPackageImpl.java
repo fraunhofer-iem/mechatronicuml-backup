@@ -513,6 +513,15 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getManager_Ports() {
+		return (EReference)managerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getExecutor() {
 		return executorEClass;
 	}
@@ -533,6 +542,15 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 */
 	public EReference getExecutor_ReconfigurationController() {
 		return (EReference)executorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExecutor_Ports() {
+		return (EReference)executorEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -775,10 +793,12 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		managerEClass = createEClass(MANAGER);
 		createEReference(managerEClass, MANAGER__SPECIFICATION_ENTRIES);
 		createEReference(managerEClass, MANAGER__RECONFIGURATION_CONTROLLER);
+		createEReference(managerEClass, MANAGER__PORTS);
 
 		executorEClass = createEClass(EXECUTOR);
 		createEReference(executorEClass, EXECUTOR__SPECIFICATION_ENTRIES);
 		createEReference(executorEClass, EXECUTOR__RECONFIGURATION_CONTROLLER);
+		createEReference(executorEClass, EXECUTOR__PORTS);
 
 		reconfigurationRuleEClass = createEClass(RECONFIGURATION_RULE);
 		createEReference(reconfigurationRuleEClass, RECONFIGURATION_RULE__PARAMETERS);
@@ -879,7 +899,9 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		controllerEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		controllerEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		managerEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		managerEClass.getESuperTypes().add(theBehaviorPackage.getBehavioralElement());
 		executorEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		executorEClass.getESuperTypes().add(theBehaviorPackage.getBehavioralElement());
 		reconfigurationRuleEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		reconfigurationRuleEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		reconfigurationConditionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
@@ -910,10 +932,12 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEClass(managerEClass, Manager.class, "Manager", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getManager_SpecificationEntries(), this.getManagerSpecificationEntry(), this.getManagerSpecificationEntry_Manager(), "specificationEntries", null, 0, -1, Manager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getManager_ReconfigurationController(), this.getRuleBasedReconfigurationController(), this.getRuleBasedReconfigurationController_Manager(), "reconfigurationController", null, 1, 1, Manager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getManager_Ports(), theComponentPackage.getDiscretePort(), null, "ports", null, 0, -1, Manager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(executorEClass, Executor.class, "Executor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExecutor_SpecificationEntries(), this.getExecutorSpecificationEntry(), this.getExecutorSpecificationEntry_Executor(), "specificationEntries", null, 1, -1, Executor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExecutor_ReconfigurationController(), this.getRuleBasedReconfigurationController(), this.getRuleBasedReconfigurationController_Executor(), "reconfigurationController", null, 1, 1, Executor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExecutor_Ports(), theComponentPackage.getDiscretePort(), null, "ports", null, 0, -1, Executor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reconfigurationRuleEClass, ReconfigurationRule.class, "ReconfigurationRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReconfigurationRule_Parameters(), theBehaviorPackage.getParameter(), null, "parameters", null, 0, -1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

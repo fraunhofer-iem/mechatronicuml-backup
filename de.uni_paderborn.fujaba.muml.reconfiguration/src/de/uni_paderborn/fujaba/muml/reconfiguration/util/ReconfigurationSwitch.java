@@ -124,6 +124,7 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				Manager manager = (Manager)theEObject;
 				T result = caseManager(manager);
 				if (result == null) result = caseCommentableElement(manager);
+				if (result == null) result = caseBehavioralElement(manager);
 				if (result == null) result = caseExtendableElement(manager);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -132,6 +133,7 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				Executor executor = (Executor)theEObject;
 				T result = caseExecutor(executor);
 				if (result == null) result = caseCommentableElement(executor);
+				if (result == null) result = caseBehavioralElement(executor);
 				if (result == null) result = caseExtendableElement(executor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

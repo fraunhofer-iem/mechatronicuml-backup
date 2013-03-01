@@ -26,10 +26,12 @@
     <genClasses ecoreClass="MumlReconfiguration.ecore#//Manager">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//Manager/specificationEntries"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//Manager/reconfigurationController"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//Manager/ports"/>
     </genClasses>
     <genClasses ecoreClass="MumlReconfiguration.ecore#//Executor">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//Executor/specificationEntries"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//Executor/reconfigurationController"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//Executor/ports"/>
     </genClasses>
     <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//ReconfigurationRule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurationRule/parameters"/>
