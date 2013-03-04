@@ -143,6 +143,15 @@ public interface ActionlanguageFactory extends EFactory {
 	TypedNamedElementExpression createTypedNamedElementExpression();
 
 	/**
+	 * Returns a new object of class '<em>Array Initialize Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Array Initialize Expression</em>'.
+	 * @generated
+	 */
+	ArrayInitializeExpression createArrayInitializeExpression();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

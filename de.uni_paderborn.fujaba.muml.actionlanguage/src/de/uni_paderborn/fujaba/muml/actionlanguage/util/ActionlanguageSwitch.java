@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.actionlanguage.util;
 
+import de.uni_paderborn.fujaba.muml.actionlanguage.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -216,6 +217,15 @@ public class ActionlanguageSwitch<T> extends Switch<T> {
 				if (result == null) result = caseExpression(typedNamedElementExpression);
 				if (result == null) result = caseCommentableElement(typedNamedElementExpression);
 				if (result == null) result = caseExtendableElement(typedNamedElementExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ActionlanguagePackage.ARRAY_INITIALIZE_EXPRESSION: {
+				ArrayInitializeExpression arrayInitializeExpression = (ArrayInitializeExpression)theEObject;
+				T result = caseArrayInitializeExpression(arrayInitializeExpression);
+				if (result == null) result = caseExpression(arrayInitializeExpression);
+				if (result == null) result = caseCommentableElement(arrayInitializeExpression);
+				if (result == null) result = caseExtendableElement(arrayInitializeExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -430,6 +440,21 @@ public class ActionlanguageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTypedNamedElementExpression(TypedNamedElementExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Array Initialize Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Array Initialize Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArrayInitializeExpression(ArrayInitializeExpression object) {
 		return null;
 	}
 

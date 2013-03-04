@@ -17,6 +17,7 @@ import org.storydriven.core.expressions.ExpressionsPackage;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
@@ -151,6 +152,13 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * @generated
 	 */
 	private EClass typedNamedElementExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass arrayInitializeExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -639,6 +647,24 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getArrayInitializeExpression() {
+		return arrayInitializeExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getArrayInitializeExpression_Expressions() {
+		return (EReference)arrayInitializeExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getAssignOperator() {
 		return assignOperatorEEnum;
 	}
@@ -745,6 +771,9 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		createEReference(typedNamedElementExpressionEClass, TYPED_NAMED_ELEMENT_EXPRESSION__TYPED_NAMED_ELEMENT);
 		createEReference(typedNamedElementExpressionEClass, TYPED_NAMED_ELEMENT_EXPRESSION__INDICES);
 
+		arrayInitializeExpressionEClass = createEClass(ARRAY_INITIALIZE_EXPRESSION);
+		createEReference(arrayInitializeExpressionEClass, ARRAY_INITIALIZE_EXPRESSION__EXPRESSIONS);
+
 		// Create enums
 		assignOperatorEEnum = createEEnum(ASSIGN_OPERATOR);
 		incrementDecrementOperatorEEnum = createEEnum(INCREMENT_DECREMENT_OPERATOR);
@@ -798,6 +827,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		positionSelectorEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		localVariableDeclarationStatementEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		typedNamedElementExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		arrayInitializeExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -856,6 +886,9 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		initEReference(getTypedNamedElementExpression_TypedNamedElement(), theBehaviorPackage.getTypedNamedElement(), null, "typedNamedElement", null, 0, 1, TypedNamedElementExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTypedNamedElementExpression_Indices(), theExpressionsPackage.getExpression(), null, "indices", null, 0, -1, TypedNamedElementExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(arrayInitializeExpressionEClass, ArrayInitializeExpression.class, "ArrayInitializeExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getArrayInitializeExpression_Expressions(), theExpressionsPackage.getExpression(), null, "expressions", null, 0, -1, ArrayInitializeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(assignOperatorEEnum, AssignOperator.class, "AssignOperator");
 		addEEnumLiteral(assignOperatorEEnum, AssignOperator.UNSET);
@@ -902,7 +935,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		   source, 
 		   new String[] {
 			 "historyURI", "../../de.uni_paderborn.fujaba.muml/model/muml.history"
-		   });																																	
+		   });																																		
 	}
 
 	/**
@@ -924,7 +957,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueName"
-		   });				
+		   });					
 	}
 
 	/**
@@ -946,7 +979,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		   source, 
 		   new String[] {
 			 "derivation", "-- collect all blocks which surround this LocalVariableDeclarationStatement\nself.eContainer()->closure(c : ecore::EObject |\n\tif c.eContainer().oclIsKindOf(core::expressions::Expression) then\n\t\tc.eContainer()\n\telse\n\t\tc\n\tendif\n)->union(\n\tSet{eContainer()}\n)->select(oclIsKindOf(Block))->collect(\n\toclAsType(Block)\n)->asOrderedSet()"
-		   });		
+		   });			
 	}
 
 } //ActionlanguagePackageImpl

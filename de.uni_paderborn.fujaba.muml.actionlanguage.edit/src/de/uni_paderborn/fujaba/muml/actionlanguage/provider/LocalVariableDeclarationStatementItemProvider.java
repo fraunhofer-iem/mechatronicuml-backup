@@ -253,6 +253,11 @@ public class LocalVariableDeclarationStatementItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createArrayInitializeExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add

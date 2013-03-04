@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.actionlanguage.util;
 
+import de.uni_paderborn.fujaba.muml.actionlanguage.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -141,6 +142,10 @@ public class ActionlanguageAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTypedNamedElementExpression(TypedNamedElementExpression object) {
 				return createTypedNamedElementExpressionAdapter();
+			}
+			@Override
+			public Adapter caseArrayInitializeExpression(ArrayInitializeExpression object) {
+				return createArrayInitializeExpressionAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -367,6 +372,20 @@ public class ActionlanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTypedNamedElementExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression <em>Array Initialize Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression
+	 * @generated
+	 */
+	public Adapter createArrayInitializeExpressionAdapter() {
 		return null;
 	}
 

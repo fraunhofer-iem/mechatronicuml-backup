@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.actionlanguage.util;
 
+import de.uni_paderborn.fujaba.muml.actionlanguage.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -133,6 +134,8 @@ public class ActionlanguageValidator extends EObjectValidator {
 				return validateLocalVariableDeclarationStatement((LocalVariableDeclarationStatement)value, diagnostics, context);
 			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION:
 				return validateTypedNamedElementExpression((TypedNamedElementExpression)value, diagnostics, context);
+			case ActionlanguagePackage.ARRAY_INITIALIZE_EXPRESSION:
+				return validateArrayInitializeExpression((ArrayInitializeExpression)value, diagnostics, context);
 			case ActionlanguagePackage.ASSIGN_OPERATOR:
 				return validateAssignOperator((AssignOperator)value, diagnostics, context);
 			case ActionlanguagePackage.INCREMENT_DECREMENT_OPERATOR:
@@ -316,6 +319,15 @@ public class ActionlanguageValidator extends EObjectValidator {
 	 */
 	public boolean validateTypedNamedElementExpression(TypedNamedElementExpression typedNamedElementExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(typedNamedElementExpression, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateArrayInitializeExpression(ArrayInitializeExpression arrayInitializeExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(arrayInitializeExpression, diagnostics, context);
 	}
 
 	/**

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.actionlanguage.impl;
 
+import de.uni_paderborn.fujaba.muml.actionlanguage.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -89,6 +90,7 @@ public class ActionlanguageFactoryImpl extends EFactoryImpl implements Actionlan
 			case ActionlanguagePackage.POSITION_SELECTOR: return createPositionSelector();
 			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT: return createLocalVariableDeclarationStatement();
 			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION: return createTypedNamedElementExpression();
+			case ActionlanguagePackage.ARRAY_INITIALIZE_EXPRESSION: return createArrayInitializeExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -260,6 +262,16 @@ public class ActionlanguageFactoryImpl extends EFactoryImpl implements Actionlan
 	public TypedNamedElementExpression createTypedNamedElementExpression() {
 		TypedNamedElementExpressionImpl typedNamedElementExpression = new TypedNamedElementExpressionImpl();
 		return typedNamedElementExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ArrayInitializeExpression createArrayInitializeExpression() {
+		ArrayInitializeExpressionImpl arrayInitializeExpression = new ArrayInitializeExpressionImpl();
+		return arrayInitializeExpression;
 	}
 
 	/**

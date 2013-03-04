@@ -1054,6 +1054,61 @@ public interface ActionlanguagePackage extends EPackage {
 	int TYPED_NAMED_ELEMENT_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.ArrayInitializeExpressionImpl <em>Array Initialize Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ArrayInitializeExpressionImpl
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getArrayInitializeExpression()
+	 * @generated
+	 */
+	int ARRAY_INITIALIZE_EXPRESSION = 14;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_INITIALIZE_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_INITIALIZE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_INITIALIZE_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_INITIALIZE_EXPRESSION__EXPRESSIONS = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Array Initialize Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRAY_INITIALIZE_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator <em>Assign Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1061,7 +1116,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getAssignOperator()
 	 * @generated
 	 */
-	int ASSIGN_OPERATOR = 14;
+	int ASSIGN_OPERATOR = 15;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator <em>Increment Decrement Operator</em>}' enum.
@@ -1071,7 +1126,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getIncrementDecrementOperator()
 	 * @generated
 	 */
-	int INCREMENT_DECREMENT_OPERATOR = 15;
+	int INCREMENT_DECREMENT_OPERATOR = 16;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelectorKind <em>Position Selector Kind</em>}' enum.
@@ -1081,7 +1136,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getPositionSelectorKind()
 	 * @generated
 	 */
-	int POSITION_SELECTOR_KIND = 16;
+	int POSITION_SELECTOR_KIND = 17;
 
 
 	/**
@@ -1533,6 +1588,27 @@ public interface ActionlanguagePackage extends EPackage {
 	EReference getTypedNamedElementExpression_Indices();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression <em>Array Initialize Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Array Initialize Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression
+	 * @generated
+	 */
+	EClass getArrayInitializeExpression();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression#getExpressions <em>Expressions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Expressions</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression#getExpressions()
+	 * @see #getArrayInitializeExpression()
+	 * @generated
+	 */
+	EReference getArrayInitializeExpression_Expressions();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator <em>Assign Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1947,6 +2023,24 @@ public interface ActionlanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference TYPED_NAMED_ELEMENT_EXPRESSION__INDICES = eINSTANCE.getTypedNamedElementExpression_Indices();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.ArrayInitializeExpressionImpl <em>Array Initialize Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ArrayInitializeExpressionImpl
+		 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getArrayInitializeExpression()
+		 * @generated
+		 */
+		EClass ARRAY_INITIALIZE_EXPRESSION = eINSTANCE.getArrayInitializeExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARRAY_INITIALIZE_EXPRESSION__EXPRESSIONS = eINSTANCE.getArrayInitializeExpression_Expressions();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator <em>Assign Operator</em>}' enum.

@@ -276,6 +276,11 @@ public class AssignmentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 ActionlanguageFactory.eINSTANCE.createArrayInitializeExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add
