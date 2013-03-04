@@ -13,8 +13,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.ExtendableElement;
 
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
@@ -75,8 +75,8 @@ public class ValuetypeAdapterFactory extends AdapterFactoryImpl {
 	protected ValuetypeSwitch<Adapter> modelSwitch =
 		new ValuetypeSwitch<Adapter>() {
 			@Override
-			public Adapter caseRange(Range object) {
-				return createRangeAdapter();
+			public Adapter caseCardinality(Cardinality object) {
+				return createCardinalityAdapter();
 			}
 			@Override
 			public Adapter caseTimeValue(TimeValue object) {
@@ -111,16 +111,16 @@ public class ValuetypeAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.valuetype.Range <em>Range</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.valuetype.Cardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.valuetype.Range
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.Cardinality
 	 * @generated
 	 */
-	public Adapter createRangeAdapter() {
+	public Adapter createCardinalityAdapter() {
 		return null;
 	}
 

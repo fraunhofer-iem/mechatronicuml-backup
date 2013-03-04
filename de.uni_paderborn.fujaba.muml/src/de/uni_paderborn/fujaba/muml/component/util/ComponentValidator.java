@@ -6,9 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.component.util;
 
-import de.uni_paderborn.fujaba.muml.behavior.util.BehaviorValidator;
 import de.uni_paderborn.fujaba.muml.component.*;
-import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;

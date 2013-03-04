@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
@@ -93,8 +93,8 @@ public class ValuetypeValidator extends MumlValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case ValuetypePackage.RANGE:
-				return validateRange((Range)value, diagnostics, context);
+			case ValuetypePackage.CARDINALITY:
+				return validateCardinality((Cardinality)value, diagnostics, context);
 			case ValuetypePackage.TIME_VALUE:
 				return validateTimeValue((TimeValue)value, diagnostics, context);
 			case ValuetypePackage.NATURAL_NUMBER:
@@ -111,45 +111,45 @@ public class ValuetypeValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRange(Range range, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(range, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(range, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(range, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(range, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(range, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(range, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(range, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(range, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(range, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRange_LowerBoundMustBeLessOrEqualThanUpperBound(range, diagnostics, context);
+	public boolean validateCardinality(Cardinality cardinality, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(cardinality, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(cardinality, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(cardinality, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(cardinality, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(cardinality, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(cardinality, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(cardinality, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cardinality, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(cardinality, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCardinality_LowerBoundMustBeLessOrEqualThanUpperBound(cardinality, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the LowerBoundMustBeLessOrEqualThanUpperBound constraint of '<em>Range</em>'.
+	 * The cached validation expression for the LowerBoundMustBeLessOrEqualThanUpperBound constraint of '<em>Cardinality</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String RANGE__LOWER_BOUND_MUST_BE_LESS_OR_EQUAL_THAN_UPPER_BOUND__EEXPRESSION = "((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\n" +
+	protected static final String CARDINALITY__LOWER_BOUND_MUST_BE_LESS_OR_EQUAL_THAN_UPPER_BOUND__EEXPRESSION = "((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\n" +
 		"and (self.lowerBound.infinity implies self.upperBound.infinity)";
 
 	/**
-	 * Validates the LowerBoundMustBeLessOrEqualThanUpperBound constraint of '<em>Range</em>'.
+	 * Validates the LowerBoundMustBeLessOrEqualThanUpperBound constraint of '<em>Cardinality</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRange_LowerBoundMustBeLessOrEqualThanUpperBound(Range range, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateCardinality_LowerBoundMustBeLessOrEqualThanUpperBound(Cardinality cardinality, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(ValuetypePackage.Literals.RANGE,
-				 range,
+				(ValuetypePackage.Literals.CARDINALITY,
+				 cardinality,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "LowerBoundMustBeLessOrEqualThanUpperBound",
-				 RANGE__LOWER_BOUND_MUST_BE_LESS_OR_EQUAL_THAN_UPPER_BOUND__EEXPRESSION,
+				 CARDINALITY__LOWER_BOUND_MUST_BE_LESS_OR_EQUAL_THAN_UPPER_BOUND__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

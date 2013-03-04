@@ -30,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 
 /**
  * <!-- begin-user-doc -->
@@ -116,7 +116,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * @generated
 	 * @ordered
 	 */
-	protected Range cardinality;
+	protected Cardinality cardinality;
 
 	/**
 	 * The cached value of the '{@link #getRefines() <em>Refines</em>}' reference.
@@ -436,7 +436,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Range getCardinality() {
+	public Cardinality getCardinality() {
 		return cardinality;
 	}
 
@@ -445,8 +445,8 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCardinality(Range newCardinality, NotificationChain msgs) {
-		Range oldCardinality = cardinality;
+	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
+		Cardinality oldCardinality = cardinality;
 		cardinality = newCardinality;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__CARDINALITY, oldCardinality, newCardinality);
@@ -460,7 +460,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCardinality(Range newCardinality) {
+	public void setCardinality(Cardinality newCardinality) {
 		if (newCardinality != cardinality) {
 			NotificationChain msgs = null;
 			if (cardinality != null)
@@ -647,7 +647,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				setRoleAndAdaptationBehavior((Behavior)newValue);
 				return;
 			case ComponentPackage.DISCRETE_PORT__CARDINALITY:
-				setCardinality((Range)newValue);
+				setCardinality((Cardinality)newValue);
 				return;
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				setRefines((Role)newValue);
@@ -680,7 +680,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				setRoleAndAdaptationBehavior((Behavior)null);
 				return;
 			case ComponentPackage.DISCRETE_PORT__CARDINALITY:
-				setCardinality((Range)null);
+				setCardinality((Cardinality)null);
 				return;
 			case ComponentPackage.DISCRETE_PORT__REFINES:
 				setRefines((Role)null);

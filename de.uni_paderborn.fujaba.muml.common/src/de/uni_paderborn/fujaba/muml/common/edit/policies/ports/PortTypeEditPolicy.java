@@ -15,7 +15,7 @@ import de.uni_paderborn.fujaba.muml.component.DirectedTypedPort;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 
 public class PortTypeEditPolicy extends PortBaseEditPolicy {
 
@@ -79,7 +79,7 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 		if (port != null
 				&& ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT
 						.isSuperTypeOf(port.eClass())) {
-			Range cardinality = (Range) port
+			Cardinality cardinality = (Cardinality) port
 					.eGet(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY);
 			setCardinality(cardinality);
 		} else {

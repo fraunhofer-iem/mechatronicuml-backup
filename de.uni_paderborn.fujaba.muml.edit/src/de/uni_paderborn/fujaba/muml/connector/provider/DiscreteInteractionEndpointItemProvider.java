@@ -235,9 +235,9 @@ public class DiscreteInteractionEndpointItemProvider
 		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
 				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Range_lowerBound_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Range_lowerBound_feature", "_UI_Range_type"),
-				 ValuetypePackage.Literals.RANGE__LOWER_BOUND,
+				 getString("_UI_Cardinality_lowerBound_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Cardinality_lowerBound_feature", "_UI_Cardinality_type"),
+				 ValuetypePackage.Literals.CARDINALITY__LOWER_BOUND,
 				 true,
 				 false,
 				 false,
@@ -249,9 +249,9 @@ public class DiscreteInteractionEndpointItemProvider
 		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
 				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Range_upperBound_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Range_upperBound_feature", "_UI_Range_type"),
-				 ValuetypePackage.Literals.RANGE__UPPER_BOUND,
+				 getString("_UI_Cardinality_upperBound_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Cardinality_upperBound_feature", "_UI_Cardinality_type"),
+				 ValuetypePackage.Literals.CARDINALITY__UPPER_BOUND,
 				 true,
 				 false,
 				 false,
@@ -345,7 +345,7 @@ public class DiscreteInteractionEndpointItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY,
-				 ValuetypeFactory.eINSTANCE.createRange()));
+				 ValuetypeFactory.eINSTANCE.createCardinality()));
 	}
 
 }

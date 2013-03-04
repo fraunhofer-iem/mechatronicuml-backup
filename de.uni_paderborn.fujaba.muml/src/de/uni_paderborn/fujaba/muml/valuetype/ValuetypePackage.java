@@ -63,14 +63,14 @@ public interface ValuetypePackage extends EPackage {
 	ValuetypePackage eINSTANCE = de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.valuetype.impl.RangeImpl <em>Range</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.valuetype.impl.CardinalityImpl <em>Cardinality</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.valuetype.impl.RangeImpl
-	 * @see de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypePackageImpl#getRange()
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.impl.CardinalityImpl
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypePackageImpl#getCardinality()
 	 * @generated
 	 */
-	int RANGE = 0;
+	int CARDINALITY = 0;
 
 	/**
 	 * The feature id for the '<em><b>Lower Bound</b></em>' containment reference.
@@ -79,7 +79,7 @@ public interface ValuetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RANGE__LOWER_BOUND = 0;
+	int CARDINALITY__LOWER_BOUND = 0;
 
 	/**
 	 * The feature id for the '<em><b>Upper Bound</b></em>' containment reference.
@@ -88,17 +88,16 @@ public interface ValuetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RANGE__UPPER_BOUND = 1;
+	int CARDINALITY__UPPER_BOUND = 1;
 
 	/**
-	 * The number of structural features of the '<em>Range</em>' class.
+	 * The number of structural features of the '<em>Cardinality</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RANGE_FEATURE_COUNT = 2;
-
+	int CARDINALITY_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.valuetype.impl.TimeValueImpl <em>Time Value</em>}' class.
@@ -204,36 +203,36 @@ public interface ValuetypePackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.valuetype.Range <em>Range</em>}'.
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.valuetype.Cardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Range</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.valuetype.Range
+	 * @return the meta object for class '<em>Cardinality</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.Cardinality
 	 * @generated
 	 */
-	EClass getRange();
+	EClass getCardinality();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.valuetype.Range#getLowerBound <em>Lower Bound</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.valuetype.Cardinality#getLowerBound <em>Lower Bound</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Lower Bound</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.valuetype.Range#getLowerBound()
-	 * @see #getRange()
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.Cardinality#getLowerBound()
+	 * @see #getCardinality()
 	 * @generated
 	 */
-	EReference getRange_LowerBound();
+	EReference getCardinality_LowerBound();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.valuetype.Range#getUpperBound <em>Upper Bound</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.valuetype.Cardinality#getUpperBound <em>Upper Bound</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Upper Bound</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.valuetype.Range#getUpperBound()
-	 * @see #getRange()
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.Cardinality#getUpperBound()
+	 * @see #getCardinality()
 	 * @generated
 	 */
-	EReference getRange_UpperBound();
+	EReference getCardinality_UpperBound();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.valuetype.TimeValue <em>Time Value</em>}'.
@@ -333,14 +332,14 @@ public interface ValuetypePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.valuetype.impl.RangeImpl <em>Range</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.valuetype.impl.CardinalityImpl <em>Cardinality</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.valuetype.impl.RangeImpl
-		 * @see de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypePackageImpl#getRange()
+		 * @see de.uni_paderborn.fujaba.muml.valuetype.impl.CardinalityImpl
+		 * @see de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypePackageImpl#getCardinality()
 		 * @generated
 		 */
-		EClass RANGE = eINSTANCE.getRange();
+		EClass CARDINALITY = eINSTANCE.getCardinality();
 
 		/**
 		 * The meta object literal for the '<em><b>Lower Bound</b></em>' containment reference feature.
@@ -348,7 +347,7 @@ public interface ValuetypePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RANGE__LOWER_BOUND = eINSTANCE.getRange_LowerBound();
+		EReference CARDINALITY__LOWER_BOUND = eINSTANCE.getCardinality_LowerBound();
 
 		/**
 		 * The meta object literal for the '<em><b>Upper Bound</b></em>' containment reference feature.
@@ -356,7 +355,7 @@ public interface ValuetypePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RANGE__UPPER_BOUND = eINSTANCE.getRange_UpperBound();
+		EReference CARDINALITY__UPPER_BOUND = eINSTANCE.getCardinality_UpperBound();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.valuetype.impl.TimeValueImpl <em>Time Value</em>}' class.

@@ -17,8 +17,8 @@ public class ElementInitializers {
 	public void init_DiscretePort_3010(
 			de.uni_paderborn.fujaba.muml.component.DiscretePort instance) {
 		try {
-			de.uni_paderborn.fujaba.muml.valuetype.Range newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
-					.createRange();
+			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createCardinality();
 			instance.setCardinality(newInstance_0_0);
 			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
 					.createNaturalNumber();
@@ -88,8 +88,8 @@ public class ElementInitializers {
 	public void init_ComponentPart_3012(
 			de.uni_paderborn.fujaba.muml.component.ComponentPart instance) {
 		try {
-			de.uni_paderborn.fujaba.muml.valuetype.Range newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
-					.createRange();
+			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createCardinality();
 			instance.setCardinality(newInstance_0_0);
 			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
 					.createNaturalNumber();
@@ -151,8 +151,8 @@ public class ElementInitializers {
 	public void init_DiscretePort_3014(
 			de.uni_paderborn.fujaba.muml.component.DiscretePort instance) {
 		try {
-			de.uni_paderborn.fujaba.muml.valuetype.Range newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
-					.createRange();
+			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createCardinality();
 			instance.setCardinality(newInstance_0_0);
 			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
 					.createNaturalNumber();

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<history:History xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<history:History xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:history="http://www.eclipse.org/emf/edapt/history/0.3">
   <releases date="2012-11-07T14:51:41.065+0100" label="0.3.2">
     <changes xsi:type="history:CompositeChange">
@@ -496,90 +497,90 @@
             featureName="value" dataValue="Determins whether this natural number represents infinity."/>
       </changes>
       <changes xsi:type="history:Create" target="#//@releases.8/@changes.24/@element"
-          referenceName="eClassifiers" element="muml.ecore#//valuetype/Range">
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range" featureName="name"
-            dataValue="Cardinality"/>
+          referenceName="eClassifiers" element="muml.ecore#//valuetype/Cardinality">
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality"
+            featureName="name" dataValue="Cardinality"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Range" referenceName="eAnnotations"
-          element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Cardinality"
+          referenceName="eAnnotations" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="This class represents the cardinality of an arbitrary model object. It consists of a lower and an upper bound."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Range" referenceName="eAnnotations"
-          element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Cardinality"
+          referenceName="eAnnotations" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="details" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
             featureName="key" dataValue="constraints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
             featureName="value" dataValue="LowerBoundMustBeLessOrEqualThanUpperBound"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Range" referenceName="eAnnotations"
-          element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Cardinality"
+          referenceName="eAnnotations" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="LowerBoundMustBeLessOrEqualThanUpperBound"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value &lt;= self.upperBound.value))&#xA;and (self.lowerBound.infinity implies self.upperBound.infinity)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Range" referenceName="eStructuralFeatures"
-          element="muml.ecore#//valuetype/Range/lowerBound">
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/lowerBound"
+      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Cardinality"
+          referenceName="eStructuralFeatures" element="muml.ecore#//valuetype/Cardinality/lowerBound">
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/lowerBound"
             featureName="name" dataValue="lowerBound"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/lowerBound"
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/lowerBound"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/lowerBound"
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/lowerBound"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/lowerBound"
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/lowerBound"
             featureName="eType" referenceValue="muml.ecore#//valuetype/NaturalNumber"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Range/lowerBound"
-          referenceName="eAnnotations" element="muml.ecore#//valuetype/Range/lowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/lowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Cardinality/lowerBound"
+          referenceName="eAnnotations" element="muml.ecore#//valuetype/Cardinality/lowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/lowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Range/lowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//valuetype/Range/lowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/lowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Cardinality/lowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//valuetype/Cardinality/lowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/lowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/lowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/lowerBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The lower bound of this cardinality."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Range" referenceName="eStructuralFeatures"
-          element="muml.ecore#//valuetype/Range/upperBound">
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/upperBound"
+      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Cardinality"
+          referenceName="eStructuralFeatures" element="muml.ecore#//valuetype/Cardinality/upperBound">
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/upperBound"
             featureName="name" dataValue="upperBound"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/upperBound"
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/upperBound"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/upperBound"
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/upperBound"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/upperBound"
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/upperBound"
             featureName="eType" referenceValue="muml.ecore#//valuetype/NaturalNumber"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Range/upperBound"
-          referenceName="eAnnotations" element="muml.ecore#//valuetype/Range/upperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/upperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Cardinality/upperBound"
+          referenceName="eAnnotations" element="muml.ecore#//valuetype/Cardinality/upperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/upperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Range/upperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//valuetype/Range/upperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/upperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//valuetype/Cardinality/upperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//valuetype/Cardinality/upperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/upperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/upperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/upperBound/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The upper bound of this cardinality."/>
       </changes>
       <changes xsi:type="history:Create" target="#//@releases.8/@changes.24/@element"
@@ -3274,7 +3275,7 @@
         <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/cardinality"
             featureName="containment" dataValue="true" oldDataValue="false"/>
         <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/cardinality"
-            featureName="eType" referenceValue="muml.ecore#//valuetype/Range"/>
+            featureName="eType" referenceValue="muml.ecore#//valuetype/Cardinality"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//connector/DiscreteInteractionEndpoint/cardinality"
           referenceName="eAnnotations" element="muml.ecore#//connector/DiscreteInteractionEndpoint/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
@@ -3910,7 +3911,7 @@
         <changes xsi:type="history:Set" element="muml.ecore#//component/ComponentPart/cardinality"
             featureName="containment" dataValue="true" oldDataValue="false"/>
         <changes xsi:type="history:Set" element="muml.ecore#//component/ComponentPart/cardinality"
-            featureName="eType" referenceValue="muml.ecore#//valuetype/Range"/>
+            featureName="eType" referenceValue="muml.ecore#//valuetype/Cardinality"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//component/ComponentPart/cardinality"
           referenceName="eAnnotations" element="muml.ecore#//component/ComponentPart/cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
@@ -6386,7 +6387,7 @@
         <changes xsi:type="history:Set" element="#//@releases.5/@changes.74/@changes.1/@element"
             featureName="containment" dataValue="true" oldDataValue="false"/>
         <changes xsi:type="history:Set" element="#//@releases.5/@changes.74/@changes.1/@element"
-            featureName="eType" referenceValue="muml.ecore#//valuetype/Range"/>
+            featureName="eType" referenceValue="muml.ecore#//valuetype/Cardinality"/>
       </changes>
       <changes xsi:type="history:Create" target="#//@releases.5/@changes.74/@changes.1/@element"
           referenceName="eAnnotations" element="#//@releases.5/@changes.74/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
@@ -16610,7 +16611,7 @@
           referenceName="eStructuralFeatures" element="muml.ecore#//connector/DiscreteInteractionEndpoint/cardinality"
           source="muml.ecore#//component/DiscretePort"/>
       <changes xsi:type="history:Delete" target="muml.ecore#//protocol/Role" referenceName="eStructuralFeatures">
-        <element xsi:type="ecore:EReference" name="cardinality" lowerBound="1" eType="ecore:EClass muml.ecore#//valuetype/Range"
+        <element xsi:type="ecore:EReference" name="cardinality" lowerBound="1" eType="ecore:EClass muml.ecore#//valuetype/Cardinality"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="A role has a cardinality."/>
@@ -17788,11 +17789,11 @@
     <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="" oldDataValue="SameConfiguration"/>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range" featureName="name"
-          dataValue="Range" oldDataValue="Cardinality"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality"
+          featureName="name" dataValue="Range" oldDataValue="Cardinality"/>
       <operation name="rename">
         <parameters name="element">
-          <referenceValue element="muml.ecore#//valuetype/Range"/>
+          <referenceValue element="muml.ecore#//valuetype/Cardinality"/>
         </parameters>
         <parameters name="name">
           <dataValue>Range</dataValue>
@@ -17835,23 +17836,23 @@
         dataValue="http://www.fujaba.de/muml/model/valuetype/0.3.8" oldDataValue="http://www.fujaba.de/muml/model/valuetype/0.3.7"/>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Move" target="muml.ecore#//valuetype" referenceName="eClassifiers"
-          element="muml.ecore#//valuetype/Range" source="#//@releases.8/@changes.24/@element"/>
+          element="muml.ecore#//valuetype/Cardinality" source="#//@releases.8/@changes.24/@element"/>
       <operation name="moveClassifier">
         <parameters name="classifier">
-          <referenceValue element="muml.ecore#//valuetype/Range"/>
+          <referenceValue element="muml.ecore#//valuetype/Cardinality"/>
         </parameters>
         <parameters name="targetPackage">
           <referenceValue element="muml.ecore#//valuetype"/>
         </parameters>
       </operation>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="This class represents  a two-dimensional range specificationof an arbitrary model object. It consists of a lower and an upper bound."
         oldDataValue="This class represents the cardinality of an arbitrary model object. It consists of a lower and an upper bound."/>
-    <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="This class represents a two-dimensional range specificationof an arbitrary model object. It consists of a lower and an upper bound."
         oldDataValue="This class represents  a two-dimensional range specificationof an arbitrary model object. It consists of a lower and an upper bound."/>
-    <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Range/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="This class represents a two-dimensional range specification of an arbitrary model object. It consists of a lower and an upper bound."
         oldDataValue="This class represents a two-dimensional range specificationof an arbitrary model object. It consists of a lower and an upper bound."/>
     <changes xsi:type="history:Set" element="muml.ecore#//valuetype" featureName="nsURI"
@@ -19832,5 +19833,7 @@
     <changes xsi:type="history:Delete" target="muml.ecore#/" referenceName="eClassifiers">
       <element xsi:type="ecore:EClass" name="Tmp"/>
     </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality" featureName="name"
+        dataValue="Cardinality" oldDataValue="Range"/>
   </releases>
 </history:History>

@@ -35,8 +35,8 @@ public class ElementInitializers {
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getRole(), null).evaluate(newInstance_1_0);
 			newInstance_1_0.setName((String) value_1_0_0);
-			de.uni_paderborn.fujaba.muml.valuetype.Range newInstance_1_0_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
-					.createRange();
+			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_1_0_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createCardinality();
 			newInstance_1_0.setCardinality(newInstance_1_0_1_0);
 			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_1_0_1_0_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
 					.createNaturalNumber();
@@ -79,8 +79,8 @@ public class ElementInitializers {
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getRole(), null).evaluate(newInstance_1_1);
 			newInstance_1_1.setName((String) value_1_1_0);
-			de.uni_paderborn.fujaba.muml.valuetype.Range newInstance_1_1_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
-					.createRange();
+			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_1_1_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createCardinality();
 			newInstance_1_1.setCardinality(newInstance_1_1_1_0);
 			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_1_1_1_0_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
 					.createNaturalNumber();
@@ -162,8 +162,8 @@ public class ElementInitializers {
 							de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 									.getRole(), null).evaluate(instance);
 			instance.setName((String) value_0);
-			de.uni_paderborn.fujaba.muml.valuetype.Range newInstance_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
-					.createRange();
+			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createCardinality();
 			instance.setCardinality(newInstance_1_0);
 			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_1_0_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
 					.createNaturalNumber();

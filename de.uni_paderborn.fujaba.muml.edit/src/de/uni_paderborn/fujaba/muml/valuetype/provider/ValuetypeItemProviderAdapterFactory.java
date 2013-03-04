@@ -75,26 +75,26 @@ public class ValuetypeItemProviderAdapterFactory extends ValuetypeAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.valuetype.Range} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.valuetype.Cardinality} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RangeItemProvider rangeItemProvider;
+	protected CardinalityItemProvider cardinalityItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.valuetype.Range}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.valuetype.Cardinality}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createRangeAdapter() {
-		if (rangeItemProvider == null) {
-			rangeItemProvider = new RangeItemProvider(this);
+	public Adapter createCardinalityAdapter() {
+		if (cardinalityItemProvider == null) {
+			cardinalityItemProvider = new CardinalityItemProvider(this);
 		}
 
-		return rangeItemProvider;
+		return cardinalityItemProvider;
 	}
 
 	/**
@@ -242,7 +242,7 @@ public class ValuetypeItemProviderAdapterFactory extends ValuetypeAdapterFactory
 	 * @generated
 	 */
 	public void dispose() {
-		if (rangeItemProvider != null) rangeItemProvider.dispose();
+		if (cardinalityItemProvider != null) cardinalityItemProvider.dispose();
 		if (timeValueItemProvider != null) timeValueItemProvider.dispose();
 		if (naturalNumberItemProvider != null) naturalNumberItemProvider.dispose();
 	}

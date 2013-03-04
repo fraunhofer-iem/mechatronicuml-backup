@@ -6,7 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.valuetype.tests;
 
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 
 import junit.framework.TestCase;
@@ -15,19 +15,19 @@ import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Range</b></em>'.
+ * A test case for the model object '<em><b>Cardinality</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class RangeTest extends TestCase {
+public class CardinalityTest extends TestCase {
 
 	/**
-	 * The fixture for this Range test case.
+	 * The fixture for this Cardinality test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Range fixture = null;
+	protected Cardinality fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -35,36 +35,36 @@ public class RangeTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(RangeTest.class);
+		TestRunner.run(CardinalityTest.class);
 	}
 
 	/**
-	 * Constructs a new Range test case with the given name.
+	 * Constructs a new Cardinality test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RangeTest(String name) {
+	public CardinalityTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Range test case.
+	 * Sets the fixture for this Cardinality test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(Range fixture) {
+	protected void setFixture(Cardinality fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Range test case.
+	 * Returns the fixture for this Cardinality test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Range getFixture() {
+	protected Cardinality getFixture() {
 		return fixture;
 	}
 
@@ -76,7 +76,7 @@ public class RangeTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(ValuetypeFactory.eINSTANCE.createRange());
+		setFixture(ValuetypeFactory.eINSTANCE.createCardinality());
 	}
 
 	/**
@@ -90,4 +90,4 @@ public class RangeTest extends TestCase {
 		setFixture(null);
 	}
 
-} //RangeTest
+} //CardinalityTest

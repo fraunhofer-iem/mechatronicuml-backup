@@ -9,7 +9,6 @@ package de.uni_paderborn.fujaba.muml.connector.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 
@@ -28,7 +27,6 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
-import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.constraint.impl.ConstraintPackageImpl;
 import de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage;
@@ -560,7 +558,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		initEReference(getDiscreteInteractionEndpoint_ReceiverMessageTypes(), theMsgtypePackage.getMessageType(), null, "receiverMessageTypes", null, 0, -1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscreteInteractionEndpoint_AdaptationBehavior(), theBehaviorPackage.getBehavior(), null, "adaptationBehavior", null, 0, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior(), theBehaviorPackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDiscreteInteractionEndpoint_Cardinality(), theValuetypePackage.getRange(), null, "cardinality", null, 1, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscreteInteractionEndpoint_Cardinality(), theValuetypePackage.getCardinality(), null, "cardinality", null, 1, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(discreteInteractionEndpointInstanceEClass, DiscreteInteractionEndpointInstance.class, "DiscreteInteractionEndpointInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

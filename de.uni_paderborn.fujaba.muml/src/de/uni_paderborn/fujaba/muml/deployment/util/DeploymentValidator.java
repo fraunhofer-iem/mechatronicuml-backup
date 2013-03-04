@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.deployment.util;
 
+import de.uni_paderborn.fujaba.muml.deployment.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -15,8 +16,6 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
-import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
-import de.uni_paderborn.fujaba.muml.deployment.*;
 import de.uni_paderborn.fujaba.muml.deployment.CommunicationLink;
 import de.uni_paderborn.fujaba.muml.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage;

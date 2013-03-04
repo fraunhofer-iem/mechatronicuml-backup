@@ -12,8 +12,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.ExtendableElement;
 
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
@@ -74,9 +74,9 @@ public class ValuetypeSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ValuetypePackage.RANGE: {
-				Range range = (Range)theEObject;
-				T result = caseRange(range);
+			case ValuetypePackage.CARDINALITY: {
+				Cardinality cardinality = (Cardinality)theEObject;
+				T result = caseCardinality(cardinality);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -98,17 +98,17 @@ public class ValuetypeSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Range</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Cardinality</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Range</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Cardinality</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRange(Range object) {
+	public T caseCardinality(Cardinality object) {
 		return null;
 	}
 

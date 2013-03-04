@@ -12,7 +12,7 @@ import de.uni_paderborn.fujaba.muml.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 
 /**
  * <!-- begin-user-doc -->
@@ -134,12 +134,12 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * The cardinality of a port specifies how many instances of a port are allowed to exist at runtime.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Cardinality</em>' containment reference.
-	 * @see #setCardinality(Range)
+	 * @see #setCardinality(Cardinality)
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteInteractionEndpoint_Cardinality()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Range getCardinality();
+	Cardinality getCardinality();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getCardinality <em>Cardinality</em>}' containment reference.
@@ -149,6 +149,6 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * @see #getCardinality()
 	 * @generated
 	 */
-	void setCardinality(Range value);
+	void setCardinality(Cardinality value);
 
 } // DiscreteInteractionEndpoint

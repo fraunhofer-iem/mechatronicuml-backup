@@ -40,8 +40,8 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
 import de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimestatechartPackageImpl;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.types.impl.TypesPackageImpl;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
@@ -59,7 +59,7 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass rangeEClass = null;
+	private EClass cardinalityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,8 +190,8 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRange() {
-		return rangeEClass;
+	public EClass getCardinality() {
+		return cardinalityEClass;
 	}
 
 	/**
@@ -199,8 +199,8 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRange_LowerBound() {
-		return (EReference)rangeEClass.getEStructuralFeatures().get(0);
+	public EReference getCardinality_LowerBound() {
+		return (EReference)cardinalityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -208,8 +208,8 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRange_UpperBound() {
-		return (EReference)rangeEClass.getEStructuralFeatures().get(1);
+	public EReference getCardinality_UpperBound() {
+		return (EReference)cardinalityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -303,9 +303,9 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		isCreated = true;
 
 		// Create classes and their features
-		rangeEClass = createEClass(RANGE);
-		createEReference(rangeEClass, RANGE__LOWER_BOUND);
-		createEReference(rangeEClass, RANGE__UPPER_BOUND);
+		cardinalityEClass = createEClass(CARDINALITY);
+		createEReference(cardinalityEClass, CARDINALITY__LOWER_BOUND);
+		createEReference(cardinalityEClass, CARDINALITY__UPPER_BOUND);
 
 		timeValueEClass = createEClass(TIME_VALUE);
 		createEReference(timeValueEClass, TIME_VALUE__VALUE);
@@ -354,9 +354,9 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		timeValueEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(rangeEClass, Range.class, "Range", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRange_LowerBound(), this.getNaturalNumber(), null, "lowerBound", null, 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRange_UpperBound(), this.getNaturalNumber(), null, "upperBound", null, 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(cardinalityEClass, Cardinality.class, "Cardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCardinality_LowerBound(), this.getNaturalNumber(), null, "lowerBound", null, 1, 1, Cardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCardinality_UpperBound(), this.getNaturalNumber(), null, "upperBound", null, 1, 1, Cardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timeValueEClass, TimeValue.class, "TimeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTimeValue_Value(), this.getNaturalNumber(), null, "value", null, 1, 1, TimeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -406,7 +406,7 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
 		   });			
 		addAnnotation
-		  (rangeEClass, 
+		  (cardinalityEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
@@ -428,7 +428,7 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";					
 		addAnnotation
-		  (rangeEClass, 
+		  (cardinalityEClass, 
 		   source, 
 		   new String[] {
 			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\nand (self.lowerBound.infinity implies self.upperBound.infinity)"

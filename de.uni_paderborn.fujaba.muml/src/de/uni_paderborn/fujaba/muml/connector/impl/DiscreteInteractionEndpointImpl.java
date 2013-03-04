@@ -27,7 +27,7 @@ import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 
 /**
  * <!-- begin-user-doc -->
@@ -117,7 +117,7 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	 * @generated
 	 * @ordered
 	 */
-	protected Range cardinality;
+	protected Cardinality cardinality;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -315,7 +315,7 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Range getCardinality() {
+	public Cardinality getCardinality() {
 		return cardinality;
 	}
 
@@ -324,8 +324,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCardinality(Range newCardinality, NotificationChain msgs) {
-		Range oldCardinality = cardinality;
+	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
+		Cardinality oldCardinality = cardinality;
 		cardinality = newCardinality;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY, oldCardinality, newCardinality);
@@ -339,7 +339,7 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCardinality(Range newCardinality) {
+	public void setCardinality(Cardinality newCardinality) {
 		if (newCardinality != cardinality) {
 			NotificationChain msgs = null;
 			if (cardinality != null)
@@ -450,7 +450,7 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 				setRoleAndAdaptationBehavior((Behavior)newValue);
 				return;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
-				setCardinality((Range)newValue);
+				setCardinality((Cardinality)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -483,7 +483,7 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 				setRoleAndAdaptationBehavior((Behavior)null);
 				return;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
-				setCardinality((Range)null);
+				setCardinality((Cardinality)null);
 				return;
 		}
 		super.eUnset(featureID);

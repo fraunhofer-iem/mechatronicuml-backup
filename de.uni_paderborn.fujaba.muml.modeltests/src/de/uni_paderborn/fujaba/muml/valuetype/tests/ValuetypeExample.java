@@ -6,26 +6,21 @@
  */
 package de.uni_paderborn.fujaba.muml.valuetype.tests;
 
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
-
 import java.io.File;
 import java.io.IOException;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-
 import org.eclipse.emf.ecore.util.Diagnostician;
-
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -64,7 +59,7 @@ public class ValuetypeExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.valuetype"));
-				Range root = ValuetypeFactory.eINSTANCE.createRange();
+				Cardinality root = ValuetypeFactory.eINSTANCE.createCardinality();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

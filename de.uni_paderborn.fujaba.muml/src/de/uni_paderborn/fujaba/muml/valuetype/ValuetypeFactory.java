@@ -26,13 +26,13 @@ public interface ValuetypeFactory extends EFactory {
 	ValuetypeFactory eINSTANCE = de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypeFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Range</em>'.
+	 * Returns a new object of class '<em>Cardinality</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Range</em>'.
+	 * @return a new object of class '<em>Cardinality</em>'.
 	 * @generated
 	 */
-	Range createRange();
+	Cardinality createCardinality();
 
 	/**
 	 * Returns a new object of class '<em>Time Value</em>'.

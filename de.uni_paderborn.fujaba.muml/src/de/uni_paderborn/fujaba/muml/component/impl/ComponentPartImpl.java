@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.types.DataType;
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 
 /**
  * <!-- begin-user-doc -->
@@ -109,7 +109,7 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	 * @generated
 	 * @ordered
 	 */
-	protected Range cardinality;
+	protected Cardinality cardinality;
 
 	/**
 	 * The cached setting delegate for the '{@link #getPorts() <em>Ports</em>}' containment reference list.
@@ -352,7 +352,7 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Range getCardinality() {
+	public Cardinality getCardinality() {
 		return cardinality;
 	}
 
@@ -361,8 +361,8 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCardinality(Range newCardinality, NotificationChain msgs) {
-		Range oldCardinality = cardinality;
+	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
+		Cardinality oldCardinality = cardinality;
 		cardinality = newCardinality;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT_PART__CARDINALITY, oldCardinality, newCardinality);
@@ -376,7 +376,7 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCardinality(Range newCardinality) {
+	public void setCardinality(Cardinality newCardinality) {
 		if (newCardinality != cardinality) {
 			NotificationChain msgs = null;
 			if (cardinality != null)
@@ -512,7 +512,7 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 				setParentComponent((StructuredComponent)newValue);
 				return;
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
-				setCardinality((Range)newValue);
+				setCardinality((Cardinality)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -536,7 +536,7 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 				setParentComponent((StructuredComponent)null);
 				return;
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
-				setCardinality((Range)null);
+				setCardinality((Cardinality)null);
 				return;
 		}
 		super.eUnset(featureID);

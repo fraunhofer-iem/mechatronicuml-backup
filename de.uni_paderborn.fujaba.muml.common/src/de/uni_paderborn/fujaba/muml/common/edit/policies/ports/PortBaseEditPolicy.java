@@ -9,16 +9,13 @@ import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.LineStyle;
-import org.eclipse.gmf.runtime.notation.LineType;
-import org.eclipse.gmf.runtime.notation.LineTypeStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyUtils;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
 
 /**
  * Base edit policy for all border items that use the CustomPortFigure. Provides
@@ -123,7 +120,7 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 	 * Convenience method to use a range as cardinality; can be used by
 	 * subclasses
 	 */
-	protected void setCardinality(Range cardinality) {
+	protected void setCardinality(Cardinality cardinality) {
 		if (cardinality == null) {
 			return;
 		}

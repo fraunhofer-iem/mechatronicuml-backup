@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
@@ -66,7 +66,7 @@ public class ValuetypeFactoryImpl extends EFactoryImpl implements ValuetypeFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ValuetypePackage.RANGE: return createRange();
+			case ValuetypePackage.CARDINALITY: return createCardinality();
 			case ValuetypePackage.TIME_VALUE: return createTimeValue();
 			case ValuetypePackage.NATURAL_NUMBER: return createNaturalNumber();
 			default:
@@ -109,9 +109,9 @@ public class ValuetypeFactoryImpl extends EFactoryImpl implements ValuetypeFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Range createRange() {
-		RangeImpl range = new RangeImpl();
-		return range;
+	public Cardinality createCardinality() {
+		CardinalityImpl cardinality = new CardinalityImpl();
+		return cardinality;
 	}
 
 	/**

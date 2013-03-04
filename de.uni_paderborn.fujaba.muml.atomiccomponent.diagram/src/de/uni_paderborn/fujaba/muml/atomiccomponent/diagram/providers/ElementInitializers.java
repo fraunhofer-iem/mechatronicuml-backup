@@ -54,8 +54,8 @@ public class ElementInitializers {
 	public void init_DiscretePort_3006(
 			de.uni_paderborn.fujaba.muml.component.DiscretePort instance) {
 		try {
-			de.uni_paderborn.fujaba.muml.valuetype.Range newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
-					.createRange();
+			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createCardinality();
 			instance.setCardinality(newInstance_0_0);
 			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_0_0_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
 					.createNaturalNumber();

@@ -6,15 +6,12 @@
  */
 package de.uni_paderborn.fujaba.muml.behavior.util;
 
-import de.uni_paderborn.fujaba.muml.behavior.*;
 import java.util.Map;
 
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
