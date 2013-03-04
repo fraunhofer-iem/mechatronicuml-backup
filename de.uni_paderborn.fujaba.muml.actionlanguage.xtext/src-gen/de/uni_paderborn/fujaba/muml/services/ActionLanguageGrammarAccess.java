@@ -459,17 +459,17 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cAssignOperatorAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cAssignOperatorAssignOperatorEnumRuleCall_1_0 = (RuleCall)cAssignOperatorAssignment_1.eContents().get(0);
 		private final Assignment cRhs_assignExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cRhs_assignExpressionExpressionParserRuleCall_2_0 = (RuleCall)cRhs_assignExpressionAssignment_2.eContents().get(0);
+		private final RuleCall cRhs_assignExpressionInitializeExpressionParserRuleCall_2_0 = (RuleCall)cRhs_assignExpressionAssignment_2.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//// Assignment
 		//Assignment returns actionlanguage::Assignment:
 		//	lhs_typedNamedElementExpression=TypedNamedElementExpression assignOperator=AssignOperator
-		//	rhs_assignExpression=Expression ";";
+		//	rhs_assignExpression=InitializeExpression ";";
 		public ParserRule getRule() { return rule; }
 
 		//lhs_typedNamedElementExpression=TypedNamedElementExpression assignOperator=AssignOperator
-		//rhs_assignExpression=Expression ";"
+		//rhs_assignExpression=InitializeExpression ";"
 		public Group getGroup() { return cGroup; }
 
 		//lhs_typedNamedElementExpression=TypedNamedElementExpression
@@ -484,14 +484,82 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//AssignOperator
 		public RuleCall getAssignOperatorAssignOperatorEnumRuleCall_1_0() { return cAssignOperatorAssignOperatorEnumRuleCall_1_0; }
 
-		//rhs_assignExpression=Expression
+		//rhs_assignExpression=InitializeExpression
 		public Assignment getRhs_assignExpressionAssignment_2() { return cRhs_assignExpressionAssignment_2; }
 
-		//Expression
-		public RuleCall getRhs_assignExpressionExpressionParserRuleCall_2_0() { return cRhs_assignExpressionExpressionParserRuleCall_2_0; }
+		//InitializeExpression
+		public RuleCall getRhs_assignExpressionInitializeExpressionParserRuleCall_2_0() { return cRhs_assignExpressionInitializeExpressionParserRuleCall_2_0; }
 
 		//";"
 		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+	}
+
+	public class InitializeExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InitializeExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cArrayInitializeExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//// end of assignment
+		//// initialize expression
+		//InitializeExpression returns expressions::Expression:
+		//	ArrayInitializeExpression | Expression;
+		public ParserRule getRule() { return rule; }
+
+		//ArrayInitializeExpression | Expression
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//ArrayInitializeExpression
+		public RuleCall getArrayInitializeExpressionParserRuleCall_0() { return cArrayInitializeExpressionParserRuleCall_0; }
+
+		//Expression
+		public RuleCall getExpressionParserRuleCall_1() { return cExpressionParserRuleCall_1; }
+	}
+
+	public class ArrayInitializeExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ArrayInitializeExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cExpressionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExpressionsInitializeExpressionParserRuleCall_1_0 = (RuleCall)cExpressionsAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cExpressionsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cExpressionsInitializeExpressionParserRuleCall_2_1_0 = (RuleCall)cExpressionsAssignment_2_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//// end of initialize expression
+		//// array initialization
+		//ArrayInitializeExpression returns actionlanguage::ArrayInitializeExpression:
+		//	"{" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "}";
+		public ParserRule getRule() { return rule; }
+
+		//"{" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "}"
+		public Group getGroup() { return cGroup; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+
+		//expressions+=InitializeExpression
+		public Assignment getExpressionsAssignment_1() { return cExpressionsAssignment_1; }
+
+		//InitializeExpression
+		public RuleCall getExpressionsInitializeExpressionParserRuleCall_1_0() { return cExpressionsInitializeExpressionParserRuleCall_1_0; }
+
+		//("," expressions+=InitializeExpression)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
+		//expressions+=InitializeExpression
+		public Assignment getExpressionsAssignment_2_1() { return cExpressionsAssignment_2_1; }
+
+		//InitializeExpression
+		public RuleCall getExpressionsInitializeExpressionParserRuleCall_2_1_0() { return cExpressionsInitializeExpressionParserRuleCall_2_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 
 	public class LocalVariableDeclarationStatementElements extends AbstractParserRuleElementFinder {
@@ -502,16 +570,16 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cColonEqualsSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cInitializeExpressionAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cInitializeExpressionExpressionParserRuleCall_1_1_0 = (RuleCall)cInitializeExpressionAssignment_1_1.eContents().get(0);
+		private final RuleCall cInitializeExpressionInitializeExpressionParserRuleCall_1_1_0 = (RuleCall)cInitializeExpressionAssignment_1_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		//// end of assignment
+		//// end of array initialization
 		//// local variable declaration
 		//LocalVariableDeclarationStatement returns actionlanguage::LocalVariableDeclarationStatement:
-		//	variable=LocalVariableDeclaration (":=" initializeExpression=Expression)? ";";
+		//	variable=LocalVariableDeclaration (":=" initializeExpression=InitializeExpression)? ";";
 		public ParserRule getRule() { return rule; }
 
-		//variable=LocalVariableDeclaration (":=" initializeExpression=Expression)? ";"
+		//variable=LocalVariableDeclaration (":=" initializeExpression=InitializeExpression)? ";"
 		public Group getGroup() { return cGroup; }
 
 		//variable=LocalVariableDeclaration
@@ -520,17 +588,17 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//LocalVariableDeclaration
 		public RuleCall getVariableLocalVariableDeclarationParserRuleCall_0_0() { return cVariableLocalVariableDeclarationParserRuleCall_0_0; }
 
-		//(":=" initializeExpression=Expression)?
+		//(":=" initializeExpression=InitializeExpression)?
 		public Group getGroup_1() { return cGroup_1; }
 
 		//":="
 		public Keyword getColonEqualsSignKeyword_1_0() { return cColonEqualsSignKeyword_1_0; }
 
-		//initializeExpression=Expression
+		//initializeExpression=InitializeExpression
 		public Assignment getInitializeExpressionAssignment_1_1() { return cInitializeExpressionAssignment_1_1; }
 
-		//Expression
-		public RuleCall getInitializeExpressionExpressionParserRuleCall_1_1_0() { return cInitializeExpressionExpressionParserRuleCall_1_1_0; }
+		//InitializeExpression
+		public RuleCall getInitializeExpressionInitializeExpressionParserRuleCall_1_1_0() { return cInitializeExpressionInitializeExpressionParserRuleCall_1_1_0; }
 
 		//";"
 		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
@@ -1705,6 +1773,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private IncrementDecrementOperatorElements unknownRuleIncrementDecrementOperator;
 	private AssignmentElements pAssignment;
 	private AssignOperatorElements unknownRuleAssignOperator;
+	private InitializeExpressionElements pInitializeExpression;
+	private ArrayInitializeExpressionElements pArrayInitializeExpression;
 	private LocalVariableDeclarationStatementElements pLocalVariableDeclarationStatement;
 	private LocalVariableDeclarationElements pLocalVariableDeclaration;
 	private ExpressionElements pExpression;
@@ -1870,7 +1940,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	//// Assignment
 	//Assignment returns actionlanguage::Assignment:
 	//	lhs_typedNamedElementExpression=TypedNamedElementExpression assignOperator=AssignOperator
-	//	rhs_assignExpression=Expression ";";
+	//	rhs_assignExpression=InitializeExpression ";";
 	public AssignmentElements getAssignmentAccess() {
 		return (pAssignment != null) ? pAssignment : (pAssignment = new AssignmentElements());
 	}
@@ -1890,9 +1960,33 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// end of assignment
+	//// initialize expression
+	//InitializeExpression returns expressions::Expression:
+	//	ArrayInitializeExpression | Expression;
+	public InitializeExpressionElements getInitializeExpressionAccess() {
+		return (pInitializeExpression != null) ? pInitializeExpression : (pInitializeExpression = new InitializeExpressionElements());
+	}
+	
+	public ParserRule getInitializeExpressionRule() {
+		return getInitializeExpressionAccess().getRule();
+	}
+
+	//// end of initialize expression
+	//// array initialization
+	//ArrayInitializeExpression returns actionlanguage::ArrayInitializeExpression:
+	//	"{" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "}";
+	public ArrayInitializeExpressionElements getArrayInitializeExpressionAccess() {
+		return (pArrayInitializeExpression != null) ? pArrayInitializeExpression : (pArrayInitializeExpression = new ArrayInitializeExpressionElements());
+	}
+	
+	public ParserRule getArrayInitializeExpressionRule() {
+		return getArrayInitializeExpressionAccess().getRule();
+	}
+
+	//// end of array initialization
 	//// local variable declaration
 	//LocalVariableDeclarationStatement returns actionlanguage::LocalVariableDeclarationStatement:
-	//	variable=LocalVariableDeclaration (":=" initializeExpression=Expression)? ";";
+	//	variable=LocalVariableDeclaration (":=" initializeExpression=InitializeExpression)? ";";
 	public LocalVariableDeclarationStatementElements getLocalVariableDeclarationStatementAccess() {
 		return (pLocalVariableDeclarationStatement != null) ? pLocalVariableDeclarationStatement : (pLocalVariableDeclarationStatement = new LocalVariableDeclarationStatementElements());
 	}

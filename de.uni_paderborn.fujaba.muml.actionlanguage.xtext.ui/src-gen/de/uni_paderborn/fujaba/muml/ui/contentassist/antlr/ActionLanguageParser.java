@@ -40,6 +40,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBlockAccess().getAlternatives(), "rule__Block__Alternatives");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getAlternatives_1(), "rule__ForLoopCountingExpression__Alternatives_1");
 					put(grammarAccess.getExpressionStartRuleAccess().getAlternatives(), "rule__ExpressionStartRule__Alternatives");
+					put(grammarAccess.getInitializeExpressionAccess().getAlternatives(), "rule__InitializeExpression__Alternatives");
 					put(grammarAccess.getMultiplicationExpressionAccess().getAlternatives(), "rule__MultiplicationExpression__Alternatives");
 					put(grammarAccess.getMultiplicationExpressionAccess().getRightExpressionAlternatives_1_1_2_0(), "rule__MultiplicationExpression__RightExpressionAlternatives_1_1_2_0");
 					put(grammarAccess.getOperandAccess().getAlternatives(), "rule__Operand__Alternatives");
@@ -65,6 +66,8 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getReturnStatementAccess().getGroup(), "rule__ReturnStatement__Group__0");
 					put(grammarAccess.getOperationCallStatementAccess().getGroup(), "rule__OperationCallStatement__Group__0");
 					put(grammarAccess.getAssignmentAccess().getGroup(), "rule__Assignment__Group__0");
+					put(grammarAccess.getArrayInitializeExpressionAccess().getGroup(), "rule__ArrayInitializeExpression__Group__0");
+					put(grammarAccess.getArrayInitializeExpressionAccess().getGroup_2(), "rule__ArrayInitializeExpression__Group_2__0");
 					put(grammarAccess.getLocalVariableDeclarationStatementAccess().getGroup(), "rule__LocalVariableDeclarationStatement__Group__0");
 					put(grammarAccess.getLocalVariableDeclarationStatementAccess().getGroup_1(), "rule__LocalVariableDeclarationStatement__Group_1__0");
 					put(grammarAccess.getLocalVariableDeclarationAccess().getGroup(), "rule__LocalVariableDeclaration__Group__0");
@@ -119,6 +122,8 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAssignmentAccess().getLhs_typedNamedElementExpressionAssignment_0(), "rule__Assignment__Lhs_typedNamedElementExpressionAssignment_0");
 					put(grammarAccess.getAssignmentAccess().getAssignOperatorAssignment_1(), "rule__Assignment__AssignOperatorAssignment_1");
 					put(grammarAccess.getAssignmentAccess().getRhs_assignExpressionAssignment_2(), "rule__Assignment__Rhs_assignExpressionAssignment_2");
+					put(grammarAccess.getArrayInitializeExpressionAccess().getExpressionsAssignment_1(), "rule__ArrayInitializeExpression__ExpressionsAssignment_1");
+					put(grammarAccess.getArrayInitializeExpressionAccess().getExpressionsAssignment_2_1(), "rule__ArrayInitializeExpression__ExpressionsAssignment_2_1");
 					put(grammarAccess.getLocalVariableDeclarationStatementAccess().getVariableAssignment_0(), "rule__LocalVariableDeclarationStatement__VariableAssignment_0");
 					put(grammarAccess.getLocalVariableDeclarationStatementAccess().getInitializeExpressionAssignment_1_1(), "rule__LocalVariableDeclarationStatement__InitializeExpressionAssignment_1_1");
 					put(grammarAccess.getLocalVariableDeclarationAccess().getDataTypeAssignment_0(), "rule__LocalVariableDeclaration__DataTypeAssignment_0");

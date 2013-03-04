@@ -84,7 +84,7 @@ enum IncrementDecrementOperator returns actionlanguage::IncrementDecrementOperat
 	
 Assignment returns actionlanguage::Assignment:
 	lhs_typedNamedElementExpression=TypedNamedElementExpression
-	assignOperator=AssignOperator rhs_assignExpression=Expression ';'
+	assignOperator=AssignOperator rhs_assignExpression=InitializeExpression ';'
 ;
 
 enum AssignOperator returns actionlanguage::AssignOperator:
@@ -93,10 +93,28 @@ enum AssignOperator returns actionlanguage::AssignOperator:
 
 // end of assignment
 
+// initialize expression
+
+InitializeExpression returns expressions::Expression:
+	ArrayInitializeExpression | Expression
+;
+
+// end of initialize expression
+
+// array initialization
+
+ArrayInitializeExpression returns actionlanguage::ArrayInitializeExpression:
+	'{' expressions+=InitializeExpression
+		(',' expressions+=InitializeExpression)*
+	'}'
+;
+
+// end of array initialization
+
 // local variable declaration
 
 LocalVariableDeclarationStatement returns actionlanguage::LocalVariableDeclarationStatement:
-	variable=LocalVariableDeclaration (':=' initializeExpression=Expression)? ';'
+	variable=LocalVariableDeclaration (':=' initializeExpression=InitializeExpression)? ';'
 ;
 
 LocalVariableDeclaration returns behavior::Variable:

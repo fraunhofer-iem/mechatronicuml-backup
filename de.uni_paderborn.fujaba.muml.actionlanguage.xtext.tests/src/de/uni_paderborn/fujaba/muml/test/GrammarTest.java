@@ -35,6 +35,7 @@ import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.common.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.component.HybridPort;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
@@ -442,6 +443,66 @@ public class GrammarTest {
 	public void testOperationCallAsParameter() {
 		loadFromString("{ callp(p1 := call(), p2 := callp(p1 := 3, p2 := 4)) ; }");
 		assertFalse(loadResult.hasError());
+	}
+	
+	@Test
+	public void testArrayInitializeExpression() {
+		// intArray is an array
+		EObject expression = getAssignmentRHS("{ intArray := { 1 + 1, 2, call(), 4 } ; }");
+		assertTrue(expression instanceof ArrayInitializeExpression);
+		ArrayInitializeExpression arrayInitializeExpression = (ArrayInitializeExpression) expression; 
+		assertEquals(4, arrayInitializeExpression.getExpressions().size());
+		assertTrue(arrayInitializeExpression.getExpressions().get(0) instanceof ArithmeticExpression);
+		assertTrue(arrayInitializeExpression.getExpressions().get(2) instanceof OperationCall);
+	}
+	
+	@Test
+	public void testMultiDimensionalArrayInitializeExpression() {
+		// multArray is a 2x3x2 array
+		String initializer = "{ { {1, 2}, {3, 4}, {5, 6} }, { {7, 8}, {9, 10}, {11, 12} } }";
+		EObject expression = getAssignmentRHS("{ multArray := " + initializer + " ; }");
+		assertTrue(expression instanceof ArrayInitializeExpression);
+		ArrayInitializeExpression arrayInitializeExpression = (ArrayInitializeExpression) expression; 
+		assertEquals(2, arrayInitializeExpression.getExpressions().size());
+		assertTrue(arrayInitializeExpression.getExpressions().get(0) instanceof ArrayInitializeExpression);
+		assertTrue(arrayInitializeExpression.getExpressions().get(1) instanceof ArrayInitializeExpression);
+		ArrayInitializeExpression firstInitializer = (ArrayInitializeExpression) arrayInitializeExpression.getExpressions().get(0);
+		ArrayInitializeExpression secondInitializer = (ArrayInitializeExpression) arrayInitializeExpression.getExpressions().get(1);
+		// check firstInitializer
+		assertEquals(3, firstInitializer.getExpressions().size());
+		assertTrue(firstInitializer.getExpressions().get(0) instanceof ArrayInitializeExpression);
+		arrayInitializeExpression = (ArrayInitializeExpression) firstInitializer.getExpressions().get(0); 
+		assertEquals(2, arrayInitializeExpression.getExpressions().size());
+		assertTrue(arrayInitializeExpression.getExpressions().get(0) instanceof LiteralExpression);
+		assertTrue(arrayInitializeExpression.getExpressions().get(1) instanceof LiteralExpression);
+		// just test the second element
+		assertEquals("2", ((LiteralExpression) arrayInitializeExpression.getExpressions().get(1)).getValue());
+		// check secondInitializer
+		assertEquals(3, secondInitializer.getExpressions().size());
+		assertTrue(secondInitializer.getExpressions().get(0) instanceof ArrayInitializeExpression);
+		arrayInitializeExpression = (ArrayInitializeExpression) secondInitializer.getExpressions().get(2); 
+		assertEquals(2, arrayInitializeExpression.getExpressions().size());
+		assertTrue(arrayInitializeExpression.getExpressions().get(0) instanceof LiteralExpression);
+		assertTrue(arrayInitializeExpression.getExpressions().get(1) instanceof LiteralExpression);
+		// just test the first element
+		assertEquals("11", ((LiteralExpression) arrayInitializeExpression.getExpressions().get(0)).getValue());
+	}
+	
+	@Test
+	public void testInvalidArrayInitializeExpression() {
+		// an empty array initializer is not supported because it (probably) makes no
+		// sense in our actionlanguage
+		loadFromString("{ intArray := {}; }");
+		assertTrue(loadResult.hasError());
+		assertNull(loadResult.getEObject());
+	}
+	
+	@Test
+	public void testLocalArrayDeclarationAndInitialization() {
+		// in fact this is simply a local variable declaration + array initialization
+		loadFromString("{ INTARRAY localArray := {1, 2, 3, 4}; }");
+		assertFalse(loadResult.hasError());
+		assertNotNull(loadResult.getEObject());
 	}
 	
 	protected static void assertValidEObject(EObject object) {
