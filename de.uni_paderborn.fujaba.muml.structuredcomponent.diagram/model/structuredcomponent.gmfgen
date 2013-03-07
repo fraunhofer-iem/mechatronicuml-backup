@@ -73,7 +73,7 @@
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Range/lowerBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
@@ -86,7 +86,7 @@
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Range/upperBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
@@ -249,7 +249,7 @@
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Range/lowerBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
@@ -262,7 +262,7 @@
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Range/upperBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
@@ -406,7 +406,7 @@
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Range/lowerBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
@@ -419,7 +419,7 @@
               <initializers
                   xsi:type="gmfgen:GenReferenceNewElementSpec">
                 <feature
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Range/upperBound"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
@@ -906,10 +906,10 @@
           body="--let partName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;--let compName : String = if self.componentType.oclIsUndefined() then 'null' else self.componentType.name endif in&#xA;--let lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then 'null' else cardinality.lowerBound.toString() endif in&#xA;--let upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then 'null' else cardinality.upperBound.toString() endif in&#xD;&#xA;--partName.concat(' : ').concat(compName).concat(' [').concat(lowerBound).concat('..').concat(upperBound).concat(']')"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="--self.oclAsType(component::Port).component = oppositeEnd.oclAsType(component::Port).component"/>
+          body="--true&#xA;---- self.oclAsType(component::Port).component = oppositeEnd.oclAsType(component::Port).component"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="---- Example error message&#xA;---- The source port's StructuredComponent must embed the ComponentPart that the Target Port is floating around.&#xA;----let containers : ecore::EObject = { view, oppositeView }.eContainer().oclAsType(notation::View).eContainer() in&#xA;----containers->notEmpty()&#xA;--false"/>
+          body="--true&#xA;---- Example error message&#xA;---- The source port's StructuredComponent must embed the ComponentPart that the Target Port is floating around.&#xA;----let containers : ecore::EObject = { view, oppositeView }.eContainer().oclAsType(notation::View).eContainer() in&#xA;----containers->notEmpty()&#xA;----false"/>
       <expressions
           body="--if refines.oclIsUndefined() then '' else ': '.concat(&#xA;--&#x9;if refines.name.oclIsUndefined() then '' else refines.name endif&#xA;--) endif"/>
     </providers>
