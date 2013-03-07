@@ -14,7 +14,7 @@ public class ProblemCollector extends ArrayList<String> {
 			int size = size();
 			for (String problem : this) {
 				if (size > 1) {
-					errorText.append('\n');
+					errorText.append("\n\n");
 				}
 				errorText.append(problem);
 			}

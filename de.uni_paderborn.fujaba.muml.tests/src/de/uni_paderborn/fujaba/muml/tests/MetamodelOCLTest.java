@@ -180,11 +180,11 @@ public class MetamodelOCLTest extends TraverseTest {
 								validateOCLConstraint(eClass, object,
 										constraintOCL);
 							} catch (ParserException e) {
-								problems.add("ERROR: " + eClass.getName() + "."
+								problems.add("ERROR: " + eClass.getEPackage().getName() + "." + eClass.getName() + "."
 										+ constraintName + ": "
 										+ e.getLocalizedMessage());
 							} catch (WrappedException e) {
-								problems.add("ERROR: " + eClass.getName() + "."
+								problems.add("ERROR: " + eClass.getEPackage().getName() + "." + eClass.getName() + "."
 										+ constraintName + ": "
 										+ e.getLocalizedMessage());
 							}
