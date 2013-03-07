@@ -50,8 +50,13 @@ public class ValidateMetamodelsTest {
 
 		// Load resource (CAUTION: Order is important; dependant metamodels must
 		// be loaded first, else proxies are not resolved correctly...)
-		TestUtilities.loadResource(resourceSet, "org.storydriven.core",
-				"/model/core.ecore");
+		try {
+			TestUtilities.loadResource(resourceSet, "org.storydriven.core",
+					"/model/core.ecore");
+		} catch (Exception e) {
+			TestUtilities.loadResource(resourceSet, "org.storydriven.core",
+					"/model/core.ecore", "/sdm");
+		}
 		TestUtilities.loadResource(resourceSet,
 				"org.storydriven.storydiagrams", "/model/storydiagrams.ecore");
 		TestUtilities.loadResource(resourceSet, "de.uni_paderborn.fujaba.muml",

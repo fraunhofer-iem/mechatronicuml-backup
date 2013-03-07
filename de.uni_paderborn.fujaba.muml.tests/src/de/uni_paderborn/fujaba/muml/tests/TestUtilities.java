@@ -13,12 +13,15 @@ public class TestUtilities {
 	private TestUtilities() {
 		// prevent instantiation
 	}
-	
-
 	public static Resource loadResource(ResourceSet resourceSet,
 			String projectName, String resourcePath) {
+		return loadResource(resourceSet, projectName, resourcePath, "");
+	}
+
+	public static Resource loadResource(ResourceSet resourceSet,
+			String projectName, String resourcePath, String jenkinsPrefix) {
 		Resource resource = null;
-		URI uri = URI.createPlatformResourceURI(projectName + resourcePath,
+		URI uri = URI.createPlatformResourceURI(projectName + jenkinsPrefix + resourcePath,
 				true);
 		if (uri == null) {
 			throw new NullPointerException("URI could not be created");
