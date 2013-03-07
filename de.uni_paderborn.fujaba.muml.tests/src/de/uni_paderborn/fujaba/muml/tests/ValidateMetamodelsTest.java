@@ -23,10 +23,11 @@ import org.junit.Test;
 import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
 
 public class ValidateMetamodelsTest {
-	private static ResourceSet resourceSet = new ResourceSetImpl();
+	private static ResourceSet resourceSet;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		resourceSet = new ResourceSetImpl();
 		// URIMap for Ecore.ecore
 		Map uriMap = resourceSet.getURIConverter().getURIMap();
 		uriMap.put(
