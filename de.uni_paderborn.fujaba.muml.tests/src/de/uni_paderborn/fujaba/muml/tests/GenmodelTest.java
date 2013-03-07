@@ -295,7 +295,7 @@ public class GenmodelTest extends TraverseTest {
 			public boolean visit(EObject element) {
 				if (element instanceof GenFeature) {
 					GenFeature genFeature = (GenFeature) element;
-					if (!genFeature.isDerived() && genFeature.getProperty() == GenPropertyKind.NONE_LITERAL) {
+					if (!genFeature.isDerived() && !genFeature.isContains() && genFeature.getProperty() == GenPropertyKind.NONE_LITERAL) {
 						problems.add(getLabel(genFeature)
 								+ ": derive = false AND 'PropertyType' is set to NONE.");
 						
