@@ -2,10 +2,52 @@
 <?eclipse version="3.4"?>
 <plugin>
 
-   
+   <!-- copied from atomiccomponenteditor -->
+      <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:de.uni_paderborn.fujaba">
+         <separator
+               name="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.custom.separator1"
+               visible="true">
+         </separator>
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.custom.copyRolePropertiesToPort"
+               label="Copy Role Properties To Port"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="activePartId">
+                     <equals
+                           value="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.part.MumlDiagramEditorID">
+                     </equals>
+                  </with>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.DiscretePortEditPart">
+                        </instanceof>
+                     </iterate>
+                  </with></and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.custom.edit.commands.CopyRolePropertiesToPort"
+            id="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.custom.copyRolePropertiesToPort"
+            name="Copy Role Properties To Port">
+      </command>
+   </extension>
 
    
-   
+   <!-- editpart provider -->
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
@@ -16,7 +58,7 @@
       </editpartProvider>
    </extension>
    
-    
+   <!-- EditHelpers -->
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
         <adviceBinding id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.custom.DiscretePortGmfProtocolAdvice"
@@ -42,7 +84,7 @@
 
       </metamodel>
    </extension>
-   
+
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
 	  <binding context="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.DiscretePortGmfProtocol_4005"/>
@@ -61,6 +103,9 @@
          <advice ref="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.custom.DelegationConnectorAdvice"/>
       </binding>
    </extension>
+
+
+   <!-- parser provider -->
 
 	<!--
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
