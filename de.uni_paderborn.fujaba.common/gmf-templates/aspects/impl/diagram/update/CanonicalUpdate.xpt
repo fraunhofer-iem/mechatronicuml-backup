@@ -79,8 +79,9 @@ protected java.util.List getSemanticChildrenViewDescriptors() {
 		
 		for (org.eclipse.gmf.runtime.notation.View childView : childViews) {
 			org.eclipse.emf.ecore.EObject childElement = childView.getElement();
-			int visualID = «EXPAND xpt::editor::VisualIDRegistry::visualID FOR getSemanticChildren(self)->first()»;
-			if (childElement.eContainer() == containerView.getElement() && visualID == «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR getDiagram()»(childView)) {
+			int visualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR getDiagram()»(childView);
+			List<Integer> visualIDs = java.util.Arrays.asList(new Integer[] { «EXPAND xpt::editor::VisualIDRegistry::visualID FOREACH getSemanticChildren(self) SEPARATOR ', '» });
+			if (childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
 				result.add(new «getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()»(childElement, visualID));
 				continue;
 			}
