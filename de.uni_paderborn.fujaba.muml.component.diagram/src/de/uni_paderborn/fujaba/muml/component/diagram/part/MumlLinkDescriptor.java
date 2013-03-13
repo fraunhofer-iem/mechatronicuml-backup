@@ -8,8 +8,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 /**
  * @generated
  */
-public class MumlLinkDescriptor
-		extends
+public class MumlLinkDescriptor extends
 		de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor {
 
 	/**
