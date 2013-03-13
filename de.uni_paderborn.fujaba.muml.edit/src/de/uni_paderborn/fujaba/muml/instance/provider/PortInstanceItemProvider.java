@@ -66,7 +66,6 @@ public class PortInstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPortTypePropertyDescriptor(object);
 			addComponentInstancePropertyDescriptor(object);
 			addPortConnectorInstancesPropertyDescriptor(object);
 		}

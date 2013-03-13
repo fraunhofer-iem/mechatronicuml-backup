@@ -135,7 +135,8 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/PortConnectorInstance/portInstances"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//instance/PortInstance">
-        <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//instance/PortInstance/portType"/>
+        <genFeatures property="None" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//instance/PortInstance/portType"/>
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/PortInstance/componentInstance"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/PortInstance/portConnectorInstances"/>
       </genClasses>
