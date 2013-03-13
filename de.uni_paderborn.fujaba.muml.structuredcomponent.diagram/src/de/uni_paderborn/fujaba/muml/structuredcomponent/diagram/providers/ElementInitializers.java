@@ -243,7 +243,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							13,
+							7,
 							de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 									.getHybridPort(), null).evaluate(instance);
 			instance.setName((String) value_0);

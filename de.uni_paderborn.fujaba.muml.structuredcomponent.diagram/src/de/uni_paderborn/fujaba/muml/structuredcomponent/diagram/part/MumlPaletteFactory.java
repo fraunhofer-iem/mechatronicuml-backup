@@ -158,15 +158,14 @@ public class MumlPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createHybridPort3CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
+		ToolEntry entry = new ToolEntry(
 				de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.Messages.HybridPort3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.Messages.HybridPort3CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.HybridPort_3017));
+				null, null) {
+		};
 		entry.setId("createHybridPort3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 

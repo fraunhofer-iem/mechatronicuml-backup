@@ -135,10 +135,6 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <behaviour
-            xsi:type="gmfgen:CustomBehaviour"
-            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.TETHER_ROLE"
-            editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.tether.DiscretePortAssignedRoleTetherBorderItemEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
             parser="//@labelParsers/@implementations.1"/>
@@ -572,6 +568,7 @@
         visualID="3017"
         editPartClassName="HybridPort2EditPart"
         itemSemanticEditPolicyClassName="HybridPort2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="HybridPortViewFactory"
         canonicalEditPolicyClassName="HybridPort2CanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="HybridPort2GraphicalNodeEditPolicy"
         createCommandClassName="HybridPort2CreateCommand"
@@ -590,6 +587,10 @@
             width="24"
             height="24"/>
       </viewmap>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/HybridPort"/>
@@ -601,7 +602,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.13">
+              value="//@expressionProviders/@providers.0/@expressions.7">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -611,7 +612,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5027"
           editPartClassName="HybridPortName2EditPart"
-          itemSemanticEditPolicyClassName="HybridPortName2ItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="HybridPortName2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="HybridPortNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -684,6 +686,7 @@
         visualID="2006"
         editPartClassName="AtomicComponentEditPart"
         itemSemanticEditPolicyClassName="AtomicComponentItemSemanticEditPolicy"
+        notationViewFactoryClassName="AtomicComponentViewFactory"
         canonicalEditPolicyClassName="AtomicComponentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.7"
         graphicalNodeEditPolicyClassName="AtomicComponentGraphicalNodeEditPolicy"
@@ -722,7 +725,8 @@
       <labels
           visualID="5028"
           editPartClassName="AtomicComponentNameEditPart"
-          itemSemanticEditPolicyClassName="AtomicComponentNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="AtomicComponentNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="AtomicComponentNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -770,7 +774,7 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.14"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.13"/>
     </links>
     <links
         visualID="4002"
@@ -801,7 +805,7 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.15"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.14"/>
     </links>
     <links
         visualID="4005"
@@ -907,8 +911,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="HybridPort"
             description="Create new HybridPort"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif"
-            genNodes="//@diagram/@childNodes.7"/>
+            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif"/>
       </groups>
       <groups
           title="Connectors"
@@ -1038,8 +1041,6 @@
       <expressions
           body="--'comp'"/>
       <expressions
-          body="--'port'"/>
-      <expressions
           xsi:type="gmfgen:GenConstraint"
           body="--true&#xA;---- self.oclAsType(component::Port).component = oppositeEnd.oclAsType(component::Port).component"/>
       <expressions
@@ -1074,7 +1075,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.2/@labels.0/@modelFacet"
         className="DiscretePortGmfProtocolLabelExpressionLabelParser6003"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.16">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/DiscretePort"/>
     </implementations>

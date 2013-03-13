@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.policies;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -82,10 +83,14 @@ public class StaticStructuredComponentCanonicalEditPolicy extends
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
+						.getVisualID(childView);
+				List<Integer> visualIDs = Arrays
+						.asList(new Integer[] {
+								de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID,
+								de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID });
 				if (childElement.eContainer() == containerView.getElement()
-						&& visualID == de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
-								.getVisualID(childView)) {
+						&& visualIDs.contains(visualID)) {
 					result.add(new de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;
