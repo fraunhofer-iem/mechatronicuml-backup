@@ -125,8 +125,10 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
+		int visualID = de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
+		return visualID == de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID
+				|| visualID == de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID;
 	}
 
 	/**
@@ -306,6 +308,17 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			}
 			break;
 		}
+		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlDiagramUpdater
+						.getAtomicComponent_2006ContainedLinks(view));
+			}
+			if (!domain2NotationMap.containsKey(view.getElement())
+					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
+				domain2NotationMap.put(view.getElement(), view);
+			}
+			break;
+		}
 		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlDiagramUpdater
@@ -376,6 +389,17 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlDiagramUpdater
 						.getCoordinationProtocol_3016ContainedLinks(view));
+			}
+			if (!domain2NotationMap.containsKey(view.getElement())
+					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
+				domain2NotationMap.put(view.getElement(), view);
+			}
+			break;
+		}
+		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.HybridPort2EditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlDiagramUpdater
+						.getHybridPort_3017ContainedLinks(view));
 			}
 			if (!domain2NotationMap.containsKey(view.getElement())
 					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$

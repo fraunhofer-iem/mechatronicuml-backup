@@ -278,6 +278,9 @@ public class ContinuousPortEditPart extends BorderedBorderItemEditPart {
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ContinuousPort2EditPart) {
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
 		}
+		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.HybridPort2EditPart) {
+			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
+		}
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.DiscretePortEditPart) {
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.DelegationConnector_4002);
 		}
@@ -291,6 +294,9 @@ public class ContinuousPortEditPart extends BorderedBorderItemEditPart {
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.DelegationConnector_4002);
 		}
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ContinuousPort2EditPart) {
+			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.DelegationConnector_4002);
+		}
+		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.HybridPort2EditPart) {
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.DelegationConnector_4002);
 		}
 		return types;
@@ -307,12 +313,14 @@ public class ContinuousPortEditPart extends BorderedBorderItemEditPart {
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.HybridPort_3013);
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.DiscretePort_3014);
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.ContinuousPort_3015);
+			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.HybridPort_3017);
 		} else if (relationshipType == de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.DelegationConnector_4002) {
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.DiscretePort_3010);
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.ContinuousPort_3011);
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.HybridPort_3013);
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.DiscretePort_3014);
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.ContinuousPort_3015);
+			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.HybridPort_3017);
 		}
 		return types;
 	}
@@ -338,12 +346,14 @@ public class ContinuousPortEditPart extends BorderedBorderItemEditPart {
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.HybridPort_3013);
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.DiscretePort_3014);
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.ContinuousPort_3015);
+			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.HybridPort_3017);
 		} else if (relationshipType == de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.DelegationConnector_4002) {
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.DiscretePort_3010);
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.ContinuousPort_3011);
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.HybridPort_3013);
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.DiscretePort_3014);
 			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.ContinuousPort_3015);
+			types.add(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.HybridPort_3017);
 		}
 		return types;
 	}

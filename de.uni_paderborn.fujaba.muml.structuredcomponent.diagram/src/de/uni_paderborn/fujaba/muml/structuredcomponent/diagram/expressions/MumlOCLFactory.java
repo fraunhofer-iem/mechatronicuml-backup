@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.expressions.MumlAbstractExpression[15];
+		this.expressions = new de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.expressions.MumlAbstractExpression[17];
 	}
 
 	/**
@@ -62,6 +62,8 @@ public class MumlOCLFactory {
 					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'port\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let partName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\n--let compName : String = if self.componentType.oclIsUndefined() then \'null\' else self.componentType.name endif in\n--let lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then \'null\' else cardinality.lowerBound.toString() endif in\n--let upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then \'null\' else cardinality.upperBound.toString() endif in\r\n--partName.concat(\' : \').concat(compName).concat(\' [\').concat(lowerBound).concat(\'..\').concat(upperBound).concat(\']\')".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'comp\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'port\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--true\n---- self.oclAsType(component::Port).component = oppositeEnd.oclAsType(component::Port).component".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--true\n---- Example error message\n---- The source port\'s StructuredComponent must embed the ComponentPart that the Target Port is floating around.\n----let containers : ecore::EObject = { view, oppositeView }.eContainer().oclAsType(notation::View).eContainer() in\n----containers->notEmpty()\n----false".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--if refines.oclIsUndefined() then \'\' else \': \'.concat(\n--\tif refines.name.oclIsUndefined() then \'\' else refines.name endif\n--) endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$

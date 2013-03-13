@@ -42,6 +42,25 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	protected IParser atomicComponentName_5028Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getAtomicComponentName_5028Parser() {
+		if (atomicComponentName_5028Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.parsers.MessageFormatParser(
+					features);
+			atomicComponentName_5028Parser = parser;
+		}
+		return atomicComponentName_5028Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser discretePortName_5012Parser;
 
 	/**
@@ -186,6 +205,25 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	protected IParser hybridPortName_5027Parser;
+
+	/**
+	 * @generated
+	 */
+	protected IParser getHybridPortName_5027Parser() {
+		if (hybridPortName_5027Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.parsers.MessageFormatParser(
+					features);
+			hybridPortName_5027Parser = parser;
+		}
+		return hybridPortName_5027Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.parsers.DiscretePortGmfProtocolLabelExpressionLabelParser6003 discretePortGmfProtocolLabel_6003Parser;
 
 	/**
@@ -205,6 +243,8 @@ public class MumlParserProvider extends AbstractProvider implements
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID:
 			return getStaticStructuredComponentName_5021Parser();
+		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID:
+			return getAtomicComponentName_5028Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID:
 			return getDiscretePortName_5012Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID:
@@ -221,6 +261,8 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getContinuousPortName_5016Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID:
 			return getCoordinationProtocolName_5026Parser();
+		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.HybridPortName2EditPart.VISUAL_ID:
+			return getHybridPortName_5027Parser();
 		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
 			return getDiscretePortGmfProtocolLabel_6003Parser();
 		}

@@ -31,6 +31,11 @@ public class ModelElementCategoryItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.commands.StaticStructuredComponentCreateCommand(
 					req));
 		}
+		if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.AtomicComponent_2006 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.commands.AtomicComponentCreateCommand(
+					req));
+		}
 		return super.getCreateCommand(req);
 	}
 

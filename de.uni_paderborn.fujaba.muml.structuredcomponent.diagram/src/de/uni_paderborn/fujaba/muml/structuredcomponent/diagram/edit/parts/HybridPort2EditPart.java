@@ -1,36 +1,24 @@
 package de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.draw2d.Connection;
-import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.Polyline;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.draw2d.geometry.PrecisionRectangle;
-import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
-import org.eclipse.gef.handles.MoveHandle;
-import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.BorderedBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -42,12 +30,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class ContinuousPort2EditPart extends BorderedBorderItemEditPart {
+public class HybridPort2EditPart extends BorderedBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3015;
+	public static final int VISUAL_ID = 3017;
 
 	/**
 	 * @generated
@@ -62,7 +50,7 @@ public class ContinuousPort2EditPart extends BorderedBorderItemEditPart {
 	/**
 	 * @generated
 	 */
-	public ContinuousPort2EditPart(View view) {
+	public HybridPort2EditPart(View view) {
 		super(view);
 	}
 
@@ -75,11 +63,8 @@ public class ContinuousPort2EditPart extends BorderedBorderItemEditPart {
 				getPrimaryDragEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.policies.ContinuousPort2ItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.policies.HybridPort2ItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
-				new de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
@@ -103,7 +88,7 @@ public class ContinuousPort2EditPart extends BorderedBorderItemEditPart {
 				View childView = (View) child.getModel();
 				switch (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ContinuousPortName2EditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.HybridPortName2EditPart.VISUAL_ID:
 					return new de.uni_paderborn.fujaba.muml.common.edit.policies.BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
@@ -144,7 +129,7 @@ public class ContinuousPort2EditPart extends BorderedBorderItemEditPart {
 	 */
 	protected void addBorderItem(IFigure borderItemContainer,
 			IBorderItemEditPart borderItemEditPart) {
-		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ContinuousPortName2EditPart) {
+		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.HybridPortName2EditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
@@ -244,7 +229,7 @@ public class ContinuousPort2EditPart extends BorderedBorderItemEditPart {
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ContinuousPortName2EditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.HybridPortName2EditPart.VISUAL_ID));
 	}
 
 	/**

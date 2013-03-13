@@ -127,6 +127,10 @@ public class MumlVisualIDRegistry {
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID;
 			}
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					.getAtomicComponent().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID;
+			}
 			break;
 		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -136,6 +140,20 @@ public class MumlVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 					.getContinuousPort().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID;
+			}
+			break;
+		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					.getDiscretePort().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID;
+			}
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					.getContinuousPort().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID;
+			}
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					.getHybridPort().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.HybridPort2EditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
@@ -194,6 +212,9 @@ public class MumlVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -206,6 +227,20 @@ public class MumlVisualIDRegistry {
 				return true;
 			}
 			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.HybridPort2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -253,6 +288,11 @@ public class MumlVisualIDRegistry {
 			break;
 		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.HybridPort2EditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.parts.HybridPortName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

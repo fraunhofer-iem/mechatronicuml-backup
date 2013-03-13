@@ -35,8 +35,9 @@ public class MumlPaletteFactory {
 		PaletteDrawer paletteContainer = new PaletteDrawer(
 				de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.Messages.Components1Group_title);
 		paletteContainer.setId("createComponents1Group"); //$NON-NLS-1$
-		paletteContainer.add(createStructuredComponent1CreationTool());
-		paletteContainer.add(createComponentPart2CreationTool());
+		paletteContainer.add(createAtomicComponent1CreationTool());
+		paletteContainer.add(createStructuredComponent2CreationTool());
+		paletteContainer.add(createComponentPart3CreationTool());
 		return paletteContainer;
 	}
 
@@ -50,6 +51,7 @@ public class MumlPaletteFactory {
 		paletteContainer.setId("createPorts2Group"); //$NON-NLS-1$
 		paletteContainer.add(createDiscretePort1CreationTool());
 		paletteContainer.add(createContinuousPort2CreationTool());
+		paletteContainer.add(createHybridPort3CreationTool());
 		return paletteContainer;
 	}
 
@@ -71,13 +73,29 @@ public class MumlPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStructuredComponent1CreationTool() {
+	private ToolEntry createAtomicComponent1CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.Messages.StructuredComponent1CreationTool_title,
-				de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.Messages.StructuredComponent1CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.Messages.AtomicComponent1CreationTool_title,
+				de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.Messages.AtomicComponent1CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.AtomicComponent_2006));
+		entry.setId("createAtomicComponent1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/AtomicComponent.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createStructuredComponent2CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.Messages.StructuredComponent2CreationTool_title,
+				de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.Messages.StructuredComponent2CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.StaticStructuredComponent_2005));
-		entry.setId("createStructuredComponent1CreationTool"); //$NON-NLS-1$
+		entry.setId("createStructuredComponent2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/StructuredComponent.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -87,13 +105,13 @@ public class MumlPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createComponentPart2CreationTool() {
+	private ToolEntry createComponentPart3CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.Messages.ComponentPart2CreationTool_title,
-				de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.Messages.ComponentPart2CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.Messages.ComponentPart3CreationTool_title,
+				de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.Messages.ComponentPart3CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.ComponentPart_3012));
-		entry.setId("createComponentPart2CreationTool"); //$NON-NLS-1$
+		entry.setId("createComponentPart3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/ComponentPart.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -132,6 +150,22 @@ public class MumlPaletteFactory {
 		entry.setId("createContinuousPort2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/ContinuousPort.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createHybridPort3CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.Messages.HybridPort3CreationTool_title,
+				de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.Messages.HybridPort3CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.providers.MumlElementTypes.HybridPort_3017));
+		entry.setId("createHybridPort3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

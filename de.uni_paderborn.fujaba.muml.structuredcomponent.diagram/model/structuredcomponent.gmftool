@@ -9,7 +9,16 @@
         xsi:type="gmftool:ToolGroup"
         title="Components"
         collapsible="true"
-        active="//@palette/@tools.0/@tools.0">
+        active="//@palette/@tools.0/@tools.1">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="AtomicComponent"
+          description="Create new AtomicComponent">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/AtomicComponent.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
+      </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="StructuredComponent"
@@ -50,6 +59,15 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ContinuousPort.gif"
+            bundle="de.uni_paderborn.fujaba.muml.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="HybridPort"
+          description="Create new HybridPort">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/HybridPort.gif"
             bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
     </tools>

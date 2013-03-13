@@ -14,6 +14,25 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_AtomicComponent_2006(
+			de.uni_paderborn.fujaba.muml.component.AtomicComponent instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							12,
+							de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+									.getAtomicComponent(), null).evaluate(
+							instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public void init_DiscretePort_3010(
 			de.uni_paderborn.fujaba.muml.component.DiscretePort instance) {
 		try {
@@ -209,6 +228,24 @@ public class ElementInitializers {
 							de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 									.getContinuousPort(), null).evaluate(
 							instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_HybridPort_3017(
+			de.uni_paderborn.fujaba.muml.component.HybridPort instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.expressions.MumlOCLFactory
+					.getExpression(
+							13,
+							de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+									.getHybridPort(), null).evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.part.StructuredcomponentDiagramEditorPlugin

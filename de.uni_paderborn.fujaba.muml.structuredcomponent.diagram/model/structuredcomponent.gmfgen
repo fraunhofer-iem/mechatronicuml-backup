@@ -37,7 +37,7 @@
         canonicalEditPolicyClassName="DiscretePortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DiscretePortGraphicalNodeEditPolicy"
         createCommandClassName="DiscretePortCreateCommand"
-        containers="//@diagram/@topLevelNodes.0"
+        containers="//@diagram/@topLevelNodes.0 //@diagram/@topLevelNodes.1"
         preferredSideName="SOUTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -153,7 +153,7 @@
         canonicalEditPolicyClassName="ContinuousPortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ContinuousPortGraphicalNodeEditPolicy"
         createCommandClassName="ContinuousPortCreateCommand"
-        containers="//@diagram/@topLevelNodes.0"
+        containers="//@diagram/@topLevelNodes.0 //@diagram/@topLevelNodes.1"
         preferredSideName="SOUTH">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -567,6 +567,64 @@
         </modelFacet>
       </labels>
     </childNodes>
+    <childNodes
+        xsi:type="gmfgen:GenChildSideAffixedNode"
+        visualID="3017"
+        editPartClassName="HybridPort2EditPart"
+        itemSemanticEditPolicyClassName="HybridPort2ItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="HybridPort2CanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="HybridPort2GraphicalNodeEditPolicy"
+        createCommandClassName="HybridPort2CreateCommand"
+        containers="//@diagram/@topLevelNodes.1"
+        preferredSideName="SOUTH">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"
+          metamodelType="//@diagram/@childNodes.3/@elementType"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="24"
+            height="24"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/HybridPort"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/Component/ports"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/Component/ports"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.13">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5027"
+          editPartClassName="HybridPortName2EditPart"
+          itemSemanticEditPolicyClassName="HybridPortName2ItemSemanticEditPolicy">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:FigureViewmap"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
     <topLevelNodes
         visualID="2005"
         editPartClassName="StaticStructuredComponentEditPart"
@@ -622,6 +680,67 @@
         </modelFacet>
       </labels>
     </topLevelNodes>
+    <topLevelNodes
+        visualID="2006"
+        editPartClassName="AtomicComponentEditPart"
+        itemSemanticEditPolicyClassName="AtomicComponentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="AtomicComponentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.7"
+        graphicalNodeEditPolicyClassName="AtomicComponentGraphicalNodeEditPolicy"
+        createCommandClassName="AtomicComponentCreateCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="AtomicComponentEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ComponentFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComponentFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureComponentNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComponentFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconRectangle0 = new org.eclipse.draw2d.RectangleFigure();&#xA;componentIconRectangle0.setFill(false);&#xA;componentIconRectangle0.setOutline(false);&#xA;&#xA;this.add(componentIconRectangle0);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutComponentIconRectangle0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutComponentIconRectangle0.numColumns = 1;&#xA;&#x9;layoutComponentIconRectangle0.makeColumnsEqualWidth = false;&#xA;&#x9;componentIconRectangle0.setLayoutManager(layoutComponentIconRectangle0);&#xA;&#xA;/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconFigure1 = new org.eclipse.draw2d.RectangleFigure();&#xA;componentIconFigure1.setFill(false);&#xA;componentIconFigure1.setOutline(false);&#xA;componentIconFigure1.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintComponentIconFigure1 = new org.eclipse.draw2d.GridData();&#xA;constraintComponentIconFigure1.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintComponentIconFigure1.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintComponentIconFigure1.horizontalIndent = 0;&#xA;constraintComponentIconFigure1.horizontalSpan = 1;&#xA;constraintComponentIconFigure1.verticalSpan = 1;&#xA;constraintComponentIconFigure1.grabExcessHorizontalSpace = true;&#xA;constraintComponentIconFigure1.grabExcessVerticalSpace = false;&#xA;componentIconRectangle0.add(componentIconFigure1, constraintComponentIconFigure1);&#xA;&#xA;componentIconFigure1.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconOuter2 = new org.eclipse.draw2d.RectangleFigure();&#xA;componentIconOuter2.setFill(false);&#xA;componentIconOuter2.setOutline(false);&#xA;&#xA;componentIconFigure1.add(componentIconOuter2);&#xA;componentIconOuter2.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure b13 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconOuter2.add(b13, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(20)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner12 = new org.eclipse.draw2d.RectangleFigure();&#xA;componentIconInner12.setFill(false);&#xA;componentIconInner12.setOutline(false);&#xA;&#xA;componentIconFigure1.add(componentIconInner12);&#xA;componentIconInner12.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure c13 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner12.add(c13, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner22 = new org.eclipse.draw2d.RectangleFigure();&#xA;componentIconInner22.setFill(false);&#xA;componentIconInner22.setOutline(false);&#xA;&#xA;componentIconFigure1.add(componentIconInner22);&#xA;componentIconInner22.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure d13 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner22.add(d13, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentNameRectangle0 = new org.eclipse.draw2d.RectangleFigure();&#xA;componentNameRectangle0.setFill(false);&#xA;componentNameRectangle0.setOutline(false);&#xA;&#xA;this.add(componentNameRectangle0);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutComponentNameRectangle0 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutComponentNameRectangle0.numColumns = 1;&#xA;&#x9;layoutComponentNameRectangle0.makeColumnsEqualWidth = false;&#xA;&#x9;componentNameRectangle0.setLayoutManager(layoutComponentNameRectangle0);&#xA;&#xA;&#xA;&#xA;fFigureComponentNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;fFigureComponentNameFigure.setText(&quot;&quot;);&#xA;&#xA;fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureComponentNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureComponentNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureComponentNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureComponentNameFigure.horizontalIndent = 0;&#xA;constraintFFigureComponentNameFigure.horizontalSpan = 1;&#xA;constraintFFigureComponentNameFigure.verticalSpan = 1;&#xA;constraintFFigureComponentNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureComponentNameFigure.grabExcessVerticalSpace = true;&#xA;componentNameRectangle0.add(fFigureComponentNameFigure, constraintFFigureComponentNameFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureComponentNameFigure() {&#xA;&#x9;&#x9;return fFigureComponentNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURECOMPONENTNAMEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="130"
+            height="47"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/AtomicComponent"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.12">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          visualID="5028"
+          editPartClassName="AtomicComponentNameEditPart"
+          itemSemanticEditPolicyClassName="AtomicComponentNameItemSemanticEditPolicy">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureComponentNameFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
     <links
         visualID="4001"
         editPartClassName="AssemblyConnectorEditPart"
@@ -651,7 +770,7 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.12"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.14"/>
     </links>
     <links
         visualID="4002"
@@ -682,7 +801,7 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
       </modelFacet>
       <creationConstraints
-          targetEnd="//@expressionProviders/@providers.0/@expressions.13"/>
+          targetEnd="//@expressionProviders/@providers.0/@expressions.15"/>
     </links>
     <links
         visualID="4005"
@@ -750,6 +869,12 @@
           collapse="true">
         <entries
             xsi:type="gmfgen:ToolEntry"
+            title="AtomicComponent"
+            description="Create new AtomicComponent"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/AtomicComponent.gif"
+            genNodes="//@diagram/@topLevelNodes.1"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
             title="StructuredComponent"
             description="Create new StructuredComponent"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/StructuredComponent.gif"
@@ -778,6 +903,12 @@
             description="Create new ContinuousPort"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/ContinuousPort.gif"
             genNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.5"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="HybridPort"
+            description="Create new HybridPort"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif"
+            genNodes="//@diagram/@childNodes.7"/>
       </groups>
       <groups
           title="Connectors"
@@ -905,6 +1036,10 @@
       <expressions
           body="--let partName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;--let compName : String = if self.componentType.oclIsUndefined() then 'null' else self.componentType.name endif in&#xA;--let lowerBound : String = if self.cardinality.lowerBound.oclIsUndefined() then 'null' else cardinality.lowerBound.toString() endif in&#xA;--let upperBound : String = if self.cardinality.upperBound.oclIsUndefined() then 'null' else cardinality.upperBound.toString() endif in&#xD;&#xA;--partName.concat(' : ').concat(compName).concat(' [').concat(lowerBound).concat('..').concat(upperBound).concat(']')"/>
       <expressions
+          body="--'comp'"/>
+      <expressions
+          body="--'port'"/>
+      <expressions
           xsi:type="gmfgen:GenConstraint"
           body="--true&#xA;---- self.oclAsType(component::Port).component = oppositeEnd.oclAsType(component::Port).component"/>
       <expressions
@@ -918,7 +1053,7 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.7/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.0/@labels.1/@modelFacet"
@@ -939,7 +1074,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.2/@labels.0/@modelFacet"
         className="DiscretePortGmfProtocolLabelExpressionLabelParser6003"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/DiscretePort"/>
     </implementations>
