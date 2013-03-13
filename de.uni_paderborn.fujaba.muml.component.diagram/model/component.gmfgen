@@ -3,8 +3,8 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.muml.component.diagram"
-    modelID="Structuredcomponent"
-    diagramFileExtension="structuredcomponent_diagram"
+    modelID="Component"
+    diagramFileExtension="component_diagram"
     domainFileExtension="fujaba"
     dynamicTemplates="true"
     templateDirectory="/de.uni_paderborn.fujaba.common/gmf-templates"
@@ -992,7 +992,7 @@
       name="Structured Component Diagram-Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.3.1.qualifier"
-      activatorClassName="StructuredcomponentDiagramEditorPlugin">
+      activatorClassName="ComponentDiagramEditorPlugin">
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.common</requiredPlugins>
@@ -1000,7 +1000,7 @@
     <requiredPlugins>de.uni_paderborn.fujaba.modelinstance.ui</requiredPlugins>
   </plugin>
   <editor
-      className="StructuredcomponentDiagramEditor"/>
+      className="ComponentDiagramEditor"/>
   <diagramUpdater/>
   <propertySheet>
     <tabs

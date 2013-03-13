@@ -306,7 +306,7 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 	protected EObject selectElement(EObject[] elements) {
 		Shell shell = Display.getCurrent().getActiveShell();
 		ILabelProvider labelProvider = new AdapterFactoryLabelProvider(
-				de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 						.getInstance().getItemProvidersAdapterFactory());
 		ElementListSelectionDialog dialog = new ElementListSelectionDialog(
 				shell, labelProvider);

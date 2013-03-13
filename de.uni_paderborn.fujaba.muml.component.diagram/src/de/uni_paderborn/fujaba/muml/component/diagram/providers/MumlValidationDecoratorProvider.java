@@ -52,7 +52,7 @@ public class MumlValidationDecoratorProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private static final String MARKER_TYPE = de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin.ID
+	private static final String MARKER_TYPE = de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID
 			+ ".diagnostic"; //$NON-NLS-1$
 
 	/**
@@ -84,7 +84,7 @@ public class MumlValidationDecoratorProvider extends AbstractProvider implements
 			if (!(ed instanceof DiagramEditDomain)) {
 				return;
 			}
-			if (((DiagramEditDomain) ed).getEditorPart() instanceof de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditor) {
+			if (((DiagramEditDomain) ed).getEditorPart() instanceof de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditor) {
 				decoratorTarget.installDecorator(KEY, new StatusDecorator(
 						decoratorTarget));
 			}
@@ -148,7 +148,7 @@ public class MumlValidationDecoratorProvider extends AbstractProvider implements
 					}
 					// END Added null checks
 				} catch (Exception e) {
-					de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+					de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 							.getInstance().logError(
 									"Decorator refresh failure", e); //$NON-NLS-1$
 				}
@@ -183,7 +183,7 @@ public class MumlValidationDecoratorProvider extends AbstractProvider implements
 							}
 						});
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 						.getInstance().logError("ViewID access failure", e); //$NON-NLS-1$			
 			}
 		}
@@ -220,7 +220,7 @@ public class MumlValidationDecoratorProvider extends AbstractProvider implements
 				markers = resource.findMarkers(MARKER_TYPE, true,
 						IResource.DEPTH_INFINITE);
 			} catch (CoreException e) {
-				de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 						.getInstance().logError(
 								"Validation markers refresh failure", e); //$NON-NLS-1$
 			}
@@ -447,7 +447,7 @@ public class MumlValidationDecoratorProvider extends AbstractProvider implements
 			try {
 				return marker.getType();
 			} catch (CoreException e) {
-				de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 						.getInstance().logError(
 								"Validation marker refresh failure", e); //$NON-NLS-1$
 				return ""; //$NON-NLS-1$

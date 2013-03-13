@@ -21,7 +21,7 @@ public class ModelElementCategoryEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public final static String MODEL_ID = "Structuredcomponent"; //$NON-NLS-1$
+	public final static String MODEL_ID = "Component"; //$NON-NLS-1$
 
 	/**
 	 * @generated

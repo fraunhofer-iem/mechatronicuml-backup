@@ -63,7 +63,7 @@ public class MumlVisualIDRegistry {
 		} catch (NumberFormatException e) {
 			if (Boolean.TRUE.toString().equalsIgnoreCase(
 					Platform.getDebugOption(DEBUG_KEY))) {
-				de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 						.getInstance().logError(
 								"Unable to parse view type as a visualID number: "
 										+ type);

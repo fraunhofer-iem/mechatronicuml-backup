@@ -24,12 +24,10 @@ import org.storydriven.core.expressions.common.provider.CommonExpressionsItemPro
 import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
 
-import de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
-
 /**
  * @generated
  */
-public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
+public class ComponentDiagramEditorPlugin extends AbstractUIPlugin {
 
 	/**
 	 * @generated
@@ -45,7 +43,7 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	private static StructuredcomponentDiagramEditorPlugin instance;
+	private static ComponentDiagramEditorPlugin instance;
 
 	/**
 	 * @generated
@@ -75,7 +73,7 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public StructuredcomponentDiagramEditorPlugin() {
+	public ComponentDiagramEditorPlugin() {
 	}
 
 	/**
@@ -105,7 +103,7 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	 * @generated
 	 */
-	public static StructuredcomponentDiagramEditorPlugin getInstance() {
+	public static ComponentDiagramEditorPlugin getInstance() {
 		return instance;
 	}
 
@@ -313,9 +311,8 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 			error = throwable.getMessage();
 		}
 		getLog().log(
-				new Status(IStatus.ERROR,
-						StructuredcomponentDiagramEditorPlugin.ID, IStatus.OK,
-						error, throwable));
+				new Status(IStatus.ERROR, ComponentDiagramEditorPlugin.ID,
+						IStatus.OK, error, throwable));
 		debug(error, throwable);
 	}
 
@@ -334,9 +331,8 @@ public class StructuredcomponentDiagramEditorPlugin extends AbstractUIPlugin {
 			message = throwable.getMessage();
 		}
 		getLog().log(
-				new Status(IStatus.INFO,
-						StructuredcomponentDiagramEditorPlugin.ID, IStatus.OK,
-						message, throwable));
+				new Status(IStatus.INFO, ComponentDiagramEditorPlugin.ID,
+						IStatus.OK, message, throwable));
 		debug(message, throwable);
 	}
 

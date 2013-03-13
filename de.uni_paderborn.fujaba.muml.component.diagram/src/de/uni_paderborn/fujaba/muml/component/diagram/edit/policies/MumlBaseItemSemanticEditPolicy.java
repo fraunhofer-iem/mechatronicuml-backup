@@ -304,10 +304,10 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+		LinkConstraints cached = de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 				.getInstance().getLinkConstraints();
 		if (cached == null) {
-			de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 					.getInstance().setLinkConstraints(
 							cached = new LinkConstraints());
 		}
@@ -404,7 +404,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return true;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
@@ -459,7 +459,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return null;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
@@ -503,7 +503,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return true;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
@@ -558,7 +558,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return null;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";

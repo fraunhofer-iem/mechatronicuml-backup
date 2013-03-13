@@ -139,7 +139,7 @@ public class MumlElementTypes {
 		if (element instanceof EClass) {
 			EClass eClass = (EClass) element;
 			if (!eClass.isAbstract()) {
-				return de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+				return de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 						.getInstance().getItemImageDescriptor(
 								eClass.getEPackage().getEFactoryInstance()
 										.create(eClass));

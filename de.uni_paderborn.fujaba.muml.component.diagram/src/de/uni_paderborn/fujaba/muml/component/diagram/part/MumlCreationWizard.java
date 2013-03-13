@@ -19,7 +19,7 @@ public class MumlCreationWizard
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 
-		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 				.getBundledImageDescriptor("icons/wizban/NewModelinstanceWizard.gif")); //$NON-NLS-1$
 
 	}
@@ -29,7 +29,7 @@ public class MumlCreationWizard
 	 */
 	@Override
 	public String getEditorId() {
-		return de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditor.ID;
+		return de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditor.ID;
 
 	}
 
@@ -38,7 +38,7 @@ public class MumlCreationWizard
 	 */
 	@Override
 	public AdapterFactory getItemProvidersAdapterFactory() {
-		return de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+		return de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 				.getInstance().getItemProvidersAdapterFactory();
 	}
 

@@ -25,7 +25,7 @@ public class ElementInitializers {
 							instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -77,7 +77,7 @@ public class ElementInitializers {
 					.evaluate(instance);
 			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -96,7 +96,7 @@ public class ElementInitializers {
 							instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -141,7 +141,7 @@ public class ElementInitializers {
 			newInstance_0_0_1_0.setValue(((Long) value_0_0_1_0_0).longValue());
 
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -159,7 +159,7 @@ public class ElementInitializers {
 									.getHybridPort(), null).evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -211,7 +211,7 @@ public class ElementInitializers {
 					.evaluate(instance);
 			instance.setName((String) value_1);
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -230,7 +230,7 @@ public class ElementInitializers {
 							instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -248,7 +248,7 @@ public class ElementInitializers {
 									.getHybridPort(), null).evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -257,10 +257,10 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public static ElementInitializers getInstance() {
-		ElementInitializers cached = de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+		ElementInitializers cached = de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 				.getInstance().getElementInitializers();
 		if (cached == null) {
-			de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 					.getInstance().setElementInitializers(
 							cached = new ElementInitializers());
 		}

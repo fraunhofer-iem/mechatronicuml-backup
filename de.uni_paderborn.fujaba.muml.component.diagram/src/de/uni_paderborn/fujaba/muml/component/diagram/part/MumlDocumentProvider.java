@@ -72,7 +72,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 			throw new CoreException(
 					new Status(
 							IStatus.ERROR,
-							de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin.ID,
+							de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
 							0,
 							NLS.bind(
 									de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
@@ -99,7 +99,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 			throw new CoreException(
 					new Status(
 							IStatus.ERROR,
-							de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin.ID,
+							de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
 							0,
 							NLS.bind(
 									de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
@@ -269,7 +269,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 					thrownExcp = new CoreException(
 							new Status(
 									IStatus.ERROR,
-									de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin.ID,
+									de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
 									0,
 									msg != null ? msg
 											: de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_DiagramLoadingError,
@@ -281,7 +281,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 			throw new CoreException(
 					new Status(
 							IStatus.ERROR,
-							de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin.ID,
+							de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
 							0,
 							NLS.bind(
 									de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
@@ -371,7 +371,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 				try {
 					updateCache(element);
 				} catch (CoreException ex) {
-					de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+					de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 							.getInstance()
 							.logError(
 									de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_isModifiable,
@@ -400,7 +400,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 				try {
 					updateCache(element);
 				} catch (CoreException ex) {
-					de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+					de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 							.getInstance()
 							.logError(
 									de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_isModifiable,
@@ -601,7 +601,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 				throw new CoreException(
 						new Status(
 								IStatus.ERROR,
-								de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin.ID,
+								de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
 								IResourceStatus.OUT_OF_SYNC_LOCAL,
 								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_UnsynchronizedFileSaveError,
 								null));
@@ -630,7 +630,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 							throw new CoreException(
 									new Status(
 											IStatus.ERROR,
-											de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin.ID,
+											de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
 											EditorStatusCodes.RESOURCE_FAILURE,
 											e.getLocalizedMessage(), null));
 						}
@@ -660,7 +660,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 				throw new CoreException(
 						new Status(
 								IStatus.ERROR,
-								de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin.ID,
+								de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
 								0,
 								NLS.bind(
 										de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_IncorrectInputError,
@@ -674,7 +674,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 				throw new CoreException(
 						new Status(
 								IStatus.ERROR,
-								de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin.ID,
+								de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
 								0,
 								"Incorrect document used: " + document + " instead of org.eclipse.gmf.runtime.diagram.ui.resources.editor.document.IDiagramDocument", null)); //$NON-NLS-1$ //$NON-NLS-2$
 			}
@@ -704,14 +704,14 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 				throw new CoreException(
 						new Status(
 								IStatus.ERROR,
-								de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin.ID,
+								de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
 								0, e.getLocalizedMessage(), null));
 			} catch (IOException e) {
 				fireElementStateChangeFailed(element);
 				throw new CoreException(
 						new Status(
 								IStatus.ERROR,
-								de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin.ID,
+								de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
 								0, e.getLocalizedMessage(), null));
 			}
 			newResource.unload();
@@ -728,7 +728,7 @@ public class MumlDocumentProvider extends AbstractDocumentProvider implements
 			try {
 				file.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 			} catch (CoreException ex) {
-				de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 						.getInstance()
 						.logError(
 								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.MumlDocumentProvider_handleElementContentChanged,

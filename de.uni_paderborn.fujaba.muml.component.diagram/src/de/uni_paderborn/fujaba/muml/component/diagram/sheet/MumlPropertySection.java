@@ -110,12 +110,12 @@ public class MumlPropertySection extends AdvancedPropertySection implements
 			List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
 					.getInstance()
 					.getCustomItemProviderAdapterFactories(
-							de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin.ID,
+							de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
 							true);
 			List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
 					.getInstance()
 					.getCustomItemProviderAdapterFactories(
-							de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin.ID,
+							de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID,
 							false);
 
 			// Put all factories into one composed adapter factory.

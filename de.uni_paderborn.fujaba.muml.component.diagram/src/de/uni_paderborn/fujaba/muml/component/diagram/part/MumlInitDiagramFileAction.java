@@ -36,7 +36,7 @@ public class MumlInitDiagramFileAction
 	 */
 	@Override
 	public String getEditorId() {
-		return de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditor.ID;
+		return de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditor.ID;
 
 	}
 }

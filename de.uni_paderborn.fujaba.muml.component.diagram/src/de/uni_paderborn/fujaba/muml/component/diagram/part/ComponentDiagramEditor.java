@@ -41,13 +41,13 @@ import org.eclipse.ui.part.ShowInContext;
 /**
  * @generated
  */
-public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
-		implements IGotoMarker {
+public class ComponentDiagramEditor extends DiagramDocumentEditor implements
+		IGotoMarker {
 
 	/**
 	 * @generated
 	 */
-	public static final String ID = "de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorID"; //$NON-NLS-1$
+	public static final String ID = "de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID"; //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -57,7 +57,7 @@ public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
 	/**
 	 * @generated
 	 */
-	public StructuredcomponentDiagramEditor() {
+	public ComponentDiagramEditor() {
 		super(true);
 	}
 
@@ -82,14 +82,14 @@ public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
 	 * @generated
 	 */
 	protected PreferencesHint getPreferencesHint() {
-		return de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
+		return de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 	}
 
 	/**
 	 * @generated
 	 */
 	public String getContributorId() {
-		return de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin.ID;
+		return de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID;
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
 	protected IDocumentProvider getDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput
 				|| input instanceof URIEditorInput) {
-			return de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+			return de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 					.getInstance().getDocumentProvider();
 		}
 		return super.getDocumentProvider(input);
@@ -122,7 +122,7 @@ public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
 	protected void setDocumentProvider(IEditorInput input) {
 		if (input instanceof IFileEditorInput
 				|| input instanceof URIEditorInput) {
-			setDocumentProvider(de.uni_paderborn.fujaba.muml.component.diagram.part.StructuredcomponentDiagramEditorPlugin
+			setDocumentProvider(de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 					.getInstance().getDocumentProvider());
 		} else {
 			super.setDocumentProvider(input);
@@ -170,7 +170,7 @@ public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
 		}
 		if (provider.isDeleted(input) && original != null) {
 			String message = NLS
-					.bind(de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.StructuredcomponentDiagramEditor_SavingDeletedFile,
+					.bind(de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.ComponentDiagramEditor_SavingDeletedFile,
 							original.getName());
 			dialog.setErrorMessage(null);
 			dialog.setMessage(message, IMessageProvider.WARNING);
@@ -202,8 +202,8 @@ public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
 				MessageDialog
 						.openWarning(
 								shell,
-								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.StructuredcomponentDiagramEditor_SaveAsErrorTitle,
-								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.StructuredcomponentDiagramEditor_SaveAsErrorMessage);
+								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.ComponentDiagramEditor_SaveAsErrorTitle,
+								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.ComponentDiagramEditor_SaveAsErrorMessage);
 				return;
 			}
 		}
@@ -220,8 +220,8 @@ public class StructuredcomponentDiagramEditor extends DiagramDocumentEditor
 				ErrorDialog
 						.openError(
 								shell,
-								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.StructuredcomponentDiagramEditor_SaveErrorTitle,
-								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.StructuredcomponentDiagramEditor_SaveErrorMessage,
+								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.ComponentDiagramEditor_SaveErrorTitle,
+								de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.ComponentDiagramEditor_SaveErrorMessage,
 								x.getStatus());
 			}
 		} finally {

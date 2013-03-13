@@ -203,27 +203,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StructuredcomponentDiagramEditor_SavingDeletedFile;
+	public static String ComponentDiagramEditor_SavingDeletedFile;
 
 	/**
 	 * @generated
 	 */
-	public static String StructuredcomponentDiagramEditor_SaveAsErrorTitle;
+	public static String ComponentDiagramEditor_SaveAsErrorTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String StructuredcomponentDiagramEditor_SaveAsErrorMessage;
+	public static String ComponentDiagramEditor_SaveAsErrorMessage;
 
 	/**
 	 * @generated
 	 */
-	public static String StructuredcomponentDiagramEditor_SaveErrorTitle;
+	public static String ComponentDiagramEditor_SaveErrorTitle;
 
 	/**
 	 * @generated
 	 */
-	public static String StructuredcomponentDiagramEditor_SaveErrorMessage;
+	public static String ComponentDiagramEditor_SaveErrorMessage;
 
 	/**
 	 * @generated
