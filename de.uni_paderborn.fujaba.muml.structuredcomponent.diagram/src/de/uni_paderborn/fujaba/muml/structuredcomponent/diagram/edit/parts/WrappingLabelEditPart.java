@@ -101,6 +101,9 @@ public class WrappingLabelEditPart extends LabelEditPart implements
 		installEditPolicy(
 				EditPolicy.SELECTION_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.edit.policies.MumlTextSelectionEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.TETHER_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.tether.DiscretePortAssignedRoleTetherBorderItemEditPolicy());
 	}
 
 	/**

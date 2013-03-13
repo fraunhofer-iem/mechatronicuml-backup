@@ -56,6 +56,10 @@
           xsi:type="gmfgen:CustomBehaviour"
           key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.OPEN_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/DiscretePort"/>
@@ -135,6 +139,10 @@
         <viewmap
             xsi:type="gmfgen:FigureViewmap"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <behaviour
+            xsi:type="gmfgen:CustomBehaviour"
+            key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.TETHER_ROLE"
+            editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.tether.DiscretePortAssignedRoleTetherBorderItemEditPolicy"/>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
             parser="//@labelParsers/@implementations.1"/>
@@ -385,6 +393,10 @@
           xsi:type="gmfgen:CustomBehaviour"
           key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.OPEN_ROLE"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/DiscretePort"/>
