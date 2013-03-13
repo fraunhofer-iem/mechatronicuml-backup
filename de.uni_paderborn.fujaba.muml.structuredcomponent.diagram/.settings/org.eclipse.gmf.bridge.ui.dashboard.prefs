@@ -1,7 +1,7 @@
 eclipse.preferences.version=1
 gmf_dashboard/domainGenerationModel=platform\:/resource/de.uni_paderborn.fujaba.muml/model/muml.genmodel
 gmf_dashboard/domainModel=platform\:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore
-gmf_dashboard/generationModel=platform\:/resource/de.uni_paderborn.fujaba.muml.structuredcomponent.diagram/model/structuredcomponent.gmfgen
-gmf_dashboard/graphicalDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.structuredcomponent.diagram/model/structuredcomponent.gmfgraph
-gmf_dashboard/mappingModel=platform\:/resource/de.uni_paderborn.fujaba.muml.structuredcomponent.diagram/model/structuredcomponent.gmfmap
-gmf_dashboard/toolingDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.structuredcomponent.diagram/model/structuredcomponent.gmftool
+gmf_dashboard/generationModel=platform\:/resource/de.uni_paderborn.fujaba.muml.component.diagram/model/component.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.component.diagram/model/component.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/de.uni_paderborn.fujaba.muml.component.diagram/model/component.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.component.diagram/model/component.gmftool
