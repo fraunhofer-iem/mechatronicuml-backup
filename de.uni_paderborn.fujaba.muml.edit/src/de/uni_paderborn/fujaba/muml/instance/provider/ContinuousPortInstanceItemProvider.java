@@ -19,6 +19,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import de.uni_paderborn.fujaba.muml.component.ContinuousPort;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance;
 
 /**
@@ -58,6 +60,23 @@ public class ContinuousPortInstanceItemProvider
 
 		}
 		return itemPropertyDescriptors;
+	}
+	
+	/**
+	 * @generated NOT
+	 */
+	@Override
+	protected boolean isValidType(ConnectorEndpointInstance instance,
+			Object type) {
+		if (!super.isValidType(instance, type)) {
+			return false;
+		}
+		
+		if (!(type instanceof ContinuousPort)) {
+			return false;
+		}
+		
+		return true;
 	}
 
 	/**

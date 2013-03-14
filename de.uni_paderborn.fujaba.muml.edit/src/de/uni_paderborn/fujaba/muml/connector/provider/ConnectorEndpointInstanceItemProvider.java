@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.connector.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -119,11 +120,11 @@ public class ConnectorEndpointInstanceItemProvider
 	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ConnectorEndpointInstance_type_feature"),
@@ -134,7 +135,22 @@ public class ConnectorEndpointInstanceItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					List<Object> validTypes = new ArrayList<Object>();	
+					for (Object value : super.getChoiceOfValues(object)) {
+						if (value == null || isValidType((ConnectorEndpointInstance) object, value)) {
+							validTypes.add(value);
+						}
+					}
+					return validTypes;
+				}
+			});
+	}
+
+	protected boolean isValidType(ConnectorEndpointInstance instance, Object type) {
+		return true;
 	}
 
 	/**

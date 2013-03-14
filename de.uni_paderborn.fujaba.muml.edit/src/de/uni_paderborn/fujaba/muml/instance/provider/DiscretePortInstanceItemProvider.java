@@ -19,9 +19,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import de.uni_paderborn.fujaba.muml.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
@@ -156,6 +157,24 @@ public class DiscretePortInstanceItemProvider
 				 null));
 	}
 
+	/**
+	 * @generated NOT
+	 */
+	@Override
+	protected boolean isValidType(ConnectorEndpointInstance instance,
+			Object type) {
+		if (!super.isValidType(instance, type)) {
+			return false;
+		}
+		
+		if (!(type instanceof DiscretePort)) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->

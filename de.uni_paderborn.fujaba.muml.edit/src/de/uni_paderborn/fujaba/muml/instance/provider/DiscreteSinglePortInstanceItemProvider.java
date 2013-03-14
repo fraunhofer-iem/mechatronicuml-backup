@@ -7,8 +7,6 @@
 package de.uni_paderborn.fujaba.muml.instance.provider;
 
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -22,8 +20,10 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
-import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance} object.
@@ -133,6 +133,31 @@ public class DiscreteSinglePortInstanceItemProvider
 				 null));
 	}
 
+	/**
+	 * @generated NOT
+	 */
+	@Override
+	protected boolean isValidType(ConnectorEndpointInstance instance,
+			Object type) {
+		if (!super.isValidType(instance, type)) {
+			return false;
+		}
+		
+		if (!(instance instanceof DiscreteSinglePortInstance)) {
+			return false;
+		}
+		DiscreteSinglePortInstance singleInstance = (DiscreteSinglePortInstance) instance;
+		DiscreteMultiInteractionEndpointInstance multiInstance = singleInstance.getMultiInteractionEndpointInstance();
+		if (multiInstance != null && multiInstance.getType() != type) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	
+	
+	
 	/**
 	 * This returns DiscreteSinglePortInstance.gif.
 	 * <!-- begin-user-doc -->
