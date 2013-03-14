@@ -88,7 +88,7 @@
       <import plugin="org.eclipse.swt" version="3.7.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram" version="0.3.1" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.component.diagram" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore" version="2.7.0" match="greaterOrEqual"/>
       <import plugin="org.junit4" version="4.8.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.xmi" version="2.7.0" match="greaterOrEqual"/>
@@ -295,14 +295,14 @@
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram"
+         id="de.uni_paderborn.fujaba.muml.component.diagram"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.structuredcomponent.diagram.custom"
+         id="de.uni_paderborn.fujaba.muml.component.diagram.custom"
          download-size="0"
          install-size="0"
          version="0.0.0"
