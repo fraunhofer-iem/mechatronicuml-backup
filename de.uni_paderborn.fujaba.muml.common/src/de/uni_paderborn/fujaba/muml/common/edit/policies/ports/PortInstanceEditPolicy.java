@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 
 public class PortInstanceEditPolicy extends PortTypeEditPolicy {
 	@Override
@@ -25,6 +26,12 @@ public class PortInstanceEditPolicy extends PortTypeEditPolicy {
 					.eGet(InstancePackage.Literals.PORT_INSTANCE__PORT_TYPE);
 		}
 		return null;
+	}
+
+	@Override
+	protected void setCardinality(Cardinality cardinality) {
+		super.setCardinality(cardinality);
+		getPortFigure().setMulti(false);
 	}
 
 }
