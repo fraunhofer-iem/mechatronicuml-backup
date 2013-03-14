@@ -45,7 +45,7 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range/lowerBound"/>
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/lowerBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
@@ -61,7 +61,7 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range/upperBound"/>
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/upperBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
@@ -74,7 +74,7 @@
                   </newElementInitializers>
                 </initializers>
                 <elementClass
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality"/>
               </newElementInitializers>
             </initializers>
             <elementClass
@@ -99,7 +99,7 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range/lowerBound"/>
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/lowerBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
@@ -115,7 +115,7 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range/upperBound"/>
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/upperBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
@@ -128,7 +128,7 @@
                   </newElementInitializers>
                 </initializers>
                 <elementClass
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality"/>
               </newElementInitializers>
             </initializers>
           </newElementInitializers>
@@ -221,7 +221,7 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range/lowerBound"/>
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/lowerBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
@@ -237,7 +237,7 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range/upperBound"/>
+                      href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality/upperBound"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
@@ -250,7 +250,7 @@
                   </newElementInitializers>
                 </initializers>
                 <elementClass
-                    href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Range"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality"/>
               </newElementInitializers>
             </initializers>
           </domainInitializer>
