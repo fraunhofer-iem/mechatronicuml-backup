@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?propgen generated="true"?>
+      <propertyContributor
+            contributorId="org.storydriven.storydiagrams.diagram"
+            labelProvider="org.storydriven.storydiagrams.diagram.sheet.StorydiagramsSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?propgen generated="true"?>
+      <propertyTabs contributorId="org.storydriven.storydiagrams.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+       
+   <extension
+         id="realtimestatechart"
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <?propgen generated="true"?>
+      <propertySections
+            contributorId="org.storydriven.storydiagrams.diagram">
+         <propertySection
+               class="de.uni_paderborn.fujaba.muml.realtimestatechart.section.RealtimeStatechartSection"
+               filter="de.uni_paderborn.fujaba.muml.realtimestatechart.filter.RealtimeStatechartFilter"
+               id="Activity.name"
+               tab="general">
+         </propertySection>
+      </propertySections>
+   </extension>
+</plugin>
