@@ -13,59 +13,65 @@ import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custo
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlParserProvider;
 
 public class CustomMumlParserProvider extends MumlParserProvider {
-	protected IParser getHybridPortInstanceLabel_5039Parser() {
-		if (hybridPortInstanceLabel_5039Parser == null) {
-			hybridPortInstanceLabel_5039Parser = new CustomHybridPortInstanceLabelExpressionLabelParser5039();
+	protected IParser getParser(int visualID) {
+		switch (visualID) {
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceNameEditPart.VISUAL_ID:
+			return getHybridPortInstanceLabel_5039Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceNameEditPart.VISUAL_ID:
+			return getDiscreteSinglePortInstanceLabel_5040Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceNameEditPart.VISUAL_ID:
+			return getDiscreteMultiPortInstanceLabel_5041Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceNameEditPart.VISUAL_ID:
+			return getContinuousPortInstanceLabel_5042Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceName2EditPart.VISUAL_ID:
+			return getHybridPortInstanceLabel_5043Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceName3EditPart.VISUAL_ID:
+			return getDiscreteSinglePortInstanceLabel_5044Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceName2EditPart.VISUAL_ID:
+			return getDiscreteMultiPortInstanceLabel_5045Parser();
+		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceName2EditPart.VISUAL_ID:
+			return getContinuousPortInstanceLabel_5046Parser();
 		}
-		return hybridPortInstanceLabel_5039Parser;
+		return super.getParser(visualID);
+	}
+
+	protected IParser getHybridPortInstanceLabel_5039Parser() {
+		return new CustomHybridPortInstanceLabelExpressionLabelParser5039();
 	}
 
 	protected IParser getDiscreteSinglePortInstanceLabel_5040Parser() {
-		if (discreteSinglePortInstanceLabel_5040Parser == null) {
-			discreteSinglePortInstanceLabel_5040Parser = new CustomDiscreteSinglePortInstanceLabelExpressionLabelParser5040();
-		}
-		return discreteSinglePortInstanceLabel_5040Parser;
+		return new CustomDiscreteSinglePortInstanceLabelExpressionLabelParser5040();
 	}
 
 	protected IParser getDiscreteMultiPortInstanceLabel_5041Parser() {
-		if (discreteMultiPortInstanceLabel_5041Parser == null) {
-			discreteMultiPortInstanceLabel_5041Parser = new CustomDiscreteMultiPortInstanceLabelExpressionLabelParser5041();
-		}
-		return discreteMultiPortInstanceLabel_5041Parser;
+
+		return new CustomDiscreteMultiPortInstanceLabelExpressionLabelParser5041();
+
 	}
+
 	protected IParser getContinuousPortInstanceLabel_5042Parser() {
-		if (continuousPortInstanceLabel_5042Parser == null) {
-			continuousPortInstanceLabel_5042Parser = new CustomContinuousPortInstanceLabelExpressionLabelParser5042();
-		}
-		return continuousPortInstanceLabel_5042Parser;
+		return new CustomContinuousPortInstanceLabelExpressionLabelParser5042();
+
 	}
 
 	protected IParser getHybridPortInstanceLabel_5043Parser() {
-		if (hybridPortInstanceLabel_5043Parser == null) {
-			hybridPortInstanceLabel_5043Parser = new CustomHybridPortInstanceLabelExpressionLabelParser5043();
-		}
-		return hybridPortInstanceLabel_5043Parser;
+		return new CustomHybridPortInstanceLabelExpressionLabelParser5043();
+
 	}
 
 	protected IParser getDiscreteSinglePortInstanceLabel_5044Parser() {
-		if (discreteSinglePortInstanceLabel_5044Parser == null) {
-			discreteSinglePortInstanceLabel_5044Parser = new CustomDiscreteSinglePortInstanceLabelExpressionLabelParser5044();
-		}
-		return discreteSinglePortInstanceLabel_5044Parser;
+		return new CustomDiscreteSinglePortInstanceLabelExpressionLabelParser5044();
+
 	}
 
 	protected IParser getDiscreteMultiPortInstanceLabel_5045Parser() {
-		if (discreteMultiPortInstanceLabel_5045Parser == null) {
-			discreteMultiPortInstanceLabel_5045Parser = new CustomDiscreteMultiPortInstanceLabelExpressionLabelParser5045();
-		}
-		return discreteMultiPortInstanceLabel_5045Parser;
+		return new CustomDiscreteMultiPortInstanceLabelExpressionLabelParser5045();
+
 	}
 
 	protected IParser getContinuousPortInstanceLabel_5046Parser() {
-		if (continuousPortInstanceLabel_5046Parser == null) {
-			continuousPortInstanceLabel_5046Parser = new CustomContinuousPortInstanceLabelExpressionLabelParser5046();
-		}
-		return continuousPortInstanceLabel_5046Parser;
+		return new CustomContinuousPortInstanceLabelExpressionLabelParser5046();
+
 	}
 
 }

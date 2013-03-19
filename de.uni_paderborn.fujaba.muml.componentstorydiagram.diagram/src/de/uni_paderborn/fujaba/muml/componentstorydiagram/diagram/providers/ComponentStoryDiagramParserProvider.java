@@ -23,12 +23,12 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	protected IParser componentStoryNodeName_5001Parser;
+	private IParser componentStoryNodeName_5001Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getComponentStoryNodeName_5001Parser() {
+	private IParser getComponentStoryNodeName_5001Parser() {
 		if (componentStoryNodeName_5001Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -42,27 +42,19 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.PartVariableLabelExpressionLabelParser5018 partVariableLabel_5018Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getPartVariableLabel_5018Parser() {
-		if (partVariableLabel_5018Parser == null) {
-			partVariableLabel_5018Parser = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.PartVariableLabelExpressionLabelParser5018();
-		}
-		return partVariableLabel_5018Parser;
+	private IParser getPartVariableLabel_5018Parser() {
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.PartVariableLabelExpressionLabelParser5018();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser multiPortVariableName_5022Parser;
+	private IParser multiPortVariableName_5022Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getMultiPortVariableName_5022Parser() {
+	private IParser getMultiPortVariableName_5022Parser() {
 		if (multiPortVariableName_5022Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -78,12 +70,12 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	protected IParser singlePortVariableName_5024Parser;
+	private IParser singlePortVariableName_5024Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getSinglePortVariableName_5024Parser() {
+	private IParser getSinglePortVariableName_5024Parser() {
 		if (singlePortVariableName_5024Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -99,12 +91,12 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	protected IParser multiPortVariableName_5026Parser;
+	private IParser multiPortVariableName_5026Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getMultiPortVariableName_5026Parser() {
+	private IParser getMultiPortVariableName_5026Parser() {
 		if (multiPortVariableName_5026Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -120,12 +112,12 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	protected IParser singlePortVariableName_5028Parser;
+	private IParser singlePortVariableName_5028Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getSinglePortVariableName_5028Parser() {
+	private IParser getSinglePortVariableName_5028Parser() {
 		if (singlePortVariableName_5028Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -141,12 +133,12 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	protected IParser controllerExchangeNodeName_5041Parser;
+	private IParser controllerExchangeNodeName_5041Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getControllerExchangeNodeName_5041Parser() {
+	private IParser getControllerExchangeNodeName_5041Parser() {
 		if (controllerExchangeNodeName_5041Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -160,57 +152,33 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser5043 controllerExchangeNodeLabel_5043Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getControllerExchangeNodeLabel_5043Parser() {
-		if (controllerExchangeNodeLabel_5043Parser == null) {
-			controllerExchangeNodeLabel_5043Parser = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser5043();
-		}
-		return controllerExchangeNodeLabel_5043Parser;
+	private IParser getControllerExchangeNodeLabel_5043Parser() {
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser5043();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser5044 controllerExchangeNodeLabel_5044Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getControllerExchangeNodeLabel_5044Parser() {
-		if (controllerExchangeNodeLabel_5044Parser == null) {
-			controllerExchangeNodeLabel_5044Parser = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser5044();
-		}
-		return controllerExchangeNodeLabel_5044Parser;
+	private IParser getControllerExchangeNodeLabel_5044Parser() {
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser5044();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.FadingFunctionLabelExpressionLabelParser5042 fadingFunctionLabel_5042Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getFadingFunctionLabel_5042Parser() {
-		if (fadingFunctionLabel_5042Parser == null) {
-			fadingFunctionLabel_5042Parser = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.FadingFunctionLabelExpressionLabelParser5042();
-		}
-		return fadingFunctionLabel_5042Parser;
+	private IParser getFadingFunctionLabel_5042Parser() {
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.FadingFunctionLabelExpressionLabelParser5042();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser assemblyVariableName_6004Parser;
+	private IParser assemblyVariableName_6004Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getAssemblyVariableName_6004Parser() {
+	private IParser getAssemblyVariableName_6004Parser() {
 		if (assemblyVariableName_6004Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -226,12 +194,12 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	protected IParser delegationVariableName_6005Parser;
+	private IParser delegationVariableName_6005Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getDelegationVariableName_6005Parser() {
+	private IParser getDelegationVariableName_6005Parser() {
 		if (delegationVariableName_6005Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };

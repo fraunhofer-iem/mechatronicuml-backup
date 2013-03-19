@@ -331,6 +331,7 @@ public class CoordinationProtocol2EditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			fFigureCoordinationProtocolNameFigure = new WrappingLabel();
+
 			fFigureCoordinationProtocolNameFigure.setText("");
 
 			GridData constraintFFigureCoordinationProtocolNameFigure = new GridData();

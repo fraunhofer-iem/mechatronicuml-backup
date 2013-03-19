@@ -34,6 +34,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
 import org.storydriven.storydiagrams.activities.ActivityNode;
@@ -130,21 +131,15 @@ public class ComponentStoryDiagramBaseItemSemanticEditPolicy extends
 		if (editPolicyCommand != null) {
 			ICommand command = editPolicyCommand instanceof ICommandProxy ? ((ICommandProxy) editPolicyCommand)
 					.getICommand() : new CommandProxy(editPolicyCommand);
-			request.setParameter(
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.ComponentStoryDiagramBaseEditHelper.EDIT_POLICY_COMMAND,
+			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND,
 					command);
 		}
 		IElementType requestContextElementType = getContextElementType(request);
-		request.setParameter(
-				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.ComponentStoryDiagramBaseEditHelper.CONTEXT_ELEMENT_TYPE,
+		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE,
 				requestContextElementType);
 		ICommand command = requestContextElementType.getEditCommand(request);
-		request.setParameter(
-				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.ComponentStoryDiagramBaseEditHelper.EDIT_POLICY_COMMAND,
-				null);
-		request.setParameter(
-				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.ComponentStoryDiagramBaseEditHelper.CONTEXT_ELEMENT_TYPE,
-				null);
+		request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, null);
+		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, null);
 		if (command != null) {
 			if (!(command instanceof CompositeTransactionalCommand)) {
 				command = new CompositeTransactionalCommand(getEditingDomain(),

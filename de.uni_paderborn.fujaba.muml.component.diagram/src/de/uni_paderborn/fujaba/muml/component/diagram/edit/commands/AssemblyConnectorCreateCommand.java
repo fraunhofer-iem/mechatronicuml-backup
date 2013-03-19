@@ -205,5 +205,4 @@ public class AssemblyConnectorCreateCommand extends EditElementCommand {
 		}
 		return null;
 	}
-
 }

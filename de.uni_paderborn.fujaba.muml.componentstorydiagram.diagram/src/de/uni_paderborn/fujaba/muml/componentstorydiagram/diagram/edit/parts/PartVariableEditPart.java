@@ -30,6 +30,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -66,8 +67,10 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(
+						de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -365,6 +368,7 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 		private void createContents() {
 
 			RectangleFigure partVariable0 = new RectangleFigure();
+
 			partVariable0.setFill(false);
 			partVariable0.setOutline(false);
 
@@ -376,6 +380,7 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 			partVariable0.setLayoutManager(layoutPartVariable0);
 
 			RectangleFigure nameContainer1 = new RectangleFigure();
+
 			nameContainer1.setFill(false);
 			nameContainer1.setOutline(false);
 
@@ -395,6 +400,7 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 			nameContainer1.setLayoutManager(layoutNameContainer1);
 
 			fFigurePartVariableNameFigure = new WrappingLabel();
+
 			fFigurePartVariableNameFigure.setText("");
 
 			fFigurePartVariableNameFigure
@@ -412,6 +418,7 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 					constraintFFigurePartVariableNameFigure);
 
 			RectangleFigure iconContainer1 = new RectangleFigure();
+
 			iconContainer1.setFill(false);
 			iconContainer1.setOutline(false);
 
@@ -430,9 +437,8 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 			layoutIconContainer1.makeColumnsEqualWidth = false;
 			iconContainer1.setLayoutManager(layoutIconContainer1);
 
-			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
-
 			RectangleFigure componentIconFigure2 = new RectangleFigure();
+
 			componentIconFigure2.setFill(false);
 			componentIconFigure2.setOutline(false);
 			componentIconFigure2.setPreferredSize(new Dimension(getMapMode()
@@ -452,6 +458,7 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 			componentIconFigure2.setLayoutManager(new StackLayout());
 
 			RectangleFigure componentIconOuter3 = new RectangleFigure();
+
 			componentIconOuter3.setFill(false);
 			componentIconOuter3.setOutline(false);
 
@@ -465,6 +472,7 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(20)));
 
 			RectangleFigure componentIconInner13 = new RectangleFigure();
+
 			componentIconInner13.setFill(false);
 			componentIconInner13.setOutline(false);
 
@@ -478,6 +486,7 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(6)));
 
 			RectangleFigure componentIconInner23 = new RectangleFigure();
+
 			componentIconInner23.setFill(false);
 			componentIconInner23.setOutline(false);
 
@@ -489,6 +498,10 @@ public class PartVariableEditPart extends AbstractBorderedShapeEditPart {
 			componentIconInner23.add(d14, new Rectangle(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
+
+			// Process FigureRef details
+
+			iconContainer1.add(componentIconFigure2);
 
 		}
 

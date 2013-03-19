@@ -1,13 +1,13 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
@@ -27,6 +27,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 
 /**
  * @generated
@@ -82,10 +83,12 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
+						.getVisualID(childView);
+				List<Integer> visualIDs = Arrays
+						.asList(new Integer[] { de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID });
 				if (childElement.eContainer() == containerView.getElement()
-						&& visualID == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-								.getVisualID(childView)) {
+						&& visualIDs.contains(visualID)) {
 					result.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;
@@ -215,7 +218,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private Collection<IAdaptable> refreshConnections() {
-		Map<EObject, View> domain2NotationMap = new HashMap<EObject, View>();
+		Domain2Notation domain2NotationMap = new Domain2Notation();
 		Collection<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> linkDescriptors = collectAllLinks(
 				getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
@@ -264,7 +267,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private Collection<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> collectAllLinks(
-			View view, Map<EObject, View> domain2NotationMap) {
+			View view, Domain2Notation domain2NotationMap) {
 		if (!de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
 				.equals(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
 						.getModelID(view))) {
@@ -278,10 +281,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getRealtimeStatechart_1000ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID: {
@@ -289,10 +289,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getRealtimeStatechart_2007ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID: {
@@ -300,10 +297,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getState_3032ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID: {
@@ -311,10 +305,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getEntryEvent_3033ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID: {
@@ -322,10 +313,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getDoEvent_3034ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID: {
@@ -333,10 +321,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getExitEvent_3035ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID: {
@@ -344,10 +329,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getClockConstraint_3036ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID: {
@@ -355,10 +337,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getSynchronizationChannel_3037ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID: {
@@ -366,10 +345,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getRegion_3038ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID: {
@@ -377,10 +353,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getRealtimeStatechart_3039ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID: {
@@ -388,10 +361,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getEntryPoint_3040ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID: {
@@ -399,10 +369,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getExitPoint_3041ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID: {
@@ -410,10 +377,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
 						.getTransition_4003ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		}
@@ -434,13 +398,13 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 	 */
 	private Collection<IAdaptable> createConnections(
 			Collection<de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor> linkDescriptors,
-			Map<EObject, View> domain2NotationMap) {
+			Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
 		for (de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlLinkDescriptor nextLinkDescriptor : linkDescriptors) {
-			EditPart sourceEditPart = getEditPart(
-					nextLinkDescriptor.getSource(), domain2NotationMap);
-			EditPart targetEditPart = getEditPart(
-					nextLinkDescriptor.getDestination(), domain2NotationMap);
+			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor,
+					domain2NotationMap);
+			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor,
+					domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
@@ -473,7 +437,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private EditPart getEditPart(EObject domainModelElement,
-			Map<EObject, View> domain2NotationMap) {
+			Domain2Notation domain2NotationMap) {
 		View view = (View) domain2NotationMap.get(domainModelElement);
 		if (view != null) {
 			return (EditPart) getHost().getViewer().getEditPartRegistry()
@@ -487,5 +451,68 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 	 */
 	private Diagram getDiagram() {
 		return ((View) getHost().getModel()).getDiagram();
+	}
+
+	/**
+	 * @generated
+	 */
+	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
+			Domain2Notation domain2NotationMap) {
+		return getEditPart(descriptor.getSource(), domain2NotationMap);
+	}
+
+	/**
+	 * @generated
+	 */
+	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor,
+			Domain2Notation domain2NotationMap) {
+		return getEditPart(descriptor.getDestination(), domain2NotationMap);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected final EditPart getHintedEditPart(EObject domainModelElement,
+			Domain2Notation domain2NotationMap, int hintVisualId) {
+		View view = (View) domain2NotationMap
+				.getHinted(
+						domainModelElement,
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
+								.getType(hintVisualId));
+		if (view != null) {
+			return (EditPart) getHost().getViewer().getEditPartRegistry()
+					.get(view);
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("serial")
+	protected static class Domain2Notation extends HashMap<EObject, View> {
+		/**
+		 * @generated
+		 */
+		public boolean containsDomainElement(EObject domainElement) {
+			return this.containsKey(domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+		public View getHinted(EObject domainEObject, String hint) {
+			return this.get(domainEObject);
+		}
+
+		/**
+		 * @generated
+		 */
+		public void putView(EObject domainElement, View view) {
+			if (!containsKey(view.getElement())) {
+				this.put(domainElement, view);
+			}
+		}
+
 	}
 }

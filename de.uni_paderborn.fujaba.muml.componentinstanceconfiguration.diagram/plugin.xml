@@ -413,7 +413,15 @@
          <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart" id="ContinuousPortInstance_2024"/>
          <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart" id="AtomicComponentInstance_2016"/>
          <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart" id="StructuredComponentInstance_2015"/>
-         <context elements="ComponentInstanceConfiguration_1000,HybridPortInstance_2021,DiscreteSinglePortInstance_2022,DiscreteMultiPortInstance_2023,ContinuousPortInstance_2024,AtomicComponentInstance_2016,StructuredComponentInstance_2015"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart" id="DiscreteSinglePortInstance_3026"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart" id="HybridPortInstance_3031"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart" id="DiscreteSinglePortInstance_3032"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart" id="DiscreteMultiPortInstance_3033"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart" id="ContinuousPortInstance_3034"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart" id="ComponentInstanceConfiguration_3023"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart" id="AtomicComponentInstance_3024"/>
+         <object class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart" id="StructuredComponentInstance_3025"/>
+         <context elements="ComponentInstanceConfiguration_1000,HybridPortInstance_2021,DiscreteSinglePortInstance_2022,DiscreteMultiPortInstance_2023,ContinuousPortInstance_2024,AtomicComponentInstance_2016,StructuredComponentInstance_2015,DiscreteSinglePortInstance_3026,HybridPortInstance_3031,DiscreteSinglePortInstance_3032,DiscreteMultiPortInstance_3033,ContinuousPortInstance_3034,ComponentInstanceConfiguration_3023,AtomicComponentInstance_3024,StructuredComponentInstance_3025"/>
       </modelingAssistantProvider>
    </extension>
 

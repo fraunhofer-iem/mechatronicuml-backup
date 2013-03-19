@@ -23,12 +23,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser coordinationProtocolName_5005Parser;
+	private IParser coordinationProtocolName_5005Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getCoordinationProtocolName_5005Parser() {
+	private IParser getCoordinationProtocolName_5005Parser() {
 		if (coordinationProtocolName_5005Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -42,12 +42,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser roleName_5006Parser;
+	private IParser roleName_5006Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getRoleName_5006Parser() {
+	private IParser getRoleName_5006Parser() {
 		if (roleName_5006Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };

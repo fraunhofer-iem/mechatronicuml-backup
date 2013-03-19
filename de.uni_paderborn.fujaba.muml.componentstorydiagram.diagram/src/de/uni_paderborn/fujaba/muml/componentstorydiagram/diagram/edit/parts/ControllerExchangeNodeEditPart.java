@@ -39,6 +39,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -75,8 +76,10 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(
+						de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -192,7 +195,6 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureControllerExchangeNodeFadingFunctionsContainer();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
@@ -200,7 +202,6 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureControllerExchangeNodePatternContainer();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
@@ -482,6 +483,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			RectangleFigure controllerExchangeNodeNameContainer0 = new RectangleFigure();
+
 			controllerExchangeNodeNameContainer0.setFill(false);
 			controllerExchangeNodeNameContainer0.setOutline(false);
 			controllerExchangeNodeNameContainer0.setBorder(createBorder0());
@@ -495,6 +497,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 					.setLayoutManager(layoutControllerExchangeNodeNameContainer0);
 
 			fFigureControllerExchangeNodeName = new WrappingLabel();
+
 			fFigureControllerExchangeNodeName.setText("");
 
 			GridData constraintFFigureControllerExchangeNodeName = new GridData();
@@ -510,6 +513,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 					constraintFFigureControllerExchangeNodeName);
 
 			RectangleFigure controllerExchangeNodeContentContainer0 = new RectangleFigure();
+
 			controllerExchangeNodeContentContainer0.setFill(false);
 			controllerExchangeNodeContentContainer0.setOutline(false);
 
@@ -523,6 +527,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 					.setLayoutManager(layoutControllerExchangeNodeContentContainer0);
 
 			RectangleFigure controllerExchangeNodeIconContainer1 = new RectangleFigure();
+
 			controllerExchangeNodeIconContainer1.setOutline(false);
 
 			GridData constraintControllerExchangeNodeIconContainer1 = new GridData();
@@ -542,6 +547,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 					.setLayoutManager(layoutControllerExchangeNodeIconContainer1);
 
 			RectangleFigure controllerExchangeNodeIconHelper2 = new RectangleFigure();
+
 			controllerExchangeNodeIconHelper2.setOutline(false);
 
 			controllerExchangeNodeIconContainer1.add(
@@ -557,6 +563,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 					.setLayoutManager(layoutControllerExchangeNodeIcon2);
 
 			RectangleFigure leftIconRectangle3 = new RectangleFigure();
+
 			leftIconRectangle3.setOutline(false);
 
 			controllerExchangeNodeIcon2.add(leftIconRectangle3,
@@ -566,6 +573,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			leftIconRectangle3.setLayoutManager(layoutLeftIconRectangle3);
 
 			RectangleFigure upperLeftIconRectangle4 = new RectangleFigure();
+
 			upperLeftIconRectangle4.setOutline(false);
 
 			leftIconRectangle3.add(upperLeftIconRectangle4, BorderLayout.TOP);
@@ -575,6 +583,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 					.setLayoutManager(layoutUpperLeftIconRectangle4);
 
 			RectangleFigure greenIconRectangle5 = new RectangleFigure();
+
 			greenIconRectangle5.setForegroundColor(GREENICONRECTANGLE5_FORE);
 			greenIconRectangle5.setPreferredSize(new Dimension(getMapMode()
 					.DPtoLP(14), getMapMode().DPtoLP(14)));
@@ -588,6 +597,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			upperLeftIconRectangle4.add(greenIconRectangle5, BorderLayout.LEFT);
 
 			RectangleFigure leftArrowPolygonRectangle5 = new RectangleFigure();
+
 			leftArrowPolygonRectangle5.setFill(false);
 			leftArrowPolygonRectangle5.setOutline(false);
 			leftArrowPolygonRectangle5.setPreferredSize(new Dimension(
@@ -597,6 +607,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 					BorderLayout.RIGHT);
 
 			PolygonShape leftArrowPolygon6 = new PolygonShape();
+
 			leftArrowPolygon6.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(7)));
 			leftArrowPolygon6.addPoint(new Point(getMapMode().DPtoLP(7),
@@ -620,12 +631,14 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			leftArrowPolygonRectangle5.add(leftArrowPolygon6);
 
 			RectangleFigure lowerLeftIconRectangle4 = new RectangleFigure();
+
 			lowerLeftIconRectangle4.setOutline(false);
 
 			leftIconRectangle3
 					.add(lowerLeftIconRectangle4, BorderLayout.CENTER);
 
 			RectangleFigure middleIconRectangle3 = new RectangleFigure();
+
 			middleIconRectangle3.setOutline(false);
 
 			controllerExchangeNodeIcon2.add(middleIconRectangle3,
@@ -637,6 +650,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			middleIconRectangle3.setLayoutManager(layoutMiddleIconRectangle3);
 
 			RectangleFigure upperLineHelper4 = new RectangleFigure();
+
 			upperLineHelper4.setFill(false);
 			upperLineHelper4.setOutline(false);
 			upperLineHelper4.setPreferredSize(new Dimension(getMapMode()
@@ -660,6 +674,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 					constraintUpperLineHelper4);
 
 			ScalablePolygonShape linePolygon4 = new ScalablePolygonShape();
+
 			linePolygon4.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0)));
 			linePolygon4.addPoint(new Point(getMapMode().DPtoLP(1),
@@ -678,6 +693,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			middleIconRectangle3.add(linePolygon4, constraintLinePolygon4);
 
 			RectangleFigure labelRectangle4 = new RectangleFigure();
+
 			labelRectangle4.setOutline(false);
 
 			GridData constraintLabelRectangle4 = new GridData();
@@ -695,6 +711,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			labelRectangle4.setLayoutManager(layoutLabelRectangle4);
 
 			fFigureControllerExchangeNodeIconLabel = new WrappingLabel();
+
 			fFigureControllerExchangeNodeIconLabel.setText("");
 
 			fFigureControllerExchangeNodeIconLabel
@@ -704,6 +721,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 					BorderLayout.LEFT);
 
 			fFigureControllerExchangeNodeIconDeadline = new WrappingLabel();
+
 			fFigureControllerExchangeNodeIconDeadline.setText("");
 
 			fFigureControllerExchangeNodeIconDeadline
@@ -713,6 +731,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 					BorderLayout.RIGHT);
 
 			RectangleFigure rightIconRectangle3 = new RectangleFigure();
+
 			rightIconRectangle3.setOutline(false);
 
 			controllerExchangeNodeIcon2.add(rightIconRectangle3,
@@ -722,6 +741,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			rightIconRectangle3.setLayoutManager(layoutRightIconRectangle3);
 
 			RectangleFigure upperRightIconRectangle4 = new RectangleFigure();
+
 			upperRightIconRectangle4.setOutline(false);
 
 			rightIconRectangle3.add(upperRightIconRectangle4, BorderLayout.TOP);
@@ -731,6 +751,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 					.setLayoutManager(layoutUpperRightIconRectangle4);
 
 			RectangleFigure rightArrowPolygonRectangle5 = new RectangleFigure();
+
 			rightArrowPolygonRectangle5.setFill(false);
 			rightArrowPolygonRectangle5.setOutline(false);
 			rightArrowPolygonRectangle5.setPreferredSize(new Dimension(
@@ -740,6 +761,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 					BorderLayout.LEFT);
 
 			PolygonShape rightArrowPolygon6 = new PolygonShape();
+
 			rightArrowPolygon6.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0)));
 			rightArrowPolygon6.addPoint(new Point(getMapMode().DPtoLP(7),
@@ -763,6 +785,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			rightArrowPolygonRectangle5.add(rightArrowPolygon6);
 
 			RectangleFigure redIconRectangle5 = new RectangleFigure();
+
 			redIconRectangle5.setForegroundColor(REDICONRECTANGLE5_FORE);
 			redIconRectangle5.setPreferredSize(new Dimension(getMapMode()
 					.DPtoLP(14), getMapMode().DPtoLP(14)));
@@ -770,12 +793,14 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 			upperRightIconRectangle4.add(redIconRectangle5, BorderLayout.RIGHT);
 
 			RectangleFigure lowerRightIconRectangle4 = new RectangleFigure();
+
 			lowerRightIconRectangle4.setOutline(false);
 
 			rightIconRectangle3.add(lowerRightIconRectangle4,
 					BorderLayout.CENTER);
 
 			fFigureControllerExchangeNodeFadingFunctionsContainer = new RectangleFigure();
+
 			fFigureControllerExchangeNodeFadingFunctionsContainer
 					.setOutline(false);
 
@@ -792,6 +817,7 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 							constraintFFigureControllerExchangeNodeFadingFunctionsContainer);
 
 			fFigureControllerExchangeNodePatternContainer = new RectangleFigure();
+
 			fFigureControllerExchangeNodePatternContainer.setFill(false);
 			fFigureControllerExchangeNodePatternContainer.setOutline(false);
 
@@ -814,7 +840,6 @@ public class ControllerExchangeNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private Border createBorder0() {
 			OneLineBorder result = new OneLineBorder();
-
 			result.setPosition(PositionConstants.BOTTOM);
 
 			return result;

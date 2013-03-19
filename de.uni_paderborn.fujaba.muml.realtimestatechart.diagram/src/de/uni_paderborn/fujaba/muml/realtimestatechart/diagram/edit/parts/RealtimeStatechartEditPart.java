@@ -153,7 +153,6 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureStatechartContentsCompartment();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
@@ -328,9 +327,9 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
 			RectangleFigure statechartTitleAreaFigure0 = new RectangleFigure();
+
 			statechartTitleAreaFigure0.setFill(false);
 			statechartTitleAreaFigure0.setOutline(false);
 
@@ -370,6 +369,7 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 			fFigureHistoryFigure.setLayoutManager(layoutFFigureHistoryFigure);
 
 			WrappingLabel historyLabel2 = new WrappingLabel();
+
 			historyLabel2.setText(" H ");
 
 			GridData constraintHistoryLabel2 = new GridData();
@@ -383,11 +383,13 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 			fFigureHistoryFigure.add(historyLabel2, constraintHistoryLabel2);
 
 			fFigureStatechartNameLabel = new WrappingLabel();
+
 			fFigureStatechartNameLabel.setText("");
 
 			statechartTitleAreaFigure0.add(fFigureStatechartNameLabel);
 
 			fFigureStatechartVariablesLabel = new WrappingLabel();
+
 			fFigureStatechartVariablesLabel.setText("");
 
 			GridData constraintFFigureStatechartVariablesLabel = new GridData();
@@ -401,7 +403,12 @@ public class RealtimeStatechartEditPart extends ShapeNodeEditPart {
 			statechartTitleAreaFigure0.add(fFigureStatechartVariablesLabel,
 					constraintFFigureStatechartVariablesLabel);
 
+			// Process FigureRef details
+
+			this.add(statechartTitleAreaFigure0);
+
 			fFigureStatechartContentsCompartment = new RectangleFigure();
+
 			fFigureStatechartContentsCompartment.setFill(false);
 			fFigureStatechartContentsCompartment.setOutline(false);
 

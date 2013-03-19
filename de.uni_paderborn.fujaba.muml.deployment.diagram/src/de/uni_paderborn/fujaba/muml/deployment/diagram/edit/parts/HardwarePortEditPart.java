@@ -344,6 +344,7 @@ public class HardwarePortEditPart extends BorderedBorderItemEditPart {
 		private void createContents() {
 
 			fFigureInContainer = new RectangleFigure();
+
 			fFigureInContainer.setOutline(false);
 			fFigureInContainer.setBorder(new MarginBorder(getMapMode()
 					.DPtoLP(2), getMapMode().DPtoLP(7), getMapMode().DPtoLP(0),
@@ -353,6 +354,7 @@ public class HardwarePortEditPart extends BorderedBorderItemEditPart {
 			fFigureInContainer.setLayoutManager(new StackLayout());
 
 			WrappingLabel inLabel1 = new WrappingLabel();
+
 			inLabel1.setText("i");
 			inLabel1.setForegroundColor(INLABEL1_FORE);
 
@@ -361,6 +363,7 @@ public class HardwarePortEditPart extends BorderedBorderItemEditPart {
 			fFigureInContainer.add(inLabel1);
 
 			fFigureOutContainer = new RectangleFigure();
+
 			fFigureOutContainer.setOutline(false);
 			fFigureOutContainer.setBorder(new MarginBorder(getMapMode().DPtoLP(
 					2), getMapMode().DPtoLP(6), getMapMode().DPtoLP(0),
@@ -370,6 +373,7 @@ public class HardwarePortEditPart extends BorderedBorderItemEditPart {
 			fFigureOutContainer.setLayoutManager(new StackLayout());
 
 			WrappingLabel outLabel1 = new WrappingLabel();
+
 			outLabel1.setText("o");
 			outLabel1.setForegroundColor(OUTLABEL1_FORE);
 
@@ -378,6 +382,7 @@ public class HardwarePortEditPart extends BorderedBorderItemEditPart {
 			fFigureOutContainer.add(outLabel1);
 
 			fFigureInOutContainer = new RectangleFigure();
+
 			fFigureInOutContainer.setOutline(false);
 			fFigureInOutContainer.setBorder(new MarginBorder(getMapMode()
 					.DPtoLP(2), getMapMode().DPtoLP(4), getMapMode().DPtoLP(0),
@@ -387,6 +392,7 @@ public class HardwarePortEditPart extends BorderedBorderItemEditPart {
 			fFigureInOutContainer.setLayoutManager(new StackLayout());
 
 			WrappingLabel inOutLabel1 = new WrappingLabel();
+
 			inOutLabel1.setText("i/o");
 			inOutLabel1.setForegroundColor(INOUTLABEL1_FORE);
 

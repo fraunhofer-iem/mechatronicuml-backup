@@ -26,6 +26,8 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
+import org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate;
+import org.eclipse.gmf.runtime.diagram.ui.label.WrappingLabelDelegate;
 import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.diagram.ui.tools.TextDirectEditManager;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -34,6 +36,9 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
 import org.eclipse.gmf.runtime.notation.FontStyle;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.directedit.TextDirectEditManager2;
+import org.eclipse.gmf.tooling.runtime.draw2d.labels.SimpleLabelDelegate;
+import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.swt.SWT;
@@ -72,6 +77,11 @@ public class ExitPointNameEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	private String defaultText;
+
+	/**
+	 * @generated
+	 */
+	private ILabelDelegate labelDelegate;
 
 	/**
 	 * @generated
@@ -137,8 +147,10 @@ public class ExitPointNameEditPart extends LabelEditPart implements
 	protected String getLabelTextHelper(IFigure figure) {
 		if (figure instanceof WrappingLabel) {
 			return ((WrappingLabel) figure).getText();
-		} else {
+		} else if (figure instanceof Label) {
 			return ((Label) figure).getText();
+		} else {
+			return getLabelDelegate().getText();
 		}
 	}
 
@@ -148,8 +160,10 @@ public class ExitPointNameEditPart extends LabelEditPart implements
 	protected void setLabelTextHelper(IFigure figure, String text) {
 		if (figure instanceof WrappingLabel) {
 			((WrappingLabel) figure).setText(text);
-		} else {
+		} else if (figure instanceof Label) {
 			((Label) figure).setText(text);
+		} else {
+			getLabelDelegate().setText(text);
 		}
 	}
 
@@ -159,8 +173,10 @@ public class ExitPointNameEditPart extends LabelEditPart implements
 	protected Image getLabelIconHelper(IFigure figure) {
 		if (figure instanceof WrappingLabel) {
 			return ((WrappingLabel) figure).getIcon();
-		} else {
+		} else if (figure instanceof Label) {
 			return ((Label) figure).getIcon();
+		} else {
+			return getLabelDelegate().getIcon(0);
 		}
 	}
 
@@ -170,8 +186,12 @@ public class ExitPointNameEditPart extends LabelEditPart implements
 	protected void setLabelIconHelper(IFigure figure, Image icon) {
 		if (figure instanceof WrappingLabel) {
 			((WrappingLabel) figure).setIcon(icon);
-		} else {
+			return;
+		} else if (figure instanceof Label) {
 			((Label) figure).setIcon(icon);
+			return;
+		} else {
+			getLabelDelegate().setIcon(icon, 0);
 		}
 	}
 
@@ -237,16 +257,7 @@ public class ExitPointNameEditPart extends LabelEditPart implements
 	 */
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
-		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlTextSelectionEditPolicy) pdEditPolicy)
-					.refreshFeedback();
-		}
-		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlTextSelectionEditPolicy) sfEditPolicy)
-					.refreshFeedback();
-		}
+		refreshSelectionFeedback();
 	}
 
 	/**
@@ -342,9 +353,9 @@ public class ExitPointNameEditPart extends LabelEditPart implements
 	 */
 	protected DirectEditManager getManager() {
 		if (manager == null) {
-			setManager(new TextDirectEditManager(
+			setManager(new TextDirectEditManager2(
 					this,
-					TextDirectEditManager.getTextCellEditorClass(this),
+					null,
 					de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.MumlEditPartFactory
 							.getTextCellEditorLocator(this)));
 		}
@@ -369,8 +380,8 @@ public class ExitPointNameEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected void performDirectEdit(Point eventLocation) {
-		if (getManager().getClass() == TextDirectEditManager.class) {
-			((TextDirectEditManager) getManager()).show(eventLocation
+		if (getManager().getClass() == TextDirectEditManager2.class) {
+			((TextDirectEditManager2) getManager()).show(eventLocation
 					.getSWTPoint());
 		}
 	}
@@ -381,7 +392,11 @@ public class ExitPointNameEditPart extends LabelEditPart implements
 	private void performDirectEdit(char initialCharacter) {
 		if (getManager() instanceof TextDirectEditManager) {
 			((TextDirectEditManager) getManager()).show(initialCharacter);
-		} else {
+		} else // 
+		if (getManager() instanceof TextDirectEditManager2) {
+			((TextDirectEditManager2) getManager()).show(initialCharacter);
+		} else //
+		{
 			performDirectEdit();
 		}
 	}
@@ -436,16 +451,7 @@ public class ExitPointNameEditPart extends LabelEditPart implements
 	protected void refreshLabel() {
 		setLabelTextHelper(getFigure(), getLabelText());
 		setLabelIconHelper(getFigure(), getLabelIcon());
-		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if (pdEditPolicy instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlTextSelectionEditPolicy) pdEditPolicy)
-					.refreshFeedback();
-		}
-		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if (sfEditPolicy instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlTextSelectionEditPolicy) {
-			((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies.MumlTextSelectionEditPolicy) sfEditPolicy)
-					.refreshFeedback();
-		}
+		refreshSelectionFeedback();
 	}
 
 	/**
@@ -487,6 +493,24 @@ public class ExitPointNameEditPart extends LabelEditPart implements
 							: SWT.NORMAL)
 							| (style.isItalic() ? SWT.ITALIC : SWT.NORMAL));
 			setFont(fontData);
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private void refreshSelectionFeedback() {
+		requestEditPolicyFeedbackRefresh(EditPolicy.PRIMARY_DRAG_ROLE);
+		requestEditPolicyFeedbackRefresh(EditPolicy.SELECTION_FEEDBACK_ROLE);
+	}
+
+	/**
+	 * @generated
+	 */
+	private void requestEditPolicyFeedbackRefresh(String editPolicyKey) {
+		Object editPolicy = getEditPolicy(editPolicyKey);
+		if (editPolicy instanceof IRefreshableFeedbackEditPolicy) {
+			((IRefreshableFeedbackEditPolicy) editPolicy).refreshFeedback();
 		}
 	}
 
@@ -547,6 +571,32 @@ public class ExitPointNameEditPart extends LabelEditPart implements
 	 */
 	private View getFontStyleOwnerView() {
 		return getPrimaryView();
+	}
+
+	/**
+	 * @generated
+	 */
+	private ILabelDelegate getLabelDelegate() {
+		if (labelDelegate == null) {
+			IFigure label = getFigure();
+			if (label instanceof WrappingLabel) {
+				labelDelegate = new WrappingLabelDelegate((WrappingLabel) label);
+			} else {
+				labelDelegate = new SimpleLabelDelegate((Label) label);
+			}
+		}
+		return labelDelegate;
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	public Object getAdapter(Class key) {
+		if (ILabelDelegate.class.equals(key)) {
+			return getLabelDelegate();
+		}
+		return super.getAdapter(key);
 	}
 
 	/**

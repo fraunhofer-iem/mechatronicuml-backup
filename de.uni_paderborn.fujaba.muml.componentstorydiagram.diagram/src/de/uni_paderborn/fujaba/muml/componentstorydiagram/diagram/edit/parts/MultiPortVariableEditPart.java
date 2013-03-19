@@ -33,6 +33,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.graphics.Color;
 
 /**
@@ -66,8 +67,10 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(
+						de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
 				getPrimaryDragEditPolicy());
@@ -160,7 +163,6 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableMultiPortVariablesCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureSinglePortVariablesCompartment();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableMultiPortVariablesCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
@@ -465,6 +467,7 @@ public class MultiPortVariableEditPart extends BorderedBorderItemEditPart {
 		private void createContents() {
 
 			fFigureSinglePortVariablesCompartment = new RectangleFigure();
+
 			fFigureSinglePortVariablesCompartment.setOutline(false);
 
 			GridData constraintFFigureSinglePortVariablesCompartment = new GridData();

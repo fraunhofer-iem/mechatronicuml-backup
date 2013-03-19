@@ -22,7 +22,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPar
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
@@ -31,6 +30,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -67,8 +67,10 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(
+						de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -365,6 +367,7 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 		private void createContents() {
 
 			RectangleFigure componentIconRectangle0 = new RectangleFigure();
+
 			componentIconRectangle0.setFill(false);
 			componentIconRectangle0.setOutline(false);
 
@@ -376,9 +379,8 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 			componentIconRectangle0
 					.setLayoutManager(layoutComponentIconRectangle0);
 
-			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
-
 			RectangleFigure componentIconFigure1 = new RectangleFigure();
+
 			componentIconFigure1.setFill(false);
 			componentIconFigure1.setOutline(false);
 			componentIconFigure1.setPreferredSize(new Dimension(getMapMode()
@@ -398,6 +400,7 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 			componentIconFigure1.setLayoutManager(new StackLayout());
 
 			RectangleFigure componentIconOuter2 = new RectangleFigure();
+
 			componentIconOuter2.setFill(false);
 			componentIconOuter2.setOutline(false);
 
@@ -411,6 +414,7 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(20)));
 
 			RectangleFigure componentIconInner12 = new RectangleFigure();
+
 			componentIconInner12.setFill(false);
 			componentIconInner12.setOutline(false);
 
@@ -424,6 +428,7 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(6)));
 
 			RectangleFigure componentIconInner22 = new RectangleFigure();
+
 			componentIconInner22.setFill(false);
 			componentIconInner22.setOutline(false);
 
@@ -436,7 +441,12 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
 
+			// Process FigureRef details
+
+			componentIconRectangle0.add(componentIconFigure1);
+
 			RectangleFigure componentNameRectangle0 = new RectangleFigure();
+
 			componentNameRectangle0.setFill(false);
 			componentNameRectangle0.setOutline(false);
 
@@ -449,6 +459,7 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 					.setLayoutManager(layoutComponentNameRectangle0);
 
 			fFigureComponentNameFigure = new WrappingLabel();
+
 			fFigureComponentNameFigure.setText("");
 
 			fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);

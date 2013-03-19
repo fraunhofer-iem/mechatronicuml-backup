@@ -134,7 +134,6 @@ public class ComponentStoryPatternEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureComponentStoryPatternContainer();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPatternComponentStoryPatternCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
@@ -295,6 +294,7 @@ public class ComponentStoryPatternEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			fFigureComponentStoryPatternContainer = new RoundedRectangle();
+
 			fFigureComponentStoryPatternContainer
 					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
 							getMapMode().DPtoLP(12)));

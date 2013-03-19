@@ -24,13 +24,14 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser;
+import org.eclipse.gmf.tooling.runtime.parsers.ExpressionLabelParserBase;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 
 /**
  * @generated
  */
-public class ParameterLabelExpressionLabelParser5016 implements IParser,
-		ISemanticParser {
+public class ParameterLabelExpressionLabelParser5016 extends
+		ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
@@ -40,16 +41,25 @@ public class ParameterLabelExpressionLabelParser5016 implements IParser,
 	/**
 	 * @generated
 	 */
+	@Override
+	protected String getExpressionBody() {
+		return de.uni_paderborn.fujaba.muml.messagetype.diagram.expressions.MumlOCLFactory
+				.getExpression(
+						3,
+						de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+								.getParameter(), null).body();
+	}
+
+	/**
+	 * @generated
+	 */
 	public String getEditString(IAdaptable element, int flags) {
 		EObject target = (EObject) element.getAdapter(EObject.class);
-		Map<java.lang.String, EClassifier> typeEnv = new HashMap<java.lang.String, EClassifier>();
-		Map<java.lang.String, java.lang.Object> env = new HashMap<java.lang.String, java.lang.Object>();
-		initializeEnvironment(typeEnv, env, target);
 		Object result = de.uni_paderborn.fujaba.muml.messagetype.diagram.expressions.MumlOCLFactory
 				.getExpression(
 						4,
 						de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-								.getParameter(), typeEnv).evaluate(target, env);
+								.getParameter(), null).evaluate(target);
 		return String.valueOf(result);
 	}
 
@@ -90,31 +100,6 @@ public class ParameterLabelExpressionLabelParser5016 implements IParser,
 	/**
 	 * @generated
 	 */
-	public String getPrintString(IAdaptable element, int flags) {
-		EObject target = (EObject) element.getAdapter(EObject.class);
-		Map<java.lang.String, EClassifier> typeEnv = new HashMap<java.lang.String, EClassifier>();
-		Map<java.lang.String, java.lang.Object> env = new HashMap<java.lang.String, java.lang.Object>();
-		initializeEnvironment(typeEnv, env, target);
-		Object result = de.uni_paderborn.fujaba.muml.messagetype.diagram.expressions.MumlOCLFactory
-				.getExpression(
-						3,
-						de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-								.getParameter(), typeEnv).evaluate(target, env);
-		return String.valueOf(result);
-	}
-
-	/**
-	 * @generated
-	 */
-	public boolean isAffectingEvent(Object event, int flags) {
-		// XXX Any event is recognized as important, unless there's a way to extract this information from expression itself.
-		// TODO analyze expressions (e.g. using OCL parser) to find out structural features in use  
-		return true;
-	}
-
-	/**
-	 * @generated
-	 */
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
@@ -136,32 +121,6 @@ public class ParameterLabelExpressionLabelParser5016 implements IParser,
 		// DO NOT FORGET to remove @generated tag or mark method @generated NOT
 		throw new ExecutionException(
 				"Please implement parsing and value modification");
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
-		return Arrays.asList(new EObject[] { element, element.eContainer() });
-	}
-
-	/**
-	 * @generated
-	 */
-	@Override
-	public boolean areSemanticElementsAffected(EObject listener,
-			Object notification) {
-		return false;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void initializeEnvironment(
-			Map<java.lang.String, EClassifier> typeEnv,
-			Map<java.lang.String, java.lang.Object> env, EObject context) {
-
 	}
 
 }

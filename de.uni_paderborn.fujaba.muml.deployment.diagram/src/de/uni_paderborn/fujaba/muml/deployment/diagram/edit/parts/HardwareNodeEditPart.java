@@ -35,6 +35,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -71,8 +72,10 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(
+						de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -334,6 +337,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 		private void createContents() {
 
 			RectangleFigure upperShadow0 = new RectangleFigure();
+
 			upperShadow0.setFill(false);
 			upperShadow0.setOutline(false);
 
@@ -343,6 +347,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			upperShadow0.setLayoutManager(layoutUpperShadow0);
 
 			RectangleFigure upperLeftRectangle1 = new RectangleFigure();
+
 			upperLeftRectangle1.setFill(false);
 			upperLeftRectangle1.setOutline(false);
 			upperLeftRectangle1.setSize(getMapMode().DPtoLP(16), getMapMode()
@@ -352,6 +357,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			upperLeftRectangle1.setLayoutManager(new StackLayout());
 
 			PolygonShape leftPolygon2 = new PolygonShape();
+
 			leftPolygon2.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(16)));
 			leftPolygon2.addPoint(new Point(getMapMode().DPtoLP(16),
@@ -372,6 +378,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			upperLeftRectangle1.add(leftPolygon2);
 
 			PolylineShape leftLine2 = new PolylineShape();
+
 			leftLine2.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
 					.DPtoLP(16)));
 			leftLine2.addPoint(new Point(getMapMode().DPtoLP(16), getMapMode()
@@ -381,6 +388,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			upperLeftRectangle1.add(leftLine2);
 
 			RectangleFigure upperMiddleRectangle1 = new RectangleFigure();
+
 			upperMiddleRectangle1.setOutline(false);
 			upperMiddleRectangle1.setLineWidth(0);
 			upperMiddleRectangle1
@@ -392,6 +400,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			upperMiddleRectangle1.setLayoutManager(layoutUpperMiddleRectangle1);
 
 			RectangleFigure upperLine2 = new RectangleFigure();
+
 			upperLine2.setForegroundColor(UPPERLINE2_FORE);
 			upperLine2.setBackgroundColor(UPPERLINE2_BACK);
 			upperLine2.setSize(getMapMode().DPtoLP(0), getMapMode().DPtoLP(1));
@@ -399,6 +408,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			upperMiddleRectangle1.add(upperLine2, BorderLayout.TOP);
 
 			RectangleFigure rightShadow1 = new RectangleFigure();
+
 			rightShadow1.setFill(false);
 			rightShadow1.setOutline(false);
 			rightShadow1.setLineWidth(0);
@@ -409,6 +419,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			rightShadow1.setLayoutManager(layoutRightShadow1);
 
 			RectangleFigure upperRightRectangle2 = new RectangleFigure();
+
 			upperRightRectangle2.setFill(false);
 			upperRightRectangle2.setOutline(false);
 			upperRightRectangle2.setLineWidth(0);
@@ -423,6 +434,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			upperRightRectangle2.setLayoutManager(new StackLayout());
 
 			RectangleFigure upperRightFilledRectangle3 = new RectangleFigure();
+
 			upperRightFilledRectangle3.setOutline(false);
 			upperRightFilledRectangle3.setLineWidth(0);
 			upperRightFilledRectangle3
@@ -437,6 +449,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			upperRightRectangle2.add(upperRightFilledRectangle3);
 
 			PolylineShape diagonalLine3 = new PolylineShape();
+
 			diagonalLine3.addPoint(new Point(getMapMode().DPtoLP(15),
 					getMapMode().DPtoLP(0)));
 			diagonalLine3.addPoint(new Point(getMapMode().DPtoLP(0),
@@ -446,6 +459,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			upperRightRectangle2.add(diagonalLine3);
 
 			PolylineShape upperRightLine3 = new PolylineShape();
+
 			upperRightLine3.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(0)));
 			upperRightLine3.addPoint(new Point(getMapMode().DPtoLP(15),
@@ -455,6 +469,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			upperRightRectangle2.add(upperRightLine3);
 
 			PolylineShape rightUpperLine3 = new PolylineShape();
+
 			rightUpperLine3.addPoint(new Point(getMapMode().DPtoLP(15),
 					getMapMode().DPtoLP(1)));
 			rightUpperLine3.addPoint(new Point(getMapMode().DPtoLP(15),
@@ -464,6 +479,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			upperRightRectangle2.add(rightUpperLine3);
 
 			RectangleFigure middleRightRectangle2 = new RectangleFigure();
+
 			middleRightRectangle2.setOutline(false);
 			middleRightRectangle2.setLineWidth(0);
 			middleRightRectangle2
@@ -475,12 +491,14 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			middleRightRectangle2.setLayoutManager(layoutMiddleRightRectangle2);
 
 			RectangleFigure rightLine3 = new RectangleFigure();
+
 			rightLine3.setBackgroundColor(RIGHTLINE3_BACK);
 			rightLine3.setSize(getMapMode().DPtoLP(1), getMapMode().DPtoLP(0));
 
 			middleRightRectangle2.add(rightLine3, BorderLayout.RIGHT);
 
 			RectangleFigure lowerRightRectangle2 = new RectangleFigure();
+
 			lowerRightRectangle2.setFill(false);
 			lowerRightRectangle2.setOutline(false);
 			lowerRightRectangle2.setLineWidth(0);
@@ -489,6 +507,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			lowerRightRectangle2.setLayoutManager(new StackLayout());
 
 			PolygonShape rightPolygon3 = new PolygonShape();
+
 			rightPolygon3.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(15)));
 			rightPolygon3.addPoint(new Point(getMapMode().DPtoLP(0),
@@ -509,6 +528,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			lowerRightRectangle2.add(rightPolygon3);
 
 			PolylineShape lowerRightLine3 = new PolylineShape();
+
 			lowerRightLine3.addPoint(new Point(getMapMode().DPtoLP(0),
 					getMapMode().DPtoLP(15)));
 			lowerRightLine3.addPoint(new Point(getMapMode().DPtoLP(15),
@@ -518,6 +538,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			lowerRightRectangle2.add(lowerRightLine3);
 
 			RectangleFigure innerRectangleHelper0 = new RectangleFigure();
+
 			innerRectangleHelper0.setFill(false);
 			innerRectangleHelper0.setOutline(false);
 			innerRectangleHelper0.setBorder(new MarginBorder(getMapMode()
@@ -528,6 +549,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			innerRectangleHelper0.setLayoutManager(new StackLayout());
 
 			RectangleFigure innerHardwareNode1 = new RectangleFigure();
+
 			innerHardwareNode1.setForegroundColor(INNERHARDWARENODE1_FORE);
 			innerHardwareNode1.setBorder(new MarginBorder(getMapMode()
 					.DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
@@ -537,6 +559,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			innerHardwareNode1.setLayoutManager(new StackLayout());
 
 			RectangleFigure componentIconRectangle2 = new RectangleFigure();
+
 			componentIconRectangle2.setFill(false);
 			componentIconRectangle2.setOutline(false);
 
@@ -549,6 +572,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 					.setLayoutManager(layoutComponentIconRectangle2);
 
 			RectangleFigure componentIconFigure3 = new RectangleFigure();
+
 			componentIconFigure3.setFill(false);
 			componentIconFigure3.setOutline(false);
 			componentIconFigure3.setPreferredSize(new Dimension(getMapMode()
@@ -568,6 +592,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			componentIconFigure3.setLayoutManager(new StackLayout());
 
 			RectangleFigure componentIconOuter4 = new RectangleFigure();
+
 			componentIconOuter4.setFill(false);
 			componentIconOuter4.setOutline(false);
 
@@ -575,6 +600,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			componentIconOuter4.setLayoutManager(new XYLayout());
 
 			RectangleFigure b15 = new RectangleFigure();
+
 			b15.setForegroundColor(B15_FORE);
 
 			componentIconOuter4.add(b15, new Rectangle(getMapMode().DPtoLP(4),
@@ -582,6 +608,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(20)));
 
 			RectangleFigure componentIconInner14 = new RectangleFigure();
+
 			componentIconInner14.setFill(false);
 			componentIconInner14.setOutline(false);
 
@@ -589,6 +616,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			componentIconInner14.setLayoutManager(new XYLayout());
 
 			RectangleFigure c15 = new RectangleFigure();
+
 			c15.setForegroundColor(C15_FORE);
 
 			componentIconInner14.add(c15, new Rectangle(getMapMode().DPtoLP(0),
@@ -596,6 +624,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(6)));
 
 			RectangleFigure componentIconInner24 = new RectangleFigure();
+
 			componentIconInner24.setFill(false);
 			componentIconInner24.setOutline(false);
 
@@ -603,6 +632,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 			componentIconInner24.setLayoutManager(new XYLayout());
 
 			RectangleFigure d15 = new RectangleFigure();
+
 			d15.setForegroundColor(D15_FORE);
 
 			componentIconInner24.add(d15, new Rectangle(getMapMode().DPtoLP(0),
@@ -610,6 +640,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(6)));
 
 			RectangleFigure componentNameRectangle2 = new RectangleFigure();
+
 			componentNameRectangle2.setFill(false);
 			componentNameRectangle2.setOutline(false);
 
@@ -622,6 +653,7 @@ public class HardwareNodeEditPart extends AbstractBorderedShapeEditPart {
 					.setLayoutManager(layoutComponentNameRectangle2);
 
 			fFigureComponentNameFigure = new WrappingLabel();
+
 			fFigureComponentNameFigure.setText("");
 			fFigureComponentNameFigure
 					.setForegroundColor(FFIGURECOMPONENTNAMEFIGURE_FORE);

@@ -21,7 +21,6 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
@@ -31,6 +30,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -67,8 +67,10 @@ public class RegionEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -174,7 +176,6 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureRegionContentsCompartment();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionRegionContentsCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
@@ -374,9 +375,9 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		private void createContents() {
-			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
 			RectangleFigure regionTitleAreaFigure0 = new RectangleFigure();
+
 			regionTitleAreaFigure0.setFill(false);
 			regionTitleAreaFigure0.setOutline(false);
 
@@ -396,9 +397,8 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			regionTitleAreaFigure0
 					.setLayoutManager(layoutRegionTitleAreaFigure0);
 
-			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
-
 			RectangleFigure statechartTitleAreaFigure1 = new RectangleFigure();
+
 			statechartTitleAreaFigure1.setFill(false);
 			statechartTitleAreaFigure1.setOutline(false);
 
@@ -438,6 +438,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			fFigureHistoryFigure.setLayoutManager(layoutFFigureHistoryFigure);
 
 			WrappingLabel historyLabel3 = new WrappingLabel();
+
 			historyLabel3.setText(" H ");
 
 			GridData constraintHistoryLabel3 = new GridData();
@@ -451,11 +452,13 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			fFigureHistoryFigure.add(historyLabel3, constraintHistoryLabel3);
 
 			fFigureStatechartNameLabel = new WrappingLabel();
+
 			fFigureStatechartNameLabel.setText("");
 
 			statechartTitleAreaFigure1.add(fFigureStatechartNameLabel);
 
 			fFigureStatechartVariablesLabel = new WrappingLabel();
+
 			fFigureStatechartVariablesLabel.setText("");
 
 			GridData constraintFFigureStatechartVariablesLabel = new GridData();
@@ -469,12 +472,17 @@ public class RegionEditPart extends ShapeNodeEditPart {
 			statechartTitleAreaFigure1.add(fFigureStatechartVariablesLabel,
 					constraintFFigureStatechartVariablesLabel);
 
+			// Process FigureRef details
+
+			regionTitleAreaFigure0.add(statechartTitleAreaFigure1);
+
 			Ellipse regionPriority1 = new Ellipse();
 
 			regionTitleAreaFigure0.add(regionPriority1);
 			regionPriority1.setLayoutManager(new StackLayout());
 
 			fFigureRegionPriorityLabel = new WrappingLabel();
+
 			fFigureRegionPriorityLabel.setText("");
 
 			fFigureRegionPriorityLabel.setFont(FFIGUREREGIONPRIORITYLABEL_FONT);
@@ -485,7 +493,12 @@ public class RegionEditPart extends ShapeNodeEditPart {
 
 			regionPriority1.add(fFigureRegionPriorityLabel);
 
+			// Process FigureRef details
+
+			this.add(regionTitleAreaFigure0);
+
 			fFigureRegionContentsCompartment = new RectangleFigure();
+
 			fFigureRegionContentsCompartment.setFill(false);
 			fFigureRegionContentsCompartment.setOutline(false);
 
@@ -507,9 +520,7 @@ public class RegionEditPart extends ShapeNodeEditPart {
 		 */
 		private Border createBorder0() {
 			OneLineBorder result = new OneLineBorder();
-
 			result.setPosition(PositionConstants.BOTTOM);
-
 			result.setStyle(SWT.LINE_DASH);
 
 			return result;

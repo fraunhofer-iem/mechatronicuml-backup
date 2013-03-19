@@ -23,12 +23,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser staticStructuredComponentName_5021Parser;
+	private IParser staticStructuredComponentName_5021Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getStaticStructuredComponentName_5021Parser() {
+	private IParser getStaticStructuredComponentName_5021Parser() {
 		if (staticStructuredComponentName_5021Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -42,12 +42,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser atomicComponentName_5028Parser;
+	private IParser atomicComponentName_5028Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getAtomicComponentName_5028Parser() {
+	private IParser getAtomicComponentName_5028Parser() {
 		if (atomicComponentName_5028Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -61,12 +61,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser discretePortName_5012Parser;
+	private IParser discretePortName_5012Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getDiscretePortName_5012Parser() {
+	private IParser getDiscretePortName_5012Parser() {
 		if (discretePortName_5012Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -80,27 +80,19 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.component.diagram.parsers.DiscretePortLabelExpressionLabelParser5025 discretePortLabel_5025Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getDiscretePortLabel_5025Parser() {
-		if (discretePortLabel_5025Parser == null) {
-			discretePortLabel_5025Parser = new de.uni_paderborn.fujaba.muml.component.diagram.parsers.DiscretePortLabelExpressionLabelParser5025();
-		}
-		return discretePortLabel_5025Parser;
+	private IParser getDiscretePortLabel_5025Parser() {
+		return new de.uni_paderborn.fujaba.muml.component.diagram.parsers.DiscretePortLabelExpressionLabelParser5025();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser continuousPortName_5013Parser;
+	private IParser continuousPortName_5013Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getContinuousPortName_5013Parser() {
+	private IParser getContinuousPortName_5013Parser() {
 		if (continuousPortName_5013Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -114,27 +106,19 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.component.diagram.parsers.ComponentPartLabelExpressionLabelParser5017 componentPartLabel_5017Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getComponentPartLabel_5017Parser() {
-		if (componentPartLabel_5017Parser == null) {
-			componentPartLabel_5017Parser = new de.uni_paderborn.fujaba.muml.component.diagram.parsers.ComponentPartLabelExpressionLabelParser5017();
-		}
-		return componentPartLabel_5017Parser;
+	private IParser getComponentPartLabel_5017Parser() {
+		return new de.uni_paderborn.fujaba.muml.component.diagram.parsers.ComponentPartLabelExpressionLabelParser5017();
 	}
 
 	/**
 	 * @generated
 	 */
-	protected IParser hybridPortName_5024Parser;
+	private IParser hybridPortName_5024Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getHybridPortName_5024Parser() {
+	private IParser getHybridPortName_5024Parser() {
 		if (hybridPortName_5024Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -148,12 +132,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser discretePortName_5015Parser;
+	private IParser discretePortName_5015Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getDiscretePortName_5015Parser() {
+	private IParser getDiscretePortName_5015Parser() {
 		if (discretePortName_5015Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -167,12 +151,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser continuousPortName_5016Parser;
+	private IParser continuousPortName_5016Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getContinuousPortName_5016Parser() {
+	private IParser getContinuousPortName_5016Parser() {
 		if (continuousPortName_5016Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -186,12 +170,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser coordinationProtocolName_5026Parser;
+	private IParser coordinationProtocolName_5026Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getCoordinationProtocolName_5026Parser() {
+	private IParser getCoordinationProtocolName_5026Parser() {
 		if (coordinationProtocolName_5026Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -205,12 +189,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser hybridPortName_5027Parser;
+	private IParser hybridPortName_5027Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getHybridPortName_5027Parser() {
+	private IParser getHybridPortName_5027Parser() {
 		if (hybridPortName_5027Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -224,16 +208,8 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.component.diagram.parsers.DiscretePortGmfProtocolLabelExpressionLabelParser6003 discretePortGmfProtocolLabel_6003Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getDiscretePortGmfProtocolLabel_6003Parser() {
-		if (discretePortGmfProtocolLabel_6003Parser == null) {
-			discretePortGmfProtocolLabel_6003Parser = new de.uni_paderborn.fujaba.muml.component.diagram.parsers.DiscretePortGmfProtocolLabelExpressionLabelParser6003();
-		}
-		return discretePortGmfProtocolLabel_6003Parser;
+	private IParser getDiscretePortGmfProtocolLabel_6003Parser() {
+		return new de.uni_paderborn.fujaba.muml.component.diagram.parsers.DiscretePortGmfProtocolLabelExpressionLabelParser6003();
 	}
 
 	/**

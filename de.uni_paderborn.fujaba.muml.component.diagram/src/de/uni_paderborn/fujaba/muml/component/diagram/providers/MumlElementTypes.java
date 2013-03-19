@@ -16,8 +16,6 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
-
 /**
  * @generated
  */
@@ -56,7 +54,6 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType AtomicComponent_2006 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.AtomicComponent_2006"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
@@ -89,7 +86,6 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType HybridPort_3017 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.HybridPort_3017"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */

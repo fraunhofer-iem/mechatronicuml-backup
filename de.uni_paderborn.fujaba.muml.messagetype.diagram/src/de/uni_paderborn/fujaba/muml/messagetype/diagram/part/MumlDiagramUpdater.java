@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.storydriven.core.ExtendableElement;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
@@ -252,5 +253,46 @@ public class MumlDiagramUpdater {
 			View view) {
 		return Collections.emptyList();
 	}
+
+	/**
+	 * @generated
+	 */
+	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlNodeDescriptor> getSemanticChildren(
+				View view) {
+			return MumlDiagramUpdater.getSemanticChildren(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlLinkDescriptor> getContainedLinks(
+				View view) {
+			return MumlDiagramUpdater.getContainedLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlLinkDescriptor> getIncomingLinks(
+				View view) {
+			return MumlDiagramUpdater.getIncomingLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlLinkDescriptor> getOutgoingLinks(
+				View view) {
+			return MumlDiagramUpdater.getOutgoingLinks(view);
+		}
+	};
 
 }

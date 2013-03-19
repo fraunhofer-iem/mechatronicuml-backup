@@ -22,7 +22,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPar
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
@@ -31,6 +30,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -67,8 +67,10 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(
+						de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -368,6 +370,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 		private void createContents() {
 
 			RectangleFigure aux10 = new RectangleFigure();
+
 			aux10.setFill(false);
 			aux10.setOutline(false);
 			aux10.setBorder(new MarginBorder(getMapMode().DPtoLP(0),
@@ -382,6 +385,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			aux10.add(shadow1);
 
 			fFigureInnerRectContainer = new RectangleFigure();
+
 			fFigureInnerRectContainer.setFill(false);
 			fFigureInnerRectContainer.setOutline(false);
 			fFigureInnerRectContainer.setBorder(new MarginBorder(getMapMode()
@@ -390,9 +394,9 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 
 			this.add(fFigureInnerRectContainer);
 			fFigureInnerRectContainer.setLayoutManager(new StackLayout());
-			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
 
 			RectangleFigure componentFigure1 = new RectangleFigure();
+
 			componentFigure1.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5)));
@@ -401,6 +405,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			componentFigure1.setLayoutManager(new StackLayout());
 
 			RectangleFigure componentIconRectangle2 = new RectangleFigure();
+
 			componentIconRectangle2.setFill(false);
 			componentIconRectangle2.setOutline(false);
 
@@ -412,9 +417,8 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			componentIconRectangle2
 					.setLayoutManager(layoutComponentIconRectangle2);
 
-			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
-
 			RectangleFigure componentIconFigure3 = new RectangleFigure();
+
 			componentIconFigure3.setFill(false);
 			componentIconFigure3.setOutline(false);
 			componentIconFigure3.setPreferredSize(new Dimension(getMapMode()
@@ -434,6 +438,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			componentIconFigure3.setLayoutManager(new StackLayout());
 
 			RectangleFigure componentIconOuter4 = new RectangleFigure();
+
 			componentIconOuter4.setFill(false);
 			componentIconOuter4.setOutline(false);
 
@@ -447,6 +452,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(20)));
 
 			RectangleFigure componentIconInner14 = new RectangleFigure();
+
 			componentIconInner14.setFill(false);
 			componentIconInner14.setOutline(false);
 
@@ -460,6 +466,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(6)));
 
 			RectangleFigure componentIconInner24 = new RectangleFigure();
+
 			componentIconInner24.setFill(false);
 			componentIconInner24.setOutline(false);
 
@@ -472,7 +479,12 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
 
+			// Process FigureRef details
+
+			componentIconRectangle2.add(componentIconFigure3);
+
 			RectangleFigure componentNameRectangle2 = new RectangleFigure();
+
 			componentNameRectangle2.setFill(false);
 			componentNameRectangle2.setOutline(false);
 
@@ -485,6 +497,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 					.setLayoutManager(layoutComponentNameRectangle2);
 
 			fFigureComponentNameFigure = new WrappingLabel();
+
 			fFigureComponentNameFigure.setText("");
 
 			fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);
@@ -499,6 +512,10 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			constraintFFigureComponentNameFigure.grabExcessVerticalSpace = true;
 			componentNameRectangle2.add(fFigureComponentNameFigure,
 					constraintFFigureComponentNameFigure);
+
+			// Process FigureRef details
+
+			fFigureInnerRectContainer.add(componentFigure1);
 
 		}
 

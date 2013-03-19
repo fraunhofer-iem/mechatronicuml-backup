@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -83,10 +84,12 @@ public class RegionRegionContentsCompartmentCanonicalEditPolicy extends
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
+						.getVisualID(childView);
+				List<Integer> visualIDs = Arrays
+						.asList(new Integer[] { de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID });
 				if (childElement.eContainer() == containerView.getElement()
-						&& visualID == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-								.getVisualID(childView)) {
+						&& visualIDs.contains(visualID)) {
 					result.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;

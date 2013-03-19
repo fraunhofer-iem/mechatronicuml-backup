@@ -133,7 +133,6 @@ public class ComponentInstanceConfigurationEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureComponentInstanceConfigurationContentsCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationComponentInstanceConfigurationContentsCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
@@ -287,6 +286,7 @@ public class ComponentInstanceConfigurationEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			fFigureComponentInstanceConfigurationContentsCompartmentFigure = new RectangleFigure();
+
 			fFigureComponentInstanceConfigurationContentsCompartmentFigure
 					.setOutline(false);
 

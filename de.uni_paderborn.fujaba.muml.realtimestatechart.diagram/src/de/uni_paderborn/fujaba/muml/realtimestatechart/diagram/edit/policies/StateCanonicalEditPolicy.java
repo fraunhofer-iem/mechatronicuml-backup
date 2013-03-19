@@ -1,12 +1,11 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
@@ -83,10 +82,14 @@ public class StateCanonicalEditPolicy extends CanonicalEditPolicy {
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
+						.getVisualID(childView);
+				List<Integer> visualIDs = Arrays
+						.asList(new Integer[] {
+								de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID,
+								de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID });
 				if (childElement.eContainer() == containerView.getElement()
-						&& visualID == de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry
-								.getVisualID(childView)) {
+						&& visualIDs.contains(visualID)) {
 					result.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;

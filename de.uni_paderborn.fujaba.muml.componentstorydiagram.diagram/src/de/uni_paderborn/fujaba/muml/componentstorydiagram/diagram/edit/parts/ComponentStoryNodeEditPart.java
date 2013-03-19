@@ -32,6 +32,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.graphics.Color;
 
 /**
@@ -65,8 +66,10 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(
+						de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -156,7 +159,6 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureComponentStoryNodePatternContainer();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeComponentStoryNodeCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
@@ -417,6 +419,7 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			RectangleFigure storyNodeNameContainer0 = new RectangleFigure();
+
 			storyNodeNameContainer0.setFill(false);
 			storyNodeNameContainer0.setOutline(false);
 
@@ -429,6 +432,7 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 					.setLayoutManager(layoutStoryNodeNameContainer0);
 
 			fFigureComponentStoryNodeName = new WrappingLabel();
+
 			fFigureComponentStoryNodeName.setText("");
 
 			GridData constraintFFigureComponentStoryNodeName = new GridData();
@@ -443,6 +447,7 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 					constraintFFigureComponentStoryNodeName);
 
 			RectangleFigure componentStoryNodeContentContainer0 = new RectangleFigure();
+
 			componentStoryNodeContentContainer0.setFill(false);
 			componentStoryNodeContentContainer0.setOutline(false);
 
@@ -453,6 +458,7 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 					.setLayoutManager(layoutComponentStoryNodeContentContainer0);
 
 			fFigureComponentStoryNodePatternContainer = new RectangleFigure();
+
 			fFigureComponentStoryNodePatternContainer.setFill(false);
 			fFigureComponentStoryNodePatternContainer.setOutline(false);
 

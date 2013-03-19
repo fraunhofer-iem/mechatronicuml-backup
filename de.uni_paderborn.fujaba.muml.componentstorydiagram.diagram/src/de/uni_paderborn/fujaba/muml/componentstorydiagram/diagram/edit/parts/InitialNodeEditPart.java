@@ -307,6 +307,7 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			Ellipse startNodeEllipse0 = new Ellipse();
+
 			startNodeEllipse0.setForegroundColor(ColorConstants.black);
 			startNodeEllipse0.setBackgroundColor(ColorConstants.black);
 			startNodeEllipse0.setPreferredSize(new Dimension(getMapMode()
@@ -327,6 +328,7 @@ public class InitialNodeEditPart extends ShapeNodeEditPart {
 			this.add(startNodeEllipse0, constraintStartNodeEllipse0);
 
 			fInitialNodeLabel = new WrappingLabel();
+
 			fInitialNodeLabel.setText("");
 
 			GridData constraintFInitialNodeLabel = new GridData();

@@ -35,5 +35,11 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
     model.diagram.preferences.fontColor := object GenConstantColor{name := DiagramColors::black;};
     model.diagram.preferences.noteFillColor := object GenConstantColor{name := DiagramColors::yellow;};
     model.diagram.preferences.noteLineColor := object GenConstantColor{name := DiagramColors::orange;};
+    
+    
+    -- Make parsers extensible
+    gmfgenModel.objectsOfType(GenParsers)->forEach(parser){
+    	parser.extensibleViaService := true;
+    }
   }
 }

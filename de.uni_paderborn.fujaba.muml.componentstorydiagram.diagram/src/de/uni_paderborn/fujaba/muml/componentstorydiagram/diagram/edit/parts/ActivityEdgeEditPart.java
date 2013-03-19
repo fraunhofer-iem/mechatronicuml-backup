@@ -132,6 +132,7 @@ public class ActivityEdgeEditPart extends ConnectionNodeEditPart implements
 		private void createContents() {
 
 			fFigureActivityLabelFigure = new WrappingLabel();
+
 			fFigureActivityLabelFigure.setText("");
 
 			this.add(fFigureActivityLabelFigure);

@@ -82,6 +82,7 @@ public class CoordinationProtocolRolesEditPart extends ConnectionNodeEditPart
 		private void createContents() {
 
 			fFigureRolePatternLabel = new WrappingLabel();
+
 			fFigureRolePatternLabel.setText("");
 
 			this.add(fFigureRolePatternLabel);

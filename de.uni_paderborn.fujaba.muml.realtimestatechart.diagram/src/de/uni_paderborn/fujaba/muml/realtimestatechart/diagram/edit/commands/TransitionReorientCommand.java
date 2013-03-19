@@ -4,7 +4,6 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
@@ -192,8 +191,6 @@ public class TransitionReorientCommand extends EditElementCommand {
 	protected de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex getNewTarget() {
 		return (de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex) newEnd;
 	}
-
-	private EditPart host;
 
 	/**
 	 * @generated

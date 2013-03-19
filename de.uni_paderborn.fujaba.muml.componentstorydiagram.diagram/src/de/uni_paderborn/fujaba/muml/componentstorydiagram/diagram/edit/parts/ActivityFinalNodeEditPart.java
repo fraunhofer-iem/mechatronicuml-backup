@@ -369,6 +369,7 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			Ellipse activityFinalNodeEllipse0 = new Ellipse();
+
 			activityFinalNodeEllipse0.setForegroundColor(ColorConstants.black);
 			activityFinalNodeEllipse0.setPreferredSize(new Dimension(
 					getMapMode().DPtoLP(23), getMapMode().DPtoLP(23)));
@@ -389,6 +390,7 @@ public class ActivityFinalNodeEditPart extends ShapeNodeEditPart {
 					constraintActivityFinalNodeEllipse0);
 
 			fActivityFinalNodeLabel = new WrappingLabel();
+
 			fActivityFinalNodeLabel.setText("");
 
 			GridData constraintFActivityFinalNodeLabel = new GridData();

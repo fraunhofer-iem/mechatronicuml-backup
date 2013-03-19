@@ -203,10 +203,6 @@
             </children>
             <children
                 xsi:type="gmfgraph:FigureRef">
-              <layoutData
-                  xsi:type="gmfgraph:GridLayoutData"
-                  verticalAlignment="BEGINNING"
-                  horizontalAlignment="END"/>
               <figure
                   xsi:type="gmfgraph:Rectangle"
                   href="../../de.uni_paderborn.fujaba.muml.common/model/component.gmfgraph#//@figures.0/@descriptors.6/@actualFigure"/>

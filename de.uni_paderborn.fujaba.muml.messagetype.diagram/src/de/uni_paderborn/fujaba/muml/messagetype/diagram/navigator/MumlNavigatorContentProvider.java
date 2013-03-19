@@ -185,6 +185,11 @@ public class MumlNavigatorContentProvider implements ICommonContentProvider {
 					topViews.add((View) o);
 				}
 			}
+			result.addAll(createNavigatorItems(
+					selectViewsByType(
+							topViews,
+							de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.MODEL_ID),
+					file, false));
 			return result.toArray();
 		}
 

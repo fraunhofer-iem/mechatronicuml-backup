@@ -358,7 +358,17 @@
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart" id="RealtimeStatechart_1000"/>
          <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart" id="RealtimeStatechart_2007"/>
-         <context elements="RealtimeStatechart_1000,RealtimeStatechart_2007"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart" id="State_3032"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart" id="EntryEvent_3033"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEventEditPart" id="DoEvent_3034"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart" id="ExitEvent_3035"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart" id="ClockConstraint_3036"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart" id="SynchronizationChannel_3037"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionEditPart" id="Region_3038"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart" id="RealtimeStatechart_3039"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart" id="EntryPoint_3040"/>
+         <object class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart" id="ExitPoint_3041"/>
+         <context elements="RealtimeStatechart_1000,RealtimeStatechart_2007,State_3032,EntryEvent_3033,DoEvent_3034,ExitEvent_3035,ClockConstraint_3036,SynchronizationChannel_3037,Region_3038,RealtimeStatechart_3039,EntryPoint_3040,ExitPoint_3041"/>
       </modelingAssistantProvider>
    </extension>
 

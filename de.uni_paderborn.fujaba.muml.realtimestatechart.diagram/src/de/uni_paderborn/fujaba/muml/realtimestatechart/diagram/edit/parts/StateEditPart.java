@@ -4,22 +4,15 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.MarginBorder;
-import org.eclipse.draw2d.PolylineShape;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -32,7 +25,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPar
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
@@ -43,6 +35,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -79,8 +72,10 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(
+						de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -221,28 +216,24 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureActionCompartment();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateActionCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureRegionsCompartment();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureChannelCompartment();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateChannelCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureInvariantCompartment();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
@@ -546,6 +537,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 		private void createContents() {
 
 			RoundedRectangle undecoratedStateFigure0 = new RoundedRectangle();
+
 			undecoratedStateFigure0.setCornerDimensions(new Dimension(
 					getMapMode().DPtoLP(12), getMapMode().DPtoLP(12)));
 
@@ -558,6 +550,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 					.setLayoutManager(layoutUndecoratedStateFigure0);
 
 			fFigureStateNameLabel = new WrappingLabel();
+
 			fFigureStateNameLabel.setText("");
 
 			fFigureStateNameLabel.setFont(FFIGURESTATENAMELABEL_FONT);
@@ -574,6 +567,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 					constraintFFigureStateNameLabel);
 
 			fFigureInvariantCompartment = new RectangleFigure();
+
 			fFigureInvariantCompartment.setOutline(false);
 
 			GridData constraintFFigureInvariantCompartment = new GridData();
@@ -588,6 +582,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 					constraintFFigureInvariantCompartment);
 
 			fFigureChannelCompartment = new RectangleFigure();
+
 			fFigureChannelCompartment.setOutline(false);
 
 			GridData constraintFFigureChannelCompartment = new GridData();
@@ -602,6 +597,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 					constraintFFigureChannelCompartment);
 
 			fFigureActionCompartment = new RectangleFigure();
+
 			fFigureActionCompartment.setOutline(false);
 
 			GridData constraintFFigureActionCompartment = new GridData();
@@ -616,6 +612,7 @@ public class StateEditPart extends AbstractBorderedShapeEditPart {
 					constraintFFigureActionCompartment);
 
 			fFigureRegionsCompartment = new RectangleFigure();
+
 			fFigureRegionsCompartment.setOutline(false);
 
 			GridData constraintFFigureRegionsCompartment = new GridData();

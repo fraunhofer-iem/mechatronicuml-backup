@@ -359,7 +359,8 @@
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.DeploymentEditPart" id="Deployment_1000"/>
          <object class="de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwareNodeEditPart" id="HardwareNode_2001"/>
-         <context elements="Deployment_1000,HardwareNode_2001"/>
+         <object class="de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart" id="HardwarePort_3001"/>
+         <context elements="Deployment_1000,HardwareNode_2001,HardwarePort_3001"/>
       </modelingAssistantProvider>
    </extension>
 

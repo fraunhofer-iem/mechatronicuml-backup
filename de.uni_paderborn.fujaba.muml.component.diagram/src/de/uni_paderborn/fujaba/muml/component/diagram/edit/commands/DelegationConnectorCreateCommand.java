@@ -205,5 +205,4 @@ public class DelegationConnectorCreateCommand extends EditElementCommand {
 		}
 		return null;
 	}
-
 }

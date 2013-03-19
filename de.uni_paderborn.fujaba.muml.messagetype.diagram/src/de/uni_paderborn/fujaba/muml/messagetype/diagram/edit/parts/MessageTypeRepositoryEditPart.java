@@ -26,6 +26,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -62,8 +63,10 @@ public class MessageTypeRepositoryEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(
+						de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -153,7 +156,6 @@ public class MessageTypeRepositoryEditPart extends ShapeNodeEditPart {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart) {
 			IFigure pane = getPrimaryShape()
 					.getFigureMessageTypesCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryMessageTypesCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
@@ -342,6 +344,7 @@ public class MessageTypeRepositoryEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			fFigureMessageInterfaceNameLabelFigure = new WrappingLabel();
+
 			fFigureMessageInterfaceNameLabelFigure.setText("");
 
 			fFigureMessageInterfaceNameLabelFigure
@@ -359,6 +362,7 @@ public class MessageTypeRepositoryEditPart extends ShapeNodeEditPart {
 					constraintFFigureMessageInterfaceNameLabelFigure);
 
 			fFigureMessageTypesCompartmentFigure = new RectangleFigure();
+
 			fFigureMessageTypesCompartmentFigure.setOutline(false);
 
 			GridData constraintFFigureMessageTypesCompartmentFigure = new GridData();

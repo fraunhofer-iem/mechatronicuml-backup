@@ -297,6 +297,7 @@ public class ParameterEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			fFigureParameterLabel = new WrappingLabel();
+
 			fFigureParameterLabel.setText("");
 
 			this.add(fFigureParameterLabel);

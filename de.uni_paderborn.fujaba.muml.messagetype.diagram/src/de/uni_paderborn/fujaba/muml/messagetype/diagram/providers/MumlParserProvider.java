@@ -23,12 +23,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser messageTypeRepositoryName_5017Parser;
+	private IParser messageTypeRepositoryName_5017Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getMessageTypeRepositoryName_5017Parser() {
+	private IParser getMessageTypeRepositoryName_5017Parser() {
 		if (messageTypeRepositoryName_5017Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -42,12 +42,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser messageTypeName_5014Parser;
+	private IParser messageTypeName_5014Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getMessageTypeName_5014Parser() {
+	private IParser getMessageTypeName_5014Parser() {
 		if (messageTypeName_5014Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -61,16 +61,8 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.messagetype.diagram.parsers.ParameterLabelExpressionLabelParser5016 parameterLabel_5016Parser;
-
-	/**
-	 * @generated
-	 */
-	protected IParser getParameterLabel_5016Parser() {
-		if (parameterLabel_5016Parser == null) {
-			parameterLabel_5016Parser = new de.uni_paderborn.fujaba.muml.messagetype.diagram.parsers.ParameterLabelExpressionLabelParser5016();
-		}
-		return parameterLabel_5016Parser;
+	private IParser getParameterLabel_5016Parser() {
+		return new de.uni_paderborn.fujaba.muml.messagetype.diagram.parsers.ParameterLabelExpressionLabelParser5016();
 	}
 
 	/**

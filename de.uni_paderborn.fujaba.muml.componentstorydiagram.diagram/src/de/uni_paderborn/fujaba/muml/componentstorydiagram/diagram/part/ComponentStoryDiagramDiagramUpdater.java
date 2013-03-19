@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityEdge;
@@ -1546,5 +1547,47 @@ public class ComponentStoryDiagramDiagramUpdater {
 		}
 		return result;
 	}
+
+	/**
+	 * @generated
+	 */
+	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramNodeDescriptor> getSemanticChildren(
+				View view) {
+			return ComponentStoryDiagramDiagramUpdater
+					.getSemanticChildren(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getContainedLinks(
+				View view) {
+			return ComponentStoryDiagramDiagramUpdater.getContainedLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getIncomingLinks(
+				View view) {
+			return ComponentStoryDiagramDiagramUpdater.getIncomingLinks(view);
+		}
+
+		/**
+		 * @generated
+		 */
+		@Override
+		public List<de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramLinkDescriptor> getOutgoingLinks(
+				View view) {
+			return ComponentStoryDiagramDiagramUpdater.getOutgoingLinks(view);
+		}
+	};
 
 }

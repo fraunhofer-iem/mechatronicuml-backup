@@ -130,6 +130,7 @@ public class DelegationVariableEditPart extends ConnectionNodeEditPart
 		private void createContents() {
 
 			fFigureDelegationVariableLabelFigure = new WrappingLabel();
+
 			fFigureDelegationVariableLabelFigure.setText("");
 
 			this.add(fFigureDelegationVariableLabelFigure);

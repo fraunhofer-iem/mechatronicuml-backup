@@ -23,12 +23,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser hardwareNodeName_5001Parser;
+	private IParser hardwareNodeName_5001Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getHardwareNodeName_5001Parser() {
+	private IParser getHardwareNodeName_5001Parser() {
 		if (hardwareNodeName_5001Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
@@ -44,12 +44,12 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	protected IParser hardwarePortName_5002Parser;
+	private IParser hardwarePortName_5002Parser;
 
 	/**
 	 * @generated
 	 */
-	protected IParser getHardwarePortName_5002Parser() {
+	private IParser getHardwarePortName_5002Parser() {
 		if (hardwarePortName_5002Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };

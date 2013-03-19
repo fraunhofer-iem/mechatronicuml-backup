@@ -144,7 +144,6 @@ public class ActivityEditPart extends ShapeNodeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityActivityCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureActivityContainer();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityActivityCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
@@ -314,6 +313,7 @@ public class ActivityEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			ScalablePolygonShape polyline0 = new ScalablePolygonShape();
+
 			polyline0.addPoint(new Point(getMapMode().DPtoLP(0), getMapMode()
 					.DPtoLP(2)));
 			polyline0.addPoint(new Point(getMapMode().DPtoLP(20), getMapMode()
@@ -335,11 +335,13 @@ public class ActivityEditPart extends ShapeNodeEditPart {
 			polyline0.setLayoutManager(new StackLayout());
 
 			fFigureActivityName = new WrappingLabel();
+
 			fFigureActivityName.setText("");
 
 			polyline0.add(fFigureActivityName);
 
 			fFigureActivityContainer = new RectangleFigure();
+
 			fFigureActivityContainer.setFill(false);
 			fFigureActivityContainer.setOutline(false);
 

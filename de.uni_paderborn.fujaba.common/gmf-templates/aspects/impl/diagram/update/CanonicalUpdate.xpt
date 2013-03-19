@@ -19,7 +19,7 @@
 
 
 «AROUND refreshConnectionsBody FOR gmfgen::GenDiagram-»
-	«EXPAND CodeStyle::G2('java.util.Map', 'org.eclipse.emf.ecore.EObject', 'org.eclipse.gmf.runtime.notation.View')» domain2NotationMap = new «EXPAND CodeStyle::G2('java.util.HashMap', 'org.eclipse.emf.ecore.EObject', 'org.eclipse.gmf.runtime.notation.View')»();
+	Domain2Notation domain2NotationMap = new Domain2Notation();
 	«EXPAND CodeStyle::G('java.util.Collection', editorGen.diagramUpdater.getLinkDescriptorQualifiedClassName())» linkDescriptors = collectAllLinks(getDiagram(), domain2NotationMap);
 	java.util.Collection existingLinks = new java.util.LinkedList(getDiagram().getEdges());
 	for (java.util.Iterator linksIterator = existingLinks.iterator(); linksIterator.hasNext();) {
@@ -80,7 +80,7 @@ protected java.util.List getSemanticChildrenViewDescriptors() {
 		for (org.eclipse.gmf.runtime.notation.View childView : childViews) {
 			org.eclipse.emf.ecore.EObject childElement = childView.getElement();
 			int visualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR getDiagram()»(childView);
-			List<Integer> visualIDs = java.util.Arrays.asList(new Integer[] { «EXPAND xpt::editor::VisualIDRegistry::visualID FOREACH getSemanticChildren(self) SEPARATOR ', '» });
+			java.util.List<Integer> visualIDs = java.util.Arrays.asList(new Integer[] { «EXPAND xpt::editor::VisualIDRegistry::visualID FOREACH getSemanticChildren(self) SEPARATOR ', '» });
 			if (childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
 				result.add(new «getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()»(childElement, visualID));
 				continue;

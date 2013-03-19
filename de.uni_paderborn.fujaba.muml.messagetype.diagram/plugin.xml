@@ -357,7 +357,9 @@
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart" id="ModelElementCategory_1000"/>
          <object class="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart" id="MessageTypeRepository_2008"/>
-         <context elements="ModelElementCategory_1000,MessageTypeRepository_2008"/>
+         <object class="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeEditPart" id="MessageType_3007"/>
+         <object class="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.ParameterEditPart" id="Parameter_3009"/>
+         <context elements="ModelElementCategory_1000,MessageTypeRepository_2008,MessageType_3007,Parameter_3009"/>
       </modelingAssistantProvider>
    </extension>
 

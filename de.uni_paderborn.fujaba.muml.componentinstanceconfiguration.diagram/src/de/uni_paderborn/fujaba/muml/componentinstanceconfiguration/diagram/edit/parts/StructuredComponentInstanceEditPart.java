@@ -34,6 +34,7 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -71,8 +72,10 @@ public class StructuredComponentInstanceEditPart extends
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(
+						de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -209,7 +212,6 @@ public class StructuredComponentInstanceEditPart extends
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureChildren();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
@@ -427,6 +429,7 @@ public class StructuredComponentInstanceEditPart extends
 		private void createContents() {
 
 			RectangleFigure container0 = new RectangleFigure();
+
 			container0.setFill(false);
 			container0.setOutline(false);
 			container0.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
@@ -449,6 +452,7 @@ public class StructuredComponentInstanceEditPart extends
 			container0.setLayoutManager(layoutContainer0);
 
 			fFigureComponentNameFigure = new WrappingLabel();
+
 			fFigureComponentNameFigure.setText("");
 
 			fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);
@@ -464,9 +468,8 @@ public class StructuredComponentInstanceEditPart extends
 			container0.add(fFigureComponentNameFigure,
 					constraintFFigureComponentNameFigure);
 
-			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
-
 			RectangleFigure componentIconFigure1 = new RectangleFigure();
+
 			componentIconFigure1.setFill(false);
 			componentIconFigure1.setOutline(false);
 			componentIconFigure1.setPreferredSize(new Dimension(getMapMode()
@@ -486,6 +489,7 @@ public class StructuredComponentInstanceEditPart extends
 			componentIconFigure1.setLayoutManager(new StackLayout());
 
 			RectangleFigure componentIconOuter2 = new RectangleFigure();
+
 			componentIconOuter2.setFill(false);
 			componentIconOuter2.setOutline(false);
 
@@ -499,6 +503,7 @@ public class StructuredComponentInstanceEditPart extends
 					getMapMode().DPtoLP(20)));
 
 			RectangleFigure componentIconInner12 = new RectangleFigure();
+
 			componentIconInner12.setFill(false);
 			componentIconInner12.setOutline(false);
 
@@ -512,6 +517,7 @@ public class StructuredComponentInstanceEditPart extends
 					getMapMode().DPtoLP(6)));
 
 			RectangleFigure componentIconInner22 = new RectangleFigure();
+
 			componentIconInner22.setFill(false);
 			componentIconInner22.setOutline(false);
 
@@ -524,7 +530,12 @@ public class StructuredComponentInstanceEditPart extends
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
 
+			// Process FigureRef details
+
+			container0.add(componentIconFigure1);
+
 			fFigureChildren = new RectangleFigure();
+
 			fFigureChildren.setFill(false);
 			fFigureChildren.setOutline(false);
 

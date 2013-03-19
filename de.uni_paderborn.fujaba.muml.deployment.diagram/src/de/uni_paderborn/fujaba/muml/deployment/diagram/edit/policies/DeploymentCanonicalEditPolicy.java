@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.deployment.diagram.edit.policies;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -28,6 +29,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 
 /**
  * @generated
@@ -90,10 +92,12 @@ public class DeploymentCanonicalEditPolicy extends CanonicalEditPolicy {
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwareNodeEditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlVisualIDRegistry
+						.getVisualID(childView);
+				List<Integer> visualIDs = Arrays
+						.asList(new Integer[] { de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwareNodeEditPart.VISUAL_ID });
 				if (childElement.eContainer() == containerView.getElement()
-						&& visualID == de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlVisualIDRegistry
-								.getVisualID(childView)) {
+						&& visualIDs.contains(visualID)) {
 					result.add(new de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;
@@ -223,7 +227,7 @@ public class DeploymentCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	private Collection<IAdaptable> refreshConnections() {
-		Map<EObject, View> domain2NotationMap = new HashMap<EObject, View>();
+		Domain2Notation domain2NotationMap = new Domain2Notation();
 		Collection<de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlLinkDescriptor> linkDescriptors = collectAllLinks(
 				getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
@@ -272,7 +276,7 @@ public class DeploymentCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	private Collection<de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlLinkDescriptor> collectAllLinks(
-			View view, Map<EObject, View> domain2NotationMap) {
+			View view, Domain2Notation domain2NotationMap) {
 		if (!de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.DeploymentEditPart.MODEL_ID
 				.equals(de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlVisualIDRegistry
 						.getModelID(view))) {
@@ -286,10 +290,7 @@ public class DeploymentCanonicalEditPolicy extends CanonicalEditPolicy {
 				result.addAll(de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlDiagramUpdater
 						.getDeployment_1000ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwareNodeEditPart.VISUAL_ID: {
@@ -297,10 +298,7 @@ public class DeploymentCanonicalEditPolicy extends CanonicalEditPolicy {
 				result.addAll(de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlDiagramUpdater
 						.getHardwareNode_2001ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID: {
@@ -308,10 +306,7 @@ public class DeploymentCanonicalEditPolicy extends CanonicalEditPolicy {
 				result.addAll(de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlDiagramUpdater
 						.getHardwarePort_3001ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID: {
@@ -319,10 +314,7 @@ public class DeploymentCanonicalEditPolicy extends CanonicalEditPolicy {
 				result.addAll(de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlDiagramUpdater
 						.getCommunicationLink_4001ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		}
@@ -343,13 +335,13 @@ public class DeploymentCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	private Collection<IAdaptable> createConnections(
 			Collection<de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlLinkDescriptor> linkDescriptors,
-			Map<EObject, View> domain2NotationMap) {
+			Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
 		for (de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlLinkDescriptor nextLinkDescriptor : linkDescriptors) {
-			EditPart sourceEditPart = getEditPart(
-					nextLinkDescriptor.getSource(), domain2NotationMap);
-			EditPart targetEditPart = getEditPart(
-					nextLinkDescriptor.getDestination(), domain2NotationMap);
+			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor,
+					domain2NotationMap);
+			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor,
+					domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
@@ -382,7 +374,7 @@ public class DeploymentCanonicalEditPolicy extends CanonicalEditPolicy {
 	 * @generated
 	 */
 	private EditPart getEditPart(EObject domainModelElement,
-			Map<EObject, View> domain2NotationMap) {
+			Domain2Notation domain2NotationMap) {
 		View view = (View) domain2NotationMap.get(domainModelElement);
 		if (view != null) {
 			return (EditPart) getHost().getViewer().getEditPartRegistry()
@@ -396,5 +388,68 @@ public class DeploymentCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	private Diagram getDiagram() {
 		return ((View) getHost().getModel()).getDiagram();
+	}
+
+	/**
+	 * @generated
+	 */
+	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
+			Domain2Notation domain2NotationMap) {
+		return getEditPart(descriptor.getSource(), domain2NotationMap);
+	}
+
+	/**
+	 * @generated
+	 */
+	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor,
+			Domain2Notation domain2NotationMap) {
+		return getEditPart(descriptor.getDestination(), domain2NotationMap);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected final EditPart getHintedEditPart(EObject domainModelElement,
+			Domain2Notation domain2NotationMap, int hintVisualId) {
+		View view = (View) domain2NotationMap
+				.getHinted(
+						domainModelElement,
+						de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlVisualIDRegistry
+								.getType(hintVisualId));
+		if (view != null) {
+			return (EditPart) getHost().getViewer().getEditPartRegistry()
+					.get(view);
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("serial")
+	protected static class Domain2Notation extends HashMap<EObject, View> {
+		/**
+		 * @generated
+		 */
+		public boolean containsDomainElement(EObject domainElement) {
+			return this.containsKey(domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+		public View getHinted(EObject domainEObject, String hint) {
+			return this.get(domainEObject);
+		}
+
+		/**
+		 * @generated
+		 */
+		public void putView(EObject domainElement, View view) {
+			if (!containsKey(view.getElement())) {
+				this.put(domainElement, view);
+			}
+		}
+
 	}
 }

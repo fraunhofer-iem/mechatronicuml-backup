@@ -53,6 +53,7 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.common,
  de.uni_paderborn.fujaba.muml.common,
  de.uni_paderborn.fujaba.modelinstance.ui,
- org.eclipse.ocl.ecore;visibility:=reexport
+ org.eclipse.ocl.ecore;visibility:=reexport,
+ org.eclipse.gmf.tooling.runtime;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

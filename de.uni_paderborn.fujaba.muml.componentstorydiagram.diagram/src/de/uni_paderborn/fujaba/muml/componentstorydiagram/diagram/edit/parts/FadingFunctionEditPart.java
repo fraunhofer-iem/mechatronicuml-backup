@@ -282,6 +282,7 @@ public class FadingFunctionEditPart extends ShapeNodeEditPart {
 		private void createContents() {
 
 			fFigureFadingFunctionLabel = new WrappingLabel();
+
 			fFigureFadingFunctionLabel.setText("FadingFunction");
 
 			this.add(fFigureFadingFunctionLabel);

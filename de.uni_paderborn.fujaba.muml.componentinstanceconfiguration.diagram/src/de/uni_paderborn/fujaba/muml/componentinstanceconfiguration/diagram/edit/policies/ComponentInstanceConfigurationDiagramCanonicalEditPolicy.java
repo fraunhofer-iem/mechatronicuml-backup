@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -30,6 +31,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 
 /**
  * @generated
@@ -107,10 +109,18 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 
 			for (View childView : childViews) {
 				EObject childElement = childView.getElement();
-				int visualID = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID;
+				int visualID = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
+						.getVisualID(childView);
+				List<Integer> visualIDs = Arrays
+						.asList(new Integer[] {
+								de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID,
+								de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID,
+								de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID,
+								de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID,
+								de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart.VISUAL_ID,
+								de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart.VISUAL_ID });
 				if (childElement.eContainer() == containerView.getElement()
-						&& visualID == de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
-								.getVisualID(childView)) {
+						&& visualIDs.contains(visualID)) {
 					result.add(new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;
@@ -250,7 +260,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private Collection<IAdaptable> refreshConnections() {
-		Map<EObject, View> domain2NotationMap = new HashMap<EObject, View>();
+		Domain2Notation domain2NotationMap = new Domain2Notation();
 		Collection<de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlLinkDescriptor> linkDescriptors = collectAllLinks(
 				getDiagram(), domain2NotationMap);
 		Collection existingLinks = new LinkedList(getDiagram().getEdges());
@@ -299,7 +309,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private Collection<de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlLinkDescriptor> collectAllLinks(
-			View view, Map<EObject, View> domain2NotationMap) {
+			View view, Domain2Notation domain2NotationMap) {
 		if (!de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.MODEL_ID
 				.equals(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
 						.getModelID(view))) {
@@ -313,10 +323,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getComponentInstanceConfiguration_1000ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstanceEditPart.VISUAL_ID: {
@@ -324,10 +331,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getHybridPortInstance_2021ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceEditPart.VISUAL_ID: {
@@ -335,10 +339,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getDiscreteSinglePortInstance_2022ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart.VISUAL_ID: {
@@ -346,10 +347,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getDiscreteMultiPortInstance_2023ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstanceEditPart.VISUAL_ID: {
@@ -357,10 +355,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getContinuousPortInstance_2024ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart.VISUAL_ID: {
@@ -368,10 +363,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getAtomicComponentInstance_2016ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart.VISUAL_ID: {
@@ -379,10 +371,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getStructuredComponentInstance_2015ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance2EditPart.VISUAL_ID: {
@@ -390,10 +379,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getDiscreteSinglePortInstance_3026ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.HybridPortInstance2EditPart.VISUAL_ID: {
@@ -401,10 +387,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getHybridPortInstance_3031ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstance3EditPart.VISUAL_ID: {
@@ -412,10 +395,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getDiscreteSinglePortInstance_3032ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstance2EditPart.VISUAL_ID: {
@@ -423,10 +403,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getDiscreteMultiPortInstance_3033ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ContinuousPortInstance2EditPart.VISUAL_ID: {
@@ -434,10 +411,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getContinuousPortInstance_3034ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationEditPart.VISUAL_ID: {
@@ -445,10 +419,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getComponentInstanceConfiguration_3023ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart.VISUAL_ID: {
@@ -456,10 +427,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getAtomicComponentInstance_3024ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart.VISUAL_ID: {
@@ -467,10 +435,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getStructuredComponentInstance_3025ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID: {
@@ -478,10 +443,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getAssemblyConnectorInstance_4001ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID: {
@@ -489,10 +451,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 				result.addAll(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramUpdater
 						.getDelegationConnectorInstance_4002ContainedLinks(view));
 			}
-			if (!domain2NotationMap.containsKey(view.getElement())
-					|| view.getEAnnotation("Shortcut") == null) { //$NON-NLS-1$
-				domain2NotationMap.put(view.getElement(), view);
-			}
+			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		}
@@ -513,13 +472,13 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 	 */
 	private Collection<IAdaptable> createConnections(
 			Collection<de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlLinkDescriptor> linkDescriptors,
-			Map<EObject, View> domain2NotationMap) {
+			Domain2Notation domain2NotationMap) {
 		LinkedList<IAdaptable> adapters = new LinkedList<IAdaptable>();
 		for (de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlLinkDescriptor nextLinkDescriptor : linkDescriptors) {
-			EditPart sourceEditPart = getEditPart(
-					nextLinkDescriptor.getSource(), domain2NotationMap);
-			EditPart targetEditPart = getEditPart(
-					nextLinkDescriptor.getDestination(), domain2NotationMap);
+			EditPart sourceEditPart = getSourceEditPart(nextLinkDescriptor,
+					domain2NotationMap);
+			EditPart targetEditPart = getTargetEditPart(nextLinkDescriptor,
+					domain2NotationMap);
 			if (sourceEditPart == null || targetEditPart == null) {
 				continue;
 			}
@@ -552,7 +511,7 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 	 * @generated
 	 */
 	private EditPart getEditPart(EObject domainModelElement,
-			Map<EObject, View> domain2NotationMap) {
+			Domain2Notation domain2NotationMap) {
 		View view = (View) domain2NotationMap.get(domainModelElement);
 		if (view != null) {
 			return (EditPart) getHost().getViewer().getEditPartRegistry()
@@ -566,5 +525,68 @@ public class ComponentInstanceConfigurationDiagramCanonicalEditPolicy extends
 	 */
 	private Diagram getDiagram() {
 		return ((View) getHost().getModel()).getDiagram();
+	}
+
+	/**
+	 * @generated
+	 */
+	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
+			Domain2Notation domain2NotationMap) {
+		return getEditPart(descriptor.getSource(), domain2NotationMap);
+	}
+
+	/**
+	 * @generated
+	 */
+	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor,
+			Domain2Notation domain2NotationMap) {
+		return getEditPart(descriptor.getDestination(), domain2NotationMap);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected final EditPart getHintedEditPart(EObject domainModelElement,
+			Domain2Notation domain2NotationMap, int hintVisualId) {
+		View view = (View) domain2NotationMap
+				.getHinted(
+						domainModelElement,
+						de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlVisualIDRegistry
+								.getType(hintVisualId));
+		if (view != null) {
+			return (EditPart) getHost().getViewer().getEditPartRegistry()
+					.get(view);
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("serial")
+	protected static class Domain2Notation extends HashMap<EObject, View> {
+		/**
+		 * @generated
+		 */
+		public boolean containsDomainElement(EObject domainElement) {
+			return this.containsKey(domainElement);
+		}
+
+		/**
+		 * @generated
+		 */
+		public View getHinted(EObject domainEObject, String hint) {
+			return this.get(domainEObject);
+		}
+
+		/**
+		 * @generated
+		 */
+		public void putView(EObject domainElement, View view) {
+			if (!containsKey(view.getElement())) {
+				this.put(domainElement, view);
+			}
+		}
+
 	}
 }

@@ -130,6 +130,7 @@ public class AssemblyVariableEditPart extends ConnectionNodeEditPart implements
 		private void createContents() {
 
 			fFigureAssemblyVariableLabelFigure = new WrappingLabel();
+
 			fFigureAssemblyVariableLabelFigure.setText("");
 
 			this.add(fFigureAssemblyVariableLabelFigure);

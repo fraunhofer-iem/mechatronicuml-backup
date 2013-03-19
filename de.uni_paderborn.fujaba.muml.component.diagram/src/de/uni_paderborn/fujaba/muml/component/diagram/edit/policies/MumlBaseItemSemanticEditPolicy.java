@@ -1,9 +1,10 @@
 package de.uni_paderborn.fujaba.muml.component.diagram.edit.policies;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
-
 import java.util.Map;
+
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.Request;
@@ -34,6 +35,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 
 /**
  * @generated
@@ -125,21 +127,15 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		if (editPolicyCommand != null) {
 			ICommand command = editPolicyCommand instanceof ICommandProxy ? ((ICommandProxy) editPolicyCommand)
 					.getICommand() : new CommandProxy(editPolicyCommand);
-			request.setParameter(
-					de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers.MumlBaseEditHelper.EDIT_POLICY_COMMAND,
+			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND,
 					command);
 		}
 		IElementType requestContextElementType = getContextElementType(request);
-		request.setParameter(
-				de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers.MumlBaseEditHelper.CONTEXT_ELEMENT_TYPE,
+		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE,
 				requestContextElementType);
 		ICommand command = requestContextElementType.getEditCommand(request);
-		request.setParameter(
-				de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers.MumlBaseEditHelper.EDIT_POLICY_COMMAND,
-				null);
-		request.setParameter(
-				de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers.MumlBaseEditHelper.CONTEXT_ELEMENT_TYPE,
-				null);
+		request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, null);
+		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, null);
 		if (command != null) {
 			if (!(command instanceof CompositeTransactionalCommand)) {
 				command = new CompositeTransactionalCommand(getEditingDomain(),
@@ -584,6 +580,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				View sourceView, View targetView) {
 			return null;
 		}
+
 	}
 
 }

@@ -3,7 +3,6 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers;
 import java.util.ArrayList;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcoreFactory;

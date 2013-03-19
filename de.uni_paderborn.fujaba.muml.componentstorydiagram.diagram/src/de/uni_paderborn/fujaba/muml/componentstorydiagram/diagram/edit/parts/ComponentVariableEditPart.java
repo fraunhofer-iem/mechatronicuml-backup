@@ -31,6 +31,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -67,8 +68,10 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CREATION_ROLE,
+				new CreationEditPolicyWithCustomReparent(
+						de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
@@ -191,7 +194,6 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariableComponentVariableCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureChildren();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.remove(((de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariableComponentVariableCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
@@ -387,6 +389,7 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 		private void createContents() {
 
 			RectangleFigure componentVariableContent0 = new RectangleFigure();
+
 			componentVariableContent0.setFill(false);
 			componentVariableContent0.setOutline(false);
 
@@ -399,6 +402,7 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 					.setLayoutManager(layoutComponentVariableContent0);
 
 			RectangleFigure container1 = new RectangleFigure();
+
 			container1.setFill(false);
 			container1.setOutline(false);
 			container1.setBorder(new MarginBorder(getMapMode().DPtoLP(3),
@@ -421,12 +425,14 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 			container1.setLayoutManager(layoutContainer1);
 
 			RectangleFigure fake2 = new RectangleFigure();
+
 			fake2.setFill(false);
 			fake2.setOutline(false);
 
 			container1.add(fake2);
 
 			fFigureComponentVariableNameFigure = new WrappingLabel();
+
 			fFigureComponentVariableNameFigure.setText("this");
 
 			fFigureComponentVariableNameFigure
@@ -443,9 +449,8 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 			container1.add(fFigureComponentVariableNameFigure,
 					constraintFFigureComponentVariableNameFigure);
 
-			/*FIXME referenced figures are just not yet fully-functional; need process attrs and layout here*/
-
 			RectangleFigure componentIconFigure2 = new RectangleFigure();
+
 			componentIconFigure2.setFill(false);
 			componentIconFigure2.setOutline(false);
 			componentIconFigure2.setPreferredSize(new Dimension(getMapMode()
@@ -465,6 +470,7 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 			componentIconFigure2.setLayoutManager(new StackLayout());
 
 			RectangleFigure componentIconOuter3 = new RectangleFigure();
+
 			componentIconOuter3.setFill(false);
 			componentIconOuter3.setOutline(false);
 
@@ -478,6 +484,7 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(20)));
 
 			RectangleFigure componentIconInner13 = new RectangleFigure();
+
 			componentIconInner13.setFill(false);
 			componentIconInner13.setOutline(false);
 
@@ -491,6 +498,7 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(6)));
 
 			RectangleFigure componentIconInner23 = new RectangleFigure();
+
 			componentIconInner23.setFill(false);
 			componentIconInner23.setOutline(false);
 
@@ -503,7 +511,12 @@ public class ComponentVariableEditPart extends AbstractBorderedShapeEditPart {
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
 
+			// Process FigureRef details
+
+			container1.add(componentIconFigure2);
+
 			fFigureChildren = new RectangleFigure();
+
 			fFigureChildren.setFill(false);
 			fFigureChildren.setOutline(false);
 

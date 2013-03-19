@@ -125,6 +125,7 @@ public class DiscretePortGmfProtocolEditPart extends ConnectionNodeEditPart
 		private void createContents() {
 
 			fFigureRolePatternLabel = new WrappingLabel();
+
 			fFigureRolePatternLabel.setText("");
 
 			this.add(fFigureRolePatternLabel);
