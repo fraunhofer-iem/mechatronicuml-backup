@@ -1,3 +1,8 @@
+«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+«EXTENSION xpt::editor::Utils»
+
+
+
 «REM» Additional methods that should be generated «ENDREM»
 «AROUND additions FOR gmfgen::GenEditorView-»
 «EXPAND doSave»
@@ -40,4 +45,39 @@ public void doSave(org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
 		);
 		// End added
 	}
+«ENDAROUND»
+
+«AROUND getContributorId FOR gmfgen::GenEditorView-»
+	«EXPAND xpt::Common::generatedMemberComment»
+public String getContributorId() {
+	return "de.uni_paderborn.fujaba.muml.common.properties";
+}
+«ENDAROUND»
+
+
+
+«AROUND getAdapter FOR gmfgen::GenEditorView-»
+«IF not hasPropertySheet(self) or hasNavigator(self)-»
+«EXPAND xpt::Common::generatedMemberComment»
+«EXPAND CodeStyle::SuppressWarnings('"rawtypes"') FOR editorGen-»
+public Object getAdapter(Class type) {
+	
+	«IF not hasPropertySheet(self)-»
+	// Deactivated, see MUML #459
+	//if (type == org.eclipse.ui.views.properties.IPropertySheetPage.class) {
+	//	return null;
+	//}
+	«ENDIF-»
+	«IF hasNavigator(self)-»
+	if (type == org.eclipse.ui.part.IShowInTargetList.class) {
+		return new org.eclipse.ui.part.IShowInTargetList() {
+			public String[] getShowInTargetIds() {
+				return new String[] { org.eclipse.ui.navigator.resources.ProjectExplorer.VIEW_ID };
+			}
+		};
+	}
+	«ENDIF-»
+	return super.getAdapter(type);
+}
+«ENDIF-»
 «ENDAROUND»

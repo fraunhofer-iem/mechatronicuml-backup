@@ -53,7 +53,7 @@
       </initializer>
   </extension>
  
- <extension
+  <extension
        point="org.eclipse.ltk.core.refactoring.moveParticipants">
     <moveParticipant
           class="de.uni_paderborn.fujaba.muml.common.refactoring.DiagramMoveParticipant"
@@ -94,6 +94,71 @@
              </or>
           </adapt></enablement>
     </moveParticipant>
- </extension>
+  </extension>
+  
+  
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <propertyContributor
+            contributorId="de.uni_paderborn.fujaba.muml.common.properties"
+            labelProvider="de.uni_paderborn.fujaba.muml.common.sheet.MumlSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="Appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="Rulers &amp; Grid"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="Advanced"/>
+
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="de.uni_paderborn.fujaba.muml.common.sheet.MumlPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <!--<input type="de.uni_paderborn.fujaba.muml.XXX.diagram.navigator.MumlAbstractNavigatorItem"/> -->
+         </propertySection>
+      </propertySections>
+   </extension>
+ 
+ 
 	
 </plugin>

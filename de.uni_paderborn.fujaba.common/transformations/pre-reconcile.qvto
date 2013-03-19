@@ -24,7 +24,7 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
     model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.common";
     model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.muml.common";
     model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.modelinstance.ui";
-    
+
     
     -- set default colors
     if (model.diagram.preferences.oclIsUndefined()) then {
@@ -40,6 +40,9 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
     -- Make parsers extensible
     gmfgenModel.objectsOfType(GenParsers)->forEach(parser){
     	parser.extensibleViaService := true;
-    }
+    };
+    
+    -- Remove Property Sheet, as we are providing our own
+    model.propertySheet := null;
   }
 }
