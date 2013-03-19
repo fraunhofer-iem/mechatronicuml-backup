@@ -1,8 +1,9 @@
 package de.uni_paderborn.fujaba.muml.tests;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -53,26 +54,25 @@ public class ValidateMetamodelsTest {
 
 		// Load resource (CAUTION: Order is important; dependant metamodels must
 		// be loaded first, else proxies are not resolved correctly...)
-		Map<String, String> projects = new HashMap<String, String>();
-		projects.put("org.storydriven.core", "/model/core.ecore");
-		projects.put("org.storydriven.storydiagrams",
-				"/model/storydiagrams.ecore");
-		projects.put("de.uni_paderborn.fujaba.muml", "/model/muml.ecore");
-		projects.put("de.uni_paderborn.fujaba.muml.actionlanguage",
-				"/model/actionlanguage.ecore");
-		projects.put("de.uni_paderborn.fujaba.muml.reconfiguration",
-				"/model/MumlReconfiguration.ecore");
-		projects.put("de.uni_paderborn.fujaba.muml.componentstorydiagram",
-				"/model/ComponentStoryDiagram.ecore");
+		List<String[]> projects = new ArrayList<String[]>();
+		projects.add(new String[] { "org.storydriven.core", "/model/core.ecore" });
+		projects.add(new String[] { "org.storydriven.storydiagrams",
+				"/model/storydiagrams.ecore" });
+		projects.add(new String[] { "de.uni_paderborn.fujaba.muml", "/model/muml.ecore" });
+		projects.add(new String[] { "de.uni_paderborn.fujaba.muml.actionlanguage",
+				"/model/actionlanguage.ecore" });
+		projects.add(new String[] { "de.uni_paderborn.fujaba.muml.reconfiguration",
+				"/model/MumlReconfiguration.ecore" });
+		projects.add(new String[] { "de.uni_paderborn.fujaba.muml.componentstorydiagram",
+				"/model/ComponentStoryDiagram.ecore" });
 
-		for (Entry<String, String> set : projects.entrySet()) {
+		for (String[] path : projects) {
 			try {
-				TestUtilities.loadResource(resourceSet, set.getKey(),
-						set.getValue());
+				TestUtilities.loadResource(resourceSet, path[0], path[1]);
 
 			} catch (FileNotFoundException e) {
-				TestUtilities.loadResource(resourceSet, set.getKey(),
-						set.getValue(), "sdm/");
+				TestUtilities.loadResource(resourceSet, path[0], path[1], "sdm/");
+
 			}
 		}
 
