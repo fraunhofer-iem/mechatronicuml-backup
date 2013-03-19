@@ -71,7 +71,7 @@ public class ValidateMetamodelsTest {
 				TestUtilities.loadResource(resourceSet, path[0], path[1]);
 
 			} catch (FileNotFoundException e) {
-				TestUtilities.loadResource(resourceSet, path[0], path[1], "sdm/");
+				TestUtilities.loadResource(resourceSet, "sdm", "/" + path[0] + path[1]);
 
 			}
 		}

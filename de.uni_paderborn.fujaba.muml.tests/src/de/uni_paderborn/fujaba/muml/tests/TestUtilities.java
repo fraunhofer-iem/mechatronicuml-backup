@@ -18,14 +18,9 @@ public class TestUtilities {
 	}
 	public static Resource loadResource(ResourceSet resourceSet,
 			String projectName, String resourcePath) throws Exception {
-		return loadResource(resourceSet, projectName, resourcePath, "");
-	}
-
-	public static Resource loadResource(ResourceSet resourceSet,
-			String projectName, String resourcePath, String jenkinsPrefix) throws Exception {
 		try {
 			Resource resource = null;
-			URI uri = URI.createPlatformResourceURI(jenkinsPrefix + projectName + resourcePath,
+			URI uri = URI.createPlatformResourceURI(projectName + resourcePath,
 					true);
 			if (uri == null) {
 				throw new NullPointerException("URI could not be created");
