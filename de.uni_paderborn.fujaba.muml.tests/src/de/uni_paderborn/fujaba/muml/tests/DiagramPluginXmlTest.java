@@ -21,14 +21,13 @@ import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
 
 public class DiagramPluginXmlTest {
 	public static final String EDITOR_PLUGINS[] = {
-			"de.uni_paderborn.fujaba.muml.atomiccomponent.diagram",
+			"de.uni_paderborn.fujaba.muml.component.diagram",
 			"de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram",
 			"de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram",
 			"de.uni_paderborn.fujaba.muml.deployment.diagram",
 			"de.uni_paderborn.fujaba.muml.messagetype.diagram",
 			"de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram",
-			"de.uni_paderborn.fujaba.muml.realtimestatechart.diagram",
-			"de.uni_paderborn.fujaba.muml.structuredcomponent.diagram" };
+			"de.uni_paderborn.fujaba.muml.realtimestatechart.diagram" };
 
 	@BeforeClass
 	public static void setUpBeforeClass() {
