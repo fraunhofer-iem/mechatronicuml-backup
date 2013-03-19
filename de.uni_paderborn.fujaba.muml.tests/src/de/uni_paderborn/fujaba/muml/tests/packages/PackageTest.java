@@ -22,7 +22,7 @@ import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
 public abstract class PackageTest extends TraverseTest {
 
 	public static Resource loadEcoreResource(String ecoreModelProject,
-			String ecoreModelPath) throws FileNotFoundException {
+			String ecoreModelPath) throws Exception {
 		// Initialize new ResourceSet
 		ResourceSet resourceSet = new ResourceSetImpl();
 
