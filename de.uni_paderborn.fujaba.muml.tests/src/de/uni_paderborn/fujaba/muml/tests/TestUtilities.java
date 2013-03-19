@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.tests;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
@@ -14,14 +15,14 @@ public class TestUtilities {
 		// prevent instantiation
 	}
 	public static Resource loadResource(ResourceSet resourceSet,
-			String projectName, String resourcePath) {
+			String projectName, String resourcePath) throws FileNotFoundException {
 		return loadResource(resourceSet, projectName, resourcePath, "");
 	}
 
 	public static Resource loadResource(ResourceSet resourceSet,
-			String projectName, String resourcePath, String jenkinsPrefix) {
+			String projectName, String resourcePath, String jenkinsPrefix) throws FileNotFoundException {
 		Resource resource = null;
-		URI uri = URI.createPlatformResourceURI(projectName + jenkinsPrefix + resourcePath,
+		URI uri = URI.createPlatformResourceURI(jenkinsPrefix + projectName + resourcePath,
 				true);
 		if (uri == null) {
 			throw new NullPointerException("URI could not be created");

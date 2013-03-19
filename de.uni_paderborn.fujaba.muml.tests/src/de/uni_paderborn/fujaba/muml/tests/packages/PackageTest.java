@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.tests.packages;
 
+import java.io.FileNotFoundException;
 import java.util.Collection;
 import java.util.Map;
 
@@ -21,7 +22,7 @@ import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
 public abstract class PackageTest extends TraverseTest {
 
 	public static Resource loadEcoreResource(String ecoreModelProject,
-			String ecoreModelPath) {
+			String ecoreModelPath) throws FileNotFoundException {
 		// Initialize new ResourceSet
 		ResourceSet resourceSet = new ResourceSetImpl();
 

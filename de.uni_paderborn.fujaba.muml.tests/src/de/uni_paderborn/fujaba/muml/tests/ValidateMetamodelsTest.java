@@ -1,7 +1,10 @@
 package de.uni_paderborn.fujaba.muml.tests;
 
+import java.io.FileNotFoundException;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -16,7 +19,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.junit.AfterClass;
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -51,26 +53,28 @@ public class ValidateMetamodelsTest {
 
 		// Load resource (CAUTION: Order is important; dependant metamodels must
 		// be loaded first, else proxies are not resolved correctly...)
-		try {
-			TestUtilities.loadResource(resourceSet, "org.storydriven.core",
-					"/model/core.ecore");
-		} catch (Exception e) {
-			TestUtilities.loadResource(resourceSet, "org.storydriven.core",
-					"/model/core.ecore", "/sdm");
-		}
-		TestUtilities.loadResource(resourceSet,
-				"org.storydriven.storydiagrams", "/model/storydiagrams.ecore");
-		TestUtilities.loadResource(resourceSet, "de.uni_paderborn.fujaba.muml",
-				"/model/muml.ecore");
-		TestUtilities.loadResource(resourceSet,
-				"de.uni_paderborn.fujaba.muml.actionlanguage",
+		Map<String, String> projects = new HashMap<String, String>();
+		projects.put("org.storydriven.core", "/model/core.ecore");
+		projects.put("org.storydriven.storydiagrams",
+				"/model/storydiagrams.ecore");
+		projects.put("de.uni_paderborn.fujaba.muml", "/model/muml.ecore");
+		projects.put("de.uni_paderborn.fujaba.muml.actionlanguage",
 				"/model/actionlanguage.ecore");
-		TestUtilities.loadResource(resourceSet,
-				"de.uni_paderborn.fujaba.muml.reconfiguration",
+		projects.put("de.uni_paderborn.fujaba.muml.reconfiguration",
 				"/model/MumlReconfiguration.ecore");
-		TestUtilities.loadResource(resourceSet,
-				"de.uni_paderborn.fujaba.muml.componentstorydiagram",
+		projects.put("de.uni_paderborn.fujaba.muml.componentstorydiagram",
 				"/model/ComponentStoryDiagram.ecore");
+
+		for (Entry<String, String> set : projects.entrySet()) {
+			try {
+				TestUtilities.loadResource(resourceSet, set.getKey(),
+						set.getValue());
+
+			} catch (FileNotFoundException e) {
+				TestUtilities.loadResource(resourceSet, set.getKey(),
+						set.getValue(), "sdm/");
+			}
+		}
 
 		EcoreUtil.resolveAll(resourceSet);
 
