@@ -27,14 +27,23 @@
    </extension>
    -->
    
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+          <propertyTab
+             category="domain"
+             id="base"
+             label="Base"/>
+      </propertyTabs>
+   </extension>
    
    
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
       <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.common.properties">
           <propertyTab
              category="domain"
-             id="property.tab.domain.base"
-             label="Base"/>
+             afterTab="base"
+             id="documentation"
+             label="Documentation"/>
       </propertyTabs>
    </extension>
    
@@ -42,10 +51,22 @@
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
       <propertySections contributorId="de.uni_paderborn.fujaba.muml.common.properties">
         <propertySection
-            id="property.tab.domain.base" 
-            tab="property.tab.domain.base"
+            id="CommentableElement.comment" 
+            tab="documentation"
             class="de.uni_paderborn.fujaba.muml.realtimestatechart.section.CommentableElementCommentSection">
             <input type="org.storydriven.core.CommentableElement"/>
+         </propertySection>
+	  </propertySections>
+   </extension>
+   
+   
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <propertySections contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+        <propertySection
+            id="NamedElement.name" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.realtimestatechart.section.NamedElementNameSection">
+            <input type="org.storydriven.core.NamedElement"/>
          </propertySection>
 	  </propertySections>
    </extension>
