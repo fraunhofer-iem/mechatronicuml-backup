@@ -62,7 +62,8 @@
       </genClasses>
       <genClasses image="false" ecoreClass="muml.ecore#//component/PortConnector">
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/PortConnector/parentComponent"/>
-        <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//component/PortConnector/ports"/>
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//component/PortConnector/ports"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//component/AssemblyConnector">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -280,9 +281,9 @@
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Transition/statechart"/>
         <genFeatures notify="false" createChild="false" propertyCategory="Clock" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Transition/clockResets"/>
-        <genFeatures createChild="false" propertyCategory="" propertyDescription=""
+        <genFeatures property="Readonly" createChild="false" propertyCategory="" propertyDescription=""
             propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Transition/triggerMessageEvent"/>
-        <genFeatures createChild="false" propertyCategory="" propertyDescription=""
+        <genFeatures property="Readonly" createChild="false" propertyCategory="" propertyDescription=""
             propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Transition/raiseMessageEvent"/>
         <genFeatures children="true" createChild="true" propertyCategory="Clock" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Transition/clockConstraints"/>
         <genFeatures children="true" createChild="true" propertyCategory="Absolute Deadline"
@@ -296,8 +297,10 @@
         <genFeatures children="true" createChild="true" propertyCategory="Action"
             propertyDescription="" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Transition/action"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/Transition/urgent"/>
-        <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Transition/receiverMessageTypes"/>
-        <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Transition/senderMessageTypes"/>
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Transition/receiverMessageTypes"/>
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Transition/senderMessageTypes"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//realtimestatechart/ClockConstraint">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/ClockConstraint/bound"/>
