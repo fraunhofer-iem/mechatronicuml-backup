@@ -100,6 +100,7 @@
   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
       <propertyContributor
             contributorId="de.uni_paderborn.fujaba.muml.common.properties"
+            typeMapper="de.uni_paderborn.fujaba.muml.common.sheet.MumlTypeMapper"
             labelProvider="de.uni_paderborn.fujaba.muml.common.sheet.MumlSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
@@ -118,15 +119,13 @@
              id="property.tab.DiagramPropertySection"
              label="Rulers &amp; Grid"/>
           <propertyTab
-             category="domain"
-             id="property.tab.domain"
+             category="extra"
+             id="property.tab.domain.advanced"
              label="Advanced"/>
-
       </propertyTabs>
    </extension>
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
-      <?gmfgen generated="true"?>   
       <propertySections contributorId="de.uni_paderborn.fujaba.muml.common.properties">
          <propertySection id="property.section.ConnectorAppearancePropertySection" 
             filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
@@ -149,16 +148,15 @@
             tab="property.tab.DiagramPropertySection">
          </propertySection>     
          <propertySection
-            id="property.section.domain" 
-            tab="property.tab.domain"
+            id="property.tab.domain.advanced" 
+            tab="property.tab.domain.advanced"
             class="de.uni_paderborn.fujaba.muml.common.sheet.MumlPropertySection">
-            <input type="org.eclipse.gmf.runtime.notation.View"/>
-            <input type="org.eclipse.gef.EditPart"/>
+            <input type="org.eclipse.emf.ecore.EObject"/>
             <!--<input type="de.uni_paderborn.fujaba.muml.XXX.diagram.navigator.MumlAbstractNavigatorItem"/> -->
          </propertySection>
+         
       </propertySections>
    </extension>
  
  
-	
 </plugin>
