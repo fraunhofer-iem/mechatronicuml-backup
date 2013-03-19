@@ -12,8 +12,7 @@ Export-Package: de.uni_paderborn.fujaba.muml.component.diagram.edit.commands,
  de.uni_paderborn.fujaba.muml.component.diagram.edit.policies,
  de.uni_paderborn.fujaba.muml.component.diagram.parsers,
  de.uni_paderborn.fujaba.muml.component.diagram.part,
- de.uni_paderborn.fujaba.muml.component.diagram.providers,
- de.uni_paderborn.fujaba.muml.component.diagram.sheet
+ de.uni_paderborn.fujaba.muml.component.diagram.providers
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,

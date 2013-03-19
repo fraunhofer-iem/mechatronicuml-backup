@@ -12,8 +12,7 @@ Export-Package: de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.com
  de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.policies,
  de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers,
  de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part,
- de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers,
- de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.sheet
+ de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,

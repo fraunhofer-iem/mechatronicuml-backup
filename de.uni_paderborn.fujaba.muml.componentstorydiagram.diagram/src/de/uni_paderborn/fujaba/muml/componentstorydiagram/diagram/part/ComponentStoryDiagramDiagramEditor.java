@@ -89,7 +89,20 @@ public class ComponentStoryDiagramDiagramEditor extends DiagramDocumentEditor
 	 * @generated
 	 */
 	public String getContributorId() {
-		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin.ID;
+		return "de.uni_paderborn.fujaba.muml.common.properties";
+	}
+
+	/**
+	 * @generated
+	 */
+	@SuppressWarnings("rawtypes")
+	public Object getAdapter(Class type) {
+
+		// Deactivated, see MUML #459
+		//if (type == org.eclipse.ui.views.properties.IPropertySheetPage.class) {
+		//	return null;
+		//}
+		return super.getAdapter(type);
 	}
 
 	/**

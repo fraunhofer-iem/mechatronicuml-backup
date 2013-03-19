@@ -1,15 +1,12 @@
 package de.uni_paderborn.fujaba.muml.component.diagram.parsers;
 
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -112,5 +109,16 @@ public class DiscretePortGmfProtocolLabelExpressionLabelParser6003 extends
 		throw new ExecutionException(
 				"Please implement parsing and value modification");
 	}
+
+	/**
+	 * @generated
+	 */
+	//
+	//protected void initializeEnvironment(java.util.Map<java.lang.String, org.eclipse.emf.ecore.EClassifier> typeEnv,
+	//		java.util.Map<java.lang.String, java.lang.Object> env, org.eclipse.emf.ecore.EObject context) {
+	//	// CAUTION: This is never called, because of newest GMF template changes according OCL-Tracking make it impossible to access the OCL object!
+	//  // TODO: See MUML #516
+	//}
+	//
 
 }

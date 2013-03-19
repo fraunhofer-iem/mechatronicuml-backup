@@ -14,35 +14,6 @@ public abstract class RealtimestatechartAbstractNavigatorItem extends
 	/**
 	 * @generated
 	 */
-	static {
-		final Class[] supportedTypes = new Class[] { ITabbedPropertySheetPageContributor.class };
-		final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor() {
-			public String getContributorId() {
-				return "de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"; //$NON-NLS-1$
-			}
-		};
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
-
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem
-								&& adapterType == ITabbedPropertySheetPageContributor.class) {
-							return propertySheetPageContributor;
-						}
-						return null;
-					}
-
-					public Class[] getAdapterList() {
-						return supportedTypes;
-					}
-				},
-				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.navigator.RealtimestatechartAbstractNavigatorItem.class);
-	}
-
-	/**
-	 * @generated
-	 */
 	private Object myParent;
 
 	/**

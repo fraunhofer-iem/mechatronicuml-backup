@@ -1672,27 +1672,6 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
-  <propertySheet
-      labelProviderClassName="ComponentinstanceconfigurationSheetLabelProvider">
-    <tabs
-        xsi:type="gmfgen:GenStandardPropertyTab"
-        iD="appearance"/>
-    <tabs
-        xsi:type="gmfgen:GenStandardPropertyTab"
-        iD="diagram"/>
-    <tabs
-        xsi:type="gmfgen:GenCustomPropertyTab"
-        iD="domain"
-        label="Core"
-        className="ComponentinstanceconfigurationPropertySection">
-      <filter
-          xsi:type="gmfgen:TypeTabFilter">
-        <types>org.eclipse.gmf.runtime.notation.View</types>
-        <types>org.eclipse.gef.EditPart</types>
-        <generatedTypes>abstractNavigatorItem</generatedTypes>
-      </filter>
-    </tabs>
-  </propertySheet>
   <domainGenModel
       href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#/"/>
   <expressionProviders>

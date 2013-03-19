@@ -12,8 +12,7 @@ Export-Package: de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.
  de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies,
  de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers,
  de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part,
- de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers,
- de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.sheet
+ de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,

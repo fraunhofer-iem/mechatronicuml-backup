@@ -95,7 +95,7 @@ public class MumlDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	public String getContributorId() {
-		return de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MessageTypeDiagramEditorPlugin.ID;
+		return "de.uni_paderborn.fujaba.muml.common.properties";
 	}
 
 	/**
@@ -103,6 +103,11 @@ public class MumlDiagramEditor extends DiagramDocumentEditor implements
 	 */
 	@SuppressWarnings("rawtypes")
 	public Object getAdapter(Class type) {
+
+		// Deactivated, see MUML #459
+		//if (type == org.eclipse.ui.views.properties.IPropertySheetPage.class) {
+		//	return null;
+		//}
 		if (type == IShowInTargetList.class) {
 			return new IShowInTargetList() {
 				public String[] getShowInTargetIds() {

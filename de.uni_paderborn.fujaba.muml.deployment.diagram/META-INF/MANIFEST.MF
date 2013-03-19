@@ -12,8 +12,7 @@ Export-Package: de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts,
  de.uni_paderborn.fujaba.muml.deployment.diagram.edit.commands,
  de.uni_paderborn.fujaba.muml.deployment.diagram.part,
  de.uni_paderborn.fujaba.muml.deployment.diagram.providers,
- de.uni_paderborn.fujaba.muml.deployment.diagram.parsers,
- de.uni_paderborn.fujaba.muml.deployment.diagram.sheet
+ de.uni_paderborn.fujaba.muml.deployment.diagram.parsers
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,
