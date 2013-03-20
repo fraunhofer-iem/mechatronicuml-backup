@@ -70,6 +70,7 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 			addRoleConnectorPropertyDescriptor(object);
 			addMultiRolePropertyDescriptor(object);
 			addReceiverMessageBufferPropertyDescriptor(object);
+			addRolesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -222,6 +223,28 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 				 getString("_UI_Role_receiverMessageBuffer_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Role_receiverMessageBuffer_feature", "_UI_Role_type"),
 				 ProtocolPackage.Literals.ROLE__RECEIVER_MESSAGE_BUFFER,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Roles feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRolesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Role_roles_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Role_roles_feature", "_UI_Role_type"),
+				 ProtocolPackage.Literals.ROLE__ROLES,
 				 false,
 				 false,
 				 false,

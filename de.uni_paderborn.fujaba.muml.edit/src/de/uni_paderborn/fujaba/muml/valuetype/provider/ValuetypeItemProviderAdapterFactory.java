@@ -144,6 +144,29 @@ public class ValuetypeItemProviderAdapterFactory extends ValuetypeAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.valuetype.Range} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RangeItemProvider rangeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.valuetype.Range}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRangeAdapter() {
+		if (rangeItemProvider == null) {
+			rangeItemProvider = new RangeItemProvider(this);
+		}
+
+		return rangeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -245,6 +268,7 @@ public class ValuetypeItemProviderAdapterFactory extends ValuetypeAdapterFactory
 		if (cardinalityItemProvider != null) cardinalityItemProvider.dispose();
 		if (timeValueItemProvider != null) timeValueItemProvider.dispose();
 		if (naturalNumberItemProvider != null) naturalNumberItemProvider.dispose();
+		if (rangeItemProvider != null) rangeItemProvider.dispose();
 	}
 
 }

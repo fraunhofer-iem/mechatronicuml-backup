@@ -71,7 +71,6 @@ public class RoleConnectorItemProvider
 
 			addCoordinationProtocolPropertyDescriptor(object);
 			addConnectorQualityOfServiceAssumptionsPropertyDescriptor(object);
-			addRolesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,28 +89,6 @@ public class RoleConnectorItemProvider
 				 getString("_UI_RoleConnector_coordinationProtocol_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RoleConnector_coordinationProtocol_feature", "_UI_RoleConnector_type"),
 				 ProtocolPackage.Literals.ROLE_CONNECTOR__COORDINATION_PROTOCOL,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Roles feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRolesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RoleConnector_roles_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RoleConnector_roles_feature", "_UI_RoleConnector_type"),
-				 ProtocolPackage.Literals.ROLE_CONNECTOR__ROLES,
 				 false,
 				 false,
 				 false,
@@ -283,9 +260,6 @@ public class RoleConnectorItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(RoleConnector.class)) {
-			case ProtocolPackage.ROLE_CONNECTOR__ROLES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case ProtocolPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

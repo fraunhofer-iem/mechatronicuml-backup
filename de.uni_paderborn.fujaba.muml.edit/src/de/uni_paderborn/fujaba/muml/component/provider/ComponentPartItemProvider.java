@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.component.provider;
 
 
+import de.uni_paderborn.fujaba.muml.component.ComponentFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -74,8 +75,6 @@ public class ComponentPartItemProvider
 			addCommentPropertyDescriptor(object);
 			addComponentTypePropertyDescriptor(object);
 			addParentComponentPropertyDescriptor(object);
-			addAssemblyConnectorsPropertyDescriptor(object);
-			addDelegationConnectorsPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addMultiPartPropertyDescriptor(object);
 		}
@@ -145,50 +144,6 @@ public class ComponentPartItemProvider
 				 false,
 				 null,
 				 getString("_UI_GeneralPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Assembly Connectors feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAssemblyConnectorsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentPart_assemblyConnectors_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_assemblyConnectors_feature", "_UI_ComponentPart_type"),
-				 ComponentPackage.Literals.COMPONENT_PART__ASSEMBLY_CONNECTORS,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Delegation Connectors feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDelegationConnectorsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentPart_delegationConnectors_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentPart_delegationConnectors_feature", "_UI_ComponentPart_type"),
-				 ComponentPackage.Literals.COMPONENT_PART__DELEGATION_CONNECTORS,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
 				 null));
 	}
 
@@ -276,6 +231,7 @@ public class ComponentPartItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ComponentPackage.Literals.COMPONENT_PART__CARDINALITY);
+			childrenFeatures.add(ComponentPackage.Literals.COMPONENT_PART__PORT_PARTS);
 		}
 		return childrenFeatures;
 	}
@@ -333,13 +289,11 @@ public class ComponentPartItemProvider
 
 		switch (notification.getFeatureID(ComponentPart.class)) {
 			case ComponentPackage.COMPONENT_PART__COMMENT:
-			case ComponentPackage.COMPONENT_PART__ASSEMBLY_CONNECTORS:
-			case ComponentPackage.COMPONENT_PART__DELEGATION_CONNECTORS:
-			case ComponentPackage.COMPONENT_PART__PORTS:
 			case ComponentPackage.COMPONENT_PART__MULTI_PART:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
+			case ComponentPackage.COMPONENT_PART__PORT_PARTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -361,6 +315,11 @@ public class ComponentPartItemProvider
 			(createChildParameter
 				(ComponentPackage.Literals.COMPONENT_PART__CARDINALITY,
 				 ValuetypeFactory.eINSTANCE.createCardinality()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentPackage.Literals.COMPONENT_PART__PORT_PARTS,
+				 ComponentFactory.eINSTANCE.createPortPart()));
 	}
 
 	/**

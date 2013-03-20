@@ -74,7 +74,6 @@ public class ComponentItemProvider
 			addCommentPropertyDescriptor(object);
 			addConstraintPropertyDescriptor(object);
 			addPortsPropertyDescriptor(object);
-			addReferencingComponentPartsPropertyDescriptor(object);
 			addComponentTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -141,28 +140,6 @@ public class ComponentItemProvider
 				 false,
 				 false,
 				 false,
-				 null,
-				 getString("_UI_GeneralPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Referencing Component Parts feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReferencingComponentPartsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Component_referencingComponentParts_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_referencingComponentParts_feature", "_UI_Component_type"),
-				 ComponentPackage.Literals.COMPONENT__REFERENCING_COMPONENT_PARTS,
-				 false,
-				 false,
-				 true,
 				 null,
 				 getString("_UI_GeneralPropertyCategory"),
 				 null));

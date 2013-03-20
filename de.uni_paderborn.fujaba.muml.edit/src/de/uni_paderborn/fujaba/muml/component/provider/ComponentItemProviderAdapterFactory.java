@@ -282,6 +282,29 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.component.PortPart} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PortPartItemProvider portPartItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.component.PortPart}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPortPartAdapter() {
+		if (portPartItemProvider == null) {
+			portPartItemProvider = new PortPartItemProvider(this);
+		}
+
+		return portPartItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -389,6 +412,7 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 		if (delegationConnectorItemProvider != null) delegationConnectorItemProvider.dispose();
 		if (hybridPortItemProvider != null) hybridPortItemProvider.dispose();
 		if (coordinationProtocolOccurrenceItemProvider != null) coordinationProtocolOccurrenceItemProvider.dispose();
+		if (portPartItemProvider != null) portPartItemProvider.dispose();
 	}
 
 }

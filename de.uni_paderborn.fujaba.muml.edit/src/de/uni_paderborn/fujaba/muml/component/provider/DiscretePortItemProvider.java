@@ -74,12 +74,13 @@ public class DiscretePortItemProvider
 			addAdaptationBehaviorPropertyDescriptor(object);
 			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
-			addRefinesPropertyDescriptor(object);
+			addRefinedRolePropertyDescriptor(object);
 			addIsDiscreteInPortPropertyDescriptor(object);
 			addIsDiscreteOutPortPropertyDescriptor(object);
 			addIsDiscreteInOutPortPropertyDescriptor(object);
 			addReceiverMessageBufferPropertyDescriptor(object);
 			addMultiPortPropertyDescriptor(object);
+			addCoordinationProtocolPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -103,28 +104,6 @@ public class DiscretePortItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Refines feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRefinesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DiscretePort_refines_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_refines_feature", "_UI_DiscretePort_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT__REFINES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 getString("_UI_GeneralPropertyCategory"),
 				 null));
 	}
 
@@ -268,6 +247,28 @@ public class DiscretePortItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Refined Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRefinedRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePort_refinedRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_refinedRole_feature", "_UI_DiscretePort_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT__REFINED_ROLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Is Discrete In Port feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -378,6 +379,28 @@ public class DiscretePortItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Coordination Protocol feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCoordinationProtocolPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscretePort_coordinationProtocol_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_coordinationProtocol_feature", "_UI_DiscretePort_type"),
+				 ComponentPackage.Literals.DISCRETE_PORT__COORDINATION_PROTOCOL,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -449,7 +472,6 @@ public class DiscretePortItemProvider
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT:
 			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER:
 			case ComponentPackage.DISCRETE_PORT__MULTI_PORT:
-			case ComponentPackage.DISCRETE_PORT__GMF_PROTOCOL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.DISCRETE_PORT__CARDINALITY:

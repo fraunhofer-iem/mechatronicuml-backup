@@ -121,6 +121,29 @@ public class TypesItemProviderAdapterFactory extends TypesAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RangedPrimitiveDataTypeItemProvider rangedPrimitiveDataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRangedPrimitiveDataTypeAdapter() {
+		if (rangedPrimitiveDataTypeItemProvider == null) {
+			rangedPrimitiveDataTypeItemProvider = new RangedPrimitiveDataTypeItemProvider(this);
+		}
+
+		return rangedPrimitiveDataTypeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -221,6 +244,7 @@ public class TypesItemProviderAdapterFactory extends TypesAdapterFactory impleme
 	public void dispose() {
 		if (arrayDataTypeItemProvider != null) arrayDataTypeItemProvider.dispose();
 		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
+		if (rangedPrimitiveDataTypeItemProvider != null) rangedPrimitiveDataTypeItemProvider.dispose();
 	}
 
 }

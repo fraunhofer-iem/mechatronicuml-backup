@@ -30,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.instance.HybridPortInstance;
  * @generated
  */
 public class HybridPortInstanceItemProvider
-	extends DiscretePortInstanceItemProvider
+	extends PortInstanceItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

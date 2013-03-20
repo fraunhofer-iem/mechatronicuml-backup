@@ -7,12 +7,19 @@
 package de.uni_paderborn.fujaba.muml.component.provider;
 
 
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.component.PortPart;
+
+import de.uni_paderborn.fujaba.muml.connector.provider.ConnectorEndpointItemProvider;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,20 +28,14 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.PortConnector;
-import de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProvider;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.component.PortConnector} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.component.PortPart} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PortConnectorItemProvider
-	extends ConnectorItemProvider
+public class PortPartItemProvider
+	extends ConnectorEndpointItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -47,7 +48,7 @@ public class PortConnectorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortConnectorItemProvider(AdapterFactory adapterFactory) {
+	public PortPartItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,31 +63,88 @@ public class PortConnectorItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addParentComponentPropertyDescriptor(object);
+			addPortTypePropertyDescriptor(object);
+			addCoordinationProtocolOccurencePropertyDescriptor(object);
+			addRefinedRolePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Parent Component feature.
+	 * This adds a property descriptor for the Port Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addParentComponentPropertyDescriptor(Object object) {
+	protected void addPortTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PortConnector_parentComponent_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortConnector_parentComponent_feature", "_UI_PortConnector_type"),
-				 ComponentPackage.Literals.PORT_CONNECTOR__PARENT_COMPONENT,
+				 getString("_UI_PortPart_portType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortPart_portType_feature", "_UI_PortPart_type"),
+				 ComponentPackage.Literals.PORT_PART__PORT_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Coordination Protocol Occurence feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCoordinationProtocolOccurencePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortPart_coordinationProtocolOccurence_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortPart_coordinationProtocolOccurence_feature", "_UI_PortPart_type"),
+				 ComponentPackage.Literals.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Refined Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRefinedRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortPart_refinedRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortPart_refinedRole_feature", "_UI_PortPart_type"),
+				 ComponentPackage.Literals.PORT_PART__REFINED_ROLE,
 				 false,
 				 false,
 				 false,
 				 null,
 				 null,
 				 null));
+	}
+
+	/**
+	 * This returns PortPart.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/PortPart"));
 	}
 
 	/**
@@ -97,10 +155,10 @@ public class PortConnectorItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PortConnector)object).getComment();
+		String label = ((PortPart)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_PortConnector_type") :
-			getString("_UI_PortConnector_type") + " " + label;
+			getString("_UI_PortPart_type") :
+			getString("_UI_PortPart_type") + " " + label;
 	}
 
 	/**

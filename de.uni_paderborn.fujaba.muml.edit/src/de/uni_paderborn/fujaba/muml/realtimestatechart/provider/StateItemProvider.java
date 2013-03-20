@@ -62,7 +62,6 @@ public class StateItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRegionsPropertyDescriptor(object);
 			addDoEventPropertyDescriptor(object);
 			addExitEventPropertyDescriptor(object);
 			addEntryEventPropertyDescriptor(object);
@@ -73,31 +72,8 @@ public class StateItemProvider
 			addChannelsPropertyDescriptor(object);
 			addConnectionPointsPropertyDescriptor(object);
 			addSimplePropertyDescriptor(object);
-			addStatechartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Regions feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRegionsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_State_regions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_State_regions_feature", "_UI_State_type"),
-				 RealtimestatechartPackage.Literals.STATE__REGIONS,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -321,28 +297,6 @@ public class StateItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Statechart feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStatechartPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_State_statechart_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_State_statechart_feature", "_UI_State_type"),
-				 RealtimestatechartPackage.Literals.STATE__STATECHART,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -354,7 +308,7 @@ public class StateItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__REGIONS);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__DO_EVENT);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__EXIT_EVENT);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.STATE__ENTRY_EVENT);
@@ -422,7 +376,7 @@ public class StateItemProvider
 			case RealtimestatechartPackage.STATE__SIMPLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RealtimestatechartPackage.STATE__REGIONS:
+			case RealtimestatechartPackage.STATE__EMBEDDED_REGIONS:
 			case RealtimestatechartPackage.STATE__DO_EVENT:
 			case RealtimestatechartPackage.STATE__EXIT_EVENT:
 			case RealtimestatechartPackage.STATE__ENTRY_EVENT:
@@ -448,7 +402,7 @@ public class StateItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.STATE__REGIONS,
+				(RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS,
 				 RealtimestatechartFactory.eINSTANCE.createRegion()));
 
 		newChildDescriptors.add

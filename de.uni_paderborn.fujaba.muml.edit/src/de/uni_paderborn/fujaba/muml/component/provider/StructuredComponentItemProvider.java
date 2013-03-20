@@ -62,32 +62,9 @@ public class StructuredComponentItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addEmbeddedPartsPropertyDescriptor(object);
 			addConnectorsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Embedded Parts feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEmbeddedPartsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StructuredComponent_embeddedParts_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StructuredComponent_embeddedParts_feature", "_UI_StructuredComponent_type"),
-				 ComponentPackage.Literals.STRUCTURED_COMPONENT__EMBEDDED_PARTS,
-				 false,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_GeneralPropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -124,8 +101,9 @@ public class StructuredComponentItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__EMBEDDED_PARTS);
+			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__EMBEDDED_COMPONENT_PARTS);
 			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__CONNECTORS);
+			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES);
 		}
 		return childrenFeatures;
 	}
@@ -182,11 +160,11 @@ public class StructuredComponentItemProvider
 		switch (notification.getFeatureID(StructuredComponent.class)) {
 			case ComponentPackage.STRUCTURED_COMPONENT__ALL_STRUCTURED_COMPONENTS:
 			case ComponentPackage.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS:
-			case ComponentPackage.STRUCTURED_COMPONENT__GMF_PROTOCOLS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ComponentPackage.STRUCTURED_COMPONENT__EMBEDDED_PARTS:
+			case ComponentPackage.STRUCTURED_COMPONENT__EMBEDDED_COMPONENT_PARTS:
 			case ComponentPackage.STRUCTURED_COMPONENT__CONNECTORS:
+			case ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -206,7 +184,7 @@ public class StructuredComponentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ComponentPackage.Literals.STRUCTURED_COMPONENT__EMBEDDED_PARTS,
+				(ComponentPackage.Literals.STRUCTURED_COMPONENT__EMBEDDED_COMPONENT_PARTS,
 				 ComponentFactory.eINSTANCE.createComponentPart()));
 
 		newChildDescriptors.add
@@ -218,6 +196,11 @@ public class StructuredComponentItemProvider
 			(createChildParameter
 				(ComponentPackage.Literals.STRUCTURED_COMPONENT__CONNECTORS,
 				 ComponentFactory.eINSTANCE.createDelegationConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentPackage.Literals.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES,
+				 ComponentFactory.eINSTANCE.createCoordinationProtocolOccurrence()));
 	}
 
 }

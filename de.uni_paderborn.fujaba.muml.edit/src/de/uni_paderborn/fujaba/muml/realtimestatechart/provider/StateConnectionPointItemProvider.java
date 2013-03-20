@@ -1,18 +1,17 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.provider;
 
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ConnectionPoint;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -20,13 +19,15 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint;
+
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.ConnectionPoint} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConnectionPointItemProvider
+public class StateConnectionPointItemProvider
 	extends VertexItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -40,7 +41,7 @@ public class ConnectionPointItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConnectionPointItemProvider(AdapterFactory adapterFactory) {
+	public StateConnectionPointItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,31 +56,8 @@ public class ConnectionPointItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addStatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the State feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStatePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConnectionPoint_state_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectionPoint_state_feature", "_UI_ConnectionPoint_type"),
-				 RealtimestatechartPackage.Literals.CONNECTION_POINT__STATE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -90,10 +68,10 @@ public class ConnectionPointItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ConnectionPoint)object).getName();
+		String label = ((StateConnectionPoint)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ConnectionPoint_type") :
-			getString("_UI_ConnectionPoint_type") + " " + label;
+			getString("_UI_StateConnectionPoint_type") :
+			getString("_UI_StateConnectionPoint_type") + " " + label;
 	}
 
 	/**

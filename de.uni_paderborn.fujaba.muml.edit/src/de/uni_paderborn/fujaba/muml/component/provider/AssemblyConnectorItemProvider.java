@@ -58,51 +58,51 @@ public class AssemblyConnectorItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCoordinationProtocolPropertyDescriptor(object);
-			addComponentPartsPropertyDescriptor(object);
+			addCoordinationProtocolOccurencePropertyDescriptor(object);
+			addPortPartsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Coordination Protocol feature.
+	 * This adds a property descriptor for the Coordination Protocol Occurence feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCoordinationProtocolPropertyDescriptor(Object object) {
+	protected void addCoordinationProtocolOccurencePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AssemblyConnector_coordinationProtocol_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnector_coordinationProtocol_feature", "_UI_AssemblyConnector_type"),
-				 ComponentPackage.Literals.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL,
-				 true,
+				 getString("_UI_AssemblyConnector_coordinationProtocolOccurence_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnector_coordinationProtocolOccurence_feature", "_UI_AssemblyConnector_type"),
+				 ComponentPackage.Literals.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_OCCURENCE,
 				 false,
-				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Component Parts feature.
+	 * This adds a property descriptor for the Port Parts feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addComponentPartsPropertyDescriptor(Object object) {
+	protected void addPortPartsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AssemblyConnector_componentParts_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnector_componentParts_feature", "_UI_AssemblyConnector_type"),
-				 ComponentPackage.Literals.ASSEMBLY_CONNECTOR__COMPONENT_PARTS,
+				 getString("_UI_AssemblyConnector_portParts_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnector_portParts_feature", "_UI_AssemblyConnector_type"),
+				 ComponentPackage.Literals.ASSEMBLY_CONNECTOR__PORT_PARTS,
+				 true,
 				 false,
-				 false,
-				 false,
+				 true,
 				 null,
 				 null,
 				 null));

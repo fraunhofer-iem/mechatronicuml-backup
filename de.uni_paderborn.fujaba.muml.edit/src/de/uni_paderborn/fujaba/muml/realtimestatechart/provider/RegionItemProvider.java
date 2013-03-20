@@ -13,8 +13,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,9 +24,8 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.provider.NamedElementItemProvider;
+import org.storydriven.core.CorePackage;
 
-import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
@@ -40,7 +39,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
  * @generated
  */
 public class RegionItemProvider
-	extends NamedElementItemProvider
+	extends PrioritizedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -68,31 +67,31 @@ public class RegionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPriorityPropertyDescriptor(object);
-			addStatechartPropertyDescriptor(object);
+			addCommentPropertyDescriptor(object);
 			addParentStatePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Priority feature.
+	 * This adds a property descriptor for the Comment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPriorityPropertyDescriptor(Object object) {
+	protected void addCommentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PrioritizedElement_priority_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PrioritizedElement_priority_feature", "_UI_PrioritizedElement_type"),
-				 RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT__PRIORITY,
+				 getString("_UI_CommentableElement_comment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
 				 true,
 				 false,
-				 true,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -109,7 +108,7 @@ public class RegionItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Region_statechart_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Region_statechart_feature", "_UI_Region_type"),
-				 RealtimestatechartPackage.Literals.REGION__STATECHART,
+				 RealtimestatechartPackage.Literals.REGION__EMBEDDED_STATECHART,
 				 true,
 				 false,
 				 true,
@@ -124,12 +123,12 @@ public class RegionItemProvider
 				Region region = (Region) object;
 
 				if (region != null && region.getParentState() != null
-						&& region.getParentState().getStatechart() != null) {
+						&& region.getParentState().getParentStatechart() != null) {
 
 					State parentState = region.getParentState();
 
 					RealtimeStatechart parentStatechart = parentState
-							.getStatechart();
+							.getParentStatechart();
 
 					List<Object> invalidChoices = new ArrayList<Object>();
 					for (Object choice : choices) {
@@ -174,6 +173,28 @@ public class RegionItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Region_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Region_name_feature", "_UI_Region_type"),
+				 RealtimestatechartPackage.Literals.REGION__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -185,7 +206,9 @@ public class RegionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.REGION__STATECHART);
+			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
+			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.REGION__EMBEDDED_STATECHART);
 		}
 		return childrenFeatures;
 	}
@@ -240,10 +263,14 @@ public class RegionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Region.class)) {
+			case RealtimestatechartPackage.REGION__COMMENT:
 			case RealtimestatechartPackage.REGION__GMF_HISTORY:
+			case RealtimestatechartPackage.REGION__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RealtimestatechartPackage.REGION__STATECHART:
+			case RealtimestatechartPackage.REGION__ANNOTATION:
+			case RealtimestatechartPackage.REGION__EXTENSION:
+			case RealtimestatechartPackage.REGION__EMBEDDED_STATECHART:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -263,19 +290,13 @@ public class RegionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.REGION__STATECHART,
-				 RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart()));
-	}
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION,
+				 EcoreFactory.eINSTANCE.createEAnnotation()));
 
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return MumlEditPlugin.INSTANCE;
+		newChildDescriptors.add
+			(createChildParameter
+				(RealtimestatechartPackage.Literals.REGION__EMBEDDED_STATECHART,
+				 RealtimestatechartFactory.eINSTANCE.createRealtimeStatechart()));
 	}
 
 }
