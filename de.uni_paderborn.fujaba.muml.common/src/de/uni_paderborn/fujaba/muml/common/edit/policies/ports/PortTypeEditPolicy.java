@@ -14,6 +14,7 @@ import de.uni_paderborn.fujaba.muml.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.component.DirectedTypedPort;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.component.PortDirectionKind;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 
@@ -111,10 +112,10 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 
 	protected PortType getDirectedPortType() {
 		// Get port direction
-		ContinuousPortDirectionKind direction = null;
+		PortDirectionKind direction = null;
 		DirectedTypedPort directedPort = (DirectedTypedPort) getPort();
 		if (directedPort != null) {
-			direction = (ContinuousPortDirectionKind) directedPort.getKind();
+			direction = (PortDirectionKind) directedPort.getKind();
 		}
 
 		// select port type based on port direction
