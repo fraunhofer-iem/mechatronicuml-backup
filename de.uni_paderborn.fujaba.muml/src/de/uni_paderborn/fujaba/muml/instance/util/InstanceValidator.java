@@ -161,7 +161,45 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validatePortInstance(PortInstance portInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(portInstance, diagnostics, context);
+		if (!validate_NoCircularContainment(portInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(portInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(portInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(portInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(portInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(portInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(portInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(portInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(portInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortPartOrPortTypeInstance(portInstance, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the PortPartOrPortTypeInstance constraint of '<em>Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePortInstance_PortPartOrPortTypeInstance(PortInstance portInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "PortPartOrPortTypeInstance", getObjectLabel(portInstance, context) },
+						 new Object[] { portInstance },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -227,7 +265,47 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateComponentInstanceConfiguration(ComponentInstanceConfiguration componentInstanceConfiguration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(componentInstanceConfiguration, diagnostics, context);
+		if (!validate_NoCircularContainment(componentInstanceConfiguration, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(componentInstanceConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(componentInstanceConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(componentInstanceConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(componentInstanceConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(componentInstanceConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(componentInstanceConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(componentInstanceConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(componentInstanceConfiguration, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponentInstanceConfiguration_UniqueComponentInstanceNames(componentInstanceConfiguration, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the UniqueComponentInstanceNames constraint of '<em>Component Instance Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COMPONENT_INSTANCE_CONFIGURATION__UNIQUE_COMPONENT_INSTANCE_NAMES__EEXPRESSION = "--  Component instances of a component instance configuration must have unique names on top level.\r\n" +
+		"self.componentInstances->isUnique(name)";
+
+	/**
+	 * Validates the UniqueComponentInstanceNames constraint of '<em>Component Instance Configuration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComponentInstanceConfiguration_UniqueComponentInstanceNames(ComponentInstanceConfiguration componentInstanceConfiguration, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION,
+				 componentInstanceConfiguration,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UniqueComponentInstanceNames",
+				 COMPONENT_INSTANCE_CONFIGURATION__UNIQUE_COMPONENT_INSTANCE_NAMES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -236,7 +314,17 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateContinuousPortInstance(ContinuousPortInstance continuousPortInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(continuousPortInstance, diagnostics, context);
+		if (!validate_NoCircularContainment(continuousPortInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(continuousPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(continuousPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(continuousPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(continuousPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(continuousPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(continuousPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(continuousPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(continuousPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortPartOrPortTypeInstance(continuousPortInstance, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -245,7 +333,17 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateHybridPortInstance(HybridPortInstance hybridPortInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(hybridPortInstance, diagnostics, context);
+		if (!validate_NoCircularContainment(hybridPortInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(hybridPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(hybridPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(hybridPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(hybridPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(hybridPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(hybridPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hybridPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hybridPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortPartOrPortTypeInstance(hybridPortInstance, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -254,7 +352,17 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateDiscretePortInstance(DiscretePortInstance discretePortInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(discretePortInstance, diagnostics, context);
+		if (!validate_NoCircularContainment(discretePortInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(discretePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(discretePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(discretePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(discretePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(discretePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(discretePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discretePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discretePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortPartOrPortTypeInstance(discretePortInstance, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -263,7 +371,17 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateDiscreteSinglePortInstance(DiscreteSinglePortInstance discreteSinglePortInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(discreteSinglePortInstance, diagnostics, context);
+		if (!validate_NoCircularContainment(discreteSinglePortInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(discreteSinglePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(discreteSinglePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(discreteSinglePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(discreteSinglePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(discreteSinglePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(discreteSinglePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discreteSinglePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discreteSinglePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortPartOrPortTypeInstance(discreteSinglePortInstance, diagnostics, context);
+		return result;
 	}
 
 	/**
@@ -272,7 +390,17 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateDiscreteMultiPortInstance(DiscreteMultiPortInstance discreteMultiPortInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(discreteMultiPortInstance, diagnostics, context);
+		if (!validate_NoCircularContainment(discreteMultiPortInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortPartOrPortTypeInstance(discreteMultiPortInstance, diagnostics, context);
+		return result;
 	}
 
 	/**

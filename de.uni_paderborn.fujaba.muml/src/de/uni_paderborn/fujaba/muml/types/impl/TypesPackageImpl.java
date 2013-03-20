@@ -37,6 +37,7 @@ import de.uni_paderborn.fujaba.muml.types.ArrayDataType;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveTypes;
+import de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.types.TypesFactory;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
@@ -69,6 +70,13 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * @generated
 	 */
 	private EClass dataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rangedPrimitiveDataTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,6 +240,33 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRangedPrimitiveDataType() {
+		return rangedPrimitiveDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRangedPrimitiveDataType_RangedType() {
+		return (EReference)rangedPrimitiveDataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRangedPrimitiveDataType_Range() {
+		return (EReference)rangedPrimitiveDataTypeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPrimitiveTypes() {
 		return primitiveTypesEEnum;
 	}
@@ -273,6 +308,10 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 
 		dataTypeEClass = createEClass(DATA_TYPE);
 
+		rangedPrimitiveDataTypeEClass = createEClass(RANGED_PRIMITIVE_DATA_TYPE);
+		createEReference(rangedPrimitiveDataTypeEClass, RANGED_PRIMITIVE_DATA_TYPE__RANGED_TYPE);
+		createEReference(rangedPrimitiveDataTypeEClass, RANGED_PRIMITIVE_DATA_TYPE__RANGE);
+
 		// Create enums
 		primitiveTypesEEnum = createEEnum(PRIMITIVE_TYPES);
 	}
@@ -313,6 +352,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
 		dataTypeEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		dataTypeEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		rangedPrimitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(arrayDataTypeEClass, ArrayDataType.class, "ArrayDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -324,6 +364,10 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(rangedPrimitiveDataTypeEClass, RangedPrimitiveDataType.class, "RangedPrimitiveDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRangedPrimitiveDataType_RangedType(), this.getPrimitiveDataType(), null, "rangedType", null, 1, 1, RangedPrimitiveDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRangedPrimitiveDataType_Range(), theValuetypePackage.getRange(), null, "range", null, 1, 1, RangedPrimitiveDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(primitiveTypesEEnum, PrimitiveTypes.class, "PrimitiveTypes");
 		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.VOID);
@@ -333,7 +377,6 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.INT);
 		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.LONG);
 		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.DOUBLE);
-		addEEnumLiteral(primitiveTypesEEnum, PrimitiveTypes.STRING);
 
 		// Create resource
 		createResource(eNS_URI);

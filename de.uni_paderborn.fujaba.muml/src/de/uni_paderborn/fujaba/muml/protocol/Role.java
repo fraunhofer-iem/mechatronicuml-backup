@@ -29,12 +29,13 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#isMultiRole <em>Multi Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getRoles <em>Roles</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRole()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RoleRequiresBehavior RoleRequiresMessageTypes'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RoleRequiresBehavior='not self.behavior.oclIsUndefined()' RoleRequiresMessageTypes='not (self.senderMessageTypes->isEmpty() and self.receiverMessageTypes->isEmpty())'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RoleRequiresBehavior='not self.behavior.oclIsUndefined()' RoleRequiresMessageTypes='self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()'"
  * @generated
  */
 public interface Role extends DiscreteInteractionEndpoint, DataType {
@@ -68,7 +69,7 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	/**
 	 * Returns the value of the '<em><b>Port</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.DiscretePort}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getRefines <em>Refines</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getRefinedRole <em>Refined Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -76,8 +77,8 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRole_Port()
-	 * @see de.uni_paderborn.fujaba.muml.component.DiscretePort#getRefines
-	 * @model opposite="refines"
+	 * @see de.uni_paderborn.fujaba.muml.component.DiscretePort#getRefinedRole
+	 * @model opposite="refinedRole"
 	 * @generated
 	 */
 	EList<DiscretePort> getPort();
@@ -93,7 +94,7 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	 * @return the value of the '<em>Role Connector</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRole_RoleConnector()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.connectors->isEmpty() then\r\n\tnull\r\nelse\r\n\tself.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)'"
 	 * @generated
 	 */
 	RoleConnector getRoleConnector();
@@ -130,5 +131,22 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	 * @generated
 	 */
 	EList<MessageBuffer> getReceiverMessageBuffer();
+
+	/**
+	 * Returns the value of the '<em><b>Roles</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.protocol.Role}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Roles</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Roles</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRole_Roles()
+	 * @model lower="2" upper="2" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->select(e | e.oclIsKindOf(Role)).oclAsType(Role)->asOrderedSet()'"
+	 * @generated
+	 */
+	EList<Role> getRoles();
 
 } // Role

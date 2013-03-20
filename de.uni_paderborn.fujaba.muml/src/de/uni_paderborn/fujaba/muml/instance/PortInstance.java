@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.instance;
 import org.eclipse.emf.common.util.EList;
 
 import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 
 /**
@@ -26,11 +27,14 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.PortInstance#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.PortInstance#getComponentInstance <em>Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.PortInstance#getPortConnectorInstances <em>Port Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.PortInstance#getPortPart <em>Port Part</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getPortInstance()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='PortPartOrPortTypeInstance'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL TypeMustReferencePortType='-- A port instance type must be a port type\r\nif (not self.type->oclIsUndefined())\r\nthen\r\nself.type->isKindOf(PortType)\r\nelse\r\nendif'"
  * @generated
  */
 public interface PortInstance extends ConnectorEndpointInstance {
@@ -43,8 +47,8 @@ public interface PortInstance extends ConnectorEndpointInstance {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Type</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getPortInstance_PortType()
-	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.type.oclAsType(component::Port)'"
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.type.oclIsKindOf(component::Port))\r\nthen\r\nself.type.oclAsType(component::Port)\r\nelse\r\nnull\r\nendif'"
 	 * @generated
 	 */
 	Port getPortType();
@@ -92,5 +96,21 @@ public interface PortInstance extends ConnectorEndpointInstance {
 	 * @generated
 	 */
 	EList<PortConnectorInstance> getPortConnectorInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Port Part</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Port Part</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Port Part</em>' reference.
+	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getPortInstance_PortPart()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.type.oclIsKindOf(component::PortPart))\r\nthen\r\nself.type.oclAsType(component::PortPart)\r\nelse\r\nnull\r\nendif'"
+	 * @generated
+	 */
+	PortPart getPortPart();
 
 } // PortInstance

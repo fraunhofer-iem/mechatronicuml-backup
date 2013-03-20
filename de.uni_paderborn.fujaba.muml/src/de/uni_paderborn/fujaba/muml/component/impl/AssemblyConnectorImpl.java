@@ -11,12 +11,15 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
+import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 
@@ -27,8 +30,8 @@ import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.AssemblyConnectorImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.AssemblyConnectorImpl#getComponentParts <em>Component Parts</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.AssemblyConnectorImpl#getCoordinationProtocolOccurence <em>Coordination Protocol Occurence</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.AssemblyConnectorImpl#getPortParts <em>Port Parts</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,24 +39,24 @@ import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
  */
 public class AssemblyConnectorImpl extends PortConnectorImpl implements AssemblyConnector {
 	/**
-	 * The cached value of the '{@link #getCoordinationProtocol() <em>Coordination Protocol</em>}' reference.
+	 * The cached setting delegate for the '{@link #getCoordinationProtocolOccurence() <em>Coordination Protocol Occurence</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCoordinationProtocol()
+	 * @see #getCoordinationProtocolOccurence()
 	 * @generated
 	 * @ordered
 	 */
-	protected CoordinationProtocol coordinationProtocol;
+	protected EStructuralFeature.Internal.SettingDelegate COORDINATION_PROTOCOL_OCCURENCE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_OCCURENCE).getSettingDelegate();
 
 	/**
-	 * The cached value of the '{@link #getComponentParts() <em>Component Parts</em>}' reference list.
+	 * The cached setting delegate for the '{@link #getPortParts() <em>Port Parts</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComponentParts()
+	 * @see #getPortParts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ComponentPart> componentParts;
+	protected EStructuralFeature.Internal.SettingDelegate PORT_PARTS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.ASSEMBLY_CONNECTOR__PORT_PARTS).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,16 +82,8 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocol getCoordinationProtocol() {
-		if (coordinationProtocol != null && coordinationProtocol.eIsProxy()) {
-			InternalEObject oldCoordinationProtocol = (InternalEObject)coordinationProtocol;
-			coordinationProtocol = (CoordinationProtocol)eResolveProxy(oldCoordinationProtocol);
-			if (coordinationProtocol != oldCoordinationProtocol) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL, oldCoordinationProtocol, coordinationProtocol));
-			}
-		}
-		return coordinationProtocol;
+	public CoordinationProtocolOccurrence getCoordinationProtocolOccurence() {
+		return (CoordinationProtocolOccurrence)COORDINATION_PROTOCOL_OCCURENCE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -96,8 +91,8 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocol basicGetCoordinationProtocol() {
-		return coordinationProtocol;
+	public CoordinationProtocolOccurrence basicGetCoordinationProtocolOccurence() {
+		return (CoordinationProtocolOccurrence)COORDINATION_PROTOCOL_OCCURENCE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -105,23 +100,9 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCoordinationProtocol(CoordinationProtocol newCoordinationProtocol) {
-		CoordinationProtocol oldCoordinationProtocol = coordinationProtocol;
-		coordinationProtocol = newCoordinationProtocol;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL, oldCoordinationProtocol, coordinationProtocol));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ComponentPart> getComponentParts() {
-		if (componentParts == null) {
-			componentParts = new EObjectResolvingEList<ComponentPart>(ComponentPart.class, this, ComponentPackage.ASSEMBLY_CONNECTOR__COMPONENT_PARTS);
-		}
-		return componentParts;
+	@SuppressWarnings("unchecked")
+	public EList<PortPart> getPortParts() {
+		return (EList<PortPart>)PORT_PARTS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -132,11 +113,11 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL:
-				if (resolve) return getCoordinationProtocol();
-				return basicGetCoordinationProtocol();
-			case ComponentPackage.ASSEMBLY_CONNECTOR__COMPONENT_PARTS:
-				return getComponentParts();
+			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_OCCURENCE:
+				if (resolve) return getCoordinationProtocolOccurence();
+				return basicGetCoordinationProtocolOccurence();
+			case ComponentPackage.ASSEMBLY_CONNECTOR__PORT_PARTS:
+				return getPortParts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,12 +131,9 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL:
-				setCoordinationProtocol((CoordinationProtocol)newValue);
-				return;
-			case ComponentPackage.ASSEMBLY_CONNECTOR__COMPONENT_PARTS:
-				getComponentParts().clear();
-				getComponentParts().addAll((Collection<? extends ComponentPart>)newValue);
+			case ComponentPackage.ASSEMBLY_CONNECTOR__PORT_PARTS:
+				getPortParts().clear();
+				getPortParts().addAll((Collection<? extends PortPart>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -169,11 +147,8 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL:
-				setCoordinationProtocol((CoordinationProtocol)null);
-				return;
-			case ComponentPackage.ASSEMBLY_CONNECTOR__COMPONENT_PARTS:
-				getComponentParts().clear();
+			case ComponentPackage.ASSEMBLY_CONNECTOR__PORT_PARTS:
+				getPortParts().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -187,10 +162,10 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL:
-				return coordinationProtocol != null;
-			case ComponentPackage.ASSEMBLY_CONNECTOR__COMPONENT_PARTS:
-				return componentParts != null && !componentParts.isEmpty();
+			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_OCCURENCE:
+				return COORDINATION_PROTOCOL_OCCURENCE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.ASSEMBLY_CONNECTOR__PORT_PARTS:
+				return PORT_PARTS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

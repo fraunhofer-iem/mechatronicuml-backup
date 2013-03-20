@@ -38,7 +38,7 @@ public interface ConnectorInstance extends CommentableElement {
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(Connector)
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getConnectorInstance_Type()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	Connector getType();

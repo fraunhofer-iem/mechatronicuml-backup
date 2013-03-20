@@ -44,7 +44,7 @@ public interface ValuetypePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/valuetype/0.3.13";
+	String eNS_URI = "http://www.fujaba.de/muml/valuetype/0.3.18";
 
 	/**
 	 * The package namespace name.
@@ -192,6 +192,43 @@ public interface ValuetypePackage extends EPackage {
 	int NATURAL_NUMBER_FEATURE_COUNT = 2;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.valuetype.impl.RangeImpl <em>Range</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.impl.RangeImpl
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypePackageImpl#getRange()
+	 * @generated
+	 */
+	int RANGE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RANGE__LOWER_BOUND = 0;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RANGE__UPPER_BOUND = 1;
+
+	/**
+	 * The number of structural features of the '<em>Range</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RANGE_FEATURE_COUNT = 2;
+
+	/**
 	 * The meta object id for the '<em>Time Unit</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -199,7 +236,7 @@ public interface ValuetypePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypePackageImpl#getTimeUnit()
 	 * @generated
 	 */
-	int TIME_UNIT = 3;
+	int TIME_UNIT = 4;
 
 
 	/**
@@ -297,6 +334,38 @@ public interface ValuetypePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNaturalNumber_Infinity();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.valuetype.Range <em>Range</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Range</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.Range
+	 * @generated
+	 */
+	EClass getRange();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.valuetype.Range#getLowerBound <em>Lower Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Lower Bound</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.Range#getLowerBound()
+	 * @see #getRange()
+	 * @generated
+	 */
+	EAttribute getRange_LowerBound();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.valuetype.Range#getUpperBound <em>Upper Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Upper Bound</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.Range#getUpperBound()
+	 * @see #getRange()
+	 * @generated
+	 */
+	EAttribute getRange_UpperBound();
 
 	/**
 	 * Returns the meta object for data type '{@link java.util.concurrent.TimeUnit <em>Time Unit</em>}'.
@@ -408,6 +477,32 @@ public interface ValuetypePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NATURAL_NUMBER__INFINITY = eINSTANCE.getNaturalNumber_Infinity();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.valuetype.impl.RangeImpl <em>Range</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.valuetype.impl.RangeImpl
+		 * @see de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypePackageImpl#getRange()
+		 * @generated
+		 */
+		EClass RANGE = eINSTANCE.getRange();
+
+		/**
+		 * The meta object literal for the '<em><b>Lower Bound</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RANGE__LOWER_BOUND = eINSTANCE.getRange_LowerBound();
+
+		/**
+		 * The meta object literal for the '<em><b>Upper Bound</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RANGE__UPPER_BOUND = eINSTANCE.getRange_UpperBound();
 
 		/**
 		 * The meta object literal for the '<em>Time Unit</em>' data type.

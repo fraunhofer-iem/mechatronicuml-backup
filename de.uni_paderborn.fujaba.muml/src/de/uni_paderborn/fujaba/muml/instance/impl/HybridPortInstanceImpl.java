@@ -20,7 +20,7 @@ import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
  *
  * @generated
  */
-public class HybridPortInstanceImpl extends DiscretePortInstanceImpl implements HybridPortInstance {
+public class HybridPortInstanceImpl extends PortInstanceImpl implements HybridPortInstance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

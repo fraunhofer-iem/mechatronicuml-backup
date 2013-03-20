@@ -27,7 +27,6 @@ import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.Component#getPorts <em>Ports</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.Component#getReferencingComponentParts <em>Referencing Component Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.Component#getComponentType <em>Component Type</em>}</li>
  * </ul>
  * </p>
@@ -55,23 +54,6 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 * @generated
 	 */
 	EList<Port> getPorts();
-
-	/**
-	 * Returns the value of the '<em><b>Referencing Component Parts</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.ComponentPart}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getComponentType <em>Component Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This association contains all component parts which have this component as their type.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Referencing Component Parts</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponent_ReferencingComponentParts()
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPart#getComponentType
-	 * @model opposite="componentType"
-	 * @generated
-	 */
-	EList<ComponentPart> getReferencingComponentParts();
 
 	/**
 	 * Returns the value of the '<em><b>Component Type</b></em>' attribute.

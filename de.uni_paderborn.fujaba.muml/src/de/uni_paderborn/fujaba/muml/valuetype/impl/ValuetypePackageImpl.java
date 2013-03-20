@@ -42,6 +42,7 @@ import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.types.impl.TypesPackageImpl;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.valuetype.Range;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
@@ -73,6 +74,13 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	 * @generated
 	 */
 	private EClass naturalNumberEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rangeEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -271,6 +279,33 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRange() {
+		return rangeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRange_LowerBound() {
+		return (EAttribute)rangeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRange_UpperBound() {
+		return (EAttribute)rangeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getTimeUnit() {
 		return timeUnitEDataType;
 	}
@@ -314,6 +349,10 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		naturalNumberEClass = createEClass(NATURAL_NUMBER);
 		createEAttribute(naturalNumberEClass, NATURAL_NUMBER__VALUE);
 		createEAttribute(naturalNumberEClass, NATURAL_NUMBER__INFINITY);
+
+		rangeEClass = createEClass(RANGE);
+		createEAttribute(rangeEClass, RANGE__LOWER_BOUND);
+		createEAttribute(rangeEClass, RANGE__UPPER_BOUND);
 
 		// Create data types
 		timeUnitEDataType = createEDataType(TIME_UNIT);
@@ -376,6 +415,10 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		op = addEOperation(naturalNumberEClass, ecorePackage.getEBoolean(), "equals", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(rangeEClass, Range.class, "Range", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRange_LowerBound(), ecorePackage.getELong(), "lowerBound", "0", 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRange_UpperBound(), ecorePackage.getELong(), "upperBound", "1", 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize data types
 		initEDataType(timeUnitEDataType, TimeUnit.class, "TimeUnit", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
@@ -416,7 +459,13 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		   source, 
 		   new String[] {
 			 "constraints", "ValueGreaterOrEqualZero"
-		   });						
+		   });									
+		addAnnotation
+		  (rangeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
+		   });	
 	}
 
 	/**
@@ -431,14 +480,20 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		  (cardinalityEClass, 
 		   source, 
 		   new String[] {
-			 "LowerBoundMustBeLessOrEqualThanUpperBound", "((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\nand (self.lowerBound.infinity implies self.upperBound.infinity)"
+			 "LowerBoundMustBeLessOrEqualThanUpperBound", "-- lower bound of cardinality must be less or equal than upper bound\r\n((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\r\nand (self.lowerBound.infinity implies self.upperBound.infinity)"
 		   });							
 		addAnnotation
 		  (naturalNumberEClass, 
 		   source, 
 		   new String[] {
 			 "ValueGreaterOrEqualZero", "self.value >= 0"
-		   });					
+		   });									
+		addAnnotation
+		  (rangeEClass, 
+		   source, 
+		   new String[] {
+			 "LowerBoundMustBeLessOrEqualThanUpperBound", "-- lower bound of range must be less or equal than upper bound\r\nself.lowerBound <= self.upperBound"
+		   });
 	}
 
 } //ValuetypePackageImpl

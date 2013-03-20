@@ -29,7 +29,8 @@ import org.storydriven.core.NamedElement;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstanceConfiguration()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueComponentInstanceNames='--  Component instances of a component instance configuration must have unique names on top level.\r\nself.componentInstances->isUnique(name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueComponentInstanceNames'"
  * @generated
  */
 public interface ComponentInstanceConfiguration extends NamedElement, CommentableElement {

@@ -107,6 +107,15 @@ public interface ComponentFactory extends EFactory {
 	CoordinationProtocolOccurrence createCoordinationProtocolOccurrence();
 
 	/**
+	 * Returns a new object of class '<em>Port Part</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Port Part</em>'.
+	 * @generated
+	 */
+	PortPart createPortPart();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

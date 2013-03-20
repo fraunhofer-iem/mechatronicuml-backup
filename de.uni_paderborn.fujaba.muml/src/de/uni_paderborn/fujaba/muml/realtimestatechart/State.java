@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getRegions <em>Regions</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getEmbeddedRegions <em>Embedded Regions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getDoEvent <em>Do Event</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getExitEvent <em>Exit Event</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getEntryEvent <em>Entry Event</em>}</li>
@@ -32,18 +32,18 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getEvents <em>Events</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getConnectionPoints <em>Connection Points</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#isSimple <em>Simple</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getStatechart <em>Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getParentStatechart <em>Parent Statechart</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getState()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OneInvariantPerClock NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero InvalidClockConstraintOperator'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OneInvariantPerClock='self.invariants->isUnique(clock)' NoOutgoingTransitionOfFinalState='self.final implies self.outgoingTransitions->isEmpty()' NoRegionsOfFinalState='self.final implies self.regions->isEmpty()' UniquePrioritiesOfOutgoingTransitions='self.outgoingTransitions->isUnique(priority) ' UniquePrioritiesOfRegions='self.regions->isUnique(priority)' UniqueChannelNames='self.channels->isUnique(name)' UniqueRegionNames='self.regions->isUnique(name)' BoundOfInvariantGreaterOrEqualZero='self.invariants.bound.value->forAll(value >= 0)' InvalidClockConstraintOperator='self.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OneInvariantPerClock NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero InvalidClockConstraintOperator UniqueStateConnectionPointNames'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OneInvariantPerClock='self.invariants->isUnique(clock)' NoOutgoingTransitionOfFinalState='self.final implies self.outgoingTransitions->isEmpty()' NoRegionsOfFinalState='self.final implies self.regions->isEmpty()' UniquePrioritiesOfOutgoingTransitions='self.outgoingTransitions->isUnique(priority) ' UniquePrioritiesOfRegions='self.regions->isUnique(priority)' UniqueChannelNames='self.channels->isUnique(name)' UniqueRegionNames='self.regions->isUnique(name)' BoundOfInvariantGreaterOrEqualZero='self.invariants.bound.value->forAll(value >= 0)' InvalidClockConstraintOperator='self.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))' UniqueStateConnectionPointNames='-- State Connection Points of a composite state must have unique names.\r\nself.connectionPoints->isUnique(name)'"
  * @generated
  */
 public interface State extends Vertex {
 	/**
-	 * Returns the value of the '<em><b>Regions</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Embedded Regions</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region}.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getParentState <em>Parent State</em>}'.
 	 * <!-- begin-user-doc -->
@@ -53,13 +53,13 @@ public interface State extends Vertex {
 	 * In case of one region, we have an xor superstate, in case of multiple regions, 
 	 * we have an AND-superstate.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Regions</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getState_Regions()
+	 * @return the value of the '<em>Embedded Regions</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getState_EmbeddedRegions()
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getParentState
 	 * @model opposite="parentState" containment="true"
 	 * @generated
 	 */
-	EList<Region> getRegions();
+	EList<Region> getEmbeddedRegions();
 
 	/**
 	 * Returns the value of the '<em><b>Do Event</b></em>' containment reference.
@@ -191,8 +191,8 @@ public interface State extends Vertex {
 
 	/**
 	 * Returns the value of the '<em><b>Connection Points</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.realtimestatechart.ConnectionPoint}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.ConnectionPoint#getState <em>State</em>}'.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint#getState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -200,15 +200,15 @@ public interface State extends Vertex {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Connection Points</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getState_ConnectionPoints()
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.ConnectionPoint#getState
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint#getState
 	 * @model opposite="state" containment="true"
 	 * @generated
 	 */
-	EList<ConnectionPoint> getConnectionPoints();
+	EList<StateConnectionPoint> getConnectionPoints();
 
 	/**
 	 * Returns the value of the '<em><b>Simple</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -217,7 +217,7 @@ public interface State extends Vertex {
 	 * @return the value of the '<em>Simple</em>' attribute.
 	 * @see #isSetSimple()
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getState_Simple()
-	 * @model default="false" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model default="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- a state is simple if it contains no regions\nregions->isEmpty()\n'"
 	 * @generated
 	 */
@@ -234,7 +234,7 @@ public interface State extends Vertex {
 	boolean isSetSimple();
 
 	/**
-	 * Returns the value of the '<em><b>Statechart</b></em>' container reference.
+	 * Returns the value of the '<em><b>Parent Statechart</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getStates <em>States</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -242,24 +242,24 @@ public interface State extends Vertex {
 	 * The realtime statechart this state belongs to.
 	 * \todoib{Should be 1..1, but GMF needs 0..1 here!}
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Statechart</em>' container reference.
-	 * @see #setStatechart(RealtimeStatechart)
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getState_Statechart()
+	 * @return the value of the '<em>Parent Statechart</em>' container reference.
+	 * @see #setParentStatechart(RealtimeStatechart)
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getState_ParentStatechart()
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getStates
 	 * @model opposite="states" transient="false"
 	 * @generated
 	 */
-	RealtimeStatechart getStatechart();
+	RealtimeStatechart getParentStatechart();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getStatechart <em>Statechart</em>}' container reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getParentStatechart <em>Parent Statechart</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Statechart</em>' container reference.
-	 * @see #getStatechart()
+	 * @param value the new value of the '<em>Parent Statechart</em>' container reference.
+	 * @see #getParentStatechart()
 	 * @generated
 	 */
-	void setStatechart(RealtimeStatechart value);
+	void setParentStatechart(RealtimeStatechart value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,7 +278,7 @@ public interface State extends Vertex {
 	 * <!-- begin-model-doc -->
 	 * Returns the <code>true</code>, if this State contains a region of the given priority.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (Region region : getRegions()) {\r\n\tif (region.getPriority() == priority) {\r\n\t\treturn true;\r\n\t}\r\n}\r\nreturn false;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (Region region : getEmbeddedRegions()) {\r\n\tif (region.getPriority() == priority) {\r\n\t\treturn true;\r\n\t}\r\n}\r\nreturn false;'"
 	 * @generated
 	 */
 	boolean hasRegionOfPriority(int priority);
@@ -315,6 +315,7 @@ public interface State extends Vertex {
 
 	/**
 	 * Returns the value of the '<em><b>Final</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Final</em>' attribute isn't clear,
@@ -327,7 +328,7 @@ public interface State extends Vertex {
 	 * @return the value of the '<em>Final</em>' attribute.
 	 * @see #setFinal(boolean)
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getState_Final()
-	 * @model
+	 * @model default="false"
 	 * @generated
 	 */
 	boolean isFinal();
@@ -344,6 +345,7 @@ public interface State extends Vertex {
 
 	/**
 	 * Returns the value of the '<em><b>Urgent</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Urgent</em>' attribute isn't clear,
@@ -356,7 +358,7 @@ public interface State extends Vertex {
 	 * @return the value of the '<em>Urgent</em>' attribute.
 	 * @see #setUrgent(boolean)
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getState_Urgent()
-	 * @model
+	 * @model default="false"
 	 * @generated
 	 */
 	boolean isUrgent();

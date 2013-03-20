@@ -24,13 +24,12 @@ import de.uni_paderborn.fujaba.muml.connector.Connector;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector#getConnectorQualityOfServiceAssumptions <em>Connector Quality Of Service Assumptions</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector#getRoles <em>Roles</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRoleConnector()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OnlyRolesOfSameCoordinationProtocol'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyRolesOfSameCoordinationProtocol='self.roles->size() = 2 implies self.roles->isUnique(coordinationProtocol)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyRolesOfSameCoordinationProtocol='self.coordinationProtocol.roles = self.roles'"
  * @generated
  */
 public interface RoleConnector extends Connector {
@@ -85,22 +84,5 @@ public interface RoleConnector extends Connector {
 	 * @generated
 	 */
 	void setConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions value);
-
-	/**
-	 * Returns the value of the '<em><b>Roles</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.protocol.Role}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Roles</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Roles</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRoleConnector_Roles()
-	 * @model lower="2" upper="2" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->select(e | e.oclIsKindOf(Role)).oclAsType(Role)->asOrderedSet()'"
-	 * @generated
-	 */
-	EList<Role> getRoles();
 
 } // RoleConnector

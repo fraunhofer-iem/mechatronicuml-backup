@@ -53,6 +53,15 @@ public interface ValuetypeFactory extends EFactory {
 	NaturalNumber createNaturalNumber();
 
 	/**
+	 * Returns a new object of class '<em>Range</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Range</em>'.
+	 * @generated
+	 */
+	Range createRange();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

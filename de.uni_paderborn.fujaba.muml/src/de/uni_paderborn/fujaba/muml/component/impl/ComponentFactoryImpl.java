@@ -44,7 +44,7 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 */
 	public static ComponentFactory init() {
 		try {
-			ComponentFactory theComponentFactory = (ComponentFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/component/0.3.17"); 
+			ComponentFactory theComponentFactory = (ComponentFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/component/0.3.18"); 
 			if (theComponentFactory != null) {
 				return theComponentFactory;
 			}
@@ -82,6 +82,7 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 			case ComponentPackage.DELEGATION_CONNECTOR: return createDelegationConnector();
 			case ComponentPackage.HYBRID_PORT: return createHybridPort();
 			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE: return createCoordinationProtocolOccurrence();
+			case ComponentPackage.PORT_PART: return createPortPart();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -97,8 +98,8 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 		switch (eDataType.getClassifierID()) {
 			case ComponentPackage.COMPONENT_KIND:
 				return createComponentKindFromString(eDataType, initialValue);
-			case ComponentPackage.CONTINUOUS_PORT_DIRECTION_KIND:
-				return createContinuousPortDirectionKindFromString(eDataType, initialValue);
+			case ComponentPackage.PORT_DIRECTION_KIND:
+				return createPortDirectionKindFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -114,8 +115,8 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 		switch (eDataType.getClassifierID()) {
 			case ComponentPackage.COMPONENT_KIND:
 				return convertComponentKindToString(eDataType, instanceValue);
-			case ComponentPackage.CONTINUOUS_PORT_DIRECTION_KIND:
-				return convertContinuousPortDirectionKindToString(eDataType, instanceValue);
+			case ComponentPackage.PORT_DIRECTION_KIND:
+				return convertPortDirectionKindToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -216,6 +217,16 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public PortPart createPortPart() {
+		PortPartImpl portPart = new PortPartImpl();
+		return portPart;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ComponentKind createComponentKindFromString(EDataType eDataType, String initialValue) {
 		ComponentKind result = ComponentKind.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -236,8 +247,8 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContinuousPortDirectionKind createContinuousPortDirectionKindFromString(EDataType eDataType, String initialValue) {
-		ContinuousPortDirectionKind result = ContinuousPortDirectionKind.get(initialValue);
+	public PortDirectionKind createPortDirectionKindFromString(EDataType eDataType, String initialValue) {
+		PortDirectionKind result = PortDirectionKind.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -247,7 +258,7 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertContinuousPortDirectionKindToString(EDataType eDataType, Object instanceValue) {
+	public String convertPortDirectionKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

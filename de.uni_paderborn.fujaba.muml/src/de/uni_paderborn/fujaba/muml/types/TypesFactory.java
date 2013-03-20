@@ -44,6 +44,15 @@ public interface TypesFactory extends EFactory {
 	PrimitiveDataType createPrimitiveDataType();
 
 	/**
+	 * Returns a new object of class '<em>Ranged Primitive Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ranged Primitive Data Type</em>'.
+	 * @generated
+	 */
+	RangedPrimitiveDataType createRangedPrimitiveDataType();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

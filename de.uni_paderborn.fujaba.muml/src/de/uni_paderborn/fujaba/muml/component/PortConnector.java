@@ -23,7 +23,6 @@ import de.uni_paderborn.fujaba.muml.connector.Connector;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortConnector#getParentComponent <em>Parent Component</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortConnector#getPorts <em>Ports</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,7 +43,7 @@ public interface PortConnector extends Connector {
 	 * @see #setParentComponent(StructuredComponent)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getPortConnector_ParentComponent()
 	 * @see de.uni_paderborn.fujaba.muml.component.StructuredComponent#getConnectors
-	 * @model opposite="connectors" transient="false"
+	 * @model opposite="connectors" required="true" transient="false"
 	 * @generated
 	 */
 	StructuredComponent getParentComponent();
@@ -58,22 +57,5 @@ public interface PortConnector extends Connector {
 	 * @generated
 	 */
 	void setParentComponent(StructuredComponent value);
-
-	/**
-	 * Returns the value of the '<em><b>Ports</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.Port}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Ports</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ports</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getPortConnector_Ports()
-	 * @model lower="2" upper="2" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port)->asOrderedSet()'"
-	 * @generated
-	 */
-	EList<Port> getPorts();
 
 } // PortConnector

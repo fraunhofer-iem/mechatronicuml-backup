@@ -58,7 +58,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getStates <em>States</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getClocks <em>Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#isHistory <em>History</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getEventQueueSize <em>Event Queue Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#isFlat <em>Flat</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#isEmbedded <em>Embedded</em>}</li>
@@ -169,26 +168,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @ordered
 	 */
 	protected boolean history = HISTORY_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getEventQueueSize() <em>Event Queue Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEventQueueSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int EVENT_QUEUE_SIZE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getEventQueueSize() <em>Event Queue Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEventQueueSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected int eventQueueSize = EVENT_QUEUE_SIZE_EDEFAULT;
 
 	/**
 	 * The cached setting delegate for the '{@link #isFlat() <em>Flat</em>}' attribute.
@@ -397,7 +376,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newEmbeddingRegion != null)
-				msgs = ((InternalEObject)newEmbeddingRegion).eInverseAdd(this, RealtimestatechartPackage.REGION__STATECHART, Region.class, msgs);
+				msgs = ((InternalEObject)newEmbeddingRegion).eInverseAdd(this, RealtimestatechartPackage.REGION__EMBEDDED_STATECHART, Region.class, msgs);
 			msgs = basicSetEmbeddingRegion(newEmbeddingRegion, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -424,7 +403,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 */
 	public EList<State> getStates() {
 		if (states == null) {
-			states = new EObjectContainmentWithInverseEList<State>(State.class, this, RealtimestatechartPackage.REALTIME_STATECHART__STATES, RealtimestatechartPackage.STATE__STATECHART);
+			states = new EObjectContainmentWithInverseEList<State>(State.class, this, RealtimestatechartPackage.REALTIME_STATECHART__STATES, RealtimestatechartPackage.STATE__PARENT_STATECHART);
 		}
 		return states;
 	}
@@ -460,27 +439,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 		history = newHistory;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REALTIME_STATECHART__HISTORY, oldHistory, history));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getEventQueueSize() {
-		return eventQueueSize;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEventQueueSize(int newEventQueueSize) {
-		int oldEventQueueSize = eventQueueSize;
-		eventQueueSize = newEventQueueSize;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REALTIME_STATECHART__EVENT_QUEUE_SIZE, oldEventQueueSize, eventQueueSize));
 	}
 
 	/**
@@ -561,8 +519,8 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 					// List<Region> regions = rtsc.getEmbeddingRegions();
 					// for (Region region : regions) {
 					State state = region.getParentState();
-					if (state != null && state.getStatechart() != null) {
-						parentStatecharts.add(state.getStatechart());
+					if (state != null && state.getParentStatechart() != null) {
+						parentStatecharts.add(state.getParentStatechart());
 					}
 					// }
 				}
@@ -581,7 +539,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	public RealtimeStatechart getHighestParentStatechart() {
 		RealtimeStatechart rtsc = this;
 		while (rtsc.isEmbedded()==true)
-		{rtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();} 
+		{rtsc = rtsc.getEmbeddingRegion().getParentState().getParentStatechart();} 
 		return rtsc;
 	}
 
@@ -597,7 +555,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 		
 		// search for ancestor with behavioral element
 		while (rtsc.isEmbedded()==true) {
-		rtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();
+		rtsc = rtsc.getEmbeddingRegion().getParentState().getParentStatechart();
 		if (rtsc.getBehavioralElement()!=null && ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;
 		} 
 		
@@ -667,7 +625,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.REGION__STATECHART, Region.class, msgs);
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.REGION__EMBEDDED_STATECHART, Region.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -699,8 +657,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return getClocks();
 			case RealtimestatechartPackage.REALTIME_STATECHART__HISTORY:
 				return isHistory();
-			case RealtimestatechartPackage.REALTIME_STATECHART__EVENT_QUEUE_SIZE:
-				return getEventQueueSize();
 			case RealtimestatechartPackage.REALTIME_STATECHART__FLAT:
 				return isFlat();
 			case RealtimestatechartPackage.REALTIME_STATECHART__AVAILABLE_CLOCKS:
@@ -756,9 +712,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			case RealtimestatechartPackage.REALTIME_STATECHART__HISTORY:
 				setHistory((Boolean)newValue);
 				return;
-			case RealtimestatechartPackage.REALTIME_STATECHART__EVENT_QUEUE_SIZE:
-				setEventQueueSize((Integer)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -798,9 +751,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			case RealtimestatechartPackage.REALTIME_STATECHART__HISTORY:
 				setHistory(HISTORY_EDEFAULT);
 				return;
-			case RealtimestatechartPackage.REALTIME_STATECHART__EVENT_QUEUE_SIZE:
-				setEventQueueSize(EVENT_QUEUE_SIZE_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -831,8 +781,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return clocks != null && !clocks.isEmpty();
 			case RealtimestatechartPackage.REALTIME_STATECHART__HISTORY:
 				return history != HISTORY_EDEFAULT;
-			case RealtimestatechartPackage.REALTIME_STATECHART__EVENT_QUEUE_SIZE:
-				return eventQueueSize != EVENT_QUEUE_SIZE_EDEFAULT;
 			case RealtimestatechartPackage.REALTIME_STATECHART__FLAT:
 				return FLAT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.REALTIME_STATECHART__AVAILABLE_CLOCKS:
@@ -909,8 +857,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 		result.append(comment);
 		result.append(", history: ");
 		result.append(history);
-		result.append(", eventQueueSize: ");
-		result.append(eventQueueSize);
 		result.append(')');
 		return result.toString();
 	}

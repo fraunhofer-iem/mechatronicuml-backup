@@ -25,48 +25,48 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getRefines <em>Refines</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getRefinedRole <em>Refined Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isIsDiscreteInPort <em>Is Discrete In Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isIsDiscreteOutPort <em>Is Discrete Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isIsDiscreteInOutPort <em>Is Discrete In Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isMultiPort <em>Multi Port</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getGmfProtocol <em>Gmf Protocol</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDiscretePort()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtLeastOneMessageType DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneMessageType='not self.senderMessageTypes->isEmpty() or not self.receiverMessageTypes->isEmpty()' DiscretePortRequiresBehavior='-- this also holds for a hybrid port, ports of structured components do not require a behavior\r\n(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))\r\n\timplies not self.behavior.oclIsUndefined()' DiscretePortAtStructuredComponentHasNoBehavior='(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\n\timplies self.behavior.oclIsUndefined()' DiscretePortRequiresRole='self.oclIsTypeOf(component::DiscretePort) implies not self.refines.oclIsUndefined()' DiscretePortAndRoleSameMessageTypes='not self.refines.oclIsUndefined() implies\n\t(self.senderMessageTypes = self.refines.senderMessageTypes\n\t and\n\t self.receiverMessageTypes = self.refines.receiverMessageTypes\n\t)' MultiPortMustRefineMultiRole='if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then\r\n       self.multiPort implies self.refines.multiRole\r\nelse\r\n\ttrue\r\nendif'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL DiscretePortRequiresMessageTypes='self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()' DiscretePortRequiresBehavior='-- this also holds for a hybrid port, ports of structured components do not require a behavior\r\n(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))\r\n\timplies not self.behavior.oclIsUndefined()' DiscretePortAtStructuredComponentHasNoBehavior='(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\n\timplies self.behavior.oclIsUndefined()' DiscretePortRequiresRole='self.oclIsTypeOf(component::DiscretePort) implies not self.refines.oclIsUndefined()' DiscretePortAndRoleSameMessageTypes='not self.refines.oclIsUndefined() implies\n\t(self.senderMessageTypes = self.refines.senderMessageTypes\n\t and\n\t self.receiverMessageTypes = self.refines.receiverMessageTypes\n\t)' MultiPortMustRefineMultiRole='if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then\r\n       self.multiPort implies self.refines.multiRole\r\nelse\r\n\ttrue\r\nendif'"
  * @generated
  */
 public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 	/**
-	 * Returns the value of the '<em><b>Refines</b></em>' reference.
+	 * Returns the value of the '<em><b>Refined Role</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.protocol.Role#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The role of a coordination protocol that this port refines.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Refines</em>' reference.
-	 * @see #setRefines(Role)
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDiscretePort_Refines()
+	 * @return the value of the '<em>Refined Role</em>' reference.
+	 * @see #setRefinedRole(Role)
+	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDiscretePort_RefinedRole()
 	 * @see de.uni_paderborn.fujaba.muml.protocol.Role#getPort
 	 * @model opposite="port"
 	 * @generated
 	 */
-	Role getRefines();
+	Role getRefinedRole();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getRefines <em>Refines</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getRefinedRole <em>Refined Role</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Refines</em>' reference.
-	 * @see #getRefines()
+	 * @param value the new value of the '<em>Refined Role</em>' reference.
+	 * @see #getRefinedRole()
 	 * @generated
 	 */
-	void setRefines(Role value);
+	void setRefinedRole(Role value);
 
 	/**
 	 * Returns the value of the '<em><b>Is Discrete In Port</b></em>' attribute.
@@ -127,7 +127,7 @@ public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 	 * @return the value of the '<em>Receiver Message Buffer</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDiscretePort_ReceiverMessageBuffer()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.refines.receiverMessageBuffer'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='not self.refinedRole.oclIsUndefined()\r\nimplies\r\nself.refinedRole.receiverMessageBuffer'"
 	 * @generated
 	 */
 	EList<MessageBuffer> getReceiverMessageBuffer();
@@ -149,18 +149,18 @@ public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 	boolean isMultiPort();
 
 	/**
-	 * Returns the value of the '<em><b>Gmf Protocol</b></em>' reference.
+	 * Returns the value of the '<em><b>Coordination Protocol</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * This reference is needed by GMF to visualize the connection from the discrete port to the coordination protocol within the structured component editor.
+	 * Derives the coordinationProtocol of the refined port.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Gmf Protocol</em>' reference.
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDiscretePort_GmfProtocol()
+	 * @return the value of the '<em>Coordination Protocol</em>' reference.
+	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDiscretePort_CoordinationProtocol()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if refines.oclIsUndefined() then\n\tnull\nelse\n\trefines.coordinationProtocol\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if refinedRole.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\trefinedRole.coordinationProtocol\r\nendif'"
 	 * @generated
 	 */
-	CoordinationProtocol getGmfProtocol();
+	CoordinationProtocol getCoordinationProtocol();
 
 } // DiscretePort

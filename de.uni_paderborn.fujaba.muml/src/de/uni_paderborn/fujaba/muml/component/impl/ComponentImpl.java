@@ -40,7 +40,6 @@ import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getConstraint <em>Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getPorts <em>Ports</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getReferencingComponentParts <em>Referencing Component Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getComponentType <em>Component Type</em>}</li>
  * </ul>
  * </p>
@@ -87,16 +86,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * @ordered
 	 */
 	protected EList<Port> ports;
-
-	/**
-	 * The cached value of the '{@link #getReferencingComponentParts() <em>Referencing Component Parts</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReferencingComponentParts()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ComponentPart> referencingComponentParts;
 
 	/**
 	 * The default value of the '{@link #getComponentType() <em>Component Type</em>}' attribute.
@@ -187,18 +176,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ComponentPart> getReferencingComponentParts() {
-		if (referencingComponentParts == null) {
-			referencingComponentParts = new EObjectWithInverseResolvingEList<ComponentPart>(ComponentPart.class, this, ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS, ComponentPackage.COMPONENT_PART__COMPONENT_TYPE);
-		}
-		return referencingComponentParts;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ComponentKind getComponentType() {
 		return componentType;
 	}
@@ -228,8 +205,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
 			case ComponentPackage.COMPONENT__PORTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPorts()).basicAdd(otherEnd, msgs);
-			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferencingComponentParts()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -246,8 +221,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.COMPONENT__PORTS:
 				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
-			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
-				return ((InternalEList<?>)getReferencingComponentParts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -266,8 +239,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return getConstraint();
 			case ComponentPackage.COMPONENT__PORTS:
 				return getPorts();
-			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
-				return getReferencingComponentParts();
 			case ComponentPackage.COMPONENT__COMPONENT_TYPE:
 				return getComponentType();
 		}
@@ -294,10 +265,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				getPorts().clear();
 				getPorts().addAll((Collection<? extends Port>)newValue);
 				return;
-			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
-				getReferencingComponentParts().clear();
-				getReferencingComponentParts().addAll((Collection<? extends ComponentPart>)newValue);
-				return;
 			case ComponentPackage.COMPONENT__COMPONENT_TYPE:
 				setComponentType((ComponentKind)newValue);
 				return;
@@ -322,9 +289,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 			case ComponentPackage.COMPONENT__PORTS:
 				getPorts().clear();
 				return;
-			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
-				getReferencingComponentParts().clear();
-				return;
 			case ComponentPackage.COMPONENT__COMPONENT_TYPE:
 				setComponentType(COMPONENT_TYPE_EDEFAULT);
 				return;
@@ -346,8 +310,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return constraint != null && !constraint.isEmpty();
 			case ComponentPackage.COMPONENT__PORTS:
 				return ports != null && !ports.isEmpty();
-			case ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS:
-				return referencingComponentParts != null && !referencingComponentParts.isEmpty();
 			case ComponentPackage.COMPONENT__COMPONENT_TYPE:
 				return componentType != COMPONENT_TYPE_EDEFAULT;
 		}

@@ -21,7 +21,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ConnectionPoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Deadline;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent;
@@ -38,6 +37,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.StateEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
@@ -163,8 +163,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 				return validateEntryEvent((EntryEvent)value, diagnostics, context);
 			case RealtimestatechartPackage.EXIT_EVENT:
 				return validateExitEvent((ExitEvent)value, diagnostics, context);
-			case RealtimestatechartPackage.CONNECTION_POINT:
-				return validateConnectionPoint((ConnectionPoint)value, diagnostics, context);
+			case RealtimestatechartPackage.STATE_CONNECTION_POINT:
+				return validateStateConnectionPoint((StateConnectionPoint)value, diagnostics, context);
 			case RealtimestatechartPackage.ENTRY_POINT:
 				return validateEntryPoint((EntryPoint)value, diagnostics, context);
 			case RealtimestatechartPackage.EXIT_POINT:
@@ -257,6 +257,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateState_UniqueRegionNames(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_BoundOfInvariantGreaterOrEqualZero(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_InvalidClockConstraintOperator(state, diagnostics, context);
+		if (result || diagnostics != null) result &= validateState_UniqueStateConnectionPointNames(state, diagnostics, context);
 		return result;
 	}
 
@@ -522,6 +523,36 @@ public class RealtimestatechartValidator extends MumlValidator {
 	}
 
 	/**
+	 * The cached validation expression for the UniqueStateConnectionPointNames constraint of '<em>State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STATE__UNIQUE_STATE_CONNECTION_POINT_NAMES__EEXPRESSION = "-- State Connection Points of a composite state must have unique names.\r\n" +
+		"self.connectionPoints->isUnique(name)";
+
+	/**
+	 * Validates the UniqueStateConnectionPointNames constraint of '<em>State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateState_UniqueStateConnectionPointNames(State state, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.STATE,
+				 state,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UniqueStateConnectionPointNames",
+				 STATE__UNIQUE_STATE_CONNECTION_POINT_NAMES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -562,12 +593,12 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__LEGAL_TRANSITIONS_ONLY__EEXPRESSION = "-- State A to State B within the same statechart\r\n" +
-		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).statechart = self.target.oclAsType(State).statechart)\r\n" +
-		"or\r\n" +
-		"-- State A to EntryPoint of B, where A and B are in the same statechart\r\n" +
-		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).statechart = self.target.oclAsType(EntryPoint).state.statechart)\r\n" +
-		"or\r\n" +
+	protected static final String TRANSITION__LEGAL_TRANSITIONS_ONLY__EEXPRESSION = "-- Only legal transitions are allowed\r\n" +
+		"-- State A to State B within the same statechart\r\n" +
+		"let allTransitionsLegal:Boolean =\r\n" +
+		"if self.source.oclAsType(State).statechart.embedded\r\n" +
+		"then\r\n" +
+		"\r\n" +
 		"-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n" +
 		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)\r\n" +
 		"or\r\n" +
@@ -577,14 +608,25 @@ public class RealtimestatechartValidator extends MumlValidator {
 		"-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2\r\n" +
 		"(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(EntryPoint).state.statechart.embeddingRegion.parentState)\r\n" +
 		"or\r\n" +
-		"-- ExitPoint of A to State B, where A and B are in the same statechart\r\n" +
-		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(State).statechart)\r\n" +
+		"-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n" +
+		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)\r\n" +
+		"else\r\n" +
+		"true\r\n" +
+		"endif\r\n" +
+		"\r\n" +
+		"in \r\n" +
+		"allTransitionsLegal \r\n" +
+		"or \r\n" +
+		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).statechart = self.target.oclAsType(State).statechart)\r\n" +
+		"or\r\n" +
+		"-- State A to EntryPoint of B, where A and B are in the same statechart\r\n" +
+		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).statechart = self.target.oclAsType(EntryPoint).state.statechart)\r\n" +
 		"or\r\n" +
 		"-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart\r\n" +
 		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(EntryPoint).state.statechart)\r\n" +
 		"or\r\n" +
-		"-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n" +
-		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)";
+		"-- ExitPoint of A to State B, where A and B are in the same statechart\r\n" +
+		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(State).statechart)";
 
 	/**
 	 * Validates the LegalTransitionsOnly constraint of '<em>Transition</em>'.
@@ -1121,44 +1163,44 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConnectionPoint(ConnectionPoint connectionPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(connectionPoint, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(connectionPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(connectionPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(connectionPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(connectionPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(connectionPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(connectionPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(connectionPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(connectionPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConnectionPoint_ConnectionPointsOnlyAtCompositeStates(connectionPoint, diagnostics, context);
+	public boolean validateStateConnectionPoint(StateConnectionPoint stateConnectionPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(stateConnectionPoint, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(stateConnectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(stateConnectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(stateConnectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(stateConnectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(stateConnectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(stateConnectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(stateConnectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(stateConnectionPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStateConnectionPoint_ConnectionPointsOnlyAtCompositeStates(stateConnectionPoint, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the ConnectionPointsOnlyAtCompositeStates constraint of '<em>Connection Point</em>'.
+	 * The cached validation expression for the ConnectionPointsOnlyAtCompositeStates constraint of '<em>State Connection Point</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CONNECTION_POINT__CONNECTION_POINTS_ONLY_AT_COMPOSITE_STATES__EEXPRESSION = "not self.state.oclIsUndefined() implies not self.state.simple";
+	protected static final String STATE_CONNECTION_POINT__CONNECTION_POINTS_ONLY_AT_COMPOSITE_STATES__EEXPRESSION = "not self.state.oclIsUndefined() implies not self.state.simple";
 
 	/**
-	 * Validates the ConnectionPointsOnlyAtCompositeStates constraint of '<em>Connection Point</em>'.
+	 * Validates the ConnectionPointsOnlyAtCompositeStates constraint of '<em>State Connection Point</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConnectionPoint_ConnectionPointsOnlyAtCompositeStates(ConnectionPoint connectionPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateStateConnectionPoint_ConnectionPointsOnlyAtCompositeStates(StateConnectionPoint stateConnectionPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(RealtimestatechartPackage.Literals.CONNECTION_POINT,
-				 connectionPoint,
+				(RealtimestatechartPackage.Literals.STATE_CONNECTION_POINT,
+				 stateConnectionPoint,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "ConnectionPointsOnlyAtCompositeStates",
-				 CONNECTION_POINT__CONNECTION_POINTS_ONLY_AT_COMPOSITE_STATES__EEXPRESSION,
+				 STATE_CONNECTION_POINT__CONNECTION_POINTS_ONLY_AT_COMPOSITE_STATES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -1179,7 +1221,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(entryPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(entryPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(entryPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConnectionPoint_ConnectionPointsOnlyAtCompositeStates(entryPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStateConnectionPoint_ConnectionPointsOnlyAtCompositeStates(entryPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntryPoint_AtLeastOneIncomingTransition(entryPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateEntryPoint_OneOutgoingTransitionPerRegion(entryPoint, diagnostics, context);
 		return result;
@@ -1220,7 +1262,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ENTRY_POINT__ONE_OUTGOING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state have at least one state that the EntryPoint connects to\r\n" +
+	protected static final String ENTRY_POINT__ONE_OUTGOING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state have exactly one state that the EntryPoint connects to\r\n" +
 		"self.state.regions->forAll(r | \r\n" +
 		"\tr.statechart.states->select(s |\r\n" +
 		"\t\ts.incomingTransitions->exists(t | t.source = self)\r\n" +
@@ -1265,7 +1307,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(exitPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(exitPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(exitPoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConnectionPoint_ConnectionPointsOnlyAtCompositeStates(exitPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStateConnectionPoint_ConnectionPointsOnlyAtCompositeStates(exitPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateExitPoint_AtLeastOneIncomingTransitionPerRegion(exitPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateExitPoint_OneOutgoingTransition(exitPoint, diagnostics, context);
 		return result;

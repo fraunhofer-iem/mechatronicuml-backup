@@ -1074,14 +1074,6 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 				setUrgent((Boolean)newValue);
 				return;
-			case RealtimestatechartPackage.TRANSITION__RECEIVER_MESSAGE_TYPES:
-				getReceiverMessageTypes().clear();
-				getReceiverMessageTypes().addAll((Collection<? extends MessageType>)newValue);
-				return;
-			case RealtimestatechartPackage.TRANSITION__SENDER_MESSAGE_TYPES:
-				getSenderMessageTypes().clear();
-				getSenderMessageTypes().addAll((Collection<? extends MessageType>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1138,12 +1130,6 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 				return;
 			case RealtimestatechartPackage.TRANSITION__URGENT:
 				setUrgent(URGENT_EDEFAULT);
-				return;
-			case RealtimestatechartPackage.TRANSITION__RECEIVER_MESSAGE_TYPES:
-				getReceiverMessageTypes().clear();
-				return;
-			case RealtimestatechartPackage.TRANSITION__SENDER_MESSAGE_TYPES:
-				getSenderMessageTypes().clear();
 				return;
 		}
 		super.eUnset(featureID);

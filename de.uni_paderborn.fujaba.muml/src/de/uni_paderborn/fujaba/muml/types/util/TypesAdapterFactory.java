@@ -89,6 +89,10 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 				return createDataTypeAdapter();
 			}
 			@Override
+			public Adapter caseRangedPrimitiveDataType(RangedPrimitiveDataType object) {
+				return createRangedPrimitiveDataTypeAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -159,6 +163,20 @@ public class TypesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDataTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType <em>Ranged Primitive Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType
+	 * @generated
+	 */
+	public Adapter createRangedPrimitiveDataTypeAdapter() {
 		return null;
 	}
 

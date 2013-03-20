@@ -32,8 +32,7 @@ import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage#getCommunicationLink()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameConfiguration='self.deployedAssemblyInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SameConfiguration'"
+ * @model
  * @generated
  */
 public interface CommunicationLink extends ExtendableElement, Connector {

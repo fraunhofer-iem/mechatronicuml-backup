@@ -37,7 +37,7 @@ public class ValuetypeFactoryImpl extends EFactoryImpl implements ValuetypeFacto
 	 */
 	public static ValuetypeFactory init() {
 		try {
-			ValuetypeFactory theValuetypeFactory = (ValuetypeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/valuetype/0.3.13"); 
+			ValuetypeFactory theValuetypeFactory = (ValuetypeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/valuetype/0.3.18"); 
 			if (theValuetypeFactory != null) {
 				return theValuetypeFactory;
 			}
@@ -69,6 +69,7 @@ public class ValuetypeFactoryImpl extends EFactoryImpl implements ValuetypeFacto
 			case ValuetypePackage.CARDINALITY: return createCardinality();
 			case ValuetypePackage.TIME_VALUE: return createTimeValue();
 			case ValuetypePackage.NATURAL_NUMBER: return createNaturalNumber();
+			case ValuetypePackage.RANGE: return createRange();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -132,6 +133,16 @@ public class ValuetypeFactoryImpl extends EFactoryImpl implements ValuetypeFacto
 	public NaturalNumber createNaturalNumber() {
 		NaturalNumberImpl naturalNumber = new NaturalNumberImpl();
 		return naturalNumber;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Range createRange() {
+		RangeImpl range = new RangeImpl();
+		return range;
 	}
 
 	/**

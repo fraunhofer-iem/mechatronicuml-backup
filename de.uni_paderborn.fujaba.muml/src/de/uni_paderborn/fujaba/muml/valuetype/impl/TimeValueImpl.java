@@ -187,7 +187,7 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 	 * @generated
 	 */
 	public String toString() {
-		// Return value concatenated with unit in lowercase.
+		// Return value concatenated with abbreviated unit.
 		StringBuffer sb = new StringBuffer();
 		if (value == null) {
 			sb.append("null");
@@ -196,7 +196,29 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 		}
 		if (unit != null) {
 			sb.append(' ');
-			sb.append(unit.toString().toLowerCase());
+			switch (unit) {
+			case DAYS:
+				sb.append('d');
+				break;
+			case HOURS:
+				sb.append('h');
+				break;
+			case MINUTES:
+				sb.append('m');
+				break;
+			case SECONDS:
+				sb.append('s');
+				break;
+			case MILLISECONDS:
+				sb.append("ms");
+				break;
+			case MICROSECONDS:
+				sb.append("?s");
+				break;
+			case NANOSECONDS:
+				sb.append("ns");
+				break;
+			}
 		}
 		return sb.toString();
 	}

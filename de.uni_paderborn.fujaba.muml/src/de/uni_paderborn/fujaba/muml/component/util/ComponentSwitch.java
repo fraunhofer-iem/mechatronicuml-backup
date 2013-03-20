@@ -180,15 +180,6 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentPackage.PORT_CONNECTOR: {
-				PortConnector portConnector = (PortConnector)theEObject;
-				T result = casePortConnector(portConnector);
-				if (result == null) result = caseConnector(portConnector);
-				if (result == null) result = caseCommentableElement(portConnector);
-				if (result == null) result = caseExtendableElement(portConnector);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ComponentPackage.ASSEMBLY_CONNECTOR: {
 				AssemblyConnector assemblyConnector = (AssemblyConnector)theEObject;
 				T result = caseAssemblyConnector(assemblyConnector);
@@ -209,6 +200,15 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ComponentPackage.PORT_CONNECTOR: {
+				PortConnector portConnector = (PortConnector)theEObject;
+				T result = casePortConnector(portConnector);
+				if (result == null) result = caseConnector(portConnector);
+				if (result == null) result = caseCommentableElement(portConnector);
+				if (result == null) result = caseExtendableElement(portConnector);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ComponentPackage.HYBRID_PORT: {
 				HybridPort hybridPort = (HybridPort)theEObject;
 				T result = caseHybridPort(hybridPort);
@@ -224,14 +224,6 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE: {
-				CoordinationProtocolOccurrence coordinationProtocolOccurrence = (CoordinationProtocolOccurrence)theEObject;
-				T result = caseCoordinationProtocolOccurrence(coordinationProtocolOccurrence);
-				if (result == null) result = caseCommentableElement(coordinationProtocolOccurrence);
-				if (result == null) result = caseExtendableElement(coordinationProtocolOccurrence);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ComponentPackage.STRUCTURED_COMPONENT: {
 				StructuredComponent structuredComponent = (StructuredComponent)theEObject;
 				T result = caseStructuredComponent(structuredComponent);
@@ -240,6 +232,14 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = caseCommentableElement(structuredComponent);
 				if (result == null) result = caseConstrainableElement(structuredComponent);
 				if (result == null) result = caseExtendableElement(structuredComponent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE: {
+				CoordinationProtocolOccurrence coordinationProtocolOccurrence = (CoordinationProtocolOccurrence)theEObject;
+				T result = caseCoordinationProtocolOccurrence(coordinationProtocolOccurrence);
+				if (result == null) result = caseCommentableElement(coordinationProtocolOccurrence);
+				if (result == null) result = caseExtendableElement(coordinationProtocolOccurrence);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -254,6 +254,17 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedElement(directedTypedPort);
 				if (result == null) result = caseCommentableElement(directedTypedPort);
 				if (result == null) result = caseExtendableElement(directedTypedPort);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ComponentPackage.PORT_PART: {
+				PortPart portPart = (PortPart)theEObject;
+				T result = casePortPart(portPart);
+				if (result == null) result = caseConnectorEndpoint(portPart);
+				if (result == null) result = caseDataType(portPart);
+				if (result == null) result = caseNamedElement(portPart);
+				if (result == null) result = caseCommentableElement(portPart);
+				if (result == null) result = caseExtendableElement(portPart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -378,6 +389,21 @@ public class ComponentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDirectedTypedPort(DirectedTypedPort object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Port Part</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Port Part</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePortPart(PortPart object) {
 		return null;
 	}
 

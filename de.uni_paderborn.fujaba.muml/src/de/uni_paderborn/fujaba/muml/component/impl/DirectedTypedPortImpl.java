@@ -17,6 +17,7 @@ import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.component.DirectedTypedPort;
+import de.uni_paderborn.fujaba.muml.component.PortDirectionKind;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
@@ -55,7 +56,7 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ContinuousPortDirectionKind KIND_EDEFAULT = ContinuousPortDirectionKind.IN;
+	protected static final PortDirectionKind KIND_EDEFAULT = PortDirectionKind.IN;
 
 	/**
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
@@ -65,7 +66,7 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	 * @generated
 	 * @ordered
 	 */
-	protected ContinuousPortDirectionKind kind = KIND_EDEFAULT;
+	protected PortDirectionKind kind = KIND_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isOptional() <em>Optional</em>}' attribute.
@@ -169,7 +170,7 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContinuousPortDirectionKind getKind() {
+	public PortDirectionKind getKind() {
 		return kind;
 	}
 
@@ -178,8 +179,8 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setKind(ContinuousPortDirectionKind newKind) {
-		ContinuousPortDirectionKind oldKind = kind;
+	public void setKind(PortDirectionKind newKind) {
+		PortDirectionKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DIRECTED_TYPED_PORT__KIND, oldKind, kind));
@@ -259,7 +260,7 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 				setDataType((DataType)newValue);
 				return;
 			case ComponentPackage.DIRECTED_TYPED_PORT__KIND:
-				setKind((ContinuousPortDirectionKind)newValue);
+				setKind((PortDirectionKind)newValue);
 				return;
 			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
 				setOptional((Boolean)newValue);

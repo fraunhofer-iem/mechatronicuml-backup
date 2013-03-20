@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart;
 
+import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
 /**
@@ -20,9 +21,10 @@ import org.storydriven.core.NamedElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getStatechart <em>Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getEmbeddedStatechart <em>Embedded Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getParentState <em>Parent State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isGmfHistory <em>Gmf History</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,41 +32,37 @@ import org.storydriven.core.NamedElement;
  * @model
  * @generated
  */
-public interface Region extends NamedElement, PrioritizedElement {
+public interface Region extends PrioritizedElement, CommentableElement {
 	/**
-	 * Returns the value of the '<em><b>Statechart</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Embedded Statechart</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Statechart</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The realtime statechart this region embeds.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Statechart</em>' containment reference.
-	 * @see #setStatechart(RealtimeStatechart)
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRegion_Statechart()
+	 * @return the value of the '<em>Embedded Statechart</em>' containment reference.
+	 * @see #setEmbeddedStatechart(RealtimeStatechart)
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRegion_EmbeddedStatechart()
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getEmbeddingRegion
 	 * @model opposite="embeddingRegion" containment="true" required="true"
 	 * @generated
 	 */
-	RealtimeStatechart getStatechart();
+	RealtimeStatechart getEmbeddedStatechart();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getStatechart <em>Statechart</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getEmbeddedStatechart <em>Embedded Statechart</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Statechart</em>' containment reference.
-	 * @see #getStatechart()
+	 * @param value the new value of the '<em>Embedded Statechart</em>' containment reference.
+	 * @see #getEmbeddedStatechart()
 	 * @generated
 	 */
-	void setStatechart(RealtimeStatechart value);
+	void setEmbeddedStatechart(RealtimeStatechart value);
 
 	/**
 	 * Returns the value of the '<em><b>Parent State</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getRegions <em>Regions</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getEmbeddedRegions <em>Embedded Regions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent State</em>' container reference isn't clear,
@@ -77,8 +75,8 @@ public interface Region extends NamedElement, PrioritizedElement {
 	 * @return the value of the '<em>Parent State</em>' container reference.
 	 * @see #setParentState(State)
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRegion_ParentState()
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.State#getRegions
-	 * @model opposite="regions" required="true" transient="false"
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.State#getEmbeddedRegions
+	 * @model opposite="embeddedRegions" required="true" transient="false"
 	 * @generated
 	 */
 	State getParentState();
@@ -111,5 +109,31 @@ public interface Region extends NamedElement, PrioritizedElement {
 	 * @generated
 	 */
 	boolean isGmfHistory();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The name of a region is derived by its conaining Real-Time Statechart
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #isSetName()
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRegion_Name()
+	 * @model unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.statechart.name'"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getName <em>Name</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Name</em>' attribute is set.
+	 * @see #getName()
+	 * @generated
+	 */
+	boolean isSetName();
 
 } // Region

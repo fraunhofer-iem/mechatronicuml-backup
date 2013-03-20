@@ -99,6 +99,8 @@ public class ValuetypeValidator extends MumlValidator {
 				return validateTimeValue((TimeValue)value, diagnostics, context);
 			case ValuetypePackage.NATURAL_NUMBER:
 				return validateNaturalNumber((NaturalNumber)value, diagnostics, context);
+			case ValuetypePackage.RANGE:
+				return validateRange((Range)value, diagnostics, context);
 			case ValuetypePackage.TIME_UNIT:
 				return validateTimeUnit((TimeUnit)value, diagnostics, context);
 			default:
@@ -131,7 +133,8 @@ public class ValuetypeValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CARDINALITY__LOWER_BOUND_MUST_BE_LESS_OR_EQUAL_THAN_UPPER_BOUND__EEXPRESSION = "((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\n" +
+	protected static final String CARDINALITY__LOWER_BOUND_MUST_BE_LESS_OR_EQUAL_THAN_UPPER_BOUND__EEXPRESSION = "-- lower bound of cardinality must be less or equal than upper bound\r\n" +
+		"((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\r\n" +
 		"and (self.lowerBound.infinity implies self.upperBound.infinity)";
 
 	/**
@@ -207,6 +210,55 @@ public class ValuetypeValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "ValueGreaterOrEqualZero",
 				 NATURAL_NUMBER__VALUE_GREATER_OR_EQUAL_ZERO__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRange(Range range, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(range, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(range, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(range, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(range, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(range, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(range, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(range, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(range, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(range, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRange_LowerBoundMustBeLessOrEqualThanUpperBound(range, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the LowerBoundMustBeLessOrEqualThanUpperBound constraint of '<em>Range</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String RANGE__LOWER_BOUND_MUST_BE_LESS_OR_EQUAL_THAN_UPPER_BOUND__EEXPRESSION = "-- lower bound of range must be less or equal than upper bound\r\n" +
+		"self.lowerBound <= self.upperBound";
+
+	/**
+	 * Validates the LowerBoundMustBeLessOrEqualThanUpperBound constraint of '<em>Range</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRange_LowerBoundMustBeLessOrEqualThanUpperBound(Range range, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ValuetypePackage.Literals.RANGE,
+				 range,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "LowerBoundMustBeLessOrEqualThanUpperBound",
+				 RANGE__LOWER_BOUND_MUST_BE_LESS_OR_EQUAL_THAN_UPPER_BOUND__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

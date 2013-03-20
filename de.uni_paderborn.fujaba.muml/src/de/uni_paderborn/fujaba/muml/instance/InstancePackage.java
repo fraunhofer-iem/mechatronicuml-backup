@@ -49,7 +49,7 @@ public interface InstancePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/instance/0.3.15";
+	String eNS_URI = "http://www.fujaba.de/muml/instance/0.3.18";
 
 	/**
 	 * The package namespace name.
@@ -314,13 +314,22 @@ public interface InstancePackage extends EPackage {
 	int PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Port Part</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_INSTANCE__PORT_PART = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_INSTANCE_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 3;
+	int PORT_INSTANCE_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.instance.impl.AssemblyConnectorInstanceImpl <em>Assembly Connector Instance</em>}' class.
@@ -679,6 +688,15 @@ public interface InstancePackage extends EPackage {
 	int CONTINUOUS_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
 
 	/**
+	 * The feature id for the '<em><b>Port Part</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT_INSTANCE__PORT_PART = PORT_INSTANCE__PORT_PART;
+
+	/**
 	 * The number of structural features of the '<em>Continuous Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -696,6 +714,115 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 */
 	int DISCRETE_PORT_INSTANCE = 8;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.instance.impl.HybridPortInstanceImpl <em>Hybrid Port Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.instance.impl.HybridPortInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.instance.impl.InstancePackageImpl#getHybridPortInstance()
+	 * @generated
+	 */
+	int HYBRID_PORT_INSTANCE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__ANNOTATION = PORT_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__EXTENSION = PORT_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__NAME = PORT_INSTANCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__COMMENT = PORT_INSTANCE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__CONNECTOR_INSTANCES = PORT_INSTANCE__CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__TYPE = PORT_INSTANCE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Port Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__PORT_TYPE = PORT_INSTANCE__PORT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__COMPONENT_INSTANCE = PORT_INSTANCE__COMPONENT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Port Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Port Part</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE__PORT_PART = PORT_INSTANCE__PORT_PART;
+
+	/**
+	 * The number of structural features of the '<em>Hybrid Port Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT_INSTANCE_FEATURE_COUNT = PORT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -779,6 +906,15 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
 
 	/**
+	 * The feature id for the '<em><b>Port Part</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT_INSTANCE__PORT_PART = PORT_INSTANCE__PORT_PART;
+
+	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -822,142 +958,6 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_PORT_INSTANCE_FEATURE_COUNT = PORT_INSTANCE_FEATURE_COUNT + 4;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.instance.impl.HybridPortInstanceImpl <em>Hybrid Port Instance</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.instance.impl.HybridPortInstanceImpl
-	 * @see de.uni_paderborn.fujaba.muml.instance.impl.InstancePackageImpl#getHybridPortInstance()
-	 * @generated
-	 */
-	int HYBRID_PORT_INSTANCE = 7;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__ANNOTATION = DISCRETE_PORT_INSTANCE__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__EXTENSION = DISCRETE_PORT_INSTANCE__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__NAME = DISCRETE_PORT_INSTANCE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__COMMENT = DISCRETE_PORT_INSTANCE__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__TYPE = DISCRETE_PORT_INSTANCE__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Port Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__PORT_TYPE = DISCRETE_PORT_INSTANCE__PORT_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__COMPONENT_INSTANCE = DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE;
-
-	/**
-	 * The feature id for the '<em><b>Port Connector Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES;
-
-	/**
-	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__SENDER_MESSAGE_TYPES = DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER;
-
-	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE__REFINES = DISCRETE_PORT_INSTANCE__REFINES;
-
-	/**
-	 * The number of structural features of the '<em>Hybrid Port Instance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT_INSTANCE_FEATURE_COUNT = DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscreteSinglePortInstanceImpl <em>Discrete Single Port Instance</em>}' class.
@@ -1049,6 +1049,15 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_SINGLE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Port Part</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_SINGLE_PORT_INSTANCE__PORT_PART = DISCRETE_PORT_INSTANCE__PORT_PART;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -1212,6 +1221,15 @@ public interface InstancePackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_MULTI_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = DISCRETE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Port Part</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_MULTI_PORT_INSTANCE__PORT_PART = DISCRETE_PORT_INSTANCE__PORT_PART;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -1632,6 +1650,17 @@ public interface InstancePackage extends EPackage {
 	EReference getPortInstance_PortConnectorInstances();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.instance.PortInstance#getPortPart <em>Port Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Port Part</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.instance.PortInstance#getPortPart()
+	 * @see #getPortInstance()
+	 * @generated
+	 */
+	EReference getPortInstance_PortPart();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance <em>Assembly Connector Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1999,6 +2028,14 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = eINSTANCE.getPortInstance_PortConnectorInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Port Part</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT_INSTANCE__PORT_PART = eINSTANCE.getPortInstance_PortPart();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.instance.impl.AssemblyConnectorInstanceImpl <em>Assembly Connector Instance</em>}' class.

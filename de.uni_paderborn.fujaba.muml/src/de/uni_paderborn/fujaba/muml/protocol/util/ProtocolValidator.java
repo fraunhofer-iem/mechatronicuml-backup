@@ -134,7 +134,7 @@ public class ProtocolValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ROLE_CONNECTOR__ONLY_ROLES_OF_SAME_COORDINATION_PROTOCOL__EEXPRESSION = "self.roles->size() = 2 implies self.roles->isUnique(coordinationProtocol)";
+	protected static final String ROLE_CONNECTOR__ONLY_ROLES_OF_SAME_COORDINATION_PROTOCOL__EEXPRESSION = "self.coordinationProtocol.roles = self.roles";
 
 	/**
 	 * Validates the OnlyRolesOfSameCoordinationProtocol constraint of '<em>Role Connector</em>'.
@@ -290,7 +290,7 @@ public class ProtocolValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ROLE__ROLE_REQUIRES_MESSAGE_TYPES__EEXPRESSION = "not (self.senderMessageTypes->isEmpty() and self.receiverMessageTypes->isEmpty())";
+	protected static final String ROLE__ROLE_REQUIRES_MESSAGE_TYPES__EEXPRESSION = "self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()";
 
 	/**
 	 * Validates the RoleRequiresMessageTypes constraint of '<em>Role</em>'.

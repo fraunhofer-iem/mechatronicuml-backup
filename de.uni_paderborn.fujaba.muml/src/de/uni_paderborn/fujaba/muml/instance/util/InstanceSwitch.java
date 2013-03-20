@@ -162,10 +162,7 @@ public class InstanceSwitch<T> extends Switch<T> {
 			case InstancePackage.HYBRID_PORT_INSTANCE: {
 				HybridPortInstance hybridPortInstance = (HybridPortInstance)theEObject;
 				T result = caseHybridPortInstance(hybridPortInstance);
-				if (result == null) result = caseDiscretePortInstance(hybridPortInstance);
-				if (result == null) result = caseContinuousPortInstance(hybridPortInstance);
 				if (result == null) result = casePortInstance(hybridPortInstance);
-				if (result == null) result = caseDiscreteInteractionEndpointInstance(hybridPortInstance);
 				if (result == null) result = caseConnectorEndpointInstance(hybridPortInstance);
 				if (result == null) result = caseNamedElement(hybridPortInstance);
 				if (result == null) result = caseCommentableElement(hybridPortInstance);

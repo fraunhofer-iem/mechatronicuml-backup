@@ -188,46 +188,7 @@ public class DeploymentValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateCommunicationLink(CommunicationLink communicationLink, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(communicationLink, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(communicationLink, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(communicationLink, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(communicationLink, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(communicationLink, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(communicationLink, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(communicationLink, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(communicationLink, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(communicationLink, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCommunicationLink_SameConfiguration(communicationLink, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the SameConfiguration constraint of '<em>Communication Link</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String COMMUNICATION_LINK__SAME_CONFIGURATION__EEXPRESSION = "self.deployedAssemblyInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration";
-
-	/**
-	 * Validates the SameConfiguration constraint of '<em>Communication Link</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCommunicationLink_SameConfiguration(CommunicationLink communicationLink, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(DeploymentPackage.Literals.COMMUNICATION_LINK,
-				 communicationLink,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "SameConfiguration",
-				 COMMUNICATION_LINK__SAME_CONFIGURATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return validate_EveryDefaultConstraint(communicationLink, diagnostics, context);
 	}
 
 	/**

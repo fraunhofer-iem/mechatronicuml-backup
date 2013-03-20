@@ -20,7 +20,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ConnectionPoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Deadline;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent;
@@ -36,6 +35,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.StateEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
@@ -131,8 +131,8 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 			case RealtimestatechartPackage.REGION: {
 				Region region = (Region)theEObject;
 				T result = caseRegion(region);
-				if (result == null) result = caseNamedElement(region);
 				if (result == null) result = casePrioritizedElement(region);
+				if (result == null) result = caseCommentableElement(region);
 				if (result == null) result = caseExtendableElement(region);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -278,19 +278,19 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RealtimestatechartPackage.CONNECTION_POINT: {
-				ConnectionPoint connectionPoint = (ConnectionPoint)theEObject;
-				T result = caseConnectionPoint(connectionPoint);
-				if (result == null) result = caseVertex(connectionPoint);
-				if (result == null) result = caseNamedElement(connectionPoint);
-				if (result == null) result = caseExtendableElement(connectionPoint);
+			case RealtimestatechartPackage.STATE_CONNECTION_POINT: {
+				StateConnectionPoint stateConnectionPoint = (StateConnectionPoint)theEObject;
+				T result = caseStateConnectionPoint(stateConnectionPoint);
+				if (result == null) result = caseVertex(stateConnectionPoint);
+				if (result == null) result = caseNamedElement(stateConnectionPoint);
+				if (result == null) result = caseExtendableElement(stateConnectionPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RealtimestatechartPackage.ENTRY_POINT: {
 				EntryPoint entryPoint = (EntryPoint)theEObject;
 				T result = caseEntryPoint(entryPoint);
-				if (result == null) result = caseConnectionPoint(entryPoint);
+				if (result == null) result = caseStateConnectionPoint(entryPoint);
 				if (result == null) result = caseVertex(entryPoint);
 				if (result == null) result = caseNamedElement(entryPoint);
 				if (result == null) result = caseExtendableElement(entryPoint);
@@ -300,7 +300,7 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 			case RealtimestatechartPackage.EXIT_POINT: {
 				ExitPoint exitPoint = (ExitPoint)theEObject;
 				T result = caseExitPoint(exitPoint);
-				if (result == null) result = caseConnectionPoint(exitPoint);
+				if (result == null) result = caseStateConnectionPoint(exitPoint);
 				if (result == null) result = caseVertex(exitPoint);
 				if (result == null) result = caseNamedElement(exitPoint);
 				if (result == null) result = caseExtendableElement(exitPoint);
@@ -657,17 +657,17 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Connection Point</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>State Connection Point</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Connection Point</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>State Connection Point</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConnectionPoint(ConnectionPoint object) {
+	public T caseStateConnectionPoint(StateConnectionPoint object) {
 		return null;
 	}
 

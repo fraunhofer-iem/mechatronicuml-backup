@@ -123,10 +123,6 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 				return createAtomicComponentAdapter();
 			}
 			@Override
-			public Adapter casePortConnector(PortConnector object) {
-				return createPortConnectorAdapter();
-			}
-			@Override
 			public Adapter caseAssemblyConnector(AssemblyConnector object) {
 				return createAssemblyConnectorAdapter();
 			}
@@ -135,20 +131,28 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 				return createDelegationConnectorAdapter();
 			}
 			@Override
-			public Adapter caseHybridPort(HybridPort object) {
-				return createHybridPortAdapter();
+			public Adapter casePortConnector(PortConnector object) {
+				return createPortConnectorAdapter();
 			}
 			@Override
-			public Adapter caseCoordinationProtocolOccurrence(CoordinationProtocolOccurrence object) {
-				return createCoordinationProtocolOccurrenceAdapter();
+			public Adapter caseHybridPort(HybridPort object) {
+				return createHybridPortAdapter();
 			}
 			@Override
 			public Adapter caseStructuredComponent(StructuredComponent object) {
 				return createStructuredComponentAdapter();
 			}
 			@Override
+			public Adapter caseCoordinationProtocolOccurrence(CoordinationProtocolOccurrence object) {
+				return createCoordinationProtocolOccurrenceAdapter();
+			}
+			@Override
 			public Adapter caseDirectedTypedPort(DirectedTypedPort object) {
 				return createDirectedTypedPortAdapter();
+			}
+			@Override
+			public Adapter casePortPart(PortPart object) {
+				return createPortPartAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -319,6 +323,20 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDirectedTypedPortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.component.PortPart <em>Port Part</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.component.PortPart
+	 * @generated
+	 */
+	public Adapter createPortPartAdapter() {
 		return null;
 	}
 

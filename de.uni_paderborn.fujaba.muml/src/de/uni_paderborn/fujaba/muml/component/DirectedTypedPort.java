@@ -30,31 +30,31 @@ import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 public interface DirectedTypedPort extends Port, TypedNamedElement {
 	/**
 	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
-	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.component.ContinuousPortDirectionKind}.
+	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.component.PortDirectionKind}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Decides the direction of a continous port.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.component.ContinuousPortDirectionKind
-	 * @see #setKind(ContinuousPortDirectionKind)
+	 * @see de.uni_paderborn.fujaba.muml.component.PortDirectionKind
+	 * @see #setKind(PortDirectionKind)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDirectedTypedPort_Kind()
 	 * @model required="true"
 	 * @generated
 	 */
-	ContinuousPortDirectionKind getKind();
+	PortDirectionKind getKind();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.component.DirectedTypedPort#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.component.ContinuousPortDirectionKind
+	 * @see de.uni_paderborn.fujaba.muml.component.PortDirectionKind
 	 * @see #getKind()
 	 * @generated
 	 */
-	void setKind(ContinuousPortDirectionKind value);
+	void setKind(PortDirectionKind value);
 
 	/**
 	 * Returns the value of the '<em><b>Optional</b></em>' attribute.
@@ -65,6 +65,9 @@ public interface DirectedTypedPort extends Port, TypedNamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Decides the direction of a continous port.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Optional</em>' attribute.
 	 * @see #setOptional(boolean)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDirectedTypedPort_Optional()

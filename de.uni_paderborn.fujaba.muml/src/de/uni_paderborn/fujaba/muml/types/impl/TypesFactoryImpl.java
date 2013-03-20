@@ -35,7 +35,7 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	 */
 	public static TypesFactory init() {
 		try {
-			TypesFactory theTypesFactory = (TypesFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/types/0.3.6"); 
+			TypesFactory theTypesFactory = (TypesFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/types/0.3.18"); 
 			if (theTypesFactory != null) {
 				return theTypesFactory;
 			}
@@ -66,6 +66,7 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 		switch (eClass.getClassifierID()) {
 			case TypesPackage.ARRAY_DATA_TYPE: return createArrayDataType();
 			case TypesPackage.PRIMITIVE_DATA_TYPE: return createPrimitiveDataType();
+			case TypesPackage.RANGED_PRIMITIVE_DATA_TYPE: return createRangedPrimitiveDataType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -119,6 +120,16 @@ public class TypesFactoryImpl extends EFactoryImpl implements TypesFactory {
 	public PrimitiveDataType createPrimitiveDataType() {
 		PrimitiveDataTypeImpl primitiveDataType = new PrimitiveDataTypeImpl();
 		return primitiveDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RangedPrimitiveDataType createRangedPrimitiveDataType() {
+		RangedPrimitiveDataTypeImpl rangedPrimitiveDataType = new RangedPrimitiveDataTypeImpl();
+		return rangedPrimitiveDataType;
 	}
 
 	/**

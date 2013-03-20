@@ -43,7 +43,7 @@ public interface TypesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/types/0.3.6";
+	String eNS_URI = "http://www.fujaba.de/muml/types/0.3.18";
 
 	/**
 	 * The package namespace name.
@@ -254,6 +254,79 @@ public interface TypesPackage extends EPackage {
 	int PRIMITIVE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.types.impl.RangedPrimitiveDataTypeImpl <em>Ranged Primitive Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.types.impl.RangedPrimitiveDataTypeImpl
+	 * @see de.uni_paderborn.fujaba.muml.types.impl.TypesPackageImpl#getRangedPrimitiveDataType()
+	 * @generated
+	 */
+	int RANGED_PRIMITIVE_DATA_TYPE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RANGED_PRIMITIVE_DATA_TYPE__ANNOTATION = DATA_TYPE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RANGED_PRIMITIVE_DATA_TYPE__EXTENSION = DATA_TYPE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RANGED_PRIMITIVE_DATA_TYPE__NAME = DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RANGED_PRIMITIVE_DATA_TYPE__COMMENT = DATA_TYPE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Ranged Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RANGED_PRIMITIVE_DATA_TYPE__RANGED_TYPE = DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Range</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RANGED_PRIMITIVE_DATA_TYPE__RANGE = DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Ranged Primitive Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RANGED_PRIMITIVE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.types.PrimitiveTypes <em>Primitive Types</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -261,7 +334,7 @@ public interface TypesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.types.impl.TypesPackageImpl#getPrimitiveTypes()
 	 * @generated
 	 */
-	int PRIMITIVE_TYPES = 3;
+	int PRIMITIVE_TYPES = 4;
 
 
 	/**
@@ -326,6 +399,38 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDataType();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType <em>Ranged Primitive Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Ranged Primitive Data Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType
+	 * @generated
+	 */
+	EClass getRangedPrimitiveDataType();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType#getRangedType <em>Ranged Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Ranged Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType#getRangedType()
+	 * @see #getRangedPrimitiveDataType()
+	 * @generated
+	 */
+	EReference getRangedPrimitiveDataType_RangedType();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType#getRange <em>Range</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Range</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType#getRange()
+	 * @see #getRangedPrimitiveDataType()
+	 * @generated
+	 */
+	EReference getRangedPrimitiveDataType_Range();
 
 	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.types.PrimitiveTypes <em>Primitive Types</em>}'.
@@ -412,6 +517,32 @@ public interface TypesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DATA_TYPE = eINSTANCE.getDataType();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.types.impl.RangedPrimitiveDataTypeImpl <em>Ranged Primitive Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.types.impl.RangedPrimitiveDataTypeImpl
+		 * @see de.uni_paderborn.fujaba.muml.types.impl.TypesPackageImpl#getRangedPrimitiveDataType()
+		 * @generated
+		 */
+		EClass RANGED_PRIMITIVE_DATA_TYPE = eINSTANCE.getRangedPrimitiveDataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Ranged Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RANGED_PRIMITIVE_DATA_TYPE__RANGED_TYPE = eINSTANCE.getRangedPrimitiveDataType_RangedType();
+
+		/**
+		 * The meta object literal for the '<em><b>Range</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RANGED_PRIMITIVE_DATA_TYPE__RANGE = eINSTANCE.getRangedPrimitiveDataType_Range();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.types.PrimitiveTypes <em>Primitive Types</em>}' enum.

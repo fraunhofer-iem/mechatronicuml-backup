@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
@@ -24,11 +25,13 @@ import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
+import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,10 +43,8 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentPartImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentPartImpl#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentPartImpl#getParentComponent <em>Parent Component</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentPartImpl#getAssemblyConnectors <em>Assembly Connectors</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentPartImpl#getDelegationConnectors <em>Delegation Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentPartImpl#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentPartImpl#getPorts <em>Ports</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentPartImpl#getPortParts <em>Port Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentPartImpl#isMultiPart <em>Multi Part</em>}</li>
  * </ul>
  * </p>
@@ -82,26 +83,6 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	protected Component componentType;
 
 	/**
-	 * The cached setting delegate for the '{@link #getAssemblyConnectors() <em>Assembly Connectors</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAssemblyConnectors()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate ASSEMBLY_CONNECTORS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__ASSEMBLY_CONNECTORS).getSettingDelegate();
-
-	/**
-	 * The cached setting delegate for the '{@link #getDelegationConnectors() <em>Delegation Connectors</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDelegationConnectors()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate DELEGATION_CONNECTORS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__DELEGATION_CONNECTORS).getSettingDelegate();
-
-	/**
 	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,14 +93,14 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	protected Cardinality cardinality;
 
 	/**
-	 * The cached setting delegate for the '{@link #getPorts() <em>Ports</em>}' containment reference list.
+	 * The cached value of the '{@link #getPortParts() <em>Port Parts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPorts()
+	 * @see #getPortParts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate PORTS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.COMPONENT_PART__PORTS).getSettingDelegate();
+	protected EList<PortPart> portParts;
 
 	/**
 	 * The cached setting delegate for the '{@link #isMultiPart() <em>Multi Part</em>}' attribute.
@@ -134,16 +115,10 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected ComponentPartImpl() {
 		super();
-		
-		// Install a notification adapter that informs the
-		// ports-reference, whenever one of the dependent features
-		// was modified
-		DerivedAttributeAdapter portsDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__PORTS);
-		portsDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE, ComponentPackage.Literals.COMPONENT__PORTS);
 	}
 
 	/**
@@ -208,33 +183,11 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetComponentType(Component newComponentType, NotificationChain msgs) {
+	public void setComponentType(Component newComponentType) {
 		Component oldComponentType = componentType;
 		componentType = newComponentType;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT_PART__COMPONENT_TYPE, oldComponentType, newComponentType);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComponentType(Component newComponentType) {
-		if (newComponentType != componentType) {
-			NotificationChain msgs = null;
-			if (componentType != null)
-				msgs = ((InternalEObject)componentType).eInverseRemove(this, ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS, Component.class, msgs);
-			if (newComponentType != null)
-				msgs = ((InternalEObject)newComponentType).eInverseAdd(this, ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS, Component.class, msgs);
-			msgs = basicSetComponentType(newComponentType, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT_PART__COMPONENT_TYPE, newComponentType, newComponentType));
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT_PART__COMPONENT_TYPE, oldComponentType, componentType));
 	}
 
 	/**
@@ -270,7 +223,7 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newParentComponent != null)
-				msgs = ((InternalEObject)newParentComponent).eInverseAdd(this, ComponentPackage.STRUCTURED_COMPONENT__EMBEDDED_PARTS, StructuredComponent.class, msgs);
+				msgs = ((InternalEObject)newParentComponent).eInverseAdd(this, ComponentPackage.STRUCTURED_COMPONENT__EMBEDDED_COMPONENT_PARTS, StructuredComponent.class, msgs);
 			msgs = basicSetParentComponent(newParentComponent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -278,27 +231,7 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT_PART__PARENT_COMPONENT, newParentComponent, newParentComponent));
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	public EList<AssemblyConnector> getAssemblyConnectors() {
-		return (EList<AssemblyConnector>)ASSEMBLY_CONNECTORS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	public EList<DelegationConnector> getDelegationConnectors() {
-		return (EList<DelegationConnector>)DELEGATION_CONNECTORS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-//	/**
+	//	/**
 //	 * <!-- begin-user-doc -->
 //	 * <!-- end-user-doc -->
 //	 * @generated NOT
@@ -395,9 +328,11 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	public EList<Port> getPorts() {
-		return (EList<Port>)PORTS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public EList<PortPart> getPortParts() {
+		if (portParts == null) {
+			portParts = new EObjectContainmentWithInverseEList.Unsettable<PortPart>(PortPart.class, this, ComponentPackage.COMPONENT_PART__PORT_PARTS, ComponentPackage.PORT_PART__COMPONENT_PART);
+		}
+		return portParts;
 	}
 
 	/**
@@ -405,8 +340,17 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSetPorts() {
-		return PORTS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	public void unsetPortParts() {
+		if (portParts != null) ((InternalEList.Unsettable<?>)portParts).unset();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetPortParts() {
+		return portParts != null && ((InternalEList.Unsettable<?>)portParts).isSet();
 	}
 
 	/**
@@ -418,14 +362,12 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
-				if (componentType != null)
-					msgs = ((InternalEObject)componentType).eInverseRemove(this, ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS, Component.class, msgs);
-				return basicSetComponentType((Component)otherEnd, msgs);
 			case ComponentPackage.COMPONENT_PART__PARENT_COMPONENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetParentComponent((StructuredComponent)otherEnd, msgs);
+			case ComponentPackage.COMPONENT_PART__PORT_PARTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPortParts()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -438,14 +380,12 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ComponentPackage.COMPONENT_PART__COMPONENT_TYPE:
-				return basicSetComponentType(null, msgs);
 			case ComponentPackage.COMPONENT_PART__PARENT_COMPONENT:
 				return basicSetParentComponent(null, msgs);
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				return basicSetCardinality(null, msgs);
-			case ComponentPackage.COMPONENT_PART__PORTS:
-				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
+			case ComponentPackage.COMPONENT_PART__PORT_PARTS:
+				return ((InternalEList<?>)getPortParts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -459,7 +399,7 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case ComponentPackage.COMPONENT_PART__PARENT_COMPONENT:
-				return eInternalContainer().eInverseRemove(this, ComponentPackage.STRUCTURED_COMPONENT__EMBEDDED_PARTS, StructuredComponent.class, msgs);
+				return eInternalContainer().eInverseRemove(this, ComponentPackage.STRUCTURED_COMPONENT__EMBEDDED_COMPONENT_PARTS, StructuredComponent.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -479,14 +419,10 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 				return basicGetComponentType();
 			case ComponentPackage.COMPONENT_PART__PARENT_COMPONENT:
 				return getParentComponent();
-			case ComponentPackage.COMPONENT_PART__ASSEMBLY_CONNECTORS:
-				return getAssemblyConnectors();
-			case ComponentPackage.COMPONENT_PART__DELEGATION_CONNECTORS:
-				return getDelegationConnectors();
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				return getCardinality();
-			case ComponentPackage.COMPONENT_PART__PORTS:
-				return getPorts();
+			case ComponentPackage.COMPONENT_PART__PORT_PARTS:
+				return getPortParts();
 			case ComponentPackage.COMPONENT_PART__MULTI_PART:
 				return isMultiPart();
 		}
@@ -514,6 +450,10 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				setCardinality((Cardinality)newValue);
 				return;
+			case ComponentPackage.COMPONENT_PART__PORT_PARTS:
+				getPortParts().clear();
+				getPortParts().addAll((Collection<? extends PortPart>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -538,6 +478,9 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				setCardinality((Cardinality)null);
 				return;
+			case ComponentPackage.COMPONENT_PART__PORT_PARTS:
+				unsetPortParts();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -556,14 +499,10 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 				return componentType != null;
 			case ComponentPackage.COMPONENT_PART__PARENT_COMPONENT:
 				return getParentComponent() != null;
-			case ComponentPackage.COMPONENT_PART__ASSEMBLY_CONNECTORS:
-				return ASSEMBLY_CONNECTORS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case ComponentPackage.COMPONENT_PART__DELEGATION_CONNECTORS:
-				return DELEGATION_CONNECTORS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.COMPONENT_PART__CARDINALITY:
 				return cardinality != null;
-			case ComponentPackage.COMPONENT_PART__PORTS:
-				return isSetPorts();
+			case ComponentPackage.COMPONENT_PART__PORT_PARTS:
+				return isSetPortParts();
 			case ComponentPackage.COMPONENT_PART__MULTI_PART:
 				return isSetMultiPart();
 		}

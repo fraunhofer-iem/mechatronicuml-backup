@@ -8,12 +8,15 @@ package de.uni_paderborn.fujaba.muml.component.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
+import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.component.PortPart;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +25,8 @@ import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DelegationConnectorImpl#getComponentPart <em>Component Part</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DelegationConnectorImpl#getPortPart <em>Port Part</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DelegationConnectorImpl#getPort <em>Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,15 +34,23 @@ import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
  */
 public class DelegationConnectorImpl extends PortConnectorImpl implements DelegationConnector {
 	/**
-	 * The cached value of the '{@link #getComponentPart() <em>Component Part</em>}' reference.
+	 * The cached setting delegate for the '{@link #getPortPart() <em>Port Part</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComponentPart()
+	 * @see #getPortPart()
 	 * @generated
 	 * @ordered
 	 */
-	protected ComponentPart componentPart;
-
+	protected EStructuralFeature.Internal.SettingDelegate PORT_PART__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.DELEGATION_CONNECTOR__PORT_PART).getSettingDelegate();
+	/**
+	 * The cached setting delegate for the '{@link #getPort() <em>Port</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.DELEGATION_CONNECTOR__PORT).getSettingDelegate();
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -63,16 +75,8 @@ public class DelegationConnectorImpl extends PortConnectorImpl implements Delega
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentPart getComponentPart() {
-		if (componentPart != null && componentPart.eIsProxy()) {
-			InternalEObject oldComponentPart = (InternalEObject)componentPart;
-			componentPart = (ComponentPart)eResolveProxy(oldComponentPart);
-			if (componentPart != oldComponentPart) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.DELEGATION_CONNECTOR__COMPONENT_PART, oldComponentPart, componentPart));
-			}
-		}
-		return componentPart;
+	public PortPart getPortPart() {
+		return (PortPart)PORT_PART__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -80,8 +84,8 @@ public class DelegationConnectorImpl extends PortConnectorImpl implements Delega
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentPart basicGetComponentPart() {
-		return componentPart;
+	public PortPart basicGetPortPart() {
+		return (PortPart)PORT_PART__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -89,11 +93,35 @@ public class DelegationConnectorImpl extends PortConnectorImpl implements Delega
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setComponentPart(ComponentPart newComponentPart) {
-		ComponentPart oldComponentPart = componentPart;
-		componentPart = newComponentPart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DELEGATION_CONNECTOR__COMPONENT_PART, oldComponentPart, componentPart));
+	public void setPortPart(PortPart newPortPart) {
+		PORT_PART__ESETTING_DELEGATE.dynamicSet(this, null, 0, newPortPart);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Port getPort() {
+		return (Port)PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Port basicGetPort() {
+		return (Port)PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPort(Port newPort) {
+		PORT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newPort);
 	}
 
 	/**
@@ -104,9 +132,12 @@ public class DelegationConnectorImpl extends PortConnectorImpl implements Delega
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentPackage.DELEGATION_CONNECTOR__COMPONENT_PART:
-				if (resolve) return getComponentPart();
-				return basicGetComponentPart();
+			case ComponentPackage.DELEGATION_CONNECTOR__PORT_PART:
+				if (resolve) return getPortPart();
+				return basicGetPortPart();
+			case ComponentPackage.DELEGATION_CONNECTOR__PORT:
+				if (resolve) return getPort();
+				return basicGetPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,8 +150,11 @@ public class DelegationConnectorImpl extends PortConnectorImpl implements Delega
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentPackage.DELEGATION_CONNECTOR__COMPONENT_PART:
-				setComponentPart((ComponentPart)newValue);
+			case ComponentPackage.DELEGATION_CONNECTOR__PORT_PART:
+				setPortPart((PortPart)newValue);
+				return;
+			case ComponentPackage.DELEGATION_CONNECTOR__PORT:
+				setPort((Port)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -134,8 +168,11 @@ public class DelegationConnectorImpl extends PortConnectorImpl implements Delega
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.DELEGATION_CONNECTOR__COMPONENT_PART:
-				setComponentPart((ComponentPart)null);
+			case ComponentPackage.DELEGATION_CONNECTOR__PORT_PART:
+				setPortPart((PortPart)null);
+				return;
+			case ComponentPackage.DELEGATION_CONNECTOR__PORT:
+				setPort((Port)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -149,8 +186,10 @@ public class DelegationConnectorImpl extends PortConnectorImpl implements Delega
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.DELEGATION_CONNECTOR__COMPONENT_PART:
-				return componentPart != null;
+			case ComponentPackage.DELEGATION_CONNECTOR__PORT_PART:
+				return PORT_PART__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.DELEGATION_CONNECTOR__PORT:
+				return PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -21,7 +21,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ConnectionPoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Deadline;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent;
@@ -37,6 +36,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.StateEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
@@ -193,8 +193,8 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 				return createExitEventAdapter();
 			}
 			@Override
-			public Adapter caseConnectionPoint(ConnectionPoint object) {
-				return createConnectionPointAdapter();
+			public Adapter caseStateConnectionPoint(StateConnectionPoint object) {
+				return createStateConnectionPointAdapter();
 			}
 			@Override
 			public Adapter caseEntryPoint(EntryPoint object) {
@@ -563,16 +563,16 @@ public class RealtimestatechartAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.ConnectionPoint <em>Connection Point</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint <em>State Connection Point</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.ConnectionPoint
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint
 	 * @generated
 	 */
-	public Adapter createConnectionPointAdapter() {
+	public Adapter createStateConnectionPointAdapter() {
 		return null;
 	}
 

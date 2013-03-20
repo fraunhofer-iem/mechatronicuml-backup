@@ -31,7 +31,6 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getStates <em>States</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getClocks <em>Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isHistory <em>History</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getEventQueueSize <em>Event Queue Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isFlat <em>Flat</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isEmbedded <em>Embedded</em>}</li>
@@ -48,7 +47,7 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
 public interface RealtimeStatechart extends NamedElement, CommentableElement, Behavior {
 	/**
 	 * Returns the value of the '<em><b>Embedding Region</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getStatechart <em>Statechart</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getEmbeddedStatechart <em>Embedded Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Embedding Region</em>' reference isn't clear,
@@ -63,8 +62,8 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @return the value of the '<em>Embedding Region</em>' container reference.
 	 * @see #setEmbeddingRegion(Region)
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_EmbeddingRegion()
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getStatechart
-	 * @model opposite="statechart" transient="false"
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getEmbeddedStatechart
+	 * @model opposite="embeddedStatechart" transient="false"
 	 * @generated
 	 */
 	Region getEmbeddingRegion();
@@ -99,7 +98,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	/**
 	 * Returns the value of the '<em><b>States</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.realtimestatechart.State}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getStatechart <em>Statechart</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getParentStatechart <em>Parent Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -107,8 +106,8 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>States</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_States()
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.State#getStatechart
-	 * @model opposite="statechart" containment="true" required="true"
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.State#getParentStatechart
+	 * @model opposite="parentStatechart" containment="true" required="true"
 	 * @generated
 	 */
 	EList<State> getStates();
@@ -154,32 +153,6 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @generated
 	 */
 	void setHistory(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Event Queue Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The size of the event queue of this port. It defines the maximum number of events
-	 * that may be temporarily buffered by the port.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Event Queue Size</em>' attribute.
-	 * @see #setEventQueueSize(int)
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_EventQueueSize()
-	 * @model
-	 * @generated
-	 */
-	int getEventQueueSize();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getEventQueueSize <em>Event Queue Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Event Queue Size</em>' attribute.
-	 * @see #getEventQueueSize()
-	 * @generated
-	 */
-	void setEventQueueSize(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Flat</b></em>' attribute.
@@ -272,7 +245,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * Returns realtime statechart which represents the root of the hierarchy tree.
 	 * <!-- end-model-doc -->
 	 * @model required="true" statechartRequired="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='// TODO: Replace by OCL\'s transitive closure?\n\t\t\nAssert.isLegal(statechart != null);\n\nBreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();\nreturn bfs.search(statechart, new ISearchVisitor() {\n\n\t@Override\n\tpublic boolean visit(Object object) {\n\t\treturn !RealtimeStatechartImpl.this.equals(object);\n\t}\n\n\t@Override\n\tpublic List<?> getAdjacentNodes(Object object) {\n\t\tRealtimeStatechart rtsc = (RealtimeStatechart) object;\n\n\t\tList<Object> parentStatecharts = new ArrayList<Object>();\n\n\t\tRegion region = rtsc.getEmbeddingRegion();\n\t\tif (region != null) {\n\t\t\t// List<Region> regions = rtsc.getEmbeddingRegions();\n\t\t\t// for (Region region : regions) {\n\t\t\tState state = region.getParentState();\n\t\t\tif (state != null && state.getStatechart() != null) {\n\t\t\t\tparentStatecharts.add(state.getStatechart());\n\t\t\t}\n\t\t\t// }\n\t\t}\n\n\t\treturn parentStatecharts;\n\t}\n\n});'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='// TODO: Replace by OCL\'s transitive closure?\r\n\t\t\r\nAssert.isLegal(statechart != null);\r\n\r\nBreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();\r\nreturn bfs.search(statechart, new ISearchVisitor() {\r\n\r\n\t@Override\r\n\tpublic boolean visit(Object object) {\r\n\t\treturn !RealtimeStatechartImpl.this.equals(object);\r\n\t}\r\n\r\n\t@Override\r\n\tpublic List<?> getAdjacentNodes(Object object) {\r\n\t\tRealtimeStatechart rtsc = (RealtimeStatechart) object;\r\n\r\n\t\tList<Object> parentStatecharts = new ArrayList<Object>();\r\n\r\n\t\tRegion region = rtsc.getEmbeddingRegion();\r\n\t\tif (region != null) {\r\n\t\t\t// List<Region> regions = rtsc.getEmbeddingRegions();\r\n\t\t\t// for (Region region : regions) {\r\n\t\t\tState state = region.getParentState();\r\n\t\t\tif (state != null && state.getParentStatechart() != null) {\r\n\t\t\t\tparentStatecharts.add(state.getParentStatechart());\r\n\t\t\t}\r\n\t\t\t// }\r\n\t\t}\r\n\r\n\t\treturn parentStatecharts;\r\n\t}\r\n\r\n});'"
 	 * @generated
 	 */
 	boolean isSuperStatechartOf(RealtimeStatechart statechart);
@@ -284,7 +257,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * Returns realtime statechart which represents the root of the hierarchy tree.
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='RealtimeStatechart rtsc = this;\r\nwhile (rtsc.isEmbedded()==true)\r\n{rtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();} \r\nreturn rtsc;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='RealtimeStatechart rtsc = this;\r\nwhile (rtsc.isEmbedded()==true)\r\n{rtsc = rtsc.getEmbeddingRegion().getParentState().getParentStatechart();} \r\nreturn rtsc;'"
 	 * @generated
 	 */
 	RealtimeStatechart getHighestParentStatechart();
@@ -296,7 +269,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * Returns itself if a Port or a Role is referenced or the next ancestor that references a Port or a Role. If no Port or a Role is found, then itself is returned.
 	 * <!-- end-model-doc -->
 	 * @model kind="operation" required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='// check if this rtsc has a behavioral element\r\nRealtimeStatechart rtsc = this;\r\nif (rtsc.getBehavioralElement()!=null && ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;\r\n\r\n// search for ancestor with behavioral element\r\nwhile (rtsc.isEmbedded()==true)\r\n{\r\nrtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();\r\nif (rtsc.getBehavioralElement()!=null && ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;\r\n} \r\n\r\n// no rtsc found with behavioral element\r\nreturn this;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='// check if this rtsc has a behavioral element\r\nRealtimeStatechart rtsc = this;\r\nif (rtsc.getBehavioralElement()!=null && ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;\r\n\r\n// search for ancestor with behavioral element\r\nwhile (rtsc.isEmbedded()==true)\r\n{\r\nrtsc = rtsc.getEmbeddingRegion().getParentState().getParentStatechart();\r\nif (rtsc.getBehavioralElement()!=null && ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;\r\n} \r\n\r\n// no rtsc found with behavioral element\r\nreturn this;'"
 	 * @generated
 	 */
 	RealtimeStatechart getPortOrRoleStatechart();

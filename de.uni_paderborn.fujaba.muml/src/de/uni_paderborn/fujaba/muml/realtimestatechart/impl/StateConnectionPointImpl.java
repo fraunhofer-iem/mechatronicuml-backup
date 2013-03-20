@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.impl;
 
@@ -9,30 +13,30 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ConnectionPoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Connection Point</b></em>'.
+ * An implementation of the model object '<em><b>State Connection Point</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.ConnectionPointImpl#getState <em>State</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateConnectionPointImpl#getState <em>State</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class ConnectionPointImpl extends VertexImpl implements ConnectionPoint {
+public abstract class StateConnectionPointImpl extends VertexImpl implements StateConnectionPoint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConnectionPointImpl() {
+	protected StateConnectionPointImpl() {
 		super();
 	}
 
@@ -43,7 +47,7 @@ public abstract class ConnectionPointImpl extends VertexImpl implements Connecti
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RealtimestatechartPackage.Literals.CONNECTION_POINT;
+		return RealtimestatechartPackage.Literals.STATE_CONNECTION_POINT;
 	}
 
 	/**
@@ -52,7 +56,7 @@ public abstract class ConnectionPointImpl extends VertexImpl implements Connecti
 	 * @generated
 	 */
 	public State getState() {
-		if (eContainerFeatureID() != RealtimestatechartPackage.CONNECTION_POINT__STATE) return null;
+		if (eContainerFeatureID() != RealtimestatechartPackage.STATE_CONNECTION_POINT__STATE) return null;
 		return (State)eContainer();
 	}
 
@@ -62,7 +66,7 @@ public abstract class ConnectionPointImpl extends VertexImpl implements Connecti
 	 * @generated
 	 */
 	public NotificationChain basicSetState(State newState, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newState, RealtimestatechartPackage.CONNECTION_POINT__STATE, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newState, RealtimestatechartPackage.STATE_CONNECTION_POINT__STATE, msgs);
 		return msgs;
 	}
 
@@ -72,7 +76,7 @@ public abstract class ConnectionPointImpl extends VertexImpl implements Connecti
 	 * @generated
 	 */
 	public void setState(State newState) {
-		if (newState != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.CONNECTION_POINT__STATE && newState != null)) {
+		if (newState != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.STATE_CONNECTION_POINT__STATE && newState != null)) {
 			if (EcoreUtil.isAncestor(this, newState))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -84,7 +88,7 @@ public abstract class ConnectionPointImpl extends VertexImpl implements Connecti
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.CONNECTION_POINT__STATE, newState, newState));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.STATE_CONNECTION_POINT__STATE, newState, newState));
 	}
 
 	/**
@@ -95,7 +99,7 @@ public abstract class ConnectionPointImpl extends VertexImpl implements Connecti
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CONNECTION_POINT__STATE:
+			case RealtimestatechartPackage.STATE_CONNECTION_POINT__STATE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetState((State)otherEnd, msgs);
@@ -111,7 +115,7 @@ public abstract class ConnectionPointImpl extends VertexImpl implements Connecti
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CONNECTION_POINT__STATE:
+			case RealtimestatechartPackage.STATE_CONNECTION_POINT__STATE:
 				return basicSetState(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -125,7 +129,7 @@ public abstract class ConnectionPointImpl extends VertexImpl implements Connecti
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case RealtimestatechartPackage.CONNECTION_POINT__STATE:
+			case RealtimestatechartPackage.STATE_CONNECTION_POINT__STATE:
 				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATE__CONNECTION_POINTS, State.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -139,7 +143,7 @@ public abstract class ConnectionPointImpl extends VertexImpl implements Connecti
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CONNECTION_POINT__STATE:
+			case RealtimestatechartPackage.STATE_CONNECTION_POINT__STATE:
 				return getState();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -153,7 +157,7 @@ public abstract class ConnectionPointImpl extends VertexImpl implements Connecti
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CONNECTION_POINT__STATE:
+			case RealtimestatechartPackage.STATE_CONNECTION_POINT__STATE:
 				setState((State)newValue);
 				return;
 		}
@@ -168,7 +172,7 @@ public abstract class ConnectionPointImpl extends VertexImpl implements Connecti
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CONNECTION_POINT__STATE:
+			case RealtimestatechartPackage.STATE_CONNECTION_POINT__STATE:
 				setState((State)null);
 				return;
 		}
@@ -183,10 +187,10 @@ public abstract class ConnectionPointImpl extends VertexImpl implements Connecti
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.CONNECTION_POINT__STATE:
+			case RealtimestatechartPackage.STATE_CONNECTION_POINT__STATE:
 				return getState() != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ConnectionPointImpl
+} //StateConnectionPointImpl

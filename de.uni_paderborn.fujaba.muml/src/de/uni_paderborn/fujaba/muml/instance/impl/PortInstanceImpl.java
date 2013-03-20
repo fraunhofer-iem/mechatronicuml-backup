@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorEndpointInstanceImpl;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
@@ -32,6 +33,7 @@ import de.uni_paderborn.fujaba.muml.instance.PortInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.PortInstanceImpl#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.PortInstanceImpl#getComponentInstance <em>Component Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.PortInstanceImpl#getPortConnectorInstances <em>Port Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.PortInstanceImpl#getPortPart <em>Port Part</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,6 +59,15 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate PORT_CONNECTOR_INSTANCES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.PORT_INSTANCE__PORT_CONNECTOR_INSTANCES).getSettingDelegate();
 
+	/**
+	 * The cached setting delegate for the '{@link #getPortPart() <em>Port Part</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortPart()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate PORT_PART__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.PORT_INSTANCE__PORT_PART).getSettingDelegate();
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -172,6 +183,24 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public PortPart getPortPart() {
+		return (PortPart)PORT_PART__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortPart basicGetPortPart() {
+		return (PortPart)PORT_PART__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -227,6 +256,9 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 				return getComponentInstance();
 			case InstancePackage.PORT_INSTANCE__PORT_CONNECTOR_INSTANCES:
 				return getPortConnectorInstances();
+			case InstancePackage.PORT_INSTANCE__PORT_PART:
+				if (resolve) return getPortPart();
+				return basicGetPortPart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -276,6 +308,8 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 				return getComponentInstance() != null;
 			case InstancePackage.PORT_INSTANCE__PORT_CONNECTOR_INSTANCES:
 				return PORT_CONNECTOR_INSTANCES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case InstancePackage.PORT_INSTANCE__PORT_PART:
+				return PORT_PART__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

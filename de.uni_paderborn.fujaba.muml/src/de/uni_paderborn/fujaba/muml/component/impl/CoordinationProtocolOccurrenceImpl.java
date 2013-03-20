@@ -9,15 +9,19 @@ package de.uni_paderborn.fujaba.muml.component.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.storydriven.core.impl.CommentableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
+import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 
@@ -29,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.CoordinationProtocolOccurrenceImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.CoordinationProtocolOccurrenceImpl#getPorts <em>Ports</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.CoordinationProtocolOccurrenceImpl#getPortParts <em>Port Parts</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,14 +51,14 @@ public class CoordinationProtocolOccurrenceImpl extends CommentableElementImpl i
 	protected CoordinationProtocol coordinationProtocol;
 
 	/**
-	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' reference list.
+	 * The cached value of the '{@link #getPortParts() <em>Port Parts</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPorts()
+	 * @see #getPortParts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Port> ports;
+	protected EList<PortPart> portParts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,11 +122,40 @@ public class CoordinationProtocolOccurrenceImpl extends CommentableElementImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Port> getPorts() {
-		if (ports == null) {
-			ports = new EObjectResolvingEList<Port>(Port.class, this, ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORTS);
+	public EList<PortPart> getPortParts() {
+		if (portParts == null) {
+			portParts = new EObjectWithInverseResolvingEList<PortPart>(PortPart.class, this, ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS, ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE);
 		}
-		return ports;
+		return portParts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPortParts()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS:
+				return ((InternalEList<?>)getPortParts()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -136,8 +169,8 @@ public class CoordinationProtocolOccurrenceImpl extends CommentableElementImpl i
 			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL:
 				if (resolve) return getCoordinationProtocol();
 				return basicGetCoordinationProtocol();
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORTS:
-				return getPorts();
+			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS:
+				return getPortParts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,9 +187,9 @@ public class CoordinationProtocolOccurrenceImpl extends CommentableElementImpl i
 			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((CoordinationProtocol)newValue);
 				return;
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORTS:
-				getPorts().clear();
-				getPorts().addAll((Collection<? extends Port>)newValue);
+			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS:
+				getPortParts().clear();
+				getPortParts().addAll((Collection<? extends PortPart>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -173,8 +206,8 @@ public class CoordinationProtocolOccurrenceImpl extends CommentableElementImpl i
 			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((CoordinationProtocol)null);
 				return;
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORTS:
-				getPorts().clear();
+			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS:
+				getPortParts().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -190,8 +223,8 @@ public class CoordinationProtocolOccurrenceImpl extends CommentableElementImpl i
 		switch (featureID) {
 			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL:
 				return coordinationProtocol != null;
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORTS:
-				return ports != null && !ports.isEmpty();
+			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS:
+				return portParts != null && !portParts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

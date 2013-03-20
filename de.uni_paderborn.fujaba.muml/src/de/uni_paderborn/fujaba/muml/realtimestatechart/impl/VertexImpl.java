@@ -128,7 +128,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				List<Object> parentStates = new ArrayList<Object>();
 		
 				State state = (State) object;
-				RealtimeStatechart rtsc = state.getStatechart();
+				RealtimeStatechart rtsc = state.getParentStatechart();
 				if (rtsc != null) {
 					Region region = rtsc.getEmbeddingRegion();
 					if (region != null) {

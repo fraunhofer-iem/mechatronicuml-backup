@@ -31,23 +31,12 @@ import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortConnectorImpl#getParentComponent <em>Parent Component</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortConnectorImpl#getPorts <em>Ports</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public abstract class PortConnectorImpl extends ConnectorImpl implements PortConnector {
-	/**
-	 * The cached setting delegate for the '{@link #getPorts() <em>Ports</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPorts()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate PORTS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT_CONNECTOR__PORTS).getSettingDelegate();
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,16 +102,6 @@ public abstract class PortConnectorImpl extends ConnectorImpl implements PortCon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	public EList<Port> getPorts() {
-		return (EList<Port>)PORTS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -172,8 +151,6 @@ public abstract class PortConnectorImpl extends ConnectorImpl implements PortCon
 		switch (featureID) {
 			case ComponentPackage.PORT_CONNECTOR__PARENT_COMPONENT:
 				return getParentComponent();
-			case ComponentPackage.PORT_CONNECTOR__PORTS:
-				return getPorts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -190,10 +167,6 @@ public abstract class PortConnectorImpl extends ConnectorImpl implements PortCon
 			case ComponentPackage.PORT_CONNECTOR__PARENT_COMPONENT:
 				setParentComponent((StructuredComponent)newValue);
 				return;
-			case ComponentPackage.PORT_CONNECTOR__PORTS:
-				getPorts().clear();
-				getPorts().addAll((Collection<? extends Port>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -209,9 +182,6 @@ public abstract class PortConnectorImpl extends ConnectorImpl implements PortCon
 			case ComponentPackage.PORT_CONNECTOR__PARENT_COMPONENT:
 				setParentComponent((StructuredComponent)null);
 				return;
-			case ComponentPackage.PORT_CONNECTOR__PORTS:
-				getPorts().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -226,8 +196,6 @@ public abstract class PortConnectorImpl extends ConnectorImpl implements PortCon
 		switch (featureID) {
 			case ComponentPackage.PORT_CONNECTOR__PARENT_COMPONENT:
 				return getParentComponent() != null;
-			case ComponentPackage.PORT_CONNECTOR__PORTS:
-				return PORTS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

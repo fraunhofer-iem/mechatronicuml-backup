@@ -120,24 +120,26 @@ public class ComponentValidator extends MumlValidator {
 				return validateStaticStructuredComponent((StaticStructuredComponent)value, diagnostics, context);
 			case ComponentPackage.ATOMIC_COMPONENT:
 				return validateAtomicComponent((AtomicComponent)value, diagnostics, context);
-			case ComponentPackage.PORT_CONNECTOR:
-				return validatePortConnector((PortConnector)value, diagnostics, context);
 			case ComponentPackage.ASSEMBLY_CONNECTOR:
 				return validateAssemblyConnector((AssemblyConnector)value, diagnostics, context);
 			case ComponentPackage.DELEGATION_CONNECTOR:
 				return validateDelegationConnector((DelegationConnector)value, diagnostics, context);
+			case ComponentPackage.PORT_CONNECTOR:
+				return validatePortConnector((PortConnector)value, diagnostics, context);
 			case ComponentPackage.HYBRID_PORT:
 				return validateHybridPort((HybridPort)value, diagnostics, context);
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE:
-				return validateCoordinationProtocolOccurrence((CoordinationProtocolOccurrence)value, diagnostics, context);
 			case ComponentPackage.STRUCTURED_COMPONENT:
 				return validateStructuredComponent((StructuredComponent)value, diagnostics, context);
+			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE:
+				return validateCoordinationProtocolOccurrence((CoordinationProtocolOccurrence)value, diagnostics, context);
 			case ComponentPackage.DIRECTED_TYPED_PORT:
 				return validateDirectedTypedPort((DirectedTypedPort)value, diagnostics, context);
+			case ComponentPackage.PORT_PART:
+				return validatePortPart((PortPart)value, diagnostics, context);
 			case ComponentPackage.COMPONENT_KIND:
 				return validateComponentKind((ComponentKind)value, diagnostics, context);
-			case ComponentPackage.CONTINUOUS_PORT_DIRECTION_KIND:
-				return validateContinuousPortDirectionKind((ContinuousPortDirectionKind)value, diagnostics, context);
+			case ComponentPackage.PORT_DIRECTION_KIND:
+				return validatePortDirectionKind((PortDirectionKind)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -224,7 +226,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discretePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDiscretePort_AtLeastOneMessageType(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresMessageTypes(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAndRoleSameMessageTypes(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresBehavior(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(discretePort, diagnostics, context);
@@ -234,20 +236,20 @@ public class ComponentValidator extends MumlValidator {
 	}
 
 	/**
-	 * The cached validation expression for the AtLeastOneMessageType constraint of '<em>Discrete Port</em>'.
+	 * The cached validation expression for the DiscretePortRequiresMessageTypes constraint of '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__AT_LEAST_ONE_MESSAGE_TYPE__EEXPRESSION = "not self.senderMessageTypes->isEmpty() or not self.receiverMessageTypes->isEmpty()";
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_MESSAGE_TYPES__EEXPRESSION = "self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()";
 
 	/**
-	 * Validates the AtLeastOneMessageType constraint of '<em>Discrete Port</em>'.
+	 * Validates the DiscretePortRequiresMessageTypes constraint of '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDiscretePort_AtLeastOneMessageType(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateDiscretePort_DiscretePortRequiresMessageTypes(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ComponentPackage.Literals.DISCRETE_PORT,
@@ -255,8 +257,8 @@ public class ComponentValidator extends MumlValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "AtLeastOneMessageType",
-				 DISCRETE_PORT__AT_LEAST_ONE_MESSAGE_TYPE__EEXPRESSION,
+				 "DiscretePortRequiresMessageTypes",
+				 DISCRETE_PORT__DISCRETE_PORT_REQUIRES_MESSAGE_TYPES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -542,7 +544,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(staticStructuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStructuredComponent_StructuredComponentNoHybridPort(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_StructuredComponentAllowsNoHybridPorts(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_ValidComponentType(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_NoCyclicComponentPartHierarchy(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_DiscreteStructuredComponentValidParts(staticStructuredComponent, diagnostics, context);
@@ -569,7 +571,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(structuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStructuredComponent_StructuredComponentNoHybridPort(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_StructuredComponentAllowsNoHybridPorts(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_ValidComponentType(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_NoCyclicComponentPartHierarchy(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_DiscreteStructuredComponentValidParts(structuredComponent, diagnostics, context);
@@ -581,20 +583,21 @@ public class ComponentValidator extends MumlValidator {
 	}
 
 	/**
-	 * The cached validation expression for the StructuredComponentNoHybridPort constraint of '<em>Structured Component</em>'.
+	 * The cached validation expression for the StructuredComponentAllowsNoHybridPorts constraint of '<em>Structured Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__STRUCTURED_COMPONENT_NO_HYBRID_PORT__EEXPRESSION = "self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))";
+	protected static final String STRUCTURED_COMPONENT__STRUCTURED_COMPONENT_ALLOWS_NO_HYBRID_PORTS__EEXPRESSION = "-- A structured component allows no hybrid ports.\r\n" +
+		"self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))";
 
 	/**
-	 * Validates the StructuredComponentNoHybridPort constraint of '<em>Structured Component</em>'.
+	 * Validates the StructuredComponentAllowsNoHybridPorts constraint of '<em>Structured Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateStructuredComponent_StructuredComponentNoHybridPort(StructuredComponent structuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateStructuredComponent_StructuredComponentAllowsNoHybridPorts(StructuredComponent structuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ComponentPackage.Literals.STRUCTURED_COMPONENT,
@@ -602,8 +605,8 @@ public class ComponentValidator extends MumlValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "StructuredComponentNoHybridPort",
-				 STRUCTURED_COMPONENT__STRUCTURED_COMPONENT_NO_HYBRID_PORT__EEXPRESSION,
+				 "StructuredComponentAllowsNoHybridPorts",
+				 STRUCTURED_COMPONENT__STRUCTURED_COMPONENT_ALLOWS_NO_HYBRID_PORTS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -748,9 +751,10 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__DISCRETE_STRUCTURED_COMPONENT_VALID_PORTS__EEXPRESSION = "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n" +
-		"\timplies (\n" +
-		"\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))\n" +
+	protected static final String STRUCTURED_COMPONENT__DISCRETE_STRUCTURED_COMPONENT_VALID_PORTS__EEXPRESSION = "-- A structured software component may only have discrete ports\r\n" +
+		"self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\r\n" +
+		"\timplies (\r\n" +
+		"\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))\r\n" +
 		"\t)";
 
 	/**
@@ -842,6 +846,15 @@ public class ComponentValidator extends MumlValidator {
 	 */
 	public boolean validateDirectedTypedPort(DirectedTypedPort directedTypedPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(directedTypedPort, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePortPart(PortPart portPart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(portPart, diagnostics, context);
 	}
 
 	/**
@@ -1035,461 +1048,7 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateAssemblyConnector(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(assemblyConnector, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyConnector_NoSelfAssembliesForSinglePortsOfSingleParts(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyConnector_ValidContinuousPortDirections(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresCoordinationProtocol(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresDifferentRoles(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsSameMessageInterfaces(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyConnector_ValidDiscreteInPortCombination(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyConnector_ValidDiscreteOutPortCombination(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyConnector_ValidDiscreteInOutPortCombination(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyConnector_ValidContinuousInPortCombination(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyConnector_ValidContinuousOutPortCombination(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyConnector_ValidHybridInPortCombination(assemblyConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAssemblyConnector_ValidHybridOutPortCombination(assemblyConnector, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the NoSelfAssembliesForSinglePortsOfSingleParts constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSEMBLY_CONNECTOR__NO_SELF_ASSEMBLIES_FOR_SINGLE_PORTS_OF_SINGLE_PARTS__EEXPRESSION = "(self.ports[0].cardinality.upperBound.value <= 1 and self.ports[0].cardinality.upperBound.value <= 1)\r\n" +
-		"implies\r\n" +
-		"self.ports[0] <> self.ports[1]";
-
-	/**
-	 * Validates the NoSelfAssembliesForSinglePortsOfSingleParts constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAssemblyConnector_NoSelfAssembliesForSinglePortsOfSingleParts(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
-				 assemblyConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "NoSelfAssembliesForSinglePortsOfSingleParts",
-				 ASSEMBLY_CONNECTOR__NO_SELF_ASSEMBLIES_FOR_SINGLE_PORTS_OF_SINGLE_PARTS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ValidContinuousPortDirections constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSEMBLY_CONNECTOR__VALID_CONTINUOUS_PORT_DIRECTIONS__EEXPRESSION = "not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()\n" +
-		"\timplies\n" +
-		"\tself.fromContinuousPort.kind <> self.toContinuousPort.kind";
-
-	/**
-	 * Validates the ValidContinuousPortDirections constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAssemblyConnector_ValidContinuousPortDirections(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
-				 assemblyConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidContinuousPortDirections",
-				 ASSEMBLY_CONNECTOR__VALID_CONTINUOUS_PORT_DIRECTIONS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the AssemblyBetweenDiscretePortsRequiresCoordinationProtocol constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_COORDINATION_PROTOCOL__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
-		"\t-- assembly between two discrete ports requires a coordination protocol\n" +
-		"\tnot self.coordinationProtocol.oclIsUndefined()\n" +
-		"else\n" +
-		"\ttrue\n" +
-		"endif";
-
-	/**
-	 * Validates the AssemblyBetweenDiscretePortsRequiresCoordinationProtocol constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresCoordinationProtocol(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
-				 assemblyConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "AssemblyBetweenDiscretePortsRequiresCoordinationProtocol",
-				 ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_COORDINATION_PROTOCOL__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PROTOCOL__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
-		"\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n" +
-		"\t\tand\n" +
-		"\t\t-- both refinements must belong to the same coordination protocol\n" +
-		"\t\tself.fromDiscretePort.refines.coordinationProtocol = self.toDiscretePort.refines.coordinationProtocol\n" +
-		"else\n" +
-		"\ttrue\n" +
-		"endif";
-
-	/**
-	 * Validates the AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
-				 assemblyConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol",
-				 ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PROTOCOL__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the AssemblyBetweenDiscretePortsRequiresDifferentRoles constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_DIFFERENT_ROLES__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
-		"\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n" +
-		"\t\tand\n" +
-		"\t\t-- both ports should have different roles (unless the coordination protocol has only one role)\n" +
-		"\t\t(self.fromDiscretePort.refines.coordinationProtocol.roles->size() = 2 implies (self.fromDiscretePort.refines.name <> self.toDiscretePort.refines.name))\n" +
-		"else\n" +
-		"\ttrue\n" +
-		"endif";
-
-	/**
-	 * Validates the AssemblyBetweenDiscretePortsRequiresDifferentRoles constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresDifferentRoles(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
-				 assemblyConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "AssemblyBetweenDiscretePortsRequiresDifferentRoles",
-				 ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_DIFFERENT_ROLES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the AssemblyBetweenDiscretePortsSameMessageInterfaces constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_SAME_MESSAGE_INTERFACES__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
-		"\t-- message interfaces must be compatible\n" +
-		"\tself.fromDiscretePort.senderMessageInterface = self.toDiscretePort.receiverMessageInterface\n" +
-		"\tand\n" +
-		"\tself.fromDiscretePort.receiverMessageInterface = self.toDiscretePort.senderMessageInterface\n" +
-		"else\n" +
-		"\ttrue\n" +
-		"endif";
-
-	/**
-	 * Validates the AssemblyBetweenDiscretePortsSameMessageInterfaces constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAssemblyConnector_AssemblyBetweenDiscretePortsSameMessageInterfaces(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
-				 assemblyConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "AssemblyBetweenDiscretePortsSameMessageInterfaces",
-				 ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_SAME_MESSAGE_INTERFACES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ValidDiscreteInPortCombination constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSEMBLY_CONNECTOR__VALID_DISCRETE_IN_PORT_COMBINATION__EEXPRESSION = "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort\n" +
-		"\timplies (\n" +
-		"\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort\n" +
-		"\t)";
-
-	/**
-	 * Validates the ValidDiscreteInPortCombination constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAssemblyConnector_ValidDiscreteInPortCombination(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
-				 assemblyConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidDiscreteInPortCombination",
-				 ASSEMBLY_CONNECTOR__VALID_DISCRETE_IN_PORT_COMBINATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ValidDiscreteOutPortCombination constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSEMBLY_CONNECTOR__VALID_DISCRETE_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort\n" +
-		"\timplies (\n" +
-		"\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort\n" +
-		"\t)";
-
-	/**
-	 * Validates the ValidDiscreteOutPortCombination constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAssemblyConnector_ValidDiscreteOutPortCombination(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
-				 assemblyConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidDiscreteOutPortCombination",
-				 ASSEMBLY_CONNECTOR__VALID_DISCRETE_OUT_PORT_COMBINATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ValidDiscreteInOutPortCombination constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSEMBLY_CONNECTOR__VALID_DISCRETE_IN_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInOutPort\n" +
-		"\timplies (\n" +
-		"\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInOutPort\n" +
-		"\t)";
-
-	/**
-	 * Validates the ValidDiscreteInOutPortCombination constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAssemblyConnector_ValidDiscreteInOutPortCombination(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
-				 assemblyConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidDiscreteInOutPortCombination",
-				 ASSEMBLY_CONNECTOR__VALID_DISCRETE_IN_OUT_PORT_COMBINATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ValidContinuousInPortCombination constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSEMBLY_CONNECTOR__VALID_CONTINUOUS_IN_PORT_COMBINATION__EEXPRESSION = "not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort\n" +
-		"\timplies (\n" +
-		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort\n" +
-		"\t\tor\n" +
-		"\t\tnot self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort\n" +
-		"\t)";
-
-	/**
-	 * Validates the ValidContinuousInPortCombination constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAssemblyConnector_ValidContinuousInPortCombination(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
-				 assemblyConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidContinuousInPortCombination",
-				 ASSEMBLY_CONNECTOR__VALID_CONTINUOUS_IN_PORT_COMBINATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ValidContinuousOutPortCombination constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSEMBLY_CONNECTOR__VALID_CONTINUOUS_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort\n" +
-		"\timplies (\n" +
-		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort\n" +
-		"\t\tor\n" +
-		"\t\tnot self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridInPort\n" +
-		"\t)";
-
-	/**
-	 * Validates the ValidContinuousOutPortCombination constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAssemblyConnector_ValidContinuousOutPortCombination(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
-				 assemblyConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidContinuousOutPortCombination",
-				 ASSEMBLY_CONNECTOR__VALID_CONTINUOUS_OUT_PORT_COMBINATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ValidHybridInPortCombination constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSEMBLY_CONNECTOR__VALID_HYBRID_IN_PORT_COMBINATION__EEXPRESSION = "not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort\n" +
-		"\timplies (\n" +
-		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort\n" +
-		"\t)";
-
-	/**
-	 * Validates the ValidHybridInPortCombination constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAssemblyConnector_ValidHybridInPortCombination(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
-				 assemblyConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidHybridInPortCombination",
-				 ASSEMBLY_CONNECTOR__VALID_HYBRID_IN_PORT_COMBINATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ValidHybridOutPortCombination constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ASSEMBLY_CONNECTOR__VALID_HYBRID_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridOutPort\n" +
-		"\timplies (\n" +
-		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort\n" +
-		"\t)";
-
-	/**
-	 * Validates the ValidHybridOutPortCombination constraint of '<em>Assembly Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAssemblyConnector_ValidHybridOutPortCombination(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
-				 assemblyConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidHybridOutPortCombination",
-				 ASSEMBLY_CONNECTOR__VALID_HYBRID_OUT_PORT_COMBINATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return validate_EveryDefaultConstraint(assemblyConnector, diagnostics, context);
 	}
 
 	/**
@@ -1498,429 +1057,7 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateDelegationConnector(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(delegationConnector, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_ValidContinuousPortDirections(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenContinuousPortsRequiresSameDataType(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDiscretePortsRequiresSameRoles(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_ValidDiscreteInPortCombination(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_ValidDiscreteOutPortCombination(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_ValidDiscreteInOutPortCombination(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_ValidContinuousInPortCombination(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_ValidContinuousOutPortCombination(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_ValidHybridInPortCombination(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_ValidHybridOutPortCombination(delegationConnector, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the ValidContinuousPortDirections constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DELEGATION_CONNECTOR__VALID_CONTINUOUS_PORT_DIRECTIONS__EEXPRESSION = "not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()\n" +
-		"\timplies\n" +
-		"\tself.fromContinuousPort.kind = self.toContinuousPort.kind";
-
-	/**
-	 * Validates the ValidContinuousPortDirections constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDelegationConnector_ValidContinuousPortDirections(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
-				 delegationConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidContinuousPortDirections",
-				 DELEGATION_CONNECTOR__VALID_CONTINUOUS_PORT_DIRECTIONS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the DelegationBetweenContinuousPortsRequiresSameDataType constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DELEGATION_CONNECTOR__DELEGATION_BETWEEN_CONTINUOUS_PORTS_REQUIRES_SAME_DATA_TYPE__EEXPRESSION = "not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()\n" +
-		"\timplies\n" +
-		"\tself.fromContinuousPort.type = self.toContinuousPort.type";
-
-	/**
-	 * Validates the DelegationBetweenContinuousPortsRequiresSameDataType constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDelegationConnector_DelegationBetweenContinuousPortsRequiresSameDataType(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
-				 delegationConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "DelegationBetweenContinuousPortsRequiresSameDataType",
-				 DELEGATION_CONNECTOR__DELEGATION_BETWEEN_CONTINUOUS_PORTS_REQUIRES_SAME_DATA_TYPE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PROTOCOL__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
-		"\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n" +
-		"\t\tand\n" +
-		"\t\t-- both refinements must belong to the same coordination protocol\n" +
-		"\t\tself.fromDiscretePort.refines.coordinationProtocol = self.toDiscretePort.refines.coordinationProtocol\n" +
-		"else\n" +
-		"\ttrue\n" +
-		"endif";
-
-	/**
-	 * Validates the DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDelegationConnector_DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
-				 delegationConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol",
-				 DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PROTOCOL__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the DelegationBetweenDiscretePortsRequiresSameRoles constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_ROLES__EEXPRESSION = "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n" +
-		"\tnot self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()\n" +
-		"\t\tand\n" +
-		"\t\t-- both ports should have the same roles\n" +
-		"\t\tself.fromDiscretePort.refines.name = self.toDiscretePort.refines.name\n" +
-		"else\n" +
-		"\ttrue\n" +
-		"endif";
-
-	/**
-	 * Validates the DelegationBetweenDiscretePortsRequiresSameRoles constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDelegationConnector_DelegationBetweenDiscretePortsRequiresSameRoles(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
-				 delegationConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "DelegationBetweenDiscretePortsRequiresSameRoles",
-				 DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_ROLES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DELEGATION_CONNECTOR__DISCRETE_MULTI_PORT_DELEGATION_REQUIRES_MULTI_PORT_OR_SINGLE_PORT_AND_MULTI_PART__EEXPRESSION = "not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined()\n" +
-		"and self.fromPort.isMultiPort\n" +
-		"\timplies (\n" +
-		"\t\t-- the target port is a multi port\n" +
-		"\t\tself.toPort.isMultiPort\n" +
-		"\t\tor\n" +
-		"\t\t-- the target part is a multi part\n" +
-		"\t\tself.componentPart.isMultiPart\n" +
-		"\t)";
-
-	/**
-	 * Validates the DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDelegationConnector_DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
-				 delegationConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart",
-				 DELEGATION_CONNECTOR__DISCRETE_MULTI_PORT_DELEGATION_REQUIRES_MULTI_PORT_OR_SINGLE_PORT_AND_MULTI_PART__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ValidDiscreteInPortCombination constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DELEGATION_CONNECTOR__VALID_DISCRETE_IN_PORT_COMBINATION__EEXPRESSION = "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort\n" +
-		"\timplies (\n" +
-		"\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort\n" +
-		"\t)";
-
-	/**
-	 * Validates the ValidDiscreteInPortCombination constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDelegationConnector_ValidDiscreteInPortCombination(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
-				 delegationConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidDiscreteInPortCombination",
-				 DELEGATION_CONNECTOR__VALID_DISCRETE_IN_PORT_COMBINATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ValidDiscreteOutPortCombination constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DELEGATION_CONNECTOR__VALID_DISCRETE_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort\n" +
-		"\timplies (\n" +
-		"\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort\n" +
-		"\t)";
-
-	/**
-	 * Validates the ValidDiscreteOutPortCombination constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDelegationConnector_ValidDiscreteOutPortCombination(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
-				 delegationConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidDiscreteOutPortCombination",
-				 DELEGATION_CONNECTOR__VALID_DISCRETE_OUT_PORT_COMBINATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ValidDiscreteInOutPortCombination constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DELEGATION_CONNECTOR__VALID_DISCRETE_IN_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInOutPort\n" +
-		"\timplies (\n" +
-		"\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInOutPort\n" +
-		"\t)";
-
-	/**
-	 * Validates the ValidDiscreteInOutPortCombination constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDelegationConnector_ValidDiscreteInOutPortCombination(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
-				 delegationConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidDiscreteInOutPortCombination",
-				 DELEGATION_CONNECTOR__VALID_DISCRETE_IN_OUT_PORT_COMBINATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ValidContinuousInPortCombination constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DELEGATION_CONNECTOR__VALID_CONTINUOUS_IN_PORT_COMBINATION__EEXPRESSION = "not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort\r\n" +
-		"\timplies (\r\n" +
-		"\t\t(not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort)\r\n" +
-		"\t\tor\r\n" +
-		"\t\t(not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridInPort)\r\n" +
-		"\t)";
-
-	/**
-	 * Validates the ValidContinuousInPortCombination constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDelegationConnector_ValidContinuousInPortCombination(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
-				 delegationConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidContinuousInPortCombination",
-				 DELEGATION_CONNECTOR__VALID_CONTINUOUS_IN_PORT_COMBINATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ValidContinuousOutPortCombination constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DELEGATION_CONNECTOR__VALID_CONTINUOUS_OUT_PORT_COMBINATION__EEXPRESSION = "-- not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) \r\n" +
-		"\r\n" +
-		"not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort\r\n" +
-		"\timplies (\r\n" +
-		"\t\t(not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort)\r\n" +
-		"\t\tor\r\n" +
-		"\t\t(not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort)\r\n" +
-		"\t)";
-
-	/**
-	 * Validates the ValidContinuousOutPortCombination constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDelegationConnector_ValidContinuousOutPortCombination(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
-				 delegationConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidContinuousOutPortCombination",
-				 DELEGATION_CONNECTOR__VALID_CONTINUOUS_OUT_PORT_COMBINATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ValidHybridInPortCombination constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DELEGATION_CONNECTOR__VALID_HYBRID_IN_PORT_COMBINATION__EEXPRESSION = "not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort\r\n" +
-		"\timplies (\r\n" +
-		"\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort\r\n" +
-		"\t)";
-
-	/**
-	 * Validates the ValidHybridInPortCombination constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDelegationConnector_ValidHybridInPortCombination(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
-				 delegationConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidHybridInPortCombination",
-				 DELEGATION_CONNECTOR__VALID_HYBRID_IN_PORT_COMBINATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ValidHybridOutPortCombination constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DELEGATION_CONNECTOR__VALID_HYBRID_OUT_PORT_COMBINATION__EEXPRESSION = "not self.fromHybridPort.oclIsUndefined() \r\n" +
-		"and \r\n" +
-		"self.fromHybridPort.isHybridOutPort \r\n" +
-		"implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) ";
-
-	/**
-	 * Validates the ValidHybridOutPortCombination constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDelegationConnector_ValidHybridOutPortCombination(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
-				 delegationConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ValidHybridOutPortCombination",
-				 DELEGATION_CONNECTOR__VALID_HYBRID_OUT_PORT_COMBINATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return validate_EveryDefaultConstraint(delegationConnector, diagnostics, context);
 	}
 
 	/**
@@ -1938,7 +1075,48 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateCoordinationProtocolOccurrence(CoordinationProtocolOccurrence coordinationProtocolOccurrence, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(coordinationProtocolOccurrence, diagnostics, context);
+		if (!validate_NoCircularContainment(coordinationProtocolOccurrence, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(coordinationProtocolOccurrence, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(coordinationProtocolOccurrence, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(coordinationProtocolOccurrence, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(coordinationProtocolOccurrence, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(coordinationProtocolOccurrence, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(coordinationProtocolOccurrence, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(coordinationProtocolOccurrence, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(coordinationProtocolOccurrence, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCoordinationProtocolOccurrence_OnlyDiscretePortParts(coordinationProtocolOccurrence, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the OnlyDiscretePortParts constraint of '<em>Coordination Protocol Occurrence</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COORDINATION_PROTOCOL_OCCURRENCE__ONLY_DISCRETE_PORT_PARTS__EEXPRESSION = "not self.portParts.oclIsUndefined()\r\n" +
+		"implies\r\n" +
+		"self.portParts->forAll(isTypeOf(DiscretePort))";
+
+	/**
+	 * Validates the OnlyDiscretePortParts constraint of '<em>Coordination Protocol Occurrence</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCoordinationProtocolOccurrence_OnlyDiscretePortParts(CoordinationProtocolOccurrence coordinationProtocolOccurrence, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.COORDINATION_PROTOCOL_OCCURRENCE,
+				 coordinationProtocolOccurrence,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "OnlyDiscretePortParts",
+				 COORDINATION_PROTOCOL_OCCURRENCE__ONLY_DISCRETE_PORT_PARTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -1955,7 +1133,7 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateContinuousPortDirectionKind(ContinuousPortDirectionKind continuousPortDirectionKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validatePortDirectionKind(PortDirectionKind portDirectionKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

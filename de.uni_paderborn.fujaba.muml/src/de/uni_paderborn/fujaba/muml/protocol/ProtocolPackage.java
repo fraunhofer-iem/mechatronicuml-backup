@@ -45,7 +45,7 @@ public interface ProtocolPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/protocol/0.3.17";
+	String eNS_URI = "http://www.fujaba.de/muml/protocol/0.3.18";
 
 	/**
 	 * The package namespace name.
@@ -128,22 +128,13 @@ public interface ProtocolPackage extends EPackage {
 	int ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_CONNECTOR__ROLES = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Role Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR_FEATURE_COUNT = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 3;
+	int ROLE_CONNECTOR_FEATURE_COUNT = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.CoordinationProtocolImpl <em>Coordination Protocol</em>}' class.
@@ -400,13 +391,22 @@ public interface ProtocolPackage extends EPackage {
 	int ROLE__RECEIVER_MESSAGE_BUFFER = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__ROLES = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 5;
+	int ROLE_FEATURE_COUNT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.MessageBufferImpl <em>Message Buffer</em>}' class.
@@ -597,17 +597,6 @@ public interface ProtocolPackage extends EPackage {
 	EReference getRoleConnector_ConnectorQualityOfServiceAssumptions();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector#getRoles <em>Roles</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Roles</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.protocol.RoleConnector#getRoles()
-	 * @see #getRoleConnector()
-	 * @generated
-	 */
-	EReference getRoleConnector_Roles();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol <em>Coordination Protocol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -714,6 +703,17 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRole_ReceiverMessageBuffer();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.protocol.Role#getRoles <em>Roles</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Roles</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.Role#getRoles()
+	 * @see #getRole()
+	 * @generated
+	 */
+	EReference getRole_Roles();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.protocol.MessageBuffer <em>Message Buffer</em>}'.
@@ -850,14 +850,6 @@ public interface ProtocolPackage extends EPackage {
 		EReference ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = eINSTANCE.getRoleConnector_ConnectorQualityOfServiceAssumptions();
 
 		/**
-		 * The meta object literal for the '<em><b>Roles</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROLE_CONNECTOR__ROLES = eINSTANCE.getRoleConnector_Roles();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.CoordinationProtocolImpl <em>Coordination Protocol</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -940,6 +932,14 @@ public interface ProtocolPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROLE__RECEIVER_MESSAGE_BUFFER = eINSTANCE.getRole_ReceiverMessageBuffer();
+
+		/**
+		 * The meta object literal for the '<em><b>Roles</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE__ROLES = eINSTANCE.getRole_Roles();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.MessageBufferImpl <em>Message Buffer</em>}' class.

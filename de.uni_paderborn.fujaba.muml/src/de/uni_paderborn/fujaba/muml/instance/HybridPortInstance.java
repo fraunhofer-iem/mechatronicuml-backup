@@ -22,5 +22,5 @@ package de.uni_paderborn.fujaba.muml.instance;
  * @model
  * @generated
  */
-public interface HybridPortInstance extends DiscretePortInstance, ContinuousPortInstance {
+public interface HybridPortInstance extends PortInstance {
 } // HybridPortInstance

@@ -6,17 +6,27 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.storydriven.core.impl.NamedElementImpl;
+import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.Extension;
 
 import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.PrioritizedElement;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
@@ -29,45 +39,68 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getPriority <em>Priority</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getStatechart <em>Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getAnnotations <em>Annotation</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getExtensions <em>Extension</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getEmbeddedStatechart <em>Embedded Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getParentState <em>Parent State</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#isGmfHistory <em>Gmf History</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class RegionImpl extends NamedElementImpl implements Region {
+public class RegionImpl extends PrioritizedElementImpl implements Region {
 	/**
-	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+	 * The cached value of the '{@link #getAnnotations() <em>Annotation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPriority()
+	 * @see #getAnnotations()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int PRIORITY_EDEFAULT = 0;
+	protected EList<EAnnotation> annotations;
 
 	/**
-	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
+	 * The cached value of the '{@link #getExtensions() <em>Extension</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPriority()
+	 * @see #getExtensions()
 	 * @generated
 	 * @ordered
 	 */
-	protected int priority = PRIORITY_EDEFAULT;
+	protected EList<Extension> extensions;
 
 	/**
-	 * The cached value of the '{@link #getStatechart() <em>Statechart</em>}' containment reference.
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatechart()
+	 * @see #getComment()
 	 * @generated
 	 * @ordered
 	 */
-	protected RealtimeStatechart statechart;
+	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
+
+	/**
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String comment = COMMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getEmbeddedStatechart() <em>Embedded Statechart</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmbeddedStatechart()
+	 * @generated
+	 * @ordered
+	 */
+	protected RealtimeStatechart embeddedStatechart;
 
 	/**
 	 * The cached setting delegate for the '{@link #isGmfHistory() <em>Gmf History</em>}' attribute.
@@ -80,6 +113,16 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	protected EStructuralFeature.Internal.SettingDelegate GMF_HISTORY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REGION__GMF_HISTORY).getSettingDelegate();
 
 	/**
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REGION__NAME).getSettingDelegate();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -90,7 +133,7 @@ public class RegionImpl extends NamedElementImpl implements Region {
 				this, RealtimestatechartPackage.Literals.REGION__GMF_HISTORY);
 		portsDerivedAdapter
 				.addNavigatedDependency(
-						RealtimestatechartPackage.Literals.REGION__STATECHART,
+						RealtimestatechartPackage.Literals.REGION__EMBEDDED_STATECHART,
 						RealtimestatechartPackage.Literals.REALTIME_STATECHART__HISTORY);
 	}
 
@@ -109,8 +152,11 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getPriority() {
-		return priority;
+	public EList<EAnnotation> getAnnotations() {
+		if (annotations == null) {
+			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this, RealtimestatechartPackage.REGION__ANNOTATION);
+		}
+		return annotations;
 	}
 
 	/**
@@ -118,11 +164,32 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPriority(int newPriority) {
-		int oldPriority = priority;
-		priority = newPriority;
+	public EList<Extension> getExtensions() {
+		if (extensions == null) {
+			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, RealtimestatechartPackage.REGION__EXTENSION, CorePackage.EXTENSION__EXTENDABLE_BASE);
+		}
+		return extensions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REGION__PRIORITY, oldPriority, priority));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REGION__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -130,8 +197,8 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RealtimeStatechart getStatechart() {
-		return statechart;
+	public RealtimeStatechart getEmbeddedStatechart() {
+		return embeddedStatechart;
 	}
 
 	/**
@@ -139,11 +206,11 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatechart(RealtimeStatechart newStatechart, NotificationChain msgs) {
-		RealtimeStatechart oldStatechart = statechart;
-		statechart = newStatechart;
+	public NotificationChain basicSetEmbeddedStatechart(RealtimeStatechart newEmbeddedStatechart, NotificationChain msgs) {
+		RealtimeStatechart oldEmbeddedStatechart = embeddedStatechart;
+		embeddedStatechart = newEmbeddedStatechart;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REGION__STATECHART, oldStatechart, newStatechart);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REGION__EMBEDDED_STATECHART, oldEmbeddedStatechart, newEmbeddedStatechart);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -154,18 +221,18 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(RealtimeStatechart newStatechart) {
-		if (newStatechart != statechart) {
+	public void setEmbeddedStatechart(RealtimeStatechart newEmbeddedStatechart) {
+		if (newEmbeddedStatechart != embeddedStatechart) {
 			NotificationChain msgs = null;
-			if (statechart != null)
-				msgs = ((InternalEObject)statechart).eInverseRemove(this, RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION, RealtimeStatechart.class, msgs);
-			if (newStatechart != null)
-				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION, RealtimeStatechart.class, msgs);
-			msgs = basicSetStatechart(newStatechart, msgs);
+			if (embeddedStatechart != null)
+				msgs = ((InternalEObject)embeddedStatechart).eInverseRemove(this, RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION, RealtimeStatechart.class, msgs);
+			if (newEmbeddedStatechart != null)
+				msgs = ((InternalEObject)newEmbeddedStatechart).eInverseAdd(this, RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION, RealtimeStatechart.class, msgs);
+			msgs = basicSetEmbeddedStatechart(newEmbeddedStatechart, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REGION__STATECHART, newStatechart, newStatechart));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REGION__EMBEDDED_STATECHART, newEmbeddedStatechart, newEmbeddedStatechart));
 	}
 
 	/**
@@ -201,7 +268,7 @@ public class RegionImpl extends NamedElementImpl implements Region {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newParentState != null)
-				msgs = ((InternalEObject)newParentState).eInverseAdd(this, RealtimestatechartPackage.STATE__REGIONS, State.class, msgs);
+				msgs = ((InternalEObject)newParentState).eInverseAdd(this, RealtimestatechartPackage.STATE__EMBEDDED_REGIONS, State.class, msgs);
 			msgs = basicSetParentState(newParentState, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -223,13 +290,78 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetName() {
+		return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Extension getExtension(EClass type) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Extension provideExtension(EClass type) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAnnotation getAnnotation(String source) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAnnotation provideAnnotation(String source) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__STATECHART:
-				if (statechart != null)
-					msgs = ((InternalEObject)statechart).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.REGION__STATECHART, null, msgs);
-				return basicSetStatechart((RealtimeStatechart)otherEnd, msgs);
+			case RealtimestatechartPackage.REGION__EXTENSION:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtensions()).basicAdd(otherEnd, msgs);
+			case RealtimestatechartPackage.REGION__EMBEDDED_STATECHART:
+				if (embeddedStatechart != null)
+					msgs = ((InternalEObject)embeddedStatechart).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.REGION__EMBEDDED_STATECHART, null, msgs);
+				return basicSetEmbeddedStatechart((RealtimeStatechart)otherEnd, msgs);
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -246,8 +378,12 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__STATECHART:
-				return basicSetStatechart(null, msgs);
+			case RealtimestatechartPackage.REGION__ANNOTATION:
+				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.REGION__EXTENSION:
+				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.REGION__EMBEDDED_STATECHART:
+				return basicSetEmbeddedStatechart(null, msgs);
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				return basicSetParentState(null, msgs);
 		}
@@ -263,7 +399,7 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATE__REGIONS, State.class, msgs);
+				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.STATE__EMBEDDED_REGIONS, State.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -276,14 +412,20 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__PRIORITY:
-				return getPriority();
-			case RealtimestatechartPackage.REGION__STATECHART:
-				return getStatechart();
+			case RealtimestatechartPackage.REGION__ANNOTATION:
+				return getAnnotations();
+			case RealtimestatechartPackage.REGION__EXTENSION:
+				return getExtensions();
+			case RealtimestatechartPackage.REGION__COMMENT:
+				return getComment();
+			case RealtimestatechartPackage.REGION__EMBEDDED_STATECHART:
+				return getEmbeddedStatechart();
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				return getParentState();
 			case RealtimestatechartPackage.REGION__GMF_HISTORY:
 				return isGmfHistory();
+			case RealtimestatechartPackage.REGION__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -297,11 +439,19 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__PRIORITY:
-				setPriority((Integer)newValue);
+			case RealtimestatechartPackage.REGION__ANNOTATION:
+				getAnnotations().clear();
+				getAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
 				return;
-			case RealtimestatechartPackage.REGION__STATECHART:
-				setStatechart((RealtimeStatechart)newValue);
+			case RealtimestatechartPackage.REGION__EXTENSION:
+				getExtensions().clear();
+				getExtensions().addAll((Collection<? extends Extension>)newValue);
+				return;
+			case RealtimestatechartPackage.REGION__COMMENT:
+				setComment((String)newValue);
+				return;
+			case RealtimestatechartPackage.REGION__EMBEDDED_STATECHART:
+				setEmbeddedStatechart((RealtimeStatechart)newValue);
 				return;
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				setParentState((State)newValue);
@@ -318,11 +468,17 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__PRIORITY:
-				setPriority(PRIORITY_EDEFAULT);
+			case RealtimestatechartPackage.REGION__ANNOTATION:
+				getAnnotations().clear();
 				return;
-			case RealtimestatechartPackage.REGION__STATECHART:
-				setStatechart((RealtimeStatechart)null);
+			case RealtimestatechartPackage.REGION__EXTENSION:
+				getExtensions().clear();
+				return;
+			case RealtimestatechartPackage.REGION__COMMENT:
+				setComment(COMMENT_EDEFAULT);
+				return;
+			case RealtimestatechartPackage.REGION__EMBEDDED_STATECHART:
+				setEmbeddedStatechart((RealtimeStatechart)null);
 				return;
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				setParentState((State)null);
@@ -339,14 +495,20 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.REGION__PRIORITY:
-				return priority != PRIORITY_EDEFAULT;
-			case RealtimestatechartPackage.REGION__STATECHART:
-				return statechart != null;
+			case RealtimestatechartPackage.REGION__ANNOTATION:
+				return annotations != null && !annotations.isEmpty();
+			case RealtimestatechartPackage.REGION__EXTENSION:
+				return extensions != null && !extensions.isEmpty();
+			case RealtimestatechartPackage.REGION__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			case RealtimestatechartPackage.REGION__EMBEDDED_STATECHART:
+				return embeddedStatechart != null;
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				return getParentState() != null;
 			case RealtimestatechartPackage.REGION__GMF_HISTORY:
 				return GMF_HISTORY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case RealtimestatechartPackage.REGION__NAME:
+				return isSetName();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -358,9 +520,21 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == PrioritizedElement.class) {
+		if (baseClass == EObject.class) {
 			switch (derivedFeatureID) {
-				case RealtimestatechartPackage.REGION__PRIORITY: return RealtimestatechartPackage.PRIORITIZED_ELEMENT__PRIORITY;
+				default: return -1;
+			}
+		}
+		if (baseClass == ExtendableElement.class) {
+			switch (derivedFeatureID) {
+				case RealtimestatechartPackage.REGION__ANNOTATION: return CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+				case RealtimestatechartPackage.REGION__EXTENSION: return CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+				default: return -1;
+			}
+		}
+		if (baseClass == CommentableElement.class) {
+			switch (derivedFeatureID) {
+				case RealtimestatechartPackage.REGION__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 				default: return -1;
 			}
 		}
@@ -374,9 +548,21 @@ public class RegionImpl extends NamedElementImpl implements Region {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == PrioritizedElement.class) {
+		if (baseClass == EObject.class) {
 			switch (baseFeatureID) {
-				case RealtimestatechartPackage.PRIORITIZED_ELEMENT__PRIORITY: return RealtimestatechartPackage.REGION__PRIORITY;
+				default: return -1;
+			}
+		}
+		if (baseClass == ExtendableElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION: return RealtimestatechartPackage.REGION__ANNOTATION;
+				case CorePackage.EXTENDABLE_ELEMENT__EXTENSION: return RealtimestatechartPackage.REGION__EXTENSION;
+				default: return -1;
+			}
+		}
+		if (baseClass == CommentableElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return RealtimestatechartPackage.REGION__COMMENT;
 				default: return -1;
 			}
 		}
@@ -393,8 +579,8 @@ public class RegionImpl extends NamedElementImpl implements Region {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (priority: ");
-		result.append(priority);
+		result.append(" (comment: ");
+		result.append(comment);
 		result.append(')');
 		return result.toString();
 	}

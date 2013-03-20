@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.ConnectionPoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.ExitEvent;
@@ -29,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.StateEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
 
@@ -39,7 +39,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getRegions <em>Regions</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getEmbeddedRegions <em>Embedded Regions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getDoEvent <em>Do Event</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getExitEvent <em>Exit Event</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getEntryEvent <em>Entry Event</em>}</li>
@@ -51,7 +51,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getEvents <em>Events</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getConnectionPoints <em>Connection Points</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#isSimple <em>Simple</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getStatechart <em>Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getParentStatechart <em>Parent Statechart</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,14 +59,14 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
  */
 public class StateImpl extends VertexImpl implements State {
 	/**
-	 * The cached value of the '{@link #getRegions() <em>Regions</em>}' containment reference list.
+	 * The cached value of the '{@link #getEmbeddedRegions() <em>Embedded Regions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRegions()
+	 * @see #getEmbeddedRegions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Region> regions;
+	protected EList<Region> embeddedRegions;
 
 	/**
 	 * The cached value of the '{@link #getDoEvent() <em>Do Event</em>}' containment reference.
@@ -196,7 +196,7 @@ public class StateImpl extends VertexImpl implements State {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ConnectionPoint> connectionPoints;
+	protected EList<StateConnectionPoint> connectionPoints;
 
 	/**
 	 * The cached setting delegate for the '{@link #isSimple() <em>Simple</em>}' attribute.
@@ -232,11 +232,11 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Region> getRegions() {
-		if (regions == null) {
-			regions = new EObjectContainmentWithInverseEList<Region>(Region.class, this, RealtimestatechartPackage.STATE__REGIONS, RealtimestatechartPackage.REGION__PARENT_STATE);
+	public EList<Region> getEmbeddedRegions() {
+		if (embeddedRegions == null) {
+			embeddedRegions = new EObjectContainmentWithInverseEList<Region>(Region.class, this, RealtimestatechartPackage.STATE__EMBEDDED_REGIONS, RealtimestatechartPackage.REGION__PARENT_STATE);
 		}
-		return regions;
+		return embeddedRegions;
 	}
 
 	/**
@@ -407,9 +407,9 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ConnectionPoint> getConnectionPoints() {
+	public EList<StateConnectionPoint> getConnectionPoints() {
 		if (connectionPoints == null) {
-			connectionPoints = new EObjectContainmentWithInverseEList<ConnectionPoint>(ConnectionPoint.class, this, RealtimestatechartPackage.STATE__CONNECTION_POINTS, RealtimestatechartPackage.CONNECTION_POINT__STATE);
+			connectionPoints = new EObjectContainmentWithInverseEList<StateConnectionPoint>(StateConnectionPoint.class, this, RealtimestatechartPackage.STATE__CONNECTION_POINTS, RealtimestatechartPackage.STATE_CONNECTION_POINT__STATE);
 		}
 		return connectionPoints;
 	}
@@ -437,8 +437,8 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RealtimeStatechart getStatechart() {
-		if (eContainerFeatureID() != RealtimestatechartPackage.STATE__STATECHART) return null;
+	public RealtimeStatechart getParentStatechart() {
+		if (eContainerFeatureID() != RealtimestatechartPackage.STATE__PARENT_STATECHART) return null;
 		return (RealtimeStatechart)eContainer();
 	}
 
@@ -447,8 +447,8 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatechart(RealtimeStatechart newStatechart, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newStatechart, RealtimestatechartPackage.STATE__STATECHART, msgs);
+	public NotificationChain basicSetParentStatechart(RealtimeStatechart newParentStatechart, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newParentStatechart, RealtimestatechartPackage.STATE__PARENT_STATECHART, msgs);
 		return msgs;
 	}
 
@@ -457,20 +457,20 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatechart(RealtimeStatechart newStatechart) {
-		if (newStatechart != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.STATE__STATECHART && newStatechart != null)) {
-			if (EcoreUtil.isAncestor(this, newStatechart))
+	public void setParentStatechart(RealtimeStatechart newParentStatechart) {
+		if (newParentStatechart != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.STATE__PARENT_STATECHART && newParentStatechart != null)) {
+			if (EcoreUtil.isAncestor(this, newParentStatechart))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newStatechart != null)
-				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, RealtimestatechartPackage.REALTIME_STATECHART__STATES, RealtimeStatechart.class, msgs);
-			msgs = basicSetStatechart(newStatechart, msgs);
+			if (newParentStatechart != null)
+				msgs = ((InternalEObject)newParentStatechart).eInverseAdd(this, RealtimestatechartPackage.REALTIME_STATECHART__STATES, RealtimeStatechart.class, msgs);
+			msgs = basicSetParentStatechart(newParentStatechart, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.STATE__STATECHART, newStatechart, newStatechart));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.STATE__PARENT_STATECHART, newParentStatechart, newParentStatechart));
 	}
 
 	/**
@@ -489,7 +489,7 @@ public class StateImpl extends VertexImpl implements State {
 	 * @generated
 	 */
 	public boolean hasRegionOfPriority(int priority) {
-		for (Region region : getRegions()) {
+		for (Region region : getEmbeddedRegions()) {
 			if (region.getPriority() == priority) {
 				return true;
 			}
@@ -569,16 +569,16 @@ public class StateImpl extends VertexImpl implements State {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.STATE__REGIONS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRegions()).basicAdd(otherEnd, msgs);
+			case RealtimestatechartPackage.STATE__EMBEDDED_REGIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEmbeddedRegions()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.STATE__CHANNELS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChannels()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.STATE__CONNECTION_POINTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectionPoints()).basicAdd(otherEnd, msgs);
-			case RealtimestatechartPackage.STATE__STATECHART:
+			case RealtimestatechartPackage.STATE__PARENT_STATECHART:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetStatechart((RealtimeStatechart)otherEnd, msgs);
+				return basicSetParentStatechart((RealtimeStatechart)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -591,8 +591,8 @@ public class StateImpl extends VertexImpl implements State {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RealtimestatechartPackage.STATE__REGIONS:
-				return ((InternalEList<?>)getRegions()).basicRemove(otherEnd, msgs);
+			case RealtimestatechartPackage.STATE__EMBEDDED_REGIONS:
+				return ((InternalEList<?>)getEmbeddedRegions()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.STATE__DO_EVENT:
 				return basicSetDoEvent(null, msgs);
 			case RealtimestatechartPackage.STATE__EXIT_EVENT:
@@ -605,8 +605,8 @@ public class StateImpl extends VertexImpl implements State {
 				return ((InternalEList<?>)getChannels()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.STATE__CONNECTION_POINTS:
 				return ((InternalEList<?>)getConnectionPoints()).basicRemove(otherEnd, msgs);
-			case RealtimestatechartPackage.STATE__STATECHART:
-				return basicSetStatechart(null, msgs);
+			case RealtimestatechartPackage.STATE__PARENT_STATECHART:
+				return basicSetParentStatechart(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -619,7 +619,7 @@ public class StateImpl extends VertexImpl implements State {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case RealtimestatechartPackage.STATE__STATECHART:
+			case RealtimestatechartPackage.STATE__PARENT_STATECHART:
 				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.REALTIME_STATECHART__STATES, RealtimeStatechart.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -633,8 +633,8 @@ public class StateImpl extends VertexImpl implements State {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RealtimestatechartPackage.STATE__REGIONS:
-				return getRegions();
+			case RealtimestatechartPackage.STATE__EMBEDDED_REGIONS:
+				return getEmbeddedRegions();
 			case RealtimestatechartPackage.STATE__DO_EVENT:
 				return getDoEvent();
 			case RealtimestatechartPackage.STATE__EXIT_EVENT:
@@ -657,8 +657,8 @@ public class StateImpl extends VertexImpl implements State {
 				return getConnectionPoints();
 			case RealtimestatechartPackage.STATE__SIMPLE:
 				return isSimple();
-			case RealtimestatechartPackage.STATE__STATECHART:
-				return getStatechart();
+			case RealtimestatechartPackage.STATE__PARENT_STATECHART:
+				return getParentStatechart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -672,9 +672,9 @@ public class StateImpl extends VertexImpl implements State {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RealtimestatechartPackage.STATE__REGIONS:
-				getRegions().clear();
-				getRegions().addAll((Collection<? extends Region>)newValue);
+			case RealtimestatechartPackage.STATE__EMBEDDED_REGIONS:
+				getEmbeddedRegions().clear();
+				getEmbeddedRegions().addAll((Collection<? extends Region>)newValue);
 				return;
 			case RealtimestatechartPackage.STATE__DO_EVENT:
 				setDoEvent((DoEvent)newValue);
@@ -704,10 +704,10 @@ public class StateImpl extends VertexImpl implements State {
 				return;
 			case RealtimestatechartPackage.STATE__CONNECTION_POINTS:
 				getConnectionPoints().clear();
-				getConnectionPoints().addAll((Collection<? extends ConnectionPoint>)newValue);
+				getConnectionPoints().addAll((Collection<? extends StateConnectionPoint>)newValue);
 				return;
-			case RealtimestatechartPackage.STATE__STATECHART:
-				setStatechart((RealtimeStatechart)newValue);
+			case RealtimestatechartPackage.STATE__PARENT_STATECHART:
+				setParentStatechart((RealtimeStatechart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -721,8 +721,8 @@ public class StateImpl extends VertexImpl implements State {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.STATE__REGIONS:
-				getRegions().clear();
+			case RealtimestatechartPackage.STATE__EMBEDDED_REGIONS:
+				getEmbeddedRegions().clear();
 				return;
 			case RealtimestatechartPackage.STATE__DO_EVENT:
 				setDoEvent((DoEvent)null);
@@ -751,8 +751,8 @@ public class StateImpl extends VertexImpl implements State {
 			case RealtimestatechartPackage.STATE__CONNECTION_POINTS:
 				getConnectionPoints().clear();
 				return;
-			case RealtimestatechartPackage.STATE__STATECHART:
-				setStatechart((RealtimeStatechart)null);
+			case RealtimestatechartPackage.STATE__PARENT_STATECHART:
+				setParentStatechart((RealtimeStatechart)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -766,8 +766,8 @@ public class StateImpl extends VertexImpl implements State {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RealtimestatechartPackage.STATE__REGIONS:
-				return regions != null && !regions.isEmpty();
+			case RealtimestatechartPackage.STATE__EMBEDDED_REGIONS:
+				return embeddedRegions != null && !embeddedRegions.isEmpty();
 			case RealtimestatechartPackage.STATE__DO_EVENT:
 				return doEvent != null;
 			case RealtimestatechartPackage.STATE__EXIT_EVENT:
@@ -790,8 +790,8 @@ public class StateImpl extends VertexImpl implements State {
 				return connectionPoints != null && !connectionPoints.isEmpty();
 			case RealtimestatechartPackage.STATE__SIMPLE:
 				return isSetSimple();
-			case RealtimestatechartPackage.STATE__STATECHART:
-				return getStatechart() != null;
+			case RealtimestatechartPackage.STATE__PARENT_STATECHART:
+				return getParentStatechart() != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -623,13 +623,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		   source, 
 		   new String[] {
 			 "constraints", "NoDeploymentOnActorOrSensor"
-		   });															
-		addAnnotation
-		  (communicationLinkEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "SameConfiguration"
-		   });										
+		   });																						
 	}
 
 	/**
@@ -651,13 +645,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectors->select(c | c.oclIsTypeOf(CommunicationLink)).oclAsType(CommunicationLink)->asOrderedSet()"
-		   });				
-		addAnnotation
-		  (communicationLinkEClass, 
-		   source, 
-		   new String[] {
-			 "SameConfiguration", "self.deployedAssemblyInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"
-		   });						
+		   });							
 		addAnnotation
 		  (getCommunicationLink_HardwarePorts(), 
 		   source, 

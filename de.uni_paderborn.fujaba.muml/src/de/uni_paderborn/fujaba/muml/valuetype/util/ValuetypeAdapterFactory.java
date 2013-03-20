@@ -87,6 +87,10 @@ public class ValuetypeAdapterFactory extends AdapterFactoryImpl {
 				return createNaturalNumberAdapter();
 			}
 			@Override
+			public Adapter caseRange(Range object) {
+				return createRangeAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -149,6 +153,20 @@ public class ValuetypeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNaturalNumberAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.valuetype.Range <em>Range</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.Range
+	 * @generated
+	 */
+	public Adapter createRangeAdapter() {
 		return null;
 	}
 

@@ -24,12 +24,13 @@ import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence#getPorts <em>Ports</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence#getPortParts <em>Port Parts</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getCoordinationProtocolOccurrence()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OnlyDiscretePortParts'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyDiscretePortParts='not self.portParts.oclIsUndefined()\r\nimplies\r\nself.portParts->forAll(isTypeOf(DiscretePort))'"
  * @generated
  */
 public interface CoordinationProtocolOccurrence extends CommentableElement {
@@ -59,20 +60,20 @@ public interface CoordinationProtocolOccurrence extends CommentableElement {
 	void setCoordinationProtocol(CoordinationProtocol value);
 
 	/**
-	 * Returns the value of the '<em><b>Ports</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.Port}.
+	 * Returns the value of the '<em><b>Port Parts</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.PortPart}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolOccurence <em>Coordination Protocol Occurence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The ports that take part in this protocol.
-	 * 
-	 * \todosd{I suggest to change this reference so that it references a DiscretePort.}
+	 * The discrete port parts that take part in this protocol occurence.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Ports</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getCoordinationProtocolOccurrence_Ports()
-	 * @model required="true"
+	 * @return the value of the '<em>Port Parts</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getCoordinationProtocolOccurrence_PortParts()
+	 * @see de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolOccurence
+	 * @model opposite="coordinationProtocolOccurence" lower="2"
 	 * @generated
 	 */
-	EList<Port> getPorts();
+	EList<PortPart> getPortParts();
 
 } // CoordinationProtocolOccurrence

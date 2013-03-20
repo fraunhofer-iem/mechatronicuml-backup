@@ -31,10 +31,8 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getParentComponent <em>Parent Component</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getAssemblyConnectors <em>Assembly Connectors</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getDelegationConnectors <em>Delegation Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getCardinality <em>Cardinality</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getPorts <em>Ports</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getPortParts <em>Port Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#isMultiPart <em>Multi Part</em>}</li>
  * </ul>
  * </p>
@@ -47,7 +45,6 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 public interface ComponentPart extends NamedElement, CommentableElement, DataType {
 	/**
 	 * Returns the value of the '<em><b>Component Type</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.component.Component#getReferencingComponentParts <em>Referencing Component Parts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -56,8 +53,7 @@ public interface ComponentPart extends NamedElement, CommentableElement, DataTyp
 	 * @return the value of the '<em>Component Type</em>' reference.
 	 * @see #setComponentType(Component)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponentPart_ComponentType()
-	 * @see de.uni_paderborn.fujaba.muml.component.Component#getReferencingComponentParts
-	 * @model opposite="referencingComponentParts" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	Component getComponentType();
@@ -74,7 +70,7 @@ public interface ComponentPart extends NamedElement, CommentableElement, DataTyp
 
 	/**
 	 * Returns the value of the '<em><b>Parent Component</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getEmbeddedParts <em>Embedded Parts</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getEmbeddedComponentParts <em>Embedded Component Parts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -83,8 +79,8 @@ public interface ComponentPart extends NamedElement, CommentableElement, DataTyp
 	 * @return the value of the '<em>Parent Component</em>' container reference.
 	 * @see #setParentComponent(StructuredComponent)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponentPart_ParentComponent()
-	 * @see de.uni_paderborn.fujaba.muml.component.StructuredComponent#getEmbeddedParts
-	 * @model opposite="embeddedParts" required="true" transient="false"
+	 * @see de.uni_paderborn.fujaba.muml.component.StructuredComponent#getEmbeddedComponentParts
+	 * @model opposite="embeddedComponentParts" required="true" transient="false"
 	 * @generated
 	 */
 	StructuredComponent getParentComponent();
@@ -98,38 +94,6 @@ public interface ComponentPart extends NamedElement, CommentableElement, DataTyp
 	 * @generated
 	 */
 	void setParentComponent(StructuredComponent value);
-
-	/**
-	 * Returns the value of the '<em><b>Assembly Connectors</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.AssemblyConnector}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The assemblies originating in port parts of this component part.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Assembly Connectors</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponentPart_AssemblyConnectors()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.ports.portConnectors->select(c | c.oclIsKindOf(AssemblyConnector)).oclAsType(AssemblyConnector)->asOrderedSet()'"
-	 * @generated
-	 */
-	EList<AssemblyConnector> getAssemblyConnectors();
-
-	/**
-	 * Returns the value of the '<em><b>Delegation Connectors</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.DelegationConnector}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The delegations connecting a port part of this component part with a port of the parent component type.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Delegation Connectors</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponentPart_DelegationConnectors()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.ports.portConnectors->select(c | c.oclIsKindOf(DelegationConnector)).oclAsType(DelegationConnector)->asOrderedSet()'"
-	 * @generated
-	 */
-	EList<DelegationConnector> getDelegationConnectors();
 
 	/**
 	 * Returns the value of the '<em><b>Multi Part</b></em>' attribute.
@@ -185,35 +149,43 @@ public interface ComponentPart extends NamedElement, CommentableElement, DataTyp
 	void setCardinality(Cardinality value);
 
 	/**
-	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.Port}.
+	 * Returns the value of the '<em><b>Port Parts</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.PortPart}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.component.PortPart#getComponentPart <em>Component Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The ports of this part. They are derived from the ports of the
-	 * componentType of this component part. It is a containment
-	 * reference, so that GMF is able to let them flow around the
-	 * component.
-	 * Because this feature is derived, transient, volatile the model file
-	 * will not store the ports in this feature.
+	 * The ports of this part.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Ports</em>' containment reference list.
-	 * @see #isSetPorts()
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponentPart_Ports()
-	 * @model containment="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if componentType.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tcomponentType.ports\r\nendif'"
+	 * @return the value of the '<em>Port Parts</em>' containment reference list.
+	 * @see #isSetPortParts()
+	 * @see #unsetPortParts()
+	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponentPart_PortParts()
+	 * @see de.uni_paderborn.fujaba.muml.component.PortPart#getComponentPart
+	 * @model opposite="componentPart" containment="true" unsettable="true"
 	 * @generated
 	 */
-	EList<Port> getPorts();
+	EList<PortPart> getPortParts();
 
 	/**
-	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getPorts <em>Ports</em>}' containment reference list is set.
+	 * Unsets the value of the '{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getPortParts <em>Port Parts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Ports</em>' containment reference list is set.
-	 * @see #getPorts()
+	 * @see #isSetPortParts()
+	 * @see #getPortParts()
 	 * @generated
 	 */
-	boolean isSetPorts();
+	void unsetPortParts();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getPortParts <em>Port Parts</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Port Parts</em>' containment reference list is set.
+	 * @see #unsetPortParts()
+	 * @see #getPortParts()
+	 * @generated
+	 */
+	boolean isSetPortParts();
 
 } // ComponentPart

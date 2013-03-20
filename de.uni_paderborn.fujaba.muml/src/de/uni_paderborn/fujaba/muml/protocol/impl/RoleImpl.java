@@ -41,6 +41,7 @@ import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl#isMultiRole <em>Multi Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl#getRoles <em>Roles</em>}</li>
  * </ul>
  * </p>
  *
@@ -86,6 +87,16 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	 * @ordered
 	 */
 	protected EList<MessageBuffer> receiverMessageBuffer;
+
+	/**
+	 * The cached setting delegate for the '{@link #getRoles() <em>Roles</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoles()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ROLES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ProtocolPackage.Literals.ROLE__ROLES).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,7 +165,7 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	 */
 	public EList<DiscretePort> getPort() {
 		if (port == null) {
-			port = new EObjectWithInverseResolvingEList<DiscretePort>(DiscretePort.class, this, ProtocolPackage.ROLE__PORT, ComponentPackage.DISCRETE_PORT__REFINES);
+			port = new EObjectWithInverseResolvingEList<DiscretePort>(DiscretePort.class, this, ProtocolPackage.ROLE__PORT, ComponentPackage.DISCRETE_PORT__REFINED_ROLE);
 		}
 		return port;
 	}
@@ -196,6 +207,16 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 			receiverMessageBuffer = new EObjectContainmentWithInverseEList<MessageBuffer>(MessageBuffer.class, this, ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER, ProtocolPackage.MESSAGE_BUFFER__ROLE);
 		}
 		return receiverMessageBuffer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EList<Role> getRoles() {
+		return (EList<Role>)ROLES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -270,6 +291,8 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 				return isMultiRole();
 			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
 				return getReceiverMessageBuffer();
+			case ProtocolPackage.ROLE__ROLES:
+				return getRoles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -337,6 +360,8 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 				return MULTI_ROLE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
 				return receiverMessageBuffer != null && !receiverMessageBuffer.isEmpty();
+			case ProtocolPackage.ROLE__ROLES:
+				return ROLES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

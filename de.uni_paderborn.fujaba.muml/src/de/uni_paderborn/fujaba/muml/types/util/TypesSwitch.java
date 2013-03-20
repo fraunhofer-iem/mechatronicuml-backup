@@ -105,6 +105,16 @@ public class TypesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case TypesPackage.RANGED_PRIMITIVE_DATA_TYPE: {
+				RangedPrimitiveDataType rangedPrimitiveDataType = (RangedPrimitiveDataType)theEObject;
+				T result = caseRangedPrimitiveDataType(rangedPrimitiveDataType);
+				if (result == null) result = caseDataType(rangedPrimitiveDataType);
+				if (result == null) result = caseNamedElement(rangedPrimitiveDataType);
+				if (result == null) result = caseCommentableElement(rangedPrimitiveDataType);
+				if (result == null) result = caseExtendableElement(rangedPrimitiveDataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -151,6 +161,21 @@ public class TypesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDataType(DataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ranged Primitive Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ranged Primitive Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRangedPrimitiveDataType(RangedPrimitiveDataType object) {
 		return null;
 	}
 

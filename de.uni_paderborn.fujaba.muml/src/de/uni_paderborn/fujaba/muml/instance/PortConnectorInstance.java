@@ -60,7 +60,7 @@ public interface PortConnectorInstance extends ConnectorInstance {
 	 * @return the value of the '<em>Port Instances</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getPortConnectorInstance_PortInstances()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpointInstances->select(c | c.oclIsTypeOf(PortInstance)).oclAsType(PortInstance)->asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpointInstances->select(c | c.oclIsKindOf(PortInstance)).oclAsType(PortInstance)->asOrderedSet()'"
 	 * @generated
 	 */
 	EList<PortInstance> getPortInstances();
