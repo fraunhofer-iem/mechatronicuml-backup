@@ -105,37 +105,40 @@ public class PortInstanceItemProvider extends
 	 * @generated
 	 */
 	protected void addComponentInstancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_PortInstance_componentInstance_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_PortInstance_componentInstance_feature",
-						"_UI_PortInstance_type"),
-				InstancePackage.Literals.PORT_INSTANCE__COMPONENT_INSTANCE,
-				false, false, false, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortInstance_componentInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_componentInstance_feature", "_UI_PortInstance_type"),
+				 InstancePackage.Literals.PORT_INSTANCE__COMPONENT_INSTANCE,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Port Connector Instances feature.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addPortConnectorInstancesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_PortInstance_portConnectorInstances_feature"),
-						getString(
-								"_UI_PropertyDescriptor_description",
-								"_UI_PortInstance_portConnectorInstances_feature",
-								"_UI_PortInstance_type"),
-						InstancePackage.Literals.PORT_INSTANCE__PORT_CONNECTOR_INSTANCES,
-						false, false, false, null, null, null));
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortInstance_portConnectorInstances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_portConnectorInstances_feature", "_UI_PortInstance_type"),
+				 InstancePackage.Literals.PORT_INSTANCE__PORT_CONNECTOR_INSTANCES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -146,29 +149,28 @@ public class PortInstanceItemProvider extends
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/PortInstance"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/PortInstance"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PortInstance) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_PortInstance_type")
-				: getString("_UI_PortInstance_type") + " " + label;
+		String label = ((PortInstance)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_PortInstance_type") :
+			getString("_UI_PortInstance_type") + " " + label;
 	}
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -176,11 +178,10 @@ public class PortInstanceItemProvider extends
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PortInstance.class)) {
-		case InstancePackage.PORT_INSTANCE__PORT_TYPE:
-		case InstancePackage.PORT_INSTANCE__PORT_CONNECTOR_INSTANCES:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
+			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
+			case InstancePackage.PORT_INSTANCE__PORT_CONNECTOR_INSTANCES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 		}
 		super.notifyChanged(notification);
 	}

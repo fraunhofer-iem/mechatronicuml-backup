@@ -104,7 +104,7 @@ public class PortConnectorItemProvider
 				 getString("_UI_PortConnector_ports_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PortConnector_ports_feature", "_UI_PortConnector_type"),
 				 ComponentPackage.Literals.PORT_CONNECTOR__PORTS,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,
