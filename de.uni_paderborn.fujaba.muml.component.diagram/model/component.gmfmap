@@ -220,6 +220,9 @@
                 <features
                     href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
               </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="component.gmftool#//@palette/@tools.1/@tools.2"/>
               <diagramNode
                   href="component.gmfgraph#Port"/>
             </ownedChild>

@@ -923,7 +923,8 @@
             xsi:type="gmfgen:ToolEntry"
             title="HybridPort"
             description="Create new HybridPort"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif"/>
+            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/HybridPort.gif"
+            genNodes="//@diagram/@childNodes.3 //@diagram/@childNodes.7"/>
       </groups>
       <groups
           title="Connectors"
