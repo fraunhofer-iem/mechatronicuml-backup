@@ -16,35 +16,31 @@ public class TestUtilities {
 	private TestUtilities() {
 		// prevent instantiation
 	}
+
 	public static Resource loadResource(ResourceSet resourceSet,
 			String projectName, String resourcePath) throws Exception {
-		try {
-			Resource resource = null;
-			URI uri = URI.createPlatformResourceURI(projectName + resourcePath,
-					true);
-			if (uri == null) {
-				throw new NullPointerException("URI could not be created");
-			}
-	
-			registerWorkspaceProject(projectName);
-			
-			// Load resource
-			resource = resourceSet.getResource(uri, true);
-			if (resource == null) {
-				throw new NullPointerException("Resource could not be loaded");
-			}
-	
-			// Resolve all referenced models
-			EcoreUtil.resolveAll(resourceSet);
-	
-			return resource;
-		} catch (WrappedException e) {
-			// unwrap
-			e.printStackTrace();
-			throw e.exception();
-		}
-	}
 
+		Resource resource = null;
+		URI uri = URI.createPlatformResourceURI(projectName + resourcePath,
+				true);
+		if (uri == null) {
+			throw new NullPointerException("URI could not be created");
+		}
+
+		registerWorkspaceProject(projectName);
+
+		// Load resource
+		resource = resourceSet.getResource(uri, true);
+		if (resource == null) {
+			throw new NullPointerException("Resource could not be loaded");
+		}
+
+		// Resolve all referenced models
+		EcoreUtil.resolveAll(resourceSet);
+
+		return resource;
+
+	}
 
 	public static void registerWorkspaceProject(String projectName) {
 		// Find out absolute path of project
@@ -59,6 +55,6 @@ public class TestUtilities {
 
 		// Register platform mapping for project
 		EcorePlugin.getPlatformResourceMap().put(projectName,
-				URI.createFileURI(absoluteProjectPath.toString()));		
+				URI.createFileURI(absoluteProjectPath.toString()));
 	}
 }

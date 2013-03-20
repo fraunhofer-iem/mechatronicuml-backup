@@ -70,7 +70,7 @@ public class ValidateMetamodelsTest {
 			try {
 				TestUtilities.loadResource(resourceSet, path[0], path[1]);
 
-			} catch (FileNotFoundException e) {
+			} catch (Exception e) {
 				TestUtilities.loadResource(resourceSet, "sdm", "/" + path[0] + path[1]);
 
 			}
