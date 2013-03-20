@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Messageinterface Diagram-Editor (Customizations)
+Bundle-Name: Messagetype Diagram-Editor (Customizations)
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.messagetype.diagram.custom;singleton:=true
 Bundle-Version: 0.3.1.qualifier
 Bundle-Localization: plugin

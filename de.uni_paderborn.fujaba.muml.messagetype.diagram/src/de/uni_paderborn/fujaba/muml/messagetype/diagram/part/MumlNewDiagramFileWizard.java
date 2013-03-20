@@ -83,7 +83,7 @@ public class MumlNewDiagramFileWizard extends Wizard {
 		myFileCreationPage
 				.setFileName(de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlDiagramEditorUtil
 						.getUniqueFileName(filePath, fileName,
-								"messageinterface_diagram")); //$NON-NLS-1$
+								"messagetype_diagram")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
 				de.uni_paderborn.fujaba.muml.messagetype.diagram.part.Messages.MumlNewDiagramFileWizard_RootSelectionPageName);

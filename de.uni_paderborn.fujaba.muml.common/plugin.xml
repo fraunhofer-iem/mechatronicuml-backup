@@ -81,7 +81,7 @@
                 </test>
                 <test
                       property="org.eclipse.core.resources.name"
-                      value="*.messageinterface_diagram">
+                      value="*.messagetype_diagram">
                 </test>
                 <test
                       property="org.eclipse.core.resources.name"
@@ -89,7 +89,7 @@
                 </test>
                 <test
                       property="org.eclipse.core.resources.name"
-                      value="*.structuredcomponent_diagram">
+                      value="*.component_diagram">
                 </test>
              </or>
           </adapt></enablement>

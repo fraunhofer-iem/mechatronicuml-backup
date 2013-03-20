@@ -94,7 +94,6 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 		PortType type = CustomPortFigure.PortType.NONE;
 		DiscretePort discretePort = (DiscretePort) getPort();
 		if (discretePort != null) {
-			// Find out the PortType depending on the MessageInterfaces set.
 			if (discretePort.isIsDiscreteInOutPort()) {
 				type = CustomPortFigure.PortType.INOUT_PORT;
 			} else if (discretePort.isIsDiscreteInPort()) {

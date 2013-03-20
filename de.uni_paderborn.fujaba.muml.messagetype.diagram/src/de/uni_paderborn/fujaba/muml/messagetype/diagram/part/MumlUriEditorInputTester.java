@@ -17,7 +17,7 @@ public class MumlUriEditorInputTester extends PropertyTester {
 			return false;
 		}
 		URIEditorInput editorInput = (URIEditorInput) receiver;
-		return "messageinterface_diagram".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
+		return "messagetype_diagram".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
 	}
 
 }
