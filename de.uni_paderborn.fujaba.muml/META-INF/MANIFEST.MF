@@ -11,7 +11,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  de.uni_paderborn.fujaba.common,
  de.uni_paderborn.fujaba.modelinstance,
- org.eclipse.emf.edapt.history,
  org.storydriven.core;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Export-Package: de.uni_paderborn.fujaba.muml,
