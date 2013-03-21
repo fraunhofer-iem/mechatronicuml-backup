@@ -92,16 +92,16 @@ public class ControlflowAdapterFactory extends AdapterFactoryImpl {
 				return createExtendableElementAdapter();
 			}
 			@Override
-			public Adapter caseNamedElement(NamedElement object) {
-				return createNamedElementAdapter();
-			}
-			@Override
 			public Adapter caseCommentableElement(CommentableElement object) {
 				return createCommentableElementAdapter();
 			}
 			@Override
 			public Adapter caseReconfigurationRule(ReconfigurationRule object) {
 				return createReconfigurationRuleAdapter();
+			}
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
 			}
 			@Override
 			public Adapter caseActivityNode(ActivityNode object) {

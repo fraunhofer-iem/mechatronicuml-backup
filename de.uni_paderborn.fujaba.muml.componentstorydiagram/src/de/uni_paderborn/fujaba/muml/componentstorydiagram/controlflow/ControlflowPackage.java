@@ -93,15 +93,6 @@ public interface ControlflowPackage extends EPackage {
 	int COMPONENT_STORY_RULE__EXTENSION = ReconfigurationPackage.RECONFIGURATION_RULE__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_RULE__NAME = ReconfigurationPackage.RECONFIGURATION_RULE__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -111,24 +102,6 @@ public interface ControlflowPackage extends EPackage {
 	int COMPONENT_STORY_RULE__COMMENT = ReconfigurationPackage.RECONFIGURATION_RULE__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_RULE__PARAMETERS = ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS;
-
-	/**
-	 * The feature id for the '<em><b>Return Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_STORY_RULE__RETURN_PARAMETERS = ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS;
-
-	/**
 	 * The feature id for the '<em><b>Reconfigured Component</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -136,6 +109,33 @@ public interface ControlflowPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPONENT_STORY_RULE__RECONFIGURED_COMPONENT = ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Wcet</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_STORY_RULE__WCET = ReconfigurationPackage.RECONFIGURATION_RULE__WCET;
+
+	/**
+	 * The feature id for the '<em><b>Signature</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_STORY_RULE__SIGNATURE = ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_STORY_RULE__NAME = ReconfigurationPackage.RECONFIGURATION_RULE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Activity</b></em>' containment reference.

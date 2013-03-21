@@ -79,7 +79,6 @@ public class ControlflowSwitch<T> extends Switch<T> {
 				ComponentStoryRule componentStoryRule = (ComponentStoryRule)theEObject;
 				T result = caseComponentStoryRule(componentStoryRule);
 				if (result == null) result = caseReconfigurationRule(componentStoryRule);
-				if (result == null) result = caseNamedElement(componentStoryRule);
 				if (result == null) result = caseCommentableElement(componentStoryRule);
 				if (result == null) result = caseExtendableElement(componentStoryRule);
 				if (result == null) result = defaultCase(theEObject);
