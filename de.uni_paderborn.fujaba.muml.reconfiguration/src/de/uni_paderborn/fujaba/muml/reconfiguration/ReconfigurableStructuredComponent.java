@@ -23,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getControllers <em>Controllers</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getController <em>Controller</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getManager <em>Manager</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getExecutor <em>Executor</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getInitialConfiguration <em>Initial Configuration</em>}</li>
@@ -36,32 +36,32 @@ import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
  */
 public interface ReconfigurableStructuredComponent extends StructuredComponent, ReconfigurableComponent {
 	/**
-	 * Returns the value of the '<em><b>Controllers</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Controller</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.reconfiguration.Controller#getStructuredComponent <em>Structured Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Controllers</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Controller</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Controllers</em>' containment reference.
-	 * @see #setControllers(Controller)
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurableStructuredComponent_Controllers()
+	 * @return the value of the '<em>Controller</em>' containment reference.
+	 * @see #setController(Controller)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurableStructuredComponent_Controller()
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.Controller#getStructuredComponent
 	 * @model opposite="structuredComponent" containment="true" ordered="false"
 	 * @generated
 	 */
-	Controller getControllers();
+	Controller getController();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getControllers <em>Controllers</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getController <em>Controller</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Controllers</em>' containment reference.
-	 * @see #getControllers()
+	 * @param value the new value of the '<em>Controller</em>' containment reference.
+	 * @see #getController()
 	 * @generated
 	 */
-	void setControllers(Controller value);
+	void setController(Controller value);
 
 	/**
 	 * Returns the value of the '<em><b>Manager</b></em>' reference.
@@ -74,7 +74,7 @@ public interface ReconfigurableStructuredComponent extends StructuredComponent, 
 	 * @return the value of the '<em>Manager</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurableStructuredComponent_Manager()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.controllers -> select(m | m.oclIsKindOf(Manager)) ->any(true)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.controller.oclIsKindOf(RuleBasedReconfigurationController) then self.controller.oclAsType(RuleBasedReconfigurationController).manager else null endif'"
 	 * @generated
 	 */
 	Manager getManager();
@@ -90,7 +90,7 @@ public interface ReconfigurableStructuredComponent extends StructuredComponent, 
 	 * @return the value of the '<em>Executor</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurableStructuredComponent_Executor()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.controllers -> select(m | m.oclIsKindOf(Executor)) ->any(true)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.controller.oclIsKindOf(RuleBasedReconfigurationController) then self.controller.oclAsType(RuleBasedReconfigurationController).executor else null endif'"
 	 * @generated
 	 */
 	Executor getExecutor();

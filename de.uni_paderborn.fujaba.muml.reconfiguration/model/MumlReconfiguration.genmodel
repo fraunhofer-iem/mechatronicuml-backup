@@ -13,7 +13,7 @@
       <genEnumLiterals ecoreEnumLiteral="MumlReconfiguration.ecore#//ReconfigurationMessageTypeEnum/REQUEST"/>
     </genEnums>
     <genClasses ecoreClass="MumlReconfiguration.ecore#//ReconfigurableStructuredComponent">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurableStructuredComponent/controllers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurableStructuredComponent/controller"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurableStructuredComponent/manager"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurableStructuredComponent/executor"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ReconfigurableStructuredComponent/initialConfiguration"/>

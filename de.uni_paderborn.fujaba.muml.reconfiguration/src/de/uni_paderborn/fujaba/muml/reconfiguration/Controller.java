@@ -34,7 +34,7 @@ import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 public interface Controller extends BehavioralElement, NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Structured Component</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getControllers <em>Controllers</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getController <em>Controller</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Structured Component</em>' container reference isn't clear,
@@ -44,8 +44,8 @@ public interface Controller extends BehavioralElement, NamedElement, Commentable
 	 * @return the value of the '<em>Structured Component</em>' container reference.
 	 * @see #setStructuredComponent(ReconfigurableStructuredComponent)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getController_StructuredComponent()
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getControllers
-	 * @model opposite="controllers" required="true" transient="false"
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getController
+	 * @model opposite="controller" required="true" transient="false"
 	 * @generated
 	 */
 	ReconfigurableStructuredComponent getStructuredComponent();

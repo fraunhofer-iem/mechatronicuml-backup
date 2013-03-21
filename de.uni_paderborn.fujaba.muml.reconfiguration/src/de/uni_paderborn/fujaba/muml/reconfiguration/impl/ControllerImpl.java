@@ -227,7 +227,7 @@ public abstract class ControllerImpl extends BehavioralElementImpl implements Co
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newStructuredComponent != null)
-				msgs = ((InternalEObject)newStructuredComponent).eInverseAdd(this, ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS, ReconfigurableStructuredComponent.class, msgs);
+				msgs = ((InternalEObject)newStructuredComponent).eInverseAdd(this, ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLER, ReconfigurableStructuredComponent.class, msgs);
 			msgs = basicSetStructuredComponent(newStructuredComponent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -325,7 +325,7 @@ public abstract class ControllerImpl extends BehavioralElementImpl implements Co
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case ReconfigurationPackage.CONTROLLER__STRUCTURED_COMPONENT:
-				return eInternalContainer().eInverseRemove(this, ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS, ReconfigurableStructuredComponent.class, msgs);
+				return eInternalContainer().eInverseRemove(this, ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLER, ReconfigurableStructuredComponent.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

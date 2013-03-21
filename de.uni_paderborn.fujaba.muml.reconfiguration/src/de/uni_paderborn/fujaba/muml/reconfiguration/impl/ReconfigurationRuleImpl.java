@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.impl.CommentableElementImpl;
@@ -67,24 +68,14 @@ public abstract class ReconfigurationRuleImpl extends CommentableElementImpl imp
 	protected Signature signature;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ReconfigurationPackage.Literals.RECONFIGURATION_RULE__NAME).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -235,19 +226,7 @@ public abstract class ReconfigurationRuleImpl extends CommentableElementImpl imp
 	 * @generated
 	 */
 	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_RULE__NAME, oldName, name));
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -321,9 +300,6 @@ public abstract class ReconfigurationRuleImpl extends CommentableElementImpl imp
 			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
 				setSignature((Signature)newValue);
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__NAME:
-				setName((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -345,9 +321,6 @@ public abstract class ReconfigurationRuleImpl extends CommentableElementImpl imp
 			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
 				setSignature((Signature)null);
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -367,25 +340,9 @@ public abstract class ReconfigurationRuleImpl extends CommentableElementImpl imp
 			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
 				return signature != null;
 			case ReconfigurationPackage.RECONFIGURATION_RULE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ReconfigurationRuleImpl

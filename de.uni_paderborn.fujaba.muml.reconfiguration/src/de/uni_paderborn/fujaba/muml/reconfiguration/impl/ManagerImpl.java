@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -76,6 +77,16 @@ public class ManagerImpl extends CommentableElementImpl implements Manager {
 	 * @ordered
 	 */
 	protected EList<DiscretePort> ports;
+
+	/**
+	 * The cached setting delegate for the '{@link #getReconfigurationMessagePorts() <em>Reconfiguration Message Ports</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReconfigurationMessagePorts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate RECONFIGURATION_MESSAGE_PORTS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ReconfigurationPackage.Literals.MANAGER__RECONFIGURATION_MESSAGE_PORTS).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -226,12 +237,9 @@ public class ManagerImpl extends CommentableElementImpl implements Manager {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<ReconfigurationMessagePort> getReconfigurationMessagePorts() {
-		// TODO: implement this method to return the 'Reconfiguration Message Ports' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		return (EList<ReconfigurationMessagePort>)RECONFIGURATION_MESSAGE_PORTS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -382,7 +390,7 @@ public class ManagerImpl extends CommentableElementImpl implements Manager {
 			case ReconfigurationPackage.MANAGER__PORTS:
 				return ports != null && !ports.isEmpty();
 			case ReconfigurationPackage.MANAGER__RECONFIGURATION_MESSAGE_PORTS:
-				return !getReconfigurationMessagePorts().isEmpty();
+				return RECONFIGURATION_MESSAGE_PORTS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

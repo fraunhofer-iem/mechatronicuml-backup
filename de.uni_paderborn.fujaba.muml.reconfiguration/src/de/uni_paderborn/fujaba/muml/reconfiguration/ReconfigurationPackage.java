@@ -196,13 +196,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURABLE_STRUCTURED_COMPONENT__GMF_PROTOCOLS = ComponentPackage.STRUCTURED_COMPONENT__GMF_PROTOCOLS;
 
 	/**
-	 * The feature id for the '<em><b>Controllers</b></em>' containment reference.
+	 * The feature id for the '<em><b>Controller</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS = ComponentPackage.STRUCTURED_COMPONENT_FEATURE_COUNT + 0;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLER = ComponentPackage.STRUCTURED_COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Manager</b></em>' reference.
@@ -2026,15 +2026,15 @@ public interface ReconfigurationPackage extends EPackage {
 	EClass getReconfigurableStructuredComponent();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getControllers <em>Controllers</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getController <em>Controller</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Controllers</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getControllers()
+	 * @return the meta object for the containment reference '<em>Controller</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getController()
 	 * @see #getReconfigurableStructuredComponent()
 	 * @generated
 	 */
-	EReference getReconfigurableStructuredComponent_Controllers();
+	EReference getReconfigurableStructuredComponent_Controller();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getManager <em>Manager</em>}'.
@@ -2711,12 +2711,12 @@ public interface ReconfigurationPackage extends EPackage {
 		EClass RECONFIGURABLE_STRUCTURED_COMPONENT = eINSTANCE.getReconfigurableStructuredComponent();
 
 		/**
-		 * The meta object literal for the '<em><b>Controllers</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Controller</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS = eINSTANCE.getReconfigurableStructuredComponent_Controllers();
+		EReference RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLER = eINSTANCE.getReconfigurableStructuredComponent_Controller();
 
 		/**
 		 * The meta object literal for the '<em><b>Manager</b></em>' reference feature.

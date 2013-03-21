@@ -113,6 +113,7 @@ public interface Manager extends CommentableElement, BehavioralElement {
 	 * @return the value of the '<em>Reconfiguration Message Ports</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getManager_ReconfigurationMessagePorts()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.ports -> select(p | p.oclIsTypeOf(ReconfigurationMessagePort))'"
 	 * @generated
 	 */
 	EList<ReconfigurationMessagePort> getReconfigurationMessagePorts();

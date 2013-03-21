@@ -296,7 +296,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getReconfigurableStructuredComponent_Controllers() {
+	public EReference getReconfigurableStructuredComponent_Controller() {
 		return (EReference)reconfigurableStructuredComponentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -869,7 +869,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 
 		// Create classes and their features
 		reconfigurableStructuredComponentEClass = createEClass(RECONFIGURABLE_STRUCTURED_COMPONENT);
-		createEReference(reconfigurableStructuredComponentEClass, RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS);
+		createEReference(reconfigurableStructuredComponentEClass, RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLER);
 		createEReference(reconfigurableStructuredComponentEClass, RECONFIGURABLE_STRUCTURED_COMPONENT__MANAGER);
 		createEReference(reconfigurableStructuredComponentEClass, RECONFIGURABLE_STRUCTURED_COMPONENT__EXECUTOR);
 		createEReference(reconfigurableStructuredComponentEClass, RECONFIGURABLE_STRUCTURED_COMPONENT__INITIAL_CONFIGURATION);
@@ -1019,7 +1019,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(reconfigurableStructuredComponentEClass, ReconfigurableStructuredComponent.class, "ReconfigurableStructuredComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReconfigurableStructuredComponent_Controllers(), this.getController(), this.getController_StructuredComponent(), "controllers", null, 0, 1, ReconfigurableStructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getReconfigurableStructuredComponent_Controller(), this.getController(), this.getController_StructuredComponent(), "controller", null, 0, 1, ReconfigurableStructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getReconfigurableStructuredComponent_Manager(), this.getManager(), null, "manager", null, 0, 1, ReconfigurableStructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurableStructuredComponent_Executor(), this.getExecutor(), null, "executor", null, 0, 1, ReconfigurableStructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurableStructuredComponent_InitialConfiguration(), theInstancePackage.getComponentInstanceConfiguration(), null, "initialConfiguration", null, 0, 1, ReconfigurableStructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1027,7 +1027,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEClass(reconfigurationPortEClass, ReconfigurationPort.class, "ReconfigurationPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(controllerEClass, Controller.class, "Controller", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getController_StructuredComponent(), this.getReconfigurableStructuredComponent(), this.getReconfigurableStructuredComponent_Controllers(), "structuredComponent", null, 1, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getController_StructuredComponent(), this.getReconfigurableStructuredComponent(), this.getReconfigurableStructuredComponent_Controller(), "structuredComponent", null, 1, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(managerEClass, Manager.class, "Manager", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getManager_SpecificationEntries(), this.getManagerSpecificationEntry(), this.getManagerSpecificationEntry_Manager(), "specificationEntries", null, 0, -1, Manager.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1045,7 +1045,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEReference(getReconfigurationRule_ReconfiguredComponent(), this.getReconfigurableComponent(), null, "reconfiguredComponent", null, 0, 1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationRule_Wcet(), theValuetypePackage.getTimeValue(), null, "wcet", null, 0, 1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationRule_Signature(), this.getSignature(), this.getSignature_ReconfigurationRule(), "signature", null, 1, 1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReconfigurationRule_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ReconfigurationRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReconfigurationRule_Name(), theEcorePackage.getEString(), "name", null, 0, 1, ReconfigurationRule.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(structuralConditionEClass, StructuralCondition.class, "StructuralCondition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructuralCondition_Parameters(), theBehaviorPackage.getParameter(), null, "parameters", null, 0, -1, StructuralCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1127,7 +1127,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });															
+		   });																		
 		addAnnotation
 		  (executorSpecificationEntryEClass, 
 		   source, 
@@ -1148,14 +1148,32 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		  (getReconfigurableStructuredComponent_Manager(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.controllers -> select(m | m.oclIsKindOf(Manager)) ->any(true)"
+			 "derivation", "if self.controller.oclIsKindOf(RuleBasedReconfigurationController) then self.controller.oclAsType(RuleBasedReconfigurationController).manager else null endif"
 		   });		
 		addAnnotation
 		  (getReconfigurableStructuredComponent_Executor(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.controllers -> select(m | m.oclIsKindOf(Executor)) ->any(true)"
-		   });																			
+			 "derivation", "if self.controller.oclIsKindOf(RuleBasedReconfigurationController) then self.controller.oclAsType(RuleBasedReconfigurationController).executor else null endif"
+		   });					
+		addAnnotation
+		  (getManager_ReconfigurationMessagePorts(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.ports -> select(p | p.oclIsTypeOf(ReconfigurationMessagePort))"
+		   });			
+		addAnnotation
+		  (getExecutor_ReconfigurationExecutionPorts(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.ports -> select(p | p.oclIsTypeOf(ReconfigurationExecutionPort))"
+		   });			
+		addAnnotation
+		  (getReconfigurationRule_Name(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if self.signature.oclIsUndefined() then null else self.signature.name endif"
+		   });														
 	}
 
 } //ReconfigurationPackageImpl
