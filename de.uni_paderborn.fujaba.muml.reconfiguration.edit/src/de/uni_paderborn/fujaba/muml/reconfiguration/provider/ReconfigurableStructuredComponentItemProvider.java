@@ -152,7 +152,7 @@ public class ReconfigurableStructuredComponentItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS);
+			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLER);
 		}
 		return childrenFeatures;
 	}
@@ -207,7 +207,7 @@ public class ReconfigurableStructuredComponentItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ReconfigurableStructuredComponent.class)) {
-			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS:
+			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -247,7 +247,7 @@ public class ReconfigurableStructuredComponentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS,
+				(ReconfigurationPackage.Literals.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLER,
 				 ReconfigurationFactory.eINSTANCE.createRuleBasedReconfigurationController()));
 	}
 
