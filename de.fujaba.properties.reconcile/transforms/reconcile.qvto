@@ -1,0 +1,131 @@
+transformation reconcile(inout properties : Properties);
+
+modeltype genmodel uses genmodel('http://www.eclipse.org/emf/2002/GenModel');
+modeltype ecore uses ecore ('http://www.eclipse.org/emf/2002/Ecore');
+modeltype Properties uses properties('http://de.fujaba.properties/0.1');
+
+
+main() {
+	log("QVT-O Script \"reconcile.qvto\" started.");
+
+	properties.rootObjects()[PropertyGenerator]->forEach(generator) {
+		generator->map generator();
+	}
+	
+}
+
+mapping inout PropertyGenerator::generator() {
+
+	-- assert that genmodel is defined
+	if (not genModel.oclIsUndefined()) then {
+		
+		-- create plugin definition
+		if (plugin.oclIsUndefined()) then {
+			plugin := new Plugin(self.genModel);
+		} endif;
+		
+		-- make sure important required bundles are registered
+		plugin.requiredBundles += Set {
+			"org.eclipse.ui",
+			"org.eclipse.core.runtime",
+			"de.fujaba.properties.runtime",
+			"org.eclipse.emf.ecore",
+			genModel.modelPluginID
+		};
+		
+		-- there must be at least one tab
+		if (tabs->isEmpty()) then {
+			tabs := new PropertyTab('default', 'Default');
+		} endif;
+		
+		-- make sure, defaultTab is set
+		if (defaultTab.oclIsUndefined()) then {
+			defaultTab := tabs->first();
+		} endif;
+		
+		-- generate missing packages
+		self.genModel.allSubobjectsOfType(GenPackage)[GenPackage]->select(shouldGenerate())->forEach(package) {
+			if (not self.packages.genPackage->includes(package)) then {
+				self.packages += self->map createPackage(package);
+			} endif;
+		};
+		
+		-- reconcile all packages
+		packages->map reconcilePackage(defaultTab);
+	} endif;
+}
+
+mapping inout Package::reconcilePackage(tab : PropertyTab) {
+	
+	-- generate missing classes
+	self.genPackage.genClasses->select(shouldGenerate())->forEach(_class) {
+		if (not self.classes.genClass->includes(_class)) then {
+			self.classes += self->map createClass(_class);
+		} endif;
+	};
+	
+	-- reconcile all classes
+	classes->map reconcileClass(tab);
+}
+ 
+mapping inout Class::reconcileClass(tab : PropertyTab) {
+	
+	-- generate missing sections
+	self.genClass.genFeatures->select(shouldGenerate())->forEach(feature) {
+		if (not self.properties.genFeature->includes(feature)) then {
+			self.properties += self->map createProperty(feature, tab);
+		} endif;
+	};
+	
+	-- reconcile all sections
+	self.properties->map reconcileProperty();
+}
+
+mapping inout Property::reconcileProperty() {
+	-- nothing to reconcile currently
+}
+
+mapping PropertyGenerator::createPackage(package : GenPackage) : Package {
+	genPackage := package;
+}
+mapping Package::createClass(_class : GenClass) : Class{
+	genClass := _class;
+}
+mapping Class::createProperty(_feature : GenFeature, _tab : PropertyTab) : Property {
+	genFeature := _feature;
+	tab := _tab;
+	editor := _feature->map editor()->any(true);
+}
+
+mapping GenFeature::editor() : PropertyEditor
+	disjuncts GenFeature::textEditor, GenFeature::listEditor, GenFeature::radioEditor;
+
+mapping GenFeature::textEditor() : TextPropertyEditor when {self.ecoreFeature.oclIsKindOf(EAttribute) and not self.ecoreFeature.eType.oclIsKindOf(EEnum) } {
+	multiLine := self.propertyMultiLine;
+}
+
+mapping GenFeature::listEditor() : ListPropertyEditor when {self.ecoreFeature.oclIsKindOf(EReference) and self.ecoreFeature.many} {
+}
+
+mapping GenFeature::radioEditor() : RadioPropertyEditor when {self.ecoreFeature.eType.oclIsKindOf(EEnum)} {
+}
+
+
+query GenPackage::shouldGenerate() : Boolean {
+	return true;--return self.genClassifiers->one(shouldGenerate());
+}
+query GenClass::shouldGenerate() : Boolean {
+	return true; -- return self.genFeatures->one(shouldGenerate());
+}
+query GenFeature::shouldGenerate() : Boolean {
+	return true; -- not ecoreFeature.derived;
+}
+constructor Plugin::Plugin(genModel : GenModel) {
+	name := genModel.modelPluginID + ".properties";
+	version := '0.1';
+}
+
+constructor PropertyTab::PropertyTab(_id : String, _name : String) {
+	id := _id;
+	name := _name;
+}

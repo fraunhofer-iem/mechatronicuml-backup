@@ -1,0 +1,90 @@
+«IMPORT properties»
+
+«DEFINE Plugin FOR PropertyGenerator-»
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+«EXPAND extensions-»
+</plugin>
+«ENDDEFINE»
+
+«DEFINE extensions FOR PropertyGenerator»
+ <extension point="org.eclipse.ui.popupMenus">
+ «EXPAND popupMenus»  
+ </extension>
+ <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+ «EXPAND propertyContributor»
+ </extension>
+ <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+ «EXPAND propertyTabs FOREACH tabs»
+ </extension>
+ <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
+ «EXPAND propertySections»
+ </extension>
+«ENDDEFINE»
+
+
+«DEFINE popupMenus FOR PropertyGenerator-»
+«REM»
+	   <objectContribution
+            adaptable="false"
+            id="org.storydriven.storydiagrams.diagram.custom.ActivityFinalNodeContribution"
+            objectClass="org.storydriven.storydiagrams.diagram.edit.parts.ActivityFinalNodeEditPart">
+         <action
+               class="org.storydriven.storydiagrams.diagram.custom.edit.commands.ActivityFinalNodeToggleFlowCommand"
+               id="org.storydriven.storydiagrams.diagram.custom.ActivityFinalNodeToggleFlowCommand"
+               label="Toggle end flow Attribute"
+               tooltip="This will toggle they isKey Attribute of the Attribute.">
+         </action>
+      </objectContribution>
+ «ENDREM»
+«ENDDEFINE»
+
+«DEFINE propertyContributor FOR PropertyGenerator-»
+«REM»
+     <propertyContributor
+            contributorId="org.storydriven.storydiagrams.diagram"
+            labelProvider="org.storydriven.storydiagrams.diagram.custom.properties.StorydiagramsPropertiesLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory
+               category="diagram">
+         </propertyCategory>
+      </propertyContributor>
+«ENDREM»
+«ENDDEFINE»
+
+
+«DEFINE propertyTabs FOR PropertyTab-»
+«REM»
+      <propertyTabs contributorId="org.storydriven.storydiagrams.diagram">
+          <propertyTab
+             category="domain"
+             id="general"
+             label="General"/>
+          <propertyTab
+                afterTab="general"
+                category="domain"
+                id="types"
+                label="Type Model"/>
+          <propertyTab
+                afterTab="types"
+                category="domain"
+                id="documentation"
+                label="Documentation"/>
+      </propertyTabs>
+«ENDREM»
+«ENDDEFINE»
+
+
+«DEFINE propertySections FOR PropertyGenerator-»
+«REM»
+      <propertySections
+            contributorId="org.storydriven.storydiagrams.diagram">
+         <propertySection
+               class="org.storydriven.storydiagrams.diagram.custom.properties.sections.NamedElementNameSection"
+               filter="org.storydriven.storydiagrams.diagram.custom.properties.filters.ActivityFilter"
+               id="Activity.name"
+               tab="general">
+         </propertySection>
+«ENDREM»
+«ENDDEFINE»

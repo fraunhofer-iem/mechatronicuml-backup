@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Reconcile
+Bundle-SymbolicName: de.fujaba.properties.reconcile
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.fujaba.properties.reconcile.PropertiesReconcilePlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.m2m.qvt.oml;bundle-version="3.1.0";visibility:=reexport,
+ de.fujaba.properties;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.fujaba.properties.reconcile

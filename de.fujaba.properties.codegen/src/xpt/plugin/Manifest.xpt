@@ -1,0 +1,16 @@
+«IMPORT properties»
+
+«DEFINE Manifest FOR Plugin-»
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Properties
+Bundle-SymbolicName: «name»; singleton:=true
+Bundle-Version: «version»
+Require-Bundle: «EXPAND requiredBundles»
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+«ENDDEFINE»
+
+«DEFINE requiredBundles FOR Plugin-»
+«FOREACH requiredBundles AS name SEPARATOR ','»«name»«ENDFOREACH-»
+«ENDDEFINE»
