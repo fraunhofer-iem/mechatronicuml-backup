@@ -18,7 +18,6 @@ import org.storydriven.core.ExtendableElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry#getPort <em>Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry#getDescription <em>Description</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry#getMessageType <em>Message Type</em>}</li>
  * </ul>
@@ -29,34 +28,6 @@ import org.storydriven.core.ExtendableElement;
  * @generated
  */
 public interface ReconfigurationPortInterfaceEntry extends ExtendableElement {
-	/**
-	 * Returns the value of the '<em><b>Port</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort#getInterfaceEntries <em>Interface Entries</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Port</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Port</em>' container reference.
-	 * @see #setPort(ReconfigurationPort)
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationPortInterfaceEntry_Port()
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort#getInterfaceEntries
-	 * @model opposite="interfaceEntries" required="true" transient="false"
-	 * @generated
-	 */
-	ReconfigurationPort getPort();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry#getPort <em>Port</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Port</em>' container reference.
-	 * @see #getPort()
-	 * @generated
-	 */
-	void setPort(ReconfigurationPort value);
-
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->

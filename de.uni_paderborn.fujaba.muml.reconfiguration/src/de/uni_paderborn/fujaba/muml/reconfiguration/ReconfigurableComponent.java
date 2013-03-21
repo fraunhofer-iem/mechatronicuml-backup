@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurableComponent()
- * @model interface="true" abstract="true"
+ * @model abstract="true"
  * @generated
  */
 public interface ReconfigurableComponent extends Component {

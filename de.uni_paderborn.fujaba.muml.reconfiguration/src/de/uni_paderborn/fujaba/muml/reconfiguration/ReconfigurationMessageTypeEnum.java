@@ -14,14 +14,14 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Message Kind</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Message Type Enum</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationMessageKind()
+ * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationMessageTypeEnum()
  * @model
  * @generated
  */
-public enum ReconfigurationMessageKind implements Enumerator {
+public enum ReconfigurationMessageTypeEnum implements Enumerator {
 	/**
 	 * The '<em><b>INFO</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -73,34 +73,34 @@ public enum ReconfigurationMessageKind implements Enumerator {
 	public static final int REQUEST_VALUE = 1;
 
 	/**
-	 * An array of all the '<em><b>Message Kind</b></em>' enumerators.
+	 * An array of all the '<em><b>Message Type Enum</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final ReconfigurationMessageKind[] VALUES_ARRAY =
-		new ReconfigurationMessageKind[] {
+	private static final ReconfigurationMessageTypeEnum[] VALUES_ARRAY =
+		new ReconfigurationMessageTypeEnum[] {
 			INFO,
 			REQUEST,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Message Kind</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Message Type Enum</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<ReconfigurationMessageKind> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ReconfigurationMessageTypeEnum> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Message Kind</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Message Type Enum</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static ReconfigurationMessageKind get(String literal) {
+	public static ReconfigurationMessageTypeEnum get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			ReconfigurationMessageKind result = VALUES_ARRAY[i];
+			ReconfigurationMessageTypeEnum result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -109,14 +109,14 @@ public enum ReconfigurationMessageKind implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Message Kind</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Message Type Enum</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static ReconfigurationMessageKind getByName(String name) {
+	public static ReconfigurationMessageTypeEnum getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			ReconfigurationMessageKind result = VALUES_ARRAY[i];
+			ReconfigurationMessageTypeEnum result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -125,12 +125,12 @@ public enum ReconfigurationMessageKind implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Message Kind</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Message Type Enum</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static ReconfigurationMessageKind get(int value) {
+	public static ReconfigurationMessageTypeEnum get(int value) {
 		switch (value) {
 			case INFO_VALUE: return INFO;
 			case REQUEST_VALUE: return REQUEST;
@@ -165,7 +165,7 @@ public enum ReconfigurationMessageKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private ReconfigurationMessageKind(int value, String name, String literal) {
+	private ReconfigurationMessageTypeEnum(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -209,4 +209,4 @@ public enum ReconfigurationMessageKind implements Enumerator {
 		return literal;
 	}
 	
-} //ReconfigurationMessageKind
+} //ReconfigurationMessageTypeEnum

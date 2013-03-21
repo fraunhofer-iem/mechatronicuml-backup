@@ -17,9 +17,9 @@ import org.storydriven.core.impl.CommentableElementImpl;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationCondition;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
+import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 /**
@@ -33,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#isPropagate <em>Propagate</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#getManager <em>Manager</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#getMessageType <em>Message Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#getGuard <em>Guard</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#getStructuralCondition <em>Structural Condition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#getReconfigurationRule <em>Reconfiguration Rule</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#isInvokePlanner <em>Invoke Planner</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#getTimeForPlanning <em>Time For Planning</em>}</li>
@@ -94,14 +94,14 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 	protected MessageType messageType;
 
 	/**
-	 * The cached value of the '{@link #getGuard() <em>Guard</em>}' reference.
+	 * The cached value of the '{@link #getStructuralCondition() <em>Structural Condition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGuard()
+	 * @see #getStructuralCondition()
 	 * @generated
 	 * @ordered
 	 */
-	protected ReconfigurationCondition guard;
+	protected StructuralCondition structuralCondition;
 
 	/**
 	 * The cached value of the '{@link #getReconfigurationRule() <em>Reconfiguration Rule</em>}' reference.
@@ -288,16 +288,16 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationCondition getGuard() {
-		if (guard != null && guard.eIsProxy()) {
-			InternalEObject oldGuard = (InternalEObject)guard;
-			guard = (ReconfigurationCondition)eResolveProxy(oldGuard);
-			if (guard != oldGuard) {
+	public StructuralCondition getStructuralCondition() {
+		if (structuralCondition != null && structuralCondition.eIsProxy()) {
+			InternalEObject oldStructuralCondition = (InternalEObject)structuralCondition;
+			structuralCondition = (StructuralCondition)eResolveProxy(oldStructuralCondition);
+			if (structuralCondition != oldStructuralCondition) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__GUARD, oldGuard, guard));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__STRUCTURAL_CONDITION, oldStructuralCondition, structuralCondition));
 			}
 		}
-		return guard;
+		return structuralCondition;
 	}
 
 	/**
@@ -305,8 +305,8 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationCondition basicGetGuard() {
-		return guard;
+	public StructuralCondition basicGetStructuralCondition() {
+		return structuralCondition;
 	}
 
 	/**
@@ -314,11 +314,11 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGuard(ReconfigurationCondition newGuard) {
-		ReconfigurationCondition oldGuard = guard;
-		guard = newGuard;
+	public void setStructuralCondition(StructuralCondition newStructuralCondition) {
+		StructuralCondition oldStructuralCondition = structuralCondition;
+		structuralCondition = newStructuralCondition;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__GUARD, oldGuard, guard));
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__STRUCTURAL_CONDITION, oldStructuralCondition, structuralCondition));
 	}
 
 	/**
@@ -486,9 +486,9 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MESSAGE_TYPE:
 				if (resolve) return getMessageType();
 				return basicGetMessageType();
-			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__GUARD:
-				if (resolve) return getGuard();
-				return basicGetGuard();
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__STRUCTURAL_CONDITION:
+				if (resolve) return getStructuralCondition();
+				return basicGetStructuralCondition();
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				if (resolve) return getReconfigurationRule();
 				return basicGetReconfigurationRule();
@@ -520,8 +520,8 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MESSAGE_TYPE:
 				setMessageType((MessageType)newValue);
 				return;
-			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__GUARD:
-				setGuard((ReconfigurationCondition)newValue);
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__STRUCTURAL_CONDITION:
+				setStructuralCondition((StructuralCondition)newValue);
 				return;
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				setReconfigurationRule((ReconfigurationRule)newValue);
@@ -556,8 +556,8 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MESSAGE_TYPE:
 				setMessageType((MessageType)null);
 				return;
-			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__GUARD:
-				setGuard((ReconfigurationCondition)null);
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__STRUCTURAL_CONDITION:
+				setStructuralCondition((StructuralCondition)null);
 				return;
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				setReconfigurationRule((ReconfigurationRule)null);
@@ -588,8 +588,8 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 				return getManager() != null;
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__MESSAGE_TYPE:
 				return messageType != null;
-			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__GUARD:
-				return guard != null;
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__STRUCTURAL_CONDITION:
+				return structuralCondition != null;
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__RECONFIGURATION_RULE:
 				return reconfigurationRule != null;
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__INVOKE_PLANNER:

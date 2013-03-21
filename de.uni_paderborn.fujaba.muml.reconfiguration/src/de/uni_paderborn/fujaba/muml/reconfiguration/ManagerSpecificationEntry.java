@@ -23,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#isPropagate <em>Propagate</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getManager <em>Manager</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getMessageType <em>Message Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getGuard <em>Guard</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getStructuralCondition <em>Structural Condition</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getReconfigurationRule <em>Reconfiguration Rule</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#isInvokePlanner <em>Invoke Planner</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getTimeForPlanning <em>Time For Planning</em>}</li>
@@ -144,30 +144,30 @@ public interface ManagerSpecificationEntry extends CommentableElement {
 	void setMessageType(MessageType value);
 
 	/**
-	 * Returns the value of the '<em><b>Guard</b></em>' reference.
+	 * Returns the value of the '<em><b>Structural Condition</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Guard</em>' reference isn't clear,
+	 * If the meaning of the '<em>Structural Condition</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Guard</em>' reference.
-	 * @see #setGuard(ReconfigurationCondition)
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getManagerSpecificationEntry_Guard()
+	 * @return the value of the '<em>Structural Condition</em>' reference.
+	 * @see #setStructuralCondition(StructuralCondition)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getManagerSpecificationEntry_StructuralCondition()
 	 * @model
 	 * @generated
 	 */
-	ReconfigurationCondition getGuard();
+	StructuralCondition getStructuralCondition();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getGuard <em>Guard</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getStructuralCondition <em>Structural Condition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Guard</em>' reference.
-	 * @see #getGuard()
+	 * @param value the new value of the '<em>Structural Condition</em>' reference.
+	 * @see #getStructuralCondition()
 	 * @generated
 	 */
-	void setGuard(ReconfigurationCondition value);
+	void setStructuralCondition(StructuralCondition value);
 
 	/**
 	 * Returns the value of the '<em><b>Reconfiguration Rule</b></em>' reference.

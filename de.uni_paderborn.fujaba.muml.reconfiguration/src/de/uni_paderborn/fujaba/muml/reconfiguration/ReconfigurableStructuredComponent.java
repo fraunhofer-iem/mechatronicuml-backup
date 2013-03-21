@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration;
 import org.eclipse.emf.common.util.EList;
 
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +26,7 @@ import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getControllers <em>Controllers</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getManager <em>Manager</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getExecutor <em>Executor</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getInitialConfiguration <em>Initial Configuration</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,8 +36,7 @@ import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
  */
 public interface ReconfigurableStructuredComponent extends StructuredComponent, ReconfigurableComponent {
 	/**
-	 * Returns the value of the '<em><b>Controllers</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.reconfiguration.Controller}.
+	 * Returns the value of the '<em><b>Controllers</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.reconfiguration.Controller#getStructuredComponent <em>Structured Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -43,13 +44,24 @@ public interface ReconfigurableStructuredComponent extends StructuredComponent, 
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Controllers</em>' containment reference list.
+	 * @return the value of the '<em>Controllers</em>' containment reference.
+	 * @see #setControllers(Controller)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurableStructuredComponent_Controllers()
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.Controller#getStructuredComponent
 	 * @model opposite="structuredComponent" containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<Controller> getControllers();
+	Controller getControllers();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getControllers <em>Controllers</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Controllers</em>' containment reference.
+	 * @see #getControllers()
+	 * @generated
+	 */
+	void setControllers(Controller value);
 
 	/**
 	 * Returns the value of the '<em><b>Manager</b></em>' reference.
@@ -82,5 +94,31 @@ public interface ReconfigurableStructuredComponent extends StructuredComponent, 
 	 * @generated
 	 */
 	Executor getExecutor();
+
+	/**
+	 * Returns the value of the '<em><b>Initial Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Initial Configuration</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Initial Configuration</em>' reference.
+	 * @see #setInitialConfiguration(ComponentInstanceConfiguration)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurableStructuredComponent_InitialConfiguration()
+	 * @model
+	 * @generated
+	 */
+	ComponentInstanceConfiguration getInitialConfiguration();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getInitialConfiguration <em>Initial Configuration</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Initial Configuration</em>' reference.
+	 * @see #getInitialConfiguration()
+	 * @generated
+	 */
+	void setInitialConfiguration(ComponentInstanceConfiguration value);
 
 } // ReconfigurableStructuredComponent

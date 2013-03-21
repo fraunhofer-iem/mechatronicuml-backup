@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
+import de.uni_paderborn.fujaba.muml.reconfiguration.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -13,7 +14,21 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.fujaba.muml.reconfiguration.*;
+import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageTypeEnum;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController;
+import de.uni_paderborn.fujaba.muml.reconfiguration.Signature;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +45,7 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	 */
 	public static ReconfigurationFactory init() {
 		try {
-			ReconfigurationFactory theReconfigurationFactory = (ReconfigurationFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/0.3.8"); 
+			ReconfigurationFactory theReconfigurationFactory = (ReconfigurationFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/0.3.18"); 
 			if (theReconfigurationFactory != null) {
 				return theReconfigurationFactory;
 			}
@@ -70,6 +85,7 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY: return createReconfigurationPortInterfaceEntry();
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY: return createReconfigurationMessagePortInterfaceEntry();
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY: return createReconfigurationExecutionPortInterfaceEntry();
+			case ReconfigurationPackage.SIGNATURE: return createSignature();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -83,8 +99,8 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_KIND:
-				return createReconfigurationMessageKindFromString(eDataType, initialValue);
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_TYPE_ENUM:
+				return createReconfigurationMessageTypeEnumFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -98,8 +114,8 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_KIND:
-				return convertReconfigurationMessageKindToString(eDataType, instanceValue);
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_TYPE_ENUM:
+				return convertReconfigurationMessageTypeEnumToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -220,8 +236,18 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationMessageKind createReconfigurationMessageKindFromString(EDataType eDataType, String initialValue) {
-		ReconfigurationMessageKind result = ReconfigurationMessageKind.get(initialValue);
+	public Signature createSignature() {
+		SignatureImpl signature = new SignatureImpl();
+		return signature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurationMessageTypeEnum createReconfigurationMessageTypeEnumFromString(EDataType eDataType, String initialValue) {
+		ReconfigurationMessageTypeEnum result = ReconfigurationMessageTypeEnum.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -231,7 +257,7 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertReconfigurationMessageKindToString(EDataType eDataType, Object instanceValue) {
+	public String convertReconfigurationMessageTypeEnumToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

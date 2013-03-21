@@ -21,24 +21,24 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationCondition;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Condition</b></em>'.
+ * An implementation of the model object '<em><b>Structural Condition</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationConditionImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationConditionImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.StructuralConditionImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.StructuralConditionImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class ReconfigurationConditionImpl extends NamedElementImpl implements ReconfigurationCondition {
+public abstract class StructuralConditionImpl extends NamedElementImpl implements StructuralCondition {
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public abstract class ReconfigurationConditionImpl extends NamedElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ReconfigurationConditionImpl() {
+	protected StructuralConditionImpl() {
 		super();
 	}
 
@@ -85,7 +85,7 @@ public abstract class ReconfigurationConditionImpl extends NamedElementImpl impl
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ReconfigurationPackage.Literals.RECONFIGURATION_CONDITION;
+		return ReconfigurationPackage.Literals.STRUCTURAL_CONDITION;
 	}
 
 	/**
@@ -106,7 +106,7 @@ public abstract class ReconfigurationConditionImpl extends NamedElementImpl impl
 		String oldComment = comment;
 		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_CONDITION__COMMENT, oldComment, comment));
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.STRUCTURAL_CONDITION__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -116,7 +116,7 @@ public abstract class ReconfigurationConditionImpl extends NamedElementImpl impl
 	 */
 	public EList<Parameter> getParameters() {
 		if (parameters == null) {
-			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, ReconfigurationPackage.RECONFIGURATION_CONDITION__PARAMETERS);
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, ReconfigurationPackage.STRUCTURAL_CONDITION__PARAMETERS);
 		}
 		return parameters;
 	}
@@ -129,7 +129,7 @@ public abstract class ReconfigurationConditionImpl extends NamedElementImpl impl
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_CONDITION__PARAMETERS:
+			case ReconfigurationPackage.STRUCTURAL_CONDITION__PARAMETERS:
 				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -143,9 +143,9 @@ public abstract class ReconfigurationConditionImpl extends NamedElementImpl impl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_CONDITION__COMMENT:
+			case ReconfigurationPackage.STRUCTURAL_CONDITION__COMMENT:
 				return getComment();
-			case ReconfigurationPackage.RECONFIGURATION_CONDITION__PARAMETERS:
+			case ReconfigurationPackage.STRUCTURAL_CONDITION__PARAMETERS:
 				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -160,10 +160,10 @@ public abstract class ReconfigurationConditionImpl extends NamedElementImpl impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_CONDITION__COMMENT:
+			case ReconfigurationPackage.STRUCTURAL_CONDITION__COMMENT:
 				setComment((String)newValue);
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_CONDITION__PARAMETERS:
+			case ReconfigurationPackage.STRUCTURAL_CONDITION__PARAMETERS:
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
@@ -179,10 +179,10 @@ public abstract class ReconfigurationConditionImpl extends NamedElementImpl impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_CONDITION__COMMENT:
+			case ReconfigurationPackage.STRUCTURAL_CONDITION__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_CONDITION__PARAMETERS:
+			case ReconfigurationPackage.STRUCTURAL_CONDITION__PARAMETERS:
 				getParameters().clear();
 				return;
 		}
@@ -197,9 +197,9 @@ public abstract class ReconfigurationConditionImpl extends NamedElementImpl impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_CONDITION__COMMENT:
+			case ReconfigurationPackage.STRUCTURAL_CONDITION__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case ReconfigurationPackage.RECONFIGURATION_CONDITION__PARAMETERS:
+			case ReconfigurationPackage.STRUCTURAL_CONDITION__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -214,7 +214,7 @@ public abstract class ReconfigurationConditionImpl extends NamedElementImpl impl
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
-				case ReconfigurationPackage.RECONFIGURATION_CONDITION__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+				case ReconfigurationPackage.STRUCTURAL_CONDITION__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 				default: return -1;
 			}
 		}
@@ -230,7 +230,7 @@ public abstract class ReconfigurationConditionImpl extends NamedElementImpl impl
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return ReconfigurationPackage.RECONFIGURATION_CONDITION__COMMENT;
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return ReconfigurationPackage.STRUCTURAL_CONDITION__COMMENT;
 				default: return -1;
 			}
 		}
@@ -253,4 +253,4 @@ public abstract class ReconfigurationConditionImpl extends NamedElementImpl impl
 		return result.toString();
 	}
 
-} //ReconfigurationConditionImpl
+} //StructuralConditionImpl

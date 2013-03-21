@@ -125,6 +125,15 @@ public interface ReconfigurationFactory extends EFactory {
 	ReconfigurationExecutionPortInterfaceEntry createReconfigurationExecutionPortInterfaceEntry();
 
 	/**
+	 * Returns a new object of class '<em>Signature</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Signature</em>'.
+	 * @generated
+	 */
+	Signature createSignature();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

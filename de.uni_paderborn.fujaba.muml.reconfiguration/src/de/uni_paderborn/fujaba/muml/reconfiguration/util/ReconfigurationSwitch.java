@@ -141,18 +141,17 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 			case ReconfigurationPackage.RECONFIGURATION_RULE: {
 				ReconfigurationRule reconfigurationRule = (ReconfigurationRule)theEObject;
 				T result = caseReconfigurationRule(reconfigurationRule);
-				if (result == null) result = caseNamedElement(reconfigurationRule);
 				if (result == null) result = caseCommentableElement(reconfigurationRule);
 				if (result == null) result = caseExtendableElement(reconfigurationRule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.RECONFIGURATION_CONDITION: {
-				ReconfigurationCondition reconfigurationCondition = (ReconfigurationCondition)theEObject;
-				T result = caseReconfigurationCondition(reconfigurationCondition);
-				if (result == null) result = caseNamedElement(reconfigurationCondition);
-				if (result == null) result = caseCommentableElement(reconfigurationCondition);
-				if (result == null) result = caseExtendableElement(reconfigurationCondition);
+			case ReconfigurationPackage.STRUCTURAL_CONDITION: {
+				StructuralCondition structuralCondition = (StructuralCondition)theEObject;
+				T result = caseStructuralCondition(structuralCondition);
+				if (result == null) result = caseNamedElement(structuralCondition);
+				if (result == null) result = caseCommentableElement(structuralCondition);
+				if (result == null) result = caseExtendableElement(structuralCondition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -259,6 +258,14 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				T result = caseReconfigurationExecutionPortInterfaceEntry(reconfigurationExecutionPortInterfaceEntry);
 				if (result == null) result = caseReconfigurationPortInterfaceEntry(reconfigurationExecutionPortInterfaceEntry);
 				if (result == null) result = caseExtendableElement(reconfigurationExecutionPortInterfaceEntry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.SIGNATURE: {
+				Signature signature = (Signature)theEObject;
+				T result = caseSignature(signature);
+				if (result == null) result = caseNamedElement(signature);
+				if (result == null) result = caseExtendableElement(signature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -387,6 +394,21 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Signature</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Signature</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSignature(Signature object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Manager</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -432,17 +454,17 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Structural Condition</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Condition</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Structural Condition</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseReconfigurationCondition(ReconfigurationCondition object) {
+	public T caseStructuralCondition(StructuralCondition object) {
 		return null;
 	}
 

@@ -6,17 +6,15 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import de.uni_paderborn.fujaba.muml.component.impl.StructuredComponentImpl;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
@@ -33,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurableStructuredComponentImpl#getControllers <em>Controllers</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurableStructuredComponentImpl#getManager <em>Manager</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurableStructuredComponentImpl#getExecutor <em>Executor</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurableStructuredComponentImpl#getInitialConfiguration <em>Initial Configuration</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,14 +39,14 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
  */
 public class ReconfigurableStructuredComponentImpl extends StructuredComponentImpl implements ReconfigurableStructuredComponent {
 	/**
-	 * The cached value of the '{@link #getControllers() <em>Controllers</em>}' containment reference list.
+	 * The cached value of the '{@link #getControllers() <em>Controllers</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getControllers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Controller> controllers;
+	protected Controller controllers;
 
 	/**
 	 * The cached setting delegate for the '{@link #getManager() <em>Manager</em>}' reference.
@@ -67,6 +66,16 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate EXECUTOR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ReconfigurationPackage.Literals.RECONFIGURABLE_STRUCTURED_COMPONENT__EXECUTOR).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getInitialConfiguration() <em>Initial Configuration</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInitialConfiguration()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComponentInstanceConfiguration initialConfiguration;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,11 +101,42 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Controller> getControllers() {
-		if (controllers == null) {
-			controllers = new EObjectContainmentWithInverseEList<Controller>(Controller.class, this, ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS, ReconfigurationPackage.CONTROLLER__STRUCTURED_COMPONENT);
-		}
+	public Controller getControllers() {
 		return controllers;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetControllers(Controller newControllers, NotificationChain msgs) {
+		Controller oldControllers = controllers;
+		controllers = newControllers;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS, oldControllers, newControllers);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setControllers(Controller newControllers) {
+		if (newControllers != controllers) {
+			NotificationChain msgs = null;
+			if (controllers != null)
+				msgs = ((InternalEObject)controllers).eInverseRemove(this, ReconfigurationPackage.CONTROLLER__STRUCTURED_COMPONENT, Controller.class, msgs);
+			if (newControllers != null)
+				msgs = ((InternalEObject)newControllers).eInverseAdd(this, ReconfigurationPackage.CONTROLLER__STRUCTURED_COMPONENT, Controller.class, msgs);
+			msgs = basicSetControllers(newControllers, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS, newControllers, newControllers));
 	}
 
 	/**
@@ -140,12 +180,52 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ComponentInstanceConfiguration getInitialConfiguration() {
+		if (initialConfiguration != null && initialConfiguration.eIsProxy()) {
+			InternalEObject oldInitialConfiguration = (InternalEObject)initialConfiguration;
+			initialConfiguration = (ComponentInstanceConfiguration)eResolveProxy(oldInitialConfiguration);
+			if (initialConfiguration != oldInitialConfiguration) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__INITIAL_CONFIGURATION, oldInitialConfiguration, initialConfiguration));
+			}
+		}
+		return initialConfiguration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentInstanceConfiguration basicGetInitialConfiguration() {
+		return initialConfiguration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInitialConfiguration(ComponentInstanceConfiguration newInitialConfiguration) {
+		ComponentInstanceConfiguration oldInitialConfiguration = initialConfiguration;
+		initialConfiguration = newInitialConfiguration;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__INITIAL_CONFIGURATION, oldInitialConfiguration, initialConfiguration));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getControllers()).basicAdd(otherEnd, msgs);
+				if (controllers != null)
+					msgs = ((InternalEObject)controllers).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS, null, msgs);
+				return basicSetControllers((Controller)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -159,7 +239,7 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS:
-				return ((InternalEList<?>)getControllers()).basicRemove(otherEnd, msgs);
+				return basicSetControllers(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -180,6 +260,9 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__EXECUTOR:
 				if (resolve) return getExecutor();
 				return basicGetExecutor();
+			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__INITIAL_CONFIGURATION:
+				if (resolve) return getInitialConfiguration();
+				return basicGetInitialConfiguration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -194,8 +277,10 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS:
-				getControllers().clear();
-				getControllers().addAll((Collection<? extends Controller>)newValue);
+				setControllers((Controller)newValue);
+				return;
+			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__INITIAL_CONFIGURATION:
+				setInitialConfiguration((ComponentInstanceConfiguration)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -210,7 +295,10 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS:
-				getControllers().clear();
+				setControllers((Controller)null);
+				return;
+			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__INITIAL_CONFIGURATION:
+				setInitialConfiguration((ComponentInstanceConfiguration)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -225,11 +313,13 @@ public class ReconfigurableStructuredComponentImpl extends StructuredComponentIm
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLERS:
-				return controllers != null && !controllers.isEmpty();
+				return controllers != null;
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__MANAGER:
 				return MANAGER__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__EXECUTOR:
 				return EXECUTOR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT__INITIAL_CONFIGURATION:
+				return initialConfiguration != null;
 		}
 		return super.eIsSet(featureID);
 	}

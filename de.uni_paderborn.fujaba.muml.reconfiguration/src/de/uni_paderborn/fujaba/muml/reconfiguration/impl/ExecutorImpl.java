@@ -6,10 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
-import de.uni_paderborn.fujaba.muml.behavior.Behavior;
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -24,8 +20,13 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.CommentableElementImpl;
 
+import de.uni_paderborn.fujaba.muml.behavior.Behavior;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController;
 
@@ -40,6 +41,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationCont
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorImpl#getSpecificationEntries <em>Specification Entries</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorImpl#getReconfigurationController <em>Reconfiguration Controller</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorImpl#getPorts <em>Ports</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorImpl#getReconfigurationExecutionPorts <em>Reconfiguration Execution Ports</em>}</li>
  * </ul>
  * </p>
  *
@@ -224,6 +226,19 @@ public class ExecutorImpl extends CommentableElementImpl implements Executor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ReconfigurationExecutionPort> getReconfigurationExecutionPorts() {
+		// TODO: implement this method to return the 'Reconfiguration Execution Ports' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
+		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -293,6 +308,8 @@ public class ExecutorImpl extends CommentableElementImpl implements Executor {
 				return getReconfigurationController();
 			case ReconfigurationPackage.EXECUTOR__PORTS:
 				return getPorts();
+			case ReconfigurationPackage.EXECUTOR__RECONFIGURATION_EXECUTION_PORTS:
+				return getReconfigurationExecutionPorts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -364,6 +381,8 @@ public class ExecutorImpl extends CommentableElementImpl implements Executor {
 				return getReconfigurationController() != null;
 			case ReconfigurationPackage.EXECUTOR__PORTS:
 				return ports != null && !ports.isEmpty();
+			case ReconfigurationPackage.EXECUTOR__RECONFIGURATION_EXECUTION_PORTS:
+				return !getReconfigurationExecutionPorts().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

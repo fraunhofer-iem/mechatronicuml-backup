@@ -6,29 +6,30 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
-
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Condition</b></em>'.
+ * A representation of the model object '<em><b>Structural Condition</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationCondition#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationCondition()
+ * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getStructuralCondition()
  * @model abstract="true"
  * @generated
  */
-public interface ReconfigurationCondition extends NamedElement, CommentableElement {
+public interface StructuralCondition extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.Parameter}.
@@ -39,10 +40,10 @@ public interface ReconfigurationCondition extends NamedElement, CommentableEleme
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationCondition_Parameters()
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getStructuralCondition_Parameters()
 	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Parameter> getParameters();
 
-} // ReconfigurationCondition
+} // StructuralCondition

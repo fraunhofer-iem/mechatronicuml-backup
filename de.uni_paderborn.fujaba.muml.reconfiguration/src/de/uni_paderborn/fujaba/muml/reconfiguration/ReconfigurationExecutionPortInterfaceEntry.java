@@ -18,6 +18,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForDecision <em>Time For Decision</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForExecution <em>Time For Execution</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getReconfigurationExecutionPort <em>Reconfiguration Execution Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,5 +78,33 @@ public interface ReconfigurationExecutionPortInterfaceEntry extends Reconfigurat
 	 * @generated
 	 */
 	void setTimeForExecution(TimeValue value);
+
+	/**
+	 * Returns the value of the '<em><b>Reconfiguration Execution Port</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort#getInterfaceEntries <em>Interface Entries</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reconfiguration Execution Port</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reconfiguration Execution Port</em>' container reference.
+	 * @see #setReconfigurationExecutionPort(ReconfigurationExecutionPort)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationExecutionPortInterfaceEntry_ReconfigurationExecutionPort()
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort#getInterfaceEntries
+	 * @model opposite="interfaceEntries" required="true" transient="false"
+	 * @generated
+	 */
+	ReconfigurationExecutionPort getReconfigurationExecutionPort();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getReconfigurationExecutionPort <em>Reconfiguration Execution Port</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reconfiguration Execution Port</em>' container reference.
+	 * @see #getReconfigurationExecutionPort()
+	 * @generated
+	 */
+	void setReconfigurationExecutionPort(ReconfigurationExecutionPort value);
 
 } // ReconfigurationExecutionPortInterfaceEntry

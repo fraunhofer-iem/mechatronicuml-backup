@@ -6,24 +6,17 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.impl.NamedElementImpl;
+import org.storydriven.core.impl.CommentableElementImpl;
 
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
+import de.uni_paderborn.fujaba.muml.reconfiguration.Signature;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 /**
@@ -33,57 +26,16 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl#getParameters <em>Parameters</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl#getReturnParameters <em>Return Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl#getReconfiguredComponent <em>Reconfigured Component</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl#getWcet <em>Wcet</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl#getSignature <em>Signature</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class ReconfigurationRuleImpl extends NamedElementImpl implements ReconfigurationRule {
-	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
-
-	/**
-	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comment = COMMENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Parameter> parameters;
-
-	/**
-	 * The cached value of the '{@link #getReturnParameters() <em>Return Parameters</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Parameter> returnParameters;
-
+public abstract class ReconfigurationRuleImpl extends CommentableElementImpl implements ReconfigurationRule {
 	/**
 	 * The cached value of the '{@link #getReconfiguredComponent() <em>Reconfigured Component</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -105,6 +57,36 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	protected TimeValue wcet;
 
 	/**
+	 * The cached value of the '{@link #getSignature() <em>Signature</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSignature()
+	 * @generated
+	 * @ordered
+	 */
+	protected Signature signature;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -121,51 +103,6 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	@Override
 	protected EClass eStaticClass() {
 		return ReconfigurationPackage.Literals.RECONFIGURATION_RULE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getComment() {
-		return comment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComment(String newComment) {
-		String oldComment = comment;
-		comment = newComment;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_RULE__COMMENT, oldComment, comment));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Parameter> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS);
-		}
-		return parameters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Parameter> getReturnParameters() {
-		if (returnParameters == null) {
-			returnParameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS);
-		}
-		return returnParameters;
 	}
 
 	/**
@@ -254,15 +191,93 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Signature getSignature() {
+		return signature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSignature(Signature newSignature, NotificationChain msgs) {
+		Signature oldSignature = signature;
+		signature = newSignature;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE, oldSignature, newSignature);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSignature(Signature newSignature) {
+		if (newSignature != signature) {
+			NotificationChain msgs = null;
+			if (signature != null)
+				msgs = ((InternalEObject)signature).eInverseRemove(this, ReconfigurationPackage.SIGNATURE__RECONFIGURATION_RULE, Signature.class, msgs);
+			if (newSignature != null)
+				msgs = ((InternalEObject)newSignature).eInverseAdd(this, ReconfigurationPackage.SIGNATURE__RECONFIGURATION_RULE, Signature.class, msgs);
+			msgs = basicSetSignature(newSignature, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE, newSignature, newSignature));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_RULE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
+				if (signature != null)
+					msgs = ((InternalEObject)signature).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE, null, msgs);
+				return basicSetSignature((Signature)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS:
-				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
-			case ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS:
-				return ((InternalEList<?>)getReturnParameters()).basicRemove(otherEnd, msgs);
 			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
 				return basicSetWcet(null, msgs);
+			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
+				return basicSetSignature(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -275,17 +290,15 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_RULE__COMMENT:
-				return getComment();
-			case ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS:
-				return getParameters();
-			case ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS:
-				return getReturnParameters();
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
 				if (resolve) return getReconfiguredComponent();
 				return basicGetReconfiguredComponent();
 			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
 				return getWcet();
+			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
+				return getSignature();
+			case ReconfigurationPackage.RECONFIGURATION_RULE__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -299,22 +312,17 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_RULE__COMMENT:
-				setComment((String)newValue);
-				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends Parameter>)newValue);
-				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS:
-				getReturnParameters().clear();
-				getReturnParameters().addAll((Collection<? extends Parameter>)newValue);
-				return;
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
 				setReconfiguredComponent((ReconfigurableComponent)newValue);
 				return;
 			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
 				setWcet((TimeValue)newValue);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
+				setSignature((Signature)newValue);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_RULE__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -328,20 +336,17 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_RULE__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS:
-				getParameters().clear();
-				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS:
-				getReturnParameters().clear();
-				return;
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
 				setReconfiguredComponent((ReconfigurableComponent)null);
 				return;
 			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
 				setWcet((TimeValue)null);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
+				setSignature((Signature)null);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_RULE__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -355,50 +360,16 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_RULE__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
-			case ReconfigurationPackage.RECONFIGURATION_RULE__RETURN_PARAMETERS:
-				return returnParameters != null && !returnParameters.isEmpty();
 			case ReconfigurationPackage.RECONFIGURATION_RULE__RECONFIGURED_COMPONENT:
 				return reconfiguredComponent != null;
 			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
 				return wcet != null;
+			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
+				return signature != null;
+			case ReconfigurationPackage.RECONFIGURATION_RULE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (derivedFeatureID) {
-				case ReconfigurationPackage.RECONFIGURATION_RULE__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (baseFeatureID) {
-				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return ReconfigurationPackage.RECONFIGURATION_RULE__COMMENT;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -411,8 +382,8 @@ public abstract class ReconfigurationRuleImpl extends NamedElementImpl implement
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (comment: ");
-		result.append(comment);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

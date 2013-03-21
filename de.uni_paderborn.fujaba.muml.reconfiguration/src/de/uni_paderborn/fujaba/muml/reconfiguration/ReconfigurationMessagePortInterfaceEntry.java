@@ -16,8 +16,9 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry#getMessageKind <em>Message Kind</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry#getReconfigurationMessageType <em>Reconfiguration Message Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry#getExpectedResponseTime <em>Expected Response Time</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry#getReconfigurationMessagePort <em>Reconfiguration Message Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,33 +28,33 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  */
 public interface ReconfigurationMessagePortInterfaceEntry extends ReconfigurationPortInterfaceEntry {
 	/**
-	 * Returns the value of the '<em><b>Message Kind</b></em>' attribute.
-	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageKind}.
+	 * Returns the value of the '<em><b>Reconfiguration Message Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageTypeEnum}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Message Kind</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Reconfiguration Message Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Message Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageKind
-	 * @see #setMessageKind(ReconfigurationMessageKind)
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationMessagePortInterfaceEntry_MessageKind()
+	 * @return the value of the '<em>Reconfiguration Message Type</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageTypeEnum
+	 * @see #setReconfigurationMessageType(ReconfigurationMessageTypeEnum)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationMessagePortInterfaceEntry_ReconfigurationMessageType()
 	 * @model
 	 * @generated
 	 */
-	ReconfigurationMessageKind getMessageKind();
+	ReconfigurationMessageTypeEnum getReconfigurationMessageType();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry#getMessageKind <em>Message Kind</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry#getReconfigurationMessageType <em>Reconfiguration Message Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Message Kind</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageKind
-	 * @see #getMessageKind()
+	 * @param value the new value of the '<em>Reconfiguration Message Type</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageTypeEnum
+	 * @see #getReconfigurationMessageType()
 	 * @generated
 	 */
-	void setMessageKind(ReconfigurationMessageKind value);
+	void setReconfigurationMessageType(ReconfigurationMessageTypeEnum value);
 
 	/**
 	 * Returns the value of the '<em><b>Expected Response Time</b></em>' containment reference.
@@ -80,5 +81,33 @@ public interface ReconfigurationMessagePortInterfaceEntry extends Reconfiguratio
 	 * @generated
 	 */
 	void setExpectedResponseTime(TimeValue value);
+
+	/**
+	 * Returns the value of the '<em><b>Reconfiguration Message Port</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort#getInterfaceEntries <em>Interface Entries</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reconfiguration Message Port</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reconfiguration Message Port</em>' container reference.
+	 * @see #setReconfigurationMessagePort(ReconfigurationMessagePort)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationMessagePortInterfaceEntry_ReconfigurationMessagePort()
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort#getInterfaceEntries
+	 * @model opposite="interfaceEntries" required="true" transient="false"
+	 * @generated
+	 */
+	ReconfigurationMessagePort getReconfigurationMessagePort();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry#getReconfigurationMessagePort <em>Reconfiguration Message Port</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reconfiguration Message Port</em>' container reference.
+	 * @see #getReconfigurationMessagePort()
+	 * @generated
+	 */
+	void setReconfigurationMessagePort(ReconfigurationMessagePort value);
 
 } // ReconfigurationMessagePortInterfaceEntry

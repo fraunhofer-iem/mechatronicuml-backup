@@ -25,10 +25,10 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule#getParameters <em>Parameters</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule#getReturnParameters <em>Return Parameters</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule#getReconfiguredComponent <em>Reconfigured Component</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule#getWcet <em>Wcet</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule#getSignature <em>Signature</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,39 +36,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * @model abstract="true"
  * @generated
  */
-public interface ReconfigurationRule extends NamedElement, CommentableElement {
-	/**
-	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.Parameter}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationRule_Parameters()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Parameter> getParameters();
-
-	/**
-	 * Returns the value of the '<em><b>Return Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.Parameter}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Return Parameters</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Return Parameters</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationRule_ReturnParameters()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Parameter> getReturnParameters();
-
+public interface ReconfigurationRule extends CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Reconfigured Component</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -120,5 +88,59 @@ public interface ReconfigurationRule extends NamedElement, CommentableElement {
 	 * @generated
 	 */
 	void setWcet(TimeValue value);
+
+	/**
+	 * Returns the value of the '<em><b>Signature</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.reconfiguration.Signature#getReconfigurationRule <em>Reconfiguration Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Signature</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Signature</em>' containment reference.
+	 * @see #setSignature(Signature)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationRule_Signature()
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.Signature#getReconfigurationRule
+	 * @model opposite="reconfigurationRule" containment="true" required="true"
+	 * @generated
+	 */
+	Signature getSignature();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule#getSignature <em>Signature</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Signature</em>' containment reference.
+	 * @see #getSignature()
+	 * @generated
+	 */
+	void setSignature(Signature value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationRule_Name()
+	 * @model derived="true"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // ReconfigurationRule

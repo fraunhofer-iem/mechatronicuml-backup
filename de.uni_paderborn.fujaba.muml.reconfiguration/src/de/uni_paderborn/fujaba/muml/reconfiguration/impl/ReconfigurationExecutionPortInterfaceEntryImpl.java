@@ -6,18 +6,17 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
-
-import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,6 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl#getTimeForDecision <em>Time For Decision</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl#getTimeForExecution <em>Time For Execution</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl#getReconfigurationExecutionPort <em>Reconfiguration Execution Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -164,6 +164,63 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ReconfigurationExecutionPort getReconfigurationExecutionPort() {
+		if (eContainerFeatureID() != ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT) return null;
+		return (ReconfigurationExecutionPort)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetReconfigurationExecutionPort(ReconfigurationExecutionPort newReconfigurationExecutionPort, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newReconfigurationExecutionPort, ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReconfigurationExecutionPort(ReconfigurationExecutionPort newReconfigurationExecutionPort) {
+		if (newReconfigurationExecutionPort != eInternalContainer() || (eContainerFeatureID() != ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT && newReconfigurationExecutionPort != null)) {
+			if (EcoreUtil.isAncestor(this, newReconfigurationExecutionPort))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newReconfigurationExecutionPort != null)
+				msgs = ((InternalEObject)newReconfigurationExecutionPort).eInverseAdd(this, ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT__INTERFACE_ENTRIES, ReconfigurationExecutionPort.class, msgs);
+			msgs = basicSetReconfigurationExecutionPort(newReconfigurationExecutionPort, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT, newReconfigurationExecutionPort, newReconfigurationExecutionPort));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetReconfigurationExecutionPort((ReconfigurationExecutionPort)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -171,8 +228,24 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 				return basicSetTimeForDecision(null, msgs);
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION:
 				return basicSetTimeForExecution(null, msgs);
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
+				return basicSetReconfigurationExecutionPort(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
+				return eInternalContainer().eInverseRemove(this, ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT__INTERFACE_ENTRIES, ReconfigurationExecutionPort.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -187,6 +260,8 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 				return getTimeForDecision();
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION:
 				return getTimeForExecution();
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
+				return getReconfigurationExecutionPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,6 +279,9 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 				return;
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION:
 				setTimeForExecution((TimeValue)newValue);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
+				setReconfigurationExecutionPort((ReconfigurationExecutionPort)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -223,6 +301,9 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION:
 				setTimeForExecution((TimeValue)null);
 				return;
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
+				setReconfigurationExecutionPort((ReconfigurationExecutionPort)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -239,6 +320,8 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 				return timeForDecision != null;
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION:
 				return timeForExecution != null;
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
+				return getReconfigurationExecutionPort() != null;
 		}
 		return super.eIsSet(featureID);
 	}

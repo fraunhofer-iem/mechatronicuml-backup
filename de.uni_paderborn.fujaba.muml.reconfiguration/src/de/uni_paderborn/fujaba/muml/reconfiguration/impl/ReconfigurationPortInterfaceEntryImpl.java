@@ -6,23 +6,15 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.storydriven.core.impl.ExtendableElementImpl;
+
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +23,6 @@ import org.storydriven.core.impl.ExtendableElementImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortInterfaceEntryImpl#getPort <em>Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortInterfaceEntryImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortInterfaceEntryImpl#getMessageType <em>Message Type</em>}</li>
  * </ul>
@@ -87,47 +78,6 @@ public class ReconfigurationPortInterfaceEntryImpl extends ExtendableElementImpl
 	@Override
 	protected EClass eStaticClass() {
 		return ReconfigurationPackage.Literals.RECONFIGURATION_PORT_INTERFACE_ENTRY;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ReconfigurationPort getPort() {
-		if (eContainerFeatureID() != ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__PORT) return null;
-		return (ReconfigurationPort)eContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetPort(ReconfigurationPort newPort, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newPort, ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__PORT, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPort(ReconfigurationPort newPort) {
-		if (newPort != eInternalContainer() || (eContainerFeatureID() != ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__PORT && newPort != null)) {
-			if (EcoreUtil.isAncestor(this, newPort))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newPort != null)
-				msgs = ((InternalEObject)newPort).eInverseAdd(this, ReconfigurationPackage.RECONFIGURATION_PORT__INTERFACE_ENTRIES, ReconfigurationPort.class, msgs);
-			msgs = basicSetPort(newPort, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__PORT, newPort, newPort));
 	}
 
 	/**
@@ -195,54 +145,8 @@ public class ReconfigurationPortInterfaceEntryImpl extends ExtendableElementImpl
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__PORT:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetPort((ReconfigurationPort)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__PORT:
-				return basicSetPort(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__PORT:
-				return eInternalContainer().eInverseRemove(this, ReconfigurationPackage.RECONFIGURATION_PORT__INTERFACE_ENTRIES, ReconfigurationPort.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__PORT:
-				return getPort();
 			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__DESCRIPTION:
 				return getDescription();
 			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__MESSAGE_TYPE:
@@ -260,9 +164,6 @@ public class ReconfigurationPortInterfaceEntryImpl extends ExtendableElementImpl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__PORT:
-				setPort((ReconfigurationPort)newValue);
-				return;
 			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
@@ -281,9 +182,6 @@ public class ReconfigurationPortInterfaceEntryImpl extends ExtendableElementImpl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__PORT:
-				setPort((ReconfigurationPort)null);
-				return;
 			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
@@ -302,8 +200,6 @@ public class ReconfigurationPortInterfaceEntryImpl extends ExtendableElementImpl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__PORT:
-				return getPort() != null;
 			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY__MESSAGE_TYPE:

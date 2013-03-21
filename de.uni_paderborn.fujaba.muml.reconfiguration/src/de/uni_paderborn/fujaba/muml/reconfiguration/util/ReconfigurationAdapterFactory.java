@@ -106,8 +106,8 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createReconfigurationRuleAdapter();
 			}
 			@Override
-			public Adapter caseReconfigurationCondition(ReconfigurationCondition object) {
-				return createReconfigurationConditionAdapter();
+			public Adapter caseStructuralCondition(StructuralCondition object) {
+				return createStructuralConditionAdapter();
 			}
 			@Override
 			public Adapter caseReconfigurableComponent(ReconfigurableComponent object) {
@@ -148,6 +148,10 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseReconfigurationExecutionPortInterfaceEntry(ReconfigurationExecutionPortInterfaceEntry object) {
 				return createReconfigurationExecutionPortInterfaceEntryAdapter();
+			}
+			@Override
+			public Adapter caseSignature(Signature object) {
+				return createSignatureAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -330,6 +334,20 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.Signature <em>Signature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.Signature
+	 * @generated
+	 */
+	public Adapter createSignatureAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.Manager <em>Manager</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -372,16 +390,16 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationCondition <em>Condition</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition <em>Structural Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationCondition
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition
 	 * @generated
 	 */
-	public Adapter createReconfigurationConditionAdapter() {
+	public Adapter createStructuralConditionAdapter() {
 		return null;
 	}
 

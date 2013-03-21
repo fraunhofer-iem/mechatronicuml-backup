@@ -110,8 +110,8 @@ public class ReconfigurationValidator extends EObjectValidator {
 				return validateExecutor((Executor)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_RULE:
 				return validateReconfigurationRule((ReconfigurationRule)value, diagnostics, context);
-			case ReconfigurationPackage.RECONFIGURATION_CONDITION:
-				return validateReconfigurationCondition((ReconfigurationCondition)value, diagnostics, context);
+			case ReconfigurationPackage.STRUCTURAL_CONDITION:
+				return validateStructuralCondition((StructuralCondition)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURABLE_COMPONENT:
 				return validateReconfigurableComponent((ReconfigurableComponent)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT:
@@ -132,8 +132,10 @@ public class ReconfigurationValidator extends EObjectValidator {
 				return validateReconfigurationMessagePortInterfaceEntry((ReconfigurationMessagePortInterfaceEntry)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY:
 				return validateReconfigurationExecutionPortInterfaceEntry((ReconfigurationExecutionPortInterfaceEntry)value, diagnostics, context);
-			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_KIND:
-				return validateReconfigurationMessageKind((ReconfigurationMessageKind)value, diagnostics, context);
+			case ReconfigurationPackage.SIGNATURE:
+				return validateSignature((Signature)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_TYPE_ENUM:
+				return validateReconfigurationMessageTypeEnum((ReconfigurationMessageTypeEnum)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -155,7 +157,7 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateComponent_UniquePortNames(reconfigurableStructuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_StructuredComponentAllowsNoHybridPorts(reconfigurableStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_StructuredComponentNoHybridPort(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_ValidComponentType(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_NoCyclicComponentPartHierarchy(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_DiscreteStructuredComponentValidParts(reconfigurableStructuredComponent, diagnostics, context);
@@ -181,7 +183,7 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurationPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresMessageTypes(reconfigurationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_AtLeastOneMessageType(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAndRoleSameMessageTypes(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresBehavior(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(reconfigurationPort, diagnostics, context);
@@ -249,7 +251,16 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateReconfigurationMessageKind(ReconfigurationMessageKind reconfigurationMessageKind, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateSignature(Signature signature, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(signature, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReconfigurationMessageTypeEnum(ReconfigurationMessageTypeEnum reconfigurationMessageTypeEnum, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
@@ -285,8 +296,8 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateReconfigurationCondition(ReconfigurationCondition reconfigurationCondition, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(reconfigurationCondition, diagnostics, context);
+	public boolean validateStructuralCondition(StructuralCondition structuralCondition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(structuralCondition, diagnostics, context);
 	}
 
 	/**
@@ -323,7 +334,7 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurationMessagePort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresMessageTypes(reconfigurationMessagePort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_AtLeastOneMessageType(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAndRoleSameMessageTypes(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresBehavior(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(reconfigurationMessagePort, diagnostics, context);
@@ -347,7 +358,7 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresMessageTypes(reconfigurationExecutionPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_AtLeastOneMessageType(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAndRoleSameMessageTypes(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresBehavior(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(reconfigurationExecutionPort, diagnostics, context);

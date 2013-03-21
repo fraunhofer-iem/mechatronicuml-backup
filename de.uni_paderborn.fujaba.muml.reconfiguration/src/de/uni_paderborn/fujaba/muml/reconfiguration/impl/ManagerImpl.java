@@ -6,10 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
-import de.uni_paderborn.fujaba.muml.behavior.Behavior;
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -24,8 +20,13 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.CommentableElementImpl;
 
+import de.uni_paderborn.fujaba.muml.behavior.Behavior;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController;
 
@@ -40,6 +41,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationCont
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerImpl#getSpecificationEntries <em>Specification Entries</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerImpl#getReconfigurationController <em>Reconfiguration Controller</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerImpl#getPorts <em>Ports</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerImpl#getReconfigurationMessagePorts <em>Reconfiguration Message Ports</em>}</li>
  * </ul>
  * </p>
  *
@@ -224,6 +226,19 @@ public class ManagerImpl extends CommentableElementImpl implements Manager {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ReconfigurationMessagePort> getReconfigurationMessagePorts() {
+		// TODO: implement this method to return the 'Reconfiguration Message Ports' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
+		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -293,6 +308,8 @@ public class ManagerImpl extends CommentableElementImpl implements Manager {
 				return getReconfigurationController();
 			case ReconfigurationPackage.MANAGER__PORTS:
 				return getPorts();
+			case ReconfigurationPackage.MANAGER__RECONFIGURATION_MESSAGE_PORTS:
+				return getReconfigurationMessagePorts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -364,6 +381,8 @@ public class ManagerImpl extends CommentableElementImpl implements Manager {
 				return getReconfigurationController() != null;
 			case ReconfigurationPackage.MANAGER__PORTS:
 				return ports != null && !ports.isEmpty();
+			case ReconfigurationPackage.MANAGER__RECONFIGURATION_MESSAGE_PORTS:
+				return !getReconfigurationMessagePorts().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

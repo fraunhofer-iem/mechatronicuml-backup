@@ -23,6 +23,7 @@ import org.storydriven.core.CommentableElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.Executor#getSpecificationEntries <em>Specification Entries</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.Executor#getReconfigurationController <em>Reconfiguration Controller</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.Executor#getPorts <em>Ports</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.Executor#getReconfigurationExecutionPorts <em>Reconfiguration Execution Ports</em>}</li>
  * </ul>
  * </p>
  *
@@ -93,4 +94,20 @@ public interface Executor extends CommentableElement, BehavioralElement {
 	 * @generated
 	 */
 	EList<DiscretePort> getPorts();
+
+	/**
+	 * Returns the value of the '<em><b>Reconfiguration Execution Ports</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reconfiguration Execution Ports</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reconfiguration Execution Ports</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutor_ReconfigurationExecutionPorts()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	EList<ReconfigurationExecutionPort> getReconfigurationExecutionPorts();
 } // Executor
