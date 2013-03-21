@@ -69,6 +69,7 @@ public class ReconfigurableStructuredComponentItemProvider
 
 			addManagerPropertyDescriptor(object);
 			addExecutorPropertyDescriptor(object);
+			addInitialConfigurationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -112,6 +113,28 @@ public class ReconfigurableStructuredComponentItemProvider
 				 false,
 				 false,
 				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Initial Configuration feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInitialConfigurationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ReconfigurableStructuredComponent_initialConfiguration_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurableStructuredComponent_initialConfiguration_feature", "_UI_ReconfigurableStructuredComponent_type"),
+				 ReconfigurationPackage.Literals.RECONFIGURABLE_STRUCTURED_COMPONENT__INITIAL_CONFIGURATION,
+				 true,
+				 false,
+				 true,
 				 null,
 				 null,
 				 null));

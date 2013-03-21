@@ -7,13 +7,21 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
+
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -23,22 +31,22 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.storydriven.core.CorePackage;
+
 import org.storydriven.core.provider.NamedElementItemProvider;
+
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationCondition;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationCondition} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReconfigurationConditionItemProvider
+public class StructuralConditionItemProvider
 	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -52,7 +60,7 @@ public class ReconfigurationConditionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationConditionItemProvider(AdapterFactory adapterFactory) {
+	public StructuralConditionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -106,7 +114,7 @@ public class ReconfigurationConditionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_CONDITION__PARAMETERS);
+			childrenFeatures.add(ReconfigurationPackage.Literals.STRUCTURAL_CONDITION__PARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -132,10 +140,10 @@ public class ReconfigurationConditionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReconfigurationCondition)object).getName();
+		String label = ((StructuralCondition)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ReconfigurationCondition_type") :
-			getString("_UI_ReconfigurationCondition_type") + " " + label;
+			getString("_UI_StructuralCondition_type") :
+			getString("_UI_StructuralCondition_type") + " " + label;
 	}
 
 	/**
@@ -149,11 +157,11 @@ public class ReconfigurationConditionItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ReconfigurationCondition.class)) {
-			case ReconfigurationPackage.RECONFIGURATION_CONDITION__COMMENT:
+		switch (notification.getFeatureID(StructuralCondition.class)) {
+			case ReconfigurationPackage.STRUCTURAL_CONDITION__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_CONDITION__PARAMETERS:
+			case ReconfigurationPackage.STRUCTURAL_CONDITION__PARAMETERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -183,7 +191,7 @@ public class ReconfigurationConditionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_CONDITION__PARAMETERS,
+				(ReconfigurationPackage.Literals.STRUCTURAL_CONDITION__PARAMETERS,
 				 BehaviorFactory.eINSTANCE.createParameter()));
 	}
 

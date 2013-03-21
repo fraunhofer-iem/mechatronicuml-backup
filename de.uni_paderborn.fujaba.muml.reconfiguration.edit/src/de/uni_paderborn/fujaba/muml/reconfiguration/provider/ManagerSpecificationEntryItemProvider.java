@@ -70,7 +70,7 @@ public class ManagerSpecificationEntryItemProvider
 			addTreatPropertyDescriptor(object);
 			addPropagatePropertyDescriptor(object);
 			addMessageTypePropertyDescriptor(object);
-			addGuardPropertyDescriptor(object);
+			addStructuralConditionPropertyDescriptor(object);
 			addReconfigurationRulePropertyDescriptor(object);
 			addInvokePlannerPropertyDescriptor(object);
 		}
@@ -144,19 +144,19 @@ public class ManagerSpecificationEntryItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Guard feature.
+	 * This adds a property descriptor for the Structural Condition feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGuardPropertyDescriptor(Object object) {
+	protected void addStructuralConditionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ManagerSpecificationEntry_guard_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ManagerSpecificationEntry_guard_feature", "_UI_ManagerSpecificationEntry_type"),
-				 ReconfigurationPackage.Literals.MANAGER_SPECIFICATION_ENTRY__GUARD,
+				 getString("_UI_ManagerSpecificationEntry_structuralCondition_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ManagerSpecificationEntry_structuralCondition_feature", "_UI_ManagerSpecificationEntry_type"),
+				 ReconfigurationPackage.Literals.MANAGER_SPECIFICATION_ENTRY__STRUCTURAL_CONDITION,
 				 true,
 				 false,
 				 true,

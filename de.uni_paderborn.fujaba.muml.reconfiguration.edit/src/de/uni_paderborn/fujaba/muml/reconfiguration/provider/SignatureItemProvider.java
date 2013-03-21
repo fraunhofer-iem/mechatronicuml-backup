@@ -7,32 +7,45 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
+
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.Signature;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+
+import org.storydriven.core.CorePackage;
+
+import org.storydriven.core.provider.NamedElementItemProvider;
+
+import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+
+import org.storydriven.storydiagrams.calls.CallsFactory;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.Signature} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReconfigurationExecutionPortItemProvider
-	extends ReconfigurationPortItemProvider
+public class SignatureItemProvider
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -45,7 +58,7 @@ public class ReconfigurationExecutionPortItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationExecutionPortItemProvider(AdapterFactory adapterFactory) {
+	public SignatureItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -76,7 +89,8 @@ public class ReconfigurationExecutionPortItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT__INTERFACE_ENTRIES);
+			childrenFeatures.add(ReconfigurationPackage.Literals.SIGNATURE__PARAMETERS);
+			childrenFeatures.add(ReconfigurationPackage.Literals.SIGNATURE__RETURN_PARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -95,14 +109,14 @@ public class ReconfigurationExecutionPortItemProvider
 	}
 
 	/**
-	 * This returns ReconfigurationExecutionPort.gif.
+	 * This returns Signature.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReconfigurationExecutionPort"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Signature"));
 	}
 
 	/**
@@ -113,10 +127,10 @@ public class ReconfigurationExecutionPortItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReconfigurationExecutionPort)object).getName();
+		String label = ((Signature)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ReconfigurationExecutionPort_type") :
-			getString("_UI_ReconfigurationExecutionPort_type") + " " + label;
+			getString("_UI_Signature_type") :
+			getString("_UI_Signature_type") + " " + label;
 	}
 
 	/**
@@ -130,8 +144,9 @@ public class ReconfigurationExecutionPortItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ReconfigurationExecutionPort.class)) {
-			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT__INTERFACE_ENTRIES:
+		switch (notification.getFeatureID(Signature.class)) {
+			case ReconfigurationPackage.SIGNATURE__PARAMETERS:
+			case ReconfigurationPackage.SIGNATURE__RETURN_PARAMETERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -151,8 +166,57 @@ public class ReconfigurationExecutionPortItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT__INTERFACE_ENTRIES,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationExecutionPortInterfaceEntry()));
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
+				 CallsFactory.eINSTANCE.createParameterExtension()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ReconfigurationPackage.Literals.SIGNATURE__PARAMETERS,
+				 BehaviorFactory.eINSTANCE.createParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ReconfigurationPackage.Literals.SIGNATURE__RETURN_PARAMETERS,
+				 BehaviorFactory.eINSTANCE.createParameter()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == ReconfigurationPackage.Literals.SIGNATURE__PARAMETERS ||
+			childFeature == ReconfigurationPackage.Literals.SIGNATURE__RETURN_PARAMETERS;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return MumlReconfigurationEditPlugin.INSTANCE;
 	}
 
 }

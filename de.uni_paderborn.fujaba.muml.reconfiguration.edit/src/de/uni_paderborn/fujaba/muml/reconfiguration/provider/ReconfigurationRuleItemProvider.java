@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -24,6 +25,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.provider.CommentableElementItemProvider;
 import org.storydriven.core.provider.NamedElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
@@ -40,7 +42,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
  * @generated
  */
 public class ReconfigurationRuleItemProvider
-	extends NamedElementItemProvider
+	extends CommentableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -68,55 +70,10 @@ public class ReconfigurationRuleItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
-			addReturnParametersPropertyDescriptor(object);
 			addReconfiguredComponentPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Comment feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Return Parameters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReturnParametersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ReconfigurationRule_returnParameters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationRule_returnParameters_feature", "_UI_ReconfigurationRule_type"),
-				 ReconfigurationPackage.Literals.RECONFIGURATION_RULE__RETURN_PARAMETERS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -142,6 +99,28 @@ public class ReconfigurationRuleItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ReconfigurationRule_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationRule_name_feature", "_UI_ReconfigurationRule_type"),
+				 ReconfigurationPackage.Literals.RECONFIGURATION_RULE__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -153,8 +132,8 @@ public class ReconfigurationRuleItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__PARAMETERS);
 			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__WCET);
+			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__SIGNATURE);
 		}
 		return childrenFeatures;
 	}
@@ -198,11 +177,11 @@ public class ReconfigurationRuleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ReconfigurationRule.class)) {
-			case ReconfigurationPackage.RECONFIGURATION_RULE__COMMENT:
+			case ReconfigurationPackage.RECONFIGURATION_RULE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_RULE__PARAMETERS:
 			case ReconfigurationPackage.RECONFIGURATION_RULE__WCET:
+			case ReconfigurationPackage.RECONFIGURATION_RULE__SIGNATURE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -232,13 +211,13 @@ public class ReconfigurationRuleItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__PARAMETERS,
-				 BehaviorFactory.eINSTANCE.createParameter()));
+				(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__WCET,
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__WCET,
-				 ValuetypeFactory.eINSTANCE.createTimeValue()));
+				(ReconfigurationPackage.Literals.RECONFIGURATION_RULE__SIGNATURE,
+				 ReconfigurationFactory.eINSTANCE.createSignature()));
 	}
 
 	/**

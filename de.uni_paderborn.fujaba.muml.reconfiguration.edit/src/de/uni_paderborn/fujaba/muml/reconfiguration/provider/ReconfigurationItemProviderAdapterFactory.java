@@ -328,6 +328,29 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.Signature} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SignatureItemProvider signatureItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.Signature}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSignatureAdapter() {
+		if (signatureItemProvider == null) {
+			signatureItemProvider = new SignatureItemProvider(this);
+		}
+
+		return signatureItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -437,6 +460,7 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 		if (reconfigurationPortInterfaceEntryItemProvider != null) reconfigurationPortInterfaceEntryItemProvider.dispose();
 		if (reconfigurationMessagePortInterfaceEntryItemProvider != null) reconfigurationMessagePortInterfaceEntryItemProvider.dispose();
 		if (reconfigurationExecutionPortInterfaceEntryItemProvider != null) reconfigurationExecutionPortInterfaceEntryItemProvider.dispose();
+		if (signatureItemProvider != null) signatureItemProvider.dispose();
 	}
 
 }

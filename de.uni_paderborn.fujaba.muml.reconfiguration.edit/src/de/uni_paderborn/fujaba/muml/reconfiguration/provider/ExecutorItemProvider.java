@@ -69,6 +69,7 @@ public class ExecutorItemProvider
 			super.getPropertyDescriptors(object);
 
 			addBehaviorPropertyDescriptor(object);
+			addReconfigurationExecutionPortsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,6 +91,28 @@ public class ExecutorItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Reconfiguration Execution Ports feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReconfigurationExecutionPortsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Executor_reconfigurationExecutionPorts_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Executor_reconfigurationExecutionPorts_feature", "_UI_Executor_type"),
+				 ReconfigurationPackage.Literals.EXECUTOR__RECONFIGURATION_EXECUTION_PORTS,
+				 false,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

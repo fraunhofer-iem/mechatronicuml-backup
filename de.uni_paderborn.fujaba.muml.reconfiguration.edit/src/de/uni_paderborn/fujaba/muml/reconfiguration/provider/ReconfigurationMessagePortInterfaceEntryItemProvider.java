@@ -65,25 +65,25 @@ public class ReconfigurationMessagePortInterfaceEntryItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMessageKindPropertyDescriptor(object);
+			addReconfigurationMessageTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Message Kind feature.
+	 * This adds a property descriptor for the Reconfiguration Message Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMessageKindPropertyDescriptor(Object object) {
+	protected void addReconfigurationMessageTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ReconfigurationMessagePortInterfaceEntry_messageKind_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationMessagePortInterfaceEntry_messageKind_feature", "_UI_ReconfigurationMessagePortInterfaceEntry_type"),
-				 ReconfigurationPackage.Literals.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__MESSAGE_KIND,
+				 getString("_UI_ReconfigurationMessagePortInterfaceEntry_reconfigurationMessageType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ReconfigurationMessagePortInterfaceEntry_reconfigurationMessageType_feature", "_UI_ReconfigurationMessagePortInterfaceEntry_type"),
+				 ReconfigurationPackage.Literals.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__RECONFIGURATION_MESSAGE_TYPE,
 				 true,
 				 false,
 				 false,
@@ -159,7 +159,7 @@ public class ReconfigurationMessagePortInterfaceEntryItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ReconfigurationMessagePortInterfaceEntry.class)) {
-			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__MESSAGE_KIND:
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__RECONFIGURATION_MESSAGE_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__EXPECTED_RESPONSE_TIME:
