@@ -6,12 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.instance.tests;
 
+import junit.framework.TestCase;
+import junit.textui.TestRunner;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.instance.InstanceFactory;
-
-import junit.framework.TestCase;
-
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->

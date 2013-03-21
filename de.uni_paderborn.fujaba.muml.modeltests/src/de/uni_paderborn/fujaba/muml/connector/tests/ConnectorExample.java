@@ -6,23 +6,18 @@
  */
 package de.uni_paderborn.fujaba.muml.connector.tests;
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-
 import java.io.File;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-
 import org.eclipse.emf.ecore.util.Diagnostician;
-
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 
 /**
  * <!-- begin-user-doc -->

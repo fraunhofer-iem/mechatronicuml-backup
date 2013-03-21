@@ -6,26 +6,21 @@
  */
 package de.uni_paderborn.fujaba.muml.types.tests;
 
-import de.uni_paderborn.fujaba.muml.types.ArrayDataType;
-import de.uni_paderborn.fujaba.muml.types.TypesFactory;
-import de.uni_paderborn.fujaba.muml.types.TypesPackage;
-
 import java.io.File;
 import java.io.IOException;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-
 import org.eclipse.emf.ecore.util.Diagnostician;
-
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+
+import de.uni_paderborn.fujaba.muml.types.ArrayDataType;
+import de.uni_paderborn.fujaba.muml.types.TypesFactory;
+import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 
 /**
  * <!-- begin-user-doc -->

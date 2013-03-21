@@ -106,7 +106,7 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
@@ -169,12 +169,12 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 							.getFigure(), locator);
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart) childEditPart)
+					.add(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
 		}
@@ -202,10 +202,10 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 							.getFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart) {
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart) childEditPart)
+					.remove(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart) childEditPart)
 							.getFigure());
 			return true;
 		}

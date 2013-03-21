@@ -6,10 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.tests;
 
+import junit.textui.TestRunner;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.ExitPoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
-
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +16,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExitPointTest extends ConnectionPointTest {
+public class ExitPointTest extends StateConnectionPointTest {
 
 	/**
 	 * <!-- begin-user-doc -->

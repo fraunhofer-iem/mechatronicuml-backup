@@ -6,12 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.valuetype.tests;
 
+import junit.framework.TestCase;
+import junit.textui.TestRunner;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
-
-import junit.framework.TestCase;
-
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->

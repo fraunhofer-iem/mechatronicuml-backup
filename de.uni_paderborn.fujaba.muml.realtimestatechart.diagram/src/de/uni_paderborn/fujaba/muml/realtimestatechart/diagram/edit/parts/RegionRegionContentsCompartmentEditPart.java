@@ -20,7 +20,7 @@ public class RegionRegionContentsCompartmentEditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7035;
+	public static final int VISUAL_ID = 7037;
 
 	/**
 	 * @generated

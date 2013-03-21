@@ -38,7 +38,7 @@ public class ComponentPartLabelExpressionLabelParser5017 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						11,
+						9,
 						de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 								.getComponentPart(), null).body();
 	}

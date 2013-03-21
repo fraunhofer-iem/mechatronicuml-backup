@@ -6,9 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.behavior.tests;
 
-import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
-
 import junit.framework.TestCase;
+import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 
 /**
  * <!-- begin-user-doc -->

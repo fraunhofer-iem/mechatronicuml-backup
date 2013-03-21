@@ -7,11 +7,8 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
 import org.eclipse.gmf.runtime.emf.commands.core.command.CompositeTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
-import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyReferenceCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
@@ -76,15 +73,6 @@ public class DiscretePortItemSemanticEditPolicy
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-					.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortGmfProtocolEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
-						outgoingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
-				continue;
-			}
 		}
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
@@ -123,11 +111,6 @@ public class DiscretePortItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.DelegationConnectorCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
-		if (de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DiscretePortGmfProtocol_4005 == req
-				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.DiscretePortGmfProtocolCreateCommand(
-					req, req.getSource(), req.getTarget()));
-		}
 		return null;
 	}
 
@@ -145,10 +128,6 @@ public class DiscretePortItemSemanticEditPolicy
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.DelegationConnectorCreateCommand(
 					req, req.getSource(), req.getTarget()));
-		}
-		if (de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DiscretePortGmfProtocol_4005 == req
-				.getElementType()) {
-			return null;
 		}
 		return null;
 	}
@@ -170,22 +149,6 @@ public class DiscretePortItemSemanticEditPolicy
 					req));
 		}
 		return super.getReorientRelationshipCommand(req);
-	}
-
-	/**
-	 * Returns command to reorient EReference based link. New link target or source
-	 * should be the domain model element associated with this node.
-	 * 
-	 * @generated
-	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
-		switch (getVisualID(req)) {
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortGmfProtocolEditPart.VISUAL_ID:
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.DiscretePortGmfProtocolReorientCommand(
-					req));
-		}
-		return super.getReorientReferenceRelationshipCommand(req);
 	}
 
 }

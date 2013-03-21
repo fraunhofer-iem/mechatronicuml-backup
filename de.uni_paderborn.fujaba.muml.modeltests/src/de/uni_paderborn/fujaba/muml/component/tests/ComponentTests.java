@@ -8,7 +8,6 @@ package de.uni_paderborn.fujaba.muml.component.tests;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
-
 import junit.textui.TestRunner;
 
 /**
@@ -44,6 +43,7 @@ public class ComponentTests extends TestSuite {
 		suite.addTestSuite(DelegationConnectorTest.class);
 		suite.addTestSuite(HybridPortTest.class);
 		suite.addTestSuite(CoordinationProtocolOccurrenceTest.class);
+		suite.addTestSuite(PortPartTest.class);
 		return suite;
 	}
 

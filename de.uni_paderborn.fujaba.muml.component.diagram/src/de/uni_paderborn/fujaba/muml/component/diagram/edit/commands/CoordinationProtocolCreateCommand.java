@@ -37,9 +37,12 @@ public class CoordinationProtocolCreateCommand extends EditElementCommand {
 		return container;
 	}
 
+	/**
+	 * @generated
+	 */
 	public boolean canExecute() {
-		// This command must not be used. The containment feature is not changable!
-		return false;
+		return true;
+
 	}
 
 	/**
@@ -47,11 +50,11 @@ public class CoordinationProtocolCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol newElement = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE
-				.createCoordinationProtocol();
+		de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence newElement = de.uni_paderborn.fujaba.muml.component.ComponentFactory.eINSTANCE
+				.createCoordinationProtocolOccurrence();
 
 		de.uni_paderborn.fujaba.muml.component.StructuredComponent owner = (de.uni_paderborn.fujaba.muml.component.StructuredComponent) getElementToEdit();
-		owner.getGmfProtocols().add(newElement);
+		owner.getCoordinationProtocolOccurences().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -63,7 +66,7 @@ public class CoordinationProtocolCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol newElement,
+			de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

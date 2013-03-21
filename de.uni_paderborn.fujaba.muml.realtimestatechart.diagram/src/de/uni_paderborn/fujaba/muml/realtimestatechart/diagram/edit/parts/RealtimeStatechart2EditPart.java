@@ -31,7 +31,7 @@ public class RealtimeStatechart2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3039;
+	public static final int VISUAL_ID = 3043;
 
 	/**
 	 * @generated

@@ -6,10 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.types.tests;
 
+import junit.textui.TestRunner;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.types.TypesFactory;
-
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->

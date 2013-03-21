@@ -6,9 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.tests;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
-
 import junit.framework.TestCase;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
 
 /**
  * <!-- begin-user-doc -->

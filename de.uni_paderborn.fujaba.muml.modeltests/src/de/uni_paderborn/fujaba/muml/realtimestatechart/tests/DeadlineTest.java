@@ -6,9 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.tests;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Deadline;
-
 import junit.framework.TestCase;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Deadline;
 
 /**
  * <!-- begin-user-doc -->

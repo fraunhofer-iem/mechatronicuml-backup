@@ -37,9 +37,12 @@ public class HybridPortCreateCommand extends EditElementCommand {
 		return container;
 	}
 
+	/**
+	 * @generated
+	 */
 	public boolean canExecute() {
-		// This command must not be used. The containment feature is not changable!
-		return false;
+		return true;
+
 	}
 
 	/**
@@ -50,7 +53,7 @@ public class HybridPortCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.component.HybridPort newElement = de.uni_paderborn.fujaba.muml.component.ComponentFactory.eINSTANCE
 				.createHybridPort();
 
-		de.uni_paderborn.fujaba.muml.component.ComponentPart owner = (de.uni_paderborn.fujaba.muml.component.ComponentPart) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.component.Component owner = (de.uni_paderborn.fujaba.muml.component.Component) getElementToEdit();
 		owner.getPorts().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.component.diagram.providers.ElementInitializers

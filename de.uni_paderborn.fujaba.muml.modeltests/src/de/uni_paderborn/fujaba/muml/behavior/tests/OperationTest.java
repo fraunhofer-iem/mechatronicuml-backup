@@ -6,12 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.behavior.tests;
 
+import junit.framework.TestCase;
+import junit.textui.TestRunner;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.behavior.Operation;
-
-import junit.framework.TestCase;
-
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->

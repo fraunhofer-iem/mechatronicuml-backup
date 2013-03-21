@@ -6,30 +6,19 @@
  */
 package de.uni_paderborn.fujaba.muml.component.tests;
 
-import de.uni_paderborn.fujaba.muml.behavior.tests.BehaviorTests;
-
-import de.uni_paderborn.fujaba.muml.connector.tests.ConnectorTests;
-
-import de.uni_paderborn.fujaba.muml.constraint.tests.ConstraintTests;
-
-import de.uni_paderborn.fujaba.muml.deployment.tests.DeploymentTests;
-
-import de.uni_paderborn.fujaba.muml.instance.tests.InstanceTests;
-
-import de.uni_paderborn.fujaba.muml.msgtype.tests.MsgtypeTests;
-
-import de.uni_paderborn.fujaba.muml.protocol.tests.ProtocolTests;
-
-import de.uni_paderborn.fujaba.muml.realtimestatechart.tests.RealtimestatechartTests;
-
-import de.uni_paderborn.fujaba.muml.types.tests.TypesTests;
-
-import de.uni_paderborn.fujaba.muml.valuetype.tests.ValuetypeTests;
-
 import junit.framework.Test;
 import junit.framework.TestSuite;
-
 import junit.textui.TestRunner;
+import de.uni_paderborn.fujaba.muml.behavior.tests.BehaviorTests;
+import de.uni_paderborn.fujaba.muml.connector.tests.ConnectorTests;
+import de.uni_paderborn.fujaba.muml.constraint.tests.ConstraintTests;
+import de.uni_paderborn.fujaba.muml.deployment.tests.DeploymentTests;
+import de.uni_paderborn.fujaba.muml.instance.tests.InstanceTests;
+import de.uni_paderborn.fujaba.muml.msgtype.tests.MsgtypeTests;
+import de.uni_paderborn.fujaba.muml.protocol.tests.ProtocolTests;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.tests.RealtimestatechartTests;
+import de.uni_paderborn.fujaba.muml.types.tests.TypesTests;
+import de.uni_paderborn.fujaba.muml.valuetype.tests.ValuetypeTests;
 
 /**
  * <!-- begin-user-doc -->

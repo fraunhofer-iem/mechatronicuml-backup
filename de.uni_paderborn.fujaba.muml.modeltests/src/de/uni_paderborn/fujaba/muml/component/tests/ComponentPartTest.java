@@ -6,12 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.component.tests;
 
+import junit.framework.TestCase;
+import junit.textui.TestRunner;
 import de.uni_paderborn.fujaba.muml.component.ComponentFactory;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
-
-import junit.framework.TestCase;
-
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,9 +18,6 @@ import junit.textui.TestRunner;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getAssemblyConnectors() <em>Assembly Connectors</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getDelegationConnectors() <em>Delegation Connectors</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getPorts() <em>Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#isMultiPart() <em>Multi Part</em>}</li>
  * </ul>
  * </p>
@@ -97,58 +92,6 @@ public class ComponentPartTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
-	}
-
-	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getAssemblyConnectors() <em>Assembly Connectors</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPart#getAssemblyConnectors()
-	 * @generated
-	 */
-	public void testGetAssemblyConnectors() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getDelegationConnectors() <em>Delegation Connectors</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPart#getDelegationConnectors()
-	 * @generated
-	 */
-	public void testGetDelegationConnectors() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#getPorts() <em>Ports</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPart#getPorts()
-	 * @generated
-	 */
-	public void testGetPorts() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.component.ComponentPart#isSetPorts() <em>isSetPorts()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPart#isSetPorts()
-	 * @generated
-	 */
-	public void testIsSetPorts() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
 	}
 
 	/**

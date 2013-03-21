@@ -38,7 +38,7 @@ public class DiscretePortLabelExpressionLabelParser5025 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						3,
+						4,
 						de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 								.getDiscretePort(), null).body();
 	}

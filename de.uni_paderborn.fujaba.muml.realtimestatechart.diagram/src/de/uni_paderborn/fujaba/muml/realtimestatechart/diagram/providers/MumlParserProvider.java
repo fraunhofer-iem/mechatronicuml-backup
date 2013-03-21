@@ -103,46 +103,46 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser regionName_5055Parser;
+	private IParser regionName_5063Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getRegionName_5055Parser() {
-		if (regionName_5055Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+	private IParser getRegionName_5063Parser() {
+		if (regionName_5063Parser == null) {
+			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+					.getRegion_Name() };
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.MessageFormatParser(
 					features);
-			regionName_5055Parser = parser;
+			regionName_5063Parser = parser;
 		}
-		return regionName_5055Parser;
+		return regionName_5063Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser regionPriority_5056Parser;
+	private IParser regionPriority_5064Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getRegionPriority_5056Parser() {
-		if (regionPriority_5056Parser == null) {
+	private IParser getRegionPriority_5064Parser() {
+		if (regionPriority_5064Parser == null) {
 			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 					.getPrioritizedElement_Priority() };
 			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.MessageFormatParser(
 					features);
-			regionPriority_5056Parser = parser;
+			regionPriority_5064Parser = parser;
 		}
-		return regionPriority_5056Parser;
+		return regionPriority_5064Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser getRegionLabel_5057Parser() {
-		return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.RegionLabelExpressionLabelParser5057();
+	private IParser getRegionLabel_5065Parser() {
+		return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.RegionLabelExpressionLabelParser5065();
 	}
 
 	/**
@@ -219,11 +219,11 @@ public class MumlParserProvider extends AbstractProvider implements
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
 			return getSynchronizationChannelLabel_5054Parser();
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionNameEditPart.VISUAL_ID:
-			return getRegionName_5055Parser();
+			return getRegionName_5063Parser();
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionPriorityEditPart.VISUAL_ID:
-			return getRegionPriority_5056Parser();
+			return getRegionPriority_5064Parser();
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
-			return getRegionLabel_5057Parser();
+			return getRegionLabel_5065Parser();
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointNameEditPart.VISUAL_ID:
 			return getEntryPointName_5058Parser();
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointNameEditPart.VISUAL_ID:

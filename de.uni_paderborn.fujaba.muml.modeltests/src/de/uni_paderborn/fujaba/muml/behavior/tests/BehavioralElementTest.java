@@ -6,9 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.behavior.tests;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
-
 import junit.framework.TestCase;
+import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 
 /**
  * <!-- begin-user-doc -->

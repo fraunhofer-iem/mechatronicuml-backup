@@ -17,7 +17,6 @@ import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getAllStructuredComponents() <em>All Structured Components</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getAllAtomicComponents() <em>All Atomic Components</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getGmfProtocols() <em>Gmf Protocols</em>}</li>
  * </ul>
  * </p>
  * <p>
@@ -99,19 +98,6 @@ public abstract class StructuredComponentTest extends ComponentTest {
 	 */
 	public void testIsSetAllAtomicComponents() {
 		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getGmfProtocols() <em>Gmf Protocols</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.component.StructuredComponent#getGmfProtocols()
-	 * @generated
-	 */
-	public void testGetGmfProtocols() {
-		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

@@ -30,7 +30,7 @@ public class MumlOCLFactory {
 	 * @generated
 	 */
 	protected MumlOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlAbstractExpression[23];
+		this.expressions = new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlAbstractExpression[22];
 	}
 
 	/**
@@ -58,7 +58,6 @@ public class MumlOCLFactory {
 					"--(\n--if self.eContainer().oclAsType(State).invariants->first() = self then\n--\t\'inv: \'\n--else\n--\t\'\'\n--endif\n--).concat(\n--\n---- BEGIN: The actual name of the Invariant\n--\n--\tif self.clock.name.oclIsUndefined() then\n--\t\t\'null\'\n--\telse\n--\t\tself.clock.name\n--\tendif\n--).concat(\' \').concat(\n--\tif self.operator.oclIsUndefined() then\n--\t\t\'null\'\n--\telse\n--\t\tlet array : Set(Tuple(s : String, d : core::expressions::common::ComparingOperator)) = Set{\n--\t\t\tTuple{s = \'<\', d = core::expressions::common::ComparingOperator::LESS },\n--\t\t\tTuple{s = \'\u2264\', d = core::expressions::common::ComparingOperator::LESS_OR_EQUAL },\n--\t\t\tTuple{s = \'=\', d = core::expressions::common::ComparingOperator::EQUAL },\n--\t\t\tTuple{s = \'\u2265\', d = core::expressions::common::ComparingOperator::GREATER_OR_EQUAL },\n--\t\t\tTuple{s = \'>\', d = core::expressions::common::ComparingOperator::GREATER },\n--\t\t\tTuple{s = \'\u2260\', d = core::expressions::common::ComparingOperator::UNEQUAL },\n--\t\t\tTuple{s = \'regexp\', d = core::expressions::common::ComparingOperator::REGULAR_EXPRESSION }\n--\t\t} in array->any(t | t.d = self.operator).s\n--\tendif\n--).concat(\' \').concat(\n--\tif self.bound.oclIsUndefined() then\n--\t\t\'null\'\n--\telse\n--\t\tself.bound.toString()\n--\tendif\n--\n---- END: The actual name of the invariant\n--\n--).concat(\n--if self.eContainer().oclAsType(State).invariants->last() = self then\n--\t\';\'\n--else\n--\t\',\'\n--endif\n--)\n--\n--".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'channel\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--(\n--if self.state.channels->first() = self then\n--\t\'ch: \'\n--else\n--\t\'\'\n--endif\n--).concat(\n--\n---- BEGIN: The actual name of the Clock\n--\n--if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(\n--\t\'(\'.concat(\n--\t\tself.parameters->iterate(param; result : String = \'\' | \n--\t\t\t(if result = \'\' then \'\' else result.concat(\', \') endif).concat(\n--\t\t\t\tparam.name.concat(\' : \').concat(\n--\t\t\t\t\tif param.type.oclIsUndefined() then\n--\t\t\t\t\t\t\'null\'\n--\t\t\t\t\telse\n--\t\t\t\t\t\tparam.type.name\n--\t\t\t\t\tendif\n--\t\t\t\t)\n--\t\t\t)\n--\t\t)\n--\t).concat(\')\')\n--\n---- END: The actual name of the Clock\n--\n--).concat(\n--if self.state.channels->last() = self then\n--\t\';\'\n--else\n--\t\',\'\n--endif\n--)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'region\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.parentState.getUniqueRegionPriority(0)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'statechart\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'init\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$

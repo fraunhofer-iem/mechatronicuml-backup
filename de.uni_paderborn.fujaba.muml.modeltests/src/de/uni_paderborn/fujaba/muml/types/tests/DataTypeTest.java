@@ -6,9 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.types.tests;
 
-import de.uni_paderborn.fujaba.muml.types.DataType;
-
 import junit.framework.TestCase;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

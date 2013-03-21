@@ -6,9 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.connector.tests;
 
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
-
 import junit.framework.TestCase;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 
 /**
  * <!-- begin-user-doc -->

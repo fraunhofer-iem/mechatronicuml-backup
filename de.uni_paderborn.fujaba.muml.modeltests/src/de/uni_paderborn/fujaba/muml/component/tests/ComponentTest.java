@@ -6,9 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.component.tests;
 
-import de.uni_paderborn.fujaba.muml.component.Component;
-
 import junit.framework.TestCase;
+import de.uni_paderborn.fujaba.muml.component.Component;
 
 /**
  * <!-- begin-user-doc -->

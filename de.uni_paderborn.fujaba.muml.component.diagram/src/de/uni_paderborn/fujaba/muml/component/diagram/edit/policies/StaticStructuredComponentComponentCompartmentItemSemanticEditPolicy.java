@@ -27,7 +27,7 @@ public class StaticStructuredComponentComponentCompartmentItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.ComponentPartCreateCommand(
 					req));
 		}
-		if (de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.CoordinationProtocol_3016 == req
+		if (de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.CoordinationProtocolOccurrence_3016 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.CoordinationProtocolCreateCommand(
 					req));

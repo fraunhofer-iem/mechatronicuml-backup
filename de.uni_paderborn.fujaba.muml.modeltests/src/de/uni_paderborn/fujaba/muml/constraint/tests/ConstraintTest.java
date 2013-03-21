@@ -6,9 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.constraint.tests;
 
-import de.uni_paderborn.fujaba.muml.constraint.Constraint;
-
 import junit.framework.TestCase;
+import de.uni_paderborn.fujaba.muml.constraint.Constraint;
 
 /**
  * <!-- begin-user-doc -->

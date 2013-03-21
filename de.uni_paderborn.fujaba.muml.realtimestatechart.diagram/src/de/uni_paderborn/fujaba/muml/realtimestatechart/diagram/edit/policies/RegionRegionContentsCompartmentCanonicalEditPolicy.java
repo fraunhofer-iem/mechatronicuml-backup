@@ -54,7 +54,7 @@ public class RegionRegionContentsCompartmentCanonicalEditPolicy extends
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-				.getRegion_Statechart();
+				.getRegion_EmbeddedStatechart();
 	}
 
 	/**
@@ -101,7 +101,7 @@ public class RegionRegionContentsCompartmentCanonicalEditPolicy extends
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlDiagramUpdater
-				.getRegionRegionContentsCompartment_7035SemanticChildren(viewObject);
+				.getRegionRegionContentsCompartment_7037SemanticChildren(viewObject);
 
 	}
 

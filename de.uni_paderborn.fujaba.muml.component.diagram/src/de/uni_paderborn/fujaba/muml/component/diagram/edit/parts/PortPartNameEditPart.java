@@ -3,10 +3,10 @@ package de.uni_paderborn.fujaba.muml.component.diagram.edit.parts;
 import java.util.Collections;
 import java.util.List;
 
-import org.eclipse.draw2d.ConnectionLocator;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RunnableWithResult;
@@ -19,11 +19,12 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
-import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate;
 import org.eclipse.gmf.runtime.diagram.ui.label.WrappingLabelDelegate;
@@ -38,8 +39,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.directedit.TextDirectEditManager2;
 import org.eclipse.gmf.tooling.runtime.draw2d.labels.SimpleLabelDelegate;
 import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy;
-import org.eclipse.gmf.tooling.runtime.ocl.tracker.HasOclTracker;
-import org.eclipse.gmf.tooling.runtime.ocl.tracker.OclTracker;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.swt.SWT;
@@ -51,13 +50,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class WrappingLabel3EditPart extends LabelEditPart implements
-		ITextAwareEditPart {
+public class PortPartNameEditPart extends LabelEditPart implements
+		ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 6003;
+	public static final int VISUAL_ID = 5034;
 
 	/**
 	 * @generated
@@ -72,7 +71,7 @@ public class WrappingLabel3EditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	private OclTracker.Registrator myOclRegistrator;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -90,14 +89,14 @@ public class WrappingLabel3EditPart extends LabelEditPart implements
 	static {
 		registerSnapBackPosition(
 				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID),
-				new Point(0, 40));
+						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartNameEditPart.VISUAL_ID),
+				new Point(0, 0));
 	}
 
 	/**
 	 * @generated
 	 */
-	public WrappingLabel3EditPart(View view) {
+	public PortPartNameEditPart(View view) {
 		super(view);
 	}
 
@@ -111,16 +110,35 @@ public class WrappingLabel3EditPart extends LabelEditPart implements
 		installEditPolicy(
 				EditPolicy.SELECTION_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlTextSelectionEditPolicy());
-		installEditPolicy(
-				EditPolicy.PRIMARY_DRAG_ROLE,
-				new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.LinkLabelDragPolicy());
 	}
 
 	/**
 	 * @generated
 	 */
-	public int getKeyPoint() {
-		return ConnectionLocator.MIDDLE;
+	public IBorderItemLocator getBorderItemLocator() {
+		IFigure parentFigure = getFigure().getParent();
+		if (parentFigure != null && parentFigure.getLayoutManager() != null) {
+			Object constraint = parentFigure.getLayoutManager().getConstraint(
+					getFigure());
+			return (IBorderItemLocator) constraint;
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refreshBounds() {
+		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
+				.getLocation_X())).intValue();
+		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
+				.getLocation_Y())).intValue();
+		int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
+				.getSize_Width())).intValue();
+		int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
+				.getSize_Height())).intValue();
+		getBorderItemLocator()
+				.setConstraint(new Rectangle(x, y, width, height));
 	}
 
 	/**
@@ -180,7 +198,7 @@ public class WrappingLabel3EditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public void setLabel(WrappingLabel figure) {
+	public void setLabel(IFigure figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -258,7 +276,7 @@ public class WrappingLabel3EditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected boolean isEditable() {
-		return false;
+		return getParser() != null;
 	}
 
 	/**
@@ -322,10 +340,10 @@ public class WrappingLabel3EditPart extends LabelEditPart implements
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DiscretePortGmfProtocol_4005,
+							de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPart_3022,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartNameEditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -507,16 +525,30 @@ public class WrappingLabel3EditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected void addSemanticListeners() {
-		OclTracker tracker = getTracker();
-		tracker.initialize(resolveSemanticElement());
-		tracker.installListeners(getEditingDomain(), this, getOclRegistrator());
+		if (getParser() instanceof ISemanticParser) {
+			EObject element = resolveSemanticElement();
+			parserElements = ((ISemanticParser) getParser())
+					.getSemanticElementsBeingParsed(element);
+			for (int i = 0; i < parserElements.size(); i++) {
+				addListenerFilter(
+						"SemanticModel" + i, this, (EObject) parserElements.get(i)); //$NON-NLS-1$
+			}
+		} else {
+			super.addSemanticListeners();
+		}
 	}
 
 	/**
 	 * @generated
 	 */
 	protected void removeSemanticListeners() {
-		getTracker().uninstallListeners();
+		if (parserElements != null) {
+			for (int i = 0; i < parserElements.size(); i++) {
+				removeListenerFilter("SemanticModel" + i); //$NON-NLS-1$
+			}
+		} else {
+			super.removeSemanticListeners();
+		}
 	}
 
 	/**
@@ -539,35 +571,6 @@ public class WrappingLabel3EditPart extends LabelEditPart implements
 	 */
 	private View getFontStyleOwnerView() {
 		return getPrimaryView();
-	}
-
-	/**
-	 * @generated
-	 */
-	private OclTracker getTracker() {
-		return ((HasOclTracker) getParser()).getOclTracker();
-	}
-
-	/**
-	 * @generated
-	 */
-	private OclTracker.Registrator getOclRegistrator() {
-		if (myOclRegistrator == null) {
-			myOclRegistrator = new OclTracker.Registrator() {
-
-				@Override
-				public void registerListener(String filterId,
-						NotificationListener listener, EObject element) {
-					addListenerFilter(filterId, listener, element);
-				}
-
-				@Override
-				public void unregisterListener(String filterId) {
-					removeListenerFilter(filterId);
-				}
-			};
-		}
-		return myOclRegistrator;
 	}
 
 	/**
@@ -643,8 +646,16 @@ public class WrappingLabel3EditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected IFigure createFigure() {
-		// Parent should assign one using setLabel() method
-		return null;
+		IFigure label = createFigurePrim();
+		defaultText = getLabelTextHelper(label);
+		return label;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure createFigurePrim() {
+		return new WrappingLabel();
 	}
 
 }

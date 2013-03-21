@@ -36,14 +36,14 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		DiscretePort port = this.getPort(event);
 
-		if (port.getRefines() == null)
+		if (port.getRefinedRole() == null)
 			return null;
 
 		// Single port
 		if (port.getCardinality().getUpperBound().getValue() == 1) {
 			RealtimeStatechart transformedBehavior = this
 					.copyRealtimeStatechart((RealtimeStatechart) port
-							.getRefines().getBehavior());
+							.getRefinedRole().getBehavior());
 
 			if (transformedBehavior != null) {
 				ICommandProxy a = new ICommandProxy(
@@ -55,16 +55,16 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 		// Multi port
 		else {
 			RealtimeStatechart roleAndAdaptation = (RealtimeStatechart) port
-					.getRefines().getRoleAndAdaptationBehavior();
+					.getRefinedRole().getRoleAndAdaptationBehavior();
 			RealtimeStatechart transformedRoleAndAdaptation = this
 					.copyRealtimeStatechart(roleAndAdaptation);
 			String behaviorName = null;
-			if (port.getRefines().getBehavior() != null)
-				behaviorName = ((RealtimeStatechart) port.getRefines()
+			if (port.getRefinedRole().getBehavior() != null)
+				behaviorName = ((RealtimeStatechart) port.getRefinedRole()
 						.getBehavior()).getName();
 			String adaptationName = null;
-			if (port.getRefines().getAdaptationBehavior() != null)
-				adaptationName = ((RealtimeStatechart) port.getRefines()
+			if (port.getRefinedRole().getAdaptationBehavior() != null)
+				adaptationName = ((RealtimeStatechart) port.getRefinedRole()
 						.getAdaptationBehavior()).getName();
 			if (transformedRoleAndAdaptation != null) {
 				ICommandProxy a = new ICommandProxy(new MultiPortChangeCommand(
@@ -106,7 +106,7 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 
 		URI transformationURI = URI
 				.createPlatformPluginURI(
-						"/de.uni_paderborn.fujaba.muml.structuredccomponent.diagram.custom/transforms/CopyRealtimeStatechart.qvto",
+						"/de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.custom/transforms/CopyRealtimeStatechart.qvto",
 						true);
 		// create executor and execution context
 		TransformationExecutor executor = new TransformationExecutor(
@@ -164,16 +164,16 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 
 			// Step 1: Set message interfaces
 			source.getReceiverMessageTypes().addAll(
-					source.getRefines().getReceiverMessageTypes());
+					source.getRefinedRole().getReceiverMessageTypes());
 			source.getSenderMessageTypes().addAll(
-					source.getRefines().getSenderMessageTypes());
+					source.getRefinedRole().getSenderMessageTypes());
 
 			// Step 2: Copy statechart
 			source.setBehavior(behavior);
 
 			// Add to resource
 			ModelElementCategory category = (ModelElementCategory) source
-					.getRefines().getBehavior().eContainer();
+					.getRefinedRole().getBehavior().eContainer();
 			category.getModelElements().add(behavior);
 
 			return CommandResult.newOKCommandResult();
@@ -202,9 +202,9 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 
 			// Step 1: Set message interfaces
 			source.getReceiverMessageTypes().addAll(
-					source.getRefines().getReceiverMessageTypes());
+					source.getRefinedRole().getReceiverMessageTypes());
 			source.getSenderMessageTypes().addAll(
-					source.getRefines().getSenderMessageTypes());
+					source.getRefinedRole().getSenderMessageTypes());
 
 			// Step 2: Copy statechart
 			source.setRoleAndAdaptationBehavior(roleAndAdaptation);
@@ -215,7 +215,7 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 
 			// Add to resource
 			ModelElementCategory category = (ModelElementCategory) source
-					.getRefines().getRoleAndAdaptationBehavior().eContainer();
+					.getRefinedRole().getRoleAndAdaptationBehavior().eContainer();
 			category.getModelElements().add(roleAndAdaptation);
 
 			return CommandResult.newOKCommandResult();
@@ -228,10 +228,10 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 			if (name.equals(chart.getName()))
 				return chart;
 			for (State s : chart.getStates()) {
-				for (Region r : s.getRegions()) {
-					if (r.getStatechart() != null) {
+				for (Region r : s.getEmbeddedRegions()) {
+					if (r.getEmbeddedStatechart() != null) {
 						RealtimeStatechart t = this.getSubChartByName(
-								r.getStatechart(), name);
+								r.getEmbeddedStatechart(), name);
 						if (t != null)
 							return t;
 					}

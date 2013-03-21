@@ -147,7 +147,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.Region4CreationTool_title,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.Messages.Region4CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Region_3038));
+						.singletonList(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042));
 		entry.setId("createRegion4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.realtimestatechart.diagram/icon/region.gif")); //$NON-NLS-1$

@@ -54,10 +54,10 @@ public class RegionCreateCommand extends EditElementCommand {
 				.createRegion();
 
 		de.uni_paderborn.fujaba.muml.realtimestatechart.State owner = (de.uni_paderborn.fujaba.muml.realtimestatechart.State) getElementToEdit();
-		owner.getRegions().add(newElement);
+		owner.getEmbeddedRegions().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.ElementInitializers
-				.getInstance().init_Region_3038(newElement);
+				.getInstance().init_Region_3042(newElement);
 
 		doConfigure(newElement, monitor, info);
 

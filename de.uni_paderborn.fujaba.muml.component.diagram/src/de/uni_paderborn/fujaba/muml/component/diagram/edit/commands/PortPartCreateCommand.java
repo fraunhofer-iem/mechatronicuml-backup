@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class DiscretePort2CreateCommand extends EditElementCommand {
+public class PortPartCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public DiscretePort2CreateCommand(CreateElementRequest req) {
+	public PortPartCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -37,9 +37,12 @@ public class DiscretePort2CreateCommand extends EditElementCommand {
 		return container;
 	}
 
+	/**
+	 * @generated
+	 */
 	public boolean canExecute() {
-		// This command must not be used. The containment feature is not changable!
-		return false;
+		return true;
+
 	}
 
 	/**
@@ -47,14 +50,11 @@ public class DiscretePort2CreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.component.DiscretePort newElement = de.uni_paderborn.fujaba.muml.component.ComponentFactory.eINSTANCE
-				.createDiscretePort();
+		de.uni_paderborn.fujaba.muml.component.PortPart newElement = de.uni_paderborn.fujaba.muml.component.ComponentFactory.eINSTANCE
+				.createPortPart();
 
 		de.uni_paderborn.fujaba.muml.component.ComponentPart owner = (de.uni_paderborn.fujaba.muml.component.ComponentPart) getElementToEdit();
-		owner.getPorts().add(newElement);
-
-		de.uni_paderborn.fujaba.muml.component.diagram.providers.ElementInitializers
-				.getInstance().init_DiscretePort_3014(newElement);
+		owner.getPortParts().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -66,7 +66,7 @@ public class DiscretePort2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.component.DiscretePort newElement,
+			de.uni_paderborn.fujaba.muml.component.PortPart newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.component.diagram.edit.policies;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -349,23 +348,6 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateDiscretePortGmfProtocol_4005(
-				de.uni_paderborn.fujaba.muml.component.DiscretePort source,
-				de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol target,
-				View sourceView, View targetView) {
-			if (source != null) {
-				if (source.getGmfProtocol() != null) {
-					return false;
-				}
-			}
-
-			return canExistDiscretePortGmfProtocol_4005(source, target,
-					sourceView, targetView);
-		}
-
-		/**
-		 * @generated
-		 */
 		public boolean canExistAssemblyConnector_4001(
 				de.uni_paderborn.fujaba.muml.component.StructuredComponent container,
 				de.uni_paderborn.fujaba.muml.component.AssemblyConnector linkInstance,
@@ -388,7 +370,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									13,
+									11,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -431,7 +413,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									13,
+									11,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -487,7 +469,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									14,
+									12,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -530,7 +512,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlAbstractExpression expression = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 							.getExpression(
-									14,
+									12,
 									de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 											.getConnectorEndpoint(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -559,26 +541,6 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
 			}
-		}
-
-		/**
-		 * @generated
-		 */
-		public boolean canExistDiscretePortGmfProtocol_4005(
-				de.uni_paderborn.fujaba.muml.component.DiscretePort source,
-				de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol target,
-				View sourceView, View targetView) {
-			return true;
-		}
-
-		/**
-		 * @generated
-		 */
-		public java.lang.String getErrorDiscretePortGmfProtocol_4005(
-				de.uni_paderborn.fujaba.muml.component.DiscretePort source,
-				de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol target,
-				View sourceView, View targetView) {
-			return null;
 		}
 
 	}

@@ -77,11 +77,13 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Region_3038 = getElementType("de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Region_3038"); //$NON-NLS-1$
+	public static final IElementType Region_3042 = getElementType("de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Region_3042"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType RealtimeStatechart_3039 = getElementType("de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.RealtimeStatechart_3039"); //$NON-NLS-1$
+	public static final IElementType RealtimeStatechart_3043 = getElementType("de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.RealtimeStatechart_3043"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -247,12 +249,12 @@ public class MumlElementTypes {
 							.getSynchronizationChannel());
 
 			elements.put(
-					Region_3038,
+					Region_3042,
 					de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getRegion());
 
 			elements.put(
-					RealtimeStatechart_3039,
+					RealtimeStatechart_3043,
 					de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 							.getRealtimeStatechart());
 
@@ -295,8 +297,8 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ExitEvent_3035);
 			KNOWN_ELEMENT_TYPES.add(ClockConstraint_3036);
 			KNOWN_ELEMENT_TYPES.add(SynchronizationChannel_3037);
-			KNOWN_ELEMENT_TYPES.add(Region_3038);
-			KNOWN_ELEMENT_TYPES.add(RealtimeStatechart_3039);
+			KNOWN_ELEMENT_TYPES.add(Region_3042);
+			KNOWN_ELEMENT_TYPES.add(RealtimeStatechart_3043);
 			KNOWN_ELEMENT_TYPES.add(EntryPoint_3040);
 			KNOWN_ELEMENT_TYPES.add(ExitPoint_3041);
 			KNOWN_ELEMENT_TYPES.add(Transition_4003);
@@ -326,9 +328,9 @@ public class MumlElementTypes {
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
 			return SynchronizationChannel_3037;
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
-			return Region_3038;
+			return Region_3042;
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
-			return RealtimeStatechart_3039;
+			return RealtimeStatechart_3043;
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
 			return EntryPoint_3040;
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:

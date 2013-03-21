@@ -383,10 +383,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3038"
+        visualID="3042"
         editPartClassName="RegionEditPart"
         itemSemanticEditPolicyClassName="RegionItemSemanticEditPolicy"
-        notationViewFactoryClassName="RegionViewFactory"
         canonicalEditPolicyClassName="RegionCanonicalEditPolicy"
         compartments="//@diagram/@compartments.5"
         graphicalNodeEditPolicyClassName="RegionGraphicalNodeEditPolicy"
@@ -405,31 +404,25 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/regions"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/embeddedRegions"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/regions"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/embeddedRegions"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
               value="//@expressionProviders/@providers.0/@expressions.8">
             <feature
-                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
-          </initializers>
-          <initializers
-              xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.9">
-            <feature
                 href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/PrioritizedElement/priority"/>
           </initializers>
           <initializers
               xsi:type="gmfgen:GenReferenceNewElementSpec">
             <feature
-                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region/statechart"/>
+                href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region/embeddedStatechart"/>
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.10">
+                  value="//@expressionProviders/@providers.0/@expressions.9">
                 <feature
                     href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
               </initializers>
@@ -440,13 +433,13 @@
                 <newElementInitializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.11">
+                      value="//@expressionProviders/@providers.0/@expressions.10">
                     <feature
                         href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
                   </initializers>
                   <initializers
                       xsi:type="gmfgen:GenFeatureValueSpec"
-                      value="//@expressionProviders/@providers.0/@expressions.12">
+                      value="//@expressionProviders/@providers.0/@expressions.11">
                     <feature
                         href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/initial"/>
                   </initializers>
@@ -457,10 +450,9 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5055"
+          visualID="5063"
           editPartClassName="RegionNameEditPart"
-          itemSemanticEditPolicyClassName="RegionNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="RegionNameViewFactory">
+          itemSemanticEditPolicyClassName="RegionNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -472,14 +464,13 @@
             parser="//@labelParsers/@implementations.5"
             viewPattern="">
           <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+              href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region/name"/>
         </modelFacet>
       </labels>
       <labels
-          visualID="5056"
+          visualID="5064"
           editPartClassName="RegionPriorityEditPart"
-          itemSemanticEditPolicyClassName="RegionPriorityItemSemanticEditPolicy"
-          notationViewFactoryClassName="RegionPriorityViewFactory">
+          itemSemanticEditPolicyClassName="RegionPriorityItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -499,10 +490,9 @@
         </modelFacet>
       </labels>
       <labels
-          visualID="5057"
+          visualID="5065"
           editPartClassName="WrappingLabel7EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel7ItemSemanticEditPolicy"
-          notationViewFactoryClassName="RegionLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -516,10 +506,9 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3039"
+        visualID="3043"
         editPartClassName="RealtimeStatechart2EditPart"
         itemSemanticEditPolicyClassName="RealtimeStatechart2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="RealtimeStatechartViewFactory"
         canonicalEditPolicyClassName="RealtimeStatechart2CanonicalEditPolicy"
         compartments="//@diagram/@compartments.6"
         graphicalNodeEditPolicyClassName="RealtimeStatechart2GraphicalNodeEditPolicy"
@@ -538,9 +527,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region/statechart"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region/embeddedStatechart"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region/statechart"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region/embeddedStatechart"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -550,13 +539,13 @@
             <newElementInitializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.13">
+                  value="//@expressionProviders/@providers.0/@expressions.12">
                 <feature
                     href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
               </initializers>
               <initializers
                   xsi:type="gmfgen:GenFeatureValueSpec"
-                  value="//@expressionProviders/@providers.0/@expressions.14">
+                  value="//@expressionProviders/@providers.0/@expressions.13">
                 <feature
                     href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/State/initial"/>
               </initializers>
@@ -604,7 +593,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.16">
+              value="//@expressionProviders/@providers.0/@expressions.15">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -670,7 +659,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.17">
+              value="//@expressionProviders/@providers.0/@expressions.16">
             <feature
                 href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
           </initializers>
@@ -781,7 +770,7 @@
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
               xsi:type="gmfgen:GenFeatureValueSpec"
-              value="//@expressionProviders/@providers.0/@expressions.19">
+              value="//@expressionProviders/@providers.0/@expressions.18">
             <feature
                 href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/PrioritizedElement/priority"/>
           </initializers>
@@ -834,7 +823,7 @@
             parser="//@labelParsers/@implementations.9"/>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.22"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.21"/>
     </links>
     <compartments
         visualID="7030"
@@ -928,10 +917,9 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7035"
+        visualID="7037"
         editPartClassName="RegionRegionContentsCompartmentEditPart"
         itemSemanticEditPolicyClassName="RegionRegionContentsCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="RegionRegionContentsCompartmentViewFactory"
         canonicalEditPolicyClassName="RegionRegionContentsCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.7"
         title="RegionContentsCompartment"
@@ -946,10 +934,9 @@
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
     <compartments
-        visualID="7036"
+        visualID="7038"
         editPartClassName="RealtimeStatechartStatechartContentsCompartment2EditPart"
         itemSemanticEditPolicyClassName="RealtimeStatechartStatechartContentsCompartment2ItemSemanticEditPolicy"
-        notationViewFactoryClassName="RealtimeStatechartStatechartContentsCompartmentViewFactory"
         canonicalEditPolicyClassName="RealtimeStatechartStatechartContentsCompartment2CanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="StatechartContentsCompartment"
@@ -1226,8 +1213,6 @@
       <expressions
           body="--(&#xA;--if self.state.channels->first() = self then&#xA;--&#x9;'ch: '&#xA;--else&#xA;--&#x9;''&#xA;--endif&#xA;--).concat(&#xA;--&#xA;---- BEGIN: The actual name of the Clock&#xA;--&#xA;--if self.name.oclIsUndefined() then 'null' else self.name endif).concat(&#xA;--&#x9;'('.concat(&#xA;--&#x9;&#x9;self.parameters->iterate(param; result : String = '' | &#xA;--&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;--&#x9;&#x9;&#x9;&#x9;param.name.concat(' : ').concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;if param.type.oclIsUndefined() then&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;param.type.name&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;)&#xA;--&#x9;).concat(')')&#xA;--&#xA;---- END: The actual name of the Clock&#xA;--&#xA;--).concat(&#xA;--if self.state.channels->last() = self then&#xA;--&#x9;';'&#xA;--else&#xA;--&#x9;','&#xA;--endif&#xA;--)"/>
       <expressions
-          body="--'region'"/>
-      <expressions
           body="--self.parentState.getUniqueRegionPriority(0)"/>
       <expressions
           body="--'statechart'"/>
@@ -1306,8 +1291,8 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.2/@modelFacet"
-        className="RegionLabelExpressionLabelParser5057"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
+        className="RegionLabelExpressionLabelParser5065"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.14">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Region"/>
     </implementations>
@@ -1315,7 +1300,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet"
         className="RealtimeStatechartLabelExpressionLabelParser5062"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.18">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.17">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/RealtimeStatechart"/>
     </implementations>
@@ -1323,7 +1308,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.0/@modelFacet"
         className="TransitionLabelExpressionLabelParser6005"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.20">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.19">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Transition"/>
     </implementations>
@@ -1331,7 +1316,7 @@
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@links.0/@labels.1/@modelFacet"
         className="TransitionLabelExpressionLabelParser6006"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.21">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.20">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/realtimestatechart/Transition"/>
     </implementations>

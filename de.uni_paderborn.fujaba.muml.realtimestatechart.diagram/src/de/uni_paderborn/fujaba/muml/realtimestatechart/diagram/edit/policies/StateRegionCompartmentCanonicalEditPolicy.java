@@ -53,7 +53,7 @@ public class StateRegionCompartmentCanonicalEditPolicy extends
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-				.getState_Regions();
+				.getState_EmbeddedRegions();
 	}
 
 	/**

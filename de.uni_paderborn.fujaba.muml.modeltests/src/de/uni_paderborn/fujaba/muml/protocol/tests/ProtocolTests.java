@@ -8,7 +8,6 @@ package de.uni_paderborn.fujaba.muml.protocol.tests;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
-
 import junit.textui.TestRunner;
 
 /**

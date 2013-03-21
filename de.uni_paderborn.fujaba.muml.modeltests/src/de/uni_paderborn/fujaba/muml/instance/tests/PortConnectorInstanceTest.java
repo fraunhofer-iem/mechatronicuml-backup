@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.instance.tests;
 
 import de.uni_paderborn.fujaba.muml.connector.tests.ConnectorInstanceTest;
-
 import de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance;
 
 /**

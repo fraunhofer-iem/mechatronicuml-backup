@@ -16,16 +16,16 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class HybridPort2ItemSemanticEditPolicy
+public class PortPartItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public HybridPort2ItemSemanticEditPolicy() {
+	public PortPartItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.HybridPort_3017);
+				de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPart_3022);
 	}
 
 	/**

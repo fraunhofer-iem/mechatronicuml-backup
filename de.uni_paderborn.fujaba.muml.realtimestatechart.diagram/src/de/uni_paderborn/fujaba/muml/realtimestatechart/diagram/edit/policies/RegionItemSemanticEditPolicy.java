@@ -24,7 +24,7 @@ public class RegionItemSemanticEditPolicy
 	 */
 	public RegionItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Region_3038);
+				de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042);
 	}
 
 	/**

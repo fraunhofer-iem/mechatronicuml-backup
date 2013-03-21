@@ -8,7 +8,6 @@ package de.uni_paderborn.fujaba.muml.types.tests;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
-
 import junit.textui.TestRunner;
 
 /**
@@ -37,6 +36,7 @@ public class TypesTests extends TestSuite {
 		TestSuite suite = new TypesTests("types Tests");
 		suite.addTestSuite(ArrayDataTypeTest.class);
 		suite.addTestSuite(PrimitiveDataTypeTest.class);
+		suite.addTestSuite(RangedPrimitiveDataTypeTest.class);
 		return suite;
 	}
 

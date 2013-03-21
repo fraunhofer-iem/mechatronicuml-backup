@@ -133,15 +133,6 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURABLE_STRUCTURED_COMPONENT__PORTS = ComponentPackage.STRUCTURED_COMPONENT__PORTS;
 
 	/**
-	 * The feature id for the '<em><b>Referencing Component Parts</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT__REFERENCING_COMPONENT_PARTS = ComponentPackage.STRUCTURED_COMPONENT__REFERENCING_COMPONENT_PARTS;
-
-	/**
 	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -151,13 +142,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURABLE_STRUCTURED_COMPONENT__COMPONENT_TYPE = ComponentPackage.STRUCTURED_COMPONENT__COMPONENT_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Embedded Parts</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Embedded Component Parts</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT__EMBEDDED_PARTS = ComponentPackage.STRUCTURED_COMPONENT__EMBEDDED_PARTS;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT__EMBEDDED_COMPONENT_PARTS = ComponentPackage.STRUCTURED_COMPONENT__EMBEDDED_COMPONENT_PARTS;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
@@ -187,13 +178,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURABLE_STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS = ComponentPackage.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS;
 
 	/**
-	 * The feature id for the '<em><b>Gmf Protocols</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Coordination Protocol Occurences</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT__GMF_PROTOCOLS = ComponentPackage.STRUCTURED_COMPONENT__GMF_PROTOCOLS;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES = ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES;
 
 	/**
 	 * The feature id for the '<em><b>Controllers</b></em>' containment reference list.
@@ -368,13 +359,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT__CARDINALITY = ComponentPackage.DISCRETE_PORT__CARDINALITY;
 
 	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__REFINES = ComponentPackage.DISCRETE_PORT__REFINES;
+	int RECONFIGURATION_PORT__REFINED_ROLE = ComponentPackage.DISCRETE_PORT__REFINED_ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
@@ -422,13 +413,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT__MULTI_PORT = ComponentPackage.DISCRETE_PORT__MULTI_PORT;
 
 	/**
-	 * The feature id for the '<em><b>Gmf Protocol</b></em>' reference.
+	 * The feature id for the '<em><b>Coordination Protocol</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__GMF_PROTOCOL = ComponentPackage.DISCRETE_PORT__GMF_PROTOCOL;
+	int RECONFIGURATION_PORT__COORDINATION_PROTOCOL = ComponentPackage.DISCRETE_PORT__COORDINATION_PROTOCOL;
 
 	/**
 	 * The feature id for the '<em><b>Interface Entries</b></em>' containment reference list.
@@ -927,15 +918,6 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURABLE_COMPONENT__PORTS = ComponentPackage.COMPONENT__PORTS;
 
 	/**
-	 * The feature id for the '<em><b>Referencing Component Parts</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURABLE_COMPONENT__REFERENCING_COMPONENT_PARTS = ComponentPackage.COMPONENT__REFERENCING_COMPONENT_PARTS;
-
-	/**
 	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1090,13 +1072,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__CARDINALITY = RECONFIGURATION_PORT__CARDINALITY;
 
 	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT__REFINES = RECONFIGURATION_PORT__REFINES;
+	int RECONFIGURATION_MESSAGE_PORT__REFINED_ROLE = RECONFIGURATION_PORT__REFINED_ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
@@ -1144,13 +1126,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__MULTI_PORT = RECONFIGURATION_PORT__MULTI_PORT;
 
 	/**
-	 * The feature id for the '<em><b>Gmf Protocol</b></em>' reference.
+	 * The feature id for the '<em><b>Coordination Protocol</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT__GMF_PROTOCOL = RECONFIGURATION_PORT__GMF_PROTOCOL;
+	int RECONFIGURATION_MESSAGE_PORT__COORDINATION_PROTOCOL = RECONFIGURATION_PORT__COORDINATION_PROTOCOL;
 
 	/**
 	 * The feature id for the '<em><b>Interface Entries</b></em>' containment reference list.
@@ -1307,13 +1289,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__CARDINALITY = RECONFIGURATION_PORT__CARDINALITY;
 
 	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT__REFINES = RECONFIGURATION_PORT__REFINES;
+	int RECONFIGURATION_EXECUTION_PORT__REFINED_ROLE = RECONFIGURATION_PORT__REFINED_ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
@@ -1361,13 +1343,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__MULTI_PORT = RECONFIGURATION_PORT__MULTI_PORT;
 
 	/**
-	 * The feature id for the '<em><b>Gmf Protocol</b></em>' reference.
+	 * The feature id for the '<em><b>Coordination Protocol</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT__GMF_PROTOCOL = RECONFIGURATION_PORT__GMF_PROTOCOL;
+	int RECONFIGURATION_EXECUTION_PORT__COORDINATION_PROTOCOL = RECONFIGURATION_PORT__COORDINATION_PROTOCOL;
 
 	/**
 	 * The feature id for the '<em><b>Interface Entries</b></em>' containment reference list.

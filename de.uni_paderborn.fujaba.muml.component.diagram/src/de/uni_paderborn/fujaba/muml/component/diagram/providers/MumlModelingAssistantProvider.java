@@ -34,8 +34,15 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 				.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.StaticStructuredComponent_2005);
 			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.AtomicComponent_2006);
+			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.StaticStructuredComponent_2005);
+			return types;
+		}
+		if (editPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart) {
+			ArrayList<IElementType> types = new ArrayList<IElementType>(3);
+			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DiscretePort_3010);
+			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
+			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.HybridPort_3013);
 			return types;
 		}
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart) {
@@ -44,24 +51,15 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
 			return types;
 		}
-		if (editPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DiscretePort_3010);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.HybridPort_3017);
-			return types;
-		}
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.HybridPort_3013);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DiscretePort_3014);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.ContinuousPort_3015);
+			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPart_3022);
 			return types;
 		}
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart) {
 			ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.ComponentPart_3012);
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.CoordinationProtocol_3016);
+			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.CoordinationProtocolOccurrence_3016);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -85,16 +83,8 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart) sourceEditPart)
 					.getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePort2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePort2EditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPort2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPort2EditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart) sourceEditPart)
+		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) {
+			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) sourceEditPart)
 					.getMARelTypesOnSource();
 		}
 		return Collections.EMPTY_LIST;
@@ -118,20 +108,8 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart) targetEditPart)
 					.getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePort2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePort2EditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPort2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPort2EditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart) targetEditPart)
+		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) {
+			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) targetEditPart)
 					.getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
@@ -158,16 +136,8 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePort2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePort2EditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPort2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPort2EditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart) sourceEditPart)
+		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) {
+			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		return Collections.EMPTY_LIST;
@@ -192,20 +162,8 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePort2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePort2EditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPort2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPort2EditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart) targetEditPart)
+		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) {
+			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
@@ -230,16 +188,8 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePort2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePort2EditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPort2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPort2EditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart) {
-			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart) sourceEditPart)
+		if (sourceEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) {
+			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;

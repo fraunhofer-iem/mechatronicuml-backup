@@ -17,44 +17,47 @@ import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
 public class DelegationConnectorEditHelperAdvice extends
 		AbstractEditHelperAdvice {
 
-	protected ICommand getAfterConfigureCommand(final ConfigureRequest request) {
-		return new ConfigureElementCommand(request) {
+	// TODO: Deactivated because of ingeration of part layer into metamodel
 
-			@Override
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor monitor, IAdaptable info)
-					throws ExecutionException {
-				DelegationConnector delegationConnector = (DelegationConnector) request
-						.getElementToConfigure();
-
-				// Set component part of source port, if exists
-				View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy
-						.getSourceView(request);
-				ComponentPart sourceComponentPart = getComponentPart(sourceView);
-				if (sourceComponentPart != null) {
-					delegationConnector.setComponentPart(sourceComponentPart);
-				}
-
-				// Set component part of target port, if exists
-				View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy
-						.getTargetView(request);
-				ComponentPart targetComponentPart = getComponentPart(targetView);
-				if (targetComponentPart != null) {
-					delegationConnector.setComponentPart(targetComponentPart);
-				}
-
-				return CommandResult.newOKCommandResult(delegationConnector);
-			}
-
-			private ComponentPart getComponentPart(View view) {
-				View containerView = (View) view.eContainer();
-				if (containerView.getElement() instanceof ComponentPart) {
-					return (ComponentPart) containerView.getElement();
-				}
-				return null;
-			}
-
-		};
-	}
+//	
+//	protected ICommand getAfterConfigureCommand(final ConfigureRequest request) {
+//		return new ConfigureElementCommand(request) {
+//
+//			@Override
+//			protected CommandResult doExecuteWithResult(
+//					IProgressMonitor monitor, IAdaptable info)
+//					throws ExecutionException {
+//				DelegationConnector delegationConnector = (DelegationConnector) request
+//						.getElementToConfigure();
+//
+//				// Set component part of source port, if exists
+//				View sourceView = ConnectionConfigureHelperGraphicalNodeEditPolicy
+//						.getSourceView(request);
+//				ComponentPart sourceComponentPart = getComponentPart(sourceView);
+//				if (sourceComponentPart != null) {
+//					delegationConnector.setComponentPart(sourceComponentPart);
+//				}
+//
+//				// Set component part of target port, if exists
+//				View targetView = ConnectionConfigureHelperGraphicalNodeEditPolicy
+//						.getTargetView(request);
+//				ComponentPart targetComponentPart = getComponentPart(targetView);
+//				if (targetComponentPart != null) {
+//					delegationConnector.setComponentPart(targetComponentPart);
+//				}
+//
+//				return CommandResult.newOKCommandResult(delegationConnector);
+//			}
+//
+//			private ComponentPart getComponentPart(View view) {
+//				View containerView = (View) view.eContainer();
+//				if (containerView.getElement() instanceof ComponentPart) {
+//					return (ComponentPart) containerView.getElement();
+//				}
+//				return null;
+//			}
+//
+//		};
+//	}
 
 }

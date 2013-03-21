@@ -25,20 +25,20 @@ public class MumlEditPartFactory implements EditPartFactory {
 				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart(
-						view);
-
-			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart(
-						view);
-
 			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart(
 						view);
 
 			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentNameEditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart(
 						view);
 
 			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
@@ -61,14 +61,6 @@ public class MumlEditPartFactory implements EditPartFactory {
 				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortNameEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart(
-						view);
-
-			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel2EditPart(
-						view);
-
 			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart(
 						view);
@@ -77,20 +69,20 @@ public class MumlEditPartFactory implements EditPartFactory {
 				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortNameEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePort2EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePort2EditPart(
+			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortName2EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortName2EditPart(
+			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel2EditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPort2EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPort2EditPart(
+			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortName2EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortName2EditPart(
+			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartNameEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartNameEditPart(
 						view);
 
 			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID:
@@ -99,14 +91,6 @@ public class MumlEditPartFactory implements EditPartFactory {
 
 			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolNameEditPart(
-						view);
-
-			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPort2EditPart(
-						view);
-
-			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortName2EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortName2EditPart(
 						view);
 
 			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart.VISUAL_ID:
@@ -119,14 +103,6 @@ public class MumlEditPartFactory implements EditPartFactory {
 
 			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DelegationConnectorEditPart(
-						view);
-
-			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortGmfProtocolEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortGmfProtocolEditPart(
-						view);
-
-			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart(
 						view);
 
 			}

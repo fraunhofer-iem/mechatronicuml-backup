@@ -6,10 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.instance.tests;
 
+import junit.textui.TestRunner;
 import de.uni_paderborn.fujaba.muml.instance.HybridPortInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstanceFactory;
-
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,7 +16,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class HybridPortInstanceTest extends DiscretePortInstanceTest {
+public class HybridPortInstanceTest extends PortInstanceTest {
 
 	/**
 	 * <!-- begin-user-doc -->

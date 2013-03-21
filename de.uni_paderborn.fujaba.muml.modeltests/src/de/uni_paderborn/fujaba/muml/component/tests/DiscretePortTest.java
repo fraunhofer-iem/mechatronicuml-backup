@@ -6,10 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.component.tests;
 
+import junit.textui.TestRunner;
 import de.uni_paderborn.fujaba.muml.component.ComponentFactory;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
-
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +22,7 @@ import junit.textui.TestRunner;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isIsDiscreteInOutPort() <em>Is Discrete In Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getReceiverMessageBuffer() <em>Receiver Message Buffer</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isMultiPort() <em>Multi Port</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getGmfProtocol() <em>Gmf Protocol</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getCoordinationProtocol() <em>Coordination Protocol</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -148,13 +147,13 @@ public class DiscretePortTest extends PortTest {
 	}
 
 	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getGmfProtocol() <em>Gmf Protocol</em>}' feature getter.
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getCoordinationProtocol() <em>Coordination Protocol</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.component.DiscretePort#getGmfProtocol()
+	 * @see de.uni_paderborn.fujaba.muml.component.DiscretePort#getCoordinationProtocol()
 	 * @generated
 	 */
-	public void testGetGmfProtocol() {
+	public void testGetCoordinationProtocol() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

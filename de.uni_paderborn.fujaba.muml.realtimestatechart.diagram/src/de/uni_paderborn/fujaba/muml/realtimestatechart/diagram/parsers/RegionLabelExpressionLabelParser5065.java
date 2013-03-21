@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.component.diagram.parsers;
+package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers;
 
 import java.util.Collections;
 
@@ -23,12 +23,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class DiscretePortGmfProtocolLabelExpressionLabelParser6003 extends
+public class RegionLabelExpressionLabelParser5065 extends
 		ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
-	public DiscretePortGmfProtocolLabelExpressionLabelParser6003() {
+	public RegionLabelExpressionLabelParser5065() {
 	}
 
 	/**
@@ -36,11 +36,11 @@ public class DiscretePortGmfProtocolLabelExpressionLabelParser6003 extends
 	 */
 	@Override
 	protected String getExpressionBody() {
-		return de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
+		return de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						15,
-						de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-								.getDiscretePort(), null).body();
+						14,
+						de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+								.getRegion(), null).body();
 	}
 
 	/**

@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.instance.tests;
 
 import de.uni_paderborn.fujaba.muml.connector.tests.ConnectorEndpointInstanceTest;
-
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
 
 /**
@@ -19,6 +18,7 @@ import de.uni_paderborn.fujaba.muml.instance.PortInstance;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.PortInstance#getPortType() <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.PortInstance#getPortConnectorInstances() <em>Port Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.PortInstance#getPortPart() <em>Port Part</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -67,6 +67,19 @@ public abstract class PortInstanceTest extends ConnectorEndpointInstanceTest {
 	 * @generated
 	 */
 	public void testGetPortConnectorInstances() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.instance.PortInstance#getPortPart() <em>Port Part</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.instance.PortInstance#getPortPart()
+	 * @generated
+	 */
+	public void testGetPortPart() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

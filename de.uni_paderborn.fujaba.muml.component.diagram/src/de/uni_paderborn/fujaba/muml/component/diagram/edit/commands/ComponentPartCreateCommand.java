@@ -54,7 +54,7 @@ public class ComponentPartCreateCommand extends EditElementCommand {
 				.createComponentPart();
 
 		de.uni_paderborn.fujaba.muml.component.StructuredComponent owner = (de.uni_paderborn.fujaba.muml.component.StructuredComponent) getElementToEdit();
-		owner.getEmbeddedParts().add(newElement);
+		owner.getEmbeddedComponentParts().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.component.diagram.providers.ElementInitializers
 				.getInstance().init_ComponentPart_3012(newElement);

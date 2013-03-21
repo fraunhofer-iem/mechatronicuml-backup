@@ -74,7 +74,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Region_3038(
+	public void init_Region_3042(
 			de.uni_paderborn.fujaba.muml.realtimestatechart.Region instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
@@ -82,43 +82,37 @@ public class ElementInitializers {
 							8,
 							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getRegion(), null).evaluate(instance);
-			instance.setName((String) value_0);
-			Object value_1 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
+
+			value_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlAbstractExpression
+					.performCast(value_0, EcorePackage.eINSTANCE.getEInt());
+			instance.setPriority(((Integer) value_0).intValue());
+			de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart newInstance_1_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+					.createRealtimeStatechart();
+			instance.setEmbeddedStatechart(newInstance_1_0);
+			Object value_1_0_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							9,
 							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getRegion(), null).evaluate(instance);
-
-			value_1 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlAbstractExpression
-					.performCast(value_1, EcorePackage.eINSTANCE.getEInt());
-			instance.setPriority(((Integer) value_1).intValue());
-			de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart newInstance_2_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-					.createRealtimeStatechart();
-			instance.setStatechart(newInstance_2_0);
-			Object value_2_0_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
+									.getRealtimeStatechart(), null).evaluate(
+							newInstance_1_0);
+			newInstance_1_0.setName((String) value_1_0_0);
+			de.uni_paderborn.fujaba.muml.realtimestatechart.State newInstance_1_0_1_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory.eINSTANCE
+					.createState();
+			newInstance_1_0.getStates().add(newInstance_1_0_1_0);
+			Object value_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							10,
 							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getRealtimeStatechart(), null).evaluate(
-							newInstance_2_0);
-			newInstance_2_0.setName((String) value_2_0_0);
-			de.uni_paderborn.fujaba.muml.realtimestatechart.State newInstance_2_0_1_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory.eINSTANCE
-					.createState();
-			newInstance_2_0.getStates().add(newInstance_2_0_1_0);
-			Object value_2_0_1_0_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
+									.getState(), null).evaluate(
+							newInstance_1_0_1_0);
+			newInstance_1_0_1_0.setName((String) value_1_0_1_0_0);
+			Object value_1_0_1_0_1 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							11,
 							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getState(), null).evaluate(
-							newInstance_2_0_1_0);
-			newInstance_2_0_1_0.setName((String) value_2_0_1_0_0);
-			Object value_2_0_1_0_1 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
-					.getExpression(
-							12,
-							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-									.getState(), null).evaluate(
-							newInstance_2_0_1_0);
-			newInstance_2_0_1_0.setInitial(((Boolean) value_2_0_1_0_1)
+							newInstance_1_0_1_0);
+			newInstance_1_0_1_0.setInitial(((Boolean) value_1_0_1_0_1)
 					.booleanValue());
 
 		} catch (RuntimeException e) {
@@ -130,7 +124,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_RealtimeStatechart_3039(
+	public void init_RealtimeStatechart_3043(
 			de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.realtimestatechart.State newInstance_0_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory.eINSTANCE
@@ -138,14 +132,14 @@ public class ElementInitializers {
 			instance.getStates().add(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							13,
+							12,
 							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getState(), null)
 					.evaluate(newInstance_0_0);
 			newInstance_0_0.setName((String) value_0_0_0);
 			Object value_0_0_1 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							14,
+							13,
 							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getState(), null)
 					.evaluate(newInstance_0_0);
@@ -165,7 +159,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							16,
+							15,
 							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getEntryPoint(), null).evaluate(instance);
 			instance.setName((String) value_0);
@@ -183,7 +177,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							17,
+							16,
 							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getExitPoint(), null).evaluate(instance);
 			instance.setName((String) value_0);
@@ -201,7 +195,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							19,
+							18,
 							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getTransition(), null).evaluate(instance);
 
