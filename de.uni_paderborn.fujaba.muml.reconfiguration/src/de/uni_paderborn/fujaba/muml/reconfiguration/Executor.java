@@ -17,6 +17,10 @@ import org.storydriven.core.CommentableElement;
  * A representation of the model object '<em><b>Executor</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * The Executor is responsible for executing reconfigurations in a reconfigurable component. It is part of a RuleBasedReconfigurationController and defines a set of ReconfigurationRules that it can execute.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

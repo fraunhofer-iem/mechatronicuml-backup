@@ -15,6 +15,11 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Message Port</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A component uses its ReconfigurationMessagePorts for sending information on situations that may require a reconfiguration to its parent. Consequently, RM ports are used for bottom-up information provision.
+ * The ReconfigurationMessagePorts are implemented in the Manager if a RuleBasedReconfigurationController is used.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

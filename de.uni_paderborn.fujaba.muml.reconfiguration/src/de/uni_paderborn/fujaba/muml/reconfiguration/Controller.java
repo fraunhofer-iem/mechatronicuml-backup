@@ -17,7 +17,7 @@ import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Reconfiguration controllers encapsulate the reconfiguration behavior of a reconfigurable structured component.
+ * Controllers add additional behavior to a reconfigurable behavior. Since the behavior of the structured component is, in principle, defined by the execution of its embedded components, it has no own behavior specification. We use Controllers to add behavior that may access the embedded components of a structured components and use them, e.g., for specifying reconfiguration behavior.
  * <!-- end-model-doc -->
  *
  * <p>

@@ -1127,13 +1127,13 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });										
+		   });															
 		addAnnotation
 		  (executorSpecificationEntryEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "TimeToFailureLessOrEqualToTimeToSuccess"
-		   });
+		   });									
 	}
 
 	/**
@@ -1155,7 +1155,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		   source, 
 		   new String[] {
 			 "derivation", "self.controllers -> select(m | m.oclIsKindOf(Executor)) ->any(true)"
-		   });					
+		   });																			
 	}
 
 } //ReconfigurationPackageImpl

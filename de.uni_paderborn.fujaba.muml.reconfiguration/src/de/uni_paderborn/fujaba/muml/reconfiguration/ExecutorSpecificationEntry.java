@@ -13,6 +13,10 @@ import org.storydriven.core.ExtendableElement;
  * A representation of the model object '<em><b>Executor Specification Entry</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An ExecutorSpecificationEntry defines a ReconfigurationRule.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

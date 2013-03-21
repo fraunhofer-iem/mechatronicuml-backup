@@ -18,6 +18,10 @@ import org.storydriven.core.NamedElement;
  * A representation of the model object '<em><b>Structural Condition</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A StructuralCondition is a condition on the embedded component instances of a reconfigurable structured component instance that is used by a ManagerSpecificationEntry for deciding whether a reconfiguration may be executed.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

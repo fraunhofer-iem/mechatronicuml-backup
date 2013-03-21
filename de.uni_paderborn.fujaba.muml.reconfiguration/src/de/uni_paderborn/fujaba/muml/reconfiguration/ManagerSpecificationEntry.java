@@ -16,6 +16,10 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * A representation of the model object '<em><b>Manager Specification Entry</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Each ManagerSpecificationEntry defines the reaction of the manager to a reconfiguration message which has either been sent by an embedded child or which is received from the executor as part of a hierarchical reconfiguration.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

@@ -17,6 +17,10 @@ import org.storydriven.core.NamedElement;
  * A representation of the model object '<em><b>Signature</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * The class Signature defines the signature of a ReconfigurationRule. It defines the name of the ReconfigurationRule and its input and output parameters.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

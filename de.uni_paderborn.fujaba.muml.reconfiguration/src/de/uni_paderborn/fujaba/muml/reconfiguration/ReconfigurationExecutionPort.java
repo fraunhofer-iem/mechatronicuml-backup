@@ -14,6 +14,10 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Execution Port</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A component uses its ReconfigurationExecutionPorts for offering reconfiguration operations to its parent. The parent may trigger a reconfiguration operation on a child by sending a reconfiguration message to the ReconfigurationExecutionPort of that child. Thus, ReconfigurationExecutionPorts  are primarily used for top-down reconfiguration initiation. They are implemented by the Executor if a RuleBasedReconfigurationController is used.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

@@ -17,6 +17,11 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
  * A representation of the model object '<em><b>Reconfiguration Rule Call Expression</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A ReconfigurationRuleCallExpression can be used for calling a ReconfigurationRule from an expression specified by the MechatronicUML action language. 
+ * In particular, it may be used for calling a reconfiguration rule in the action of a transition of a real-time statechart.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

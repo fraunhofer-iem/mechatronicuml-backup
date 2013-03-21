@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This interface needs to be implemented by all reconfigurable component types in order to distinguish them from static component types.
+ * This abstract class needs to be implemented by all reconfigurable component types in order to distinguish them from static component types.
  * <!-- end-model-doc -->
  *
  *

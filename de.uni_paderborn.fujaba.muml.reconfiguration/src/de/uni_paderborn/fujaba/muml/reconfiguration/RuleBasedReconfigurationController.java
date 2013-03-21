@@ -12,6 +12,10 @@ package de.uni_paderborn.fujaba.muml.reconfiguration;
  * A representation of the model object '<em><b>Rule Based Reconfiguration Controller</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A RuleBasedReconfigurationController uses a declarative approach for defining the reconfiguration behavior. 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

@@ -15,6 +15,10 @@ import org.storydriven.core.ExtendableElement;
  * A representation of the model object '<em><b>Port Interface Entry</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A ReconfigurationPortInterfaceEntry is the abstract super class of the interface entries of ReconfigurationMessagePorts and ReconfigurationExecutionPorts.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

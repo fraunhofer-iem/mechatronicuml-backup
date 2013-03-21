@@ -17,6 +17,12 @@ import org.storydriven.core.CommentableElement;
  * A representation of the model object '<em><b>Manager</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * The Manager is responsible for defining when to execute which reconfiguration rule. 
+ * It reacts to reconfiguration messages that are provided by embedded components and indicate that a certain situation which may require reconfiguration has been monitored. 
+ * The Manager is part of a RuleBasedReconfigurationController. Therefore, it provides a rule-based specification of its behavior using a set of ManagerSpecificationEntries.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

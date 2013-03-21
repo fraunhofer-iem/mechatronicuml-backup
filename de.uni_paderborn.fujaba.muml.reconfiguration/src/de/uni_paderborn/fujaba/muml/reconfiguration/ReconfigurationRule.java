@@ -19,7 +19,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A reconfiguration rule describes a modification of the internal structure of a reconfigurable structured component or of a reconfigurable atomic component.
+ * A reconfiguration rule describes a modification of the internal structure of a reconfigurable structured component or of a reconfigurable atomic component. It has a Signature that defines the name of the reconfiguration rule as well as its input and output parameters.
  * <!-- end-model-doc -->
  *
  * <p>

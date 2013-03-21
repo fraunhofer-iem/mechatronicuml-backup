@@ -13,6 +13,10 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * A representation of the model object '<em><b>Message Port Interface Entry</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Each ReconfigurationMessagePortInterfaceEntry defines one reconfiguration message that is sent by a component to its parent. In addition to the message, it defines the ReconfigurationmessageType and, in case that it is a request, the expected response time for the parent.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

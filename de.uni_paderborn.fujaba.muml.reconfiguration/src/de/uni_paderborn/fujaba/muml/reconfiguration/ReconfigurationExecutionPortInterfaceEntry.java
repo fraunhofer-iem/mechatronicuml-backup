@@ -13,6 +13,11 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * A representation of the model object '<em><b>Execution Port Interface Entry</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Each ReconfigurationExecutionPortInterfaceEntry defines one reconfiguration message that may be sent by the parent component to initiate a reconfiguration on the component. 
+ * In addition to the message, it defines the duration for deciding whether the requested reconfiguration can be executed and the duration for executing the reconfiguration.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

@@ -17,6 +17,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Message Type Enum</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * If a reconfiguration message is sent by an embedded child, we distinguish to types of reconfiguration messages. These are info messages and requests. An info message just indicates that a certain situation has been monitored. A request is used if the embedded component knows that a reconfiguration needs to be performed, but it cannot perform the reconfiguration itself. A request needs to be answered by the parent component, an info message is not answered.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationMessageTypeEnum()
  * @model
  * @generated

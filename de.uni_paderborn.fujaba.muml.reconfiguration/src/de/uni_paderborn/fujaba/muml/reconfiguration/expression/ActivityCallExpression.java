@@ -17,6 +17,11 @@ import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
  * A representation of the model object '<em><b>Activity Call Expression</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An ActivityCallExpression can be used for calling a story diagram from an expression specified by the MechatronicUML action language. 
+ * In particular, it may be used for calling a story diagram in the action of a transition of a real-time statechart.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
