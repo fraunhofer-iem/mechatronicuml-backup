@@ -136,21 +136,25 @@ public class CsdmUtility {
 		Component tmpComponent = null;
 
 		// build list of Return Parameters and build String to Display
-		for (Parameter returnParameter : componentStoryRule
-				.getReturnParameters()) {
-			if (returnParameter.getDataType() instanceof Port) {
-				tmpPort = ((Port) returnParameter.getDataType());
-				resultParameters = resultParameters.concat(tmpPort.getName()
-						+ " " + returnParameter.getName() + ", ");
-			} else if (returnParameter.getDataType() instanceof ComponentPart) {
-				tmpPart = ((ComponentPart) returnParameter.getDataType());
-				tmpComponent = ((Component) tmpPart.getComponentType());
-				resultParameters = resultParameters.concat(returnParameter
-						.getName()
-						+ " / "
-						+ tmpPart.getName()
-						+ " : "
-						+ tmpComponent.getName() + ", ");
+		if (componentStoryRule.getSignature() == null){
+			resultParameters = "";
+		} else {
+			for (Parameter returnParameter : componentStoryRule.getSignature()
+					.getReturnParameters()) {
+				if (returnParameter.getDataType() instanceof Port) {
+					tmpPort = ((Port) returnParameter.getDataType());
+					resultParameters = resultParameters.concat(tmpPort.getName()
+							+ " " + returnParameter.getName() + ", ");
+				} else if (returnParameter.getDataType() instanceof ComponentPart) {
+					tmpPart = ((ComponentPart) returnParameter.getDataType());
+					tmpComponent = ((Component) tmpPart.getComponentType());
+					resultParameters = resultParameters.concat(returnParameter
+							.getName()
+							+ " / "
+							+ tmpPart.getName()
+							+ " : "
+							+ tmpComponent.getName() + ", ");
+				}
 			}
 		}
 
@@ -159,18 +163,23 @@ public class CsdmUtility {
 					resultParameters.length() - 2);
 		}
 
-		for (Parameter parameter : componentStoryRule.getParameters()) {
-			if (parameter.getDataType() instanceof Port) {
-				tmpPort = ((Port) parameter.getDataType());
-				parameters = parameters.concat(parameter.getName() + " / "
-						+ tmpPort.getName() /* + " : " + tmpPortType.getName() */
-						+ ", ");
-			} else if (parameter.getDataType() instanceof ComponentPart) {
-				tmpPart = ((ComponentPart) parameter.getDataType());
-				tmpComponent = ((Component) tmpPart.getComponentType());
-				parameters = parameters.concat(parameter.getName() + " / "
-						+ tmpPart.getName() + " : " + tmpComponent.getName()
-						+ ", ");
+		// build list of Return Parameters and build String to Display
+		if (componentStoryRule.getSignature() == null){
+			parameters = "";
+		} else {
+			for (Parameter parameter : componentStoryRule.getSignature().getParameters()) {
+				if (parameter.getDataType() instanceof Port) {
+					tmpPort = ((Port) parameter.getDataType());
+					parameters = parameters.concat(parameter.getName() + " / "
+							+ tmpPort.getName() /* + " : " + tmpPortType.getName() */
+							+ ", ");
+				} else if (parameter.getDataType() instanceof ComponentPart) {
+					tmpPart = ((ComponentPart) parameter.getDataType());
+					tmpComponent = ((Component) tmpPart.getComponentType());
+					parameters = parameters.concat(parameter.getName() + " / "
+							+ tmpPart.getName() + " : " + tmpComponent.getName()
+							+ ", ");
+				}
 			}
 		}
 
