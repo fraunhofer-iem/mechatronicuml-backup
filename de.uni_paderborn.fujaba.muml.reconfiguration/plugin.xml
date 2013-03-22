@@ -16,4 +16,9 @@
       <package class="de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage" genModel="model/MumlReconfiguration.genmodel" uri="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <?emfgen generated="true"?>
+      <package class="de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage" genModel="model/MumlReconfiguration.genmodel" uri="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18"/>
+   </extension>
+
 </plugin>

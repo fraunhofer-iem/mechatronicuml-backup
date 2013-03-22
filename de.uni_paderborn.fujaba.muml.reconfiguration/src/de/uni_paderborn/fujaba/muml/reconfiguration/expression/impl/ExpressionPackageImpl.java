@@ -29,6 +29,8 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionFactory
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ReconfigurationRuleCallExpression;
 import de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl;
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl.StructdatatypePackageImpl;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
@@ -115,14 +117,17 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 
 		// Obtain or create and register interdependencies
 		ReconfigurationPackageImpl theReconfigurationPackage = (ReconfigurationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI) instanceof ReconfigurationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI) : ReconfigurationPackage.eINSTANCE);
+		StructdatatypePackageImpl theStructdatatypePackage = (StructdatatypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructdatatypePackage.eNS_URI) instanceof StructdatatypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructdatatypePackage.eNS_URI) : StructdatatypePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theExpressionPackage.createPackageContents();
 		theReconfigurationPackage.createPackageContents();
+		theStructdatatypePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theExpressionPackage.initializePackageContents();
 		theReconfigurationPackage.initializePackageContents();
+		theStructdatatypePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theExpressionPackage.freeze();

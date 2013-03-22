@@ -253,4 +253,33 @@
           containment="true"/>
     </eClassifiers>
   </eSubpackages>
+  <eSubpackages name="structdatatype" nsURI="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18"
+      nsPrefix="structdatatype">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="StructType" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+          eType="#//structdatatype/Attribute" containment="true" eOpposite="#//structdatatype/Attribute/structType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="references" upperBound="-1"
+          eType="#//structdatatype/Reference" containment="true" eOpposite="#//structdatatype/Reference/structType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="structType" lowerBound="1"
+          eType="#//structdatatype/StructType" eOpposite="#//structdatatype/StructType/attributes"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="structType" lowerBound="1"
+          eType="#//structdatatype/StructType" eOpposite="#//structdatatype/StructType/references"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType"/>
+    </eClassifiers>
+  </eSubpackages>
 </ecore:EPackage>
