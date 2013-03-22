@@ -366,7 +366,7 @@ public class StructdatatypePackageImpl extends EPackageImpl implements Structdat
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });
+		   });				
 	}
 
 } //StructdatatypePackageImpl

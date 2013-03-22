@@ -15,6 +15,10 @@ import org.storydriven.core.NamedElement;
  * A representation of the model object '<em><b>Attribute</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An attribute is a field of a StructType. An attribute specifies a name and a primitive or array data type.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

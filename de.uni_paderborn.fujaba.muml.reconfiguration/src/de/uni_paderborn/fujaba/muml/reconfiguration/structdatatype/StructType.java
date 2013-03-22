@@ -15,6 +15,10 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Struct Type</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A StructType is a complex data type which is comparable to a struct in C. It specifies a set of attributes and a set of references, but provides no inheritance.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

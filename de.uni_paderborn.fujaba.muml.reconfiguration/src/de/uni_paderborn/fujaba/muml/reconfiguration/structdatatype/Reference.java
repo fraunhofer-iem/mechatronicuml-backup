@@ -17,6 +17,11 @@ import org.storydriven.core.NamedElement;
  * A representation of the model object '<em><b>Reference</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A reference is a field of a StructType. It specifies a relation to another StructType or an element of the MechatronicUML meta-model such as a component or port. 
+ * A reference specifies a cardinality that defines the minimum and maximum number of elements that need to be referenced.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

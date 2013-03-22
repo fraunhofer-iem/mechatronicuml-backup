@@ -22,6 +22,10 @@ import org.storydriven.core.expressions.ExpressionsPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package defines expressions that may used for calling reconfiguration operations
+ * in the action language.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionFactory
  * @model kind="package"
  * @generated

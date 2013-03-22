@@ -25,6 +25,10 @@ import org.storydriven.core.CorePackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package defines complex struct data types that are used by the
+ * reconfiguration behavior. 
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypeFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
