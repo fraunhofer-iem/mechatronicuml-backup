@@ -29,14 +29,14 @@ public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 
 		// Set initial tether visibility
 		boolean tetherVisible = getSemanticElement().eGet(
-				ComponentPackage.Literals.DISCRETE_PORT__REFINES) != null;
+				ComponentPackage.Literals.DISCRETE_PORT__REFINED_ROLE) != null;
 		getConnection().setVisible(tetherVisible);
 		
 		// Add notification listener
 		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
 		if (diagramEventBroker != null) {
 			diagramEventBroker.addNotificationListener(getSemanticElement(),
-					ComponentPackage.Literals.DISCRETE_PORT__REFINES, this);
+					ComponentPackage.Literals.DISCRETE_PORT__REFINED_ROLE, this);
 		}
 	}
 
@@ -45,7 +45,7 @@ public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
 		if (diagramEventBroker != null) {
 			diagramEventBroker.removeNotificationListener(getSemanticElement(),
-					ComponentPackage.Literals.DISCRETE_PORT__REFINES, this);
+					ComponentPackage.Literals.DISCRETE_PORT__REFINED_ROLE, this);
 		}
 		
 		// Fix: Moving the refinement connection of DiscretePort that points to the refinement label, should not move the port, but the label.
@@ -78,7 +78,7 @@ public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 
 	@Override
 	public void notifyChanged(Notification notification) {
-		if (notification.getFeature() == ComponentPackage.Literals.DISCRETE_PORT__REFINES) {
+		if (notification.getFeature() == ComponentPackage.Literals.DISCRETE_PORT__REFINED_ROLE) {
 			getConnection().setVisible(notification.getNewValue() != null);
 		}
 	}
