@@ -31,7 +31,7 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getRefines <em>Refines</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getRefinedRole <em>Refined Role</em>}</li>
  * </ul>
  * </p>
  *
@@ -88,23 +88,23 @@ public interface DiscretePortInstance extends PortInstance, DiscreteInteractionE
 	 * @return the value of the '<em>Receiver Message Buffer</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getDiscretePortInstance_ReceiverMessageBuffer()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.refines.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tself.refines.receiverMessageBuffer\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.refinedRole.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tself.refinedRole.receiverMessageBuffer\r\nendif'"
 	 * @generated
 	 */
 	EList<MessageBuffer> getReceiverMessageBuffer();
 
 	/**
-	 * Returns the value of the '<em><b>Refines</b></em>' reference.
+	 * Returns the value of the '<em><b>Refined Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The role of a coordination protocol that the port type of this port instance refines.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Refines</em>' reference.
-	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getDiscretePortInstance_Refines()
+	 * @return the value of the '<em>Refined Role</em>' reference.
+	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getDiscretePortInstance_RefinedRole()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.portType.oclIsUndefined() and self.portType.oclIsKindOf(component::DiscretePort) then\n\tself.portType.oclAsType(component::DiscretePort).refines\nelse\n\tnull\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.portType.oclIsUndefined() and self.portType.oclIsKindOf(component::DiscretePort) then\r\n\tself.portType.oclAsType(component::DiscretePort).refinedRole\r\nelse\r\n\tnull\r\nendif'"
 	 * @generated
 	 */
-	Role getRefines();
+	Role getRefinedRole();
 } // DiscretePortInstance

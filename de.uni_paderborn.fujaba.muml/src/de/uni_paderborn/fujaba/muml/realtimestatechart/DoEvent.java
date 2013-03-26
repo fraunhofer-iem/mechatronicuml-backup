@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getDoEvent()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidLowerUpperPeriod='self.periodLower.value.value >= 1 and self.periodLower.value.value <= self.periodUpper.value.value'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidLowerUpperPeriod='not (self.periodLower.value.oclIsUndefined() and self.periodUpper.value.oclIsUndefined())\r\nimplies\r\nself.periodLower.value.value >= 1 and self.periodLower.value.value <= self.periodUpper.value.value'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidLowerUpperPeriod'"
  * @generated
  */

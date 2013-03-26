@@ -942,13 +942,13 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER = PORT_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_INSTANCE__REFINES = PORT_INSTANCE_FEATURE_COUNT + 3;
+	int DISCRETE_PORT_INSTANCE__REFINED_ROLE = PORT_INSTANCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Discrete Port Instance</em>' class.
@@ -1087,13 +1087,13 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_SINGLE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER;
 
 	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_SINGLE_PORT_INSTANCE__REFINES = DISCRETE_PORT_INSTANCE__REFINES;
+	int DISCRETE_SINGLE_PORT_INSTANCE__REFINED_ROLE = DISCRETE_PORT_INSTANCE__REFINED_ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Multi Interaction Endpoint Instance</b></em>' reference.
@@ -1259,13 +1259,13 @@ public interface InstancePackage extends EPackage {
 	int DISCRETE_MULTI_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER = DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER;
 
 	/**
-	 * The feature id for the '<em><b>Refines</b></em>' reference.
+	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_MULTI_PORT_INSTANCE__REFINES = DISCRETE_PORT_INSTANCE__REFINES;
+	int DISCRETE_MULTI_PORT_INSTANCE__REFINED_ROLE = DISCRETE_PORT_INSTANCE__REFINED_ROLE;
 
 	/**
 	 * The feature id for the '<em><b>Sub Interaction Endpoint Instances</b></em>' reference list.
@@ -1809,15 +1809,15 @@ public interface InstancePackage extends EPackage {
 	EReference getDiscretePortInstance_ReceiverMessageBuffer();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getRefines <em>Refines</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getRefinedRole <em>Refined Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Refines</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getRefines()
+	 * @return the meta object for the reference '<em>Refined Role</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getRefinedRole()
 	 * @see #getDiscretePortInstance()
 	 * @generated
 	 */
-	EReference getDiscretePortInstance_Refines();
+	EReference getDiscretePortInstance_RefinedRole();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance <em>Discrete Single Port Instance</em>}'.
@@ -2162,12 +2162,12 @@ public interface InstancePackage extends EPackage {
 		EReference DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER = eINSTANCE.getDiscretePortInstance_ReceiverMessageBuffer();
 
 		/**
-		 * The meta object literal for the '<em><b>Refines</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Refined Role</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DISCRETE_PORT_INSTANCE__REFINES = eINSTANCE.getDiscretePortInstance_Refines();
+		EReference DISCRETE_PORT_INSTANCE__REFINED_ROLE = eINSTANCE.getDiscretePortInstance_RefinedRole();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscreteSinglePortInstanceImpl <em>Discrete Single Port Instance</em>}' class.

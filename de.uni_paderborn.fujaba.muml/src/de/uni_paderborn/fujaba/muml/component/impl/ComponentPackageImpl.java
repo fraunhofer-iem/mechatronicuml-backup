@@ -1089,7 +1089,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "StructuredComponentAllowsNoHybridPorts ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"
-		   });													
+		   });												
 		addAnnotation
 		  (coordinationProtocolOccurrenceEClass, 
 		   source, 
@@ -1125,9 +1125,9 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "DiscretePortRequiresMessageTypes", "self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()",
 			 "DiscretePortRequiresBehavior", "-- this also holds for a hybrid port, ports of structured components do not require a behavior\r\n(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))\r\n\timplies not self.behavior.oclIsUndefined()",
 			 "DiscretePortAtStructuredComponentHasNoBehavior", "(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\n\timplies self.behavior.oclIsUndefined()",
-			 "DiscretePortRequiresRole", "self.oclIsTypeOf(component::DiscretePort) implies not self.refines.oclIsUndefined()",
-			 "DiscretePortAndRoleSameMessageTypes", "not self.refines.oclIsUndefined() implies\n\t(self.senderMessageTypes = self.refines.senderMessageTypes\n\t and\n\t self.receiverMessageTypes = self.refines.receiverMessageTypes\n\t)",
-			 "MultiPortMustRefineMultiRole", "if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then\r\n       self.multiPort implies self.refines.multiRole\r\nelse\r\n\ttrue\r\nendif"
+			 "DiscretePortRequiresRole", "self.oclIsTypeOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()",
+			 "DiscretePortAndRoleSameMessageTypes", "not self.refinedRole.oclIsUndefined() implies\r\n\t(self.senderMessageTypes = self.refinedRole.senderMessageTypes\r\n\t and\r\n\t self.receiverMessageTypes = self.refinedRole.receiverMessageTypes\r\n\t)",
+			 "MultiPortMustRefineMultiRole", "if not (self.refinedRole.oclIsUndefined() and self.refinedRole.cardinality.oclIsUndefined() and self.refinedRole.cardinality.upperBound.oclIsUndefined()) then\r\n       self.multiPort implies self.refinedRole.multiRole\r\nelse\r\n\ttrue\r\nendif"
 		   });				
 		addAnnotation
 		  (getDiscretePort_IsDiscreteInPort(), 
@@ -1151,7 +1151,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (getDiscretePort_ReceiverMessageBuffer(), 
 		   source, 
 		   new String[] {
-			 "derivation", "not self.refinedRole.oclIsUndefined()\r\nimplies\r\nself.refinedRole.receiverMessageBuffer"
+			 "derivation", "if not self.refinedRole.oclIsUndefined() then\r\nself.refinedRole.receiverMessageBuffer\r\nelse\r\nnull\r\nendif"
 		   });				
 		addAnnotation
 		  (getDiscretePort_MultiPort(), 
@@ -1273,13 +1273,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "self.allStructuredComponents->collect(\n\tembeddedParts->select(\n\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t)->collect(componentType.oclAsType(component::AtomicComponent))\n)->asOrderedSet()"
-		   });				
-		addAnnotation
-		  (getStructuredComponent_CoordinationProtocolOccurences(), 
-		   source, 
-		   new String[] {
-			 "derivation", "self.embeddedComponentParts.componentType->reject(oclIsUndefined()).ports->select(p | p.oclIsKindOf(DiscretePort)).oclAsType(DiscretePort).coordinationProtocolOccurence->reject(oclIsUndefined())->asOrderedSet()"
-		   });				
+		   });						
 		addAnnotation
 		  (coordinationProtocolOccurrenceEClass, 
 		   source, 
@@ -1290,13 +1284,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (getDirectedTypedPort_OutPort(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.kind = component::ContinuousPortDirectionKind::OUT"
+			 "derivation", "self.kind = component::PortDirectionKind::OUT"
 		   });			
 		addAnnotation
 		  (getDirectedTypedPort_InPort(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.kind = component::ContinuousPortDirectionKind::IN"
+			 "derivation", "self.kind = component::PortDirectionKind::IN"
 		   });			
 		addAnnotation
 		  (getPortPart_RefinedRole(), 

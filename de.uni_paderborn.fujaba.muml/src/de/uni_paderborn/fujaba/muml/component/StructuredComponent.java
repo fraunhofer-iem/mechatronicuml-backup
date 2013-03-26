@@ -139,7 +139,6 @@ public interface StructuredComponent extends Component {
 	 * @return the value of the '<em>Coordination Protocol Occurences</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getStructuredComponent_CoordinationProtocolOccurences()
 	 * @model containment="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.embeddedComponentParts.componentType->reject(oclIsUndefined()).ports->select(p | p.oclIsKindOf(DiscretePort)).oclAsType(DiscretePort).coordinationProtocolOccurence->reject(oclIsUndefined())->asOrderedSet()'"
 	 * @generated
 	 */
 	EList<CoordinationProtocolOccurrence> getCoordinationProtocolOccurences();

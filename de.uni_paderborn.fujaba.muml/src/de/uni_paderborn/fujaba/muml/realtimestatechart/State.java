@@ -38,7 +38,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getState()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OneInvariantPerClock NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero InvalidClockConstraintOperator UniqueStateConnectionPointNames'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OneInvariantPerClock='self.invariants->isUnique(clock)' NoOutgoingTransitionOfFinalState='self.final implies self.outgoingTransitions->isEmpty()' NoRegionsOfFinalState='self.final implies self.regions->isEmpty()' UniquePrioritiesOfOutgoingTransitions='self.outgoingTransitions->isUnique(priority) ' UniquePrioritiesOfRegions='self.regions->isUnique(priority)' UniqueChannelNames='self.channels->isUnique(name)' UniqueRegionNames='self.regions->isUnique(name)' BoundOfInvariantGreaterOrEqualZero='self.invariants.bound.value->forAll(value >= 0)' InvalidClockConstraintOperator='self.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))' UniqueStateConnectionPointNames='-- State Connection Points of a composite state must have unique names.\r\nself.connectionPoints->isUnique(name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OneInvariantPerClock='self.invariants->isUnique(clock)' NoOutgoingTransitionOfFinalState='self.final implies self.outgoingTransitions->isEmpty()' NoRegionsOfFinalState='self.final implies self.embeddedRegions->isEmpty()' UniquePrioritiesOfOutgoingTransitions='self.outgoingTransitions->isUnique(priority) ' UniquePrioritiesOfRegions='self.embeddedRegions->isUnique(priority)' UniqueChannelNames='self.channels->isUnique(name)' UniqueRegionNames='self.embeddedRegions->isUnique(name)' BoundOfInvariantGreaterOrEqualZero='self.invariants->forAll(i|\r\n\tnot i.bound.value.oclIsUndefined() implies\r\n\t\ti.bound.value.value >= 0\r\n\r\n)' InvalidClockConstraintOperator='self.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))' UniqueStateConnectionPointNames='-- State Connection Points of a composite state must have unique names.\r\nself.connectionPoints->isUnique(name)'"
  * @generated
  */
 public interface State extends Vertex {
@@ -218,7 +218,7 @@ public interface State extends Vertex {
 	 * @see #isSetSimple()
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getState_Simple()
 	 * @model default="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- a state is simple if it contains no regions\nregions->isEmpty()\n'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- a state is simple if it contains no regions\r\nembeddedRegions->isEmpty()\r\n'"
 	 * @generated
 	 */
 	boolean isSimple();

@@ -460,13 +460,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REGION__PARENT_STATE = PRIORITIZED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Gmf History</b></em>' attribute.
+	 * The feature id for the '<em><b>Embeds History Statechart</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION__GMF_HISTORY = PRIORITIZED_ELEMENT_FEATURE_COUNT + 5;
+	int REGION__EMBEDS_HISTORY_STATECHART = PRIORITIZED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -532,13 +532,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int VERTEX__INCOMING_TRANSITIONS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>All Super Vertices</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERTEX__ALL_SUPER_VERTICES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Vertex</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int VERTEX_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -584,6 +593,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATE__INCOMING_TRANSITIONS = VERTEX__INCOMING_TRANSITIONS;
+
+	/**
+	 * The feature id for the '<em><b>All Super Vertices</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__ALL_SUPER_VERTICES = VERTEX__ALL_SUPER_VERTICES;
 
 	/**
 	 * The feature id for the '<em><b>Embedded Regions</b></em>' containment reference list.
@@ -1343,13 +1361,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REALTIME_STATECHART__VARIABLES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Embedding Region</b></em>' container reference.
+	 * The feature id for the '<em><b>Parent Region</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__EMBEDDING_REGION = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int REALTIME_STATECHART__PARENT_REGION = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
@@ -1644,6 +1662,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE_CONNECTION_POINT__INCOMING_TRANSITIONS = VERTEX__INCOMING_TRANSITIONS;
 
 	/**
+	 * The feature id for the '<em><b>All Super Vertices</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_CONNECTION_POINT__ALL_SUPER_VERTICES = VERTEX__ALL_SUPER_VERTICES;
+
+	/**
 	 * The feature id for the '<em><b>State</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1717,6 +1744,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	int ENTRY_POINT__INCOMING_TRANSITIONS = STATE_CONNECTION_POINT__INCOMING_TRANSITIONS;
 
 	/**
+	 * The feature id for the '<em><b>All Super Vertices</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTRY_POINT__ALL_SUPER_VERTICES = STATE_CONNECTION_POINT__ALL_SUPER_VERTICES;
+
+	/**
 	 * The feature id for the '<em><b>State</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1788,6 +1824,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXIT_POINT__INCOMING_TRANSITIONS = STATE_CONNECTION_POINT__INCOMING_TRANSITIONS;
+
+	/**
+	 * The feature id for the '<em><b>All Super Vertices</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXIT_POINT__ALL_SUPER_VERTICES = STATE_CONNECTION_POINT__ALL_SUPER_VERTICES;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' container reference.
@@ -1944,15 +1989,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getRegion_ParentState();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isGmfHistory <em>Gmf History</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isEmbedsHistoryStatechart <em>Embeds History Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Gmf History</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isGmfHistory()
+	 * @return the meta object for the attribute '<em>Embeds History Statechart</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isEmbedsHistoryStatechart()
 	 * @see #getRegion()
 	 * @generated
 	 */
-	EAttribute getRegion_GmfHistory();
+	EAttribute getRegion_EmbedsHistoryStatechart();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getName <em>Name</em>}'.
@@ -2149,6 +2194,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVertex_IncomingTransitions();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex#getAllSuperVertices <em>All Super Vertices</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>All Super Vertices</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex#getAllSuperVertices()
+	 * @see #getVertex()
+	 * @generated
+	 */
+	EReference getVertex_AllSuperVertices();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Transition <em>Transition</em>}'.
@@ -2614,15 +2670,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EClass getRealtimeStatechart();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}'.
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getParentRegion <em>Parent Region</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Embedding Region</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getEmbeddingRegion()
+	 * @return the meta object for the container reference '<em>Parent Region</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getParentRegion()
 	 * @see #getRealtimeStatechart()
 	 * @generated
 	 */
-	EReference getRealtimeStatechart_EmbeddingRegion();
+	EReference getRealtimeStatechart_ParentRegion();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getTransitions <em>Transitions</em>}'.
@@ -2998,12 +3054,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference REGION__PARENT_STATE = eINSTANCE.getRegion_ParentState();
 
 		/**
-		 * The meta object literal for the '<em><b>Gmf History</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Embeds History Statechart</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REGION__GMF_HISTORY = eINSTANCE.getRegion_GmfHistory();
+		EAttribute REGION__EMBEDS_HISTORY_STATECHART = eINSTANCE.getRegion_EmbedsHistoryStatechart();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3152,6 +3208,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VERTEX__INCOMING_TRANSITIONS = eINSTANCE.getVertex_IncomingTransitions();
+
+		/**
+		 * The meta object literal for the '<em><b>All Super Vertices</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VERTEX__ALL_SUPER_VERTICES = eINSTANCE.getVertex_AllSuperVertices();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.TransitionImpl <em>Transition</em>}' class.
@@ -3518,12 +3582,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EClass REALTIME_STATECHART = eINSTANCE.getRealtimeStatechart();
 
 		/**
-		 * The meta object literal for the '<em><b>Embedding Region</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Parent Region</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REALTIME_STATECHART__EMBEDDING_REGION = eINSTANCE.getRealtimeStatechart_EmbeddingRegion();
+		EReference REALTIME_STATECHART__PARENT_REGION = eINSTANCE.getRealtimeStatechart_ParentRegion();
 
 		/**
 		 * The meta object literal for the '<em><b>Transitions</b></em>' containment reference list feature.

@@ -484,7 +484,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRegion_GmfHistory() {
+	public EAttribute getRegion_EmbedsHistoryStatechart() {
 		return (EAttribute)regionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -648,6 +648,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 */
 	public EReference getVertex_IncomingTransitions() {
 		return (EReference)vertexEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getVertex_AllSuperVertices() {
+		return (EReference)vertexEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1042,7 +1051,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRealtimeStatechart_EmbeddingRegion() {
+	public EReference getRealtimeStatechart_ParentRegion() {
 		return (EReference)realtimeStatechartEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1305,7 +1314,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		regionEClass = createEClass(REGION);
 		createEReference(regionEClass, REGION__EMBEDDED_STATECHART);
 		createEReference(regionEClass, REGION__PARENT_STATE);
-		createEAttribute(regionEClass, REGION__GMF_HISTORY);
+		createEAttribute(regionEClass, REGION__EMBEDS_HISTORY_STATECHART);
 		createEAttribute(regionEClass, REGION__NAME);
 
 		stateEClass = createEClass(STATE);
@@ -1326,6 +1335,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		vertexEClass = createEClass(VERTEX);
 		createEReference(vertexEClass, VERTEX__OUTGOING_TRANSITIONS);
 		createEReference(vertexEClass, VERTEX__INCOMING_TRANSITIONS);
+		createEReference(vertexEClass, VERTEX__ALL_SUPER_VERTICES);
 
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__SYNCHRONIZATION);
@@ -1379,7 +1389,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEAttribute(prioritizedElementEClass, PRIORITIZED_ELEMENT__PRIORITY);
 
 		realtimeStatechartEClass = createEClass(REALTIME_STATECHART);
-		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__EMBEDDING_REGION);
+		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__PARENT_REGION);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__TRANSITIONS);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__STATES);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__CLOCKS);
@@ -1498,9 +1508,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getClock_Statechart(), this.getRealtimeStatechart(), this.getRealtimeStatechart_Clocks(), "statechart", null, 0, 1, Clock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(regionEClass, Region.class, "Region", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRegion_EmbeddedStatechart(), this.getRealtimeStatechart(), this.getRealtimeStatechart_EmbeddingRegion(), "embeddedStatechart", null, 1, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRegion_EmbeddedStatechart(), this.getRealtimeStatechart(), this.getRealtimeStatechart_ParentRegion(), "embeddedStatechart", null, 1, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRegion_ParentState(), this.getState(), this.getState_EmbeddedRegions(), "parentState", null, 1, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRegion_GmfHistory(), theEcorePackage.getEBoolean(), "gmfHistory", null, 1, 1, Region.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRegion_EmbedsHistoryStatechart(), theEcorePackage.getEBoolean(), "embedsHistoryStatechart", null, 1, 1, Region.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRegion_Name(), ecorePackage.getEString(), "name", null, 0, 1, Region.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1527,6 +1537,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEClass(vertexEClass, Vertex.class, "Vertex", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVertex_OutgoingTransitions(), this.getTransition(), this.getTransition_Source(), "outgoingTransitions", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVertex_IncomingTransitions(), this.getTransition(), this.getTransition_Target(), "incomingTransitions", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVertex_AllSuperVertices(), this.getVertex(), null, "allSuperVertices", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = addEOperation(vertexEClass, ecorePackage.getEBoolean(), "isSuperVertexOf", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1589,7 +1600,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getPrioritizedElement_Priority(), ecorePackage.getEInt(), "priority", null, 0, 1, PrioritizedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(realtimeStatechartEClass, RealtimeStatechart.class, "RealtimeStatechart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRealtimeStatechart_EmbeddingRegion(), this.getRegion(), this.getRegion_EmbeddedStatechart(), "embeddingRegion", null, 0, 1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRealtimeStatechart_ParentRegion(), this.getRegion(), this.getRegion_EmbeddedStatechart(), "parentRegion", null, 0, 1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_Transitions(), this.getTransition(), this.getTransition_Statechart(), "transitions", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_States(), this.getState(), this.getState_ParentStatechart(), "states", null, 1, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_Clocks(), this.getClock(), this.getClock_Statechart(), "clocks", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1669,12 +1680,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "OneInvariantPerClock NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero InvalidClockConstraintOperator UniqueStateConnectionPointNames"
-		   });																											
+		   });																														
 		addAnnotation
 		  (transitionEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines ConnectionPointOutgoingTransitionsNoConditions ConnectionPointTransitionsNoSynchronization"
+			 "constraints", "LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent StateConnectionPointTransitionsNoSynchronization"
 		   });																																
 		addAnnotation
 		  (doEventEClass, 
@@ -1723,16 +1734,16 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";														
 		addAnnotation
-		  (getRegion_GmfHistory(), 
+		  (getRegion_EmbedsHistoryStatechart(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if statechart.oclIsUndefined() then\n\tfalse\nelse\n\tstatechart.history\nendif"
+			 "derivation", "if embeddedStatechart.oclIsUndefined() then\r\n\tfalse\r\nelse\r\n\tembeddedStatechart.history\r\nendif"
 		   });			
 		addAnnotation
 		  (getRegion_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.statechart.name"
+			 "derivation", "if not self.embeddedStatechart.oclIsUndefined() then\r\n\tif not self.embeddedStatechart.oclIsUndefined() then\r\n\t\tself.embeddedStatechart.name\r\n\telse\r\n\t\tnull\r\n\tendif\r\nelse\r\n\tnull\r\nendif"
 		   });					
 		addAnnotation
 		  (stateEClass, 
@@ -1740,12 +1751,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   new String[] {
 			 "OneInvariantPerClock", "self.invariants->isUnique(clock)",
 			 "NoOutgoingTransitionOfFinalState", "self.final implies self.outgoingTransitions->isEmpty()",
-			 "NoRegionsOfFinalState", "self.final implies self.regions->isEmpty()",
+			 "NoRegionsOfFinalState", "self.final implies self.embeddedRegions->isEmpty()",
 			 "UniquePrioritiesOfOutgoingTransitions", "self.outgoingTransitions->isUnique(priority) ",
-			 "UniquePrioritiesOfRegions", "self.regions->isUnique(priority)",
+			 "UniquePrioritiesOfRegions", "self.embeddedRegions->isUnique(priority)",
 			 "UniqueChannelNames", "self.channels->isUnique(name)",
-			 "UniqueRegionNames", "self.regions->isUnique(name)",
-			 "BoundOfInvariantGreaterOrEqualZero", "self.invariants.bound.value->forAll(value >= 0)",
+			 "UniqueRegionNames", "self.embeddedRegions->isUnique(name)",
+			 "BoundOfInvariantGreaterOrEqualZero", "self.invariants->forAll(i|\r\n\tnot i.bound.value.oclIsUndefined() implies\r\n\t\ti.bound.value.value >= 0\r\n\r\n)",
 			 "InvalidClockConstraintOperator", "self.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))",
 			 "UniqueStateConnectionPointNames", "-- State Connection Points of a composite state must have unique names.\r\nself.connectionPoints->isUnique(name)"
 		   });													
@@ -1759,19 +1770,32 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getState_Simple(), 
 		   source, 
 		   new String[] {
-			 "derivation", "-- a state is simple if it contains no regions\nregions->isEmpty()\n"
-		   });												
+			 "derivation", "-- a state is simple if it contains no regions\r\nembeddedRegions->isEmpty()\r\n"
+		   });						
+		addAnnotation
+		  (vertexEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+			 "body", "true\r\n-- TODO IMPLEMENT\r\n--self.allSuperVertices->includes(v)"
+		   });						
+		addAnnotation
+		  (getVertex_AllSuperVertices(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if self.oclIsKindOf(State)\r\nthen self.oclAsType(State)->closure(s | if s.statechart.embedded then s.statechart.parentRegion.parentState else null endif)\r\nelse\r\n   if self.oclIsKindOf(StateConnectionPoint)\r\n   then let state : State = self.oclAsType(StateConnectionPoint).state in state->union(state->closure(s | if s.statechart.embedded then s.statechart.parentRegion.parentState else null endif))\r\n   else OrderedSet{ }\r\n   endif\r\nendif"
+		   });					
 		addAnnotation
 		  (transitionEClass, 
 		   source, 
 		   new String[] {
-			 "LegalTransitionsOnly", "-- Only legal transitions are allowed\r\n-- State A to State B within the same statechart\r\nlet allTransitionsLegal:Boolean =\r\nif self.source.oclAsType(State).statechart.embedded\r\nthen\r\n\r\n-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)\r\nor\r\n-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2\r\n(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(State).statechart.embeddingRegion.parentState)\r\nor\r\n-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2\r\n(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(EntryPoint).state.statechart.embeddingRegion.parentState)\r\nor\r\n-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)\r\nelse\r\ntrue\r\nendif\r\n\r\nin \r\nallTransitionsLegal \r\nor \r\n(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).statechart = self.target.oclAsType(State).statechart)\r\nor\r\n-- State A to EntryPoint of B, where A and B are in the same statechart\r\n(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).statechart = self.target.oclAsType(EntryPoint).state.statechart)\r\nor\r\n-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart\r\n(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(EntryPoint).state.statechart)\r\nor\r\n-- ExitPoint of A to State B, where A and B are in the same statechart\r\n(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(State).statechart)",
-			 "TriggerMessageEventsMustNotHaveAnOwnedParameterBinding", "not self.triggerMessageEvent.message.oclIsUndefined() implies\nself.triggerMessageEvent.message.parameterBinding->isEmpty()",
+			 "LegalTransitionsOnly", "-- Only legal transitions are allowed\r\n-- State A to State B within the same statechart\r\nlet allTransitionsLegal:Boolean =\r\nif self.source.oclAsType(State).parentStatechart.embedded\r\nthen\r\n\r\n-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).parentStatechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)\r\nor\r\n-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2\r\n(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(State).parentStatechart.parentRegion.parentState)\r\nor\r\n-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2\r\n(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion.parentState)\r\nor\r\n-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)\r\nelse\r\ntrue\r\nendif\r\n\r\nin \r\nallTransitionsLegal \r\nor \r\n(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(State).parentStatechart)\r\nor\r\n-- State A to EntryPoint of B, where A and B are in the same statechart\r\n(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)\r\nor\r\n-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart\r\n(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)\r\nor\r\n-- ExitPoint of A to State B, where A and B are in the same statechart\r\n(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(State).parentStatechart)",
+			 "TriggerMessageEventsMustNotHaveAnOwnedParameterBinding", "not self.triggerMessageEvent.message.oclIsUndefined() implies\r\nself.triggerMessageEvent.message.parameterBinding->isEmpty()",
 			 "ValidTriggerMessageEvents", "not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)",
 			 "ValidRaiseMessageEvents", "not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)",
-			 "ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines", "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ConnectionPoint))\r\n\timplies (\r\n\t\tself.clockResets->isEmpty()\r\n\t\tand self.action.oclIsUndefined()\r\n\t\tand self.raiseMessageEvent.oclIsUndefined()\r\n\t\tand self.absoluteDeadlines->isEmpty()\r\n\t\tand self.relativeDeadline.oclIsUndefined()\r\n\t)",
-			 "ConnectionPointOutgoingTransitionsNoConditions", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ConnectionPoint))\r\n\timplies (\r\n\t\tself.triggerMessageEvent.oclIsUndefined()\r\n\t\tand self.clockConstraints->isEmpty()\r\n\t\tand self.guard.oclIsUndefined()\r\n\t)",
-			 "ConnectionPointTransitionsNoSynchronization", "((not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ConnectionPoint))\r\n\tor\r\n (not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ConnectionPoint)))\r\n\timplies\r\nself.synchronization.oclIsUndefined()"
+			 "StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines", "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.clockResets->isEmpty()\r\n\t\tand self.action.oclIsUndefined()\r\n\t\tand self.raiseMessageEvent.oclIsUndefined()\r\n\t\tand self.absoluteDeadlines->isEmpty()\r\n\t\tand self.relativeDeadline.oclIsUndefined()\r\n\t)",
+			 "StateConnectionPointOutgoingTransitionsNoConditions", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.triggerMessageEvent.oclIsUndefined()\r\n\t\tand self.clockConstraints->isEmpty()\r\n\t\tand self.guard.oclIsUndefined()\r\n\t)",
+			 "StateConnectionPointOutgoingTransitionsMustBeUrgent ", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.urgent\r\n\t)",
+			 "StateConnectionPointTransitionsNoSynchronization", "((not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\tor\r\n (not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint)))\r\n\timplies\r\nself.synchronization.oclIsUndefined()"
 		   });								
 		addAnnotation
 		  (getTransition_TriggerMessageEvent(), 
@@ -1801,7 +1825,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (doEventEClass, 
 		   source, 
 		   new String[] {
-			 "ValidLowerUpperPeriod", "self.periodLower.value.value >= 1 and self.periodLower.value.value <= self.periodUpper.value.value"
+			 "ValidLowerUpperPeriod", "not (self.periodLower.value.oclIsUndefined() and self.periodUpper.value.oclIsUndefined())\r\nimplies\r\nself.periodLower.value.value >= 1 and self.periodLower.value.value <= self.periodUpper.value.value"
 		   });																
 		addAnnotation
 		  (prioritizedElementEClass, 
@@ -1814,38 +1838,38 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "UniqueNameOfStates", "self.states->isUnique(name)",
-			 "NoCycles", "-- If we are contained within a statechart...\n(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n\nimplies\n\n-- ... then we must not be a super statechart of it.\n(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))",
+			 "NoCycles", "-- If we are contained within a statechart...\r\n(not self.parentRegion.parentState.parentStatechart.oclIsUndefined())\r\n\r\nimplies\r\n\r\n-- ... then we must not be a super statechart of it.\r\n(not self.isSuperStatechartOf(self.parentRegion.parentState.parentStatechart))",
 			 "OneInitialState", "self.states->select(s |  s.initial)->size() = 1"
 		   });											
 		addAnnotation
 		  (getRealtimeStatechart_Flat(), 
 		   source, 
 		   new String[] {
-			 "derivation", "-- a statechart is flat if it exclusively contains simple states\nstates->forAll(simple)"
+			 "derivation", "-- a statechart is flat if it exclusively contains simple states\r\nstates->forAll(simple)"
 		   });				
 		addAnnotation
 		  (getRealtimeStatechart_AvailableClocks(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).clocks->asSet()"
+			 "derivation", "self -> closure(\r\n\tif parentRegion.oclIsUndefined() then \r\n\t\tself \r\n\telse \r\n\t\tparentRegion.parentState.parentStatechart \r\n\tendif\r\n).clocks->asSet()"
 		   });			
 		addAnnotation
 		  (getRealtimeStatechart_Embedded(), 
 		   source, 
 		   new String[] {
-			 "derivation", "not self.embeddingRegion.oclIsUndefined()"
+			 "derivation", "not self.parentRegion.oclIsUndefined()"
 		   });		
 		addAnnotation
 		  (getRealtimeStatechart_AllAvailableVariables(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).variables->asOrderedSet()"
+			 "derivation", "self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).variables->asOrderedSet()"
 		   });		
 		addAnnotation
 		  (getRealtimeStatechart_AllAvailableOperations(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asOrderedSet()"
+			 "derivation", "self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).operations ->asOrderedSet()"
 		   });																		
 		addAnnotation
 		  (stateConnectionPointEClass, 
@@ -1858,13 +1882,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "AtLeastOneIncomingTransition", "self.incomingTransitions ->notEmpty()",
-			 "OneOutgoingTransitionPerRegion", "-- all regions of the parent state have exactly one state that the EntryPoint connects to\r\nself.state.regions->forAll(r | \r\n\tr.statechart.states->select(s |\r\n\t\ts.incomingTransitions->exists(t | t.source = self)\r\n\t\tor\r\n\t\ts.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)\r\n\t)->size() = 1\r\n)"
+			 "OneOutgoingTransitionPerRegion", "-- all regions of the parent state have exactly one state that the EntryPoint connects to\r\nself.state.embeddedRegions->forAll(r | \r\n\tr.embeddedStatechart.states->select(s |\r\n\t\ts.incomingTransitions->exists(t | t.source = self)\r\n\t\tor\r\n\t\ts.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)\r\n\t)->size() = 1\r\n)"
 		   });				
 		addAnnotation
 		  (exitPointEClass, 
 		   source, 
 		   new String[] {
-			 "AtLeastOneIncomingTransitionPerRegion", "-- all regions of the parent state have at least one state that connects to the ExitPoint\r\nself.state.regions->forAll(r | \r\n\tr.statechart.states->exists(s |\r\n\t\ts.outgoingTransitions->exists(t | t.target = self)\r\n\t\tor\r\n\t\ts.connectionPoints->select(oclIsKindOf(ExitPoint)).outgoingTransitions->exists(t | t.target = self)\r\n\t)\r\n)",
+			 "AtLeastOneIncomingTransitionPerRegion", "-- all regions of the parent state have at least one state that connects to the ExitPoint\r\nself.state.embeddedRegions->forAll(r | \r\n\tr.embeddedStatechart.states->exists(s |\r\n\t\ts.outgoingTransitions->exists(t | t.target = self)\r\n\t\tor\r\n\t\ts.connectionPoints->select(oclIsKindOf(ExitPoint)).outgoingTransitions->exists(t | t.target = self)\r\n\t)\r\n)",
 			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1"
 		   });
 	}

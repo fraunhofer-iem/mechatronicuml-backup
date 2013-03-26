@@ -26,7 +26,7 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscretePortInstanceImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscretePortInstanceImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscretePortInstanceImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscretePortInstanceImpl#getRefines <em>Refines</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscretePortInstanceImpl#getRefinedRole <em>Refined Role</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,16 +63,14 @@ public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implemen
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate RECEIVER_MESSAGE_BUFFER__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER).getSettingDelegate();
 	/**
-	 * The cached setting delegate for the '{@link #getRefines() <em>Refines</em>}' reference.
+	 * The cached setting delegate for the '{@link #getRefinedRole() <em>Refined Role</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRefines()
+	 * @see #getRefinedRole()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate REFINES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.DISCRETE_PORT_INSTANCE__REFINES).getSettingDelegate();
-
-
+	protected EStructuralFeature.Internal.SettingDelegate REFINED_ROLE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)InstancePackage.Literals.DISCRETE_PORT_INSTANCE__REFINED_ROLE).getSettingDelegate();
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -127,8 +125,8 @@ public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Role getRefines() {
-		return (Role)REFINES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public Role getRefinedRole() {
+		return (Role)REFINED_ROLE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -136,8 +134,8 @@ public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Role basicGetRefines() {
-		return (Role)REFINES__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	public Role basicGetRefinedRole() {
+		return (Role)REFINED_ROLE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -154,9 +152,9 @@ public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implemen
 				return getSenderMessageTypes();
 			case InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER:
 				return getReceiverMessageBuffer();
-			case InstancePackage.DISCRETE_PORT_INSTANCE__REFINES:
-				if (resolve) return getRefines();
-				return basicGetRefines();
+			case InstancePackage.DISCRETE_PORT_INSTANCE__REFINED_ROLE:
+				if (resolve) return getRefinedRole();
+				return basicGetRefinedRole();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -175,8 +173,8 @@ public abstract class DiscretePortInstanceImpl extends PortInstanceImpl implemen
 				return SENDER_MESSAGE_TYPES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER:
 				return RECEIVER_MESSAGE_BUFFER__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case InstancePackage.DISCRETE_PORT_INSTANCE__REFINES:
-				return REFINES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case InstancePackage.DISCRETE_PORT_INSTANCE__REFINED_ROLE:
+				return REFINED_ROLE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

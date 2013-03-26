@@ -29,7 +29,6 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#isMultiRole <em>Multi Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getRoles <em>Roles</em>}</li>
  * </ul>
  * </p>
  *
@@ -85,15 +84,20 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 
 	/**
 	 * Returns the value of the '<em><b>Role Connector</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector#getRoles <em>Roles</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Role Connector</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The role connector that connects this role with another role.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Role Connector</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRole_RoleConnector()
-	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @see de.uni_paderborn.fujaba.muml.protocol.RoleConnector#getRoles
+	 * @model opposite="roles" required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)'"
 	 * @generated
 	 */
@@ -131,22 +135,5 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	 * @generated
 	 */
 	EList<MessageBuffer> getReceiverMessageBuffer();
-
-	/**
-	 * Returns the value of the '<em><b>Roles</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.protocol.Role}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Roles</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Roles</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRole_Roles()
-	 * @model lower="2" upper="2" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->select(e | e.oclIsKindOf(Role)).oclAsType(Role)->asOrderedSet()'"
-	 * @generated
-	 */
-	EList<Role> getRoles();
 
 } // Role

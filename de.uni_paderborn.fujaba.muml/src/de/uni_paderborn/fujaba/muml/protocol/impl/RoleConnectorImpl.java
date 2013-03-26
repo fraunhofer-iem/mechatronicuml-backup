@@ -31,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleConnectorImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleConnectorImpl#getConnectorQualityOfServiceAssumptions <em>Connector Quality Of Service Assumptions</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleConnectorImpl#getRoles <em>Roles</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +47,16 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 	 * @ordered
 	 */
 	protected ConnectorQualityOfServiceAssumptions connectorQualityOfServiceAssumptions;
+
+	/**
+	 * The cached setting delegate for the '{@link #getRoles() <em>Roles</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoles()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ROLES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ProtocolPackage.Literals.ROLE_CONNECTOR__ROLES).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,6 +166,16 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	public EList<Role> getRoles() {
+		return (EList<Role>)ROLES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -208,6 +229,8 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 				return getCoordinationProtocol();
 			case ProtocolPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				return getConnectorQualityOfServiceAssumptions();
+			case ProtocolPackage.ROLE_CONNECTOR__ROLES:
+				return getRoles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,6 +283,8 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 				return getCoordinationProtocol() != null;
 			case ProtocolPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				return connectorQualityOfServiceAssumptions != null;
+			case ProtocolPackage.ROLE_CONNECTOR__ROLES:
+				return ROLES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

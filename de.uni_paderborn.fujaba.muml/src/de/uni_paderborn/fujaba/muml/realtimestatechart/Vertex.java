@@ -23,6 +23,7 @@ import org.storydriven.core.NamedElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex#getOutgoingTransitions <em>Outgoing Transitions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex#getIncomingTransitions <em>Incoming Transitions</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex#getAllSuperVertices <em>All Super Vertices</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,10 +67,28 @@ public interface Vertex extends NamedElement {
 	EList<Transition> getIncomingTransitions();
 
 	/**
+	 * Returns the value of the '<em><b>All Super Vertices</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * All super vertices of this vertex.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>All Super Vertices</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getVertex_AllSuperVertices()
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsKindOf(State)\r\nthen self.oclAsType(State)->closure(s | if s.statechart.embedded then s.statechart.parentRegion.parentState else null endif)\r\nelse\r\n   if self.oclIsKindOf(StateConnectionPoint)\r\n   then let state : State = self.oclAsType(StateConnectionPoint).state in state->union(state->closure(s | if s.statechart.embedded then s.statechart.parentRegion.parentState else null endif))\r\n   else OrderedSet{ }\r\n   endif\r\nendif'"
+	 * @generated
+	 */
+	EList<Vertex> getAllSuperVertices();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * return if this vertex is a super vertex of another vertex
+	 * <!-- end-model-doc -->
 	 * @model required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='Assert.isLegal(vertex != null);\r\n\r\nBreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();\r\nreturn bfs.search(vertex, new ISearchVisitor() {\r\n\r\n\t@Override\r\n\tpublic boolean visit(Object object) {\r\n\t\treturn !VertexImpl.this.equals(object);\r\n\t}\r\n\r\n\t@Override\r\n\tpublic List<?> getAdjacentNodes(Object object) {\r\n\r\n\t\tList<Object> parentStates = new ArrayList<Object>();\r\n\r\n\t\tState state = (State) object;\r\n\t\tRealtimeStatechart rtsc = state.getParentStatechart();\r\n\t\tif (rtsc != null) {\r\n\t\t\tRegion region = rtsc.getEmbeddingRegion();\r\n\t\t\tif (region != null) {\r\n\t\t\t\t// List<Region> regions = rtsc.getEmbeddingRegions();\r\n\t\t\t\t// for (Region region : regions) {\r\n\t\t\t\tState parentState = region.getParentState();\r\n\t\t\t\tif (state != null) {\r\n\t\t\t\t\tparentStates.add(parentState);\r\n\t\t\t\t}\r\n\t\t\t\t// }\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\treturn parentStates;\r\n\t}\r\n\r\n});'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='true\r\n-- TODO IMPLEMENT\r\n--self.allSuperVertices->includes(v)'"
 	 * @generated
 	 */
 	boolean isSuperVertexOf(Vertex vertex);
@@ -81,7 +100,7 @@ public interface Vertex extends NamedElement {
 	 * Returns the next free higher transition priority that is closest to the value provided as hint.
 	 * \todosd{Rename hint to an understandable name.}
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (; hasOutgoingTransitionOfPriority(hint); hint++);\nreturn hint;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (; hasOutgoingTransitionOfPriority(hint); hint++);\r\nreturn hint;'"
 	 * @generated
 	 */
 	int getUniqueTransitionPriority(int hint);

@@ -44,7 +44,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getEmbeddedStatechart <em>Embedded Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getParentState <em>Parent State</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#isGmfHistory <em>Gmf History</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#isEmbedsHistoryStatechart <em>Embeds History Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
@@ -103,14 +103,14 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 	protected RealtimeStatechart embeddedStatechart;
 
 	/**
-	 * The cached setting delegate for the '{@link #isGmfHistory() <em>Gmf History</em>}' attribute.
+	 * The cached setting delegate for the '{@link #isEmbedsHistoryStatechart() <em>Embeds History Statechart</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isGmfHistory()
+	 * @see #isEmbedsHistoryStatechart()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate GMF_HISTORY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REGION__GMF_HISTORY).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate EMBEDS_HISTORY_STATECHART__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REGION__EMBEDS_HISTORY_STATECHART).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
@@ -130,7 +130,7 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 	protected RegionImpl() {
 		super();
 		DerivedAttributeAdapter portsDerivedAdapter = new DerivedAttributeAdapter(
-				this, RealtimestatechartPackage.Literals.REGION__GMF_HISTORY);
+				this, RealtimestatechartPackage.Literals.REGION__EMBEDS_HISTORY_STATECHART);
 		portsDerivedAdapter
 				.addNavigatedDependency(
 						RealtimestatechartPackage.Literals.REGION__EMBEDDED_STATECHART,
@@ -225,9 +225,9 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 		if (newEmbeddedStatechart != embeddedStatechart) {
 			NotificationChain msgs = null;
 			if (embeddedStatechart != null)
-				msgs = ((InternalEObject)embeddedStatechart).eInverseRemove(this, RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION, RealtimeStatechart.class, msgs);
+				msgs = ((InternalEObject)embeddedStatechart).eInverseRemove(this, RealtimestatechartPackage.REALTIME_STATECHART__PARENT_REGION, RealtimeStatechart.class, msgs);
 			if (newEmbeddedStatechart != null)
-				msgs = ((InternalEObject)newEmbeddedStatechart).eInverseAdd(this, RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDING_REGION, RealtimeStatechart.class, msgs);
+				msgs = ((InternalEObject)newEmbeddedStatechart).eInverseAdd(this, RealtimestatechartPackage.REALTIME_STATECHART__PARENT_REGION, RealtimeStatechart.class, msgs);
 			msgs = basicSetEmbeddedStatechart(newEmbeddedStatechart, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -281,8 +281,8 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isGmfHistory() {
-		return (Boolean)GMF_HISTORY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public boolean isEmbedsHistoryStatechart() {
+		return (Boolean)EMBEDS_HISTORY_STATECHART__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -422,8 +422,8 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 				return getEmbeddedStatechart();
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				return getParentState();
-			case RealtimestatechartPackage.REGION__GMF_HISTORY:
-				return isGmfHistory();
+			case RealtimestatechartPackage.REGION__EMBEDS_HISTORY_STATECHART:
+				return isEmbedsHistoryStatechart();
 			case RealtimestatechartPackage.REGION__NAME:
 				return getName();
 		}
@@ -505,8 +505,8 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 				return embeddedStatechart != null;
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				return getParentState() != null;
-			case RealtimestatechartPackage.REGION__GMF_HISTORY:
-				return GMF_HISTORY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case RealtimestatechartPackage.REGION__EMBEDS_HISTORY_STATECHART:
+				return EMBEDS_HISTORY_STATECHART__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.REGION__NAME:
 				return isSetName();
 		}

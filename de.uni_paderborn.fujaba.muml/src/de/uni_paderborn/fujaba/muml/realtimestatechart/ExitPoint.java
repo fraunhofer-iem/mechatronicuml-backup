@@ -19,7 +19,7 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart;
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getExitPoint()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtLeastOneIncomingTransitionPerRegion OneOutgoingTransition'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneIncomingTransitionPerRegion='-- all regions of the parent state have at least one state that connects to the ExitPoint\r\nself.state.regions->forAll(r | \r\n\tr.statechart.states->exists(s |\r\n\t\ts.outgoingTransitions->exists(t | t.target = self)\r\n\t\tor\r\n\t\ts.connectionPoints->select(oclIsKindOf(ExitPoint)).outgoingTransitions->exists(t | t.target = self)\r\n\t)\r\n)' OneOutgoingTransition='self.outgoingTransitions->size() = 1'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneIncomingTransitionPerRegion='-- all regions of the parent state have at least one state that connects to the ExitPoint\r\nself.state.embeddedRegions->forAll(r | \r\n\tr.embeddedStatechart.states->exists(s |\r\n\t\ts.outgoingTransitions->exists(t | t.target = self)\r\n\t\tor\r\n\t\ts.connectionPoints->select(oclIsKindOf(ExitPoint)).outgoingTransitions->exists(t | t.target = self)\r\n\t)\r\n)' OneOutgoingTransition='self.outgoingTransitions->size() = 1'"
  * @generated
  */
 public interface ExitPoint extends StateConnectionPoint {

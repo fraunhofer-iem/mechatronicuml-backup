@@ -23,7 +23,7 @@ import org.storydriven.core.NamedElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getEmbeddedStatechart <em>Embedded Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getParentState <em>Parent State</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isGmfHistory <em>Gmf History</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isEmbedsHistoryStatechart <em>Embeds History Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getName <em>Name</em>}</li>
  * </ul>
  * </p>
@@ -35,7 +35,7 @@ import org.storydriven.core.NamedElement;
 public interface Region extends PrioritizedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Embedded Statechart</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getEmbeddingRegion <em>Embedding Region</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getParentRegion <em>Parent Region</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -44,8 +44,8 @@ public interface Region extends PrioritizedElement, CommentableElement {
 	 * @return the value of the '<em>Embedded Statechart</em>' containment reference.
 	 * @see #setEmbeddedStatechart(RealtimeStatechart)
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRegion_EmbeddedStatechart()
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getEmbeddingRegion
-	 * @model opposite="embeddingRegion" containment="true" required="true"
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getParentRegion
+	 * @model opposite="parentRegion" containment="true" required="true"
 	 * @generated
 	 */
 	RealtimeStatechart getEmbeddedStatechart();
@@ -92,23 +92,19 @@ public interface Region extends PrioritizedElement, CommentableElement {
 	void setParentState(State value);
 
 	/**
-	 * Returns the value of the '<em><b>Gmf History</b></em>' attribute.
+	 * Returns the value of the '<em><b>Embeds History Statechart</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Gmf History</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * This feature exists for GMF. We use it to register a DerivedAttributeAdapter in RegionImpl to be able to get notifications in the CustomRegionEditPart, when the value of "RealtimeStatechart.history" changes.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Gmf History</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRegion_GmfHistory()
+	 * @return the value of the '<em>Embeds History Statechart</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRegion_EmbedsHistoryStatechart()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if statechart.oclIsUndefined() then\n\tfalse\nelse\n\tstatechart.history\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if embeddedStatechart.oclIsUndefined() then\r\n\tfalse\r\nelse\r\n\tembeddedStatechart.history\r\nendif'"
 	 * @generated
 	 */
-	boolean isGmfHistory();
+	boolean isEmbedsHistoryStatechart();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -121,7 +117,7 @@ public interface Region extends PrioritizedElement, CommentableElement {
 	 * @see #isSetName()
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRegion_Name()
 	 * @model unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.statechart.name'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.embeddedStatechart.oclIsUndefined() then\r\n\tif not self.embeddedStatechart.oclIsUndefined() then\r\n\t\tself.embeddedStatechart.name\r\n\telse\r\n\t\tnull\r\n\tendif\r\nelse\r\n\tnull\r\nendif'"
 	 * @generated
 	 */
 	String getName();

@@ -163,7 +163,7 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/DiscretePortInstance/receiverMessageTypes"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/DiscretePortInstance/senderMessageTypes"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/DiscretePortInstance/receiverMessageBuffer"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/DiscretePortInstance/refines"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/DiscretePortInstance/refinedRole"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//instance/DiscreteSinglePortInstance"/>
       <genClasses ecoreClass="muml.ecore#//instance/DiscreteMultiPortInstance">
@@ -185,6 +185,7 @@
       <genClasses ecoreClass="muml.ecore#//protocol/RoleConnector">
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/RoleConnector/coordinationProtocol"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/RoleConnector/roles"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//protocol/CoordinationProtocol">
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/CoordinationProtocol/roles"/>
@@ -198,7 +199,6 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/Role/roleConnector"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//protocol/Role/multiRole"/>
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/Role/receiverMessageBuffer"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/Role/roles"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//protocol/MessageBuffer">
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/MessageBuffer/bufferSize"/>
@@ -237,7 +237,7 @@
       <genClasses ecoreClass="muml.ecore#//realtimestatechart/Region">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Region/embeddedStatechart"/>
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Region/parentState"/>
-        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/Region/gmfHistory"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/Region/name"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//realtimestatechart/State">
@@ -266,6 +266,8 @@
             propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Vertex/outgoingTransitions"/>
         <genFeatures notify="false" createChild="false" propertyCategory="Transitions"
             propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Vertex/incomingTransitions"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Vertex/allSuperVertices"/>
         <genOperations ecoreOperation="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf">
           <genParameters ecoreParameter="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf/vertex"/>
         </genOperations>
@@ -344,8 +346,7 @@
             ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/PrioritizedElement/priority"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//realtimestatechart/RealtimeStatechart">
-        <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/RealtimeStatechart/embeddingRegion"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"/>
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/RealtimeStatechart/transitions"/>
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/RealtimeStatechart/states"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/RealtimeStatechart/clocks"/>

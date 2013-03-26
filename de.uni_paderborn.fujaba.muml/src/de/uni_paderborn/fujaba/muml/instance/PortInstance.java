@@ -47,7 +47,7 @@ public interface PortInstance extends ConnectorEndpointInstance {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Type</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getPortInstance_PortType()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.type.oclIsKindOf(component::Port))\r\nthen\r\nself.type.oclAsType(component::Port)\r\nelse\r\nnull\r\nendif'"
 	 * @generated
 	 */

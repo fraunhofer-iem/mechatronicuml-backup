@@ -48,7 +48,7 @@ public interface CoordinationProtocol extends NamedElement, ConstrainableElement
 	 * @return the value of the '<em>Roles</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getCoordinationProtocol_Roles()
 	 * @see de.uni_paderborn.fujaba.muml.protocol.Role#getCoordinationProtocol
-	 * @model opposite="coordinationProtocol" containment="true" required="true" upper="2"
+	 * @model opposite="coordinationProtocol" containment="true" lower="2" upper="2"
 	 * @generated
 	 */
 	EList<Role> getRoles();

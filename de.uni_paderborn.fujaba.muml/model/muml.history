@@ -7924,26 +7924,26 @@
             featureName="value" dataValue="// check if this rtsc has a behavioral element&#xD;&#xA;RealtimeStatechart rtsc = this;&#xD;&#xA;if (rtsc.getBehavioralElement()!=null &amp;&amp; ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;&#xD;&#xA;&#xD;&#xA;// search for ancestor with behavioral element&#xD;&#xA;while (rtsc.isEmbedded()==true)&#xD;&#xA;{&#xD;&#xA;rtsc = rtsc.getEmbeddingRegion().getParentState().getStatechart();&#xD;&#xA;if (rtsc.getBehavioralElement()!=null &amp;&amp; ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;&#xD;&#xA;} &#xD;&#xA;&#xD;&#xA;// no rtsc found with behavioral element&#xD;&#xA;return this;"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/RealtimeStatechart"
-          referenceName="eStructuralFeatures" element="muml.ecore#//realtimestatechart/RealtimeStatechart/embeddingRegion">
-        <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/embeddingRegion"
+          referenceName="eStructuralFeatures" element="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion">
+        <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"
             featureName="name" dataValue="embeddingRegion"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/embeddingRegion"
+        <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"
             featureName="eType" referenceValue="muml.ecore#//realtimestatechart/Region"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/embeddingRegion"
+        <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"
             featureName="eOpposite" referenceValue="muml.ecore#//realtimestatechart/Region/embeddedStatechart"/>
         <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embeddedStatechart"
-            featureName="eOpposite" referenceValue="muml.ecore#//realtimestatechart/RealtimeStatechart/embeddingRegion"/>
+            featureName="eOpposite" referenceValue="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/RealtimeStatechart/embeddingRegion"
-          referenceName="eAnnotations" element="muml.ecore#//realtimestatechart/RealtimeStatechart/embeddingRegion/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/embeddingRegion/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"
+          referenceName="eAnnotations" element="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/RealtimeStatechart/embeddingRegion/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//realtimestatechart/RealtimeStatechart/embeddingRegion/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/embeddingRegion/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/embeddingRegion/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="If the real-time statechart is embedded into a region of a composite state,&#xD;&#xA;than this reference returns the region of this state. If the real-time statechart&#xD;&#xA;is not embedded, this reference will be undefined."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/RealtimeStatechart"
@@ -15528,10 +15528,10 @@
     </changes>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Create" target="muml.ecore#//instance/DiscretePortInstance"
-          referenceName="eStructuralFeatures" element="muml.ecore#//instance/DiscretePortInstance/refines">
-        <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines"
+          referenceName="eStructuralFeatures" element="muml.ecore#//instance/DiscretePortInstance/refinedRole">
+        <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole"
             featureName="name" dataValue="refines"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines"
+        <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole"
             featureName="eType" referenceValue="muml.ecore#//protocol/Role"/>
       </changes>
       <operation name="newReference">
@@ -15581,17 +15581,17 @@
       </operation>
     </changes>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines"
+      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole"
           featureName="volatile" dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines"
+      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole"
           featureName="transient" dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines"
+      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole"
           featureName="derived" dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines"
+      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole"
           featureName="changeable" dataValue="false" oldDataValue="true"/>
       <operation name="makeFeatureVolatile">
         <parameters name="feature">
-          <referenceValue element="muml.ecore#//instance/DiscretePortInstance/refines"/>
+          <referenceValue element="muml.ecore#//instance/DiscretePortInstance/refinedRole"/>
         </parameters>
         <parameters name="trans">
           <dataValue>true</dataValue>
@@ -15604,16 +15604,16 @@
         </parameters>
       </operation>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//instance/DiscretePortInstance/refines"
-        referenceName="eAnnotations" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+    <changes xsi:type="history:Create" target="muml.ecore#//instance/DiscretePortInstance/refinedRole"
+        referenceName="eAnnotations" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Create" target="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
           featureName="key" dataValue="derivation"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
           featureName="value" dataValue="self.refines.receiverMessageBuffer"/>
     </changes>
     <changes xsi:type="history:Create" target="muml.ecore#//instance/DiscretePortInstance/receiverMessageBuffer"
@@ -15631,7 +15631,7 @@
     <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="self.portType.refines.receiverMessageBuffer"
         oldDataValue="self.refines.receiverMessageBuffer"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="self.portType.refines" oldDataValue="self.refines.receiverMessageBuffer"/>
     <changes xsi:type="history:Create" target="muml.ecore#//instance/DiscretePortInstance/receiverMessageBuffer"
         referenceName="eAnnotations" element="muml.ecore#//instance/DiscretePortInstance/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
@@ -15660,22 +15660,22 @@
       <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="value" dataValue="The derived properties of the refined role regarding the receiver message buffers."/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//instance/DiscretePortInstance/refines"
-        referenceName="eAnnotations" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+    <changes xsi:type="history:Create" target="muml.ecore#//instance/DiscretePortInstance/refinedRole"
+        referenceName="eAnnotations" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
           featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-        referenceName="details" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Create" target="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="key" dataValue="documentation"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="value" dataValue="The role of a coordination pattern that this port refines."/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="The role of a coordination pattern that this port instance refines."
         oldDataValue="The role of a coordination pattern that this port refines."/>
-    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="The role of a coordination pattern that the port type of this port instance refines."
         oldDataValue="The role of a coordination pattern that this port instance refines."/>
     <changes xsi:type="history:OperationChange">
@@ -15707,49 +15707,49 @@
   </releases>
   <releases date="2012-11-23T15:46:42.326+0100" label="0.3.4">
     <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Region"
-        referenceName="eStructuralFeatures" element="muml.ecore#//realtimestatechart/Region/gmfHistory"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/gmfHistory"
+        referenceName="eStructuralFeatures" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart"
         featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/gmfHistory"
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart"
         featureName="name" dataValue="gmfHistory"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/gmfHistory"
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart"
         featureName="eType" referenceValue="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Region/gmfHistory"
-        referenceName="eAnnotations" element="muml.ecore#//realtimestatechart/Region/gmfHistory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/gmfHistory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart"
+        referenceName="eAnnotations" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Region/gmfHistory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//realtimestatechart/Region/gmfHistory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/gmfHistory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
           featureName="key" dataValue="derivation"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/gmfHistory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
           featureName="value" dataValue="if componentType.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;componentType.ports&#xD;&#xA;endif"/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/gmfHistory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="if statechart.oclIsUndefined() then&#xA;&#x9;false&#xA;else&#xA;&#x9;statechart.history&#xA;endif"
         oldDataValue="if componentType.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;componentType.ports&#xD;&#xA;endif"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/gmfHistory"
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart"
         featureName="derived" dataValue="true" oldDataValue="false"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/gmfHistory"
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart"
         featureName="volatile" dataValue="true" oldDataValue="false"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/gmfHistory"
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart"
         featureName="transient" dataValue="true" oldDataValue="false"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/gmfHistory"
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart"
         featureName="changeable" dataValue="false" oldDataValue="true"/>
-    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Region/gmfHistory"
-        referenceName="eAnnotations" element="muml.ecore#//realtimestatechart/Region/gmfHistory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/gmfHistory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart"
+        referenceName="eAnnotations" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
           featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Region/gmfHistory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-        referenceName="details" element="muml.ecore#//realtimestatechart/Region/gmfHistory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/gmfHistory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="key" dataValue="documentation"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/gmfHistory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="value" dataValue="The component type typing this component part."/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/gmfHistory/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="This feature exists for GMF. We use it to register a DerivedAttributeAdapter in RegionImpl to be able to get notifications in the CustomRegionEditPart, when the value of &quot;RealtimeStatechart.history&quot; changes."
         oldDataValue="The component type typing this component part."/>
     <changes xsi:type="history:Create" target="#//@releases.8/@changes.24/@element"
@@ -17157,14 +17157,14 @@
         featureName="name" dataValue="coordinationProtocolOccurrence" oldDataValue="protocolOccurrence"/>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Create" target="muml.ecore#//protocol/RoleConnector"
-          referenceName="eStructuralFeatures" element="muml.ecore#//protocol/Role/roles">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roles"
+          referenceName="eStructuralFeatures" element="#//@releases.16/@changes.18/@element">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.18/@element"
             featureName="name" dataValue="roles"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roles"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.18/@element"
             featureName="lowerBound" dataValue="2" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roles"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.18/@element"
             featureName="upperBound" dataValue="2" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roles"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.18/@element"
             featureName="eType" referenceValue="muml.ecore#//protocol/Role"/>
       </changes>
       <operation name="newReference">
@@ -17190,17 +17190,17 @@
       </operation>
     </changes>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roles" featureName="volatile"
-          dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roles" featureName="transient"
-          dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roles" featureName="derived"
-          dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roles" featureName="changeable"
-          dataValue="false" oldDataValue="true"/>
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.18/@element"
+          featureName="volatile" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.18/@element"
+          featureName="transient" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.18/@element"
+          featureName="derived" dataValue="true" oldDataValue="false"/>
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.18/@element"
+          featureName="changeable" dataValue="false" oldDataValue="true"/>
       <operation name="makeFeatureVolatile">
         <parameters name="feature">
-          <referenceValue element="muml.ecore#//protocol/Role/roles"/>
+          <referenceValue element="#//@releases.16/@changes.18/@element"/>
         </parameters>
         <parameters name="trans">
           <dataValue>true</dataValue>
@@ -17763,18 +17763,18 @@
         oldDataValue="connectorType.oclAsType(component::Delegation)"/>
     <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="self.refines.receiverMessageBuffer" oldDataValue="self.portType.refines.receiverMessageBuffer"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="self.portType.oclAsType(component::DiscretePort).refines"
         oldDataValue="self.portType.refines"/>
-    <changes xsi:type="history:Create" target="muml.ecore#//protocol/Role/roles" referenceName="eAnnotations"
-        element="muml.ecore#//protocol/Role/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.18/@element"
+        referenceName="eAnnotations" element="#//@releases.16/@changes.18/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.18/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
         featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-    <changes xsi:type="history:Create" target="muml.ecore#//protocol/Role/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//protocol/Role/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.18/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="#//@releases.16/@changes.18/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.18/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="key" dataValue="derivation"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.18/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="self.connectorEndpoints->select(e | e.oclIsKindOf(Role)).oclAsType(Role)->asOrderedSet()"/>
     <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/receiverMessageTypes"
         featureName="upperBound" dataValue="-1" oldDataValue="1"/>
@@ -19106,15 +19106,15 @@
         featureName="value" dataValue="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::EntryPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"
         oldDataValue="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::EntryPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.synchronization.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
     <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6">
-      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+        referenceName="details" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7">
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
           featureName="key" dataValue="ExitPointIncomingTransitionsNoSideEffectsOrDeadlines"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
           featureName="value" dataValue="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
         featureName="key" dataValue="EntryOrExitTransitionsNoSynchronization" oldDataValue="ExitPointIncomingTransitionsNoSideEffectsOrDeadlines"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
         featureName="key" dataValue="EntryOrExitPointTransitionsNoSynchronization"
         oldDataValue="EntryOrExitTransitionsNoSynchronization"/>
     <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart" referenceName="eClassifiers"
@@ -19235,10 +19235,10 @@
     <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
         featureName="value" dataValue="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ConnectionPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"
         oldDataValue="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
         featureName="key" dataValue="ConnectionPointTransitionsNoSynchronization"
         oldDataValue="EntryOrExitPointTransitionsNoSynchronization"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
         featureName="value" dataValue="((not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ConnectionPoint))&#xD;&#xA;&#x9;or&#xD;&#xA; (not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ConnectionPoint)))&#xD;&#xA;&#x9;implies&#xD;&#xA;self.synchronization.oclIsUndefined()"
         oldDataValue="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ExitPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
     <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
@@ -19459,10 +19459,10 @@
     <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="if self.refines.oclIsUndefined() then&#xA;&#x9;OrderedSet { }&#xA;else&#xA;&#x9;self.refines.receiverMessageBuffer&#xA;endif"
         oldDataValue="self.refines.receiverMessageBuffer"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="if self.portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.portType.oclAsType(component::DiscretePort).refines&#xA;else&#xA;&#x9;null&#xA;endif"
         oldDataValue="self.portType.oclAsType(component::DiscretePort).refines"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="if not self.portType.oclIsUndefined() and self.portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.portType.oclAsType(component::DiscretePort).refines&#xA;else&#xA;&#x9;null&#xA;endif"
         oldDataValue="if self.portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.portType.oclAsType(component::DiscretePort).refines&#xA;else&#xA;&#x9;null&#xA;endif"/>
     <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/receiverMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
@@ -19585,14 +19585,14 @@
     <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/coordinationProtocolOccurences/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="This reference is needed by GMF to visualize the CoordinationProtocols within the StructuredComponent."/>
     <changes xsi:type="history:Create" target="muml.ecore#//component/StructuredComponent/coordinationProtocolOccurences"
-        referenceName="eAnnotations" element="muml.ecore#//component/StructuredComponent/coordinationProtocolOccurences/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/coordinationProtocolOccurences/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="eAnnotations" element="#//@releases.16/@changes.97/@element"/>
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.97/@element"
         featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-    <changes xsi:type="history:Create" target="muml.ecore#//component/StructuredComponent/coordinationProtocolOccurences/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//component/StructuredComponent/coordinationProtocolOccurences/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/coordinationProtocolOccurences/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.97/@element"
+        referenceName="details" element="#//@releases.16/@changes.97/@element/@details.0"/>
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.97/@element/@details.0"
         featureName="key" dataValue="derivation"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/coordinationProtocolOccurences/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.97/@element/@details.0"
         featureName="value" dataValue="self.embeddedParts.componentType->reject(oclIsUndefined()).ports->select(p | p.oclIsKindOf(DiscretePort)).oclAsType(DiscretePort).gmfProtocol->reject(oclIsUndefined())->asOrderedSet()"/>
     <changes xsi:type="history:Set" element="muml.ecore#//valuetype/TimeValue/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="// Return value concatenated with unit in lowercase.&#xA;StringBuffer sb = new StringBuffer();&#xA;if (value == null) {&#xA;&#x9;sb.append(&quot;null&quot;);&#xA;} else {&#xA;&#x9;sb.append(value.toString());&#xA;}&#xA;if (unit != null) {&#xA;&#x9;sb.append(' ');&#xA;&#x9;sb.append(unit.toString().toLowerCase());&#xA;}&#xA;return sb.toString();"
@@ -19793,7 +19793,7 @@
     <changes xsi:type="history:Set" element="muml.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="The muml package contains the core meta-model of MechatronicUML. The&#xD;&#xA;subpackages define the base classes for the component model, real-time &#xD;&#xA;statecharts, message interfaces and coordination protocol."
         oldDataValue="The muml package contains the core meta-model of MechatronicUML. The&#xD;&#xA;subpackages define the base classes for the component model, real-time &#xD;&#xA;statecharts, message interfaces and coordination pattern."/>
-    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refines/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="The role of a coordination protocol that the port type of this port instance refines."
         oldDataValue="The role of a coordination pattern that the port type of this port instance refines."/>
     <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
@@ -20604,10 +20604,10 @@
           featureName="value" dataValue="self.connectorEndpoints->select(e | e.oclIsKindOf(Role)).oclAsType(Role)->asOrderedSet()"/>
     </changes>
     <changes xsi:type="history:Move" target="muml.ecore#//protocol/CoordinationProtocol"
-        referenceName="eStructuralFeatures" element="muml.ecore#//protocol/Role/roles"
+        referenceName="eStructuralFeatures" element="#//@releases.16/@changes.18/@element"
         source="muml.ecore#//protocol/RoleConnector"/>
     <changes xsi:type="history:Move" target="muml.ecore#//protocol/Role" referenceName="eStructuralFeatures"
-        element="muml.ecore#//protocol/Role/roles" source="muml.ecore#//protocol/CoordinationProtocol"/>
+        element="#//@releases.16/@changes.18/@element" source="muml.ecore#//protocol/CoordinationProtocol"/>
     <changes xsi:type="history:Set" element="muml.ecore#//protocol" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/protocol/0.3.18" oldDataValue="http://www.fujaba.de/muml/protocol/0.3.17"/>
     <changes xsi:type="history:Create" target="muml.ecore#//instance/ComponentInstanceConfiguration"
@@ -21090,7 +21090,7 @@
         featureName="name" dataValue="coordinationProtocolOccurences" oldDataValue="gmfProtocols"/>
     <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/embeddedComponentParts"
         featureName="name" dataValue="embeddedComponentParts" oldDataValue="embeddedParts"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/coordinationProtocolOccurences/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.97/@element/@details.0"
         featureName="value" dataValue="self.embeddedComponentParts.componentType->reject(oclIsUndefined()).ports->select(p | p.oclIsKindOf(DiscretePort)).oclAsType(DiscretePort).coordinationProtocolOccurence->reject(oclIsUndefined())->asOrderedSet()"
         oldDataValue="self.embeddedParts.componentType->reject(oclIsUndefined()).ports->select(p | p.oclIsKindOf(DiscretePort)).oclAsType(DiscretePort).gmfProtocol->reject(oclIsUndefined())->asOrderedSet()"/>
     <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/coordinationProtocolOccurences"
@@ -21256,5 +21256,353 @@
         oldDataValue="AtLeastOneMessageType DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole"/>
   </releases>
   <releases>
+    <changes xsi:type="history:Create" target="muml.ecore#//protocol/RoleConnector"
+        referenceName="eStructuralFeatures" element="muml.ecore#//protocol/RoleConnector/roles"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles"
+        featureName="eType" referenceValue="muml.ecore#//protocol/Role"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roleConnector"
+        featureName="eOpposite" referenceValue="muml.ecore#//protocol/RoleConnector/roles"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles"
+        featureName="eOpposite" referenceValue="muml.ecore#//protocol/Role/roleConnector"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles"
+        featureName="name" dataValue="role"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles"
+        featureName="lowerBound" dataValue="2" oldDataValue="0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles"
+        featureName="upperBound" dataValue="2" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles"
+        featureName="changeable" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles"
+        featureName="derived" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles"
+        featureName="volatile" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles"
+        featureName="transient" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles"
+        featureName="name" dataValue="roles" oldDataValue="role"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//protocol/RoleConnector/roles"
+        referenceName="eAnnotations" element="muml.ecore#//protocol/RoleConnector/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//protocol/RoleConnector/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//protocol/RoleConnector/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="self"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//protocol/RoleConnector/roles"
+        referenceName="eAnnotations" element="muml.ecore#//protocol/RoleConnector/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//protocol/RoleConnector/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//protocol/RoleConnector/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="This derived reference only exists because GMF needs it to visualize the inner ellipse of a Real-Time Coordination Protocol."/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="The two roles that are connected." oldDataValue="This derived reference only exists because GMF needs it to visualize the inner ellipse of a Real-Time Coordination Protocol."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/RoleConnector/roles/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.connectorEndpoints->select(e | e.oclIsKindOf(Role)).oclAsType(Role)->asOrderedSet()"
+        oldDataValue="self"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//protocol/Role" referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EReference" name="roles" lowerBound="2" upperBound="2"
+          eType="ecore:EClass muml.ecore#//protocol/Role" changeable="false" volatile="true"
+          transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectorEndpoints->select(e | e.oclIsKindOf(Role)).oclAsType(Role)->asOrderedSet()"/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//protocol/Role/roleConnector"
+        referenceName="eAnnotations" element="muml.ecore#//protocol/Role/roleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//protocol/Role/roleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//protocol/Role/roleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="The two roles that are connected."/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/roleConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="The role connector that connects this role with another role."
+        oldDataValue="The two roles that are connected."/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/CoordinationProtocol/roles"
+        featureName="lowerBound" dataValue="2" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent StateConnectionPointTransitionsNoSynchronization"
+        oldDataValue="LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines ConnectionPointOutgoingTransitionsNoConditions ConnectionPointTransitionsNoSynchronization"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="key" dataValue="StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines"
+        oldDataValue="ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        featureName="key" dataValue="StateConnectionPointOutgoingTransitionsNoConditions"
+        oldDataValue="ConnectionPointOutgoingTransitionsNoConditions"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        featureName="key" dataValue="StateConnectionPointTransitionsNoSynchronization"
+        oldDataValue="ConnectionPointTransitionsNoSynchronization"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+        featureName="key" dataValue="StateConnectionPointOutgoingTransitionsMustBeUrgent "/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+        featureName="value" dataValue="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.urgent&#xD;&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        featureName="value" dataValue="((not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))&#xD;&#xA;&#x9;or&#xD;&#xA; (not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint)))&#xD;&#xA;&#x9;implies&#xD;&#xA;self.synchronization.oclIsUndefined()"
+        oldDataValue="((not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ConnectionPoint))&#xD;&#xA;&#x9;or&#xD;&#xA; (not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ConnectionPoint)))&#xD;&#xA;&#x9;implies&#xD;&#xA;self.synchronization.oclIsUndefined()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        featureName="value" dataValue="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"
+        oldDataValue="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ConnectionPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="value" dataValue="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"
+        oldDataValue="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ConnectionPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="not self.triggerMessageEvent.message.oclIsUndefined() implies&#xD;&#xA;self.triggerMessageEvent.message.parameterBinding->isEmpty()"
+        oldDataValue="not self.triggerMessageEvent.message.oclIsUndefined() implies&#xA;self.triggerMessageEvent.message.parameterBinding->isEmpty()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.refinedRole.oclIsUndefined() then&#xD;&#xA;self.refinedRole.receiverMessageBuffer&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif"
+        oldDataValue="not self.refinedRole.oclIsUndefined()&#xD;&#xA;implies&#xD;&#xA;self.refinedRole.receiverMessageBuffer"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if self.refines.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;self.refines.receiverMessageBuffer&#xD;&#xA;endif"
+        oldDataValue="if self.refines.oclIsUndefined() then&#xA;&#x9;OrderedSet { }&#xA;else&#xA;&#x9;self.refines.receiverMessageBuffer&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.portType.oclIsUndefined() and self.portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;self.portType.oclAsType(component::DiscretePort).refinedRole&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif"
+        oldDataValue="if not self.portType.oclIsUndefined() and self.portType.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;self.portType.oclAsType(component::DiscretePort).refines&#xA;else&#xA;&#x9;null&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if self.refinedRole.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;self.refinedRole.receiverMessageBuffer&#xD;&#xA;endif"
+        oldDataValue="if self.refines.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;self.refines.receiverMessageBuffer&#xD;&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole"
+        featureName="name" dataValue="refinedRole" oldDataValue="refines"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/portType"
+        featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Vertex"
+        referenceName="eStructuralFeatures" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices"
+        featureName="name" dataValue="allSuperVertices"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices"
+        featureName="eType" referenceValue="muml.ecore#//realtimestatechart/Vertex"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Vertex/allSuperVertices"
+        referenceName="eAnnotations" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="-- a state is simple if it contains no regions&#xA;regions->isEmpty()&#xA;"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Vertex/allSuperVertices"
+        referenceName="eAnnotations" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="The incoming transitions of this vertex"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="All super vertices of this vertex." oldDataValue="The incoming transitions of this vertex"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if self.oclIsKindOf(State)&#xD;&#xA;then self.oclAsType(State)->closure(s | if s.statechart.embedded then s.statechart.embeddingRegion.parentState else null endif)&#xD;&#xA;else&#xD;&#xA;   if self.oclIsKindOf(ConnectionPoint)&#xD;&#xA;   then let state : State = self.oclAsType(ConnectionPoint).state in state->union(state->closure(s | if s.statechart.embedded then s.statechart.embeddingRegion.parentState else null endif))&#xD;&#xA;   else null&#xD;&#xA;   endif&#xD;&#xA;endif&#xD;&#xA;"
+        oldDataValue="-- a state is simple if it contains no regions&#xA;regions->isEmpty()&#xA;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="self.allSuperVertices->includes(v)" oldDataValue="Assert.isLegal(vertex != null);&#xD;&#xA;&#xD;&#xA;BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();&#xD;&#xA;return bfs.search(vertex, new ISearchVisitor() {&#xD;&#xA;&#xD;&#xA;&#x9;@Override&#xD;&#xA;&#x9;public boolean visit(Object object) {&#xD;&#xA;&#x9;&#x9;return !VertexImpl.this.equals(object);&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;@Override&#xD;&#xA;&#x9;public List&lt;?> getAdjacentNodes(Object object) {&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;List&lt;Object> parentStates = new ArrayList&lt;Object>();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;State state = (State) object;&#xD;&#xA;&#x9;&#x9;RealtimeStatechart rtsc = state.getParentStatechart();&#xD;&#xA;&#x9;&#x9;if (rtsc != null) {&#xD;&#xA;&#x9;&#x9;&#x9;Region region = rtsc.getEmbeddingRegion();&#xD;&#xA;&#x9;&#x9;&#x9;if (region != null) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// List&lt;Region> regions = rtsc.getEmbeddingRegions();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// for (Region region : regions) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;State parentState = region.getParentState();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;if (state != null) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;parentStates.add(parentState);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// }&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return parentStates;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;});"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf"
+        referenceName="eAnnotations" element="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="-- a state is simple if it contains no regions&#xA;regions->isEmpty()&#xA;"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.allSuperVertices->includes(v)" oldDataValue="-- a state is simple if it contains no regions&#xA;regions->isEmpty()&#xA;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="body" oldDataValue="derivation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="key" dataValue="documentation" oldDataValue="body"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="return if this vertex is a super vertex of another vertex"
+        oldDataValue="self.allSuperVertices->includes(v)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices"
+        featureName="upperBound" dataValue="-1" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if self.oclIsKindOf(State)&#xD;&#xA;then self.oclAsType(State)->closure(s | if s.parentStatechart.embedded then s.parentStatechart.embeddingRegion.parentState else null endif)&#xD;&#xA;else&#xD;&#xA;   if self.oclIsKindOf(ConnectionPoint)&#xD;&#xA;   then let state : State = self.oclAsType(ConnectionPoint).state in state->union(state->closure(s | if s.parentStatechart.embedded then s.parentStatechart.embeddingRegion.parentState else null endif))&#xD;&#xA;   else null&#xD;&#xA;   endif&#xD;&#xA;endif&#xD;&#xA;"
+        oldDataValue="if self.oclIsKindOf(State)&#xD;&#xA;then self.oclAsType(State)->closure(s | if s.statechart.embedded then s.statechart.embeddingRegion.parentState else null endif)&#xD;&#xA;else&#xD;&#xA;   if self.oclIsKindOf(ConnectionPoint)&#xD;&#xA;   then let state : State = self.oclAsType(ConnectionPoint).state in state->union(state->closure(s | if s.statechart.embedded then s.statechart.embeddingRegion.parentState else null endif))&#xD;&#xA;   else null&#xD;&#xA;   endif&#xD;&#xA;endif&#xD;&#xA;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"
+        featureName="name" dataValue="parentRegion" oldDataValue="embeddingRegion"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/getPortOrRoleStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
+        featureName="value" dataValue="// check if this rtsc has a behavioral element&#xD;&#xA;RealtimeStatechart rtsc = this;&#xD;&#xA;if (rtsc.getBehavioralElement()!=null &amp;&amp; ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;&#xD;&#xA;&#xD;&#xA;// search for ancestor with behavioral element&#xD;&#xA;while (rtsc.isEmbedded()==true)&#xD;&#xA;{&#xD;&#xA;rtsc = rtsc.getParentRegion().getParentState().getParentStatechart();&#xD;&#xA;if (rtsc.getBehavioralElement()!=null &amp;&amp; ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;&#xD;&#xA;} &#xD;&#xA;&#xD;&#xA;// no rtsc found with behavioral element&#xD;&#xA;return this;"
+        oldDataValue="// check if this rtsc has a behavioral element&#xD;&#xA;RealtimeStatechart rtsc = this;&#xD;&#xA;if (rtsc.getBehavioralElement()!=null &amp;&amp; ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;&#xD;&#xA;&#xD;&#xA;// search for ancestor with behavioral element&#xD;&#xA;while (rtsc.isEmbedded()==true)&#xD;&#xA;{&#xD;&#xA;rtsc = rtsc.getEmbeddingRegion().getParentState().getParentStatechart();&#xD;&#xA;if (rtsc.getBehavioralElement()!=null &amp;&amp; ((rtsc.getBehavioralElement() instanceof Port) || (rtsc.getBehavioralElement() instanceof Role))) return rtsc;&#xD;&#xA;} &#xD;&#xA;&#xD;&#xA;// no rtsc found with behavioral element&#xD;&#xA;return this;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/getHighestParentStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
+        featureName="value" dataValue="RealtimeStatechart rtsc = this;&#xD;&#xA;while (rtsc.isEmbedded()==true)&#xD;&#xA;{rtsc = rtsc.getParentRegion().getParentState().getParentStatechart();} &#xD;&#xA;return rtsc;"
+        oldDataValue="RealtimeStatechart rtsc = this;&#xD;&#xA;while (rtsc.isEmbedded()==true)&#xD;&#xA;{rtsc = rtsc.getEmbeddingRegion().getParentState().getParentStatechart();} &#xD;&#xA;return rtsc;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/isSuperStatechartOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
+        featureName="value" dataValue="// TODO: Replace by OCL's transitive closure?&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;Assert.isLegal(statechart != null);&#xD;&#xA;&#xD;&#xA;BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();&#xD;&#xA;return bfs.search(statechart, new ISearchVisitor() {&#xD;&#xA;&#xD;&#xA;&#x9;@Override&#xD;&#xA;&#x9;public boolean visit(Object object) {&#xD;&#xA;&#x9;&#x9;return !RealtimeStatechartImpl.this.equals(object);&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;@Override&#xD;&#xA;&#x9;public List&lt;?> getAdjacentNodes(Object object) {&#xD;&#xA;&#x9;&#x9;RealtimeStatechart rtsc = (RealtimeStatechart) object;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;List&lt;Object> parentStatecharts = new ArrayList&lt;Object>();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;Region region = rtsc.getParentRegion();&#xD;&#xA;&#x9;&#x9;if (region != null) {&#xD;&#xA;&#x9;&#x9;&#x9;// List&lt;Region> regions = rtsc.getParentRegions();&#xD;&#xA;&#x9;&#x9;&#x9;// for (Region region : regions) {&#xD;&#xA;&#x9;&#x9;&#x9;State state = region.getParentState();&#xD;&#xA;&#x9;&#x9;&#x9;if (state != null &amp;&amp; state.getParentStatechart() != null) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;parentStatecharts.add(state.getParentStatechart());&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;// }&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return parentStatecharts;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;});"
+        oldDataValue="// TODO: Replace by OCL's transitive closure?&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;Assert.isLegal(statechart != null);&#xD;&#xA;&#xD;&#xA;BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();&#xD;&#xA;return bfs.search(statechart, new ISearchVisitor() {&#xD;&#xA;&#xD;&#xA;&#x9;@Override&#xD;&#xA;&#x9;public boolean visit(Object object) {&#xD;&#xA;&#x9;&#x9;return !RealtimeStatechartImpl.this.equals(object);&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;@Override&#xD;&#xA;&#x9;public List&lt;?> getAdjacentNodes(Object object) {&#xD;&#xA;&#x9;&#x9;RealtimeStatechart rtsc = (RealtimeStatechart) object;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;List&lt;Object> parentStatecharts = new ArrayList&lt;Object>();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;Region region = rtsc.getEmbeddingRegion();&#xD;&#xA;&#x9;&#x9;if (region != null) {&#xD;&#xA;&#x9;&#x9;&#x9;// List&lt;Region> regions = rtsc.getEmbeddingRegions();&#xD;&#xA;&#x9;&#x9;&#x9;// for (Region region : regions) {&#xD;&#xA;&#x9;&#x9;&#x9;State state = region.getParentState();&#xD;&#xA;&#x9;&#x9;&#x9;if (state != null &amp;&amp; state.getParentStatechart() != null) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;parentStatecharts.add(state.getParentStatechart());&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;// }&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return parentStatecharts;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;});"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/flat/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- a statechart is flat if it exclusively contains simple states&#xD;&#xA;states->forAll(simple)"
+        oldDataValue="-- a statechart is flat if it exclusively contains simple states&#xA;states->forAll(simple)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/availableClocks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.statechart endif).clocks->asSet()"
+        oldDataValue="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).clocks->asSet()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/embedded/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="not self.parentRegion.oclIsUndefined()" oldDataValue="not self.embeddingRegion.oclIsUndefined()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/allAvailableVariables/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.statechart endif).variables->asOrderedSet()"
+        oldDataValue="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).variables->asOrderedSet()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/allAvailableOperations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.statechart endif).operations ->asOrderedSet()"
+        oldDataValue="self -> closure(if embeddingRegion.oclIsUndefined() then self else embeddingRegion.parentState.statechart endif).operations ->asOrderedSet()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if self.oclIsKindOf(State)&#xD;&#xA;then self.oclAsType(State)->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif)&#xD;&#xA;else&#xD;&#xA;   if self.oclIsKindOf(ConnectionPoint)&#xD;&#xA;   then let state : State = self.oclAsType(ConnectionPoint).state in state->union(state->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif))&#xD;&#xA;   else null&#xD;&#xA;   endif&#xD;&#xA;endif&#xD;&#xA;"
+        oldDataValue="if self.oclIsKindOf(State)&#xD;&#xA;then self.oclAsType(State)->closure(s | if s.parentStatechart.embedded then s.parentStatechart.embeddingRegion.parentState else null endif)&#xD;&#xA;else&#xD;&#xA;   if self.oclIsKindOf(ConnectionPoint)&#xD;&#xA;   then let state : State = self.oclAsType(ConnectionPoint).state in state->union(state->closure(s | if s.parentStatechart.embedded then s.parentStatechart.embeddingRegion.parentState else null endif))&#xD;&#xA;   else null&#xD;&#xA;   endif&#xD;&#xA;endif&#xD;&#xA;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/getUniqueTransitionPriority/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.1"
+        featureName="value" dataValue="for (; hasOutgoingTransitionOfPriority(hint); hint++);&#xD;&#xA;return hint;"
+        oldDataValue="for (; hasOutgoingTransitionOfPriority(hint); hint++);&#xA;return hint;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if self.oclIsKindOf(State)&#xD;&#xA;then self.oclAsType(State)->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif)&#xD;&#xA;else&#xD;&#xA;   if self.oclIsKindOf(StateConnectionPoint)&#xD;&#xA;   then let state : State = self.oclAsType(StateConnectionPoint).state in state->union(state->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif))&#xD;&#xA;   else null&#xD;&#xA;   endif&#xD;&#xA;endif&#xD;&#xA;"
+        oldDataValue="if self.oclIsKindOf(State)&#xD;&#xA;then self.oclAsType(State)->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif)&#xD;&#xA;else&#xD;&#xA;   if self.oclIsKindOf(ConnectionPoint)&#xD;&#xA;   then let state : State = self.oclAsType(ConnectionPoint).state in state->union(state->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif))&#xD;&#xA;   else null&#xD;&#xA;   endif&#xD;&#xA;endif&#xD;&#xA;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if self.oclIsKindOf(State)&#xD;&#xA;then self.oclAsType(State)->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif).oclAsType(Vertex)->asOrderedSet()&#xD;&#xA;else&#xD;&#xA;   if self.oclIsKindOf(StateConnectionPoint)&#xD;&#xA;   then let state : State = self.oclAsType(StateConnectionPoint).state in state->union(state->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif).oclAsType(Vertex)->asOrderedSet())&#xD;&#xA;   else null&#xD;&#xA;   endif&#xD;&#xA;endif&#xD;&#xA;"
+        oldDataValue="if self.oclIsKindOf(State)&#xD;&#xA;then self.oclAsType(State)->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif)&#xD;&#xA;else&#xD;&#xA;   if self.oclIsKindOf(StateConnectionPoint)&#xD;&#xA;   then let state : State = self.oclAsType(StateConnectionPoint).state in state->union(state->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif))&#xD;&#xA;   else null&#xD;&#xA;   endif&#xD;&#xA;endif&#xD;&#xA;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="null" oldDataValue="if self.oclIsKindOf(State)&#xD;&#xA;then self.oclAsType(State)->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif).oclAsType(Vertex)->asOrderedSet()&#xD;&#xA;else&#xD;&#xA;   if self.oclIsKindOf(StateConnectionPoint)&#xD;&#xA;   then let state : State = self.oclAsType(StateConnectionPoint).state in state->union(state->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif).oclAsType(Vertex)->asOrderedSet())&#xD;&#xA;   else null&#xD;&#xA;   endif&#xD;&#xA;endif&#xD;&#xA;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="true&#xD;&#xA;-- TODO IMPLEMENT&#xD;&#xA;--self.allSuperVertices->includes(v)"
+        oldDataValue="self.allSuperVertices->includes(v)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/State/simple/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- a state is simple if it contains no regions&#xD;&#xA;embeddedRegions->isEmpty()&#xD;&#xA;"
+        oldDataValue="-- a state is simple if it contains no regions&#xA;regions->isEmpty()&#xA;"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Vertex/allSuperVertices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if self.oclIsKindOf(State)&#xD;&#xA;then self.oclAsType(State)->closure(s | if s.statechart.embedded then s.statechart.parentRegion.parentState else null endif)&#xD;&#xA;else&#xD;&#xA;   if self.oclIsKindOf(StateConnectionPoint)&#xD;&#xA;   then let state : State = self.oclAsType(StateConnectionPoint).state in state->union(state->closure(s | if s.statechart.embedded then s.statechart.parentRegion.parentState else null endif))&#xD;&#xA;   else OrderedSet{ }&#xD;&#xA;   endif&#xD;&#xA;endif"
+        oldDataValue="null"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if embeddedStatechart.oclIsUndefined() then&#xD;&#xA;&#x9;false&#xD;&#xA;else&#xD;&#xA;&#x9;embeddedStatechart.history&#xD;&#xA;endif"
+        oldDataValue="if statechart.oclIsUndefined() then&#xA;&#x9;false&#xA;else&#xA;&#x9;statechart.history&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/name/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.embeddedStatechart.name" oldDataValue="self.statechart.name"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/name/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if not self.embeddedStatechart.oclIsUndefined() then&#xD;&#xA;&#x9;if not self.embeddedStatechart.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;self.embeddedStatechart.name&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;endif&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif"
+        oldDataValue="self.embeddedStatechart.name"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart"
+        featureName="name" dataValue="history" oldDataValue="gmfHistory"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart"
+        featureName="name" dataValue="embedsHistoryStatechart" oldDataValue="history"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- If we are contained within a statechart...&#xD;&#xA;(not self.parentRegion.parentState.parentStatechart.oclIsUndefined())&#xD;&#xA;&#xD;&#xA;implies&#xD;&#xA;&#xD;&#xA;-- ... then we must not be a super statechart of it.&#xD;&#xA;(not self.isSuperStatechartOf(self.parentRegion.parentState.parentStatechart))"
+        oldDataValue="-- If we are contained within a statechart...&#xA;(not self.embeddingRegion.parentState.statechart.oclIsUndefined())&#xA;&#xA;implies&#xA;&#xA;-- ... then we must not be a super statechart of it.&#xA;(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="self.final implies self.embeddedRegions->isEmpty()"
+        oldDataValue="self.final implies self.regions->isEmpty()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="value" dataValue="self.embeddedRegions->isUnique(priority)" oldDataValue="self.regions->isUnique(priority)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+        featureName="value" dataValue="self.embeddedRegions->isUnique(name)" oldDataValue="self.regions->isUnique(name)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="value" dataValue="not self.refinedRole.oclIsUndefined() implies&#xD;&#xA;&#x9;(self.senderMessageTypes = self.refinedRole.senderMessageTypes&#xD;&#xA;&#x9; and&#xD;&#xA;&#x9; self.receiverMessageTypes = self.refinedRole.receiverMessageTypes&#xD;&#xA;&#x9;)"
+        oldDataValue="not self.refines.oclIsUndefined() implies&#xA;&#x9;(self.senderMessageTypes = self.refines.senderMessageTypes&#xA;&#x9; and&#xA;&#x9; self.receiverMessageTypes = self.refines.receiverMessageTypes&#xA;&#x9;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="self.oclIsTypeOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()"
+        oldDataValue="self.oclIsTypeOf(component::DiscretePort) implies not self.refines.oclIsUndefined()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        featureName="value" dataValue="if not (self.refinedRole.oclIsUndefined() and self.refinedRole.cardinality.oclIsUndefined() and self.refinedRole.cardinality.upperBound.oclIsUndefined()) then&#xD;&#xA;       self.multiPort implies self.refinedRole.multiRole&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"
+        oldDataValue="if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then&#xD;&#xA;       self.multiPort implies self.refines.multiRole&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/allAvailableVariables/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).variables->asOrderedSet()"
+        oldDataValue="self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.statechart endif).variables->asOrderedSet()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/allAvailableOperations/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).operations ->asOrderedSet()"
+        oldDataValue="self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.statechart endif).operations ->asOrderedSet()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/availableClocks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).clocks->asSet()"
+        oldDataValue="self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.statechart endif).clocks->asSet()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/availableClocks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self -> closure(&#xD;&#xA;&#x9;if parentRegion.oclIsUndefined() then &#xD;&#xA;&#x9;&#x9;self &#xD;&#xA;&#x9;else &#xD;&#xA;&#x9;&#x9;parentRegion.parentState.parentStatechart endif&#xD;&#xA;).clocks->asSet()"
+        oldDataValue="self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).clocks->asSet()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/availableClocks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self -> closure(&#xD;&#xA;&#x9;if parentRegion.oclIsUndefined() then &#xD;&#xA;&#x9;&#x9;self &#xD;&#xA;&#x9;else &#xD;&#xA;&#x9;&#x9;parentRegion.parentState.parentStatechart &#xD;&#xA;&#x9;endif&#xD;&#xA;).clocks->asSet()"
+        oldDataValue="self -> closure(&#xD;&#xA;&#x9;if parentRegion.oclIsUndefined() then &#xD;&#xA;&#x9;&#x9;self &#xD;&#xA;&#x9;else &#xD;&#xA;&#x9;&#x9;parentRegion.parentState.parentStatechart endif&#xD;&#xA;).clocks->asSet()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- Only legal transitions are allowed&#xD;&#xA;-- State A to State B within the same statechart&#xD;&#xA;let allTransitionsLegal:Boolean =&#xD;&#xA;if self.source.oclAsType(State).statechart.embedded&#xD;&#xA;then&#xD;&#xA;&#xD;&#xA;-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).statechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(State).statechart.parentRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(EntryPoint).state.statechart.parentRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.statechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)&#xD;&#xA;else&#xD;&#xA;true&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;in &#xD;&#xA;allTransitionsLegal &#xD;&#xA;or &#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).statechart = self.target.oclAsType(State).statechart)&#xD;&#xA;or&#xD;&#xA;-- State A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).statechart = self.target.oclAsType(EntryPoint).state.statechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(EntryPoint).state.statechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to State B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(State).statechart)"
+        oldDataValue="-- Only legal transitions are allowed&#xD;&#xA;-- State A to State B within the same statechart&#xD;&#xA;let allTransitionsLegal:Boolean =&#xD;&#xA;if self.source.oclAsType(State).statechart.embedded&#xD;&#xA;then&#xD;&#xA;&#xD;&#xA;-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(State).statechart.embeddingRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(EntryPoint).state.statechart.embeddingRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)&#xD;&#xA;else&#xD;&#xA;true&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;in &#xD;&#xA;allTransitionsLegal &#xD;&#xA;or &#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).statechart = self.target.oclAsType(State).statechart)&#xD;&#xA;or&#xD;&#xA;-- State A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).statechart = self.target.oclAsType(EntryPoint).state.statechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(EntryPoint).state.statechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to State B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(State).statechart)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- all regions of the parent state have exactly one state that the EntryPoint connects to&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.parentStatechart.states->select(s |&#xD;&#xA;&#x9;&#x9;s.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;)->size() = 1&#xD;&#xA;)"
+        oldDataValue="-- all regions of the parent state have exactly one state that the EntryPoint connects to&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states->select(s |&#xD;&#xA;&#x9;&#x9;s.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;)->size() = 1&#xD;&#xA;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- all regions of the parent state have exactly one state that the EntryPoint connects to&#xD;&#xA;self.state.embeddedRegions->forAll(r | &#xD;&#xA;&#x9;r.parentStatechart.states->select(s |&#xD;&#xA;&#x9;&#x9;s.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;)->size() = 1&#xD;&#xA;)"
+        oldDataValue="-- all regions of the parent state have exactly one state that the EntryPoint connects to&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.parentStatechart.states->select(s |&#xD;&#xA;&#x9;&#x9;s.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;)->size() = 1&#xD;&#xA;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- all regions of the parent state have at least one state that connects to the ExitPoint&#xD;&#xA;self.state.embeddedRegions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states->exists(s |&#xD;&#xA;&#x9;&#x9;s.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(ExitPoint)).outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;)&#xD;&#xA;)"
+        oldDataValue="-- all regions of the parent state have at least one state that connects to the ExitPoint&#xD;&#xA;self.state.regions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states->exists(s |&#xD;&#xA;&#x9;&#x9;s.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(ExitPoint)).outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/ExitPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- all regions of the parent state have at least one state that connects to the ExitPoint&#xD;&#xA;self.state.embeddedRegions->forAll(r | &#xD;&#xA;&#x9;r.embeddedStatechart.states->exists(s |&#xD;&#xA;&#x9;&#x9;s.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(ExitPoint)).outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;)&#xD;&#xA;)"
+        oldDataValue="-- all regions of the parent state have at least one state that connects to the ExitPoint&#xD;&#xA;self.state.embeddedRegions->forAll(r | &#xD;&#xA;&#x9;r.statechart.states->exists(s |&#xD;&#xA;&#x9;&#x9;s.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(ExitPoint)).outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//component/StructuredComponent/coordinationProtocolOccurences"
+        referenceName="eAnnotations">
+      <element xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="self.embeddedComponentParts.componentType->reject(oclIsUndefined()).ports->select(p | p.oclIsKindOf(DiscretePort)).oclAsType(DiscretePort).coordinationProtocolOccurence->reject(oclIsUndefined())->asOrderedSet()"/>
+      </element>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//component/DirectedTypedPort/outPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.kind = component::PortDirectionKind::OUT"
+        oldDataValue="self.kind = component::ContinuousPortDirectionKind::OUT"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//component/DirectedTypedPort/inPort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.kind = component::PortDirectionKind::IN"
+        oldDataValue="self.kind = component::ContinuousPortDirectionKind::IN"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        featureName="value" dataValue="if self.invariants.bound.value->oclIsUndefined() then&#xD;&#xA;self.invariants.bound.value->forAll(value >= 0)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"
+        oldDataValue="self.invariants.bound.value->forAll(value >= 0)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        featureName="value" dataValue="if self.invariants.bound.value.oclIsUndefined() then&#xD;&#xA;self.invariants.bound.value->forAll(value >= 0)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"
+        oldDataValue="if self.invariants.bound.value->oclIsUndefined() then&#xD;&#xA;self.invariants.bound.value->forAll(value >= 0)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/DoEvent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if self.periodLower.value.value.isUndefined() or self.periodLower.value.value.isUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.periodLower.value.value >= 1 and self.periodLower.value.value &lt;= self.periodUpper.value.value&#xD;&#xA;endif"
+        oldDataValue="self.periodLower.value.value >= 1 and self.periodLower.value.value &lt;= self.periodUpper.value.value"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        featureName="value" dataValue="if not self.invariants.bound.value.oclIsUndefined() then&#xD;&#xA;self.invariants.bound.value->forAll(value >= 0)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"
+        oldDataValue="if self.invariants.bound.value.oclIsUndefined() then&#xD;&#xA;self.invariants.bound.value->forAll(value >= 0)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/EntryPoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- all regions of the parent state have exactly one state that the EntryPoint connects to&#xD;&#xA;self.state.embeddedRegions->forAll(r | &#xD;&#xA;&#x9;r.embeddedStatechart.states->select(s |&#xD;&#xA;&#x9;&#x9;s.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;)->size() = 1&#xD;&#xA;)"
+        oldDataValue="-- all regions of the parent state have exactly one state that the EntryPoint connects to&#xD;&#xA;self.state.embeddedRegions->forAll(r | &#xD;&#xA;&#x9;r.parentStatechart.states->select(s |&#xD;&#xA;&#x9;&#x9;s.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;)->size() = 1&#xD;&#xA;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        featureName="value" dataValue="if not self.invariants.bound.oclIsUndefined() then&#xD;&#xA;self.invariants.bound.value->forAll(value >= 0)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"
+        oldDataValue="if not self.invariants.bound.value.oclIsUndefined() then&#xD;&#xA;self.invariants.bound.value->forAll(value >= 0)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/DoEvent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if self.periodLower.value.value.isUndefined() or self.periodLower.value.isUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.periodLower.value.value >= 1 and self.periodLower.value.value &lt;= self.periodUpper.value.value&#xD;&#xA;endif"
+        oldDataValue="if self.periodLower.value.value.isUndefined() or self.periodLower.value.value.isUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.periodLower.value.value >= 1 and self.periodLower.value.value &lt;= self.periodUpper.value.value&#xD;&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/DoEvent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="if self.periodLower.value.isUndefined() or self.periodLower.value.isUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.periodLower.value.value >= 1 and self.periodLower.value.value &lt;= self.periodUpper.value.value&#xD;&#xA;endif"
+        oldDataValue="if self.periodLower.value.value.isUndefined() or self.periodLower.value.isUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.periodLower.value.value >= 1 and self.periodLower.value.value &lt;= self.periodUpper.value.value&#xD;&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        featureName="value" dataValue="if self.invariants.bound.oclIsUndefined() then&#xD;&#xA;&#x9;false&#xD;&#xA;else&#xD;&#xA;&#x9;self.invariants.bound.value->forAll(value >= 0)&#xD;&#xA;endif"
+        oldDataValue="if not self.invariants.bound.oclIsUndefined() then&#xD;&#xA;self.invariants.bound.value->forAll(value >= 0)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- Only legal transitions are allowed&#xD;&#xA;-- State A to State B within the same statechart&#xD;&#xA;let allTransitionsLegal:Boolean =&#xD;&#xA;if self.source.oclAsType(State).parentStatechart.embedded&#xD;&#xA;then&#xD;&#xA;&#xD;&#xA;-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).parentStatechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(State).parentStatechart.parentRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)&#xD;&#xA;else&#xD;&#xA;true&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;in &#xD;&#xA;allTransitionsLegal &#xD;&#xA;or &#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).statechart = self.target.oclAsType(State).statechart)&#xD;&#xA;or&#xD;&#xA;-- State A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).statechart = self.target.oclAsType(EntryPoint).state.statechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(EntryPoint).state.statechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to State B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(State).statechart)"
+        oldDataValue="-- Only legal transitions are allowed&#xD;&#xA;-- State A to State B within the same statechart&#xD;&#xA;let allTransitionsLegal:Boolean =&#xD;&#xA;if self.source.oclAsType(State).statechart.embedded&#xD;&#xA;then&#xD;&#xA;&#xD;&#xA;-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).statechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(State).statechart.parentRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(EntryPoint).state.statechart.parentRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.statechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)&#xD;&#xA;else&#xD;&#xA;true&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;in &#xD;&#xA;allTransitionsLegal &#xD;&#xA;or &#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).statechart = self.target.oclAsType(State).statechart)&#xD;&#xA;or&#xD;&#xA;-- State A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).statechart = self.target.oclAsType(EntryPoint).state.statechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(EntryPoint).state.statechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to State B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(State).statechart)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- Only legal transitions are allowed&#xD;&#xA;-- State A to State B within the same statechart&#xD;&#xA;let allTransitionsLegal:Boolean =&#xD;&#xA;if self.source.oclAsType(State).parentStatechart.embedded&#xD;&#xA;then&#xD;&#xA;&#xD;&#xA;-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).parentStatechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(State).parentStatechart.parentRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)&#xD;&#xA;else&#xD;&#xA;true&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;in &#xD;&#xA;allTransitionsLegal &#xD;&#xA;or &#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(State).parentStatechart)&#xD;&#xA;or&#xD;&#xA;-- State A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to State B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(State).parentStatechart)"
+        oldDataValue="-- Only legal transitions are allowed&#xD;&#xA;-- State A to State B within the same statechart&#xD;&#xA;let allTransitionsLegal:Boolean =&#xD;&#xA;if self.source.oclAsType(State).parentStatechart.embedded&#xD;&#xA;then&#xD;&#xA;&#xD;&#xA;-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).parentStatechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(State).parentStatechart.parentRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion.parentState)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)&#xD;&#xA;else&#xD;&#xA;true&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;in &#xD;&#xA;allTransitionsLegal &#xD;&#xA;or &#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).statechart = self.target.oclAsType(State).statechart)&#xD;&#xA;or&#xD;&#xA;-- State A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).statechart = self.target.oclAsType(EntryPoint).state.statechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(EntryPoint).state.statechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to State B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(State).statechart)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/State/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        featureName="value" dataValue="self.invariants->forAll(i|&#xD;&#xA;&#x9;not i.bound.value.oclIsUndefined() implies&#xD;&#xA;&#x9;&#x9;i.bound.value.value >= 0&#xD;&#xA;&#xD;&#xA;)"
+        oldDataValue="if self.invariants.bound.oclIsUndefined() then&#xD;&#xA;&#x9;false&#xD;&#xA;else&#xD;&#xA;&#x9;self.invariants.bound.value->forAll(value >= 0)&#xD;&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/DoEvent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="not (self.periodLower.value.oclIsUndefined() and self.periodUpper.value.oclIsUndefined())&#xD;&#xA;implies&#xD;&#xA;self.periodLower.value.value >= 1 and self.periodLower.value.value &lt;= self.periodUpper.value.value"
+        oldDataValue="if self.periodLower.value.isUndefined() or self.periodLower.value.isUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.periodLower.value.value >= 1 and self.periodLower.value.value &lt;= self.periodUpper.value.value&#xD;&#xA;endif"/>
   </releases>
 </history:History>

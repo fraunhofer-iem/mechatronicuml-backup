@@ -501,7 +501,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDiscretePortInstance_Refines() {
+	public EReference getDiscretePortInstance_RefinedRole() {
 		return (EReference)discretePortInstanceEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -648,7 +648,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		createEReference(discretePortInstanceEClass, DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES);
 		createEReference(discretePortInstanceEClass, DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES);
 		createEReference(discretePortInstanceEClass, DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER);
-		createEReference(discretePortInstanceEClass, DISCRETE_PORT_INSTANCE__REFINES);
+		createEReference(discretePortInstanceEClass, DISCRETE_PORT_INSTANCE__REFINED_ROLE);
 
 		discreteSinglePortInstanceEClass = createEClass(DISCRETE_SINGLE_PORT_INSTANCE);
 
@@ -730,7 +730,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEReference(getPortConnectorInstance_PortInstances(), this.getPortInstance(), null, "portInstances", null, 0, -1, PortConnectorInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(portInstanceEClass, PortInstance.class, "PortInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPortInstance_PortType(), theComponentPackage.getPort(), null, "portType", null, 0, 1, PortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getPortInstance_PortType(), theComponentPackage.getPort(), null, "portType", null, 1, 1, PortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getPortInstance_ComponentInstance(), this.getComponentInstance(), this.getComponentInstance_PortInstances(), "componentInstance", null, 0, 1, PortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortInstance_PortConnectorInstances(), this.getPortConnectorInstance(), null, "portConnectorInstances", null, 0, -1, PortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getPortInstance_PortPart(), theComponentPackage.getPortPart(), null, "portPart", null, 0, 1, PortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -754,7 +754,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		initEReference(getDiscretePortInstance_ReceiverMessageTypes(), theMsgtypePackage.getMessageType(), null, "receiverMessageTypes", null, 0, -1, DiscretePortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscretePortInstance_SenderMessageTypes(), theMsgtypePackage.getMessageType(), null, "senderMessageTypes", null, 0, -1, DiscretePortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscretePortInstance_ReceiverMessageBuffer(), theProtocolPackage.getMessageBuffer(), null, "receiverMessageBuffer", null, 0, -1, DiscretePortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getDiscretePortInstance_Refines(), theProtocolPackage.getRole(), null, "refines", null, 0, 1, DiscretePortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDiscretePortInstance_RefinedRole(), theProtocolPackage.getRole(), null, "refinedRole", null, 0, 1, DiscretePortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(discreteSinglePortInstanceEClass, DiscreteSinglePortInstance.class, "DiscreteSinglePortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -906,13 +906,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (getDiscretePortInstance_ReceiverMessageBuffer(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if self.refines.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tself.refines.receiverMessageBuffer\nendif"
+			 "derivation", "if self.refinedRole.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tself.refinedRole.receiverMessageBuffer\r\nendif"
 		   });			
 		addAnnotation
-		  (getDiscretePortInstance_Refines(), 
+		  (getDiscretePortInstance_RefinedRole(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if not self.portType.oclIsUndefined() and self.portType.oclIsKindOf(component::DiscretePort) then\n\tself.portType.oclAsType(component::DiscretePort).refines\nelse\n\tnull\nendif"
+			 "derivation", "if not self.portType.oclIsUndefined() and self.portType.oclIsKindOf(component::DiscretePort) then\r\n\tself.portType.oclAsType(component::DiscretePort).refinedRole\r\nelse\r\n\tnull\r\nendif"
 		   });						
 		addAnnotation
 		  (getDiscreteMultiPortInstance_GmfSubPortInstances(), 

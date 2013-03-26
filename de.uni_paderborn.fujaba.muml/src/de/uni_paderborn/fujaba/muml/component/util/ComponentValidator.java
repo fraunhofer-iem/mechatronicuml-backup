@@ -270,10 +270,10 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__DISCRETE_PORT_AND_ROLE_SAME_MESSAGE_TYPES__EEXPRESSION = "not self.refines.oclIsUndefined() implies\n" +
-		"\t(self.senderMessageTypes = self.refines.senderMessageTypes\n" +
-		"\t and\n" +
-		"\t self.receiverMessageTypes = self.refines.receiverMessageTypes\n" +
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_AND_ROLE_SAME_MESSAGE_TYPES__EEXPRESSION = "not self.refinedRole.oclIsUndefined() implies\r\n" +
+		"\t(self.senderMessageTypes = self.refinedRole.senderMessageTypes\r\n" +
+		"\t and\r\n" +
+		"\t self.receiverMessageTypes = self.refinedRole.receiverMessageTypes\r\n" +
 		"\t)";
 
 	/**
@@ -364,7 +364,7 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_ROLE__EEXPRESSION = "self.oclIsTypeOf(component::DiscretePort) implies not self.refines.oclIsUndefined()";
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_ROLE__EEXPRESSION = "self.oclIsTypeOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()";
 
 	/**
 	 * Validates the DiscretePortRequiresRole constraint of '<em>Discrete Port</em>'.
@@ -393,8 +393,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__MULTI_PORT_MUST_REFINE_MULTI_ROLE__EEXPRESSION = "if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then\r\n" +
-		"       self.multiPort implies self.refines.multiRole\r\n" +
+	protected static final String DISCRETE_PORT__MULTI_PORT_MUST_REFINE_MULTI_ROLE__EEXPRESSION = "if not (self.refinedRole.oclIsUndefined() and self.refinedRole.cardinality.oclIsUndefined() and self.refinedRole.cardinality.upperBound.oclIsUndefined()) then\r\n" +
+		"       self.multiPort implies self.refinedRole.multiRole\r\n" +
 		"else\r\n" +
 		"\ttrue\r\n" +
 		"endif";

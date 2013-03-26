@@ -97,7 +97,7 @@ public interface DirectedTypedPort extends Port, TypedNamedElement {
 	 * @return the value of the '<em>In Port</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDirectedTypedPort_InPort()
 	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.kind = component::ContinuousPortDirectionKind::IN'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.kind = component::PortDirectionKind::IN'"
 	 * @generated
 	 */
 	boolean isInPort();
@@ -113,7 +113,7 @@ public interface DirectedTypedPort extends Port, TypedNamedElement {
 	 * @return the value of the '<em>Out Port</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDirectedTypedPort_OutPort()
 	 * @model default="false" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.kind = component::ContinuousPortDirectionKind::OUT'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.kind = component::PortDirectionKind::OUT'"
 	 * @generated
 	 */
 	boolean isOutPort();

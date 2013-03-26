@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -83,14 +84,14 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 	protected EStructuralFeature.Internal.SettingDelegate ALL_ATOMIC_COMPONENTS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS).getSettingDelegate();
 
 	/**
-	 * The cached setting delegate for the '{@link #getCoordinationProtocolOccurences() <em>Coordination Protocol Occurences</em>}' containment reference list.
+	 * The cached value of the '{@link #getCoordinationProtocolOccurences() <em>Coordination Protocol Occurences</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCoordinationProtocolOccurences()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate COORDINATION_PROTOCOL_OCCURENCES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES).getSettingDelegate();
+	protected EList<CoordinationProtocolOccurrence> coordinationProtocolOccurences;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,7 +181,10 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 	 */
 	@SuppressWarnings("unchecked")
 	public EList<CoordinationProtocolOccurrence> getCoordinationProtocolOccurences() {
-		return (EList<CoordinationProtocolOccurrence>)COORDINATION_PROTOCOL_OCCURENCES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+		if (coordinationProtocolOccurences == null) {
+			coordinationProtocolOccurences = new EObjectContainmentEList<CoordinationProtocolOccurrence>(CoordinationProtocolOccurrence.class, this, ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES);
+		}
+		return coordinationProtocolOccurences;
 	}
 
 	/**
@@ -307,7 +311,7 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 			case ComponentPackage.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS:
 				return isSetAllAtomicComponents();
 			case ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES:
-				return COORDINATION_PROTOCOL_OCCURENCES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return coordinationProtocolOccurences != null && !coordinationProtocolOccurences.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

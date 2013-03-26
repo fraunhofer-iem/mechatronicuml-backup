@@ -12,8 +12,12 @@ import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -27,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,6 +42,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.VertexImpl#getOutgoingTransitions <em>Outgoing Transitions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.VertexImpl#getIncomingTransitions <em>Incoming Transitions</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.VertexImpl#getAllSuperVertices <em>All Super Vertices</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,6 +68,16 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * @ordered
 	 */
 	protected EList<Transition> incomingTransitions;
+
+	/**
+	 * The cached setting delegate for the '{@link #getAllSuperVertices() <em>All Super Vertices</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllSuperVertices()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ALL_SUPER_VERTICES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.VERTEX__ALL_SUPER_VERTICES).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,41 +127,33 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	public EList<Vertex> getAllSuperVertices() {
+		return (EList<Vertex>)ALL_SUPER_VERTICES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #isSuperVertexOf(de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex) <em>Is Super Vertex Of</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSuperVertexOf(de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate IS_SUPER_VERTEX_OF_VERTEX__EINVOCATION_DELEGATE = ((EOperation.Internal)RealtimestatechartPackage.Literals.VERTEX.getEOperations().get(0)).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isSuperVertexOf(Vertex vertex) {
-		Assert.isLegal(vertex != null);
-		
-		BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();
-		return bfs.search(vertex, new ISearchVisitor() {
-		
-			@Override
-			public boolean visit(Object object) {
-				return !VertexImpl.this.equals(object);
-			}
-		
-			@Override
-			public List<?> getAdjacentNodes(Object object) {
-		
-				List<Object> parentStates = new ArrayList<Object>();
-		
-				State state = (State) object;
-				RealtimeStatechart rtsc = state.getParentStatechart();
-				if (rtsc != null) {
-					Region region = rtsc.getEmbeddingRegion();
-					if (region != null) {
-						// List<Region> regions = rtsc.getEmbeddingRegions();
-						// for (Region region : regions) {
-						State parentState = region.getParentState();
-						if (state != null) {
-							parentStates.add(parentState);
-						}
-						// }
-					}
-				}
-		
-				return parentStates;
-			}
-		
-		});
+		try {
+			return (Boolean)IS_SUPER_VERTEX_OF_VERTEX__EINVOCATION_DELEGATE.dynamicInvoke(this, new BasicEList.UnmodifiableEList<Object>(1, new Object[]{vertex}));
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
 	}
 
 	/**
@@ -217,6 +225,8 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				return getOutgoingTransitions();
 			case RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS:
 				return getIncomingTransitions();
+			case RealtimestatechartPackage.VERTEX__ALL_SUPER_VERTICES:
+				return getAllSuperVertices();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -238,6 +248,10 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				getIncomingTransitions().clear();
 				getIncomingTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
+			case RealtimestatechartPackage.VERTEX__ALL_SUPER_VERTICES:
+				getAllSuperVertices().clear();
+				getAllSuperVertices().addAll((Collection<? extends Vertex>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -256,6 +270,9 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 			case RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS:
 				getIncomingTransitions().clear();
 				return;
+			case RealtimestatechartPackage.VERTEX__ALL_SUPER_VERTICES:
+				getAllSuperVertices().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -272,6 +289,8 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				return outgoingTransitions != null && !outgoingTransitions.isEmpty();
 			case RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS:
 				return incomingTransitions != null && !incomingTransitions.isEmpty();
+			case RealtimestatechartPackage.VERTEX__ALL_SUPER_VERTICES:
+				return ALL_SUPER_VERTICES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

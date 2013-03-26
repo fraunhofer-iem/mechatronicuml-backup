@@ -24,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.connector.Connector;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector#getConnectorQualityOfServiceAssumptions <em>Connector Quality Of Service Assumptions</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector#getRoles <em>Roles</em>}</li>
  * </ul>
  * </p>
  *
@@ -84,5 +85,23 @@ public interface RoleConnector extends Connector {
 	 * @generated
 	 */
 	void setConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions value);
+
+	/**
+	 * Returns the value of the '<em><b>Roles</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.protocol.Role}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.protocol.Role#getRoleConnector <em>Role Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The two roles that are connected.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Roles</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRoleConnector_Roles()
+	 * @see de.uni_paderborn.fujaba.muml.protocol.Role#getRoleConnector
+	 * @model opposite="roleConnector" lower="2" upper="2" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->select(e | e.oclIsKindOf(Role)).oclAsType(Role)->asOrderedSet()'"
+	 * @generated
+	 */
+	EList<Role> getRoles();
 
 } // RoleConnector

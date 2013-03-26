@@ -325,7 +325,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__NO_REGIONS_OF_FINAL_STATE__EEXPRESSION = "self.final implies self.regions->isEmpty()";
+	protected static final String STATE__NO_REGIONS_OF_FINAL_STATE__EEXPRESSION = "self.final implies self.embeddedRegions->isEmpty()";
 
 	/**
 	 * Validates the NoRegionsOfFinalState constraint of '<em>State</em>'.
@@ -383,7 +383,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__UNIQUE_PRIORITIES_OF_REGIONS__EEXPRESSION = "self.regions->isUnique(priority)";
+	protected static final String STATE__UNIQUE_PRIORITIES_OF_REGIONS__EEXPRESSION = "self.embeddedRegions->isUnique(priority)";
 
 	/**
 	 * Validates the UniquePrioritiesOfRegions constraint of '<em>State</em>'.
@@ -441,7 +441,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__UNIQUE_REGION_NAMES__EEXPRESSION = "self.regions->isUnique(name)";
+	protected static final String STATE__UNIQUE_REGION_NAMES__EEXPRESSION = "self.embeddedRegions->isUnique(name)";
 
 	/**
 	 * Validates the UniqueRegionNames constraint of '<em>State</em>'.
@@ -470,7 +470,11 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__BOUND_OF_INVARIANT_GREATER_OR_EQUAL_ZERO__EEXPRESSION = "self.invariants.bound.value->forAll(value >= 0)";
+	protected static final String STATE__BOUND_OF_INVARIANT_GREATER_OR_EQUAL_ZERO__EEXPRESSION = "self.invariants->forAll(i|\r\n" +
+		"\tnot i.bound.value.oclIsUndefined() implies\r\n" +
+		"\t\ti.bound.value.value >= 0\r\n" +
+		"\r\n" +
+		")";
 
 	/**
 	 * Validates the BoundOfInvariantGreaterOrEqualZero constraint of '<em>State</em>'.
@@ -581,9 +585,10 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateTransition_TriggerMessageEventsMustNotHaveAnOwnedParameterBinding(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_ValidTriggerMessageEvents(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_ValidRaiseMessageEvents(transition, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTransition_ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines(transition, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTransition_ConnectionPointOutgoingTransitionsNoConditions(transition, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTransition_ConnectionPointTransitionsNoSynchronization(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_StateConnectionPointOutgoingTransitionsNoConditions(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_StateConnectionPointOutgoingTransitionsMustBeUrgent(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_StateConnectionPointTransitionsNoSynchronization(transition, diagnostics, context);
 		return result;
 	}
 
@@ -596,20 +601,20 @@ public class RealtimestatechartValidator extends MumlValidator {
 	protected static final String TRANSITION__LEGAL_TRANSITIONS_ONLY__EEXPRESSION = "-- Only legal transitions are allowed\r\n" +
 		"-- State A to State B within the same statechart\r\n" +
 		"let allTransitionsLegal:Boolean =\r\n" +
-		"if self.source.oclAsType(State).statechart.embedded\r\n" +
+		"if self.source.oclAsType(State).parentStatechart.embedded\r\n" +
 		"then\r\n" +
 		"\r\n" +
 		"-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n" +
-		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)\r\n" +
+		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).parentStatechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)\r\n" +
 		"or\r\n" +
 		"-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2\r\n" +
-		"(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(State).statechart.embeddingRegion.parentState)\r\n" +
+		"(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(State).parentStatechart.parentRegion.parentState)\r\n" +
 		"or\r\n" +
 		"-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2\r\n" +
-		"(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(EntryPoint).state.statechart.embeddingRegion.parentState)\r\n" +
+		"(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion.parentState)\r\n" +
 		"or\r\n" +
 		"-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n" +
-		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.statechart.embeddingRegion.parentState = self.target.oclAsType(ExitPoint).state)\r\n" +
+		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)\r\n" +
 		"else\r\n" +
 		"true\r\n" +
 		"endif\r\n" +
@@ -617,16 +622,16 @@ public class RealtimestatechartValidator extends MumlValidator {
 		"in \r\n" +
 		"allTransitionsLegal \r\n" +
 		"or \r\n" +
-		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).statechart = self.target.oclAsType(State).statechart)\r\n" +
+		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(State).parentStatechart)\r\n" +
 		"or\r\n" +
 		"-- State A to EntryPoint of B, where A and B are in the same statechart\r\n" +
-		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).statechart = self.target.oclAsType(EntryPoint).state.statechart)\r\n" +
+		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)\r\n" +
 		"or\r\n" +
 		"-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart\r\n" +
-		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(EntryPoint).state.statechart)\r\n" +
+		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)\r\n" +
 		"or\r\n" +
 		"-- ExitPoint of A to State B, where A and B are in the same statechart\r\n" +
-		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.statechart = self.target.oclAsType(State).statechart)";
+		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(State).parentStatechart)";
 
 	/**
 	 * Validates the LegalTransitionsOnly constraint of '<em>Transition</em>'.
@@ -655,7 +660,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__TRIGGER_MESSAGE_EVENTS_MUST_NOT_HAVE_AN_OWNED_PARAMETER_BINDING__EEXPRESSION = "not self.triggerMessageEvent.message.oclIsUndefined() implies\n" +
+	protected static final String TRANSITION__TRIGGER_MESSAGE_EVENTS_MUST_NOT_HAVE_AN_OWNED_PARAMETER_BINDING__EEXPRESSION = "not self.triggerMessageEvent.message.oclIsUndefined() implies\r\n" +
 		"self.triggerMessageEvent.message.parameterBinding->isEmpty()";
 
 	/**
@@ -738,12 +743,12 @@ public class RealtimestatechartValidator extends MumlValidator {
 	}
 
 	/**
-	 * The cached validation expression for the ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines constraint of '<em>Transition</em>'.
+	 * The cached validation expression for the StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines constraint of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__CONNECTION_POINT_INCOMING_TRANSITIONS_NO_SIDE_EFFECTS_OR_DEADLINES__EEXPRESSION = "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ConnectionPoint))\r\n" +
+	protected static final String TRANSITION__STATE_CONNECTION_POINT_INCOMING_TRANSITIONS_NO_SIDE_EFFECTS_OR_DEADLINES__EEXPRESSION = "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n" +
 		"\timplies (\r\n" +
 		"\t\tself.clockResets->isEmpty()\r\n" +
 		"\t\tand self.action.oclIsUndefined()\r\n" +
@@ -753,12 +758,12 @@ public class RealtimestatechartValidator extends MumlValidator {
 		"\t)";
 
 	/**
-	 * Validates the ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines constraint of '<em>Transition</em>'.
+	 * Validates the StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines constraint of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTransition_ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateTransition_StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(RealtimestatechartPackage.Literals.TRANSITION,
@@ -766,20 +771,20 @@ public class RealtimestatechartValidator extends MumlValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines",
-				 TRANSITION__CONNECTION_POINT_INCOMING_TRANSITIONS_NO_SIDE_EFFECTS_OR_DEADLINES__EEXPRESSION,
+				 "StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines",
+				 TRANSITION__STATE_CONNECTION_POINT_INCOMING_TRANSITIONS_NO_SIDE_EFFECTS_OR_DEADLINES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
 	}
 
 	/**
-	 * The cached validation expression for the ConnectionPointOutgoingTransitionsNoConditions constraint of '<em>Transition</em>'.
+	 * The cached validation expression for the StateConnectionPointOutgoingTransitionsNoConditions constraint of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__CONNECTION_POINT_OUTGOING_TRANSITIONS_NO_CONDITIONS__EEXPRESSION = "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ConnectionPoint))\r\n" +
+	protected static final String TRANSITION__STATE_CONNECTION_POINT_OUTGOING_TRANSITIONS_NO_CONDITIONS__EEXPRESSION = "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n" +
 		"\timplies (\r\n" +
 		"\t\tself.triggerMessageEvent.oclIsUndefined()\r\n" +
 		"\t\tand self.clockConstraints->isEmpty()\r\n" +
@@ -787,12 +792,12 @@ public class RealtimestatechartValidator extends MumlValidator {
 		"\t)";
 
 	/**
-	 * Validates the ConnectionPointOutgoingTransitionsNoConditions constraint of '<em>Transition</em>'.
+	 * Validates the StateConnectionPointOutgoingTransitionsNoConditions constraint of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTransition_ConnectionPointOutgoingTransitionsNoConditions(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateTransition_StateConnectionPointOutgoingTransitionsNoConditions(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(RealtimestatechartPackage.Literals.TRANSITION,
@@ -800,32 +805,60 @@ public class RealtimestatechartValidator extends MumlValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ConnectionPointOutgoingTransitionsNoConditions",
-				 TRANSITION__CONNECTION_POINT_OUTGOING_TRANSITIONS_NO_CONDITIONS__EEXPRESSION,
+				 "StateConnectionPointOutgoingTransitionsNoConditions",
+				 TRANSITION__STATE_CONNECTION_POINT_OUTGOING_TRANSITIONS_NO_CONDITIONS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
 	}
 
 	/**
-	 * The cached validation expression for the ConnectionPointTransitionsNoSynchronization constraint of '<em>Transition</em>'.
+	 * Validates the StateConnectionPointOutgoingTransitionsMustBeUrgent constraint of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__CONNECTION_POINT_TRANSITIONS_NO_SYNCHRONIZATION__EEXPRESSION = "((not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::ConnectionPoint))\r\n" +
+	public boolean validateTransition_StateConnectionPointOutgoingTransitionsMustBeUrgent(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "StateConnectionPointOutgoingTransitionsMustBeUrgent", getObjectLabel(transition, context) },
+						 new Object[] { transition },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached validation expression for the StateConnectionPointTransitionsNoSynchronization constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TRANSITION__STATE_CONNECTION_POINT_TRANSITIONS_NO_SYNCHRONIZATION__EEXPRESSION = "((not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n" +
 		"\tor\r\n" +
-		" (not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::ConnectionPoint)))\r\n" +
+		" (not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint)))\r\n" +
 		"\timplies\r\n" +
 		"self.synchronization.oclIsUndefined()";
 
 	/**
-	 * Validates the ConnectionPointTransitionsNoSynchronization constraint of '<em>Transition</em>'.
+	 * Validates the StateConnectionPointTransitionsNoSynchronization constraint of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTransition_ConnectionPointTransitionsNoSynchronization(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateTransition_StateConnectionPointTransitionsNoSynchronization(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(RealtimestatechartPackage.Literals.TRANSITION,
@@ -833,8 +866,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ConnectionPointTransitionsNoSynchronization",
-				 TRANSITION__CONNECTION_POINT_TRANSITIONS_NO_SYNCHRONIZATION__EEXPRESSION,
+				 "StateConnectionPointTransitionsNoSynchronization",
+				 TRANSITION__STATE_CONNECTION_POINT_TRANSITIONS_NO_SYNCHRONIZATION__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -892,7 +925,9 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DO_EVENT__VALID_LOWER_UPPER_PERIOD__EEXPRESSION = "self.periodLower.value.value >= 1 and self.periodLower.value.value <= self.periodUpper.value.value";
+	protected static final String DO_EVENT__VALID_LOWER_UPPER_PERIOD__EEXPRESSION = "not (self.periodLower.value.oclIsUndefined() and self.periodUpper.value.oclIsUndefined())\r\n" +
+		"implies\r\n" +
+		"self.periodLower.value.value >= 1 and self.periodLower.value.value <= self.periodUpper.value.value";
 
 	/**
 	 * Validates the ValidLowerUpperPeriod constraint of '<em>Do Event</em>'.
@@ -1046,13 +1081,13 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__NO_CYCLES__EEXPRESSION = "-- If we are contained within a statechart...\n" +
-		"(not self.embeddingRegion.parentState.statechart.oclIsUndefined())\n" +
-		"\n" +
-		"implies\n" +
-		"\n" +
-		"-- ... then we must not be a super statechart of it.\n" +
-		"(not self.isSuperStatechartOf(self.embeddingRegion.parentState.statechart))";
+	protected static final String REALTIME_STATECHART__NO_CYCLES__EEXPRESSION = "-- If we are contained within a statechart...\r\n" +
+		"(not self.parentRegion.parentState.parentStatechart.oclIsUndefined())\r\n" +
+		"\r\n" +
+		"implies\r\n" +
+		"\r\n" +
+		"-- ... then we must not be a super statechart of it.\r\n" +
+		"(not self.isSuperStatechartOf(self.parentRegion.parentState.parentStatechart))";
 
 	/**
 	 * Validates the NoCycles constraint of '<em>Realtime Statechart</em>'.
@@ -1263,8 +1298,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String ENTRY_POINT__ONE_OUTGOING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state have exactly one state that the EntryPoint connects to\r\n" +
-		"self.state.regions->forAll(r | \r\n" +
-		"\tr.statechart.states->select(s |\r\n" +
+		"self.state.embeddedRegions->forAll(r | \r\n" +
+		"\tr.embeddedStatechart.states->select(s |\r\n" +
 		"\t\ts.incomingTransitions->exists(t | t.source = self)\r\n" +
 		"\t\tor\r\n" +
 		"\t\ts.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)\r\n" +
@@ -1320,8 +1355,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String EXIT_POINT__AT_LEAST_ONE_INCOMING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state have at least one state that connects to the ExitPoint\r\n" +
-		"self.state.regions->forAll(r | \r\n" +
-		"\tr.statechart.states->exists(s |\r\n" +
+		"self.state.embeddedRegions->forAll(r | \r\n" +
+		"\tr.embeddedStatechart.states->exists(s |\r\n" +
 		"\t\ts.outgoingTransitions->exists(t | t.target = self)\r\n" +
 		"\t\tor\r\n" +
 		"\t\ts.connectionPoints->select(oclIsKindOf(ExitPoint)).outgoingTransitions->exists(t | t.target = self)\r\n" +
