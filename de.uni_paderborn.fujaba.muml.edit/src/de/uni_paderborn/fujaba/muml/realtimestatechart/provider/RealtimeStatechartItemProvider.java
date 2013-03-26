@@ -72,7 +72,6 @@ public class RealtimeStatechartItemProvider
 			addBehavioralElementPropertyDescriptor(object);
 			addOperationsPropertyDescriptor(object);
 			addVariablesPropertyDescriptor(object);
-			addEmbeddingRegionPropertyDescriptor(object);
 			addTransitionsPropertyDescriptor(object);
 			addStatesPropertyDescriptor(object);
 			addClocksPropertyDescriptor(object);
@@ -168,28 +167,6 @@ public class RealtimeStatechartItemProvider
 				 true,
 				 false,
 				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Embedding Region feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEmbeddingRegionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RealtimeStatechart_embeddingRegion_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_embeddingRegion_feature", "_UI_RealtimeStatechart_type"),
-				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__EMBEDDING_REGION,
-				 false,
-				 false,
-				 true,
 				 null,
 				 null,
 				 null));

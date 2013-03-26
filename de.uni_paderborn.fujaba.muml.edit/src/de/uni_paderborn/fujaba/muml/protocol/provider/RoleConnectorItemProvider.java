@@ -71,6 +71,7 @@ public class RoleConnectorItemProvider
 
 			addCoordinationProtocolPropertyDescriptor(object);
 			addConnectorQualityOfServiceAssumptionsPropertyDescriptor(object);
+			addRolesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -191,6 +192,28 @@ public class RoleConnectorItemProvider
 				"QoS Assumptions",
 				null,
 				rootPropertyDescriptor));
+	}
+
+	/**
+	 * This adds a property descriptor for the Roles feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRolesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RoleConnector_roles_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RoleConnector_roles_feature", "_UI_RoleConnector_type"),
+				 ProtocolPackage.Literals.ROLE_CONNECTOR__ROLES,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

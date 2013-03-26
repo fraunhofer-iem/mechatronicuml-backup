@@ -63,6 +63,7 @@ public class VertexItemProvider
 
 			addOutgoingTransitionsPropertyDescriptor(object);
 			addIncomingTransitionsPropertyDescriptor(object);
+			addAllSuperVerticesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -108,6 +109,28 @@ public class VertexItemProvider
 				 true,
 				 null,
 				 getString("_UI_TransitionsPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the All Super Vertices feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAllSuperVerticesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Vertex_allSuperVertices_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Vertex_allSuperVertices_feature", "_UI_Vertex_type"),
+				 RealtimestatechartPackage.Literals.VERTEX__ALL_SUPER_VERTICES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
 				 null));
 	}
 

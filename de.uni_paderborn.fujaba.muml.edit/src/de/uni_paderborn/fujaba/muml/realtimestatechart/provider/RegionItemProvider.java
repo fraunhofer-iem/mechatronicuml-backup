@@ -69,6 +69,7 @@ public class RegionItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addParentStatePropertyDescriptor(object);
+			addEmbedsHistoryStatechartPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -173,6 +174,28 @@ public class RegionItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Embeds History Statechart feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEmbedsHistoryStatechartPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Region_embedsHistoryStatechart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Region_embedsHistoryStatechart_feature", "_UI_Region_type"),
+				 RealtimestatechartPackage.Literals.REGION__EMBEDS_HISTORY_STATECHART,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -264,7 +287,7 @@ public class RegionItemProvider
 
 		switch (notification.getFeatureID(Region.class)) {
 			case RealtimestatechartPackage.REGION__COMMENT:
-			case RealtimestatechartPackage.REGION__GMF_HISTORY:
+			case RealtimestatechartPackage.REGION__EMBEDS_HISTORY_STATECHART:
 			case RealtimestatechartPackage.REGION__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
