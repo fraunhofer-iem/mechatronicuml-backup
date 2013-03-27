@@ -11,22 +11,22 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import de.fujaba.properties.PropertiesPackage;
-import de.fujaba.properties.TextPropertyEditor;
+import de.fujaba.properties.TextPropertySection;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Text Property Editor</b></em>'.
+ * An implementation of the model object '<em><b>Text Property Section</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.fujaba.properties.impl.TextPropertyEditorImpl#isMultiLine <em>Multi Line</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.TextPropertySectionImpl#isMultiLine <em>Multi Line</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TextPropertyEditorImpl extends PropertyEditorImpl implements TextPropertyEditor {
+public class TextPropertySectionImpl extends PropertySectionImpl implements TextPropertySection {
 	/**
 	 * The default value of the '{@link #isMultiLine() <em>Multi Line</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -52,7 +52,7 @@ public class TextPropertyEditorImpl extends PropertyEditorImpl implements TextPr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TextPropertyEditorImpl() {
+	protected TextPropertySectionImpl() {
 		super();
 	}
 
@@ -63,7 +63,7 @@ public class TextPropertyEditorImpl extends PropertyEditorImpl implements TextPr
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PropertiesPackage.Literals.TEXT_PROPERTY_EDITOR;
+		return PropertiesPackage.Literals.TEXT_PROPERTY_SECTION;
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class TextPropertyEditorImpl extends PropertyEditorImpl implements TextPr
 		boolean oldMultiLine = multiLine;
 		multiLine = newMultiLine;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.TEXT_PROPERTY_EDITOR__MULTI_LINE, oldMultiLine, multiLine));
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.TEXT_PROPERTY_SECTION__MULTI_LINE, oldMultiLine, multiLine));
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class TextPropertyEditorImpl extends PropertyEditorImpl implements TextPr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PropertiesPackage.TEXT_PROPERTY_EDITOR__MULTI_LINE:
+			case PropertiesPackage.TEXT_PROPERTY_SECTION__MULTI_LINE:
 				return isMultiLine();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -109,7 +109,7 @@ public class TextPropertyEditorImpl extends PropertyEditorImpl implements TextPr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PropertiesPackage.TEXT_PROPERTY_EDITOR__MULTI_LINE:
+			case PropertiesPackage.TEXT_PROPERTY_SECTION__MULTI_LINE:
 				setMultiLine((Boolean)newValue);
 				return;
 		}
@@ -124,7 +124,7 @@ public class TextPropertyEditorImpl extends PropertyEditorImpl implements TextPr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PropertiesPackage.TEXT_PROPERTY_EDITOR__MULTI_LINE:
+			case PropertiesPackage.TEXT_PROPERTY_SECTION__MULTI_LINE:
 				setMultiLine(MULTI_LINE_EDEFAULT);
 				return;
 		}
@@ -139,7 +139,7 @@ public class TextPropertyEditorImpl extends PropertyEditorImpl implements TextPr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PropertiesPackage.TEXT_PROPERTY_EDITOR__MULTI_LINE:
+			case PropertiesPackage.TEXT_PROPERTY_SECTION__MULTI_LINE:
 				return multiLine != MULTI_LINE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -161,4 +161,4 @@ public class TextPropertyEditorImpl extends PropertyEditorImpl implements TextPr
 		return result.toString();
 	}
 
-} //TextPropertyEditorImpl
+} //TextPropertySectionImpl

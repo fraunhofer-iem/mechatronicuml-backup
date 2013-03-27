@@ -12,24 +12,24 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import de.fujaba.properties.GroupPropertyEditor;
+import de.fujaba.properties.GroupPropertySection;
 import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Group Property Editor</b></em>'.
+ * An implementation of the model object '<em><b>Group Property Section</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.fujaba.properties.impl.GroupPropertyEditorImpl#getNavigatedProperties <em>Navigated Properties</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.GroupPropertySectionImpl#getNavigatedProperties <em>Navigated Properties</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class GroupPropertyEditorImpl extends PropertyEditorImpl implements GroupPropertyEditor {
+public class GroupPropertySectionImpl extends PropertySectionImpl implements GroupPropertySection {
 	/**
 	 * The cached value of the '{@link #getNavigatedProperties() <em>Navigated Properties</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -45,7 +45,7 @@ public class GroupPropertyEditorImpl extends PropertyEditorImpl implements Group
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GroupPropertyEditorImpl() {
+	protected GroupPropertySectionImpl() {
 		super();
 	}
 
@@ -56,7 +56,7 @@ public class GroupPropertyEditorImpl extends PropertyEditorImpl implements Group
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PropertiesPackage.Literals.GROUP_PROPERTY_EDITOR;
+		return PropertiesPackage.Literals.GROUP_PROPERTY_SECTION;
 	}
 
 	/**
@@ -66,7 +66,7 @@ public class GroupPropertyEditorImpl extends PropertyEditorImpl implements Group
 	 */
 	public EList<Property> getNavigatedProperties() {
 		if (navigatedProperties == null) {
-			navigatedProperties = new EObjectResolvingEList<Property>(Property.class, this, PropertiesPackage.GROUP_PROPERTY_EDITOR__NAVIGATED_PROPERTIES);
+			navigatedProperties = new EObjectResolvingEList<Property>(Property.class, this, PropertiesPackage.GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES);
 		}
 		return navigatedProperties;
 	}
@@ -79,7 +79,7 @@ public class GroupPropertyEditorImpl extends PropertyEditorImpl implements Group
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PropertiesPackage.GROUP_PROPERTY_EDITOR__NAVIGATED_PROPERTIES:
+			case PropertiesPackage.GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES:
 				return getNavigatedProperties();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -94,7 +94,7 @@ public class GroupPropertyEditorImpl extends PropertyEditorImpl implements Group
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PropertiesPackage.GROUP_PROPERTY_EDITOR__NAVIGATED_PROPERTIES:
+			case PropertiesPackage.GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES:
 				getNavigatedProperties().clear();
 				getNavigatedProperties().addAll((Collection<? extends Property>)newValue);
 				return;
@@ -110,7 +110,7 @@ public class GroupPropertyEditorImpl extends PropertyEditorImpl implements Group
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PropertiesPackage.GROUP_PROPERTY_EDITOR__NAVIGATED_PROPERTIES:
+			case PropertiesPackage.GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES:
 				getNavigatedProperties().clear();
 				return;
 		}
@@ -125,10 +125,10 @@ public class GroupPropertyEditorImpl extends PropertyEditorImpl implements Group
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PropertiesPackage.GROUP_PROPERTY_EDITOR__NAVIGATED_PROPERTIES:
+			case PropertiesPackage.GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES:
 				return navigatedProperties != null && !navigatedProperties.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //GroupPropertyEditorImpl
+} //GroupPropertySectionImpl

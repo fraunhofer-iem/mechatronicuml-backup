@@ -108,12 +108,12 @@ public interface Property extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Editor</em>' containment reference.
-	 * @see #setEditor(PropertyEditor)
+	 * @see #setEditor(PropertySection)
 	 * @see de.fujaba.properties.PropertiesPackage#getProperty_Editor()
 	 * @model containment="true"
 	 * @generated
 	 */
-	PropertyEditor getEditor();
+	PropertySection getEditor();
 
 	/**
 	 * Sets the value of the '{@link de.fujaba.properties.Property#getEditor <em>Editor</em>}' containment reference.
@@ -123,7 +123,7 @@ public interface Property extends EObject {
 	 * @see #getEditor()
 	 * @generated
 	 */
-	void setEditor(PropertyEditor value);
+	void setEditor(PropertySection value);
 
 	/**
 	 * Returns the value of the '<em><b>Tooltip</b></em>' attribute.

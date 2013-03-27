@@ -8,25 +8,25 @@ package de.fujaba.properties.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import de.fujaba.properties.ListPropertyEditor;
+import de.fujaba.properties.ListPropertySection;
 import de.fujaba.properties.PropertiesPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>List Property Editor</b></em>'.
+ * An implementation of the model object '<em><b>List Property Section</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ListPropertyEditorImpl extends PropertyEditorImpl implements ListPropertyEditor {
+public class ListPropertySectionImpl extends PropertySectionImpl implements ListPropertySection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ListPropertyEditorImpl() {
+	protected ListPropertySectionImpl() {
 		super();
 	}
 
@@ -37,7 +37,7 @@ public class ListPropertyEditorImpl extends PropertyEditorImpl implements ListPr
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PropertiesPackage.Literals.LIST_PROPERTY_EDITOR;
+		return PropertiesPackage.Literals.LIST_PROPERTY_SECTION;
 	}
 
-} //ListPropertyEditorImpl
+} //ListPropertySectionImpl

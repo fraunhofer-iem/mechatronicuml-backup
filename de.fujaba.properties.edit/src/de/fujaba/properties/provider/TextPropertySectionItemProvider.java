@@ -8,6 +8,7 @@ package de.fujaba.properties.provider;
 
 
 import de.fujaba.properties.PropertiesPackage;
+import de.fujaba.properties.TextPropertySection;
 
 import java.util.Collection;
 import java.util.List;
@@ -22,15 +23,17 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.fujaba.properties.GroupPropertyEditor} object.
+ * This is the item provider adapter for a {@link de.fujaba.properties.TextPropertySection} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class GroupPropertyEditorItemProvider
-	extends PropertyEditorItemProvider
+public class TextPropertySectionItemProvider
+	extends PropertySectionItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -43,7 +46,7 @@ public class GroupPropertyEditorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GroupPropertyEditorItemProvider(AdapterFactory adapterFactory) {
+	public TextPropertySectionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -58,42 +61,42 @@ public class GroupPropertyEditorItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNavigatedPropertiesPropertyDescriptor(object);
+			addMultiLinePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Navigated Properties feature.
+	 * This adds a property descriptor for the Multi Line feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNavigatedPropertiesPropertyDescriptor(Object object) {
+	protected void addMultiLinePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_GroupPropertyEditor_navigatedProperties_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GroupPropertyEditor_navigatedProperties_feature", "_UI_GroupPropertyEditor_type"),
-				 PropertiesPackage.Literals.GROUP_PROPERTY_EDITOR__NAVIGATED_PROPERTIES,
+				 getString("_UI_TextPropertySection_multiLine_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TextPropertySection_multiLine_feature", "_UI_TextPropertySection_type"),
+				 PropertiesPackage.Literals.TEXT_PROPERTY_SECTION__MULTI_LINE,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This returns GroupPropertyEditor.gif.
+	 * This returns TextPropertySection.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/GroupPropertyEditor"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TextPropertySection"));
 	}
 
 	/**
@@ -104,7 +107,8 @@ public class GroupPropertyEditorItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_GroupPropertyEditor_type");
+		TextPropertySection textPropertySection = (TextPropertySection)object;
+		return getString("_UI_TextPropertySection_type") + " " + textPropertySection.isMultiLine();
 	}
 
 	/**
@@ -117,6 +121,12 @@ public class GroupPropertyEditorItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(TextPropertySection.class)) {
+			case PropertiesPackage.TEXT_PROPERTY_SECTION__MULTI_LINE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

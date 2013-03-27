@@ -7,26 +7,27 @@
 package de.fujaba.properties.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import de.fujaba.properties.ComboBoxPropertyEditor;
 import de.fujaba.properties.PropertiesPackage;
+import de.fujaba.properties.PropertySection;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Combo Box Property Editor</b></em>'.
+ * An implementation of the model object '<em><b>Property Section</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ComboBoxPropertyEditorImpl extends PropertyEditorImpl implements ComboBoxPropertyEditor {
+public abstract class PropertySectionImpl extends EObjectImpl implements PropertySection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComboBoxPropertyEditorImpl() {
+	protected PropertySectionImpl() {
 		super();
 	}
 
@@ -37,7 +38,7 @@ public class ComboBoxPropertyEditorImpl extends PropertyEditorImpl implements Co
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PropertiesPackage.Literals.COMBO_BOX_PROPERTY_EDITOR;
+		return PropertiesPackage.Literals.PROPERTY_SECTION;
 	}
 
-} //ComboBoxPropertyEditorImpl
+} //PropertySectionImpl

@@ -279,27 +279,27 @@ public class PropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__EDITOR,
-				 PropertiesFactory.eINSTANCE.createTextPropertyEditor()));
+				 PropertiesFactory.eINSTANCE.createTextPropertySection()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__EDITOR,
-				 PropertiesFactory.eINSTANCE.createComboBoxPropertyEditor()));
+				 PropertiesFactory.eINSTANCE.createComboBoxPropertySection()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__EDITOR,
-				 PropertiesFactory.eINSTANCE.createRadioPropertyEditor()));
+				 PropertiesFactory.eINSTANCE.createRadioPropertySection()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__EDITOR,
-				 PropertiesFactory.eINSTANCE.createListPropertyEditor()));
+				 PropertiesFactory.eINSTANCE.createListPropertySection()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__EDITOR,
-				 PropertiesFactory.eINSTANCE.createGroupPropertyEditor()));
+				 PropertiesFactory.eINSTANCE.createGroupPropertySection()));
 	}
 
 	/**

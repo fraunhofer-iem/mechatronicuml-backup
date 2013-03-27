@@ -11,4 +11,7 @@ String fullyQualifiedName(genmodel::GenPackage this) :
 	else if eContainer != null then
 		 fullyQualifiedName(eContainer) + '.' 
 	else
-		'') + ecorePackage.name;	
+		'') + ecorePackage.name;
+
+String sectionName(Property this) :
+	'property.genFeature.genClass.ecoreClass.name + property.genFeature.ecoreFeature.name + Section';

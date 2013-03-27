@@ -9,24 +9,24 @@ package de.fujaba.properties.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import de.fujaba.properties.PropertiesPackage;
-import de.fujaba.properties.RadioPropertyEditor;
+import de.fujaba.properties.RadioPropertySection;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Radio Property Editor</b></em>'.
+ * An implementation of the model object '<em><b>Radio Property Section</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class RadioPropertyEditorImpl extends PropertyEditorImpl implements RadioPropertyEditor {
+public class RadioPropertySectionImpl extends PropertySectionImpl implements RadioPropertySection {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RadioPropertyEditorImpl() {
+	protected RadioPropertySectionImpl() {
 		super();
 	}
 
@@ -37,7 +37,7 @@ public class RadioPropertyEditorImpl extends PropertyEditorImpl implements Radio
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PropertiesPackage.Literals.RADIO_PROPERTY_EDITOR;
+		return PropertiesPackage.Literals.RADIO_PROPERTY_SECTION;
 	}
 
-} //RadioPropertyEditorImpl
+} //RadioPropertySectionImpl

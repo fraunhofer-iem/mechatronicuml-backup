@@ -10,13 +10,13 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Property Editor</b></em>'.
+ * A representation of the model object '<em><b>Property Section</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see de.fujaba.properties.PropertiesPackage#getPropertyEditor()
+ * @see de.fujaba.properties.PropertiesPackage#getPropertySection()
  * @model abstract="true"
  * @generated
  */
-public interface PropertyEditor extends EObject {
-} // PropertyEditor
+public interface PropertySection extends EObject {
+} // PropertySection

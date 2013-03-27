@@ -12,9 +12,9 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.fujaba.properties.ComboBoxPropertyEditor;
-import de.fujaba.properties.GroupPropertyEditor;
-import de.fujaba.properties.ListPropertyEditor;
+import de.fujaba.properties.ComboBoxPropertySection;
+import de.fujaba.properties.GroupPropertySection;
+import de.fujaba.properties.ListPropertySection;
 import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.Plugin;
 import de.fujaba.properties.PropertiesFactory;
@@ -22,8 +22,8 @@ import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.PropertyTab;
-import de.fujaba.properties.RadioPropertyEditor;
-import de.fujaba.properties.TextPropertyEditor;
+import de.fujaba.properties.RadioPropertySection;
+import de.fujaba.properties.TextPropertySection;
 
 /**
  * <!-- begin-user-doc -->
@@ -75,12 +75,12 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 			case PropertiesPackage.PACKAGE: return createPackage();
 			case PropertiesPackage.CLASS: return createClass();
 			case PropertiesPackage.PROPERTY: return createProperty();
-			case PropertiesPackage.TEXT_PROPERTY_EDITOR: return createTextPropertyEditor();
-			case PropertiesPackage.COMBO_BOX_PROPERTY_EDITOR: return createComboBoxPropertyEditor();
-			case PropertiesPackage.RADIO_PROPERTY_EDITOR: return createRadioPropertyEditor();
-			case PropertiesPackage.LIST_PROPERTY_EDITOR: return createListPropertyEditor();
+			case PropertiesPackage.TEXT_PROPERTY_SECTION: return createTextPropertySection();
+			case PropertiesPackage.COMBO_BOX_PROPERTY_SECTION: return createComboBoxPropertySection();
+			case PropertiesPackage.RADIO_PROPERTY_SECTION: return createRadioPropertySection();
+			case PropertiesPackage.LIST_PROPERTY_SECTION: return createListPropertySection();
+			case PropertiesPackage.GROUP_PROPERTY_SECTION: return createGroupPropertySection();
 			case PropertiesPackage.OCL_PROPERTY_FILTER: return createOCLPropertyFilter();
-			case PropertiesPackage.GROUP_PROPERTY_EDITOR: return createGroupPropertyEditor();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -151,9 +151,9 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TextPropertyEditor createTextPropertyEditor() {
-		TextPropertyEditorImpl textPropertyEditor = new TextPropertyEditorImpl();
-		return textPropertyEditor;
+	public TextPropertySection createTextPropertySection() {
+		TextPropertySectionImpl textPropertySection = new TextPropertySectionImpl();
+		return textPropertySection;
 	}
 
 	/**
@@ -161,9 +161,9 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComboBoxPropertyEditor createComboBoxPropertyEditor() {
-		ComboBoxPropertyEditorImpl comboBoxPropertyEditor = new ComboBoxPropertyEditorImpl();
-		return comboBoxPropertyEditor;
+	public ComboBoxPropertySection createComboBoxPropertySection() {
+		ComboBoxPropertySectionImpl comboBoxPropertySection = new ComboBoxPropertySectionImpl();
+		return comboBoxPropertySection;
 	}
 
 	/**
@@ -171,9 +171,9 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RadioPropertyEditor createRadioPropertyEditor() {
-		RadioPropertyEditorImpl radioPropertyEditor = new RadioPropertyEditorImpl();
-		return radioPropertyEditor;
+	public RadioPropertySection createRadioPropertySection() {
+		RadioPropertySectionImpl radioPropertySection = new RadioPropertySectionImpl();
+		return radioPropertySection;
 	}
 
 	/**
@@ -181,9 +181,19 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ListPropertyEditor createListPropertyEditor() {
-		ListPropertyEditorImpl listPropertyEditor = new ListPropertyEditorImpl();
-		return listPropertyEditor;
+	public ListPropertySection createListPropertySection() {
+		ListPropertySectionImpl listPropertySection = new ListPropertySectionImpl();
+		return listPropertySection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GroupPropertySection createGroupPropertySection() {
+		GroupPropertySectionImpl groupPropertySection = new GroupPropertySectionImpl();
+		return groupPropertySection;
 	}
 
 	/**
@@ -194,16 +204,6 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	public OCLPropertyFilter createOCLPropertyFilter() {
 		OCLPropertyFilterImpl oclPropertyFilter = new OCLPropertyFilterImpl();
 		return oclPropertyFilter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GroupPropertyEditor createGroupPropertyEditor() {
-		GroupPropertyEditorImpl groupPropertyEditor = new GroupPropertyEditorImpl();
-		return groupPropertyEditor;
 	}
 
 	/**

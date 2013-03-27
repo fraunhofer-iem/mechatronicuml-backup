@@ -21,13 +21,13 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 /**
- * This is the item provider adapter for a {@link de.fujaba.properties.RadioPropertyEditor} object.
+ * This is the item provider adapter for a {@link de.fujaba.properties.ComboBoxPropertySection} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RadioPropertyEditorItemProvider
-	extends PropertyEditorItemProvider
+public class ComboBoxPropertySectionItemProvider
+	extends PropertySectionItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -40,7 +40,7 @@ public class RadioPropertyEditorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RadioPropertyEditorItemProvider(AdapterFactory adapterFactory) {
+	public ComboBoxPropertySectionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,14 +60,14 @@ public class RadioPropertyEditorItemProvider
 	}
 
 	/**
-	 * This returns RadioPropertyEditor.gif.
+	 * This returns ComboBoxPropertySection.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RadioPropertyEditor"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComboBoxPropertySection"));
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class RadioPropertyEditorItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_RadioPropertyEditor_type");
+		return getString("_UI_ComboBoxPropertySection_type");
 	}
 
 	/**

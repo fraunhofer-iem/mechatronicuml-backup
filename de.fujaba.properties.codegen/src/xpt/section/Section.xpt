@@ -1,0 +1,8 @@
+«IMPORT properties»
+
+«DEFINE Section FOR PropertySection»
+«ENDDEFINE»
+
+«DEFINE Section FOR TextPropertySection»
+
+«ENDDEFINE»

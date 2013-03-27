@@ -80,40 +80,49 @@ public interface PropertiesFactory extends EFactory {
 	Property createProperty();
 
 	/**
-	 * Returns a new object of class '<em>Text Property Editor</em>'.
+	 * Returns a new object of class '<em>Text Property Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Text Property Editor</em>'.
+	 * @return a new object of class '<em>Text Property Section</em>'.
 	 * @generated
 	 */
-	TextPropertyEditor createTextPropertyEditor();
+	TextPropertySection createTextPropertySection();
 
 	/**
-	 * Returns a new object of class '<em>Combo Box Property Editor</em>'.
+	 * Returns a new object of class '<em>Combo Box Property Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Combo Box Property Editor</em>'.
+	 * @return a new object of class '<em>Combo Box Property Section</em>'.
 	 * @generated
 	 */
-	ComboBoxPropertyEditor createComboBoxPropertyEditor();
+	ComboBoxPropertySection createComboBoxPropertySection();
 
 	/**
-	 * Returns a new object of class '<em>Radio Property Editor</em>'.
+	 * Returns a new object of class '<em>Radio Property Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Radio Property Editor</em>'.
+	 * @return a new object of class '<em>Radio Property Section</em>'.
 	 * @generated
 	 */
-	RadioPropertyEditor createRadioPropertyEditor();
+	RadioPropertySection createRadioPropertySection();
 
 	/**
-	 * Returns a new object of class '<em>List Property Editor</em>'.
+	 * Returns a new object of class '<em>List Property Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>List Property Editor</em>'.
+	 * @return a new object of class '<em>List Property Section</em>'.
 	 * @generated
 	 */
-	ListPropertyEditor createListPropertyEditor();
+	ListPropertySection createListPropertySection();
+
+	/**
+	 * Returns a new object of class '<em>Group Property Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Group Property Section</em>'.
+	 * @generated
+	 */
+	GroupPropertySection createGroupPropertySection();
 
 	/**
 	 * Returns a new object of class '<em>OCL Property Filter</em>'.
@@ -123,15 +132,6 @@ public interface PropertiesFactory extends EFactory {
 	 * @generated
 	 */
 	OCLPropertyFilter createOCLPropertyFilter();
-
-	/**
-	 * Returns a new object of class '<em>Group Property Editor</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Group Property Editor</em>'.
-	 * @generated
-	 */
-	GroupPropertyEditor createGroupPropertyEditor();
 
 	/**
 	 * Returns the package supported by this factory.

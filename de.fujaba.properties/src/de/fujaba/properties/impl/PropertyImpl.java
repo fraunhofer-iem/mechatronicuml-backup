@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
-import de.fujaba.properties.PropertyEditor;
 import de.fujaba.properties.PropertyFilter;
+import de.fujaba.properties.PropertySection;
 import de.fujaba.properties.PropertyTab;
 
 /**
@@ -81,7 +81,7 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * @generated
 	 * @ordered
 	 */
-	protected PropertyEditor editor;
+	protected PropertySection editor;
 
 	/**
 	 * The default value of the '{@link #getTooltip() <em>Tooltip</em>}' attribute.
@@ -215,7 +215,7 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyEditor getEditor() {
+	public PropertySection getEditor() {
 		return editor;
 	}
 
@@ -224,8 +224,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEditor(PropertyEditor newEditor, NotificationChain msgs) {
-		PropertyEditor oldEditor = editor;
+	public NotificationChain basicSetEditor(PropertySection newEditor, NotificationChain msgs) {
+		PropertySection oldEditor = editor;
 		editor = newEditor;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__EDITOR, oldEditor, newEditor);
@@ -239,7 +239,7 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEditor(PropertyEditor newEditor) {
+	public void setEditor(PropertySection newEditor) {
 		if (newEditor != editor) {
 			NotificationChain msgs = null;
 			if (editor != null)
@@ -334,7 +334,7 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				setTab((PropertyTab)newValue);
 				return;
 			case PropertiesPackage.PROPERTY__EDITOR:
-				setEditor((PropertyEditor)newValue);
+				setEditor((PropertySection)newValue);
 				return;
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				setTooltip((String)newValue);
@@ -361,7 +361,7 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				setTab((PropertyTab)null);
 				return;
 			case PropertiesPackage.PROPERTY__EDITOR:
-				setEditor((PropertyEditor)null);
+				setEditor((PropertySection)null);
 				return;
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				setTooltip(TOOLTIP_EDEFAULT);

@@ -42,13 +42,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference properties.ecore#//Property/editor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Property/tooltip"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="properties.ecore#//PropertyEditor"/>
-    <genClasses ecoreClass="properties.ecore#//TextPropertyEditor">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//TextPropertyEditor/multiLine"/>
+    <genClasses image="false" ecoreClass="properties.ecore#//PropertySection"/>
+    <genClasses ecoreClass="properties.ecore#//TextPropertySection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//TextPropertySection/multiLine"/>
     </genClasses>
-    <genClasses ecoreClass="properties.ecore#//ComboBoxPropertyEditor"/>
-    <genClasses ecoreClass="properties.ecore#//RadioPropertyEditor"/>
-    <genClasses ecoreClass="properties.ecore#//ListPropertyEditor"/>
+    <genClasses ecoreClass="properties.ecore#//ComboBoxPropertySection"/>
+    <genClasses ecoreClass="properties.ecore#//RadioPropertySection"/>
+    <genClasses ecoreClass="properties.ecore#//ListPropertySection"/>
+    <genClasses ecoreClass="properties.ecore#//GroupPropertySection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//GroupPropertySection/navigatedProperties"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="properties.ecore#//PropertyFilter">
       <genOperations ecoreOperation="properties.ecore#//PropertyFilter/isValid">
         <genParameters ecoreParameter="properties.ecore#//PropertyFilter/isValid/object"/>
@@ -56,9 +59,6 @@
     </genClasses>
     <genClasses ecoreClass="properties.ecore#//OCLPropertyFilter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//OCLPropertyFilter/expression"/>
-    </genClasses>
-    <genClasses ecoreClass="properties.ecore#//GroupPropertyEditor">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//GroupPropertyEditor/navigatedProperties"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

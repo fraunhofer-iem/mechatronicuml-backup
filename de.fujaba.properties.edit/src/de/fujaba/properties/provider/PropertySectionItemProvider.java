@@ -13,21 +13,24 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a {@link de.fujaba.properties.ListPropertyEditor} object.
+ * This is the item provider adapter for a {@link de.fujaba.properties.PropertySection} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ListPropertyEditorItemProvider
-	extends PropertyEditorItemProvider
+public class PropertySectionItemProvider
+	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -40,7 +43,7 @@ public class ListPropertyEditorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ListPropertyEditorItemProvider(AdapterFactory adapterFactory) {
+	public PropertySectionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,17 +63,6 @@ public class ListPropertyEditorItemProvider
 	}
 
 	/**
-	 * This returns ListPropertyEditor.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ListPropertyEditor"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -78,7 +70,7 @@ public class ListPropertyEditorItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ListPropertyEditor_type");
+		return getString("_UI_PropertySection_type");
 	}
 
 	/**
@@ -104,6 +96,17 @@ public class ListPropertyEditorItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return PropertiesEditPlugin.INSTANCE;
 	}
 
 }

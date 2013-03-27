@@ -18,20 +18,20 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import de.fujaba.properties.ComboBoxPropertyEditor;
-import de.fujaba.properties.GroupPropertyEditor;
-import de.fujaba.properties.ListPropertyEditor;
+import de.fujaba.properties.ComboBoxPropertySection;
+import de.fujaba.properties.GroupPropertySection;
+import de.fujaba.properties.ListPropertySection;
 import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.Plugin;
 import de.fujaba.properties.PropertiesFactory;
 import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
-import de.fujaba.properties.PropertyEditor;
 import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
+import de.fujaba.properties.PropertySection;
 import de.fujaba.properties.PropertyTab;
-import de.fujaba.properties.RadioPropertyEditor;
-import de.fujaba.properties.TextPropertyEditor;
+import de.fujaba.properties.RadioPropertySection;
+import de.fujaba.properties.TextPropertySection;
 import de.fujaba.properties.util.PropertiesValidator;
 
 /**
@@ -88,35 +88,42 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass propertyEditorEClass = null;
+	private EClass propertySectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass textPropertyEditorEClass = null;
+	private EClass textPropertySectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass comboBoxPropertyEditorEClass = null;
+	private EClass comboBoxPropertySectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass radioPropertyEditorEClass = null;
+	private EClass radioPropertySectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass listPropertyEditorEClass = null;
+	private EClass listPropertySectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass groupPropertySectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -131,13 +138,6 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * @generated
 	 */
 	private EClass oclPropertyFilterEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass groupPropertyEditorEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -469,8 +469,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPropertyEditor() {
-		return propertyEditorEClass;
+	public EClass getPropertySection() {
+		return propertySectionEClass;
 	}
 
 	/**
@@ -478,8 +478,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTextPropertyEditor() {
-		return textPropertyEditorEClass;
+	public EClass getTextPropertySection() {
+		return textPropertySectionEClass;
 	}
 
 	/**
@@ -487,8 +487,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTextPropertyEditor_MultiLine() {
-		return (EAttribute)textPropertyEditorEClass.getEStructuralFeatures().get(0);
+	public EAttribute getTextPropertySection_MultiLine() {
+		return (EAttribute)textPropertySectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -496,8 +496,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getComboBoxPropertyEditor() {
-		return comboBoxPropertyEditorEClass;
+	public EClass getComboBoxPropertySection() {
+		return comboBoxPropertySectionEClass;
 	}
 
 	/**
@@ -505,8 +505,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRadioPropertyEditor() {
-		return radioPropertyEditorEClass;
+	public EClass getRadioPropertySection() {
+		return radioPropertySectionEClass;
 	}
 
 	/**
@@ -514,8 +514,26 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getListPropertyEditor() {
-		return listPropertyEditorEClass;
+	public EClass getListPropertySection() {
+		return listPropertySectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGroupPropertySection() {
+		return groupPropertySectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGroupPropertySection_NavigatedProperties() {
+		return (EReference)groupPropertySectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -543,24 +561,6 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 */
 	public EAttribute getOCLPropertyFilter_Expression() {
 		return (EAttribute)oclPropertyFilterEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getGroupPropertyEditor() {
-		return groupPropertyEditorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getGroupPropertyEditor_NavigatedProperties() {
-		return (EReference)groupPropertyEditorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -625,24 +625,24 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		createEReference(propertyEClass, PROPERTY__EDITOR);
 		createEAttribute(propertyEClass, PROPERTY__TOOLTIP);
 
-		propertyEditorEClass = createEClass(PROPERTY_EDITOR);
+		propertySectionEClass = createEClass(PROPERTY_SECTION);
 
-		textPropertyEditorEClass = createEClass(TEXT_PROPERTY_EDITOR);
-		createEAttribute(textPropertyEditorEClass, TEXT_PROPERTY_EDITOR__MULTI_LINE);
+		textPropertySectionEClass = createEClass(TEXT_PROPERTY_SECTION);
+		createEAttribute(textPropertySectionEClass, TEXT_PROPERTY_SECTION__MULTI_LINE);
 
-		comboBoxPropertyEditorEClass = createEClass(COMBO_BOX_PROPERTY_EDITOR);
+		comboBoxPropertySectionEClass = createEClass(COMBO_BOX_PROPERTY_SECTION);
 
-		radioPropertyEditorEClass = createEClass(RADIO_PROPERTY_EDITOR);
+		radioPropertySectionEClass = createEClass(RADIO_PROPERTY_SECTION);
 
-		listPropertyEditorEClass = createEClass(LIST_PROPERTY_EDITOR);
+		listPropertySectionEClass = createEClass(LIST_PROPERTY_SECTION);
+
+		groupPropertySectionEClass = createEClass(GROUP_PROPERTY_SECTION);
+		createEReference(groupPropertySectionEClass, GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES);
 
 		propertyFilterEClass = createEClass(PROPERTY_FILTER);
 
 		oclPropertyFilterEClass = createEClass(OCL_PROPERTY_FILTER);
 		createEAttribute(oclPropertyFilterEClass, OCL_PROPERTY_FILTER__EXPRESSION);
-
-		groupPropertyEditorEClass = createEClass(GROUP_PROPERTY_EDITOR);
-		createEReference(groupPropertyEditorEClass, GROUP_PROPERTY_EDITOR__NAVIGATED_PROPERTIES);
 	}
 
 	/**
@@ -677,12 +677,12 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		textPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
-		comboBoxPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
-		radioPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
-		listPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
+		textPropertySectionEClass.getESuperTypes().add(this.getPropertySection());
+		comboBoxPropertySectionEClass.getESuperTypes().add(this.getPropertySection());
+		radioPropertySectionEClass.getESuperTypes().add(this.getPropertySection());
+		listPropertySectionEClass.getESuperTypes().add(this.getPropertySection());
+		groupPropertySectionEClass.getESuperTypes().add(this.getPropertySection());
 		oclPropertyFilterEClass.getESuperTypes().add(this.getPropertyFilter());
-		groupPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(propertyGeneratorEClass, PropertyGenerator.class, "PropertyGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -718,19 +718,22 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		initEReference(getProperty_GenFeature(), theGenModelPackage.getGenFeature(), null, "genFeature", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_Filters(), this.getPropertyFilter(), null, "filters", null, 0, -1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_Tab(), this.getPropertyTab(), null, "tab", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProperty_Editor(), this.getPropertyEditor(), null, "editor", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProperty_Editor(), this.getPropertySection(), null, "editor", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProperty_Tooltip(), theEcorePackage.getEString(), "tooltip", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(propertyEditorEClass, PropertyEditor.class, "PropertyEditor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(propertySectionEClass, PropertySection.class, "PropertySection", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(textPropertyEditorEClass, TextPropertyEditor.class, "TextPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTextPropertyEditor_MultiLine(), theEcorePackage.getEBoolean(), "multiLine", null, 1, 1, TextPropertyEditor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(textPropertySectionEClass, TextPropertySection.class, "TextPropertySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTextPropertySection_MultiLine(), theEcorePackage.getEBoolean(), "multiLine", null, 1, 1, TextPropertySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(comboBoxPropertyEditorEClass, ComboBoxPropertyEditor.class, "ComboBoxPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(comboBoxPropertySectionEClass, ComboBoxPropertySection.class, "ComboBoxPropertySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(radioPropertyEditorEClass, RadioPropertyEditor.class, "RadioPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(radioPropertySectionEClass, RadioPropertySection.class, "RadioPropertySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(listPropertyEditorEClass, ListPropertyEditor.class, "ListPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(listPropertySectionEClass, ListPropertySection.class, "ListPropertySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(groupPropertySectionEClass, GroupPropertySection.class, "GroupPropertySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGroupPropertySection_NavigatedProperties(), this.getProperty(), null, "navigatedProperties", null, 0, -1, GroupPropertySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyFilterEClass, PropertyFilter.class, "PropertyFilter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -739,9 +742,6 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		initEClass(oclPropertyFilterEClass, OCLPropertyFilter.class, "OCLPropertyFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOCLPropertyFilter_Expression(), ecorePackage.getEString(), "expression", null, 1, 1, OCLPropertyFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(groupPropertyEditorEClass, GroupPropertyEditor.class, "GroupPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGroupPropertyEditor_NavigatedProperties(), this.getProperty(), null, "navigatedProperties", null, 0, -1, GroupPropertyEditor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
