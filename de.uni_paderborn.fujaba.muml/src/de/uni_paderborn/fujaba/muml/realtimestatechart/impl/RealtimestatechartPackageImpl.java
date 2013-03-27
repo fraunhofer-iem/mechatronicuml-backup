@@ -1685,7 +1685,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (transitionEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent StateConnectionPointTransitionsNoSynchronization"
+			 "constraints", "LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent"
 		   });																																
 		addAnnotation
 		  (doEventEClass, 
@@ -1794,8 +1794,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "ValidRaiseMessageEvents", "not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)",
 			 "StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines", "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.clockResets->isEmpty()\r\n\t\tand self.action.oclIsUndefined()\r\n\t\tand self.raiseMessageEvent.oclIsUndefined()\r\n\t\tand self.absoluteDeadlines->isEmpty()\r\n\t\tand self.relativeDeadline.oclIsUndefined()\r\n\t)",
 			 "StateConnectionPointOutgoingTransitionsNoConditions", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.triggerMessageEvent.oclIsUndefined()\r\n\t\tand self.clockConstraints->isEmpty()\r\n\t\tand self.guard.oclIsUndefined()\r\n\t)",
-			 "StateConnectionPointOutgoingTransitionsMustBeUrgent ", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.urgent\r\n\t)",
-			 "StateConnectionPointTransitionsNoSynchronization", "((not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\tor\r\n (not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint)))\r\n\timplies\r\nself.synchronization.oclIsUndefined()"
+			 "StateConnectionPointOutgoingTransitionsMustBeUrgent ", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.urgent\r\n\t)"
 		   });								
 		addAnnotation
 		  (getTransition_TriggerMessageEvent(), 

@@ -588,7 +588,6 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateTransition_StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_StateConnectionPointOutgoingTransitionsNoConditions(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_StateConnectionPointOutgoingTransitionsMustBeUrgent(transition, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTransition_StateConnectionPointTransitionsNoSynchronization(transition, diagnostics, context);
 		return result;
 	}
 
@@ -830,39 +829,6 @@ public class RealtimestatechartValidator extends MumlValidator {
 			return false;
 		}
 		return true;
-	}
-
-	/**
-	 * The cached validation expression for the StateConnectionPointTransitionsNoSynchronization constraint of '<em>Transition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String TRANSITION__STATE_CONNECTION_POINT_TRANSITIONS_NO_SYNCHRONIZATION__EEXPRESSION = "((not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n" +
-		"\tor\r\n" +
-		" (not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint)))\r\n" +
-		"\timplies\r\n" +
-		"self.synchronization.oclIsUndefined()";
-
-	/**
-	 * Validates the StateConnectionPointTransitionsNoSynchronization constraint of '<em>Transition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateTransition_StateConnectionPointTransitionsNoSynchronization(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(RealtimestatechartPackage.Literals.TRANSITION,
-				 transition,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "StateConnectionPointTransitionsNoSynchronization",
-				 TRANSITION__STATE_CONNECTION_POINT_TRANSITIONS_NO_SYNCHRONIZATION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
 	}
 
 	/**
