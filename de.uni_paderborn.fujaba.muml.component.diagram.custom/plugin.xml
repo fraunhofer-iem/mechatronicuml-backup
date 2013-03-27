@@ -57,57 +57,10 @@
          </Priority>
       </editpartProvider>
    </extension>
-   
-   <!-- EditHelpers -->
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http://www.fujaba.de/muml/component/0.3.17">
-        <adviceBinding id="de.uni_paderborn.fujaba.muml.component.diagram.custom.DiscretePortGmfProtocolAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.component.diagram.DiscretePortGmfProtocol_4005"
-		  class="de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.helpers.DiscretePortGmfProtocolEditHelperAdvice"
-		  inheritance="all">
-        </adviceBinding>
-        <adviceBinding id="de.uni_paderborn.fujaba.muml.component.diagram.custom.ComponentPartAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.component.diagram.ComponentPart_3012"
-		  class="de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.helpers.ComponentPartEditHelperAdvice"
-		  inheritance="all">
-        </adviceBinding>
-        <adviceBinding id="de.uni_paderborn.fujaba.muml.component.diagram.custom.AssemblyConnectorAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.component.diagram.AssemblyConnector_4001"
-		  class="de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.helpers.AssemblyConnectorEditHelperAdvice"
-		  inheritance="all">
-        </adviceBinding>
-         <adviceBinding id="de.uni_paderborn.fujaba.muml.component.diagram.custom.DelegationConnectorAdvice"
-		  typeId="de.uni_paderborn.fujaba.muml.component.diagram.DelegationConnector_4002"
-		  class="de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.helpers.DelegationConnectorEditHelperAdvice"
-		  inheritance="all">
-        </adviceBinding>
-
-      </metamodel>
-   </extension>
-
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
-	  <binding context="de.uni_paderborn.fujaba.muml.component.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.DiscretePortGmfProtocol_4005"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.component.diagram.custom.DiscretePortGmfProtocolAdvice"/>
-      </binding>
-      <binding context="de.uni_paderborn.fujaba.muml.component.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.ComponentPart_3012"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.component.diagram.custom.ComponentPartAdvice"/>
-      </binding>
-      <binding context="de.uni_paderborn.fujaba.muml.component.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.AssemblyConnector_4001"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.component.diagram.custom.AssemblyConnectorAdvice"/>
-      </binding>
-      <binding context="de.uni_paderborn.fujaba.muml.component.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.DelegationConnector_4002"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.component.diagram.custom.DelegationConnectorAdvice"/>
-      </binding>
-   </extension>
-
 
    <!-- parser provider -->
-
-	<!--
+   
+   <!--
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
       <ParserProvider class="de.uni_paderborn.fujaba.muml.component.diagram.custom.providers.CustomStructuredcomponentParserProvider">
