@@ -386,6 +386,7 @@
         visualID="3042"
         editPartClassName="RegionEditPart"
         itemSemanticEditPolicyClassName="RegionItemSemanticEditPolicy"
+        notationViewFactoryClassName="RegionViewFactory"
         canonicalEditPolicyClassName="RegionCanonicalEditPolicy"
         compartments="//@diagram/@compartments.5"
         graphicalNodeEditPolicyClassName="RegionGraphicalNodeEditPolicy"
@@ -452,7 +453,8 @@
       <labels
           visualID="5063"
           editPartClassName="RegionNameEditPart"
-          itemSemanticEditPolicyClassName="RegionNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="RegionNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="RegionNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -470,7 +472,8 @@
       <labels
           visualID="5064"
           editPartClassName="RegionPriorityEditPart"
-          itemSemanticEditPolicyClassName="RegionPriorityItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="RegionPriorityItemSemanticEditPolicy"
+          notationViewFactoryClassName="RegionPriorityViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -493,6 +496,7 @@
           visualID="5065"
           editPartClassName="WrappingLabel7EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel7ItemSemanticEditPolicy"
+          notationViewFactoryClassName="RegionLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -509,6 +513,7 @@
         visualID="3043"
         editPartClassName="RealtimeStatechart2EditPart"
         itemSemanticEditPolicyClassName="RealtimeStatechart2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="RealtimeStatechartViewFactory"
         canonicalEditPolicyClassName="RealtimeStatechart2CanonicalEditPolicy"
         compartments="//@diagram/@compartments.6"
         graphicalNodeEditPolicyClassName="RealtimeStatechart2GraphicalNodeEditPolicy"
@@ -920,6 +925,7 @@
         visualID="7037"
         editPartClassName="RegionRegionContentsCompartmentEditPart"
         itemSemanticEditPolicyClassName="RegionRegionContentsCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="RegionRegionContentsCompartmentViewFactory"
         canonicalEditPolicyClassName="RegionRegionContentsCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.7"
         title="RegionContentsCompartment"
@@ -937,6 +943,7 @@
         visualID="7038"
         editPartClassName="RealtimeStatechartStatechartContentsCompartment2EditPart"
         itemSemanticEditPolicyClassName="RealtimeStatechartStatechartContentsCompartment2ItemSemanticEditPolicy"
+        notationViewFactoryClassName="RealtimeStatechartStatechartContentsCompartmentViewFactory"
         canonicalEditPolicyClassName="RealtimeStatechartStatechartContentsCompartment2CanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0"
         title="StatechartContentsCompartment"
@@ -1225,7 +1232,7 @@
       <expressions
           body="--true"/>
       <expressions
-          body="--statechart->collect(&#xA;--(&#xA;--&#xA;---- Attributes&#xA;--&#xA;--&#x9;if variables->isEmpty() then&#xA;--&#x9;&#x9;''&#xA;--&#x9;else&#xA;--&#x9;&#x9;'var: '.concat(&#xA;--&#x9;&#x9;&#x9;variables->iterate(attribute; result : String = '' |&#xA;--&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.dataType.name.oclIsUndefined() then&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.dataType.name.concat(' ')&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;).concat('; ')&#xA;--&#x9;endif&#xA;--).concat(&#xA;--&#xA;---- Operations&#xA;--&#xA;--&#x9;if operations->isEmpty() then&#xA;--&#x9;&#x9;''&#xA;--&#x9;else&#xA;--&#x9;&#x9;'op: '.concat(&#xA;--&#x9;&#x9;&#x9;operations->iterate(operation; result : String = '' |&#xA;--&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.returnType.name.oclIsUndefined() then&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.returnType.name.concat(' ')&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;&#x9;&#x9;).concat('(').concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;-- parameters&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;operation.parameters->iterate(parameter; result2 : String = '' |&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(if result2 = '' then '' else result2.concat(', ') endif).concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.dataType.name.oclIsUndefined() then&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.dataType.name.concat(' ')&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.name.oclIsUndefined() then&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.name&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;&#x9;&#x9;).concat(')')&#xA;--&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;).concat('; ')&#xA;--&#x9;endif&#xA;--).concat(&#xA;--&#xA;---- Clocks&#xA;--&#xA;--&#x9;if clocks->isEmpty() then&#xA;--&#x9;&#x9;''&#xA;--&#x9;else&#xA;--&#x9;&#x9;'cl: '.concat(&#xA;--&#x9;&#x9;&#x9;clocks->iterate(clock; result : String = '' |&#xA;--&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;).concat('; ')&#xA;--&#x9;endif&#xA;--)&#xA;--)->any(true)"/>
+          body="--embeddedStatechart->collect(&#xA;--(&#xA;--&#xA;---- Attributes&#xA;--&#xA;--&#x9;if variables->isEmpty() then&#xA;--&#x9;&#x9;''&#xA;--&#x9;else&#xA;--&#x9;&#x9;'var: '.concat(&#xA;--&#x9;&#x9;&#x9;variables->iterate(attribute; result : String = '' |&#xA;--&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.dataType.name.oclIsUndefined() then&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.dataType.name.concat(' ')&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if attribute.name.oclIsUndefined() then&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;attribute.name&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;).concat('; ')&#xA;--&#x9;endif&#xA;--).concat(&#xA;--&#xA;---- Operations&#xA;--&#xA;--&#x9;if operations->isEmpty() then&#xA;--&#x9;&#x9;''&#xA;--&#x9;else&#xA;--&#x9;&#x9;'op: '.concat(&#xA;--&#x9;&#x9;&#x9;operations->iterate(operation; result : String = '' |&#xA;--&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.returnType.name.oclIsUndefined() then&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.returnType.name.concat(' ')&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if operation.name.oclIsUndefined() then&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;operation.name&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;&#x9;&#x9;).concat('(').concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;-- parameters&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;operation.parameters->iterate(parameter; result2 : String = '' |&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(if result2 = '' then '' else result2.concat(', ') endif).concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.dataType.name.oclIsUndefined() then&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.dataType.name.concat(' ')&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;if parameter.name.oclIsUndefined() then&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;parameter.name&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;&#x9;&#x9;).concat(')')&#xA;--&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;).concat('; ')&#xA;--&#x9;endif&#xA;--).concat(&#xA;--&#xA;---- Clocks&#xA;--&#xA;--&#x9;if clocks->isEmpty() then&#xA;--&#x9;&#x9;''&#xA;--&#x9;else&#xA;--&#x9;&#x9;'cl: '.concat(&#xA;--&#x9;&#x9;&#x9;clocks->iterate(clock; result : String = '' |&#xA;--&#x9;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;if clock.name.oclIsUndefined() then&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;''&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;clock.name&#xA;--&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;--&#x9;&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;&#x9;)&#xA;--&#x9;&#x9;).concat('; ')&#xA;--&#x9;endif&#xA;--)&#xA;--)->any(true)"/>
       <expressions
           body="--'entry'"/>
       <expressions
