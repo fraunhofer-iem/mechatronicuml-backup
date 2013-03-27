@@ -117,10 +117,10 @@ query DelegationConnector::primCreateConnectorInstance() : ConnectorInstance {
 // Constructors
 constructor ComponentInstanceConfiguration::ComponentInstanceConfiguration(component : StructuredComponent) {
 	name := component.name;
-	component.embeddedParts->select(p | p.componentType.oclIsKindOf(AtomicComponent))->forEach(part) {
+	component.embeddedComponentParts->select(p | p.componentType.oclIsKindOf(AtomicComponent))->forEach(part) {
 		componentInstances += new AtomicComponentInstance(part.componentType.oclAsType(AtomicComponent), part);
 	};
-	component.embeddedParts->select(p | p.componentType.oclIsKindOf(StructuredComponent))->forEach(part) {
+	component.embeddedComponentParts->select(p | p.componentType.oclIsKindOf(StructuredComponent))->forEach(part) {
 		componentInstances += new StructuredComponentInstance(part.componentType.oclAsType(StructuredComponent), part);
 	};
 	// make sure all created connectors are contained
