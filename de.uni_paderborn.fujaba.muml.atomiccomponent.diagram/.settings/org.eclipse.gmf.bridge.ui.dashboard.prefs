@@ -1,8 +1,0 @@
-#Mon Aug 29 08:54:50 CEST 2011
-eclipse.preferences.version=1
-gmf_dashboard/domainGenerationModel=platform\:/resource/de.uni_paderborn.fujaba.muml/model/muml.genmodel
-gmf_dashboard/domainModel=platform\:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore
-gmf_dashboard/generationModel=platform\:/resource/de.uni_paderborn.fujaba.muml.atomiccomponent.diagram/model/atomiccomponent.gmfgen
-gmf_dashboard/graphicalDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.atomiccomponent.diagram/model/atomiccomponent.gmfgraph
-gmf_dashboard/mappingModel=platform\:/resource/de.uni_paderborn.fujaba.muml.atomiccomponent.diagram/model/atomiccomponent.gmfmap
-gmf_dashboard/toolingDefinitionModel=platform\:/resource/de.uni_paderborn.fujaba.muml.atomiccomponent.diagram/model/atomiccomponent.gmftool
