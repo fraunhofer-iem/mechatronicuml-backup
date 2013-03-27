@@ -598,30 +598,22 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__LEGAL_TRANSITIONS_ONLY__EEXPRESSION = "-- Only legal transitions are allowed\r\n" +
-		"-- State A to State B within the same statechart\r\n" +
-		"let allTransitionsLegal:Boolean =\r\n" +
-		"if self.source.oclAsType(State).parentStatechart.embedded\r\n" +
-		"then\r\n" +
+	protected static final String TRANSITION__LEGAL_TRANSITIONS_ONLY__EEXPRESSION = "-- Only specific types of transitions are allowed\r\n" +
 		"\r\n" +
 		"-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n" +
-		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(State).parentStatechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)\r\n" +
+		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.source.oclAsType(State)))\t\r\n" +
 		"or\r\n" +
 		"-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2\r\n" +
-		"(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(State).parentStatechart.parentRegion.parentState)\r\n" +
+		"(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.target.oclAsType(State)))\t\r\n" +
 		"or\r\n" +
 		"-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2\r\n" +
-		"(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state = self.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion.parentState)\r\n" +
+		"(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.target.oclAsType(EntryPoint).state))\r\n" +
 		"or\r\n" +
 		"-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n" +
-		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion.parentState = self.target.oclAsType(ExitPoint).state)\r\n" +
-		"else\r\n" +
-		"true\r\n" +
-		"endif\r\n" +
+		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.source.oclAsType(ExitPoint).state))\r\n" +
 		"\r\n" +
-		"in \r\n" +
-		"allTransitionsLegal \r\n" +
 		"or \r\n" +
+		"-- State A to State B within the same statechart\r\n" +
 		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(State).parentStatechart)\r\n" +
 		"or\r\n" +
 		"-- State A to EntryPoint of B, where A and B are in the same statechart\r\n" +
