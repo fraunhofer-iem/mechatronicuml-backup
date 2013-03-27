@@ -5,13 +5,15 @@ import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.policies.CustomComponentPartItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands.CreatePortPartsCommand;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
 
 /**
@@ -27,14 +29,6 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 		super(view);
 	}
 
-	@Override
-	protected void createDefaultEditPolicies() {
-		super.createDefaultEditPolicies();
-		removeEditPolicy(EditPolicyRoles.SEMANTIC_ROLE);
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new CustomComponentPartItemSemanticEditPolicy());
-	}
-	
 	@Override
 	protected IFigure createNodeShape() {
 		return primaryShape = new CustomComponentMultiFigure();
@@ -60,6 +54,16 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 		if (ComponentPackage.Literals.COMPONENT_PART__CARDINALITY
 				.equals(feature)) {
 			updateCardinality();
+		} else if (ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE
+				.equals(feature)) {
+			EditingDomain editingDomain = getEditingDomain();
+			if (editingDomain != null) {
+				ComponentPart componentPart = (ComponentPart) getNotationView()
+						.getElement();
+				CreatePortPartsCommand command = new CreatePortPartsCommand(
+						componentPart);
+				editingDomain.getCommandStack().execute(command);
+			}
 		}
 		super.handleNotificationEvent(notification);
 	}
@@ -110,7 +114,8 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 
 				// Set the new margin and the new preferred size.
 				RectangleFigure innerRectContainer = getFigureInnerRectContainer();
-				innerRectContainer.setBorder(new MarginBorder(marginTop, 0, 0, marginRight));
+				innerRectContainer.setBorder(new MarginBorder(marginTop, 0, 0,
+						marginRight));
 				innerRectContainer.setPreferredSize(preferredSize);
 			}
 		}

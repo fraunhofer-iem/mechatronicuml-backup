@@ -12,3 +12,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
 Import-Package: org.eclipse.core.expressions,
  org.eclipse.m2m.qvt.oml
+Bundle-Activator: de.uni_paderborn.fujaba.muml.component.diagram.custom.part.Activator

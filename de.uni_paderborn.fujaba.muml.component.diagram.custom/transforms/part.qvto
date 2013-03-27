@@ -1,0 +1,26 @@
+transformation InstantiationTransformation(inout input : ComponentPackage);
+
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.2.2');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.2.2');
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+main() {
+	log("QVT-O Script \"part.qvto\" started.");
+
+	input.rootObjects()[ComponentPart]->forEach(part) {
+		part.portParts := part.componentType.createPortParts();
+	};
+}
+
+
+query Component::createPortParts() : Set(PortPart) {
+	var portParts : Set(PortPart);
+	self.ports->forEach(port) {
+		portParts += new PortPart(port);
+	};
+	return portParts;
+}
+
+constructor PortPart::PortPart(type : Port) {
+	portType := type;
+}
