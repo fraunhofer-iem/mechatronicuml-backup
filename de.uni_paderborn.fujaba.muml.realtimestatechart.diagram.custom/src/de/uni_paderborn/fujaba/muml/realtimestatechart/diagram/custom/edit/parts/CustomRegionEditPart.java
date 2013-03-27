@@ -39,7 +39,7 @@ public class CustomRegionEditPart extends RegionEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
 		Object feature = notification.getFeature();
-		if (RealtimestatechartPackage.Literals.REGION__GMF_HISTORY
+		if (RealtimestatechartPackage.Literals.REGION__EMBEDS_HISTORY_STATECHART
 				.equals(feature)) {
 			updateHistory();
 		}
@@ -58,7 +58,7 @@ public class CustomRegionEditPart extends RegionEditPart {
 		RegionFigure regionFigure = getPrimaryShape();
 		if (region != null && regionFigure != null) {
 			regionFigure.getFigureHistoryFigure().setVisible(
-					getRegion().isGmfHistory());
+					getRegion().isEmbedsHistoryStatechart());
 		}
 	}
 }
