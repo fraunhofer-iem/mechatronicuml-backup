@@ -371,20 +371,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.storydriven.storydiagrams.interpreter"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.storydriven.storydiagrams.interpreter.eclipse"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="de.mdelab.sdm.interpreter.core"
          download-size="0"
          install-size="0"
