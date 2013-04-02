@@ -23,12 +23,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class RegionLabelExpressionLabelParser5065 extends
+public class RegionLabelExpressionLabelParser5063 extends
 		ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
-	public RegionLabelExpressionLabelParser5065() {
+	public RegionLabelExpressionLabelParser5063() {
 	}
 
 	/**
@@ -38,7 +38,7 @@ public class RegionLabelExpressionLabelParser5065 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						15,
+						14,
 						de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getRegion(), null).body();
 	}

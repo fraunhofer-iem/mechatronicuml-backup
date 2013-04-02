@@ -159,7 +159,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							15,
+							16,
 							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getEntryPoint(), null).evaluate(instance);
 			instance.setName((String) value_0);
@@ -177,7 +177,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							16,
+							17,
 							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getExitPoint(), null).evaluate(instance);
 			instance.setName((String) value_0);
@@ -195,7 +195,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 					.getExpression(
-							18,
+							19,
 							de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 									.getTransition(), null).evaluate(instance);
 

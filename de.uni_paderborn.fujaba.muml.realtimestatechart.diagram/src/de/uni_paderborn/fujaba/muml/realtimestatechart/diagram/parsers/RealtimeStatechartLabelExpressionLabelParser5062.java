@@ -40,7 +40,7 @@ public class RealtimeStatechartLabelExpressionLabelParser5062 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.expressions.MumlOCLFactory
 				.getExpression(
-						17,
+						18,
 						de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 								.getRealtimeStatechart(), null).body();
 	}
