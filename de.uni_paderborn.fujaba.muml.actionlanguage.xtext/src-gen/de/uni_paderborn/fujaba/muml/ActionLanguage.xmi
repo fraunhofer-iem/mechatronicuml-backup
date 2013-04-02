@@ -11,13 +11,13 @@
       <ePackage href="http://www.storydriven.org/core/0.3.1#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="rtsc">
-      <ePackage href="http://www.fujaba.de/muml/realtimestatechart/0.3.17#/"/>
+      <ePackage href="http://www.fujaba.de/muml/realtimestatechart/0.3.18#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="behavior">
       <ePackage href="http://www.fujaba.de/muml/behavior/0.3.17#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="types">
-      <ePackage href="http://www.fujaba.de/muml/types/0.3.6#/"/>
+      <ePackage href="http://www.fujaba.de/muml/types/0.3.18#/"/>
     </metamodelDeclarations>
     <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="msgtype">
       <ePackage href="http://www.fujaba.de/muml/msgtype/0.3.6#/"/>
@@ -314,7 +314,7 @@
         <elements xsi:type="xtext:Assignment" feature="dataType" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.5">
-              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.3.6#//DataType"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/types/0.3.18#//DataType"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>
