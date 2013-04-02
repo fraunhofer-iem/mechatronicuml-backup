@@ -288,15 +288,6 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = InstancePackage.DISCRETE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
 
 	/**
-	 * The feature id for the '<em><b>Port Part</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RUNTIME_DISCRETE_PORT_INSTANCE__PORT_PART = InstancePackage.DISCRETE_PORT_INSTANCE__PORT_PART;
-
-	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -324,13 +315,13 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER = InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER;
 
 	/**
-	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
+	 * The feature id for the '<em><b>Refines</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_DISCRETE_PORT_INSTANCE__REFINED_ROLE = InstancePackage.DISCRETE_PORT_INSTANCE__REFINED_ROLE;
+	int RUNTIME_DISCRETE_PORT_INSTANCE__REFINES = InstancePackage.DISCRETE_PORT_INSTANCE__REFINES;
 
 	/**
 	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.

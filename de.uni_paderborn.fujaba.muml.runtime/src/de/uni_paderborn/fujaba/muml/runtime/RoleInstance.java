@@ -54,7 +54,7 @@ public interface RoleInstance extends RuntimeBehavioralElement, DiscreteInteract
 	 * @return the value of the '<em>Assembly</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRoleInstance_Assembly()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorInstances->first().oclAsType(RuntimeRoleConnectorInstance)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.oclAsType(muml::connector::ConnectorEndpointInstance).connectorInstances->isEmpty() then\r\n\tself.oclAsType(muml::connector::ConnectorEndpointInstance).connectorInstances->first().oclAsType(RuntimeRoleConnectorInstance)\r\nelse\r\n\tnull\r\nendif'"
 	 * @generated
 	 */
 	RuntimeRoleConnectorInstance getAssembly();

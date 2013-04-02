@@ -813,7 +813,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		  (getRoleInstance_Assembly(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.connectorInstances->first().oclAsType(RuntimeRoleConnectorInstance)"
+			 "derivation", "if not self.oclAsType(muml::connector::ConnectorEndpointInstance).connectorInstances->isEmpty() then\r\n\tself.oclAsType(muml::connector::ConnectorEndpointInstance).connectorInstances->first().oclAsType(RuntimeRoleConnectorInstance)\r\nelse\r\n\tnull\r\nendif"
 		   });
 	}
 
