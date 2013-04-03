@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.reconfiguration.ui;singleton:=true
+Bundle-Version: 0.3.2.qualifier
+Bundle-Activator: de.uni_paderborn.fujaba.muml.reconfiguration.ui.Activator
+Bundle-Vendor: %providerName
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.muml;bundle-version="0.3.2",
+ de.uni_paderborn.fujaba.muml.reconfiguration;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml.component.diagram;bundle-version="0.3.1",
+ org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.6.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
+            description="Transforms this structured component into a reconfigurable structured component."
+            id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
+            name="Make Reconfigurable">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
+               icon="icons/MakeReconfigurable.gif"
+               id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
+               label="Make Reconfigurable"
+               style="push">
+            <visibleWhen>
+               <with
+                     variable="selection">
+                  <iterate
+                        ifEmpty="false">
+                     <instanceof
+                           value="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart">
+                     </instanceof>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>
