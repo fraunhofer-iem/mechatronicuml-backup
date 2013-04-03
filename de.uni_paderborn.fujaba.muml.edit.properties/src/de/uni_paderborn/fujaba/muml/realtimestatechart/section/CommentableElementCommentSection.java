@@ -12,7 +12,7 @@ public class CommentableElementCommentSection extends AbstractTextSection {
 	}
 
 	@Override
-	protected EStructuralFeature getFeature() {
+	public EStructuralFeature getFeature() {
 		return CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT;
 	}
 

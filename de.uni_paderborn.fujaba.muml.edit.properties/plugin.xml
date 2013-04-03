@@ -1,33 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-<!--
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs2">
-      <?propgen generated="true"?>
-      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.common.properties">
-          <propertyTab
-             category="domain"
-             id="property.tab.domain.base"
-             label="Base"/>
-      </propertyTabs>
-   </extension>
-
-   <extension
-         id="realtimestatechart2"
-         point="org.eclipse.ui.views.properties.tabbed.propertySections">
-      <?propgen generated="true"?>
-      <propertySections
-            contributorId="de.uni_paderborn.fujaba.muml.common.properties">
-         <propertySection
-        	   id="CommentableElement.comment"
-               class="de.uni_paderborn.fujaba.muml.realtimestatechart.section.CommentableElementCommentSection"
-               tab="property.tab.domain.base">
-         </propertySection>
-      </propertySections>
-   </extension>
-   -->
-   
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?propgen generated="true"?>
       <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.common.properties">
           <propertyTab
              category="domain"
@@ -36,8 +11,8 @@
       </propertyTabs>
    </extension>
    
-   
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?propgen generated="true"?>
       <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.common.properties">
           <propertyTab
              category="domain"
@@ -47,8 +22,8 @@
       </propertyTabs>
    </extension>
    
-   
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?propgen generated="true"?>
       <propertySections contributorId="de.uni_paderborn.fujaba.muml.common.properties">
         <propertySection
             id="CommentableElement.comment" 
@@ -59,14 +34,27 @@
 	  </propertySections>
    </extension>
    
-   
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?propgen generated="true"?>
       <propertySections contributorId="de.uni_paderborn.fujaba.muml.common.properties">
         <propertySection
             id="NamedElement.name" 
             tab="base"
             class="de.uni_paderborn.fujaba.muml.realtimestatechart.section.NamedElementNameSection">
             <input type="org.storydriven.core.NamedElement"/>
+         </propertySection>
+	  </propertySections>
+   </extension>
+   
+   
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?propgen generated="true"?>
+      <propertySections contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+        <propertySection
+            id="Transition.relativeDeadline" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.realtimestatechart.section.TransitionRelativeDeadlineSection">
+            <input type="de.uni_paderborn.fujaba.muml.realtimestatechart.Transition"/>
          </propertySection>
 	  </propertySections>
    </extension>
