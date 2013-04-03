@@ -8,7 +8,7 @@
 	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
-	            icon="icons/obj16/TypeDialog.gif"
+	            icon="icons/TypeDialog.gif"
 	            id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
 	            label="Open Type Dialog"
 	            style="push">
