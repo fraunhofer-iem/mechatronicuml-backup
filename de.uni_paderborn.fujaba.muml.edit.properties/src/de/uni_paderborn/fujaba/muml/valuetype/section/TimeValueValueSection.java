@@ -7,6 +7,10 @@ import de.upb.swt.core.ui.properties.sections.AbstractGroupSection;
 
 public class TimeValueValueSection extends AbstractGroupSection {
 
+	public TimeValueValueSection() {
+		addSection(new NaturalNumberValueSection());
+	}
+	
 	@Override
 	protected String getLabelText() {
 		return "Value";
