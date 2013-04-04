@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.util;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.*;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -15,6 +14,12 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeStrategy;
 
 
 /**

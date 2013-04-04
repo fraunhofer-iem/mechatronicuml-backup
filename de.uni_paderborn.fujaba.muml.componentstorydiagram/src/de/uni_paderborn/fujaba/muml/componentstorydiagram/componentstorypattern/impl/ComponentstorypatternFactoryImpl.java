@@ -7,12 +7,24 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable;
 
 
 /**

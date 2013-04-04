@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.ComponentstorypatternPackageImpl;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode;
@@ -24,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.Controlflo
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeStrategy;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.util.ControlflowValidator;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.ComponentstorydiagramPackageImpl;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 

@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.util;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -17,6 +16,10 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 import org.storydriven.storydiagrams.activities.ActivityNode;
 
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
 
 /**

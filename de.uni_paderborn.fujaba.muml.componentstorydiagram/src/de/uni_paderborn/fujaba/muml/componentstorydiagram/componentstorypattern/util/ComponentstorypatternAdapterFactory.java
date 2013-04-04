@@ -7,8 +7,6 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.util;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.*;
-import de.uni_paderborn.fujaba.muml.connector.Connector;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -16,6 +14,22 @@ import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ConnectorVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PortVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable;
+import de.uni_paderborn.fujaba.muml.connector.Connector;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 
 
 /**

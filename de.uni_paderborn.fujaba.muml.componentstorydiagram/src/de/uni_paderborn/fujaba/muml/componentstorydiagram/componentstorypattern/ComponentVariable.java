@@ -6,10 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern;
 
-import de.uni_paderborn.fujaba.muml.component.Component;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
-
 import org.eclipse.emf.common.util.EList;
+
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
 
 
 /**

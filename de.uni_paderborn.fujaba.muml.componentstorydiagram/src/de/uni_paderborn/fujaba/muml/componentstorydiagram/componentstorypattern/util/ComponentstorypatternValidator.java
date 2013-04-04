@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.util;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.*;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -15,6 +14,20 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ConnectorVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PortVariable;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable;
 
 
 /**
