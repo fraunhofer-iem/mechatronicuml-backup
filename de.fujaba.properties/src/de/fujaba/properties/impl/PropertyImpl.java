@@ -243,9 +243,9 @@ public class PropertyImpl extends EObjectImpl implements Property {
 		if (newSection != section) {
 			NotificationChain msgs = null;
 			if (section != null)
-				msgs = ((InternalEObject)section).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY__SECTION, null, msgs);
+				msgs = ((InternalEObject)section).eInverseRemove(this, PropertiesPackage.PROPERTY_SECTION__PROPERTY, PropertySection.class, msgs);
 			if (newSection != null)
-				msgs = ((InternalEObject)newSection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY__SECTION, null, msgs);
+				msgs = ((InternalEObject)newSection).eInverseAdd(this, PropertiesPackage.PROPERTY_SECTION__PROPERTY, PropertySection.class, msgs);
 			msgs = basicSetSection(newSection, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -272,6 +272,22 @@ public class PropertyImpl extends EObjectImpl implements Property {
 		tooltip = newTooltip;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__TOOLTIP, oldTooltip, tooltip));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PropertiesPackage.PROPERTY__SECTION:
+				if (section != null)
+					msgs = ((InternalEObject)section).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY__SECTION, null, msgs);
+				return basicSetSection((PropertySection)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

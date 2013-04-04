@@ -15,7 +15,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -27,6 +26,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
+import de.fujaba.properties.PropertySection;
 
 /**
  * This is the item provider adapter for a {@link de.fujaba.properties.GroupPropertySection} object.
@@ -72,7 +72,7 @@ public class GroupPropertySectionItemProvider
 	 * This adds a property descriptor for the Navigated Properties feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addNavigatedPropertiesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
@@ -90,7 +90,7 @@ public class GroupPropertySectionItemProvider
 				 null) {
 				@Override
 				public Collection<?> getChoiceOfValues(Object object) {
-					Property containingProperty = (Property) ((EObject) object).eContainer();
+					Property containingProperty = ((PropertySection) object).getProperty();
 					List<Object> choices = new ArrayList<Object>();
 					for (Object choice : super.getChoiceOfValues(object)) {
 						if (false == (choice instanceof Property)) {

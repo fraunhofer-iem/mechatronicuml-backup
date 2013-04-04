@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="properties"
-    nsURI="http://de.fujaba.properties/0.1" nsPrefix="de.fujaba">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="properties" nsURI="http://de.fujaba.properties/0.1" nsPrefix="de.fujaba">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -23,7 +21,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="tabs" upperBound="-1" eType="#//PropertyTab"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
-        eType="#//Package" containment="true"/>
+        eType="#//Package" containment="true" eOpposite="#//Package/generator"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contributorId" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -55,6 +53,8 @@
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="classes" upperBound="-1"
         eType="#//Class" containment="true" eOpposite="#//Class/package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generator" lowerBound="1"
+        eType="#//PropertyGenerator" eOpposite="#//PropertyGenerator/packages"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Class">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -68,7 +68,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="package" lowerBound="1"
         eType="#//Package" eOpposite="#//Package/classes"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
-        eType="#//Property" containment="true"/>
+        eType="#//Property" containment="true" eOpposite="#//Property/class"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Property">
     <eStructuralFeatures xsi:type="ecore:EReference" name="genFeature" lowerBound="1"
@@ -77,10 +77,15 @@
         eType="#//PropertyFilter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tab" lowerBound="1" eType="#//PropertyTab"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="section" eType="#//PropertySection"
-        containment="true"/>
+        containment="true" eOpposite="#//PropertySection/property"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tooltip" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1" eType="#//Class"
+        eOpposite="#//Class/properties"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertySection" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertySection" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
+        eType="#//Property" eOpposite="#//Property/section"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextPropertySection" eSuperTypes="#//PropertySection">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiLine" lowerBound="1"
         eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>

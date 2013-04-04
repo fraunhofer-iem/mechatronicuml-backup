@@ -29,14 +29,14 @@ mapping inout PropertyGenerator::generator() {
 		plugin.requiredBundles += Set {
 			"org.eclipse.ui",
 			"org.eclipse.core.runtime",
-			"de.fujaba.properties.runtime",
 			"org.eclipse.emf.ecore",
+			"de.upb.swt.core.ui.properties",
 			genModel.modelPluginID
 		};
 		
 		-- there must be at least one tab
 		if (tabs->isEmpty()) then {
-			tabs := new PropertyTab('default', 'Default');
+			tabs := new PropertyTab('base', 'Base');
 		} endif;
 		
 		-- make sure, defaultTab is set
@@ -57,7 +57,7 @@ mapping inout PropertyGenerator::generator() {
 		-- initialize newly created GroupPropertySections
 		GROUP_PROPERTY_SECTIONS->forEach(section) {
 			if section.container().oclIsKindOf(Property) then {
-			var prop : Property := section.container().oclAsType(Property);
+			var prop : Property := section._property;//container().oclAsType(Property);
 				section.navigatedProperties := packages.classes->select(c | prop.genFeature.ecoreFeature.eType = c.genClass.ecoreClass).properties;
 			} endif;
 		}
@@ -138,7 +138,7 @@ query GenFeature::shouldGenerate() : Boolean {
 	return true; -- not ecoreFeature.derived;
 }
 constructor Plugin::Plugin(genModel : GenModel) {
-	name := genModel.modelPluginID + ".properties";
+	name := genModel.modelPluginID + ".edit.properties";
 	version := '0.1';
 }
 

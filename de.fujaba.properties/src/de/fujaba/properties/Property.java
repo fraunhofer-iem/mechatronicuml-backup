@@ -101,6 +101,7 @@ public interface Property extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Section</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.PropertySection#getProperty <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Section</em>' containment reference isn't clear,
@@ -110,7 +111,8 @@ public interface Property extends EObject {
 	 * @return the value of the '<em>Section</em>' containment reference.
 	 * @see #setSection(PropertySection)
 	 * @see de.fujaba.properties.PropertiesPackage#getProperty_Section()
-	 * @model containment="true"
+	 * @see de.fujaba.properties.PropertySection#getProperty
+	 * @model opposite="property" containment="true"
 	 * @generated
 	 */
 	PropertySection getSection();

@@ -175,6 +175,7 @@ public class PropertyGeneratorItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY_GENERATOR__PLUGIN);
 			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY_GENERATOR__TABS);
 			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY_GENERATOR__PACKAGES);
 		}
@@ -252,6 +253,11 @@ public class PropertyGeneratorItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PropertiesPackage.Literals.PROPERTY_GENERATOR__PLUGIN,
+				 PropertiesFactory.eINSTANCE.createPlugin()));
 
 		newChildDescriptors.add
 			(createChildParameter

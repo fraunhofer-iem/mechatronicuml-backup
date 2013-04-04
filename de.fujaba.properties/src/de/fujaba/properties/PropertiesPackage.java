@@ -383,13 +383,22 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY_SECTION = 6;
 
 	/**
+	 * The feature id for the '<em><b>Property</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_SECTION__PROPERTY = 0;
+
+	/**
 	 * The number of structural features of the '<em>Property Section</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_SECTION_FEATURE_COUNT = 0;
+	int PROPERTY_SECTION_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.TextPropertySectionImpl <em>Text Property Section</em>}' class.
@@ -400,6 +409,15 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	int TEXT_PROPERTY_SECTION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_PROPERTY_SECTION__PROPERTY = PROPERTY_SECTION__PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Multi Line</b></em>' attribute.
@@ -430,6 +448,15 @@ public interface PropertiesPackage extends EPackage {
 	int COMBO_BOX_PROPERTY_SECTION = 8;
 
 	/**
+	 * The feature id for the '<em><b>Property</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMBO_BOX_PROPERTY_SECTION__PROPERTY = PROPERTY_SECTION__PROPERTY;
+
+	/**
 	 * The number of structural features of the '<em>Combo Box Property Section</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -447,6 +474,15 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	int RADIO_PROPERTY_SECTION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RADIO_PROPERTY_SECTION__PROPERTY = PROPERTY_SECTION__PROPERTY;
 
 	/**
 	 * The number of structural features of the '<em>Radio Property Section</em>' class.
@@ -468,6 +504,15 @@ public interface PropertiesPackage extends EPackage {
 	int LIST_PROPERTY_SECTION = 10;
 
 	/**
+	 * The feature id for the '<em><b>Property</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LIST_PROPERTY_SECTION__PROPERTY = PROPERTY_SECTION__PROPERTY;
+
+	/**
 	 * The number of structural features of the '<em>List Property Section</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -485,6 +530,15 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	int GROUP_PROPERTY_SECTION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP_PROPERTY_SECTION__PROPERTY = PROPERTY_SECTION__PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Navigated Properties</b></em>' reference list.
@@ -865,6 +919,17 @@ public interface PropertiesPackage extends EPackage {
 	EClass getPropertySection();
 
 	/**
+	 * Returns the meta object for the container reference '{@link de.fujaba.properties.PropertySection#getProperty <em>Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Property</em>'.
+	 * @see de.fujaba.properties.PropertySection#getProperty()
+	 * @see #getPropertySection()
+	 * @generated
+	 */
+	EReference getPropertySection_Property();
+
+	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.TextPropertySection <em>Text Property Section</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1234,6 +1299,14 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PROPERTY_SECTION = eINSTANCE.getPropertySection();
+
+		/**
+		 * The meta object literal for the '<em><b>Property</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTY_SECTION__PROPERTY = eINSTANCE.getPropertySection_Property();
 
 		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.TextPropertySectionImpl <em>Text Property Section</em>}' class.

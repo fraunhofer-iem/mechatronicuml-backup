@@ -14,5 +14,7 @@ String fullyQualifiedName(genmodel::GenPackage this) :
 	else
 		'') + ecorePackage.name;
 
+String toFirstUp(String this) : "";
+
 //String sectionName(Property this) :
 //	genFeature.genClass.ecoreClass.name + genFeature.ecoreFeature.name;
