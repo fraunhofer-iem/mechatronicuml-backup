@@ -1,16 +1,26 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.m2m.qvt.oml.BasicModelExtent;
+import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
+import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
+import org.eclipse.m2m.qvt.oml.ModelExtent;
+import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.handlers.HandlerUtil;
+import org.storydriven.storydiagrams.activities.Activity;
 
+import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart;
 
@@ -39,6 +49,34 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 	}
 	
 	private void makeStructuredComponentReconfigurable(StaticStructuredComponent sc){
+		ModelElementCategory category = (ModelElementCategory) sc.eContainer();
+		
+		URI transformationURI = URI
+				.createPlatformPluginURI(
+						"/de.uni_paderborn.fujaba.muml.reconfiguration.ui/transforms/MakeStructuredComponentReconfigurable.qvto",
+						true);
+
+		// create executor and execution context
+		TransformationExecutor executor = new TransformationExecutor(
+				transformationURI);
+		ExecutionContextImpl context = new ExecutionContextImpl();
+
+		// create input extend containing the component and the category
+		List<StaticStructuredComponent> compList = new ArrayList<StaticStructuredComponent>();
+		compList.add(sc);
+		List<ModelElementCategory> catList = new ArrayList<ModelElementCategory>();
+		catList.add(category);
+		ModelExtent inputComponent = new BasicModelExtent(compList);
+		ModelExtent inputCategory = new BasicModelExtent(catList);
+
+		// execute transformation
+		ExecutionDiagnostic result = executor.execute(context, inputComponent, inputCategory);
+		if (result.getSeverity() != ExecutionDiagnostic.OK) {
+
+			System.out
+					.println("A QVT-O ERROR occured while execution the transformation. Message was:");
+			System.out.println(result.getMessage());
+		}
 		
 		
 	}
