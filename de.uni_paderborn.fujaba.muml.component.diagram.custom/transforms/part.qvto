@@ -23,4 +23,5 @@ query Component::createPortParts() : Set(PortPart) {
 
 constructor PortPart::PortPart(type : Port) {
 	portType := type;
+	name := type.name;
 }
