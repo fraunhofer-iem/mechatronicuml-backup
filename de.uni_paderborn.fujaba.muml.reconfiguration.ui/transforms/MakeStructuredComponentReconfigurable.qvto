@@ -46,9 +46,9 @@ main() {
 mapping createReconfigurableComponent(in oldComp : StaticStructuredComponent) : ReconfigurableStructuredComponent {
 	
 	-- copy attributes
-	name := name;
-	comment := comment;
-	componentType := componentType;
+	name := oldComp.name;
+	comment := oldComp.comment;
+	componentType := oldComp.componentType;
 	
 	-- move features contained in references
 	
