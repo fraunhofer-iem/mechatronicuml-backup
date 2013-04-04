@@ -1,5 +1,6 @@
 import genmodel;
 import ecore;
+import properties;
 
 String fullyQualifiedName(genmodel::GenClass this) :
 	genPackage.fullyQualifiedName() + '.' + ecoreClass.name;
@@ -13,5 +14,5 @@ String fullyQualifiedName(genmodel::GenPackage this) :
 	else
 		'') + ecorePackage.name;
 
-String sectionName(Property this) :
-	'property.genFeature.genClass.ecoreClass.name + property.genFeature.ecoreFeature.name + Section';
+//String sectionName(Property this) :
+//	genFeature.genClass.ecoreClass.name + genFeature.ecoreFeature.name;

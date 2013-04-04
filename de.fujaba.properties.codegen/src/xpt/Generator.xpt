@@ -1,4 +1,5 @@
 «IMPORT properties»
+«EXTENSION Metamodel»
 
 «DEFINE Generate FOR PropertyGenerator»
 «FILE 'META-INF/MANIFEST.MF'-»
@@ -9,8 +10,8 @@
 «EXPAND plugin::Plugin::Plugin-»
 «ENDFILE-»
 
-«FOREACH packages.classes.properties->reject(section.oclIsUndefined()) AS property»
-«FILE 'src/' + (genModel.modelPluginID + '.properties').replaceAll('\\.', '/') + '/sections/' + property.sectionName() + 'Section'.java'»
+«FOREACH packages.classes.properties.select(p | p.section != null) AS property»
+«FILE 'src/' + (genModel.modelPluginID + '.properties').replaceAll('\\.', '/') + '/sections/' + property.genFeature.genClass.ecoreClass.name + property.genFeature.ecoreFeature.name+ 'Section.java'»
 package «genModel.modelPluginID».properties.sections;
 «EXPAND section::Section::Section FOR property.section»
 «ENDFILE»

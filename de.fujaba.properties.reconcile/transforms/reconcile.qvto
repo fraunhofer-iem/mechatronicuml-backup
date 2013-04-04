@@ -4,6 +4,7 @@ modeltype genmodel uses genmodel('http://www.eclipse.org/emf/2002/GenModel');
 modeltype ecore uses ecore ('http://www.eclipse.org/emf/2002/Ecore');
 modeltype Properties uses properties('http://de.fujaba.properties/0.1');
 
+property GROUP_PROPERTY_SECTIONS : OrderedSet(GroupPropertySection) = object OrderedSet(GroupPropertySection){};
 
 main() {
 	log("QVT-O Script \"reconcile.qvto\" started.");
@@ -52,6 +53,14 @@ mapping inout PropertyGenerator::generator() {
 		
 		-- reconcile all packages
 		packages->map reconcilePackage(defaultTab);
+		
+		-- initialize newly created GroupPropertySections
+		GROUP_PROPERTY_SECTIONS->forEach(section) {
+			if section.container().oclIsKindOf(Property) then {
+			var prop : Property := section.container().oclAsType(Property);
+				section.navigatedProperties := packages.classes->select(c | prop.genFeature.ecoreFeature.eType = c.genClass.ecoreClass).properties;
+			} endif;
+		}
 	} endif;
 }
 
@@ -94,20 +103,28 @@ mapping Package::createClass(_class : GenClass) : Class{
 mapping Class::createProperty(_feature : GenFeature, _tab : PropertyTab) : Property {
 	genFeature := _feature;
 	tab := _tab;
-	editor := _feature->map editor()->any(true);
+	section := _feature->map section()->any(true);
 }
 
-mapping GenFeature::editor() : PropertyEditor
-	disjuncts GenFeature::textEditor, GenFeature::listEditor, GenFeature::radioEditor;
+mapping GenFeature::section() : PropertySection
+	disjuncts 
+	GenFeature::textSection, 
+	GenFeature::listSection, 
+	GenFeature::radioSection, 
+	GenFeature::groupSection;
 
-mapping GenFeature::textEditor() : TextPropertyEditor when {self.ecoreFeature.oclIsKindOf(EAttribute) and not self.ecoreFeature.eType.oclIsKindOf(EEnum) } {
+mapping GenFeature::textSection() : TextPropertySection when {self.ecoreFeature.oclIsKindOf(EAttribute) and not self.ecoreFeature.eType.oclIsKindOf(EEnum) } {
 	multiLine := self.propertyMultiLine;
 }
 
-mapping GenFeature::listEditor() : ListPropertyEditor when {self.ecoreFeature.oclIsKindOf(EReference) and self.ecoreFeature.many} {
+mapping GenFeature::listSection() : ListPropertySection when {self.ecoreFeature.oclIsKindOf(EReference) and self.ecoreFeature.upperBound > 1} {
 }
 
-mapping GenFeature::radioEditor() : RadioPropertyEditor when {self.ecoreFeature.eType.oclIsKindOf(EEnum)} {
+mapping GenFeature::radioSection() : RadioPropertySection when {self.ecoreFeature.eType.oclIsKindOf(EEnum)} {
+}
+
+mapping GenFeature::groupSection() : GroupPropertySection when {self.ecoreFeature.oclIsKindOf(EReference) and self.ecoreFeature.oclAsType(EReference).containment and self.ecoreFeature.upperBound = 1} {
+	GROUP_PROPERTY_SECTIONS += result;
 }
 
 

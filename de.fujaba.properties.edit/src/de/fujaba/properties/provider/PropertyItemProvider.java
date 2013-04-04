@@ -184,7 +184,7 @@ public class PropertyItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__FILTERS);
-			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__EDITOR);
+			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__SECTION);
 		}
 		return childrenFeatures;
 	}
@@ -253,7 +253,7 @@ public class PropertyItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case PropertiesPackage.PROPERTY__FILTERS:
-			case PropertiesPackage.PROPERTY__EDITOR:
+			case PropertiesPackage.PROPERTY__SECTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -278,27 +278,27 @@ public class PropertyItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.PROPERTY__EDITOR,
+				(PropertiesPackage.Literals.PROPERTY__SECTION,
 				 PropertiesFactory.eINSTANCE.createTextPropertySection()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.PROPERTY__EDITOR,
+				(PropertiesPackage.Literals.PROPERTY__SECTION,
 				 PropertiesFactory.eINSTANCE.createComboBoxPropertySection()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.PROPERTY__EDITOR,
+				(PropertiesPackage.Literals.PROPERTY__SECTION,
 				 PropertiesFactory.eINSTANCE.createRadioPropertySection()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.PROPERTY__EDITOR,
+				(PropertiesPackage.Literals.PROPERTY__SECTION,
 				 PropertiesFactory.eINSTANCE.createListPropertySection()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.PROPERTY__EDITOR,
+				(PropertiesPackage.Literals.PROPERTY__SECTION,
 				 PropertiesFactory.eINSTANCE.createGroupPropertySection()));
 	}
 

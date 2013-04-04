@@ -35,7 +35,7 @@ import de.fujaba.properties.PropertyTab;
  *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getGenFeature <em>Gen Feature</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getFilters <em>Filters</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getTab <em>Tab</em>}</li>
- *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getEditor <em>Editor</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getSection <em>Section</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getTooltip <em>Tooltip</em>}</li>
  * </ul>
  * </p>
@@ -74,14 +74,14 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	protected PropertyTab tab;
 
 	/**
-	 * The cached value of the '{@link #getEditor() <em>Editor</em>}' containment reference.
+	 * The cached value of the '{@link #getSection() <em>Section</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEditor()
+	 * @see #getSection()
 	 * @generated
 	 * @ordered
 	 */
-	protected PropertySection editor;
+	protected PropertySection section;
 
 	/**
 	 * The default value of the '{@link #getTooltip() <em>Tooltip</em>}' attribute.
@@ -215,8 +215,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertySection getEditor() {
-		return editor;
+	public PropertySection getSection() {
+		return section;
 	}
 
 	/**
@@ -224,11 +224,11 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEditor(PropertySection newEditor, NotificationChain msgs) {
-		PropertySection oldEditor = editor;
-		editor = newEditor;
+	public NotificationChain basicSetSection(PropertySection newSection, NotificationChain msgs) {
+		PropertySection oldSection = section;
+		section = newSection;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__EDITOR, oldEditor, newEditor);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__SECTION, oldSection, newSection);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -239,18 +239,18 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEditor(PropertySection newEditor) {
-		if (newEditor != editor) {
+	public void setSection(PropertySection newSection) {
+		if (newSection != section) {
 			NotificationChain msgs = null;
-			if (editor != null)
-				msgs = ((InternalEObject)editor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY__EDITOR, null, msgs);
-			if (newEditor != null)
-				msgs = ((InternalEObject)newEditor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY__EDITOR, null, msgs);
-			msgs = basicSetEditor(newEditor, msgs);
+			if (section != null)
+				msgs = ((InternalEObject)section).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY__SECTION, null, msgs);
+			if (newSection != null)
+				msgs = ((InternalEObject)newSection).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY__SECTION, null, msgs);
+			msgs = basicSetSection(newSection, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__EDITOR, newEditor, newEditor));
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__SECTION, newSection, newSection));
 	}
 
 	/**
@@ -284,8 +284,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 		switch (featureID) {
 			case PropertiesPackage.PROPERTY__FILTERS:
 				return ((InternalEList<?>)getFilters()).basicRemove(otherEnd, msgs);
-			case PropertiesPackage.PROPERTY__EDITOR:
-				return basicSetEditor(null, msgs);
+			case PropertiesPackage.PROPERTY__SECTION:
+				return basicSetSection(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -306,8 +306,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__TAB:
 				if (resolve) return getTab();
 				return basicGetTab();
-			case PropertiesPackage.PROPERTY__EDITOR:
-				return getEditor();
+			case PropertiesPackage.PROPERTY__SECTION:
+				return getSection();
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				return getTooltip();
 		}
@@ -333,8 +333,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__TAB:
 				setTab((PropertyTab)newValue);
 				return;
-			case PropertiesPackage.PROPERTY__EDITOR:
-				setEditor((PropertySection)newValue);
+			case PropertiesPackage.PROPERTY__SECTION:
+				setSection((PropertySection)newValue);
 				return;
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				setTooltip((String)newValue);
@@ -360,8 +360,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__TAB:
 				setTab((PropertyTab)null);
 				return;
-			case PropertiesPackage.PROPERTY__EDITOR:
-				setEditor((PropertySection)null);
+			case PropertiesPackage.PROPERTY__SECTION:
+				setSection((PropertySection)null);
 				return;
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				setTooltip(TOOLTIP_EDEFAULT);
@@ -384,8 +384,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return filters != null && !filters.isEmpty();
 			case PropertiesPackage.PROPERTY__TAB:
 				return tab != null;
-			case PropertiesPackage.PROPERTY__EDITOR:
-				return editor != null;
+			case PropertiesPackage.PROPERTY__SECTION:
+				return section != null;
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				return TOOLTIP_EDEFAULT == null ? tooltip != null : !TOOLTIP_EDEFAULT.equals(tooltip);
 		}

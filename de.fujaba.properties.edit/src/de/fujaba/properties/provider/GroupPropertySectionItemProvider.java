@@ -7,14 +7,15 @@
 package de.fujaba.properties.provider;
 
 
-import de.fujaba.properties.PropertiesPackage;
-
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,6 +23,10 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+
+import de.fujaba.properties.PropertiesPackage;
+import de.fujaba.properties.Property;
 
 /**
  * This is the item provider adapter for a {@link de.fujaba.properties.GroupPropertySection} object.
@@ -71,7 +76,7 @@ public class GroupPropertySectionItemProvider
 	 */
 	protected void addNavigatedPropertiesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_GroupPropertySection_navigatedProperties_feature"),
@@ -82,7 +87,25 @@ public class GroupPropertySectionItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					Property containingProperty = (Property) ((EObject) object).eContainer();
+					List<Object> choices = new ArrayList<Object>();
+					for (Object choice : super.getChoiceOfValues(object)) {
+						if (false == (choice instanceof Property)) {
+							continue;
+						}
+						Property property = (Property) choice;
+						EClass eClass = property.getGenFeature().getGenClass().getEcoreClass();
+						EClassifier eClassifier = containingProperty.getGenFeature().getEcoreFeature().getEType();
+						if (eClass == eClassifier) {
+							choices.add(choice);
+						}
+					}
+					return choices;
+				}
+			});
 	}
 
 	/**
