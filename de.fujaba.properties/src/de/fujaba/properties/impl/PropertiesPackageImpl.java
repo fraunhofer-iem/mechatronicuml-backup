@@ -280,6 +280,15 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPropertyGenerator_SourceFolder() {
+		return (EAttribute)propertyGeneratorEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPlugin() {
 		return pluginEClass;
 	}
@@ -625,6 +634,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		createEReference(propertyGeneratorEClass, PROPERTY_GENERATOR__TABS);
 		createEReference(propertyGeneratorEClass, PROPERTY_GENERATOR__PACKAGES);
 		createEAttribute(propertyGeneratorEClass, PROPERTY_GENERATOR__CONTRIBUTOR_ID);
+		createEAttribute(propertyGeneratorEClass, PROPERTY_GENERATOR__SOURCE_FOLDER);
 
 		pluginEClass = createEClass(PLUGIN);
 		createEAttribute(pluginEClass, PLUGIN__NAME);
@@ -722,6 +732,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		initEReference(getPropertyGenerator_Tabs(), this.getPropertyTab(), null, "tabs", null, 0, -1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPropertyGenerator_Packages(), this.getPackage(), this.getPackage_Generator(), "packages", null, 0, -1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPropertyGenerator_ContributorId(), ecorePackage.getEString(), "contributorId", null, 1, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPropertyGenerator_SourceFolder(), ecorePackage.getEString(), "sourceFolder", "src-gen", 1, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pluginEClass, Plugin.class, "Plugin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPlugin_Name(), theEcorePackage.getEString(), "name", null, 1, 1, Plugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

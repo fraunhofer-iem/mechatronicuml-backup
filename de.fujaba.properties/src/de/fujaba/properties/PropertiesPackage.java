@@ -125,13 +125,22 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY_GENERATOR__CONTRIBUTOR_ID = 5;
 
 	/**
+	 * The feature id for the '<em><b>Source Folder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_GENERATOR__SOURCE_FOLDER = 6;
+
+	/**
 	 * The number of structural features of the '<em>Property Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR_FEATURE_COUNT = 6;
+	int PROPERTY_GENERATOR_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.PluginImpl <em>Plugin</em>}' class.
@@ -701,6 +710,17 @@ public interface PropertiesPackage extends EPackage {
 	EAttribute getPropertyGenerator_ContributorId();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.PropertyGenerator#getSourceFolder <em>Source Folder</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Source Folder</em>'.
+	 * @see de.fujaba.properties.PropertyGenerator#getSourceFolder()
+	 * @see #getPropertyGenerator()
+	 * @generated
+	 */
+	EAttribute getPropertyGenerator_SourceFolder();
+
+	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.Plugin <em>Plugin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1151,6 +1171,14 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROPERTY_GENERATOR__CONTRIBUTOR_ID = eINSTANCE.getPropertyGenerator_ContributorId();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Folder</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTY_GENERATOR__SOURCE_FOLDER = eINSTANCE.getPropertyGenerator_SourceFolder();
 
 		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.PluginImpl <em>Plugin</em>}' class.

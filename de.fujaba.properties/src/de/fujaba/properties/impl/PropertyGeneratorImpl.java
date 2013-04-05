@@ -38,6 +38,7 @@ import de.fujaba.properties.PropertyTab;
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getTabs <em>Tabs</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getPackages <em>Packages</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getContributorId <em>Contributor Id</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getSourceFolder <em>Source Folder</em>}</li>
  * </ul>
  * </p>
  *
@@ -113,6 +114,26 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 	 * @ordered
 	 */
 	protected String contributorId = CONTRIBUTOR_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSourceFolder() <em>Source Folder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceFolder()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String SOURCE_FOLDER_EDEFAULT = "src-gen";
+
+	/**
+	 * The cached value of the '{@link #getSourceFolder() <em>Source Folder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSourceFolder()
+	 * @generated
+	 * @ordered
+	 */
+	protected String sourceFolder = SOURCE_FOLDER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -302,6 +323,27 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getSourceFolder() {
+		return sourceFolder;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSourceFolder(String newSourceFolder) {
+		String oldSourceFolder = sourceFolder;
+		sourceFolder = newSourceFolder;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY_GENERATOR__SOURCE_FOLDER, oldSourceFolder, sourceFolder));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -352,6 +394,8 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 				return getPackages();
 			case PropertiesPackage.PROPERTY_GENERATOR__CONTRIBUTOR_ID:
 				return getContributorId();
+			case PropertiesPackage.PROPERTY_GENERATOR__SOURCE_FOLDER:
+				return getSourceFolder();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -385,6 +429,9 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 			case PropertiesPackage.PROPERTY_GENERATOR__CONTRIBUTOR_ID:
 				setContributorId((String)newValue);
 				return;
+			case PropertiesPackage.PROPERTY_GENERATOR__SOURCE_FOLDER:
+				setSourceFolder((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -415,6 +462,9 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 			case PropertiesPackage.PROPERTY_GENERATOR__CONTRIBUTOR_ID:
 				setContributorId(CONTRIBUTOR_ID_EDEFAULT);
 				return;
+			case PropertiesPackage.PROPERTY_GENERATOR__SOURCE_FOLDER:
+				setSourceFolder(SOURCE_FOLDER_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -439,6 +489,8 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 				return packages != null && !packages.isEmpty();
 			case PropertiesPackage.PROPERTY_GENERATOR__CONTRIBUTOR_ID:
 				return CONTRIBUTOR_ID_EDEFAULT == null ? contributorId != null : !CONTRIBUTOR_ID_EDEFAULT.equals(contributorId);
+			case PropertiesPackage.PROPERTY_GENERATOR__SOURCE_FOLDER:
+				return SOURCE_FOLDER_EDEFAULT == null ? sourceFolder != null : !SOURCE_FOLDER_EDEFAULT.equals(sourceFolder);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -455,6 +507,8 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (contributorId: ");
 		result.append(contributorId);
+		result.append(", sourceFolder: ");
+		result.append(sourceFolder);
 		result.append(')');
 		return result.toString();
 	}

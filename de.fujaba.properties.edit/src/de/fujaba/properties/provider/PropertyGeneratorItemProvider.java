@@ -71,6 +71,7 @@ public class PropertyGeneratorItemProvider
 			addPluginPropertyDescriptor(object);
 			addDefaultTabPropertyDescriptor(object);
 			addContributorIdPropertyDescriptor(object);
+			addSourceFolderPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -164,6 +165,28 @@ public class PropertyGeneratorItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Source Folder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSourceFolderPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PropertyGenerator_sourceFolder_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyGenerator_sourceFolder_feature", "_UI_PropertyGenerator_type"),
+				 PropertiesPackage.Literals.PROPERTY_GENERATOR__SOURCE_FOLDER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -233,6 +256,7 @@ public class PropertyGeneratorItemProvider
 
 		switch (notification.getFeatureID(PropertyGenerator.class)) {
 			case PropertiesPackage.PROPERTY_GENERATOR__CONTRIBUTOR_ID:
+			case PropertiesPackage.PROPERTY_GENERATOR__SOURCE_FOLDER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case PropertiesPackage.PROPERTY_GENERATOR__TABS:

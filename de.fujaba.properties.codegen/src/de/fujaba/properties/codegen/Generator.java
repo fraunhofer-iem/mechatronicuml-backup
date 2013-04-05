@@ -15,6 +15,7 @@ import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -65,6 +66,8 @@ public class Generator {
 	}
 
 	public void generate(PropertyGenerator generator) throws CoreException {
+		Assert.isNotNull(generator);
+		
 		BasicDiagnostic diagnostics = new BasicDiagnostic();
 		Map<Object, Object> context = new HashMap<Object, Object>();
 		if (!Diagnostician.INSTANCE.validate(generator, diagnostics, context)) {
@@ -77,14 +80,19 @@ public class Generator {
 		}
 		if (plugin.getName() == null) {
 			throw new UnsupportedOperationException(
-					"Plugin: No name element defined!");
+					"Plugin: No name specified!");
+		}
+		
+		String sourceFolder = "src-gen";
+		if (generator.getSourceFolder() != null) {
+			sourceFolder = generator.getSourceFolder();
 		}
 
 		// create project
 		IProject project = ResourcesPlugin.getWorkspace().getRoot()
 				.getProject(plugin.getName());
 		if (!project.exists()) {
-			createProject(project, Arrays.asList(new String[] { "src" }),
+			createProject(project, Arrays.asList(new String[] { sourceFolder }),
 					new NullProgressMonitor());
 		}
 

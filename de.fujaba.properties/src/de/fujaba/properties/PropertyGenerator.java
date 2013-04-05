@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getTabs <em>Tabs</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getPackages <em>Packages</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getContributorId <em>Contributor Id</em>}</li>
+ *   <li>{@link de.fujaba.properties.PropertyGenerator#getSourceFolder <em>Source Folder</em>}</li>
  * </ul>
  * </p>
  *
@@ -170,5 +171,32 @@ public interface PropertyGenerator extends EObject {
 	 * @generated
 	 */
 	void setContributorId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Source Folder</b></em>' attribute.
+	 * The default value is <code>"src-gen"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Source Folder</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source Folder</em>' attribute.
+	 * @see #setSourceFolder(String)
+	 * @see de.fujaba.properties.PropertiesPackage#getPropertyGenerator_SourceFolder()
+	 * @model default="src-gen" required="true"
+	 * @generated
+	 */
+	String getSourceFolder();
+
+	/**
+	 * Sets the value of the '{@link de.fujaba.properties.PropertyGenerator#getSourceFolder <em>Source Folder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source Folder</em>' attribute.
+	 * @see #getSourceFolder()
+	 * @generated
+	 */
+	void setSourceFolder(String value);
 
 } // PropertyGenerator
