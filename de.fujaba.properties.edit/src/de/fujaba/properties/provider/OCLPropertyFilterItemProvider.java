@@ -81,7 +81,7 @@ public class OCLPropertyFilterItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_OCLPropertyFilter_expression_feature", "_UI_OCLPropertyFilter_type"),
 				 PropertiesPackage.Literals.OCL_PROPERTY_FILTER__EXPRESSION,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
@@ -107,7 +107,7 @@ public class OCLPropertyFilterItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((OCLPropertyFilter)object).getExpression();
+		String label = crop(((OCLPropertyFilter)object).getExpression());
 		return label == null || label.length() == 0 ?
 			getString("_UI_OCLPropertyFilter_type") :
 			getString("_UI_OCLPropertyFilter_type") + " " + label;

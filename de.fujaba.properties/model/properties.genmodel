@@ -68,7 +68,7 @@
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="properties.ecore#//OCLPropertyFilter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//OCLPropertyFilter/expression"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute properties.ecore#//OCLPropertyFilter/expression"/>
     </genClasses>
     <genClasses ecoreClass="properties.ecore#//PropertyReference">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//PropertyReference/active"/>
