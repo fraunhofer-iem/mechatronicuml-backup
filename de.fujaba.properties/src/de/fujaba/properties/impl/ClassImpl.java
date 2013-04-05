@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -164,7 +165,7 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 	 */
 	public EList<Property> getProperties() {
 		if (properties == null) {
-			properties = new EObjectContainmentEList<Property>(Property.class, this, PropertiesPackage.CLASS__PROPERTIES);
+			properties = new EObjectContainmentWithInverseEList<Property>(Property.class, this, PropertiesPackage.CLASS__PROPERTIES, PropertiesPackage.PROPERTY__CLAZZ);
 		}
 		return properties;
 	}
@@ -174,6 +175,7 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -181,6 +183,8 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetPackage((de.fujaba.properties.Package)otherEnd, msgs);
+			case PropertiesPackage.CLASS__PROPERTIES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProperties()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

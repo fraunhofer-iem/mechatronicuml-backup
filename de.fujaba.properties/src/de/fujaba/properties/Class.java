@@ -87,6 +87,7 @@ public interface Class extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' containment reference list.
 	 * The list contents are of type {@link de.fujaba.properties.Property}.
+	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.Property#getClazz <em>Clazz</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Properties</em>' containment reference isn't clear,
@@ -95,7 +96,8 @@ public interface Class extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Properties</em>' containment reference list.
 	 * @see de.fujaba.properties.PropertiesPackage#getClass_Properties()
-	 * @model containment="true"
+	 * @see de.fujaba.properties.Property#getClazz
+	 * @model opposite="clazz" containment="true"
 	 * @generated
 	 */
 	EList<Property> getProperties();

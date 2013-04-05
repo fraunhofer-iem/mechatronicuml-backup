@@ -254,13 +254,22 @@ public interface PropertiesPackage extends EPackage {
 	int PACKAGE__CLASSES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Generator</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__GENERATOR = 2;
+
+	/**
 	 * The number of structural features of the '<em>Package</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_FEATURE_COUNT = 2;
+	int PACKAGE_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.ClassImpl <em>Class</em>}' class.
@@ -364,13 +373,22 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY__TOOLTIP = 4;
 
 	/**
+	 * The feature id for the '<em><b>Clazz</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__CLAZZ = 5;
+
+	/**
 	 * The number of structural features of the '<em>Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = 5;
+	int PROPERTY_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertySectionImpl <em>Property Section</em>}' class.
@@ -801,6 +819,17 @@ public interface PropertiesPackage extends EPackage {
 	EReference getPackage_Classes();
 
 	/**
+	 * Returns the meta object for the container reference '{@link de.fujaba.properties.Package#getGenerator <em>Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Generator</em>'.
+	 * @see de.fujaba.properties.Package#getGenerator()
+	 * @see #getPackage()
+	 * @generated
+	 */
+	EReference getPackage_Generator();
+
+	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.Class <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -907,6 +936,17 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getProperty_Tooltip();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.fujaba.properties.Property#getClazz <em>Clazz</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Clazz</em>'.
+	 * @see de.fujaba.properties.Property#getClazz()
+	 * @see #getProperty()
+	 * @generated
+	 */
+	EReference getProperty_Clazz();
 
 	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.PropertySection <em>Property Section</em>}'.
@@ -1207,6 +1247,14 @@ public interface PropertiesPackage extends EPackage {
 		EReference PACKAGE__CLASSES = eINSTANCE.getPackage_Classes();
 
 		/**
+		 * The meta object literal for the '<em><b>Generator</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PACKAGE__GENERATOR = eINSTANCE.getPackage_Generator();
+
+		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.ClassImpl <em>Class</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1289,6 +1337,14 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROPERTY__TOOLTIP = eINSTANCE.getProperty_Tooltip();
+
+		/**
+		 * The meta object literal for the '<em><b>Clazz</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTY__CLAZZ = eINSTANCE.getProperty_Clazz();
 
 		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.PropertySectionImpl <em>Property Section</em>}' class.

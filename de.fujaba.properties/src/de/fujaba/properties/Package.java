@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.fujaba.properties.Package#getGenPackage <em>Gen Package</em>}</li>
  *   <li>{@link de.fujaba.properties.Package#getClasses <em>Classes</em>}</li>
+ *   <li>{@link de.fujaba.properties.Package#getGenerator <em>Generator</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,5 +73,33 @@ public interface Package extends EObject {
 	 * @generated
 	 */
 	EList<de.fujaba.properties.Class> getClasses();
+
+	/**
+	 * Returns the value of the '<em><b>Generator</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.PropertyGenerator#getPackages <em>Packages</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Generator</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Generator</em>' container reference.
+	 * @see #setGenerator(PropertyGenerator)
+	 * @see de.fujaba.properties.PropertiesPackage#getPackage_Generator()
+	 * @see de.fujaba.properties.PropertyGenerator#getPackages
+	 * @model opposite="packages" required="true" transient="false"
+	 * @generated
+	 */
+	PropertyGenerator getGenerator();
+
+	/**
+	 * Sets the value of the '{@link de.fujaba.properties.Package#getGenerator <em>Generator</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Generator</em>' container reference.
+	 * @see #getGenerator()
+	 * @generated
+	 */
+	void setGenerator(PropertyGenerator value);
 
 } // Package

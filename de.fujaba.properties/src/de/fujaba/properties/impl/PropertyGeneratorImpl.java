@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.fujaba.properties.Plugin;
@@ -270,7 +271,7 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 	 */
 	public EList<de.fujaba.properties.Package> getPackages() {
 		if (packages == null) {
-			packages = new EObjectContainmentEList<de.fujaba.properties.Package>(de.fujaba.properties.Package.class, this, PropertiesPackage.PROPERTY_GENERATOR__PACKAGES);
+			packages = new EObjectContainmentWithInverseEList<de.fujaba.properties.Package>(de.fujaba.properties.Package.class, this, PropertiesPackage.PROPERTY_GENERATOR__PACKAGES, PropertiesPackage.PACKAGE__GENERATOR);
 		}
 		return packages;
 	}
@@ -294,6 +295,21 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 		contributorId = newContributorId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY_GENERATOR__CONTRIBUTOR_ID, oldContributorId, contributorId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PropertiesPackage.PROPERTY_GENERATOR__PACKAGES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPackages()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

@@ -17,9 +17,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.fujaba.properties.PropertiesPackage;
+import de.fujaba.properties.PropertyGenerator;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,6 +32,7 @@ import de.fujaba.properties.PropertiesPackage;
  * <ul>
  *   <li>{@link de.fujaba.properties.impl.PackageImpl#getGenPackage <em>Gen Package</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PackageImpl#getClasses <em>Classes</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.PackageImpl#getGenerator <em>Generator</em>}</li>
  * </ul>
  * </p>
  *
@@ -130,12 +133,57 @@ public class PackageImpl extends EObjectImpl implements de.fujaba.properties.Pac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public PropertyGenerator getGenerator() {
+		if (eContainerFeatureID() != PropertiesPackage.PACKAGE__GENERATOR) return null;
+		return (PropertyGenerator)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetGenerator(PropertyGenerator newGenerator, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newGenerator, PropertiesPackage.PACKAGE__GENERATOR, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGenerator(PropertyGenerator newGenerator) {
+		if (newGenerator != eInternalContainer() || (eContainerFeatureID() != PropertiesPackage.PACKAGE__GENERATOR && newGenerator != null)) {
+			if (EcoreUtil.isAncestor(this, newGenerator))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newGenerator != null)
+				msgs = ((InternalEObject)newGenerator).eInverseAdd(this, PropertiesPackage.PROPERTY_GENERATOR__PACKAGES, PropertyGenerator.class, msgs);
+			msgs = basicSetGenerator(newGenerator, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PACKAGE__GENERATOR, newGenerator, newGenerator));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case PropertiesPackage.PACKAGE__CLASSES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClasses()).basicAdd(otherEnd, msgs);
+			case PropertiesPackage.PACKAGE__GENERATOR:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetGenerator((PropertyGenerator)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -150,8 +198,24 @@ public class PackageImpl extends EObjectImpl implements de.fujaba.properties.Pac
 		switch (featureID) {
 			case PropertiesPackage.PACKAGE__CLASSES:
 				return ((InternalEList<?>)getClasses()).basicRemove(otherEnd, msgs);
+			case PropertiesPackage.PACKAGE__GENERATOR:
+				return basicSetGenerator(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case PropertiesPackage.PACKAGE__GENERATOR:
+				return eInternalContainer().eInverseRemove(this, PropertiesPackage.PROPERTY_GENERATOR__PACKAGES, PropertyGenerator.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -167,6 +231,8 @@ public class PackageImpl extends EObjectImpl implements de.fujaba.properties.Pac
 				return basicGetGenPackage();
 			case PropertiesPackage.PACKAGE__CLASSES:
 				return getClasses();
+			case PropertiesPackage.PACKAGE__GENERATOR:
+				return getGenerator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -187,6 +253,9 @@ public class PackageImpl extends EObjectImpl implements de.fujaba.properties.Pac
 				getClasses().clear();
 				getClasses().addAll((Collection<? extends de.fujaba.properties.Class>)newValue);
 				return;
+			case PropertiesPackage.PACKAGE__GENERATOR:
+				setGenerator((PropertyGenerator)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -205,6 +274,9 @@ public class PackageImpl extends EObjectImpl implements de.fujaba.properties.Pac
 			case PropertiesPackage.PACKAGE__CLASSES:
 				getClasses().clear();
 				return;
+			case PropertiesPackage.PACKAGE__GENERATOR:
+				setGenerator((PropertyGenerator)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -221,6 +293,8 @@ public class PackageImpl extends EObjectImpl implements de.fujaba.properties.Pac
 				return genPackage != null;
 			case PropertiesPackage.PACKAGE__CLASSES:
 				return classes != null && !classes.isEmpty();
+			case PropertiesPackage.PACKAGE__GENERATOR:
+				return getGenerator() != null;
 		}
 		return super.eIsSet(featureID);
 	}

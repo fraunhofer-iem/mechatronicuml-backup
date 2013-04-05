@@ -130,6 +130,7 @@ public interface PropertyGenerator extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Packages</b></em>' containment reference list.
 	 * The list contents are of type {@link de.fujaba.properties.Package}.
+	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.Package#getGenerator <em>Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Packages</em>' containment reference list isn't clear,
@@ -138,7 +139,8 @@ public interface PropertyGenerator extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Packages</em>' containment reference list.
 	 * @see de.fujaba.properties.PropertiesPackage#getPropertyGenerator_Packages()
-	 * @model containment="true"
+	 * @see de.fujaba.properties.Package#getGenerator
+	 * @model opposite="generator" containment="true"
 	 * @generated
 	 */
 	EList<de.fujaba.properties.Package> getPackages();

@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.fujaba.properties.Property#getTab <em>Tab</em>}</li>
  *   <li>{@link de.fujaba.properties.Property#getSection <em>Section</em>}</li>
  *   <li>{@link de.fujaba.properties.Property#getTooltip <em>Tooltip</em>}</li>
+ *   <li>{@link de.fujaba.properties.Property#getClazz <em>Clazz</em>}</li>
  * </ul>
  * </p>
  *
@@ -152,5 +153,33 @@ public interface Property extends EObject {
 	 * @generated
 	 */
 	void setTooltip(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Clazz</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.Class#getProperties <em>Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Clazz</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Clazz</em>' container reference.
+	 * @see #setClazz(de.fujaba.properties.Class)
+	 * @see de.fujaba.properties.PropertiesPackage#getProperty_Clazz()
+	 * @see de.fujaba.properties.Class#getProperties
+	 * @model opposite="properties" required="true" transient="false"
+	 * @generated
+	 */
+	de.fujaba.properties.Class getClazz();
+
+	/**
+	 * Sets the value of the '{@link de.fujaba.properties.Property#getClazz <em>Clazz</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Clazz</em>' container reference.
+	 * @see #getClazz()
+	 * @generated
+	 */
+	void setClazz(de.fujaba.properties.Class value);
 
 } // Property

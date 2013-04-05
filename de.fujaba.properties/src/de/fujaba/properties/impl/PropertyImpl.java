@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.fujaba.properties.PropertiesPackage;
@@ -37,6 +38,7 @@ import de.fujaba.properties.PropertyTab;
  *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getTab <em>Tab</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getSection <em>Section</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getTooltip <em>Tooltip</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getClazz <em>Clazz</em>}</li>
  * </ul>
  * </p>
  *
@@ -279,6 +281,47 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public de.fujaba.properties.Class getClazz() {
+		if (eContainerFeatureID() != PropertiesPackage.PROPERTY__CLAZZ) return null;
+		return (de.fujaba.properties.Class)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetClazz(de.fujaba.properties.Class newClazz, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newClazz, PropertiesPackage.PROPERTY__CLAZZ, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setClazz(de.fujaba.properties.Class newClazz) {
+		if (newClazz != eInternalContainer() || (eContainerFeatureID() != PropertiesPackage.PROPERTY__CLAZZ && newClazz != null)) {
+			if (EcoreUtil.isAncestor(this, newClazz))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newClazz != null)
+				msgs = ((InternalEObject)newClazz).eInverseAdd(this, PropertiesPackage.CLASS__PROPERTIES, de.fujaba.properties.Class.class, msgs);
+			msgs = basicSetClazz(newClazz, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__CLAZZ, newClazz, newClazz));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -286,6 +329,10 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				if (section != null)
 					msgs = ((InternalEObject)section).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY__SECTION, null, msgs);
 				return basicSetSection((PropertySection)otherEnd, msgs);
+			case PropertiesPackage.PROPERTY__CLAZZ:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetClazz((de.fujaba.properties.Class)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -302,8 +349,24 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return ((InternalEList<?>)getFilters()).basicRemove(otherEnd, msgs);
 			case PropertiesPackage.PROPERTY__SECTION:
 				return basicSetSection(null, msgs);
+			case PropertiesPackage.PROPERTY__CLAZZ:
+				return basicSetClazz(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case PropertiesPackage.PROPERTY__CLAZZ:
+				return eInternalContainer().eInverseRemove(this, PropertiesPackage.CLASS__PROPERTIES, de.fujaba.properties.Class.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -326,6 +389,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return getSection();
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				return getTooltip();
+			case PropertiesPackage.PROPERTY__CLAZZ:
+				return getClazz();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -355,6 +420,9 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				setTooltip((String)newValue);
 				return;
+			case PropertiesPackage.PROPERTY__CLAZZ:
+				setClazz((de.fujaba.properties.Class)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -382,6 +450,9 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				setTooltip(TOOLTIP_EDEFAULT);
 				return;
+			case PropertiesPackage.PROPERTY__CLAZZ:
+				setClazz((de.fujaba.properties.Class)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -404,6 +475,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return section != null;
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				return TOOLTIP_EDEFAULT == null ? tooltip != null : !TOOLTIP_EDEFAULT.equals(tooltip);
+			case PropertiesPackage.PROPERTY__CLAZZ:
+				return getClazz() != null;
 		}
 		return super.eIsSet(featureID);
 	}
