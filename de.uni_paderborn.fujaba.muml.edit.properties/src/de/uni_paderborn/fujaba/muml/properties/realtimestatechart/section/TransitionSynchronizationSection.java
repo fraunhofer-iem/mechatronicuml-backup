@@ -15,4 +15,12 @@ public class TransitionSynchronizationSection
 		return "Synchronization";
 	}
 
+	public TransitionSynchronizationSection() {
+
+		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.SynchronizationKindSection());
+
+		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.SynchronizationSelectorExpressionSection());
+
+	}
+
 }

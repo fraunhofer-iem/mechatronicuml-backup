@@ -47,6 +47,192 @@
             <input type="de.uni_paderborn.fujaba.muml.behavior.ParameterBinding"/>
          </propertySection>
          <propertySection
+            id="Component.ports" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.ComponentPortsSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.Component"/>
+         </propertySection>
+         <propertySection
+            id="Component.componentType" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.ComponentComponentTypeSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.Component"/>
+         </propertySection>
+         <propertySection
+            id="Port.portConnectors" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.PortPortConnectorsSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.Port"/>
+         </propertySection>
+         <propertySection
+            id="DiscretePort.isDiscreteInPort" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.DiscretePortIsDiscreteInPortSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.DiscretePort"/>
+         </propertySection>
+         <propertySection
+            id="DiscretePort.isDiscreteOutPort" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.DiscretePortIsDiscreteOutPortSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.DiscretePort"/>
+         </propertySection>
+         <propertySection
+            id="DiscretePort.isDiscreteInOutPort" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.DiscretePortIsDiscreteInOutPortSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.DiscretePort"/>
+         </propertySection>
+         <propertySection
+            id="DiscretePort.receiverMessageBuffer" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.DiscretePortReceiverMessageBufferSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.DiscretePort"/>
+         </propertySection>
+         <propertySection
+            id="DiscretePort.multiPort" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.DiscretePortMultiPortSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.DiscretePort"/>
+         </propertySection>
+         <propertySection
+            id="ComponentPart.cardinality" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.ComponentPartCardinalitySection">
+            <input type="de.uni_paderborn.fujaba.muml.component.ComponentPart"/>
+         </propertySection>
+         <propertySection
+            id="ComponentPart.portParts" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.ComponentPartPortPartsSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.ComponentPart"/>
+         </propertySection>
+         <propertySection
+            id="ComponentPart.multiPart" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.ComponentPartMultiPartSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.ComponentPart"/>
+         </propertySection>
+         <propertySection
+            id="AssemblyConnector.portParts" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.AssemblyConnectorPortPartsSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.AssemblyConnector"/>
+         </propertySection>
+         <propertySection
+            id="HybridPort.samplingInterval" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.HybridPortSamplingIntervalSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.HybridPort"/>
+         </propertySection>
+         <propertySection
+            id="StructuredComponent.embeddedComponentParts" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.StructuredComponentEmbeddedComponentPartsSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.StructuredComponent"/>
+         </propertySection>
+         <propertySection
+            id="StructuredComponent.connectors" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.StructuredComponentConnectorsSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.StructuredComponent"/>
+         </propertySection>
+         <propertySection
+            id="StructuredComponent.allStructuredComponents" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.StructuredComponentAllStructuredComponentsSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.StructuredComponent"/>
+         </propertySection>
+         <propertySection
+            id="StructuredComponent.allAtomicComponents" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.StructuredComponentAllAtomicComponentsSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.StructuredComponent"/>
+         </propertySection>
+         <propertySection
+            id="StructuredComponent.coordinationProtocolOccurences" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.StructuredComponentCoordinationProtocolOccurencesSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.StructuredComponent"/>
+         </propertySection>
+         <propertySection
+            id="CoordinationProtocolOccurrence.portParts" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.CoordinationProtocolOccurrencePortPartsSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence"/>
+         </propertySection>
+         <propertySection
+            id="DirectedTypedPort.kind" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.DirectedTypedPortKindSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.DirectedTypedPort"/>
+         </propertySection>
+         <propertySection
+            id="DirectedTypedPort.optional" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.DirectedTypedPortOptionalSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.DirectedTypedPort"/>
+         </propertySection>
+         <propertySection
+            id="DirectedTypedPort.outPort" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.DirectedTypedPortOutPortSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.DirectedTypedPort"/>
+         </propertySection>
+         <propertySection
+            id="DirectedTypedPort.inPort" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.component.section.DirectedTypedPortInPortSection">
+            <input type="de.uni_paderborn.fujaba.muml.component.DirectedTypedPort"/>
+         </propertySection>
+         <propertySection
+            id="ConnectorEndpoint.connectors" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorEndpointConnectorsSection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint"/>
+         </propertySection>
+         <propertySection
+            id="Connector.connectorEndpoints" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorConnectorEndpointsSection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.Connector"/>
+         </propertySection>
+         <propertySection
+            id="ConnectorEndpointInstance.connectorInstances" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorEndpointInstanceConnectorInstancesSection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance"/>
+         </propertySection>
+         <propertySection
+            id="ConnectorInstance.connectorEndpointInstances" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorInstanceConnectorEndpointInstancesSection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.ConnectorInstance"/>
+         </propertySection>
+         <propertySection
+            id="DiscreteInteractionEndpoint.senderMessageTypes" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteInteractionEndpointSenderMessageTypesSection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint"/>
+         </propertySection>
+         <propertySection
+            id="DiscreteInteractionEndpoint.receiverMessageTypes" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteInteractionEndpointReceiverMessageTypesSection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint"/>
+         </propertySection>
+         <propertySection
+            id="DiscreteInteractionEndpoint.cardinality" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteInteractionEndpointCardinalitySection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint"/>
+         </propertySection>
+         <propertySection
+            id="DiscreteMultiInteractionEndpointInstance.subInteractionEndpointInstances" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesSection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance"/>
+         </propertySection>
+         <propertySection
             id="Cardinality.lowerBound" 
             tab="base"
             class="de.uni_paderborn.fujaba.muml.properties.valuetype.section.CardinalityLowerBoundSection">
@@ -111,6 +297,78 @@
             tab="base"
             class="de.uni_paderborn.fujaba.muml.properties.types.section.RangedPrimitiveDataTypeRangeSection">
             <input type="de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType"/>
+         </propertySection>
+         <propertySection
+            id="ComponentInstance.portInstances" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.instance.section.ComponentInstancePortInstancesSection">
+            <input type="de.uni_paderborn.fujaba.muml.instance.ComponentInstance"/>
+         </propertySection>
+         <propertySection
+            id="PortConnectorInstance.portInstances" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.instance.section.PortConnectorInstancePortInstancesSection">
+            <input type="de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance"/>
+         </propertySection>
+         <propertySection
+            id="PortInstance.portConnectorInstances" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.instance.section.PortInstancePortConnectorInstancesSection">
+            <input type="de.uni_paderborn.fujaba.muml.instance.PortInstance"/>
+         </propertySection>
+         <propertySection
+            id="ComponentInstanceConfiguration.componentInstances" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.instance.section.ComponentInstanceConfigurationComponentInstancesSection">
+            <input type="de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration"/>
+         </propertySection>
+         <propertySection
+            id="ComponentInstanceConfiguration.portConnectorInstances" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.instance.section.ComponentInstanceConfigurationPortConnectorInstancesSection">
+            <input type="de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration"/>
+         </propertySection>
+         <propertySection
+            id="ComponentInstanceConfiguration.parentPortInstances" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.instance.section.ComponentInstanceConfigurationParentPortInstancesSection">
+            <input type="de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration"/>
+         </propertySection>
+         <propertySection
+            id="DiscretePortInstance.receiverMessageTypes" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.instance.section.DiscretePortInstanceReceiverMessageTypesSection">
+            <input type="de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance"/>
+         </propertySection>
+         <propertySection
+            id="DiscretePortInstance.senderMessageTypes" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.instance.section.DiscretePortInstanceSenderMessageTypesSection">
+            <input type="de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance"/>
+         </propertySection>
+         <propertySection
+            id="DiscretePortInstance.receiverMessageBuffer" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.instance.section.DiscretePortInstanceReceiverMessageBufferSection">
+            <input type="de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance"/>
+         </propertySection>
+         <propertySection
+            id="DiscreteMultiPortInstance.gmfSubPortInstances" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.instance.section.DiscreteMultiPortInstanceGmfSubPortInstancesSection">
+            <input type="de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance"/>
+         </propertySection>
+         <propertySection
+            id="CoordinationProtocolInstance.portInstances" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.instance.section.CoordinationProtocolInstancePortInstancesSection">
+            <input type="de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance"/>
+         </propertySection>
+         <propertySection
+            id="StructuredComponentInstance.embeddedCIC" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.instance.section.StructuredComponentInstanceEmbeddedCICSection">
+            <input type="de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance"/>
          </propertySection>
          <propertySection
             id="Deployment.communicationLinks" 
@@ -189,84 +447,6 @@
             tab="base"
             class="de.uni_paderborn.fujaba.muml.properties.deployment.section.LinkQualityOfServiceLatencySection">
             <input type="de.uni_paderborn.fujaba.muml.deployment.LinkQualityOfService"/>
-         </propertySection>
-         <propertySection
-            id="ConnectorEndpoint.connectors" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorEndpointConnectorsSection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint"/>
-         </propertySection>
-         <propertySection
-            id="Connector.connectorEndpoints" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorConnectorEndpointsSection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.Connector"/>
-         </propertySection>
-         <propertySection
-            id="ConnectorEndpointInstance.connectorInstances" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorEndpointInstanceConnectorInstancesSection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance"/>
-         </propertySection>
-         <propertySection
-            id="ConnectorInstance.connectorEndpointInstances" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorInstanceConnectorEndpointInstancesSection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.ConnectorInstance"/>
-         </propertySection>
-         <propertySection
-            id="DiscreteInteractionEndpoint.senderMessageTypes" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteInteractionEndpointSenderMessageTypesSection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint"/>
-         </propertySection>
-         <propertySection
-            id="DiscreteInteractionEndpoint.receiverMessageTypes" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteInteractionEndpointReceiverMessageTypesSection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint"/>
-         </propertySection>
-         <propertySection
-            id="DiscreteInteractionEndpoint.cardinality" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteInteractionEndpointCardinalitySection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint"/>
-         </propertySection>
-         <propertySection
-            id="DiscreteMultiInteractionEndpointInstance.subInteractionEndpointInstances" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesSection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance"/>
-         </propertySection>
-         <propertySection
-            id="Constraint.correctness" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstraintCorrectnessSection">
-            <input type="de.uni_paderborn.fujaba.muml.constraint.Constraint"/>
-         </propertySection>
-         <propertySection
-            id="Constraint.background" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstraintBackgroundSection">
-            <input type="de.uni_paderborn.fujaba.muml.constraint.Constraint"/>
-         </propertySection>
-         <propertySection
-            id="Constraint.correct" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstraintCorrectSection">
-            <input type="de.uni_paderborn.fujaba.muml.constraint.Constraint"/>
-         </propertySection>
-         <propertySection
-            id="TextualConstraint.textualExpression" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.TextualConstraintTextualExpressionSection">
-            <input type="de.uni_paderborn.fujaba.muml.constraint.TextualConstraint"/>
-         </propertySection>
-         <propertySection
-            id="ConstrainableElement.constraint" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstrainableElementConstraintSection">
-            <input type="de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement"/>
          </propertySection>
          <propertySection
             id="MessageType.parameters" 
@@ -611,78 +791,6 @@
             <input type="de.uni_paderborn.fujaba.muml.realtimestatechart.Message"/>
          </propertySection>
          <propertySection
-            id="ComponentInstance.portInstances" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.instance.section.ComponentInstancePortInstancesSection">
-            <input type="de.uni_paderborn.fujaba.muml.instance.ComponentInstance"/>
-         </propertySection>
-         <propertySection
-            id="PortConnectorInstance.portInstances" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.instance.section.PortConnectorInstancePortInstancesSection">
-            <input type="de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance"/>
-         </propertySection>
-         <propertySection
-            id="PortInstance.portConnectorInstances" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.instance.section.PortInstancePortConnectorInstancesSection">
-            <input type="de.uni_paderborn.fujaba.muml.instance.PortInstance"/>
-         </propertySection>
-         <propertySection
-            id="ComponentInstanceConfiguration.componentInstances" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.instance.section.ComponentInstanceConfigurationComponentInstancesSection">
-            <input type="de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration"/>
-         </propertySection>
-         <propertySection
-            id="ComponentInstanceConfiguration.portConnectorInstances" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.instance.section.ComponentInstanceConfigurationPortConnectorInstancesSection">
-            <input type="de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration"/>
-         </propertySection>
-         <propertySection
-            id="ComponentInstanceConfiguration.parentPortInstances" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.instance.section.ComponentInstanceConfigurationParentPortInstancesSection">
-            <input type="de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration"/>
-         </propertySection>
-         <propertySection
-            id="DiscretePortInstance.receiverMessageTypes" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.instance.section.DiscretePortInstanceReceiverMessageTypesSection">
-            <input type="de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance"/>
-         </propertySection>
-         <propertySection
-            id="DiscretePortInstance.senderMessageTypes" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.instance.section.DiscretePortInstanceSenderMessageTypesSection">
-            <input type="de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance"/>
-         </propertySection>
-         <propertySection
-            id="DiscretePortInstance.receiverMessageBuffer" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.instance.section.DiscretePortInstanceReceiverMessageBufferSection">
-            <input type="de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance"/>
-         </propertySection>
-         <propertySection
-            id="DiscreteMultiPortInstance.gmfSubPortInstances" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.instance.section.DiscreteMultiPortInstanceGmfSubPortInstancesSection">
-            <input type="de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance"/>
-         </propertySection>
-         <propertySection
-            id="CoordinationProtocolInstance.portInstances" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.instance.section.CoordinationProtocolInstancePortInstancesSection">
-            <input type="de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance"/>
-         </propertySection>
-         <propertySection
-            id="StructuredComponentInstance.embeddedCIC" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.instance.section.StructuredComponentInstanceEmbeddedCICSection">
-            <input type="de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance"/>
-         </propertySection>
-         <propertySection
             id="RoleConnector.connectorQualityOfServiceAssumptions" 
             tab="base"
             class="de.uni_paderborn.fujaba.muml.properties.protocol.section.RoleConnectorConnectorQualityOfServiceAssumptionsSection">
@@ -761,142 +869,34 @@
             <input type="de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions"/>
          </propertySection>
          <propertySection
-            id="Component.ports" 
+            id="Constraint.correctness" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.ComponentPortsSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.Component"/>
+            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstraintCorrectnessSection">
+            <input type="de.uni_paderborn.fujaba.muml.constraint.Constraint"/>
          </propertySection>
          <propertySection
-            id="Component.componentType" 
+            id="Constraint.background" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.ComponentComponentTypeSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.Component"/>
+            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstraintBackgroundSection">
+            <input type="de.uni_paderborn.fujaba.muml.constraint.Constraint"/>
          </propertySection>
          <propertySection
-            id="Port.portConnectors" 
+            id="Constraint.correct" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.PortPortConnectorsSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.Port"/>
+            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstraintCorrectSection">
+            <input type="de.uni_paderborn.fujaba.muml.constraint.Constraint"/>
          </propertySection>
          <propertySection
-            id="DiscretePort.isDiscreteInPort" 
+            id="TextualConstraint.textualExpression" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.DiscretePortIsDiscreteInPortSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.DiscretePort"/>
+            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.TextualConstraintTextualExpressionSection">
+            <input type="de.uni_paderborn.fujaba.muml.constraint.TextualConstraint"/>
          </propertySection>
          <propertySection
-            id="DiscretePort.isDiscreteOutPort" 
+            id="ConstrainableElement.constraint" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.DiscretePortIsDiscreteOutPortSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.DiscretePort"/>
-         </propertySection>
-         <propertySection
-            id="DiscretePort.isDiscreteInOutPort" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.DiscretePortIsDiscreteInOutPortSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.DiscretePort"/>
-         </propertySection>
-         <propertySection
-            id="DiscretePort.receiverMessageBuffer" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.DiscretePortReceiverMessageBufferSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.DiscretePort"/>
-         </propertySection>
-         <propertySection
-            id="DiscretePort.multiPort" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.DiscretePortMultiPortSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.DiscretePort"/>
-         </propertySection>
-         <propertySection
-            id="ComponentPart.cardinality" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.ComponentPartCardinalitySection">
-            <input type="de.uni_paderborn.fujaba.muml.component.ComponentPart"/>
-         </propertySection>
-         <propertySection
-            id="ComponentPart.portParts" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.ComponentPartPortPartsSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.ComponentPart"/>
-         </propertySection>
-         <propertySection
-            id="ComponentPart.multiPart" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.ComponentPartMultiPartSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.ComponentPart"/>
-         </propertySection>
-         <propertySection
-            id="AssemblyConnector.portParts" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.AssemblyConnectorPortPartsSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.AssemblyConnector"/>
-         </propertySection>
-         <propertySection
-            id="HybridPort.samplingInterval" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.HybridPortSamplingIntervalSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.HybridPort"/>
-         </propertySection>
-         <propertySection
-            id="StructuredComponent.embeddedComponentParts" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.StructuredComponentEmbeddedComponentPartsSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.StructuredComponent"/>
-         </propertySection>
-         <propertySection
-            id="StructuredComponent.connectors" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.StructuredComponentConnectorsSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.StructuredComponent"/>
-         </propertySection>
-         <propertySection
-            id="StructuredComponent.allStructuredComponents" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.StructuredComponentAllStructuredComponentsSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.StructuredComponent"/>
-         </propertySection>
-         <propertySection
-            id="StructuredComponent.allAtomicComponents" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.StructuredComponentAllAtomicComponentsSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.StructuredComponent"/>
-         </propertySection>
-         <propertySection
-            id="StructuredComponent.coordinationProtocolOccurences" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.StructuredComponentCoordinationProtocolOccurencesSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.StructuredComponent"/>
-         </propertySection>
-         <propertySection
-            id="CoordinationProtocolOccurrence.portParts" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.CoordinationProtocolOccurrencePortPartsSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence"/>
-         </propertySection>
-         <propertySection
-            id="DirectedTypedPort.kind" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.DirectedTypedPortKindSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.DirectedTypedPort"/>
-         </propertySection>
-         <propertySection
-            id="DirectedTypedPort.optional" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.DirectedTypedPortOptionalSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.DirectedTypedPort"/>
-         </propertySection>
-         <propertySection
-            id="DirectedTypedPort.outPort" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.DirectedTypedPortOutPortSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.DirectedTypedPort"/>
-         </propertySection>
-         <propertySection
-            id="DirectedTypedPort.inPort" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.component.section.DirectedTypedPortInPortSection">
-            <input type="de.uni_paderborn.fujaba.muml.component.DirectedTypedPort"/>
+            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstrainableElementConstraintSection">
+            <input type="de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement"/>
          </propertySection>
          
       </propertySections>

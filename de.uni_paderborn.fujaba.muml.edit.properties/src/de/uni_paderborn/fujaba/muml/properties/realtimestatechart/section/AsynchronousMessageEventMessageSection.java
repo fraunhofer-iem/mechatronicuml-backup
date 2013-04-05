@@ -15,4 +15,10 @@ public class AsynchronousMessageEventMessageSection
 		return "Message";
 	}
 
+	public AsynchronousMessageEventMessageSection() {
+
+		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.MessageParameterBindingSection());
+
+	}
+
 }
