@@ -17,36 +17,6 @@
  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
       <propertySections contributorId="de.uni_paderborn.fujaba.muml.common.properties">
          <propertySection
-            id="Behavior.operations" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.behavior.section.BehaviorOperationsSection">
-            <input type="de.uni_paderborn.fujaba.muml.behavior.Behavior"/>
-         </propertySection>
-         <propertySection
-            id="Behavior.variables" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.behavior.section.BehaviorVariablesSection">
-            <input type="de.uni_paderborn.fujaba.muml.behavior.Behavior"/>
-         </propertySection>
-         <propertySection
-            id="Operation.implementations" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.behavior.section.OperationImplementationsSection">
-            <input type="de.uni_paderborn.fujaba.muml.behavior.Operation"/>
-         </propertySection>
-         <propertySection
-            id="Operation.parameters" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.behavior.section.OperationParametersSection">
-            <input type="de.uni_paderborn.fujaba.muml.behavior.Operation"/>
-         </propertySection>
-         <propertySection
-            id="ParameterBinding.value" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.behavior.section.ParameterBindingValueSection">
-            <input type="de.uni_paderborn.fujaba.muml.behavior.ParameterBinding"/>
-         </propertySection>
-         <propertySection
             id="Component.ports" 
             tab="base"
             class="de.uni_paderborn.fujaba.muml.properties.component.section.ComponentPortsSection">
@@ -185,52 +155,34 @@
             <input type="de.uni_paderborn.fujaba.muml.component.DirectedTypedPort"/>
          </propertySection>
          <propertySection
-            id="ConnectorEndpoint.connectors" 
+            id="Constraint.correctness" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorEndpointConnectorsSection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint"/>
+            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstraintCorrectnessSection">
+            <input type="de.uni_paderborn.fujaba.muml.constraint.Constraint"/>
          </propertySection>
          <propertySection
-            id="Connector.connectorEndpoints" 
+            id="Constraint.background" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorConnectorEndpointsSection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.Connector"/>
+            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstraintBackgroundSection">
+            <input type="de.uni_paderborn.fujaba.muml.constraint.Constraint"/>
          </propertySection>
          <propertySection
-            id="ConnectorEndpointInstance.connectorInstances" 
+            id="Constraint.correct" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorEndpointInstanceConnectorInstancesSection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance"/>
+            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstraintCorrectSection">
+            <input type="de.uni_paderborn.fujaba.muml.constraint.Constraint"/>
          </propertySection>
          <propertySection
-            id="ConnectorInstance.connectorEndpointInstances" 
+            id="TextualConstraint.textualExpression" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorInstanceConnectorEndpointInstancesSection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.ConnectorInstance"/>
+            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.TextualConstraintTextualExpressionSection">
+            <input type="de.uni_paderborn.fujaba.muml.constraint.TextualConstraint"/>
          </propertySection>
          <propertySection
-            id="DiscreteInteractionEndpoint.senderMessageTypes" 
+            id="ConstrainableElement.constraint" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteInteractionEndpointSenderMessageTypesSection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint"/>
-         </propertySection>
-         <propertySection
-            id="DiscreteInteractionEndpoint.receiverMessageTypes" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteInteractionEndpointReceiverMessageTypesSection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint"/>
-         </propertySection>
-         <propertySection
-            id="DiscreteInteractionEndpoint.cardinality" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteInteractionEndpointCardinalitySection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint"/>
-         </propertySection>
-         <propertySection
-            id="DiscreteMultiInteractionEndpointInstance.subInteractionEndpointInstances" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesSection">
-            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance"/>
+            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstrainableElementConstraintSection">
+            <input type="de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement"/>
          </propertySection>
          <propertySection
             id="Cardinality.lowerBound" 
@@ -281,22 +233,130 @@
             <input type="de.uni_paderborn.fujaba.muml.valuetype.Range"/>
          </propertySection>
          <propertySection
-            id="ArrayDataType.cardinality" 
+            id="RoleConnector.connectorQualityOfServiceAssumptions" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.types.section.ArrayDataTypeCardinalitySection">
-            <input type="de.uni_paderborn.fujaba.muml.types.ArrayDataType"/>
+            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.RoleConnectorConnectorQualityOfServiceAssumptionsSection">
+            <input type="de.uni_paderborn.fujaba.muml.protocol.RoleConnector"/>
          </propertySection>
          <propertySection
-            id="PrimitiveDataType.primitiveType" 
+            id="RoleConnector.roles" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.types.section.PrimitiveDataTypePrimitiveTypeSection">
-            <input type="de.uni_paderborn.fujaba.muml.types.PrimitiveDataType"/>
+            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.RoleConnectorRolesSection">
+            <input type="de.uni_paderborn.fujaba.muml.protocol.RoleConnector"/>
          </propertySection>
          <propertySection
-            id="RangedPrimitiveDataType.range" 
+            id="CoordinationProtocol.roles" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.types.section.RangedPrimitiveDataTypeRangeSection">
-            <input type="de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType"/>
+            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.CoordinationProtocolRolesSection">
+            <input type="de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol"/>
+         </propertySection>
+         <propertySection
+            id="CoordinationProtocol.roleConnector" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.CoordinationProtocolRoleConnectorSection">
+            <input type="de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol"/>
+         </propertySection>
+         <propertySection
+            id="CoordinationProtocol.gmfCoordinationProtocol" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.CoordinationProtocolGmfCoordinationProtocolSection">
+            <input type="de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol"/>
+         </propertySection>
+         <propertySection
+            id="Role.port" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.RolePortSection">
+            <input type="de.uni_paderborn.fujaba.muml.protocol.Role"/>
+         </propertySection>
+         <propertySection
+            id="Role.multiRole" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.RoleMultiRoleSection">
+            <input type="de.uni_paderborn.fujaba.muml.protocol.Role"/>
+         </propertySection>
+         <propertySection
+            id="Role.receiverMessageBuffer" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.RoleReceiverMessageBufferSection">
+            <input type="de.uni_paderborn.fujaba.muml.protocol.Role"/>
+         </propertySection>
+         <propertySection
+            id="MessageBuffer.bufferSize" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.MessageBufferBufferSizeSection">
+            <input type="de.uni_paderborn.fujaba.muml.protocol.MessageBuffer"/>
+         </propertySection>
+         <propertySection
+            id="MessageBuffer.messageType" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.MessageBufferMessageTypeSection">
+            <input type="de.uni_paderborn.fujaba.muml.protocol.MessageBuffer"/>
+         </propertySection>
+         <propertySection
+            id="ConnectorQualityOfServiceAssumptions.minMessageDelay" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.ConnectorQualityOfServiceAssumptionsMinMessageDelaySection">
+            <input type="de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions"/>
+         </propertySection>
+         <propertySection
+            id="ConnectorQualityOfServiceAssumptions.maxMessageDelay" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.ConnectorQualityOfServiceAssumptionsMaxMessageDelaySection">
+            <input type="de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions"/>
+         </propertySection>
+         <propertySection
+            id="ConnectorQualityOfServiceAssumptions.messageLossPossible" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.ConnectorQualityOfServiceAssumptionsMessageLossPossibleSection">
+            <input type="de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions"/>
+         </propertySection>
+         <propertySection
+            id="ConnectorEndpoint.connectors" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorEndpointConnectorsSection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint"/>
+         </propertySection>
+         <propertySection
+            id="Connector.connectorEndpoints" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorConnectorEndpointsSection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.Connector"/>
+         </propertySection>
+         <propertySection
+            id="ConnectorEndpointInstance.connectorInstances" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorEndpointInstanceConnectorInstancesSection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance"/>
+         </propertySection>
+         <propertySection
+            id="ConnectorInstance.connectorEndpointInstances" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorInstanceConnectorEndpointInstancesSection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.ConnectorInstance"/>
+         </propertySection>
+         <propertySection
+            id="DiscreteInteractionEndpoint.senderMessageTypes" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteInteractionEndpointSenderMessageTypesSection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint"/>
+         </propertySection>
+         <propertySection
+            id="DiscreteInteractionEndpoint.receiverMessageTypes" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteInteractionEndpointReceiverMessageTypesSection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint"/>
+         </propertySection>
+         <propertySection
+            id="DiscreteInteractionEndpoint.cardinality" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteInteractionEndpointCardinalitySection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint"/>
+         </propertySection>
+         <propertySection
+            id="DiscreteMultiInteractionEndpointInstance.subInteractionEndpointInstances" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.connector.section.DiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesSection">
+            <input type="de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance"/>
          </propertySection>
          <propertySection
             id="ComponentInstance.portInstances" 
@@ -369,6 +429,18 @@
             tab="base"
             class="de.uni_paderborn.fujaba.muml.properties.instance.section.StructuredComponentInstanceEmbeddedCICSection">
             <input type="de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance"/>
+         </propertySection>
+         <propertySection
+            id="MessageType.parameters" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.msgtype.section.MessageTypeParametersSection">
+            <input type="de.uni_paderborn.fujaba.muml.msgtype.MessageType"/>
+         </propertySection>
+         <propertySection
+            id="MessageTypeRepository.messageTypes" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.msgtype.section.MessageTypeRepositoryMessageTypesSection">
+            <input type="de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository"/>
          </propertySection>
          <propertySection
             id="Deployment.communicationLinks" 
@@ -449,16 +521,34 @@
             <input type="de.uni_paderborn.fujaba.muml.deployment.LinkQualityOfService"/>
          </propertySection>
          <propertySection
-            id="MessageType.parameters" 
+            id="Behavior.operations" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.msgtype.section.MessageTypeParametersSection">
-            <input type="de.uni_paderborn.fujaba.muml.msgtype.MessageType"/>
+            class="de.uni_paderborn.fujaba.muml.properties.behavior.section.BehaviorOperationsSection">
+            <input type="de.uni_paderborn.fujaba.muml.behavior.Behavior"/>
          </propertySection>
          <propertySection
-            id="MessageTypeRepository.messageTypes" 
+            id="Behavior.variables" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.msgtype.section.MessageTypeRepositoryMessageTypesSection">
-            <input type="de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository"/>
+            class="de.uni_paderborn.fujaba.muml.properties.behavior.section.BehaviorVariablesSection">
+            <input type="de.uni_paderborn.fujaba.muml.behavior.Behavior"/>
+         </propertySection>
+         <propertySection
+            id="Operation.implementations" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.behavior.section.OperationImplementationsSection">
+            <input type="de.uni_paderborn.fujaba.muml.behavior.Operation"/>
+         </propertySection>
+         <propertySection
+            id="Operation.parameters" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.behavior.section.OperationParametersSection">
+            <input type="de.uni_paderborn.fujaba.muml.behavior.Operation"/>
+         </propertySection>
+         <propertySection
+            id="ParameterBinding.value" 
+            tab="base"
+            class="de.uni_paderborn.fujaba.muml.properties.behavior.section.ParameterBindingValueSection">
+            <input type="de.uni_paderborn.fujaba.muml.behavior.ParameterBinding"/>
          </propertySection>
          <propertySection
             id="Deadline.upperBound" 
@@ -791,112 +881,22 @@
             <input type="de.uni_paderborn.fujaba.muml.realtimestatechart.Message"/>
          </propertySection>
          <propertySection
-            id="RoleConnector.connectorQualityOfServiceAssumptions" 
+            id="ArrayDataType.cardinality" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.RoleConnectorConnectorQualityOfServiceAssumptionsSection">
-            <input type="de.uni_paderborn.fujaba.muml.protocol.RoleConnector"/>
+            class="de.uni_paderborn.fujaba.muml.properties.types.section.ArrayDataTypeCardinalitySection">
+            <input type="de.uni_paderborn.fujaba.muml.types.ArrayDataType"/>
          </propertySection>
          <propertySection
-            id="RoleConnector.roles" 
+            id="PrimitiveDataType.primitiveType" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.RoleConnectorRolesSection">
-            <input type="de.uni_paderborn.fujaba.muml.protocol.RoleConnector"/>
+            class="de.uni_paderborn.fujaba.muml.properties.types.section.PrimitiveDataTypePrimitiveTypeSection">
+            <input type="de.uni_paderborn.fujaba.muml.types.PrimitiveDataType"/>
          </propertySection>
          <propertySection
-            id="CoordinationProtocol.roles" 
+            id="RangedPrimitiveDataType.range" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.CoordinationProtocolRolesSection">
-            <input type="de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol"/>
-         </propertySection>
-         <propertySection
-            id="CoordinationProtocol.roleConnector" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.CoordinationProtocolRoleConnectorSection">
-            <input type="de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol"/>
-         </propertySection>
-         <propertySection
-            id="CoordinationProtocol.gmfCoordinationProtocol" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.CoordinationProtocolGmfCoordinationProtocolSection">
-            <input type="de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol"/>
-         </propertySection>
-         <propertySection
-            id="Role.port" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.RolePortSection">
-            <input type="de.uni_paderborn.fujaba.muml.protocol.Role"/>
-         </propertySection>
-         <propertySection
-            id="Role.multiRole" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.RoleMultiRoleSection">
-            <input type="de.uni_paderborn.fujaba.muml.protocol.Role"/>
-         </propertySection>
-         <propertySection
-            id="Role.receiverMessageBuffer" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.RoleReceiverMessageBufferSection">
-            <input type="de.uni_paderborn.fujaba.muml.protocol.Role"/>
-         </propertySection>
-         <propertySection
-            id="MessageBuffer.bufferSize" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.MessageBufferBufferSizeSection">
-            <input type="de.uni_paderborn.fujaba.muml.protocol.MessageBuffer"/>
-         </propertySection>
-         <propertySection
-            id="MessageBuffer.messageType" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.MessageBufferMessageTypeSection">
-            <input type="de.uni_paderborn.fujaba.muml.protocol.MessageBuffer"/>
-         </propertySection>
-         <propertySection
-            id="ConnectorQualityOfServiceAssumptions.minMessageDelay" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.ConnectorQualityOfServiceAssumptionsMinMessageDelaySection">
-            <input type="de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions"/>
-         </propertySection>
-         <propertySection
-            id="ConnectorQualityOfServiceAssumptions.maxMessageDelay" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.ConnectorQualityOfServiceAssumptionsMaxMessageDelaySection">
-            <input type="de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions"/>
-         </propertySection>
-         <propertySection
-            id="ConnectorQualityOfServiceAssumptions.messageLossPossible" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.ConnectorQualityOfServiceAssumptionsMessageLossPossibleSection">
-            <input type="de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions"/>
-         </propertySection>
-         <propertySection
-            id="Constraint.correctness" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstraintCorrectnessSection">
-            <input type="de.uni_paderborn.fujaba.muml.constraint.Constraint"/>
-         </propertySection>
-         <propertySection
-            id="Constraint.background" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstraintBackgroundSection">
-            <input type="de.uni_paderborn.fujaba.muml.constraint.Constraint"/>
-         </propertySection>
-         <propertySection
-            id="Constraint.correct" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstraintCorrectSection">
-            <input type="de.uni_paderborn.fujaba.muml.constraint.Constraint"/>
-         </propertySection>
-         <propertySection
-            id="TextualConstraint.textualExpression" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.TextualConstraintTextualExpressionSection">
-            <input type="de.uni_paderborn.fujaba.muml.constraint.TextualConstraint"/>
-         </propertySection>
-         <propertySection
-            id="ConstrainableElement.constraint" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.constraint.section.ConstrainableElementConstraintSection">
-            <input type="de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement"/>
+            class="de.uni_paderborn.fujaba.muml.properties.types.section.RangedPrimitiveDataTypeRangeSection">
+            <input type="de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType"/>
          </propertySection>
          
       </propertySections>
