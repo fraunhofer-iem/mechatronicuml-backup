@@ -58,11 +58,11 @@ mapping inout PropertyGenerator::generator() {
 		GROUP_PROPERTY_SECTIONS->forEach(section) {
 			if section.container().oclIsKindOf(Property) then {
 			var prop : Property := section._property;//container().oclAsType(Property);
-				section.navigatedProperties := packages.classes->select(c | prop.genFeature.ecoreFeature.eType =
-					c.genClass.ecoreClass).properties->select(p | 
+				section.navigatedProperties := packages.classes->select(c |
+					prop.genFeature.ecoreFeature.eType.oclAsType(ecore::EClass).eAllSuperTypes->including(prop.genFeature.ecoreFeature.eType.oclAsType(ecore::EClass))->includes(c.genClass.ecoreClass)).properties->select(p | 
 						-- reject eopposite
 						((not p.genFeature.ecoreFeature.oclIsKindOf(ecore::EReference)) or p.genFeature.ecoreFeature.oclAsType(ecore::EReference).eOpposite != prop.genFeature.ecoreFeature)
-					)
+				)
 			} endif;
 		}
 	} endif;
