@@ -58,7 +58,6 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 	private EditingDomain editingDomain;
 	private AdapterFactory adapterFactory;
 	private IPropertySourceProvider propertySourceProvider;
-	//private IRefreshProhibitedPropertySection mainPropertySection;
 
 	public CustomPropertyDescriptor(Object object,
 			IItemPropertyDescriptor itemPropertyDescriptor,
@@ -68,7 +67,6 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 		this.adapterFactory = adapterFactory;
 		this.propertySourceProvider = propertySourceProvider;
 		this.editingDomain = editingDomain;
-		//this.mainPropertySection = mainPropertySection;
 	}
 
 	@Override
@@ -133,27 +131,30 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 						}
 					};
 
-				} else if (feature.isMany()) {
-					return new MultiFeatureCreationCellEditor(parent, feature);
 				} else {
-					// Don't show a creation dialog
+					return new CreationCellEditor(parent, feature);
+	
 				}
 			}
 		}
 		return super.createPropertyEditor(parent);
 	}
 
+	@SuppressWarnings("unchecked")
 	private Collection<?> getCurrentValues() {
 		Object value = itemPropertyDescriptor.getPropertyValue(object);
-		Collection<?> currentValues;
+		Collection<Object> currentValues;
 		if (value instanceof ItemPropertyDescriptor.PropertyValueWrapper) {
 			value = ((ItemPropertyDescriptor.PropertyValueWrapper) value)
 					.getEditableValue(value);
 		}
 		if (value instanceof Collection) {
-			currentValues = (Collection<?>) value;
+			currentValues = (Collection<Object>) value;
 		} else {
 			currentValues = new ArrayList<Object>();
+			if (value != null) {
+				currentValues.add(value);
+			}
 		}
 		return currentValues;
 	}
@@ -167,27 +168,6 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 				EStructuralFeature feature) {
 			super(composite, getLabelProvider());
 			this.feature = feature;
-
-			// TODO: Removed this hack; evaluate if "Widget-Disposed-Bug" reappears now!
-//			addListener(new ICellEditorListener() {
-//				@Override
-//				public void applyEditorValue() {
-//					// We must call refresh, after it is allowed again (part of
-//					// the fix of the Widget-Disposed bug).
-//					if (mainPropertySection != null) {
-//						mainPropertySection.refresh();
-//					}
-//				}
-//
-//				@Override
-//				public void cancelEditor() {
-//				}
-//
-//				@Override
-//				public void editorValueChanged(boolean oldValidState,
-//						boolean newValidState) {
-//				}
-//			});
 
 			// Dialog creation
 			dialog = new ExtensibleCreationDialog(PlatformUI.getWorkbench()
@@ -224,7 +204,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 
 	}
 
-	public class ActionCellEditor extends MultiFeatureCreationCellEditor {
+	public class ActionCellEditor extends CreationCellEditor {
 		private Collection<?> oldValues;
 		private SimpleTextualDialogExtension textDialog;
 		private UseParserDialogExtension useParserDialogExtension;
@@ -286,11 +266,11 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 
 	}
 
-	public class MultiFeatureCreationCellEditor extends
+	public class CreationCellEditor extends
 			AbstractCreationCellEditor {
 		protected ObjectsListDialogExtension objectsListDialogExtension;
 
-		public MultiFeatureCreationCellEditor(Composite composite,
+		public CreationCellEditor(Composite composite,
 				EStructuralFeature feature) {
 			super(composite, feature);
 		}

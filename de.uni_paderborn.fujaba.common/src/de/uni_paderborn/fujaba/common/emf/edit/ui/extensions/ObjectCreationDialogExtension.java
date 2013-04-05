@@ -6,12 +6,14 @@ import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.ItemProvider;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.jface.viewers.ISelection;
@@ -36,6 +38,16 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 	private ComboViewer comboViewer;
 
 	private AdapterFactory adapterFactory;
+	
+	private INotifyChangedListener listener = new INotifyChangedListener() {
+
+		@Override
+		public void notifyChanged(Notification notification) {
+			updateButtonEnablement();
+		}
+		
+	};
+
 
 	/**
 	 * The Create-Button.
@@ -139,6 +151,14 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 						new StructuredSelection(new Object[] { newObject }));
 			}
 		});
+		
+		updateButtonEnablement();
+	}
+
+	private void updateButtonEnablement() {
+		if (!getCreationDialog().isManyProperty()) {
+			btnCreate.setEnabled(objectsListDialogExtension.getCurrentListItems().isEmpty());
+		}
 	}
 
 	protected EClass getInstanceClass() {
@@ -152,11 +172,18 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 
 	@Override
 	public void close() {
+		setObjectsListDialogExtension(null);
 	}
 
 	public void setObjectsListDialogExtension(
 			ObjectsListDialogExtension objectsListDialogExtension) {
+		if (this.objectsListDialogExtension != null) {
+			this.objectsListDialogExtension.removeListener(listener);
+		}
 		this.objectsListDialogExtension = objectsListDialogExtension;
+		if (this.objectsListDialogExtension != null) {
+			this.objectsListDialogExtension.addListener(listener);
+		}
 	}
 
 }

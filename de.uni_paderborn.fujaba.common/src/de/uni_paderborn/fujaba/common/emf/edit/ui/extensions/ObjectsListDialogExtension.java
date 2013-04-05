@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.ItemProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -92,7 +93,16 @@ public class ObjectsListDialogExtension extends AbstractDialogExtension {
 	public void removeFilter(IFilter filter) {
 		filters.remove(filter);
 	}
+	
+	public void addListener(INotifyChangedListener listener) {
+		values.addListener(listener);
+	}
+	
+	public void removeListener(INotifyChangedListener listener) {
+		values.removeListener(listener);
+	}
 
+	
 	@Override
 	public void initialize() {
 	}

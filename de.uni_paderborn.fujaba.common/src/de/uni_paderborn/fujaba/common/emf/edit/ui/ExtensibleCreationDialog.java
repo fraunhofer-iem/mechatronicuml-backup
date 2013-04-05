@@ -152,6 +152,10 @@ public class ExtensibleCreationDialog extends Dialog {
 		}
 		return null;
 	}
+	
+	public boolean isManyProperty() {
+		return getItemPropertyDescriptor().isMany(containerObject);
+	}
 
 	/**
 	 * Create contents of the dialog window.
@@ -214,13 +218,20 @@ public class ExtensibleCreationDialog extends Dialog {
 			// Hack to force notification
 			IItemPropertyDescriptor descriptor = getItemPropertyDescriptor();
 			if (descriptor != null) {
-				List<?> value = new ArrayList<Object>(
-						(List<?>) getWrappedValue(descriptor
-								.getPropertyValue(containerObject)));
-				descriptor.setPropertyValue(containerObject,
-						Collections.EMPTY_LIST);
-				descriptor.setPropertyValue(containerObject,
-						value);
+				Object newValue = getWrappedValue(descriptor
+							.getPropertyValue(containerObject));
+				if (!descriptor.isMany(containerObject)) {
+					
+					descriptor.setPropertyValue(containerObject, null);
+					descriptor.setPropertyValue(containerObject, newValue);
+
+				} else {
+					descriptor.setPropertyValue(containerObject,
+							Collections.EMPTY_LIST);
+					
+					descriptor.setPropertyValue(containerObject, new ArrayList<Object>(
+							(List<?>) newValue));
+				}
 			}
 			// End added
 
@@ -234,21 +245,6 @@ public class ExtensibleCreationDialog extends Dialog {
 			e.printStackTrace();
 		}
 		return super.close();
-	}
-
-	// TODO: Removed this hack; evaluate if "Widget-Disposed-Bug" reappears now!
-	// We must forbid calling refresh on the main Property Section, while the
-	// dialog is open (part of the fix of the Widget-Disposed bug).
-	@Override
-	public int open() {
-//		if (mainPropertySection != null) {
-//			mainPropertySection.pushRefreshProhibition();
-//		}
-		int result = super.open();
-//		if (mainPropertySection != null) {
-//			mainPropertySection.popRefreshProhibition();
-//		}
-		return result;
 	}
 
 	public ILabelProvider getLabelProvider() {
@@ -268,7 +264,18 @@ public class ExtensibleCreationDialog extends Dialog {
 	}
 
 	public void setPropertyValue(Object value) {
+
 		IItemPropertyDescriptor itemPropertyDescriptor = getItemPropertyDescriptor();
+
+		if (value instanceof Collection && !itemPropertyDescriptor.isMany(containerObject)) {
+			Collection<?> collection = (Collection<?>) value;
+			if (collection.isEmpty()) {
+				value = null;
+			} else {
+				value = ((Collection<?>) value).iterator().next();
+			}
+		}
+		
 		if (itemPropertyDescriptor != null) {
 			itemPropertyDescriptor.setPropertyValue(containerObject, value);
 		}
