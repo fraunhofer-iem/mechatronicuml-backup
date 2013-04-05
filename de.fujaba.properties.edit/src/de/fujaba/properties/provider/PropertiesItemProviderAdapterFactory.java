@@ -375,6 +375,29 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.PropertyReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PropertyReferenceItemProvider propertyReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.fujaba.properties.PropertyReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPropertyReferenceAdapter() {
+		if (propertyReferenceItemProvider == null) {
+			propertyReferenceItemProvider = new PropertyReferenceItemProvider(this);
+		}
+
+		return propertyReferenceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -486,6 +509,7 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 		if (groupPropertySectionItemProvider != null) groupPropertySectionItemProvider.dispose();
 		if (customPropertySectionItemProvider != null) customPropertySectionItemProvider.dispose();
 		if (oclPropertyFilterItemProvider != null) oclPropertyFilterItemProvider.dispose();
+		if (propertyReferenceItemProvider != null) propertyReferenceItemProvider.dispose();
 	}
 
 }

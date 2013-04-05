@@ -8,12 +8,17 @@ package de.fujaba.properties.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import de.fujaba.properties.GroupPropertySection;
 import de.fujaba.properties.PropertiesPackage;
+import de.fujaba.properties.PropertyReference;
 import de.fujaba.properties.Property;
 
 /**
@@ -23,7 +28,7 @@ import de.fujaba.properties.Property;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.fujaba.properties.impl.GroupPropertySectionImpl#getNavigatedProperties <em>Navigated Properties</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.GroupPropertySectionImpl#getReferencedProperties <em>Referenced Properties</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,15 +36,14 @@ import de.fujaba.properties.Property;
  */
 public class GroupPropertySectionImpl extends PropertySectionImpl implements GroupPropertySection {
 	/**
-	 * The cached value of the '{@link #getNavigatedProperties() <em>Navigated Properties</em>}' reference list.
+	 * The cached value of the '{@link #getReferencedProperties() <em>Referenced Properties</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNavigatedProperties()
+	 * @see #getReferencedProperties()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Property> navigatedProperties;
-
+	protected EList<PropertyReference> referencedProperties;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,11 +68,25 @@ public class GroupPropertySectionImpl extends PropertySectionImpl implements Gro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Property> getNavigatedProperties() {
-		if (navigatedProperties == null) {
-			navigatedProperties = new EObjectResolvingEList<Property>(Property.class, this, PropertiesPackage.GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES);
+	public EList<PropertyReference> getReferencedProperties() {
+		if (referencedProperties == null) {
+			referencedProperties = new EObjectContainmentEList<PropertyReference>(PropertyReference.class, this, PropertiesPackage.GROUP_PROPERTY_SECTION__REFERENCED_PROPERTIES);
 		}
-		return navigatedProperties;
+		return referencedProperties;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PropertiesPackage.GROUP_PROPERTY_SECTION__REFERENCED_PROPERTIES:
+				return ((InternalEList<?>)getReferencedProperties()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -79,8 +97,8 @@ public class GroupPropertySectionImpl extends PropertySectionImpl implements Gro
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PropertiesPackage.GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES:
-				return getNavigatedProperties();
+			case PropertiesPackage.GROUP_PROPERTY_SECTION__REFERENCED_PROPERTIES:
+				return getReferencedProperties();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -94,9 +112,9 @@ public class GroupPropertySectionImpl extends PropertySectionImpl implements Gro
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PropertiesPackage.GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES:
-				getNavigatedProperties().clear();
-				getNavigatedProperties().addAll((Collection<? extends Property>)newValue);
+			case PropertiesPackage.GROUP_PROPERTY_SECTION__REFERENCED_PROPERTIES:
+				getReferencedProperties().clear();
+				getReferencedProperties().addAll((Collection<? extends PropertyReference>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -110,8 +128,8 @@ public class GroupPropertySectionImpl extends PropertySectionImpl implements Gro
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PropertiesPackage.GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES:
-				getNavigatedProperties().clear();
+			case PropertiesPackage.GROUP_PROPERTY_SECTION__REFERENCED_PROPERTIES:
+				getReferencedProperties().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -125,8 +143,8 @@ public class GroupPropertySectionImpl extends PropertySectionImpl implements Gro
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PropertiesPackage.GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES:
-				return navigatedProperties != null && !navigatedProperties.isEmpty();
+			case PropertiesPackage.GROUP_PROPERTY_SECTION__REFERENCED_PROPERTIES:
+				return referencedProperties != null && !referencedProperties.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

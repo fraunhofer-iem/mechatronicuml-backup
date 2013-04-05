@@ -29,6 +29,7 @@ import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
 import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
+import de.fujaba.properties.PropertyReference;
 import de.fujaba.properties.PropertySection;
 import de.fujaba.properties.PropertyTab;
 import de.fujaba.properties.RadioPropertySection;
@@ -146,6 +147,13 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * @generated
 	 */
 	private EClass oclPropertyFilterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass propertyReferenceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -594,7 +602,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getGroupPropertySection_NavigatedProperties() {
+	public EReference getGroupPropertySection_ReferencedProperties() {
 		return (EReference)groupPropertySectionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -641,6 +649,33 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 */
 	public EAttribute getOCLPropertyFilter_Expression() {
 		return (EAttribute)oclPropertyFilterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPropertyReference() {
+		return propertyReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPropertyReference_Active() {
+		return (EAttribute)propertyReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPropertyReference_Property() {
+		return (EReference)propertyReferenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -723,7 +758,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		listPropertySectionEClass = createEClass(LIST_PROPERTY_SECTION);
 
 		groupPropertySectionEClass = createEClass(GROUP_PROPERTY_SECTION);
-		createEReference(groupPropertySectionEClass, GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES);
+		createEReference(groupPropertySectionEClass, GROUP_PROPERTY_SECTION__REFERENCED_PROPERTIES);
 
 		customPropertySectionEClass = createEClass(CUSTOM_PROPERTY_SECTION);
 		createEAttribute(customPropertySectionEClass, CUSTOM_PROPERTY_SECTION__FULLY_QUALIFIED_CLASS_NAME);
@@ -732,6 +767,10 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		oclPropertyFilterEClass = createEClass(OCL_PROPERTY_FILTER);
 		createEAttribute(oclPropertyFilterEClass, OCL_PROPERTY_FILTER__EXPRESSION);
+
+		propertyReferenceEClass = createEClass(PROPERTY_REFERENCE);
+		createEAttribute(propertyReferenceEClass, PROPERTY_REFERENCE__ACTIVE);
+		createEReference(propertyReferenceEClass, PROPERTY_REFERENCE__PROPERTY);
 	}
 
 	/**
@@ -829,7 +868,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		initEClass(listPropertySectionEClass, ListPropertySection.class, "ListPropertySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(groupPropertySectionEClass, GroupPropertySection.class, "GroupPropertySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGroupPropertySection_NavigatedProperties(), this.getProperty(), null, "navigatedProperties", null, 0, -1, GroupPropertySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGroupPropertySection_ReferencedProperties(), this.getPropertyReference(), null, "referencedProperties", null, 0, -1, GroupPropertySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(customPropertySectionEClass, CustomPropertySection.class, "CustomPropertySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomPropertySection_FullyQualifiedClassName(), ecorePackage.getEString(), "fullyQualifiedClassName", null, 1, 1, CustomPropertySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -841,6 +880,10 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		initEClass(oclPropertyFilterEClass, OCLPropertyFilter.class, "OCLPropertyFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOCLPropertyFilter_Expression(), ecorePackage.getEString(), "expression", null, 1, 1, OCLPropertyFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(propertyReferenceEClass, PropertyReference.class, "PropertyReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPropertyReference_Active(), ecorePackage.getEBoolean(), "active", null, 1, 1, PropertyReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyReference_Property(), this.getProperty(), null, "property", null, 1, 1, PropertyReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -21,6 +21,7 @@ import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
 import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
+import de.fujaba.properties.PropertyReference;
 import de.fujaba.properties.PropertySection;
 import de.fujaba.properties.PropertyTab;
 import de.fujaba.properties.RadioPropertySection;
@@ -141,6 +142,10 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseOCLPropertyFilter(OCLPropertyFilter object) {
 				return createOCLPropertyFilterAdapter();
+			}
+			@Override
+			public Adapter casePropertyReference(PropertyReference object) {
+				return createPropertyReferenceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -369,6 +374,20 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOCLPropertyFilterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.PropertyReference <em>Property Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fujaba.properties.PropertyReference
+	 * @generated
+	 */
+	public Adapter createPropertyReferenceAdapter() {
 		return null;
 	}
 

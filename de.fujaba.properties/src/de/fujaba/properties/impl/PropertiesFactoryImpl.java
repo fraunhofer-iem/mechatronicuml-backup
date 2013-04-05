@@ -22,6 +22,7 @@ import de.fujaba.properties.PropertiesFactory;
 import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
 import de.fujaba.properties.PropertyGenerator;
+import de.fujaba.properties.PropertyReference;
 import de.fujaba.properties.PropertyTab;
 import de.fujaba.properties.RadioPropertySection;
 import de.fujaba.properties.TextPropertySection;
@@ -83,6 +84,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 			case PropertiesPackage.GROUP_PROPERTY_SECTION: return createGroupPropertySection();
 			case PropertiesPackage.CUSTOM_PROPERTY_SECTION: return createCustomPropertySection();
 			case PropertiesPackage.OCL_PROPERTY_FILTER: return createOCLPropertyFilter();
+			case PropertiesPackage.PROPERTY_REFERENCE: return createPropertyReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -216,6 +218,16 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	public OCLPropertyFilter createOCLPropertyFilter() {
 		OCLPropertyFilterImpl oclPropertyFilter = new OCLPropertyFilterImpl();
 		return oclPropertyFilter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PropertyReference createPropertyReference() {
+		PropertyReferenceImpl propertyReference = new PropertyReferenceImpl();
+		return propertyReference;
 	}
 
 	/**

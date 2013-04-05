@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.fujaba.properties.GroupPropertySection#getNavigatedProperties <em>Navigated Properties</em>}</li>
+ *   <li>{@link de.fujaba.properties.GroupPropertySection#getReferencedProperties <em>Referenced Properties</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,19 +26,19 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface GroupPropertySection extends PropertySection {
 	/**
-	 * Returns the value of the '<em><b>Navigated Properties</b></em>' reference list.
-	 * The list contents are of type {@link de.fujaba.properties.Property}.
+	 * Returns the value of the '<em><b>Referenced Properties</b></em>' containment reference list.
+	 * The list contents are of type {@link de.fujaba.properties.PropertyReference}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Navigated Properties</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Referenced Properties</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Navigated Properties</em>' reference list.
-	 * @see de.fujaba.properties.PropertiesPackage#getGroupPropertySection_NavigatedProperties()
-	 * @model
+	 * @return the value of the '<em>Referenced Properties</em>' containment reference list.
+	 * @see de.fujaba.properties.PropertiesPackage#getGroupPropertySection_ReferencedProperties()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Property> getNavigatedProperties();
+	EList<PropertyReference> getReferencedProperties();
 
 } // GroupPropertySection

@@ -20,6 +20,7 @@ import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
 import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
+import de.fujaba.properties.PropertyReference;
 import de.fujaba.properties.PropertySection;
 import de.fujaba.properties.PropertyTab;
 import de.fujaba.properties.RadioPropertySection;
@@ -176,6 +177,12 @@ public class PropertiesSwitch<T> extends Switch<T> {
 				OCLPropertyFilter oclPropertyFilter = (OCLPropertyFilter)theEObject;
 				T result = caseOCLPropertyFilter(oclPropertyFilter);
 				if (result == null) result = casePropertyFilter(oclPropertyFilter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PropertiesPackage.PROPERTY_REFERENCE: {
+				PropertyReference propertyReference = (PropertyReference)theEObject;
+				T result = casePropertyReference(propertyReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -405,6 +412,21 @@ public class PropertiesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOCLPropertyFilter(OCLPropertyFilter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Property Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Property Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePropertyReference(PropertyReference object) {
 		return null;
 	}
 

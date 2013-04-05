@@ -143,6 +143,15 @@ public interface PropertiesFactory extends EFactory {
 	OCLPropertyFilter createOCLPropertyFilter();
 
 	/**
+	 * Returns a new object of class '<em>Property Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Property Reference</em>'.
+	 * @generated
+	 */
+	PropertyReference createPropertyReference();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

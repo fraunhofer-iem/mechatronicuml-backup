@@ -4,8 +4,6 @@ modeltype genmodel uses genmodel('http://www.eclipse.org/emf/2002/GenModel');
 modeltype ecore uses ecore ('http://www.eclipse.org/emf/2002/Ecore');
 modeltype Properties uses properties('http://de.fujaba.properties/0.1');
 
-property GROUP_PROPERTY_SECTIONS : OrderedSet(GroupPropertySection) = object OrderedSet(GroupPropertySection){};
-
 main() {
 	log("QVT-O Script \"reconcile.qvto\" started.");
 
@@ -55,14 +53,18 @@ mapping inout PropertyGenerator::generator() {
 		packages->map reconcilePackage(defaultTab);
 		
 		-- initialize newly created GroupPropertySections
-		GROUP_PROPERTY_SECTIONS->forEach(section) {
+		packages.classes.properties.section[GroupPropertySection]->forEach(section) {
 			if section.container().oclIsKindOf(Property) then {
 			var prop : Property := section._property;//container().oclAsType(Property);
-				section.navigatedProperties := packages.classes->select(c |
+				packages.classes->select(c |
 					prop.genFeature.ecoreFeature.eType.oclAsType(ecore::EClass).eAllSuperTypes->including(prop.genFeature.ecoreFeature.eType.oclAsType(ecore::EClass))->includes(c.genClass.ecoreClass)).properties->select(p | 
 						-- reject eopposite
 						((not p.genFeature.ecoreFeature.oclIsKindOf(ecore::EReference)) or p.genFeature.ecoreFeature.oclAsType(ecore::EReference).eOpposite != prop.genFeature.ecoreFeature)
-				)
+						-- reject existing property references
+						and not section.referencedProperties._property->includes(p)
+				)->forEach(prp) {
+					section.referencedProperties += new PropertyReference(prp);
+				}
 			} endif;
 		}
 	} endif;
@@ -128,18 +130,20 @@ mapping GenFeature::radioSection() : RadioPropertySection when {self.ecoreFeatur
 }
 
 mapping GenFeature::groupSection() : GroupPropertySection when {self.ecoreFeature.oclIsKindOf(EReference) and self.ecoreFeature.oclAsType(EReference).containment and self.ecoreFeature.upperBound = 1} {
-	GROUP_PROPERTY_SECTIONS += result;
 }
 
 
 query GenPackage::shouldGenerate() : Boolean {
-	return true;--return self.genClassifiers->one(shouldGenerate());
+	return not self.genClassifiers->select(shouldGenerate())->isEmpty();
+}
+query GenClassifier::shouldGenerate() : Boolean {
+	return false;
 }
 query GenClass::shouldGenerate() : Boolean {
-	return true; -- return self.genFeatures->one(shouldGenerate());
+	return not self.genFeatures->select(shouldGenerate())->isEmpty();
 }
 query GenFeature::shouldGenerate() : Boolean {
-	return true; -- not ecoreFeature.derived;
+	return not self.ecoreFeature._derived;
 }
 constructor Plugin::Plugin(genModel : GenModel) {
 	name := genModel.modelPluginID + ".edit.properties";
@@ -149,4 +153,9 @@ constructor Plugin::Plugin(genModel : GenModel) {
 constructor PropertyTab::PropertyTab(_id : String, _name : String) {
 	id := _id;
 	name := _name;
+}
+
+constructor PropertyReference::PropertyReference(prp : Property) {
+	_property := prp;
+	active := true;
 }

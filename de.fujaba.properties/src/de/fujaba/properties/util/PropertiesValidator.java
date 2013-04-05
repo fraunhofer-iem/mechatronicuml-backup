@@ -24,6 +24,7 @@ import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
 import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
+import de.fujaba.properties.PropertyReference;
 import de.fujaba.properties.PropertySection;
 import de.fujaba.properties.PropertyTab;
 import de.fujaba.properties.RadioPropertySection;
@@ -131,6 +132,8 @@ public class PropertiesValidator extends EObjectValidator {
 				return validatePropertyFilter((PropertyFilter)value, diagnostics, context);
 			case PropertiesPackage.OCL_PROPERTY_FILTER:
 				return validateOCLPropertyFilter((OCLPropertyFilter)value, diagnostics, context);
+			case PropertiesPackage.PROPERTY_REFERENCE:
+				return validatePropertyReference((PropertyReference)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -386,6 +389,15 @@ public class PropertiesValidator extends EObjectValidator {
 	 */
 	public boolean validateOCLPropertyFilter(OCLPropertyFilter oclPropertyFilter, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(oclPropertyFilter, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePropertyReference(PropertyReference propertyReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(propertyReference, diagnostics, context);
 	}
 
 	/**

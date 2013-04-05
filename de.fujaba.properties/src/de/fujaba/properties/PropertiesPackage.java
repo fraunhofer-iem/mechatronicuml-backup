@@ -586,13 +586,13 @@ public interface PropertiesPackage extends EPackage {
 	int GROUP_PROPERTY_SECTION__PROPERTY = PROPERTY_SECTION__PROPERTY;
 
 	/**
-	 * The feature id for the '<em><b>Navigated Properties</b></em>' reference list.
+	 * The feature id for the '<em><b>Referenced Properties</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES = PROPERTY_SECTION_FEATURE_COUNT + 0;
+	int GROUP_PROPERTY_SECTION__REFERENCED_PROPERTIES = PROPERTY_SECTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Group Property Section</em>' class.
@@ -686,6 +686,44 @@ public interface PropertiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int OCL_PROPERTY_FILTER_FEATURE_COUNT = PROPERTY_FILTER_FEATURE_COUNT + 1;
+
+
+	/**
+	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertyReferenceImpl <em>Property Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fujaba.properties.impl.PropertyReferenceImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyReference()
+	 * @generated
+	 */
+	int PROPERTY_REFERENCE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_REFERENCE__ACTIVE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_REFERENCE__PROPERTY = 1;
+
+	/**
+	 * The number of structural features of the '<em>Property Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_REFERENCE_FEATURE_COUNT = 2;
 
 
 	/**
@@ -1128,15 +1166,15 @@ public interface PropertiesPackage extends EPackage {
 	EClass getGroupPropertySection();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.fujaba.properties.GroupPropertySection#getNavigatedProperties <em>Navigated Properties</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.fujaba.properties.GroupPropertySection#getReferencedProperties <em>Referenced Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Navigated Properties</em>'.
-	 * @see de.fujaba.properties.GroupPropertySection#getNavigatedProperties()
+	 * @return the meta object for the containment reference list '<em>Referenced Properties</em>'.
+	 * @see de.fujaba.properties.GroupPropertySection#getReferencedProperties()
 	 * @see #getGroupPropertySection()
 	 * @generated
 	 */
-	EReference getGroupPropertySection_NavigatedProperties();
+	EReference getGroupPropertySection_ReferencedProperties();
 
 	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.CustomPropertySection <em>Custom Property Section</em>}'.
@@ -1189,6 +1227,38 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getOCLPropertyFilter_Expression();
+
+	/**
+	 * Returns the meta object for class '{@link de.fujaba.properties.PropertyReference <em>Property Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Property Reference</em>'.
+	 * @see de.fujaba.properties.PropertyReference
+	 * @generated
+	 */
+	EClass getPropertyReference();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.PropertyReference#isActive <em>Active</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Active</em>'.
+	 * @see de.fujaba.properties.PropertyReference#isActive()
+	 * @see #getPropertyReference()
+	 * @generated
+	 */
+	EAttribute getPropertyReference_Active();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.fujaba.properties.PropertyReference#getProperty <em>Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Property</em>'.
+	 * @see de.fujaba.properties.PropertyReference#getProperty()
+	 * @see #getPropertyReference()
+	 * @generated
+	 */
+	EReference getPropertyReference_Property();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1565,12 +1635,12 @@ public interface PropertiesPackage extends EPackage {
 		EClass GROUP_PROPERTY_SECTION = eINSTANCE.getGroupPropertySection();
 
 		/**
-		 * The meta object literal for the '<em><b>Navigated Properties</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Referenced Properties</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES = eINSTANCE.getGroupPropertySection_NavigatedProperties();
+		EReference GROUP_PROPERTY_SECTION__REFERENCED_PROPERTIES = eINSTANCE.getGroupPropertySection_ReferencedProperties();
 
 		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.CustomPropertySectionImpl <em>Custom Property Section</em>}' class.
@@ -1617,6 +1687,32 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OCL_PROPERTY_FILTER__EXPRESSION = eINSTANCE.getOCLPropertyFilter_Expression();
+
+		/**
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.PropertyReferenceImpl <em>Property Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fujaba.properties.impl.PropertyReferenceImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyReference()
+		 * @generated
+		 */
+		EClass PROPERTY_REFERENCE = eINSTANCE.getPropertyReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Active</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTY_REFERENCE__ACTIVE = eINSTANCE.getPropertyReference_Active();
+
+		/**
+		 * The meta object literal for the '<em><b>Property</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTY_REFERENCE__PROPERTY = eINSTANCE.getPropertyReference_Property();
 
 	}
 

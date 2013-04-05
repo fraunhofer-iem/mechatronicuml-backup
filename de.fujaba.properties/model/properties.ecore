@@ -100,8 +100,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="RadioPropertySection" eSuperTypes="#//PropertySection"/>
   <eClassifiers xsi:type="ecore:EClass" name="ListPropertySection" eSuperTypes="#//PropertySection"/>
   <eClassifiers xsi:type="ecore:EClass" name="GroupPropertySection" eSuperTypes="#//PropertySection">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="navigatedProperties" upperBound="-1"
-        eType="#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedProperties" upperBound="-1"
+        eType="#//PropertyReference" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CustomPropertySection" eSuperTypes="#//PropertySection">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullyQualifiedClassName"
@@ -115,5 +115,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="OCLPropertyFilter" eSuperTypes="#//PropertyFilter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyReference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
+        eType="#//Property"/>
   </eClassifiers>
 </ecore:EPackage>

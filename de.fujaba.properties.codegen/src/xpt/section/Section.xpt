@@ -26,7 +26,7 @@ public class «property.genFeature.genClass.ecoreClass.name»«property.genFeatu
 
 «DEFINE additionalMethods FOR GroupPropertySection»
 	public «property.genFeature.genClass.ecoreClass.name»«property.genFeature.ecoreFeature.name.toFirstUpper()»Section() {
-		«FOREACH navigatedProperties.section.reject(p | p == null) AS this»
+		«FOREACH referencedProperties.reject(p | p.active == false).property.section.reject(p | p == null) AS this»
 		addSection(new «property.clazz.package.generator.genModel.modelPluginID».properties.«property.genFeature.genClass.genPackage.ecorePackage.name».section.«property.genFeature.genClass.ecoreClass.name»«property.genFeature.ecoreFeature.name.toFirstUpper()»Section());
 		«ENDFOREACH»
 	}
