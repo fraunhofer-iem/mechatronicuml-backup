@@ -102,10 +102,11 @@ public class RoleConnectorItemProvider
 	 * This adds a property descriptor for the Connector Quality Of Service Assumptions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addConnectorQualityOfServiceAssumptionsPropertyDescriptor(Object object) {
-		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_RoleConnector_connectorQualityOfServiceAssumptions_feature"),
@@ -116,82 +117,7 @@ public class RoleConnectorItemProvider
 				 false,
 				 null,
 				 null,
-				 null);
-		
-		itemPropertyDescriptors.add
-			(new DefaultChainedPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 "QoS Assumptions",
-				 null,
-				 rootPropertyDescriptor));
-	
-		itemPropertyDescriptors.add
-			(new NaturalNumberPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConnectorQualityOfServiceAssumptions_minMessageDelay_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorQualityOfServiceAssumptions_minMessageDelay_feature", "_UI_ConnectorQualityOfServiceAssumptions_type"),
-				 ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY,
-				 true,
-				 false,
-				 false,
-				 null,
-				 "QoS Assumptions",
-				 null,
-				 rootPropertyDescriptor));
-
-		itemPropertyDescriptors.add
-			(new NaturalNumberPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConnectorQualityOfServiceAssumptions_maxMessageDelay_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorQualityOfServiceAssumptions_maxMessageDelay_feature", "_UI_ConnectorQualityOfServiceAssumptions_type"),
-				 ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY,
-				 true,
-				 false,
-				 false,
-				 null,
-				 "QoS Assumptions",
-				 null,
-				 rootPropertyDescriptor));
-	
-		itemPropertyDescriptors.add
-			(new DefaultChainedPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConnectorQualityOfServiceAssumptions_messageLossPossible_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorQualityOfServiceAssumptions_messageLossPossible_feature", "_UI_ConnectorQualityOfServiceAssumptions_type"),
-				 ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 "QoS Assumptions",
-				 null,
-				 rootPropertyDescriptor));
-		
-		itemPropertyDescriptors.add
-			(new DefaultChainedPropertyDescriptor
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_NamedElement_name_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				CorePackage.Literals.NAMED_ELEMENT__NAME,
-				true,
-				false,
-				false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				"QoS Assumptions",
-				null,
-				rootPropertyDescriptor));
+				 null));
 	}
 
 	/**

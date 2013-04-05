@@ -38,16 +38,15 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 	private ComboViewer comboViewer;
 
 	private AdapterFactory adapterFactory;
-	
+
 	private INotifyChangedListener listener = new INotifyChangedListener() {
 
 		@Override
 		public void notifyChanged(Notification notification) {
 			updateButtonEnablement();
 		}
-		
-	};
 
+	};
 
 	/**
 	 * The Create-Button.
@@ -144,20 +143,23 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 			public void widgetSelected(SelectionEvent event) {
 
 				final EObject newObject = EcoreUtil.create(getInstanceClass());
-				
+
 				objectsListDialogExtension.addListItem(newObject);
 				objectsListDialogExtension.getTableViewer().refresh();
 				objectsListDialogExtension.getTableViewer().setSelection(
 						new StructuredSelection(new Object[] { newObject }));
 			}
 		});
-		
+	
 		updateButtonEnablement();
 	}
 
 	private void updateButtonEnablement() {
-		if (!getCreationDialog().isManyProperty()) {
-			btnCreate.setEnabled(objectsListDialogExtension.getCurrentListItems().isEmpty());
+		if (objectsListDialogExtension != null && btnCreate != null && !btnCreate.isDisposed()) {
+			if (!getCreationDialog().isManyProperty()) {
+				btnCreate.setEnabled(objectsListDialogExtension
+						.getCurrentListItems().isEmpty());
+			}
 		}
 	}
 
@@ -177,13 +179,18 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 
 	public void setObjectsListDialogExtension(
 			ObjectsListDialogExtension objectsListDialogExtension) {
+
 		if (this.objectsListDialogExtension != null) {
 			this.objectsListDialogExtension.removeListener(listener);
 		}
+		
 		this.objectsListDialogExtension = objectsListDialogExtension;
+		
 		if (this.objectsListDialogExtension != null) {
 			this.objectsListDialogExtension.addListener(listener);
+			updateButtonEnablement();
 		}
+		
 	}
 
 }
