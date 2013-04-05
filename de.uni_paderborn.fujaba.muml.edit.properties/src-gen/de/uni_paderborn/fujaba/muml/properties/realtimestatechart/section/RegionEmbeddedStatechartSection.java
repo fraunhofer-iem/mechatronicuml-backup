@@ -29,16 +29,6 @@ public class RegionEmbeddedStatechartSection
 
 		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.RealtimeStatechartHistorySection());
 
-		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.RealtimeStatechartFlatSection());
-
-		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.RealtimeStatechartAvailableClocksSection());
-
-		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.RealtimeStatechartEmbeddedSection());
-
-		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.RealtimeStatechartAllAvailableVariablesSection());
-
-		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.RealtimeStatechartAllAvailableOperationsSection());
-
 	}
 
 }

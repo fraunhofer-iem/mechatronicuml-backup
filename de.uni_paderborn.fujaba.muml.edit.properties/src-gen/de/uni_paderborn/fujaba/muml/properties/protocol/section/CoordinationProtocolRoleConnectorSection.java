@@ -19,8 +19,6 @@ public class CoordinationProtocolRoleConnectorSection
 
 		addSection(new de.uni_paderborn.fujaba.muml.properties.protocol.section.RoleConnectorConnectorQualityOfServiceAssumptionsSection());
 
-		addSection(new de.uni_paderborn.fujaba.muml.properties.protocol.section.RoleConnectorRolesSection());
-
 		addSection(new de.uni_paderborn.fujaba.muml.properties.connector.section.ConnectorConnectorEndpointsSection());
 
 	}

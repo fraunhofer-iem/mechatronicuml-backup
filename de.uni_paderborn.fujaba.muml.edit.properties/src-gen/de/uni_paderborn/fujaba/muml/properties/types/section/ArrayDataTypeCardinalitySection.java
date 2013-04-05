@@ -19,6 +19,8 @@ public class ArrayDataTypeCardinalitySection
 
 		addSection(new de.uni_paderborn.fujaba.muml.properties.valuetype.section.NaturalNumberValueSection());
 
+		addSection(new de.uni_paderborn.fujaba.muml.properties.valuetype.section.NaturalNumberInfinitySection());
+
 	}
 
 }

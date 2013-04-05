@@ -21,8 +21,6 @@ public class StructuredComponentInstanceEmbeddedCICSection
 
 		addSection(new de.uni_paderborn.fujaba.muml.properties.instance.section.ComponentInstanceConfigurationPortConnectorInstancesSection());
 
-		addSection(new de.uni_paderborn.fujaba.muml.properties.instance.section.ComponentInstanceConfigurationParentPortInstancesSection());
-
 	}
 
 }
