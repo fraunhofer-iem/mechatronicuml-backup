@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import de.fujaba.properties.ComboBoxPropertySection;
+import de.fujaba.properties.CustomPropertySection;
 import de.fujaba.properties.GroupPropertySection;
 import de.fujaba.properties.ListPropertySection;
 import de.fujaba.properties.OCLPropertyFilter;
@@ -155,6 +156,13 @@ public class PropertiesSwitch<T> extends Switch<T> {
 				GroupPropertySection groupPropertySection = (GroupPropertySection)theEObject;
 				T result = caseGroupPropertySection(groupPropertySection);
 				if (result == null) result = casePropertySection(groupPropertySection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PropertiesPackage.CUSTOM_PROPERTY_SECTION: {
+				CustomPropertySection customPropertySection = (CustomPropertySection)theEObject;
+				T result = caseCustomPropertySection(customPropertySection);
+				if (result == null) result = casePropertySection(customPropertySection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -352,6 +360,21 @@ public class PropertiesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseGroupPropertySection(GroupPropertySection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Custom Property Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Custom Property Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCustomPropertySection(CustomPropertySection object) {
 		return null;
 	}
 

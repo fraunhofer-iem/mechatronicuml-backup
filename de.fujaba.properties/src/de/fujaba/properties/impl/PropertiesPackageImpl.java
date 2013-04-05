@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import de.fujaba.properties.ComboBoxPropertySection;
+import de.fujaba.properties.CustomPropertySection;
 import de.fujaba.properties.GroupPropertySection;
 import de.fujaba.properties.ListPropertySection;
 import de.fujaba.properties.OCLPropertyFilter;
@@ -124,6 +125,13 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * @generated
 	 */
 	private EClass groupPropertySectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass customPropertySectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -282,6 +290,24 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 */
 	public EAttribute getPropertyGenerator_SourceFolder() {
 		return (EAttribute)propertyGeneratorEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPropertyGenerator_PrereconcileQvtoTransformation() {
+		return (EAttribute)propertyGeneratorEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPropertyGenerator_PostreconcileQvtoTransformation() {
+		return (EAttribute)propertyGeneratorEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -577,6 +603,24 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCustomPropertySection() {
+		return customPropertySectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCustomPropertySection_FullyQualifiedClassName() {
+		return (EAttribute)customPropertySectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPropertyFilter() {
 		return propertyFilterEClass;
 	}
@@ -635,6 +679,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		createEReference(propertyGeneratorEClass, PROPERTY_GENERATOR__PACKAGES);
 		createEAttribute(propertyGeneratorEClass, PROPERTY_GENERATOR__CONTRIBUTOR_ID);
 		createEAttribute(propertyGeneratorEClass, PROPERTY_GENERATOR__SOURCE_FOLDER);
+		createEAttribute(propertyGeneratorEClass, PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION);
+		createEAttribute(propertyGeneratorEClass, PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION);
 
 		pluginEClass = createEClass(PLUGIN);
 		createEAttribute(pluginEClass, PLUGIN__NAME);
@@ -679,6 +725,9 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		groupPropertySectionEClass = createEClass(GROUP_PROPERTY_SECTION);
 		createEReference(groupPropertySectionEClass, GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES);
 
+		customPropertySectionEClass = createEClass(CUSTOM_PROPERTY_SECTION);
+		createEAttribute(customPropertySectionEClass, CUSTOM_PROPERTY_SECTION__FULLY_QUALIFIED_CLASS_NAME);
+
 		propertyFilterEClass = createEClass(PROPERTY_FILTER);
 
 		oclPropertyFilterEClass = createEClass(OCL_PROPERTY_FILTER);
@@ -722,6 +771,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		radioPropertySectionEClass.getESuperTypes().add(this.getPropertySection());
 		listPropertySectionEClass.getESuperTypes().add(this.getPropertySection());
 		groupPropertySectionEClass.getESuperTypes().add(this.getPropertySection());
+		customPropertySectionEClass.getESuperTypes().add(this.getPropertySection());
 		oclPropertyFilterEClass.getESuperTypes().add(this.getPropertyFilter());
 
 		// Initialize classes and features; add operations and parameters
@@ -733,6 +783,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		initEReference(getPropertyGenerator_Packages(), this.getPackage(), this.getPackage_Generator(), "packages", null, 0, -1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPropertyGenerator_ContributorId(), ecorePackage.getEString(), "contributorId", null, 1, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPropertyGenerator_SourceFolder(), ecorePackage.getEString(), "sourceFolder", "src-gen", 1, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPropertyGenerator_PrereconcileQvtoTransformation(), ecorePackage.getEString(), "prereconcileQvtoTransformation", null, 0, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPropertyGenerator_PostreconcileQvtoTransformation(), ecorePackage.getEString(), "postreconcileQvtoTransformation", null, 0, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pluginEClass, Plugin.class, "Plugin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPlugin_Name(), theEcorePackage.getEString(), "name", null, 1, 1, Plugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -778,6 +830,9 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		initEClass(groupPropertySectionEClass, GroupPropertySection.class, "GroupPropertySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGroupPropertySection_NavigatedProperties(), this.getProperty(), null, "navigatedProperties", null, 0, -1, GroupPropertySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(customPropertySectionEClass, CustomPropertySection.class, "CustomPropertySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCustomPropertySection_FullyQualifiedClassName(), ecorePackage.getEString(), "fullyQualifiedClassName", null, 1, 1, CustomPropertySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyFilterEClass, PropertyFilter.class, "PropertyFilter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -1,6 +1,5 @@
 package de.fujaba.properties.reconcile;
 
-
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -16,11 +15,9 @@ public class PropertiesReconcilePlugin extends AbstractUIPlugin {
 
 	// The shared instance
 	private static PropertiesReconcilePlugin plugin;
-	
 
-	private TransformationExecutor transformationExecutor;
+	private TransformationExecutor defaultTransformationExecutor;
 
-	
 	/**
 	 * The constructor
 	 */
@@ -29,52 +26,67 @@ public class PropertiesReconcilePlugin extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
+	 * 
+	 * @see
+	 * org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext
+	 * )
 	 */
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
 
 		// Create transformation executor
-		getTransformationExecutor();
+		getDefaultTransformationExecutor();
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
+	 * 
+	 * @see
+	 * org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext
+	 * )
 	 */
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
-		transformationExecutor = null;
+		defaultTransformationExecutor = null;
 		super.stop(context);
 	}
 
 	/**
 	 * Returns the shared instance
-	 *
+	 * 
 	 * @return the shared instance
 	 */
 	public static PropertiesReconcilePlugin getDefault() {
 		return plugin;
 	}
-	
-	public TransformationExecutor getTransformationExecutor() {
-		return getTransformationExecutor(false);
+
+	public TransformationExecutor getDefaultTransformationExecutor() {
+		return getDefaultTransformationExecutor(false);
 	}
 
-	public TransformationExecutor getTransformationExecutor(boolean reload) {
+	public TransformationExecutor getDefaultTransformationExecutor(
+			boolean reload) {
 		if (reload) {
-			transformationExecutor = null;
+			defaultTransformationExecutor = null;
 		}
-		
-		if (transformationExecutor == null) {
-			URI transformationURI = URI
+
+		if (defaultTransformationExecutor == null) {
+			URI uri = URI
 					.createPlatformPluginURI(
 							"/de.fujaba.properties.reconcile/transforms/reconcile.qvto",
 							true);
-			// create executor and execution context
-			transformationExecutor = new TransformationExecutor(
-					transformationURI);
+			defaultTransformationExecutor = createTransformationExecutor(uri);
+		}
+		return defaultTransformationExecutor;
+	}
+
+	public TransformationExecutor createTransformationExecutor(URI uri) {
+
+		// create executor and execution context
+		TransformationExecutor transformationExecutor = new TransformationExecutor(
+				uri);
+		if (transformationExecutor != null) {
 			transformationExecutor.loadTransformation();
 		}
 		return transformationExecutor;

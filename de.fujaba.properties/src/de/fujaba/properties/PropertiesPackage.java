@@ -134,13 +134,31 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY_GENERATOR__SOURCE_FOLDER = 6;
 
 	/**
+	 * The feature id for the '<em><b>Prereconcile Qvto Transformation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Postreconcile Qvto Transformation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION = 8;
+
+	/**
 	 * The number of structural features of the '<em>Property Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR_FEATURE_COUNT = 7;
+	int PROPERTY_GENERATOR_FEATURE_COUNT = 9;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.PluginImpl <em>Plugin</em>}' class.
@@ -586,6 +604,43 @@ public interface PropertiesPackage extends EPackage {
 	int GROUP_PROPERTY_SECTION_FEATURE_COUNT = PROPERTY_SECTION_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.fujaba.properties.impl.CustomPropertySectionImpl <em>Custom Property Section</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fujaba.properties.impl.CustomPropertySectionImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCustomPropertySection()
+	 * @generated
+	 */
+	int CUSTOM_PROPERTY_SECTION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_PROPERTY_SECTION__PROPERTY = PROPERTY_SECTION__PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Fully Qualified Class Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_PROPERTY_SECTION__FULLY_QUALIFIED_CLASS_NAME = PROPERTY_SECTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Custom Property Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_PROPERTY_SECTION_FEATURE_COUNT = PROPERTY_SECTION_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertyFilterImpl <em>Property Filter</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -593,7 +648,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyFilter()
 	 * @generated
 	 */
-	int PROPERTY_FILTER = 12;
+	int PROPERTY_FILTER = 13;
 
 	/**
 	 * The number of structural features of the '<em>Property Filter</em>' class.
@@ -612,7 +667,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getOCLPropertyFilter()
 	 * @generated
 	 */
-	int OCL_PROPERTY_FILTER = 13;
+	int OCL_PROPERTY_FILTER = 14;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -719,6 +774,28 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPropertyGenerator_SourceFolder();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.PropertyGenerator#getPrereconcileQvtoTransformation <em>Prereconcile Qvto Transformation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Prereconcile Qvto Transformation</em>'.
+	 * @see de.fujaba.properties.PropertyGenerator#getPrereconcileQvtoTransformation()
+	 * @see #getPropertyGenerator()
+	 * @generated
+	 */
+	EAttribute getPropertyGenerator_PrereconcileQvtoTransformation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.PropertyGenerator#getPostreconcileQvtoTransformation <em>Postreconcile Qvto Transformation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Postreconcile Qvto Transformation</em>'.
+	 * @see de.fujaba.properties.PropertyGenerator#getPostreconcileQvtoTransformation()
+	 * @see #getPropertyGenerator()
+	 * @generated
+	 */
+	EAttribute getPropertyGenerator_PostreconcileQvtoTransformation();
 
 	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.Plugin <em>Plugin</em>}'.
@@ -1062,6 +1139,27 @@ public interface PropertiesPackage extends EPackage {
 	EReference getGroupPropertySection_NavigatedProperties();
 
 	/**
+	 * Returns the meta object for class '{@link de.fujaba.properties.CustomPropertySection <em>Custom Property Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Custom Property Section</em>'.
+	 * @see de.fujaba.properties.CustomPropertySection
+	 * @generated
+	 */
+	EClass getCustomPropertySection();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.CustomPropertySection#getFullyQualifiedClassName <em>Fully Qualified Class Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Fully Qualified Class Name</em>'.
+	 * @see de.fujaba.properties.CustomPropertySection#getFullyQualifiedClassName()
+	 * @see #getCustomPropertySection()
+	 * @generated
+	 */
+	EAttribute getCustomPropertySection_FullyQualifiedClassName();
+
+	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.PropertyFilter <em>Property Filter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1179,6 +1277,22 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROPERTY_GENERATOR__SOURCE_FOLDER = eINSTANCE.getPropertyGenerator_SourceFolder();
+
+		/**
+		 * The meta object literal for the '<em><b>Prereconcile Qvto Transformation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION = eINSTANCE.getPropertyGenerator_PrereconcileQvtoTransformation();
+
+		/**
+		 * The meta object literal for the '<em><b>Postreconcile Qvto Transformation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION = eINSTANCE.getPropertyGenerator_PostreconcileQvtoTransformation();
 
 		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.PluginImpl <em>Plugin</em>}' class.
@@ -1457,6 +1571,24 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GROUP_PROPERTY_SECTION__NAVIGATED_PROPERTIES = eINSTANCE.getGroupPropertySection_NavigatedProperties();
+
+		/**
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.CustomPropertySectionImpl <em>Custom Property Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fujaba.properties.impl.CustomPropertySectionImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCustomPropertySection()
+		 * @generated
+		 */
+		EClass CUSTOM_PROPERTY_SECTION = eINSTANCE.getCustomPropertySection();
+
+		/**
+		 * The meta object literal for the '<em><b>Fully Qualified Class Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CUSTOM_PROPERTY_SECTION__FULLY_QUALIFIED_CLASS_NAME = eINSTANCE.getCustomPropertySection_FullyQualifiedClassName();
 
 		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.PropertyFilterImpl <em>Property Filter</em>}' class.

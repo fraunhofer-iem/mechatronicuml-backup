@@ -125,6 +125,15 @@ public interface PropertiesFactory extends EFactory {
 	GroupPropertySection createGroupPropertySection();
 
 	/**
+	 * Returns a new object of class '<em>Custom Property Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Custom Property Section</em>'.
+	 * @generated
+	 */
+	CustomPropertySection createCustomPropertySection();
+
+	/**
 	 * Returns a new object of class '<em>OCL Property Filter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

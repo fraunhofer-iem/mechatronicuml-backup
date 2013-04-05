@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.fujaba.properties.ComboBoxPropertySection;
+import de.fujaba.properties.CustomPropertySection;
 import de.fujaba.properties.GroupPropertySection;
 import de.fujaba.properties.ListPropertySection;
 import de.fujaba.properties.OCLPropertyFilter;
@@ -124,6 +125,8 @@ public class PropertiesValidator extends EObjectValidator {
 				return validateListPropertySection((ListPropertySection)value, diagnostics, context);
 			case PropertiesPackage.GROUP_PROPERTY_SECTION:
 				return validateGroupPropertySection((GroupPropertySection)value, diagnostics, context);
+			case PropertiesPackage.CUSTOM_PROPERTY_SECTION:
+				return validateCustomPropertySection((CustomPropertySection)value, diagnostics, context);
 			case PropertiesPackage.PROPERTY_FILTER:
 				return validatePropertyFilter((PropertyFilter)value, diagnostics, context);
 			case PropertiesPackage.OCL_PROPERTY_FILTER:
@@ -356,6 +359,15 @@ public class PropertiesValidator extends EObjectValidator {
 	 */
 	public boolean validateGroupPropertySection(GroupPropertySection groupPropertySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(groupPropertySection, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCustomPropertySection(CustomPropertySection customPropertySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(customPropertySection, diagnostics, context);
 	}
 
 	/**

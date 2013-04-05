@@ -300,6 +300,11 @@ public class PropertyItemProvider
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__SECTION,
 				 PropertiesFactory.eINSTANCE.createGroupPropertySection()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PropertiesPackage.Literals.PROPERTY__SECTION,
+				 PropertiesFactory.eINSTANCE.createCustomPropertySection()));
 	}
 
 	/**

@@ -72,6 +72,8 @@ public class PropertyGeneratorItemProvider
 			addDefaultTabPropertyDescriptor(object);
 			addContributorIdPropertyDescriptor(object);
 			addSourceFolderPropertyDescriptor(object);
+			addPrereconcileQvtoTransformationPropertyDescriptor(object);
+			addPostreconcileQvtoTransformationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -187,6 +189,50 @@ public class PropertyGeneratorItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Prereconcile Qvto Transformation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPrereconcileQvtoTransformationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PropertyGenerator_prereconcileQvtoTransformation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyGenerator_prereconcileQvtoTransformation_feature", "_UI_PropertyGenerator_type"),
+				 PropertiesPackage.Literals.PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Postreconcile Qvto Transformation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPostreconcileQvtoTransformationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PropertyGenerator_postreconcileQvtoTransformation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyGenerator_postreconcileQvtoTransformation_feature", "_UI_PropertyGenerator_type"),
+				 PropertiesPackage.Literals.PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -257,6 +303,8 @@ public class PropertyGeneratorItemProvider
 		switch (notification.getFeatureID(PropertyGenerator.class)) {
 			case PropertiesPackage.PROPERTY_GENERATOR__CONTRIBUTOR_ID:
 			case PropertiesPackage.PROPERTY_GENERATOR__SOURCE_FOLDER:
+			case PropertiesPackage.PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION:
+			case PropertiesPackage.PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case PropertiesPackage.PROPERTY_GENERATOR__TABS:

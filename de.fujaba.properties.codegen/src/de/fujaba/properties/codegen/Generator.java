@@ -101,7 +101,9 @@ public class Generator {
 		OutputImpl output = new OutputImpl();
 		Outlet outlet = new Outlet(containerName);
 		outlet.setOverwrite(true);
-		outlet.addPostprocessor(new JMergePostProcessor(mergeModel));
+
+		// TODO: Enable JMerge again!
+//		outlet.addPostprocessor(new JMergePostProcessor(mergeModel));
 		outlet.addPostprocessor(new org.eclipse.xpand2.output.JavaBeautifier());
 		output.addOutlet(outlet);
 

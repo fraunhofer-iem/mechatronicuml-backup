@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.fujaba.properties.ComboBoxPropertySection;
+import de.fujaba.properties.CustomPropertySection;
 import de.fujaba.properties.GroupPropertySection;
 import de.fujaba.properties.ListPropertySection;
 import de.fujaba.properties.OCLPropertyFilter;
@@ -80,6 +81,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 			case PropertiesPackage.RADIO_PROPERTY_SECTION: return createRadioPropertySection();
 			case PropertiesPackage.LIST_PROPERTY_SECTION: return createListPropertySection();
 			case PropertiesPackage.GROUP_PROPERTY_SECTION: return createGroupPropertySection();
+			case PropertiesPackage.CUSTOM_PROPERTY_SECTION: return createCustomPropertySection();
 			case PropertiesPackage.OCL_PROPERTY_FILTER: return createOCLPropertyFilter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -194,6 +196,16 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	public GroupPropertySection createGroupPropertySection() {
 		GroupPropertySectionImpl groupPropertySection = new GroupPropertySectionImpl();
 		return groupPropertySection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomPropertySection createCustomPropertySection() {
+		CustomPropertySectionImpl customPropertySection = new CustomPropertySectionImpl();
+		return customPropertySection;
 	}
 
 	/**

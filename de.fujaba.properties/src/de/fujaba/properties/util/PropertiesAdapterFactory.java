@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import de.fujaba.properties.ComboBoxPropertySection;
+import de.fujaba.properties.CustomPropertySection;
 import de.fujaba.properties.GroupPropertySection;
 import de.fujaba.properties.ListPropertySection;
 import de.fujaba.properties.OCLPropertyFilter;
@@ -128,6 +129,10 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseGroupPropertySection(GroupPropertySection object) {
 				return createGroupPropertySectionAdapter();
+			}
+			@Override
+			public Adapter caseCustomPropertySection(CustomPropertySection object) {
+				return createCustomPropertySectionAdapter();
 			}
 			@Override
 			public Adapter casePropertyFilter(PropertyFilter object) {
@@ -322,6 +327,20 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGroupPropertySectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.CustomPropertySection <em>Custom Property Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fujaba.properties.CustomPropertySection
+	 * @generated
+	 */
+	public Adapter createCustomPropertySectionAdapter() {
 		return null;
 	}
 

@@ -39,6 +39,8 @@ import de.fujaba.properties.PropertyTab;
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getPackages <em>Packages</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getContributorId <em>Contributor Id</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getSourceFolder <em>Source Folder</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getPrereconcileQvtoTransformation <em>Prereconcile Qvto Transformation</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getPostreconcileQvtoTransformation <em>Postreconcile Qvto Transformation</em>}</li>
  * </ul>
  * </p>
  *
@@ -134,6 +136,46 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 	 * @ordered
 	 */
 	protected String sourceFolder = SOURCE_FOLDER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPrereconcileQvtoTransformation() <em>Prereconcile Qvto Transformation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrereconcileQvtoTransformation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PRERECONCILE_QVTO_TRANSFORMATION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPrereconcileQvtoTransformation() <em>Prereconcile Qvto Transformation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrereconcileQvtoTransformation()
+	 * @generated
+	 * @ordered
+	 */
+	protected String prereconcileQvtoTransformation = PRERECONCILE_QVTO_TRANSFORMATION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPostreconcileQvtoTransformation() <em>Postreconcile Qvto Transformation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPostreconcileQvtoTransformation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String POSTRECONCILE_QVTO_TRANSFORMATION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPostreconcileQvtoTransformation() <em>Postreconcile Qvto Transformation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPostreconcileQvtoTransformation()
+	 * @generated
+	 * @ordered
+	 */
+	protected String postreconcileQvtoTransformation = POSTRECONCILE_QVTO_TRANSFORMATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -344,6 +386,48 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPrereconcileQvtoTransformation() {
+		return prereconcileQvtoTransformation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPrereconcileQvtoTransformation(String newPrereconcileQvtoTransformation) {
+		String oldPrereconcileQvtoTransformation = prereconcileQvtoTransformation;
+		prereconcileQvtoTransformation = newPrereconcileQvtoTransformation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION, oldPrereconcileQvtoTransformation, prereconcileQvtoTransformation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPostreconcileQvtoTransformation() {
+		return postreconcileQvtoTransformation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPostreconcileQvtoTransformation(String newPostreconcileQvtoTransformation) {
+		String oldPostreconcileQvtoTransformation = postreconcileQvtoTransformation;
+		postreconcileQvtoTransformation = newPostreconcileQvtoTransformation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION, oldPostreconcileQvtoTransformation, postreconcileQvtoTransformation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -396,6 +480,10 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 				return getContributorId();
 			case PropertiesPackage.PROPERTY_GENERATOR__SOURCE_FOLDER:
 				return getSourceFolder();
+			case PropertiesPackage.PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION:
+				return getPrereconcileQvtoTransformation();
+			case PropertiesPackage.PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION:
+				return getPostreconcileQvtoTransformation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -432,6 +520,12 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 			case PropertiesPackage.PROPERTY_GENERATOR__SOURCE_FOLDER:
 				setSourceFolder((String)newValue);
 				return;
+			case PropertiesPackage.PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION:
+				setPrereconcileQvtoTransformation((String)newValue);
+				return;
+			case PropertiesPackage.PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION:
+				setPostreconcileQvtoTransformation((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -465,6 +559,12 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 			case PropertiesPackage.PROPERTY_GENERATOR__SOURCE_FOLDER:
 				setSourceFolder(SOURCE_FOLDER_EDEFAULT);
 				return;
+			case PropertiesPackage.PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION:
+				setPrereconcileQvtoTransformation(PRERECONCILE_QVTO_TRANSFORMATION_EDEFAULT);
+				return;
+			case PropertiesPackage.PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION:
+				setPostreconcileQvtoTransformation(POSTRECONCILE_QVTO_TRANSFORMATION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -491,6 +591,10 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 				return CONTRIBUTOR_ID_EDEFAULT == null ? contributorId != null : !CONTRIBUTOR_ID_EDEFAULT.equals(contributorId);
 			case PropertiesPackage.PROPERTY_GENERATOR__SOURCE_FOLDER:
 				return SOURCE_FOLDER_EDEFAULT == null ? sourceFolder != null : !SOURCE_FOLDER_EDEFAULT.equals(sourceFolder);
+			case PropertiesPackage.PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION:
+				return PRERECONCILE_QVTO_TRANSFORMATION_EDEFAULT == null ? prereconcileQvtoTransformation != null : !PRERECONCILE_QVTO_TRANSFORMATION_EDEFAULT.equals(prereconcileQvtoTransformation);
+			case PropertiesPackage.PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION:
+				return POSTRECONCILE_QVTO_TRANSFORMATION_EDEFAULT == null ? postreconcileQvtoTransformation != null : !POSTRECONCILE_QVTO_TRANSFORMATION_EDEFAULT.equals(postreconcileQvtoTransformation);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -509,6 +613,10 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 		result.append(contributorId);
 		result.append(", sourceFolder: ");
 		result.append(sourceFolder);
+		result.append(", prereconcileQvtoTransformation: ");
+		result.append(prereconcileQvtoTransformation);
+		result.append(", postreconcileQvtoTransformation: ");
+		result.append(postreconcileQvtoTransformation);
 		result.append(')');
 		return result.toString();
 	}

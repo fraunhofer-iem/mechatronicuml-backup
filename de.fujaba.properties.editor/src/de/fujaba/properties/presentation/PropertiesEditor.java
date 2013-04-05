@@ -134,6 +134,7 @@ import org.eclipse.ui.views.properties.PropertySheetPage;
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.provider.PropertiesItemProviderAdapterFactory;
 import de.fujaba.properties.reconcile.PropertiesReconcilePlugin;
+import de.fujaba.properties.reconcile.ReconcileCommand;
 
 /**
  * This is an example of a Properties model editor. <!-- begin-user-doc --> <!--
@@ -612,54 +613,6 @@ public class PropertiesEditor extends MultiPageEditorPart implements
 
 	}
 	
-	protected class ReconcileCommand extends ChangeCommand {
-
-		private PropertyGenerator generator;
-		
-		public ReconcileCommand(PropertyGenerator generator) {
-			super(generator.eResource());
-			setLabel("Reconcile Model");
-			this.generator = generator;
-		}
-
-		public boolean hasChanged() {
-			ChangeDescription description = getChangeDescription();
-			if (description != null) {
-				return !description.getObjectChanges().isEmpty();
-			}
-			return false;
-		}
-
-		@Override
-		protected void doExecute() {
-
-			// Bind componentInstance to input
-			ModelExtent input = new BasicModelExtent(
-					Collections.singletonList(generator));
-
-			// Load QVTO script
-			TransformationExecutor transformationExecutor = PropertiesReconcilePlugin
-					.getDefault().getTransformationExecutor(false);
-
-			// Create execution context
-			ExecutionContextImpl context = new ExecutionContextImpl();
-
-			// Execute transformation
-			ExecutionDiagnostic result = transformationExecutor.execute(
-					context, input);
-
-			if (result.getSeverity() != ExecutionDiagnostic.OK) {
-				System.out
-						.println("QVT-O ERROR on rule transformation. Message was:");
-				System.out.println(result.getMessage());
-			}
-//			
-//			generator.setGenModel(null);
-//			generator.setPlugin(null);
-//			generator.getSections().clear();
-			
-		}
-	}
 
 	/**
 	 * Updates the problems indication with the information described in the

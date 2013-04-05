@@ -25,6 +25,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getPackages <em>Packages</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getContributorId <em>Contributor Id</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getSourceFolder <em>Source Folder</em>}</li>
+ *   <li>{@link de.fujaba.properties.PropertyGenerator#getPrereconcileQvtoTransformation <em>Prereconcile Qvto Transformation</em>}</li>
+ *   <li>{@link de.fujaba.properties.PropertyGenerator#getPostreconcileQvtoTransformation <em>Postreconcile Qvto Transformation</em>}</li>
  * </ul>
  * </p>
  *
@@ -198,5 +200,57 @@ public interface PropertyGenerator extends EObject {
 	 * @generated
 	 */
 	void setSourceFolder(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Prereconcile Qvto Transformation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Prereconcile Qvto Transformation</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Prereconcile Qvto Transformation</em>' attribute.
+	 * @see #setPrereconcileQvtoTransformation(String)
+	 * @see de.fujaba.properties.PropertiesPackage#getPropertyGenerator_PrereconcileQvtoTransformation()
+	 * @model
+	 * @generated
+	 */
+	String getPrereconcileQvtoTransformation();
+
+	/**
+	 * Sets the value of the '{@link de.fujaba.properties.PropertyGenerator#getPrereconcileQvtoTransformation <em>Prereconcile Qvto Transformation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Prereconcile Qvto Transformation</em>' attribute.
+	 * @see #getPrereconcileQvtoTransformation()
+	 * @generated
+	 */
+	void setPrereconcileQvtoTransformation(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Postreconcile Qvto Transformation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Postreconcile Qvto Transformation</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Postreconcile Qvto Transformation</em>' attribute.
+	 * @see #setPostreconcileQvtoTransformation(String)
+	 * @see de.fujaba.properties.PropertiesPackage#getPropertyGenerator_PostreconcileQvtoTransformation()
+	 * @model
+	 * @generated
+	 */
+	String getPostreconcileQvtoTransformation();
+
+	/**
+	 * Sets the value of the '{@link de.fujaba.properties.PropertyGenerator#getPostreconcileQvtoTransformation <em>Postreconcile Qvto Transformation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Postreconcile Qvto Transformation</em>' attribute.
+	 * @see #getPostreconcileQvtoTransformation()
+	 * @generated
+	 */
+	void setPostreconcileQvtoTransformation(String value);
 
 } // PropertyGenerator

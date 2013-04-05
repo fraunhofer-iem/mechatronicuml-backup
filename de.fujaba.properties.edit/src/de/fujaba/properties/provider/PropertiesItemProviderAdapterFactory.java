@@ -329,6 +329,29 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.CustomPropertySection} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CustomPropertySectionItemProvider customPropertySectionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.fujaba.properties.CustomPropertySection}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCustomPropertySectionAdapter() {
+		if (customPropertySectionItemProvider == null) {
+			customPropertySectionItemProvider = new CustomPropertySectionItemProvider(this);
+		}
+
+		return customPropertySectionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.OCLPropertyFilter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -461,6 +484,7 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 		if (radioPropertySectionItemProvider != null) radioPropertySectionItemProvider.dispose();
 		if (listPropertySectionItemProvider != null) listPropertySectionItemProvider.dispose();
 		if (groupPropertySectionItemProvider != null) groupPropertySectionItemProvider.dispose();
+		if (customPropertySectionItemProvider != null) customPropertySectionItemProvider.dispose();
 		if (oclPropertyFilterItemProvider != null) oclPropertyFilterItemProvider.dispose();
 	}
 
