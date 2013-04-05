@@ -215,12 +215,6 @@
             <input type="de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber"/>
          </propertySection>
          <propertySection
-            id="NaturalNumber.infinity" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.valuetype.section.NaturalNumberInfinitySection">
-            <input type="de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber"/>
-         </propertySection>
-         <propertySection
             id="Range.lowerBound" 
             tab="base"
             class="de.uni_paderborn.fujaba.muml.properties.valuetype.section.RangeLowerBoundSection">
