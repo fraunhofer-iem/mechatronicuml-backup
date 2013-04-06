@@ -99,56 +99,6 @@ public class PortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Cardinality feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addCardinalityPropertyDescriptor(Object object) {
-		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor(
-				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_cardinality_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_cardinality_feature", "_UI_Port_type"),
-				 ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY,
-				 true,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_CardinalityPropertyCategory"),
-				 null);
-
-		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
-				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Cardinality_lowerBound_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Cardinality_lowerBound_feature", "_UI_Cardinality_type"),
-				 ValuetypePackage.Literals.CARDINALITY__LOWER_BOUND,
-				 true,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_CardinalityPropertyCategory"),
-				 null,
-				 rootPropertyDescriptor));
-
-		itemPropertyDescriptors.add(new NaturalNumberPropertyDescriptor(
-				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Cardinality_upperBound_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Cardinality_upperBound_feature", "_UI_Cardinality_type"),
-				 ValuetypePackage.Literals.CARDINALITY__UPPER_BOUND,
-				 true,
-				 false,
-				 false,
-				 null,
-				 getString("_UI_CardinalityPropertyCategory"),
-				 null,
-				 rootPropertyDescriptor));
-	}
-
-
-	/**
 	 * This adds a property descriptor for the Component feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
