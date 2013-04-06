@@ -86,6 +86,9 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY: return createReconfigurationMessagePortInterfaceEntry();
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY: return createReconfigurationExecutionPortInterfaceEntry();
 			case ReconfigurationPackage.SIGNATURE: return createSignature();
+			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_COMMUNICATION_PORT: return createInternalReconfigurationCommunicationPort();
+			case ReconfigurationPackage.RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR: return createReconfigurationPortAssemblyConnector();
+			case ReconfigurationPackage.RECONFIGURATION_PORT_DELEGATION_CONNECTOR: return createReconfigurationPortDelegationConnector();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -239,6 +242,36 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	public Signature createSignature() {
 		SignatureImpl signature = new SignatureImpl();
 		return signature;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InternalReconfigurationCommunicationPort createInternalReconfigurationCommunicationPort() {
+		InternalReconfigurationCommunicationPortImpl internalReconfigurationCommunicationPort = new InternalReconfigurationCommunicationPortImpl();
+		return internalReconfigurationCommunicationPort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurationPortAssemblyConnector createReconfigurationPortAssemblyConnector() {
+		ReconfigurationPortAssemblyConnectorImpl reconfigurationPortAssemblyConnector = new ReconfigurationPortAssemblyConnectorImpl();
+		return reconfigurationPortAssemblyConnector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurationPortDelegationConnector createReconfigurationPortDelegationConnector() {
+		ReconfigurationPortDelegationConnectorImpl reconfigurationPortDelegationConnector = new ReconfigurationPortDelegationConnectorImpl();
+		return reconfigurationPortDelegationConnector;
 	}
 
 	/**

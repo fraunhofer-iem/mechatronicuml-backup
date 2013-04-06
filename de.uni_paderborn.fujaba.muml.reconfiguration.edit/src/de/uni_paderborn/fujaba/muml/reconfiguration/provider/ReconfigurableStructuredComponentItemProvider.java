@@ -247,6 +247,21 @@ public class ReconfigurableStructuredComponentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(ComponentPackage.Literals.COMPONENT__PORTS,
+				 ReconfigurationFactory.eINSTANCE.createInternalReconfigurationCommunicationPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentPackage.Literals.STRUCTURED_COMPONENT__CONNECTORS,
+				 ReconfigurationFactory.eINSTANCE.createReconfigurationPortAssemblyConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentPackage.Literals.STRUCTURED_COMPONENT__CONNECTORS,
+				 ReconfigurationFactory.eINSTANCE.createReconfigurationPortDelegationConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(ReconfigurationPackage.Literals.RECONFIGURABLE_STRUCTURED_COMPONENT__CONTROLLER,
 				 ReconfigurationFactory.eINSTANCE.createRuleBasedReconfigurationController()));
 	}

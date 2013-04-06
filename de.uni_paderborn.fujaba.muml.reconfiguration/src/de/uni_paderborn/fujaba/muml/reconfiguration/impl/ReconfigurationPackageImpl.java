@@ -29,6 +29,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
@@ -42,6 +43,8 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortIn
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageTypeEnum;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
 import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController;
@@ -124,6 +127,27 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * @generated
 	 */
 	private EClass signatureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass internalReconfigurationCommunicationPortEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass reconfigurationPortAssemblyConnectorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass reconfigurationPortDelegationConnectorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -528,6 +552,33 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 */
 	public EReference getSignature_ReconfigurationRule() {
 		return (EReference)signatureEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInternalReconfigurationCommunicationPort() {
+		return internalReconfigurationCommunicationPortEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getReconfigurationPortAssemblyConnector() {
+		return reconfigurationPortAssemblyConnectorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getReconfigurationPortDelegationConnector() {
+		return reconfigurationPortDelegationConnectorEClass;
 	}
 
 	/**
@@ -952,6 +1003,12 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		createEReference(signatureEClass, SIGNATURE__RETURN_PARAMETERS);
 		createEReference(signatureEClass, SIGNATURE__RECONFIGURATION_RULE);
 
+		internalReconfigurationCommunicationPortEClass = createEClass(INTERNAL_RECONFIGURATION_COMMUNICATION_PORT);
+
+		reconfigurationPortAssemblyConnectorEClass = createEClass(RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR);
+
+		reconfigurationPortDelegationConnectorEClass = createEClass(RECONFIGURATION_PORT_DELEGATION_CONNECTOR);
+
 		// Create enums
 		reconfigurationMessageTypeEnumEEnum = createEEnum(RECONFIGURATION_MESSAGE_TYPE_ENUM);
 	}
@@ -1023,6 +1080,9 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		reconfigurationMessagePortInterfaceEntryEClass.getESuperTypes().add(this.getReconfigurationPortInterfaceEntry());
 		reconfigurationExecutionPortInterfaceEntryEClass.getESuperTypes().add(this.getReconfigurationPortInterfaceEntry());
 		signatureEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		internalReconfigurationCommunicationPortEClass.getESuperTypes().add(this.getReconfigurationPort());
+		reconfigurationPortAssemblyConnectorEClass.getESuperTypes().add(theComponentPackage.getPortConnector());
+		reconfigurationPortDelegationConnectorEClass.getESuperTypes().add(theComponentPackage.getPortConnector());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(reconfigurableStructuredComponentEClass, ReconfigurableStructuredComponent.class, "ReconfigurableStructuredComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1104,6 +1164,12 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEReference(getSignature_ReturnParameters(), theBehaviorPackage.getParameter(), null, "returnParameters", null, 0, -1, Signature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSignature_ReconfigurationRule(), this.getReconfigurationRule(), this.getReconfigurationRule_Signature(), "reconfigurationRule", null, 1, 1, Signature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(internalReconfigurationCommunicationPortEClass, InternalReconfigurationCommunicationPort.class, "InternalReconfigurationCommunicationPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(reconfigurationPortAssemblyConnectorEClass, ReconfigurationPortAssemblyConnector.class, "ReconfigurationPortAssemblyConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(reconfigurationPortDelegationConnectorEClass, ReconfigurationPortDelegationConnector.class, "ReconfigurationPortDelegationConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		// Initialize enums and add enum literals
 		initEEnum(reconfigurationMessageTypeEnumEEnum, ReconfigurationMessageTypeEnum.class, "ReconfigurationMessageTypeEnum");
 		addEEnumLiteral(reconfigurationMessageTypeEnumEEnum, ReconfigurationMessageTypeEnum.INFO);
@@ -1140,7 +1206,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		   source, 
 		   new String[] {
 			 "constraints", "TimeToFailureLessOrEqualToTimeToSuccess"
-		   });									
+		   });												
 	}
 
 	/**
@@ -1180,7 +1246,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		   source, 
 		   new String[] {
 			 "derivation", "if self.signature.oclIsUndefined() then null else self.signature.name endif"
-		   });														
+		   });																	
 	}
 
 } //ReconfigurationPackageImpl

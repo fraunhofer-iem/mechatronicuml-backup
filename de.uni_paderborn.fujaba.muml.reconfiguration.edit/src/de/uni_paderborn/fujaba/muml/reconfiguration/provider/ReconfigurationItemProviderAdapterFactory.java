@@ -351,6 +351,75 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InternalReconfigurationCommunicationPortItemProvider internalReconfigurationCommunicationPortItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInternalReconfigurationCommunicationPortAdapter() {
+		if (internalReconfigurationCommunicationPortItemProvider == null) {
+			internalReconfigurationCommunicationPortItemProvider = new InternalReconfigurationCommunicationPortItemProvider(this);
+		}
+
+		return internalReconfigurationCommunicationPortItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReconfigurationPortAssemblyConnectorItemProvider reconfigurationPortAssemblyConnectorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReconfigurationPortAssemblyConnectorAdapter() {
+		if (reconfigurationPortAssemblyConnectorItemProvider == null) {
+			reconfigurationPortAssemblyConnectorItemProvider = new ReconfigurationPortAssemblyConnectorItemProvider(this);
+		}
+
+		return reconfigurationPortAssemblyConnectorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReconfigurationPortDelegationConnectorItemProvider reconfigurationPortDelegationConnectorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReconfigurationPortDelegationConnectorAdapter() {
+		if (reconfigurationPortDelegationConnectorItemProvider == null) {
+			reconfigurationPortDelegationConnectorItemProvider = new ReconfigurationPortDelegationConnectorItemProvider(this);
+		}
+
+		return reconfigurationPortDelegationConnectorItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -461,6 +530,9 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 		if (reconfigurationMessagePortInterfaceEntryItemProvider != null) reconfigurationMessagePortInterfaceEntryItemProvider.dispose();
 		if (reconfigurationExecutionPortInterfaceEntryItemProvider != null) reconfigurationExecutionPortInterfaceEntryItemProvider.dispose();
 		if (signatureItemProvider != null) signatureItemProvider.dispose();
+		if (internalReconfigurationCommunicationPortItemProvider != null) internalReconfigurationCommunicationPortItemProvider.dispose();
+		if (reconfigurationPortAssemblyConnectorItemProvider != null) reconfigurationPortAssemblyConnectorItemProvider.dispose();
+		if (reconfigurationPortDelegationConnectorItemProvider != null) reconfigurationPortDelegationConnectorItemProvider.dispose();
 	}
 
 }

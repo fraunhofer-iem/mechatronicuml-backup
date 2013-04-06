@@ -1,0 +1,41 @@
+/**
+ */
+package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
+
+import de.uni_paderborn.fujaba.muml.component.impl.PortConnectorImpl;
+
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector;
+
+import org.eclipse.emf.ecore.EClass;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Port Delegation Connector</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * </p>
+ *
+ * @generated
+ */
+public class ReconfigurationPortDelegationConnectorImpl extends PortConnectorImpl implements ReconfigurationPortDelegationConnector {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReconfigurationPortDelegationConnectorImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return ReconfigurationPackage.Literals.RECONFIGURATION_PORT_DELEGATION_CONNECTOR;
+	}
+
+} //ReconfigurationPortDelegationConnectorImpl

@@ -1,18 +1,11 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.component.provider.PortConnectorItemProvider;
 
-import de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProvider;
-
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector;
 
 import java.util.Collection;
 import java.util.List;
@@ -36,13 +29,13 @@ import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReconfigurableComponentItemProvider
-	extends ComponentItemProvider
+public class ReconfigurationPortDelegationConnectorItemProvider
+	extends PortConnectorItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -55,7 +48,7 @@ public class ReconfigurableComponentItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurableComponentItemProvider(AdapterFactory adapterFactory) {
+	public ReconfigurationPortDelegationConnectorItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -75,6 +68,17 @@ public class ReconfigurableComponentItemProvider
 	}
 
 	/**
+	 * This returns ReconfigurationPortDelegationConnector.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReconfigurationPortDelegationConnector"));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,10 +86,10 @@ public class ReconfigurableComponentItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReconfigurableComponent)object).getName();
+		String label = ((ReconfigurationPortDelegationConnector)object).getComment();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ReconfigurableComponent_type") :
-			getString("_UI_ReconfigurableComponent_type") + " " + label;
+			getString("_UI_ReconfigurationPortDelegationConnector_type") :
+			getString("_UI_ReconfigurationPortDelegationConnector_type") + " " + label;
 	}
 
 	/**
@@ -121,21 +125,6 @@ public class ReconfigurableComponentItemProvider
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationMessagePort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationExecutionPort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createInternalReconfigurationCommunicationPort()));
 	}
 
 	/**

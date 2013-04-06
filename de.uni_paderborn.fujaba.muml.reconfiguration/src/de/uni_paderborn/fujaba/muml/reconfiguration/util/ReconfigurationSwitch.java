@@ -17,7 +17,9 @@ import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
@@ -269,6 +271,43 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_COMMUNICATION_PORT: {
+				InternalReconfigurationCommunicationPort internalReconfigurationCommunicationPort = (InternalReconfigurationCommunicationPort)theEObject;
+				T result = caseInternalReconfigurationCommunicationPort(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseReconfigurationPort(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseDiscretePort(internalReconfigurationCommunicationPort);
+				if (result == null) result = casePort(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseDiscreteInteractionEndpoint(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseConnectorEndpoint(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseConstrainableElement(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseDataType(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseBehavioralElement(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseNamedElement(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseCommentableElement(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseExtendableElement(internalReconfigurationCommunicationPort);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR: {
+				ReconfigurationPortAssemblyConnector reconfigurationPortAssemblyConnector = (ReconfigurationPortAssemblyConnector)theEObject;
+				T result = caseReconfigurationPortAssemblyConnector(reconfigurationPortAssemblyConnector);
+				if (result == null) result = casePortConnector(reconfigurationPortAssemblyConnector);
+				if (result == null) result = caseConnector(reconfigurationPortAssemblyConnector);
+				if (result == null) result = caseCommentableElement(reconfigurationPortAssemblyConnector);
+				if (result == null) result = caseExtendableElement(reconfigurationPortAssemblyConnector);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.RECONFIGURATION_PORT_DELEGATION_CONNECTOR: {
+				ReconfigurationPortDelegationConnector reconfigurationPortDelegationConnector = (ReconfigurationPortDelegationConnector)theEObject;
+				T result = caseReconfigurationPortDelegationConnector(reconfigurationPortDelegationConnector);
+				if (result == null) result = casePortConnector(reconfigurationPortDelegationConnector);
+				if (result == null) result = caseConnector(reconfigurationPortDelegationConnector);
+				if (result == null) result = caseCommentableElement(reconfigurationPortDelegationConnector);
+				if (result == null) result = caseExtendableElement(reconfigurationPortDelegationConnector);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -405,6 +444,51 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSignature(Signature object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Internal Reconfiguration Communication Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Internal Reconfiguration Communication Port</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInternalReconfigurationCommunicationPort(InternalReconfigurationCommunicationPort object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Port Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Port Assembly Connector</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReconfigurationPortAssemblyConnector(ReconfigurationPortAssemblyConnector object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Port Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Port Delegation Connector</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReconfigurationPortDelegationConnector(ReconfigurationPortDelegationConnector object) {
 		return null;
 	}
 
@@ -720,6 +804,36 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDiscretePort(DiscretePort object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Connector</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnector(Connector object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Port Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Port Connector</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePortConnector(PortConnector object) {
 		return null;
 	}
 

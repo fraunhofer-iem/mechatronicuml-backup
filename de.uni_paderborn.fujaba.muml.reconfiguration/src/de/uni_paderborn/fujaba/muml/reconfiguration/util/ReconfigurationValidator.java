@@ -134,6 +134,12 @@ public class ReconfigurationValidator extends EObjectValidator {
 				return validateReconfigurationExecutionPortInterfaceEntry((ReconfigurationExecutionPortInterfaceEntry)value, diagnostics, context);
 			case ReconfigurationPackage.SIGNATURE:
 				return validateSignature((Signature)value, diagnostics, context);
+			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_COMMUNICATION_PORT:
+				return validateInternalReconfigurationCommunicationPort((InternalReconfigurationCommunicationPort)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR:
+				return validateReconfigurationPortAssemblyConnector((ReconfigurationPortAssemblyConnector)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURATION_PORT_DELEGATION_CONNECTOR:
+				return validateReconfigurationPortDelegationConnector((ReconfigurationPortDelegationConnector)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_TYPE_ENUM:
 				return validateReconfigurationMessageTypeEnum((ReconfigurationMessageTypeEnum)value, diagnostics, context);
 			default:
@@ -253,6 +259,48 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 */
 	public boolean validateSignature(Signature signature, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(signature, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInternalReconfigurationCommunicationPort(InternalReconfigurationCommunicationPort internalReconfigurationCommunicationPort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(internalReconfigurationCommunicationPort, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresMessageTypes(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAndRoleSameMessageTypes(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresBehavior(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresRole(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortMustRefineMultiRole(internalReconfigurationCommunicationPort, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReconfigurationPortAssemblyConnector(ReconfigurationPortAssemblyConnector reconfigurationPortAssemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(reconfigurationPortAssemblyConnector, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReconfigurationPortDelegationConnector(ReconfigurationPortDelegationConnector reconfigurationPortDelegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(reconfigurationPortDelegationConnector, diagnostics, context);
 	}
 
 	/**

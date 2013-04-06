@@ -233,6 +233,11 @@ public class ManagerItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ReconfigurationPackage.Literals.MANAGER__PORTS,
+				 ReconfigurationFactory.eINSTANCE.createInternalReconfigurationCommunicationPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ReconfigurationPackage.Literals.MANAGER__PORTS,
 				 ComponentFactory.eINSTANCE.createDiscretePort()));
 	}
 

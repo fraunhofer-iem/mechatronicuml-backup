@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="reconfiguration"
-    nsURI="http://www.fujaba.de/muml/reconfiguration/0.3.18" nsPrefix="reconfiguration">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="reconfiguration" nsURI="http://www.fujaba.de/muml/reconfiguration/0.3.18"
+    nsPrefix="reconfiguration">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -228,6 +227,24 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationRule" lowerBound="1"
         eType="#//ReconfigurationRule" eOpposite="#//ReconfigurationRule/signature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InternalReconfigurationCommunicationPort"
+      eSuperTypes="#//ReconfigurationPort">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An InternalReconfigurationCommunicationPort is used for the interaction&#xD;&#xA;of manager and executor within a structured component. "/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortAssemblyConnector"
+      eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/PortConnector">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A ReconfigurationPortAssemblyConnector connects two ReconfigurationPorts with each other.&#xD;&#xA;In contrast to a normal assembly used for component parts within a structured&#xD;&#xA;component, the ReconfigurationPortAssemblyConnector connects two&#xD;&#xA;reconfiguration ports instead of two port parts."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPortDelegationConnector"
+      eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/PortConnector">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A ReconfigurationPortDelegationConnector connects two ReconfigurationPorts with each other.&#xD;&#xA;In contrast to a normal delegation connector used for component parts within a structured&#xD;&#xA;component, the ReconfigurationPortDelegationConnector connects two&#xD;&#xA;reconfiguration ports instead of one port and one port part."/>
+    </eAnnotations>
   </eClassifiers>
   <eSubpackages name="expression" nsURI="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"
       nsPrefix="expression">

@@ -134,6 +134,33 @@ public interface ReconfigurationFactory extends EFactory {
 	Signature createSignature();
 
 	/**
+	 * Returns a new object of class '<em>Internal Reconfiguration Communication Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Internal Reconfiguration Communication Port</em>'.
+	 * @generated
+	 */
+	InternalReconfigurationCommunicationPort createInternalReconfigurationCommunicationPort();
+
+	/**
+	 * Returns a new object of class '<em>Port Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Port Assembly Connector</em>'.
+	 * @generated
+	 */
+	ReconfigurationPortAssemblyConnector createReconfigurationPortAssemblyConnector();
+
+	/**
+	 * Returns a new object of class '<em>Port Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Port Delegation Connector</em>'.
+	 * @generated
+	 */
+	ReconfigurationPortDelegationConnector createReconfigurationPortDelegationConnector();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

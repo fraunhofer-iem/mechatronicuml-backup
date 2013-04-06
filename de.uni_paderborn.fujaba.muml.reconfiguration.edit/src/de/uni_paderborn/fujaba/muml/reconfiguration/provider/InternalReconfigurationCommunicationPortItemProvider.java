@@ -1,26 +1,15 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-
-import de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProvider;
-
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
+import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -29,20 +18,14 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import org.storydriven.core.CorePackage;
-
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-
-import org.storydriven.storydiagrams.calls.CallsFactory;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReconfigurableComponentItemProvider
-	extends ComponentItemProvider
+public class InternalReconfigurationCommunicationPortItemProvider
+	extends ReconfigurationPortItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -55,7 +38,7 @@ public class ReconfigurableComponentItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurableComponentItemProvider(AdapterFactory adapterFactory) {
+	public InternalReconfigurationCommunicationPortItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -75,6 +58,17 @@ public class ReconfigurableComponentItemProvider
 	}
 
 	/**
+	 * This returns InternalReconfigurationCommunicationPort.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/InternalReconfigurationCommunicationPort"));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,10 +76,10 @@ public class ReconfigurableComponentItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReconfigurableComponent)object).getName();
+		String label = ((InternalReconfigurationCommunicationPort)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ReconfigurableComponent_type") :
-			getString("_UI_ReconfigurableComponent_type") + " " + label;
+			getString("_UI_InternalReconfigurationCommunicationPort_type") :
+			getString("_UI_InternalReconfigurationCommunicationPort_type") + " " + label;
 	}
 
 	/**
@@ -111,42 +105,6 @@ public class ReconfigurableComponentItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationMessagePort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationExecutionPort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createInternalReconfigurationCommunicationPort()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return MumlReconfigurationEditPlugin.INSTANCE;
 	}
 
 }
