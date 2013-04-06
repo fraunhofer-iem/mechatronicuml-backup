@@ -1,3 +1,4 @@
+import GenerateReconfigurationController;
 
 --core models
 modeltype core uses core('http://www.storydriven.org/core/0.3.1');
@@ -27,8 +28,8 @@ modeltype componentpattern uses componentstorydiagram::componentstorypattern("ht
 modeltype componentstory uses componentstorydiagram::controlflow("http://www.fujaba.de/muml/componentstorydiagram/0.3.1");
 
 
--- this transformation creates a copy of the inputComponent, adds it to the category, and redirects all references
--- from the inputComponent to the copy
+-- this transformation creates a copy of the inputComponent, adds it to the category, generates the reconfiguration
+-- controller, and redirects all references from the inputComponent to the copy
 transformation MakeStructuredComponentReconfigurable(in inputComponent : component, inout category : modelinst);
 
 main() {
@@ -57,107 +58,9 @@ mapping createReconfigurableComponent(in oldComp : StaticStructuredComponent) : 
 	coordinationProtocolOccurences := oldComp.coordinationProtocolOccurences; -- from StructuredComponent
 	embeddedComponentParts := oldComp.embeddedComponentParts;	-- from StructuredComponent	
 	
-	-- create reconfiguration ports
-	ports += new ReconfigurationMessagePort('parent', false); 
-	ports += new ReconfigurationExecutionPort('parent', false);
 	
-	-- instantiate reconfiguration controllers and connections
-	controller := new RuleBasedReconfigurationController();
-	
-	-- create assembly between manager and executor
-	connectors += new ReconfigurationPortAssemblyConnector(controller.oclAsType(RuleBasedReconfigurationController).manager.ports 
-			-> select(p : Port | p.oclIsTypeOf(InternalReconfigurationCommunicationPort)) -> any(true), controller.oclAsType(RuleBasedReconfigurationController).executor.ports 
-			-> select(p : Port | p.oclIsTypeOf(InternalReconfigurationCommunicationPort)) -> any(true));
-	
-	-- create delegations
-	connectors += new ReconfigurationPortDelegationConnector(controller.oclAsType(RuleBasedReconfigurationController).manager.ports 
-			-> select(p : Port | p.oclIsTypeOf(ReconfigurationMessagePort) and p.name = 'parent') -> any(true), ports 
-			-> select(p : Port | p.oclIsTypeOf(ReconfigurationMessagePort)) -> any(true));
-			
-	connectors += new ReconfigurationPortDelegationConnector(controller.oclAsType(RuleBasedReconfigurationController).executor.ports 
-			-> select(p : Port | p.oclIsTypeOf(ReconfigurationExecutionPort) and p.name = 'parent') -> any(true), ports 
-			-> select(p : Port | p.oclIsTypeOf(ReconfigurationExecutionPort)) -> any(true));
+	-- instantiate reconfiguration controllers and connections incl. reconfiguration ports for the structured component
+	-- => call transformation
+	map addRuleBasedReconfigurationController(result);
 }
 
--- creates a rule based reconfiguration controller consisting of a manager and an executor for 
--- the reconfigurable structure component
-constructor RuleBasedReconfigurationController::RuleBasedReconfigurationController(){
-	
-	-- create manager and executor including their ports
-	manager := new Manager();
-	executor := new Executor();
-}
-
--- creates a manager for the rule based reconfiguration controller
-constructor Manager::Manager(){
-	ports += new InternalReconfigurationCommunicationPort('executor');
-	ports += new ReconfigurationMessagePort('parent', false);
-	ports += new ReconfigurationMessagePort('embeddedCI', true);
-}
-
--- creates an executor for the rule based reconfiguration controller
-constructor Executor::Executor(){
-	ports += new InternalReconfigurationCommunicationPort('events');
-	ports += new ReconfigurationExecutionPort('parent', false);
-	ports += new ReconfigurationExecutionPort('embeddedCI', true);
-}
-
--- creates a discrete port with the specified name
-constructor InternalReconfigurationCommunicationPort::InternalReconfigurationCommunicationPort(in theName : String){
-	name := theName;
-	cardinality := new Cardinality(1,1);
-}
-
--- creates a reconfiguration message port with the specified name
-constructor ReconfigurationMessagePort::ReconfigurationMessagePort(in theName : String, in isMulti : Boolean){
-	name := theName;
-	
-	if(isMulti = true) then{
-		cardinality := new Cardinality(1, -1);
-	} else {
-		cardinality := new Cardinality(1, 1);
-	}
-	endif;
-}
-
--- creates a reconfiguration execution port with the specified name
-constructor ReconfigurationExecutionPort::ReconfigurationExecutionPort(in theName : String, in isMulti : Boolean){
-	name := theName;
-	
-	if(isMulti = true) then{
-		cardinality := new Cardinality(1, -1);
-	} else {
-		cardinality := new Cardinality(1, 1);
-	}
-	endif;
-}
-
--- create a cardinality object with the given bounds, an uBound of -1 encodes infinity
-constructor Cardinality::Cardinality(in lBound : Integer, in uBound : Integer){
-	lowerBound := object NaturalNumber{
-		value := lBound;
-		infinity := false;
-	};
-	
-	if(uBound = -1) then{
-		upperBound := object NaturalNumber{
-			value := lBound + 1;
-			infinity = true;
-		}
-	} else {
-		upperBound := object NaturalNumber{
-			value := uBound;
-			infinity = false;
-		}
-	} endif;
-}
-
-constructor ReconfigurationPortAssemblyConnector::ReconfigurationPortAssemblyConnector(in srcPort : Port, in tgtPort : Port){
-	connectorEndpoints += srcPort;
-	connectorEndpoints += tgtPort;
-}
-
-constructor ReconfigurationPortDelegationConnector::ReconfigurationPortDelegationConnector(in srcPort : Port, in tgtPort : Port){
-	connectorEndpoints += srcPort;
-	connectorEndpoints += tgtPort;
-}
