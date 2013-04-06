@@ -79,6 +79,9 @@ public class RoleEditPart extends AbstractBorderedShapeEditPart {
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.ports.RoleEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.OPEN_ROLE,
+				new de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 

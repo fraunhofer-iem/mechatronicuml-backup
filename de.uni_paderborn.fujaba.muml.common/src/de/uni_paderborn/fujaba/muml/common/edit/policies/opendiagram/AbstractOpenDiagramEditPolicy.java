@@ -71,7 +71,7 @@ public abstract class AbstractOpenDiagramEditPolicy extends OpenEditPolicy {
 			return null;
 		}
 		final View view = (View) targetEditPart.getModel();
-		
+
 		final EObject diagramDomainElement = getDiagramDomainElement(view);
 		if (diagramDomainElement == null) {
 			return null;
@@ -93,114 +93,122 @@ public abstract class AbstractOpenDiagramEditPolicy extends OpenEditPolicy {
 			Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
 					.getShell();
 
-			IWorkspaceRoot workspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
-			
-	        MessageBox messageBox = new MessageBox(shell, SWT.ICON_QUESTION | SWT.YES | SWT.NO| SWT.CANCEL);
-	        messageBox.setText("Create new Subdiagram");
-	        messageBox.setMessage("Do you want to create a new Subdiagram?");
-	        int buttonID = messageBox.open();
-	        if (buttonID == SWT.CANCEL) {
-	        	return null;
-	        	
-	        } else if (buttonID == SWT.NO) {
-				URI myUri = view.eResource().getURI();
-				IFile myFile = workspaceRoot.getFile(new Path(myUri
-						.toPlatformString(true)));
+			IWorkspaceRoot workspaceRoot = ResourcesPlugin.getWorkspace()
+					.getRoot();
 
-				ElementTreeSelectionDialog dialog = new ElementTreeSelectionDialog(shell, new WorkbenchLabelProvider() ,new BaseWorkbenchContentProvider()) {
-				    protected TreeViewer createTreeViewer(Composite parent) {
-				    	TreeViewer treeViewer = super.createTreeViewer(parent);
-				    	treeViewer.expandAll();
-				    	return treeViewer;
-				    }
-				};
-				//elementSelector.addFilter(new ExtensionViewerFilter(filter));
-				dialog.setInput(workspaceRoot);
-				dialog.setTitle("title");
-				dialog.setMessage("message");
-				dialog.setAllowMultiple(false);
-				dialog.addFilter(new DiagramFileViewerFilter(diagramDomainElement));
-				dialog.addFilter(new ViewerFilter() {
+			// Deactivated this question, see discussion in muml bug #484
+			// MessageBox messageBox = new MessageBox(shell, SWT.ICON_QUESTION |
+			// SWT.YES | SWT.NO| SWT.CANCEL);
+			// messageBox.setText("Create new Subdiagram");
+			// messageBox.setMessage("Do you want to create a new Subdiagram?");
+			// int buttonID = messageBox.open();
+			// if (buttonID == SWT.CANCEL) {
+			// return null;
+			//
+			// } else if (buttonID == SWT.NO) {
+			URI myUri = view.eResource().getURI();
+			IFile myFile = workspaceRoot.getFile(new Path(myUri
+					.toPlatformString(true)));
 
-					@Override
-					public boolean select(Viewer viewer, Object parentElement,
-							Object element) {
-						if (element instanceof IResource) {
-							return !((IResource) element).getName().startsWith(".");
-						}
-						return true;
+			ElementTreeSelectionDialog dialog = new ElementTreeSelectionDialog(
+					shell, new WorkbenchLabelProvider(),
+					new BaseWorkbenchContentProvider()) {
+				protected TreeViewer createTreeViewer(Composite parent) {
+					TreeViewer treeViewer = super.createTreeViewer(parent);
+					treeViewer.expandAll();
+					return treeViewer;
+				}
+			};
+			// elementSelector.addFilter(new ExtensionViewerFilter(filter));
+			dialog.setInput(workspaceRoot);
+			dialog.setTitle("Connect to existing diagram");
+			dialog.setMessage("Please connect a diagram that you want to open.");
+			dialog.setAllowMultiple(false);
+			dialog.addFilter(new DiagramFileViewerFilter(diagramDomainElement));
+			dialog.addFilter(new ViewerFilter() {
+
+				@Override
+				public boolean select(Viewer viewer, Object parentElement,
+						Object element) {
+					if (element instanceof IResource) {
+						return !((IResource) element).getName().startsWith(".");
 					}
-					
-				});
-				
-				dialog.setValidator(new ISelectionStatusValidator() {
-
-					public final IStatus errorNoFileSelected = new Status(IStatus.ERROR, MumlCommonPlugin.ID, "No diagram file selected.");
-					
-					@Override
-					public IStatus validate(Object[] selection) {
-						for (Object element : selection) {
-							if (false == element instanceof IFile) {
-								return errorNoFileSelected;
-							}
-						}
-						return Status.OK_STATUS;
-					}
-					
-				});
-				//dialog.setImage(image);
-
-				dialog.setInitialSelection(myFile.getParent());
-
-
-				int exitCode = dialog.open();
-				if (exitCode != Window.OK) {
-					// Cancel opening diagram
-					return null;
+					return true;
 				}
 
-				
-				
-				IFile file = null;
-				if (dialog.getResult() instanceof Object[]) {
-					Object[] result = (Object[]) dialog.getResult();
-					if (result.length > 0) {
-						Object first = result[0];
-						if (first instanceof IFile) {
-							file = (IFile) first;
+			});
+
+			dialog.setValidator(new ISelectionStatusValidator() {
+
+				public final IStatus errorNoFileSelected = new Status(
+						IStatus.ERROR, MumlCommonPlugin.ID,
+						"No diagram file selected.");
+
+				@Override
+				public IStatus validate(Object[] selection) {
+					for (Object element : selection) {
+						if (false == element instanceof IFile) {
+							return errorNoFileSelected;
 						}
 					}
+					return Status.OK_STATUS;
 				}
 
-				if (file != null) {
-					// TODO: Find existing editing domain to reuse for
-					// resourceSet and diagramEditingDomain!
-					URI uri = URI.createPlatformResourceURI(file.getFullPath()
-							.toString(), true);
-					ResourceSet resourceSet = new ResourceSetImpl();
-					Resource resource = resourceSet.createResource(uri);
-					try {
-						resource.load(Collections.emptyMap());
-					} catch (IOException e) {
-					}
-					if (resource != null && !resource.getContents().isEmpty()) {
-						EObject root = resource.getContents().get(0);
-						if (root instanceof Diagram) {
-							diagram = (Diagram) root;
-						}
-					}
+			});
+			// dialog.setImage(image);
 
-				}
+			dialog.setInitialSelection(myFile.getParent());
 
-				// Reference existing diagram file
-				compoundCommand.add(new ICommandProxy(
-						new ReferenceDiagramCommand(diagramEditingDomain, view,
-								diagram)));
-			} else {
-
-				// Create diagram within our diagram file (new root element)
-				compoundCommand.add(new ICommandProxy(new CreateDiagramCommand(view, diagramDomainElement)));
+			int exitCode = dialog.open();
+			if (exitCode != Window.OK) {
+				// Cancel opening diagram
+				return null;
 			}
+
+			IFile file = null;
+			if (dialog.getResult() instanceof Object[]) {
+				Object[] result = (Object[]) dialog.getResult();
+				if (result.length > 0) {
+					Object first = result[0];
+					if (first instanceof IFile) {
+						file = (IFile) first;
+					}
+				}
+			}
+
+			if (file != null) {
+				// TODO: Find existing editing domain to reuse for
+				// resourceSet and diagramEditingDomain!
+				URI uri = URI.createPlatformResourceURI(file.getFullPath()
+						.toString(), true);
+				ResourceSet resourceSet = diagramDomainElement.eResource().getResourceSet();
+				Resource resource = resourceSet.createResource(uri);
+				try {
+					resource.load(Collections.emptyMap());
+				} catch (IOException e) {
+				}
+				if (resource != null && !resource.getContents().isEmpty()) {
+					EObject root = resource.getContents().get(0);
+					if (root instanceof Diagram) {
+						diagram = (Diagram) root;
+					}
+				}
+
+			}
+
+			// Reference existing diagram file
+			compoundCommand.add(new ICommandProxy(new ReferenceDiagramCommand(
+					diagramEditingDomain, view, diagram)));
+
+			// Deactivated as we decided that we do not want diagrams within
+			// diagrams,
+			// see discussion in muml bug #484
+			// } else {
+			//
+			// // Create diagram within our diagram file (new root element)
+			// compoundCommand.add(new ICommandProxy(new
+			// CreateDiagramCommand(view, diagramDomainElement)));
+			// }
 
 		}
 
@@ -209,7 +217,6 @@ public abstract class AbstractOpenDiagramEditPolicy extends OpenEditPolicy {
 
 		return compoundCommand;
 	}
-	
 
 	protected Diagram getDiagramToOpen(View view) {
 		HintedDiagramLinkStyle facet = getDiagramFacet(view);
@@ -388,12 +395,12 @@ public abstract class AbstractOpenDiagramEditPolicy extends OpenEditPolicy {
 		 * Lazily created diagram.
 		 */
 		protected Diagram diagram;
-		
+
 		/**
 		 * View that references the newly created diagram.
 		 */
 		protected final View view;
-		
+
 		/**
 		 * Domain element for the new diagram.
 		 */
@@ -431,11 +438,11 @@ public abstract class AbstractOpenDiagramEditPolicy extends OpenEditPolicy {
 			return d;
 		}
 
-
 	}
 
 	public class DiagramFileViewerFilter extends ViewerFilter {
 		protected final EObject diagramDomainElement;
+
 		public DiagramFileViewerFilter(EObject diagramDomainElement) {
 			this.diagramDomainElement = diagramDomainElement;
 		}
@@ -443,12 +450,15 @@ public abstract class AbstractOpenDiagramEditPolicy extends OpenEditPolicy {
 		@Override
 		public boolean select(Viewer viewer, Object parentElement,
 				Object element) {
+			boolean selected = true;
 			if (element instanceof IFile) {
+				selected = false;
+
 				IFile file = (IFile) element;
-			
+
 				URI uri = URI.createPlatformResourceURI(file.getFullPath()
 						.toString(), true);
-				ResourceSet resourceSet = new ResourceSetImpl();
+				ResourceSet resourceSet = diagramDomainElement.eResource().getResourceSet();
 				Resource resource = resourceSet.createResource(uri);
 				try {
 					resource.load(Collections.emptyMap());
@@ -457,25 +467,26 @@ public abstract class AbstractOpenDiagramEditPolicy extends OpenEditPolicy {
 				if (resource != null && !resource.getContents().isEmpty()) {
 					EObject root = resource.getContents().get(0);
 					if (root instanceof Diagram) {
-						
+
 						Diagram diagram = (Diagram) root;
 						if (diagram.getElement() == diagramDomainElement) {
-							return true;
-						}
-						if (diagram.getElement() instanceof ModelElementCategory) {
-							ModelElementCategory category = (ModelElementCategory) diagram.getElement();
-							if (category.getModelElements().contains(diagramDomainElement)) {
-								return true;
+							selected = true;
+						} else if (diagram.getElement() instanceof ModelElementCategory) {
+							ModelElementCategory category = (ModelElementCategory) diagram
+									.getElement();
+							if (category.getModelElements().contains(
+									diagramDomainElement)) {
+								selected = true;
 							}
 						}
-						
+
 					}
 				}
-				return false;
+				resourceSet.getResources().remove(resource);
 			}
-			return true;
+			return selected;
 		}
-		
+
 	}
 
 }
