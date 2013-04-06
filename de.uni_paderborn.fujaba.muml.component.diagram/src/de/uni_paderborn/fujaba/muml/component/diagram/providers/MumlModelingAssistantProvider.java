@@ -112,6 +112,10 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) targetEditPart)
 					.getMARelTypesOnTarget();
 		}
+		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart) {
+			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart) targetEditPart)
+					.getMARelTypesOnTarget();
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -164,6 +168,10 @@ public class MumlModelingAssistantProvider extends ModelingAssistantProvider {
 		}
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) {
 			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart) {
+			return ((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
 		return Collections.EMPTY_LIST;

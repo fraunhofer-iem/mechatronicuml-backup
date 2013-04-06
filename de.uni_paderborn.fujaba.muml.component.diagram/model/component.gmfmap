@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfmap:Mapping xmi:version="2.0"
+<gmfmap:Mapping
+    xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
@@ -356,6 +357,13 @@
       <targetEnd
           body="true&#xA;-- Example error message&#xA;-- The source port's StructuredComponent must embed the ComponentPart that the Target Port is floating around.&#xA;--let containers : ecore::EObject = { view, oppositeView }.eContainer().oclAsType(notation::View).eContainer() in&#xA;--containers->notEmpty()&#xA;--false"/>
     </creationConstraints>
+  </links>
+  <links>
+    <diagramLink
+        href="component.gmfgraph#RolePatternConnection"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/PortPart/coordinationProtocolOccurence"/>
   </links>
   <diagram>
     <diagramCanvas

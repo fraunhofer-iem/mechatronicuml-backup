@@ -9,6 +9,7 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -19,6 +20,7 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.BorderedBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
@@ -239,9 +241,10 @@ public class PortPartEditPart extends BorderedBorderItemEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.AssemblyConnector_4001);
 		types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
+		types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolOccurence_4003);
 		return types;
 	}
 
@@ -275,6 +278,9 @@ public class PortPartEditPart extends BorderedBorderItemEditPart {
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) {
 			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
 		}
+		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart) {
+			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolOccurence_4003);
+		}
 		return types;
 	}
 
@@ -293,6 +299,8 @@ public class PortPartEditPart extends BorderedBorderItemEditPart {
 			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.ContinuousPort_3011);
 			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.HybridPort_3013);
 			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPart_3022);
+		} else if (relationshipType == de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolOccurence_4003) {
+			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.CoordinationProtocolOccurrence_3016);
 		}
 		return types;
 	}
@@ -324,6 +332,27 @@ public class PortPartEditPart extends BorderedBorderItemEditPart {
 			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPart_3022);
 		}
 		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void handleNotificationEvent(Notification event) {
+		boolean update = false;
+
+		if (event.getFeature() == de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+				.getPortPart_CoordinationProtocolOccurence()) {
+			update = true;
+		}
+
+		if (update) {
+			List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
+					.getRegisteredEditPolicies(getDiagramView().getElement());
+			for (CanonicalEditPolicy editPolicy : editPolicies) {
+				editPolicy.refresh();
+			}
+		}
+		super.handleNotificationEvent(event);
 	}
 
 }

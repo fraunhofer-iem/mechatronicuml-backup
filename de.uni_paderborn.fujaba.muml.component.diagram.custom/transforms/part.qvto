@@ -2,13 +2,29 @@ transformation InstantiationTransformation(inout input : ComponentPackage);
 
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.2.2');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.2.2');
+modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.2.2');
+
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 main() {
-	log("QVT-O Script \"part.qvto\" started.");
-
 	input.rootObjects()[ComponentPart]->forEach(part) {
 		part.portParts := part.componentType.createPortParts();
+		
+		// Create CoordinationProtocolParts (was occurrence) and associate PortParts
+		part.portParts->forEach(p) {
+			if (p.portType.oclIsKindOf(DiscretePort)) then {
+				var coordinationProtocol : CoordinationProtocol := p.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol;
+				if (not coordinationProtocol.oclIsUndefined()) then {
+					// Try to find an existing protocol part (was occurrence) for this protocol
+					p.coordinationProtocolOccurence := part.parentComponent.coordinationProtocolOccurences->any(c | c.coordinationProtocol = coordinationProtocol);
+					if (p.coordinationProtocolOccurence.oclIsUndefined()) then {
+						// If none found, create one
+						p.coordinationProtocolOccurence := new CoordinationProtocolOccurrence(coordinationProtocol);
+						part.parentComponent.coordinationProtocolOccurences += p.coordinationProtocolOccurence;
+					} endif;
+				} endif
+			} endif;
+		}
 	};
 }
 
@@ -24,4 +40,8 @@ query Component::createPortParts() : Set(PortPart) {
 constructor PortPart::PortPart(type : Port) {
 	portType := type;
 	name := type.name;
+}
+
+constructor CoordinationProtocolOccurrence::CoordinationProtocolOccurrence(p : CoordinationProtocol) {
+	coordinationProtocol := p;
 }

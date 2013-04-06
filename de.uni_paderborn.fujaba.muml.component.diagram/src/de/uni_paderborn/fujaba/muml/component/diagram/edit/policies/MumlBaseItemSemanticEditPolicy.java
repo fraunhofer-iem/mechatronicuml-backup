@@ -348,6 +348,26 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
+		public boolean canCreatePortPartCoordinationProtocolOccurence_4003(
+				de.uni_paderborn.fujaba.muml.component.PortPart source,
+				de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence target,
+				View sourceView, View targetView) {
+			if (source != null) {
+				if (source.getCoordinationProtocolOccurence() != null) {
+					return false;
+				}
+			}
+			if (target != null && (target.getPortParts().contains(target))) {
+				return false;
+			}
+
+			return canExistPortPartCoordinationProtocolOccurence_4003(source,
+					target, sourceView, targetView);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canExistAssemblyConnector_4001(
 				de.uni_paderborn.fujaba.muml.component.StructuredComponent container,
 				de.uni_paderborn.fujaba.muml.component.AssemblyConnector linkInstance,
@@ -541,6 +561,26 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
 			}
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistPortPartCoordinationProtocolOccurence_4003(
+				de.uni_paderborn.fujaba.muml.component.PortPart source,
+				de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence target,
+				View sourceView, View targetView) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public java.lang.String getErrorPortPartCoordinationProtocolOccurence_4003(
+				de.uni_paderborn.fujaba.muml.component.PortPart source,
+				de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence target,
+				View sourceView, View targetView) {
+			return null;
 		}
 
 	}

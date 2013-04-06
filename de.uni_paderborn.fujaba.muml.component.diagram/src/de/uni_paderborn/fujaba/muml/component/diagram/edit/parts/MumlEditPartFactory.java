@@ -105,6 +105,10 @@ public class MumlEditPartFactory implements EditPartFactory {
 				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DelegationConnectorEditPart(
 						view);
 
+			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolOccurenceEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolOccurenceEditPart(
+						view);
+
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

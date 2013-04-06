@@ -57,74 +57,74 @@ public class CustomCoordinationProtocolEditPart extends
 			editPolicy.refresh();
 		}
 	}
-
-	@Override
-	protected void createDefaultEditPolicies() {
-		super.createDefaultEditPolicies();
-		removeEditPolicy(EditPolicy.COMPONENT_ROLE);
-		installEditPolicy(EditPolicy.COMPONENT_ROLE, new ComponentEditPolicy() {
-			@Override
-			public Command getCommand(Request request) {
-				// If the user presses the delete key, don't delete
-				boolean keyboardDelete = request instanceof GroupRequestViaKeyboard
-						&& RequestConstants.REQ_DELETE.equals(request.getType());
-				if (request.getType() == RequestConstants.REQ_DELETE
-						|| keyboardDelete) {
-					return UnexecutableCommand.INSTANCE;
-				}
-
-				return super.getCommand(request);
-			}
-		});
-		removeEditPolicy(EditPolicyRoles.SEMANTIC_ROLE);
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new CoordinationProtocolItemSemanticEditPolicy() {
-
-					@Override
-					protected Command getSemanticCommand(
-							IEditCommandRequest request) {
-						if (request instanceof DestroyRequest) {
-							return null;
-						}
-						return super.getSemanticCommand(request);
-					}
-
-				});
-
-		// TODO: Try to prevent view creation in EditHelper!
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
-				new de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy() {
-					/*
-					 * Make sure the outer DiscretePorts do not connect to the
-					 * CoordinationProtocol figure. We do this by making the
-					 * View invisible initially. EditParts use this information
-					 * in their refreshVisibility() method.
-					 */
-					protected Command getConnectionCompleteCommand(
-							CreateConnectionRequest request) {
-						Command result = super
-								.getConnectionCompleteCommand(request);
-
-						ICommandProxy proxy = (ICommandProxy) request
-								.getStartCommand();
-						View view = (View) request.getSourceEditPart()
-								.getModel();
-						View containerView = (View) view.eContainer();
-						if (proxy != null
-								&& containerView.getElement() instanceof StructuredComponent) {
-							CompositeCommand cc = (CompositeCommand) proxy
-									.getICommand();
-							cc.add(new SetPropertyCommand(
-									getEditingDomain(),
-									"Set invisible",
-									getViewAdapter(),
-									"notation.View.visible",
-									//MetamodelManager.getID(NotationPackage.Literals.VIEW__VISIBLE),
-									Boolean.FALSE));
-						}
-						return result;
-					}
-				});
-	}
+//
+//	@Override
+//	protected void createDefaultEditPolicies() {
+//		super.createDefaultEditPolicies();
+//		removeEditPolicy(EditPolicy.COMPONENT_ROLE);
+//		installEditPolicy(EditPolicy.COMPONENT_ROLE, new ComponentEditPolicy() {
+//			@Override
+//			public Command getCommand(Request request) {
+//				// If the user presses the delete key, don't delete
+//				boolean keyboardDelete = request instanceof GroupRequestViaKeyboard
+//						&& RequestConstants.REQ_DELETE.equals(request.getType());
+//				if (request.getType() == RequestConstants.REQ_DELETE
+//						|| keyboardDelete) {
+//					return UnexecutableCommand.INSTANCE;
+//				}
+//
+//				return super.getCommand(request);
+//			}
+//		});
+//		removeEditPolicy(EditPolicyRoles.SEMANTIC_ROLE);
+//		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+//				new CoordinationProtocolItemSemanticEditPolicy() {
+//
+//					@Override
+//					protected Command getSemanticCommand(
+//							IEditCommandRequest request) {
+//						if (request instanceof DestroyRequest) {
+//							return null;
+//						}
+//						return super.getSemanticCommand(request);
+//					}
+//
+//				});
+//
+//		// TODO: Try to prevent view creation in EditHelper!
+//		installEditPolicy(
+//				EditPolicy.GRAPHICAL_NODE_ROLE,
+//				new de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy() {
+//					/*
+//					 * Make sure the outer DiscretePorts do not connect to the
+//					 * CoordinationProtocol figure. We do this by making the
+//					 * View invisible initially. EditParts use this information
+//					 * in their refreshVisibility() method.
+//					 */
+//					protected Command getConnectionCompleteCommand(
+//							CreateConnectionRequest request) {
+//						Command result = super
+//								.getConnectionCompleteCommand(request);
+//
+//						ICommandProxy proxy = (ICommandProxy) request
+//								.getStartCommand();
+//						View view = (View) request.getSourceEditPart()
+//								.getModel();
+//						View containerView = (View) view.eContainer();
+//						if (proxy != null
+//								&& containerView.getElement() instanceof StructuredComponent) {
+//							CompositeCommand cc = (CompositeCommand) proxy
+//									.getICommand();
+//							cc.add(new SetPropertyCommand(
+//									getEditingDomain(),
+//									"Set invisible",
+//									getViewAdapter(),
+//									"notation.View.visible",
+//									//MetamodelManager.getID(NotationPackage.Literals.VIEW__VISIBLE),
+//									Boolean.FALSE));
+//						}
+//						return result;
+//					}
+//				});
+//	}
 }

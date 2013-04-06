@@ -369,7 +369,11 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getPortPart_3022ContainedLinks(
 			View view) {
-		return Collections.emptyList();
+		de.uni_paderborn.fujaba.muml.component.PortPart modelElement = (de.uni_paderborn.fujaba.muml.component.PortPart) view
+				.getElement();
+		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_PortPart_CoordinationProtocolOccurence_4003(modelElement));
+		return result;
 	}
 
 	/**
@@ -493,7 +497,14 @@ public class MumlDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getCoordinationProtocolOccurrence_3016IncomingLinks(
 			View view) {
-		return Collections.emptyList();
+		de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence modelElement = (de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence) view
+				.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_PortPart_CoordinationProtocolOccurence_4003(
+				modelElement, crossReferences));
+		return result;
 	}
 
 	/**
@@ -585,6 +596,7 @@ public class MumlDiagramUpdater {
 		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_AssemblyConnector_4001(modelElement));
 		result.addAll(getOutgoingTypeModelFacetLinks_DelegationConnector_4002(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_PortPart_CoordinationProtocolOccurence_4003(modelElement));
 		return result;
 	}
 
@@ -769,6 +781,28 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	private static Collection<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getIncomingFeatureModelFacetLinks_PortPart_CoordinationProtocolOccurence_4003(
+			de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					.getPortPart_CoordinationProtocolOccurence()) {
+				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor(
+						setting.getEObject(),
+						target,
+						de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolOccurence_4003,
+						de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolOccurenceEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getOutgoingTypeModelFacetLinks_AssemblyConnector_4001(
 			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source) {
 		de.uni_paderborn.fujaba.muml.component.StructuredComponent container = null;
@@ -875,6 +909,25 @@ public class MumlDiagramUpdater {
 					de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DelegationConnector_4002,
 					de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID));
 		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getOutgoingFeatureModelFacetLinks_PortPart_CoordinationProtocolOccurence_4003(
+			de.uni_paderborn.fujaba.muml.component.PortPart source) {
+		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>();
+		de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence destination = source
+				.getCoordinationProtocolOccurence();
+		if (destination == null) {
+			return result;
+		}
+		result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor(
+				source,
+				destination,
+				de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolOccurence_4003,
+				de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolOccurenceEditPart.VISUAL_ID));
 		return result;
 	}
 
