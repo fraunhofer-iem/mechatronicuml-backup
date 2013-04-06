@@ -1241,13 +1241,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (getDelegationConnector_PortPart(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart)"
+			 "derivation", "self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart) -> any(true)"
 		   });		
 		addAnnotation
 		  (getDelegationConnector_Port(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port)"
+			 "derivation", "self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port) -> any(true)"
 		   });															
 		addAnnotation
 		  (structuredComponentEClass, 

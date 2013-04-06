@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<history:History xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<history:History xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:history="http://www.eclipse.org/emf/edapt/history/0.3">
   <releases date="2012-11-07T14:51:41.065+0100" label="0.3.2">
     <changes xsi:type="history:CompositeChange">
@@ -21604,5 +21603,8 @@
     <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/DoEvent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="not (self.periodLower.value.oclIsUndefined() and self.periodUpper.value.oclIsUndefined())&#xD;&#xA;implies&#xD;&#xA;self.periodLower.value.value >= 1 and self.periodLower.value.value &lt;= self.periodUpper.value.value"
         oldDataValue="if self.periodLower.value.isUndefined() or self.periodLower.value.isUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.periodLower.value.value >= 1 and self.periodLower.value.value &lt;= self.periodUpper.value.value&#xD;&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/port/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port) -> any(true)"
+        oldDataValue="self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port)"/>
   </releases>
 </history:History>

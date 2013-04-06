@@ -47,7 +47,7 @@ public interface DelegationConnector extends PortConnector {
 	 * @see #setPortPart(PortPart)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDelegationConnector_PortPart()
 	 * @model required="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart) -> any(true)'"
 	 * @generated
 	 */
 	PortPart getPortPart();
@@ -74,7 +74,7 @@ public interface DelegationConnector extends PortConnector {
 	 * @see #setPort(Port)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDelegationConnector_Port()
 	 * @model required="true" transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port) -> any(true)'"
 	 * @generated
 	 */
 	Port getPort();

@@ -280,13 +280,13 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="portPart" lowerBound="1"
           eType="#//component/PortPart" volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart)"/>
+          <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart) -> any(true)"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1"
           eType="#//component/Port" volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port)"/>
+          <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port) -> any(true)"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
