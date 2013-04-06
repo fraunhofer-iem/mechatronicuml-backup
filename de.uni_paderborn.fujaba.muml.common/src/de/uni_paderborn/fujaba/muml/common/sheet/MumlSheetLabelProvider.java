@@ -105,7 +105,7 @@ public class MumlSheetLabelProvider extends BaseLabelProvider implements
 
 	private IElementType getElementType(View view) {
 		// Generic code:
-		if (view != null) {
+		if (view != null && view.getElement() != null) {
 			IElementType[] elementTypes = ElementTypeRegistry.getInstance()
 					.getAllTypesMatching(view.getElement());
 			if (elementTypes != null && elementTypes.length > 0) {
