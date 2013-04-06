@@ -26,6 +26,7 @@ import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart;
 
@@ -64,6 +65,7 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 	 */
 	private void makeStructuredComponentReconfigurable(StaticStructuredComponent sc){
 		ModelElementCategory category = (ModelElementCategory) sc.eContainer();
+		RootNode rootNode = (RootNode) category.eContainer();
 		
 		URI transformationURI = URI
 				.createPlatformPluginURI(
@@ -78,10 +80,10 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 		// create input extend containing the component and the category
 		List<StaticStructuredComponent> compList = new ArrayList<StaticStructuredComponent>();
 		compList.add(sc);
-		List<ModelElementCategory> catList = new ArrayList<ModelElementCategory>();
-		catList.add(category);
+		List<RootNode> rnList = new ArrayList<RootNode>();
+		rnList.add(rootNode);
 		ModelExtent inputComponent = new BasicModelExtent(compList);
-		ModelExtent inputCategory = new BasicModelExtent(catList);
+		ModelExtent inputCategory = new BasicModelExtent(rnList);
 
 		// execute transformation
 		ExecutionDiagnostic result = executor.execute(context, inputComponent, inputCategory);

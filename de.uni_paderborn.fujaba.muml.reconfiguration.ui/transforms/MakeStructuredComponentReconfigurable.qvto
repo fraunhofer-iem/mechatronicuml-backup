@@ -1,4 +1,5 @@
 import GenerateReconfigurationController;
+import UpdateReferencesToComponent;
 
 --core models
 modeltype core uses core('http://www.storydriven.org/core/0.3.1');
@@ -36,14 +37,19 @@ main() {
 
 	-- parse input parameters
 	var oldComponent : StaticStructuredComponent := inputComponent.objects()[StaticStructuredComponent] -> any(true);
-	var componentCategory : ModelElementCategory := category.objects()[ModelElementCategory] -> any(true);
+	var rootNode : RootNode := category.objects()[RootNode] -> any(true);
+	var componentCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.components.category') -> any(true);
 
 	var newComponent : ReconfigurableStructuredComponent := map createReconfigurableComponent(oldComponent);
+	
+	-- update reference such that they point to the newComponent instead of the oldComponent
+	map updateReferencesToComponent(rootNode, oldComponent, newComponent);
 	
 	componentCategory.modelElements += newComponent;
 }
 
-
+-- creates a reconfigurable structure component including the reconfiguration controller
+-- and moves all structural features of the oldComp to the new component.
 mapping createReconfigurableComponent(in oldComp : StaticStructuredComponent) : ReconfigurableStructuredComponent {
 	
 	-- copy attributes
@@ -63,4 +69,5 @@ mapping createReconfigurableComponent(in oldComp : StaticStructuredComponent) : 
 	-- => call transformation
 	map addRuleBasedReconfigurationController(result);
 }
+
 
