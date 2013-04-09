@@ -1262,7 +1262,7 @@
           <details key="documentation" value="return if this vertex is a super vertex of another vertex"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="body" value="true&#xD;&#xA;-- TODO IMPLEMENT&#xD;&#xA;--self.allSuperVertices->includes(v)"/>
+          <details key="body" value="vertex.allSuperVertices->includes(self)"/>
         </eAnnotations>
         <eParameters name="vertex" eType="#//realtimestatechart/Vertex"/>
       </eOperations>

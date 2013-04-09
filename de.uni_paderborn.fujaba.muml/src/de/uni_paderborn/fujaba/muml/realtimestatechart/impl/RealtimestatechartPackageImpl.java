@@ -1856,7 +1856,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getVertex__IsSuperVertexOf__Vertex(), 
 		   source, 
 		   new String[] {
-			 "body", "true\r\n-- TODO IMPLEMENT\r\n--self.allSuperVertices->includes(v)"
+			 "body", "vertex.allSuperVertices->includes(self)"
 		   });						
 		addAnnotation
 		  (getVertex_AllSuperVertices(), 

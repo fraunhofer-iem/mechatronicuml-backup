@@ -88,7 +88,7 @@ public interface Vertex extends NamedElement {
 	 * return if this vertex is a super vertex of another vertex
 	 * <!-- end-model-doc -->
 	 * @model required="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='true\r\n-- TODO IMPLEMENT\r\n--self.allSuperVertices->includes(v)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='vertex.allSuperVertices->includes(self)'"
 	 * @generated
 	 */
 	boolean isSuperVertexOf(Vertex vertex);
