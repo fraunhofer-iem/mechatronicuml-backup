@@ -454,7 +454,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		parameterBindingEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 		typedNamedElementEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(behavioralElementEClass, BehavioralElement.class, "BehavioralElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehavioralElement_Behavior(), this.getBehavior(), this.getBehavior_BehavioralElement(), "behavior", null, 0, 1, BehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -628,6 +628,24 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getState__GetUniqueRegionPriority__int() {
+		return stateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getState__HasRegionOfPriority__int() {
+		return stateEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getVertex() {
 		return vertexEClass;
 	}
@@ -657,6 +675,33 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 */
 	public EReference getVertex_AllSuperVertices() {
 		return (EReference)vertexEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getVertex__IsSuperVertexOf__Vertex() {
+		return vertexEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getVertex__GetUniqueTransitionPriority__int() {
+		return vertexEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getVertex__HasOutgoingTransitionOfPriority__int() {
+		return vertexEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -1141,6 +1186,33 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getRealtimeStatechart__IsSuperStatechartOf__RealtimeStatechart() {
+		return realtimeStatechartEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRealtimeStatechart__GetHighestParentStatechart() {
+		return realtimeStatechartEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRealtimeStatechart__GetPortOrRoleStatechart() {
+		return realtimeStatechartEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEvent() {
 		return eventEClass;
 	}
@@ -1331,11 +1403,16 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEReference(stateEClass, STATE__CONNECTION_POINTS);
 		createEAttribute(stateEClass, STATE__SIMPLE);
 		createEReference(stateEClass, STATE__PARENT_STATECHART);
+		createEOperation(stateEClass, STATE___GET_UNIQUE_REGION_PRIORITY__INT);
+		createEOperation(stateEClass, STATE___HAS_REGION_OF_PRIORITY__INT);
 
 		vertexEClass = createEClass(VERTEX);
 		createEReference(vertexEClass, VERTEX__OUTGOING_TRANSITIONS);
 		createEReference(vertexEClass, VERTEX__INCOMING_TRANSITIONS);
 		createEReference(vertexEClass, VERTEX__ALL_SUPER_VERTICES);
+		createEOperation(vertexEClass, VERTEX___IS_SUPER_VERTEX_OF__VERTEX);
+		createEOperation(vertexEClass, VERTEX___GET_UNIQUE_TRANSITION_PRIORITY__INT);
+		createEOperation(vertexEClass, VERTEX___HAS_OUTGOING_TRANSITION_OF_PRIORITY__INT);
 
 		transitionEClass = createEClass(TRANSITION);
 		createEReference(transitionEClass, TRANSITION__SYNCHRONIZATION);
@@ -1399,6 +1476,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEAttribute(realtimeStatechartEClass, REALTIME_STATECHART__EMBEDDED);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__ALL_AVAILABLE_VARIABLES);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS);
+		createEOperation(realtimeStatechartEClass, REALTIME_STATECHART___IS_SUPER_STATECHART_OF__REALTIMESTATECHART);
+		createEOperation(realtimeStatechartEClass, REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART);
+		createEOperation(realtimeStatechartEClass, REALTIME_STATECHART___GET_PORT_OR_ROLE_STATECHART);
 
 		eventEClass = createEClass(EVENT);
 		createEAttribute(eventEClass, EVENT__KIND);
@@ -1494,7 +1574,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		entryPointEClass.getESuperTypes().add(this.getStateConnectionPoint());
 		exitPointEClass.getESuperTypes().add(this.getStateConnectionPoint());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(deadlineEClass, Deadline.class, "Deadline", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDeadline_UpperBound(), theValuetypePackage.getTimeValue(), null, "upperBound", null, 0, 1, Deadline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeadline_LowerBound(), theValuetypePackage.getTimeValue(), null, "lowerBound", null, 0, 1, Deadline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1528,10 +1608,10 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEAttribute(getState_Simple(), theEcorePackage.getEBoolean(), "simple", "true", 0, 1, State.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getState_ParentStatechart(), this.getRealtimeStatechart(), this.getRealtimeStatechart_States(), "parentStatechart", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = addEOperation(stateEClass, ecorePackage.getEInt(), "getUniqueRegionPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getState__GetUniqueRegionPriority__int(), ecorePackage.getEInt(), "getUniqueRegionPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "hint", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(stateEClass, ecorePackage.getEBoolean(), "hasRegionOfPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getState__HasRegionOfPriority__int(), ecorePackage.getEBoolean(), "hasRegionOfPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "priority", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(vertexEClass, Vertex.class, "Vertex", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1539,13 +1619,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getVertex_IncomingTransitions(), this.getTransition(), this.getTransition_Target(), "incomingTransitions", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVertex_AllSuperVertices(), this.getVertex(), null, "allSuperVertices", null, 0, -1, Vertex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(vertexEClass, ecorePackage.getEBoolean(), "isSuperVertexOf", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getVertex__IsSuperVertexOf__Vertex(), ecorePackage.getEBoolean(), "isSuperVertexOf", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getVertex(), "vertex", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(vertexEClass, theEcorePackage.getEInt(), "getUniqueTransitionPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getVertex__GetUniqueTransitionPriority__int(), theEcorePackage.getEInt(), "getUniqueTransitionPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theEcorePackage.getEInt(), "hint", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(vertexEClass, theEcorePackage.getEBoolean(), "hasOutgoingTransitionOfPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getVertex__HasOutgoingTransitionOfPriority__int(), theEcorePackage.getEBoolean(), "hasOutgoingTransitionOfPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "priority", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1611,12 +1691,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getRealtimeStatechart_AllAvailableVariables(), theBehaviorPackage.getVariable(), null, "allAvailableVariables", null, 0, -1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_AllAvailableOperations(), theBehaviorPackage.getOperation(), null, "allAvailableOperations", null, 0, -1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(realtimeStatechartEClass, ecorePackage.getEBoolean(), "isSuperStatechartOf", 1, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getRealtimeStatechart__IsSuperStatechartOf__RealtimeStatechart(), ecorePackage.getEBoolean(), "isSuperStatechartOf", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getRealtimeStatechart(), "statechart", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(realtimeStatechartEClass, this.getRealtimeStatechart(), "getHighestParentStatechart", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getRealtimeStatechart__GetHighestParentStatechart(), this.getRealtimeStatechart(), "getHighestParentStatechart", 1, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(realtimeStatechartEClass, this.getRealtimeStatechart(), "getPortOrRoleStatechart", 1, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getRealtimeStatechart__GetPortOrRoleStatechart(), this.getRealtimeStatechart(), "getPortOrRoleStatechart", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eventEClass, Event.class, "Event", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEvent_Kind(), this.getEventKind(), "kind", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1773,7 +1853,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "derivation", "-- a state is simple if it contains no regions\r\nembeddedRegions->isEmpty()\r\n"
 		   });						
 		addAnnotation
-		  (vertexEClass.getEOperations().get(0), 
+		  (getVertex__IsSuperVertexOf__Vertex(), 
 		   source, 
 		   new String[] {
 			 "body", "true\r\n-- TODO IMPLEMENT\r\n--self.allSuperVertices->includes(v)"

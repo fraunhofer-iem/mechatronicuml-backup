@@ -140,7 +140,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate IS_SUPER_VERTEX_OF_VERTEX__EINVOCATION_DELEGATE = ((EOperation.Internal)RealtimestatechartPackage.Literals.VERTEX.getEOperations().get(0)).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate IS_SUPER_VERTEX_OF_VERTEX__EINVOCATION_DELEGATE = ((EOperation.Internal)RealtimestatechartPackage.Literals.VERTEX___IS_SUPER_VERTEX_OF__VERTEX).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -293,6 +293,24 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				return ALL_SUPER_VERTICES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RealtimestatechartPackage.VERTEX___IS_SUPER_VERTEX_OF__VERTEX:
+				return isSuperVertexOf((Vertex)arguments.get(0));
+			case RealtimestatechartPackage.VERTEX___GET_UNIQUE_TRANSITION_PRIORITY__INT:
+				return getUniqueTransitionPriority((Integer)arguments.get(0));
+			case RealtimestatechartPackage.VERTEX___HAS_OUTGOING_TRANSITION_OF_PRIORITY__INT:
+				return hasOutgoingTransitionOfPriority((Integer)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //VertexImpl

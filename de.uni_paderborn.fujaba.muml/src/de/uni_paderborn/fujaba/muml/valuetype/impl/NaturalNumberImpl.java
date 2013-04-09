@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.valuetype.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -14,6 +15,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -267,6 +269,25 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 				return infinity != INFINITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ValuetypePackage.NATURAL_NUMBER___SET_VALUE__STRING:
+				setValue((String)arguments.get(0));
+				return null;
+			case ValuetypePackage.NATURAL_NUMBER___TO_STRING:
+				return toString();
+			case ValuetypePackage.NATURAL_NUMBER___EQUALS__EOBJECT:
+				return equals((EObject)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //NaturalNumberImpl

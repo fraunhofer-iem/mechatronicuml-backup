@@ -31,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.StateEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -794,6 +795,22 @@ public class StateImpl extends VertexImpl implements State {
 				return getParentStatechart() != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RealtimestatechartPackage.STATE___GET_UNIQUE_REGION_PRIORITY__INT:
+				return getUniqueRegionPriority((Integer)arguments.get(0));
+			case RealtimestatechartPackage.STATE___HAS_REGION_OF_PRIORITY__INT:
+				return hasRegionOfPriority((Integer)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

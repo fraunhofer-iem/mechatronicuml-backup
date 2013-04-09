@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -31,6 +32,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -567,6 +569,70 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == EObject.class) {
+			switch (baseOperationID) {
+				case EcorePackage.EOBJECT___ECLASS: return RealtimestatechartPackage.REGION___ECLASS;
+				case EcorePackage.EOBJECT___EIS_PROXY: return RealtimestatechartPackage.REGION___EIS_PROXY;
+				case EcorePackage.EOBJECT___ERESOURCE: return RealtimestatechartPackage.REGION___ERESOURCE;
+				case EcorePackage.EOBJECT___ECONTAINER: return RealtimestatechartPackage.REGION___ECONTAINER;
+				case EcorePackage.EOBJECT___ECONTAINING_FEATURE: return RealtimestatechartPackage.REGION___ECONTAINING_FEATURE;
+				case EcorePackage.EOBJECT___ECONTAINMENT_FEATURE: return RealtimestatechartPackage.REGION___ECONTAINMENT_FEATURE;
+				case EcorePackage.EOBJECT___ECONTENTS: return RealtimestatechartPackage.REGION___ECONTENTS;
+				case EcorePackage.EOBJECT___EALL_CONTENTS: return RealtimestatechartPackage.REGION___EALL_CONTENTS;
+				case EcorePackage.EOBJECT___ECROSS_REFERENCES: return RealtimestatechartPackage.REGION___ECROSS_REFERENCES;
+				case EcorePackage.EOBJECT___EGET__ESTRUCTURALFEATURE: return RealtimestatechartPackage.REGION___EGET__ESTRUCTURALFEATURE;
+				case EcorePackage.EOBJECT___EGET__ESTRUCTURALFEATURE_BOOLEAN: return RealtimestatechartPackage.REGION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+				case EcorePackage.EOBJECT___ESET__ESTRUCTURALFEATURE_OBJECT: return RealtimestatechartPackage.REGION___ESET__ESTRUCTURALFEATURE_OBJECT;
+				case EcorePackage.EOBJECT___EIS_SET__ESTRUCTURALFEATURE: return RealtimestatechartPackage.REGION___EIS_SET__ESTRUCTURALFEATURE;
+				case EcorePackage.EOBJECT___EUNSET__ESTRUCTURALFEATURE: return RealtimestatechartPackage.REGION___EUNSET__ESTRUCTURALFEATURE;
+				case EcorePackage.EOBJECT___EINVOKE__EOPERATION_ELIST: return RealtimestatechartPackage.REGION___EINVOKE__EOPERATION_ELIST;
+				default: return -1;
+			}
+		}
+		if (baseClass == ExtendableElement.class) {
+			switch (baseOperationID) {
+				case CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS: return RealtimestatechartPackage.REGION___GET_EXTENSION__ECLASS;
+				case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS: return RealtimestatechartPackage.REGION___PROVIDE_EXTENSION__ECLASS;
+				case CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING: return RealtimestatechartPackage.REGION___GET_ANNOTATION__STRING;
+				case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING: return RealtimestatechartPackage.REGION___PROVIDE_ANNOTATION__STRING;
+				default: return -1;
+			}
+		}
+		if (baseClass == CommentableElement.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RealtimestatechartPackage.REGION___GET_EXTENSION__ECLASS:
+				return getExtension((EClass)arguments.get(0));
+			case RealtimestatechartPackage.REGION___PROVIDE_EXTENSION__ECLASS:
+				return provideExtension((EClass)arguments.get(0));
+			case RealtimestatechartPackage.REGION___GET_ANNOTATION__STRING:
+				return getAnnotation((String)arguments.get(0));
+			case RealtimestatechartPackage.REGION___PROVIDE_ANNOTATION__STRING:
+				return provideAnnotation((String)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.valuetype;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
@@ -100,6 +101,15 @@ public interface ValuetypePackage extends EPackage {
 	int CARDINALITY_FEATURE_COUNT = 2;
 
 	/**
+	 * The number of operations of the '<em>Cardinality</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CARDINALITY_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.valuetype.impl.TimeValueImpl <em>Time Value</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,6 +165,195 @@ public interface ValuetypePackage extends EPackage {
 	int TIME_VALUE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___ECLASS = CorePackage.EXTENDABLE_ELEMENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___EIS_PROXY = CorePackage.EXTENDABLE_ELEMENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___ERESOURCE = CorePackage.EXTENDABLE_ELEMENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___ECONTAINER = CorePackage.EXTENDABLE_ELEMENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___ECONTAINING_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___ECONTAINMENT_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___ECONTENTS = CorePackage.EXTENDABLE_ELEMENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___EALL_CONTENTS = CorePackage.EXTENDABLE_ELEMENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___ECROSS_REFERENCES = CorePackage.EXTENDABLE_ELEMENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___GET_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE___TO_STRING = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Time Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_VALUE_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.valuetype.impl.NaturalNumberImpl <em>Natural Number</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -192,6 +391,42 @@ public interface ValuetypePackage extends EPackage {
 	int NATURAL_NUMBER_FEATURE_COUNT = 2;
 
 	/**
+	 * The operation id for the '<em>Set Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NATURAL_NUMBER___SET_VALUE__STRING = 0;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NATURAL_NUMBER___TO_STRING = 1;
+
+	/**
+	 * The operation id for the '<em>Equals</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NATURAL_NUMBER___EQUALS__EOBJECT = 2;
+
+	/**
+	 * The number of operations of the '<em>Natural Number</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NATURAL_NUMBER_OPERATION_COUNT = 3;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.valuetype.impl.RangeImpl <em>Range</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -227,6 +462,15 @@ public interface ValuetypePackage extends EPackage {
 	 * @ordered
 	 */
 	int RANGE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Range</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RANGE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '<em>Time Unit</em>' data type.
@@ -304,6 +548,16 @@ public interface ValuetypePackage extends EPackage {
 	EAttribute getTimeValue_Unit();
 
 	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.valuetype.TimeValue#toString() <em>To String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To String</em>' operation.
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.TimeValue#toString()
+	 * @generated
+	 */
+	EOperation getTimeValue__ToString();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber <em>Natural Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -334,6 +588,36 @@ public interface ValuetypePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNaturalNumber_Infinity();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#setValue(java.lang.String) <em>Set Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Value</em>' operation.
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#setValue(java.lang.String)
+	 * @generated
+	 */
+	EOperation getNaturalNumber__SetValue__String();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#toString() <em>To String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To String</em>' operation.
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#toString()
+	 * @generated
+	 */
+	EOperation getNaturalNumber__ToString();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#equals(org.eclipse.emf.ecore.EObject) <em>Equals</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Equals</em>' operation.
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#equals(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getNaturalNumber__Equals__EObject();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.valuetype.Range <em>Range</em>}'.
@@ -453,6 +737,14 @@ public interface ValuetypePackage extends EPackage {
 		EAttribute TIME_VALUE__UNIT = eINSTANCE.getTimeValue_Unit();
 
 		/**
+		 * The meta object literal for the '<em><b>To String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TIME_VALUE___TO_STRING = eINSTANCE.getTimeValue__ToString();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.valuetype.impl.NaturalNumberImpl <em>Natural Number</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -477,6 +769,30 @@ public interface ValuetypePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NATURAL_NUMBER__INFINITY = eINSTANCE.getNaturalNumber_Infinity();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Value</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NATURAL_NUMBER___SET_VALUE__STRING = eINSTANCE.getNaturalNumber__SetValue__String();
+
+		/**
+		 * The meta object literal for the '<em><b>To String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NATURAL_NUMBER___TO_STRING = eINSTANCE.getNaturalNumber__ToString();
+
+		/**
+		 * The meta object literal for the '<em><b>Equals</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NATURAL_NUMBER___EQUALS__EOBJECT = eINSTANCE.getNaturalNumber__Equals__EObject();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.valuetype.impl.RangeImpl <em>Range</em>}' class.

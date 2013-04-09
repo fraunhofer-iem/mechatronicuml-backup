@@ -550,7 +550,7 @@ public class DeploymentPackageImpl extends EPackageImpl implements DeploymentPac
 		linkQualityOfServiceEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		linkQualityOfServiceEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(deploymentEClass, Deployment.class, "Deployment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDeployment_CommunicationLinks(), this.getCommunicationLink(), this.getCommunicationLink_Deployment(), "communicationLinks", null, 0, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDeployment_HardwareNodes(), this.getHardwareNode(), this.getHardwareNode_Deployment(), "hardwareNodes", null, 1, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

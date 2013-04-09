@@ -354,7 +354,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		dataTypeEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		rangedPrimitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(arrayDataTypeEClass, ArrayDataType.class, "ArrayDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getArrayDataType_Type(), this.getDataType(), null, "type", null, 1, 1, ArrayDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArrayDataType_Cardinality(), theValuetypePackage.getNaturalNumber(), null, "cardinality", null, 1, 1, ArrayDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

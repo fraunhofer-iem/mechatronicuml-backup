@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.component.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -547,6 +548,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getStructuredComponent__ToString() {
+		return structuredComponentEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDirectedTypedPort() {
 		return directedTypedPortEClass;
 	}
@@ -639,6 +649,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 */
 	public EClass getAtomicComponent() {
 		return atomicComponentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAtomicComponent__ToString() {
+		return atomicComponentEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -833,6 +852,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		staticStructuredComponentEClass = createEClass(STATIC_STRUCTURED_COMPONENT);
 
 		atomicComponentEClass = createEClass(ATOMIC_COMPONENT);
+		createEOperation(atomicComponentEClass, ATOMIC_COMPONENT___TO_STRING);
 
 		assemblyConnectorEClass = createEClass(ASSEMBLY_CONNECTOR);
 		createEReference(assemblyConnectorEClass, ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_OCCURENCE);
@@ -854,6 +874,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__ALL_STRUCTURED_COMPONENTS);
 		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS);
 		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES);
+		createEOperation(structuredComponentEClass, STRUCTURED_COMPONENT___TO_STRING);
 
 		coordinationProtocolOccurrenceEClass = createEClass(COORDINATION_PROTOCOL_OCCURRENCE);
 		createEReference(coordinationProtocolOccurrenceEClass, COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL);
@@ -940,7 +961,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		portPartEClass.getESuperTypes().add(theConnectorPackage.getConnectorEndpoint());
 		portPartEClass.getESuperTypes().add(theTypesPackage.getDataType());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponent_Ports(), this.getPort(), this.getPort_Component(), "ports", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_ComponentType(), this.getComponentKind(), "componentType", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -971,7 +992,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		initEClass(atomicComponentEClass, AtomicComponent.class, "AtomicComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(atomicComponentEClass, theEcorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getAtomicComponent__ToString(), theEcorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(assemblyConnectorEClass, AssemblyConnector.class, "AssemblyConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssemblyConnector_CoordinationProtocolOccurence(), this.getCoordinationProtocolOccurrence(), null, "coordinationProtocolOccurence", null, 0, 1, AssemblyConnector.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -994,7 +1015,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getStructuredComponent_AllAtomicComponents(), this.getAtomicComponent(), null, "allAtomicComponents", null, 0, -1, StructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getStructuredComponent_CoordinationProtocolOccurences(), this.getCoordinationProtocolOccurrence(), null, "coordinationProtocolOccurences", null, 0, -1, StructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(structuredComponentEClass, theEcorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getStructuredComponent__ToString(), theEcorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(coordinationProtocolOccurrenceEClass, CoordinationProtocolOccurrence.class, "CoordinationProtocolOccurrence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCoordinationProtocolOccurrence_CoordinationProtocol(), theProtocolPackage.getCoordinationProtocol(), null, "coordinationProtocol", null, 1, 1, CoordinationProtocolOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

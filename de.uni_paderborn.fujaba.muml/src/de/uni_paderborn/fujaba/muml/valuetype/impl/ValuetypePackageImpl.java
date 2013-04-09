@@ -252,6 +252,15 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getTimeValue__ToString() {
+		return timeValueEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getNaturalNumber() {
 		return naturalNumberEClass;
 	}
@@ -272,6 +281,33 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	 */
 	public EAttribute getNaturalNumber_Infinity() {
 		return (EAttribute)naturalNumberEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getNaturalNumber__SetValue__String() {
+		return naturalNumberEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getNaturalNumber__ToString() {
+		return naturalNumberEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getNaturalNumber__Equals__EObject() {
+		return naturalNumberEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -345,10 +381,14 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		timeValueEClass = createEClass(TIME_VALUE);
 		createEReference(timeValueEClass, TIME_VALUE__VALUE);
 		createEAttribute(timeValueEClass, TIME_VALUE__UNIT);
+		createEOperation(timeValueEClass, TIME_VALUE___TO_STRING);
 
 		naturalNumberEClass = createEClass(NATURAL_NUMBER);
 		createEAttribute(naturalNumberEClass, NATURAL_NUMBER__VALUE);
 		createEAttribute(naturalNumberEClass, NATURAL_NUMBER__INFINITY);
+		createEOperation(naturalNumberEClass, NATURAL_NUMBER___SET_VALUE__STRING);
+		createEOperation(naturalNumberEClass, NATURAL_NUMBER___TO_STRING);
+		createEOperation(naturalNumberEClass, NATURAL_NUMBER___EQUALS__EOBJECT);
 
 		rangeEClass = createEClass(RANGE);
 		createEAttribute(rangeEClass, RANGE__LOWER_BOUND);
@@ -392,7 +432,7 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		// Add supertypes to classes
 		timeValueEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(cardinalityEClass, Cardinality.class, "Cardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCardinality_LowerBound(), this.getNaturalNumber(), null, "lowerBound", null, 1, 1, Cardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCardinality_UpperBound(), this.getNaturalNumber(), null, "upperBound", null, 1, 1, Cardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -401,18 +441,18 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		initEReference(getTimeValue_Value(), this.getNaturalNumber(), null, "value", null, 1, 1, TimeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTimeValue_Unit(), this.getTimeUnit(), "unit", null, 0, 1, TimeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(timeValueEClass, theEcorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getTimeValue__ToString(), theEcorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(naturalNumberEClass, NaturalNumber.class, "NaturalNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNaturalNumber_Value(), ecorePackage.getELong(), "value", "1", 0, 1, NaturalNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNaturalNumber_Infinity(), ecorePackage.getEBoolean(), "infinity", "false", 0, 1, NaturalNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = addEOperation(naturalNumberEClass, null, "setValue", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getNaturalNumber__SetValue__String(), null, "setValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(naturalNumberEClass, ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getNaturalNumber__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(naturalNumberEClass, ecorePackage.getEBoolean(), "equals", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getNaturalNumber__Equals__EObject(), ecorePackage.getEBoolean(), "equals", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(rangeEClass, Range.class, "Range", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

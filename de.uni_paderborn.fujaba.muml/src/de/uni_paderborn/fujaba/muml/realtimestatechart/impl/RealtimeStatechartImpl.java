@@ -41,6 +41,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -841,6 +842,24 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case RealtimestatechartPackage.REALTIME_STATECHART___IS_SUPER_STATECHART_OF__REALTIMESTATECHART:
+				return isSuperStatechartOf((RealtimeStatechart)arguments.get(0));
+			case RealtimestatechartPackage.REALTIME_STATECHART___GET_HIGHEST_PARENT_STATECHART:
+				return getHighestParentStatechart();
+			case RealtimestatechartPackage.REALTIME_STATECHART___GET_PORT_OR_ROLE_STATECHART:
+				return getPortOrRoleStatechart();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
