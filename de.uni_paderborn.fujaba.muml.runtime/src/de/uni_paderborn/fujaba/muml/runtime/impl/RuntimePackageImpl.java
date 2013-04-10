@@ -368,8 +368,26 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRealtimeStatechartInstance_VariableBindings() {
+	public EReference getRealtimeStatechartInstance_ParentRealtimeStatechartInstance() {
 		return (EReference)realtimeStatechartInstanceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRealtimeStatechartInstance_VariableBindings() {
+		return (EReference)realtimeStatechartInstanceEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRealtimeStatechartInstance_AllAvailableVariableBindings() {
+		return (EReference)realtimeStatechartInstanceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -616,7 +634,9 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__INSTANCE_OF);
 		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__ACTIVE);
 		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES);
+		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE);
 		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS);
+		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__ALL_AVAILABLE_VARIABLE_BINDINGS);
 
 		runtimeMessageEClass = createEClass(RUNTIME_MESSAGE);
 		createEReference(runtimeMessageEClass, RUNTIME_MESSAGE__PARAMETERS);
@@ -730,8 +750,10 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		initEReference(getRealtimeStatechartInstance_RuntimeBehavioralElement(), this.getRuntimeBehavioralElement(), this.getRuntimeBehavioralElement_StatechartInstance(), "runtimeBehavioralElement", null, 0, 1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechartInstance_InstanceOf(), theRealtimestatechartPackage.getRealtimeStatechart(), null, "instanceOf", null, 1, 1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechartInstance_Active(), theRealtimestatechartPackage.getState(), null, "active", null, 1, 1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRealtimeStatechartInstance_SubRealtimeStatechartInstances(), this.getRealtimeStatechartInstance(), null, "subRealtimeStatechartInstances", null, 0, -1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRealtimeStatechartInstance_SubRealtimeStatechartInstances(), this.getRealtimeStatechartInstance(), this.getRealtimeStatechartInstance_ParentRealtimeStatechartInstance(), "subRealtimeStatechartInstances", null, 0, -1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRealtimeStatechartInstance_ParentRealtimeStatechartInstance(), this.getRealtimeStatechartInstance(), this.getRealtimeStatechartInstance_SubRealtimeStatechartInstances(), "parentRealtimeStatechartInstance", null, 0, 1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechartInstance_VariableBindings(), this.getVariableBinding(), null, "variableBindings", null, 0, -1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRealtimeStatechartInstance_AllAvailableVariableBindings(), this.getVariableBinding(), null, "allAvailableVariableBindings", null, 0, -1, RealtimeStatechartInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(runtimeMessageEClass, RuntimeMessage.class, "RuntimeMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRuntimeMessage_Parameters(), this.getRuntimeParameter(), this.getRuntimeParameter_Message(), "parameters", null, 0, -1, RuntimeMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

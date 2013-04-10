@@ -24,7 +24,9 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getInstanceOf <em>Instance Of</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getActive <em>Active</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getSubRealtimeStatechartInstances <em>Sub Realtime Statechart Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getParentRealtimeStatechartInstance <em>Parent Realtime Statechart Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getVariableBindings <em>Variable Bindings</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getAllAvailableVariableBindings <em>All Available Variable Bindings</em>}</li>
  * </ul>
  * </p>
  *
@@ -116,6 +118,7 @@ public interface RealtimeStatechartInstance extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Sub Realtime Statechart Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getParentRealtimeStatechartInstance <em>Parent Realtime Statechart Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Sub Realtime Statechart Instances</em>' containment reference list isn't clear,
@@ -124,10 +127,39 @@ public interface RealtimeStatechartInstance extends ExtendableElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sub Realtime Statechart Instances</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRealtimeStatechartInstance_SubRealtimeStatechartInstances()
-	 * @model containment="true"
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getParentRealtimeStatechartInstance
+	 * @model opposite="parentRealtimeStatechartInstance" containment="true"
 	 * @generated
 	 */
 	EList<RealtimeStatechartInstance> getSubRealtimeStatechartInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Parent Realtime Statechart Instance</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getSubRealtimeStatechartInstances <em>Sub Realtime Statechart Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent Realtime Statechart Instance</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent Realtime Statechart Instance</em>' container reference.
+	 * @see #setParentRealtimeStatechartInstance(RealtimeStatechartInstance)
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRealtimeStatechartInstance_ParentRealtimeStatechartInstance()
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getSubRealtimeStatechartInstances
+	 * @model opposite="subRealtimeStatechartInstances" transient="false"
+	 * @generated
+	 */
+	RealtimeStatechartInstance getParentRealtimeStatechartInstance();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getParentRealtimeStatechartInstance <em>Parent Realtime Statechart Instance</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent Realtime Statechart Instance</em>' container reference.
+	 * @see #getParentRealtimeStatechartInstance()
+	 * @generated
+	 */
+	void setParentRealtimeStatechartInstance(RealtimeStatechartInstance value);
 
 	/**
 	 * Returns the value of the '<em><b>Variable Bindings</b></em>' containment reference list.
@@ -144,5 +176,21 @@ public interface RealtimeStatechartInstance extends ExtendableElement {
 	 * @generated
 	 */
 	EList<VariableBinding> getVariableBindings();
+
+	/**
+	 * Returns the value of the '<em><b>All Available Variable Bindings</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.runtime.VariableBinding}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>All Available Variable Bindings</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>All Available Variable Bindings</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRealtimeStatechartInstance_AllAvailableVariableBindings()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	EList<VariableBinding> getAllAvailableVariableBindings();
 
 } // RealtimeStatechartInstance

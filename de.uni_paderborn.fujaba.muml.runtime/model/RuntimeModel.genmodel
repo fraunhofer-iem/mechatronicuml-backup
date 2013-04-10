@@ -23,7 +23,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/instanceOf"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/active"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/subRealtimeStatechartInstances"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/parentRealtimeStatechartInstance"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/variableBindings"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/allAvailableVariableBindings"/>
     </genClasses>
     <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeMessage">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeMessage/parameters"/>

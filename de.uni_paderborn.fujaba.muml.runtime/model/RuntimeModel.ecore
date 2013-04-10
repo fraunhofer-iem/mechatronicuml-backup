@@ -37,9 +37,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="active" lowerBound="1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subRealtimeStatechartInstances"
-        upperBound="-1" eType="#//RealtimeStatechartInstance" containment="true"/>
+        upperBound="-1" eType="#//RealtimeStatechartInstance" containment="true" eOpposite="#//RealtimeStatechartInstance/parentRealtimeStatechartInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentRealtimeStatechartInstance"
+        eType="#//RealtimeStatechartInstance" eOpposite="#//RealtimeStatechartInstance/subRealtimeStatechartInstances"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variableBindings" upperBound="-1"
         eType="#//VariableBinding" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allAvailableVariableBindings"
+        upperBound="-1" eType="#//VariableBinding" changeable="false" volatile="true"
+        transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeMessage" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
