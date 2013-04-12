@@ -72,6 +72,7 @@ public class RealtimeStatechartItemProvider
 			addBehavioralElementPropertyDescriptor(object);
 			addOperationsPropertyDescriptor(object);
 			addVariablesPropertyDescriptor(object);
+			addParentRegionPropertyDescriptor(object);
 			addTransitionsPropertyDescriptor(object);
 			addStatesPropertyDescriptor(object);
 			addClocksPropertyDescriptor(object);
@@ -164,6 +165,28 @@ public class RealtimeStatechartItemProvider
 				 getString("_UI_Behavior_variables_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Behavior_variables_feature", "_UI_Behavior_type"),
 				 BehaviorPackage.Literals.BEHAVIOR__VARIABLES,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parent Region feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParentRegionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RealtimeStatechart_parentRegion_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_parentRegion_feature", "_UI_RealtimeStatechart_type"),
+				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__PARENT_REGION,
 				 true,
 				 false,
 				 false,

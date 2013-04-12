@@ -72,6 +72,7 @@ public class StateItemProvider
 			addChannelsPropertyDescriptor(object);
 			addConnectionPointsPropertyDescriptor(object);
 			addSimplePropertyDescriptor(object);
+			addParentStatechartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -292,6 +293,28 @@ public class StateItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parent Statechart feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParentStatechartPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_parentStatechart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_parentStatechart_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__PARENT_STATECHART,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

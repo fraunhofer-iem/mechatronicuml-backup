@@ -44,23 +44,12 @@ public interface DelegationConnector extends PortConnector {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Port Part</em>' reference.
-	 * @see #setPortPart(PortPart)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDelegationConnector_PortPart()
-	 * @model required="true" transient="true" volatile="true" derived="true"
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart) -> any(true)'"
 	 * @generated
 	 */
 	PortPart getPortPart();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.component.DelegationConnector#getPortPart <em>Port Part</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Port Part</em>' reference.
-	 * @see #getPortPart()
-	 * @generated
-	 */
-	void setPortPart(PortPart value);
 
 	/**
 	 * Returns the value of the '<em><b>Port</b></em>' reference.
@@ -71,22 +60,11 @@ public interface DelegationConnector extends PortConnector {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Port</em>' reference.
-	 * @see #setPort(Port)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDelegationConnector_Port()
-	 * @model required="true" transient="true" volatile="true" derived="true"
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port) -> any(true)'"
 	 * @generated
 	 */
 	Port getPort();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.component.DelegationConnector#getPort <em>Port</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Port</em>' reference.
-	 * @see #getPort()
-	 * @generated
-	 */
-	void setPort(Port value);
 
 } // DelegationConnector

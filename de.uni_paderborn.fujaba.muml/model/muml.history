@@ -21681,5 +21681,15 @@
     <changes xsi:type="history:Set" element="muml.ecore#//component/PortPart/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="if (self.portType.oclIsKindOf(DiscretePort)) then&#xD;&#xA;self.portType.oclAsType(DiscretePort).refinedRole&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif"
         oldDataValue="self.portType.refinedRole"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/portParts"
+        featureName="changeable" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/portPart"
+        featureName="changeable" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/port"
+        featureName="changeable" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"
+        featureName="transient" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"
+        featureName="transient" dataValue="false" oldDataValue="true"/>
   </releases>
 </history:History>

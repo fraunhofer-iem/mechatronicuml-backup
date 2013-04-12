@@ -93,15 +93,6 @@ public class DelegationConnectorImpl extends PortConnectorImpl implements Delega
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPortPart(PortPart newPortPart) {
-		PORT_PART__ESETTING_DELEGATE.dynamicSet(this, null, 0, newPortPart);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Port getPort() {
 		return (Port)PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -120,15 +111,6 @@ public class DelegationConnectorImpl extends PortConnectorImpl implements Delega
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPort(Port newPort) {
-		PORT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newPort);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,42 +122,6 @@ public class DelegationConnectorImpl extends PortConnectorImpl implements Delega
 				return basicGetPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ComponentPackage.DELEGATION_CONNECTOR__PORT_PART:
-				setPortPart((PortPart)newValue);
-				return;
-			case ComponentPackage.DELEGATION_CONNECTOR__PORT:
-				setPort((Port)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ComponentPackage.DELEGATION_CONNECTOR__PORT_PART:
-				setPortPart((PortPart)null);
-				return;
-			case ComponentPackage.DELEGATION_CONNECTOR__PORT:
-				setPort((Port)null);
-				return;
-		}
-		super.eUnset(featureID);
 	}
 
 	/**

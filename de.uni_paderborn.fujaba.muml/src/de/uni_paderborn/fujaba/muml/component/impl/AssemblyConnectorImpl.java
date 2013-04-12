@@ -127,38 +127,6 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ComponentPackage.ASSEMBLY_CONNECTOR__PORT_PARTS:
-				getPortParts().clear();
-				getPortParts().addAll((Collection<? extends PortPart>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ComponentPackage.ASSEMBLY_CONNECTOR__PORT_PARTS:
-				getPortParts().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {

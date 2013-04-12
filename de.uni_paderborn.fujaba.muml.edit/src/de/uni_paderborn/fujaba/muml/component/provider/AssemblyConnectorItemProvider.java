@@ -101,7 +101,7 @@ public class AssemblyConnectorItemProvider
 				 getString("_UI_AssemblyConnector_portParts_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnector_portParts_feature", "_UI_AssemblyConnector_type"),
 				 ComponentPackage.Literals.ASSEMBLY_CONNECTOR__PORT_PARTS,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,

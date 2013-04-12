@@ -246,8 +246,8 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portParts" lowerBound="2"
-          upperBound="2" eType="#//component/PortPart" volatile="true" transient="true"
-          derived="true">
+          upperBound="2" eType="#//component/PortPart" changeable="false" volatile="true"
+          transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart)->asOrderedSet()"/>
         </eAnnotations>
@@ -278,13 +278,15 @@
         <details key="ValidPortDirections" value="-- direction of two connected directed typed ports must be identical&#xD;&#xA;self.ports ->forAll(p1, p2 | p1.oclIsKindOf(DirectedTypedPort) and p2.oclIsKindOf(DirectedTypedPort) )"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portPart" lowerBound="1"
-          eType="#//component/PortPart" volatile="true" transient="true" derived="true">
+          eType="#//component/PortPart" changeable="false" volatile="true" transient="true"
+          derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart) -> any(true)"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1"
-          eType="#//component/Port" volatile="true" transient="true" derived="true">
+          eType="#//component/Port" changeable="false" volatile="true" transient="true"
+          derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port) -> any(true)"/>
         </eAnnotations>

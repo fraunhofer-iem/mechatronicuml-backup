@@ -65,6 +65,7 @@ public class PortPartItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPortTypePropertyDescriptor(object);
+			addComponentPartPropertyDescriptor(object);
 			addCoordinationProtocolOccurencePropertyDescriptor(object);
 			addRefinedRolePropertyDescriptor(object);
 		}
@@ -88,6 +89,28 @@ public class PortPartItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Component Part feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addComponentPartPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PortPart_componentPart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortPart_componentPart_feature", "_UI_PortPart_type"),
+				 ComponentPackage.Literals.PORT_PART__COMPONENT_PART,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

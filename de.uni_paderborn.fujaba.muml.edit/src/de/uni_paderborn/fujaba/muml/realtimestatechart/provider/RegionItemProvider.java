@@ -209,7 +209,7 @@ public class RegionItemProvider
 				 getString("_UI_Region_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Region_name_feature", "_UI_Region_type"),
 				 RealtimestatechartPackage.Literals.REGION__NAME,
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,

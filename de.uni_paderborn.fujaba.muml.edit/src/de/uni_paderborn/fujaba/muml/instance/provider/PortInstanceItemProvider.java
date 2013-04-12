@@ -156,7 +156,7 @@ public class PortInstanceItemProvider extends
 				 getString("_UI_PortInstance_portPart_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_portPart_feature", "_UI_PortInstance_type"),
 				 InstancePackage.Literals.PORT_INSTANCE__PORT_PART,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,

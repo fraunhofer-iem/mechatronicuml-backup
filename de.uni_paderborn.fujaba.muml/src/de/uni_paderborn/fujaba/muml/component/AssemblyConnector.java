@@ -59,7 +59,7 @@ public interface AssemblyConnector extends PortConnector {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Port Parts</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getAssemblyConnector_PortParts()
-	 * @model lower="2" upper="2" transient="true" volatile="true" derived="true"
+	 * @model lower="2" upper="2" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart)->asOrderedSet()'"
 	 * @generated
 	 */
