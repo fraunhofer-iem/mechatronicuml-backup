@@ -472,6 +472,7 @@ public class DiscretePortItemProvider
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT:
 			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER:
 			case ComponentPackage.DISCRETE_PORT__MULTI_PORT:
+			case ComponentPackage.DISCRETE_PORT__COORDINATION_PROTOCOL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.DISCRETE_PORT__CARDINALITY:

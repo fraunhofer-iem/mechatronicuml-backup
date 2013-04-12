@@ -203,6 +203,7 @@ public class PortInstanceItemProvider extends
 		switch (notification.getFeatureID(PortInstance.class)) {
 			case InstancePackage.PORT_INSTANCE__PORT_TYPE:
 			case InstancePackage.PORT_INSTANCE__PORT_CONNECTOR_INSTANCES:
+			case InstancePackage.PORT_INSTANCE__PORT_PART:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

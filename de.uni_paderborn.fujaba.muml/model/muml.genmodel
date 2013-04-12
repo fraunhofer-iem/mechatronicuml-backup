@@ -39,7 +39,7 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DiscretePort/isDiscreteInOutPort"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/DiscretePort/receiverMessageBuffer"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DiscretePort/multiPort"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/DiscretePort/coordinationProtocol"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/DiscretePort/coordinationProtocol"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//component/ComponentPart">
         <genFeatures notify="false" createChild="false" propertyCategory="General"
@@ -56,15 +56,12 @@
         <genOperations ecoreOperation="muml.ecore#//component/AtomicComponent/toString"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//component/AssemblyConnector">
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/AssemblyConnector/coordinationProtocolOccurence"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//component/AssemblyConnector/portParts"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/AssemblyConnector/coordinationProtocolOccurence"/>
+        <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//component/AssemblyConnector/portParts"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//component/DelegationConnector">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//component/DelegationConnector/portPart"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//component/DelegationConnector/port"/>
+        <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//component/DelegationConnector/portPart"/>
+        <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//component/DelegationConnector/port"/>
       </genClasses>
       <genClasses image="false" ecoreClass="muml.ecore#//component/PortConnector">
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/PortConnector/parentComponent"/>
@@ -98,7 +95,7 @@
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/componentPart"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/coordinationProtocolOccurence"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/refinedRole"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/refinedRole"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Constraint" basePackage="de.uni_paderborn.fujaba.muml"
@@ -143,8 +140,7 @@
             ecoreFeature="ecore:EReference muml.ecore#//instance/PortInstance/portType"/>
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/PortInstance/componentInstance"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/PortInstance/portConnectorInstances"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//instance/PortInstance/portPart"/>
+        <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//instance/PortInstance/portPart"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//instance/AssemblyConnectorInstance">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/AssemblyConnectorInstance/assemblyConnectorType"/>
@@ -163,7 +159,7 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/DiscretePortInstance/receiverMessageTypes"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/DiscretePortInstance/senderMessageTypes"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/DiscretePortInstance/receiverMessageBuffer"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/DiscretePortInstance/refinedRole"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//instance/DiscretePortInstance/refinedRole"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//instance/DiscreteSinglePortInstance"/>
       <genClasses ecoreClass="muml.ecore#//instance/DiscreteMultiPortInstance">
@@ -185,7 +181,7 @@
       <genClasses ecoreClass="muml.ecore#//protocol/RoleConnector">
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/RoleConnector/coordinationProtocol"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/RoleConnector/roles"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/RoleConnector/roles"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//protocol/CoordinationProtocol">
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/CoordinationProtocol/roles"/>

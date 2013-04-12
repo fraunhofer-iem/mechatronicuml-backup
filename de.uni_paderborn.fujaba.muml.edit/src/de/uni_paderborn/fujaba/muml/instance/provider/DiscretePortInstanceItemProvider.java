@@ -204,6 +204,7 @@ public class DiscretePortInstanceItemProvider
 			case InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES:
 			case InstancePackage.DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES:
 			case InstancePackage.DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER:
+			case InstancePackage.DISCRETE_PORT_INSTANCE__REFINED_ROLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 
@@ -143,6 +144,13 @@ public class AssemblyConnectorItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(AssemblyConnector.class)) {
+			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_OCCURENCE:
+			case ComponentPackage.ASSEMBLY_CONNECTOR__PORT_PARTS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
