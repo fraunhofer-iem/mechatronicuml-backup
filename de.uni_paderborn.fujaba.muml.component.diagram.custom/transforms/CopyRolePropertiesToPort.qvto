@@ -10,13 +10,13 @@ modeltype BehaviorPackage uses muml::behavior("http://www.fujaba.de/muml/0.2.2")
 
 modeltype ModelInstancePackage uses modelinstance("http://www.fujaba.de/modelinstance/0.3.15");
 
-transformation CopyRolePropertiesToPort(inout rootNode : ModelInstancePackage, inout port : ComponentPackage);
+transformation CopyRolePropertiesToPort(inout input : ModelInstancePackage);
 
 main() {
 
 	-- parse input parameters
-	var thePort : DiscretePort := port.objects()[DiscretePort] -> any(true);
-	var theRootNode : RootNode := rootNode.objects()[RootNode] -> any(true);
+	var thePort : DiscretePort := input.objects()[DiscretePort] -> any(true);
+	var theRootNode : RootNode := input.objects()[RootNode] -> any(true);
 
 	-- copy the role properties
 	map copyRolePropertiesToPort(thePort, theRootNode);

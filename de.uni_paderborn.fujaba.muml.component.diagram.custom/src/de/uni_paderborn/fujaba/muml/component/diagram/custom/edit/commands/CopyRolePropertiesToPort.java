@@ -89,15 +89,13 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 					transformationURI);
 			ExecutionContextImpl context = new ExecutionContextImpl();
 
-			//create model extends
+			//create model extent
 			BasicModelExtent portInput = new BasicModelExtent();
 			portInput.add(thePort);
-			
-			BasicModelExtent rnInput = new BasicModelExtent();
-			rnInput.add(getRootNode(thePort));
+			portInput.add(getRootNode(thePort));
 
 			// execute transformation
-			ExecutionDiagnostic result = executor.execute(context, portInput, rnInput);
+			ExecutionDiagnostic result = executor.execute(context, portInput);
 			if (result.getSeverity() != ExecutionDiagnostic.OK) {
 				String message = "QVT-O ERROR on rule transformation. Message was:" + result.getMessage();
 				return CommandResult.newErrorCommandResult(message);
