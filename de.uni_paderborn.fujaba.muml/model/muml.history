@@ -21691,5 +21691,7 @@
         featureName="transient" dataValue="true" oldDataValue="false"/>
     <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/RealtimeStatechart/parentRegion"
         featureName="transient" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//behavior/Variable/initializeExpression"
+        featureName="containment" dataValue="true" oldDataValue="false"/>
   </releases>
 </history:History>

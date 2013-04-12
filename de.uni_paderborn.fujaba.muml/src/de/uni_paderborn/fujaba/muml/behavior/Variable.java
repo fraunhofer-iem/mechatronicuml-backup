@@ -32,26 +32,26 @@ import org.storydriven.core.expressions.Expression;
 public interface Variable extends TypedNamedElement, CommentableElement {
 
 	/**
-	 * Returns the value of the '<em><b>Initialize Expression</b></em>' reference.
+	 * Returns the value of the '<em><b>Initialize Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Initialize Expression</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Initialize Expression</em>' reference.
+	 * @return the value of the '<em>Initialize Expression</em>' containment reference.
 	 * @see #setInitializeExpression(Expression)
 	 * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getVariable_InitializeExpression()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	Expression getInitializeExpression();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.behavior.Variable#getInitializeExpression <em>Initialize Expression</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.behavior.Variable#getInitializeExpression <em>Initialize Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Initialize Expression</em>' reference.
+	 * @param value the new value of the '<em>Initialize Expression</em>' containment reference.
 	 * @see #getInitializeExpression()
 	 * @generated
 	 */

@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.behavior.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -53,7 +54,7 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 	protected String comment = COMMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getInitializeExpression() <em>Initialize Expression</em>}' reference.
+	 * The cached value of the '{@link #getInitializeExpression() <em>Initialize Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInitializeExpression()
@@ -108,14 +109,6 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 	 * @generated
 	 */
 	public Expression getInitializeExpression() {
-		if (initializeExpression != null && initializeExpression.eIsProxy()) {
-			InternalEObject oldInitializeExpression = (InternalEObject)initializeExpression;
-			initializeExpression = (Expression)eResolveProxy(oldInitializeExpression);
-			if (initializeExpression != oldInitializeExpression) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION, oldInitializeExpression, initializeExpression));
-			}
-		}
 		return initializeExpression;
 	}
 
@@ -124,8 +117,14 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression basicGetInitializeExpression() {
-		return initializeExpression;
+	public NotificationChain basicSetInitializeExpression(Expression newInitializeExpression, NotificationChain msgs) {
+		Expression oldInitializeExpression = initializeExpression;
+		initializeExpression = newInitializeExpression;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION, oldInitializeExpression, newInitializeExpression);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -134,10 +133,31 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 	 * @generated
 	 */
 	public void setInitializeExpression(Expression newInitializeExpression) {
-		Expression oldInitializeExpression = initializeExpression;
-		initializeExpression = newInitializeExpression;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION, oldInitializeExpression, initializeExpression));
+		if (newInitializeExpression != initializeExpression) {
+			NotificationChain msgs = null;
+			if (initializeExpression != null)
+				msgs = ((InternalEObject)initializeExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION, null, msgs);
+			if (newInitializeExpression != null)
+				msgs = ((InternalEObject)newInitializeExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION, null, msgs);
+			msgs = basicSetInitializeExpression(newInitializeExpression, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION, newInitializeExpression, newInitializeExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION:
+				return basicSetInitializeExpression(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -151,8 +171,7 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 			case BehaviorPackage.VARIABLE__COMMENT:
 				return getComment();
 			case BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION:
-				if (resolve) return getInitializeExpression();
-				return basicGetInitializeExpression();
+				return getInitializeExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

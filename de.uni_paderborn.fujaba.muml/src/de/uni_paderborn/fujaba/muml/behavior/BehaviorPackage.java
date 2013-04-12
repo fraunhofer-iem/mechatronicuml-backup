@@ -443,7 +443,7 @@ public interface BehaviorPackage extends EPackage {
 	int VARIABLE__COMMENT = TYPED_NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Initialize Expression</b></em>' reference.
+	 * The feature id for the '<em><b>Initialize Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1458,10 +1458,10 @@ public interface BehaviorPackage extends EPackage {
 	EClass getVariable();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.behavior.Variable#getInitializeExpression <em>Initialize Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.behavior.Variable#getInitializeExpression <em>Initialize Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Initialize Expression</em>'.
+	 * @return the meta object for the containment reference '<em>Initialize Expression</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.behavior.Variable#getInitializeExpression()
 	 * @see #getVariable()
 	 * @generated
@@ -1659,7 +1659,7 @@ public interface BehaviorPackage extends EPackage {
 		EClass VARIABLE = eINSTANCE.getVariable();
 
 		/**
-		 * The meta object literal for the '<em><b>Initialize Expression</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Initialize Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
