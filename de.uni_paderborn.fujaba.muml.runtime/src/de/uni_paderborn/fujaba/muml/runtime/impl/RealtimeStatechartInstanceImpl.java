@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -87,6 +88,16 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 * @ordered
 	 */
 	protected EList<VariableBinding> variableBindings;
+
+	/**
+	 * The cached setting delegate for the '{@link #getAllAvailableVariableBindings() <em>All Available Variable Bindings</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllAvailableVariableBindings()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ALL_AVAILABLE_VARIABLE_BINDINGS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RuntimePackage.Literals.REALTIME_STATECHART_INSTANCE__ALL_AVAILABLE_VARIABLE_BINDINGS).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -319,14 +330,11 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated 
+	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<VariableBinding> getAllAvailableVariableBindings() {
-		// TODO: implement this method to return the 'All Available Variable Bindings' reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		return (EList<VariableBinding>)ALL_AVAILABLE_VARIABLE_BINDINGS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -500,7 +508,7 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS:
 				return variableBindings != null && !variableBindings.isEmpty();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ALL_AVAILABLE_VARIABLE_BINDINGS:
-				return !getAllAvailableVariableBindings().isEmpty();
+				return ALL_AVAILABLE_VARIABLE_BINDINGS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -189,6 +189,7 @@ public interface RealtimeStatechartInstance extends ExtendableElement {
 	 * @return the value of the '<em>All Available Variable Bindings</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRealtimeStatechartInstance_AllAvailableVariableBindings()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if parentRealtimeStatechartInstance.oclIsUndefined() then self else parentRealtimeStatechartInstance endif).variables->asOrderedSet()'"
 	 * @generated
 	 */
 	EList<VariableBinding> getAllAvailableVariableBindings();

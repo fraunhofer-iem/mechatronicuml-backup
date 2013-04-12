@@ -814,7 +814,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });		
+		   });			
 	}
 
 	/**
@@ -836,6 +836,12 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		   source, 
 		   new String[] {
 			 "derivation", "if not self.oclAsType(muml::connector::ConnectorEndpointInstance).connectorInstances->isEmpty() then\r\n\tself.oclAsType(muml::connector::ConnectorEndpointInstance).connectorInstances->first().oclAsType(RuntimeRoleConnectorInstance)\r\nelse\r\n\tnull\r\nendif"
+		   });		
+		addAnnotation
+		  (getRealtimeStatechartInstance_AllAvailableVariableBindings(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self -> closure(if parentRealtimeStatechartInstance.oclIsUndefined() then self else parentRealtimeStatechartInstance endif).variables->asOrderedSet()"
 		   });
 	}
 
