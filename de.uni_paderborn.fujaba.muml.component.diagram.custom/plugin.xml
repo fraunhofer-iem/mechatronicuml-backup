@@ -9,21 +9,16 @@
             allPopups="false"
             locationURI="popup:de.uni_paderborn.fujaba">
          <separator
-               name="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.custom.separator1"
+               name="de.uni_paderborn.fujaba.muml.component.diagram.custom.separator1"
                visible="true">
          </separator>
          <command
-               commandId="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.custom.copyRolePropertiesToPort"
+               commandId="de.uni_paderborn.fujaba.muml.component.diagram.custom.copyRolePropertiesToPort"
+               id="de.uni_paderborn.fujaba.muml.component.diagram.custom.copyRolePropertiesToPort"
                label="Copy Role Properties To Port"
                style="push">
             <visibleWhen>
                <and>
-                  <with
-                        variable="activePartId">
-                     <equals
-                           value="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.part.MumlDiagramEditorID">
-                     </equals>
-                  </with>
                   <with
                         variable="selection">
                      <iterate
@@ -40,8 +35,10 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
+            categoryId="de.uni_paderborn.fujaba"
             defaultHandler="de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands.CopyRolePropertiesToPort"
-            id="de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.custom.copyRolePropertiesToPort"
+            description="Copy Properties defined in the Role to the Port."
+            id="de.uni_paderborn.fujaba.muml.component.diagram.custom.copyRolePropertiesToPort"
             name="Copy Role Properties To Port">
       </command>
    </extension>

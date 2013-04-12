@@ -1,31 +1,30 @@
 package de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands;
 
-import java.util.Collection;
+import java.util.Iterator;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.expressions.EvaluationContext;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
-import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
+import org.eclipse.ui.handlers.HandlerUtil;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 
 public class CopyRolePropertiesToPort extends AbstractHandler {
 
@@ -34,108 +33,30 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		DiscretePort port = this.getPort(event);
 
-		if (port.getRefinedRole() == null)
-			return null;
+		//get and process current selection
+		ISelection selection = HandlerUtil.getCurrentSelection(event);
+		
+		//collect all StaticStructureComponents from the selection
+		Iterator iter = ((IStructuredSelection) selection).iterator();
+		while(iter.hasNext()){
+			GraphicalEditPart editPart = (GraphicalEditPart) iter.next();
+			
+			//add StaticStructuredComponent to list
+			if(editPart instanceof DiscretePortEditPart){
+				DiscretePort port = (DiscretePort) ((View) editPart.getModel()).getElement();
 
-		// Single port
-		if (port.getCardinality().getUpperBound().getValue() == 1) {
-			RealtimeStatechart transformedBehavior = this
-					.copyRealtimeStatechart((RealtimeStatechart) port
-							.getRefinedRole().getBehavior());
-
-			if (transformedBehavior != null) {
-				ICommandProxy a = new ICommandProxy(
-						new SinglePortChangeCommand(this.getEditPart(event)
-								.getEditingDomain(), port, transformedBehavior));
-				a.execute();
+				if (port.getRefinedRole() == null)
+					continue;
+				
+				ICommandProxy cmd = new ICommandProxy(
+						new PortChangeCommand(editPart
+								.getEditingDomain(), port));
+				cmd.execute();
 			}
-		}
-		// Multi port
-		else {
-			RealtimeStatechart roleAndAdaptation = (RealtimeStatechart) port
-					.getRefinedRole().getRoleAndAdaptationBehavior();
-			RealtimeStatechart transformedRoleAndAdaptation = this
-					.copyRealtimeStatechart(roleAndAdaptation);
-			String behaviorName = null;
-			if (port.getRefinedRole().getBehavior() != null)
-				behaviorName = ((RealtimeStatechart) port.getRefinedRole()
-						.getBehavior()).getName();
-			String adaptationName = null;
-			if (port.getRefinedRole().getAdaptationBehavior() != null)
-				adaptationName = ((RealtimeStatechart) port.getRefinedRole()
-						.getAdaptationBehavior()).getName();
-			if (transformedRoleAndAdaptation != null) {
-				ICommandProxy a = new ICommandProxy(new MultiPortChangeCommand(
-						this.getEditPart(event).getEditingDomain(), port,
-						transformedRoleAndAdaptation, behaviorName,
-						adaptationName));
-				a.execute();
-			}
+			
 		}
 
-		return null;
-	}
-
-	/**
-	 * Returns the selected discrete port
-	 */
-	public DiscretePort getPort(ExecutionEvent event) {
-		DiscretePortEditPart editPart = this.getEditPart(event);
-		return (DiscretePort) editPart.getNotationView().getElement();
-	}
-
-	/**
-	 * Returns the selected editpart
-	 */
-	public DiscretePortEditPart getEditPart(ExecutionEvent event) {
-		EvaluationContext evalCtx = (EvaluationContext) event
-				.getApplicationContext();
-		Collection<?> defVar = (Collection<?>) evalCtx
-				.getDefaultVariable();
-		return (DiscretePortEditPart) defVar.iterator().next();
-	}
-
-	/**
-	 * Copies the given rtsc by using a qvto transformation
-	 */
-	public RealtimeStatechart copyRealtimeStatechart(RealtimeStatechart source) {
-		if (source == null)
-			return null;
-
-		URI transformationURI = URI
-				.createPlatformPluginURI(
-						"/de.uni_paderborn.fujaba.muml.atomiccomponent.diagram.custom/transforms/CopyRealtimeStatechart.qvto",
-						true);
-		// create executor and execution context
-		TransformationExecutor executor = new TransformationExecutor(
-				transformationURI);
-		ExecutionContextImpl context = new ExecutionContextImpl();
-
-		// create input extend containing the activities
-		// create empty output extend
-
-		BasicModelExtent input = new BasicModelExtent();
-		input.add(source);
-
-		ModelExtent output = new BasicModelExtent();
-
-		// execute transformation
-		ExecutionDiagnostic result = executor.execute(context, input, output);
-		if (result.getSeverity() != ExecutionDiagnostic.OK) {
-
-			System.out
-					.println("QVT-O ERROR on rule transformation. Message was:");
-			System.out.println(result.getMessage());
-		}
-
-		// get the resulting rules
-		for (EObject curObject : output.getContents()) {
-			if (curObject instanceof RealtimeStatechart) {
-				return (RealtimeStatechart) curObject;
-			}
-		}
 		return null;
 	}
 
@@ -146,98 +67,52 @@ public class CopyRolePropertiesToPort extends AbstractHandler {
 	 * Cannot modify resource set without a write transaction"
 	 * 
 	 */
-	class SinglePortChangeCommand extends AbstractTransactionalCommand {
-		DiscretePort source = null;
-		RealtimeStatechart behavior = null;
+	class PortChangeCommand extends AbstractTransactionalCommand {
+		DiscretePort thePort = null;
 
-		public SinglePortChangeCommand(
-				TransactionalEditingDomain editingDomain, DiscretePort source,
-				RealtimeStatechart behavior) {
+		public PortChangeCommand(
+				TransactionalEditingDomain editingDomain, DiscretePort source) {
 			super(editingDomain, "Copy role properties to port", null);
-			this.source = source;
-			this.behavior = behavior;
+			this.thePort = source;
 		}
 
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 				IAdaptable info) throws ExecutionException {
 
-			// Step 1: Set message interfaces
-			source.getReceiverMessageTypes().addAll(
-					source.getRefinedRole().getReceiverMessageTypes());
-			source.getSenderMessageTypes().addAll(
-					source.getRefinedRole().getSenderMessageTypes());
+			URI transformationURI = URI
+					.createPlatformPluginURI(
+							"/de.uni_paderborn.fujaba.muml.component.diagram.custom/transforms/CopyRolePropertiesToPort.qvto",
+							true);
+			// create executor and execution context
+			TransformationExecutor executor = new TransformationExecutor(
+					transformationURI);
+			ExecutionContextImpl context = new ExecutionContextImpl();
 
-			// Step 2: Copy statechart
-			source.setBehavior(behavior);
+			//create model extends
+			BasicModelExtent portInput = new BasicModelExtent();
+			portInput.add(thePort);
+			
+			BasicModelExtent rnInput = new BasicModelExtent();
+			rnInput.add(getRootNode(thePort));
 
-			// Add to resource
-			ModelElementCategory category = (ModelElementCategory) source
-					.getRefinedRole().getBehavior().eContainer();
-			category.getModelElements().add(behavior);
-
-			return CommandResult.newOKCommandResult();
-		}
-	}
-
-	class MultiPortChangeCommand extends AbstractTransactionalCommand {
-		DiscretePort source = null;
-		RealtimeStatechart roleAndAdaptation = null;
-		String behaviorName = null;
-		String adaptationName = null;
-
-		public MultiPortChangeCommand(TransactionalEditingDomain editingDomain,
-				DiscretePort source, RealtimeStatechart roleAndAdaptation,
-				String behaviorName, String adaptationName) {
-			super(editingDomain, "Copy role properties to port", null);
-			this.source = source;
-			this.roleAndAdaptation = roleAndAdaptation;
-			this.behaviorName = behaviorName;
-			this.adaptationName = adaptationName;
-		}
-
-		@Override
-		protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-				IAdaptable info) throws ExecutionException {
-
-			// Step 1: Set message interfaces
-			source.getReceiverMessageTypes().addAll(
-					source.getRefinedRole().getReceiverMessageTypes());
-			source.getSenderMessageTypes().addAll(
-					source.getRefinedRole().getSenderMessageTypes());
-
-			// Step 2: Copy statechart
-			source.setRoleAndAdaptationBehavior(roleAndAdaptation);
-			source.setBehavior(this.getSubChartByName(this.roleAndAdaptation,
-					this.behaviorName));
-			source.setAdaptationBehavior(this.getSubChartByName(
-					this.roleAndAdaptation, this.adaptationName));
-
-			// Add to resource
-			ModelElementCategory category = (ModelElementCategory) source
-					.getRefinedRole().getRoleAndAdaptationBehavior().eContainer();
-			category.getModelElements().add(roleAndAdaptation);
-
-			return CommandResult.newOKCommandResult();
-		}
-
-		public RealtimeStatechart getSubChartByName(RealtimeStatechart chart,
-				String name) {
-			if (name == null)
-				return null;
-			if (name.equals(chart.getName()))
-				return chart;
-			for (State s : chart.getStates()) {
-				for (Region r : s.getEmbeddedRegions()) {
-					if (r.getEmbeddedStatechart() != null) {
-						RealtimeStatechart t = this.getSubChartByName(
-								r.getEmbeddedStatechart(), name);
-						if (t != null)
-							return t;
-					}
-				}
+			// execute transformation
+			ExecutionDiagnostic result = executor.execute(context, portInput, rnInput);
+			if (result.getSeverity() != ExecutionDiagnostic.OK) {
+				String message = "QVT-O ERROR on rule transformation. Message was:" + result.getMessage();
+				return CommandResult.newErrorCommandResult(message);
 			}
-			return null;
+			
+			return CommandResult.newOKCommandResult();
+		}
+		
+		/**
+		 * Returns the root node of the resource the contains the port given as a parameter.
+		 * @param thePort
+		 * @return
+		 */
+		private RootNode getRootNode(DiscretePort thePort){
+			return (RootNode) thePort.getComponent().eContainer().eContainer();
 		}
 	}
 
