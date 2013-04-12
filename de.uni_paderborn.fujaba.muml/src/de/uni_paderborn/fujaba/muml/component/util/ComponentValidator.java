@@ -447,7 +447,11 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COMPONENT_PART__CARDINALITY_LOWER_BOUND_SET__EEXPRESSION = "self.cardinality.lowerBound->notEmpty()";
+	protected static final String COMPONENT_PART__CARDINALITY_LOWER_BOUND_SET__EEXPRESSION = "if self.cardinality.lowerBound.oclIsUndefined() then\r\n" +
+		"false\r\n" +
+		"else\r\n" +
+		"self.cardinality.lowerBound->notEmpty()\r\n" +
+		"endif";
 
 	/**
 	 * Validates the CardinalityLowerBoundSet constraint of '<em>Part</em>'.
@@ -505,7 +509,11 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COMPONENT_PART__CARDINALITY_UPPER_BOUND_SET__EEXPRESSION = "self.cardinality.upperBound->notEmpty()";
+	protected static final String COMPONENT_PART__CARDINALITY_UPPER_BOUND_SET__EEXPRESSION = "if self.cardinality.upperBound.oclIsUndefined() then\r\n" +
+		"false\r\n" +
+		"else\r\n" +
+		"self.cardinality.upperBound->notEmpty()\r\n" +
+		"endif";
 
 	/**
 	 * Validates the CardinalityUpperBoundSet constraint of '<em>Part</em>'.
@@ -648,7 +656,11 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__NO_CYCLIC_COMPONENT_PART_HIERARCHY__EEXPRESSION = "not self.allStructuredComponents->includes(self)";
+	protected static final String STRUCTURED_COMPONENT__NO_CYCLIC_COMPONENT_PART_HIERARCHY__EEXPRESSION = "if self.allStructuredComponents->oclIsUndefined() then\r\n" +
+		"false\r\n" +
+		"else\r\n" +
+		"not self.allStructuredComponents->includes(self)\r\n" +
+		"endif";
 
 	/**
 	 * Validates the NoCyclicComponentPartHierarchy constraint of '<em>Structured Component</em>'.
@@ -677,15 +689,19 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__DISCRETE_STRUCTURED_COMPONENT_VALID_PARTS__EEXPRESSION = "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n" +
-		"implies\n" +
-		"\t-- collect all atomic components from parent parts and union them\n" +
-		"\t-- with own atomic components\n" +
-		"\tself.allAtomicComponents->union(\n" +
-		"\t\tself.embeddedParts->select(\n" +
-		"\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n" +
-		"\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n" +
-		"\t)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)";
+	protected static final String STRUCTURED_COMPONENT__DISCRETE_STRUCTURED_COMPONENT_VALID_PARTS__EEXPRESSION = "if (not self.allAtomicComponents->oclIsUndefined()) then\r\n" +
+		"self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\r\n" +
+		"implies\r\n" +
+		"\t-- collect all atomic components from parent parts and union them\r\n" +
+		"\t-- with own atomic components\r\n" +
+		"\tself.allAtomicComponents->union(\r\n" +
+		"\t\tself.embeddedComponentParts->select(\r\n" +
+		"\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\r\n" +
+		"\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\r\n" +
+		"\t)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)\r\n" +
+		"else\r\n" +
+		"true\r\n" +
+		"endif";
 
 	/**
 	 * Validates the DiscreteStructuredComponentValidParts constraint of '<em>Structured Component</em>'.
@@ -714,15 +730,19 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__HYBRID_STRUCTURED_COMPONENT_VALID_PARTS__EEXPRESSION = "self.componentType = component::ComponentKind::HYBRID_COMPONENT\n" +
-		"implies\n" +
-		"\t-- collect all atomic components from parent parts and union them\n" +
-		"\t-- with own atomic components\n" +
-		"\tself.allAtomicComponents->union(\n" +
-		"\t\tself.embeddedParts->select(\n" +
-		"\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n" +
-		"\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n" +
-		"\t)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)";
+	protected static final String STRUCTURED_COMPONENT__HYBRID_STRUCTURED_COMPONENT_VALID_PARTS__EEXPRESSION = "if (self.allAtomicComponents->oclIsUndefined()) then \r\n" +
+		"true\r\n" +
+		"else\r\n" +
+		"self.componentType = component::ComponentKind::HYBRID_COMPONENT\r\n" +
+		"implies\r\n" +
+		"\t-- collect all atomic components from parent parts and union them\r\n" +
+		"\t-- with own atomic components\r\n" +
+		"\tself.allAtomicComponents->union(\r\n" +
+		"\t\tself.embeddedComponentParts->select(\r\n" +
+		"\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\r\n" +
+		"\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\r\n" +
+		"\t)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)\r\n" +
+		"endif";
 
 	/**
 	 * Validates the HybridStructuredComponentValidParts constraint of '<em>Structured Component</em>'.
@@ -784,9 +804,9 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__HYBRID_STRUCTURED_COMPONENT_VALID_PORTS__EEXPRESSION = "self.componentType = component::ComponentKind::HYBRID_COMPONENT\n" +
-		"\timplies (\n" +
-		"\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))\n" +
+	protected static final String STRUCTURED_COMPONENT__HYBRID_STRUCTURED_COMPONENT_VALID_PORTS__EEXPRESSION = "self.componentType = component::ComponentKind::HYBRID_COMPONENT\r\n" +
+		"\timplies (\r\n" +
+		"\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))\r\n" +
 		"\t)";
 
 	/**
@@ -816,7 +836,7 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__COMPONENT_PARTS_HAVE_UNIQUE_NAME__EEXPRESSION = "self.embeddedParts -> isUnique(name)";
+	protected static final String STRUCTURED_COMPONENT__COMPONENT_PARTS_HAVE_UNIQUE_NAME__EEXPRESSION = "self.embeddedComponentParts -> isUnique(name)";
 
 	/**
 	 * Validates the ComponentPartsHaveUniqueName constraint of '<em>Structured Component</em>'.
@@ -1094,9 +1114,9 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COORDINATION_PROTOCOL_OCCURRENCE__ONLY_DISCRETE_PORT_PARTS__EEXPRESSION = "not self.portParts.oclIsUndefined()\r\n" +
+	protected static final String COORDINATION_PROTOCOL_OCCURRENCE__ONLY_DISCRETE_PORT_PARTS__EEXPRESSION = "not self.portParts->oclIsUndefined()\r\n" +
 		"implies\r\n" +
-		"self.portParts->forAll(isTypeOf(DiscretePort))";
+		"self.portParts->forAll(oclIsTypeOf(DiscretePort))";
 
 	/**
 	 * Validates the OnlyDiscretePortParts constraint of '<em>Coordination Protocol Occurrence</em>'.

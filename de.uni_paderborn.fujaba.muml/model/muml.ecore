@@ -148,9 +148,9 @@
         <details key="documentation" value="This class represents a component part. Component parts are used to specify&#xD;&#xA;the inner structure of a structured component. A component part represents&#xD;&#xA;another component that is embedded in a  structured &#xD;&#xA;component. It is specified on the model level and is &#xD;&#xA;always typed over a component (either structured or atomic)."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="CardinalityLowerBoundSet" value="self.cardinality.lowerBound->notEmpty()"/>
+        <details key="CardinalityLowerBoundSet" value="if self.cardinality.lowerBound.oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.cardinality.lowerBound->notEmpty()&#xD;&#xA;endif"/>
         <details key="TypeNotEqualToParent" value="self.componentType &lt;> self.parentComponent"/>
-        <details key="CardinalityUpperBoundSet" value="self.cardinality.upperBound->notEmpty()"/>
+        <details key="CardinalityUpperBoundSet" value="if self.cardinality.upperBound.oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;self.cardinality.upperBound->notEmpty()&#xD;&#xA;endif"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="componentType" lowerBound="1"
           eType="#//component/Component">
@@ -242,7 +242,7 @@
           <details key="documentation" value="The coordination protocol occurence that this assembly uses."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.ports->first().coordinationProtocolOccurence"/>
+          <details key="derivation" value="self.portParts->first().coordinationProtocolOccurence"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portParts" lowerBound="2"
@@ -358,12 +358,12 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="StructuredComponentAllowsNoHybridPorts" value="-- A structured component allows no hybrid ports.&#xD;&#xA;self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))"/>
         <details key="ValidComponentType" value="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;or self.componentType = component::ComponentKind::HYBRID_COMPONENT"/>
-        <details key="NoCyclicComponentPartHierarchy" value="not self.allStructuredComponents->includes(self)"/>
-        <details key="DiscreteStructuredComponentValidParts" value="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;implies&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xA;&#x9;-- with own atomic components&#xA;&#x9;self.allAtomicComponents->union(&#xA;&#x9;&#x9;self.embeddedParts->select(&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xA;&#x9;)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)"/>
-        <details key="HybridStructuredComponentValidParts" value="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xA;implies&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xA;&#x9;-- with own atomic components&#xA;&#x9;self.allAtomicComponents->union(&#xA;&#x9;&#x9;self.embeddedParts->select(&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xA;&#x9;)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)"/>
+        <details key="NoCyclicComponentPartHierarchy" value="if self.allStructuredComponents->oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;not self.allStructuredComponents->includes(self)&#xD;&#xA;endif"/>
+        <details key="DiscreteStructuredComponentValidParts" value="if (not self.allAtomicComponents->oclIsUndefined()) then&#xD;&#xA;self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xD;&#xA;implies&#xD;&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xD;&#xA;&#x9;-- with own atomic components&#xD;&#xA;&#x9;self.allAtomicComponents->union(&#xD;&#xA;&#x9;&#x9;self.embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xD;&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xD;&#xA;&#x9;)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)&#xD;&#xA;else&#xD;&#xA;true&#xD;&#xA;endif"/>
+        <details key="HybridStructuredComponentValidParts" value="if (self.allAtomicComponents->oclIsUndefined()) then &#xD;&#xA;true&#xD;&#xA;else&#xD;&#xA;self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xD;&#xA;implies&#xD;&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xD;&#xA;&#x9;-- with own atomic components&#xD;&#xA;&#x9;self.allAtomicComponents->union(&#xD;&#xA;&#x9;&#x9;self.embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xD;&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xD;&#xA;&#x9;)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)&#xD;&#xA;endif"/>
         <details key="DiscreteStructuredComponentValidPorts" value="-- A structured software component may only have discrete ports&#xD;&#xA;self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))&#xD;&#xA;&#x9;)"/>
-        <details key="HybridStructuredComponentValidPorts" value="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))&#xA;&#x9;)"/>
-        <details key="ComponentPartsHaveUniqueName" value="self.embeddedParts -> isUnique(name)"/>
+        <details key="HybridStructuredComponentValidPorts" value="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))&#xD;&#xA;&#x9;)"/>
+        <details key="ComponentPartsHaveUniqueName" value="self.embeddedComponentParts -> isUnique(name)"/>
       </eAnnotations>
       <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -387,7 +387,7 @@
           upperBound="-1" eType="#//component/StructuredComponent" changeable="false"
           volatile="true" transient="true" unsettable="true" derived="true" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self->closure(&#xA;&#x9;embeddedParts->select(&#xA;&#x9;&#x9;componentType.oclIsTypeOf(StructuredComponent)&#xA;&#x9;).componentType.oclAsType(StructuredComponent)&#xA;)"/>
+          <details key="derivation" value="self->closure(&#xD;&#xA;&#x9;embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;componentType.oclIsTypeOf(StructuredComponent)&#xD;&#xA;&#x9;).componentType.oclAsType(StructuredComponent)&#xD;&#xA;)"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Transitive closure of all StructuredComponents which are used (specified&#xA;as a componentType for a ComponentPart) in the component hierarchy."/>
@@ -397,7 +397,7 @@
           upperBound="-1" eType="#//component/AtomicComponent" changeable="false"
           volatile="true" transient="true" unsettable="true" derived="true" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.allStructuredComponents->collect(&#xA;&#x9;embeddedParts->select(&#xA;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))&#xA;)->asOrderedSet()"/>
+          <details key="derivation" value="self.allStructuredComponents->collect(&#xD;&#xA;&#x9;embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xD;&#xA;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))&#xD;&#xA;)->asOrderedSet()"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Transitive closure of all AtomicComponents which are used (specified&#xA;as a componentType for a ComponentPart) in the component hierarchy.&#xA;Note: AtomicComponents from directly embeddedParts are NOT included"/>
@@ -418,7 +418,7 @@
         <details key="constraints" value="OnlyDiscretePortParts"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="OnlyDiscretePortParts" value="not self.portParts.oclIsUndefined()&#xD;&#xA;implies&#xD;&#xA;self.portParts->forAll(isTypeOf(DiscretePort))"/>
+        <details key="OnlyDiscretePortParts" value="not self.portParts->oclIsUndefined()&#xD;&#xA;implies&#xD;&#xA;self.portParts->forAll(oclIsTypeOf(DiscretePort))"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
           lowerBound="1" eType="#//protocol/CoordinationProtocol">
@@ -480,7 +480,7 @@
           <details key="documentation" value="The role of a coordination protocol that this partial instance of a port refines."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.portType.refinedRole"/>
+          <details key="derivation" value="if (self.portType.oclIsKindOf(DiscretePort)) then&#xD;&#xA;self.portType.oclAsType(DiscretePort).refinedRole&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -626,10 +626,10 @@
         <details key="documentation" value="A port instance is a port of a component at instance level."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="PortPartOrPortTypeInstance"/>
+        <details key="constraints" value="TypeMustReferencePortType"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="TypeMustReferencePortType" value="-- A port instance type must be a port type&#xD;&#xA;if (not self.type->oclIsUndefined())&#xD;&#xA;then&#xD;&#xA;self.type->isKindOf(PortType)&#xD;&#xA;else&#xD;&#xA;endif"/>
+        <details key="TypeMustReferencePortType" value="-- A port instance type must be a port type&#xD;&#xA;if (not self.type->oclIsUndefined())&#xD;&#xA;then&#xD;&#xA;self.type->oclIsKindOf(Port)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
           eType="#//component/Port" changeable="false" volatile="true" transient="true"
@@ -681,10 +681,10 @@
         <details key="documentation" value="This class represents a delegation connector at instance level."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="OneDelegationInstancePerPortInstance"/>
+        <details key="constraints" value=""/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="OneDelegationInstancePerPortInstance" value="not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1"/>
+        <details key="OneDelegationInstancePerPortInstance" value="-- FIXME&#xD;&#xA;not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="delegationConnectorType"
           lowerBound="1" eType="#//component/DelegationConnector" changeable="false"
@@ -885,7 +885,7 @@
         <details key="constraints" value="OnlyRolesOfSameCoordinationProtocol"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="OnlyRolesOfSameCoordinationProtocol" value="self.coordinationProtocol.roles = self.roles"/>
+        <details key="OnlyRolesOfSameCoordinationProtocol" value="if self.coordinationProtocol.roles->oclIsUndefined() then &#xD;&#xA;true&#xD;&#xA;else&#xD;&#xA;self.coordinationProtocol.roles = self.roles&#xD;&#xA;endif"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
           lowerBound="1" eType="#//protocol/CoordinationProtocol" eOpposite="#//protocol/CoordinationProtocol/roleConnector">
@@ -1310,7 +1310,7 @@
         <details key="documentation" value="A transition connects different vertices. If the vertex is a state a self-transition is also possible."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="LegalTransitionsOnly" value="-- Only specific types of transitions are allowed&#xD;&#xA;&#xD;&#xA;-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.source.oclAsType(State)))&#x9;&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.target.oclAsType(State)))&#x9;&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.target.oclAsType(EntryPoint).state))&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.source.oclAsType(ExitPoint).state))&#xD;&#xA;&#xD;&#xA;or &#xD;&#xA;-- State A to State B within the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(State).parentStatechart)&#xD;&#xA;or&#xD;&#xA;-- State A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to State B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(State).parentStatechart)"/>
+        <details key="LegalTransitionsOnly" value="-- Only specific types of transitions are allowed&#xD;&#xA;&#xD;&#xA;if (self.source.oclIsUndefined() or self.target.oclIsUndefined()) then&#xD;&#xA;true&#xD;&#xA;else&#xD;&#xA;-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.source.oclAsType(State)))&#x9;&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.target.oclAsType(State)))&#x9;&#xD;&#xA;or&#xD;&#xA;-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2&#xD;&#xA;(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.target.oclAsType(EntryPoint).state))&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.source.oclAsType(ExitPoint).state))&#xD;&#xA;&#xD;&#xA;or &#xD;&#xA;-- State A to State B within the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(State).parentStatechart)&#xD;&#xA;or&#xD;&#xA;-- State A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)&#xD;&#xA;or&#xD;&#xA;-- ExitPoint of A to State B, where A and B are in the same statechart&#xD;&#xA;(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(State).parentStatechart)&#xD;&#xA;endif"/>
         <details key="TriggerMessageEventsMustNotHaveAnOwnedParameterBinding" value="not self.triggerMessageEvent.message.oclIsUndefined() implies&#xD;&#xA;self.triggerMessageEvent.message.parameterBinding->isEmpty()"/>
         <details key="ValidTriggerMessageEvents" value="not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)"/>
         <details key="ValidRaiseMessageEvents" value="not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)"/>

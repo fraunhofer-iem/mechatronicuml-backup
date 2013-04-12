@@ -1190,9 +1190,9 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (componentPartEClass, 
 		   source, 
 		   new String[] {
-			 "CardinalityLowerBoundSet", "self.cardinality.lowerBound->notEmpty()",
+			 "CardinalityLowerBoundSet", "if self.cardinality.lowerBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.lowerBound->notEmpty()\r\nendif",
 			 "TypeNotEqualToParent", "self.componentType <> self.parentComponent",
-			 "CardinalityUpperBoundSet", "self.cardinality.upperBound->notEmpty()"
+			 "CardinalityUpperBoundSet", "if self.cardinality.upperBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.upperBound->notEmpty()\r\nendif"
 		   });							
 		addAnnotation
 		  (getComponentPart_MultiPart(), 
@@ -1232,7 +1232,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (getAssemblyConnector_CoordinationProtocolOccurence(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.ports->first().coordinationProtocolOccurence"
+			 "derivation", "self.portParts->first().coordinationProtocolOccurence"
 		   });		
 		addAnnotation
 		  (getAssemblyConnector_PortParts(), 
@@ -1276,30 +1276,30 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   new String[] {
 			 "StructuredComponentAllowsNoHybridPorts", "-- A structured component allows no hybrid ports.\r\nself.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))",
 			 "ValidComponentType", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\nor self.componentType = component::ComponentKind::HYBRID_COMPONENT",
-			 "NoCyclicComponentPartHierarchy", "not self.allStructuredComponents->includes(self)",
-			 "DiscreteStructuredComponentValidParts", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\nimplies\n\t-- collect all atomic components from parent parts and union them\n\t-- with own atomic components\n\tself.allAtomicComponents->union(\n\t\tself.embeddedParts->select(\n\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n\t)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)",
-			 "HybridStructuredComponentValidParts", "self.componentType = component::ComponentKind::HYBRID_COMPONENT\nimplies\n\t-- collect all atomic components from parent parts and union them\n\t-- with own atomic components\n\tself.allAtomicComponents->union(\n\t\tself.embeddedParts->select(\n\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\n\t)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)",
+			 "NoCyclicComponentPartHierarchy", "if self.allStructuredComponents->oclIsUndefined() then\r\nfalse\r\nelse\r\nnot self.allStructuredComponents->includes(self)\r\nendif",
+			 "DiscreteStructuredComponentValidParts", "if (not self.allAtomicComponents->oclIsUndefined()) then\r\nself.componentType = component::ComponentKind::SOFTWARE_COMPONENT\r\nimplies\r\n\t-- collect all atomic components from parent parts and union them\r\n\t-- with own atomic components\r\n\tself.allAtomicComponents->union(\r\n\t\tself.embeddedComponentParts->select(\r\n\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\r\n\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\r\n\t)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)\r\nelse\r\ntrue\r\nendif",
+			 "HybridStructuredComponentValidParts", "if (self.allAtomicComponents->oclIsUndefined()) then \r\ntrue\r\nelse\r\nself.componentType = component::ComponentKind::HYBRID_COMPONENT\r\nimplies\r\n\t-- collect all atomic components from parent parts and union them\r\n\t-- with own atomic components\r\n\tself.allAtomicComponents->union(\r\n\t\tself.embeddedComponentParts->select(\r\n\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\r\n\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\r\n\t)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)\r\nendif",
 			 "DiscreteStructuredComponentValidPorts", "-- A structured software component may only have discrete ports\r\nself.componentType = component::ComponentKind::SOFTWARE_COMPONENT\r\n\timplies (\r\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))\r\n\t)",
-			 "HybridStructuredComponentValidPorts", "self.componentType = component::ComponentKind::HYBRID_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))\n\t)",
-			 "ComponentPartsHaveUniqueName", "self.embeddedParts -> isUnique(name)"
+			 "HybridStructuredComponentValidPorts", "self.componentType = component::ComponentKind::HYBRID_COMPONENT\r\n\timplies (\r\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))\r\n\t)",
+			 "ComponentPartsHaveUniqueName", "self.embeddedComponentParts -> isUnique(name)"
 		   });					
 		addAnnotation
 		  (getStructuredComponent_AllStructuredComponents(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self->closure(\n\tembeddedParts->select(\n\t\tcomponentType.oclIsTypeOf(StructuredComponent)\n\t).componentType.oclAsType(StructuredComponent)\n)"
+			 "derivation", "self->closure(\r\n\tembeddedComponentParts->select(\r\n\t\tcomponentType.oclIsTypeOf(StructuredComponent)\r\n\t).componentType.oclAsType(StructuredComponent)\r\n)"
 		   });			
 		addAnnotation
 		  (getStructuredComponent_AllAtomicComponents(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.allStructuredComponents->collect(\n\tembeddedParts->select(\n\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\n\t)->collect(componentType.oclAsType(component::AtomicComponent))\n)->asOrderedSet()"
+			 "derivation", "self.allStructuredComponents->collect(\r\n\tembeddedComponentParts->select(\r\n\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\r\n\t)->collect(componentType.oclAsType(component::AtomicComponent))\r\n)->asOrderedSet()"
 		   });						
 		addAnnotation
 		  (coordinationProtocolOccurrenceEClass, 
 		   source, 
 		   new String[] {
-			 "OnlyDiscretePortParts", "not self.portParts.oclIsUndefined()\r\nimplies\r\nself.portParts->forAll(isTypeOf(DiscretePort))"
+			 "OnlyDiscretePortParts", "not self.portParts->oclIsUndefined()\r\nimplies\r\nself.portParts->forAll(oclIsTypeOf(DiscretePort))"
 		   });							
 		addAnnotation
 		  (getDirectedTypedPort_OutPort(), 
@@ -1317,7 +1317,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (getPortPart_RefinedRole(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.portType.refinedRole"
+			 "derivation", "if (self.portType.oclIsKindOf(DiscretePort)) then\r\nself.portType.oclAsType(DiscretePort).refinedRole\r\nelse\r\nnull\r\nendif"
 		   });
 	}
 

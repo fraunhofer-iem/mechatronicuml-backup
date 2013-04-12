@@ -800,13 +800,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (portInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "PortPartOrPortTypeInstance"
+			 "constraints", "TypeMustReferencePortType"
 		   });												
 		addAnnotation
 		  (delegationConnectorInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "OneDelegationInstancePerPortInstance"
+			 "constraints", ""
 		   });							
 		addAnnotation
 		  (componentInstanceConfigurationEClass, 
@@ -840,7 +840,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (portInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "TypeMustReferencePortType", "-- A port instance type must be a port type\r\nif (not self.type->oclIsUndefined())\r\nthen\r\nself.type->isKindOf(PortType)\r\nelse\r\nendif"
+			 "TypeMustReferencePortType", "-- A port instance type must be a port type\r\nif (not self.type->oclIsUndefined())\r\nthen\r\nself.type->oclIsKindOf(Port)\r\nelse\r\nfalse\r\nendif"
 		   });			
 		addAnnotation
 		  (getPortInstance_PortType(), 
@@ -870,7 +870,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (delegationConnectorInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "OneDelegationInstancePerPortInstance", "not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1"
+			 "OneDelegationInstancePerPortInstance", "-- FIXME\r\nnot self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1"
 		   });			
 		addAnnotation
 		  (getDelegationConnectorInstance_DelegationConnectorType(), 

@@ -39,7 +39,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponentPart()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CardinalityLowerBoundSet='self.cardinality.lowerBound->notEmpty()' TypeNotEqualToParent='self.componentType <> self.parentComponent' CardinalityUpperBoundSet='self.cardinality.upperBound->notEmpty()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CardinalityLowerBoundSet='if self.cardinality.lowerBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.lowerBound->notEmpty()\r\nendif' TypeNotEqualToParent='self.componentType <> self.parentComponent' CardinalityUpperBoundSet='if self.cardinality.upperBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.upperBound->notEmpty()\r\nendif'"
  * @generated
  */
 public interface ComponentPart extends NamedElement, CommentableElement, DataType {

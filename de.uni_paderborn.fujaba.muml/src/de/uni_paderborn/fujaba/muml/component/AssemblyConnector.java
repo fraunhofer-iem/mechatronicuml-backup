@@ -43,7 +43,7 @@ public interface AssemblyConnector extends PortConnector {
 	 * @return the value of the '<em>Coordination Protocol Occurence</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getAssemblyConnector_CoordinationProtocolOccurence()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.ports->first().coordinationProtocolOccurence'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.portParts->first().coordinationProtocolOccurence'"
 	 * @generated
 	 */
 	CoordinationProtocolOccurrence getCoordinationProtocolOccurence();

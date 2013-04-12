@@ -30,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getCoordinationProtocolOccurrence()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OnlyDiscretePortParts'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyDiscretePortParts='not self.portParts.oclIsUndefined()\r\nimplies\r\nself.portParts->forAll(isTypeOf(DiscretePort))'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyDiscretePortParts='not self.portParts->oclIsUndefined()\r\nimplies\r\nself.portParts->forAll(oclIsTypeOf(DiscretePort))'"
  * @generated
  */
 public interface CoordinationProtocolOccurrence extends CommentableElement {

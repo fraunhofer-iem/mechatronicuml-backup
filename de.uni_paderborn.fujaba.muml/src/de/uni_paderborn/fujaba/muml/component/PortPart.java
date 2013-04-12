@@ -124,7 +124,7 @@ public interface PortPart extends ConnectorEndpoint, DataType {
 	 * @return the value of the '<em>Refined Role</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getPortPart_RefinedRole()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.portType.refinedRole'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.portType.oclIsKindOf(DiscretePort)) then\r\nself.portType.oclAsType(DiscretePort).refinedRole\r\nelse\r\nnull\r\nendif'"
 	 * @generated
 	 */
 	Role getRefinedRole();

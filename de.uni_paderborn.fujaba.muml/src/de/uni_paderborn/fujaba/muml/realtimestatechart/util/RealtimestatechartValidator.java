@@ -599,6 +599,9 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 */
 	protected static final String TRANSITION__LEGAL_TRANSITIONS_ONLY__EEXPRESSION = "-- Only specific types of transitions are allowed\r\n" +
 		"\r\n" +
+		"if (self.source.oclIsUndefined() or self.target.oclIsUndefined()) then\r\n" +
+		"true\r\n" +
+		"else\r\n" +
 		"-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n" +
 		"(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.source.oclAsType(State)))\t\r\n" +
 		"or\r\n" +
@@ -622,7 +625,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)\r\n" +
 		"or\r\n" +
 		"-- ExitPoint of A to State B, where A and B are in the same statechart\r\n" +
-		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(State).parentStatechart)";
+		"(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(State).parentStatechart)\r\n" +
+		"endif";
 
 	/**
 	 * Validates the LegalTransitionsOnly constraint of '<em>Transition</em>'.

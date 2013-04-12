@@ -30,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.connector.Connector;
  *
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRoleConnector()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OnlyRolesOfSameCoordinationProtocol'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyRolesOfSameCoordinationProtocol='self.coordinationProtocol.roles = self.roles'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyRolesOfSameCoordinationProtocol='if self.coordinationProtocol.roles->oclIsUndefined() then \r\ntrue\r\nelse\r\nself.coordinationProtocol.roles = self.roles\r\nendif'"
  * @generated
  */
 public interface RoleConnector extends Connector {

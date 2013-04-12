@@ -580,7 +580,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (roleConnectorEClass, 
 		   source, 
 		   new String[] {
-			 "OnlyRolesOfSameCoordinationProtocol", "self.coordinationProtocol.roles = self.roles"
+			 "OnlyRolesOfSameCoordinationProtocol", "if self.coordinationProtocol.roles->oclIsUndefined() then \r\ntrue\r\nelse\r\nself.coordinationProtocol.roles = self.roles\r\nendif"
 		   });				
 		addAnnotation
 		  (getRoleConnector_Roles(), 

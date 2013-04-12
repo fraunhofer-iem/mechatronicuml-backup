@@ -134,7 +134,11 @@ public class ProtocolValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ROLE_CONNECTOR__ONLY_ROLES_OF_SAME_COORDINATION_PROTOCOL__EEXPRESSION = "self.coordinationProtocol.roles = self.roles";
+	protected static final String ROLE_CONNECTOR__ONLY_ROLES_OF_SAME_COORDINATION_PROTOCOL__EEXPRESSION = "if self.coordinationProtocol.roles->oclIsUndefined() then \r\n" +
+		"true\r\n" +
+		"else\r\n" +
+		"self.coordinationProtocol.roles = self.roles\r\n" +
+		"endif";
 
 	/**
 	 * Validates the OnlyRolesOfSameCoordinationProtocol constraint of '<em>Role Connector</em>'.
