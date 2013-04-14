@@ -111,7 +111,8 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 				// Which creation dialog should be shown?
 				if (RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS
 						.equals(feature)
-						|| BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS.equals(feature)) {
+						|| BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS.equals(feature)
+						|| BehaviorPackage.Literals.VARIABLE__INITIALIZE_EXPRESSION.equals(feature)) {
 					return new ActionCellEditor(parent, feature);
 				} else if (RealtimestatechartPackage.Literals.MESSAGE__PARAMETER_BINDING
 						.equals(feature)) {
@@ -259,9 +260,12 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			} else if (model instanceof Collection) {
 				return model;
 			}
-			List<Object> list = new BasicEList<Object>();
-			list.add(model);
-			return list;
+			if (feature.isMany()) {
+				List<Object> list = new BasicEList<Object>();
+				list.add(model);
+				return list;
+			}
+			return model;
 		}
 
 	}

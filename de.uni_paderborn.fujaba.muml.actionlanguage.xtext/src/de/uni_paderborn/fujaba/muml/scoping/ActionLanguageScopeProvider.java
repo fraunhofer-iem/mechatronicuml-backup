@@ -135,8 +135,10 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 			setScopeForEObject((ParameterBinding) object);
 		} else if (object instanceof Operation) {
 			setScopeForEObject((Operation) object);
+		} else if (object instanceof Variable) {
+			setScopeForEObject((Variable) object);
 		} else if (object instanceof RealtimeStatechart) {
-			setScopeForRTSC((RealtimeStatechart) object);
+			setScopeForRTSC((RealtimeStatechart) object); 
 		} else {
 			throw new IllegalArgumentException("scope requested for unsupported object: " + object);
 		}
@@ -179,6 +181,10 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		for (Parameter parameter : parameterList) {
 			typedNamedElementList.add(parameter);
 		}
+	}
+	
+	public void setScopeForEObject(Variable variable) {
+		setScopeForRTSC(variable.eContainer());
 	}
 	
 	private void setScopeForRTSC(EObject object) {
