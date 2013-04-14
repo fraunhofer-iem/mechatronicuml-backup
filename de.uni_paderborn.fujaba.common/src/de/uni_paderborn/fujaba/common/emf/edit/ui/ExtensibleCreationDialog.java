@@ -226,11 +226,14 @@ public class ExtensibleCreationDialog extends Dialog {
 					descriptor.setPropertyValue(containerObject, newValue);
 
 				} else {
+					// save newValue in a list otherwise it will be lost
+					// after the first setPropertyValue call
+					List<?> valueList = new ArrayList<Object>(
+							(List<?>) newValue);
 					descriptor.setPropertyValue(containerObject,
 							Collections.EMPTY_LIST);
 					
-					descriptor.setPropertyValue(containerObject, new ArrayList<Object>(
-							(List<?>) newValue));
+					descriptor.setPropertyValue(containerObject, valueList);
 				}
 			}
 			// End added
