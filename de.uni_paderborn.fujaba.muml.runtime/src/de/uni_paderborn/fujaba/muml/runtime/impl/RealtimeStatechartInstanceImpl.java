@@ -50,6 +50,16 @@ import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
  */
 public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implements RealtimeStatechartInstance {
 	/**
+	 * The cached value of the '{@link #getRuntimeBehavioralElement() <em>Runtime Behavioral Element</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRuntimeBehavioralElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected RuntimeBehavioralElement runtimeBehavioralElement;
+
+	/**
 	 * The cached value of the '{@link #getInstanceOf() <em>Instance Of</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -124,8 +134,24 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 * @generated
 	 */
 	public RuntimeBehavioralElement getRuntimeBehavioralElement() {
-		if (eContainerFeatureID() != RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT) return null;
-		return (RuntimeBehavioralElement)eContainer();
+		if (runtimeBehavioralElement != null && runtimeBehavioralElement.eIsProxy()) {
+			InternalEObject oldRuntimeBehavioralElement = (InternalEObject)runtimeBehavioralElement;
+			runtimeBehavioralElement = (RuntimeBehavioralElement)eResolveProxy(oldRuntimeBehavioralElement);
+			if (runtimeBehavioralElement != oldRuntimeBehavioralElement) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT, oldRuntimeBehavioralElement, runtimeBehavioralElement));
+			}
+		}
+		return runtimeBehavioralElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeBehavioralElement basicGetRuntimeBehavioralElement() {
+		return runtimeBehavioralElement;
 	}
 
 	/**
@@ -134,7 +160,12 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 * @generated
 	 */
 	public NotificationChain basicSetRuntimeBehavioralElement(RuntimeBehavioralElement newRuntimeBehavioralElement, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newRuntimeBehavioralElement, RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT, msgs);
+		RuntimeBehavioralElement oldRuntimeBehavioralElement = runtimeBehavioralElement;
+		runtimeBehavioralElement = newRuntimeBehavioralElement;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT, oldRuntimeBehavioralElement, newRuntimeBehavioralElement);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
 		return msgs;
 	}
 
@@ -144,12 +175,10 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 * @generated
 	 */
 	public void setRuntimeBehavioralElement(RuntimeBehavioralElement newRuntimeBehavioralElement) {
-		if (newRuntimeBehavioralElement != eInternalContainer() || (eContainerFeatureID() != RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT && newRuntimeBehavioralElement != null)) {
-			if (EcoreUtil.isAncestor(this, newRuntimeBehavioralElement))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+		if (newRuntimeBehavioralElement != runtimeBehavioralElement) {
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
+			if (runtimeBehavioralElement != null)
+				msgs = ((InternalEObject)runtimeBehavioralElement).eInverseRemove(this, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE, RuntimeBehavioralElement.class, msgs);
 			if (newRuntimeBehavioralElement != null)
 				msgs = ((InternalEObject)newRuntimeBehavioralElement).eInverseAdd(this, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE, RuntimeBehavioralElement.class, msgs);
 			msgs = basicSetRuntimeBehavioralElement(newRuntimeBehavioralElement, msgs);
@@ -347,8 +376,8 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
+				if (runtimeBehavioralElement != null)
+					msgs = ((InternalEObject)runtimeBehavioralElement).eInverseRemove(this, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE, RuntimeBehavioralElement.class, msgs);
 				return basicSetRuntimeBehavioralElement((RuntimeBehavioralElement)otherEnd, msgs);
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubRealtimeStatechartInstances()).basicAdd(otherEnd, msgs);
@@ -388,8 +417,6 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT:
-				return eInternalContainer().eInverseRemove(this, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE, RuntimeBehavioralElement.class, msgs);
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE:
 				return eInternalContainer().eInverseRemove(this, RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES, RealtimeStatechartInstance.class, msgs);
 		}
@@ -405,7 +432,8 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT:
-				return getRuntimeBehavioralElement();
+				if (resolve) return getRuntimeBehavioralElement();
+				return basicGetRuntimeBehavioralElement();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
 				if (resolve) return getInstanceOf();
 				return basicGetInstanceOf();
@@ -496,7 +524,7 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT:
-				return getRuntimeBehavioralElement() != null;
+				return runtimeBehavioralElement != null;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
 				return instanceOf != null;
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE:

@@ -35,7 +35,7 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
  */
 public class RuntimeComponentInstanceImpl extends ComponentInstanceImpl implements RuntimeComponentInstance {
 	/**
-	 * The cached value of the '{@link #getStatechartInstance() <em>Statechart Instance</em>}' containment reference.
+	 * The cached value of the '{@link #getStatechartInstance() <em>Statechart Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStatechartInstance()
@@ -77,6 +77,23 @@ public class RuntimeComponentInstanceImpl extends ComponentInstanceImpl implemen
 	 * @generated
 	 */
 	public RealtimeStatechartInstance getStatechartInstance() {
+		if (statechartInstance != null && statechartInstance.eIsProxy()) {
+			InternalEObject oldStatechartInstance = (InternalEObject)statechartInstance;
+			statechartInstance = (RealtimeStatechartInstance)eResolveProxy(oldStatechartInstance);
+			if (statechartInstance != oldStatechartInstance) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.RUNTIME_COMPONENT_INSTANCE__STATECHART_INSTANCE, oldStatechartInstance, statechartInstance));
+			}
+		}
+		return statechartInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RealtimeStatechartInstance basicGetStatechartInstance() {
 		return statechartInstance;
 	}
 
@@ -167,7 +184,7 @@ public class RuntimeComponentInstanceImpl extends ComponentInstanceImpl implemen
 		switch (featureID) {
 			case RuntimePackage.RUNTIME_COMPONENT_INSTANCE__STATECHART_INSTANCE:
 				if (statechartInstance != null)
-					msgs = ((InternalEObject)statechartInstance).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RuntimePackage.RUNTIME_COMPONENT_INSTANCE__STATECHART_INSTANCE, null, msgs);
+					msgs = ((InternalEObject)statechartInstance).eInverseRemove(this, RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT, RealtimeStatechartInstance.class, msgs);
 				return basicSetStatechartInstance((RealtimeStatechartInstance)otherEnd, msgs);
 			case RuntimePackage.RUNTIME_COMPONENT_INSTANCE__MESSAGE_BUFFER:
 				if (messageBuffer != null)
@@ -202,7 +219,8 @@ public class RuntimeComponentInstanceImpl extends ComponentInstanceImpl implemen
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RuntimePackage.RUNTIME_COMPONENT_INSTANCE__STATECHART_INSTANCE:
-				return getStatechartInstance();
+				if (resolve) return getStatechartInstance();
+				return basicGetStatechartInstance();
 			case RuntimePackage.RUNTIME_COMPONENT_INSTANCE__MESSAGE_BUFFER:
 				return getMessageBuffer();
 		}

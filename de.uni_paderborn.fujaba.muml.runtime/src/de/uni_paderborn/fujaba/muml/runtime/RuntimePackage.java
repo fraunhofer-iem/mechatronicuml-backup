@@ -180,7 +180,7 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_COMPONENT_INSTANCE__COMPONENT_PART = InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART;
 
 	/**
-	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.
+	 * The feature id for the '<em><b>Statechart Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -333,7 +333,7 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_PORT_INSTANCE__REFINED_ROLE = InstancePackage.DISCRETE_PORT_INSTANCE__REFINED_ROLE;
 
 	/**
-	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.
+	 * The feature id for the '<em><b>Statechart Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -417,7 +417,7 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_BEHAVIORAL_ELEMENT__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.
+	 * The feature id for the '<em><b>Statechart Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -482,7 +482,7 @@ public interface RuntimePackage extends EPackage {
 	int ROLE_INSTANCE__NAME = RUNTIME_BEHAVIORAL_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.
+	 * The feature id for the '<em><b>Statechart Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -626,7 +626,7 @@ public interface RuntimePackage extends EPackage {
 	int REALTIME_STATECHART_INSTANCE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Runtime Behavioral Element</b></em>' container reference.
+	 * The feature id for the '<em><b>Runtime Behavioral Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -879,7 +879,7 @@ public interface RuntimePackage extends EPackage {
 	int SINGLE_ROLE_INSTANCE__NAME = ROLE_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.
+	 * The feature id for the '<em><b>Statechart Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1005,7 +1005,7 @@ public interface RuntimePackage extends EPackage {
 	int MULTI_ROLE_INSTANCE__NAME = ROLE_INSTANCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Statechart Instance</b></em>' containment reference.
+	 * The feature id for the '<em><b>Statechart Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1530,10 +1530,10 @@ public interface RuntimePackage extends EPackage {
 	EClass getRealtimeStatechartInstance();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Runtime Behavioral Element</em>'.
+	 * @return the meta object for the reference '<em>Runtime Behavioral Element</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getRuntimeBehavioralElement()
 	 * @see #getRealtimeStatechartInstance()
 	 * @generated
@@ -1702,10 +1702,10 @@ public interface RuntimePackage extends EPackage {
 	EClass getRuntimeBehavioralElement();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement#getStatechartInstance <em>Statechart Instance</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement#getStatechartInstance <em>Statechart Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Statechart Instance</em>'.
+	 * @return the meta object for the reference '<em>Statechart Instance</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement#getStatechartInstance()
 	 * @see #getRuntimeBehavioralElement()
 	 * @generated
@@ -1951,7 +1951,7 @@ public interface RuntimePackage extends EPackage {
 		EClass REALTIME_STATECHART_INSTANCE = eINSTANCE.getRealtimeStatechartInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Runtime Behavioral Element</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Runtime Behavioral Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2087,7 +2087,7 @@ public interface RuntimePackage extends EPackage {
 		EClass RUNTIME_BEHAVIORAL_ELEMENT = eINSTANCE.getRuntimeBehavioralElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Statechart Instance</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Statechart Instance</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

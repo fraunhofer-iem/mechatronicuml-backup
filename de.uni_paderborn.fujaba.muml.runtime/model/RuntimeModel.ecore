@@ -69,7 +69,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeBehavioralElement" abstract="true"
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statechartInstance" eType="#//RealtimeStatechartInstance"
-        containment="true" eOpposite="#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
+        eOpposite="#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageBuffer" eType="#//MessageBuffer"
         containment="true" eOpposite="#//MessageBuffer/runtimeBehavioralElement"/>
   </eClassifiers>

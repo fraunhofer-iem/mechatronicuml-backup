@@ -36,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
  */
 public interface RealtimeStatechartInstance extends ExtendableElement {
 	/**
-	 * Returns the value of the '<em><b>Runtime Behavioral Element</b></em>' container reference.
+	 * Returns the value of the '<em><b>Runtime Behavioral Element</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement#getStatechartInstance <em>Statechart Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -44,20 +44,20 @@ public interface RealtimeStatechartInstance extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Runtime Behavioral Element</em>' container reference.
+	 * @return the value of the '<em>Runtime Behavioral Element</em>' reference.
 	 * @see #setRuntimeBehavioralElement(RuntimeBehavioralElement)
 	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRealtimeStatechartInstance_RuntimeBehavioralElement()
 	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement#getStatechartInstance
-	 * @model opposite="statechartInstance" transient="false"
+	 * @model opposite="statechartInstance"
 	 * @generated
 	 */
 	RuntimeBehavioralElement getRuntimeBehavioralElement();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}' container reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Runtime Behavioral Element</em>' container reference.
+	 * @param value the new value of the '<em>Runtime Behavioral Element</em>' reference.
 	 * @see #getRuntimeBehavioralElement()
 	 * @generated
 	 */
