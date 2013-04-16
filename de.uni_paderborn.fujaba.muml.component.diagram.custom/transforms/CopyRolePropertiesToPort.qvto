@@ -19,11 +19,11 @@ main() {
 	var theRootNode : RootNode := input.objects()[RootNode] -> any(true);
 
 	-- copy the role properties
-	map copyRolePropertiesToPort(thePort, theRootNode);
+	copyRolePropertiesToPort(thePort, theRootNode);
 }
 
 -- copies all relevant role properties to the port
-mapping copyRolePropertiesToPort(inout thePort : DiscretePort, inout theRootNode : RootNode){
+helper copyRolePropertiesToPort(inout thePort : DiscretePort, inout theRootNode : RootNode){
 	
 	-- get role
 	var theRole := thePort.refinedRole;
@@ -47,12 +47,12 @@ mapping copyRolePropertiesToPort(inout thePort : DiscretePort, inout theRootNode
 	thePort.senderMessageTypes := senderMsgTypes;
 	
 	-- copy behavior specification
-	map copyBehavior(theRole, thePort, theRootNode);
+	copyBehavior(theRole, thePort, theRootNode);
 }
 
 
 -- copies the behavior of the role into the port if the port belongs to an atomic component
-mapping copyBehavior(in theRole : Role, inout thePort : DiscretePort, inout theRootNode : RootNode){
+helper copyBehavior(in theRole : Role, inout thePort : DiscretePort, inout theRootNode : RootNode){
 
 	if(thePort.component.oclIsKindOf(AtomicComponent)) then {
 		-- copy real-time statechart
@@ -61,7 +61,7 @@ mapping copyBehavior(in theRole : Role, inout thePort : DiscretePort, inout theR
 			thePort.behavior := (theRole.behavior.deepclone()).oclAsType(RealtimeStatechart);
 			
 			-- contain in resource
-			map storeRealtimeStatechart(thePort.behavior.oclAsType(RealtimeStatechart), theRootNode, thePort.component.oclAsType(AtomicComponent));
+			storeRealtimeStatechart(thePort.behavior.oclAsType(RealtimeStatechart), theRootNode, thePort.component.oclAsType(AtomicComponent));
 			
 			-- adjust name
 			thePort.behavior.oclAsType(RealtimeStatechart).name := thePort.behavior.oclAsType(RealtimeStatechart).name + '_' + thePort.name;
@@ -70,7 +70,7 @@ mapping copyBehavior(in theRole : Role, inout thePort : DiscretePort, inout theR
 			thePort.roleAndAdaptationBehavior := (theRole.roleAndAdaptationBehavior.deepclone()).oclAsType(RealtimeStatechart);
 			
 			-- contain copied RTSC in resource
-			map storeRealtimeStatechart(thePort.roleAndAdaptationBehavior.oclAsType(RealtimeStatechart), theRootNode, thePort.component.oclAsType(AtomicComponent));
+			storeRealtimeStatechart(thePort.roleAndAdaptationBehavior.oclAsType(RealtimeStatechart), theRootNode, thePort.component.oclAsType(AtomicComponent));
 			
 			-- set behavior and adaptationBehavior references
 			thePort.behavior := getMultiPortBehaviorRTSC(theRole, thePort);
@@ -83,7 +83,7 @@ mapping copyBehavior(in theRole : Role, inout thePort : DiscretePort, inout theR
 }
 
 -- this mapping ensures that the port RTSC will be contained in the resource at the right place
-mapping storeRealtimeStatechart(inout rtsc : RealtimeStatechart, inout theRootNode : RootNode, inout component : AtomicComponent){
+helper storeRealtimeStatechart(inout rtsc : RealtimeStatechart, inout theRootNode : RootNode, inout component : AtomicComponent){
 	-- contain in resource: either hook into component RTSC or put into the RTSC category
 	if(component.behavior.oclIsUndefined()) then{
 		var category : ModelElementCategory := getRTSCCategory(theRootNode);
@@ -142,6 +142,7 @@ query getRTSCCategory(in theRootNode : RootNode) : ModelElementCategory {
 	return theRootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
 }
 
+-- constructor for creating new regions
 constructor Region::Region() {
 	
 }
