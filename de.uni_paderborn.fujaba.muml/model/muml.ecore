@@ -627,10 +627,10 @@
         <details key="documentation" value="A port instance is a port of a component at instance level."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="TypeMustReferencePortType"/>
+        <details key="constraints" value="PortInstanceMustReferencePortType"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="TypeMustReferencePortType" value="-- A port instance type must be a port type&#xD;&#xA;if (not self.type->oclIsUndefined())&#xD;&#xA;then&#xD;&#xA;self.type->oclIsKindOf(Port)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"/>
+        <details key="PortInstanceMustReferencePortType" value="-- The type of a port instance must be a port type&#xD;&#xA;if (not self.type->oclIsUndefined()) then&#xD;&#xA;self.type.oclIsKindOf(component::Port)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
           eType="#//component/Port" changeable="false" volatile="true" transient="true"
