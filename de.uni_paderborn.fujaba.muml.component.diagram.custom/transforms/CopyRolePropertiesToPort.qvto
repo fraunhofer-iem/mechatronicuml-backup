@@ -52,7 +52,7 @@ helper copyRolePropertiesToPort(inout thePort : DiscretePort, inout theRootNode 
 
 
 -- copies the behavior of the role into the port if the port belongs to an atomic component
-helper copyBehavior(in theRole : Role, inout thePort : DiscretePort, inout theRootNode : RootNode){
+helper copyBehavior(inout theRole : Role, inout thePort : DiscretePort, inout theRootNode : RootNode){
 
 	if(thePort.component.oclIsKindOf(AtomicComponent)) then {
 		-- copy real-time statechart
