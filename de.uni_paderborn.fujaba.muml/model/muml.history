@@ -21693,5 +21693,9 @@
         featureName="transient" dataValue="false" oldDataValue="true"/>
     <changes xsi:type="history:Set" element="muml.ecore#//behavior/Variable/initializeExpression"
         featureName="containment" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/AssemblyConnectorInstance/assemblyConnectorType"
+        featureName="lowerBound" dataValue="0" oldDataValue="1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortConnectorInstance/portConnectorType"
+        featureName="lowerBound" dataValue="0" oldDataValue="1"/>
   </releases>
 </history:History>

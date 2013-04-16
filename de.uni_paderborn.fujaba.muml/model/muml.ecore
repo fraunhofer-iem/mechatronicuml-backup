@@ -605,9 +605,8 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class is the common super class of delegation instances and assemly instances."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="portConnectorType" lowerBound="1"
-          eType="#//component/PortConnector" changeable="false" volatile="true" transient="true"
-          derived="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portConnectorType" eType="#//component/PortConnector"
+          changeable="false" volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The connector type of this connector instance."/>
         </eAnnotations>
@@ -668,8 +667,8 @@
         <details key="documentation" value="This class represents an assembly connector at instance level.&#xD;&#xA;&#xD;&#xA;\todosd{Why does the AssemblyInstance has a lower and upper bound for the propagation delay and the Assembly not?}"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyConnectorType"
-          lowerBound="1" eType="#//component/AssemblyConnector" changeable="false"
-          volatile="true" transient="true" derived="true">
+          eType="#//component/AssemblyConnector" changeable="false" volatile="true"
+          transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The assembly that this assembly instance is built from."/>
         </eAnnotations>
