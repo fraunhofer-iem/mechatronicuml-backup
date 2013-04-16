@@ -15,8 +15,8 @@ transformation CopyRolePropertiesToPort(inout input : ModelInstancePackage);
 main() {
 
 	-- parse input parameters
-	var thePort : DiscretePort := input.objects()[DiscretePort] -> any(true);
-	var theRootNode : RootNode := input.objects()[RootNode] -> any(true);
+	var thePort : DiscretePort := input.rootObjects()[DiscretePort] -> any(true);
+	var theRootNode : RootNode := input.rootObjects()[RootNode] -> any(true);
 
 	-- copy the role properties
 	copyRolePropertiesToPort(thePort, theRootNode);
