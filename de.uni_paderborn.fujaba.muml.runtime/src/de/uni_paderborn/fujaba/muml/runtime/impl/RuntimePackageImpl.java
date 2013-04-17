@@ -841,7 +841,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		  (getRealtimeStatechartInstance_AllAvailableVariableBindings(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self -> closure(if parentRealtimeStatechartInstance.oclIsUndefined() then self else parentRealtimeStatechartInstance endif).variables->asOrderedSet()"
+			 "derivation", "self -> closure(if parentRealtimeStatechartInstance.oclIsUndefined() then self else parentRealtimeStatechartInstance endif).variableBindings->asOrderedSet()"
 		   });
 	}
 

@@ -46,7 +46,7 @@
         upperBound="-1" eType="#//VariableBinding" changeable="false" volatile="true"
         transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="self -> closure(if parentRealtimeStatechartInstance.oclIsUndefined() then self else parentRealtimeStatechartInstance endif).variables->asOrderedSet()"/>
+        <details key="derivation" value="self -> closure(if parentRealtimeStatechartInstance.oclIsUndefined() then self else parentRealtimeStatechartInstance endif).variableBindings->asOrderedSet()"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
