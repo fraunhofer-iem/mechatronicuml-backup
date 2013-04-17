@@ -57,7 +57,7 @@ helper copyBehavior(inout theRole : Role, inout thePort : DiscretePort, inout th
 
 	if(thePort.component.oclIsKindOf(AtomicComponent)) then {
 		-- copy real-time statechart
-		if(thePort.cardinality.upperBound.value = 1) then{
+		if(thePort.cardinality.upperBound.value <= 1) then{
 			-- single port, RTSC is referenced by behavior reference
 			thePort.behavior := (theRole.behavior.deepclone()).oclAsType(RealtimeStatechart);
 			
