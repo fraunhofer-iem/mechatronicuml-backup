@@ -217,6 +217,21 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 				 getString("_UI_SynchronizationPropertyCategory"),
 				 null,
 				 rootPropertyDescriptor));
+		
+		itemPropertyDescriptors.add
+			(new DefaultChainedPropertyDescriptor
+			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_Synchronization_selectorExpression_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_Synchronization_selectorExpression_feature", "_UI_Synchronization_type"),
+			 RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
+			 false,
+			 false,
+			 false,
+			 null,
+			 getString("_UI_SynchronizationPropertyCategory"),
+			 null,
+			 rootPropertyDescriptor));
 
 	}
 
