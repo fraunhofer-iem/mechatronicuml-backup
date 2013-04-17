@@ -30,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
+import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.protocol.MessageBuffer} object.
@@ -100,11 +101,11 @@ public class MessageBufferItemProvider
 	 * This adds a property descriptor for the Buffer Size feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addBufferSizePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new NaturalNumberPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_MessageBuffer_bufferSize_feature"),
