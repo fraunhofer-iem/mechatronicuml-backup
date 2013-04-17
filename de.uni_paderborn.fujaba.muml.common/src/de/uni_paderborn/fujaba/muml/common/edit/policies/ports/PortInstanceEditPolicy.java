@@ -29,8 +29,8 @@ public class PortInstanceEditPolicy extends PortTypeEditPolicy {
 	}
 
 	@Override
-	protected void setCardinality(Cardinality cardinality) {
-		super.setCardinality(cardinality);
+	protected void applyCardinality(Cardinality cardinality) {
+		super.applyCardinality(cardinality);
 		getPortFigure().setMulti(false);
 	}
 

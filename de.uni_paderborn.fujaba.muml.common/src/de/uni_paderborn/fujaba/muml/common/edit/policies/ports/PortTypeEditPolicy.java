@@ -1,7 +1,9 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.swt.graphics.Color;
 
@@ -10,19 +12,28 @@ import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortKind;
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortType;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.component.DirectedTypedPort;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.component.PortDirectionKind;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 public class PortTypeEditPolicy extends PortBaseEditPolicy {
 
 	@Override
 	public void handleNotificationEvent(Notification notification) {
-		if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY) {
+		EStructuralFeature feature = null;
+		EClass containingClass = null;
+		if (notification.getFeature() instanceof EStructuralFeature) {
+			feature = (EStructuralFeature) notification.getFeature();
+		}
+		if (feature != null) {
+			containingClass = feature.getEContainingClass();
+		}
+		
+		if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY || containingClass == ValuetypePackage.Literals.CARDINALITY) {
 			refreshCardinality();
 			// } else if (notification.getFeature() == C){
 		} else if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES
@@ -73,18 +84,26 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 
 		getPortFigure().setPortKindAndPortType(portKind, portType);
 	}
-
-	@Override
-	protected void refreshCardinality() {
+	
+	protected Cardinality getCardinality() {
 		Port port = getPort();
 		if (port != null
 				&& ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT
 						.isSuperTypeOf(port.eClass())) {
 			Cardinality cardinality = (Cardinality) port
 					.eGet(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY);
-			setCardinality(cardinality);
+			return cardinality;
+		}
+		return null;
+	}
+
+	@Override
+	protected void refreshCardinality() {
+		Cardinality cardinality = getCardinality();
+		if (cardinality != null) {
+			applyCardinality(cardinality);
 		} else {
-			// setCardinality also does this, so do it here
+			// applyCardinality also does this, so do it here
 			Color color = getForegroundColor();
 			getPortFigure().configureArrows(color, color);
 			getPortFigure().setLineStyle(EditPolicyUtils.getLineType(getPrimaryView()));

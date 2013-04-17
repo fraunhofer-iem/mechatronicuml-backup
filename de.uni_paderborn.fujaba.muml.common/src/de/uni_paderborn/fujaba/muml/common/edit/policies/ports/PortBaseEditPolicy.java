@@ -120,7 +120,7 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 	 * Convenience method to use a range as cardinality; can be used by
 	 * subclasses
 	 */
-	protected void setCardinality(Cardinality cardinality) {
+	protected void applyCardinality(Cardinality cardinality) {
 		if (cardinality == null) {
 			return;
 		}
