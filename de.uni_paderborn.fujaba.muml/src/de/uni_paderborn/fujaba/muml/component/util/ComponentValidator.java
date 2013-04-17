@@ -303,7 +303,7 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_BEHAVIOR__EEXPRESSION = "-- this also holds for a hybrid port, ports of structured components do not require a behavior\r\n" +
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_BEHAVIOR__EEXPRESSION = "-- A discrete port of an atomic component must have a Behavior Specification\r\n" +
 		"(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))\r\n" +
 		"\timplies not self.behavior.oclIsUndefined()";
 

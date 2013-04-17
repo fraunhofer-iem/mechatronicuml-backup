@@ -21707,5 +21707,8 @@
     <changes xsi:type="history:Set" element="muml.ecore#//component/CoordinationProtocolOccurrence/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="not self.portParts->oclIsUndefined()&#xD;&#xA;implies&#xD;&#xA;self.portParts->forAll(p : PortPart | p.portType.oclIsKindOf(DiscretePort))"
         oldDataValue="not self.portParts->oclIsUndefined()&#xD;&#xA;implies&#xD;&#xA;self.portParts->forAll(oclIsTypeOf(DiscretePort))"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- A discrete port of an atomic component must have a Behavior Specification&#xD;&#xA;(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))&#xD;&#xA;&#x9;implies not self.behavior.oclIsUndefined()"
+        oldDataValue="-- this also holds for a hybrid port, ports of structured components do not require a behavior&#xD;&#xA;(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))&#xD;&#xA;&#x9;implies not self.behavior.oclIsUndefined()"/>
   </releases>
 </history:History>

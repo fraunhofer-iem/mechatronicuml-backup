@@ -66,7 +66,7 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="DiscretePortRequiresMessageTypes" value="self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
-        <details key="DiscretePortRequiresBehavior" value="-- this also holds for a hybrid port, ports of structured components do not require a behavior&#xD;&#xA;(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))&#xD;&#xA;&#x9;implies not self.behavior.oclIsUndefined()"/>
+        <details key="DiscretePortRequiresBehavior" value="-- A discrete port of an atomic component must have a Behavior Specification&#xD;&#xA;(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))&#xD;&#xA;&#x9;implies not self.behavior.oclIsUndefined()"/>
         <details key="DiscretePortAtStructuredComponentHasNoBehavior" value="(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))&#xA;&#x9;implies self.behavior.oclIsUndefined()"/>
         <details key="DiscretePortRequiresRole" value="self.oclIsTypeOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()"/>
         <details key="DiscretePortAndRoleSameMessageTypes" value="not self.refinedRole.oclIsUndefined() implies&#xD;&#xA;&#x9;(self.senderMessageTypes = self.refinedRole.senderMessageTypes&#xD;&#xA;&#x9; and&#xD;&#xA;&#x9; self.receiverMessageTypes = self.refinedRole.receiverMessageTypes&#xD;&#xA;&#x9;)"/>
