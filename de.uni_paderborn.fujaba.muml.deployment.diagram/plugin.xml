@@ -97,7 +97,7 @@
             name="deployment">
          
          <child
-               class="HardwareNode"
+               class="Deployment"
                packageNsUri="http://www.fujaba.de/muml/deployment/0.3.11">
          </child>
          

@@ -96,10 +96,12 @@
             key="de.uni_paderborn.fujaba.muml.protocol.category"
             name="protocol">
          
+         
          <child
                class="CoordinationProtocol"
                packageNsUri="http://www.fujaba.de/muml/protocol/0.3.18">
          </child>
+         
          
       </category>
    </extension>

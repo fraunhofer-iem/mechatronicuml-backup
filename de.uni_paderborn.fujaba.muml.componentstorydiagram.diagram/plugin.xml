@@ -67,7 +67,7 @@
 	            commandId="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.createDiagram"
 	            icon="icons/obj16/ComponentStoryDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.createDiagram"
-	            label="Initialize Component Story Diagram"
+	            label="Create Component Story Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
@@ -97,8 +97,8 @@
             name="activities">
          
          <child
-               class="Activity"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.1">
+               class="ComponentStoryRule"
+               packageNsUri="http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.1">
          </child>
          
       </category>

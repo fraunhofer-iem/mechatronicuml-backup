@@ -96,10 +96,12 @@
             key="de.uni_paderborn.fujaba.muml.messagetype.category"
             name="msgtype">
          
+         
          <child
                class="MessageTypeRepository"
                packageNsUri="http://www.fujaba.de/muml/msgtype/0.3.6">
          </child>
+         
          
       </category>
    </extension>

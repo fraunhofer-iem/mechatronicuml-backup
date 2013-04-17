@@ -97,32 +97,7 @@
             name="instance">
          
          <child
-               class="HybridPortInstance"
-               packageNsUri="http://www.fujaba.de/muml/instance/0.3.18">
-         </child>
-         
-         <child
-               class="DiscreteSinglePortInstance"
-               packageNsUri="http://www.fujaba.de/muml/instance/0.3.18">
-         </child>
-         
-         <child
-               class="DiscreteMultiPortInstance"
-               packageNsUri="http://www.fujaba.de/muml/instance/0.3.18">
-         </child>
-         
-         <child
-               class="ContinuousPortInstance"
-               packageNsUri="http://www.fujaba.de/muml/instance/0.3.18">
-         </child>
-         
-         <child
-               class="AtomicComponentInstance"
-               packageNsUri="http://www.fujaba.de/muml/instance/0.3.18">
-         </child>
-         
-         <child
-               class="StructuredComponentInstance"
+               class="ComponentInstanceConfiguration"
                packageNsUri="http://www.fujaba.de/muml/instance/0.3.18">
          </child>
          

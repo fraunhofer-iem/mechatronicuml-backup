@@ -94,12 +94,19 @@
       <category
             key="«modelElementCategoryKey(diagram)»"
             name="«diagram.topLevelNodes->first().getDomainMetaClass().genPackage.ecorePackage.name»">
+         «IF diagram.domainDiagramElement.ecoreClass.name = 'ModelElementCategory'»
          «FOREACH diagram.topLevelNodes.getDomainMetaClass() AS node»
          <child
                class="«node.ecoreClass.name»"
                packageNsUri="«node.genPackage.ecorePackage.nsURI»">
          </child>
          «ENDFOREACH»
+         «ELSE»
+         <child
+               class="«diagram.domainDiagramElement.ecoreClass.name»"
+               packageNsUri="«diagram.domainDiagramElement.genPackage.ecorePackage.nsURI»">
+         </child>
+         «ENDIF»
       </category>
    </extension>
 «ENDDEFINE»
