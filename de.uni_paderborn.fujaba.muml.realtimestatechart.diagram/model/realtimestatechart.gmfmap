@@ -185,7 +185,7 @@
                 <diagramLabel
                     href="realtimestatechart.gmfgraph#StateItemLabel"/>
                 <viewExpression
-                    body="(&#xA;if self.state.channels->first() = self then&#xA;&#x9;'ch: '&#xA;else&#xA;&#x9;''&#xA;endif&#xA;).concat(&#xA;&#xA;-- BEGIN: The actual name of the Clock&#xA;&#xA;if self.name.oclIsUndefined() then 'null' else self.name endif).concat(&#xA;&#x9;'('.concat(&#xA;&#x9;&#x9;self.parameters->iterate(param; result : String = '' | &#xA;&#x9;&#x9;&#x9;(if result = '' then '' else result.concat(', ') endif).concat(&#xA;&#x9;&#x9;&#x9;&#x9;param.name.concat(' : ').concat(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if param.type.oclIsUndefined() then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;'null'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;param.type.name&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;)&#xA;&#x9;).concat(')')&#xA;&#xA;-- END: The actual name of the Clock&#xA;&#xA;).concat(&#xA;if self.state.channels->last() = self then&#xA;&#x9;';'&#xA;else&#xA;&#x9;','&#xA;endif&#xA;)"/>
+                    body="(&#xA;if self.state.channels->first() = self then&#xA;&#x9;'ch: '&#xA;else&#xA;&#x9;''&#xA;endif&#xA;&#xA;).concat(&#xA;&#x9;if self.name.oclIsUndefined() then 'null' else self.name endif&#xA;).concat('(').concat(&#xA;&#x9;if self.selectorType.name.oclIsUndefined() then '' else self.selectorType.name endif&#xA;).concat(')').concat(&#xA;if self.state.channels->last() = self then&#xA;&#x9;';'&#xA;else&#xA;&#x9;','&#xA;endif&#xA;)"/>
               </labelMappings>
               <diagramNode
                   href="realtimestatechart.gmfgraph#StateItem"/>
