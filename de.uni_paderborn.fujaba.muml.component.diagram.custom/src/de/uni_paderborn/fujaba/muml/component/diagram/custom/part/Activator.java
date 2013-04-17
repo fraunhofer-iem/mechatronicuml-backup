@@ -24,6 +24,14 @@ public class Activator extends AbstractUIPlugin {
 	}
 
 	public TransformationExecutor getTransformationExecutor() {
+		return getTransformationExecutor(false);
+	}
+
+	
+	public TransformationExecutor getTransformationExecutor(boolean reload) {
+		if (reload) {
+			transformationExecutor = null;
+		}
 		if (transformationExecutor == null) {
 			URI transformationURI = URI
 					.createPlatformPluginURI(

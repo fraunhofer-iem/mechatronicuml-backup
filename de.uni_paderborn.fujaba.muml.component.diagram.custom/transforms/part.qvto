@@ -8,7 +8,23 @@ modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 main() {
 	input.rootObjects()[ComponentPart]->forEach(part) {
+		// IMPORTANT: Before replacing existing portParts, make sure that those portParts
+		// that will be removed after the replacement are also removed from the resource.
+		// See MUML #564
+		part.portParts->forEach(p) {
+			// also remove from coordination protocol occurrence
+			part.parentComponent.coordinationProtocolOccurences->forEach(c) {
+				c.portParts := c.portParts->excluding(p); 
+			};
+			input.removeElement(p); // remove from resource
+		};
+		
+		// Remove stale coordinationProtocolOccurrences
+		part.parentComponent.coordinationProtocolOccurences := part.parentComponent.coordinationProtocolOccurences->reject(portParts->isEmpty());
+		
+		// Replace existing portParts with newly created portParts
 		part.portParts := part.componentType.createPortParts();
+		--part.portParts := Set { };	
 		
 		// Create CoordinationProtocolParts (was occurrence) and associate PortParts
 		part.portParts->forEach(p) {

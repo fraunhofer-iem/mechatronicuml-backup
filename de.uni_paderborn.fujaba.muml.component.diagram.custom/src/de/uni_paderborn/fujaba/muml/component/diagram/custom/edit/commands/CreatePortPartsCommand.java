@@ -29,7 +29,7 @@ public class CreatePortPartsCommand extends ChangeCommand {
 
 		// Load QVTO script
 		TransformationExecutor transformationExecutor = Activator.getInstance()
-				.getTransformationExecutor();
+				.getTransformationExecutor(false);
 
 		// Create execution context
 		ExecutionContextImpl context = new ExecutionContextImpl();
