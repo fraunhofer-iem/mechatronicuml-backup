@@ -21,6 +21,7 @@ import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.TransitionLabelExpressionLabelParser6005;
 
@@ -40,8 +41,28 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		printString = printString.replaceAll(
 				"\\{raiseMessageEventParameterBinding\\}",
 				getMessageParameterBindingExpression(transition, message));
+		
+		Synchronization synchronization = transition.getSynchronization();
+		Expression expression = null;
+		if (synchronization != null) {
+			expression = synchronization.getSelectorExpression();
+		}
+		
+		printString = printString.replaceAll(
+				"\\{synchronizationExpression\\}",
+				getSynchronizationExpression(synchronization, expression));
 
 		return printString;
+	}
+
+	private String getSynchronizationExpression(Synchronization context, Expression expression) {
+		if (context != null && expression != null) {
+			String serialization = LanguageResource.serializeEObject(expression, context);
+			if (serialization != null) {
+				return serialization;
+			}
+		}
+		return "";
 	}
 
 	private String getGuardExpression(Transition transition) {
