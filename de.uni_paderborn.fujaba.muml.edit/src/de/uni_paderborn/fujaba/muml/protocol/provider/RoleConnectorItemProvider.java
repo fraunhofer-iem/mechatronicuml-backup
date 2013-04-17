@@ -23,7 +23,6 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
@@ -32,6 +31,8 @@ import de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProvider;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
@@ -102,11 +103,10 @@ public class RoleConnectorItemProvider
 	 * This adds a property descriptor for the Connector Quality Of Service Assumptions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addConnectorQualityOfServiceAssumptionsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+		IChainedPropertyDescriptor rootDescriptor = new DefaultChainedPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_RoleConnector_connectorQualityOfServiceAssumptions_feature"),
@@ -117,7 +117,116 @@ public class RoleConnectorItemProvider
 				 false,
 				 null,
 				 null,
-				 null));
+				 null);
+		
+		IChainedPropertyDescriptor minMessageDelay =
+			(new DefaultChainedPropertyDescriptor
+			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_ConnectorQualityOfServiceAssumptions_minMessageDelay_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorQualityOfServiceAssumptions_minMessageDelay_feature", "_UI_ConnectorQualityOfServiceAssumptions_type"),
+			 ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MIN_MESSAGE_DELAY,
+			 false,
+			 false,
+			 false,
+			 null,
+			 "QoS Assumptions - Minimum Message Delay",
+			 null,
+			 rootDescriptor));
+		
+		itemPropertyDescriptors.add
+			(new NaturalNumberPropertyDescriptor
+			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_TimeValue_value_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
+			 ValuetypePackage.Literals.TIME_VALUE__VALUE,
+			 false,
+			 false,
+			 false,
+			 null,
+			 "QoS Assumptions - Minimum Message Delay",
+			 null,
+			 minMessageDelay));
+
+		itemPropertyDescriptors.add
+		(new EnumerationPropertyDescriptor
+			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_TimeValue_unit_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
+			 ValuetypePackage.Literals.TIME_VALUE__UNIT,
+			 true,
+			 false,
+			 false,
+			 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+			 "QoS Assumptions - Minimum Message Delay",
+			 null,
+			 minMessageDelay));
+
+
+		IChainedPropertyDescriptor maxMessageDelay =
+		new DefaultChainedPropertyDescriptor
+			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_ConnectorQualityOfServiceAssumptions_maxMessageDelay_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorQualityOfServiceAssumptions_maxMessageDelay_feature", "_UI_ConnectorQualityOfServiceAssumptions_type"),
+			 ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MAX_MESSAGE_DELAY,
+			 false,
+			 false,
+			 false,
+			 null,
+			 "QoS Assumptions - Maximum Message Delay",
+			 null,
+			 rootDescriptor);
+		
+		itemPropertyDescriptors.add
+		(new NaturalNumberPropertyDescriptor
+		(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+		 getResourceLocator(),
+		 getString("_UI_TimeValue_value_feature"),
+		 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
+		 ValuetypePackage.Literals.TIME_VALUE__VALUE,
+		 false,
+		 false,
+		 false,
+		 null,
+		 "QoS Assumptions - Maximum Message Delay",
+		 null,
+		 maxMessageDelay));
+
+	itemPropertyDescriptors.add
+	(new EnumerationPropertyDescriptor
+		(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+		 getResourceLocator(),
+		 getString("_UI_TimeValue_unit_feature"),
+		 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
+		 ValuetypePackage.Literals.TIME_VALUE__UNIT,
+		 true,
+		 false,
+		 false,
+		 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+		 "QoS Assumptions - Maximum Message Delay",
+		 null,
+		 maxMessageDelay));
+
+		itemPropertyDescriptors.add
+		(new DefaultChainedPropertyDescriptor
+			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_ConnectorQualityOfServiceAssumptions_messageLossPossible_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_ConnectorQualityOfServiceAssumptions_messageLossPossible_feature", "_UI_ConnectorQualityOfServiceAssumptions_type"),
+			 ProtocolPackage.Literals.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS__MESSAGE_LOSS_POSSIBLE,
+			 true,
+			 false,
+			 false,
+			 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+			 "QoS Assumptions",
+			 null,
+			 rootDescriptor));
+		
+		
+		
 	}
 
 	/**
