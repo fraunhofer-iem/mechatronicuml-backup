@@ -67,7 +67,7 @@
 	            commandId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.createDiagram"
 	            icon="icons/obj16/InstanceDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.createDiagram"
-	            label="Initialize Componentinstanceconfiguration Diagram"
+	            label="Create Component Instance Configuration Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>

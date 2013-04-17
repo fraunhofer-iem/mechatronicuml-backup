@@ -67,7 +67,7 @@
 	            commandId="de.uni_paderborn.fujaba.muml.messagetype.diagram.createDiagram"
 	            icon="icons/obj16/MessageinterfaceDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.createDiagram"
-	            label="Initialize Messagetype Diagram"
+	            label="Create Message Type Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>

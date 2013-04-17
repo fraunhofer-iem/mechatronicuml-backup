@@ -67,7 +67,7 @@
 	            commandId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.createDiagram"
 	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.createDiagram"
-	            label="Initialize CoordinationProtocol Diagram"
+	            label="Create Coordination Protocol Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>

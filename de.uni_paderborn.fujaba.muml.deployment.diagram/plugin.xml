@@ -67,7 +67,7 @@
 	            commandId="de.uni_paderborn.fujaba.muml.deployment.diagram.createDiagram"
 	            icon="icons/obj16/DeploymentDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.deployment.diagram.createDiagram"
-	            label="Initialize Deployment Diagram"
+	            label="Create Deployment Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>

@@ -67,7 +67,7 @@
 	            commandId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.createDiagram"
 	            icon="icons/obj16/RealtimestatechartDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.createDiagram"
-	            label="Initialize Realtimestatechart Diagram"
+	            label="Create Real-Time Statechart Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
