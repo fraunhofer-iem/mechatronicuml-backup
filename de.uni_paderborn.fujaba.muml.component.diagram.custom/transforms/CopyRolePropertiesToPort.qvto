@@ -28,9 +28,10 @@ helper copyRolePropertiesToPort(inout thePort : DiscretePort, inout theRootNode 
 	-- get role
 	var theRole := thePort.refinedRole;
 	
-	-- cardinality
-	thePort.cardinality.lowerBound.value := theRole.cardinality.lowerBound.value;
-	thePort.cardinality.upperBound.value := theRole.cardinality.upperBound.value;
+	-- cardinality (creating a new one, to force notification in the diagram)
+	thePort.cardinality := new Cardinality(theRole.cardinality.lowerBound, theRole.cardinality.upperBound);
+	--thePort.cardinality.lowerBound.value := theRole.cardinality.lowerBound.value;
+	--thePort.cardinality.upperBound.value := theRole.cardinality.upperBound.value;
 	
 	-- receiver message types
 	var recvMsgTypes : OrderedSet(MessageType);
@@ -145,4 +146,9 @@ query getRTSCCategory(in theRootNode : RootNode) : ModelElementCategory {
 -- constructor for creating new regions
 constructor Region::Region() {
 	
+}
+
+constructor Cardinality::Cardinality(in lower : NaturalNumber, in upper : NaturalNumber) {
+	lowerBound := lower;
+	upperBound := upper;
 }
