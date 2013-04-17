@@ -171,8 +171,6 @@ public class ComponentStoryDiagramDiagramEditorPlugin extends AbstractUIPlugin {
 				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.provider.ReconfigurationItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.expression.provider.ExpressionItemProviderAdapterFactory());
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.provider.StructdatatypeItemProviderAdapterFactory());
 		factories.add(new StorydiagramsItemProviderAdapterFactory());
 		factories.add(new ActivitiesItemProviderAdapterFactory());
 		factories.add(new ActivitiesExpressionsItemProviderAdapterFactory());
