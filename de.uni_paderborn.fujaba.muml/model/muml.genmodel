@@ -555,7 +555,7 @@
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//behavior/Behavior/variables"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//behavior/Variable">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//behavior/Variable/initializeExpression"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//behavior/Operation">
