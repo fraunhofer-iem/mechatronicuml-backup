@@ -1109,7 +1109,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (structuredComponentEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "StructuredComponentAllowsNoHybridPorts ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"
+			 "constraints", "StructuredComponentAllowsNoHybridPorts ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"
 		   });												
 		addAnnotation
 		  (coordinationProtocolOccurrenceEClass, 
@@ -1278,7 +1278,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "ValidComponentType", "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\nor self.componentType = component::ComponentKind::HYBRID_COMPONENT",
 			 "NoCyclicComponentPartHierarchy", "if self.allStructuredComponents->oclIsUndefined() then\r\nfalse\r\nelse\r\nnot self.allStructuredComponents->includes(self)\r\nendif",
 			 "DiscreteStructuredComponentValidParts", "if (not self.allAtomicComponents->oclIsUndefined()) then\r\nself.componentType = component::ComponentKind::SOFTWARE_COMPONENT\r\nimplies\r\n\t-- collect all atomic components from parent parts and union them\r\n\t-- with own atomic components\r\n\tself.allAtomicComponents->union(\r\n\t\tself.embeddedComponentParts->select(\r\n\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\r\n\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\r\n\t)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)\r\nelse\r\ntrue\r\nendif",
-			 "HybridStructuredComponentValidParts", "if (self.allAtomicComponents->oclIsUndefined()) then \r\ntrue\r\nelse\r\nself.componentType = component::ComponentKind::HYBRID_COMPONENT\r\nimplies\r\n\t-- collect all atomic components from parent parts and union them\r\n\t-- with own atomic components\r\n\tself.allAtomicComponents->union(\r\n\t\tself.embeddedComponentParts->select(\r\n\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\r\n\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\r\n\t)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)\r\nendif",
 			 "DiscreteStructuredComponentValidPorts", "-- A structured software component may only have discrete ports\r\nself.componentType = component::ComponentKind::SOFTWARE_COMPONENT\r\n\timplies (\r\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))\r\n\t)",
 			 "HybridStructuredComponentValidPorts", "self.componentType = component::ComponentKind::HYBRID_COMPONENT\r\n\timplies (\r\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))\r\n\t)",
 			 "ComponentPartsHaveUniqueName", "self.embeddedComponentParts -> isUnique(name)"

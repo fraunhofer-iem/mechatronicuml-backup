@@ -4792,31 +4792,31 @@
             featureName="value" dataValue="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;implies&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xA;&#x9;-- with own atomic components&#xA;&#x9;self.allAtomicComponents->union(&#xA;&#x9;&#x9;self.embeddedParts->select(&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xA;&#x9;)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="#//@releases.16/@changes.153/@element">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.153/@element"
+            featureName="key" dataValue="HybridStructuredComponentValidParts"/>
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.153/@element"
+            featureName="value" dataValue="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xA;implies&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xA;&#x9;-- with own atomic components&#xA;&#x9;self.allAtomicComponents->union(&#xA;&#x9;&#x9;self.embeddedParts->select(&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xA;&#x9;)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)"/>
+      </changes>
+      <changes xsi:type="history:Create" target="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4">
         <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
-            featureName="key" dataValue="HybridStructuredComponentValidParts"/>
+            featureName="key" dataValue="DiscreteStructuredComponentValidPorts"/>
         <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
-            featureName="value" dataValue="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xA;implies&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xA;&#x9;-- with own atomic components&#xA;&#x9;self.allAtomicComponents->union(&#xA;&#x9;&#x9;self.embeddedParts->select(&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xA;&#x9;)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)"/>
+            featureName="value" dataValue="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))&#xA;&#x9;)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5">
         <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
-            featureName="key" dataValue="DiscreteStructuredComponentValidPorts"/>
+            featureName="key" dataValue="HybridStructuredComponentValidPorts"/>
         <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
-            featureName="value" dataValue="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))&#xA;&#x9;)"/>
+            featureName="value" dataValue="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))&#xA;&#x9;)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           referenceName="details" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6">
         <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
-            featureName="key" dataValue="HybridStructuredComponentValidPorts"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
-            featureName="value" dataValue="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))&#xA;&#x9;)"/>
-      </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
             featureName="key" dataValue="ComponentPartsHaveUniqueName"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
             featureName="value" dataValue="self.embeddedParts -> isUnique(name)"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//component/StructuredComponent"
@@ -20070,10 +20070,10 @@
         featureName="eType" oldReferenceValue="muml.ecore#//valuetype/NaturalNumber"/>
     <changes xsi:type="history:Set" element="muml.ecore#//valuetype/TimeValue/value"
         featureName="eType" referenceValue="muml.ecore#//valuetype/NaturalNumber"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+    <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
         featureName="value" dataValue="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))&#xD;&#xA;&#x9;)"
         oldDataValue="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))&#xA;&#x9;)"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+    <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
         featureName="value" dataValue="-- A structured software component may only have discrete ports&#xD;&#xA;self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))&#xD;&#xA;&#x9;)"
         oldDataValue="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))&#xD;&#xA;&#x9;)"/>
     <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
@@ -21622,10 +21622,10 @@
     <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
         featureName="value" dataValue="if self.allStructuredComponents.oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;not self.allStructuredComponents->includes(self)&#xD;&#xA;endif"
         oldDataValue="not self.allStructuredComponents->includes(self)"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+    <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
         featureName="value" dataValue="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))&#xD;&#xA;&#x9;)"
         oldDataValue="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))&#xA;&#x9;)"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+    <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
         featureName="value" dataValue="self.embeddedComponentParts -> isUnique(name)"
         oldDataValue="self.embeddedParts -> isUnique(name)"/>
     <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
@@ -21637,7 +21637,7 @@
     <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
         featureName="value" dataValue="if (not self.allAtomicComponents->oclIsUndefined()) then&#xD;&#xA;self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xD;&#xA;implies&#xD;&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xD;&#xA;&#x9;-- with own atomic components&#xD;&#xA;&#x9;self.allAtomicComponents->union(&#xD;&#xA;&#x9;&#x9;self.embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xD;&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xD;&#xA;&#x9;)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"
         oldDataValue="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xD;&#xA;implies&#xD;&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xD;&#xA;&#x9;-- with own atomic components&#xD;&#xA;&#x9;self.allAtomicComponents->union(&#xD;&#xA;&#x9;&#x9;self.embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xD;&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xD;&#xA;&#x9;)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.153/@element"
         featureName="value" dataValue="if (self.allAtomicComponents->oclIsUndefined()) then &#xD;&#xA;true&#xD;&#xA;else&#xD;&#xA;self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xD;&#xA;implies&#xD;&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xD;&#xA;&#x9;-- with own atomic components&#xD;&#xA;&#x9;self.allAtomicComponents->union(&#xD;&#xA;&#x9;&#x9;self.embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xD;&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xD;&#xA;&#x9;)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)&#xD;&#xA;endif"
         oldDataValue="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xA;implies&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xA;&#x9;-- with own atomic components&#xA;&#x9;self.allAtomicComponents->union(&#xA;&#x9;&#x9;self.embeddedParts->select(&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xA;&#x9;)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)"/>
     <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
@@ -21710,5 +21710,13 @@
     <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
         featureName="value" dataValue="-- A discrete port of an atomic component must have a Behavior Specification&#xD;&#xA;(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))&#xD;&#xA;&#x9;implies not self.behavior.oclIsUndefined()"
         oldDataValue="-- this also holds for a hybrid port, ports of structured components do not require a behavior&#xD;&#xA;(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))&#xD;&#xA;&#x9;implies not self.behavior.oclIsUndefined()"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="HybridStructuredComponentValidParts"
+          value="if (self.allAtomicComponents->oclIsUndefined()) then &#xD;&#xA;true&#xD;&#xA;else&#xD;&#xA;self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xD;&#xA;implies&#xD;&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xD;&#xA;&#x9;-- with own atomic components&#xD;&#xA;&#x9;self.allAtomicComponents->union(&#xD;&#xA;&#x9;&#x9;self.embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xD;&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xD;&#xA;&#x9;)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)&#xD;&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="StructuredComponentAllowsNoHybridPorts ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"
+        oldDataValue="StructuredComponentAllowsNoHybridPorts ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"/>
   </releases>
 </history:History>

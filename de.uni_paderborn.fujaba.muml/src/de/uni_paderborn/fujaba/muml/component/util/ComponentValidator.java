@@ -556,7 +556,6 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateStructuredComponent_ValidComponentType(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_NoCyclicComponentPartHierarchy(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_DiscreteStructuredComponentValidParts(staticStructuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStructuredComponent_HybridStructuredComponentValidParts(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_DiscreteStructuredComponentValidPorts(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_HybridStructuredComponentValidPorts(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_ComponentPartsHaveUniqueName(staticStructuredComponent, diagnostics, context);
@@ -583,7 +582,6 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateStructuredComponent_ValidComponentType(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_NoCyclicComponentPartHierarchy(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_DiscreteStructuredComponentValidParts(structuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStructuredComponent_HybridStructuredComponentValidParts(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_DiscreteStructuredComponentValidPorts(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_HybridStructuredComponentValidPorts(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_ComponentPartsHaveUniqueName(structuredComponent, diagnostics, context);
@@ -719,47 +717,6 @@ public class ComponentValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "DiscreteStructuredComponentValidParts",
 				 STRUCTURED_COMPONENT__DISCRETE_STRUCTURED_COMPONENT_VALID_PARTS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the HybridStructuredComponentValidParts constraint of '<em>Structured Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String STRUCTURED_COMPONENT__HYBRID_STRUCTURED_COMPONENT_VALID_PARTS__EEXPRESSION = "if (self.allAtomicComponents->oclIsUndefined()) then \r\n" +
-		"true\r\n" +
-		"else\r\n" +
-		"self.componentType = component::ComponentKind::HYBRID_COMPONENT\r\n" +
-		"implies\r\n" +
-		"\t-- collect all atomic components from parent parts and union them\r\n" +
-		"\t-- with own atomic components\r\n" +
-		"\tself.allAtomicComponents->union(\r\n" +
-		"\t\tself.embeddedComponentParts->select(\r\n" +
-		"\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\r\n" +
-		"\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\r\n" +
-		"\t)->exists(componentType = component::ComponentKind::CONTINUOUS_COMPONENT)\r\n" +
-		"endif";
-
-	/**
-	 * Validates the HybridStructuredComponentValidParts constraint of '<em>Structured Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateStructuredComponent_HybridStructuredComponentValidParts(StructuredComponent structuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.STRUCTURED_COMPONENT,
-				 structuredComponent,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "HybridStructuredComponentValidParts",
-				 STRUCTURED_COMPONENT__HYBRID_STRUCTURED_COMPONENT_VALID_PARTS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
