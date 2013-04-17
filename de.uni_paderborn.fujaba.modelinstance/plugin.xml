@@ -10,10 +10,6 @@
 <plugin>
 <extension-point id="modelelementcategory" name="modelelementcategory" schema="schema/modelelementcategory.exsd"/>
 <extension-point id="version" name="version" schema="schema/version.exsd"/>
-<extension point="org.eclipse.emf.ecore.extension_parser">
-   <parser class="de.uni_paderborn.fujaba.modelinstance.util.ModelinstanceResourceFactoryImpl" type="fujaba">
-   </parser>
-</extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
