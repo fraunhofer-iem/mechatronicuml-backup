@@ -64,7 +64,7 @@
 	            commandId="«plugin.iD».createDiagram"
 	            icon="«diagram.creationWizardIconPathX»"
 	            id="«plugin.iD».createDiagram"
-	            label="Initialize «modelID» Diagram"
+	            label="Create «modelID» Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
