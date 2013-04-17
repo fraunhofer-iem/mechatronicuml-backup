@@ -22,7 +22,7 @@ public class ComponentInstanceConfigurationDiagramEditPart extends
 	/**
 	 * @generated
 	 */
-	public final static String MODEL_ID = "Componentinstanceconfiguration"; //$NON-NLS-1$
+	public final static String MODEL_ID = "Component Instance Configuration"; //$NON-NLS-1$
 
 	/**
 	 * @generated

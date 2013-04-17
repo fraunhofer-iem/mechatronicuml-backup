@@ -21,7 +21,7 @@ public class ModelElementCategoryEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public final static String MODEL_ID = "CoordinationProtocol"; //$NON-NLS-1$
+	public final static String MODEL_ID = "Coordination Protocol"; //$NON-NLS-1$
 
 	/**
 	 * @generated
