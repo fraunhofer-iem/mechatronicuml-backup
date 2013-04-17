@@ -34,66 +34,6 @@ import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 public class ParameterBindingPropertySourceProvider implements
 		IPropertySourceProvider {
 	
-	static class ParameterBindingCellEditor extends TextCellEditor {
-		
-		/**
-		 * Convenience class to transform expression <-> String.
-		 * Inspired by EDataTypeValueHandler.
-		 *
-		 */
-		static class ValueWrapper implements ICellEditorValidator {
-			
-			private EObject container;
-			
-			public ValueWrapper(EObject object) {
-				container = object;
-			}
-
-			@Override
-			public String isValid(Object value) {
-				ILoadResult loadResult = loadFromString((String) value);
-				if (loadResult != null && loadResult.hasError()) {
-					return loadResult.getError();
-				}
-				return null;
-			}
-			
-			private ILoadResult loadFromString(String text) {
-				if (text == null) {
-					return null;
-				}
-				//ILoadResult loadResult = LanguageResource.loadFromString(text, getAttributeList(container));
-				ILoadResult loadResult = LanguageResource.loadFromString(text, container);
-				return loadResult;
-			}
-			
-			public EObject toValue(String text) {
-				ILoadResult loadResult = loadFromString(text);
-				return loadResult == null ? null : loadResult.getEObject();
-			}
-
-		}
-
-		private ValueWrapper valueWrapper;
-		
-		public ParameterBindingCellEditor(Composite parent, EObject object) {
-			super(parent);
-			valueWrapper = new ValueWrapper(object);
-			setValidator(valueWrapper);
-		}
-
-	    @Override
-	    public Object doGetValue()
-	    {
-	    	return valueWrapper.toValue((String) super.doGetValue());
-	    }
-
-	    @Override
-	    public void doSetValue(Object value) {
-	    	super.doSetValue(value == null ? "" : value);
-	    }
-	}
-
 	public static interface IParameterBindingElement {
 		Collection<Parameter> getParameters(EObject object);
 		EStructuralFeature getParameterBindingFeature();
@@ -131,7 +71,7 @@ public class ParameterBindingPropertySourceProvider implements
 						@Override
 						public CellEditor createPropertyEditor(
 								Composite composite) {
-							return new ParameterBindingCellEditor(composite, (EObject) object);
+							return new ActionLanguageCellEditor(composite, (EObject) object);
 						}
 
 					};

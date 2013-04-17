@@ -113,7 +113,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 						.equals(feature)
 						|| BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS.equals(feature)
 						|| BehaviorPackage.Literals.VARIABLE__INITIALIZE_EXPRESSION.equals(feature)) {
-					return new ActionCellEditor(parent, feature);
+					return new ActionCreationCellEditor(parent, feature);
 				} else if (RealtimestatechartPackage.Literals.MESSAGE__PARAMETER_BINDING
 						.equals(feature)) {
 					return new ParameterBindingCreationCellEditor(parent,
@@ -205,12 +205,12 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 
 	}
 
-	public class ActionCellEditor extends CreationCellEditor {
+	public class ActionCreationCellEditor extends CreationCellEditor {
 		private Collection<?> oldValues;
 		private SimpleTextualDialogExtension textDialog;
 		private UseParserDialogExtension useParserDialogExtension;
 
-		public ActionCellEditor(Composite composite, EStructuralFeature feature) {
+		public ActionCreationCellEditor(Composite composite, EStructuralFeature feature) {
 			super(composite, feature);
 		}
 
