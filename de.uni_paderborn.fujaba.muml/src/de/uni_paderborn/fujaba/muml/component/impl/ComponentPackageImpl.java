@@ -1299,7 +1299,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (coordinationProtocolOccurrenceEClass, 
 		   source, 
 		   new String[] {
-			 "OnlyDiscretePortParts", "not self.portParts->oclIsUndefined()\r\nimplies\r\nself.portParts->forAll(oclIsTypeOf(DiscretePort))"
+			 "OnlyDiscretePortParts", "not self.portParts->oclIsUndefined()\r\nimplies\r\nself.portParts->forAll(p : PortPart | p.portType.oclIsKindOf(DiscretePort))"
 		   });							
 		addAnnotation
 		  (getDirectedTypedPort_OutPort(), 

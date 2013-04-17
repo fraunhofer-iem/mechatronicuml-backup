@@ -1116,7 +1116,7 @@ public class ComponentValidator extends MumlValidator {
 	 */
 	protected static final String COORDINATION_PROTOCOL_OCCURRENCE__ONLY_DISCRETE_PORT_PARTS__EEXPRESSION = "not self.portParts->oclIsUndefined()\r\n" +
 		"implies\r\n" +
-		"self.portParts->forAll(oclIsTypeOf(DiscretePort))";
+		"self.portParts->forAll(p : PortPart | p.portType.oclIsKindOf(DiscretePort))";
 
 	/**
 	 * Validates the OnlyDiscretePortParts constraint of '<em>Coordination Protocol Occurrence</em>'.
