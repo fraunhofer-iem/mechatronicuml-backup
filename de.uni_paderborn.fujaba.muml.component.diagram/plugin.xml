@@ -456,7 +456,7 @@
 	            commandId="de.uni_paderborn.fujaba.muml.component.diagram.createDiagram"
 	            icon="icons/obj16/ModelinstanceDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.component.diagram.createDiagram"
-	            label="Initialize Component Diagram"
+	            label="Create Component Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
@@ -483,6 +483,7 @@
             key="de.uni_paderborn.fujaba.muml.components.category"
             name="component">
          
+         
          <child
                class="AtomicComponent"
                packageNsUri="http://www.fujaba.de/muml/component/0.3.18">
@@ -492,6 +493,7 @@
                class="StaticStructuredComponent"
                packageNsUri="http://www.fujaba.de/muml/component/0.3.18">
          </child>
+         
          
       </category>
    </extension>

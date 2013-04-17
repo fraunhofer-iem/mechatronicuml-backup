@@ -22,7 +22,7 @@ public class ModelElementCategoryEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public final static String MODEL_ID = "Realtimestatechart"; //$NON-NLS-1$
+	public final static String MODEL_ID = "Real-Time Statechart"; //$NON-NLS-1$
 
 	/**
 	 * @generated

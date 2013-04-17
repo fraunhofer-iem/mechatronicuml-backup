@@ -113,10 +113,10 @@
       <editor
             preferencesHint="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram"
             editorId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID"
-            editorName="CoordinationProtocol Editor"
+            editorName="Coordination Protocol Editor"
             fileExtension="coordinationprotocol_diagram"
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.protocol.category"
-            modelId="CoordinationProtocol">
+            modelId="Coordination Protocol">
          <diagramElement
                packageNsURI="http://www.fujaba.de/modelinstance/0.3.15"
                className="ModelElementCategory">
@@ -135,7 +135,7 @@
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="CoordinationProtocolPresentation">
+         id="Coordination ProtocolPresentation">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -152,7 +152,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="CoordinationProtocolPresentationIDE">
+         id="Coordination ProtocolPresentationIDE">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -162,7 +162,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="CoordinationProtocolRender">
+            id="Coordination ProtocolRender">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.CoordinationProtocolDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -247,7 +247,7 @@
       <?gmfgen generated="true"?>
       <viewProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="CoordinationProtocol"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Coordination Protocol"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,3005,3006"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4007,4006"/>
       </viewProvider>
@@ -258,7 +258,7 @@
       <editpartProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="CoordinationProtocol"/>
+            <method name="getType()" value="Coordination Protocol"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
             <method name="getType()" value="2005,3005,3006"/>
