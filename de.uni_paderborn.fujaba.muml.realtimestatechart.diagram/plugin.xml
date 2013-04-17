@@ -67,7 +67,7 @@
 	            commandId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.createDiagram"
 	            icon="icons/obj16/RealtimestatechartDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.createDiagram"
-	            label="Initialize Real-Time Statechart Diagram"
+	            label="Initialize Realtimestatechart Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
@@ -111,10 +111,10 @@
       <editor
             preferencesHint="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"
             editorId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorID"
-            editorName="Real-Time Statechart Editor"
+            editorName="Realtimestatechart Editor"
             fileExtension="realtimestatechart_diagram"
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.realtimestatechart.category"
-            modelId="Real-Time Statechart">
+            modelId="Realtimestatechart">
          <diagramElement
                packageNsURI="http://www.fujaba.de/muml/realtimestatechart/0.3.18"
                className="RealtimeStatechart">
@@ -133,7 +133,7 @@
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="Real-Time StatechartPresentation">
+         id="RealtimestatechartPresentation">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -150,7 +150,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="Real-Time StatechartPresentationIDE">
+         id="RealtimestatechartPresentationIDE">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -160,7 +160,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="Real-Time StatechartRender">
+            id="RealtimestatechartRender">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.RealtimestatechartDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -244,7 +244,7 @@
       <?gmfgen generated="true"?>
       <viewProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Real-Time Statechart"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Realtimestatechart"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2007,3032,3033,3034,3035,3036,3037,3042,3043,3040,3041"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4003"/>
       </viewProvider>
@@ -255,7 +255,7 @@
       <editpartProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="Real-Time Statechart"/>
+            <method name="getType()" value="Realtimestatechart"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
             <method name="getType()" value="2007,3032,3033,3034,3035,3036,3037,3042,3043,3040,3041"/>

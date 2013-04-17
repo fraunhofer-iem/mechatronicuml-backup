@@ -67,7 +67,7 @@
 	            commandId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.createDiagram"
 	            icon="icons/obj16/InstanceDiagramFile.gif"
 	            id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.createDiagram"
-	            label="Initialize Component Instance Configuration Diagram"
+	            label="Initialize Componentinstanceconfiguration Diagram"
 	            style="push">
 	            	<visibleWhen checkEnabled="false">
 						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
@@ -136,10 +136,10 @@
       <editor
             preferencesHint="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram"
             editorId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorID"
-            editorName="Component Instance Configuration Editor"
+            editorName="Componentinstanceconfiguration Editor"
             fileExtension="componentinstanceconfiguration_diagram"
             modelElementCategoryKey="de.uni_paderborn.fujaba.muml.instance.category"
-            modelId="Component Instance Configuration">
+            modelId="Componentinstanceconfiguration">
          <diagramElement
                packageNsURI="http://www.fujaba.de/muml/instance/0.3.18"
                className="ComponentInstanceConfiguration">
@@ -183,7 +183,7 @@
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="Component Instance ConfigurationPresentation">
+         id="ComponentinstanceconfigurationPresentation">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -200,7 +200,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="Component Instance ConfigurationPresentationIDE">
+         id="ComponentinstanceconfigurationPresentationIDE">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -210,7 +210,7 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="Component Instance ConfigurationRender">
+            id="ComponentinstanceconfigurationRender">
          <Priority name="Lowest"/>
          <ViewId id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
@@ -294,7 +294,7 @@
       <?gmfgen generated="true"?>
       <viewProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlViewProvider">
          <Priority name="Lowest"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Component Instance Configuration"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Componentinstanceconfiguration"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2021,2022,2023,2024,2016,2015,3026,3031,3032,3033,3034,3023,3024,3025"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
       </viewProvider>
@@ -305,7 +305,7 @@
       <editpartProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.MumlEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="Component Instance Configuration"/>
+            <method name="getType()" value="Componentinstanceconfiguration"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
             <method name="getType()" value="2021,2022,2023,2024,2016,2015,3026,3031,3032,3033,3034,3023,3024,3025"/>

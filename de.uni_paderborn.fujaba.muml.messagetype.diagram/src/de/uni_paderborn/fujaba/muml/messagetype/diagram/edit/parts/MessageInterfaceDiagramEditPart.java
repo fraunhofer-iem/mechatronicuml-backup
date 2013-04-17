@@ -21,7 +21,7 @@ public class MessageInterfaceDiagramEditPart extends DiagramEditPart {
 	/**
 	 * @generated
 	 */
-	public final static String MODEL_ID = "Message Type"; //$NON-NLS-1$
+	public final static String MODEL_ID = "Messagetype"; //$NON-NLS-1$
 
 	/**
 	 * @generated
