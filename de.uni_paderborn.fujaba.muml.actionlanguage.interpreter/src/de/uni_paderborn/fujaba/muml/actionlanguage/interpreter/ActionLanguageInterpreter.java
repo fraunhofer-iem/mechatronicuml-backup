@@ -429,6 +429,7 @@ public class ActionLanguageInterpreter {
 
 		}
 
+		// nothing to return
 		return null;
 	}
 
@@ -496,8 +497,7 @@ public class ActionLanguageInterpreter {
 		}
 
 		if (variableBinding == null) {
-			// TODO add text
-			throw new IllegalArgumentException(variable.toString() + " ");
+			throw new IllegalArgumentException(variable.toString() + " is null");
 		}
 		if (variableBinding != null) {
 			// get new value
@@ -582,24 +582,42 @@ public class ActionLanguageInterpreter {
 			UnsupportedModellingElementException,
 			VariableNotInitializedException {
 
-		// check if all parameters are bound
+		HashMap<TypedNamedElement, Object> deletedParameters = new HashMap<TypedNamedElement, Object>();
+		HashSet<TypedNamedElement> usedParameters = new HashSet<TypedNamedElement>();
 
+		// check if all parameters are bound
 		if (operationCall.getParameterBinding().size() != operationCall
 				.getOperation().getParameters().size())
 			throw new IncompatibleTypeException(
 					"Wrong number of parameters in " + operationCall.toString());
 
-		// check data types of parameters
-
 		for (ParameterBinding parBinding : operationCall.getParameterBinding()) {
-
+			// check data types of parameter values
 			Object value = castTo(
 					parBinding.getParameter().getDataType(),
 					evaluate(variableBindings, parAndLocVarBinding,
 							parBinding.getValue()));
+			// add parameter binding
 			parAndLocVarBinding.put(parBinding.getParameter(), value);
+			usedParameters.add(parBinding.getParameter());
 
 		}
+
+		// delete parameter bindings that are not referring to parameters of
+		// this operation call
+		for (TypedNamedElement curTne : parAndLocVarBinding.keySet()) {
+			if (curTne instanceof Parameter
+					&& !(operationCall.getOperation().getParameters()
+							.contains(curTne))) {
+				deletedParameters.put(curTne, parAndLocVarBinding.get(curTne));
+			}
+		}
+		for (TypedNamedElement curTne : deletedParameters.keySet())
+			parAndLocVarBinding.remove(curTne);
+
+		if (operationCall.getOperation() == null)
+			throw new IllegalArgumentException("Operation not set for "
+					+ operationCall.toString());
 
 		if (operationCall.getOperation().getReturnType() == null)
 			throw new IllegalArgumentException("Return type not set for "
@@ -613,9 +631,22 @@ public class ActionLanguageInterpreter {
 			// evaluate
 			for (Expression curImplementation : operationCall.getOperation()
 					.getImplementations()) {
+				// there is exactly one implementation that is not instance of
+				// TextualExpression
 				if (!(curImplementation instanceof TextualExpression)) {
 					Object o = evaluate(variableBindings, parAndLocVarBinding,
 							curImplementation);
+
+					// add deleted parameter bindings again to make them
+					// accessible in parent operation
+					parAndLocVarBinding.putAll(deletedParameters);
+
+					// delete parameter bindings that are referring to
+					// parameters of this operation call
+
+					for (TypedNamedElement curTne : usedParameters)
+						parAndLocVarBinding.remove(curTne);
+
 					return castTo(operationCall.getOperation().getReturnType(),
 							o);
 				}
@@ -629,9 +660,21 @@ public class ActionLanguageInterpreter {
 		else {
 			for (Expression curImplementation : operationCall.getOperation()
 					.getImplementations()) {
+				// there is exactly one implementation that is not instance of
+				// TextualExpression
 				if (!(curImplementation instanceof TextualExpression)) {
 					evaluate(variableBindings, parAndLocVarBinding,
 							curImplementation);
+
+					// add deleted parameter bindings again to make them
+					// accessible in parent operation
+					parAndLocVarBinding.putAll(deletedParameters);
+
+					// delete parameter bindings that are referring to
+					// parameters of this operation call
+					for (TypedNamedElement curTne : usedParameters)
+						parAndLocVarBinding.remove(curTne);
+
 					return null;
 				}
 			}
