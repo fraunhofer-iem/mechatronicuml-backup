@@ -10,4 +10,5 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.3.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.actionlanguage.interpreter
+Export-Package: de.uni_paderborn.fujaba.muml.actionlanguage.interpreter,
+ de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions
