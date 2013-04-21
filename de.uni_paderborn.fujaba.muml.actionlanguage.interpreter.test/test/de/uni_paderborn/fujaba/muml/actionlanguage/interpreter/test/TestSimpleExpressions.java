@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.test;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.HashSet;
 
-import org.storydriven.core.expressions.ExpressionsFactory;
+import org.junit.Before;
+import org.junit.Test;
 import org.storydriven.core.expressions.common.ArithmeticExpression;
 import org.storydriven.core.expressions.common.ArithmeticOperator;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
@@ -12,19 +15,17 @@ import org.storydriven.core.expressions.common.LiteralExpression;
 import org.storydriven.core.expressions.common.LogicOperator;
 import org.storydriven.core.expressions.common.LogicalExpression;
 
-import static org.junit.Assert.assertTrue;
-import org.junit.Before;
-import org.junit.Test;
-
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
+import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.ActionLanguageInterpreter;
+import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions.IncompatibleTypeException;
+import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions.UnsupportedModellingElementException;
+import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions.VariableNotInitializedException;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
-import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
 import de.uni_paderborn.fujaba.muml.types.DataType;
@@ -37,8 +38,8 @@ public class TestSimpleExpressions {
 	private ActionlanguageFactory alFactory;
 	private CommonExpressionsFactory expFactory;
 	private RuntimeFactory runtimeFactory;
-	// private RealtimestatechartFactory rtscFactory;
 	private BehaviorFactory behaviourFactory;
+	private TypesFactory typeFactory;
 
 	private Variable intA, intB, boolA, boolB;
 	private VariableBinding varBindingIntA, varBindingIntB, varBindingBoolA,
@@ -46,16 +47,14 @@ public class TestSimpleExpressions {
 	private HashSet<VariableBinding> varBindings;
 	private Block block, block2;
 	private Assignment assignment;
-	private TestableActionLanguageInterpreter actionLanguageInterpreter;
-	private TypesFactory typeFactory;
+	private ActionLanguageInterpreter actionLanguageInterpreter;
 
 	@Before
 	public void setUp() {
 		// set up factories
 		alFactory = ActionlanguageFactory.eINSTANCE;
-		actionLanguageInterpreter = new TestableActionLanguageInterpreter();
+		actionLanguageInterpreter = new ActionLanguageInterpreter();
 		runtimeFactory = RuntimeFactory.eINSTANCE;
-		// rtscFactory = RealtimestatechartFactory.eINSTANCE;
 		behaviourFactory = BehaviorFactory.eINSTANCE;
 		expFactory = CommonExpressionsFactory.eINSTANCE;
 		typeFactory = TypesFactory.eINSTANCE;
@@ -116,7 +115,7 @@ public class TestSimpleExpressions {
 	}
 
 	@Test
-	public void testAssignment() {
+	public void testAssignment() throws UnsupportedModellingElementException, VariableNotInitializedException, IncompatibleTypeException {
 
 		TypedNamedElementExpression tneExp = alFactory
 				.createTypedNamedElementExpression();
@@ -140,7 +139,7 @@ public class TestSimpleExpressions {
 	}
 
 	@Test
-	public void testComparisonExpression() {
+	public void testComparisonExpression() throws UnsupportedModellingElementException, VariableNotInitializedException, IncompatibleTypeException {
 		TypedNamedElementExpression tneExp1 = alFactory
 				.createTypedNamedElementExpression();
 		tneExp1.setTypedNamedElement(intA);
@@ -182,7 +181,7 @@ public class TestSimpleExpressions {
 	}
 
 	@Test
-	public void testArithmeticExpression() {
+	public void testArithmeticExpression() throws UnsupportedModellingElementException, VariableNotInitializedException, IncompatibleTypeException {
 		varBindingIntA.setValue(22);
 		TypedNamedElementExpression tneExp1 = alFactory
 				.createTypedNamedElementExpression();
@@ -216,7 +215,7 @@ public class TestSimpleExpressions {
 	}
 
 	@Test
-	public void testLogicalExpression() {
+	public void testLogicalExpression() throws UnsupportedModellingElementException, VariableNotInitializedException, IncompatibleTypeException {
 
 		TypedNamedElementExpression boolExp1 = alFactory
 				.createTypedNamedElementExpression();
@@ -257,7 +256,7 @@ public class TestSimpleExpressions {
 	}
 
 	@Test
-	public void testIfStatement() {
+	public void testIfStatement() throws UnsupportedModellingElementException, VariableNotInitializedException, IncompatibleTypeException {
 		IfStatement ifStatement = alFactory.createIfStatement();
 		ifStatement.setIfBlock(block);
 
