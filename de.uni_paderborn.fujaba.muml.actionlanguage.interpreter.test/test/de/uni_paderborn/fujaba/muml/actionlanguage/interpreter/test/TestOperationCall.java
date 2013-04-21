@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.test;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 import java.util.HashSet;
 
@@ -39,9 +40,9 @@ public class TestOperationCall {
 	private TypesFactory typeFactory;
 
 	private Block block;
-	private Operation op;
-	private OperationCall opCall;
-	private Parameter parameter;
+	private Operation op, op1, op2;
+	private OperationCall opCall, opCall1, opCall2;
+	private Parameter parameter, parameterA, parameterB;
 
 	private ActionLanguageInterpreter actionLanguageInterpreter;
 	private Variable intA, intB;
@@ -95,13 +96,28 @@ public class TestOperationCall {
 
 		// set up operation
 		op = behaviourFactory.createOperation();
+		op1 = behaviourFactory.createOperation();
+		op2 = behaviourFactory.createOperation();
 
 		// set up operation call
 		opCall = alFactory.createOperationCall();
 		opCall.setOperation(op);
+		opCall1 = alFactory.createOperationCall();
+		opCall1.setOperation(op1);
+		opCall2 = alFactory.createOperationCall();
+		opCall2.setOperation(op2);
 
 	}
 
+	/**
+	 * op();
+	 * 
+	 * op(){ intA=2; }
+	 * 
+	 * @throws UnsupportedModellingElementException
+	 * @throws VariableNotInitializedException
+	 * @throws IncompatibleTypeException
+	 */
 	@Test
 	public void testNoParameters() throws UnsupportedModellingElementException,
 			VariableNotInitializedException, IncompatibleTypeException {
@@ -129,9 +145,19 @@ public class TestOperationCall {
 
 	}
 
+	/**
+	 * op(intB);
+	 * 
+	 * op(int parameter){ intA=parameter; }
+	 * 
+	 * @throws UnsupportedModellingElementException
+	 * @throws VariableNotInitializedException
+	 * @throws IncompatibleTypeException
+	 */
 	@Test
 	public void testParameters() throws UnsupportedModellingElementException,
 			VariableNotInitializedException, IncompatibleTypeException {
+
 		parameter = behaviourFactory.createParameter();
 		parameter.setDataType(intType);
 
@@ -173,6 +199,15 @@ public class TestOperationCall {
 
 	}
 
+	/**
+	 * intA=op();
+	 * 
+	 * op(){ return intB; //which has value 2 in variableBindings }
+	 * 
+	 * @throws UnsupportedModellingElementException
+	 * @throws VariableNotInitializedException
+	 * @throws IncompatibleTypeException
+	 */
 	@Test
 	public void testReturnValue() throws UnsupportedModellingElementException,
 			VariableNotInitializedException, IncompatibleTypeException {
@@ -205,5 +240,188 @@ public class TestOperationCall {
 				assertTrue(curVarBinding.getValue().equals(2));
 		}
 
+	}
+
+//@formatter:off
+	/**
+	 * op1(2);
+	 * 
+	 * op1(int parameterA){ 
+	 *  op2(intB);
+	 * }
+	 * 
+	 * op2(int parameterB){ 
+	 * 
+	 *  intA=parameterA; //op2 should not be able to access parameterA
+	 * 
+	 *   }
+	 * 
+	 * @throws IncompatibleTypeException
+	 * @throws UnsupportedModellingElementException
+	 * 
+	 */
+//@formatter:on
+	@Test
+	public void testEmbeddedOperationCalls()
+			throws UnsupportedModellingElementException,
+			IncompatibleTypeException {
+		// set up parameters
+		parameterA = behaviourFactory.createParameter();
+		parameterA.setDataType(intType);
+		parameterA.setName("parameterA");
+
+		parameterB = behaviourFactory.createParameter();
+		parameterB.setDataType(intType);
+
+		// set up typedNamedElementExpressions
+		TypedNamedElementExpression intAExp = alFactory
+				.createTypedNamedElementExpression();
+		intAExp.setTypedNamedElement(intA);
+		TypedNamedElementExpression intBExp = alFactory
+				.createTypedNamedElementExpression();
+		intBExp.setTypedNamedElement(intB);
+		TypedNamedElementExpression paraAExp = alFactory
+				.createTypedNamedElementExpression();
+		paraAExp.setTypedNamedElement(parameterA);
+
+		// set up literalExpression
+		LiteralExpression litExp = expFactory.createLiteralExpression();
+		litExp.setValue("2");
+
+		// set up parameter bindings
+		ParameterBinding parBindingA = behaviourFactory
+				.createParameterBinding();
+		parBindingA.setParameter(parameterA);
+		parBindingA.setValue(litExp);
+		ParameterBinding parBindingB = behaviourFactory
+				.createParameterBinding();
+		parBindingB.setParameter(parameterB);
+		parBindingB.setValue(intBExp);
+
+		// set up operation calls
+		opCall1.getParameterBinding().add(parBindingA);
+		opCall2.getParameterBinding().add(parBindingB);
+
+		// set up assignment as implementation of op2
+		Assignment assignment = alFactory.createAssignment();
+		assignment.setLhs_typedNamedElementExpression(intAExp);
+		assignment.setRhs_assignExpression(paraAExp);
+
+		// set up operations
+		op1.getParameters().add(parameterA);
+		op1.getImplementations().add(opCall2);
+		op1.setReturnType(voidType);
+		op1.setName("op1");
+		op2.getParameters().add(parameterB);
+		op2.getImplementations().add(assignment);
+		op2.setReturnType(voidType);
+		op2.setName("op2");
+
+		try {
+			actionLanguageInterpreter.evaluateExpression(varBindings, opCall1);
+		} catch (VariableNotInitializedException e) {
+			for (VariableBinding curVarBinding : varBindings) {
+				if (curVarBinding.getVariable().equals(intA))
+					assertTrue(curVarBinding.getValue().equals(0));
+			}
+		}
+		for (VariableBinding curVarBinding : varBindings) {
+			if (curVarBinding.getVariable().equals(intA))
+				assertFalse(curVarBinding.getValue().equals(2));
+		}
+
+	}
+
+	//@formatter:off
+	/**
+	 * op1(2);
+	 * 
+	 * op1(int parameterA){ 
+	 *  op2(intB);
+	 *  intA=parameterB; //op1 should not be able to access parameterB
+	 * }
+	 * 
+	 * op2(int parameterB){ 
+	 *   }
+	 * @throws IncompatibleTypeException 
+	 * @throws UnsupportedModellingElementException 
+	 * 
+	 * 
+	 */
+	//@formatter:on
+	@Test
+	public void testEmbeddedOperationCalls2() throws UnsupportedModellingElementException, IncompatibleTypeException {
+
+		// set up parameters
+		parameterA = behaviourFactory.createParameter();
+		parameterA.setDataType(intType);
+		parameterA.setName("parameterA");
+
+		parameterB = behaviourFactory.createParameter();
+		parameterB.setDataType(intType);
+
+		// set up typedNamedElementExpressions
+		TypedNamedElementExpression intAExp = alFactory
+				.createTypedNamedElementExpression();
+		intAExp.setTypedNamedElement(intA);
+		TypedNamedElementExpression intBExp = alFactory
+				.createTypedNamedElementExpression();
+		intBExp.setTypedNamedElement(intB);
+		TypedNamedElementExpression paraBExp = alFactory
+				.createTypedNamedElementExpression();
+		paraBExp.setTypedNamedElement(parameterB);
+
+		// set up literalExpression
+		LiteralExpression litExp = expFactory.createLiteralExpression();
+		litExp.setValue("2");
+
+		// set up parameter bindings
+		ParameterBinding parBindingA = behaviourFactory
+				.createParameterBinding();
+		parBindingA.setParameter(parameterA);
+		parBindingA.setValue(litExp);
+		ParameterBinding parBindingB = behaviourFactory
+				.createParameterBinding();
+		parBindingB.setParameter(parameterB);
+		parBindingB.setValue(intBExp);
+
+		// set up operation calls
+		opCall1.getParameterBinding().add(parBindingA);
+		opCall2.getParameterBinding().add(parBindingB);
+
+		// set up assignment
+		Assignment assignment = alFactory.createAssignment();
+		assignment.setLhs_typedNamedElementExpression(intAExp);
+		assignment.setRhs_assignExpression(paraBExp);
+		
+		//set up block as implementation of op1
+		block.getExpressions().add(opCall2);
+		block.getExpressions().add(assignment);
+
+		//set up empty block as implementation of op2
+		Block emptyBlock = alFactory.createBlock();
+		
+		// set up operations
+		op1.getParameters().add(parameterA);
+		op1.getImplementations().add(block);
+		op1.setReturnType(voidType);
+		op1.setName("op1");
+		op2.getParameters().add(parameterB);
+		op2.getImplementations().add(emptyBlock);
+		op2.setReturnType(voidType);
+		op2.setName("op2");
+
+		try {
+			actionLanguageInterpreter.evaluateExpression(varBindings, opCall1);
+		} catch (VariableNotInitializedException e) {
+			for (VariableBinding curVarBinding : varBindings) {
+				if (curVarBinding.getVariable().equals(intA))
+					assertTrue(curVarBinding.getValue().equals(0));
+			}
+		}
+		for (VariableBinding curVarBinding : varBindings) {
+			if (curVarBinding.getVariable().equals(intA))
+				assertFalse(curVarBinding.getValue().equals(2));
+		}
 	}
 }
