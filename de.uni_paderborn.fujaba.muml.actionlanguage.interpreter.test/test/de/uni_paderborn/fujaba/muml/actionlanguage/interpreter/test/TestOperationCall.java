@@ -13,6 +13,7 @@ import org.storydriven.core.expressions.common.LiteralExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
+import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ReturnStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
@@ -262,7 +263,7 @@ public class TestOperationCall {
 	 */
 //@formatter:on
 	@Test
-	public void testEmbeddedOperationCalls()
+	public void testEmbeddedOperationCalls1()
 			throws UnsupportedModellingElementException,
 			IncompatibleTypeException {
 		// set up parameters
@@ -319,15 +320,9 @@ public class TestOperationCall {
 
 		try {
 			actionLanguageInterpreter.evaluateExpression(varBindings, opCall1);
+			assertTrue(false);
 		} catch (VariableNotInitializedException e) {
-			for (VariableBinding curVarBinding : varBindings) {
-				if (curVarBinding.getVariable().equals(intA))
-					assertTrue(curVarBinding.getValue().equals(0));
-			}
-		}
-		for (VariableBinding curVarBinding : varBindings) {
-			if (curVarBinding.getVariable().equals(intA))
-				assertFalse(curVarBinding.getValue().equals(2));
+			assertTrue(true);
 		}
 
 	}
@@ -350,7 +345,9 @@ public class TestOperationCall {
 	 */
 	//@formatter:on
 	@Test
-	public void testEmbeddedOperationCalls2() throws UnsupportedModellingElementException, IncompatibleTypeException {
+	public void testEmbeddedOperationCalls2()
+			throws UnsupportedModellingElementException,
+			IncompatibleTypeException {
 
 		// set up parameters
 		parameterA = behaviourFactory.createParameter();
@@ -393,14 +390,14 @@ public class TestOperationCall {
 		Assignment assignment = alFactory.createAssignment();
 		assignment.setLhs_typedNamedElementExpression(intAExp);
 		assignment.setRhs_assignExpression(paraBExp);
-		
-		//set up block as implementation of op1
+
+		// set up block as implementation of op1
 		block.getExpressions().add(opCall2);
 		block.getExpressions().add(assignment);
 
-		//set up empty block as implementation of op2
+		// set up empty block as implementation of op2
 		Block emptyBlock = alFactory.createBlock();
-		
+
 		// set up operations
 		op1.getParameters().add(parameterA);
 		op1.getImplementations().add(block);
@@ -413,15 +410,138 @@ public class TestOperationCall {
 
 		try {
 			actionLanguageInterpreter.evaluateExpression(varBindings, opCall1);
+			assertTrue(false);
 		} catch (VariableNotInitializedException e) {
-			for (VariableBinding curVarBinding : varBindings) {
-				if (curVarBinding.getVariable().equals(intA))
-					assertTrue(curVarBinding.getValue().equals(0));
-			}
+			assertTrue(true);
 		}
-		for (VariableBinding curVarBinding : varBindings) {
-			if (curVarBinding.getVariable().equals(intA))
-				assertFalse(curVarBinding.getValue().equals(2));
+
+	}
+
+	//@formatter:off
+	/**
+	 * intC=2;
+	 * op();
+	 * 
+	 * op(){
+	 * intA=intC; //should not be possible
+	 * }
+	 * @throws IncompatibleTypeException  
+	 * @throws UnsupportedModellingElementException 
+	 * 
+	 */
+	//@formatter:on
+	@Test
+	public void testLocalVariable1()
+			throws UnsupportedModellingElementException,
+			VariableNotInitializedException, IncompatibleTypeException {
+		// set up initialization expression
+		LiteralExpression litExpression = expFactory.createLiteralExpression();
+		litExpression.setValue("2");
+		// set up inC
+		Variable intC = behaviourFactory.createVariable();
+		intC.setDataType(intType);
+
+		// set up declaration expression
+		LocalVariableDeclarationStatement decExpression = alFactory
+				.createLocalVariableDeclarationStatement();
+		decExpression.setVariable(intC);
+		decExpression.setInitializeExpression(litExpression);
+
+		// set up block
+		block.getExpressions().add(decExpression);
+		block.getExpressions().add(opCall);
+
+		// set up tne expression for intC
+		TypedNamedElementExpression intCExp = alFactory
+				.createTypedNamedElementExpression();
+		intCExp.setTypedNamedElement(intC);
+
+		// set up tne expression for intA
+		TypedNamedElementExpression intAExp = alFactory
+				.createTypedNamedElementExpression();
+		intAExp.setTypedNamedElement(intA);
+
+		// set up Assignment
+		Assignment assignment = alFactory.createAssignment();
+		assignment.setLhs_typedNamedElementExpression(intAExp);
+		assignment.setRhs_assignExpression(intCExp);
+
+		// set up op
+		op.getImplementations().add(assignment);
+		op.setReturnType(voidType);
+		op.setName("op");
+
+		try {
+			actionLanguageInterpreter.evaluateExpression(varBindings, block);
+			assertTrue(false);
+		} catch (VariableNotInitializedException e) {
+			assertTrue(true);
 		}
+
+	}
+
+	//@formatter:off
+	/**
+	 * 
+	 * op();
+	 * intA=intC; //should not be possible
+	 * 
+	 * op(){
+	 * intC=2; 
+	 * }
+	 * @throws IncompatibleTypeException 
+	 * @throws UnsupportedModellingElementException 
+	 * 
+	 */
+	//@formatter:on
+	@Test
+	public void testLocalVariable2()
+			throws UnsupportedModellingElementException,
+			IncompatibleTypeException {
+
+		// set up initialization expression
+		LiteralExpression litExpression = expFactory.createLiteralExpression();
+		litExpression.setValue("2");
+		// set up inC
+		Variable intC = behaviourFactory.createVariable();
+		intC.setDataType(intType);
+
+		// set up declaration expression
+		LocalVariableDeclarationStatement decExpression = alFactory
+				.createLocalVariableDeclarationStatement();
+		decExpression.setVariable(intC);
+		decExpression.setInitializeExpression(litExpression);
+
+		// set up tne expression for intC
+		TypedNamedElementExpression intCExp = alFactory
+				.createTypedNamedElementExpression();
+		intCExp.setTypedNamedElement(intC);
+
+		// set up tne expression for intA
+		TypedNamedElementExpression intAExp = alFactory
+				.createTypedNamedElementExpression();
+		intAExp.setTypedNamedElement(intA);
+
+		// set up Assignment
+		Assignment assignment = alFactory.createAssignment();
+		assignment.setLhs_typedNamedElementExpression(intAExp);
+		assignment.setRhs_assignExpression(intCExp);
+
+		// set up block
+		block.getExpressions().add(opCall);
+		block.getExpressions().add(assignment);
+
+		// set up op
+		op.getImplementations().add(decExpression);
+		op.setReturnType(voidType);
+		op.setName("op");
+
+		try {
+			actionLanguageInterpreter.evaluateExpression(varBindings, block);
+			assertTrue(false);
+		} catch (VariableNotInitializedException e) {
+			assertTrue(true);
+		}
+
 	}
 }
