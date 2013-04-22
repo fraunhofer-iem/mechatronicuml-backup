@@ -19,6 +19,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
+import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.ActionLanguageInterpreter;
 import de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions.IncompatibleTypeException;
@@ -44,6 +45,7 @@ public class TestSimpleExpressions {
 	private Variable intA, intB, boolA, boolB;
 	private VariableBinding varBindingIntA, varBindingIntB, varBindingBoolA,
 			varBindingBoolB;
+	private DataType intType, boolType;
 	private HashSet<VariableBinding> varBindings;
 	private Block block, block2;
 	private Assignment assignment;
@@ -64,10 +66,10 @@ public class TestSimpleExpressions {
 		block2 = alFactory.createBlock();
 
 		// set up data types
-		DataType intType = typeFactory.createPrimitiveDataType();
+		intType = typeFactory.createPrimitiveDataType();
 		((PrimitiveDataType) intType).setPrimitiveType(PrimitiveTypes.INT);
 
-		DataType boolType = typeFactory.createPrimitiveDataType();
+		boolType = typeFactory.createPrimitiveDataType();
 		((PrimitiveDataType) boolType).setPrimitiveType(PrimitiveTypes.BOOLEAN);
 
 		// set up variables
@@ -115,7 +117,8 @@ public class TestSimpleExpressions {
 	}
 
 	@Test
-	public void testAssignment() throws UnsupportedModellingElementException, VariableNotInitializedException, IncompatibleTypeException {
+	public void testAssignment() throws UnsupportedModellingElementException,
+			VariableNotInitializedException, IncompatibleTypeException {
 
 		TypedNamedElementExpression tneExp = alFactory
 				.createTypedNamedElementExpression();
@@ -139,7 +142,9 @@ public class TestSimpleExpressions {
 	}
 
 	@Test
-	public void testComparisonExpression() throws UnsupportedModellingElementException, VariableNotInitializedException, IncompatibleTypeException {
+	public void testComparisonExpression()
+			throws UnsupportedModellingElementException,
+			VariableNotInitializedException, IncompatibleTypeException {
 		TypedNamedElementExpression tneExp1 = alFactory
 				.createTypedNamedElementExpression();
 		tneExp1.setTypedNamedElement(intA);
@@ -181,7 +186,9 @@ public class TestSimpleExpressions {
 	}
 
 	@Test
-	public void testArithmeticExpression() throws UnsupportedModellingElementException, VariableNotInitializedException, IncompatibleTypeException {
+	public void testArithmeticExpression()
+			throws UnsupportedModellingElementException,
+			VariableNotInitializedException, IncompatibleTypeException {
 		varBindingIntA.setValue(22);
 		TypedNamedElementExpression tneExp1 = alFactory
 				.createTypedNamedElementExpression();
@@ -215,7 +222,9 @@ public class TestSimpleExpressions {
 	}
 
 	@Test
-	public void testLogicalExpression() throws UnsupportedModellingElementException, VariableNotInitializedException, IncompatibleTypeException {
+	public void testLogicalExpression()
+			throws UnsupportedModellingElementException,
+			VariableNotInitializedException, IncompatibleTypeException {
 
 		TypedNamedElementExpression boolExp1 = alFactory
 				.createTypedNamedElementExpression();
@@ -256,21 +265,21 @@ public class TestSimpleExpressions {
 	}
 
 	@Test
-	public void testIfStatement() throws UnsupportedModellingElementException, VariableNotInitializedException, IncompatibleTypeException {
+	public void testIfStatement() throws UnsupportedModellingElementException,
+			VariableNotInitializedException, IncompatibleTypeException {
 		IfStatement ifStatement = alFactory.createIfStatement();
 		ifStatement.setIfBlock(block);
 
-		//false
+		// false
 		TypedNamedElementExpression boolExp1 = alFactory
 				.createTypedNamedElementExpression();
 		boolExp1.setTypedNamedElement(boolB);
-		
+
 		TypedNamedElementExpression boolExp3 = alFactory
 				.createTypedNamedElementExpression();
 		boolExp3.setTypedNamedElement(boolB);
 
-		
-		//true
+		// true
 		TypedNamedElementExpression boolExp2 = alFactory
 				.createTypedNamedElementExpression();
 		boolExp2.setTypedNamedElement(boolA);
@@ -326,5 +335,60 @@ public class TestSimpleExpressions {
 			if (curVarBinding.getVariable().equals(intA))
 				assertTrue(curVarBinding.getValue().equals(3));
 		}
+	}
+
+//@formatter:off
+	/**
+	 * intC=2;
+	 * intA=intC;
+	 * 
+	 * @throws IncompatibleTypeException
+	 * @throws VariableNotInitializedException
+	 * @throws UnsupportedModellingElementException
+	 * 
+	 */
+//@formatter:on
+	@Test
+	public void testLocalVariableDeclaration()
+			throws UnsupportedModellingElementException,
+			VariableNotInitializedException, IncompatibleTypeException {
+		// set up initialization expression
+		LiteralExpression litExpression = expFactory.createLiteralExpression();
+		litExpression.setValue("2");
+		// set up inC
+		Variable intC = behaviourFactory.createVariable();
+		intC.setDataType(intType);
+		// intC.setInitializeExpression(litExpression);
+
+		// set up declaration expression
+		LocalVariableDeclarationStatement decExpression = alFactory
+				.createLocalVariableDeclarationStatement();
+		decExpression.setVariable(intC);
+		decExpression.setInitializeExpression(litExpression);
+
+		// set up tne expression for intA
+		TypedNamedElementExpression intAExp = alFactory
+				.createTypedNamedElementExpression();
+		intAExp.setTypedNamedElement(intA);
+
+		// set up tne expression for intC
+		TypedNamedElementExpression intCExp = alFactory
+				.createTypedNamedElementExpression();
+		intCExp.setTypedNamedElement(intC);
+
+		// set up Assignment
+		Assignment assignment = alFactory.createAssignment();
+		assignment.setLhs_typedNamedElementExpression(intAExp);
+		assignment.setRhs_assignExpression(intCExp);
+
+		// set up Block
+		block.getExpressions().add(decExpression);
+		block.getExpressions().add(assignment);
+
+		// evaluate
+		actionLanguageInterpreter.evaluateExpression(varBindings, block);
+
+		assertTrue(varBindingIntA.getValue().equals(2));
+
 	}
 }
