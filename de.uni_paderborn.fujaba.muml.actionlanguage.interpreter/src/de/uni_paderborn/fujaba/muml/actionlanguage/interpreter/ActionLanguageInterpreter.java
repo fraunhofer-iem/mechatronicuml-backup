@@ -22,6 +22,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.DoWhileLoop;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
+import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ReturnStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
@@ -124,6 +125,9 @@ public class ActionLanguageInterpreter {
 		else if (expression instanceof TypedNamedElementExpression)
 			return evaluate(variableBindings, parAndLocVarBinding,
 					(TypedNamedElementExpression) expression);
+		else if (expression instanceof LocalVariableDeclarationStatement)
+			return evaluate(variableBindings, parAndLocVarBinding,
+					(LocalVariableDeclarationStatement) expression);
 
 		throw new UnsupportedModellingElementException("Expressions of type "
 				+ expression.eClass().getName() + " are not yet supported");
@@ -488,23 +492,38 @@ public class ActionLanguageInterpreter {
 		}
 
 		Variable variable = (Variable) element;
-		VariableBinding variableBinding = null;
-		for (VariableBinding curVarBinding : variableBindings) {
-			if (curVarBinding.getVariable().equals(variable)) {
-				variableBinding = curVarBinding;
-				break;
-			}
-		}
 
-		if (variableBinding == null) {
-			throw new IllegalArgumentException(variable.toString() + " is null");
-		}
-		if (variableBinding != null) {
+		// search for variable in local variables
+		if (parAndLocVarBinding.containsKey(variable)) {
 			// get new value
-			Object value = evaluate(variableBindings, parAndLocVarBinding,
-					assignment.getRhs_assignExpression());
+			Object value = castTo(
+					variable.getDataType(),
+					evaluate(variableBindings, parAndLocVarBinding,
+							assignment.getRhs_assignExpression()));
 			// assign new value
-			variableBinding.setValue(castTo(variable.getDataType(), value));
+			parAndLocVarBinding.put(variable, value);
+		}
+		// search for variable in variable bindings
+		else {
+			VariableBinding variableBinding = null;
+			for (VariableBinding curVarBinding : variableBindings) {
+				if (curVarBinding.getVariable().equals(variable)) {
+					variableBinding = curVarBinding;
+					break;
+				}
+			}
+
+			if (variableBinding == null) {
+				throw new VariableNotInitializedException(variable.toString()
+						+ " not declared and/or intitialized");
+			}
+			if (variableBinding != null) {
+				// get new value
+				Object value = evaluate(variableBindings, parAndLocVarBinding,
+						assignment.getRhs_assignExpression());
+				// assign new value
+				variableBinding.setValue(castTo(variable.getDataType(), value));
+			}
 		}
 
 		return null;
@@ -582,7 +601,7 @@ public class ActionLanguageInterpreter {
 			UnsupportedModellingElementException,
 			VariableNotInitializedException {
 
-		HashMap<TypedNamedElement, Object> deletedParameters = new HashMap<TypedNamedElement, Object>();
+		HashMap<TypedNamedElement, Object> deletedTNEs = new HashMap<TypedNamedElement, Object>();
 		HashSet<TypedNamedElement> usedParameters = new HashSet<TypedNamedElement>();
 
 		// check if all parameters are bound
@@ -603,16 +622,18 @@ public class ActionLanguageInterpreter {
 
 		}
 
-		// delete parameter bindings that are not referring to parameters of
-		// this operation call
+		// delete parameter/local variable bindings that are not referring to
+		// parameters or local variables of
+		// this operation
 		for (TypedNamedElement curTne : parAndLocVarBinding.keySet()) {
-			if (curTne instanceof Parameter
+			if (curTne instanceof Variable
+					|| curTne instanceof Parameter
 					&& !(operationCall.getOperation().getParameters()
 							.contains(curTne))) {
-				deletedParameters.put(curTne, parAndLocVarBinding.get(curTne));
+				deletedTNEs.put(curTne, parAndLocVarBinding.get(curTne));
 			}
 		}
-		for (TypedNamedElement curTne : deletedParameters.keySet())
+		for (TypedNamedElement curTne : deletedTNEs.keySet())
 			parAndLocVarBinding.remove(curTne);
 
 		if (operationCall.getOperation() == null)
@@ -637,9 +658,19 @@ public class ActionLanguageInterpreter {
 					Object o = evaluate(variableBindings, parAndLocVarBinding,
 							curImplementation);
 
-					// add deleted parameter bindings again to make them
+					// delete local variables of this operation
+					HashSet<TypedNamedElement> toDeletelocVar = new HashSet<TypedNamedElement>();
+					for (TypedNamedElement curTne : parAndLocVarBinding
+							.keySet())
+						if (curTne instanceof Variable)
+							toDeletelocVar.add(curTne);
+					for (TypedNamedElement curTne : toDeletelocVar)
+						parAndLocVarBinding.remove(curTne);
+
+					// add deleted parameter/local variable bindings again to
+					// make them
 					// accessible in parent operation
-					parAndLocVarBinding.putAll(deletedParameters);
+					parAndLocVarBinding.putAll(deletedTNEs);
 
 					// delete parameter bindings that are referring to
 					// parameters of this operation call
@@ -666,9 +697,19 @@ public class ActionLanguageInterpreter {
 					evaluate(variableBindings, parAndLocVarBinding,
 							curImplementation);
 
-					// add deleted parameter bindings again to make them
+					// delete local variables of this operation
+					HashSet<TypedNamedElement> toDeletelocVar = new HashSet<TypedNamedElement>();
+					for (TypedNamedElement curTne : parAndLocVarBinding
+							.keySet())
+						if (curTne instanceof Variable)
+							toDeletelocVar.add(curTne);
+					for (TypedNamedElement curTne : toDeletelocVar)
+						parAndLocVarBinding.remove(curTne);
+
+					// add deleted parameter/local variable bindings again to
+					// make them
 					// accessible in parent operation
-					parAndLocVarBinding.putAll(deletedParameters);
+					parAndLocVarBinding.putAll(deletedTNEs);
 
 					// delete parameter bindings that are referring to
 					// parameters of this operation call
@@ -733,6 +774,23 @@ public class ActionLanguageInterpreter {
 
 		return value;
 
+	}
+
+	protected Object evaluate(HashSet<VariableBinding> variableBindings,
+			HashMap<TypedNamedElement, Object> parAndLocVarBinding,
+			LocalVariableDeclarationStatement localVariableDeclarationStatement)
+			throws VariableNotInitializedException,
+			UnsupportedModellingElementException, IncompatibleTypeException {
+
+		Variable variable = localVariableDeclarationStatement.getVariable();
+		Object value = castTo(
+				variable.getDataType(),
+				evaluate(variableBindings, parAndLocVarBinding,
+						localVariableDeclarationStatement
+								.getInitializeExpression()));
+
+		parAndLocVarBinding.put(variable, value);
+		return null;
 	}
 
 	/**
