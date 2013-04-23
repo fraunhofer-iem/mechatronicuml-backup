@@ -167,7 +167,6 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_ValidComponentType(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_NoCyclicComponentPartHierarchy(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_DiscreteStructuredComponentValidParts(reconfigurableStructuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_HybridStructuredComponentValidParts(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_DiscreteStructuredComponentValidPorts(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_HybridStructuredComponentValidPorts(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_ComponentPartsHaveUniqueName(reconfigurableStructuredComponent, diagnostics, context);
