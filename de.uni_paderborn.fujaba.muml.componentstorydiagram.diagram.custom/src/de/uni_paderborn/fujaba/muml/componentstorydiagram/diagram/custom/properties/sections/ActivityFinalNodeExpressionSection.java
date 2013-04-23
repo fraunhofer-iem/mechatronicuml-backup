@@ -2,14 +2,15 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.proper
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.TextualExpression;
 import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityFinalNode;
+import org.storydriven.storydiagrams.diagram.custom.util.ActivityUtil;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.properties.AbstractExpressionSection;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.util.ActivityUtil;
 
 public class ActivityFinalNodeExpressionSection extends AbstractExpressionSection {
 
@@ -20,7 +21,7 @@ public class ActivityFinalNodeExpressionSection extends AbstractExpressionSectio
 			expression.setLanguage("OCL");
 			expression.setLanguageVersion("1.0");
 
-			RecordingCommand command = new RecordingCommand(getEditingDomain()) {
+			RecordingCommand command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 				@Override
 				protected void doExecute() {
 					getElement().getReturnValues().add(expression);
@@ -41,6 +42,7 @@ public class ActivityFinalNodeExpressionSection extends AbstractExpressionSectio
 
 		return super.getContextClassifier();
 	}
+
 	@Override
 	protected void postUpdate() {
 		Expression expression = getElement().getReturnValue();

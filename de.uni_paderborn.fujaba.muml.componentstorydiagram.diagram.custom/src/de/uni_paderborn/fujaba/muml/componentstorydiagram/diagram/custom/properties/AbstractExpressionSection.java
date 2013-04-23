@@ -1,13 +1,10 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.properties;
 
-import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.text.ITextListener;
@@ -22,69 +19,32 @@ import org.eclipse.swt.widgets.Group;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.expressions.TextualExpression;
-import org.storydriven.core.expressions.util.ExpressionUtils;
+import org.storydriven.core.ui.IExpressionEditor;
+import org.storydriven.core.ui.util.ExpressionEditorUtil;
+import org.storydriven.storydiagrams.diagram.custom.util.BoundUtil;
+import org.storydriven.storydiagrams.diagram.custom.util.EcoreTextUtil;
 
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.util.EcoreTextUtil;
+import de.upb.swt.core.ui.properties.sections.AbstractPropertySection;
 
-public abstract class AbstractExpressionSection extends AbstractSection {
-	private static final String EXPRESSION_SOURCE_VIEWER_EXTENSION_POINT_ID = "de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.expressionSourceViewerExtension";
-	private static final String EXPRESSION_LANGUAGES_LANGUAGE_ATTRIBUTE_NAME = "expressionLanguage";
-	private static final String EXPRESSION_LANGUAGES_VERSION_ATTRIBUTE_NAME = "version";
-	private static final String EXPRESSION_SOURCE_VIEWER_ATTRIBUTE_NAME = "sourceViewerProvider";
-
-	private static HashMap<String, SourceViewerProvider> sourceViewerProviders;
-	private SourceViewerProvider provider;
+public abstract class AbstractExpressionSection extends AbstractPropertySection {
+	private IExpressionEditor provider;
 
 	private Group group;
 	private CLabel typeLabel;
 	protected ISourceViewer viewer;
 
-	public AbstractExpressionSection() {
-		initializeSourceViewerProviders();
-	}
-
-	private static void initializeSourceViewerProviders() {
-		if (sourceViewerProviders == null && Platform.getExtensionRegistry() != null) {
-			sourceViewerProviders = new HashMap<String, SourceViewerProvider>();
-
-			IConfigurationElement[] configurationElements = Platform.getExtensionRegistry()
-					.getConfigurationElementsFor(EXPRESSION_SOURCE_VIEWER_EXTENSION_POINT_ID);
-
-			for (IConfigurationElement configurationElement : configurationElements) {
-				String s = configurationElement.getAttribute(EXPRESSION_LANGUAGES_LANGUAGE_ATTRIBUTE_NAME);
-				String v = configurationElement.getAttribute(EXPRESSION_LANGUAGES_VERSION_ATTRIBUTE_NAME);
-
-				if ((s != null && !("".equals(s))) && (v != null && !("".equals(v)))) {
-					try {
-						sourceViewerProviders.put(s.concat(v), (SourceViewerProvider) configurationElement
-								.createExecutableExtension(EXPRESSION_SOURCE_VIEWER_ATTRIBUTE_NAME));
-					} catch (CoreException e) {
-						// Skip it but show error message
-						e.printStackTrace();
-					}
-				}
-			}
-		}
-
-		for (String aLanguage : ExpressionUtils.getAvailableExpressionLanguages()) {
-			for (String aVersion : ExpressionUtils.getAvailableExpressionLanguageVersions(aLanguage)) {
-				if (!sourceViewerProviders.containsKey(aLanguage.concat(aVersion))) {
-					sourceViewerProviders.put(aLanguage.concat(aVersion), new SourceViewerProvider());
-				}
-			}
-		}
-	}
-
 	@Override
 	public void refresh() {
 		Expression expression = getExpression();
 		if (getElement() != null && expression instanceof TextualExpression) {
+			
+			TextualExpression textualExpression = (TextualExpression) expression;
+			provider = ExpressionEditorUtil.getEditor(textualExpression.getLanguage(),
+					textualExpression.getLanguageVersion());
+
 			EClassifier classifier = getContextClassifier();
 			String value = ((TextualExpression) expression).getExpressionText();
 
-			if (provider == null) {
-				provider = sourceViewerProviders.get("OCL1.0");
-			}
 			if (viewer != null) {
 				viewer.getTextWidget().dispose();
 				viewer = null;
@@ -98,7 +58,7 @@ public abstract class AbstractExpressionSection extends AbstractSection {
 				public void textChanged(TextEvent event) {
 					final Expression expression = getExpression();
 					if (expression instanceof TextualExpression) {
-						RecordingCommand command = new RecordingCommand(getEditingDomain()) {
+						RecordingCommand command = new RecordingCommand((TransactionalEditingDomain) getEditingDomain()) {
 							@Override
 							protected void doExecute() {
 								((TextualExpression) expression).setExpressionText(viewer.getDocument().get());
@@ -172,7 +132,7 @@ public abstract class AbstractExpressionSection extends AbstractSection {
 	}
 
 	@Override
-	protected void layoutWidgets(Composite parent) {
+	protected void layoutWidgets() {
 		FormData data = new FormData();
 		data.left = new FormAttachment(0);
 		data.right = new FormAttachment(100);

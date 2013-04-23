@@ -2,19 +2,6 @@
 <?eclipse version="3.4"?>
 <plugin>
 
-
-
-   <extension-point id="expressionSourceViewerExtension" name="Expression Source Viewer Extension" schema="schema/expressionSourceViewerExtension.exsd"/>
-
-   <!-- copied from diagram.ocl plugin -->
-   <extension point="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.expressionSourceViewerExtension">
-		<expressionSourceViewer
-			expressionLanguage="OCL"
-			sourceViewerProvider="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.ocl.OCLSourceViewerProvider"
-			version="1.0"/>
-	</extension>
-
-
    <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
@@ -126,6 +113,7 @@
       </propertyTabs>
    </extension>
 
+<!-- deactivated, because current implementation in SDM throws many exceptions
    <extension
          id="activities"
          point="org.eclipse.ui.views.properties.tabbed.propertySections">
@@ -139,7 +127,7 @@
          </propertySection>
       </propertySections>
    </extension>
-
+-->s
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
