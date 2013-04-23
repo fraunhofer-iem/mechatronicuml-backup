@@ -127,7 +127,7 @@
          </propertySection>
       </propertySections>
    </extension>
--->s
+-->
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
