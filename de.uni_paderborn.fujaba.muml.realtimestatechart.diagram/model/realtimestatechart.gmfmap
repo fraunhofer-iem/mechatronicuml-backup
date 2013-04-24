@@ -470,7 +470,7 @@
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition/target"/>
     <creationConstraints>
       <sourceEnd
-          body="not (self.oclIsKindOf(EntryPoint) and (not oppositeEnd.oclIsKindOf(State))) and&#xA;not (self.oclIsKindOf(ExitPoint) and (not oppositeEnd.oclIsKindOf(State)))"/>
+          body="-- Deactivated because StateEntryPoint has been deleted and logic changed.&#xA;&#xA;-- not (self.oclIsKindOf(EntryPoint) and (not oppositeEnd.oclIsKindOf(State))) and&#xA;-- not (self.oclIsKindOf(ExitPoint) and (not oppositeEnd.oclIsKindOf(State)))&#xA;true"/>
     </creationConstraints>
   </links>
   <diagram>
