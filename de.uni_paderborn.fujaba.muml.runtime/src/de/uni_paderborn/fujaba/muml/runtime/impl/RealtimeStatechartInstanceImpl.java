@@ -43,6 +43,7 @@ import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getParentRealtimeStatechartInstance <em>Parent Realtime Statechart Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getVariableBindings <em>Variable Bindings</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getAllAvailableVariableBindings <em>All Available Variable Bindings</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getNearestRuntimeBehavioralElement <em>Nearest Runtime Behavioral Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -108,6 +109,16 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate ALL_AVAILABLE_VARIABLE_BINDINGS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RuntimePackage.Literals.REALTIME_STATECHART_INSTANCE__ALL_AVAILABLE_VARIABLE_BINDINGS).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getNearestRuntimeBehavioralElement() <em>Nearest Runtime Behavioral Element</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNearestRuntimeBehavioralElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate NEAREST_RUNTIME_BEHAVIORAL_ELEMENT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RuntimePackage.Literals.REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -371,6 +382,33 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RuntimeBehavioralElement getNearestRuntimeBehavioralElement() {
+		return (RuntimeBehavioralElement)NEAREST_RUNTIME_BEHAVIORAL_ELEMENT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeBehavioralElement basicGetNearestRuntimeBehavioralElement() {
+		return (RuntimeBehavioralElement)NEAREST_RUNTIME_BEHAVIORAL_ELEMENT__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNearestRuntimeBehavioralElement(RuntimeBehavioralElement newNearestRuntimeBehavioralElement) {
+		NEAREST_RUNTIME_BEHAVIORAL_ELEMENT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newNearestRuntimeBehavioralElement);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -448,6 +486,9 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 				return getVariableBindings();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ALL_AVAILABLE_VARIABLE_BINDINGS:
 				return getAllAvailableVariableBindings();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT:
+				if (resolve) return getNearestRuntimeBehavioralElement();
+				return basicGetNearestRuntimeBehavioralElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -481,6 +522,9 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 				getVariableBindings().clear();
 				getVariableBindings().addAll((Collection<? extends VariableBinding>)newValue);
 				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT:
+				setNearestRuntimeBehavioralElement((RuntimeBehavioralElement)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -511,6 +555,9 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS:
 				getVariableBindings().clear();
 				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT:
+				setNearestRuntimeBehavioralElement((RuntimeBehavioralElement)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -537,6 +584,8 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 				return variableBindings != null && !variableBindings.isEmpty();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ALL_AVAILABLE_VARIABLE_BINDINGS:
 				return ALL_AVAILABLE_VARIABLE_BINDINGS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT:
+				return NEAREST_RUNTIME_BEHAVIORAL_ELEMENT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

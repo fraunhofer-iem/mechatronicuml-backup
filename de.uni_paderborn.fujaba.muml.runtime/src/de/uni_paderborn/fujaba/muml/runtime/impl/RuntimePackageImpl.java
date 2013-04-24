@@ -395,6 +395,15 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRealtimeStatechartInstance_NearestRuntimeBehavioralElement() {
+		return (EReference)realtimeStatechartInstanceEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRuntimeMessage() {
 		return runtimeMessageEClass;
 	}
@@ -637,6 +646,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE);
 		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS);
 		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__ALL_AVAILABLE_VARIABLE_BINDINGS);
+		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT);
 
 		runtimeMessageEClass = createEClass(RUNTIME_MESSAGE);
 		createEReference(runtimeMessageEClass, RUNTIME_MESSAGE__PARAMETERS);
@@ -754,6 +764,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		initEReference(getRealtimeStatechartInstance_ParentRealtimeStatechartInstance(), this.getRealtimeStatechartInstance(), this.getRealtimeStatechartInstance_SubRealtimeStatechartInstances(), "parentRealtimeStatechartInstance", null, 0, 1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechartInstance_VariableBindings(), this.getVariableBinding(), null, "variableBindings", null, 0, -1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechartInstance_AllAvailableVariableBindings(), this.getVariableBinding(), null, "allAvailableVariableBindings", null, 0, -1, RealtimeStatechartInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getRealtimeStatechartInstance_NearestRuntimeBehavioralElement(), this.getRuntimeBehavioralElement(), null, "nearestRuntimeBehavioralElement", null, 0, 1, RealtimeStatechartInstance.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(runtimeMessageEClass, RuntimeMessage.class, "RuntimeMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRuntimeMessage_Parameters(), this.getRuntimeParameter(), this.getRuntimeParameter_Message(), "parameters", null, 0, -1, RuntimeMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -814,7 +825,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });			
+		   });				
 	}
 
 	/**
@@ -842,6 +853,12 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		   source, 
 		   new String[] {
 			 "derivation", "self -> closure(if parentRealtimeStatechartInstance.oclIsUndefined() then self else parentRealtimeStatechartInstance endif).variableBindings->asOrderedSet()"
+		   });		
+		addAnnotation
+		  (getRealtimeStatechartInstance_NearestRuntimeBehavioralElement(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if self.runtimeBehavioralElement.oclIsUndefined() then\r\n\tself.parentRealtimeStatechartInstance.nearestRuntimeBehavioralElement\r\nelse\r\n\tself.runtimeBehavioralElement\r\nendif"
 		   });
 	}
 

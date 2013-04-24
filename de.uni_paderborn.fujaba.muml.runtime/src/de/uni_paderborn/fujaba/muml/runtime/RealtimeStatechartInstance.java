@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getParentRealtimeStatechartInstance <em>Parent Realtime Statechart Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getVariableBindings <em>Variable Bindings</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getAllAvailableVariableBindings <em>All Available Variable Bindings</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getNearestRuntimeBehavioralElement <em>Nearest Runtime Behavioral Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -193,5 +194,32 @@ public interface RealtimeStatechartInstance extends ExtendableElement {
 	 * @generated
 	 */
 	EList<VariableBinding> getAllAvailableVariableBindings();
+
+	/**
+	 * Returns the value of the '<em><b>Nearest Runtime Behavioral Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Nearest Runtime Behavioral Element</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Nearest Runtime Behavioral Element</em>' reference.
+	 * @see #setNearestRuntimeBehavioralElement(RuntimeBehavioralElement)
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRealtimeStatechartInstance_NearestRuntimeBehavioralElement()
+	 * @model transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.runtimeBehavioralElement.oclIsUndefined() then\r\n\tself.parentRealtimeStatechartInstance.nearestRuntimeBehavioralElement\r\nelse\r\n\tself.runtimeBehavioralElement\r\nendif'"
+	 * @generated
+	 */
+	RuntimeBehavioralElement getNearestRuntimeBehavioralElement();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getNearestRuntimeBehavioralElement <em>Nearest Runtime Behavioral Element</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Nearest Runtime Behavioral Element</em>' reference.
+	 * @see #getNearestRuntimeBehavioralElement()
+	 * @generated
+	 */
+	void setNearestRuntimeBehavioralElement(RuntimeBehavioralElement value);
 
 } // RealtimeStatechartInstance

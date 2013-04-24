@@ -49,6 +49,12 @@
         <details key="derivation" value="self -> closure(if parentRealtimeStatechartInstance.oclIsUndefined() then self else parentRealtimeStatechartInstance endif).variableBindings->asOrderedSet()"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nearestRuntimeBehavioralElement"
+        eType="#//RuntimeBehavioralElement" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if self.runtimeBehavioralElement.oclIsUndefined() then&#xD;&#xA;&#x9;self.parentRealtimeStatechartInstance.nearestRuntimeBehavioralElement&#xD;&#xA;else&#xD;&#xA;&#x9;self.runtimeBehavioralElement&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeMessage" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"

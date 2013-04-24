@@ -689,13 +689,22 @@ public interface RuntimePackage extends EPackage {
 	int REALTIME_STATECHART_INSTANCE__ALL_AVAILABLE_VARIABLE_BINDINGS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Nearest Runtime Behavioral Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Realtime Statechart Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_INSTANCE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 7;
+	int REALTIME_STATECHART_INSTANCE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1607,6 +1616,17 @@ public interface RuntimePackage extends EPackage {
 	EReference getRealtimeStatechartInstance_AllAvailableVariableBindings();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getNearestRuntimeBehavioralElement <em>Nearest Runtime Behavioral Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Nearest Runtime Behavioral Element</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance#getNearestRuntimeBehavioralElement()
+	 * @see #getRealtimeStatechartInstance()
+	 * @generated
+	 */
+	EReference getRealtimeStatechartInstance_NearestRuntimeBehavioralElement();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage <em>Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2005,6 +2025,14 @@ public interface RuntimePackage extends EPackage {
 		 * @generated
 		 */
 		EReference REALTIME_STATECHART_INSTANCE__ALL_AVAILABLE_VARIABLE_BINDINGS = eINSTANCE.getRealtimeStatechartInstance_AllAvailableVariableBindings();
+
+		/**
+		 * The meta object literal for the '<em><b>Nearest Runtime Behavioral Element</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT = eINSTANCE.getRealtimeStatechartInstance_NearestRuntimeBehavioralElement();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeMessageImpl <em>Message</em>}' class.
