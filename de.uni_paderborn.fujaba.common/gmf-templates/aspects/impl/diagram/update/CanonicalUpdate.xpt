@@ -240,3 +240,21 @@ protected java.util.List getSemanticChildrenViewDescriptors() {
 «ENDLET-»
 «ENDAROUND»
 
+
+// Begin switch visibility to protected, to allow overriding for #542
+«AROUND getSourceEditPartMethod FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment»
+protected org.eclipse.gef.EditPart getSourceEditPart(org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor descriptor, «EXPAND _Domain2Notation» domain2NotationMap) { 
+	return getEditPart(descriptor.getSource(), domain2NotationMap);
+}
+«ENDAROUND»
+
+«AROUND getTargetEditPartMethod FOR gmfgen::GenDiagram-»
+	«EXPAND xpt::Common::generatedMemberComment»
+protected org.eclipse.gef.EditPart getTargetEditPart(org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor descriptor, «EXPAND _Domain2Notation» domain2NotationMap) { 
+	return getEditPart(descriptor.getDestination(), domain2NotationMap);
+}
+«ENDAROUND»
+«DEFINE _Domain2Notation FOR gmfgen::GenDiagram»«EXPAND impl::diagram::update::domain2notation::DomainToNotationClassName»«ENDDEFINE»
+// End switch visibility
+

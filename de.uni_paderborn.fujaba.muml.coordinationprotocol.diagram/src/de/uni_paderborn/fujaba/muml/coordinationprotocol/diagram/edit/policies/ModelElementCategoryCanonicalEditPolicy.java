@@ -8,9 +8,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gef.EditPart;
@@ -29,9 +29,10 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
-
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
-import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
+
+import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocol2EditPart;
+import de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolEditPart;
 
 /**
  * @generated
@@ -404,7 +405,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	private EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
+	protected EditPart getSourceEditPart(UpdaterLinkDescriptor descriptor,
 			Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getSource(), domain2NotationMap);
 	}
@@ -412,7 +413,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	private EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor,
+	protected EditPart getTargetEditPart(UpdaterLinkDescriptor descriptor,
 			Domain2Notation domain2NotationMap) {
 		return getEditPart(descriptor.getDestination(), domain2NotationMap);
 	}
