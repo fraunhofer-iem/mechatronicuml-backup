@@ -12,5 +12,6 @@ Export-Package: de.uni_paderborn.fujaba.muml.actionlanguage.provider
 Require-Bundle: org.storydriven.core.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.3.1";visibility:=reexport,
  de.uni_paderborn.fujaba.muml.edit;bundle-version="0.3.1",
- org.storydriven.storydiagrams.edit;bundle-version="1.0.0"
+ org.storydriven.storydiagrams.edit;bundle-version="1.0.0",
+ de.uni_paderborn.fujaba.muml.actionlanguage.xtext;bundle-version="0.3.2"
 Bundle-ActivationPolicy: lazy

@@ -123,6 +123,12 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	
 	public void setScopeForEObject(EObject object) {
 		initLists();
+		if (!setScopeSwitch(object)) {
+			throw new IllegalArgumentException("scope not found for object: " + object);
+		}
+	}	
+	
+	private boolean setScopeSwitch(EObject object) {
 		if (object instanceof StateEvent) {
 			setScopeForEObject((StateEvent) object);
 		} else if (object instanceof Transition) {
@@ -139,9 +145,12 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 			setScopeForEObject((Variable) object);
 		} else if (object instanceof RealtimeStatechart) {
 			setScopeForRTSC((RealtimeStatechart) object); 
+		} else if (object != null) {
+			setScopeSwitch(object.eContainer());
 		} else {
-			throw new IllegalArgumentException("scope requested for unsupported object: " + object);
+			return false;
 		}
+		return true;
 	}
 	
 	public void setScopeForEObject(StateEvent event) {

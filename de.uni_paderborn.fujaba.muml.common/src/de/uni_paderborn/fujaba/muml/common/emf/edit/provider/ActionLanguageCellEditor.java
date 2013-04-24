@@ -25,11 +25,13 @@ public class ActionLanguageCellEditor extends TextCellEditor {
 
 		@Override
 		public String isValid(Object value) {
-			ILoadResult loadResult = loadFromString((String) value);
-			if (loadResult != null && loadResult.hasError()) {
-				return loadResult.getError();
+			if (value instanceof String) {
+				ILoadResult loadResult = loadFromString((String) value);
+				if (loadResult != null && loadResult.hasError()) {
+					return loadResult.getError();
+				}
 			}
-			return null;
+			return "";
 		}
 
 		private ILoadResult loadFromString(String text) {
@@ -51,11 +53,13 @@ public class ActionLanguageCellEditor extends TextCellEditor {
 	}
 
 	private ValueWrapper valueWrapper;
+	private EObject container;
 
 	public ActionLanguageCellEditor(Composite parent, EObject object) {
 		super(parent);
 		valueWrapper = new ValueWrapper(object);
 		setValidator(valueWrapper);
+		container = object;
 	}
 
 	@Override
@@ -65,6 +69,10 @@ public class ActionLanguageCellEditor extends TextCellEditor {
 
 	@Override
 	public void doSetValue(Object value) {
+		if (value instanceof EObject) {
+			System.out.println(value);
+			value = LanguageResource.serializeEObject((EObject) value, container);
+		}
 		super.doSetValue(value == null ? "" : value);
 	}
 }

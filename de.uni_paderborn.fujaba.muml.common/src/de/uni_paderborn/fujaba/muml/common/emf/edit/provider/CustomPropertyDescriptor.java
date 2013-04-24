@@ -111,9 +111,11 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 				// Which creation dialog should be shown?
 				if (RealtimestatechartPackage.Literals.ACTION__EXPRESSIONS
 						.equals(feature)
-						|| BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS.equals(feature)
-						|| BehaviorPackage.Literals.VARIABLE__INITIALIZE_EXPRESSION.equals(feature)) {
-					return new ActionCreationCellEditor(parent, feature);
+						|| BehaviorPackage.Literals.OPERATION__IMPLEMENTATIONS.equals(feature)) {
+					return new ActionCellEditor(parent, feature);
+				} else if (BehaviorPackage.Literals.VARIABLE__INITIALIZE_EXPRESSION.equals(feature)) {
+					return new ActionLanguageCellEditor(parent, (EObject) object);
+
 				} else if (RealtimestatechartPackage.Literals.MESSAGE__PARAMETER_BINDING
 						.equals(feature)) {
 					return new ParameterBindingCreationCellEditor(parent,
@@ -205,12 +207,12 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 
 	}
 
-	public class ActionCreationCellEditor extends CreationCellEditor {
+	public class ActionCellEditor extends CreationCellEditor {
 		private Collection<?> oldValues;
 		private SimpleTextualDialogExtension textDialog;
 		private UseParserDialogExtension useParserDialogExtension;
 
-		public ActionCreationCellEditor(Composite composite, EStructuralFeature feature) {
+		public ActionCellEditor(Composite composite, EStructuralFeature feature) {
 			super(composite, feature);
 		}
 
