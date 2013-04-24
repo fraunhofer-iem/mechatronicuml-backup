@@ -21,6 +21,22 @@ main() {
 	instance.rootObjects()[StructuredComponentInstance]->forEach(ci) {
 		ci.portInstances := ci.componentType.createPortInstances(NULL_COMPONENT_PART_HELPER); // using helper instead of "null", because of QVTO-Bug
 		ci.embeddedCIC := new ComponentInstanceConfiguration(ci.componentType.oclAsType(StructuredComponent));
+		
+		// Create ConnectorInstances after PortInstance.component and ComponentInstance.componentPart is set (see above)
+		// This makes sure that the derivation of the PortInstance.portPart reference can work,
+		// Which is necessary for the creation of the connector instances.
+		ci.portInstances->forEach(i) {
+			var part : ComponentPart := NULL_COMPONENT_PART_HELPER;
+			if (not ci.componentPart.oclIsUndefined()) then {
+				part := ci.componentPart;
+			} endif;
+			i.createConnectorInstances(part);
+		};
+		// make sure all created connectors are contained
+		if (ci.container().oclIsKindOf(ComponentInstanceConfiguration)) then {
+			ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances := ci.portInstances.portConnectorInstances;
+		} endif;
+		
 	};
 }
 
@@ -37,12 +53,11 @@ query Port::portInstances(componentInstance : ComponentInstance) : Set(PortInsta
 	return componentInstance.portInstances->select(i | i.type = self);
 }
 
-// Creating Port Instances for Components by creating instances for each port.
+
 query Component::createPortInstances(part : ComponentPart) : Set(PortInstance) {
 	var portInstances : Set(PortInstance);
 	self.ports->forEach(port) {
 		portInstances += port.createInstances(part)[PortInstance];
-		
 	};
 	return portInstances;
 }
@@ -73,12 +88,6 @@ query DiscretePort::createSubPortInstances(part : ComponentPart) : Set(PortInsta
 
 // Primitively creating and initializing one PortInstance by PortType
 query ConnectorEndpoint::createInstance(part : ComponentPart) : ConnectorEndpointInstance {
-	var portInstance : ConnectorEndpointInstance = self.primCreateInstance(part);
-	// initialize port instance by creating connector instances for it.
-	portInstance.connectorInstances := portInstance.createConnectorInstances(part);
-	return portInstance;
-}
-query ConnectorEndpoint::primCreateInstance(part : ComponentPart) : ConnectorEndpointInstance {
 	return self.map single(part);
 }
 
@@ -88,12 +97,17 @@ query Connector::otherEnd(thisEnd : ConnectorEndpoint) : ConnectorEndpoint {
 }
 query ConnectorEndpointInstance::createConnectorInstances(part : ComponentPart) : Set(ConnectorInstance) {
 	var connectorInstances : Set(ConnectorInstance);
-	self.type.connectors[PortConnector]->forEach(portConnector) {
-		var otherEnd : Port := portConnector.otherEnd(self.type).oclAsType(Port);
 		
-		//ComponentInstance.allInstances()->collect(ci | otherEnd.portInstances(ci))->reject(oclIsUndefined())->forEach(otherEndInstance) {
+	self.type.connectors
+		
+	//->reject(c | self.connectorInstances.type->includes(c))[PortConnector]
+		
+	[PortConnector]->forEach(portConnector) {
+		var otherEnd : Port := portConnector.otherEnd(self.type).oclAsType(Port);
 		otherEnd.resolve(PortInstance)->forEach(otherEndInstance) {
-			connectorInstances += portConnector.createConnectorInstance(Set { self, otherEndInstance });
+			if (not otherEndInstance.oclIsUndefined() and otherEndInstance != self and Set { self, otherEndInstance}.connectorInstances.type->excludes(portConnector)) then {
+				connectorInstances += portConnector.createConnectorInstance(Set { self, otherEndInstance });
+			} endif;
 		}
 	};
 	return connectorInstances;
@@ -114,6 +128,9 @@ query DelegationConnector::primCreateConnectorInstance() : ConnectorInstance {
 	return new DelegationConnectorInstance(self);
 }
 
+
+
+
 // Constructors
 constructor ComponentInstanceConfiguration::ComponentInstanceConfiguration(component : StructuredComponent) {
 	name := component.name;
@@ -124,20 +141,64 @@ constructor ComponentInstanceConfiguration::ComponentInstanceConfiguration(compo
 		componentInstances += new StructuredComponentInstance(part.componentType.oclAsType(StructuredComponent), part);
 	};
 	// make sure all created connectors are contained
+	portConnectorInstances->forEach(pci) {
+		instance.removeElement(pci);
+	};
 	portConnectorInstances := componentInstances.portInstances.portConnectorInstances;
 }
+
+// TODO: Same code as below
 constructor AtomicComponentInstance::AtomicComponentInstance(type : AtomicComponent, part : ComponentPart) {
 	componentType := type;
 	name := type.name;
-	portInstances := type.createPortInstances(part);
+	
+	// Creating Port Instances also sets the opposite feature PortInstance.component
+	portInstances := componentType.createPortInstances(part);
+
+	// Set ComponentPart
+	if (part != NULL_COMPONENT_PART_HELPER) then {
+		componentPart := part;
+	} endif;
+	
+	// Create ConnectorInstances after PortInstance.component and ComponentInstance.componentPart is set (see above)
+	// This makes sure that the derivation of the PortInstance.portPart reference can work,
+	// Which is necessary for the creation of the connector instances.
+	portInstances->forEach(i) {
+		i.connectorInstances := i.createConnectorInstances(part);
+	};
 }
+
+// TODO: Same code as above
 constructor StructuredComponentInstance::StructuredComponentInstance(type : StructuredComponent, part : ComponentPart) {
 	componentType := type;
 	name := type.name;
-	portInstances := type.createPortInstances(part);
+	
+	// Creating Port Instances also sets the opposite feature PortInstance.component
+	portInstances := componentType.createPortInstances(part);
+	
+	// Set ComponentPart
+	if (part != NULL_COMPONENT_PART_HELPER) then {
+		componentPart := part;
+	} endif;
+	
+	// Create ConnectorInstances after PortInstance.component and ComponentInstance.componentPart is set (see above)
+	// This makes sure that the derivation of the PortInstance.portPart reference can work,
+	// Which is necessary for the creation of the connector instances.
+	portInstances->forEach(i) {
+		i.connectorInstances := i.createConnectorInstances(part);
+	};
+	
 	embeddedCIC := new ComponentInstanceConfiguration(type);
 }
 
+
+constructor AssemblyConnectorInstance::AssemblyConnectorInstance(assembly : AssemblyConnector) {
+	type := assembly;
+}
+constructor DelegationConnectorInstance::DelegationConnectorInstance(delegation : DelegationConnector) {
+	type := delegation;
+	
+}
 
 mapping ConnectorEndpoint::single(part : ComponentPart) : ConnectorEndpointInstance
 	disjuncts DiscretePort::singleDiscrete, ContinuousPort::singleContinuous, HybridPort::singleHybrid;
@@ -156,11 +217,4 @@ mapping ContinuousPort::singleContinuous(part : ComponentPart) : ContinuousPortI
 }
 mapping HybridPort::singleHybrid(part : ComponentPart) : HybridPortInstance {
 	type := self;
-}
-constructor AssemblyConnectorInstance::AssemblyConnectorInstance(assembly : AssemblyConnector) {
-	type := assembly;
-}
-constructor DelegationConnectorInstance::DelegationConnectorInstance(delegation : DelegationConnector) {
-	type := delegation;
-	
 }
