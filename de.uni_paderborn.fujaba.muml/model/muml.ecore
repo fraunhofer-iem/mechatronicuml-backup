@@ -657,7 +657,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="portPart" eType="#//component/PortPart"
           changeable="false" volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if (self.type.oclIsKindOf(component::PortPart))&#xD;&#xA;then&#xD;&#xA;self.type.oclAsType(component::PortPart)&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif"/>
+          <details key="derivation" value="componentInstance.componentPart.portParts->select(type = self.type)->any(true)"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>

@@ -108,7 +108,7 @@ public interface PortInstance extends ConnectorEndpointInstance {
 	 * @return the value of the '<em>Port Part</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getPortInstance_PortPart()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.type.oclIsKindOf(component::PortPart))\r\nthen\r\nself.type.oclAsType(component::PortPart)\r\nelse\r\nnull\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='componentInstance.componentPart.portParts->select(type = self.type)->any(true)'"
 	 * @generated
 	 */
 	PortPart getPortPart();

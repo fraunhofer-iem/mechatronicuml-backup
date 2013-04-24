@@ -21718,5 +21718,11 @@
     <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="StructuredComponentAllowsNoHybridPorts ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"
         oldDataValue="StructuredComponentAllowsNoHybridPorts ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/portPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="componentInstance.componentPart.portParts->select(type = self.type)"
+        oldDataValue="if (self.type.oclIsKindOf(component::PortPart))&#xD;&#xA;then&#xD;&#xA;self.type.oclAsType(component::PortPart)&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/portPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="componentInstance.componentPart.portParts->select(type = self.type)->any(true)"
+        oldDataValue="componentInstance.componentPart.portParts->select(type = self.type)"/>
   </releases>
 </history:History>

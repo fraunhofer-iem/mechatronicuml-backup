@@ -858,7 +858,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (getPortInstance_PortPart(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if (self.type.oclIsKindOf(component::PortPart))\r\nthen\r\nself.type.oclAsType(component::PortPart)\r\nelse\r\nnull\r\nendif"
+			 "derivation", "componentInstance.componentPart.portParts->select(type = self.type)->any(true)"
 		   });				
 		addAnnotation
 		  (getAssemblyConnectorInstance_AssemblyConnectorType(), 
