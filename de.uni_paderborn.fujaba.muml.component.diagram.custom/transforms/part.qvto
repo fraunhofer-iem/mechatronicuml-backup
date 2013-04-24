@@ -1,6 +1,7 @@
 transformation InstantiationTransformation(inout input : ComponentPackage);
 
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.2.2');
+modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.2.2');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.2.2');
 modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.2.2');
 
@@ -16,9 +17,23 @@ main() {
 			part.parentComponent.coordinationProtocolOccurences->forEach(c) {
 				c.portParts := c.portParts->excluding(p); 
 			};
-			input.removeElement(p); // remove from resource
+			
+			// Remove all its connectors
+			var connectors : Set(Connector) := p.connectors;
+			connectors->forEach(c) {
+				c.connectorEndpoints := Set { };
+				if (c.oclIsKindOf(PortConnector)) then {
+					part.parentComponent.connectors := part.parentComponent.connectors->excluding(c.oclAsType(PortConnector));
+				} endif;
+			};
+			
+			// remove from resource
+			input.removeElement(p);
 		};
 		
+		// and from connectors
+		
+				
 		// Remove stale coordinationProtocolOccurrences
 		part.parentComponent.coordinationProtocolOccurences := part.parentComponent.coordinationProtocolOccurences->reject(portParts->isEmpty());
 		
