@@ -566,44 +566,20 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class LocalVariableDeclarationStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocalVariableDeclarationStatement");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cVariableAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cVariableLocalVariableDeclarationParserRuleCall_0_0 = (RuleCall)cVariableAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cColonEqualsSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cInitializeExpressionAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cInitializeExpressionInitializeExpressionParserRuleCall_1_1_0 = (RuleCall)cInitializeExpressionAssignment_1_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cVariableAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cVariableLocalVariableDeclarationParserRuleCall_0 = (RuleCall)cVariableAssignment.eContents().get(0);
 		
 		//// end of array initialization
 		//// local variable declaration
 		//LocalVariableDeclarationStatement returns actionlanguage::LocalVariableDeclarationStatement:
-		//	variable=LocalVariableDeclaration (":=" initializeExpression=InitializeExpression)? ";";
+		//	variable=LocalVariableDeclaration;
 		public ParserRule getRule() { return rule; }
 
-		//variable=LocalVariableDeclaration (":=" initializeExpression=InitializeExpression)? ";"
-		public Group getGroup() { return cGroup; }
-
 		//variable=LocalVariableDeclaration
-		public Assignment getVariableAssignment_0() { return cVariableAssignment_0; }
+		public Assignment getVariableAssignment() { return cVariableAssignment; }
 
 		//LocalVariableDeclaration
-		public RuleCall getVariableLocalVariableDeclarationParserRuleCall_0_0() { return cVariableLocalVariableDeclarationParserRuleCall_0_0; }
-
-		//(":=" initializeExpression=InitializeExpression)?
-		public Group getGroup_1() { return cGroup_1; }
-
-		//":="
-		public Keyword getColonEqualsSignKeyword_1_0() { return cColonEqualsSignKeyword_1_0; }
-
-		//initializeExpression=InitializeExpression
-		public Assignment getInitializeExpressionAssignment_1_1() { return cInitializeExpressionAssignment_1_1; }
-
-		//InitializeExpression
-		public RuleCall getInitializeExpressionInitializeExpressionParserRuleCall_1_1_0() { return cInitializeExpressionInitializeExpressionParserRuleCall_1_1_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+		public RuleCall getVariableLocalVariableDeclarationParserRuleCall_0() { return cVariableLocalVariableDeclarationParserRuleCall_0; }
 	}
 
 	public class LocalVariableDeclarationElements extends AbstractParserRuleElementFinder {
@@ -614,12 +590,17 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDataTypeDataTypeIDTerminalRuleCall_0_0_1 = (RuleCall)cDataTypeDataTypeCrossReference_0_0.eContents().get(1);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cColonEqualsSignKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cInitializeExpressionAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cInitializeExpressionInitializeExpressionParserRuleCall_2_1_0 = (RuleCall)cInitializeExpressionAssignment_2_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//LocalVariableDeclaration returns behavior::Variable:
-		//	dataType=[types::DataType] name=ID;
+		//	dataType=[types::DataType] name=ID (":=" initializeExpression=InitializeExpression)? ";";
 		public ParserRule getRule() { return rule; }
 
-		//dataType=[types::DataType] name=ID
+		//dataType=[types::DataType] name=ID (":=" initializeExpression=InitializeExpression)? ";"
 		public Group getGroup() { return cGroup; }
 
 		//dataType=[types::DataType]
@@ -636,6 +617,21 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//(":=" initializeExpression=InitializeExpression)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//":="
+		public Keyword getColonEqualsSignKeyword_2_0() { return cColonEqualsSignKeyword_2_0; }
+
+		//initializeExpression=InitializeExpression
+		public Assignment getInitializeExpressionAssignment_2_1() { return cInitializeExpressionAssignment_2_1; }
+
+		//InitializeExpression
+		public RuleCall getInitializeExpressionInitializeExpressionParserRuleCall_2_1_0() { return cInitializeExpressionInitializeExpressionParserRuleCall_2_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
@@ -2005,7 +2001,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	//// end of array initialization
 	//// local variable declaration
 	//LocalVariableDeclarationStatement returns actionlanguage::LocalVariableDeclarationStatement:
-	//	variable=LocalVariableDeclaration (":=" initializeExpression=InitializeExpression)? ";";
+	//	variable=LocalVariableDeclaration;
 	public LocalVariableDeclarationStatementElements getLocalVariableDeclarationStatementAccess() {
 		return (pLocalVariableDeclarationStatement != null) ? pLocalVariableDeclarationStatement : (pLocalVariableDeclarationStatement = new LocalVariableDeclarationStatementElements());
 	}
@@ -2015,7 +2011,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LocalVariableDeclaration returns behavior::Variable:
-	//	dataType=[types::DataType] name=ID;
+	//	dataType=[types::DataType] name=ID (":=" initializeExpression=InitializeExpression)? ";";
 	public LocalVariableDeclarationElements getLocalVariableDeclarationAccess() {
 		return (pLocalVariableDeclaration != null) ? pLocalVariableDeclaration : (pLocalVariableDeclaration = new LocalVariableDeclarationElements());
 	}

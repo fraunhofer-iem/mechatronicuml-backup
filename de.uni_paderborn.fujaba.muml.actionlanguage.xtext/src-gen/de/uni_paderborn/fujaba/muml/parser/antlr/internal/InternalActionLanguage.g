@@ -1019,10 +1019,10 @@ ruleLocalVariableDeclarationStatement returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLocalVariableDeclarationStatementAccess().getVariableLocalVariableDeclarationParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getLocalVariableDeclarationStatementAccess().getVariableLocalVariableDeclarationParserRuleCall_0()); 
 	    }
 		lv_variable_0_0=ruleLocalVariableDeclaration		{
 	        if ($current==null) {
@@ -1037,32 +1037,6 @@ ruleLocalVariableDeclarationStatement returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_1=':=' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getLocalVariableDeclarationStatementAccess().getColonEqualsSignKeyword_1_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getLocalVariableDeclarationStatementAccess().getInitializeExpressionInitializeExpressionParserRuleCall_1_1_0()); 
-	    }
-		lv_initializeExpression_2_0=ruleInitializeExpression		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getLocalVariableDeclarationStatementRule());
-	        }
-       		set(
-       			$current, 
-       			"initializeExpression",
-        		lv_initializeExpression_2_0, 
-        		"InitializeExpression");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))?	otherlv_3=';' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getLocalVariableDeclarationStatementAccess().getSemicolonKeyword_2());
-    }
 )
 ;
 
@@ -1115,7 +1089,33 @@ ruleLocalVariableDeclaration returns [EObject current=null]
 	    }
 
 )
-))
+)(	otherlv_2=':=' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getLocalVariableDeclarationAccess().getColonEqualsSignKeyword_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getLocalVariableDeclarationAccess().getInitializeExpressionInitializeExpressionParserRuleCall_2_1_0()); 
+	    }
+		lv_initializeExpression_3_0=ruleInitializeExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getLocalVariableDeclarationRule());
+	        }
+       		set(
+       			$current, 
+       			"initializeExpression",
+        		lv_initializeExpression_3_0, 
+        		"InitializeExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_4=';' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getLocalVariableDeclarationAccess().getSemicolonKeyword_3());
+    }
+)
 ;
 
 

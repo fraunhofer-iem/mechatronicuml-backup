@@ -40,6 +40,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator;
+import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TriggerMessageExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
@@ -389,6 +390,12 @@ public class GrammarTest {
 		assertFalse(loadResult.hasError());
 		assertNotNull(loadResult.getEObject());
 		assertValidEObject(loadResult.getEObject());
+		Block block = (Block) loadResult.getEObject();
+		assertEquals(2, block.getExpressions().size());
+		LocalVariableDeclarationStatement localVariableDeclarationStatement = (LocalVariableDeclarationStatement) block.getExpressions().get(1);
+		assertNotNull(localVariableDeclarationStatement.getVariable());
+		assertEquals("xyz", localVariableDeclarationStatement.getVariable().getName());
+		assertNotNull(localVariableDeclarationStatement.getVariable().getInitializeExpression());
 	}
 	
 	@Test

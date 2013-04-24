@@ -68,9 +68,8 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAssignmentAccess().getGroup(), "rule__Assignment__Group__0");
 					put(grammarAccess.getArrayInitializeExpressionAccess().getGroup(), "rule__ArrayInitializeExpression__Group__0");
 					put(grammarAccess.getArrayInitializeExpressionAccess().getGroup_2(), "rule__ArrayInitializeExpression__Group_2__0");
-					put(grammarAccess.getLocalVariableDeclarationStatementAccess().getGroup(), "rule__LocalVariableDeclarationStatement__Group__0");
-					put(grammarAccess.getLocalVariableDeclarationStatementAccess().getGroup_1(), "rule__LocalVariableDeclarationStatement__Group_1__0");
 					put(grammarAccess.getLocalVariableDeclarationAccess().getGroup(), "rule__LocalVariableDeclaration__Group__0");
+					put(grammarAccess.getLocalVariableDeclarationAccess().getGroup_2(), "rule__LocalVariableDeclaration__Group_2__0");
 					put(grammarAccess.getLogicalOrExpressionAccess().getGroup(), "rule__LogicalOrExpression__Group__0");
 					put(grammarAccess.getLogicalOrExpressionAccess().getGroup_1(), "rule__LogicalOrExpression__Group_1__0");
 					put(grammarAccess.getLogicalAndExpressionAccess().getGroup(), "rule__LogicalAndExpression__Group__0");
@@ -124,10 +123,10 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAssignmentAccess().getRhs_assignExpressionAssignment_2(), "rule__Assignment__Rhs_assignExpressionAssignment_2");
 					put(grammarAccess.getArrayInitializeExpressionAccess().getExpressionsAssignment_1(), "rule__ArrayInitializeExpression__ExpressionsAssignment_1");
 					put(grammarAccess.getArrayInitializeExpressionAccess().getExpressionsAssignment_2_1(), "rule__ArrayInitializeExpression__ExpressionsAssignment_2_1");
-					put(grammarAccess.getLocalVariableDeclarationStatementAccess().getVariableAssignment_0(), "rule__LocalVariableDeclarationStatement__VariableAssignment_0");
-					put(grammarAccess.getLocalVariableDeclarationStatementAccess().getInitializeExpressionAssignment_1_1(), "rule__LocalVariableDeclarationStatement__InitializeExpressionAssignment_1_1");
+					put(grammarAccess.getLocalVariableDeclarationStatementAccess().getVariableAssignment(), "rule__LocalVariableDeclarationStatement__VariableAssignment");
 					put(grammarAccess.getLocalVariableDeclarationAccess().getDataTypeAssignment_0(), "rule__LocalVariableDeclaration__DataTypeAssignment_0");
 					put(grammarAccess.getLocalVariableDeclarationAccess().getNameAssignment_1(), "rule__LocalVariableDeclaration__NameAssignment_1");
+					put(grammarAccess.getLocalVariableDeclarationAccess().getInitializeExpressionAssignment_2_1(), "rule__LocalVariableDeclaration__InitializeExpressionAssignment_2_1");
 					put(grammarAccess.getLogicalOrExpressionAccess().getOperatorAssignment_1_1(), "rule__LogicalOrExpression__OperatorAssignment_1_1");
 					put(grammarAccess.getLogicalOrExpressionAccess().getRightExpressionAssignment_1_2(), "rule__LogicalOrExpression__RightExpressionAssignment_1_2");
 					put(grammarAccess.getLogicalAndExpressionAccess().getOperatorAssignment_1_1(), "rule__LogicalAndExpression__OperatorAssignment_1_1");

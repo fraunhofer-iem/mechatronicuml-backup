@@ -114,11 +114,11 @@ ArrayInitializeExpression returns actionlanguage::ArrayInitializeExpression:
 // local variable declaration
 
 LocalVariableDeclarationStatement returns actionlanguage::LocalVariableDeclarationStatement:
-	variable=LocalVariableDeclaration (':=' initializeExpression=InitializeExpression)? ';'
+	variable=LocalVariableDeclaration
 ;
 
 LocalVariableDeclaration returns behavior::Variable:
-	dataType=[types::DataType] name=ID
+	dataType=[types::DataType] name=ID (':=' initializeExpression=InitializeExpression)? ';'
 ;
 
 // end of local variable declaration
