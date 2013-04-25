@@ -2,8 +2,8 @@ package de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.test;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.HashSet;
-
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Test;
 import org.storydriven.core.expressions.common.ArithmeticExpression;
@@ -46,7 +46,7 @@ public class TestSimpleExpressions {
 	private VariableBinding varBindingIntA, varBindingIntB, varBindingBoolA,
 			varBindingBoolB;
 	private DataType intType, boolType;
-	private HashSet<VariableBinding> varBindings;
+	private EList<VariableBinding> varBindings;
 	private Block block, block2;
 	private Assignment assignment;
 	private ActionLanguageInterpreter actionLanguageInterpreter;
@@ -94,7 +94,7 @@ public class TestSimpleExpressions {
 		varBindingIntA.setValue(0);
 		varBindingIntA.setVariable(intA);
 
-		varBindings = new HashSet<VariableBinding>();
+		varBindings = new BasicEList<VariableBinding>();
 		varBindings.add(varBindingIntA);
 
 		varBindingIntB = runtimeFactory.createVariableBinding();
@@ -349,7 +349,7 @@ public class TestSimpleExpressions {
 	 */
 //@formatter:on
 	@Test
-	public void testLocalVariableDeclaration()
+	public void testLocalVariableDeclaration1()
 			throws UnsupportedModellingElementException,
 			VariableNotInitializedException, IncompatibleTypeException {
 		// set up initialization expression
@@ -358,14 +358,13 @@ public class TestSimpleExpressions {
 		// set up inC
 		Variable intC = behaviourFactory.createVariable();
 		intC.setDataType(intType);
-		// intC.setInitializeExpression(litExpression);
+		intC.setInitializeExpression(litExpression);
 
 		// set up declaration expression
 		LocalVariableDeclarationStatement decExpression = alFactory
 				.createLocalVariableDeclarationStatement();
 		decExpression.setVariable(intC);
-		decExpression.setInitializeExpression(litExpression);
-
+		
 		// set up tne expression for intA
 		TypedNamedElementExpression intAExp = alFactory
 				.createTypedNamedElementExpression();
@@ -391,4 +390,82 @@ public class TestSimpleExpressions {
 		assertTrue(varBindingIntA.getValue().equals(2));
 
 	}
+	
+	//@formatter:off
+		/**
+		 * intC;
+		 * if(true){
+		 * 	intC = 2;
+		 * }
+		 * intA=intC;
+		 * 
+		 * @throws IncompatibleTypeException
+		 * @throws VariableNotInitializedException
+		 * @throws UnsupportedModellingElementException
+		 * 
+		 */
+	//@formatter:on
+		@Test
+		public void testLocalVariableDeclaration2()
+				throws UnsupportedModellingElementException,
+				VariableNotInitializedException, IncompatibleTypeException {
+			// set up literal expressions
+			LiteralExpression litExpression = expFactory.createLiteralExpression();
+			litExpression.setValue("2");
+			
+			
+			LiteralExpression litExpressionBool = expFactory.createLiteralExpression();
+			litExpressionBool.setValue("true");
+			// set up inC
+			Variable intC = behaviourFactory.createVariable();
+			intC.setDataType(intType);
+			// intC.setInitializeExpression(litExpression);
+
+			// set up declaration expression
+			LocalVariableDeclarationStatement decExpression = alFactory
+					.createLocalVariableDeclarationStatement();
+			decExpression.setVariable(intC);
+
+			// set up tne expression for intA
+			TypedNamedElementExpression intAExp = alFactory
+					.createTypedNamedElementExpression();
+			intAExp.setTypedNamedElement(intA);
+
+			// set up tne expressions for intC
+			TypedNamedElementExpression intCExp1 = alFactory
+					.createTypedNamedElementExpression();
+			intCExp1.setTypedNamedElement(intC);
+			
+			TypedNamedElementExpression intCExp2 = alFactory
+					.createTypedNamedElementExpression();
+			intCExp2.setTypedNamedElement(intC);
+
+			// set up Assignments
+			Assignment assignment1 = alFactory.createAssignment();
+			assignment1.setLhs_typedNamedElementExpression(intCExp1);
+			assignment1.setRhs_assignExpression(litExpression);
+			
+			Assignment assignment2 = alFactory.createAssignment();
+			assignment2.setLhs_typedNamedElementExpression(intAExp);
+			assignment2.setRhs_assignExpression(intCExp2);
+			
+			//set up ifStatement
+			IfStatement ifStatement = alFactory.createIfStatement();
+			ifStatement.setIfCondition(litExpressionBool);
+			ifStatement.setIfBlock(block2);
+
+			// set up Blocks
+			block.getExpressions().add(decExpression);
+			block.getExpressions().add(ifStatement);
+			block.getExpressions().add(assignment2);
+			
+			block2.getExpressions().add(assignment1);
+			
+
+			// evaluate
+			actionLanguageInterpreter.evaluateExpression(varBindings, block);
+
+			assertTrue(varBindingIntA.getValue().equals(2));
+
+		}
 }

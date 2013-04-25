@@ -1,10 +1,9 @@
 package de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.test;
 
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
 
-import java.util.HashSet;
-
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Test;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
@@ -48,7 +47,7 @@ public class TestOperationCall {
 	private ActionLanguageInterpreter actionLanguageInterpreter;
 	private Variable intA, intB;
 	private VariableBinding varBindingIntA, varBindingIntB;
-	private HashSet<VariableBinding> varBindings;
+	private EList<VariableBinding> varBindings;
 	private DataType intType, voidType;
 
 	@Before
@@ -81,7 +80,7 @@ public class TestOperationCall {
 		intB.setDataType(intType);
 
 		// set up variable bindings
-		varBindings = new HashSet<VariableBinding>();
+		varBindings = new BasicEList<VariableBinding>();
 
 		varBindingIntA = runtimeFactory.createVariableBinding();
 		varBindingIntA.setValue(0);
@@ -264,8 +263,7 @@ public class TestOperationCall {
 //@formatter:on
 	@Test
 	public void testEmbeddedOperationCalls1()
-			throws UnsupportedModellingElementException,
-			IncompatibleTypeException {
+			{
 		// set up parameters
 		parameterA = behaviourFactory.createParameter();
 		parameterA.setDataType(intType);
@@ -323,6 +321,11 @@ public class TestOperationCall {
 			assertTrue(false);
 		} catch (VariableNotInitializedException e) {
 			assertTrue(true);
+		} catch (UnsupportedModellingElementException e) {
+			e.printStackTrace();
+		} catch (IncompatibleTypeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 	}
@@ -544,4 +547,6 @@ public class TestOperationCall {
 		}
 
 	}
+	
+	
 }
