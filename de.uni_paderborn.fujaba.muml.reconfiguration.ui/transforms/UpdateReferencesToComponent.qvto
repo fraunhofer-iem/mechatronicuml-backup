@@ -57,6 +57,7 @@ mapping updateComponentParts(inout compCategory : ModelElementCategory, in oldCo
 				-- redirect type reference from oldComp to newComp
 				if(part.componentType = oldComp) then{
 					part.componentType := newComp;
+										
 				} endif;
 			}
 		} endif;

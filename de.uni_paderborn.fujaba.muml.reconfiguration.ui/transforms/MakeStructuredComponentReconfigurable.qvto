@@ -31,7 +31,7 @@ modeltype componentstory uses componentstorydiagram::controlflow("http://www.fuj
 
 -- this transformation creates a copy of the inputComponent, adds it to the category, generates the reconfiguration
 -- controller, and redirects all references from the inputComponent to the copy
-transformation MakeStructuredComponentReconfigurable(in inputComponent : component, inout category : modelinst);
+transformation MakeStructuredComponentReconfigurable(inout inputComponent : component, inout category : modelinst);
 
 main() {
 
@@ -45,7 +45,11 @@ main() {
 	-- update reference such that they point to the newComponent instead of the oldComponent
 	map updateReferencesToComponent(rootNode, oldComponent, newComponent);
 	
+	-- add new component to the model element category
 	componentCategory.modelElements += newComponent;
+	
+	-- delete old component
+	inputComponent.removeElement(oldComponent);
 }
 
 -- creates a reconfigurable structure component including the reconfiguration controller
