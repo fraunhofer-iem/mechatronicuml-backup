@@ -18334,12 +18334,12 @@
         featureName="lowerBound" dataValue="1" oldDataValue="0"/>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//LocalVariableDeclarationStatement"
-          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//LocalVariableDeclarationStatement/initializeExpression">
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//LocalVariableDeclarationStatement/initializeExpression"
+          referenceName="eStructuralFeatures" element="#//@releases.16/@changes.157/@element">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.157/@element"
             featureName="name" dataValue="initializeExpression"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//LocalVariableDeclarationStatement/initializeExpression"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.157/@element"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//LocalVariableDeclarationStatement/initializeExpression"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.157/@element"
             featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment"/>
       </changes>
       <operation name="newReference">
@@ -18682,7 +18682,7 @@
         </parameters>
       </operation>
     </changes>
-    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//LocalVariableDeclarationStatement/initializeExpression"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.157/@element"
         featureName="eType" referenceValue="../../org.storydriven.core/model/core.ecore#//expressions/Expression"
         oldReferenceValue="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment"/>
     <changes xsi:type="history:OperationChange">
@@ -21724,5 +21724,10 @@
     <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/portPart/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="componentInstance.componentPart.portParts->select(type = self.type)->any(true)"
         oldDataValue="componentInstance.componentPart.portParts->select(type = self.type)"/>
+    <changes xsi:type="history:Delete" target="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//LocalVariableDeclarationStatement"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EReference" name="initializeExpression" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          containment="true"/>
+    </changes>
   </releases>
 </history:History>

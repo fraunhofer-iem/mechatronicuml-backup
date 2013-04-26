@@ -20,7 +20,6 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement#getVariable <em>Variable</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement#getInitializeExpression <em>Initialize Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement#getAllSurroundingBlocks <em>All Surrounding Blocks</em>}</li>
  * </ul>
  * </p>
@@ -56,32 +55,6 @@ public interface LocalVariableDeclarationStatement extends Expression {
 	 * @generated
 	 */
 	void setVariable(Variable value);
-
-	/**
-	 * Returns the value of the '<em><b>Initialize Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Initialize Expression</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Initialize Expression</em>' containment reference.
-	 * @see #setInitializeExpression(Expression)
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getLocalVariableDeclarationStatement_InitializeExpression()
-	 * @model containment="true"
-	 * @generated
-	 */
-	Expression getInitializeExpression();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement#getInitializeExpression <em>Initialize Expression</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Initialize Expression</em>' containment reference.
-	 * @see #getInitializeExpression()
-	 * @generated
-	 */
-	void setInitializeExpression(Expression value);
 
 	/**
 	 * Returns the value of the '<em><b>All Surrounding Blocks</b></em>' reference list.

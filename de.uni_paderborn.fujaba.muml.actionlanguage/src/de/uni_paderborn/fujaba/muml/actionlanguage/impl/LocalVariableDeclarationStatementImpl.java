@@ -29,7 +29,6 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.LocalVariableDeclarationStatementImpl#getVariable <em>Variable</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.LocalVariableDeclarationStatementImpl#getInitializeExpression <em>Initialize Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.LocalVariableDeclarationStatementImpl#getAllSurroundingBlocks <em>All Surrounding Blocks</em>}</li>
  * </ul>
  * </p>
@@ -46,16 +45,6 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	 * @ordered
 	 */
 	protected Variable variable;
-
-	/**
-	 * The cached value of the '{@link #getInitializeExpression() <em>Initialize Expression</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInitializeExpression()
-	 * @generated
-	 * @ordered
-	 */
-	protected Expression initializeExpression;
 
 	/**
 	 * The cached value of the '{@link #getAllSurroundingBlocks() <em>All Surrounding Blocks</em>}' reference list.
@@ -134,49 +123,6 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression getInitializeExpression() {
-		return initializeExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetInitializeExpression(Expression newInitializeExpression, NotificationChain msgs) {
-		Expression oldInitializeExpression = initializeExpression;
-		initializeExpression = newInitializeExpression;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION, oldInitializeExpression, newInitializeExpression);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setInitializeExpression(Expression newInitializeExpression) {
-		if (newInitializeExpression != initializeExpression) {
-			NotificationChain msgs = null;
-			if (initializeExpression != null)
-				msgs = ((InternalEObject)initializeExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION, null, msgs);
-			if (newInitializeExpression != null)
-				msgs = ((InternalEObject)newInitializeExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION, null, msgs);
-			msgs = basicSetInitializeExpression(newInitializeExpression, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION, newInitializeExpression, newInitializeExpression));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Block> getAllSurroundingBlocks() {
 		if (allSurroundingBlocks == null) {
 			allSurroundingBlocks = new EObjectResolvingEList<Block>(Block.class, this, ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS);
@@ -194,8 +140,6 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 		switch (featureID) {
 			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
 				return basicSetVariable(null, msgs);
-			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
-				return basicSetInitializeExpression(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -210,8 +154,6 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 		switch (featureID) {
 			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
 				return getVariable();
-			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
-				return getInitializeExpression();
 			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS:
 				return getAllSurroundingBlocks();
 		}
@@ -229,9 +171,6 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
 				setVariable((Variable)newValue);
 				return;
-			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
-				setInitializeExpression((Expression)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -247,9 +186,6 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
 				setVariable((Variable)null);
 				return;
-			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
-				setInitializeExpression((Expression)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -264,8 +200,6 @@ public class LocalVariableDeclarationStatementImpl extends ExpressionImpl implem
 		switch (featureID) {
 			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE:
 				return variable != null;
-			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION:
-				return initializeExpression != null;
 			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS:
 				return allSurroundingBlocks != null && !allSurroundingBlocks.isEmpty();
 		}

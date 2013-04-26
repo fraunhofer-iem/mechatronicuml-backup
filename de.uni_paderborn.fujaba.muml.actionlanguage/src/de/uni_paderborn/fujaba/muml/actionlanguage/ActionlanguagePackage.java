@@ -963,22 +963,13 @@ public interface ActionlanguagePackage extends EPackage {
 	int LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Initialize Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>All Surrounding Blocks</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Local Variable Declaration Statement</em>' class.
@@ -987,7 +978,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_VARIABLE_DECLARATION_STATEMENT_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
+	int LOCAL_VARIABLE_DECLARATION_STATEMENT_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.TypedNamedElementExpressionImpl <em>Typed Named Element Expression</em>}' class.
@@ -1534,17 +1525,6 @@ public interface ActionlanguagePackage extends EPackage {
 	EReference getLocalVariableDeclarationStatement_Variable();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement#getInitializeExpression <em>Initialize Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Initialize Expression</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement#getInitializeExpression()
-	 * @see #getLocalVariableDeclarationStatement()
-	 * @generated
-	 */
-	EReference getLocalVariableDeclarationStatement_InitializeExpression();
-
-	/**
 	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement#getAllSurroundingBlocks <em>All Surrounding Blocks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1981,14 +1961,6 @@ public interface ActionlanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE = eINSTANCE.getLocalVariableDeclarationStatement_Variable();
-
-		/**
-		 * The meta object literal for the '<em><b>Initialize Expression</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION = eINSTANCE.getLocalVariableDeclarationStatement_InitializeExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>All Surrounding Blocks</b></em>' reference list feature.

@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?eclipse version="3.0"?>
-
-<!--
- <copyright>
- </copyright>
-
- $Id$
--->
-<plugin>
+<?eclipse version="3.0"?><!--
+--><plugin>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <?emfgen generated="true"?>

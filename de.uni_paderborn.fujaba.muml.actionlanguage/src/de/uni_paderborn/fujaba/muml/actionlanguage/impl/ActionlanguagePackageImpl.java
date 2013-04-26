@@ -602,17 +602,8 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLocalVariableDeclarationStatement_InitializeExpression() {
-		return (EReference)localVariableDeclarationStatementEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getLocalVariableDeclarationStatement_AllSurroundingBlocks() {
-		return (EReference)localVariableDeclarationStatementEClass.getEStructuralFeatures().get(2);
+		return (EReference)localVariableDeclarationStatementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -764,7 +755,6 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 
 		localVariableDeclarationStatementEClass = createEClass(LOCAL_VARIABLE_DECLARATION_STATEMENT);
 		createEReference(localVariableDeclarationStatementEClass, LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE);
-		createEReference(localVariableDeclarationStatementEClass, LOCAL_VARIABLE_DECLARATION_STATEMENT__INITIALIZE_EXPRESSION);
 		createEReference(localVariableDeclarationStatementEClass, LOCAL_VARIABLE_DECLARATION_STATEMENT__ALL_SURROUNDING_BLOCKS);
 
 		typedNamedElementExpressionEClass = createEClass(TYPED_NAMED_ELEMENT_EXPRESSION);
@@ -879,7 +869,6 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 
 		initEClass(localVariableDeclarationStatementEClass, LocalVariableDeclarationStatement.class, "LocalVariableDeclarationStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLocalVariableDeclarationStatement_Variable(), theBehaviorPackage.getVariable(), null, "variable", null, 1, 1, LocalVariableDeclarationStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLocalVariableDeclarationStatement_InitializeExpression(), theExpressionsPackage.getExpression(), null, "initializeExpression", null, 0, 1, LocalVariableDeclarationStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLocalVariableDeclarationStatement_AllSurroundingBlocks(), this.getBlock(), null, "allSurroundingBlocks", null, 0, -1, LocalVariableDeclarationStatement.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(typedNamedElementExpressionEClass, TypedNamedElementExpression.class, "TypedNamedElementExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

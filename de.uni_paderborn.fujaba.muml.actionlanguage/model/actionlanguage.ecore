@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="actionlanguage"
-    nsURI="http://www.fujaba.de/muml/actionlanguage/0.3.16" nsPrefix="actionlanguage">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="actionlanguage" nsURI="http://www.fujaba.de/muml/actionlanguage/0.3.16"
+    nsPrefix="actionlanguage">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The base package for the muml action language. It is an extension to the core.ecore expression package.&#xD;&#xA;The action language contains block definition, control structures like conditional statements and loops, assignments, and variable and operation call expressions. "/>
   </eAnnotations>
@@ -211,8 +210,6 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Variable"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initializeExpression" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="allSurroundingBlocks" upperBound="-1"
         eType="#//Block" changeable="false" transient="true" derived="true">
