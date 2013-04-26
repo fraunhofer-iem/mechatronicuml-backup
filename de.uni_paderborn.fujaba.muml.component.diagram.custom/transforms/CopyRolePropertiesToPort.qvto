@@ -28,10 +28,8 @@ helper copyRolePropertiesToPort(inout thePort : DiscretePort, inout theRootNode 
 	-- get role
 	var theRole := thePort.refinedRole;
 	
-	-- cardinality (creating a new one, to force notification in the diagram)
-	thePort.cardinality := new Cardinality(theRole.cardinality.lowerBound, theRole.cardinality.upperBound);
-	--thePort.cardinality.lowerBound.value := theRole.cardinality.lowerBound.value;
-	--thePort.cardinality.upperBound.value := theRole.cardinality.upperBound.value;
+	-- copy cardinality (creating a new one, to force notification in the diagram)
+	thePort.cardinality := theRole.cardinality.map copyCardinality();
 	
 	-- receiver message types
 	var recvMsgTypes : OrderedSet(MessageType);
@@ -148,7 +146,14 @@ constructor Region::Region() {
 	
 }
 
-constructor Cardinality::Cardinality(in lower : NaturalNumber, in upper : NaturalNumber) {
-	lowerBound := lower;
-	upperBound := upper;
+-- mapping that creates an exact copy of a cardinality
+mapping Cardinality::copyCardinality() : Cardinality{
+	lowerBound := self.lowerBound.map copyNaturalNumber();
+	upperBound := self.upperBound.map copyNaturalNumber();
+}
+
+-- mapping that creates an exact copy of a NaturalNumber
+mapping NaturalNumber::copyNaturalNumber() : NaturalNumber {
+	value := self.value;
+	infinity := self.infinity;
 }
