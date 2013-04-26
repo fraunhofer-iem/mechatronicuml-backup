@@ -47,5 +47,37 @@
          </child>
       </category>
    </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders">
+      <paletteProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.providers.internal.DefaultPaletteProvider">
+         <Priority
+               name="High">
+         </Priority>
+         <editor
+               id="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID"></editor>
+         <contribution
+               factoryClass="de.uni_paderborn.fujaba.muml.component.diagram.part.MumlPaletteFactory">
+            <entry
+                  defineOnly="false"
+                  description="Creates a reconfigurable structured component."
+                  id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurableStructuredComponentTool"
+                  kind="tool"
+                  label="Reconfigurable Structured Component"
+                  path="createComponents1Group/"
+                  permission="Full">
+            </entry>
+         </contribution>
+      </paletteProvider>
+   </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.CustomReconfigurationEditPartProvider">
+         <Priority
+               name="Medium">
+         </Priority>
+      </editpartProvider>
+   </extension>
 
 </plugin>
