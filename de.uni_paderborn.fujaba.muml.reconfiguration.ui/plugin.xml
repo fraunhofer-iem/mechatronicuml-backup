@@ -36,5 +36,16 @@
          </command>
       </menuContribution>
    </extension>
+   <extension
+         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+      <category
+            key="de.uni_paderborn.fujaba.muml.components.category"
+            name="component">
+         <child
+               class="ReconfigurableStructuredComponent"
+               packageNsUri="http://www.fujaba.de/muml/reconfiguration/0.3.18">
+         </child>
+      </category>
+   </extension>
 
 </plugin>
