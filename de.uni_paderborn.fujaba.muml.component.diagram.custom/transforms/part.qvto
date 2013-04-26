@@ -13,22 +13,25 @@ main() {
 		// that will be removed after the replacement are also removed from the resource.
 		// See MUML #564
 		part.portParts->forEach(p) {
-			// also remove from coordination protocol occurrence
-			part.parentComponent.coordinationProtocolOccurences->forEach(c) {
-				c.portParts := c.portParts->excluding(p); 
-			};
-			
-			// Remove all its connectors
-			var connectors : Set(Connector) := p.connectors;
-			connectors->forEach(c) {
-				c.connectorEndpoints := Set { };
-				if (c.oclIsKindOf(PortConnector)) then {
-					part.parentComponent.connectors := part.parentComponent.connectors->excluding(c.oclAsType(PortConnector));
-				} endif;
-			};
-			
-			// remove from resource
-			input.removeElement(p);
+			-- only delete those port parts whose port type is not contained in the current component type (see #591)
+			if (part.componentType.ports ->excludes(p.portType)) then {
+				// also remove from coordination protocol occurrence
+				part.parentComponent.coordinationProtocolOccurences->forEach(c) {
+					c.portParts := c.portParts->excluding(p); 
+				};
+				
+				// Remove all its connectors
+				var connectors : Set(Connector) := p.connectors;
+				connectors->forEach(c) {
+					c.connectorEndpoints := Set { };
+					if (c.oclIsKindOf(PortConnector)) then {
+						part.parentComponent.connectors := part.parentComponent.connectors->excluding(c.oclAsType(PortConnector));
+					} endif;
+				};
+				
+				// remove from resource
+				input.removeElement(p);
+			}endif;
 		};
 		
 		// and from connectors
@@ -38,12 +41,11 @@ main() {
 		part.parentComponent.coordinationProtocolOccurences := part.parentComponent.coordinationProtocolOccurences->reject(portParts->isEmpty());
 		
 		// Replace existing portParts with newly created portParts
-		part.portParts := part.componentType.createPortParts();
-		--part.portParts := Set { };	
+		createPortParts(part);
 		
 		// Create CoordinationProtocolParts (was occurrence) and associate PortParts
 		part.portParts->forEach(p) {
-			if (p.portType.oclIsKindOf(DiscretePort)) then {
+			if (p.portType.oclIsKindOf(DiscretePort) and p.coordinationProtocolOccurence.oclIsUndefined()) then {
 				var coordinationProtocol : CoordinationProtocol := p.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol;
 				if (not coordinationProtocol.oclIsUndefined()) then {
 					// Try to find an existing protocol part (was occurrence) for this protocol
@@ -59,15 +61,21 @@ main() {
 	};
 }
 
-
-query Component::createPortParts() : Set(PortPart) {
-	var portParts : Set(PortPart);
-	self.ports->forEach(port) {
-		portParts += new PortPart(port);
+-- create new port parts for the component part
+helper createPortParts(inout componentPart : ComponentPart) {
+	
+	var componentType : Component := componentPart.componentType;
+	
+	componentType.ports -> forEach(port){
+		-- if no port part exists that references this port as its port type, create new port part (see #591)
+		if((componentPart.portParts -> select(p : PortPart | p.portType = port)) -> isEmpty()) then {
+			componentPart.portParts += new PortPart(port);
+		} endif;
 	};
-	return portParts;
+	
 }
 
+-- instantiate port part that references the given port
 constructor PortPart::PortPart(type : Port) {
 	portType := type;
 	name := type.name;
