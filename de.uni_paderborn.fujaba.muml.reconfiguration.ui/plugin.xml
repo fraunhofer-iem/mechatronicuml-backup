@@ -27,9 +27,14 @@
                      variable="selection">
                   <iterate
                         ifEmpty="false">
-                     <instanceof
-                           value="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart">
-                     </instanceof>
+                     <or>
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart">
+                        </instanceof>
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent">
+                        </instanceof>
+                     </or>
                   </iterate>
                </with>
             </visibleWhen>
