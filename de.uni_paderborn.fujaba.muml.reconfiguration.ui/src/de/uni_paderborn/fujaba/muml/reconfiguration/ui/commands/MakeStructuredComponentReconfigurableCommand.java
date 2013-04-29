@@ -10,10 +10,10 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
@@ -39,19 +39,40 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
 		
 		//collect all StaticStructureComponents from the selection
-		Iterator iter = ((IStructuredSelection) selection).iterator();
+		Iterator<?> iter = ((IStructuredSelection) selection).iterator();
 		while(iter.hasNext()){
-			GraphicalEditPart editPart = (GraphicalEditPart) iter.next();
+			Object currentObject = iter.next();
 			
-			//add StaticStructuredComponent to list
-			if(editPart instanceof StaticStructuredComponentEditPart){
-				StaticStructuredComponent sc = (StaticStructuredComponent) ((View) editPart.getModel()).getElement();
-
-				ICommandProxy cmd = new ICommandProxy(
-						new StaticStructuredComponentTransformationCommand(editPart
-								.getEditingDomain(), sc));
-				cmd.execute();
+			//set up variables
+			StaticStructuredComponent sc = null;
+			TransactionalEditingDomain editingDomain = null;
+			
+			//if command is triggered via the graphical editor, the selection contains an EditPart
+			if(currentObject instanceof StaticStructuredComponentEditPart){
+			
+				StaticStructuredComponentEditPart editPart = (StaticStructuredComponentEditPart) currentObject;
+			
+				sc = (StaticStructuredComponent) ((View) editPart.getModel()).getElement();
+				editingDomain = editPart.getEditingDomain();	
+			} else if (currentObject instanceof StaticStructuredComponent){
+				//if the command is triggered via the tree editor, the selection contains a StaticStructuredComponent
+				sc = (StaticStructuredComponent) currentObject;
+				
+				//obtain the editing domain for the resource set
+				ResourceSet rset = sc.eResource().getResourceSet();
+				editingDomain = TransactionalEditingDomain.Factory.INSTANCE.getEditingDomain(rset);
+				if(editingDomain == null){
+					//create new editing domain because no editing domain exists yet
+					editingDomain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(rset);
+				}
+			} else {
+				//there is an object within the selection, which is not supported -> ignore
+				continue;
 			}
+			
+			ICommandProxy cmd = new ICommandProxy(
+					new StaticStructuredComponentTransformationCommand(editingDomain, sc));
+			cmd.execute();
 			
 		}
 		

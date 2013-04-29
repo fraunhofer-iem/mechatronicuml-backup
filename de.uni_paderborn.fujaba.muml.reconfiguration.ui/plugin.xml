@@ -10,6 +10,13 @@
             id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.MakeStructuredComponentReconfigurableCommand"
             name="Make Reconfigurable">
       </command>
+      <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
+            description="Generates Real-Time Statecharts for the Manager and Executor of this ReconfigurableStructuredComponent."
+            id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
+            name="Generate Manager and Executor Implementation">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -33,6 +40,26 @@
                         </instanceof>
                         <instanceof
                               value="de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent">
+                        </instanceof>
+                     </or>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
+               icon="icons/GenerateImplementation.gif"
+               id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
+               label="Generate Manager and Executor Implementation"
+               style="push">
+            <visibleWhen>
+               <with
+                     variable="selection">
+                  <iterate
+                        ifEmpty="false">
+                     <or>
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent">
                         </instanceof>
                      </or>
                   </iterate>
