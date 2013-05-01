@@ -1,0 +1,83 @@
+
+--core models
+modeltype core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.3.15");
+
+-- muml models 
+modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.2.2");
+modeltype component uses muml::component("http://www.fujaba.de/muml/0.2.2");
+modeltype connector uses muml::connector("http://www.fujaba.de/muml/0.2.2");
+modeltype constraints uses muml::constraint("http://www.fujaba.de/muml/0.2.2");
+modeltype deployment uses muml::deployment("http://www.fujaba.de/muml/0.2.2");
+modeltype instance uses muml::instance("http://www.fujaba.de/muml/0.2.2");
+modeltype msgi uses muml::msgtype("http://www.fujaba.de/muml/0.2.2");
+modeltype protocol uses muml::protocol("http://www.fujaba.de/muml/0.2.2");
+modeltype realtimestatechart uses muml::realtimestatechart('http://www.fujaba.de/muml/0.2.2');
+modeltype types uses muml::types("http://www.fujaba.de/muml/0.2.2");
+modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.2.2");
+
+modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.3.16');
+modeltype reconf uses reconfiguration("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+modeltype reconf_expressions uses reconfiguration::expression("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+modeltype reconf_datatype uses reconfiguration::structdatatype("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+
+modeltype componentpattern uses componentstorydiagram::componentstorypattern("http://www.fujaba.de/muml/componentstorydiagram/0.3.1");
+modeltype componentstory uses componentstorydiagram::controlflow("http://www.fujaba.de/muml/componentstorydiagram/0.3.1");
+
+-- this transformation parses the reconfiguration specification of the manager of the
+-- reconfigurable structured component contained in inputComponent and generates a behavior
+-- specification in terms of real-time statecharts for it
+transformation GenerateManagerImplementation(inout inputComponent : component, inout category : modelinst);
+
+main() {
+
+	var theComponent : ReconfigurableStructuredComponent := inputComponent.rootObjects()[ReconfigurableStructuredComponent] -> any(true);
+	var rootNode : RootNode := category.rootObjects()[RootNode] -> any(true);
+	
+	
+	createManagerImplementation(theComponent, rootNode);
+	
+	
+}
+
+-- creates and implementation for the manager
+helper createManagerImplementation(inout theComponent : ReconfigurableStructuredComponent, inout rootNode : RootNode){
+	
+	-- create the statechart
+	var rtsc : RealtimeStatechart := new RealtimeStatechart('Test');
+	
+	-- add statechart to category
+	var rtscCategory : ModelElementCategory := (rootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true));
+	rtscCategory.modelElements += rtsc;
+	
+	return;
+}
+
+
+
+helper createEmbeddedRTSC(in name : String, inout state : State){
+	var rtsc : RealtimeStatechart := new RealtimeStatechart(name);
+	var region : Region := new Region();
+	
+	region.embeddedStatechart := rtsc;
+	state.embeddedRegions += region;
+	
+	return;
+}
+
+------------- constructors -----------------
+
+constructor RealtimeStatechart::RealtimeStatechart(in newName : String){
+	name := newName;
+}
+
+constructor State::State(in newName : String){
+	name := newName;
+}
+
+constructor Region::Region(){
+	
+}
+
