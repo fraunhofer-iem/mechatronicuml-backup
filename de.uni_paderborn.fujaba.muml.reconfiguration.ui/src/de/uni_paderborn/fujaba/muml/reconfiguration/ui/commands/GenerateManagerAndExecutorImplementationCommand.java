@@ -7,15 +7,13 @@ import java.util.List;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.edit.command.ChangeCommand;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.common.core.command.CommandResult;
-import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
-import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -28,7 +26,6 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
 
@@ -47,7 +44,7 @@ public class GenerateManagerAndExecutorImplementationCommand extends AbstractHan
 			
 			//set up variables
 			ReconfigurableStructuredComponent sc = null;
-			TransactionalEditingDomain editingDomain = null;
+			EditingDomain editingDomain = null;
 			
 			//if command is triggered via the graphical editor, the selection contains an EditPart
 			if(currentObject instanceof StaticStructuredComponentEditPart){
@@ -56,16 +53,16 @@ public class GenerateManagerAndExecutorImplementationCommand extends AbstractHan
 				StaticStructuredComponentEditPart editPart = (StaticStructuredComponentEditPart) currentObject;
 			
 				sc = (ReconfigurableStructuredComponent) ((View) editPart.getModel()).getElement();
-				editingDomain = editPart.getEditingDomain();	
+				editingDomain = editPart.getEditingDomain();		
 			} else if (currentObject instanceof ReconfigurableStructuredComponent){
 				//if the command is triggered via the tree editor, the selection contains a StaticStructuredComponent
 				sc = (ReconfigurableStructuredComponent) currentObject;
 				
 				//obtain the editing domain for the resource set
-				ResourceSet rset = sc.eResource().getResourceSet();
-				editingDomain = TransactionalEditingDomain.Factory.INSTANCE.getEditingDomain(rset);
+				editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(sc);
 				if(editingDomain == null){
 					//create new editing domain because no editing domain exists yet
+					ResourceSet rset = sc.eResource().getResourceSet();
 					editingDomain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(rset);
 				}
 			} else {
@@ -73,9 +70,7 @@ public class GenerateManagerAndExecutorImplementationCommand extends AbstractHan
 				continue;
 			}
 			
-			ICommandProxy cmd = new ICommandProxy(
-					new GenerateManagerAndExecutorImplementationTransformationCommand(editingDomain, sc));
-			cmd.execute();
+			editingDomain.getCommandStack().execute(new GenerateManagerAndExecutorImplementationTransformationCommand(sc));
 			
 		}
 		
@@ -189,24 +184,22 @@ public class GenerateManagerAndExecutorImplementationCommand extends AbstractHan
 	 * Cannot modify resource set without a write transaction"
 	 * 
 	 */
-	class GenerateManagerAndExecutorImplementationTransformationCommand extends AbstractTransactionalCommand {
+	class GenerateManagerAndExecutorImplementationTransformationCommand extends ChangeCommand {
 		
 		private ReconfigurableStructuredComponent sc;
-		
-		public GenerateManagerAndExecutorImplementationTransformationCommand(
-				TransactionalEditingDomain editingDomain, ReconfigurableStructuredComponent comp) {
-			super(editingDomain, "Make Structured Component Reconfigurable", null);
+
+		public GenerateManagerAndExecutorImplementationTransformationCommand(ReconfigurableStructuredComponent comp) {
+			super(comp);
+			setLabel("Generate Manager and Executor Implementation");
 			this.sc = comp;
 		}
 
 		@Override
-		protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-				IAdaptable info) throws ExecutionException {
+		protected void doExecute() {
 
 			generateManagerAndExecutorImplementations(sc);
 			
-
-			return CommandResult.newOKCommandResult();
 		}
 	}
+	
 }
