@@ -20,7 +20,9 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointIn
 import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
+import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.*;
@@ -112,9 +114,10 @@ public class RuntimeSwitch<T> extends Switch<T> {
 				RuntimeDiscretePortInstance runtimeDiscretePortInstance = (RuntimeDiscretePortInstance)theEObject;
 				T result = caseRuntimeDiscretePortInstance(runtimeDiscretePortInstance);
 				if (result == null) result = caseDiscretePortInstance(runtimeDiscretePortInstance);
-				if (result == null) result = caseRuntimeBehavioralElement(runtimeDiscretePortInstance);
+				if (result == null) result = caseRuntimeDiscreteInteractionEndpointInstance(runtimeDiscretePortInstance);
 				if (result == null) result = casePortInstance(runtimeDiscretePortInstance);
 				if (result == null) result = caseDiscreteInteractionEndpointInstance(runtimeDiscretePortInstance);
+				if (result == null) result = caseRuntimeBehavioralElement(runtimeDiscretePortInstance);
 				if (result == null) result = caseConnectorEndpointInstance(runtimeDiscretePortInstance);
 				if (result == null) result = caseNamedElement(runtimeDiscretePortInstance);
 				if (result == null) result = caseCommentableElement(runtimeDiscretePortInstance);
@@ -125,6 +128,7 @@ public class RuntimeSwitch<T> extends Switch<T> {
 			case RuntimePackage.ROLE_INSTANCE: {
 				RoleInstance roleInstance = (RoleInstance)theEObject;
 				T result = caseRoleInstance(roleInstance);
+				if (result == null) result = caseRuntimeDiscreteInteractionEndpointInstance(roleInstance);
 				if (result == null) result = caseRuntimeBehavioralElement(roleInstance);
 				if (result == null) result = caseDiscreteInteractionEndpointInstance(roleInstance);
 				if (result == null) result = caseConnectorEndpointInstance(roleInstance);
@@ -184,6 +188,7 @@ public class RuntimeSwitch<T> extends Switch<T> {
 				T result = caseSingleRoleInstance(singleRoleInstance);
 				if (result == null) result = caseRoleInstance(singleRoleInstance);
 				if (result == null) result = caseDiscreteSingleInteractionEndpointInstance(singleRoleInstance);
+				if (result == null) result = caseRuntimeDiscreteInteractionEndpointInstance(singleRoleInstance);
 				if (result == null) result = caseRuntimeBehavioralElement(singleRoleInstance);
 				if (result == null) result = caseDiscreteInteractionEndpointInstance(singleRoleInstance);
 				if (result == null) result = caseConnectorEndpointInstance(singleRoleInstance);
@@ -198,6 +203,7 @@ public class RuntimeSwitch<T> extends Switch<T> {
 				T result = caseMultiRoleInstance(multiRoleInstance);
 				if (result == null) result = caseRoleInstance(multiRoleInstance);
 				if (result == null) result = caseDiscreteMultiInteractionEndpointInstance(multiRoleInstance);
+				if (result == null) result = caseRuntimeDiscreteInteractionEndpointInstance(multiRoleInstance);
 				if (result == null) result = caseRuntimeBehavioralElement(multiRoleInstance);
 				if (result == null) result = caseDiscreteInteractionEndpointInstance(multiRoleInstance);
 				if (result == null) result = caseConnectorEndpointInstance(multiRoleInstance);
@@ -242,6 +248,54 @@ public class RuntimeSwitch<T> extends Switch<T> {
 				MessageOnConnector messageOnConnector = (MessageOnConnector)theEObject;
 				T result = caseMessageOnConnector(messageOnConnector);
 				if (result == null) result = caseExtendableElement(messageOnConnector);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RuntimePackage.RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE: {
+				RuntimeDiscreteInteractionEndpointInstance runtimeDiscreteInteractionEndpointInstance = (RuntimeDiscreteInteractionEndpointInstance)theEObject;
+				T result = caseRuntimeDiscreteInteractionEndpointInstance(runtimeDiscreteInteractionEndpointInstance);
+				if (result == null) result = caseRuntimeBehavioralElement(runtimeDiscreteInteractionEndpointInstance);
+				if (result == null) result = caseDiscreteInteractionEndpointInstance(runtimeDiscreteInteractionEndpointInstance);
+				if (result == null) result = caseConnectorEndpointInstance(runtimeDiscreteInteractionEndpointInstance);
+				if (result == null) result = caseNamedElement(runtimeDiscreteInteractionEndpointInstance);
+				if (result == null) result = caseCommentableElement(runtimeDiscreteInteractionEndpointInstance);
+				if (result == null) result = caseExtendableElement(runtimeDiscreteInteractionEndpointInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RuntimePackage.RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE: {
+				RuntimeDiscreteSinglePortInstance runtimeDiscreteSinglePortInstance = (RuntimeDiscreteSinglePortInstance)theEObject;
+				T result = caseRuntimeDiscreteSinglePortInstance(runtimeDiscreteSinglePortInstance);
+				if (result == null) result = caseRuntimeDiscretePortInstance(runtimeDiscreteSinglePortInstance);
+				if (result == null) result = caseDiscreteSinglePortInstance(runtimeDiscreteSinglePortInstance);
+				if (result == null) result = caseDiscretePortInstance(runtimeDiscreteSinglePortInstance);
+				if (result == null) result = caseRuntimeDiscreteInteractionEndpointInstance(runtimeDiscreteSinglePortInstance);
+				if (result == null) result = caseDiscreteSingleInteractionEndpointInstance(runtimeDiscreteSinglePortInstance);
+				if (result == null) result = casePortInstance(runtimeDiscreteSinglePortInstance);
+				if (result == null) result = caseDiscreteInteractionEndpointInstance(runtimeDiscreteSinglePortInstance);
+				if (result == null) result = caseRuntimeBehavioralElement(runtimeDiscreteSinglePortInstance);
+				if (result == null) result = caseConnectorEndpointInstance(runtimeDiscreteSinglePortInstance);
+				if (result == null) result = caseNamedElement(runtimeDiscreteSinglePortInstance);
+				if (result == null) result = caseCommentableElement(runtimeDiscreteSinglePortInstance);
+				if (result == null) result = caseExtendableElement(runtimeDiscreteSinglePortInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RuntimePackage.RUNTIME_DISCRETE_MULTI_PORT_INSTANCE: {
+				RuntimeDiscreteMultiPortInstance runtimeDiscreteMultiPortInstance = (RuntimeDiscreteMultiPortInstance)theEObject;
+				T result = caseRuntimeDiscreteMultiPortInstance(runtimeDiscreteMultiPortInstance);
+				if (result == null) result = caseDiscreteMultiPortInstance(runtimeDiscreteMultiPortInstance);
+				if (result == null) result = caseRuntimeDiscretePortInstance(runtimeDiscreteMultiPortInstance);
+				if (result == null) result = caseDiscretePortInstance(runtimeDiscreteMultiPortInstance);
+				if (result == null) result = caseDiscreteMultiInteractionEndpointInstance(runtimeDiscreteMultiPortInstance);
+				if (result == null) result = caseRuntimeDiscreteInteractionEndpointInstance(runtimeDiscreteMultiPortInstance);
+				if (result == null) result = casePortInstance(runtimeDiscreteMultiPortInstance);
+				if (result == null) result = caseDiscreteInteractionEndpointInstance(runtimeDiscreteMultiPortInstance);
+				if (result == null) result = caseRuntimeBehavioralElement(runtimeDiscreteMultiPortInstance);
+				if (result == null) result = caseConnectorEndpointInstance(runtimeDiscreteMultiPortInstance);
+				if (result == null) result = caseNamedElement(runtimeDiscreteMultiPortInstance);
+				if (result == null) result = caseCommentableElement(runtimeDiscreteMultiPortInstance);
+				if (result == null) result = caseExtendableElement(runtimeDiscreteMultiPortInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -475,6 +529,51 @@ public class RuntimeSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Interaction Endpoint Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Interaction Endpoint Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeDiscreteInteractionEndpointInstance(RuntimeDiscreteInteractionEndpointInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Single Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Single Port Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeDiscreteSinglePortInstance(RuntimeDiscreteSinglePortInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Multi Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Multi Port Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuntimeDiscreteMultiPortInstance(RuntimeDiscreteMultiPortInstance object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -666,6 +765,36 @@ public class RuntimeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAssemblyConnectorInstance(AssemblyConnectorInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Single Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Single Port Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteSinglePortInstance(DiscreteSinglePortInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Discrete Multi Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Discrete Multi Port Instance</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDiscreteMultiPortInstance(DiscreteMultiPortInstance object) {
 		return null;
 	}
 

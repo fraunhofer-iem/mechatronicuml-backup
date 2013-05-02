@@ -26,13 +26,16 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/parentRealtimeStatechartInstance"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/variableBindings"/>
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/allAvailableVariableBindings"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/nearestRuntimeBehavioralElement"/>
     </genClasses>
     <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeMessage">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeMessage/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeMessage/type"/>
     </genClasses>
     <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeParameter">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeParameter/message"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute RuntimeModel.ecore#//RuntimeParameter/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeParameter/parameter"/>
     </genClasses>
     <genClasses ecoreClass="RuntimeModel.ecore#//VariableBinding">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//VariableBinding/variable"/>
@@ -54,5 +57,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageOnConnector/message"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageOnConnector/runtimeConnectorInstance"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="RuntimeModel.ecore#//RuntimeDiscreteInteractionEndpointInstance"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeDiscreteSinglePortInstance"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeDiscreteMultiPortInstance"/>
   </genPackages>
 </genmodel:GenModel>

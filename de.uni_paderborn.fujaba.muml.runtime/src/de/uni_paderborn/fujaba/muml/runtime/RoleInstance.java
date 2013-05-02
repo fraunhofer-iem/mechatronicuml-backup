@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime;
 
-import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 
 /**
@@ -26,7 +25,7 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  * @model abstract="true"
  * @generated
  */
-public interface RoleInstance extends RuntimeBehavioralElement, DiscreteInteractionEndpointInstance {
+public interface RoleInstance extends RuntimeDiscreteInteractionEndpointInstance {
 	/**
 	 * Returns the value of the '<em><b>Role</b></em>' reference.
 	 * <!-- begin-user-doc -->

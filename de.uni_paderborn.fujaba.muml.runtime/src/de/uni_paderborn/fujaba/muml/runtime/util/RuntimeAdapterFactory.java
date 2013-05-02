@@ -21,7 +21,9 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointIn
 import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
+import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.*;
@@ -159,6 +161,18 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 				return createMessageOnConnectorAdapter();
 			}
 			@Override
+			public Adapter caseRuntimeDiscreteInteractionEndpointInstance(RuntimeDiscreteInteractionEndpointInstance object) {
+				return createRuntimeDiscreteInteractionEndpointInstanceAdapter();
+			}
+			@Override
+			public Adapter caseRuntimeDiscreteSinglePortInstance(RuntimeDiscreteSinglePortInstance object) {
+				return createRuntimeDiscreteSinglePortInstanceAdapter();
+			}
+			@Override
+			public Adapter caseRuntimeDiscreteMultiPortInstance(RuntimeDiscreteMultiPortInstance object) {
+				return createRuntimeDiscreteMultiPortInstanceAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -209,6 +223,14 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAssemblyConnectorInstance(AssemblyConnectorInstance object) {
 				return createAssemblyConnectorInstanceAdapter();
+			}
+			@Override
+			public Adapter caseDiscreteSinglePortInstance(DiscreteSinglePortInstance object) {
+				return createDiscreteSinglePortInstanceAdapter();
+			}
+			@Override
+			public Adapter caseDiscreteMultiPortInstance(DiscreteMultiPortInstance object) {
+				return createDiscreteMultiPortInstanceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -441,6 +463,48 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteInteractionEndpointInstance <em>Discrete Interaction Endpoint Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteInteractionEndpointInstance
+	 * @generated
+	 */
+	public Adapter createRuntimeDiscreteInteractionEndpointInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteSinglePortInstance <em>Discrete Single Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteSinglePortInstance
+	 * @generated
+	 */
+	public Adapter createRuntimeDiscreteSinglePortInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteMultiPortInstance <em>Discrete Multi Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteMultiPortInstance
+	 * @generated
+	 */
+	public Adapter createRuntimeDiscreteMultiPortInstanceAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.storydriven.core.ExtendableElement <em>Extendable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -619,6 +683,34 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAssemblyConnectorInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance <em>Discrete Single Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance
+	 * @generated
+	 */
+	public Adapter createDiscreteSinglePortInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance <em>Discrete Multi Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance
+	 * @generated
+	 */
+	public Adapter createDiscreteMultiPortInstanceAdapter() {
 		return null;
 	}
 

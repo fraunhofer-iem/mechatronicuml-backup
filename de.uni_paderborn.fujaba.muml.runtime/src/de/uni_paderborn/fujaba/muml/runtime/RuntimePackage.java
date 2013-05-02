@@ -47,7 +47,7 @@ public interface RuntimePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/runtime/0.3.14";
+	String eNS_URI = "http://www.fujaba.de/muml/runtime/0.3.18";
 
 	/**
 	 * The package namespace name.
@@ -445,6 +445,97 @@ public interface RuntimePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeDiscreteInteractionEndpointInstanceImpl <em>Discrete Interaction Endpoint Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeDiscreteInteractionEndpointInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.runtime.impl.RuntimePackageImpl#getRuntimeDiscreteInteractionEndpointInstance()
+	 * @generated
+	 */
+	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__ANNOTATION = RUNTIME_BEHAVIORAL_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__EXTENSION = RUNTIME_BEHAVIORAL_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__NAME = RUNTIME_BEHAVIORAL_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Statechart Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__STATECHART_INSTANCE = RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__MESSAGE_BUFFER = RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__COMMENT = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__CONNECTOR_INSTANCES = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__TYPE = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Discrete Interaction Endpoint Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.runtime.impl.RoleInstanceImpl <em>Role Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -461,7 +552,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_INSTANCE__ANNOTATION = RUNTIME_BEHAVIORAL_ELEMENT__ANNOTATION;
+	int ROLE_INSTANCE__ANNOTATION = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -470,7 +561,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_INSTANCE__EXTENSION = RUNTIME_BEHAVIORAL_ELEMENT__EXTENSION;
+	int ROLE_INSTANCE__EXTENSION = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -479,7 +570,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_INSTANCE__NAME = RUNTIME_BEHAVIORAL_ELEMENT__NAME;
+	int ROLE_INSTANCE__NAME = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Statechart Instance</b></em>' reference.
@@ -488,7 +579,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_INSTANCE__STATECHART_INSTANCE = RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE;
+	int ROLE_INSTANCE__STATECHART_INSTANCE = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__STATECHART_INSTANCE;
 
 	/**
 	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
@@ -497,7 +588,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_INSTANCE__MESSAGE_BUFFER = RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER;
+	int ROLE_INSTANCE__MESSAGE_BUFFER = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__MESSAGE_BUFFER;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -506,7 +597,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_INSTANCE__COMMENT = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
+	int ROLE_INSTANCE__COMMENT = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
@@ -515,7 +606,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_INSTANCE__CONNECTOR_INSTANCES = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
+	int ROLE_INSTANCE__CONNECTOR_INSTANCES = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__CONNECTOR_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -524,7 +615,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_INSTANCE__TYPE = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
+	int ROLE_INSTANCE__TYPE = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Role</b></em>' reference.
@@ -533,7 +624,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_INSTANCE__ROLE = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
+	int ROLE_INSTANCE__ROLE = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Assembly</b></em>' reference.
@@ -542,7 +633,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_INSTANCE__ASSEMBLY = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 4;
+	int ROLE_INSTANCE__ASSEMBLY = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Role Instance</em>' class.
@@ -551,7 +642,7 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_INSTANCE_FEATURE_COUNT = RUNTIME_BEHAVIORAL_ELEMENT_FEATURE_COUNT + 5;
+	int ROLE_INSTANCE_FEATURE_COUNT = RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -743,13 +834,22 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_MESSAGE__PARAMETERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_MESSAGE__TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Message</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_MESSAGE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RUNTIME_MESSAGE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -797,13 +897,22 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_PARAMETER__VALUE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Parameter</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_PARAMETER__PARAMETER = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_PARAMETER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int RUNTIME_PARAMETER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.runtime.impl.VariableBindingImpl <em>Variable Binding</em>}' class.
@@ -1423,6 +1532,395 @@ public interface RuntimePackage extends EPackage {
 	int MESSAGE_ON_CONNECTOR_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeDiscreteSinglePortInstanceImpl <em>Discrete Single Port Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeDiscreteSinglePortInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.runtime.impl.RuntimePackageImpl#getRuntimeDiscreteSinglePortInstance()
+	 * @generated
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE = 16;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__ANNOTATION = RUNTIME_DISCRETE_PORT_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__EXTENSION = RUNTIME_DISCRETE_PORT_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__NAME = RUNTIME_DISCRETE_PORT_INSTANCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__COMMENT = RUNTIME_DISCRETE_PORT_INSTANCE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__CONNECTOR_INSTANCES = RUNTIME_DISCRETE_PORT_INSTANCE__CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__TYPE = RUNTIME_DISCRETE_PORT_INSTANCE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Port Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__PORT_TYPE = RUNTIME_DISCRETE_PORT_INSTANCE__PORT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__COMPONENT_INSTANCE = RUNTIME_DISCRETE_PORT_INSTANCE__COMPONENT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Port Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = RUNTIME_DISCRETE_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Port Part</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__PORT_PART = RUNTIME_DISCRETE_PORT_INSTANCE__PORT_PART;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES = RUNTIME_DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__SENDER_MESSAGE_TYPES = RUNTIME_DISCRETE_PORT_INSTANCE__SENDER_MESSAGE_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER = RUNTIME_DISCRETE_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER;
+
+	/**
+	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__REFINED_ROLE = RUNTIME_DISCRETE_PORT_INSTANCE__REFINED_ROLE;
+
+	/**
+	 * The feature id for the '<em><b>Statechart Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__STATECHART_INSTANCE = RUNTIME_DISCRETE_PORT_INSTANCE__STATECHART_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__MESSAGE_BUFFER = RUNTIME_DISCRETE_PORT_INSTANCE__MESSAGE_BUFFER;
+
+	/**
+	 * The feature id for the '<em><b>Multi Interaction Endpoint Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE = RUNTIME_DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Next</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__NEXT = RUNTIME_DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Previous</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__PREVIOUS = RUNTIME_DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Discrete Single Port Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE_FEATURE_COUNT = RUNTIME_DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeDiscreteMultiPortInstanceImpl <em>Discrete Multi Port Instance</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeDiscreteMultiPortInstanceImpl
+	 * @see de.uni_paderborn.fujaba.muml.runtime.impl.RuntimePackageImpl#getRuntimeDiscreteMultiPortInstance()
+	 * @generated
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE = 17;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__ANNOTATION = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__EXTENSION = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__NAME = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__COMMENT = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__CONNECTOR_INSTANCES = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__TYPE = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Port Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__PORT_TYPE = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__PORT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Component Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__COMPONENT_INSTANCE = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__COMPONENT_INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Port Connector Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__PORT_CONNECTOR_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Port Part</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__PORT_PART = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__PORT_PART;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__RECEIVER_MESSAGE_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__SENDER_MESSAGE_TYPES = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__SENDER_MESSAGE_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__RECEIVER_MESSAGE_BUFFER;
+
+	/**
+	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__REFINED_ROLE = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__REFINED_ROLE;
+
+	/**
+	 * The feature id for the '<em><b>Sub Interaction Endpoint Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__SUB_INTERACTION_ENDPOINT_INSTANCES = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__SUB_INTERACTION_ENDPOINT_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>First</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__FIRST = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__FIRST;
+
+	/**
+	 * The feature id for the '<em><b>Last</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__LAST = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__LAST;
+
+	/**
+	 * The feature id for the '<em><b>Gmf Sub Port Instances</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__GMF_SUB_PORT_INSTANCES = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE__GMF_SUB_PORT_INSTANCES;
+
+	/**
+	 * The feature id for the '<em><b>Statechart Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__STATECHART_INSTANCE = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Message Buffer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__MESSAGE_BUFFER = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Discrete Multi Port Instance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_MULTI_PORT_INSTANCE_FEATURE_COUNT = InstancePackage.DISCRETE_MULTI_PORT_INSTANCE_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '<em>Java Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1430,7 +1928,7 @@ public interface RuntimePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.runtime.impl.RuntimePackageImpl#getJavaObject()
 	 * @generated
 	 */
-	int JAVA_OBJECT = 15;
+	int JAVA_OBJECT = 18;
 
 
 	/**
@@ -1648,6 +2146,17 @@ public interface RuntimePackage extends EPackage {
 	EReference getRuntimeMessage_Parameters();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage#getType()
+	 * @see #getRuntimeMessage()
+	 * @generated
+	 */
+	EReference getRuntimeMessage_Type();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeParameter <em>Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1678,6 +2187,17 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRuntimeParameter_Value();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeParameter#getParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Parameter</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeParameter#getParameter()
+	 * @see #getRuntimeParameter()
+	 * @generated
+	 */
+	EReference getRuntimeParameter_Parameter();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.runtime.VariableBinding <em>Variable Binding</em>}'.
@@ -1846,6 +2366,36 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMessageOnConnector_RuntimeConnectorInstance();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteInteractionEndpointInstance <em>Discrete Interaction Endpoint Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Discrete Interaction Endpoint Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteInteractionEndpointInstance
+	 * @generated
+	 */
+	EClass getRuntimeDiscreteInteractionEndpointInstance();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteSinglePortInstance <em>Discrete Single Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Discrete Single Port Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteSinglePortInstance
+	 * @generated
+	 */
+	EClass getRuntimeDiscreteSinglePortInstance();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteMultiPortInstance <em>Discrete Multi Port Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Discrete Multi Port Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteMultiPortInstance
+	 * @generated
+	 */
+	EClass getRuntimeDiscreteMultiPortInstance();
 
 	/**
 	 * Returns the meta object for data type '{@link java.lang.Object <em>Java Object</em>}'.
@@ -2053,6 +2603,14 @@ public interface RuntimePackage extends EPackage {
 		EReference RUNTIME_MESSAGE__PARAMETERS = eINSTANCE.getRuntimeMessage_Parameters();
 
 		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RUNTIME_MESSAGE__TYPE = eINSTANCE.getRuntimeMessage_Type();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeParameterImpl <em>Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2077,6 +2635,14 @@ public interface RuntimePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RUNTIME_PARAMETER__VALUE = eINSTANCE.getRuntimeParameter_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RUNTIME_PARAMETER__PARAMETER = eINSTANCE.getRuntimeParameter_Parameter();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.runtime.impl.VariableBindingImpl <em>Variable Binding</em>}' class.
@@ -2221,6 +2787,36 @@ public interface RuntimePackage extends EPackage {
 		 * @generated
 		 */
 		EReference MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE = eINSTANCE.getMessageOnConnector_RuntimeConnectorInstance();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeDiscreteInteractionEndpointInstanceImpl <em>Discrete Interaction Endpoint Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeDiscreteInteractionEndpointInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.runtime.impl.RuntimePackageImpl#getRuntimeDiscreteInteractionEndpointInstance()
+		 * @generated
+		 */
+		EClass RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE = eINSTANCE.getRuntimeDiscreteInteractionEndpointInstance();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeDiscreteSinglePortInstanceImpl <em>Discrete Single Port Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeDiscreteSinglePortInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.runtime.impl.RuntimePackageImpl#getRuntimeDiscreteSinglePortInstance()
+		 * @generated
+		 */
+		EClass RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE = eINSTANCE.getRuntimeDiscreteSinglePortInstance();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeDiscreteMultiPortInstanceImpl <em>Discrete Multi Port Instance</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeDiscreteMultiPortInstanceImpl
+		 * @see de.uni_paderborn.fujaba.muml.runtime.impl.RuntimePackageImpl#getRuntimeDiscreteMultiPortInstance()
+		 * @generated
+		 */
+		EClass RUNTIME_DISCRETE_MULTI_PORT_INSTANCE = eINSTANCE.getRuntimeDiscreteMultiPortInstance();
 
 		/**
 		 * The meta object literal for the '<em>Java Object</em>' data type.

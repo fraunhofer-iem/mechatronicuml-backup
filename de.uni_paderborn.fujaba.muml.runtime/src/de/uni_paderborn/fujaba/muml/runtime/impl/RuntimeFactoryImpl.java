@@ -44,7 +44,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	 */
 	public static RuntimeFactory init() {
 		try {
-			RuntimeFactory theRuntimeFactory = (RuntimeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/runtime/0.3.14"); 
+			RuntimeFactory theRuntimeFactory = (RuntimeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/runtime/0.3.18"); 
 			if (theRuntimeFactory != null) {
 				return theRuntimeFactory;
 			}
@@ -74,7 +74,6 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case RuntimePackage.RUNTIME_COMPONENT_INSTANCE: return createRuntimeComponentInstance();
-			case RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE: return createRuntimeDiscretePortInstance();
 			case RuntimePackage.MESSAGE_BUFFER: return createMessageBuffer();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE: return createRealtimeStatechartInstance();
 			case RuntimePackage.RUNTIME_MESSAGE: return createRuntimeMessage();
@@ -85,6 +84,8 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 			case RuntimePackage.RUNTIME_ROLE_CONNECTOR_INSTANCE: return createRuntimeRoleConnectorInstance();
 			case RuntimePackage.RUNTIME_ASSEMBLY_CONNECTOR_INSTANCE: return createRuntimeAssemblyConnectorInstance();
 			case RuntimePackage.MESSAGE_ON_CONNECTOR: return createMessageOnConnector();
+			case RuntimePackage.RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE: return createRuntimeDiscreteSinglePortInstance();
+			case RuntimePackage.RUNTIME_DISCRETE_MULTI_PORT_INSTANCE: return createRuntimeDiscreteMultiPortInstance();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -124,16 +125,6 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	public RuntimeComponentInstance createRuntimeComponentInstance() {
 		RuntimeComponentInstanceImpl runtimeComponentInstance = new RuntimeComponentInstanceImpl();
 		return runtimeComponentInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RuntimeDiscretePortInstance createRuntimeDiscretePortInstance() {
-		RuntimeDiscretePortInstanceImpl runtimeDiscretePortInstance = new RuntimeDiscretePortInstanceImpl();
-		return runtimeDiscretePortInstance;
 	}
 
 	/**
@@ -234,6 +225,26 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	public MessageOnConnector createMessageOnConnector() {
 		MessageOnConnectorImpl messageOnConnector = new MessageOnConnectorImpl();
 		return messageOnConnector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeDiscreteSinglePortInstance createRuntimeDiscreteSinglePortInstance() {
+		RuntimeDiscreteSinglePortInstanceImpl runtimeDiscreteSinglePortInstance = new RuntimeDiscreteSinglePortInstanceImpl();
+		return runtimeDiscreteSinglePortInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeDiscreteMultiPortInstance createRuntimeDiscreteMultiPortInstance() {
+		RuntimeDiscreteMultiPortInstanceImpl runtimeDiscreteMultiPortInstance = new RuntimeDiscreteMultiPortInstanceImpl();
+		return runtimeDiscreteMultiPortInstance;
 	}
 
 	/**

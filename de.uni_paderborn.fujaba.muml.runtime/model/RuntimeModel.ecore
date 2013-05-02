@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="runtime" nsURI="http://www.fujaba.de/muml/runtime/0.3.14" nsPrefix="runtime">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="runtime" nsURI="http://www.fujaba.de/muml/runtime/0.3.18" nsPrefix="runtime">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeComponentInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance #//RuntimeBehavioralElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscretePortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscretePortInstance #//RuntimeBehavioralElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RoleInstance" abstract="true" eSuperTypes="#//RuntimeBehavioralElement ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpointInstance">
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscretePortInstance" abstract="true"
+      eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscretePortInstance #//RuntimeDiscreteInteractionEndpointInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RoleInstance" abstract="true" eSuperTypes="#//RuntimeDiscreteInteractionEndpointInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol/Role"
         changeable="false" volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -59,12 +60,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeMessage" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//RuntimeParameter" containment="true" eOpposite="#//RuntimeParameter/message"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeParameter" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
         eType="#//RuntimeMessage" eOpposite="#//RuntimeMessage/parameters"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//JavaObject"
         transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Parameter"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariableBinding" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
@@ -98,4 +101,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeConnectorInstance"
         lowerBound="1" eType="#//RuntimeConnectorInstance" eOpposite="#//RuntimeConnectorInstance/transientMessages"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscreteInteractionEndpointInstance"
+      abstract="true" eSuperTypes="#//RuntimeBehavioralElement ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpointInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscreteSinglePortInstance" eSuperTypes="#//RuntimeDiscretePortInstance ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscreteSinglePortInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscreteMultiPortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscreteMultiPortInstance #//RuntimeDiscretePortInstance"/>
 </ecore:EPackage>

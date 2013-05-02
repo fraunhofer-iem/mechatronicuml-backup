@@ -15,8 +15,8 @@ import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
  *
  *
  * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRuntimeDiscretePortInstance()
- * @model
+ * @model abstract="true"
  * @generated
  */
-public interface RuntimeDiscretePortInstance extends DiscretePortInstance, RuntimeBehavioralElement {
+public interface RuntimeDiscretePortInstance extends DiscretePortInstance, RuntimeDiscreteInteractionEndpointInstance {
 } // RuntimeDiscretePortInstance

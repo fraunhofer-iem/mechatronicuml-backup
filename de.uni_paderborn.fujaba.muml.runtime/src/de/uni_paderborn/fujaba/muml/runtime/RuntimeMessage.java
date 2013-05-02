@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime;
 
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.NamedElement;
 
@@ -18,6 +19,7 @@ import org.storydriven.core.NamedElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,5 +45,31 @@ public interface RuntimeMessage extends NamedElement {
 	 * @generated
 	 */
 	EList<RuntimeParameter> getParameters();
+
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type</em>' reference.
+	 * @see #setType(MessageType)
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRuntimeMessage_Type()
+	 * @model
+	 * @generated
+	 */
+	MessageType getType();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage#getType <em>Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' reference.
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(MessageType value);
 
 } // RuntimeMessage

@@ -6,12 +6,15 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime.impl;
 
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.NamedElementImpl;
@@ -28,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeParameter;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeMessageImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeMessageImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +47,16 @@ public class RuntimeMessageImpl extends NamedElementImpl implements RuntimeMessa
 	 * @ordered
 	 */
 	protected EList<RuntimeParameter> parameters;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected MessageType type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,6 +87,44 @@ public class RuntimeMessageImpl extends NamedElementImpl implements RuntimeMessa
 			parameters = new EObjectContainmentWithInverseEList<RuntimeParameter>(RuntimeParameter.class, this, RuntimePackage.RUNTIME_MESSAGE__PARAMETERS, RuntimePackage.RUNTIME_PARAMETER__MESSAGE);
 		}
 		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageType getType() {
+		if (type != null && type.eIsProxy()) {
+			InternalEObject oldType = (InternalEObject)type;
+			type = (MessageType)eResolveProxy(oldType);
+			if (type != oldType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.RUNTIME_MESSAGE__TYPE, oldType, type));
+			}
+		}
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageType basicGetType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(MessageType newType) {
+		MessageType oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.RUNTIME_MESSAGE__TYPE, oldType, type));
 	}
 
 	/**
@@ -114,6 +166,9 @@ public class RuntimeMessageImpl extends NamedElementImpl implements RuntimeMessa
 		switch (featureID) {
 			case RuntimePackage.RUNTIME_MESSAGE__PARAMETERS:
 				return getParameters();
+			case RuntimePackage.RUNTIME_MESSAGE__TYPE:
+				if (resolve) return getType();
+				return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -131,6 +186,9 @@ public class RuntimeMessageImpl extends NamedElementImpl implements RuntimeMessa
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends RuntimeParameter>)newValue);
 				return;
+			case RuntimePackage.RUNTIME_MESSAGE__TYPE:
+				setType((MessageType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -146,6 +204,9 @@ public class RuntimeMessageImpl extends NamedElementImpl implements RuntimeMessa
 			case RuntimePackage.RUNTIME_MESSAGE__PARAMETERS:
 				getParameters().clear();
 				return;
+			case RuntimePackage.RUNTIME_MESSAGE__TYPE:
+				setType((MessageType)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -160,6 +221,8 @@ public class RuntimeMessageImpl extends NamedElementImpl implements RuntimeMessa
 		switch (featureID) {
 			case RuntimePackage.RUNTIME_MESSAGE__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
+			case RuntimePackage.RUNTIME_MESSAGE__TYPE:
+				return type != null;
 		}
 		return super.eIsSet(featureID);
 	}

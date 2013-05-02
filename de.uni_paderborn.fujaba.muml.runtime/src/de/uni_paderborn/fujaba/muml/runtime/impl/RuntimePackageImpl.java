@@ -33,7 +33,10 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeAssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeComponentInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeConnectorInstance;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscretePortInstance;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
@@ -155,6 +158,27 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * @generated
 	 */
 	private EClass messageOnConnectorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass runtimeDiscreteInteractionEndpointInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass runtimeDiscreteSinglePortInstanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass runtimeDiscreteMultiPortInstanceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -422,6 +446,15 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRuntimeMessage_Type() {
+		return (EReference)runtimeMessageEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRuntimeParameter() {
 		return runtimeParameterEClass;
 	}
@@ -442,6 +475,15 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 */
 	public EAttribute getRuntimeParameter_Value() {
 		return (EAttribute)runtimeParameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRuntimeParameter_Parameter() {
+		return (EReference)runtimeParameterEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -593,6 +635,33 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRuntimeDiscreteInteractionEndpointInstance() {
+		return runtimeDiscreteInteractionEndpointInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRuntimeDiscreteSinglePortInstance() {
+		return runtimeDiscreteSinglePortInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRuntimeDiscreteMultiPortInstance() {
+		return runtimeDiscreteMultiPortInstanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getJavaObject() {
 		return javaObjectEDataType;
 	}
@@ -650,10 +719,12 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 
 		runtimeMessageEClass = createEClass(RUNTIME_MESSAGE);
 		createEReference(runtimeMessageEClass, RUNTIME_MESSAGE__PARAMETERS);
+		createEReference(runtimeMessageEClass, RUNTIME_MESSAGE__TYPE);
 
 		runtimeParameterEClass = createEClass(RUNTIME_PARAMETER);
 		createEReference(runtimeParameterEClass, RUNTIME_PARAMETER__MESSAGE);
 		createEAttribute(runtimeParameterEClass, RUNTIME_PARAMETER__VALUE);
+		createEReference(runtimeParameterEClass, RUNTIME_PARAMETER__PARAMETER);
 
 		variableBindingEClass = createEClass(VARIABLE_BINDING);
 		createEReference(variableBindingEClass, VARIABLE_BINDING__VARIABLE);
@@ -678,6 +749,12 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		createEReference(messageOnConnectorEClass, MESSAGE_ON_CONNECTOR__RECEIVER);
 		createEReference(messageOnConnectorEClass, MESSAGE_ON_CONNECTOR__MESSAGE);
 		createEReference(messageOnConnectorEClass, MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE);
+
+		runtimeDiscreteInteractionEndpointInstanceEClass = createEClass(RUNTIME_DISCRETE_INTERACTION_ENDPOINT_INSTANCE);
+
+		runtimeDiscreteSinglePortInstanceEClass = createEClass(RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE);
+
+		runtimeDiscreteMultiPortInstanceEClass = createEClass(RUNTIME_DISCRETE_MULTI_PORT_INSTANCE);
 
 		// Create data types
 		javaObjectEDataType = createEDataType(JAVA_OBJECT);
@@ -708,12 +785,13 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 
 		// Obtain other dependent packages
 		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
-		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
 		ProtocolPackage theProtocolPackage = (ProtocolPackage)EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
+		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
+		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -723,9 +801,8 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		runtimeComponentInstanceEClass.getESuperTypes().add(theInstancePackage.getComponentInstance());
 		runtimeComponentInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
 		runtimeDiscretePortInstanceEClass.getESuperTypes().add(theInstancePackage.getDiscretePortInstance());
-		runtimeDiscretePortInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
-		roleInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
-		roleInstanceEClass.getESuperTypes().add(theConnectorPackage.getDiscreteInteractionEndpointInstance());
+		runtimeDiscretePortInstanceEClass.getESuperTypes().add(this.getRuntimeDiscreteInteractionEndpointInstance());
+		roleInstanceEClass.getESuperTypes().add(this.getRuntimeDiscreteInteractionEndpointInstance());
 		messageBufferEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 		realtimeStatechartInstanceEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 		runtimeMessageEClass.getESuperTypes().add(theCorePackage.getNamedElement());
@@ -741,11 +818,17 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		runtimeAssemblyConnectorInstanceEClass.getESuperTypes().add(theInstancePackage.getAssemblyConnectorInstance());
 		runtimeAssemblyConnectorInstanceEClass.getESuperTypes().add(this.getRuntimeConnectorInstance());
 		messageOnConnectorEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
+		runtimeDiscreteInteractionEndpointInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
+		runtimeDiscreteInteractionEndpointInstanceEClass.getESuperTypes().add(theConnectorPackage.getDiscreteInteractionEndpointInstance());
+		runtimeDiscreteSinglePortInstanceEClass.getESuperTypes().add(this.getRuntimeDiscretePortInstance());
+		runtimeDiscreteSinglePortInstanceEClass.getESuperTypes().add(theInstancePackage.getDiscreteSinglePortInstance());
+		runtimeDiscreteMultiPortInstanceEClass.getESuperTypes().add(theInstancePackage.getDiscreteMultiPortInstance());
+		runtimeDiscreteMultiPortInstanceEClass.getESuperTypes().add(this.getRuntimeDiscretePortInstance());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(runtimeComponentInstanceEClass, RuntimeComponentInstance.class, "RuntimeComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(runtimeDiscretePortInstanceEClass, RuntimeDiscretePortInstance.class, "RuntimeDiscretePortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(runtimeDiscretePortInstanceEClass, RuntimeDiscretePortInstance.class, "RuntimeDiscretePortInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(roleInstanceEClass, RoleInstance.class, "RoleInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRoleInstance_Role(), theProtocolPackage.getRole(), null, "role", null, 1, 1, RoleInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -768,10 +851,12 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 
 		initEClass(runtimeMessageEClass, RuntimeMessage.class, "RuntimeMessage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRuntimeMessage_Parameters(), this.getRuntimeParameter(), this.getRuntimeParameter_Message(), "parameters", null, 0, -1, RuntimeMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuntimeMessage_Type(), theMsgtypePackage.getMessageType(), null, "type", null, 0, 1, RuntimeMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(runtimeParameterEClass, RuntimeParameter.class, "RuntimeParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRuntimeParameter_Message(), this.getRuntimeMessage(), this.getRuntimeMessage_Parameters(), "message", null, 1, 1, RuntimeParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRuntimeParameter_Value(), this.getJavaObject(), "value", null, 0, 1, RuntimeParameter.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuntimeParameter_Parameter(), theBehaviorPackage.getParameter(), null, "parameter", null, 0, 1, RuntimeParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variableBindingEClass, VariableBinding.class, "VariableBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVariableBinding_Variable(), theBehaviorPackage.getVariable(), null, "variable", null, 1, 1, VariableBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -796,6 +881,12 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		initEReference(getMessageOnConnector_Receiver(), this.getRuntimeBehavioralElement(), null, "receiver", null, 1, 1, MessageOnConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageOnConnector_Message(), this.getRuntimeMessage(), null, "message", null, 1, 1, MessageOnConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageOnConnector_RuntimeConnectorInstance(), this.getRuntimeConnectorInstance(), this.getRuntimeConnectorInstance_TransientMessages(), "runtimeConnectorInstance", null, 1, 1, MessageOnConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(runtimeDiscreteInteractionEndpointInstanceEClass, RuntimeDiscreteInteractionEndpointInstance.class, "RuntimeDiscreteInteractionEndpointInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(runtimeDiscreteSinglePortInstanceEClass, RuntimeDiscreteSinglePortInstance.class, "RuntimeDiscreteSinglePortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(runtimeDiscreteMultiPortInstanceEClass, RuntimeDiscreteMultiPortInstance.class, "RuntimeDiscreteMultiPortInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize data types
 		initEDataType(javaObjectEDataType, Object.class, "JavaObject", !IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime.impl;
 
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -27,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeParameter;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeParameterImpl#getMessage <em>Message</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeParameterImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeParameterImpl#getParameter <em>Parameter</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +53,16 @@ public class RuntimeParameterImpl extends NamedElementImpl implements RuntimePar
 	 * @ordered
 	 */
 	protected Object value = VALUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameter()
+	 * @generated
+	 * @ordered
+	 */
+	protected Parameter parameter;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,6 +150,44 @@ public class RuntimeParameterImpl extends NamedElementImpl implements RuntimePar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Parameter getParameter() {
+		if (parameter != null && parameter.eIsProxy()) {
+			InternalEObject oldParameter = (InternalEObject)parameter;
+			parameter = (Parameter)eResolveProxy(oldParameter);
+			if (parameter != oldParameter) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.RUNTIME_PARAMETER__PARAMETER, oldParameter, parameter));
+			}
+		}
+		return parameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Parameter basicGetParameter() {
+		return parameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParameter(Parameter newParameter) {
+		Parameter oldParameter = parameter;
+		parameter = newParameter;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.RUNTIME_PARAMETER__PARAMETER, oldParameter, parameter));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -189,6 +239,9 @@ public class RuntimeParameterImpl extends NamedElementImpl implements RuntimePar
 				return getMessage();
 			case RuntimePackage.RUNTIME_PARAMETER__VALUE:
 				return getValue();
+			case RuntimePackage.RUNTIME_PARAMETER__PARAMETER:
+				if (resolve) return getParameter();
+				return basicGetParameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -206,6 +259,9 @@ public class RuntimeParameterImpl extends NamedElementImpl implements RuntimePar
 				return;
 			case RuntimePackage.RUNTIME_PARAMETER__VALUE:
 				setValue(newValue);
+				return;
+			case RuntimePackage.RUNTIME_PARAMETER__PARAMETER:
+				setParameter((Parameter)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -225,6 +281,9 @@ public class RuntimeParameterImpl extends NamedElementImpl implements RuntimePar
 			case RuntimePackage.RUNTIME_PARAMETER__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
+			case RuntimePackage.RUNTIME_PARAMETER__PARAMETER:
+				setParameter((Parameter)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -241,6 +300,8 @@ public class RuntimeParameterImpl extends NamedElementImpl implements RuntimePar
 				return getMessage() != null;
 			case RuntimePackage.RUNTIME_PARAMETER__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+			case RuntimePackage.RUNTIME_PARAMETER__PARAMETER:
+				return parameter != null;
 		}
 		return super.eIsSet(featureID);
 	}

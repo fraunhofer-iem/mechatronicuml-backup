@@ -37,9 +37,6 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeRoleConnectorInstance;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RoleInstanceImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RoleInstanceImpl#getConnectorInstances <em>Connector Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RoleInstanceImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RoleInstanceImpl#getRole <em>Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RoleInstanceImpl#getAssembly <em>Assembly</em>}</li>
  * </ul>
@@ -47,47 +44,7 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeRoleConnectorInstance;
  *
  * @generated
  */
-public abstract class RoleInstanceImpl extends RuntimeBehavioralElementImpl implements RoleInstance {
-	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
-
-	/**
-	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comment = COMMENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getConnectorInstances() <em>Connector Instances</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConnectorInstances()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ConnectorInstance> connectorInstances;
-
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected ConnectorEndpoint type;
-
+public abstract class RoleInstanceImpl extends RuntimeDiscreteInteractionEndpointInstanceImpl implements RoleInstance {
 	/**
 	 * The cached setting delegate for the '{@link #getRole() <em>Role</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -132,77 +89,6 @@ public abstract class RoleInstanceImpl extends RuntimeBehavioralElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getComment() {
-		return comment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComment(String newComment) {
-		String oldComment = comment;
-		comment = newComment;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.ROLE_INSTANCE__COMMENT, oldComment, comment));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ConnectorInstance> getConnectorInstances() {
-		if (connectorInstances == null) {
-			connectorInstances = new EObjectWithInverseResolvingEList.ManyInverse<ConnectorInstance>(ConnectorInstance.class, this, RuntimePackage.ROLE_INSTANCE__CONNECTOR_INSTANCES, ConnectorPackage.CONNECTOR_INSTANCE__CONNECTOR_ENDPOINT_INSTANCES);
-		}
-		return connectorInstances;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ConnectorEndpoint getType() {
-		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (ConnectorEndpoint)eResolveProxy(oldType);
-			if (type != oldType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.ROLE_INSTANCE__TYPE, oldType, type));
-			}
-		}
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ConnectorEndpoint basicGetType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setType(ConnectorEndpoint newType) {
-		ConnectorEndpoint oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.ROLE_INSTANCE__TYPE, oldType, type));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Role getRole() {
 		return (Role)ROLE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -239,45 +125,9 @@ public abstract class RoleInstanceImpl extends RuntimeBehavioralElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RuntimePackage.ROLE_INSTANCE__CONNECTOR_INSTANCES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectorInstances()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RuntimePackage.ROLE_INSTANCE__CONNECTOR_INSTANCES:
-				return ((InternalEList<?>)getConnectorInstances()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RuntimePackage.ROLE_INSTANCE__COMMENT:
-				return getComment();
-			case RuntimePackage.ROLE_INSTANCE__CONNECTOR_INSTANCES:
-				return getConnectorInstances();
-			case RuntimePackage.ROLE_INSTANCE__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
 			case RuntimePackage.ROLE_INSTANCE__ROLE:
 				if (resolve) return getRole();
 				return basicGetRole();
@@ -293,137 +143,15 @@ public abstract class RoleInstanceImpl extends RuntimeBehavioralElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case RuntimePackage.ROLE_INSTANCE__COMMENT:
-				setComment((String)newValue);
-				return;
-			case RuntimePackage.ROLE_INSTANCE__CONNECTOR_INSTANCES:
-				getConnectorInstances().clear();
-				getConnectorInstances().addAll((Collection<? extends ConnectorInstance>)newValue);
-				return;
-			case RuntimePackage.ROLE_INSTANCE__TYPE:
-				setType((ConnectorEndpoint)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case RuntimePackage.ROLE_INSTANCE__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
-			case RuntimePackage.ROLE_INSTANCE__CONNECTOR_INSTANCES:
-				getConnectorInstances().clear();
-				return;
-			case RuntimePackage.ROLE_INSTANCE__TYPE:
-				setType((ConnectorEndpoint)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.ROLE_INSTANCE__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case RuntimePackage.ROLE_INSTANCE__CONNECTOR_INSTANCES:
-				return connectorInstances != null && !connectorInstances.isEmpty();
-			case RuntimePackage.ROLE_INSTANCE__TYPE:
-				return type != null;
 			case RuntimePackage.ROLE_INSTANCE__ROLE:
 				return ROLE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RuntimePackage.ROLE_INSTANCE__ASSEMBLY:
 				return ASSEMBLY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (derivedFeatureID) {
-				case RuntimePackage.ROLE_INSTANCE__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
-				default: return -1;
-			}
-		}
-		if (baseClass == ConnectorEndpointInstance.class) {
-			switch (derivedFeatureID) {
-				case RuntimePackage.ROLE_INSTANCE__CONNECTOR_INSTANCES: return ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__CONNECTOR_INSTANCES;
-				case RuntimePackage.ROLE_INSTANCE__TYPE: return ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__TYPE;
-				default: return -1;
-			}
-		}
-		if (baseClass == DiscreteInteractionEndpointInstance.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (baseFeatureID) {
-				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return RuntimePackage.ROLE_INSTANCE__COMMENT;
-				default: return -1;
-			}
-		}
-		if (baseClass == ConnectorEndpointInstance.class) {
-			switch (baseFeatureID) {
-				case ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__CONNECTOR_INSTANCES: return RuntimePackage.ROLE_INSTANCE__CONNECTOR_INSTANCES;
-				case ConnectorPackage.CONNECTOR_ENDPOINT_INSTANCE__TYPE: return RuntimePackage.ROLE_INSTANCE__TYPE;
-				default: return -1;
-			}
-		}
-		if (baseClass == DiscreteInteractionEndpointInstance.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (comment: ");
-		result.append(comment);
-		result.append(')');
-		return result.toString();
 	}
 
 } //RoleInstanceImpl

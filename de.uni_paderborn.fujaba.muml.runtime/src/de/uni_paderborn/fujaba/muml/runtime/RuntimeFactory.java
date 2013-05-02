@@ -35,15 +35,6 @@ public interface RuntimeFactory extends EFactory {
 	RuntimeComponentInstance createRuntimeComponentInstance();
 
 	/**
-	 * Returns a new object of class '<em>Discrete Port Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Discrete Port Instance</em>'.
-	 * @generated
-	 */
-	RuntimeDiscretePortInstance createRuntimeDiscretePortInstance();
-
-	/**
 	 * Returns a new object of class '<em>Message Buffer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -132,6 +123,24 @@ public interface RuntimeFactory extends EFactory {
 	 * @generated
 	 */
 	MessageOnConnector createMessageOnConnector();
+
+	/**
+	 * Returns a new object of class '<em>Discrete Single Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Discrete Single Port Instance</em>'.
+	 * @generated
+	 */
+	RuntimeDiscreteSinglePortInstance createRuntimeDiscreteSinglePortInstance();
+
+	/**
+	 * Returns a new object of class '<em>Discrete Multi Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Discrete Multi Port Instance</em>'.
+	 * @generated
+	 */
+	RuntimeDiscreteMultiPortInstance createRuntimeDiscreteMultiPortInstance();
 
 	/**
 	 * Returns the package supported by this factory.
