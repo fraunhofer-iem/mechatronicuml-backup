@@ -7,14 +7,12 @@ import java.util.List;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.edit.command.ChangeCommand;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.common.core.command.CommandResult;
-import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
-import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -45,7 +43,7 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 			
 			//set up variables
 			StaticStructuredComponent sc = null;
-			TransactionalEditingDomain editingDomain = null;
+			EditingDomain editingDomain = null;
 			
 			//if command is triggered via the graphical editor, the selection contains an EditPart
 			if(currentObject instanceof StaticStructuredComponentEditPart){
@@ -58,21 +56,20 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 				//if the command is triggered via the tree editor, the selection contains a StaticStructuredComponent
 				sc = (StaticStructuredComponent) currentObject;
 				
-				//obtain the editing domain for the resource set
-				ResourceSet rset = sc.eResource().getResourceSet();
-				editingDomain = TransactionalEditingDomain.Factory.INSTANCE.getEditingDomain(rset);
+				//obtain the editing domain for the structured component
+				editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(sc);
 				if(editingDomain == null){
 					//create new editing domain because no editing domain exists yet
+					ResourceSet rset = sc.eResource().getResourceSet();
 					editingDomain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(rset);
 				}
 			} else {
 				//there is an object within the selection, which is not supported -> ignore
 				continue;
 			}
-			
-			ICommandProxy cmd = new ICommandProxy(
-					new StaticStructuredComponentTransformationCommand(editingDomain, sc));
-			cmd.execute();
+						
+			editingDomain.getCommandStack().execute(new StaticStructuredComponentTransformationCommand(sc));
+		
 			
 		}
 		
@@ -125,25 +122,21 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 	 * Cannot modify resource set without a write transaction"
 	 * 
 	 */
-	class StaticStructuredComponentTransformationCommand extends AbstractTransactionalCommand {
+	class StaticStructuredComponentTransformationCommand extends ChangeCommand {
 		
 		private StaticStructuredComponent sc;
 
-		public StaticStructuredComponentTransformationCommand(
-				TransactionalEditingDomain editingDomain, StaticStructuredComponent comp) {
-			super(editingDomain, "Make Structured Component Reconfigurable", null);
+		public StaticStructuredComponentTransformationCommand(StaticStructuredComponent comp) {
+			super(comp);
+			setLabel("Make Structured Component Reconfigurable");
 			this.sc = comp;
 		}
 
 		@Override
-		protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-				IAdaptable info) throws ExecutionException {
-
-			
+		protected void doExecute() {
 			makeStructuredComponentReconfigurable(sc);
-
-			return CommandResult.newOKCommandResult();
 		}
+
 	}
 
 }
