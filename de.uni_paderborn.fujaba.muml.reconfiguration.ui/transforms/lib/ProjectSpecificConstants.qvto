@@ -1,0 +1,22 @@
+library ProjectSpecificConstants;
+
+-- name of the message type repository that is generated for the reconfiguration messages
+-- that are NOT user defined
+property reconfigurationMessageTypeRepositoryName : String = '_ReconfigurationMessageTypeRepo';
+
+-- names of the generated for the reconfiguration message types that are NOT user defined
+property genMsgTypeSuccess : String = 'success';
+property genMsgTypeFailed : String = 'failed';
+property genMsgTypeOccupied : String = 'occupied';
+property genMsgTypeDeclineRequest : String = 'declineRequest';
+property genMsgTypeAbort : String = 'abort';
+property genMsgTypeFinished : String = 'finished';
+property genMsgTypeExecute : String = 'execute';
+property genMsgTypeConfirmRequest : String = 'confirmRequest';
+property genMsgTypeConfirm : String = 'confirm';
+
+-- names of the synchronization channels that are not depending on user-defined messages
+property genSyncChanReply : String = 'reply';
+property genSyncChanParentReply : String = 'parentReply';
+property genSyncChanExecuted : String = 'executed';
+property genSyncChanExecuteReconf : String = 'executeReconf';

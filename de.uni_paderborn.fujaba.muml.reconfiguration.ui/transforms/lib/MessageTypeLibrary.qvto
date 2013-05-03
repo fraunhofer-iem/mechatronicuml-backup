@@ -1,0 +1,92 @@
+import TypeAndBehaviorLibrary;
+import ProjectSpecificConstants;
+
+--core models
+modeltype core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.3.15");
+
+-- muml models 
+modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.2.2");
+modeltype msgi uses muml::msgtype("http://www.fujaba.de/muml/0.2.2");
+modeltype types uses muml::types("http://www.fujaba.de/muml/0.2.2");
+modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.2.2");
+
+library MessageTypeLibrary;
+
+------------ helper functions --------------
+
+-- returns the generated message type repositoy which contains all message types that are needed for the
+-- communication of manager and executor and that are NOT user defined 
+helper getOrCreateReconfigurationMessageTypeRepositoy(inout rootNode : RootNode) : MessageTypeRepository{
+	
+	var category : ModelElementCategory := rootNode.getMessageTypeCategory();
+	
+	-- try to obtain message type repository
+	var repo : MessageTypeRepository := (category.modelElements -> select(t : ExtendableElement | t.oclIsKindOf(MessageTypeRepository) 
+						and t.oclAsType(MessageTypeRepository).name = reconfigurationMessageTypeRepositoryName) 
+						-> any(true)).oclAsType(MessageTypeRepository);
+	
+	-- if no repository was found, then create it!
+	if(repo = null) then{
+		repo := createReconfigurationMessageTypeRepository(rootNode);
+		category.modelElements += repo;
+	}endif;
+	
+	return repo;
+}
+
+-- creates the message type repositoy which contains all message types that are needed for the
+-- communication of manager and executor and that are NOT user defined 
+helper createReconfigurationMessageTypeRepository(inout rootNode : RootNode) : MessageTypeRepository{
+	-- create the repository
+	var repo : MessageTypeRepository := new MessageTypeRepository(reconfigurationMessageTypeRepositoryName);
+	repo.comment := 'Generated Message Types for Reconfigurable Structured Components - DO NOT EDIT!';
+	
+	-- create all necessary message types
+	var msgType : MessageType;
+	
+	repo.messageTypes += new MessageType(genMsgTypeSuccess);
+	repo.messageTypes += new MessageType(genMsgTypeFailed);
+	repo.messageTypes += new MessageType(genMsgTypeOccupied);
+	repo.messageTypes += new MessageType(genMsgTypeDeclineRequest);
+	repo.messageTypes += new MessageType(genMsgTypeAbort);
+	repo.messageTypes += new MessageType(genMsgTypeFinished);
+	
+	msgType := new MessageType(genMsgTypeExecute);
+	msgType.parameters += new Parameter('reconf', rootNode.getPrimitiveType(intType));
+	repo.messageTypes += msgType;
+	
+	msgType := new MessageType(genMsgTypeConfirmRequest);
+	msgType.parameters += new Parameter('reconf', rootNode.getPrimitiveType(intType));
+	repo.messageTypes += msgType;
+	
+	msgType := new MessageType(genMsgTypeConfirm);
+	msgType.parameters += new Parameter('t', rootNode.getPrimitiveType(intType));
+	repo.messageTypes += msgType;
+	
+	return repo;
+}
+
+-- returns the message type with the given name from the generated message type repository
+-- that contains all message types that are needed for the
+-- communication of manager and executor and that are NOT user defined 
+helper getGeneratedReconfigurationMessageType(in rootNode : RootNode, in theName : String) : MessageType{
+	return getOrCreateReconfigurationMessageTypeRepositoy(rootNode).messageTypes -> select(name = theName) -> any(true);
+}
+
+------------ helper queries ---------------
+
+-- returns the model element category for real-time statecharts.
+query RootNode::getMessageTypeCategory() : ModelElementCategory {
+	return self.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.messagetype.category') -> any(true);
+}
+
+------------- constructors -----------------
+
+constructor MessageType::MessageType(in newName : String){
+	name := newName;
+}
+
+constructor MessageTypeRepository::MessageTypeRepository(in newName : String){
+	name := newName;
+}

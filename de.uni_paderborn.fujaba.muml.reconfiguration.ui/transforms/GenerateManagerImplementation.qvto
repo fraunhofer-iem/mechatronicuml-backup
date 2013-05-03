@@ -1,3 +1,8 @@
+import transforms.lib.RTSCBaseLibrary;
+import transforms.lib.ActionLanguageBaseLibrary;
+import transforms.lib.TypeAndBehaviorLibrary;
+import transforms.lib.MessageTypeLibrary;
+import transforms.lib.ProjectSpecificConstants;
 
 --core models
 modeltype core uses core('http://www.storydriven.org/core/0.3.1');
@@ -36,9 +41,7 @@ main() {
 	var theComponent : ReconfigurableStructuredComponent := inputComponent.rootObjects()[ReconfigurableStructuredComponent] -> any(true);
 	var rootNode : RootNode := category.rootObjects()[RootNode] -> any(true);
 	
-	
 	createManagerImplementation(theComponent, rootNode);
-	
 	
 }
 
@@ -46,38 +49,130 @@ main() {
 helper createManagerImplementation(inout theComponent : ReconfigurableStructuredComponent, inout rootNode : RootNode){
 	
 	-- create the statechart
-	var rtsc : RealtimeStatechart := new RealtimeStatechart('Test');
+	var rtsc : RealtimeStatechart := new RealtimeStatechart(theComponent.name + '_Manager_RTSC');
+	rtsc.comment := 'Generated Real-Time Statechart -- DO NOT EDIT!';
+	
+	-- assign it to the manager
+	theComponent.manager.behavior := rtsc;
 	
 	-- add statechart to category
-	var rtscCategory : ModelElementCategory := (rootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true));
-	rtscCategory.modelElements += rtsc;
+	rootNode.getRTSCCategory().modelElements += rtsc;
+	
+	--generate static statechart frame
+	generateStaticStatechartFrame(rootNode, rtsc);
 	
 	return;
 }
 
-
-
-helper createEmbeddedRTSC(in name : String, inout state : State){
-	var rtsc : RealtimeStatechart := new RealtimeStatechart(name);
-	var region : Region := new Region();
+-- generates the static statechart frame (the 'black' parts in the manager generation template)
+helper generateStaticStatechartFrame(inout rootNode : RootNode, inout managerRTSC : RealtimeStatechart){
 	
-	region.embeddedStatechart := rtsc;
-	state.embeddedRegions += region;
+	-- generate initial state
+	var initialState : State := new State('Manager_Main');
+	initialState.initial := true;
+	managerRTSC.states += initialState;
+	
+	-- add variables
+	managerRTSC.variables += new Variable('reconfiguration', rootNode.getPrimitiveType(intType));
+	
+	-- add sync channels
+	initialState.channels += new SynchronizationChannel(genSyncChanReply, rootNode.getPrimitiveType(boolType));
+	initialState.channels += new SynchronizationChannel(genSyncChanParentReply, rootNode.getPrimitiveType(boolType));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecuted, rootNode.getPrimitiveType(boolType));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecuteReconf, null);
+	
+	-- generate embedded statecharts
+	var parentSubRTSC : RealtimeStatechart := createEmbeddedRTSC('parent', initialState, 2);
+	generateStaticParentStatechartFrame(rootNode, parentSubRTSC);
+	
+	var executorSubRTSC : RealtimeStatechart := createEmbeddedRTSC('executor', initialState, 1);
+	generateStaticExecutorStatechartFrame(rootNode, executorSubRTSC);
+	
+	var internalRTSC : RealtimeStatechart := createEmbeddedRTSC('internal behavior', initialState, 3);
+	generateStaticInternalBehaviorStatechartFrame(rootNode, internalRTSC);
+	
+	var embeddedCISubRTSC : RealtimeStatechart := createEmbeddedRTSC('embeddedCI', initialState, 4);
+	generateStaticEmbeddedCIStatechartFrame(rootNode, embeddedCISubRTSC);
 	
 	return;
 }
 
-------------- constructors -----------------
-
-constructor RealtimeStatechart::RealtimeStatechart(in newName : String){
-	name := newName;
-}
-
-constructor State::State(in newName : String){
-	name := newName;
-}
-
-constructor Region::Region(){
+-- generates the static statechart frame for the parent statechart (the 'black' parts in the manager generation template)
+helper generateStaticParentStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
+	-- create variables
+	var requestVar : Variable := new Variable('request', rootNode.getPrimitiveType(boolType));
+	rtsc.variables += requestVar;
+	
+	-- create states
+	var initState : State := new State('Idle');
+	initState.initial := true;
+	initState.entryEvent := new EntryEvent(createSimpleAssignmentExpressioninBlock(requestVar, 'false'), null);
+	rtsc.states += initState;
+	
+	var propState : State := new State('Propagated');
+	propState.urgent := true;
+	rtsc.states += propState;
+	
+	var awaitState : State := new State('AwaitReply');
+	rtsc.states += awaitState;
+	
+	-- create transitions
+	var currentTrans : Transition = null;
+	
+	-- Propagated -> Idle
+	currentTrans := new Transition(propState, initState, 1);
+	currentTrans.guard := createSimpleCompareGuardExpression(requestVar, 'false');
+	rtsc.transitions += currentTrans;
+	
+	-- Propagated -> AwaitReply
+	currentTrans := new Transition(propState, awaitState, 2);
+	currentTrans.guard := createSimpleCompareGuardExpression(requestVar, 'true');
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitReply -> Idle (success)
+	currentTrans := new Transition(awaitState, initState, 3);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::SEND, 
+			new LiteralExpression('true'));
+	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeSuccess), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitReply -> Idle (failed)
+	currentTrans := new Transition(awaitState, initState, 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::SEND, 
+			new LiteralExpression('false'));
+	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeFailed), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitReply -> Idle (occupied)
+	currentTrans := new Transition(awaitState, initState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::SEND, 
+			new LiteralExpression('false'));
+	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeOccupied), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	
+	return;
+}
+
+-- generates the static statechart frame for the executor statechart (the 'black' parts in the manager generation template)
+helper generateStaticExecutorStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+	
+	return;
+}
+
+-- generates the static statechart frame for the internal behavior statechart (the 'black' parts in the manager generation template)
+helper generateStaticInternalBehaviorStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+	
+	return;
+}
+
+-- generates the static statechart frame for the embeddedCI statechart (the 'black' parts in the manager generation template)
+helper generateStaticEmbeddedCIStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+	
+	return;
 }
 

@@ -1,0 +1,137 @@
+import ActionLanguageBaseLibrary;
+
+--core models
+modeltype core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.3.15");
+
+-- muml models 
+modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.2.2");
+modeltype msgi uses muml::msgtype("http://www.fujaba.de/muml/0.2.2");
+modeltype realtimestatechart uses muml::realtimestatechart('http://www.fujaba.de/muml/0.2.2');
+modeltype types uses muml::types("http://www.fujaba.de/muml/0.2.2");
+modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.2.2");
+
+modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.3.16');
+
+
+-- this library contains queries and constructors for generating RealtimeStatecharts
+library RTSCBaseLibrary;
+
+------------ helper functions --------------
+
+-- adds a region including an embedded RTSC with the specified name to the specified state
+helper createEmbeddedRTSC(in name : String, inout state : State, in priority : Integer) : RealtimeStatechart{
+	var rtsc : RealtimeStatechart := new RealtimeStatechart(name);
+	var region : Region := new Region();
+	
+	region.embeddedStatechart := rtsc;
+	region.priority := priority;
+	state.embeddedRegions += region;
+	
+	return rtsc;
+}
+
+-- creates a comparison expression where a variable is compared to a literal
+helper createSimpleCompareGuardExpression(in variable : Variable, in value : String) : ComparisonExpression{
+	
+	var literalExpr : Expression := new LiteralExpression(value);
+	var lhs : Expression := new TypedNamedElementExpression(variable);
+	
+	return new ComparisonExpression(lhs, literalExpr, ComparingOperator::EQUAL);
+}
+
+-- creates a block containing one assignment expression where a literal is assigned to a variable
+helper createSimpleAssignmentExpressioninBlock(in variable : Variable, in newValue : String) : Expression{
+	var block : Block := new Block();
+	
+	var rhs : Expression := new LiteralExpression(newValue);
+	
+	var assignment : Assignment := new Assignment(variable, rhs, AssignOperator::ASSIGN);
+	block.expressions += assignment;
+	
+	return block;
+}
+
+-- returns the synchronization channel with the specified name if it is accessible from within the given statechart or null otherwise
+helper getSynchronizationChannel(in rtsc : RealtimeStatechart, in channelName : String) : SynchronizationChannel{
+	
+	-- check whether rtsc is embedded
+	if(rtsc.parentRegion.oclIsUndefined()) then{
+		-- if not, return null -> no parent state defining the channel exists
+		return null;
+	} else {
+		var parentState : State := rtsc.parentRegion.parentState;
+		
+		-- search for channel with the specified name in all parent states (recursively)
+		return (parentState -> closure(if parentStatechart.parentRegion.oclIsUndefined() then parentState else parentStatechart.parentRegion.parentState endif).channels 
+							-> any(name = channelName)); 
+	}endif;
+	
+	return null;
+}
+
+------------ helper queries ---------------
+
+-- returns the model element category for real-time statecharts.
+query RootNode::getRTSCCategory() : ModelElementCategory {
+	return self.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
+}
+
+------------- constructors -----------------
+
+constructor RealtimeStatechart::RealtimeStatechart(in newName : String){
+	name := newName;
+}
+
+constructor State::State(in newName : String){
+	name := newName;
+}
+
+constructor Region::Region(){
+	
+}
+
+constructor Transition::Transition(in srcState : State, in tgtState : State, in prio : Integer){
+	source := srcState;
+	target := tgtState;
+	priority := prio;
+}
+
+constructor SynchronizationChannel::SynchronizationChannel(in newName : String, in type : DataType){
+	name := newName;
+	selectorType := type;
+}
+
+constructor Synchronization::Synchronization(in channel : SynchronizationChannel, in theKind : SynchronizationKind, in selectorExpr : Expression){
+	syncChannel := channel;
+	kind := theKind;
+	selectorExpression := selectorExpr;
+}
+
+constructor EntryEvent::EntryEvent(in expr : Expression, in resets : Set(Clock)){
+	action := new Action('entry', expr);
+	clockResets += resets;
+	kind := EventKind::RAISE;
+}
+
+constructor ExitEvent::ExitEvent(in expr : Expression, in resets : Set(Clock)){
+	action := new Action('exit', expr);
+	clockResets += resets;
+	kind := EventKind::RAISE;
+}
+
+constructor Action::Action(in newName : String, in expr : Expression){
+	_expressions += expr;
+	name := newName;
+}
+
+constructor AsynchronousMessageEvent::AsynchronousMessageEvent(in msgType : MessageType, in evtKind : EventKind){
+	message := new Message(msgType);
+	kind := evtKind;
+}
+
+constructor Message::Message(in msgType : MessageType){
+	instanceOf := msgType;
+}
