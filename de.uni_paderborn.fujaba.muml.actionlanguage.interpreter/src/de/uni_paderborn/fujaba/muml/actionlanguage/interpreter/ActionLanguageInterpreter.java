@@ -57,11 +57,11 @@ public class ActionLanguageInterpreter {
 	 * @throws VariableNotInitializedException
 	 * @throws IncompatibleTypeException
 	 */
-	public void evaluateExpression(EList<VariableBinding> variableBindings,
+	public Object evaluateExpression(EList<VariableBinding> variableBindings,
 			Expression expression) throws UnsupportedModellingElementException,
 			VariableNotInitializedException, IncompatibleTypeException {
 		HashSet<LocalVariableAndParameterBinding> parAndLocVarBindings = new HashSet<LocalVariableAndParameterBinding>();
-		evaluate(variableBindings, parAndLocVarBindings, expression);
+		return evaluate(variableBindings, parAndLocVarBindings, expression);
 
 	}
 
@@ -753,7 +753,7 @@ public class ActionLanguageInterpreter {
 	 * @throws IncompatibleTypeException
 	 * @throws UnsupportedModellingElementException
 	 */
-	protected Object castTo(DataType type, Object value)
+	public Object castTo(DataType type, Object value)
 			throws IncompatibleTypeException,
 			UnsupportedModellingElementException {
 		switch (((PrimitiveDataType) type).getPrimitiveType().getValue()) {
