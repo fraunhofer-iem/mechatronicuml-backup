@@ -93,6 +93,10 @@ constructor Region::Region(){
 	
 }
 
+constructor Clock::Clock(in newName : String){
+	name := newName;
+}
+
 constructor Transition::Transition(in srcState : State, in tgtState : State, in prio : Integer){
 	source := srcState;
 	target := tgtState;

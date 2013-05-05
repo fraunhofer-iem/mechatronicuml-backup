@@ -15,8 +15,47 @@ property genMsgTypeExecute : String = 'execute';
 property genMsgTypeConfirmRequest : String = 'confirmRequest';
 property genMsgTypeConfirm : String = 'confirm';
 
--- names of the synchronization channels that are not depending on user-defined messages
+-- names of the manager synchronization channels that are not depending on user-defined messages
 property genSyncChanReply : String = 'reply';
 property genSyncChanParentReply : String = 'parentReply';
 property genSyncChanExecuted : String = 'executed';
 property genSyncChanExecuteReconf : String = 'executeReconf';
+
+
+-- names of manager internal variables
+property genVarManager_Parent_Request : String = 'request';
+property genVarManager_Executor_Reuqest : String = 'executor_request';
+property genVarManager_Internal_Request : String = 'request';
+property genVarManager_Internal_Result : String = 'result';
+property genVarManager_embeddedCI_Request : String = 'request';
+property genVarManager_embeddedCI_Propagate : String = 'propagate';
+
+-- names of manager internal clocks
+property genClockManager_embeddedCI_cReq : String = 'c_req';
+
+-- names of manager internal states
+property genStateManager_Main : String = 'Manager_Main';
+
+property genStateManager_Parent_Idle : String = 'Idle';
+property genStateManager_Parent_Propagated : String = 'Propagated';
+property genStateManager_Parent_AwaitReply : String = 'AwaitReply';
+
+property genStateManager_Executor_Idle : String = 'Idle';
+property genStateManager_Executor_Request : String = 'Request';
+property genStateManager_Executor_WaitForConfirm : String = 'WaitForConfirm';
+property genStateManager_Executor_ExecuteReconf : String = 'ExecuteReconf';
+property genStateManager_Executor_Finished : String = 'Finished';
+
+property genStateManager_Internal_Idle : String = 'Idle';
+property genStateManager_Internal_Check_Prefix : String = 'Check';
+property genStateManager_Internal_Plan : String = 'Plan';
+property genStateManager_Internal_Execute : String = 'Execute';
+property genStateManager_Internal_Success : String = 'Success';
+property genStateManager_Internal_Fail : String = 'Fail';
+
+property genStateManager_EmbeddedCI_Main : String = 'EmbeddedCI_Main';
+property genStateManager_EmbeddedCI_Idle : String = 'Idle';
+property genStateManager_EmbeddedCI_Received_Prefix : String = 'ReceivedMsg';
+property genStateManager_EmbeddedCI_Deliver : String = 'DeliverMsg';
+property genStateManager_EmbeddedCI_AwaitReply : String = 'AwaitReply';
+property genStateManager_EmbeddedCI_AwaitParent : String = 'AwaitParentReply';
