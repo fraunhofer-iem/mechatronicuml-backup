@@ -3,11 +3,9 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Test
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.test
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.test.Activator
 Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.actionlanguage.interpreter;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.muml.runtime;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.3.1",
  org.junit4;bundle-version="4.8.1"
-Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

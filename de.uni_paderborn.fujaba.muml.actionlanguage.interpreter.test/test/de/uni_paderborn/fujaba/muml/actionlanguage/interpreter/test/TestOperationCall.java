@@ -443,13 +443,13 @@ public class TestOperationCall {
 		// set up inC
 		Variable intC = behaviourFactory.createVariable();
 		intC.setDataType(intType);
+		intC.setInitializeExpression(litExpression);
 
 		// set up declaration expression
 		LocalVariableDeclarationStatement decExpression = alFactory
 				.createLocalVariableDeclarationStatement();
 		decExpression.setVariable(intC);
-		decExpression.setInitializeExpression(litExpression);
-
+		
 		// set up block
 		block.getExpressions().add(decExpression);
 		block.getExpressions().add(opCall);
@@ -508,12 +508,13 @@ public class TestOperationCall {
 		// set up inC
 		Variable intC = behaviourFactory.createVariable();
 		intC.setDataType(intType);
+		intC.setInitializeExpression(litExpression);
 
 		// set up declaration expression
 		LocalVariableDeclarationStatement decExpression = alFactory
 				.createLocalVariableDeclarationStatement();
 		decExpression.setVariable(intC);
-		decExpression.setInitializeExpression(litExpression);
+	
 
 		// set up tne expression for intC
 		TypedNamedElementExpression intCExp = alFactory
