@@ -53,15 +53,15 @@ helper createReconfigurationMessageTypeRepository(inout rootNode : RootNode) : M
 	repo.messageTypes += new MessageType(genMsgTypeFinished);
 	
 	msgType := new MessageType(genMsgTypeExecute);
-	msgType.parameters += new Parameter('reconf', rootNode.getPrimitiveType(intType));
+	msgType.parameters += new Parameter(genParamExecute_Reconf, rootNode.getPrimitiveType(intType));
 	repo.messageTypes += msgType;
 	
 	msgType := new MessageType(genMsgTypeConfirmRequest);
-	msgType.parameters += new Parameter('reconf', rootNode.getPrimitiveType(intType));
+	msgType.parameters += new Parameter(genParamConfirmRequest_Reconf, rootNode.getPrimitiveType(intType));
 	repo.messageTypes += msgType;
 	
 	msgType := new MessageType(genMsgTypeConfirm);
-	msgType.parameters += new Parameter('t', rootNode.getPrimitiveType(intType));
+	msgType.parameters += new Parameter(genParamConfirm_T, rootNode.getPrimitiveType(intType));
 	repo.messageTypes += msgType;
 	
 	return repo;
@@ -79,6 +79,11 @@ helper getGeneratedReconfigurationMessageType(in rootNode : RootNode, in theName
 -- returns the model element category for real-time statecharts.
 query RootNode::getMessageTypeCategory() : ModelElementCategory {
 	return self.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.messagetype.category') -> any(true);
+}
+
+-- return the parameter with the given name of the message type
+query MessageType::getParameterByName(in theName : String) : Parameter{
+	return (self.parameters -> any(name = theName));
 }
 
 ------------- constructors -----------------

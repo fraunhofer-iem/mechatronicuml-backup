@@ -1,4 +1,5 @@
 import ActionLanguageBaseLibrary;
+import TypeAndBehaviorLibrary;
 
 --core models
 modeltype core uses core('http://www.storydriven.org/core/0.3.1');
@@ -39,7 +40,7 @@ helper createSimpleCompareGuardExpression(in variable : Variable, in value : Str
 	var literalExpr : Expression := new LiteralExpression(value);
 	var lhs : Expression := new TypedNamedElementExpression(variable);
 	
-	return new ComparisonExpression(lhs, literalExpr, ComparingOperator::EQUAL);
+	return new ComparisonExpression(lhs, ComparingOperator::EQUAL, literalExpr);
 }
 
 -- creates a block containing one assignment expression where a literal is assigned to a variable
@@ -48,10 +49,29 @@ helper createSimpleAssignmentExpressioninBlock(in variable : Variable, in newVal
 	
 	var rhs : Expression := new LiteralExpression(newValue);
 	
-	var assignment : Assignment := new Assignment(variable, rhs, AssignOperator::ASSIGN);
+	var assignment : Assignment := new Assignment(variable, AssignOperator::ASSIGN, rhs);
 	block.expressions += assignment;
 	
 	return block;
+}
+
+-- creates an assignment expression where a literal is assigned to a variable
+helper createSimpleAssignmentExpression(in variable : Variable, in newValue : String) : Expression{
+	
+	var rhs : Expression := new LiteralExpression(newValue);
+	var assignment : Assignment := new Assignment(variable, AssignOperator::ASSIGN, rhs);
+	
+	return assignment;
+}
+
+-- creates a parameter binding where a literal is bound to a parameter
+helper createSimpleSendLiteralParameterBinding(in param : Parameter, in theValue : String) : ParameterBinding{
+	return (new ParameterBinding(param, new LiteralExpression(theValue)));
+}
+
+-- creates a parameter binding where a variable is bound to a parameter
+helper createSimpleSendVariableParameterBinding(in param : Parameter, in variable : Variable) : ParameterBinding{
+	return (new ParameterBinding(param, new TypedNamedElementExpression(variable)));
 }
 
 -- returns the synchronization channel with the specified name if it is accessible from within the given statechart or null otherwise
@@ -77,6 +97,11 @@ helper getSynchronizationChannel(in rtsc : RealtimeStatechart, in channelName : 
 -- returns the model element category for real-time statecharts.
 query RootNode::getRTSCCategory() : ModelElementCategory {
 	return self.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
+}
+
+-- returns the variable with the given name that is accessible from within the realtime statechart
+query RealtimeStatechart::getVariableByName(in theName : String) : Variable{
+	return (self.allAvailableVariables -> any(name = theName));
 }
 
 ------------- constructors -----------------

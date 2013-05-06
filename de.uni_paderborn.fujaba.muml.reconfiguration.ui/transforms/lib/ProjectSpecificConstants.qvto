@@ -15,20 +15,33 @@ property genMsgTypeExecute : String = 'execute';
 property genMsgTypeConfirmRequest : String = 'confirmRequest';
 property genMsgTypeConfirm : String = 'confirm';
 
+-- names of parameters of the reconfiguration message types that are NOT user defined
+property genParamExecute_Reconf : String = 'reconf';
+property genParamConfirmRequest_Reconf : String = 'reconf';
+property genParamConfirm_T : String = 't';
+
 -- names of the manager synchronization channels that are not depending on user-defined messages
 property genSyncChanReply : String = 'reply';
 property genSyncChanParentReply : String = 'parentReply';
 property genSyncChanExecuted : String = 'executed';
 property genSyncChanExecuteReconf : String = 'executeReconf';
 
+--names of embedded statecharts in the manager RTSC
+property genEmbeddedRTSCManager_Parent : String = 'parent';
+property genEmbeddedRTSCManager_Executor : String = 'executor';
+property genEmbeddedRTSCManager_Internal : String = 'internal behavior';
+property genEmbeddedRTSCManager_EmbeddedCI : String = 'embeddedCI';
+property genEmbeddedRTSCManager_EmbeddedCI_adapt : String = 'adaptation';
+property genEmbeddedRTSCManager_EmbeddedCI_subrole : String = 'subrole';
 
 -- names of manager internal variables
+property genVarManager_Reconfiguration : String = 'reconfiguration';
 property genVarManager_Parent_Request : String = 'request';
 property genVarManager_Executor_Reuqest : String = 'executor_request';
 property genVarManager_Internal_Request : String = 'request';
 property genVarManager_Internal_Result : String = 'result';
-property genVarManager_embeddedCI_Request : String = 'request';
-property genVarManager_embeddedCI_Propagate : String = 'propagate';
+property genVarManager_EmbeddedCI_Request : String = 'request';
+property genVarManager_EmbeddedCI_Propagate : String = 'propagate';
 
 -- names of manager internal clocks
 property genClockManager_embeddedCI_cReq : String = 'c_req';

@@ -22,25 +22,25 @@ constructor LiteralExpression::LiteralExpression(in newValue : String){
 	value := newValue;
 }
 
-constructor ComparisonExpression::ComparisonExpression(in leftExpr : Expression, in rightExpr : Expression, in op : ComparingOperator){
+constructor ComparisonExpression::ComparisonExpression(in leftExpr : Expression, in op : ComparingOperator, in rightExpr : Expression){
 	leftExpression := leftExpr;
 	rightExpression := rightExpr;
 	operator := op;
 }
 
-constructor LogicalExpression::LogicalExpression(in leftExpr : Expression, in rightExpr : Expression, in op : LogicOperator){
+constructor LogicalExpression::LogicalExpression(in leftExpr : Expression, in op : LogicOperator, in rightExpr : Expression){
 	leftExpression := leftExpr;
 	rightExpression := rightExpr;
 	operator := op;
 }
 
-constructor ArithmeticExpression::ArithmeticExpression(in leftExpr : Expression, in rightExpr : Expression, in op : ArithmeticOperator){
+constructor ArithmeticExpression::ArithmeticExpression(in leftExpr : Expression, in op : ArithmeticOperator, in rightExpr : Expression){
 	leftExpression := leftExpr;
 	rightExpression := rightExpr;
 	operator := op;
 }
 
-constructor Assignment::Assignment(in variable : Variable, in rightExpr : Expression, in op : AssignOperator){
+constructor Assignment::Assignment(in variable : Variable, in op : AssignOperator, in rightExpr : Expression){
 	lhs_typedNamedElementExpression := new TypedNamedElementExpression(variable);
 	rhs_assignExpression := rightExpr;
 	assignOperator := op;

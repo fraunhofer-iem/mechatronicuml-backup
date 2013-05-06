@@ -68,12 +68,12 @@ helper createManagerImplementation(inout theComponent : ReconfigurableStructured
 helper generateStaticStatechartFrame(inout rootNode : RootNode, inout managerRTSC : RealtimeStatechart){
 	
 	-- generate initial state
-	var initialState : State := new State('Manager_Main');
+	var initialState : State := new State(genStateManager_Main);
 	initialState.initial := true;
 	managerRTSC.states += initialState;
 	
 	-- add variables
-	managerRTSC.variables += new Variable('reconfiguration', rootNode.getPrimitiveType(intType));
+	managerRTSC.variables += new Variable(genVarManager_Reconfiguration, rootNode.getPrimitiveType(intType));
 	
 	-- add sync channels
 	initialState.channels += new SynchronizationChannel(genSyncChanReply, rootNode.getPrimitiveType(boolType));
@@ -82,16 +82,16 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout managerRTS
 	initialState.channels += new SynchronizationChannel(genSyncChanExecuteReconf, null);
 	
 	-- generate embedded statecharts
-	var parentSubRTSC : RealtimeStatechart := createEmbeddedRTSC('parent', initialState, 2);
+	var parentSubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_Parent, initialState, 2);
 	generateStaticParentStatechartFrame(rootNode, parentSubRTSC);
 	
-	var executorSubRTSC : RealtimeStatechart := createEmbeddedRTSC('executor', initialState, 1);
+	var executorSubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_Executor, initialState, 1);
 	generateStaticExecutorStatechartFrame(rootNode, executorSubRTSC);
 	
-	var internalRTSC : RealtimeStatechart := createEmbeddedRTSC('internal behavior', initialState, 3);
+	var internalRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_Internal, initialState, 3);
 	generateStaticInternalBehaviorStatechartFrame(rootNode, internalRTSC);
 	
-	var embeddedCISubRTSC : RealtimeStatechart := createEmbeddedRTSC('embeddedCI', initialState, 4);
+	var embeddedCISubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_EmbeddedCI, initialState, 4);
 	generateStaticEmbeddedCIStatechartFrame(rootNode, embeddedCISubRTSC);
 	
 	return;
@@ -188,8 +188,10 @@ helper generateStaticExecutorStatechartFrame(inout rootNode : RootNode, inout rt
 	currentTrans := new Transition(idleState, executeState, 2);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecuteReconf), SynchronizationKind::RECEIVE, 
 			null);
-	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeExecute), EventKind::RAISE);
-	-- FIXME: add parameter binding
+	var msgType : MessageType := getGeneratedReconfigurationMessageType(rootNode, genMsgTypeExecute);
+	var sendMsg : AsynchronousMessageEvent := new AsynchronousMessageEvent(msgType, EventKind::RAISE);
+	sendMsg.message.parameterBinding += createSimpleSendVariableParameterBinding(msgType.getParameterByName(genParamExecute_Reconf), rtsc.getVariableByName(genVarManager_Reconfiguration));
+	currentTrans.events += sendMsg;
 	rtsc.transitions += currentTrans;
 	
 	-- ExecuteReconf -> Finished (success)
@@ -229,8 +231,10 @@ helper generateStaticExecutorStatechartFrame(inout rootNode : RootNode, inout rt
 	currentTrans := new Transition(requestState, executeState, 1);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecuteReconf), SynchronizationKind::RECEIVE, 
 			null);
-	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeConfirmRequest), EventKind::RAISE);
-	-- FIXME: add parameter binding
+	msgType := getGeneratedReconfigurationMessageType(rootNode, genMsgTypeConfirmRequest);
+	sendMsg := new AsynchronousMessageEvent(msgType, EventKind::RAISE);
+	sendMsg.message.parameterBinding += createSimpleSendVariableParameterBinding(msgType.getParameterByName(genParamExecute_Reconf), rtsc.getVariableByName(genVarManager_Reconfiguration));
+	currentTrans.events += sendMsg;
 	rtsc.transitions += currentTrans;
 	
 		-- Request -> WaitForConfirm
@@ -253,7 +257,10 @@ helper generateStaticInternalBehaviorStatechartFrame(inout rootNode : RootNode, 
 	
 	-- create variables
 	var requestVar : Variable := new Variable(genVarManager_Internal_Request, rootNode.getPrimitiveType(boolType));
+	rtsc.variables += requestVar;
+	
 	var resultVar : Variable := new Variable(genVarManager_Internal_Result, rootNode.getPrimitiveType(boolType));
+	rtsc.variables += resultVar;
 	
 	-- create states
 	var idleState : State := new State(genStateManager_Internal_Idle);
@@ -274,7 +281,7 @@ helper generateStaticInternalBehaviorStatechartFrame(inout rootNode : RootNode, 
 	
 	var failState : State := new State(genStateManager_Internal_Fail);
 	successState.urgent := true;
-	rtsc.states += successState;
+	rtsc.states += failState;
 	
 	-- create transitions
 	var currentTrans : Transition = null;
@@ -339,10 +346,10 @@ helper generateStaticEmbeddedCIStatechartFrame(inout rootNode : RootNode, inout 
 	rtsc.states += mainState;
 
 	-- create embedded statecharts	
-	var adaptationRTSC : RealtimeStatechart := createEmbeddedRTSC('adaptation', mainState, 2);
+	var adaptationRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_EmbeddedCI_adapt, mainState, 2);
 	generateStaticEmbeddedCIAdaptationStatechartFrame(rootNode, adaptationRTSC);
 	
-	var subroleRTSC : RealtimeStatechart := createEmbeddedRTSC('subrole', mainState, 1);
+	var subroleRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_EmbeddedCI_subrole, mainState, 1);
 	generateStaticEmbeddedCISubroleStatechartFrame(rootNode, subroleRTSC);
 	
 	return;
@@ -363,10 +370,10 @@ helper generateStaticEmbeddedCIAdaptationStatechartFrame(inout rootNode : RootNo
 helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
 	-- create variables
-	var requestVar : Variable := new Variable(genVarManager_embeddedCI_Request, rootNode.getPrimitiveType(boolType));
+	var requestVar : Variable := new Variable(genVarManager_EmbeddedCI_Request, rootNode.getPrimitiveType(boolType));
 	rtsc.variables += requestVar;
 	
-	var propVar : Variable := new Variable(genVarManager_embeddedCI_Propagate, rootNode.getPrimitiveType(boolType));
+	var propVar : Variable := new Variable(genVarManager_EmbeddedCI_Propagate, rootNode.getPrimitiveType(boolType));
 	rtsc.variables += propVar;
 	
 	-- create clocks
@@ -376,6 +383,10 @@ helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode,
 	-- create states
 	var idleState : State := new State(genStateManager_EmbeddedCI_Idle);
 	idleState.initial := true;
+	var theBlock : Block := new Block();
+	theBlock.expressions += createSimpleAssignmentExpression(requestVar, 'false');
+	theBlock.expressions += createSimpleAssignmentExpression(propVar, 'false');
+	idleState.entryEvent := new EntryEvent(theBlock, null);
 	rtsc.states += idleState;
 	
 	var deliverState : State := new State(genStateManager_EmbeddedCI_Deliver);
@@ -391,10 +402,51 @@ helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode,
 	-- create transitions
 	var currentTrans : Transition = null;
 	
+	-- DeliverMsg -> Idle
+	currentTrans := new Transition(deliverState, idleState, 3);
+	currentTrans.guard := createSimpleCompareGuardExpression(requestVar, 'false');
+	rtsc.transitions += currentTrans;
+	
 	-- DeliverMsg -> AwaitReply
 	currentTrans := new Transition(deliverState, awaitState, 2);
-	-- FIXME: correct guard
-	currentTrans.guard := createSimpleCompareGuardExpression(requestVar, 'true');
+	currentTrans.guard := new LogicalExpression(createSimpleCompareGuardExpression(requestVar, 'true'),
+								LogicOperator::AND,
+								createSimpleCompareGuardExpression(propVar, 'false'));
+	rtsc.transitions += currentTrans;
+	
+	-- DeliverMsg -> AwaitParentReply
+	currentTrans := new Transition(deliverState, awaitParentState, 1);
+	currentTrans.guard := new LogicalExpression(createSimpleCompareGuardExpression(requestVar, 'true'),
+								LogicOperator::AND,
+								createSimpleCompareGuardExpression(propVar, 'true'));
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitReply -> Idle (success)
+	currentTrans := new Transition(awaitState, idleState, 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('true'));
+	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeSuccess), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitReply -> Idle (failed)
+	currentTrans := new Transition(awaitState, idleState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('false'));
+	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeFailed), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitParentReply -> Idle (success)
+	currentTrans := new Transition(awaitState, idleState, 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanParentReply), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('true'));
+	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeSuccess), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitParentReply -> Idle (failed)
+	currentTrans := new Transition(awaitState, idleState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanParentReply), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('false'));
+	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeFailed), EventKind::RAISE);
 	rtsc.transitions += currentTrans;
 	
 	return;
