@@ -67,13 +67,6 @@ helper createReconfigurationMessageTypeRepository(inout rootNode : RootNode) : M
 	return repo;
 }
 
--- returns the message type with the given name from the generated message type repository
--- that contains all message types that are needed for the
--- communication of manager and executor and that are NOT user defined 
-helper getGeneratedReconfigurationMessageType(in rootNode : RootNode, in theName : String) : MessageType{
-	return getOrCreateReconfigurationMessageTypeRepositoy(rootNode).messageTypes -> select(name = theName) -> any(true);
-}
-
 ------------ helper queries ---------------
 
 -- returns the model element category for real-time statecharts.
@@ -84,6 +77,13 @@ query RootNode::getMessageTypeCategory() : ModelElementCategory {
 -- return the parameter with the given name of the message type
 query MessageType::getParameterByName(in theName : String) : Parameter{
 	return (self.parameters -> any(name = theName));
+}
+
+-- returns the message type with the given name from the generated message type repository
+-- that contains all message types that are needed for the
+-- communication of manager and executor and that are NOT user defined 
+query RootNode::getGeneratedReconfigurationMessageType(in theName : String) : MessageType{
+	return getOrCreateReconfigurationMessageTypeRepositoy(self).messageTypes -> select(name = theName) -> any(true);
 }
 
 ------------- constructors -----------------

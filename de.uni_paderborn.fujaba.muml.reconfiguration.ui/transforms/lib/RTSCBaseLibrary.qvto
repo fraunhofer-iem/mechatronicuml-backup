@@ -104,6 +104,22 @@ query RealtimeStatechart::getVariableByName(in theName : String) : Variable{
 	return (self.allAvailableVariables -> any(name = theName));
 }
 
+-- returns the embedded statechart with the specified name. Assumes that the RTSC follows the
+-- standard MUML RTSC structure having one initial state containing all embedded statecharts.
+query RealtimeStatechart::getEmbeddedRTSCByName(in theName : String) : RealtimeStatechart{
+	var initState : State := self.states -> any(initial = true);
+	
+	-- check whether state exists
+	if(initState.oclIsUndefined()) then{
+		return null;
+	} else {
+		return (initState.embeddedRegions -> select(r : Region | r.embeddedStatechart.name = theName) -> any(true)).embeddedStatechart;
+	} endif;
+
+	-- default return to make QVT happy
+	return null;	
+}
+
 ------------- constructors -----------------
 
 constructor RealtimeStatechart::RealtimeStatechart(in newName : String){

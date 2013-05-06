@@ -59,13 +59,16 @@ helper createManagerImplementation(inout theComponent : ReconfigurableStructured
 	rootNode.getRTSCCategory().modelElements += rtsc;
 	
 	--generate static statechart frame
-	generateStaticStatechartFrame(rootNode, rtsc);
+	generateStaticStatechartFrame(rootNode, theComponent.manager);
 	
 	return;
 }
 
 -- generates the static statechart frame (the 'black' parts in the manager generation template)
-helper generateStaticStatechartFrame(inout rootNode : RootNode, inout managerRTSC : RealtimeStatechart){
+helper generateStaticStatechartFrame(inout rootNode : RootNode, inout manager : Manager){
+	
+	-- retrieve statechart
+	var managerRTSC : RealtimeStatechart := manager.behavior.oclAsType(RealtimeStatechart);
 	
 	-- generate initial state
 	var initialState : State := new State(genStateManager_Main);
@@ -84,15 +87,43 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout managerRTS
 	-- generate embedded statecharts
 	var parentSubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_Parent, initialState, 2);
 	generateStaticParentStatechartFrame(rootNode, parentSubRTSC);
+	manager.ports -> any(name = 'parent').behavior := parentSubRTSC;
 	
 	var executorSubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_Executor, initialState, 1);
 	generateStaticExecutorStatechartFrame(rootNode, executorSubRTSC);
+	manager.ports -> any(name = 'executor').behavior := executorSubRTSC;
 	
 	var internalRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_Internal, initialState, 3);
 	generateStaticInternalBehaviorStatechartFrame(rootNode, internalRTSC);
 	
 	var embeddedCISubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCManager_EmbeddedCI, initialState, 4);
 	generateStaticEmbeddedCIStatechartFrame(rootNode, embeddedCISubRTSC);
+	manager.ports -> any(name = 'embeddedCI').roleAndAdaptationBehavior := embeddedCISubRTSC;
+	manager.ports -> any(name = 'embeddedCI').behavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI_subrole);
+	manager.ports -> any(name = 'embeddedCI').adaptationBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI_adapt);
+	
+	-- configure message types of ports
+	var currentPort : DiscretePort = null;
+	
+	-- parent port
+	currentPort := manager.ports -> any(name = 'parent');
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeOccupied);
+	
+	-- executor port
+	currentPort := manager.ports -> any(name = 'executor');
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeDeclineRequest);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	
+	-- embeddedCI port
+	currentPort := manager.ports -> any(name = 'embeddedCI');
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeOccupied);
 	
 	return;
 }
@@ -134,21 +165,21 @@ helper generateStaticParentStatechartFrame(inout rootNode : RootNode, inout rtsc
 	currentTrans := new Transition(awaitState, initState, 3);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::SEND, 
 			new LiteralExpression('true'));
-	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeSuccess), EventKind::TRIGGER);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess), EventKind::TRIGGER);
 	rtsc.transitions += currentTrans;
 	
 	-- AwaitReply -> Idle (failed)
 	currentTrans := new Transition(awaitState, initState, 2);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::SEND, 
 			new LiteralExpression('false'));
-	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeFailed), EventKind::TRIGGER);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed), EventKind::TRIGGER);
 	rtsc.transitions += currentTrans;
 	
 	-- AwaitReply -> Idle (occupied)
 	currentTrans := new Transition(awaitState, initState, 1);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::SEND, 
 			new LiteralExpression('false'));
-	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeOccupied), EventKind::TRIGGER);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeOccupied), EventKind::TRIGGER);
 	rtsc.transitions += currentTrans;
 	
 	
@@ -188,7 +219,7 @@ helper generateStaticExecutorStatechartFrame(inout rootNode : RootNode, inout rt
 	currentTrans := new Transition(idleState, executeState, 2);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecuteReconf), SynchronizationKind::RECEIVE, 
 			null);
-	var msgType : MessageType := getGeneratedReconfigurationMessageType(rootNode, genMsgTypeExecute);
+	var msgType : MessageType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
 	var sendMsg : AsynchronousMessageEvent := new AsynchronousMessageEvent(msgType, EventKind::RAISE);
 	sendMsg.message.parameterBinding += createSimpleSendVariableParameterBinding(msgType.getParameterByName(genParamExecute_Reconf), rtsc.getVariableByName(genVarManager_Reconfiguration));
 	currentTrans.events += sendMsg;
@@ -198,14 +229,14 @@ helper generateStaticExecutorStatechartFrame(inout rootNode : RootNode, inout rt
 	currentTrans := new Transition(executeState, finishedState, 2);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecuted), SynchronizationKind::SEND, 
 			new LiteralExpression('true'));
-	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeSuccess), EventKind::TRIGGER);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess), EventKind::TRIGGER);
 	rtsc.transitions += currentTrans;
 	
 	-- ExecuteReconf -> Finished (failed)
 	currentTrans := new Transition(executeState, finishedState, 1);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecuted), SynchronizationKind::SEND, 
 			new LiteralExpression('false'));
-	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeFailed), EventKind::TRIGGER);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed), EventKind::TRIGGER);
 	rtsc.transitions += currentTrans;
 	
 	-- Finished -> Idle (request + sucess)
@@ -231,7 +262,7 @@ helper generateStaticExecutorStatechartFrame(inout rootNode : RootNode, inout rt
 	currentTrans := new Transition(requestState, executeState, 1);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecuteReconf), SynchronizationKind::RECEIVE, 
 			null);
-	msgType := getGeneratedReconfigurationMessageType(rootNode, genMsgTypeConfirmRequest);
+	msgType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest);
 	sendMsg := new AsynchronousMessageEvent(msgType, EventKind::RAISE);
 	sendMsg.message.parameterBinding += createSimpleSendVariableParameterBinding(msgType.getParameterByName(genParamExecute_Reconf), rtsc.getVariableByName(genVarManager_Reconfiguration));
 	currentTrans.events += sendMsg;
@@ -241,12 +272,12 @@ helper generateStaticExecutorStatechartFrame(inout rootNode : RootNode, inout rt
 	currentTrans := new Transition(requestState, waitState, 2);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::RECEIVE, 
 			new LiteralExpression('false'));
-	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeDeclineRequest), EventKind::RAISE);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeDeclineRequest), EventKind::RAISE);
 	rtsc.transitions += currentTrans;
 	
 	-- WaitForConfirm -> Idle
 	currentTrans := new Transition(waitState, idleState, 1);
-	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeFailed), EventKind::TRIGGER);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed), EventKind::TRIGGER);
 	rtsc.transitions += currentTrans;
 	
 	return;
@@ -299,7 +330,7 @@ helper generateStaticInternalBehaviorStatechartFrame(inout rootNode : RootNode, 
 	rtsc.transitions += currentTrans;
 	
 	-- Execute -> Fail
-	currentTrans := new Transition(executeState, failState, 2);
+	currentTrans := new Transition(executeState, failState, 1);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecuted), SynchronizationKind::RECEIVE, 
 			new LiteralExpression('false'));
 	rtsc.transitions += currentTrans;
@@ -425,28 +456,28 @@ helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode,
 	currentTrans := new Transition(awaitState, idleState, 2);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::RECEIVE, 
 			new LiteralExpression('true'));
-	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeSuccess), EventKind::RAISE);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess), EventKind::RAISE);
 	rtsc.transitions += currentTrans;
 	
 	-- AwaitReply -> Idle (failed)
 	currentTrans := new Transition(awaitState, idleState, 1);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanReply), SynchronizationKind::RECEIVE, 
 			new LiteralExpression('false'));
-	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeFailed), EventKind::RAISE);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed), EventKind::RAISE);
 	rtsc.transitions += currentTrans;
 	
 	-- AwaitParentReply -> Idle (success)
-	currentTrans := new Transition(awaitState, idleState, 2);
+	currentTrans := new Transition(awaitParentState, idleState, 2);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanParentReply), SynchronizationKind::RECEIVE, 
 			new LiteralExpression('true'));
-	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeSuccess), EventKind::RAISE);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess), EventKind::RAISE);
 	rtsc.transitions += currentTrans;
 	
 	-- AwaitParentReply -> Idle (failed)
-	currentTrans := new Transition(awaitState, idleState, 1);
+	currentTrans := new Transition(awaitParentState, idleState, 1);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanParentReply), SynchronizationKind::RECEIVE, 
 			new LiteralExpression('false'));
-	currentTrans.events += new AsynchronousMessageEvent(getGeneratedReconfigurationMessageType(rootNode, genMsgTypeFailed), EventKind::RAISE);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed), EventKind::RAISE);
 	rtsc.transitions += currentTrans;
 	
 	return;
