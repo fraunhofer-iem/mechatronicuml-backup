@@ -53,7 +53,7 @@ public class MumlOCLFactory {
 					"--\'Repository\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'messagetype\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'p\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--(\n--if self.eContainer().oclAsType(msgtype::MessageType).parameters->first() = self then\n--\t\t\'\'\n--\telse\n--\t\t\' \'\n--\tendif\n--).concat(\n--\tif self.name.oclIsUndefined() then\n--\t\t\'null\'\n--\telse\n--\t\tself.name\n--\tendif\n--).concat(\n--\tif self.dataType.name.oclIsUndefined() then\n--\t\t\'\'\n--\telse\n--\t\t\' : \'.concat(self.dataType.name)\n--\tendif\n--).concat(\n--\tif self.eContainer().oclAsType(msgtype::MessageType).parameters->last() = self then\n--\t\t\'\'\n--\telse\n--\t\t\',\'\n--\tendif\n--)\n--\n--".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--(\n--if self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->first() = self then\n--\t\t\'\'\n--\telse\n--\t\t\' \'\n--\tendif\n--).concat(\n--\tif self.name.oclIsUndefined() then\n--\t\t\'null\'\n--\telse\n--\t\tself.name\n--\tendif\n--).concat(\n--\tif self.dataType.name.oclIsUndefined() then\n--\t\t\'\'\n--\telse\n--\t\t\' : \'.concat(self.dataType.name)\n--\tendif\n--).concat(\n--\tif self.oclAsType(ecore::EObject).eContainer().oclAsType(msgtype::MessageType).parameters->last() = self then\n--\t\t\'\'\n--\telse\n--\t\t\',\'\n--\tendif\n--)\n--\n--".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--if self.name.oclIsUndefined() then\n--\t\'\'\n--else\n--\tself.name\n--endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(

@@ -650,6 +650,7 @@
         visualID="4003"
         editPartClassName="PortPartCoordinationProtocolOccurenceEditPart"
         itemSemanticEditPolicyClassName="PortPartCoordinationProtocolOccurenceItemSemanticEditPolicy"
+        notationViewFactoryClassName="PortPartCoordinationProtocolOccurenceViewFactory"
         createCommandClassName="PortPartCoordinationProtocolOccurenceCreateCommand"
         reorientCommandClassName="PortPartCoordinationProtocolOccurenceReorientCommand">
       <diagramRunTimeClass
@@ -842,7 +843,7 @@
           body="--true&#xA;---- self.oclAsType(component::Port).component = oppositeEnd.oclAsType(component::Port).component"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="--true&#xA;---- Example error message&#xA;---- The source port's StructuredComponent must embed the ComponentPart that the Target Port is floating around.&#xA;----let containers : ecore::EObject = { view, oppositeView }.eContainer().oclAsType(notation::View).eContainer() in&#xA;----containers->notEmpty()&#xA;----false"/>
+          body="--true&#xA;---- Example error message&#xA;---- The source port's StructuredComponent must embed the ComponentPart that the Target Port is floating around.&#xA;----let containers : ecore::EObject = { view, oppositeView }.oclAsType(ecore::EObject).eContainer().oclAsType(notation::View).eContainer() in&#xA;----containers->notEmpty()&#xA;----false"/>
     </providers>
   </expressionProviders>
   <labelParsers
