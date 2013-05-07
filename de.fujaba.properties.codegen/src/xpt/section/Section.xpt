@@ -62,6 +62,7 @@ public class «property.genFeature.genClass.ecoreClass.name»«property.genFeatu
 
 «DEFINE superClass FOR TextPropertySection»de.upb.swt.core.ui.properties.sections.AbstractTextSection«ENDDEFINE»
 «DEFINE superClass FOR GroupPropertySection»de.upb.swt.core.ui.properties.sections.AbstractGroupSection«ENDDEFINE»
+«DEFINE superClass FOR CheckboxPropertySection»de.upb.swt.core.ui.properties.sections.AbstractCheckboxSection«ENDDEFINE»
 «DEFINE superClass FOR ComboBoxPropertySection»de.upb.swt.core.ui.properties.sections.AbstractComboSection<Object>«ENDDEFINE»
 «DEFINE superClass FOR ListPropertySection»de.upb.swt.core.ui.properties.sections.AbstractComboSection<Object>«ENDDEFINE»
 «DEFINE superClass FOR RadioPropertySection»de.upb.swt.core.ui.properties.sections.AbstractComboSection<Object>«ENDDEFINE»
