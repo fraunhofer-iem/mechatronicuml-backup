@@ -98,6 +98,15 @@ public interface PropertiesFactory extends EFactory {
 	ComboBoxPropertySection createComboBoxPropertySection();
 
 	/**
+	 * Returns a new object of class '<em>Checkbox Property Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Checkbox Property Section</em>'.
+	 * @generated
+	 */
+	CheckboxPropertySection createCheckboxPropertySection();
+
+	/**
 	 * Returns a new object of class '<em>Radio Property Section</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

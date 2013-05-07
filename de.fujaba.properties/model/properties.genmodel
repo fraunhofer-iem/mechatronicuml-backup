@@ -54,6 +54,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//TextPropertySection/multiLine"/>
     </genClasses>
     <genClasses ecoreClass="properties.ecore#//ComboBoxPropertySection"/>
+    <genClasses ecoreClass="properties.ecore#//CheckboxPropertySection"/>
     <genClasses ecoreClass="properties.ecore#//RadioPropertySection"/>
     <genClasses ecoreClass="properties.ecore#//ListPropertySection"/>
     <genClasses ecoreClass="properties.ecore#//GroupPropertySection">

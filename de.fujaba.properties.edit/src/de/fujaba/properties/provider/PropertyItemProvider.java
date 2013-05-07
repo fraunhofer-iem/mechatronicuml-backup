@@ -289,6 +289,11 @@ public class PropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__SECTION,
+				 PropertiesFactory.eINSTANCE.createCheckboxPropertySection()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PropertiesPackage.Literals.PROPERTY__SECTION,
 				 PropertiesFactory.eINSTANCE.createRadioPropertySection()));
 
 		newChildDescriptors.add

@@ -97,6 +97,7 @@
         eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComboBoxPropertySection" eSuperTypes="#//PropertySection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CheckboxPropertySection" eSuperTypes="#//PropertySection"/>
   <eClassifiers xsi:type="ecore:EClass" name="RadioPropertySection" eSuperTypes="#//PropertySection"/>
   <eClassifiers xsi:type="ecore:EClass" name="ListPropertySection" eSuperTypes="#//PropertySection"/>
   <eClassifiers xsi:type="ecore:EClass" name="GroupPropertySection" eSuperTypes="#//PropertySection">

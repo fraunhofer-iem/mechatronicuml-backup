@@ -260,6 +260,29 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.CheckboxPropertySection} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CheckboxPropertySectionItemProvider checkboxPropertySectionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.fujaba.properties.CheckboxPropertySection}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCheckboxPropertySectionAdapter() {
+		if (checkboxPropertySectionItemProvider == null) {
+			checkboxPropertySectionItemProvider = new CheckboxPropertySectionItemProvider(this);
+		}
+
+		return checkboxPropertySectionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.RadioPropertySection} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -504,6 +527,7 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 		if (propertyItemProvider != null) propertyItemProvider.dispose();
 		if (textPropertySectionItemProvider != null) textPropertySectionItemProvider.dispose();
 		if (comboBoxPropertySectionItemProvider != null) comboBoxPropertySectionItemProvider.dispose();
+		if (checkboxPropertySectionItemProvider != null) checkboxPropertySectionItemProvider.dispose();
 		if (radioPropertySectionItemProvider != null) radioPropertySectionItemProvider.dispose();
 		if (listPropertySectionItemProvider != null) listPropertySectionItemProvider.dispose();
 		if (groupPropertySectionItemProvider != null) groupPropertySectionItemProvider.dispose();

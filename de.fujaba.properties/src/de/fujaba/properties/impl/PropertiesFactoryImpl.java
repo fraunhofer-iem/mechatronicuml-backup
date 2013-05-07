@@ -6,6 +6,7 @@
  */
 package de.fujaba.properties.impl;
 
+import de.fujaba.properties.CheckboxPropertySection;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -79,6 +80,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 			case PropertiesPackage.PROPERTY: return createProperty();
 			case PropertiesPackage.TEXT_PROPERTY_SECTION: return createTextPropertySection();
 			case PropertiesPackage.COMBO_BOX_PROPERTY_SECTION: return createComboBoxPropertySection();
+			case PropertiesPackage.CHECKBOX_PROPERTY_SECTION: return createCheckboxPropertySection();
 			case PropertiesPackage.RADIO_PROPERTY_SECTION: return createRadioPropertySection();
 			case PropertiesPackage.LIST_PROPERTY_SECTION: return createListPropertySection();
 			case PropertiesPackage.GROUP_PROPERTY_SECTION: return createGroupPropertySection();
@@ -168,6 +170,16 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	public ComboBoxPropertySection createComboBoxPropertySection() {
 		ComboBoxPropertySectionImpl comboBoxPropertySection = new ComboBoxPropertySectionImpl();
 		return comboBoxPropertySection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CheckboxPropertySection createCheckboxPropertySection() {
+		CheckboxPropertySectionImpl checkboxPropertySection = new CheckboxPropertySectionImpl();
+		return checkboxPropertySection;
 	}
 
 	/**

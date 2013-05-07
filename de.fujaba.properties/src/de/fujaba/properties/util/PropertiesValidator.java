@@ -6,6 +6,7 @@
  */
 package de.fujaba.properties.util;
 
+import de.fujaba.properties.CheckboxPropertySection;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -120,6 +121,8 @@ public class PropertiesValidator extends EObjectValidator {
 				return validateTextPropertySection((TextPropertySection)value, diagnostics, context);
 			case PropertiesPackage.COMBO_BOX_PROPERTY_SECTION:
 				return validateComboBoxPropertySection((ComboBoxPropertySection)value, diagnostics, context);
+			case PropertiesPackage.CHECKBOX_PROPERTY_SECTION:
+				return validateCheckboxPropertySection((CheckboxPropertySection)value, diagnostics, context);
 			case PropertiesPackage.RADIO_PROPERTY_SECTION:
 				return validateRadioPropertySection((RadioPropertySection)value, diagnostics, context);
 			case PropertiesPackage.LIST_PROPERTY_SECTION:
@@ -335,6 +338,15 @@ public class PropertiesValidator extends EObjectValidator {
 	 */
 	public boolean validateComboBoxPropertySection(ComboBoxPropertySection comboBoxPropertySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(comboBoxPropertySection, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCheckboxPropertySection(CheckboxPropertySection checkboxPropertySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(checkboxPropertySection, diagnostics, context);
 	}
 
 	/**

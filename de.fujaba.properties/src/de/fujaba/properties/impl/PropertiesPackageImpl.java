@@ -6,6 +6,7 @@
  */
 package de.fujaba.properties.impl;
 
+import de.fujaba.properties.CheckboxPropertySection;
 import static de.fujaba.properties.PropertiesPackage.CLASS;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
@@ -105,6 +106,13 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * @generated
 	 */
 	private EClass comboBoxPropertySectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass checkboxPropertySectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -575,6 +583,15 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCheckboxPropertySection() {
+		return checkboxPropertySectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRadioPropertySection() {
 		return radioPropertySectionEClass;
 	}
@@ -753,6 +770,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		comboBoxPropertySectionEClass = createEClass(COMBO_BOX_PROPERTY_SECTION);
 
+		checkboxPropertySectionEClass = createEClass(CHECKBOX_PROPERTY_SECTION);
+
 		radioPropertySectionEClass = createEClass(RADIO_PROPERTY_SECTION);
 
 		listPropertySectionEClass = createEClass(LIST_PROPERTY_SECTION);
@@ -807,6 +826,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		// Add supertypes to classes
 		textPropertySectionEClass.getESuperTypes().add(this.getPropertySection());
 		comboBoxPropertySectionEClass.getESuperTypes().add(this.getPropertySection());
+		checkboxPropertySectionEClass.getESuperTypes().add(this.getPropertySection());
 		radioPropertySectionEClass.getESuperTypes().add(this.getPropertySection());
 		listPropertySectionEClass.getESuperTypes().add(this.getPropertySection());
 		groupPropertySectionEClass.getESuperTypes().add(this.getPropertySection());
@@ -862,6 +882,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		initEAttribute(getTextPropertySection_MultiLine(), theEcorePackage.getEBoolean(), "multiLine", null, 1, 1, TextPropertySection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(comboBoxPropertySectionEClass, ComboBoxPropertySection.class, "ComboBoxPropertySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(checkboxPropertySectionEClass, CheckboxPropertySection.class, "CheckboxPropertySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(radioPropertySectionEClass, RadioPropertySection.class, "RadioPropertySection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

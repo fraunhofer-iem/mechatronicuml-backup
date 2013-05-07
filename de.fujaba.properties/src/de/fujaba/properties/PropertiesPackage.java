@@ -511,6 +511,34 @@ public interface PropertiesPackage extends EPackage {
 	int COMBO_BOX_PROPERTY_SECTION_FEATURE_COUNT = PROPERTY_SECTION_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.fujaba.properties.impl.CheckboxPropertySectionImpl <em>Checkbox Property Section</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fujaba.properties.impl.CheckboxPropertySectionImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCheckboxPropertySection()
+	 * @generated
+	 */
+	int CHECKBOX_PROPERTY_SECTION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHECKBOX_PROPERTY_SECTION__PROPERTY = PROPERTY_SECTION__PROPERTY;
+
+	/**
+	 * The number of structural features of the '<em>Checkbox Property Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHECKBOX_PROPERTY_SECTION_FEATURE_COUNT = PROPERTY_SECTION_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.RadioPropertySectionImpl <em>Radio Property Section</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -518,7 +546,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getRadioPropertySection()
 	 * @generated
 	 */
-	int RADIO_PROPERTY_SECTION = 9;
+	int RADIO_PROPERTY_SECTION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -546,7 +574,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getListPropertySection()
 	 * @generated
 	 */
-	int LIST_PROPERTY_SECTION = 10;
+	int LIST_PROPERTY_SECTION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -574,7 +602,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getGroupPropertySection()
 	 * @generated
 	 */
-	int GROUP_PROPERTY_SECTION = 11;
+	int GROUP_PROPERTY_SECTION = 12;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -611,7 +639,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCustomPropertySection()
 	 * @generated
 	 */
-	int CUSTOM_PROPERTY_SECTION = 12;
+	int CUSTOM_PROPERTY_SECTION = 13;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -648,7 +676,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyFilter()
 	 * @generated
 	 */
-	int PROPERTY_FILTER = 13;
+	int PROPERTY_FILTER = 14;
 
 	/**
 	 * The number of structural features of the '<em>Property Filter</em>' class.
@@ -667,7 +695,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getOCLPropertyFilter()
 	 * @generated
 	 */
-	int OCL_PROPERTY_FILTER = 14;
+	int OCL_PROPERTY_FILTER = 15;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -696,7 +724,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyReference()
 	 * @generated
 	 */
-	int PROPERTY_REFERENCE = 15;
+	int PROPERTY_REFERENCE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -1134,6 +1162,16 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComboBoxPropertySection();
+
+	/**
+	 * Returns the meta object for class '{@link de.fujaba.properties.CheckboxPropertySection <em>Checkbox Property Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Checkbox Property Section</em>'.
+	 * @see de.fujaba.properties.CheckboxPropertySection
+	 * @generated
+	 */
+	EClass getCheckboxPropertySection();
 
 	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.RadioPropertySection <em>Radio Property Section</em>}'.
@@ -1603,6 +1641,16 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMBO_BOX_PROPERTY_SECTION = eINSTANCE.getComboBoxPropertySection();
+
+		/**
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.CheckboxPropertySectionImpl <em>Checkbox Property Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fujaba.properties.impl.CheckboxPropertySectionImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCheckboxPropertySection()
+		 * @generated
+		 */
+		EClass CHECKBOX_PROPERTY_SECTION = eINSTANCE.getCheckboxPropertySection();
 
 		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.RadioPropertySectionImpl <em>Radio Property Section</em>}' class.

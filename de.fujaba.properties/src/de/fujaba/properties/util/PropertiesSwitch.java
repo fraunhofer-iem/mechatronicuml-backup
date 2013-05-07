@@ -6,6 +6,7 @@
  */
 package de.fujaba.properties.util;
 
+import de.fujaba.properties.CheckboxPropertySection;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -136,6 +137,13 @@ public class PropertiesSwitch<T> extends Switch<T> {
 				ComboBoxPropertySection comboBoxPropertySection = (ComboBoxPropertySection)theEObject;
 				T result = caseComboBoxPropertySection(comboBoxPropertySection);
 				if (result == null) result = casePropertySection(comboBoxPropertySection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PropertiesPackage.CHECKBOX_PROPERTY_SECTION: {
+				CheckboxPropertySection checkboxPropertySection = (CheckboxPropertySection)theEObject;
+				T result = caseCheckboxPropertySection(checkboxPropertySection);
+				if (result == null) result = casePropertySection(checkboxPropertySection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -322,6 +330,21 @@ public class PropertiesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComboBoxPropertySection(ComboBoxPropertySection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Checkbox Property Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Checkbox Property Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCheckboxPropertySection(CheckboxPropertySection object) {
 		return null;
 	}
 

@@ -6,6 +6,7 @@
  */
 package de.fujaba.properties.util;
 
+import de.fujaba.properties.CheckboxPropertySection;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -118,6 +119,10 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseComboBoxPropertySection(ComboBoxPropertySection object) {
 				return createComboBoxPropertySectionAdapter();
+			}
+			@Override
+			public Adapter caseCheckboxPropertySection(CheckboxPropertySection object) {
+				return createCheckboxPropertySectionAdapter();
 			}
 			@Override
 			public Adapter caseRadioPropertySection(RadioPropertySection object) {
@@ -290,6 +295,20 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComboBoxPropertySectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.CheckboxPropertySection <em>Checkbox Property Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fujaba.properties.CheckboxPropertySection
+	 * @generated
+	 */
+	public Adapter createCheckboxPropertySectionAdapter() {
 		return null;
 	}
 
