@@ -2,7 +2,7 @@ package de.uni_paderborn.fujaba.muml.properties.protocol.section;
 
 public class ConnectorQualityOfServiceAssumptionsMessageLossPossibleSection
 		extends
-			de.upb.swt.core.ui.properties.sections.AbstractTextSection {
+			de.upb.swt.core.ui.properties.sections.AbstractCheckboxSection {
 
 	@Override
 	public org.eclipse.emf.ecore.EStructuralFeature getFeature() {
@@ -13,11 +13,6 @@ public class ConnectorQualityOfServiceAssumptionsMessageLossPossibleSection
 	@Override
 	protected String getLabelText() {
 		return "MessageLossPossible";
-	}
-
-	@Override
-	protected boolean isMultiLine() {
-		return false;
 	}
 
 }

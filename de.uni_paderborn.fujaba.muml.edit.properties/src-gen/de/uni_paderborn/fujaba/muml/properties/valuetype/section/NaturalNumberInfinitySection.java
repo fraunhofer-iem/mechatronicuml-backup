@@ -2,7 +2,7 @@ package de.uni_paderborn.fujaba.muml.properties.valuetype.section;
 
 public class NaturalNumberInfinitySection
 		extends
-			de.upb.swt.core.ui.properties.sections.AbstractTextSection {
+			de.upb.swt.core.ui.properties.sections.AbstractCheckboxSection {
 
 	@Override
 	public org.eclipse.emf.ecore.EStructuralFeature getFeature() {
@@ -13,11 +13,6 @@ public class NaturalNumberInfinitySection
 	@Override
 	protected String getLabelText() {
 		return "Infinity";
-	}
-
-	@Override
-	protected boolean isMultiLine() {
-		return false;
 	}
 
 }

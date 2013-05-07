@@ -2,7 +2,7 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section;
 
 public class TransitionUrgentSection
 		extends
-			de.upb.swt.core.ui.properties.sections.AbstractTextSection {
+			de.upb.swt.core.ui.properties.sections.AbstractCheckboxSection {
 
 	@Override
 	public org.eclipse.emf.ecore.EStructuralFeature getFeature() {
@@ -13,11 +13,6 @@ public class TransitionUrgentSection
 	@Override
 	protected String getLabelText() {
 		return "Urgent";
-	}
-
-	@Override
-	protected boolean isMultiLine() {
-		return false;
 	}
 
 }
