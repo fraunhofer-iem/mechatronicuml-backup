@@ -114,11 +114,16 @@ mapping Class::createProperty(_feature : GenFeature, _tab : PropertyTab) : Prope
 
 mapping GenFeature::section() : PropertySection
 	disjuncts 
+	GenFeature::checkboxSection,
 	GenFeature::listSection, 
 	GenFeature::radioSection,
-	GenFeature::checkboxSection,
 	GenFeature::groupSection,
 	GenFeature::textSection;
+
+
+mapping GenFeature::checkboxSection() : CheckboxPropertySection when {self.ecoreFeature.eType.name = 'EBoolean'} {
+}
+
 
 mapping GenFeature::listSection() : ListPropertySection when {self.ecoreFeature.oclIsKindOf(EReference) and self.ecoreFeature.upperBound > 1} {
 }
@@ -127,15 +132,12 @@ mapping GenFeature::radioSection() : RadioPropertySection when {self.ecoreFeatur
 }
 
 
-mapping GenFeature::checkboxSection() : CheckboxPropertySection when {self.ecoreFeature.eType.oclIsKindOf(EBoolean)} {
-}
-
 
 mapping GenFeature::groupSection() : GroupPropertySection when {self.ecoreFeature.oclIsKindOf(EReference) and self.ecoreFeature.oclAsType(EReference).containment and self.ecoreFeature.upperBound = 1} {
 }
 
 
-mapping GenFeature::textSection() : TextPropertySection when {self.ecoreFeature.oclIsKindOf(EAttribute) and not self.ecoreFeature.eType.oclIsKindOf(EEnum) } {
+mapping GenFeature::textSection() : TextPropertySection when {self.ecoreFeature.oclIsKindOf(EAttribute) and self.ecoreFeature.eType.name != 'EBoolean' and not self.ecoreFeature.eType.oclIsKindOf(EEnum) } {
 	multiLine := self.propertyMultiLine;
 }
 
