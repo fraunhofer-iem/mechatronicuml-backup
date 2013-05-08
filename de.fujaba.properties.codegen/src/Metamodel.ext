@@ -2,15 +2,21 @@ import genmodel;
 import ecore;
 import properties;
 
+String fullyQualifiedName(ecore::EClassifier this, genmodel::GenModel genmodel) :
+	fullyQualifiedName(getGenClassifier(this, genmodel));
+String fullyQualifiedName(genmodel::GenClassifier this) :
+	'';
 String fullyQualifiedName(genmodel::GenClass this) :
 	genPackage.fullyQualifiedName() + '.' + ecoreClass.name;
-String fullyQualifiedName(emf::EObject this) :
+String fullyQualifiedName(genmodel::GenDataType this) :
+	genPackage.fullyQualifiedName() + '.' + ecoreDataType.name;
+String fullyQualifiedName(GenBase this) :
 	'';
 String fullyQualifiedName(genmodel::GenPackage this) :
 	(if basePackage.length > 0 then
 		basePackage + '.'
-	else if eContainer != null then
-		 fullyQualifiedName(eContainer) + '.' 
+	else if eContainer != null && { eContainer }.typeSelect(GenBase).size > 0 then
+		 fullyQualifiedName({ eContainer }.typeSelect(GenBase).first()) + '.' 
 	else
 		'') + ecorePackage.name;
 
@@ -18,3 +24,27 @@ String toFirstUp(String this) : "";
 
 //String sectionName(Property this) :
 //	genFeature.genClass.ecoreClass.name + genFeature.ecoreFeature.name;
+
+List[GenPackage] getAllGenPackages(GenModel this) :
+	this.usedGenPackages.union(this.genPackages);
+	
+List[GenBase] getAllGenBases(GenModel this) :
+	getAllGenPackages().eAllContents.typeSelect(GenBase);
+	
+GenClassifier getType(GenFeature this) : 
+	getGenClassifier(ecoreFeature.eType, genClass.genPackage.genModel);
+	
+GenClassifier getGenClassifier(ecore::EClassifier this, genmodel::GenModel genModel) : 
+	genModel.getAllGenBases().typeSelect(GenClassifier).selectFirst(e | e.isGenClassifierFor(this));
+	
+Boolean isGenClassifierFor(genmodel::GenClassifier classifier, ecore::EClassifier this) :
+	false;
+
+Boolean isGenClassifierFor(genmodel::GenClassifier classifier, ecore::EClass this) :
+	{ classifier }.typeSelect(GenClass).first().ecoreClass == this;
+
+Boolean isGenClassifierFor(genmodel::GenClassifier classifier, ecore::EDataType this) :
+	{ classifier }.typeSelect(GenDataType).first().ecoreDataType == this;
+
+String propertyType(Property this) :
+	genFeature.ecoreFeature.eType.fullyQualifiedName(genFeature.genClass.genPackage.genModel);

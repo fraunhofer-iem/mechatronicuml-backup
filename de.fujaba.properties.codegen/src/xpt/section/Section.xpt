@@ -53,8 +53,26 @@ public class «property.genFeature.genClass.ecoreClass.name»«property.genFeatu
 «ENDDEFINE»
 «DEFINE additionalMethods FOR RadioPropertySection»
 	@Override
-	protected java.util.List<Object> getItems() {
-		return new java.util.ArrayList<Object>();
+	protected java.util.List<«property.propertyType()»> getValues() {
+		return «property.propertyType()».VALUES;
+	}
+	
+	@Override
+	public void refresh() {
+		super.refresh();
+		checkEnabled();
+	}
+
+	protected boolean isEnabled(«property.propertyType()» state) {
+//		if (getElement() instanceof ObjectVariable) {
+//			ObjectVariable variable = (ObjectVariable) getElement();
+//			BindingSemantics semantics = variable.getBindingSemantics();
+//			BindingOperator operator = variable.getBindingOperator();
+//
+//			return ValidationUtil.isValid(state, semantics, operator);
+//		}
+
+		return true;
 	}
 «ENDDEFINE»
 
@@ -65,4 +83,4 @@ public class «property.genFeature.genClass.ecoreClass.name»«property.genFeatu
 «DEFINE superClass FOR CheckboxPropertySection»de.upb.swt.core.ui.properties.sections.AbstractCheckboxSection«ENDDEFINE»
 «DEFINE superClass FOR ComboBoxPropertySection»de.upb.swt.core.ui.properties.sections.AbstractComboSection<Object>«ENDDEFINE»
 «DEFINE superClass FOR ListPropertySection»de.upb.swt.core.ui.properties.sections.AbstractComboSection<Object>«ENDDEFINE»
-«DEFINE superClass FOR RadioPropertySection»de.upb.swt.core.ui.properties.sections.AbstractComboSection<Object>«ENDDEFINE»
+«DEFINE superClass FOR RadioPropertySection»de.upb.swt.core.ui.properties.sections.AbstractRadioGroupSection<«property.propertyType()»>«ENDDEFINE»
