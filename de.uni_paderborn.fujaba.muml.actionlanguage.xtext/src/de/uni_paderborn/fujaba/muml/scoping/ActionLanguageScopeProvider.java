@@ -60,11 +60,6 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		initLists();
 	}
 	
-	/*IScope scope_TypedNamedElement(EObject object, EReference ref) {
-		// do not return hybrid out ports
-		return createScope(filterHybridPorts(getAvailableTypedNamedElementList(object), false));
-	}*/
-	
 	IScope scope_TypedNamedElement(TypedNamedElementExpression typedNamedElementExpression, EReference ref) {
 		EObject container = typedNamedElementExpression.eContainer();
 		if (container instanceof Assignment
@@ -89,10 +84,6 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	}
 	
 	IScope scope_Parameter(Object object, EReference ref) {
-		/*if (!(object instanceof ParameterBinding)
-				|| !(((ParameterBinding) object).eContainer() instanceof OperationCall)) {
-			return IScope.NULLSCOPE;
-		}*/
 		if (!(object instanceof EObject)) {
 			return IScope.NULLSCOPE;
 		}
@@ -106,10 +97,6 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		}
 		return createScope(parameterList);
 	}
-	
-	/*public void setAttributeList(List<Attribute> attributeList) {
-		this.attributeList = attributeList;
-	}*/
 	
 	public void setScopeForEObject(EObject object) {
 		initLists();
