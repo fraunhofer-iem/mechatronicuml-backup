@@ -2956,11 +2956,11 @@ protected class LocalVariableDeclarationStatement_VariableAssignment extends Ass
 /************ begin Rule LocalVariableDeclaration ****************
  *
  * LocalVariableDeclaration returns behavior::Variable:
- * 	dataType=[types::DataType] name=ID (":=" initializeExpression=InitializeExpression)? ";";
+ * 	dataType=[types::DataType|DATATYPE] name=ID (":=" initializeExpression=InitializeExpression)? ";";
  *
  **/
 
-// dataType=[types::DataType] name=ID (":=" initializeExpression=InitializeExpression)? ";"
+// dataType=[types::DataType|DATATYPE] name=ID (":=" initializeExpression=InitializeExpression)? ";"
 protected class LocalVariableDeclaration_Group extends GroupToken {
 	
 	public LocalVariableDeclaration_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2989,7 +2989,7 @@ protected class LocalVariableDeclaration_Group extends GroupToken {
 
 }
 
-// dataType=[types::DataType]
+// dataType=[types::DataType|DATATYPE]
 protected class LocalVariableDeclaration_DataTypeAssignment_0 extends AssignmentToken  {
 	
 	public LocalVariableDeclaration_DataTypeAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6748,5 +6748,6 @@ protected class TriggerMessageExpression_ParameterAssignment_2 extends Assignmen
 
 
 /************ end Rule TriggerMessageExpression ****************/
+
 
 }

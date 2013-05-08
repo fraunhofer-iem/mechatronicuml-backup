@@ -587,7 +587,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cDataTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cDataTypeDataTypeCrossReference_0_0 = (CrossReference)cDataTypeAssignment_0.eContents().get(0);
-		private final RuleCall cDataTypeDataTypeIDTerminalRuleCall_0_0_1 = (RuleCall)cDataTypeDataTypeCrossReference_0_0.eContents().get(1);
+		private final RuleCall cDataTypeDataTypeDATATYPEParserRuleCall_0_0_1 = (RuleCall)cDataTypeDataTypeCrossReference_0_0.eContents().get(1);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
@@ -597,20 +597,20 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//LocalVariableDeclaration returns behavior::Variable:
-		//	dataType=[types::DataType] name=ID (":=" initializeExpression=InitializeExpression)? ";";
+		//	dataType=[types::DataType|DATATYPE] name=ID (":=" initializeExpression=InitializeExpression)? ";";
 		public ParserRule getRule() { return rule; }
 
-		//dataType=[types::DataType] name=ID (":=" initializeExpression=InitializeExpression)? ";"
+		//dataType=[types::DataType|DATATYPE] name=ID (":=" initializeExpression=InitializeExpression)? ";"
 		public Group getGroup() { return cGroup; }
 
-		//dataType=[types::DataType]
+		//dataType=[types::DataType|DATATYPE]
 		public Assignment getDataTypeAssignment_0() { return cDataTypeAssignment_0; }
 
-		//[types::DataType]
+		//[types::DataType|DATATYPE]
 		public CrossReference getDataTypeDataTypeCrossReference_0_0() { return cDataTypeDataTypeCrossReference_0_0; }
 
-		//ID
-		public RuleCall getDataTypeDataTypeIDTerminalRuleCall_0_0_1() { return cDataTypeDataTypeIDTerminalRuleCall_0_0_1; }
+		//DATATYPE
+		public RuleCall getDataTypeDataTypeDATATYPEParserRuleCall_0_0_1() { return cDataTypeDataTypeDATATYPEParserRuleCall_0_0_1; }
 
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -1401,6 +1401,38 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getParameterParameterIDTerminalRuleCall_2_0_1() { return cParameterParameterIDTerminalRuleCall_2_0_1; }
 	}
+
+	public class DATATYPEElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DATATYPE");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		
+		//DATATYPE returns ecore::EString:
+		//	ID ("[" INT "]")*;
+		public ParserRule getRule() { return rule; }
+
+		//ID ("[" INT "]")*
+		public Group getGroup() { return cGroup; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+
+		//("[" INT "]")*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_1_0() { return cLeftSquareBracketKeyword_1_0; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall_1_1() { return cINTTerminalRuleCall_1_1; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_1_2() { return cRightSquareBracketKeyword_1_2; }
+	}
 	
 	
 	public class IncrementDecrementOperatorElements extends AbstractEnumRuleElementFinder {
@@ -1807,6 +1839,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private TriggerMessageExpressionElements pTriggerMessageExpression;
 	private TerminalRule tNUMBER;
 	private TerminalRule tBOOLEAN;
+	private TerminalRule tID;
+	private DATATYPEElements pDATATYPE;
 	
 	private final Grammar grammar;
 
@@ -2011,7 +2045,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LocalVariableDeclaration returns behavior::Variable:
-	//	dataType=[types::DataType] name=ID (":=" initializeExpression=InitializeExpression)? ";";
+	//	dataType=[types::DataType|DATATYPE] name=ID (":=" initializeExpression=InitializeExpression)? ";";
 	public LocalVariableDeclarationElements getLocalVariableDeclarationAccess() {
 		return (pLocalVariableDeclaration != null) ? pLocalVariableDeclaration : (pLocalVariableDeclaration = new LocalVariableDeclarationElements());
 	}
@@ -2360,8 +2394,18 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getIDRule() {
-		return gaTerminals.getIDRule();
+		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
 	} 
+
+	//DATATYPE returns ecore::EString:
+	//	ID ("[" INT "]")*;
+	public DATATYPEElements getDATATYPEAccess() {
+		return (pDATATYPE != null) ? pDATATYPE : (pDATATYPE = new DATATYPEElements());
+	}
+	
+	public ParserRule getDATATYPERule() {
+		return getDATATYPEAccess().getRule();
+	}
 
 	//terminal INT returns ecore::EInt:
 	//	"0".."9"+;

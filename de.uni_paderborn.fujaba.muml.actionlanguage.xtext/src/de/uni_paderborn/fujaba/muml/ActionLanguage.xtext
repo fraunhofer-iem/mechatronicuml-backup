@@ -118,7 +118,7 @@ LocalVariableDeclarationStatement returns actionlanguage::LocalVariableDeclarati
 ;
 
 LocalVariableDeclaration returns behavior::Variable:
-	dataType=[types::DataType] name=ID (':=' initializeExpression=InitializeExpression)? ';'
+	dataType=[types::DataType|DATATYPE] name=ID (':=' initializeExpression=InitializeExpression)? ';'
 ;
 
 // end of local variable declaration
@@ -315,4 +315,12 @@ terminal NUMBER returns ecore::EBigDecimal:
 
 terminal BOOLEAN returns ecore::EBoolean:
 	'true' | 'false'
-;	
+;
+
+terminal ID:
+	'^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
+;
+
+DATATYPE returns ecore::EString:
+	ID ('['INT']')*
+;
