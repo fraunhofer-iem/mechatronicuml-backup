@@ -28,6 +28,7 @@ mapping inout PropertyGenerator::generator() {
 			"org.eclipse.ui",
 			"org.eclipse.core.runtime",
 			"org.eclipse.emf.ecore",
+			"org.eclipse.emf.edit",
 			"de.upb.swt.core.ui.properties",
 			genModel.modelPluginID
 		};
