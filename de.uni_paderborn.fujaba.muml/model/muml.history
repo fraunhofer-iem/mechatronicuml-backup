@@ -21729,5 +21729,48 @@
       <element xsi:type="ecore:EReference" name="initializeExpression" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
           containment="true"/>
     </changes>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment"
+        referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
+    </changes>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        referenceName="details" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+          featureName="key" dataValue="constraints"/>
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+          featureName="value" dataValue="UniqueName"/>
+    </changes>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment"
+        referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="UniqueName"/>
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="-- check if no variable with the same name was defined before&#xA;self.allSurroundingBlocks->collect(&#xA;&#x9;expressions&#xA;)->select(&#xA;&#x9;oclIsKindOf(LocalVariableDeclarationStatement)&#xA;)->collect(&#xA;&#x9;oclAsType(LocalVariableDeclarationStatement)&#xA;)->select(&#xA;&#x9;variable.name = self.variable.name&#xA;)->isUnique(variable.name)"/>
+    </changes>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- asserts that no hybrid in port is used as a lhs of an assignment&#xA;"
+        oldDataValue="-- check if no variable with the same name was defined before&#xA;self.allSurroundingBlocks->collect(&#xA;&#x9;expressions&#xA;)->select(&#xA;&#x9;oclIsKindOf(LocalVariableDeclarationStatement)&#xA;)->collect(&#xA;&#x9;oclAsType(LocalVariableDeclarationStatement)&#xA;)->select(&#xA;&#x9;variable.name = self.variable.name&#xA;)->isUnique(variable.name)"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- asserts that no hybrid in port is used as a lhs of an assignment&#xA;if lhs_typedNamedElementExpression.oclIsKindOf(&#xA;"
+        oldDataValue="-- asserts that no hybrid in port is used as a lhs of an assignment&#xA;"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- asserts that no hybrid in port is used as a lhs of an assignment&#xA;let lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression&#xA;in&#xA;if not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(HybridPort) then&#xA;&#x9;lhs.typedNamedElement.oclAsType(HybridPort).isOutPort&#xA;else&#xA;&#x9;true&#xA;endif&#xA;"
+        oldDataValue="-- asserts that no hybrid in port is used as a lhs of an assignment&#xA;if lhs_typedNamedElementExpression.oclIsKindOf(&#xA;"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- asserts that no hybrid in port is used as a lhs of an assignment&#xA;let lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression&#xA;in&#xA;if not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(HybridPort) then&#xA;&#x9;lhs.typedNamedElement.oclAsType(HybridPort).outPort&#xA;else&#xA;&#x9;true&#xA;endif&#xA;"
+        oldDataValue="-- asserts that no hybrid in port is used as a lhs of an assignment&#xA;let lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression&#xA;in&#xA;if not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(HybridPort) then&#xA;&#x9;lhs.typedNamedElement.oclAsType(HybridPort).isOutPort&#xA;else&#xA;&#x9;true&#xA;endif&#xA;"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="-- a hybrid in port is not allowed as a lhs of an assignment&#xA;let lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression&#xA;in&#xA;if not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(component::HybridPort) then&#xA;&#x9;lhs.typedNamedElement.oclAsType(component::HybridPort).outPort&#xA;else&#xA;&#x9;true&#xA;endif"
+        oldDataValue="-- asserts that no hybrid in port is used as a lhs of an assignment&#xA;let lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression&#xA;in&#xA;if not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(HybridPort) then&#xA;&#x9;lhs.typedNamedElement.oclAsType(HybridPort).outPort&#xA;else&#xA;&#x9;true&#xA;endif&#xA;"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="ValidLHS" oldDataValue="UniqueName"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="ValidLHS" oldDataValue="UniqueName"/>
   </releases>
 </history:History>
