@@ -1,59 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<modelinstance:RootNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:component="http://www.fujaba.de/muml/component/0.3.18" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.15" xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.3.6" xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.3.18" xmlns:types="http://www.fujaba.de/muml/types/0.3.18">
-  <categories key="de.uni_paderborn.fujaba.muml.types.category" name="types">
-    <modelElements xsi:type="types:PrimitiveDataType" name="VOID"/>
-    <modelElements xsi:type="types:PrimitiveDataType" name="BOOLEAN" primitiveType="BOOLEAN"/>
-    <modelElements xsi:type="types:PrimitiveDataType" name="BYTE" primitiveType="BYTE"/>
-    <modelElements xsi:type="types:PrimitiveDataType" name="SHORT" primitiveType="SHORT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" name="INT" primitiveType="INT"/>
-    <modelElements xsi:type="types:PrimitiveDataType" name="LONG" primitiveType="LONG"/>
-    <modelElements xsi:type="types:PrimitiveDataType" name="DOUBLE" primitiveType="DOUBLE"/>
-    <modelElements xsi:type="types:ArrayDataType" name="INTARRAY" type="//@categories.0/@modelElements.4"/>
-    <modelElements xsi:type="types:ArrayDataType" name="MULTARRAY" type="//@categories.0/@modelElements.9"/>
-    <modelElements xsi:type="types:ArrayDataType" name="THREEDIM" type="//@categories.0/@modelElements.10"/>
-    <modelElements xsi:type="types:ArrayDataType" name="TWODIM" type="//@categories.0/@modelElements.4"/>
+<!--muml metamodel version 0.3.2 (r2137)-->
+<modelinstance:RootNode
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:component="http://www.fujaba.de/muml/component/0.3.18"
+    xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.15"
+    xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.3.6"
+    xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.3.18"
+    xmlns:types="http://www.fujaba.de/muml/types/0.3.18"
+    xmi:id="_VT1VcLe2EeKdhdSR8ySkxQ">
+  <categories
+      xmi:id="_VT1Vcbe2EeKdhdSR8ySkxQ"
+      key="de.uni_paderborn.fujaba.muml.types.category"
+      name="types">
+    <modelElements
+        xsi:type="types:PrimitiveDataType"
+        xmi:id="_VT1Vcre2EeKdhdSR8ySkxQ"
+        name="VOID"/>
+    <modelElements
+        xsi:type="types:PrimitiveDataType"
+        xmi:id="_VT1Vc7e2EeKdhdSR8ySkxQ"
+        name="BOOLEAN"
+        primitiveType="BOOLEAN"/>
+    <modelElements
+        xsi:type="types:PrimitiveDataType"
+        xmi:id="_VT18gLe2EeKdhdSR8ySkxQ"
+        name="BYTE"
+        primitiveType="BYTE"/>
+    <modelElements
+        xsi:type="types:PrimitiveDataType"
+        xmi:id="_VT18gbe2EeKdhdSR8ySkxQ"
+        name="SHORT"
+        primitiveType="SHORT"/>
+    <modelElements
+        xsi:type="types:PrimitiveDataType"
+        xmi:id="_VT18gre2EeKdhdSR8ySkxQ"
+        name="INT"
+        primitiveType="INT"/>
+    <modelElements
+        xsi:type="types:PrimitiveDataType"
+        xmi:id="_VT18g7e2EeKdhdSR8ySkxQ"
+        name="LONG"
+        primitiveType="LONG"/>
+    <modelElements
+        xsi:type="types:PrimitiveDataType"
+        xmi:id="_VT18hLe2EeKdhdSR8ySkxQ"
+        name="DOUBLE"
+        primitiveType="DOUBLE"/>
+    <modelElements
+        xsi:type="types:ArrayDataType"
+        xmi:id="_VT18hbe2EeKdhdSR8ySkxQ"
+        name="INTARRAY"
+        type="_VT18gre2EeKdhdSR8ySkxQ">
+      <cardinality
+          xmi:id="_a12zkLe2EeKdhdSR8ySkxQ"
+          value="5"/>
+    </modelElements>
+    <modelElements
+        xsi:type="types:ArrayDataType"
+        xmi:id="_VT18hre2EeKdhdSR8ySkxQ"
+        name="MULTARRAY"
+        type="_VT18h7e2EeKdhdSR8ySkxQ"/>
+    <modelElements
+        xsi:type="types:ArrayDataType"
+        xmi:id="_VT18h7e2EeKdhdSR8ySkxQ"
+        name="THREEDIM"
+        type="_VT18iLe2EeKdhdSR8ySkxQ"/>
+    <modelElements
+        xsi:type="types:ArrayDataType"
+        xmi:id="_VT18iLe2EeKdhdSR8ySkxQ"
+        name="INT[2][5]"
+        type="_VT18gre2EeKdhdSR8ySkxQ">
+      <cardinality
+          xmi:id="_eGalYLe2EeKdhdSR8ySkxQ"
+          value="2"/>
+    </modelElements>
   </categories>
-  <categories key="de.uni_paderborn.fujaba.muml.messagetype.category" name="msgtype">
-    <modelElements xsi:type="msgtype:MessageTypeRepository" name="Repository">
-      <messageTypes name="m1">
-        <parameters name="i"/>
-        <parameters name="test"/>
+  <categories
+      xmi:id="_VT18ibe2EeKdhdSR8ySkxQ"
+      key="de.uni_paderborn.fujaba.muml.messagetype.category"
+      name="msgtype">
+    <modelElements
+        xsi:type="msgtype:MessageTypeRepository"
+        xmi:id="_VT18ire2EeKdhdSR8ySkxQ"
+        name="Repository">
+      <messageTypes
+          xmi:id="_VT18i7e2EeKdhdSR8ySkxQ"
+          name="m1">
+        <parameters
+            xmi:id="_VT18jLe2EeKdhdSR8ySkxQ"
+            name="i"/>
+        <parameters
+            xmi:id="_VT18jbe2EeKdhdSR8ySkxQ"
+            name="test"/>
       </messageTypes>
     </modelElements>
   </categories>
-  <categories key="de.uni_paderborn.fujaba.muml.components.category" name="component">
-    <modelElements xsi:type="component:AtomicComponent" name="comp">
-      <ports xsi:type="component:DiscretePort" name="port" behavior="//@categories.3/@modelElements.0" receiverMessageTypes="//@categories.1/@modelElements.0/@messageTypes.0">
-        <cardinality>
-          <lowerBound/>
-          <upperBound/>
+  <categories
+      xmi:id="_VT18jre2EeKdhdSR8ySkxQ"
+      key="de.uni_paderborn.fujaba.muml.components.category"
+      name="component">
+    <modelElements
+        xsi:type="component:AtomicComponent"
+        xmi:id="_VT18j7e2EeKdhdSR8ySkxQ"
+        name="comp">
+      <ports
+          xsi:type="component:DiscretePort"
+          xmi:id="_VT18kLe2EeKdhdSR8ySkxQ"
+          name="port"
+          behavior="_VT2jkre2EeKdhdSR8ySkxQ"
+          receiverMessageTypes="_VT18i7e2EeKdhdSR8ySkxQ">
+        <cardinality
+            xmi:id="_VT18kbe2EeKdhdSR8ySkxQ">
+          <lowerBound
+              xmi:id="_VT18kre2EeKdhdSR8ySkxQ"/>
+          <upperBound
+              xmi:id="_VT18k7e2EeKdhdSR8ySkxQ"/>
         </cardinality>
       </ports>
-      <ports xsi:type="component:HybridPort" name="hybridOut" dataType="//@categories.0/@modelElements.4" kind="OUT"/>
-      <ports xsi:type="component:HybridPort" name="hybridIn" dataType="//@categories.0/@modelElements.4"/>
+      <ports
+          xsi:type="component:HybridPort"
+          xmi:id="_VT18lLe2EeKdhdSR8ySkxQ"
+          name="hybridOut"
+          dataType="_VT18gre2EeKdhdSR8ySkxQ"
+          kind="OUT"/>
+      <ports
+          xsi:type="component:HybridPort"
+          xmi:id="_VT2jkLe2EeKdhdSR8ySkxQ"
+          name="hybridIn"
+          dataType="_VT18gre2EeKdhdSR8ySkxQ"/>
     </modelElements>
   </categories>
-  <categories key="de.uni_paderborn.fujaba.muml.realtimestatechart.category" name="realtimestatechart">
-    <modelElements xsi:type="realtimestatechart:RealtimeStatechart" name="statechart" behavioralElement="//@categories.2/@modelElements.0/@ports.0">
-      <operations name="call" returnType="//@categories.0/@modelElements.4"/>
-      <operations name="callp">
-        <parameters name="p1" dataType="//@categories.0/@modelElements.4"/>
-        <parameters name="p2" dataType="//@categories.0/@modelElements.4"/>
+  <categories
+      xmi:id="_VT2jkbe2EeKdhdSR8ySkxQ"
+      key="de.uni_paderborn.fujaba.muml.realtimestatechart.category"
+      name="realtimestatechart">
+    <modelElements
+        xsi:type="realtimestatechart:RealtimeStatechart"
+        xmi:id="_VT2jkre2EeKdhdSR8ySkxQ"
+        name="statechart"
+        behavioralElement="_VT18kLe2EeKdhdSR8ySkxQ">
+      <operations
+          xmi:id="_VT2jk7e2EeKdhdSR8ySkxQ"
+          name="call"
+          returnType="_VT18gre2EeKdhdSR8ySkxQ"/>
+      <operations
+          xmi:id="_VT2jlLe2EeKdhdSR8ySkxQ"
+          name="callp">
+        <parameters
+            xmi:id="_VT2jlbe2EeKdhdSR8ySkxQ"
+            name="p1"
+            dataType="_VT18gre2EeKdhdSR8ySkxQ"/>
+        <parameters
+            xmi:id="_VT2jlre2EeKdhdSR8ySkxQ"
+            name="p2"
+            dataType="_VT18gre2EeKdhdSR8ySkxQ"/>
       </operations>
-      <operations name="bool_op" returnType="//@categories.0/@modelElements.1"/>
-      <variables name="foo" dataType="//@categories.0/@modelElements.4"/>
-      <variables name="bar" dataType="//@categories.0/@modelElements.4"/>
-      <variables name="baz" dataType="//@categories.0/@modelElements.4"/>
-      <variables name="b" dataType="//@categories.0/@modelElements.1"/>
-      <variables name="intArray" dataType="//@categories.0/@modelElements.7"/>
-      <variables name="multArray" dataType="//@categories.0/@modelElements.8"/>
-      <transitions priority="1" target="//@categories.3/@modelElements.0/@states.1" source="//@categories.3/@modelElements.0/@states.0">
-        <events xsi:type="realtimestatechart:AsynchronousMessageEvent" kind="TRIGGER">
-          <message instanceOf="//@categories.1/@modelElements.0/@messageTypes.0"/>
+      <operations
+          xmi:id="_VT2jl7e2EeKdhdSR8ySkxQ"
+          name="bool_op"
+          returnType="_VT1Vc7e2EeKdhdSR8ySkxQ"/>
+      <variables
+          xmi:id="_VT2jmLe2EeKdhdSR8ySkxQ"
+          name="foo"
+          dataType="_VT18gre2EeKdhdSR8ySkxQ"/>
+      <variables
+          xmi:id="_VT2jmbe2EeKdhdSR8ySkxQ"
+          name="bar"
+          dataType="_VT18gre2EeKdhdSR8ySkxQ"/>
+      <variables
+          xmi:id="_VT2jmre2EeKdhdSR8ySkxQ"
+          name="baz"
+          dataType="_VT18gre2EeKdhdSR8ySkxQ"/>
+      <variables
+          xmi:id="_VT2jm7e2EeKdhdSR8ySkxQ"
+          name="b"
+          dataType="_VT1Vc7e2EeKdhdSR8ySkxQ"/>
+      <variables
+          xmi:id="_VT2jnLe2EeKdhdSR8ySkxQ"
+          name="intArray"
+          dataType="_VT18hbe2EeKdhdSR8ySkxQ"/>
+      <variables
+          xmi:id="_VT2jnbe2EeKdhdSR8ySkxQ"
+          name="multArray"
+          dataType="_VT18hre2EeKdhdSR8ySkxQ"/>
+      <transitions
+          xmi:id="_VT2jnre2EeKdhdSR8ySkxQ"
+          priority="1"
+          target="_VT2jore2EeKdhdSR8ySkxQ"
+          source="_VT2jobe2EeKdhdSR8ySkxQ">
+        <events
+            xsi:type="realtimestatechart:AsynchronousMessageEvent"
+            xmi:id="_VT2jn7e2EeKdhdSR8ySkxQ"
+            kind="TRIGGER">
+          <message
+              xmi:id="_VT2joLe2EeKdhdSR8ySkxQ"
+              instanceOf="_VT18i7e2EeKdhdSR8ySkxQ"/>
         </events>
       </transitions>
-      <states name="init" outgoingTransitions="//@categories.3/@modelElements.0/@transitions.0" initial="true"/>
-      <states name="s2" incomingTransitions="//@categories.3/@modelElements.0/@transitions.0"/>
+      <states
+          xmi:id="_VT2jobe2EeKdhdSR8ySkxQ"
+          name="init"
+          outgoingTransitions="_VT2jnre2EeKdhdSR8ySkxQ"
+          initial="true"/>
+      <states
+          xmi:id="_VT2jore2EeKdhdSR8ySkxQ"
+          name="s2"
+          incomingTransitions="_VT2jnre2EeKdhdSR8ySkxQ"/>
     </modelElements>
   </categories>
 </modelinstance:RootNode>
