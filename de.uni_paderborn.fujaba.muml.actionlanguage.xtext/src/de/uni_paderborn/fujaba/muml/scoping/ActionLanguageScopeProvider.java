@@ -25,10 +25,12 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TriggerMessageExpression;
+import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
@@ -58,32 +60,20 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		initLists();
 	}
 	
-	List<TypedNamedElement> getLocalVariables(EObject object) {
-		List<TypedNamedElement> localVariableList = new ArrayList<TypedNamedElement>();
-		EObject container = object;
-		EObject containedExpression = null;
-		while (container != null) {
-			if (container instanceof Block) {
-				// add all local variable declarations which were defined
-				// before the containedExpression
-				for (Expression expression : ((Block) container).getExpressions()) {
-					if (expression == containedExpression) {
-						break;
-					} else if (expression instanceof LocalVariableDeclarationStatement) {
-						localVariableList.add(((LocalVariableDeclarationStatement) expression).getVariable());
-					}
-				}
-			}
-			containedExpression = container;
-			container = container.eContainer();
-		}
-		return localVariableList;
-	}
+	/*IScope scope_TypedNamedElement(EObject object, EReference ref) {
+		// do not return hybrid out ports
+		return createScope(filterHybridPorts(getAvailableTypedNamedElementList(object), false));
+	}*/
 	
-	IScope scope_TypedNamedElement(EObject object, EReference ref) {
-		List<TypedNamedElement> localVariableList = getLocalVariables(object);
-		localVariableList.addAll(typedNamedElementList);
-		return createScope(localVariableList);
+	IScope scope_TypedNamedElement(TypedNamedElementExpression typedNamedElementExpression, EReference ref) {
+		EObject container = typedNamedElementExpression.eContainer();
+		if (container instanceof Assignment
+				&& ((Assignment) container).getLhs_typedNamedElementExpression() == typedNamedElementExpression) {
+			// do not return hybrid in ports
+			return createScope(filterHybridPorts(getAvailableTypedNamedElementList(typedNamedElementExpression), true));
+		}
+		// do not return hybrid out ports
+		return createScope(filterHybridPorts(getAvailableTypedNamedElementList(typedNamedElementExpression), false));
 	}
 	
 	IScope scope_DataType(Variable variable, EReference ref) {
@@ -265,6 +255,49 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		typedNamedElementList = Collections.<TypedNamedElement>emptyList();
 		operationList = Collections.<Operation>emptyList();
 		messageTypeList = Collections.<MessageType>emptyList();
+	}
+	
+	private List<TypedNamedElement> getAvailableTypedNamedElementList(EObject context) {
+		List<TypedNamedElement> availableTypedNamedElementList = getLocalVariables(context);
+		availableTypedNamedElementList.addAll(typedNamedElementList);
+		return availableTypedNamedElementList;
+	}
+	
+	private List<TypedNamedElement> filterHybridPorts(List<TypedNamedElement> list, boolean filterIn) {
+		List<TypedNamedElement> filteredList = new ArrayList<TypedNamedElement>();
+		for (TypedNamedElement typedNamedElement : list) {
+			if (typedNamedElement instanceof HybridPort) {
+				HybridPort hybridPort = (HybridPort) typedNamedElement;
+				if (filterIn && hybridPort.isInPort()
+						|| !filterIn && hybridPort.isOutPort()) {
+					continue;
+				}
+			}
+			filteredList.add(typedNamedElement);
+		}
+		return filteredList;
+	}
+	
+	private List<TypedNamedElement> getLocalVariables(EObject object) {
+		List<TypedNamedElement> localVariableList = new ArrayList<TypedNamedElement>();
+		EObject container = object;
+		EObject containedExpression = null;
+		while (container != null) {
+			if (container instanceof Block) {
+				// add all local variable declarations which were defined
+				// before the containedExpression
+				for (Expression expression : ((Block) container).getExpressions()) {
+					if (expression == containedExpression) {
+						break;
+					} else if (expression instanceof LocalVariableDeclarationStatement) {
+						localVariableList.add(((LocalVariableDeclarationStatement) expression).getVariable());
+					}
+				}
+			}
+			containedExpression = container;
+			container = container.eContainer();
+		}
+		return localVariableList;
 	}
 
 }
