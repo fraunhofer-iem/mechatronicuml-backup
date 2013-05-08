@@ -17,7 +17,19 @@ public class RolePortSection
 
 	@Override
 	protected java.util.List<Object> getItems() {
-		return new java.util.ArrayList<Object>();
+		java.util.List<Object> nodes = new java.util.ArrayList<Object>();
+		nodes.add(null);
+
+		org.eclipse.emf.common.util.TreeIterator<Object> it = org.eclipse.emf.ecore.util.EcoreUtil
+				.getAllContents(getEditingDomain().getResourceSet(), true);
+		while (it.hasNext()) {
+			Object element = (Object) it.next();
+			if (element instanceof de.uni_paderborn.fujaba.muml.component.DiscretePort) {
+				nodes.add(element);
+			}
+		}
+
+		return nodes;
 	}
 
 }
