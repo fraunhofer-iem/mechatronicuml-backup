@@ -186,7 +186,7 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public String toString() {
 		// Return value concatenated with abbreviated unit.
