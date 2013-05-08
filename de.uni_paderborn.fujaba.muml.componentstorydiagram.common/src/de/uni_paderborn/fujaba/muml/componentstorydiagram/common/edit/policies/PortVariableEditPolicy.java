@@ -1,8 +1,9 @@
-package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
+package de.uni_paderborn.fujaba.muml.componentstorydiagram.common.edit.policies;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 
+import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 

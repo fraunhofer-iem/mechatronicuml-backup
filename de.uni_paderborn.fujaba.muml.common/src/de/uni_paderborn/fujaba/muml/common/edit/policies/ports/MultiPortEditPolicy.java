@@ -1,18 +1,14 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 
-import java.util.Arrays;
-
 import org.eclipse.draw2d.LayoutListener;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 
 import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.layout.MultiPortLayoutListener;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 
 public class MultiPortEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 	public static final Dimension DEFAULT_MULTI_OFFSET = new Dimension(22, 18);
@@ -35,11 +31,26 @@ public class MultiPortEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 	 *            The notification sent by the model.
 	 */
 	public void handleNotificationEvent(final Notification notification) {
-		EStructuralFeature[] features = new EStructuralFeature[] {
-				ComponentstorypatternPackage.Literals.MULTI_PORT_VARIABLE__SUB_PORT_VARIABLES, //
-				ConnectorPackage.Literals.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__SUB_INTERACTION_ENDPOINT_INSTANCES //
-		};
-		if (Arrays.asList(features).contains(notification.getFeature())) {
+		boolean childrenChanged = false;
+		
+		// Generic implementation for all kinds of children.
+		if (notification.getFeature() instanceof EReference) {
+			//EReference reference = (EReference) notification.getFeature();
+			if (notification.getNotifier() == getSemanticElement() /*&& reference.isContainment()*/) { // inner ports are not contained by the multiport, so we must not only react on containment references.
+				childrenChanged = true;
+			}
+		}
+		
+		// Concrete implementation for each kind of children
+//		EStructuralFeature[] features = new EStructuralFeature[] {
+//				ComponentstorypatternPackage.Literals.MULTI_PORT_VARIABLE__SUB_PORT_VARIABLES, //
+//				ConnectorPackage.Literals.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__SUB_INTERACTION_ENDPOINT_INSTANCES //
+//		};
+//		if (Arrays.asList(features).contains(notification.getFeature())) {
+//			childrenChanged = true;
+//		}
+		
+		if (childrenChanged) {
 			// Reactivate layouting
 			((MultiPortLayoutListener) getContainerLayoutListener())
 					.reactivateLayouting();

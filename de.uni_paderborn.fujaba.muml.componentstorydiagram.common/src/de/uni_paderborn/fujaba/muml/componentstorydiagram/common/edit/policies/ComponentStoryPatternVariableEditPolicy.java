@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.common.edit.policies.storydiagram;
+package de.uni_paderborn.fujaba.muml.componentstorydiagram.common.edit.policies;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.ScalablePolygonShape;
@@ -11,7 +11,6 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.notation.LineType;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.RGB;
 import org.storydriven.storydiagrams.patterns.BindingOperator;
 import org.storydriven.storydiagrams.patterns.BindingSemantics;
