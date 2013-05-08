@@ -186,7 +186,7 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String toString() {
 		// Return value concatenated with abbreviated unit.
@@ -215,7 +215,7 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 				sb.append("ms");
 				break;
 			case MICROSECONDS:
-				sb.append("μs");
+				sb.append('\u03BC' + "s"); // \u03BC = μ
 				break;
 			case NANOSECONDS:
 				sb.append("ns");
