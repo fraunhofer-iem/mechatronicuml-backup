@@ -2,7 +2,7 @@ package de.uni_paderborn.fujaba.muml.properties.deployment.section;
 
 public class HardwarePortKindSection
 		extends
-			de.upb.swt.core.ui.properties.sections.AbstractComboSection<Object> {
+			de.upb.swt.core.ui.properties.sections.AbstractRadioGroupSection<de.uni_paderborn.fujaba.muml.deployment.HardwarePortDirectionKind> {
 
 	@Override
 	public org.eclipse.emf.ecore.EStructuralFeature getFeature() {
@@ -16,8 +16,27 @@ public class HardwarePortKindSection
 	}
 
 	@Override
-	protected java.util.List<Object> getItems() {
-		return new java.util.ArrayList<Object>();
+	protected java.util.List<de.uni_paderborn.fujaba.muml.deployment.HardwarePortDirectionKind> getValues() {
+		return de.uni_paderborn.fujaba.muml.deployment.HardwarePortDirectionKind.VALUES;
+	}
+
+	@Override
+	public void refresh() {
+		super.refresh();
+		checkEnabled();
+	}
+
+	protected boolean isEnabled(
+			de.uni_paderborn.fujaba.muml.deployment.HardwarePortDirectionKind state) {
+		//		if (getElement() instanceof ObjectVariable) {
+		//			ObjectVariable variable = (ObjectVariable) getElement();
+		//			BindingSemantics semantics = variable.getBindingSemantics();
+		//			BindingOperator operator = variable.getBindingOperator();
+		//
+		//			return ValidationUtil.isValid(state, semantics, operator);
+		//		}
+
+		return true;
 	}
 
 }
