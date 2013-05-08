@@ -189,7 +189,53 @@ public class ActionlanguageValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAssignment(Assignment assignment, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(assignment, diagnostics, context);
+		if (!validate_NoCircularContainment(assignment, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assignment, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssignment_ValidLHS(assignment, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ValidLHS constraint of '<em>Assignment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSIGNMENT__VALID_LHS__EEXPRESSION = "-- a hybrid in port is not allowed as a lhs of an assignment\n" +
+		"let lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression\n" +
+		"in\n" +
+		"if not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(component::HybridPort) then\n" +
+		"\tlhs.typedNamedElement.oclAsType(component::HybridPort).outPort\n" +
+		"else\n" +
+		"\ttrue\n" +
+		"endif";
+
+	/**
+	 * Validates the ValidLHS constraint of '<em>Assignment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssignment_ValidLHS(Assignment assignment, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ActionlanguagePackage.Literals.ASSIGNMENT,
+				 assignment,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidLHS",
+				 ASSIGNMENT__VALID_LHS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
