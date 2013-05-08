@@ -374,14 +374,19 @@ public class GrammarTest {
 	}
 	
 	@Test
-	public void testInvalidHybridPortReadWrite() {
-		// TODO: this should be forbidden
-		// the best is to add a check for this to the type analysis phase.
-		// We could also disallow such an assignment with the help of the scope provider
-		// but such checks are better done in the type analysis phase (IMHO)
-		TypedNamedElementExpression typedNamedElementExpression = (TypedNamedElementExpression) getAssignmentRHS("{ hybridIn := hybridOut ; }");
-		assertTrue(typedNamedElementExpression.getTypedNamedElement() instanceof HybridPort);
-		assertEquals("hybridOut", typedNamedElementExpression.getTypedNamedElement().getName());
+	public void testInvalidHybridInPortWrite() {
+		// do not assign to an in port
+		loadFromString("{ hybridIn := bar ; }");
+		assertTrue(loadResult.hasError());
+		assertNull(loadResult.getEObject());
+	}
+	
+	@Test
+	public void testInvalidHybridOutPortRead() {
+		// do not read an out port
+		loadFromString("{ bar := hybridOut ; }");
+		assertTrue(loadResult.hasError());
+		assertNull(loadResult.getEObject());
 	}
 	
 	@Test
