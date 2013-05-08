@@ -126,12 +126,6 @@ public abstract class ModelStorage<T extends EObject> implements IModelStorage {
 		}
 		return feature;
 	}
-
-	// this is not needed anymore
-	protected static void setFeature(EObject object, String name, Object value) {
-		EStructuralFeature feature = getFeatureByName(object, name);
-		setFeature(object, feature, value);
-	}
 	
 	protected static void setFeature(EObject object, EStructuralFeature feature, Object value) {
 		EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(object);

@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.core.expressions.Expression;
 
@@ -26,27 +27,30 @@ public class ActionStorage extends ModelStorage<Action> {
 	public ActionStorage(EObject model) {
 		super(model);
 		Action action = null;
+		EReference reference;
 		if (model instanceof DoEvent) {
 			action = ((DoEvent) model).getAction();
+			reference = RealtimestatechartPackage.Literals.DO_EVENT__ACTION;
 		} else if (model instanceof EntryOrExitEvent) {
 			action = ((EntryOrExitEvent) model).getAction();
+			reference = RealtimestatechartPackage.Literals.ENTRY_OR_EXIT_EVENT__ACTION;
 		} else if (model instanceof Transition) {
 			action = ((Transition) model).getAction();
+			reference = RealtimestatechartPackage.Literals.TRANSITION__ACTION;
 		} else {
 			// shouldn't happen because this is used in an object contribution
 			throw new IllegalArgumentException("model has invalid type");
 		}
 		if (action == null) {
-			action = addAction(model);
+			action = addAction(model, reference);
 		}
 		setModel(action);
-		//setAttributeList(attributeList);
 	}
 
-	private Action addAction(EObject model) {
+	private Action addAction(EObject model, EReference reference) {
 		Action action = RealtimestatechartFactory.eINSTANCE.createAction();
 		action.setName("");
-		setFeature(model, "action", action);
+		setFeature(model, reference, action);
 		return action;
 	}
 
