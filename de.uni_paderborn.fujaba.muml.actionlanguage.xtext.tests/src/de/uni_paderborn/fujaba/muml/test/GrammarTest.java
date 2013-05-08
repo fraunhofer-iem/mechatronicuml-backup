@@ -505,9 +505,17 @@ public class GrammarTest {
 	}
 	
 	@Test
-	public void testLocalArrayDeclarationAndInitialization() {
+	public void testLocalArrayDeclarationAndInitialization1() {
 		// in fact this is simply a local variable declaration + array initialization
-		loadFromString("{ INTARRAY localArray := {1, 2, 3, 4}; }");
+		loadFromString("{ INTARRAY localArray := {1, 2, 3, 4, 5}; }");
+		assertFalse(loadResult.hasError());
+		assertNotNull(loadResult.getEObject());
+	}
+	
+	@Test
+	public void testLocalArrayDeclarationAndInitialization2() {
+		// check if brackets in the datatype's name are supported
+		loadFromString("{ INT[2][5] lArray := { {1, 2, 3, 4, 5}, {6, 7, 8, 9, 10} }; }");
 		assertFalse(loadResult.hasError());
 		assertNotNull(loadResult.getEObject());
 	}
