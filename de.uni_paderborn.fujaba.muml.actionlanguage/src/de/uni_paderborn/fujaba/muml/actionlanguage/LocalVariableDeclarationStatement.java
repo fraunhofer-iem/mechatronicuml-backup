@@ -26,7 +26,7 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getLocalVariableDeclarationStatement()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueName'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueName='-- check if no variable with the same name was defined before\nself.allSurroundingBlocks->collect(\n\texpressions\n)->select(\n\toclIsKindOf(LocalVariableDeclarationStatement)\n)->collect(\n\toclAsType(LocalVariableDeclarationStatement)\n)->select(\n\tvariable.name = self.variable.name\n)->isUnique(variable.name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueName='-- check if no variable with the same name was defined before\nself.allSurroundingBlocks->collect(\n\texpressions\n)->select(\n\toclIsKindOf(LocalVariableDeclarationStatement)\n)->collect(\n\toclAsType(LocalVariableDeclarationStatement)\n)->one(\n\tvariable.name = self.variable.name\n)'"
  * @generated
  */
 public interface LocalVariableDeclarationStatement extends Expression {

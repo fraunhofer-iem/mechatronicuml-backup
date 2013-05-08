@@ -973,7 +973,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		  (localVariableDeclarationStatementEClass, 
 		   source, 
 		   new String[] {
-			 "UniqueName", "-- check if no variable with the same name was defined before\nself.allSurroundingBlocks->collect(\n\texpressions\n)->select(\n\toclIsKindOf(LocalVariableDeclarationStatement)\n)->collect(\n\toclAsType(LocalVariableDeclarationStatement)\n)->select(\n\tvariable.name = self.variable.name\n)->isUnique(variable.name)"
+			 "UniqueName", "-- check if no variable with the same name was defined before\nself.allSurroundingBlocks->collect(\n\texpressions\n)->select(\n\toclIsKindOf(LocalVariableDeclarationStatement)\n)->collect(\n\toclAsType(LocalVariableDeclarationStatement)\n)->one(\n\tvariable.name = self.variable.name\n)"
 		   });		
 		addAnnotation
 		  (getLocalVariableDeclarationStatement_AllSurroundingBlocks(), 

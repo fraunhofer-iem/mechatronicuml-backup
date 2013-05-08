@@ -333,9 +333,9 @@ public class ActionlanguageValidator extends EObjectValidator {
 		"\toclIsKindOf(LocalVariableDeclarationStatement)\n" +
 		")->collect(\n" +
 		"\toclAsType(LocalVariableDeclarationStatement)\n" +
-		")->select(\n" +
+		")->one(\n" +
 		"\tvariable.name = self.variable.name\n" +
-		")->isUnique(variable.name)";
+		")";
 
 	/**
 	 * Validates the UniqueName constraint of '<em>Local Variable Declaration Statement</em>'.
