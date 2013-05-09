@@ -4,6 +4,18 @@ library ProjectSpecificConstants;
 -- that are NOT user defined
 property reconfigurationMessageTypeRepositoryName : String = '_ReconfigurationMessageTypeRepo';
 
+-- name of the struct type used by the executor
+property genTypeAffectedComponents : String = 'AffectedComponents';
+property genTypeAffectedComponentsEntry : String = 'AffectedComponentsEntry';
+property genAttrRequest : String = 'request';
+property genAttrReply : String = 'reply';
+property genAttrAction : String = 'action';
+property genAttrVoteCommit : String = 'voteCommit';
+property genAttrFinished : String = 'finished';
+property genRefEntries : String = 'entries';
+property genRefPortInstance : String = 'portInstance';
+property genRefRule : String = 'rule';
+
 -- names of the generated for the reconfiguration message types that are NOT user defined
 property genMsgTypeSuccess : String = 'success';
 property genMsgTypeFailed : String = 'failed';

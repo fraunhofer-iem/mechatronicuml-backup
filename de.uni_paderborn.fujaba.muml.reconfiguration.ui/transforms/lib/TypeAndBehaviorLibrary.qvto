@@ -1,3 +1,4 @@
+import ProjectSpecificConstants;
 
 --core models
 modeltype core uses core('http://www.storydriven.org/core/0.3.1');
@@ -24,6 +25,49 @@ property longType : String = PrimitiveTypes::LONG.repr();
 property doubleType : String = PrimitiveTypes::DOUBLE.repr();
 
 ------------ helper functions --------------
+
+-- return the affected component type used in the executor for storing the affected children of 
+-- a reconfiguration. If it is not yet contained in the model, it will be created.
+helper RootNode::getOrCreateAffectedComponentsType() : StructType {
+	
+	var category : ModelElementCategory := self.getTypesCategory();
+	
+	-- try to obtain message type repository
+	var type : StructType := (category.modelElements -> select(t : ExtendableElement | t.oclIsKindOf(StructType) 
+						and t.oclAsType(StructType).name = genTypeAffectedComponents) 
+						-> any(true)).oclAsType(StructType);
+	
+	-- if no repository was found, then create it!
+	if(type = null) then{
+		type := self.createAffectedComponentsType();
+		category.modelElements += type;
+		category.modelElements += (type._references -> any(true)).type;
+	}endif;
+	
+	return type;
+}
+
+-- creates the affected component type used in the executor for storing the affected children of 
+-- a reconfiguration
+helper RootNode::createAffectedComponentsType() : StructType {
+	
+	-- create struct types
+	var affectedCompType : StructType := new StructType(genTypeAffectedComponents);
+	var entryType : StructType := new StructType(genTypeAffectedComponentsEntry);
+	
+	-- create attributes
+	entryType.attributes += new Attribute(genAttrRequest, self.getPrimitiveType(boolType));
+	entryType.attributes += new Attribute(genAttrReply, self.getPrimitiveType(boolType));
+	entryType.attributes += new Attribute(genAttrAction, self.getPrimitiveType(boolType));
+	entryType.attributes += new Attribute(genAttrVoteCommit, self.getPrimitiveType(boolType));
+	entryType.attributes += new Attribute(genAttrFinished, self.getPrimitiveType(boolType));
+	
+	-- create references
+	affectedCompType._references += new Reference(genRefEntries, entryType, new Cardinality(0, -1));
+	-- FIXME: add references to port instance and reconf rule
+	
+	return affectedCompType;
+}
 
 
 ------------ helper queries ---------------
@@ -66,4 +110,39 @@ constructor Operation::Operation(in newName : String, in type : DataType, in imp
 	name := newName;
 	returnType := type;
 	implementations := impl;
+}
+
+constructor StructType::StructType(in newName : String){
+	name := newName;
+}
+
+constructor Attribute::Attribute(in newName : String, in dataType : DataType){
+	name := newName;
+	type := dataType;
+}
+
+constructor Reference::Reference(in newName : String, in dataType : DataType, in card : Cardinality){
+	name := newName;
+	type := dataType;
+	cardinality := card;
+}
+
+-- create a cardinality object with the given bounds, an uBound of -1 encodes infinity
+constructor Cardinality::Cardinality(in lBound : Integer, in uBound : Integer){
+	lowerBound := object NaturalNumber{
+		value := lBound;
+		infinity := false;
+	};
+	
+	if(uBound = -1) then{
+		upperBound := object NaturalNumber{
+			value := lBound + 1;
+			infinity = true;
+		}
+	} else {
+		upperBound := object NaturalNumber{
+			value := uBound;
+			infinity = false;
+		}
+	} endif;
 }
