@@ -31,8 +31,8 @@ import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getCoordinationProtocol()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueRoleNames CoordinationProtocolNamesMustBeUnique'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueRoleNames='self.roles->isUnique(name)' CoordinationProtocolNamesMustBeUnique='CoordinationProtocol.allInstances()->isUnique(name)'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueRoleNames CoordinationProtocolNamesMustBeUnique RoleMessageTypesMustBeCompatible'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueRoleNames='self.roles->isUnique(name)' CoordinationProtocolNamesMustBeUnique='CoordinationProtocol.allInstances()->isUnique(name)' RoleMessageTypesMustBeCompatible='-- Roles should be compatibe w.r.t. message types\r\nself.roles->forAll(role1 : Role, role2 : Role |\r\n   role1 <> role2\r\n   implies\r\n   role1.senderMessageTypes = role2.receiverMessageTypes\r\n)'"
  * @generated
  */
 public interface CoordinationProtocol extends NamedElement, ConstrainableElement, CommentableElement {
@@ -89,22 +89,11 @@ public interface CoordinationProtocol extends NamedElement, ConstrainableElement
 	 * This derived reference only exists because GMF needs it to visualize the inner ellipse of a Real-Time Coordination Protocol.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Gmf Coordination Protocol</em>' containment reference.
-	 * @see #setGmfCoordinationProtocol(CoordinationProtocol)
 	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getCoordinationProtocol_GmfCoordinationProtocol()
-	 * @model containment="true" transient="true" volatile="true" derived="true"
+	 * @model containment="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self'"
 	 * @generated
 	 */
 	CoordinationProtocol getGmfCoordinationProtocol();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfCoordinationProtocol <em>Gmf Coordination Protocol</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Gmf Coordination Protocol</em>' containment reference.
-	 * @see #getGmfCoordinationProtocol()
-	 * @generated
-	 */
-	void setGmfCoordinationProtocol(CoordinationProtocol value);
 
 } // CoordinationProtocol

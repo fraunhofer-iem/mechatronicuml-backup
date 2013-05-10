@@ -178,6 +178,7 @@ public class ProtocolValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(coordinationProtocol, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCoordinationProtocol_UniqueRoleNames(coordinationProtocol, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCoordinationProtocol_CoordinationProtocolNamesMustBeUnique(coordinationProtocol, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCoordinationProtocol_RoleMessageTypesMustBeCompatible(coordinationProtocol, diagnostics, context);
 		return result;
 	}
 
@@ -240,6 +241,40 @@ public class ProtocolValidator extends MumlValidator {
 	}
 
 	/**
+	 * The cached validation expression for the RoleMessageTypesMustBeCompatible constraint of '<em>Coordination Protocol</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COORDINATION_PROTOCOL__ROLE_MESSAGE_TYPES_MUST_BE_COMPATIBLE__EEXPRESSION = "-- Roles should be compatibe w.r.t. message types\r\n" +
+		"self.roles->forAll(role1 : Role, role2 : Role |\r\n" +
+		"   role1 <> role2\r\n" +
+		"   implies\r\n" +
+		"   role1.senderMessageTypes = role2.receiverMessageTypes\r\n" +
+		")";
+
+	/**
+	 * Validates the RoleMessageTypesMustBeCompatible constraint of '<em>Coordination Protocol</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCoordinationProtocol_RoleMessageTypesMustBeCompatible(CoordinationProtocol coordinationProtocol, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ProtocolPackage.Literals.COORDINATION_PROTOCOL,
+				 coordinationProtocol,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "RoleMessageTypesMustBeCompatible",
+				 COORDINATION_PROTOCOL__ROLE_MESSAGE_TYPES_MUST_BE_COMPATIBLE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -256,6 +291,8 @@ public class ProtocolValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresBehavior(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresMessageTypes(role, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRole_ReceiverRoleRequiresMessageBuffer(role, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRole_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(role, diagnostics, context);
 		return result;
 	}
 
@@ -312,6 +349,67 @@ public class ProtocolValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "RoleRequiresMessageTypes",
 				 ROLE__ROLE_REQUIRES_MESSAGE_TYPES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ReceiverRoleRequiresMessageBuffer constraint of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ROLE__RECEIVER_ROLE_REQUIRES_MESSAGE_BUFFER__EEXPRESSION = "self.receiverMessageTypes->notEmpty() \r\n" +
+		"implies \r\n" +
+		"self.receiverMessageBuffer->notEmpty()";
+
+	/**
+	 * Validates the ReceiverRoleRequiresMessageBuffer constraint of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRole_ReceiverRoleRequiresMessageBuffer(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ProtocolPackage.Literals.ROLE,
+				 role,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ReceiverRoleRequiresMessageBuffer",
+				 ROLE__RECEIVER_ROLE_REQUIRES_MESSAGE_BUFFER__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer constraint of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ROLE__RECEIVER_MESSAGE_TYPE_MUST_BE_ASSIGNED_TO_EXACTLY_ONE_BUFFER__EEXPRESSION = "-- Each receiver message type should be assigned to exactly one buffer\r\n" +
+		"self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))";
+
+	/**
+	 * Validates the ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer constraint of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRole_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ProtocolPackage.Literals.ROLE,
+				 role,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer",
+				 ROLE__RECEIVER_MESSAGE_TYPE_MUST_BE_ASSIGNED_TO_EXACTLY_ONE_BUFFER__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

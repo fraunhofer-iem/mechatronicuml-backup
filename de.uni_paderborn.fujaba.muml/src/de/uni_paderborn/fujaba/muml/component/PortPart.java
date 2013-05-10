@@ -43,7 +43,7 @@ public interface PortPart extends ConnectorEndpoint, DataType {
 	 * @return the value of the '<em>Port Type</em>' reference.
 	 * @see #setPortType(Port)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getPortPart_PortType()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Port getPortType();

@@ -242,15 +242,6 @@ public class CoordinationProtocolImpl extends NamedElementImpl implements Coordi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGmfCoordinationProtocol(CoordinationProtocol newGmfCoordinationProtocol) {
-		GMF_COORDINATION_PROTOCOL__ESETTING_DELEGATE.dynamicSet(this, null, 0, newGmfCoordinationProtocol);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -332,9 +323,6 @@ public class CoordinationProtocolImpl extends NamedElementImpl implements Coordi
 			case ProtocolPackage.COORDINATION_PROTOCOL__ROLE_CONNECTOR:
 				setRoleConnector((RoleConnector)newValue);
 				return;
-			case ProtocolPackage.COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL:
-				setGmfCoordinationProtocol((CoordinationProtocol)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -358,9 +346,6 @@ public class CoordinationProtocolImpl extends NamedElementImpl implements Coordi
 				return;
 			case ProtocolPackage.COORDINATION_PROTOCOL__ROLE_CONNECTOR:
 				setRoleConnector((RoleConnector)null);
-				return;
-			case ProtocolPackage.COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL:
-				setGmfCoordinationProtocol((CoordinationProtocol)null);
 				return;
 		}
 		super.eUnset(featureID);

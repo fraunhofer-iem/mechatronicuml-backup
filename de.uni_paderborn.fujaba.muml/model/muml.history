@@ -21778,5 +21778,152 @@
     <changes xsi:type="history:Set" element="muml.ecore#//valuetype/TimeValue/toString/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="// Return value concatenated with abbreviated unit.&#xD;&#xA;StringBuffer sb = new StringBuffer();&#xD;&#xA;if (value == null) {&#xD;&#xA;&#x9;sb.append(&quot;null&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;sb.append(value.toString());&#xD;&#xA;}&#xD;&#xA;if (unit != null) {&#xD;&#xA;&#x9;sb.append(' ');&#xD;&#xA;&#x9;switch (unit) {&#xD;&#xA;&#x9;case DAYS:&#xD;&#xA;&#x9;&#x9;sb.append('d');&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case HOURS:&#xD;&#xA;&#x9;&#x9;sb.append('h');&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case MINUTES:&#xD;&#xA;&#x9;&#x9;sb.append('m');&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case SECONDS:&#xD;&#xA;&#x9;&#x9;sb.append('s');&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case MILLISECONDS:&#xD;&#xA;&#x9;&#x9;sb.append(&quot;ms&quot;);&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case MICROSECONDS:&#xD;&#xA;&#x9;&#x9;sb.append('\u03BC' + &quot;s&quot;); // \u03BC = μ&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case NANOSECONDS:&#xD;&#xA;&#x9;&#x9;sb.append(&quot;ns&quot;);&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return sb.toString();"
         oldDataValue="// Return value concatenated with abbreviated unit.&#xD;&#xA;StringBuffer sb = new StringBuffer();&#xD;&#xA;if (value == null) {&#xD;&#xA;&#x9;sb.append(&quot;null&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;sb.append(value.toString());&#xD;&#xA;}&#xD;&#xA;if (unit != null) {&#xD;&#xA;&#x9;sb.append(' ');&#xD;&#xA;&#x9;switch (unit) {&#xD;&#xA;&#x9;case DAYS:&#xD;&#xA;&#x9;&#x9;sb.append('d');&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case HOURS:&#xD;&#xA;&#x9;&#x9;sb.append('h');&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case MINUTES:&#xD;&#xA;&#x9;&#x9;sb.append('m');&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case SECONDS:&#xD;&#xA;&#x9;&#x9;sb.append('s');&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case MILLISECONDS:&#xD;&#xA;&#x9;&#x9;sb.append(&quot;ms&quot;);&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case MICROSECONDS:&#xD;&#xA;&#x9;&#x9;sb.append(&quot;μs&quot;);&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case NANOSECONDS:&#xD;&#xA;&#x9;&#x9;sb.append(&quot;ns&quot;);&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return sb.toString();"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Deadline/upperBound"
+        featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Deadline/lowerBound"
+        featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2">
+      <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+          featureName="key" dataValue="RoleRequiresBehavior"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+          featureName="value" dataValue="not self.behavior.oclIsUndefined()"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="key" dataValue="ReceiverRoleRequiresMessageBuffer" oldDataValue="RoleRequiresBehavior"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer"
+        oldDataValue="RoleRequiresBehavior RoleRequiresMessageTypes"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="self.receiverMessageTypes->notEmpty() &#xD;&#xA;implies &#xD;&#xA;self.receiverMessageBuffer->notEmpty()"
+        oldDataValue="not self.behavior.oclIsUndefined()"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3">
+      <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+          featureName="key" dataValue="ReceiverRoleRequiresMessageBuffer"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+          featureName="value" dataValue="self.receiverMessageTypes->notEmpty() &#xD;&#xA;implies &#xD;&#xA;self.receiverMessageBuffer->notEmpty()"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"
+        oldDataValue="self.receiverMessageTypes->notEmpty() &#xD;&#xA;implies &#xD;&#xA;self.receiverMessageBuffer->notEmpty()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="-- Each receiver message type should be assigned to exactly one buffer&#xD;&#xA;self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"
+        oldDataValue="self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="key" dataValue="ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"
+        oldDataValue="ReceiverRoleRequiresMessageBuffer"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"
+        oldDataValue="RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//protocol/CoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//protocol/CoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2">
+      <changes xsi:type="history:Set" element="muml.ecore#//protocol/CoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+          featureName="key" dataValue="CoordinationProtocolNamesMustBeUnique"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//protocol/CoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+          featureName="value" dataValue="CoordinationProtocol.allInstances()->isUnique(name)"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/CoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="-- Roles should be compatibe w.r.t. message types&#xD;&#xA;self.roles->forAll(role1 : Role, role2 : role |&#xD;&#xA;   role1 &lt;> role2&#xD;&#xA;   implies&#xD;&#xA;   role1.senderMessageTypes = role2.receiverMessageTypes&#xD;&#xA;)"
+        oldDataValue="CoordinationProtocol.allInstances()->isUnique(name)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/CoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="key" dataValue="RoleMessageTypesMustBeCompatible" oldDataValue="CoordinationProtocolNamesMustBeUnique"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/CoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="UniqueRoleNames CoordinationProtocolNamesMustBeUnique RoleMessageTypesMustBeCompatible"
+        oldDataValue="UniqueRoleNames CoordinationProtocolNamesMustBeUnique"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/CoordinationProtocol/gmfCoordinationProtocol"
+        featureName="changeable" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//component/PortPart" referenceName="eStructuralFeatures"
+        element="#//@releases.16/@changes.208/@element"/>
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.208/@element"
+        featureName="eType" referenceValue="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.208/@element"
+        featureName="name" dataValue="name"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//component/PortPart/refinedRole"
+        referenceName="eAnnotations"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//component/PortPart/refinedRole"
+        referenceName="eAnnotations"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//component/PortPart/refinedRole"
+        referenceName="eAnnotations" element="muml.ecore#//component/PortPart/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="muml.ecore#//component/PortPart/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//component/PortPart/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="muml.ecore#//component/PortPart/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//component/PortPart/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//component/PortPart/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="The role of a coordination protocol that this partial instance of a port refines."/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//component/PortPart/refinedRole"
+        referenceName="eAnnotations" element="muml.ecore#//component/PortPart/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//component/PortPart/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//component/PortPart/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//component/PortPart/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//component/PortPart/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//component/PortPart/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="if (self.portType.oclIsKindOf(DiscretePort)) then&#xD;&#xA;self.portType.oclAsType(DiscretePort).refinedRole&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.208/@element"
+        referenceName="eAnnotations" element="#//@releases.16/@changes.208/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.208/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
+    </changes>
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.208/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="#//@releases.16/@changes.208/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.208/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="key" dataValue="documentation"/>
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.208/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+          featureName="value" dataValue="The role of a coordination protocol that this partial instance of a port refines."/>
+    </changes>
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.208/@element"
+        referenceName="eAnnotations" element="#//@releases.16/@changes.208/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.208/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.208/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="#//@releases.16/@changes.208/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.208/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="derivation"/>
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.208/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="if (self.portType.oclIsKindOf(DiscretePort)) then&#xD;&#xA;self.portType.oclAsType(DiscretePort).refinedRole&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.208/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        featureName="value" dataValue="The name of the port part (derived by its port type)."
+        oldDataValue="The role of a coordination protocol that this partial instance of a port refines."/>
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.208/@element"
+        featureName="derived" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.208/@element"
+        featureName="changeable" dataValue="false" oldDataValue="true"/>
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.208/@element"
+        featureName="volatile" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.208/@element"
+        featureName="transient" dataValue="true" oldDataValue="false"/>
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.208/@element"
+        featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//component/PortPart/portType"
+        featureName="lowerBound" dataValue="1" oldDataValue="0"/>
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.208/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="value" dataValue="self.portType.name" oldDataValue="if (self.portType.oclIsKindOf(DiscretePort)) then&#xD;&#xA;self.portType.oclAsType(DiscretePort).refinedRole&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//component/PortPart" referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false" volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The name of the port part (derived by its port type)."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.portType.name"/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol/CoordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="-- Roles should be compatibe w.r.t. message types&#xD;&#xA;self.roles->forAll(role1 : Role, role2 : Role |&#xD;&#xA;   role1 &lt;> role2&#xD;&#xA;   implies&#xD;&#xA;   role1.senderMessageTypes = role2.receiverMessageTypes&#xD;&#xA;)"
+        oldDataValue="-- Roles should be compatibe w.r.t. message types&#xD;&#xA;self.roles->forAll(role1 : Role, role2 : role |&#xD;&#xA;   role1 &lt;> role2&#xD;&#xA;   implies&#xD;&#xA;   role1.senderMessageTypes = role2.receiverMessageTypes&#xD;&#xA;)"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent "
+        oldDataValue="LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent"/>
   </releases>
 </history:History>
