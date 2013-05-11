@@ -141,6 +141,12 @@ public class TestSimpleExpressions {
 		}
 	}
 
+	/**
+	 * boolA := intA >= intB
+	 * @throws UnsupportedModellingElementException
+	 * @throws VariableNotInitializedException
+	 * @throws IncompatibleTypeException
+	 */
 	@Test
 	public void testComparisonExpression()
 			throws UnsupportedModellingElementException,
@@ -176,6 +182,14 @@ public class TestSimpleExpressions {
 
 		compExpression.setOperator(ComparingOperator.GREATER_OR_EQUAL);
 
+		actionLanguageInterpreter.evaluateExpression(varBindings, assignment);
+
+		for (VariableBinding curVarBinding : varBindings) {
+			if (curVarBinding.getVariable().equals(boolA))
+				assertTrue(curVarBinding.getValue().equals(true));
+		}
+		
+		compExpression.setOperator(ComparingOperator.EQUAL);
 		actionLanguageInterpreter.evaluateExpression(varBindings, assignment);
 
 		for (VariableBinding curVarBinding : varBindings) {
