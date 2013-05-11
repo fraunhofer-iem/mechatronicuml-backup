@@ -145,26 +145,31 @@ public class ActionLanguageInterpreter {
 			throws UnsupportedModellingElementException,
 			VariableNotInitializedException, IncompatibleTypeException {
 		double value;
+		DataType doubleType = TypesFactory.eINSTANCE.createPrimitiveDataType();
+		((PrimitiveDataType)doubleType).setPrimitiveType(PrimitiveTypes.DOUBLE);
+		
+		DataType boolType = TypesFactory.eINSTANCE.createPrimitiveDataType();
+		((PrimitiveDataType)boolType).setPrimitiveType(PrimitiveTypes.BOOLEAN);
 		switch (unaryExpression.getOperator().getValue()) {
 		case UnaryOperator.DECREMENT_VALUE:
-			value = (Double) evaluate(variableBindings, parAndLocVarBindings,
-					unaryExpression.getEnclosedExpression());
+			value = (Double) castTo(doubleType, evaluate(variableBindings, parAndLocVarBindings,
+					unaryExpression.getEnclosedExpression()));
 			return value--;
 
 		case UnaryOperator.INCREMENT_VALUE:
-			value = (Double) evaluate(variableBindings, parAndLocVarBindings,
-					unaryExpression.getEnclosedExpression());
+			value = (Double) castTo(doubleType, evaluate(variableBindings, parAndLocVarBindings,
+					unaryExpression.getEnclosedExpression()));
 			return value++;
 
 		case UnaryOperator.MINUS_VALUE:
-			value = (Double) evaluate(variableBindings, parAndLocVarBindings,
-					unaryExpression.getEnclosedExpression());
+			value = (Double) castTo(doubleType, evaluate(variableBindings, parAndLocVarBindings,
+					unaryExpression.getEnclosedExpression()));
 			return value * -1;
 
 		case UnaryOperator.NOT_VALUE:
 
-			return !((Boolean) evaluate(variableBindings, parAndLocVarBindings,
-					unaryExpression.getEnclosedExpression()));
+			return !((Boolean) castTo(boolType, evaluate(variableBindings, parAndLocVarBindings,
+					unaryExpression.getEnclosedExpression())));
 		default:
 			throw new UnsupportedModellingElementException("Operator"
 					+ unaryExpression.getOperator().toString()
@@ -193,52 +198,72 @@ public class ActionLanguageInterpreter {
 		DataType doubleType = typeFactory.createPrimitiveDataType();
 		((PrimitiveDataType) doubleType)
 				.setPrimitiveType(PrimitiveTypes.DOUBLE);
+		double lhe, rhe;
+		boolean result;
 
 		switch (comparisonExpression.getOperator().getValue()) {
 		case ComparingOperator.EQUAL_VALUE:
-			return (Double) castTo(
+			lhe = (Double) castTo(
 					doubleType,
 					evaluate(variableBindings, parAndLocVarBindings,
-							comparisonExpression.getLeftExpression())) == (Double) castTo(
+							comparisonExpression.getLeftExpression()));
+			rhe = (Double) castTo(
 					doubleType,
 					evaluate(variableBindings, parAndLocVarBindings,
 							comparisonExpression.getRightExpression()));
+			result = lhe == rhe;
+			return result;
+
 
 		case ComparingOperator.GREATER_OR_EQUAL_VALUE:
-			return (Double) castTo(
+			lhe = (Double) castTo(
 					doubleType,
 					evaluate(variableBindings, parAndLocVarBindings,
-							comparisonExpression.getLeftExpression())) >= (Double) castTo(
+							comparisonExpression.getLeftExpression()));
+			rhe = (Double) castTo(
 					doubleType,
 					evaluate(variableBindings, parAndLocVarBindings,
 							comparisonExpression.getRightExpression()));
+			result = lhe >= rhe;
+			return result;
+
 
 		case ComparingOperator.GREATER_VALUE:
-			return ((Double) castTo(
+			lhe = (Double) castTo(
 					doubleType,
 					evaluate(variableBindings, parAndLocVarBindings,
-							comparisonExpression.getLeftExpression()))) > ((Double) castTo(
+							comparisonExpression.getLeftExpression()));
+			rhe = (Double) castTo(
 					doubleType,
 					evaluate(variableBindings, parAndLocVarBindings,
-							comparisonExpression.getRightExpression())));
+							comparisonExpression.getRightExpression()));
+			result = lhe > rhe;
+			return result;
+			
 
 		case ComparingOperator.LESS_OR_EQUAL_VALUE:
-			return (Double) castTo(
+			lhe = (Double) castTo(
 					doubleType,
 					evaluate(variableBindings, parAndLocVarBindings,
-							comparisonExpression.getLeftExpression())) <= (Double) castTo(
+							comparisonExpression.getLeftExpression()));
+			rhe = (Double) castTo(
 					doubleType,
 					evaluate(variableBindings, parAndLocVarBindings,
 							comparisonExpression.getRightExpression()));
+			result = lhe <= rhe;
+			return result;
 
 		case ComparingOperator.LESS_VALUE:
-			return (Double) castTo(
+			lhe = (Double) castTo(
 					doubleType,
 					evaluate(variableBindings, parAndLocVarBindings,
-							comparisonExpression.getLeftExpression())) < (Double) castTo(
+							comparisonExpression.getLeftExpression()));
+			rhe = (Double) castTo(
 					doubleType,
 					evaluate(variableBindings, parAndLocVarBindings,
 							comparisonExpression.getRightExpression()));
+			result = lhe < rhe;
+			return result;
 
 		case ComparingOperator.REGULAR_EXPRESSION_VALUE:
 			throw new UnsupportedModellingElementException("Operator "
@@ -247,13 +272,16 @@ public class ActionLanguageInterpreter {
 
 		case ComparingOperator.UNEQUAL_VALUE:
 
-			return (Double) castTo(
+			lhe = (Double) castTo(
 					doubleType,
 					evaluate(variableBindings, parAndLocVarBindings,
-							comparisonExpression.getLeftExpression())) != (Double) castTo(
+							comparisonExpression.getLeftExpression()));
+			rhe = (Double) castTo(
 					doubleType,
 					evaluate(variableBindings, parAndLocVarBindings,
 							comparisonExpression.getRightExpression()));
+			result = lhe != rhe;
+			return result;
 
 		default:
 			throw new UnsupportedModellingElementException("Operator"
