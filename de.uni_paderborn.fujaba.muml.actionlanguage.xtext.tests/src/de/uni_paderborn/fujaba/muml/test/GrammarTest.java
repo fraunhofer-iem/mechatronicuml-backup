@@ -332,9 +332,7 @@ public class GrammarTest {
 		Transition transition = rtsc.getTransitions().get(0);
 		loadFromString("m1.i", transition);
 		assertFalse(loadResult.hasError());
-		Block block = (Block) loadResult.getEObject();
-		assertTrue(block.getExpressions().get(0) instanceof TriggerMessageExpression);
-		TriggerMessageExpression triggerMessageExpression = (TriggerMessageExpression) block.getExpressions().get(0);
+		TriggerMessageExpression triggerMessageExpression = (TriggerMessageExpression) loadResult.getEObject();
 		assertEquals("m1", triggerMessageExpression.getMessageType().getName());
 		assertEquals("i", triggerMessageExpression.getParameter().getName());
 	}
@@ -344,9 +342,7 @@ public class GrammarTest {
 		Transition transition = rtsc.getTransitions().get(0);
 		loadFromString("m1.i + m1.test", transition);
 		assertFalse(loadResult.hasError());
-		Block block = (Block) loadResult.getEObject();
-		assertTrue(block.getExpressions().get(0) instanceof ArithmeticExpression);
-		ArithmeticExpression expression = (ArithmeticExpression) block.getExpressions().get(0);
+		ArithmeticExpression expression = (ArithmeticExpression) loadResult.getEObject();
 		// left expression
 		assertTrue(expression.getLeftExpression() instanceof TriggerMessageExpression);
 		TriggerMessageExpression triggerMessageExpression = (TriggerMessageExpression) expression.getLeftExpression();
@@ -523,6 +519,13 @@ public class GrammarTest {
 		loadFromString("{ INT[2][5] lArray := { {1, 2, 3, 4, 5}, {6, 7, 8, 9, 10} }; }");
 		assertFalse(loadResult.hasError());
 		assertNotNull(loadResult.getEObject());
+	}
+	
+	@Test
+	public void testGuardExpression() {
+		loadFromString("bar + 7 < 42");
+		assertFalse(loadResult.hasError());
+		assertTrue(loadResult.getEObject() instanceof ComparisonExpression);
 	}
 	
 	protected static void assertValidEObject(EObject object) {
