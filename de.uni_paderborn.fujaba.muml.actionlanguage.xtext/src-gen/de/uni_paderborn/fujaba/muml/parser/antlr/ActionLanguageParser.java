@@ -25,7 +25,7 @@ public class ActionLanguageParser extends org.eclipse.xtext.parser.antlr.Abstrac
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Block";
+		return "Entry";
 	}
 	
 	public ActionLanguageGrammarAccess getGrammarAccess() {

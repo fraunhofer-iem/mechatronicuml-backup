@@ -184,6 +184,9 @@ public class AbstractActionLanguageProposalProvider extends TerminalsProposalPro
 		lookupCrossReference(((CrossReference)assignment.getTerminal()), context, acceptor);
 	}
     
+	public void complete_Entry(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// subclasses may override
+	}
 	public void complete_Block(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// subclasses may override
 	}

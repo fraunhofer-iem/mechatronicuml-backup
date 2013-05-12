@@ -37,7 +37,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getBlockAccess().getAlternatives(), "rule__Block__Alternatives");
+					put(grammarAccess.getEntryAccess().getAlternatives(), "rule__Entry__Alternatives");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getAlternatives_1(), "rule__ForLoopCountingExpression__Alternatives_1");
 					put(grammarAccess.getExpressionStartRuleAccess().getAlternatives(), "rule__ExpressionStartRule__Alternatives");
 					put(grammarAccess.getInitializeExpressionAccess().getAlternatives(), "rule__InitializeExpression__Alternatives");
@@ -54,7 +54,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryPreOperatorAccess().getAlternatives(), "rule__UnaryPreOperator__Alternatives");
 					put(grammarAccess.getUnaryPostOperatorAccess().getAlternatives(), "rule__UnaryPostOperator__Alternatives");
 					put(grammarAccess.getPositionSelectorKindAccess().getAlternatives(), "rule__PositionSelectorKind__Alternatives");
-					put(grammarAccess.getBlockAccess().getGroup_0(), "rule__Block__Group_0__0");
+					put(grammarAccess.getBlockAccess().getGroup(), "rule__Block__Group__0");
 					put(grammarAccess.getForLoopAccess().getGroup(), "rule__ForLoop__Group__0");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getGroup(), "rule__ForLoopCountingExpression__Group__0");
 					put(grammarAccess.getForLoopCountingExpressionAccess().getGroup_1_1(), "rule__ForLoopCountingExpression__Group_1_1__0");
@@ -100,8 +100,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTriggerMessageExpressionAccess().getGroup(), "rule__TriggerMessageExpression__Group__0");
 					put(grammarAccess.getDATATYPEAccess().getGroup(), "rule__DATATYPE__Group__0");
 					put(grammarAccess.getDATATYPEAccess().getGroup_1(), "rule__DATATYPE__Group_1__0");
-					put(grammarAccess.getBlockAccess().getExpressionsAssignment_0_2(), "rule__Block__ExpressionsAssignment_0_2");
-					put(grammarAccess.getBlockAccess().getExpressionsAssignment_1(), "rule__Block__ExpressionsAssignment_1");
+					put(grammarAccess.getBlockAccess().getExpressionsAssignment_2(), "rule__Block__ExpressionsAssignment_2");
 					put(grammarAccess.getForLoopAccess().getInitializeExpressionAssignment_2(), "rule__ForLoop__InitializeExpressionAssignment_2");
 					put(grammarAccess.getForLoopAccess().getLoopTestAssignment_3(), "rule__ForLoop__LoopTestAssignment_3");
 					put(grammarAccess.getForLoopAccess().getCountingExpressionAssignment_5(), "rule__ForLoop__CountingExpressionAssignment_5");
@@ -168,7 +167,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
 			de.uni_paderborn.fujaba.muml.ui.contentassist.antlr.internal.InternalActionLanguageParser typedParser = (de.uni_paderborn.fujaba.muml.ui.contentassist.antlr.internal.InternalActionLanguageParser) parser;
-			typedParser.entryRuleBlock();
+			typedParser.entryRuleEntry();
 			return typedParser.getFollowElements();
 		} catch(RecognitionException ex) {
 			throw new RuntimeException(ex);

@@ -31,115 +31,223 @@ protected class ThisRootNode extends RootToken {
 	@Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Block_Alternatives(this, this, 0, inst);
-			case 1: return new ForLoop_Group(this, this, 1, inst);
-			case 2: return new ForLoopCountingExpression_Group(this, this, 2, inst);
-			case 3: return new WhileLoop_Group(this, this, 3, inst);
-			case 4: return new DoWhileLoop_Group(this, this, 4, inst);
-			case 5: return new IfStatement_Group(this, this, 5, inst);
-			case 6: return new ReturnStatement_Group(this, this, 6, inst);
-			case 7: return new OperationCallStatement_Group(this, this, 7, inst);
-			case 8: return new ExpressionStartRule_Alternatives(this, this, 8, inst);
-			case 9: return new Assignment_Group(this, this, 9, inst);
-			case 10: return new InitializeExpression_Alternatives(this, this, 10, inst);
-			case 11: return new ArrayInitializeExpression_Group(this, this, 11, inst);
-			case 12: return new LocalVariableDeclarationStatement_VariableAssignment(this, this, 12, inst);
-			case 13: return new LocalVariableDeclaration_Group(this, this, 13, inst);
-			case 14: return new Expression_LogicalExpressionParserRuleCall(this, this, 14, inst);
-			case 15: return new LogicalExpression_LogicalOrExpressionParserRuleCall(this, this, 15, inst);
-			case 16: return new LogicalOrExpression_Group(this, this, 16, inst);
-			case 17: return new LogicalAndExpression_Group(this, this, 17, inst);
-			case 18: return new ComparisonExpression_Group(this, this, 18, inst);
-			case 19: return new ComparisonHigherOpExpression_Group(this, this, 19, inst);
-			case 20: return new ArithmeticExpression_AdditionExpressionParserRuleCall(this, this, 20, inst);
-			case 21: return new AdditionExpression_Group(this, this, 21, inst);
-			case 22: return new MultiplicationExpression_Alternatives(this, this, 22, inst);
-			case 23: return new UnaryPreExpression_Group(this, this, 23, inst);
-			case 24: return new UnaryPostExpression_Group(this, this, 24, inst);
-			case 25: return new Operand_Alternatives(this, this, 25, inst);
-			case 26: return new LiteralExpression_Group(this, this, 26, inst);
-			case 27: return new ExtendedTypedNamedElementExpression_Group(this, this, 27, inst);
-			case 28: return new TypedNamedElementExpression_Group(this, this, 28, inst);
-			case 29: return new NoAttributeSelectorExpression_PositionAssignment(this, this, 29, inst);
-			case 30: return new PositionSelectorExpression_Group(this, this, 30, inst);
-			case 31: return new OperationCall_Group(this, this, 31, inst);
-			case 32: return new ParamaterBinding_Group(this, this, 32, inst);
-			case 33: return new TriggerMessageExpression_Group(this, this, 33, inst);
+			case 0: return new Entry_Alternatives(this, this, 0, inst);
+			case 1: return new Block_Group(this, this, 1, inst);
+			case 2: return new ForLoop_Group(this, this, 2, inst);
+			case 3: return new ForLoopCountingExpression_Group(this, this, 3, inst);
+			case 4: return new WhileLoop_Group(this, this, 4, inst);
+			case 5: return new DoWhileLoop_Group(this, this, 5, inst);
+			case 6: return new IfStatement_Group(this, this, 6, inst);
+			case 7: return new ReturnStatement_Group(this, this, 7, inst);
+			case 8: return new OperationCallStatement_Group(this, this, 8, inst);
+			case 9: return new ExpressionStartRule_Alternatives(this, this, 9, inst);
+			case 10: return new Assignment_Group(this, this, 10, inst);
+			case 11: return new InitializeExpression_Alternatives(this, this, 11, inst);
+			case 12: return new ArrayInitializeExpression_Group(this, this, 12, inst);
+			case 13: return new LocalVariableDeclarationStatement_VariableAssignment(this, this, 13, inst);
+			case 14: return new LocalVariableDeclaration_Group(this, this, 14, inst);
+			case 15: return new Expression_LogicalExpressionParserRuleCall(this, this, 15, inst);
+			case 16: return new LogicalExpression_LogicalOrExpressionParserRuleCall(this, this, 16, inst);
+			case 17: return new LogicalOrExpression_Group(this, this, 17, inst);
+			case 18: return new LogicalAndExpression_Group(this, this, 18, inst);
+			case 19: return new ComparisonExpression_Group(this, this, 19, inst);
+			case 20: return new ComparisonHigherOpExpression_Group(this, this, 20, inst);
+			case 21: return new ArithmeticExpression_AdditionExpressionParserRuleCall(this, this, 21, inst);
+			case 22: return new AdditionExpression_Group(this, this, 22, inst);
+			case 23: return new MultiplicationExpression_Alternatives(this, this, 23, inst);
+			case 24: return new UnaryPreExpression_Group(this, this, 24, inst);
+			case 25: return new UnaryPostExpression_Group(this, this, 25, inst);
+			case 26: return new Operand_Alternatives(this, this, 26, inst);
+			case 27: return new LiteralExpression_Group(this, this, 27, inst);
+			case 28: return new ExtendedTypedNamedElementExpression_Group(this, this, 28, inst);
+			case 29: return new TypedNamedElementExpression_Group(this, this, 29, inst);
+			case 30: return new NoAttributeSelectorExpression_PositionAssignment(this, this, 30, inst);
+			case 31: return new PositionSelectorExpression_Group(this, this, 31, inst);
+			case 32: return new OperationCall_Group(this, this, 32, inst);
+			case 33: return new ParamaterBinding_Group(this, this, 33, inst);
+			case 34: return new TriggerMessageExpression_Group(this, this, 34, inst);
 			default: return null;
 		}	
 	}	
 }
 	
 
-/************ begin Rule Block ****************
+/************ begin Rule Entry ****************
  *
- * Block returns actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
- * 	{actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=Expression;
+ * Entry returns expressions::Expression:
+ * 	Block | Expression;
  *
  **/
 
-// {actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=Expression
-protected class Block_Alternatives extends AlternativesToken {
+// Block | Expression
+protected class Entry_Alternatives extends AlternativesToken {
 
-	public Block_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Entry_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Alternatives getGrammarElement() {
-		return grammarAccess.getBlockAccess().getAlternatives();
+		return grammarAccess.getEntryAccess().getAlternatives();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Block_Group_0(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Block_ExpressionsAssignment_1(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new Entry_BlockParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new Entry_ExpressionParserRuleCall_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getBlockRule().getType().getClassifier())
+		if(getEObject().eClass() != grammarAccess.getMultiplicationExpressionAccess().getArithmeticExpressionLeftExpressionAction_1_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getBlockAccess().getBlockAction_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getComparisonHigherOpExpressionAccess().getComparisonExpressionLeftExpressionAction_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getNoAttributeSelectorExpressionRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getLiteralExpressionAccess().getLiteralExpressionAction_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getLogicalAndExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getOperationCallRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getTriggerMessageExpressionRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getTypedNamedElementExpressionRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getUnaryPreExpressionAccess().getUnaryExpressionAction_0().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
 	}
 
 }
 
-// {actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}"
-protected class Block_Group_0 extends GroupToken {
+// Block
+protected class Entry_BlockParserRuleCall_0 extends RuleCallToken {
 	
-	public Block_Group_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Entry_BlockParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public Group getGrammarElement() {
-		return grammarAccess.getBlockAccess().getGroup_0();
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getEntryAccess().getBlockParserRuleCall_0();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Block_RightCurlyBracketKeyword_0_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Block_Group(this, this, 0, inst);
 			default: return null;
 		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getBlockAccess().getBlockAction_0().getType().getClassifier())
+			return null;
+		if(checkForRecursion(Block_Group.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+// Expression
+protected class Entry_ExpressionParserRuleCall_1 extends RuleCallToken {
+	
+	public Entry_ExpressionParserRuleCall_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getEntryAccess().getExpressionParserRuleCall_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Expression_LogicalExpressionParserRuleCall(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getMultiplicationExpressionAccess().getArithmeticExpressionLeftExpressionAction_1_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getComparisonHigherOpExpressionAccess().getComparisonExpressionLeftExpressionAction_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getNoAttributeSelectorExpressionRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getLiteralExpressionAccess().getLiteralExpressionAction_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getLogicalAndExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getOperationCallRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getTriggerMessageExpressionRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getTypedNamedElementExpressionRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getUnaryPreExpressionAccess().getUnaryExpressionAction_0().getType().getClassifier())
+			return null;
+		if(checkForRecursion(Expression_LogicalExpressionParserRuleCall.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+
+/************ end Rule Entry ****************/
+
+
+/************ begin Rule Block ****************
+ *
+ * Block returns actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
+ * 	{actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}";
+ *
+ **/
+
+// {actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}"
+protected class Block_Group extends GroupToken {
+	
+	public Block_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getBlockAccess().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Block_RightCurlyBracketKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getBlockAccess().getBlockAction_0().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
 	}
 
 }
 
 // {actionlanguage::Block}
-protected class Block_BlockAction_0_0 extends ActionToken  {
+protected class Block_BlockAction_0 extends ActionToken  {
 
-	public Block_BlockAction_0_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Block_BlockAction_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Action getGrammarElement() {
-		return grammarAccess.getBlockAccess().getBlockAction_0_0();
+		return grammarAccess.getBlockAccess().getBlockAction_0();
 	}
 
     @Override
@@ -157,21 +265,21 @@ protected class Block_BlockAction_0_0 extends ActionToken  {
 }
 
 // "{"
-protected class Block_LeftCurlyBracketKeyword_0_1 extends KeywordToken  {
+protected class Block_LeftCurlyBracketKeyword_1 extends KeywordToken  {
 	
-	public Block_LeftCurlyBracketKeyword_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Block_LeftCurlyBracketKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_0_1();
+		return grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_1();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Block_BlockAction_0_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Block_BlockAction_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -179,15 +287,15 @@ protected class Block_LeftCurlyBracketKeyword_0_1 extends KeywordToken  {
 }
 
 // expressions+=ExpressionStartRule*
-protected class Block_ExpressionsAssignment_0_2 extends AssignmentToken  {
+protected class Block_ExpressionsAssignment_2 extends AssignmentToken  {
 	
-	public Block_ExpressionsAssignment_0_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Block_ExpressionsAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getBlockAccess().getExpressionsAssignment_0_2();
+		return grammarAccess.getBlockAccess().getExpressionsAssignment_2();
 	}
 
     @Override
@@ -206,7 +314,7 @@ protected class Block_ExpressionsAssignment_0_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getExpressionStartRuleRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getBlockAccess().getExpressionsExpressionStartRuleParserRuleCall_0_2_0(); 
+				element = grammarAccess.getBlockAccess().getExpressionsExpressionStartRuleParserRuleCall_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -218,80 +326,34 @@ protected class Block_ExpressionsAssignment_0_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Block_ExpressionsAssignment_0_2(lastRuleCallOrigin, next, actIndex, consumed);
-			case 1: return new Block_LeftCurlyBracketKeyword_0_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new Block_ExpressionsAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 1: return new Block_LeftCurlyBracketKeyword_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
 }
 
 // "}"
-protected class Block_RightCurlyBracketKeyword_0_3 extends KeywordToken  {
+protected class Block_RightCurlyBracketKeyword_3 extends KeywordToken  {
 	
-	public Block_RightCurlyBracketKeyword_0_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Block_RightCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getBlockAccess().getRightCurlyBracketKeyword_0_3();
+		return grammarAccess.getBlockAccess().getRightCurlyBracketKeyword_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Block_ExpressionsAssignment_0_2(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Block_LeftCurlyBracketKeyword_0_1(lastRuleCallOrigin, this, 1, inst);
+			case 0: return new Block_ExpressionsAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new Block_LeftCurlyBracketKeyword_1(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
 
-}
-
-
-// expressions+=Expression
-protected class Block_ExpressionsAssignment_1 extends AssignmentToken  {
-	
-	public Block_ExpressionsAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getBlockAccess().getExpressionsAssignment_1();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new Expression_LogicalExpressionParserRuleCall(this, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override	
-	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("expressions",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("expressions");
-		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
-			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getExpressionRule().getType().getClassifier())) {
-				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getBlockAccess().getExpressionsExpressionParserRuleCall_1_0(); 
-				consumed = obj;
-				return param;
-			}
-		}
-		return null;
-	}
-
-    @Override
-	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
-		if(value == inst.getEObject() && !inst.isConsumed()) return null;
-		switch(index) {
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, consumed);
-		}	
-	}	
 }
 
 
@@ -578,7 +640,7 @@ protected class ForLoop_BlockAssignment_7 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Block_Alternatives(this, this, 0, inst);
+			case 0: return new Block_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1023,7 +1085,7 @@ protected class WhileLoop_BlockAssignment_4 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Block_Alternatives(this, this, 0, inst);
+			case 0: return new Block_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1130,7 +1192,7 @@ protected class DoWhileLoop_BlockAssignment_1 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Block_Alternatives(this, this, 0, inst);
+			case 0: return new Block_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1443,7 +1505,7 @@ protected class IfStatement_IfBlockAssignment_4 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Block_Alternatives(this, this, 0, inst);
+			case 0: return new Block_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1624,7 +1686,7 @@ protected class IfStatement_ElseIfBlocksAssignment_5_4 extends AssignmentToken  
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Block_Alternatives(this, this, 0, inst);
+			case 0: return new Block_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -1716,7 +1778,7 @@ protected class IfStatement_ElseBlockAssignment_6_1 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Block_Alternatives(this, this, 0, inst);
+			case 0: return new Block_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}

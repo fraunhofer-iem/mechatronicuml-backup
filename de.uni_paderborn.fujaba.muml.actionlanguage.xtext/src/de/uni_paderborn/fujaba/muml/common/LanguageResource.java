@@ -14,6 +14,7 @@ import org.eclipse.xtext.Constants;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.util.StringInputStream;
+import org.storydriven.core.expressions.Expression;
 
 import com.google.inject.Injector;
 import com.google.inject.Key;
@@ -21,7 +22,6 @@ import com.google.inject.name.Names;
 
 import de.uni_paderborn.fujaba.muml.ActionLanguageStandaloneSetup;
 import de.uni_paderborn.fujaba.muml.scoping.ActionLanguageScopeProviderFactory;
-import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 
 public class LanguageResource {
 	private static Injector injector = null;
@@ -102,7 +102,7 @@ public class LanguageResource {
 	}
 
 	public static String serializeEObject(EObject object, EObject container) {
-		if (!(object instanceof Block)) {
+		if (!(object instanceof Expression)) {
 			return null;
 		}
 		XtextResource resource = (XtextResource) getXtextResource(container);

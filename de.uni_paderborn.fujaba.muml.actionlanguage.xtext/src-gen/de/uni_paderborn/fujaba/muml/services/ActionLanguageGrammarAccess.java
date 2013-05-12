@@ -19,48 +19,56 @@ import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
-	public class BlockElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Block");
+	public class EntryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Entry");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cBlockAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cExpressionsAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cExpressionsExpressionStartRuleParserRuleCall_0_2_0 = (RuleCall)cExpressionsAssignment_0_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
-		private final Assignment cExpressionsAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cExpressionsExpressionParserRuleCall_1_0 = (RuleCall)cExpressionsAssignment_1.eContents().get(0);
+		private final RuleCall cBlockParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//Block returns actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
-		//	{actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=Expression;
+		//Entry returns expressions::Expression:
+		//	Block | Expression;
 		public ParserRule getRule() { return rule; }
 
-		//{actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=Expression
+		//Block | Expression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}"
-		public Group getGroup_0() { return cGroup_0; }
-
-		//{actionlanguage::Block}
-		public Action getBlockAction_0_0() { return cBlockAction_0_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_0_1() { return cLeftCurlyBracketKeyword_0_1; }
-
-		//expressions+=ExpressionStartRule*
-		public Assignment getExpressionsAssignment_0_2() { return cExpressionsAssignment_0_2; }
-
-		//ExpressionStartRule
-		public RuleCall getExpressionsExpressionStartRuleParserRuleCall_0_2_0() { return cExpressionsExpressionStartRuleParserRuleCall_0_2_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_0_3() { return cRightCurlyBracketKeyword_0_3; }
-
-		//expressions+=Expression
-		public Assignment getExpressionsAssignment_1() { return cExpressionsAssignment_1; }
+		//Block
+		public RuleCall getBlockParserRuleCall_0() { return cBlockParserRuleCall_0; }
 
 		//Expression
-		public RuleCall getExpressionsExpressionParserRuleCall_1_0() { return cExpressionsExpressionParserRuleCall_1_0; }
+		public RuleCall getExpressionParserRuleCall_1() { return cExpressionParserRuleCall_1; }
+	}
+
+	public class BlockElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Block");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cBlockAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cExpressionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpressionsExpressionStartRuleParserRuleCall_2_0 = (RuleCall)cExpressionsAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//Block returns actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
+		//	{actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}";
+		public ParserRule getRule() { return rule; }
+
+		//{actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}"
+		public Group getGroup() { return cGroup; }
+
+		//{actionlanguage::Block}
+		public Action getBlockAction_0() { return cBlockAction_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+
+		//expressions+=ExpressionStartRule*
+		public Assignment getExpressionsAssignment_2() { return cExpressionsAssignment_2; }
+
+		//ExpressionStartRule
+		public RuleCall getExpressionsExpressionStartRuleParserRuleCall_2_0() { return cExpressionsExpressionStartRuleParserRuleCall_2_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 
 	public class ForLoopElements extends AbstractParserRuleElementFinder {
@@ -1791,6 +1799,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getNEXTNextKeyword_4_0() { return cNEXTNextKeyword_4_0; }
 	}
 	
+	private EntryElements pEntry;
 	private BlockElements pBlock;
 	private ForLoopElements pForLoop;
 	private ForLoopCountingExpressionElements pForLoopCountingExpression;
@@ -1880,8 +1889,18 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
+	//Entry returns expressions::Expression:
+	//	Block | Expression;
+	public EntryElements getEntryAccess() {
+		return (pEntry != null) ? pEntry : (pEntry = new EntryElements());
+	}
+	
+	public ParserRule getEntryRule() {
+		return getEntryAccess().getRule();
+	}
+
 	//Block returns actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
-	//	{actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}" | expressions+=Expression;
+	//	{actionlanguage::Block} "{" expressions+=ExpressionStartRule* "}";
 	public BlockElements getBlockAccess() {
 		return (pBlock != null) ? pBlock : (pBlock = new BlockElements());
 	}

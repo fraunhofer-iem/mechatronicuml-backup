@@ -19,10 +19,15 @@ import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions" 
 
 import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions/common" as commonExpressions
 
+Entry returns expressions::Expression:
+	Block | Expression
+;
 
 Block returns actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
 	{actionlanguage::Block}
-	'{'(expressions+=ExpressionStartRule*)'}' | expressions+=Expression
+	'{'
+		(expressions+=ExpressionStartRule*)
+	'}'
 ;
 
 // TODO: clarify if it makes sense to allow arbitrary expressions for
