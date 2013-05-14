@@ -138,7 +138,6 @@ public class ActionLanguageInterpreter {
 				+ expression.eClass().getName() + " are not yet supported");
 	}
 
-	// TODO evaluate loc variables and parameters
 	protected Object evaluate(EList<VariableBinding> variableBindings,
 			HashSet<LocalVariableAndParameterBinding> parAndLocVarBindings,
 			UnaryExpression unaryExpression)
@@ -146,30 +145,39 @@ public class ActionLanguageInterpreter {
 			VariableNotInitializedException, IncompatibleTypeException {
 		double value;
 		DataType doubleType = TypesFactory.eINSTANCE.createPrimitiveDataType();
-		((PrimitiveDataType)doubleType).setPrimitiveType(PrimitiveTypes.DOUBLE);
-		
+		((PrimitiveDataType) doubleType)
+				.setPrimitiveType(PrimitiveTypes.DOUBLE);
+
 		DataType boolType = TypesFactory.eINSTANCE.createPrimitiveDataType();
-		((PrimitiveDataType)boolType).setPrimitiveType(PrimitiveTypes.BOOLEAN);
+		((PrimitiveDataType) boolType).setPrimitiveType(PrimitiveTypes.BOOLEAN);
 		switch (unaryExpression.getOperator().getValue()) {
 		case UnaryOperator.DECREMENT_VALUE:
-			value = (Double) castTo(doubleType, evaluate(variableBindings, parAndLocVarBindings,
-					unaryExpression.getEnclosedExpression()));
-			return value--;
+			value = (Double) castTo(
+					doubleType,
+					evaluate(variableBindings, parAndLocVarBindings,
+							unaryExpression.getEnclosedExpression()));
+			return (value - 1);
 
 		case UnaryOperator.INCREMENT_VALUE:
-			value = (Double) castTo(doubleType, evaluate(variableBindings, parAndLocVarBindings,
-					unaryExpression.getEnclosedExpression()));
-			return value++;
+			value = (Double) castTo(
+					doubleType,
+					evaluate(variableBindings, parAndLocVarBindings,
+							unaryExpression.getEnclosedExpression()));
+			return (value + 1);
 
 		case UnaryOperator.MINUS_VALUE:
-			value = (Double) castTo(doubleType, evaluate(variableBindings, parAndLocVarBindings,
-					unaryExpression.getEnclosedExpression()));
-			return value * -1;
+			value = (Double) castTo(
+					doubleType,
+					evaluate(variableBindings, parAndLocVarBindings,
+							unaryExpression.getEnclosedExpression()));
+			return (value * -1);
 
 		case UnaryOperator.NOT_VALUE:
 
-			return !((Boolean) castTo(boolType, evaluate(variableBindings, parAndLocVarBindings,
-					unaryExpression.getEnclosedExpression())));
+			return !((Boolean) castTo(
+					boolType,
+					evaluate(variableBindings, parAndLocVarBindings,
+							unaryExpression.getEnclosedExpression())));
 		default:
 			throw new UnsupportedModellingElementException("Operator"
 					+ unaryExpression.getOperator().toString()
@@ -214,7 +222,6 @@ public class ActionLanguageInterpreter {
 			result = lhe == rhe;
 			return result;
 
-
 		case ComparingOperator.GREATER_OR_EQUAL_VALUE:
 			lhe = (Double) castTo(
 					doubleType,
@@ -227,7 +234,6 @@ public class ActionLanguageInterpreter {
 			result = lhe >= rhe;
 			return result;
 
-
 		case ComparingOperator.GREATER_VALUE:
 			lhe = (Double) castTo(
 					doubleType,
@@ -239,7 +245,6 @@ public class ActionLanguageInterpreter {
 							comparisonExpression.getRightExpression()));
 			result = lhe > rhe;
 			return result;
-			
 
 		case ComparingOperator.LESS_OR_EQUAL_VALUE:
 			lhe = (Double) castTo(
@@ -372,11 +377,18 @@ public class ActionLanguageInterpreter {
 							logicalExpression.getRightExpression());
 			// TODO not sure here
 		case LogicOperator.EQUIVALENT_VALUE:
-			return (Boolean) evaluate(variableBindings, parAndLocVarBindings,
-					logicalExpression.getLeftExpression()) == (Boolean) evaluate(
-					variableBindings, parAndLocVarBindings,
-					logicalExpression.getRightExpression());
-			// TODO check if correctly implemented
+			return !((Boolean) evaluate(variableBindings, parAndLocVarBindings,
+					logicalExpression.getLeftExpression()))
+					&& !((Boolean) evaluate(variableBindings,
+							parAndLocVarBindings,
+							logicalExpression.getRightExpression()))
+					|| (Boolean) evaluate(variableBindings,
+							parAndLocVarBindings,
+							logicalExpression.getLeftExpression())
+					&& (Boolean) evaluate(variableBindings,
+							parAndLocVarBindings,
+							logicalExpression.getRightExpression());
+
 		case LogicOperator.IMPLY_VALUE:
 			return !((Boolean) evaluate(variableBindings, parAndLocVarBindings,
 					logicalExpression.getLeftExpression()))
@@ -535,16 +547,17 @@ public class ActionLanguageInterpreter {
 				return null;
 			}
 		}
-		
+
 		// search for variable in variable bindings
 		if (element instanceof Variable) {
 			Variable variable = (Variable) element;
 			for (VariableBinding curVarBinding : variableBindings) {
 				if (curVarBinding.getVariable().equals(variable)) {
-					curVarBinding.setValue(castTo(variable.getDataType(), value));
+					curVarBinding
+							.setValue(castTo(variable.getDataType(), value));
 					return null;
 				}
-			}	
+			}
 		}
 
 		throw new VariableNotInitializedException(element.toString()
@@ -723,12 +736,13 @@ public class ActionLanguageInterpreter {
 
 		// search in local variable / parameter bindings
 		for (LocalVariableAndParameterBinding curBinding : parAndLocVarBindings) {
-			if (curBinding.getTypedNamedElement().equals(tne)){
+			if (curBinding.getTypedNamedElement().equals(tne)) {
 				if (curBinding.getValue() == null)
 					throw new VariableNotInitializedException(tne.toString()
 							+ " not initialized until execution of"
 							+ typedNamedElementExpression.toString());
-			return curBinding.getValue();}
+				return curBinding.getValue();
+			}
 		}
 
 		if (tne instanceof Variable) {
@@ -772,6 +786,8 @@ public class ActionLanguageInterpreter {
 		return null;
 	}
 
+	// TODO write own class for this see
+	// http://balusc.blogspot.de/2007/08/generic-object-converter.html
 	/**
 	 * Casts value to Java data type corresponding {@link DataType} type
 	 * 
@@ -784,7 +800,9 @@ public class ActionLanguageInterpreter {
 	public Object castTo(DataType type, Object value)
 			throws IncompatibleTypeException,
 			UnsupportedModellingElementException {
+
 		switch (((PrimitiveDataType) type).getPrimitiveType().getValue()) {
+		// cast to boolean
 		case PrimitiveTypes.BOOLEAN_VALUE:
 			if (!(value instanceof Boolean) && !(value instanceof String)) {
 				throw new IncompatibleTypeException("Cannot cast "
@@ -793,6 +811,7 @@ public class ActionLanguageInterpreter {
 						+ ((PrimitiveDataType) type).getPrimitiveType()
 								.toString());
 			}
+			// cast string to boolean
 			if (value instanceof String) {
 				if (((String) value).equals("true"))
 					return true;
@@ -806,10 +825,11 @@ public class ActionLanguageInterpreter {
 									.toString());
 
 			}
+			// value was already of type boolean
 			return (Boolean) value;
 
 		case PrimitiveTypes.BYTE_VALUE:
-
+			// cast to byte
 			if (!(value instanceof Short) && !(value instanceof Double)
 					&& !(value instanceof Long) && !(value instanceof Integer)
 					&& !(value instanceof String)) {
@@ -850,6 +870,16 @@ public class ActionLanguageInterpreter {
 				return ((Integer) value).byteValue();
 			}
 
+			else if (value instanceof Double) {
+				if ((Double) value > Byte.MAX_VALUE || (Double) value % 1 != 0)
+					throw new IncompatibleTypeException("Cannot cast "
+							+ value.toString()
+							+ " to "
+							+ ((PrimitiveDataType) type).getPrimitiveType()
+									.toString());
+				return ((Double) value).byteValue();
+			}
+
 			else if (value instanceof String)
 				try {
 					return Byte.parseByte((String) value);
@@ -864,6 +894,7 @@ public class ActionLanguageInterpreter {
 				return (Byte) value;
 
 		case PrimitiveTypes.DOUBLE_VALUE:
+			// cast to double
 			if (!(value instanceof Short) && !(value instanceof Double)
 					&& !(value instanceof Long) && !(value instanceof Integer)
 					&& !(value instanceof String)) {
@@ -894,7 +925,7 @@ public class ActionLanguageInterpreter {
 				return (Double) value;
 
 		case PrimitiveTypes.INT_VALUE:
-			// all integer numbers are parsed to Long by evaluate
+			// cast to int
 			if (!(value instanceof Long) && !(value instanceof Short)
 					&& !(value instanceof Double)
 					&& !(value instanceof Integer)
@@ -921,7 +952,8 @@ public class ActionLanguageInterpreter {
 
 			// TODO check for decimal places
 			else if (value instanceof Double) {
-				if ((Double) value > Integer.MAX_VALUE)
+				if ((Double) value > Integer.MAX_VALUE
+						|| (Double) value % 1 != 0)
 					throw new IncompatibleTypeException("Cannot cast "
 							+ value.toString()
 							+ " to "
@@ -950,6 +982,7 @@ public class ActionLanguageInterpreter {
 				return (Integer) value;
 
 		case PrimitiveTypes.LONG_VALUE:
+			// cast to long
 			if (!(value instanceof Long) && !(value instanceof Short)
 					&& !(value instanceof Double)
 					&& !(value instanceof Integer)
@@ -968,9 +1001,10 @@ public class ActionLanguageInterpreter {
 				return ((Integer) value).longValue();
 			}
 
-			// TODO check for decimal places
+			// TODO this implementation rounds
+			// else check for decimal places
 			else if (value instanceof Double) {
-				if ((Double) value > Long.MAX_VALUE)
+				if ((Double) value > Long.MAX_VALUE || (Double) value % 1 != 0)
 					throw new IncompatibleTypeException("Cannot cast "
 							+ value.toString()
 							+ " to "
@@ -999,6 +1033,7 @@ public class ActionLanguageInterpreter {
 				return (Long) value;
 
 		case PrimitiveTypes.SHORT_VALUE:
+			// cast to short
 			if (!(value instanceof Short) && !(value instanceof Long)
 					&& !(value instanceof Double)
 					&& !(value instanceof Integer)
@@ -1022,7 +1057,8 @@ public class ActionLanguageInterpreter {
 
 			// TODO check for decimal places
 			else if (value instanceof Double) {
-				if ((Double) value > Integer.MAX_VALUE)
+				if ((Double) value > Integer.MAX_VALUE
+						|| (Double) value % 1 != 0)
 					throw new IncompatibleTypeException("Cannot cast "
 							+ value.toString()
 							+ " to "

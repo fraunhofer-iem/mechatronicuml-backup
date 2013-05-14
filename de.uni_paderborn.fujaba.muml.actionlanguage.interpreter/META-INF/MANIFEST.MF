@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Interpreter
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.actionlanguage.interpreter
-Bundle-Version: 1.0.0.qualifier
+Bundle-Name: Action Language Interpreter Plugin
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.actionlanguage.interpreter;singleton:=true
+Bundle-Version: 0.3.1.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.storydriven.core;bundle-version="1.0.1",
@@ -12,3 +12,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.actionlanguage.interpreter,
  de.uni_paderborn.fujaba.muml.actionlanguage.interpreter.exceptions
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
