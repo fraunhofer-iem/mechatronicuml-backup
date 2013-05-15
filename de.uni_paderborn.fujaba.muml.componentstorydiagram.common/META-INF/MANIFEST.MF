@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML Component Story Diagram Common Plugin
-Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.componentstorydiagram.common
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.reconfiguration.common
 Bundle-Version: 0.3.1.qualifier
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.4.1",
  org.eclipse.emf.edit.ui;bundle-version="2.6.0",
@@ -19,4 +19,4 @@ Require-Bundle: org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.4.1",
  de.uni_paderborn.fujaba.muml.componentstorydiagram;bundle-version="0.3.2"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.componentstorydiagram.common.edit.policies
+Export-Package: de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies

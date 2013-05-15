@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.componentstorydiagram.common.edit.policies;
+package de.uni_paderborn.fujaba.muml.reconfiguration.common.edit.policies;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
