@@ -95,7 +95,6 @@
       <genClasses ecoreClass="MumlReconfiguration.ecore#//expression/ActivityCallExpression">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//expression/ActivityCallExpression/activity"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//expression/ActivityCallExpression/parameterBindings"/>
       </genClasses>
       <genClasses ecoreClass="MumlReconfiguration.ecore#//expression/ReconfigurationRuleCallExpression">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

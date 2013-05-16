@@ -14,6 +14,7 @@ import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.storydiagrams.StorydiagramsPackage;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 
+import org.storydriven.storydiagrams.calls.CallsPackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
@@ -161,15 +162,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getActivityCallExpression_ParameterBindings() {
-		return (EReference)activityCallExpressionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getReconfigurationRuleCallExpression() {
 		return reconfigurationRuleCallExpressionEClass;
 	}
@@ -222,7 +214,6 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		// Create classes and their features
 		activityCallExpressionEClass = createEClass(ACTIVITY_CALL_EXPRESSION);
 		createEReference(activityCallExpressionEClass, ACTIVITY_CALL_EXPRESSION__ACTIVITY);
-		createEReference(activityCallExpressionEClass, ACTIVITY_CALL_EXPRESSION__PARAMETER_BINDINGS);
 
 		reconfigurationRuleCallExpressionEClass = createEClass(RECONFIGURATION_RULE_CALL_EXPRESSION);
 		createEReference(reconfigurationRuleCallExpressionEClass, RECONFIGURATION_RULE_CALL_EXPRESSION__RECONFIGURATION_RULE);
@@ -254,9 +245,10 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 
 		// Obtain other dependent packages
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
+		CallsPackage theCallsPackage = (CallsPackage)EPackage.Registry.INSTANCE.getEPackage(CallsPackage.eNS_URI);
 		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
-		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 		ReconfigurationPackage theReconfigurationPackage = (ReconfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI);
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -264,16 +256,36 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 
 		// Add supertypes to classes
 		activityCallExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		activityCallExpressionEClass.getESuperTypes().add(theCallsPackage.getInvocation());
 		reconfigurationRuleCallExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(activityCallExpressionEClass, ActivityCallExpression.class, "ActivityCallExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActivityCallExpression_Activity(), theActivitiesPackage.getActivity(), null, "activity", null, 1, 1, ActivityCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivityCallExpression_ParameterBindings(), theBehaviorPackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, ActivityCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reconfigurationRuleCallExpressionEClass, ReconfigurationRuleCallExpression.class, "ReconfigurationRuleCallExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReconfigurationRuleCallExpression_ReconfigurationRule(), theReconfigurationPackage.getReconfigurationRule(), null, "reconfigurationRule", null, 1, 1, ReconfigurationRuleCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationRuleCallExpression_ParameterBindings(), theBehaviorPackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, ReconfigurationRuleCallExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";				
+		addAnnotation
+		  (getActivityCallExpression_Activity(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.callee.oclAsType(Activity)"
+		   });	
 	}
 
 } //ExpressionPackageImpl

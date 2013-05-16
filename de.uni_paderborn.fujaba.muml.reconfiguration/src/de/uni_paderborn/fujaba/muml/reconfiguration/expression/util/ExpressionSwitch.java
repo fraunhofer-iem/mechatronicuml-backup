@@ -13,6 +13,7 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.expressions.Expression;
 
+import org.storydriven.storydiagrams.calls.Invocation;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.*;
 
 /**
@@ -76,6 +77,7 @@ public class ExpressionSwitch<T> extends Switch<T> {
 				ActivityCallExpression activityCallExpression = (ActivityCallExpression)theEObject;
 				T result = caseActivityCallExpression(activityCallExpression);
 				if (result == null) result = caseExpression(activityCallExpression);
+				if (result == null) result = caseInvocation(activityCallExpression);
 				if (result == null) result = caseCommentableElement(activityCallExpression);
 				if (result == null) result = caseExtendableElement(activityCallExpression);
 				if (result == null) result = defaultCase(theEObject);
@@ -166,6 +168,21 @@ public class ExpressionSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseExpression(Expression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Invocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Invocation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInvocation(Invocation object) {
 		return null;
 	}
 

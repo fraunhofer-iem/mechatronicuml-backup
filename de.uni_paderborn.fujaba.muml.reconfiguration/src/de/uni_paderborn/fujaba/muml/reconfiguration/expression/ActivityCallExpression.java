@@ -10,6 +10,7 @@ import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.storydiagrams.activities.Activity;
 
+import org.storydriven.storydiagrams.calls.Invocation;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 
 /**
@@ -26,7 +27,6 @@ import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.ActivityCallExpression#getActivity <em>Activity</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.ActivityCallExpression#getParameterBindings <em>Parameter Bindings</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,7 +34,7 @@ import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
  * @model
  * @generated
  */
-public interface ActivityCallExpression extends Expression {
+public interface ActivityCallExpression extends Expression, Invocation {
 	/**
 	 * Returns the value of the '<em><b>Activity</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -47,6 +47,7 @@ public interface ActivityCallExpression extends Expression {
 	 * @see #setActivity(Activity)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage#getActivityCallExpression_Activity()
 	 * @model required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.callee.oclAsType(Activity)'"
 	 * @generated
 	 */
 	Activity getActivity();
@@ -60,21 +61,5 @@ public interface ActivityCallExpression extends Expression {
 	 * @generated
 	 */
 	void setActivity(Activity value);
-
-	/**
-	 * Returns the value of the '<em><b>Parameter Bindings</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.behavior.ParameterBinding}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Parameter Bindings</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameter Bindings</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage#getActivityCallExpression_ParameterBindings()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<ParameterBinding> getParameterBindings();
 
 } // ActivityCallExpression

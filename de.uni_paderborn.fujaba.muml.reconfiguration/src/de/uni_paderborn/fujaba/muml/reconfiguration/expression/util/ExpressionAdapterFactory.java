@@ -14,6 +14,7 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.expressions.Expression;
 
+import org.storydriven.storydiagrams.calls.Invocation;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.*;
 
 /**
@@ -91,6 +92,10 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseExpression(Expression object) {
 				return createExpressionAdapter();
+			}
+			@Override
+			public Adapter caseInvocation(Invocation object) {
+				return createInvocationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -179,6 +184,20 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.calls.Invocation <em>Invocation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.storydiagrams.calls.Invocation
+	 * @generated
+	 */
+	public Adapter createInvocationAdapter() {
 		return null;
 	}
 

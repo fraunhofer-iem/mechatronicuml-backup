@@ -101,22 +101,31 @@ public interface ExpressionPackage extends EPackage {
 	int ACTIVITY_CALL_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
 
 	/**
+	 * The feature id for the '<em><b>Owned Parameter Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Callee</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_CALL_EXPRESSION__CALLEE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Activity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_CALL_EXPRESSION__ACTIVITY = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Parameter Bindings</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_CALL_EXPRESSION__PARAMETER_BINDINGS = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+	int ACTIVITY_CALL_EXPRESSION__ACTIVITY = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Activity Call Expression</em>' class.
@@ -125,7 +134,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_CALL_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+	int ACTIVITY_CALL_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 3;
 
 
 	/**
@@ -215,17 +224,6 @@ public interface ExpressionPackage extends EPackage {
 	EReference getActivityCallExpression_Activity();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.ActivityCallExpression#getParameterBindings <em>Parameter Bindings</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Parameter Bindings</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.expression.ActivityCallExpression#getParameterBindings()
-	 * @see #getActivityCallExpression()
-	 * @generated
-	 */
-	EReference getActivityCallExpression_ParameterBindings();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.ReconfigurationRuleCallExpression <em>Reconfiguration Rule Call Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -296,14 +294,6 @@ public interface ExpressionPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ACTIVITY_CALL_EXPRESSION__ACTIVITY = eINSTANCE.getActivityCallExpression_Activity();
-
-		/**
-		 * The meta object literal for the '<em><b>Parameter Bindings</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTIVITY_CALL_EXPRESSION__PARAMETER_BINDINGS = eINSTANCE.getActivityCallExpression_ParameterBindings();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.expression.impl.ReconfigurationRuleCallExpressionImpl <em>Reconfiguration Rule Call Expression</em>}' class.
