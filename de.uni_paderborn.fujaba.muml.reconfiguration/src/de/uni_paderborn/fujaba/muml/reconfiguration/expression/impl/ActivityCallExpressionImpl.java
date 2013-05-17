@@ -15,16 +15,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.expressions.impl.ExpressionImpl;
 import org.storydriven.storydiagrams.activities.Activity;
-
 import org.storydriven.storydiagrams.calls.Callable;
 import org.storydriven.storydiagrams.calls.CallsPackage;
 import org.storydriven.storydiagrams.calls.Invocation;
 import org.storydriven.storydiagrams.calls.ParameterBinding;
-import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
+
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ActivityCallExpression;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage;
 

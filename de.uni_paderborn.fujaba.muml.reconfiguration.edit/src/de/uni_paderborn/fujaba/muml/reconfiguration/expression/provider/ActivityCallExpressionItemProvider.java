@@ -27,6 +27,7 @@ import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
+import org.storydriven.storydiagrams.calls.CallsPackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ActivityCallExpression;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage;
@@ -67,9 +68,32 @@ public class ActivityCallExpressionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addCalleePropertyDescriptor(object);
 			addActivityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Callee feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCalleePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Invocation_callee_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Invocation_callee_feature", "_UI_Invocation_type"),
+				 CallsPackage.Literals.INVOCATION__CALLEE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -106,7 +130,7 @@ public class ActivityCallExpressionItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ExpressionPackage.Literals.ACTIVITY_CALL_EXPRESSION__PARAMETER_BINDINGS);
+			childrenFeatures.add(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS);
 		}
 		return childrenFeatures;
 	}
@@ -161,7 +185,7 @@ public class ActivityCallExpressionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ActivityCallExpression.class)) {
-			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION__PARAMETER_BINDINGS:
+			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION__OWNED_PARAMETER_BINDINGS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -191,8 +215,8 @@ public class ActivityCallExpressionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExpressionPackage.Literals.ACTIVITY_CALL_EXPRESSION__PARAMETER_BINDINGS,
-				 BehaviorFactory.eINSTANCE.createParameterBinding()));
+				(CallsPackage.Literals.INVOCATION__OWNED_PARAMETER_BINDINGS,
+				 CallsFactory.eINSTANCE.createParameterBinding()));
 	}
 
 	/**
