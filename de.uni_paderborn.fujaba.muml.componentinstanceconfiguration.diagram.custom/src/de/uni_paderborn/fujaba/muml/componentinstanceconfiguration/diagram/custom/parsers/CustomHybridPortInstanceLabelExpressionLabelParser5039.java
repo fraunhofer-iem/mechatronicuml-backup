@@ -1,7 +1,0 @@
-package de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.parsers;
-
-import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.parsers.HybridPortInstanceLabelExpressionLabelParser5039;
-
-public class CustomHybridPortInstanceLabelExpressionLabelParser5039 extends
-		HybridPortInstanceLabelExpressionLabelParser5039 {
-}

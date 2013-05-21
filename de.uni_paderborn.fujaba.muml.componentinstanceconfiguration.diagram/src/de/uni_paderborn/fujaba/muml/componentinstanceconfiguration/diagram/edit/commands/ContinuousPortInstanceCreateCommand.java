@@ -47,19 +47,8 @@ public class ContinuousPortInstanceCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance newElement = de.uni_paderborn.fujaba.muml.instance.InstanceFactory.eINSTANCE
-				.createContinuousPortInstance();
-
-		de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration owner = (de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) getElementToEdit();
-		owner.getParentPortInstances().add(newElement);
-
-		de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.ElementInitializers
-				.getInstance().init_ContinuousPortInstance_2024(newElement);
-
-		doConfigure(newElement, monitor, info);
-
-		((CreateElementRequest) getRequest()).setNewElement(newElement);
-		return CommandResult.newOKCommandResult(newElement);
+		return CommandResult
+				.newErrorCommandResult("Cannot modify non-changeable feature!");
 	}
 
 	/**

@@ -47,19 +47,8 @@ public class DiscreteSinglePortInstanceCreateCommand extends EditElementCommand 
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance newElement = de.uni_paderborn.fujaba.muml.instance.InstanceFactory.eINSTANCE
-				.createDiscreteSinglePortInstance();
-
-		de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration owner = (de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration) getElementToEdit();
-		owner.getParentPortInstances().add(newElement);
-
-		de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.providers.ElementInitializers
-				.getInstance().init_DiscreteSinglePortInstance_2022(newElement);
-
-		doConfigure(newElement, monitor, info);
-
-		((CreateElementRequest) getRequest()).setNewElement(newElement);
-		return CommandResult.newOKCommandResult(newElement);
+		return CommandResult
+				.newErrorCommandResult("Cannot modify non-changeable feature!");
 	}
 
 	/**

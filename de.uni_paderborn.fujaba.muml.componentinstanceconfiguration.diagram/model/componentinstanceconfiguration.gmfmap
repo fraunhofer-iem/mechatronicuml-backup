@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfmap:Mapping xmi:version="2.0"
+<gmfmap:Mapping
+    xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
@@ -23,11 +24,12 @@
         </initializers>
       </domainInitializer>
       <labelMappings
-          xsi:type="gmfmap:ExpressionLabelMapping">
+          xsi:type="gmfmap:ExpressionLabelMapping"
+          readOnly="true">
         <diagramLabel
             href="componentinstanceconfiguration.gmfgraph#PortInstanceLabel"/>
         <viewExpression
-            body="if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
+            body="': '.concat(if self.type.name.oclIsUndefined() then 'null' else self.type.name endif)"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -56,11 +58,12 @@
         </initializers>
       </domainInitializer>
       <labelMappings
-          xsi:type="gmfmap:ExpressionLabelMapping">
+          xsi:type="gmfmap:ExpressionLabelMapping"
+          readOnly="true">
         <diagramLabel
             href="componentinstanceconfiguration.gmfgraph#PortInstanceLabel"/>
         <viewExpression
-            body="if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
+            body="': '.concat(if self.type.name.oclIsUndefined() then 'null' else self.type.name endif)"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -87,11 +90,12 @@
         </initializers>
       </domainInitializer>
       <labelMappings
-          xsi:type="gmfmap:ExpressionLabelMapping">
+          xsi:type="gmfmap:ExpressionLabelMapping"
+          readOnly="true">
         <diagramLabel
             href="componentinstanceconfiguration.gmfgraph#PortInstanceLabel"/>
         <viewExpression
-            body="if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
+            body="': '.concat(if self.type.name.oclIsUndefined() then 'null' else self.type.name endif)"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -156,11 +160,12 @@
         </initializers>
       </domainInitializer>
       <labelMappings
-          xsi:type="gmfmap:ExpressionLabelMapping">
+          xsi:type="gmfmap:ExpressionLabelMapping"
+          readOnly="true">
         <diagramLabel
             href="componentinstanceconfiguration.gmfgraph#PortInstanceLabel"/>
         <viewExpression
-            body="if self.type.name.oclIsUndefined() then '' else ': '.concat(self.type.name) endif"/>
+            body="': '.concat(if self.type.name.oclIsUndefined() then 'null' else self.type.name endif)"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
