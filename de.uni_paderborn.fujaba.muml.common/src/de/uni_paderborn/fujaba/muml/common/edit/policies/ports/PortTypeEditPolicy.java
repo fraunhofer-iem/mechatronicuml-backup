@@ -87,7 +87,7 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 	
 	protected boolean isOptional() {
 		EObject port = getPort();
-		if (ComponentPackage.Literals.DIRECTED_TYPED_PORT.isSuperTypeOf(port.eClass())) {
+		if (port != null && ComponentPackage.Literals.DIRECTED_TYPED_PORT.isSuperTypeOf(port.eClass())) {
 			return (Boolean) port.eGet(ComponentPackage.Literals.DIRECTED_TYPED_PORT__OPTIONAL);
 		}
 		return super.isOptional();
