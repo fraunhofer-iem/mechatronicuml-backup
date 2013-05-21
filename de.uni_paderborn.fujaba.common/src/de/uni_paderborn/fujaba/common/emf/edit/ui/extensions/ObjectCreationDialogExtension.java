@@ -144,10 +144,12 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 
 				final EObject newObject = EcoreUtil.create(getInstanceClass());
 
-				objectsListDialogExtension.addListItem(newObject);
-				objectsListDialogExtension.getTableViewer().refresh();
-				objectsListDialogExtension.getTableViewer().setSelection(
-						new StructuredSelection(new Object[] { newObject }));
+				if (objectsListDialogExtension != null) {
+					objectsListDialogExtension.addListItem(newObject);
+					objectsListDialogExtension.getTableViewer().refresh();
+					objectsListDialogExtension.getTableViewer().setSelection(
+							new StructuredSelection(new Object[] { newObject }));
+				}
 			}
 		});
 	
