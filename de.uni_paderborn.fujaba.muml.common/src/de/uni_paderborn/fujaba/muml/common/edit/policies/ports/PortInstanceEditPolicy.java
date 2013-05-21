@@ -12,7 +12,7 @@ public class PortInstanceEditPolicy extends PortTypeEditPolicy {
 	@Override
 	public void handleNotificationEvent(Notification notification) {
 		if (notification.getFeature() == ConnectorPackage.Literals.CONNECTOR_ENDPOINT_INSTANCE__TYPE) {
-			refreshCardinality();
+			refreshArrow();
 			refreshPortType();
 		}
 		super.handleNotificationEvent(notification);
@@ -27,11 +27,10 @@ public class PortInstanceEditPolicy extends PortTypeEditPolicy {
 		}
 		return null;
 	}
-
+	
 	@Override
-	protected void applyCardinality(Cardinality cardinality) {
-		super.applyCardinality(cardinality);
-		getPortFigure().setMulti(false);
+	protected boolean isMulti() {
+		return false;
 	}
 
 }

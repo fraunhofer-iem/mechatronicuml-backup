@@ -14,7 +14,7 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 	@Override
 	public void handleNotificationEvent(Notification notification) {
 		if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY) {
-			refreshCardinality();
+			refreshArrow();
 		} else if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES
 				|| notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES) {
 			refreshPortType();
@@ -46,7 +46,7 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 	}
 	
 	@Override
-	protected void refreshCardinality() {
+	protected void refreshArrow() {
 		boolean isMulti = false;
 		Role role = getRole();
 		if (role != null && role.getCardinality() != null) {
@@ -57,7 +57,7 @@ public class RoleEditPolicy extends PortBaseEditPolicy {
 			}
 		}
 		getPortFigure().setMulti(isMulti);
-		Color color = getForegroundColor();
+		Color color = getArrowForegroundColor();
 		getPortFigure().setLineStyle(EditPolicyUtils.getLineType(getPrimaryView()));
 		getPortFigure().configureArrows(color, color);
 	}

@@ -33,8 +33,8 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 			containingClass = feature.getEContainingClass();
 		}
 		
-		if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY || containingClass == ValuetypePackage.Literals.CARDINALITY) {
-			refreshCardinality();
+		if (feature == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY || containingClass == ValuetypePackage.Literals.CARDINALITY || feature == ComponentPackage.Literals.DIRECTED_TYPED_PORT__OPTIONAL) {
+			refreshArrow();
 			// } else if (notification.getFeature() == C){
 		} else if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES
 				|| notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES
@@ -85,6 +85,16 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 		getPortFigure().setPortKindAndPortType(portKind, portType);
 	}
 	
+	protected boolean isOptional() {
+		EObject port = getPort();
+		if (ComponentPackage.Literals.DIRECTED_TYPED_PORT.isSuperTypeOf(port.eClass())) {
+			return (Boolean) port.eGet(ComponentPackage.Literals.DIRECTED_TYPED_PORT__OPTIONAL);
+		}
+		return super.isOptional();
+	}
+
+	
+	@Override
 	protected Cardinality getCardinality() {
 		Port port = getPort();
 		if (port != null
@@ -94,20 +104,7 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 					.eGet(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY);
 			return cardinality;
 		}
-		return null;
-	}
-
-	@Override
-	protected void refreshCardinality() {
-		Cardinality cardinality = getCardinality();
-		if (cardinality != null) {
-			applyCardinality(cardinality);
-		} else {
-			// applyCardinality also does this, so do it here
-			Color color = getForegroundColor();
-			getPortFigure().configureArrows(color, color);
-			getPortFigure().setLineStyle(EditPolicyUtils.getLineType(getPrimaryView()));
-		}
+		return super.getCardinality();
 	}
 
 	protected PortType getDiscretePortType() {

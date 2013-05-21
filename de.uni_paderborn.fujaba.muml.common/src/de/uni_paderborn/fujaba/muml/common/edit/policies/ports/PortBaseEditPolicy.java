@@ -21,12 +21,43 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  * Base edit policy for all border items that use the CustomPortFigure. Provides
  * handling model notifications and updating the port figure accordingly. This
  * base implementation does not depend on any semantic classes, but subclasses
- * should override handleNotificationEvent() and call update*() methods.
+ * should override handleNotificationEvent() and call refreshXXX() methods.
  * 
  * @author bingo
  * 
  */
 public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
+	// Can be overriden to provide proper logic
+	protected boolean isMulti() {
+		Cardinality cardinality = getCardinality();
+		if (cardinality != null) {
+			NaturalNumber upperBound = cardinality.getUpperBound();
+			if (upperBound != null
+					&& (upperBound.isInfinity() || upperBound.getValue() > 1)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	// Can be overriden to provide proper logic
+	protected int getArrowLineType() {
+		return Graphics.LINE_SOLID;
+	}
+
+	// Can be overriden to provide proper logic
+	protected boolean isOptional() {
+		Cardinality cardinality = getCardinality();
+		if (cardinality != null) {
+			NaturalNumber lowerBound = cardinality.getLowerBound();
+			if (lowerBound != null
+					&& (lowerBound.isInfinity() || lowerBound.getValue() > 0)) {
+				return false;
+			}
+			return true;
+		}
+		return false;
+	}
 
 	public void activate() {
 		super.activate();
@@ -34,9 +65,12 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 			getPortFigure().setPortSide(PositionConstants.WEST);
 		}
 		refreshPortType();
-		refreshCardinality();
+		refreshArrow();
 	}
-
+	
+	protected Cardinality getCardinality() {
+		return null;
+	}
 
 	@Override
 	protected void sideChanged(int side) {
@@ -44,11 +78,20 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 		super.sideChanged(side);
 	}
 
-	protected void refreshCardinality() {
+	protected void refreshArrow() {
 		getPortFigure().setMulti(false);
-		Color color = getForegroundColor();
-		getPortFigure().setLineStyle(EditPolicyUtils.getLineType(getPrimaryView()));
-		getPortFigure().configureArrows(color, color);
+		Color arrowFg = getArrowForegroundColor();
+		Color arrowBg = getArrowBackgroundColor();
+		getPortFigure().configureArrows(arrowFg, arrowBg);
+
+		getPortFigure().setMulti(isMulti());
+		getPortFigure().setLineStyle(
+				EditPolicyUtils.getLineType(getPrimaryView()));
+
+		int arrowLineType = getArrowLineType();
+		getPortFigure().getFigureInPolygon().setLineStyle(arrowLineType);
+		getPortFigure().getFigureOutPolygon().setLineStyle(arrowLineType);
+		getPortFigure().getFigureInOutPolygon().setLineStyle(arrowLineType);
 	}
 
 	protected void refreshPortType() {
@@ -66,9 +109,9 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 		if (notification.getFeature() == NotationPackage.Literals.LINE_STYLE__LINE_COLOR) {
 			// our getDefaultBackgroundColor() method depends on this value; so
 			// we recalculate it.
-			refreshCardinality();
+			refreshArrow();
 		} else if (notification.getFeature() == NotationPackage.Literals.LINE_TYPE_STYLE__LINE_TYPE) {
-			refreshCardinality();
+			refreshArrow();
 		}
 		super.handleNotificationEvent(notification);
 	}
@@ -104,7 +147,7 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 	 * 
 	 * @return the foreground color
 	 */
-	protected Color getForegroundColor() {
+	protected Color getArrowForegroundColor() {
 		Color backgroundColor = ColorConstants.black;
 		LineStyle style = (LineStyle) getPrimaryView().getStyle(
 				NotationPackage.Literals.LINE_STYLE);
@@ -116,46 +159,10 @@ public class PortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy {
 		return backgroundColor;
 	}
 
-	/**
-	 * Convenience method to use a range as cardinality; can be used by
-	 * subclasses
-	 */
-	protected void applyCardinality(Cardinality cardinality) {
-		if (cardinality == null) {
-			return;
+	protected Color getArrowBackgroundColor() {
+		if (isOptional()) {
+			return ColorConstants.white;
 		}
-
-		boolean isMulti = false, mandatory = false;
-		NaturalNumber upperBound = cardinality.getUpperBound();
-		if (upperBound != null
-				&& (upperBound.isInfinity() || upperBound.getValue() > 1)) {
-			isMulti = true;
-		}
-		NaturalNumber lowerBound = cardinality.getLowerBound();
-
-		if (lowerBound != null
-				&& (lowerBound.isInfinity() || lowerBound.getValue() > 0)) {
-			mandatory = true;
-		}
-		getPortFigure().setMulti(isMulti);
-
-		// Update background color
-		int lineType = EditPolicyUtils.getLineType(getPrimaryView());
-		int innerLineType = Graphics.LINE_SOLID;
-		Color foregroundColor = getForegroundColor();
-		Color backgroundColor = foregroundColor;
-		if (!mandatory) {
-			backgroundColor = ColorConstants.white;
-			innerLineType = lineType;
-		}
-		
-		getPortFigure().configureArrows(foregroundColor, backgroundColor);
-		getPortFigure().setLineStyle(lineType);
-		getPortFigure().getFigureInPolygon().setLineStyle(innerLineType);
-		getPortFigure().getFigureOutPolygon().setLineStyle(innerLineType);
-		getPortFigure().getFigureInOutPolygon().setLineStyle(innerLineType);
+		return getArrowForegroundColor();
 	}
-
-
-
 }
