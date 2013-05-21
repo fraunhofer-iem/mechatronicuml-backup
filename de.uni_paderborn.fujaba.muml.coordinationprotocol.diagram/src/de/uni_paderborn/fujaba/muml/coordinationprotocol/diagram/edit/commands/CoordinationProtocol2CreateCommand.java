@@ -41,12 +41,8 @@ public class CoordinationProtocol2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol container = (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) getElementToEdit();
-		if (container.getGmfCoordinationProtocol() != null) {
-			return false;
-		}
-		return true;
-
+		// This command must not be used. The containment feature is not changeable!
+		return false;
 	}
 
 	/**
@@ -54,16 +50,8 @@ public class CoordinationProtocol2CreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol newElement = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE
-				.createCoordinationProtocol();
-
-		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol owner = (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) getElementToEdit();
-		owner.setGmfCoordinationProtocol(newElement);
-
-		doConfigure(newElement, monitor, info);
-
-		((CreateElementRequest) getRequest()).setNewElement(newElement);
-		return CommandResult.newOKCommandResult(newElement);
+		return CommandResult
+				.newErrorCommandResult("Cannot modify non-changeable feature!");
 	}
 
 	/**
