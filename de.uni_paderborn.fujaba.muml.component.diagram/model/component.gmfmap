@@ -333,8 +333,10 @@
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
     <creationConstraints>
+      <sourceEnd
+          body="-- Only PortParts may be connected using an AssemblyConnector&#xA;self.oclIsKindOf(component::PortPart)"/>
       <targetEnd
-          body="true&#xA;-- self.oclAsType(component::Port).component = oppositeEnd.oclAsType(component::Port).component"/>
+          body="-- Assembly must only connect PortParts at different ComponentParts of the same type&#xA;self.oclIsKindOf(component::PortPart) and&#xA;not oppositeEnd.oclAsType(component::PortPart).parentComponent.componentType.oclIsUndefined() and&#xA;not self.oclAsType(component::PortPart).componentPart.parentComponent.oclIsUndefined() and&#xA;oppositeEnd.oclAsType(component::PortPart).componentPart &lt;> self.oclAsType(component::PortPart).componentPart and&#xA;oppositeEnd.oclAsType(component::PortPart).componentPart.parentComponent = self.oclAsType(component::PortPart).componentPart.parentComponent"/>
     </creationConstraints>
   </links>
   <links>
@@ -354,8 +356,10 @@
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
     <creationConstraints>
+      <sourceEnd
+          body="-- Only Ports or PortParts may be the source of a DelegationConnector&#xA;true&#xA;-- or self.oclIsKindOf(component::PortPart) or self.oclIsKindOf(component::Port)"/>
       <targetEnd
-          body="true&#xA;-- Example error message&#xA;-- The source port's StructuredComponent must embed the ComponentPart that the Target Port is floating around.&#xA;--let containers : ecore::EObject = { view, oppositeView }.oclAsType(ecore::EObject).eContainer().oclAsType(notation::View).eContainer() in&#xA;--containers->notEmpty()&#xA;--false"/>
+          body="-- DelegationConnector must only connect Port at StructuredComponent and PortPart at embedded ComponentPart&#xA;let portPart : component::PortPart = if self.oclIsKindOf(component::PortPart) then self else if oppositeEnd.oclIsKindOf(component::PortPart) then oppositeEnd else null endif endif.oclAsType(component::PortPart) in&#xA;let portType : component::Port = if self.oclIsKindOf(component::Port) then self else if oppositeEnd.oclIsKindOf(component::Port) then oppositeEnd else null endif endif.oclAsType(component::Port) in&#xA;not portPart.oclIsUndefined() and&#xA;not portType.oclIsUndefined() and&#xA;not portPart.componentPart.parentComponent.oclIsUndefined() and&#xA;not portType.component.oclIsUndefined() and&#xA;portPart.componentPart.parentComponent = portType.component"/>
     </creationConstraints>
   </links>
   <links>
