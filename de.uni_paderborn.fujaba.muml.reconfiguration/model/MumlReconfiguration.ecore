@@ -256,7 +256,8 @@
         <details key="documentation" value="An ActivityCallExpression can be used for calling a story diagram from an expression specified by the MechatronicUML action language. &#xD;&#xA;In particular, it may be used for calling a story diagram in the action of a transition of a real-time statechart."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
-          eType="ecore:EClass ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity">
+          eType="ecore:EClass ../../org.storydriven.storydiagrams/model/storydiagrams.ecore#//activities/Activity"
+          volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.callee.oclAsType(Activity)"/>
         </eAnnotations>

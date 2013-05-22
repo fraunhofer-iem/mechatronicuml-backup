@@ -63,16 +63,6 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 	protected Callable callee;
 
 	/**
-	 * The cached value of the '{@link #getActivity() <em>Activity</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getActivity()
-	 * @generated
-	 * @ordered
-	 */
-	protected Activity activity;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -147,15 +137,8 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 	 * @generated
 	 */
 	public Activity getActivity() {
-		if (activity != null && activity.eIsProxy()) {
-			InternalEObject oldActivity = (InternalEObject)activity;
-			activity = (Activity)eResolveProxy(oldActivity);
-			if (activity != oldActivity) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionPackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, oldActivity, activity));
-			}
-		}
-		return activity;
+		Activity activity = basicGetActivity();
+		return activity != null && activity.eIsProxy() ? (Activity)eResolveProxy((InternalEObject)activity) : activity;
 	}
 
 	/**
@@ -164,7 +147,10 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 	 * @generated
 	 */
 	public Activity basicGetActivity() {
-		return activity;
+		// TODO: implement this method to return the 'Activity' reference
+		// -> do not perform proxy resolution
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -173,10 +159,9 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 	 * @generated
 	 */
 	public void setActivity(Activity newActivity) {
-		Activity oldActivity = activity;
-		activity = newActivity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY, oldActivity, activity));
+		// TODO: implement this method to set the 'Activity' reference
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -285,7 +270,7 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION__CALLEE:
 				return callee != null;
 			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY:
-				return activity != null;
+				return basicGetActivity() != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -46,7 +46,7 @@ public interface ActivityCallExpression extends Expression, Invocation {
 	 * @return the value of the '<em>Activity</em>' reference.
 	 * @see #setActivity(Activity)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage#getActivityCallExpression_Activity()
-	 * @model required="true"
+	 * @model required="true" transient="true" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.callee.oclAsType(Activity)'"
 	 * @generated
 	 */
