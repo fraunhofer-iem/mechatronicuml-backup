@@ -724,7 +724,7 @@
           upperBound="-1" eType="#//instance/PortInstance" changeable="false" volatile="true"
           transient="true" unsettable="true" derived="true" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if (self.eContainer().oclIsKindOf(ComponentInstance)) then&#xA;&#x9;self.eContainer().oclAsType(ComponentInstance).portInstances&#xA;else&#xA;&#x9;OrderedSet {}&#xA;endif"/>
+          <details key="derivation" value="if (self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(ComponentInstance)) then&#xA;&#x9;self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentInstance).portInstances&#xA;else&#xA;&#x9;OrderedSet {}&#xA;endif"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The port instances of the containing component instance."/>

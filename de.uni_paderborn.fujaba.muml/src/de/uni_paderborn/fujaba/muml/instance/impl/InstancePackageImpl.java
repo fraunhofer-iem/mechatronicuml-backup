@@ -888,7 +888,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (getComponentInstanceConfiguration_ParentPortInstances(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if (self.eContainer().oclIsKindOf(ComponentInstance)) then\n\tself.eContainer().oclAsType(ComponentInstance).portInstances\nelse\n\tOrderedSet {}\nendif"
+			 "derivation", "if (self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(ComponentInstance)) then\n\tself.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentInstance).portInstances\nelse\n\tOrderedSet {}\nendif"
 		   });						
 		addAnnotation
 		  (getDiscretePortInstance_ReceiverMessageTypes(), 

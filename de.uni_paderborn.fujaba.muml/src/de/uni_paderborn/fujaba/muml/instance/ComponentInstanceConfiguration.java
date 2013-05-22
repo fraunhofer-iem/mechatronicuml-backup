@@ -76,7 +76,7 @@ public interface ComponentInstanceConfiguration extends NamedElement, Commentabl
 	 * @see #isSetParentPortInstances()
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstanceConfiguration_ParentPortInstances()
 	 * @model containment="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.eContainer().oclIsKindOf(ComponentInstance)) then\n\tself.eContainer().oclAsType(ComponentInstance).portInstances\nelse\n\tOrderedSet {}\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(ComponentInstance)) then\n\tself.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentInstance).portInstances\nelse\n\tOrderedSet {}\nendif'"
 	 * @generated
 	 */
 	EList<PortInstance> getParentPortInstances();
