@@ -15,6 +15,7 @@ import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.util.StringInputStream;
 import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.TextualExpression;
 
 import com.google.inject.Injector;
 import com.google.inject.Key;
@@ -102,7 +103,7 @@ public class LanguageResource {
 	}
 
 	public static String serializeEObject(EObject object, EObject container) {
-		if (!(object instanceof Expression)) {
+		if (!(object instanceof Expression) || object instanceof TextualExpression) {
 			return null;
 		}
 		XtextResource resource = (XtextResource) getXtextResource(container);
