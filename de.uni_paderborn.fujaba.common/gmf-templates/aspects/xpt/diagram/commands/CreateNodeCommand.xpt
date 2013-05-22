@@ -38,7 +38,7 @@ Only allow execution of the create command, if the feature is changeable!
 
 «REM»«ENDREM»
 «AROUND doExecuteWithResultMethod FOR gmfgen::GenNode-»
-	«IF modelFacet.containmentMetaFeature.ecoreFeature.oclAsType(ecore::EReference).changeable»
+	«IF modelFacet.containmentMetaFeature.ecoreFeature.oclAsType(ecore::EReference).oclIsUndefined() or modelFacet.containmentMetaFeature.ecoreFeature.oclAsType(ecore::EReference).changeable»
 		«targetDef.proceed()»
 	«ELSE»
 		«EXPAND xpt::Common::generatedMemberComment»
