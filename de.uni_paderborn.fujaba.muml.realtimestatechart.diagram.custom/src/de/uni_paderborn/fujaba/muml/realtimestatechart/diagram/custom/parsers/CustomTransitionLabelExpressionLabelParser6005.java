@@ -59,7 +59,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 		if (context != null && expression != null) {
 			String serialization = LanguageResource.serializeEObject(expression, context);
 			if (serialization != null) {
-				return serialization;
+				return "[" + serialization + "]";
 			}
 		}
 		return "";
