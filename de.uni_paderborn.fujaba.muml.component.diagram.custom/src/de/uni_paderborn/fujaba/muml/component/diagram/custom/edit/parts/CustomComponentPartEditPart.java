@@ -6,14 +6,20 @@ import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.Request;
+import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.requests.ChangeBoundsRequest;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DiagramDragDropEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableShapeEditPolicy;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands.CreatePortPartsCommand;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart;
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
-import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
 
 /**
@@ -33,6 +39,30 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	protected IFigure createNodeShape() {
 		return primaryShape = new CustomComponentMultiFigure();
 	}
+
+	// Note: The following is the unchanged default implementation, can be uncommented to change it.
+//	@Override
+//	public EditPolicy getPrimaryDragEditPolicy() {
+//		EditPolicy policy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+//		return policy != null ? policy : new ResizableShapeEditPolicy() {
+//			protected Command getMoveCommand(ChangeBoundsRequest request) {
+//				ChangeBoundsRequest req = new ChangeBoundsRequest(REQ_MOVE_CHILDREN);
+//				req.setEditParts(getHost());
+//
+//				req.setMoveDelta(request.getMoveDelta());
+//				req.setSizeDelta(request.getSizeDelta());
+//				req.setLocation(request.getLocation());
+//				req.setExtendedData(request.getExtendedData());
+//				Command cmd =  getHost().getParent().getCommand(req);
+//				if (cmd instanceof ICommandProxy) {
+//					System.out.println(((ICommandProxy)cmd).getICommand());
+//				} else {
+//					System.out.println(cmd);
+//				}
+//				return cmd;
+//			}
+//		};
+//	}
 
 	/**
 	 * Called whenever the EditPart is going to be activated. Initializes

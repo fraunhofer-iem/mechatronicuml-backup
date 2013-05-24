@@ -3,10 +3,7 @@ package de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.parts;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart;
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.MumlEditPartFactory;
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry;
 
 /**
@@ -24,17 +21,19 @@ public class CustomStructuredcomponentEditPartFactory extends
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
-			case CoordinationProtocolEditPart.VISUAL_ID:
+			case CustomCoordinationProtocolEditPart.VISUAL_ID:
 				return new CustomCoordinationProtocolEditPart(view);
+			case CustomModelElementCategoryEditPart.VISUAL_ID:
+				return new CustomModelElementCategoryEditPart(view);
 //			case CustomRolePatternEditPart.VISUAL_ID:
 //				return new CustomRolePatternEditPart(view);
-//			case DiscretePortGmfProtocolEditPart.VISUAL_ID:
+//			case CustomDiscretePortGmfProtocolEditPart.VISUAL_ID:
 //				return new CustomDiscretePortGmfProtocolEditPart(view);
-//			case DiscretePort2EditPart.VISUAL_ID:
+//			case CustomDiscretePort2EditPart.VISUAL_ID:
 //				return new CustomDiscretePort2EditPart(view);
-			case ComponentPartEditPart.VISUAL_ID:
+			case CustomComponentPartEditPart.VISUAL_ID:
 				return new CustomComponentPartEditPart(view);
-			case StaticStructuredComponentComponentCompartmentEditPart.VISUAL_ID:
+			case CustomStaticStructuredComponentComponentCompartmentEditPart.VISUAL_ID:
 				return new CustomStaticStructuredComponentComponentCompartmentEditPart(view);
 			}
 		}
