@@ -3,6 +3,7 @@
 package de.uni_paderborn.fujaba.muml.runtime;
 
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +15,5 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstanc
  * @model abstract="true"
  * @generated
  */
-public interface RuntimeDiscreteInteractionEndpointInstance extends RuntimeBehavioralElement, DiscreteInteractionEndpointInstance {
+public interface RuntimeDiscreteInteractionEndpointInstance extends RuntimeBehavioralElement, DiscreteInteractionEndpointInstance, DataType {
 } // RuntimeDiscreteInteractionEndpointInstance

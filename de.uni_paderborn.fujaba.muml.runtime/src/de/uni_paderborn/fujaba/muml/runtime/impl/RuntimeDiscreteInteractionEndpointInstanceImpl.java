@@ -11,6 +11,7 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstanc
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
 
+import de.uni_paderborn.fujaba.muml.types.DataType;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -310,6 +311,11 @@ public abstract class RuntimeDiscreteInteractionEndpointInstanceImpl extends Run
 				default: return -1;
 			}
 		}
+		if (baseClass == DataType.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -334,6 +340,11 @@ public abstract class RuntimeDiscreteInteractionEndpointInstanceImpl extends Run
 			}
 		}
 		if (baseClass == DiscreteInteractionEndpointInstance.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == DataType.class) {
 			switch (baseFeatureID) {
 				default: return -1;
 			}

@@ -19,6 +19,7 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -294,6 +295,11 @@ public abstract class RuntimeDiscretePortInstanceImpl extends DiscretePortInstan
 				default: return -1;
 			}
 		}
+		if (baseClass == DataType.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == RuntimeDiscreteInteractionEndpointInstance.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
@@ -313,6 +319,11 @@ public abstract class RuntimeDiscretePortInstanceImpl extends DiscretePortInstan
 			switch (baseFeatureID) {
 				case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE: return RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE__STATECHART_INSTANCE;
 				case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER: return RuntimePackage.RUNTIME_DISCRETE_PORT_INSTANCE__MESSAGE_BUFFER;
+				default: return -1;
+			}
+		}
+		if (baseClass == DataType.class) {
+			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}

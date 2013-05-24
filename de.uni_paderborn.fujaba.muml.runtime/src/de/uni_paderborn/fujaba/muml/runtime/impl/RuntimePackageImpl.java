@@ -792,6 +792,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -820,6 +821,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		messageOnConnectorEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 		runtimeDiscreteInteractionEndpointInstanceEClass.getESuperTypes().add(this.getRuntimeBehavioralElement());
 		runtimeDiscreteInteractionEndpointInstanceEClass.getESuperTypes().add(theConnectorPackage.getDiscreteInteractionEndpointInstance());
+		runtimeDiscreteInteractionEndpointInstanceEClass.getESuperTypes().add(theTypesPackage.getDataType());
 		runtimeDiscreteSinglePortInstanceEClass.getESuperTypes().add(this.getRuntimeDiscretePortInstance());
 		runtimeDiscreteSinglePortInstanceEClass.getESuperTypes().add(theInstancePackage.getDiscreteSinglePortInstance());
 		runtimeDiscreteMultiPortInstanceEClass.getESuperTypes().add(theInstancePackage.getDiscreteMultiPortInstance());

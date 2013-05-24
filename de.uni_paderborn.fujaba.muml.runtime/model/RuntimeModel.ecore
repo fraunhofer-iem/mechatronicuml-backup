@@ -102,7 +102,7 @@
         lowerBound="1" eType="#//RuntimeConnectorInstance" eOpposite="#//RuntimeConnectorInstance/transientMessages"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscreteInteractionEndpointInstance"
-      abstract="true" eSuperTypes="#//RuntimeBehavioralElement ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpointInstance"/>
+      abstract="true" eSuperTypes="#//RuntimeBehavioralElement ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpointInstance ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscreteSinglePortInstance" eSuperTypes="#//RuntimeDiscretePortInstance ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscreteSinglePortInstance"/>
   <eClassifiers xsi:type="ecore:EClass" name="RuntimeDiscreteMultiPortInstance" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DiscreteMultiPortInstance #//RuntimeDiscretePortInstance"/>
 </ecore:EPackage>

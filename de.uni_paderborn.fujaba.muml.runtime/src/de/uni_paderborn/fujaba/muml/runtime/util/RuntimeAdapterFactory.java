@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.*;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 import de.uni_paderborn.fujaba.muml.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.MessageOnConnector;
 import de.uni_paderborn.fujaba.muml.runtime.MultiRoleInstance;
@@ -203,6 +204,10 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDiscretePortInstance(DiscretePortInstance object) {
 				return createDiscretePortInstanceAdapter();
+			}
+			@Override
+			public Adapter caseDataType(DataType object) {
+				return createDataTypeAdapter();
 			}
 			@Override
 			public Adapter caseDiscreteSingleInteractionEndpointInstance(DiscreteSingleInteractionEndpointInstance object) {
@@ -613,6 +618,20 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiscretePortInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.types.DataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.types.DataType
+	 * @generated
+	 */
+	public Adapter createDataTypeAdapter() {
 		return null;
 	}
 

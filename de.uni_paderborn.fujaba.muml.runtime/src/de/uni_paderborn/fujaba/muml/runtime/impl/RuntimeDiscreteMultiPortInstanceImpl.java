@@ -12,6 +12,7 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
 
+import de.uni_paderborn.fujaba.muml.types.DataType;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -296,6 +297,11 @@ public class RuntimeDiscreteMultiPortInstanceImpl extends DiscreteMultiPortInsta
 				default: return -1;
 			}
 		}
+		if (baseClass == DataType.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == RuntimeDiscreteInteractionEndpointInstance.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
@@ -320,6 +326,11 @@ public class RuntimeDiscreteMultiPortInstanceImpl extends DiscreteMultiPortInsta
 			switch (baseFeatureID) {
 				case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE: return RuntimePackage.RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__STATECHART_INSTANCE;
 				case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER: return RuntimePackage.RUNTIME_DISCRETE_MULTI_PORT_INSTANCE__MESSAGE_BUFFER;
+				default: return -1;
+			}
+		}
+		if (baseClass == DataType.class) {
+			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}
