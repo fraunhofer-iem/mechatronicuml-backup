@@ -21928,5 +21928,7 @@
     <changes xsi:type="history:Set" element="muml.ecore#//instance/ComponentInstanceConfiguration/parentPortInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="if (self.oclAsType(ecore::EObject).eContainer().oclIsKindOf(ComponentInstance)) then&#xA;&#x9;self.oclAsType(ecore::EObject).eContainer().oclAsType(ComponentInstance).portInstances&#xA;else&#xA;&#x9;OrderedSet {}&#xA;endif"
         oldDataValue="if (self.eContainer().oclIsKindOf(ComponentInstance)) then&#xA;&#x9;self.eContainer().oclAsType(ComponentInstance).portInstances&#xA;else&#xA;&#x9;OrderedSet {}&#xA;endif"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//protocol" featureName="nsURI"
+        dataValue="http://www.fujaba.de/muml/protocol/0.3.19" oldDataValue="http://www.fujaba.de/muml/protocol/0.3.18"/>
   </releases>
 </history:History>

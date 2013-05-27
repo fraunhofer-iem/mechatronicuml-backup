@@ -215,7 +215,7 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 				sb.append("ms");
 				break;
 			case MICROSECONDS:
-				sb.append('\u03BC' + "s"); // \u03BC = μ
+				sb.append('\u03BC' + "s"); // \u03BC = ?
 				break;
 			case NANOSECONDS:
 				sb.append("ns");

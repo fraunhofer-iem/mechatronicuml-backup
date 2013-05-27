@@ -64,14 +64,14 @@ public interface ProtocolPackage extends EPackage {
 	ProtocolPackage eINSTANCE = de.uni_paderborn.fujaba.muml.protocol.impl.ProtocolPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleConnectorImpl <em>Role Connector</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl <em>Abstract Coordination Specification</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.protocol.impl.RoleConnectorImpl
-	 * @see de.uni_paderborn.fujaba.muml.protocol.impl.ProtocolPackageImpl#getRoleConnector()
+	 * @see de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl
+	 * @see de.uni_paderborn.fujaba.muml.protocol.impl.ProtocolPackageImpl#getAbstractCoordinationSpecification()
 	 * @generated
 	 */
-	int ROLE_CONNECTOR = 0;
+	int ABSTRACT_COORDINATION_SPECIFICATION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -80,7 +80,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR__ANNOTATION = ConnectorPackage.CONNECTOR__ANNOTATION;
+	int ABSTRACT_COORDINATION_SPECIFICATION__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -89,7 +89,25 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR__EXTENSION = ConnectorPackage.CONNECTOR__EXTENSION;
+	int ABSTRACT_COORDINATION_SPECIFICATION__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COORDINATION_SPECIFICATION__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COORDINATION_SPECIFICATION__CONSTRAINT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -98,52 +116,34 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR__COMMENT = ConnectorPackage.CONNECTOR__COMMENT;
+	int ABSTRACT_COORDINATION_SPECIFICATION__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Connector Endpoints</b></em>' reference list.
+	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR__CONNECTOR_ENDPOINTS = ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS;
+	int ABSTRACT_COORDINATION_SPECIFICATION__ROLES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Coordination Protocol</b></em>' container reference.
+	 * The feature id for the '<em><b>Role Connector</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR__COORDINATION_PROTOCOL = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 0;
+	int ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Connector Quality Of Service Assumptions</b></em>' containment reference.
+	 * The number of structural features of the '<em>Abstract Coordination Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Roles</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_CONNECTOR__ROLES = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Role Connector</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE_CONNECTOR_FEATURE_COUNT = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 3;
+	int ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -152,7 +152,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___ECLASS = ConnectorPackage.CONNECTOR___ECLASS;
+	int ABSTRACT_COORDINATION_SPECIFICATION___ECLASS = CorePackage.NAMED_ELEMENT___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -161,7 +161,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___EIS_PROXY = ConnectorPackage.CONNECTOR___EIS_PROXY;
+	int ABSTRACT_COORDINATION_SPECIFICATION___EIS_PROXY = CorePackage.NAMED_ELEMENT___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -170,7 +170,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___ERESOURCE = ConnectorPackage.CONNECTOR___ERESOURCE;
+	int ABSTRACT_COORDINATION_SPECIFICATION___ERESOURCE = CorePackage.NAMED_ELEMENT___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -179,7 +179,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___ECONTAINER = ConnectorPackage.CONNECTOR___ECONTAINER;
+	int ABSTRACT_COORDINATION_SPECIFICATION___ECONTAINER = CorePackage.NAMED_ELEMENT___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -188,7 +188,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___ECONTAINING_FEATURE = ConnectorPackage.CONNECTOR___ECONTAINING_FEATURE;
+	int ABSTRACT_COORDINATION_SPECIFICATION___ECONTAINING_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -197,7 +197,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___ECONTAINMENT_FEATURE = ConnectorPackage.CONNECTOR___ECONTAINMENT_FEATURE;
+	int ABSTRACT_COORDINATION_SPECIFICATION___ECONTAINMENT_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -206,7 +206,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___ECONTENTS = ConnectorPackage.CONNECTOR___ECONTENTS;
+	int ABSTRACT_COORDINATION_SPECIFICATION___ECONTENTS = CorePackage.NAMED_ELEMENT___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -215,7 +215,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___EALL_CONTENTS = ConnectorPackage.CONNECTOR___EALL_CONTENTS;
+	int ABSTRACT_COORDINATION_SPECIFICATION___EALL_CONTENTS = CorePackage.NAMED_ELEMENT___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -224,7 +224,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___ECROSS_REFERENCES = ConnectorPackage.CONNECTOR___ECROSS_REFERENCES;
+	int ABSTRACT_COORDINATION_SPECIFICATION___ECROSS_REFERENCES = CorePackage.NAMED_ELEMENT___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -233,7 +233,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___EGET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR___EGET__ESTRUCTURALFEATURE;
+	int ABSTRACT_COORDINATION_SPECIFICATION___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -242,7 +242,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___EGET__ESTRUCTURALFEATURE_BOOLEAN = ConnectorPackage.CONNECTOR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int ABSTRACT_COORDINATION_SPECIFICATION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -251,7 +251,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___ESET__ESTRUCTURALFEATURE_OBJECT = ConnectorPackage.CONNECTOR___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int ABSTRACT_COORDINATION_SPECIFICATION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -260,7 +260,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___EIS_SET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR___EIS_SET__ESTRUCTURALFEATURE;
+	int ABSTRACT_COORDINATION_SPECIFICATION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -269,7 +269,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___EUNSET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR___EUNSET__ESTRUCTURALFEATURE;
+	int ABSTRACT_COORDINATION_SPECIFICATION___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -278,7 +278,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___EINVOKE__EOPERATION_ELIST = ConnectorPackage.CONNECTOR___EINVOKE__EOPERATION_ELIST;
+	int ABSTRACT_COORDINATION_SPECIFICATION___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -287,7 +287,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR___GET_EXTENSION__ECLASS;
+	int ABSTRACT_COORDINATION_SPECIFICATION___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -296,7 +296,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___PROVIDE_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR___PROVIDE_EXTENSION__ECLASS;
+	int ABSTRACT_COORDINATION_SPECIFICATION___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -305,7 +305,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___GET_ANNOTATION__STRING = ConnectorPackage.CONNECTOR___GET_ANNOTATION__STRING;
+	int ABSTRACT_COORDINATION_SPECIFICATION___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -314,16 +314,26 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___PROVIDE_ANNOTATION__STRING = ConnectorPackage.CONNECTOR___PROVIDE_ANNOTATION__STRING;
+	int ABSTRACT_COORDINATION_SPECIFICATION___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
-	 * The number of operations of the '<em>Role Connector</em>' class.
+	 * The number of operations of the '<em>Abstract Coordination Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR_OPERATION_COUNT = ConnectorPackage.CONNECTOR_OPERATION_COUNT + 0;
+	int ABSTRACT_COORDINATION_SPECIFICATION_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleConnectorImpl <em>Role Connector</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.protocol.impl.RoleConnectorImpl
+	 * @see de.uni_paderborn.fujaba.muml.protocol.impl.ProtocolPackageImpl#getRoleConnector()
+	 * @generated
+	 */
+	int ROLE_CONNECTOR = 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.CoordinationProtocolImpl <em>Coordination Protocol</em>}' class.
@@ -342,7 +352,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int COORDINATION_PROTOCOL__ANNOTATION = ABSTRACT_COORDINATION_SPECIFICATION__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -351,7 +361,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int COORDINATION_PROTOCOL__EXTENSION = ABSTRACT_COORDINATION_SPECIFICATION__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -360,7 +370,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int COORDINATION_PROTOCOL__NAME = ABSTRACT_COORDINATION_SPECIFICATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
@@ -369,7 +379,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL__CONSTRAINT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int COORDINATION_PROTOCOL__CONSTRAINT = ABSTRACT_COORDINATION_SPECIFICATION__CONSTRAINT;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -378,7 +388,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int COORDINATION_PROTOCOL__COMMENT = ABSTRACT_COORDINATION_SPECIFICATION__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
@@ -387,7 +397,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL__ROLES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int COORDINATION_PROTOCOL__ROLES = ABSTRACT_COORDINATION_SPECIFICATION__ROLES;
 
 	/**
 	 * The feature id for the '<em><b>Role Connector</b></em>' containment reference.
@@ -396,7 +406,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL__ROLE_CONNECTOR = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int COORDINATION_PROTOCOL__ROLE_CONNECTOR = ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR;
 
 	/**
 	 * The feature id for the '<em><b>Gmf Coordination Protocol</b></em>' containment reference.
@@ -405,7 +415,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int COORDINATION_PROTOCOL__GMF_COORDINATION_PROTOCOL = ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Coordination Protocol</em>' class.
@@ -414,7 +424,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int COORDINATION_PROTOCOL_FEATURE_COUNT = ABSTRACT_COORDINATION_SPECIFICATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -423,7 +433,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___ECLASS = CorePackage.NAMED_ELEMENT___ECLASS;
+	int COORDINATION_PROTOCOL___ECLASS = ABSTRACT_COORDINATION_SPECIFICATION___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -432,7 +442,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___EIS_PROXY = CorePackage.NAMED_ELEMENT___EIS_PROXY;
+	int COORDINATION_PROTOCOL___EIS_PROXY = ABSTRACT_COORDINATION_SPECIFICATION___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -441,7 +451,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___ERESOURCE = CorePackage.NAMED_ELEMENT___ERESOURCE;
+	int COORDINATION_PROTOCOL___ERESOURCE = ABSTRACT_COORDINATION_SPECIFICATION___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -450,7 +460,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___ECONTAINER = CorePackage.NAMED_ELEMENT___ECONTAINER;
+	int COORDINATION_PROTOCOL___ECONTAINER = ABSTRACT_COORDINATION_SPECIFICATION___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -459,7 +469,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___ECONTAINING_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
+	int COORDINATION_PROTOCOL___ECONTAINING_FEATURE = ABSTRACT_COORDINATION_SPECIFICATION___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -468,7 +478,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___ECONTAINMENT_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
+	int COORDINATION_PROTOCOL___ECONTAINMENT_FEATURE = ABSTRACT_COORDINATION_SPECIFICATION___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -477,7 +487,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___ECONTENTS = CorePackage.NAMED_ELEMENT___ECONTENTS;
+	int COORDINATION_PROTOCOL___ECONTENTS = ABSTRACT_COORDINATION_SPECIFICATION___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -486,7 +496,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___EALL_CONTENTS = CorePackage.NAMED_ELEMENT___EALL_CONTENTS;
+	int COORDINATION_PROTOCOL___EALL_CONTENTS = ABSTRACT_COORDINATION_SPECIFICATION___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -495,7 +505,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___ECROSS_REFERENCES = CorePackage.NAMED_ELEMENT___ECROSS_REFERENCES;
+	int COORDINATION_PROTOCOL___ECROSS_REFERENCES = ABSTRACT_COORDINATION_SPECIFICATION___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -504,7 +514,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int COORDINATION_PROTOCOL___EGET__ESTRUCTURALFEATURE = ABSTRACT_COORDINATION_SPECIFICATION___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -513,7 +523,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int COORDINATION_PROTOCOL___EGET__ESTRUCTURALFEATURE_BOOLEAN = ABSTRACT_COORDINATION_SPECIFICATION___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -522,7 +532,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int COORDINATION_PROTOCOL___ESET__ESTRUCTURALFEATURE_OBJECT = ABSTRACT_COORDINATION_SPECIFICATION___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -531,7 +541,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int COORDINATION_PROTOCOL___EIS_SET__ESTRUCTURALFEATURE = ABSTRACT_COORDINATION_SPECIFICATION___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -540,7 +550,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int COORDINATION_PROTOCOL___EUNSET__ESTRUCTURALFEATURE = ABSTRACT_COORDINATION_SPECIFICATION___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -549,7 +559,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int COORDINATION_PROTOCOL___EINVOKE__EOPERATION_ELIST = ABSTRACT_COORDINATION_SPECIFICATION___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -558,7 +568,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int COORDINATION_PROTOCOL___GET_EXTENSION__ECLASS = ABSTRACT_COORDINATION_SPECIFICATION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -567,7 +577,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int COORDINATION_PROTOCOL___PROVIDE_EXTENSION__ECLASS = ABSTRACT_COORDINATION_SPECIFICATION___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -576,7 +586,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int COORDINATION_PROTOCOL___GET_ANNOTATION__STRING = ABSTRACT_COORDINATION_SPECIFICATION___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -585,7 +595,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int COORDINATION_PROTOCOL___PROVIDE_ANNOTATION__STRING = ABSTRACT_COORDINATION_SPECIFICATION___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Coordination Protocol</em>' class.
@@ -594,7 +604,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int COORDINATION_PROTOCOL_OPERATION_COUNT = ABSTRACT_COORDINATION_SPECIFICATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl <em>Role</em>}' class.
@@ -949,6 +959,258 @@ public interface ProtocolPackage extends EPackage {
 	int ROLE_OPERATION_COUNT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR__ANNOTATION = ConnectorPackage.CONNECTOR__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR__EXTENSION = ConnectorPackage.CONNECTOR__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR__COMMENT = ConnectorPackage.CONNECTOR__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Connector Endpoints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR__CONNECTOR_ENDPOINTS = ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS;
+
+	/**
+	 * The feature id for the '<em><b>Coordination Protocol</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR__COORDINATION_PROTOCOL = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Connector Quality Of Service Assumptions</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR__ROLES = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Role Connector</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR_FEATURE_COUNT = ConnectorPackage.CONNECTOR_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___ECLASS = ConnectorPackage.CONNECTOR___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___EIS_PROXY = ConnectorPackage.CONNECTOR___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___ERESOURCE = ConnectorPackage.CONNECTOR___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___ECONTAINER = ConnectorPackage.CONNECTOR___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___ECONTAINING_FEATURE = ConnectorPackage.CONNECTOR___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___ECONTAINMENT_FEATURE = ConnectorPackage.CONNECTOR___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___ECONTENTS = ConnectorPackage.CONNECTOR___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___EALL_CONTENTS = ConnectorPackage.CONNECTOR___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___ECROSS_REFERENCES = ConnectorPackage.CONNECTOR___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___EGET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___EGET__ESTRUCTURALFEATURE_BOOLEAN = ConnectorPackage.CONNECTOR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___ESET__ESTRUCTURALFEATURE_OBJECT = ConnectorPackage.CONNECTOR___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___EIS_SET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___EUNSET__ESTRUCTURALFEATURE = ConnectorPackage.CONNECTOR___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___EINVOKE__EOPERATION_ELIST = ConnectorPackage.CONNECTOR___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___PROVIDE_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___GET_ANNOTATION__STRING = ConnectorPackage.CONNECTOR___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR___PROVIDE_ANNOTATION__STRING = ConnectorPackage.CONNECTOR___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Role Connector</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR_OPERATION_COUNT = ConnectorPackage.CONNECTOR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.MessageBufferImpl <em>Message Buffer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -956,7 +1218,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.protocol.impl.ProtocolPackageImpl#getMessageBuffer()
 	 * @generated
 	 */
-	int MESSAGE_BUFFER = 3;
+	int MESSAGE_BUFFER = 4;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1218,7 +1480,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.protocol.impl.ProtocolPackageImpl#getConnectorQualityOfServiceAssumptions()
 	 * @generated
 	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = 4;
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1466,6 +1728,38 @@ public interface ProtocolPackage extends EPackage {
 
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification <em>Abstract Coordination Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Coordination Specification</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification
+	 * @generated
+	 */
+	EClass getAbstractCoordinationSpecification();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getRoles <em>Roles</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Roles</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getRoles()
+	 * @see #getAbstractCoordinationSpecification()
+	 * @generated
+	 */
+	EReference getAbstractCoordinationSpecification_Roles();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getRoleConnector <em>Role Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Role Connector</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getRoleConnector()
+	 * @see #getAbstractCoordinationSpecification()
+	 * @generated
+	 */
+	EReference getAbstractCoordinationSpecification_RoleConnector();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector <em>Role Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1517,28 +1811,6 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCoordinationProtocol();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getRoles <em>Roles</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Roles</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getRoles()
-	 * @see #getCoordinationProtocol()
-	 * @generated
-	 */
-	EReference getCoordinationProtocol_Roles();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getRoleConnector <em>Role Connector</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Role Connector</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getRoleConnector()
-	 * @see #getCoordinationProtocol()
-	 * @generated
-	 */
-	EReference getCoordinationProtocol_RoleConnector();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getGmfCoordinationProtocol <em>Gmf Coordination Protocol</em>}'.
@@ -1725,6 +1997,32 @@ public interface ProtocolPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl <em>Abstract Coordination Specification</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl
+		 * @see de.uni_paderborn.fujaba.muml.protocol.impl.ProtocolPackageImpl#getAbstractCoordinationSpecification()
+		 * @generated
+		 */
+		EClass ABSTRACT_COORDINATION_SPECIFICATION = eINSTANCE.getAbstractCoordinationSpecification();
+
+		/**
+		 * The meta object literal for the '<em><b>Roles</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_COORDINATION_SPECIFICATION__ROLES = eINSTANCE.getAbstractCoordinationSpecification_Roles();
+
+		/**
+		 * The meta object literal for the '<em><b>Role Connector</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR = eINSTANCE.getAbstractCoordinationSpecification_RoleConnector();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleConnectorImpl <em>Role Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1767,22 +2065,6 @@ public interface ProtocolPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COORDINATION_PROTOCOL = eINSTANCE.getCoordinationProtocol();
-
-		/**
-		 * The meta object literal for the '<em><b>Roles</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COORDINATION_PROTOCOL__ROLES = eINSTANCE.getCoordinationProtocol_Roles();
-
-		/**
-		 * The meta object literal for the '<em><b>Role Connector</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COORDINATION_PROTOCOL__ROLE_CONNECTOR = eINSTANCE.getCoordinationProtocol_RoleConnector();
 
 		/**
 		 * The meta object literal for the '<em><b>Gmf Coordination Protocol</b></em>' containment reference feature.

@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl;
+import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
@@ -111,9 +112,9 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocol getCoordinationProtocol() {
+	public AbstractCoordinationSpecification getCoordinationProtocol() {
 		if (eContainerFeatureID() != ProtocolPackage.ROLE__COORDINATION_PROTOCOL) return null;
-		return (CoordinationProtocol)eContainer();
+		return (AbstractCoordinationSpecification)eContainer();
 	}
 
 	/**
@@ -121,7 +122,7 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCoordinationProtocol(CoordinationProtocol newCoordinationProtocol, NotificationChain msgs) {
+	public NotificationChain basicSetCoordinationProtocol(AbstractCoordinationSpecification newCoordinationProtocol, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newCoordinationProtocol, ProtocolPackage.ROLE__COORDINATION_PROTOCOL, msgs);
 		return msgs;
 	}
@@ -131,7 +132,7 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCoordinationProtocol(CoordinationProtocol newCoordinationProtocol) {
+	public void setCoordinationProtocol(AbstractCoordinationSpecification newCoordinationProtocol) {
 		if (newCoordinationProtocol != eInternalContainer() || (eContainerFeatureID() != ProtocolPackage.ROLE__COORDINATION_PROTOCOL && newCoordinationProtocol != null)) {
 			if (EcoreUtil.isAncestor(this, newCoordinationProtocol))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -139,7 +140,7 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newCoordinationProtocol != null)
-				msgs = ((InternalEObject)newCoordinationProtocol).eInverseAdd(this, ProtocolPackage.COORDINATION_PROTOCOL__ROLES, CoordinationProtocol.class, msgs);
+				msgs = ((InternalEObject)newCoordinationProtocol).eInverseAdd(this, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES, AbstractCoordinationSpecification.class, msgs);
 			msgs = basicSetCoordinationProtocol(newCoordinationProtocol, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -210,7 +211,7 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetCoordinationProtocol((CoordinationProtocol)otherEnd, msgs);
+				return basicSetCoordinationProtocol((AbstractCoordinationSpecification)otherEnd, msgs);
 			case ProtocolPackage.ROLE__PORT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPort()).basicAdd(otherEnd, msgs);
 			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
@@ -246,7 +247,7 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
-				return eInternalContainer().eInverseRemove(this, ProtocolPackage.COORDINATION_PROTOCOL__ROLES, CoordinationProtocol.class, msgs);
+				return eInternalContainer().eInverseRemove(this, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES, AbstractCoordinationSpecification.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -284,7 +285,7 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
-				setCoordinationProtocol((CoordinationProtocol)newValue);
+				setCoordinationProtocol((AbstractCoordinationSpecification)newValue);
 				return;
 			case ProtocolPackage.ROLE__PORT:
 				getPort().clear();
@@ -307,7 +308,7 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
-				setCoordinationProtocol((CoordinationProtocol)null);
+				setCoordinationProtocol((AbstractCoordinationSpecification)null);
 				return;
 			case ProtocolPackage.ROLE__PORT:
 				getPort().clear();

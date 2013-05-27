@@ -85,8 +85,8 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 	protected ProtocolSwitch<Adapter> modelSwitch =
 		new ProtocolSwitch<Adapter>() {
 			@Override
-			public Adapter caseRoleConnector(RoleConnector object) {
-				return createRoleConnectorAdapter();
+			public Adapter caseAbstractCoordinationSpecification(AbstractCoordinationSpecification object) {
+				return createAbstractCoordinationSpecificationAdapter();
 			}
 			@Override
 			public Adapter caseCoordinationProtocol(CoordinationProtocol object) {
@@ -95,6 +95,10 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseRole(Role object) {
 				return createRoleAdapter();
+			}
+			@Override
+			public Adapter caseRoleConnector(RoleConnector object) {
+				return createRoleConnectorAdapter();
 			}
 			@Override
 			public Adapter caseMessageBuffer(MessageBuffer object) {
@@ -109,20 +113,16 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 				return createExtendableElementAdapter();
 			}
 			@Override
-			public Adapter caseCommentableElement(CommentableElement object) {
-				return createCommentableElementAdapter();
-			}
-			@Override
-			public Adapter caseConnector(Connector object) {
-				return createConnectorAdapter();
-			}
-			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
 			}
 			@Override
 			public Adapter caseConstrainableElement(ConstrainableElement object) {
 				return createConstrainableElementAdapter();
+			}
+			@Override
+			public Adapter caseCommentableElement(CommentableElement object) {
+				return createCommentableElementAdapter();
 			}
 			@Override
 			public Adapter caseConnectorEndpoint(ConnectorEndpoint object) {
@@ -139,6 +139,10 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDataType(DataType object) {
 				return createDataTypeAdapter();
+			}
+			@Override
+			public Adapter caseConnector(Connector object) {
+				return createConnectorAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -159,6 +163,20 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification <em>Abstract Coordination Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification
+	 * @generated
+	 */
+	public Adapter createAbstractCoordinationSpecificationAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector <em>Role Connector</em>}'.

@@ -94,12 +94,14 @@ public class ProtocolValidator extends MumlValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case ProtocolPackage.ROLE_CONNECTOR:
-				return validateRoleConnector((RoleConnector)value, diagnostics, context);
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION:
+				return validateAbstractCoordinationSpecification((AbstractCoordinationSpecification)value, diagnostics, context);
 			case ProtocolPackage.COORDINATION_PROTOCOL:
 				return validateCoordinationProtocol((CoordinationProtocol)value, diagnostics, context);
 			case ProtocolPackage.ROLE:
 				return validateRole((Role)value, diagnostics, context);
+			case ProtocolPackage.ROLE_CONNECTOR:
+				return validateRoleConnector((RoleConnector)value, diagnostics, context);
 			case ProtocolPackage.MESSAGE_BUFFER:
 				return validateMessageBuffer((MessageBuffer)value, diagnostics, context);
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
@@ -107,6 +109,89 @@ public class ProtocolValidator extends MumlValidator {
 			default:
 				return true;
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAbstractCoordinationSpecification(AbstractCoordinationSpecification abstractCoordinationSpecification, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(abstractCoordinationSpecification, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(abstractCoordinationSpecification, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(abstractCoordinationSpecification, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(abstractCoordinationSpecification, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(abstractCoordinationSpecification, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(abstractCoordinationSpecification, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(abstractCoordinationSpecification, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(abstractCoordinationSpecification, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(abstractCoordinationSpecification, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAbstractCoordinationSpecification_UniqueRoleNames(abstractCoordinationSpecification, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAbstractCoordinationSpecification_RoleMessageTypesMustBeCompatible(abstractCoordinationSpecification, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the UniqueRoleNames constraint of '<em>Abstract Coordination Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ABSTRACT_COORDINATION_SPECIFICATION__UNIQUE_ROLE_NAMES__EEXPRESSION = "self.roles->isUnique(name)";
+
+	/**
+	 * Validates the UniqueRoleNames constraint of '<em>Abstract Coordination Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAbstractCoordinationSpecification_UniqueRoleNames(AbstractCoordinationSpecification abstractCoordinationSpecification, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION,
+				 abstractCoordinationSpecification,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UniqueRoleNames",
+				 ABSTRACT_COORDINATION_SPECIFICATION__UNIQUE_ROLE_NAMES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the RoleMessageTypesMustBeCompatible constraint of '<em>Abstract Coordination Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ABSTRACT_COORDINATION_SPECIFICATION__ROLE_MESSAGE_TYPES_MUST_BE_COMPATIBLE__EEXPRESSION = "-- Roles should be compatibe w.r.t. message types\r\n" +
+		"self.roles->forAll(role1 : Role, role2 : Role |\r\n" +
+		"   role1 <> role2\r\n" +
+		"   implies\r\n" +
+		"   role1.senderMessageTypes = role2.receiverMessageTypes\r\n" +
+		")";
+
+	/**
+	 * Validates the RoleMessageTypesMustBeCompatible constraint of '<em>Abstract Coordination Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAbstractCoordinationSpecification_RoleMessageTypesMustBeCompatible(AbstractCoordinationSpecification abstractCoordinationSpecification, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION,
+				 abstractCoordinationSpecification,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "RoleMessageTypesMustBeCompatible",
+				 ABSTRACT_COORDINATION_SPECIFICATION__ROLE_MESSAGE_TYPES_MUST_BE_COMPATIBLE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -176,39 +261,10 @@ public class ProtocolValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(coordinationProtocol, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(coordinationProtocol, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(coordinationProtocol, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCoordinationProtocol_UniqueRoleNames(coordinationProtocol, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAbstractCoordinationSpecification_UniqueRoleNames(coordinationProtocol, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAbstractCoordinationSpecification_RoleMessageTypesMustBeCompatible(coordinationProtocol, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCoordinationProtocol_CoordinationProtocolNamesMustBeUnique(coordinationProtocol, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCoordinationProtocol_RoleMessageTypesMustBeCompatible(coordinationProtocol, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * The cached validation expression for the UniqueRoleNames constraint of '<em>Coordination Protocol</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String COORDINATION_PROTOCOL__UNIQUE_ROLE_NAMES__EEXPRESSION = "self.roles->isUnique(name)";
-
-	/**
-	 * Validates the UniqueRoleNames constraint of '<em>Coordination Protocol</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCoordinationProtocol_UniqueRoleNames(CoordinationProtocol coordinationProtocol, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ProtocolPackage.Literals.COORDINATION_PROTOCOL,
-				 coordinationProtocol,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "UniqueRoleNames",
-				 COORDINATION_PROTOCOL__UNIQUE_ROLE_NAMES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
 	}
 
 	/**
@@ -235,40 +291,6 @@ public class ProtocolValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "CoordinationProtocolNamesMustBeUnique",
 				 COORDINATION_PROTOCOL__COORDINATION_PROTOCOL_NAMES_MUST_BE_UNIQUE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the RoleMessageTypesMustBeCompatible constraint of '<em>Coordination Protocol</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String COORDINATION_PROTOCOL__ROLE_MESSAGE_TYPES_MUST_BE_COMPATIBLE__EEXPRESSION = "-- Roles should be compatibe w.r.t. message types\r\n" +
-		"self.roles->forAll(role1 : Role, role2 : Role |\r\n" +
-		"   role1 <> role2\r\n" +
-		"   implies\r\n" +
-		"   role1.senderMessageTypes = role2.receiverMessageTypes\r\n" +
-		")";
-
-	/**
-	 * Validates the RoleMessageTypesMustBeCompatible constraint of '<em>Coordination Protocol</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCoordinationProtocol_RoleMessageTypesMustBeCompatible(CoordinationProtocol coordinationProtocol, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ProtocolPackage.Literals.COORDINATION_PROTOCOL,
-				 coordinationProtocol,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "RoleMessageTypesMustBeCompatible",
-				 COORDINATION_PROTOCOL__ROLE_MESSAGE_TYPES_MUST_BE_COMPATIBLE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

@@ -65,9 +65,9 @@ public class ProtocolFactoryImpl extends EFactoryImpl implements ProtocolFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ProtocolPackage.ROLE_CONNECTOR: return createRoleConnector();
 			case ProtocolPackage.COORDINATION_PROTOCOL: return createCoordinationProtocol();
 			case ProtocolPackage.ROLE: return createRole();
+			case ProtocolPackage.ROLE_CONNECTOR: return createRoleConnector();
 			case ProtocolPackage.MESSAGE_BUFFER: return createMessageBuffer();
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS: return createConnectorQualityOfServiceAssumptions();
 			default:

@@ -288,9 +288,9 @@ public class ProtocolItemProviderAdapterFactory extends ProtocolAdapterFactory i
 	 * @generated
 	 */
 	public void dispose() {
-		if (roleConnectorItemProvider != null) roleConnectorItemProvider.dispose();
 		if (coordinationProtocolItemProvider != null) coordinationProtocolItemProvider.dispose();
 		if (roleItemProvider != null) roleItemProvider.dispose();
+		if (roleConnectorItemProvider != null) roleConnectorItemProvider.dispose();
 		if (messageBufferItemProvider != null) messageBufferItemProvider.dispose();
 		if (connectorQualityOfServiceAssumptionsItemProvider != null) connectorQualityOfServiceAssumptionsItemProvider.dispose();
 	}

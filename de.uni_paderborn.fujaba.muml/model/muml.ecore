@@ -840,13 +840,112 @@
       </eAnnotations>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="protocol" nsURI="http://www.fujaba.de/muml/protocol/0.3.18"
+  <eSubpackages name="protocol" nsURI="http://www.fujaba.de/muml/protocol/0.3.19"
       nsPrefix="protocol">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractCoordinationSpecification"
+        abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement #//constraint/ConstrainableElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="\todosd{document!}"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="UniqueRoleNames RoleMessageTypesMustBeCompatible"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="UniqueRoleNames" value="self.roles->isUnique(name)"/>
+        <details key="RoleMessageTypesMustBeCompatible" value="-- Roles should be compatibe w.r.t. message types&#xD;&#xA;self.roles->forAll(role1 : Role, role2 : Role |&#xD;&#xA;   role1 &lt;> role2&#xD;&#xA;   implies&#xD;&#xA;   role1.senderMessageTypes = role2.receiverMessageTypes&#xD;&#xA;)"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="2"
+          upperBound="2" eType="#//protocol/Role" containment="true" eOpposite="#//protocol/Role/coordinationProtocol">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The roles belonging to this coordination protocol."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" lowerBound="1"
+          eType="#//protocol/RoleConnector" containment="true" eOpposite="#//protocol/RoleConnector/coordinationProtocol">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Each coordination protocol has exactly one role connector.&#xD;&#xA;Cardinality is 1 because there exists no useful protocol with more than two roles. If a useful protocol exists with more than 2 roles, then change cardinality to 1..*"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocol" eSuperTypes="#//protocol/AbstractCoordinationSpecification">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A coordination protocol specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination protocols. Constraints specify certain properties the coordination specified by the protocol has to fullfill."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="CoordinationProtocolNamesMustBeUnique"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="CoordinationProtocolNamesMustBeUnique" value="CoordinationProtocol.allInstances()->isUnique(name)"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="gmfCoordinationProtocol"
+          eType="#//protocol/CoordinationProtocol" changeable="false" volatile="true"
+          transient="true" derived="true" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This derived reference only exists because GMF needs it to visualize the inner hexagon of a Real-Time Coordination Protocol."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//connector/DiscreteInteractionEndpoint #//types/DataType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a role of a coordination protocol."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="RoleRequiresBehavior" value="not self.behavior.oclIsUndefined()"/>
+        <details key="RoleRequiresMessageTypes" value="self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
+        <details key="ReceiverRoleRequiresMessageBuffer" value="self.receiverMessageTypes->notEmpty() &#xD;&#xA;implies &#xD;&#xA;self.receiverMessageBuffer->notEmpty()"/>
+        <details key="ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer" value="-- Each receiver message type should be assigned to exactly one buffer&#xD;&#xA;self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
+          lowerBound="1" eType="#//protocol/AbstractCoordinationSpecification" eOpposite="#//protocol/AbstractCoordinationSpecification/roles">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The coordination protocol this role belongs to."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="port" upperBound="-1"
+          eType="#//component/DiscretePort" eOpposite="#//component/DiscretePort/refinedRole">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The ports this role is assigned to."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" lowerBound="1"
+          eType="#//protocol/RoleConnector" changeable="false" volatile="true" transient="true"
+          derived="true" eOpposite="#//protocol/RoleConnector/roles">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="self.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The role connector that connects this role with another role."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiRole" lowerBound="1"
+          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+          changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This derived attribute indicates if the role is a multi role."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if not (self.cardinality.oclIsUndefined()) then&#xD;&#xA;&#x9;(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity&#xD;&#xA;else&#xD;&#xA;&#x9;false&#xD;&#xA;endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageBuffer"
+          upperBound="-1" eType="#//protocol/MessageBuffer" containment="true" eOpposite="#//protocol/MessageBuffer/role">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RoleConnector" eSuperTypes="#//connector/Connector">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a communication channel connecting two roles of a coordination protocol."/>
@@ -889,7 +988,7 @@
         <details key="OnlyRolesOfSameCoordinationProtocol" value="if self.coordinationProtocol.roles->oclIsUndefined() then &#xD;&#xA;true&#xD;&#xA;else&#xD;&#xA;self.coordinationProtocol.roles = self.roles&#xD;&#xA;endif"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
-          lowerBound="1" eType="#//protocol/CoordinationProtocol" eOpposite="#//protocol/CoordinationProtocol/roleConnector">
+          lowerBound="1" eType="#//protocol/AbstractCoordinationSpecification" eOpposite="#//protocol/AbstractCoordinationSpecification/roleConnector">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The coordination protocol this role connector is part of."/>
         </eAnnotations>
@@ -909,94 +1008,6 @@
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The two roles that are connected."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocol" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement #//constraint/ConstrainableElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A coordination protocol specifies the coordination between a certain number of communication members. The communication members are represented by roles. To specify which roles communicate whith each other they are connected by channels. The communication protocol used by the roles is specified by realtime statecharts. Each role has its own realtime statechart describing the roles communication behavior. Furthermore channels own a realtime statechart which enables specifying properties of certain real communication channels e.g. propagation delay or buffering of messages. Furthermore constraints can be assigned to coordination protocols. Constraints specify certain properties the coordination specified by the protocol has to fullfill."/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="UniqueRoleNames CoordinationProtocolNamesMustBeUnique RoleMessageTypesMustBeCompatible"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="UniqueRoleNames" value="self.roles->isUnique(name)"/>
-        <details key="CoordinationProtocolNamesMustBeUnique" value="CoordinationProtocol.allInstances()->isUnique(name)"/>
-        <details key="RoleMessageTypesMustBeCompatible" value="-- Roles should be compatibe w.r.t. message types&#xD;&#xA;self.roles->forAll(role1 : Role, role2 : Role |&#xD;&#xA;   role1 &lt;> role2&#xD;&#xA;   implies&#xD;&#xA;   role1.senderMessageTypes = role2.receiverMessageTypes&#xD;&#xA;)"/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="2"
-          upperBound="2" eType="#//protocol/Role" containment="true" eOpposite="#//protocol/Role/coordinationProtocol">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The roles belonging to this coordination protocol."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" lowerBound="1"
-          eType="#//protocol/RoleConnector" containment="true" eOpposite="#//protocol/RoleConnector/coordinationProtocol">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Each coordination protocol has exactly one role connector.&#xD;&#xA;Cardinality is 1 because there exists no useful protocol with more than two roles. If a useful protocol exists with more than 2 roles, then change cardinality to 1..*"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="gmfCoordinationProtocol"
-          eType="#//protocol/CoordinationProtocol" changeable="false" volatile="true"
-          transient="true" derived="true" containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This derived reference only exists because GMF needs it to visualize the inner ellipse of a Real-Time Coordination Protocol."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//connector/DiscreteInteractionEndpoint #//types/DataType">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a role of a coordination protocol."/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="RoleRequiresBehavior" value="not self.behavior.oclIsUndefined()"/>
-        <details key="RoleRequiresMessageTypes" value="self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
-        <details key="ReceiverRoleRequiresMessageBuffer" value="self.receiverMessageTypes->notEmpty() &#xD;&#xA;implies &#xD;&#xA;self.receiverMessageBuffer->notEmpty()"/>
-        <details key="ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer" value="-- Each receiver message type should be assigned to exactly one buffer&#xD;&#xA;self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
-          lowerBound="1" eType="#//protocol/CoordinationProtocol" eOpposite="#//protocol/CoordinationProtocol/roles">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The coordination protocol this role belongs to."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="port" upperBound="-1"
-          eType="#//component/DiscretePort" eOpposite="#//component/DiscretePort/refinedRole">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The ports this role is assigned to."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" lowerBound="1"
-          eType="#//protocol/RoleConnector" changeable="false" volatile="true" transient="true"
-          derived="true" eOpposite="#//protocol/RoleConnector/roles">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.connectors->any(c | c.oclIsKindOf(RoleConnector)).oclAsType(RoleConnector)"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The role connector that connects this role with another role."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiRole" lowerBound="1"
-          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-          changeable="false" volatile="true" transient="true" defaultValueLiteral=""
-          derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This derived attribute indicates if the role is a multi role."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if not (self.cardinality.oclIsUndefined()) then&#xD;&#xA;&#x9;(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity&#xD;&#xA;else&#xD;&#xA;&#x9;false&#xD;&#xA;endif"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageBuffer"
-          upperBound="-1" eType="#//protocol/MessageBuffer" containment="true" eOpposite="#//protocol/MessageBuffer/role">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>

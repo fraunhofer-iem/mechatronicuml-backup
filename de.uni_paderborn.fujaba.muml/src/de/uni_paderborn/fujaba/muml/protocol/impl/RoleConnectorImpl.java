@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorImpl;
+import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
@@ -82,9 +83,9 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocol getCoordinationProtocol() {
+	public AbstractCoordinationSpecification getCoordinationProtocol() {
 		if (eContainerFeatureID() != ProtocolPackage.ROLE_CONNECTOR__COORDINATION_PROTOCOL) return null;
-		return (CoordinationProtocol)eContainer();
+		return (AbstractCoordinationSpecification)eContainer();
 	}
 
 	/**
@@ -92,7 +93,7 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCoordinationProtocol(CoordinationProtocol newCoordinationProtocol, NotificationChain msgs) {
+	public NotificationChain basicSetCoordinationProtocol(AbstractCoordinationSpecification newCoordinationProtocol, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newCoordinationProtocol, ProtocolPackage.ROLE_CONNECTOR__COORDINATION_PROTOCOL, msgs);
 		return msgs;
 	}
@@ -102,7 +103,7 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCoordinationProtocol(CoordinationProtocol newCoordinationProtocol) {
+	public void setCoordinationProtocol(AbstractCoordinationSpecification newCoordinationProtocol) {
 		if (newCoordinationProtocol != eInternalContainer() || (eContainerFeatureID() != ProtocolPackage.ROLE_CONNECTOR__COORDINATION_PROTOCOL && newCoordinationProtocol != null)) {
 			if (EcoreUtil.isAncestor(this, newCoordinationProtocol))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -110,7 +111,7 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newCoordinationProtocol != null)
-				msgs = ((InternalEObject)newCoordinationProtocol).eInverseAdd(this, ProtocolPackage.COORDINATION_PROTOCOL__ROLE_CONNECTOR, CoordinationProtocol.class, msgs);
+				msgs = ((InternalEObject)newCoordinationProtocol).eInverseAdd(this, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR, AbstractCoordinationSpecification.class, msgs);
 			msgs = basicSetCoordinationProtocol(newCoordinationProtocol, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -182,7 +183,7 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 			case ProtocolPackage.ROLE_CONNECTOR__COORDINATION_PROTOCOL:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetCoordinationProtocol((CoordinationProtocol)otherEnd, msgs);
+				return basicSetCoordinationProtocol((AbstractCoordinationSpecification)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -212,7 +213,7 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case ProtocolPackage.ROLE_CONNECTOR__COORDINATION_PROTOCOL:
-				return eInternalContainer().eInverseRemove(this, ProtocolPackage.COORDINATION_PROTOCOL__ROLE_CONNECTOR, CoordinationProtocol.class, msgs);
+				return eInternalContainer().eInverseRemove(this, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR, AbstractCoordinationSpecification.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -244,7 +245,7 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ProtocolPackage.ROLE_CONNECTOR__COORDINATION_PROTOCOL:
-				setCoordinationProtocol((CoordinationProtocol)newValue);
+				setCoordinationProtocol((AbstractCoordinationSpecification)newValue);
 				return;
 			case ProtocolPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				setConnectorQualityOfServiceAssumptions((ConnectorQualityOfServiceAssumptions)newValue);
@@ -262,7 +263,7 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ProtocolPackage.ROLE_CONNECTOR__COORDINATION_PROTOCOL:
-				setCoordinationProtocol((CoordinationProtocol)null);
+				setCoordinationProtocol((AbstractCoordinationSpecification)null);
 				return;
 			case ProtocolPackage.ROLE_CONNECTOR__CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				setConnectorQualityOfServiceAssumptions((ConnectorQualityOfServiceAssumptions)null);

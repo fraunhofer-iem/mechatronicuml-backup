@@ -182,14 +182,11 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Protocol" basePackage="de.uni_paderborn.fujaba.muml"
         disposableProviderFactory="true" ecorePackage="muml.ecore#//protocol">
-      <genClasses ecoreClass="muml.ecore#//protocol/RoleConnector">
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/RoleConnector/coordinationProtocol"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/RoleConnector/roles"/>
+      <genClasses image="false" ecoreClass="muml.ecore#//protocol/AbstractCoordinationSpecification">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/AbstractCoordinationSpecification/roles"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/AbstractCoordinationSpecification/roleConnector"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//protocol/CoordinationProtocol">
-        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/CoordinationProtocol/roles"/>
-        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/CoordinationProtocol/roleConnector"/>
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//protocol/Role">
@@ -199,6 +196,11 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/Role/roleConnector"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//protocol/Role/multiRole"/>
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/Role/receiverMessageBuffer"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//protocol/RoleConnector">
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/RoleConnector/coordinationProtocol"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/RoleConnector/roles"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//protocol/MessageBuffer">
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/MessageBuffer/bufferSize"/>

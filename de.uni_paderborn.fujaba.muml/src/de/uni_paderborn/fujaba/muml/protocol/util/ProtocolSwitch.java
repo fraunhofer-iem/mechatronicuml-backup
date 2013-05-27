@@ -84,18 +84,20 @@ public class ProtocolSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ProtocolPackage.ROLE_CONNECTOR: {
-				RoleConnector roleConnector = (RoleConnector)theEObject;
-				T result = caseRoleConnector(roleConnector);
-				if (result == null) result = caseConnector(roleConnector);
-				if (result == null) result = caseCommentableElement(roleConnector);
-				if (result == null) result = caseExtendableElement(roleConnector);
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION: {
+				AbstractCoordinationSpecification abstractCoordinationSpecification = (AbstractCoordinationSpecification)theEObject;
+				T result = caseAbstractCoordinationSpecification(abstractCoordinationSpecification);
+				if (result == null) result = caseNamedElement(abstractCoordinationSpecification);
+				if (result == null) result = caseConstrainableElement(abstractCoordinationSpecification);
+				if (result == null) result = caseCommentableElement(abstractCoordinationSpecification);
+				if (result == null) result = caseExtendableElement(abstractCoordinationSpecification);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ProtocolPackage.COORDINATION_PROTOCOL: {
 				CoordinationProtocol coordinationProtocol = (CoordinationProtocol)theEObject;
 				T result = caseCoordinationProtocol(coordinationProtocol);
+				if (result == null) result = caseAbstractCoordinationSpecification(coordinationProtocol);
 				if (result == null) result = caseNamedElement(coordinationProtocol);
 				if (result == null) result = caseConstrainableElement(coordinationProtocol);
 				if (result == null) result = caseCommentableElement(coordinationProtocol);
@@ -114,6 +116,15 @@ public class ProtocolSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedElement(role);
 				if (result == null) result = caseCommentableElement(role);
 				if (result == null) result = caseExtendableElement(role);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ProtocolPackage.ROLE_CONNECTOR: {
+				RoleConnector roleConnector = (RoleConnector)theEObject;
+				T result = caseRoleConnector(roleConnector);
+				if (result == null) result = caseConnector(roleConnector);
+				if (result == null) result = caseCommentableElement(roleConnector);
+				if (result == null) result = caseExtendableElement(roleConnector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -136,6 +147,21 @@ public class ProtocolSwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Coordination Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Coordination Specification</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractCoordinationSpecification(AbstractCoordinationSpecification object) {
+		return null;
 	}
 
 	/**

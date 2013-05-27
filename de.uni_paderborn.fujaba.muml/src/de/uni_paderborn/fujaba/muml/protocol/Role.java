@@ -40,20 +40,20 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
 public interface Role extends DiscreteInteractionEndpoint, DataType {
 	/**
 	 * Returns the value of the '<em><b>Coordination Protocol</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getRoles <em>Roles</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getRoles <em>Roles</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The coordination protocol this role belongs to.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Coordination Protocol</em>' container reference.
-	 * @see #setCoordinationProtocol(CoordinationProtocol)
+	 * @see #setCoordinationProtocol(AbstractCoordinationSpecification)
 	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRole_CoordinationProtocol()
-	 * @see de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getRoles
+	 * @see de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getRoles
 	 * @model opposite="roles" required="true" transient="false"
 	 * @generated
 	 */
-	CoordinationProtocol getCoordinationProtocol();
+	AbstractCoordinationSpecification getCoordinationProtocol();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.protocol.Role#getCoordinationProtocol <em>Coordination Protocol</em>}' container reference.
@@ -63,7 +63,7 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	 * @see #getCoordinationProtocol()
 	 * @generated
 	 */
-	void setCoordinationProtocol(CoordinationProtocol value);
+	void setCoordinationProtocol(AbstractCoordinationSpecification value);
 
 	/**
 	 * Returns the value of the '<em><b>Port</b></em>' reference list.
