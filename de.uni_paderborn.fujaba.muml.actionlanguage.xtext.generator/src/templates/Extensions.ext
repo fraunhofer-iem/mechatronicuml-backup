@@ -1,4 +1,0 @@
-import de::uni_paderborn::fujaba::muml::actionlanguage;
-
-sortedGreetings(Model this) :
-	this.greetings.sortBy(g|g.name.toLowerCase());
