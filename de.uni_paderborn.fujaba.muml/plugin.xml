@@ -39,7 +39,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/protocol/0.3.18"/>
+      <package class="de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/protocol/0.3.19"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">

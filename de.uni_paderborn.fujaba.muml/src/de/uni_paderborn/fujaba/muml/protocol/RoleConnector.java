@@ -36,20 +36,20 @@ import de.uni_paderborn.fujaba.muml.connector.Connector;
 public interface RoleConnector extends Connector {
 	/**
 	 * Returns the value of the '<em><b>Coordination Protocol</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getRoleConnector <em>Role Connector</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getRoleConnector <em>Role Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The coordination protocol this role connector is part of.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Coordination Protocol</em>' container reference.
-	 * @see #setCoordinationProtocol(CoordinationProtocol)
+	 * @see #setCoordinationProtocol(AbstractCoordinationSpecification)
 	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRoleConnector_CoordinationProtocol()
-	 * @see de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#getRoleConnector
+	 * @see de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification#getRoleConnector
 	 * @model opposite="roleConnector" required="true" transient="false"
 	 * @generated
 	 */
-	CoordinationProtocol getCoordinationProtocol();
+	AbstractCoordinationSpecification getCoordinationProtocol();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.protocol.RoleConnector#getCoordinationProtocol <em>Coordination Protocol</em>}' container reference.
@@ -59,7 +59,7 @@ public interface RoleConnector extends Connector {
 	 * @see #getCoordinationProtocol()
 	 * @generated
 	 */
-	void setCoordinationProtocol(CoordinationProtocol value);
+	void setCoordinationProtocol(AbstractCoordinationSpecification value);
 
 	/**
 	 * Returns the value of the '<em><b>Connector Quality Of Service Assumptions</b></em>' containment reference.
