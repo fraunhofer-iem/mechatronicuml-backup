@@ -13,7 +13,6 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -29,7 +28,6 @@ import org.storydriven.core.expressions.provider.ExpressionItemProvider;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
-import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 
 
 /**
@@ -117,14 +115,14 @@ public class BlockItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = LanguageResource.serializeEObject((EObject) object, (EObject) object).replaceAll("\n", "").replaceAll("\t", "");
+		String label = ((Block)object).getComment();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Block_type") :
-			label;
+			getString("_UI_Block_type") + " " + label;
 	}
 
 	/**
