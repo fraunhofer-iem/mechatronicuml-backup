@@ -1,13 +1,13 @@
 package de.uni_paderborn.fujaba.muml.properties.protocol.section;
 
-public class CoordinationProtocolRoleConnectorSection
+public class AbstractCoordinationSpecificationRoleConnectorSection
 		extends
 			de.upb.swt.core.ui.properties.sections.AbstractGroupSection {
 
 	@Override
 	public org.eclipse.emf.ecore.EStructuralFeature getFeature() {
 		return de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-				.getCoordinationProtocol_RoleConnector();
+				.getAbstractCoordinationSpecification_RoleConnector();
 	}
 
 	@Override
@@ -15,7 +15,7 @@ public class CoordinationProtocolRoleConnectorSection
 		return "RoleConnector";
 	}
 
-	public CoordinationProtocolRoleConnectorSection() {
+	public AbstractCoordinationSpecificationRoleConnectorSection() {
 
 		addSection(new de.uni_paderborn.fujaba.muml.properties.protocol.section.RoleConnectorConnectorQualityOfServiceAssumptionsSection());
 
