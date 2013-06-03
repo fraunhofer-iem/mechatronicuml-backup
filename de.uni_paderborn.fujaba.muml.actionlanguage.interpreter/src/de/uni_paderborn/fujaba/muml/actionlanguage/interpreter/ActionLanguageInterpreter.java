@@ -144,6 +144,7 @@ public class ActionLanguageInterpreter {
 			throws UnsupportedModellingElementException,
 			VariableNotInitializedException, IncompatibleTypeException {
 		double value;
+		TypedNamedElement element;
 		DataType doubleType = TypesFactory.eINSTANCE.createPrimitiveDataType();
 		((PrimitiveDataType) doubleType)
 				.setPrimitiveType(PrimitiveTypes.DOUBLE);
@@ -156,15 +157,80 @@ public class ActionLanguageInterpreter {
 					doubleType,
 					evaluate(variableBindings, parAndLocVarBindings,
 							unaryExpression.getEnclosedExpression()));
-			return (value - 1);
+			value = value - 1;
+
+			element = null;
+			if (unaryExpression.getEnclosedExpression() instanceof TypedNamedElementExpression)
+				element = ((TypedNamedElementExpression) unaryExpression
+						.getEnclosedExpression()).getTypedNamedElement();
+			else
+				throw new UnsupportedModellingElementException(
+						unaryExpression.toString()
+								+ " does not have a typedNamedElementExpression as enclosedExpression. This is not yet supported");
+			// search for variable in local variables/parameters
+			for (LocalVariableAndParameterBinding curBinding : parAndLocVarBindings) {
+				if (curBinding.getTypedNamedElement().equals(element)) {
+
+					// found binding -> assign new value
+					curBinding.setValue(castTo(element.getDataType(), value));
+					return value;
+				}
+			}
+
+			// search for variable in variable bindings
+			if (element instanceof Variable) {
+				Variable variable = (Variable) element;
+				for (VariableBinding curVarBinding : variableBindings) {
+					if (curVarBinding.getVariable().equals(variable)) {
+						curVarBinding.setValue(castTo(variable.getDataType(),
+								value));
+						return value;
+					}
+				}
+			}
+			throw new VariableNotInitializedException(element.toString()
+					+ " not declared and/or intitialized");
 
 		case UnaryOperator.INCREMENT_VALUE:
 			value = (Double) castTo(
 					doubleType,
 					evaluate(variableBindings, parAndLocVarBindings,
 							unaryExpression.getEnclosedExpression()));
-			return (value + 1);
+			value = value + 1;
 
+			element = null;
+			if (unaryExpression.getEnclosedExpression() instanceof TypedNamedElementExpression)
+				element = ((TypedNamedElementExpression) unaryExpression
+						.getEnclosedExpression()).getTypedNamedElement();
+			else
+				throw new UnsupportedModellingElementException(
+						unaryExpression.toString()
+								+ " does not have a typedNamedElementExpression as enclosedExpression. This is not yet supported");
+			// search for variable in local variables/parameters
+			for (LocalVariableAndParameterBinding curBinding : parAndLocVarBindings) {
+				if (curBinding.getTypedNamedElement().equals(element)) {
+
+					// found binding -> assign new value
+					curBinding.setValue(castTo(element.getDataType(), value));
+					return value;
+				}
+			}
+
+			// search for variable in variable bindings
+			if (element instanceof Variable) {
+				Variable variable = (Variable) element;
+				for (VariableBinding curVarBinding : variableBindings) {
+					if (curVarBinding.getVariable().equals(variable)) {
+						curVarBinding.setValue(castTo(variable.getDataType(),
+								value));
+						return value;
+					}
+				}
+			}
+			throw new VariableNotInitializedException(element.toString()
+					+ " not declared and/or intitialized");
+
+			// TODO assign value here?
 		case UnaryOperator.MINUS_VALUE:
 			value = (Double) castTo(
 					doubleType,
@@ -375,7 +441,7 @@ public class ActionLanguageInterpreter {
 					&& (Boolean) evaluate(variableBindings,
 							parAndLocVarBindings,
 							logicalExpression.getRightExpression());
-			// TODO not sure here
+			
 		case LogicOperator.EQUIVALENT_VALUE:
 			return !((Boolean) evaluate(variableBindings, parAndLocVarBindings,
 					logicalExpression.getLeftExpression()))
@@ -786,13 +852,312 @@ public class ActionLanguageInterpreter {
 		return null;
 	}
 
-	// TODO write own class for this see
+	// public Object castTo(DataType type, Object value)
+	// throws IncompatibleTypeException,
+	// UnsupportedModellingElementException {
+	//
+	// switch (((PrimitiveDataType) type).getPrimitiveType().getValue()) {
+	// // cast to boolean
+	// case PrimitiveTypes.BOOLEAN_VALUE:
+	// if (!(value instanceof Boolean) && !(value instanceof String)) {
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// }
+	// // cast string to boolean
+	// if (value instanceof String) {
+	// if (((String) value).equals("true"))
+	// return true;
+	// else if (((String) value).equals("false"))
+	// return false;
+	// else
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	//
+	// }
+	// // value was already of type boolean
+	// return (Boolean) value;
+	//
+	// case PrimitiveTypes.BYTE_VALUE:
+	// // cast to byte
+	// if (!(value instanceof Short) && !(value instanceof Double)
+	// && !(value instanceof Long) && !(value instanceof Integer)
+	// && !(value instanceof String)) {
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// }
+	//
+	// else if (value instanceof Short) {
+	// if ((Short) value > Byte.MAX_VALUE)
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// return ((Short) value).byteValue();
+	// }
+	//
+	// else if (value instanceof Long) {
+	// if ((Long) value > Byte.MAX_VALUE)
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// return ((Long) value).byteValue();
+	// }
+	//
+	// else if (value instanceof Integer) {
+	// if ((Integer) value > Byte.MAX_VALUE)
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// return ((Integer) value).byteValue();
+	// }
+	//
+	// else if (value instanceof Double) {
+	// if ((Double) value > Byte.MAX_VALUE || (Double) value % 1 != 0)
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// return ((Double) value).byteValue();
+	// }
+	//
+	// else if (value instanceof String)
+	// try {
+	// return Byte.parseByte((String) value);
+	// } catch (NumberFormatException e) {
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// }
+	// else
+	// return (Byte) value;
+	//
+	// case PrimitiveTypes.DOUBLE_VALUE:
+	// // cast to double
+	// if (!(value instanceof Short) && !(value instanceof Double)
+	// && !(value instanceof Long) && !(value instanceof Integer)
+	// && !(value instanceof String)) {
+	//
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// }
+	// if (value instanceof Short)
+	// return ((Short) value).doubleValue();
+	// else if (value instanceof Long)
+	// return ((Long) value).doubleValue();
+	// else if (value instanceof Integer)
+	// return ((Integer) value).doubleValue();
+	// else if (value instanceof String)
+	// try {
+	// return Double.parseDouble((String) value);
+	// } catch (NumberFormatException e) {
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// }
+	// else
+	// return (Double) value;
+	//
+	// case PrimitiveTypes.INT_VALUE:
+	// // cast to int
+	// if (!(value instanceof Long) && !(value instanceof Short)
+	// && !(value instanceof Double)
+	// && !(value instanceof Integer)
+	// && !(value instanceof String)) {
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// }
+	//
+	// if (value instanceof Short)
+	// return ((Short) value).intValue();
+	//
+	// else if (value instanceof Long) {
+	// if ((Long) value > Integer.MAX_VALUE)
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// return ((Long) value).intValue();
+	// }
+	//
+	// // check for decimal places
+	// else if (value instanceof Double) {
+	// if ((Double) value > Integer.MAX_VALUE
+	// || (Double) value % 1 != 0)
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// return ((Double) value).intValue();
+	// }
+	//
+	// else if (value instanceof Byte) {
+	//
+	// return ((Byte) value).intValue();
+	// }
+	//
+	// else if (value instanceof String)
+	// try {
+	// return Byte.parseByte((String) value);
+	// } catch (NumberFormatException e) {
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// }
+	// else
+	//
+	// return (Integer) value;
+	//
+	// case PrimitiveTypes.LONG_VALUE:
+	// // cast to long
+	// if (!(value instanceof Long) && !(value instanceof Short)
+	// && !(value instanceof Double)
+	// && !(value instanceof Integer)
+	// && !(value instanceof String)) {
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// }
+	// if (value instanceof Short)
+	// return ((Short) value).longValue();
+	//
+	// if (value instanceof Integer) {
+	//
+	// return ((Integer) value).longValue();
+	// }
+	//
+	// 
+	// // else check for decimal places
+	// else if (value instanceof Double) {
+	// if ((Double) value > Long.MAX_VALUE || (Double) value % 1 != 0)
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// return ((Double) value).longValue();
+	// }
+	//
+	// else if (value instanceof Byte) {
+	//
+	// return ((Byte) value).longValue();
+	// }
+	//
+	// else if (value instanceof String)
+	// try {
+	// return Long.parseLong((String) value);
+	// } catch (NumberFormatException e) {
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// }
+	// else
+	//
+	// return (Long) value;
+	//
+	// case PrimitiveTypes.SHORT_VALUE:
+	// // cast to short
+	// if (!(value instanceof Short) && !(value instanceof Long)
+	// && !(value instanceof Double)
+	// && !(value instanceof Integer)
+	// && !(value instanceof String)) {
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// }
+	//
+	// if (value instanceof Long) {
+	// if ((Long) value > Short.MAX_VALUE)
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// return ((Long) value).shortValue();
+	// }
+	//
+	// //  check for decimal places
+	// else if (value instanceof Double) {
+	// if ((Double) value > Integer.MAX_VALUE
+	// || (Double) value % 1 != 0)
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// return ((Double) value).shortValue();
+	// }
+	//
+	// else if (value instanceof Byte) {
+	//
+	// return ((Byte) value).shortValue();
+	// }
+	//
+	// else if (value instanceof String)
+	// try {
+	// return Short.parseShort((String) value);
+	// } catch (NumberFormatException e) {
+	// throw new IncompatibleTypeException("Cannot cast "
+	// + value.toString()
+	// + " to "
+	// + ((PrimitiveDataType) type).getPrimitiveType()
+	// .toString());
+	// }
+	// else
+	//
+	// return (Short) value;
+	//
+	// default:
+	// throw new UnsupportedModellingElementException(type.toString()
+	// + " is not yet supported");
+	//
+	// }
+	// }
+
+	// alternative implementation
 	// http://balusc.blogspot.de/2007/08/generic-object-converter.html
 	/**
-	 * Casts value to Java data type corresponding {@link DataType} type
+	 * Casts value to Java data type corresponding {@link DataType} type.
 	 * 
 	 * @param type
 	 * @param value
+	 *            Supported types of value are {@link String},{@link Boolean},
+	 *            {@link Byte}, {@link Short}, {@link Integer}, {@link Long} and
+	 *            {@link Double}.
 	 * @return
 	 * @throws IncompatibleTypeException
 	 * @throws UnsupportedModellingElementException
@@ -804,6 +1169,7 @@ public class ActionLanguageInterpreter {
 		switch (((PrimitiveDataType) type).getPrimitiveType().getValue()) {
 		// cast to boolean
 		case PrimitiveTypes.BOOLEAN_VALUE:
+			// evaluate whether value is of supported type for this cast
 			if (!(value instanceof Boolean) && !(value instanceof String)) {
 				throw new IncompatibleTypeException("Cannot cast "
 						+ value.toString()
@@ -828,8 +1194,9 @@ public class ActionLanguageInterpreter {
 			// value was already of type boolean
 			return (Boolean) value;
 
-		case PrimitiveTypes.BYTE_VALUE:
 			// cast to byte
+		case PrimitiveTypes.BYTE_VALUE:
+			// evaluate whether value is of supported type for this cast
 			if (!(value instanceof Short) && !(value instanceof Double)
 					&& !(value instanceof Long) && !(value instanceof Integer)
 					&& !(value instanceof String)) {
@@ -840,61 +1207,27 @@ public class ActionLanguageInterpreter {
 								.toString());
 			}
 
-			else if (value instanceof Short) {
-				if ((Short) value > Byte.MAX_VALUE)
-					throw new IncompatibleTypeException("Cannot cast "
-							+ value.toString()
-							+ " to "
-							+ ((PrimitiveDataType) type).getPrimitiveType()
-									.toString());
-				return ((Short) value).byteValue();
-			}
-
-			else if (value instanceof Long) {
-				if ((Long) value > Byte.MAX_VALUE)
-					throw new IncompatibleTypeException("Cannot cast "
-							+ value.toString()
-							+ " to "
-							+ ((PrimitiveDataType) type).getPrimitiveType()
-									.toString());
-				return ((Long) value).byteValue();
-			}
-
-			else if (value instanceof Integer) {
-				if ((Integer) value > Byte.MAX_VALUE)
-					throw new IncompatibleTypeException("Cannot cast "
-							+ value.toString()
-							+ " to "
-							+ ((PrimitiveDataType) type).getPrimitiveType()
-									.toString());
-				return ((Integer) value).byteValue();
-			}
-
-			else if (value instanceof Double) {
-				if ((Double) value > Byte.MAX_VALUE || (Double) value % 1 != 0)
-					throw new IncompatibleTypeException("Cannot cast "
-							+ value.toString()
-							+ " to "
-							+ ((PrimitiveDataType) type).getPrimitiveType()
-									.toString());
-				return ((Double) value).byteValue();
-			}
-
-			else if (value instanceof String)
+			// string to byte
+			if (value instanceof String)
 				try {
 					return Byte.parseByte((String) value);
 				} catch (NumberFormatException e) {
 					throw new IncompatibleTypeException("Cannot cast "
-							+ value.toString()
-							+ " to "
-							+ ((PrimitiveDataType) type).getPrimitiveType()
-									.toString());
+							+ value.toString() + " to Byte");
 				}
-			else
-				return (Byte) value;
 
-		case PrimitiveTypes.DOUBLE_VALUE:
+			// numeric to byte (check whether decimal places are only 0s)
+			else {
+				if (((Number) value).doubleValue() > Byte.MAX_VALUE
+						|| ((Number) value).doubleValue() % 1 != 0)
+					throw new IncompatibleTypeException("Cannot cast "
+							+ value.toString() + " to Byte");
+				return ((Number) value).byteValue();
+			}
+
 			// cast to double
+		case PrimitiveTypes.DOUBLE_VALUE:
+			// evaluate whether value is of supported type for this cast
 			if (!(value instanceof Short) && !(value instanceof Double)
 					&& !(value instanceof Long) && !(value instanceof Integer)
 					&& !(value instanceof String)) {
@@ -905,27 +1238,22 @@ public class ActionLanguageInterpreter {
 						+ ((PrimitiveDataType) type).getPrimitiveType()
 								.toString());
 			}
-			if (value instanceof Short)
-				return ((Short) value).doubleValue();
-			else if (value instanceof Long)
-				return ((Long) value).doubleValue();
-			else if (value instanceof Integer)
-				return ((Integer) value).doubleValue();
-			else if (value instanceof String)
+
+			// string to double
+			if (value instanceof String)
 				try {
 					return Double.parseDouble((String) value);
 				} catch (NumberFormatException e) {
 					throw new IncompatibleTypeException("Cannot cast "
-							+ value.toString()
-							+ " to "
-							+ ((PrimitiveDataType) type).getPrimitiveType()
-									.toString());
+							+ value.toString() + " to Double");
 				}
+			// numeric can be casted without constraints
 			else
-				return (Double) value;
+				return ((Number) value).doubleValue();
 
-		case PrimitiveTypes.INT_VALUE:
 			// cast to int
+		case PrimitiveTypes.INT_VALUE:
+			// evaluate whether value is of supported type for this cast
 			if (!(value instanceof Long) && !(value instanceof Short)
 					&& !(value instanceof Double)
 					&& !(value instanceof Integer)
@@ -936,53 +1264,27 @@ public class ActionLanguageInterpreter {
 						+ ((PrimitiveDataType) type).getPrimitiveType()
 								.toString());
 			}
-
-			if (value instanceof Short)
-				return ((Short) value).intValue();
-
-			else if (value instanceof Long) {
-				if ((Long) value > Integer.MAX_VALUE)
-					throw new IncompatibleTypeException("Cannot cast "
-							+ value.toString()
-							+ " to "
-							+ ((PrimitiveDataType) type).getPrimitiveType()
-									.toString());
-				return ((Long) value).intValue();
-			}
-
-			// TODO check for decimal places
-			else if (value instanceof Double) {
-				if ((Double) value > Integer.MAX_VALUE
-						|| (Double) value % 1 != 0)
-					throw new IncompatibleTypeException("Cannot cast "
-							+ value.toString()
-							+ " to "
-							+ ((PrimitiveDataType) type).getPrimitiveType()
-									.toString());
-				return ((Double) value).intValue();
-			}
-
-			else if (value instanceof Byte) {
-
-				return ((Byte) value).intValue();
-			}
-
-			else if (value instanceof String)
+			// string to int
+			if (value instanceof String)
 				try {
-					return Byte.parseByte((String) value);
+					return Integer.parseInt((String) value);
 				} catch (NumberFormatException e) {
 					throw new IncompatibleTypeException("Cannot cast "
-							+ value.toString()
-							+ " to "
-							+ ((PrimitiveDataType) type).getPrimitiveType()
-									.toString());
+							+ value.toString() + " to Integer");
 				}
-			else
 
-				return (Integer) value;
+			// numeric (check whether decimal places are only 0s)
+			else {
+				if (((Number) value).doubleValue() > Integer.MAX_VALUE
+						|| ((Number) value).doubleValue() % 1 != 0)
+					throw new IncompatibleTypeException("Cannot cast "
+							+ value.toString() + " to Integer");
+				return ((Number) value).intValue();
+			}
 
-		case PrimitiveTypes.LONG_VALUE:
 			// cast to long
+		case PrimitiveTypes.LONG_VALUE:
+			// evaluate whether value is of supported type for this cast
 			if (!(value instanceof Long) && !(value instanceof Short)
 					&& !(value instanceof Double)
 					&& !(value instanceof Integer)
@@ -993,47 +1295,28 @@ public class ActionLanguageInterpreter {
 						+ ((PrimitiveDataType) type).getPrimitiveType()
 								.toString());
 			}
-			if (value instanceof Short)
-				return ((Short) value).longValue();
 
-			if (value instanceof Integer) {
-
-				return ((Integer) value).longValue();
-			}
-
-			// TODO this implementation rounds
-			// else check for decimal places
-			else if (value instanceof Double) {
-				if ((Double) value > Long.MAX_VALUE || (Double) value % 1 != 0)
-					throw new IncompatibleTypeException("Cannot cast "
-							+ value.toString()
-							+ " to "
-							+ ((PrimitiveDataType) type).getPrimitiveType()
-									.toString());
-				return ((Double) value).longValue();
-			}
-
-			else if (value instanceof Byte) {
-
-				return ((Byte) value).longValue();
-			}
-
-			else if (value instanceof String)
+			// string to long
+			if (value instanceof String)
 				try {
 					return Long.parseLong((String) value);
 				} catch (NumberFormatException e) {
 					throw new IncompatibleTypeException("Cannot cast "
-							+ value.toString()
-							+ " to "
-							+ ((PrimitiveDataType) type).getPrimitiveType()
-									.toString());
+							+ value.toString() + " to Long");
 				}
-			else
 
-				return (Long) value;
+			// numeric to long (check whether decimal places are only 0s)
+			else {
+				if (((Number) value).doubleValue() > Long.MAX_VALUE
+						|| ((Number) value).doubleValue() % 1 != 0)
+					throw new IncompatibleTypeException("Cannot cast "
+							+ value.toString() + " to Long");
+				return ((Number) value).longValue();
+			}
 
-		case PrimitiveTypes.SHORT_VALUE:
 			// cast to short
+		case PrimitiveTypes.SHORT_VALUE:
+			// evaluate whether value is of supported type for this cast
 			if (!(value instanceof Short) && !(value instanceof Long)
 					&& !(value instanceof Double)
 					&& !(value instanceof Integer)
@@ -1045,46 +1328,23 @@ public class ActionLanguageInterpreter {
 								.toString());
 			}
 
-			if (value instanceof Long) {
-				if ((Long) value > Short.MAX_VALUE)
-					throw new IncompatibleTypeException("Cannot cast "
-							+ value.toString()
-							+ " to "
-							+ ((PrimitiveDataType) type).getPrimitiveType()
-									.toString());
-				return ((Long) value).shortValue();
-			}
-
-			// TODO check for decimal places
-			else if (value instanceof Double) {
-				if ((Double) value > Integer.MAX_VALUE
-						|| (Double) value % 1 != 0)
-					throw new IncompatibleTypeException("Cannot cast "
-							+ value.toString()
-							+ " to "
-							+ ((PrimitiveDataType) type).getPrimitiveType()
-									.toString());
-				return ((Double) value).shortValue();
-			}
-
-			else if (value instanceof Byte) {
-
-				return ((Byte) value).shortValue();
-			}
-
-			else if (value instanceof String)
+			// string to short
+			if (value instanceof String)
 				try {
 					return Short.parseShort((String) value);
 				} catch (NumberFormatException e) {
 					throw new IncompatibleTypeException("Cannot cast "
-							+ value.toString()
-							+ " to "
-							+ ((PrimitiveDataType) type).getPrimitiveType()
-									.toString());
+							+ value.toString() + " to Short");
 				}
-			else
 
-				return (Short) value;
+			// numeric to short (check whether decimal places are only 0s)
+			else {
+				if (((Number) value).doubleValue() > Short.MAX_VALUE
+						|| ((Number) value).doubleValue() % 1 != 0)
+					throw new IncompatibleTypeException("Cannot cast "
+							+ value.toString() + " to Short");
+				return ((Number) value).byteValue();
+			}
 
 		default:
 			throw new UnsupportedModellingElementException(type.toString()
