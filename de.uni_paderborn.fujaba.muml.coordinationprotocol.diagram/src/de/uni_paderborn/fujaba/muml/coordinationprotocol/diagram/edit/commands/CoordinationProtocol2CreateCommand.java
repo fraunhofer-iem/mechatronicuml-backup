@@ -37,9 +37,6 @@ public class CoordinationProtocol2CreateCommand extends EditElementCommand {
 		return container;
 	}
 
-	/**
-	 * @generated
-	 */
 	public boolean canExecute() {
 		// This command must not be used. The containment feature is not changeable!
 		return false;

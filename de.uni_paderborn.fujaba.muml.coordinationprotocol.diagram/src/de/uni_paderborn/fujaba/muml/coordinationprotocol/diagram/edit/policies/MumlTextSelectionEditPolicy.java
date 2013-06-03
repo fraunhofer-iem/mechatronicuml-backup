@@ -209,4 +209,5 @@ public class MumlTextSelectionEditPolicy extends SelectionEditPolicy implements
 		}
 		return hostPositionListener;
 	}
+
 }

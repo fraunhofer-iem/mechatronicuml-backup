@@ -288,42 +288,42 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RoleConnector_4006_target;
+	public static String NavigatorGroupName_CoordinationProtocol_2006_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_RoleConnector_4006_source;
+	public static String NavigatorGroupName_AbstractCoordinationSpecificationRoles_4008_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationProtocolRoles_4007_target;
+	public static String NavigatorGroupName_AbstractCoordinationSpecificationRoles_4008_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationProtocolRoles_4007_source;
+	public static String NavigatorGroupName_CoordinationProtocol_3007_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationProtocol_3005_outgoinglinks;
+	public static String NavigatorGroupName_RoleConnector_4009_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CoordinationProtocol_2005_outgoinglinks;
+	public static String NavigatorGroupName_RoleConnector_4009_source;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Role_3006_incominglinks;
+	public static String NavigatorGroupName_Role_3008_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Role_3006_outgoinglinks;
+	public static String NavigatorGroupName_Role_3008_outgoinglinks;
 
 	/**
 	 * @generated

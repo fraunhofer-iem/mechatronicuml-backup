@@ -41,7 +41,7 @@ public class RoleCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol container = (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container = (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) getElementToEdit();
 		if (container.getRoles().size() >= 2) {
 			return false;
 		}
@@ -57,11 +57,11 @@ public class RoleCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.protocol.Role newElement = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE
 				.createRole();
 
-		de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol owner = (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification owner = (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) getElementToEdit();
 		owner.getRoles().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.ElementInitializers
-				.getInstance().init_Role_3006(newElement);
+				.getInstance().init_Role_3008(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -325,8 +324,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateCoordinationProtocolRoles_4007(
-				de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol source,
+		public boolean canCreateAbstractCoordinationSpecificationRoles_4008(
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
 				de.uni_paderborn.fujaba.muml.protocol.Role target,
 				View sourceView, View targetView) {
 			if (source != null) {
@@ -342,15 +341,15 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return false;
 			}
 
-			return canExistCoordinationProtocolRoles_4007(source, target,
-					sourceView, targetView);
+			return canExistAbstractCoordinationSpecificationRoles_4008(source,
+					target, sourceView, targetView);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateRoleConnector_4006(
-				de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol container,
+		public boolean canCreateRoleConnector_4009(
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
@@ -359,15 +358,15 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-			return canExistRoleConnector_4006(container, null, source, target,
+			return canExistRoleConnector_4009(container, null, source, target,
 					sourceView, targetView);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistCoordinationProtocolRoles_4007(
-				de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol source,
+		public boolean canExistAbstractCoordinationSpecificationRoles_4008(
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
 				de.uni_paderborn.fujaba.muml.protocol.Role target,
 				View sourceView, View targetView) {
 			return true;
@@ -376,8 +375,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public java.lang.String getErrorCoordinationProtocolRoles_4007(
-				de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol source,
+		public java.lang.String getErrorAbstractCoordinationSpecificationRoles_4008(
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
 				de.uni_paderborn.fujaba.muml.protocol.Role target,
 				View sourceView, View targetView) {
 			return null;
@@ -386,8 +385,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistRoleConnector_4006(
-				de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol container,
+		public boolean canExistRoleConnector_4009(
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container,
 				de.uni_paderborn.fujaba.muml.protocol.RoleConnector linkInstance,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
@@ -430,8 +429,8 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public java.lang.String getErrorRoleConnector_4006(
-				de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol container,
+		public java.lang.String getErrorRoleConnector_4009(
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
 				View sourceView, View targetView) {
@@ -481,6 +480,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				return "Link constraint evaluation error";
 			}
 		}
+
 	}
 
 }

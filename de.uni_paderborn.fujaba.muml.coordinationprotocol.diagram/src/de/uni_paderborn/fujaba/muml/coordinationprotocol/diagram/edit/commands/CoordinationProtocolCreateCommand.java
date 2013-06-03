@@ -12,8 +12,6 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-
 /**
  * @generated
  */
@@ -59,7 +57,7 @@ public class CoordinationProtocolCreateCommand extends EditElementCommand {
 		owner.getModelElements().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.ElementInitializers
-				.getInstance().init_CoordinationProtocol_2005(newElement);
+				.getInstance().init_CoordinationProtocol_2006(newElement);
 
 		doConfigure(newElement, monitor, info);
 

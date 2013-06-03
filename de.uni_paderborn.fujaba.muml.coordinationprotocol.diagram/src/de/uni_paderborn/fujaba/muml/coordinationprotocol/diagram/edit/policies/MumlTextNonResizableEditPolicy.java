@@ -225,4 +225,5 @@ public class MumlTextNonResizableEditPolicy extends NonResizableEditPolicyEx
 		moveHandle.setDragTracker(new DragEditPartsTrackerEx(getHost()));
 		return Collections.singletonList(moveHandle);
 	}
+
 }

@@ -67,7 +67,7 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 							.getCoordinationProtocol_GmfCoordinationProtocol());
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-							.getCoordinationProtocol_Roles());
+							.getAbstractCoordinationSpecification_Roles());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -118,7 +118,7 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
-				.getCoordinationProtocolCoordinationProtocolContainerCompartment_7005SemanticChildren(viewObject);
+				.getCoordinationProtocolCoordinationProtocolContainerCompartment_7006SemanticChildren(viewObject);
 
 	}
 

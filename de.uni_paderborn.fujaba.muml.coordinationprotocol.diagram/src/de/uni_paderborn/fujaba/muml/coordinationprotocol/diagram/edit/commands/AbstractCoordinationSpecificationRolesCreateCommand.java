@@ -4,7 +4,6 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateRelationshipRequest;
@@ -13,7 +12,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CoordinationProtocolRolesCreateCommand extends EditElementCommand {
+public class AbstractCoordinationSpecificationRolesCreateCommand extends
+		EditElementCommand {
 
 	/**
 	 * @generated
@@ -28,7 +28,7 @@ public class CoordinationProtocolRolesCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolRolesCreateCommand(
+	public AbstractCoordinationSpecificationRolesCreateCommand(
 			CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
@@ -43,7 +43,7 @@ public class CoordinationProtocolRolesCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) {
 			return false;
 		}
 		if (target != null
@@ -59,12 +59,13 @@ public class CoordinationProtocolRolesCreateCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateCoordinationProtocolRoles_4007(
+				.getLinkConstraints()
+				.canCreateAbstractCoordinationSpecificationRoles_4008(
 						getSource(), getTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorCoordinationProtocolRoles_4007(getSource(),
-							getTarget(), sourceView, targetView);
+					.getErrorAbstractCoordinationSpecificationRoles_4008(
+							getSource(), getTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(targetView != null ? targetView : sourceView,
 							errorMessage);
@@ -100,8 +101,8 @@ public class CoordinationProtocolRolesCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol getSource() {
-		return (de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) source;
+	protected de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification getSource() {
+		return (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) source;
 	}
 
 	/**

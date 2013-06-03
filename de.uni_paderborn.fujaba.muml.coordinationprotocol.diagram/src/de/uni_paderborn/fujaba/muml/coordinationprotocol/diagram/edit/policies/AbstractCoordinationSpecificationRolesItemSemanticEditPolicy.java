@@ -13,16 +13,16 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 /**
  * @generated
  */
-public class CoordinationProtocolRolesItemSemanticEditPolicy
+public class AbstractCoordinationSpecificationRolesItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolRolesItemSemanticEditPolicy() {
+	public AbstractCoordinationSpecificationRolesItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocolRoles_4007);
+				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4008);
 	}
 
 	/**
