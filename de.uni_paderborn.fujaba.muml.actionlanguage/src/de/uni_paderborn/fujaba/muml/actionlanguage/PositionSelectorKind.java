@@ -17,6 +17,17 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Position Selector Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * Defines keywords for referring to sub-role instance (sub-port instances) of a
+ * multi-role instance (multi-port instance). Self may be used by a sub-role
+ * instance (sub-port instance) and refers to the corresponding sub-role instance
+ * (sub-port instance) itself. First and last may be used by the adaptation behavior
+ * and refer to the first or last sub-role instance (sub-port instance) of the multi-role
+ * instance (multi-port instance). Given a reference sub-role instance (sub-port
+ * instance), next and prev refer to the next or previous sub-role instance (sub-port
+ * instance). If the reference sub-role instance (sub-port instance) is the last one 
+ * (first one), then next (first) refers to null.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getPositionSelectorKind()
  * @model
  * @generated

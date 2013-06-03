@@ -970,7 +970,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		   source, 
 		   new String[] {
 			 "historyURI", "../../de.uni_paderborn.fujaba.muml/model/muml.history"
-		   });																																							
+		   });																																																	
 	}
 
 	/**
@@ -992,13 +992,13 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		   source, 
 		   new String[] {
 			 "constraints", "ValidLHS"
-		   });																						
+		   });																													
 		addAnnotation
 		  (localVariableDeclarationStatementEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueName"
-		   });								
+		   });											
 	}
 
 	/**
@@ -1014,19 +1014,19 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		   source, 
 		   new String[] {
 			 "ValidLHS", "-- a hybrid in port is not allowed as a lhs of an assignment\nlet lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression\nin\nif not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(component::HybridPort) then\n\tlhs.typedNamedElement.oclAsType(component::HybridPort).outPort\nelse\n\ttrue\nendif"
-		   });																						
+		   });																													
 		addAnnotation
 		  (localVariableDeclarationStatementEClass, 
 		   source, 
 		   new String[] {
 			 "UniqueName", "-- check if no variable with the same name was defined before\nself.allSurroundingBlocks->collect(\n\texpressions\n)->select(\n\toclIsKindOf(LocalVariableDeclarationStatement)\n)->collect(\n\toclAsType(LocalVariableDeclarationStatement)\n)->one(\n\tvariable.name = self.variable.name\n)"
-		   });		
+		   });				
 		addAnnotation
 		  (getLocalVariableDeclarationStatement_AllSurroundingBlocks(), 
 		   source, 
 		   new String[] {
 			 "derivation", "-- collect all blocks which surround this LocalVariableDeclarationStatement\nself.eContainer()->closure(c : ecore::EObject |\n\tif c.eContainer().oclIsKindOf(core::expressions::Expression) then\n\t\tc.eContainer()\n\telse\n\t\tc\n\tendif\n)->union(\n\tSet{eContainer()}\n)->select(oclIsKindOf(Block))->collect(\n\toclAsType(Block)\n)->asOrderedSet()"
-		   });						
+		   });							
 	}
 
 } //ActionlanguagePackageImpl

@@ -190,12 +190,26 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpointReference"
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A DiscreteInteractionEndpointReference is used for defining SelectorExpressions&#xD;&#xA;in a multi-role or multi-port. There, a SelectorExpression may reference a&#xD;&#xA;sub-role instance or sub-port instance for selecting the synchronization partner. &#xD;&#xA;The DiscreteInteractionEndpointReference always specifies a PositionSelector that&#xD;&#xA;defines the position of the reference sub-role instance or sub-port instance. It may, &#xD;&#xA;e.g., be the first or last one in a multi-role or multi-port. The reference &#xD;&#xA;typedNamedElementExpressions allows to reference a variable containing a &#xD;&#xA;sub-role instance or a sub-port instance. In combination, both references enable&#xD;&#xA;to select the next or previous sub-role (or sub-port) instance, e.g., as var1.next. In &#xD;&#xA;this case, next is the PositionSelector while var1 is the typedNamedElementExpression."/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typedNamedElementExpression"
-        eType="#//TypedNamedElementExpression" containment="true"/>
+        eType="#//TypedNamedElementExpression" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Allows to reference a variable containing a sub-role instance of sub-port instance.&#xD;&#xA;This field is optional. "/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="position" lowerBound="1"
-        eType="#//PositionSelector" containment="true"/>
+        eType="#//PositionSelector" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the relative position of the sub-role instance or sub-port instance.&#xD;&#xA;In particular, it enables to select the first or last sub-role instance (sub-port instance) of a &#xD;&#xA;multi-role instance (multi-port instance) using keyword first and last, to select itself&#xD;&#xA;in case of a sub-role instance (sub-port instance) using keyword self, or the next&#xD;&#xA;or previous sub-role given a reference either by self or a variable using keywords&#xD;&#xA;next and prev."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PositionSelectorKind">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Defines keywords for referring to sub-role instance (sub-port instances) of a&#xD;&#xA;multi-role instance (multi-port instance). Self may be used by a sub-role&#xD;&#xA;instance (sub-port instance) and refers to the corresponding sub-role instance&#xD;&#xA;(sub-port instance) itself. First and last may be used by the adaptation behavior&#xD;&#xA;and refer to the first or last sub-role instance (sub-port instance) of the multi-role&#xD;&#xA;instance (multi-port instance). Given a reference sub-role instance (sub-port&#xD;&#xA;instance), next and prev refer to the next or previous sub-role instance (sub-port&#xD;&#xA;instance). If the reference sub-role instance (sub-port instance) is the last one &#xD;&#xA;(first one), then next (first) refers to null."/>
+    </eAnnotations>
     <eLiterals name="SELF"/>
     <eLiterals name="FIRST" value="1"/>
     <eLiterals name="LAST" value="2"/>
@@ -203,9 +217,20 @@
     <eLiterals name="NEXT" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PositionSelector" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//PositionSelectorKind"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Defines a relative position of a sub-role instance or sub-port instance.&#xD;&#xA;The kind defines the particular reference using an enum literal where&#xD;&#xA;self refers to a sub-role instance (sub-port instance) itself, first or last refer to the&#xD;&#xA;first or last sub-role instance (sub-port instance) or a multi-role instance (multi-port&#xD;&#xA;instance), and next or prev refer to the next or previous sub-role instance (sub-port&#xD;&#xA;instance). PositionSelectors can be concatenated using the successor reference.&#xD;&#xA;That enables to specify, e.g., self.next, first.next, or self.prev.prev."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//PositionSelectorKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The enum literal defining the position."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="successor" eType="#//PositionSelector"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Successors of a PositionSelector enable to concatenate PositionSelectors for&#xD;&#xA;specifying more complex expression like self.next or self.prev.prev."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LocalVariableDeclarationStatement" eSuperTypes="../../org.storydriven.core/model/core.ecore#//expressions/Expression">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -214,13 +239,23 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="UniqueName" value="-- check if no variable with the same name was defined before&#xA;self.allSurroundingBlocks->collect(&#xA;&#x9;expressions&#xA;)->select(&#xA;&#x9;oclIsKindOf(LocalVariableDeclarationStatement)&#xA;)->collect(&#xA;&#x9;oclAsType(LocalVariableDeclarationStatement)&#xA;)->one(&#xA;&#x9;variable.name = self.variable.name&#xA;)"/>
     </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Enables to declare a local variable inside a Block. Local variables are declared &#xD;&#xA;according to the C-rule and have the scope of the block they are defined in.&#xD;&#xA;Local variables may not have the same name as a variable that is declared in the&#xD;&#xA;real-time statechart."/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" lowerBound="1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Variable"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The variable that is declared and optionally initialized by this declaration &#xD;&#xA;statement."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="allSurroundingBlocks" upperBound="-1"
         eType="#//Block" changeable="false" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="derivation" value="-- collect all blocks which surround this LocalVariableDeclarationStatement&#xA;self.eContainer()->closure(c : ecore::EObject |&#xA;&#x9;if c.eContainer().oclIsKindOf(core::expressions::Expression) then&#xA;&#x9;&#x9;c.eContainer()&#xA;&#x9;else&#xA;&#x9;&#x9;c&#xA;&#x9;endif&#xA;)->union(&#xA;&#x9;Set{eContainer()}&#xA;)->select(oclIsKindOf(Block))->collect(&#xA;&#x9;oclAsType(Block)&#xA;)->asOrderedSet()"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This derived feature returns all blocks that surround this local variable declaration.&#xD;&#xA;This is a helper feature for ensuring that the names of local variables are unique."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

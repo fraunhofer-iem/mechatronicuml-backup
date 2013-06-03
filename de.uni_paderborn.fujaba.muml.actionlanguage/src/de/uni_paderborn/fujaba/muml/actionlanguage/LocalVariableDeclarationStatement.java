@@ -16,6 +16,13 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  * A representation of the model object '<em><b>Local Variable Declaration Statement</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Enables to declare a local variable inside a Block. Local variables are declared 
+ * according to the C-rule and have the scope of the block they are defined in.
+ * Local variables may not have the same name as a variable that is declared in the
+ * real-time statechart.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -38,6 +45,10 @@ public interface LocalVariableDeclarationStatement extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The variable that is declared and optionally initialized by this declaration 
+	 * statement.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Variable</em>' containment reference.
 	 * @see #setVariable(Variable)
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getLocalVariableDeclarationStatement_Variable()
@@ -65,6 +76,10 @@ public interface LocalVariableDeclarationStatement extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived feature returns all blocks that surround this local variable declaration.
+	 * This is a helper feature for ensuring that the names of local variables are unique.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>All Surrounding Blocks</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getLocalVariableDeclarationStatement_AllSurroundingBlocks()
 	 * @model transient="true" changeable="false" derived="true"

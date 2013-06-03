@@ -13,6 +13,19 @@ import org.storydriven.core.expressions.Expression;
  * A representation of the model object '<em><b>Discrete Interaction Endpoint Reference</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A DiscreteInteractionEndpointReference is used for defining SelectorExpressions
+ * in a multi-role or multi-port. There, a SelectorExpression may reference a
+ * sub-role instance or sub-port instance for selecting the synchronization partner. 
+ * The DiscreteInteractionEndpointReference always specifies a PositionSelector that
+ * defines the position of the reference sub-role instance or sub-port instance. It may, 
+ * e.g., be the first or last one in a multi-role or multi-port. The reference 
+ * typedNamedElementExpressions allows to reference a variable containing a 
+ * sub-role instance or a sub-port instance. In combination, both references enable
+ * to select the next or previous sub-role (or sub-port) instance, e.g., as var1.next. In 
+ * this case, next is the PositionSelector while var1 is the typedNamedElementExpression.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -34,6 +47,10 @@ public interface DiscreteInteractionEndpointReference extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Allows to reference a variable containing a sub-role instance of sub-port instance.
+	 * This field is optional. 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Typed Named Element Expression</em>' containment reference.
 	 * @see #setTypedNamedElementExpression(TypedNamedElementExpression)
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getDiscreteInteractionEndpointReference_TypedNamedElementExpression()
@@ -60,6 +77,14 @@ public interface DiscreteInteractionEndpointReference extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines the relative position of the sub-role instance or sub-port instance.
+	 * In particular, it enables to select the first or last sub-role instance (sub-port instance) of a 
+	 * multi-role instance (multi-port instance) using keyword first and last, to select itself
+	 * in case of a sub-role instance (sub-port instance) using keyword self, or the next
+	 * or previous sub-role given a reference either by self or a variable using keywords
+	 * next and prev.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Position</em>' containment reference.
 	 * @see #setPosition(PositionSelector)
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getDiscreteInteractionEndpointReference_Position()

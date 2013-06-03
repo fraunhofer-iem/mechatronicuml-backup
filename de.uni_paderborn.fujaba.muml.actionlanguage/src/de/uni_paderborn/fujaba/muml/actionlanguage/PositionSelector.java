@@ -13,6 +13,16 @@ import org.storydriven.core.expressions.Expression;
  * A representation of the model object '<em><b>Position Selector</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Defines a relative position of a sub-role instance or sub-port instance.
+ * The kind defines the particular reference using an enum literal where
+ * self refers to a sub-role instance (sub-port instance) itself, first or last refer to the
+ * first or last sub-role instance (sub-port instance) or a multi-role instance (multi-port
+ * instance), and next or prev refer to the next or previous sub-role instance (sub-port
+ * instance). PositionSelectors can be concatenated using the successor reference.
+ * That enables to specify, e.g., self.next, first.next, or self.prev.prev.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -35,6 +45,9 @@ public interface PositionSelector extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The enum literal defining the position.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelectorKind
 	 * @see #setKind(PositionSelectorKind)
@@ -63,6 +76,10 @@ public interface PositionSelector extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Successors of a PositionSelector enable to concatenate PositionSelectors for
+	 * specifying more complex expression like self.next or self.prev.prev.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Successor</em>' containment reference.
 	 * @see #setSuccessor(PositionSelector)
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getPositionSelector_Successor()
