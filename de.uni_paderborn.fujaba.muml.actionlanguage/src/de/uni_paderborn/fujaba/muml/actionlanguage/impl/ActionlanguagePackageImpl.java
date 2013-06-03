@@ -28,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator;
 import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Loop;
+import de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelector;
 import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelectorKind;
@@ -159,6 +160,13 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * @generated
 	 */
 	private EClass arrayInitializeExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass nondeterministicChoiceExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -656,6 +664,33 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getNondeterministicChoiceExpression() {
+		return nondeterministicChoiceExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNondeterministicChoiceExpression_Range() {
+		return (EReference)nondeterministicChoiceExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNondeterministicChoiceExpression_DataType() {
+		return (EReference)nondeterministicChoiceExpressionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getAssignOperator() {
 		return assignOperatorEEnum;
 	}
@@ -764,6 +799,10 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		arrayInitializeExpressionEClass = createEClass(ARRAY_INITIALIZE_EXPRESSION);
 		createEReference(arrayInitializeExpressionEClass, ARRAY_INITIALIZE_EXPRESSION__EXPRESSIONS);
 
+		nondeterministicChoiceExpressionEClass = createEClass(NONDETERMINISTIC_CHOICE_EXPRESSION);
+		createEReference(nondeterministicChoiceExpressionEClass, NONDETERMINISTIC_CHOICE_EXPRESSION__RANGE);
+		createEReference(nondeterministicChoiceExpressionEClass, NONDETERMINISTIC_CHOICE_EXPRESSION__DATA_TYPE);
+
 		// Create enums
 		assignOperatorEEnum = createEEnum(ASSIGN_OPERATOR);
 		incrementDecrementOperatorEEnum = createEEnum(INCREMENT_DECREMENT_OPERATOR);
@@ -797,6 +836,8 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
+		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
+		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -818,6 +859,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		localVariableDeclarationStatementEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		typedNamedElementExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		arrayInitializeExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
+		nondeterministicChoiceExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -878,6 +920,10 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		initEClass(arrayInitializeExpressionEClass, ArrayInitializeExpression.class, "ArrayInitializeExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getArrayInitializeExpression_Expressions(), theExpressionsPackage.getExpression(), null, "expressions", null, 0, -1, ArrayInitializeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(nondeterministicChoiceExpressionEClass, NondeterministicChoiceExpression.class, "NondeterministicChoiceExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getNondeterministicChoiceExpression_Range(), theValuetypePackage.getRange(), null, "range", null, 1, 1, NondeterministicChoiceExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNondeterministicChoiceExpression_DataType(), theTypesPackage.getPrimitiveDataType(), null, "dataType", null, 1, 1, NondeterministicChoiceExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(assignOperatorEEnum, AssignOperator.class, "AssignOperator");
 		addEEnumLiteral(assignOperatorEEnum, AssignOperator.UNSET);
@@ -924,7 +970,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		   source, 
 		   new String[] {
 			 "historyURI", "../../de.uni_paderborn.fujaba.muml/model/muml.history"
-		   });																																				
+		   });																																							
 	}
 
 	/**
@@ -952,7 +998,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueName"
-		   });					
+		   });								
 	}
 
 	/**
@@ -980,7 +1026,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		   source, 
 		   new String[] {
 			 "derivation", "-- collect all blocks which surround this LocalVariableDeclarationStatement\nself.eContainer()->closure(c : ecore::EObject |\n\tif c.eContainer().oclIsKindOf(core::expressions::Expression) then\n\t\tc.eContainer()\n\telse\n\t\tc\n\tendif\n)->union(\n\tSet{eContainer()}\n)->select(oclIsKindOf(Block))->collect(\n\toclAsType(Block)\n)->asOrderedSet()"
-		   });			
+		   });						
 	}
 
 } //ActionlanguagePackageImpl

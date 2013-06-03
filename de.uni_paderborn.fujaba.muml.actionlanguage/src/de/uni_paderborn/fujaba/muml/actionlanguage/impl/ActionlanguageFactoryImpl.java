@@ -48,7 +48,7 @@ public class ActionlanguageFactoryImpl extends EFactoryImpl implements Actionlan
 	 */
 	public static ActionlanguageFactory init() {
 		try {
-			ActionlanguageFactory theActionlanguageFactory = (ActionlanguageFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/actionlanguage/0.3.16"); 
+			ActionlanguageFactory theActionlanguageFactory = (ActionlanguageFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/actionlanguage/0.3.19"); 
 			if (theActionlanguageFactory != null) {
 				return theActionlanguageFactory;
 			}
@@ -91,6 +91,7 @@ public class ActionlanguageFactoryImpl extends EFactoryImpl implements Actionlan
 			case ActionlanguagePackage.LOCAL_VARIABLE_DECLARATION_STATEMENT: return createLocalVariableDeclarationStatement();
 			case ActionlanguagePackage.TYPED_NAMED_ELEMENT_EXPRESSION: return createTypedNamedElementExpression();
 			case ActionlanguagePackage.ARRAY_INITIALIZE_EXPRESSION: return createArrayInitializeExpression();
+			case ActionlanguagePackage.NONDETERMINISTIC_CHOICE_EXPRESSION: return createNondeterministicChoiceExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -272,6 +273,16 @@ public class ActionlanguageFactoryImpl extends EFactoryImpl implements Actionlan
 	public ArrayInitializeExpression createArrayInitializeExpression() {
 		ArrayInitializeExpressionImpl arrayInitializeExpression = new ArrayInitializeExpressionImpl();
 		return arrayInitializeExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NondeterministicChoiceExpression createNondeterministicChoiceExpression() {
+		NondeterministicChoiceExpressionImpl nondeterministicChoiceExpression = new NondeterministicChoiceExpressionImpl();
+		return nondeterministicChoiceExpression;
 	}
 
 	/**

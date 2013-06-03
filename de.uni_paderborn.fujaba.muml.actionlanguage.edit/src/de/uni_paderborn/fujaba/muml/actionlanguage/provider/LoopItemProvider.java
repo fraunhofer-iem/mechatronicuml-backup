@@ -246,6 +246,11 @@ public class LoopItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
+				 ActionlanguageFactory.eINSTANCE.createNondeterministicChoiceExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ActionlanguagePackage.Literals.LOOP__LOOP_TEST,
 				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
 
 		newChildDescriptors.add

@@ -49,7 +49,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/actionlanguage/0.3.16";
+	String eNS_URI = "http://www.fujaba.de/muml/actionlanguage/0.3.19";
 
 	/**
 	 * The package namespace name.
@@ -1100,6 +1100,70 @@ public interface ActionlanguagePackage extends EPackage {
 	int ARRAY_INITIALIZE_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.NondeterministicChoiceExpressionImpl <em>Nondeterministic Choice Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.NondeterministicChoiceExpressionImpl
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getNondeterministicChoiceExpression()
+	 * @generated
+	 */
+	int NONDETERMINISTIC_CHOICE_EXPRESSION = 15;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NONDETERMINISTIC_CHOICE_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NONDETERMINISTIC_CHOICE_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NONDETERMINISTIC_CHOICE_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Range</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NONDETERMINISTIC_CHOICE_EXPRESSION__RANGE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NONDETERMINISTIC_CHOICE_EXPRESSION__DATA_TYPE = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Nondeterministic Choice Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NONDETERMINISTIC_CHOICE_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator <em>Assign Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1107,7 +1171,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getAssignOperator()
 	 * @generated
 	 */
-	int ASSIGN_OPERATOR = 15;
+	int ASSIGN_OPERATOR = 16;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator <em>Increment Decrement Operator</em>}' enum.
@@ -1117,7 +1181,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getIncrementDecrementOperator()
 	 * @generated
 	 */
-	int INCREMENT_DECREMENT_OPERATOR = 16;
+	int INCREMENT_DECREMENT_OPERATOR = 17;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelectorKind <em>Position Selector Kind</em>}' enum.
@@ -1127,7 +1191,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getPositionSelectorKind()
 	 * @generated
 	 */
-	int POSITION_SELECTOR_KIND = 17;
+	int POSITION_SELECTOR_KIND = 18;
 
 
 	/**
@@ -1589,6 +1653,38 @@ public interface ActionlanguagePackage extends EPackage {
 	EReference getArrayInitializeExpression_Expressions();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression <em>Nondeterministic Choice Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Nondeterministic Choice Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression
+	 * @generated
+	 */
+	EClass getNondeterministicChoiceExpression();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression#getRange <em>Range</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Range</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression#getRange()
+	 * @see #getNondeterministicChoiceExpression()
+	 * @generated
+	 */
+	EReference getNondeterministicChoiceExpression_Range();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression#getDataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Data Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression#getDataType()
+	 * @see #getNondeterministicChoiceExpression()
+	 * @generated
+	 */
+	EReference getNondeterministicChoiceExpression_DataType();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator <em>Assign Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2013,6 +2109,32 @@ public interface ActionlanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ARRAY_INITIALIZE_EXPRESSION__EXPRESSIONS = eINSTANCE.getArrayInitializeExpression_Expressions();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.impl.NondeterministicChoiceExpressionImpl <em>Nondeterministic Choice Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.NondeterministicChoiceExpressionImpl
+		 * @see de.uni_paderborn.fujaba.muml.actionlanguage.impl.ActionlanguagePackageImpl#getNondeterministicChoiceExpression()
+		 * @generated
+		 */
+		EClass NONDETERMINISTIC_CHOICE_EXPRESSION = eINSTANCE.getNondeterministicChoiceExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Range</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NONDETERMINISTIC_CHOICE_EXPRESSION__RANGE = eINSTANCE.getNondeterministicChoiceExpression_Range();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NONDETERMINISTIC_CHOICE_EXPRESSION__DATA_TYPE = eINSTANCE.getNondeterministicChoiceExpression_DataType();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator <em>Assign Operator</em>}' enum.

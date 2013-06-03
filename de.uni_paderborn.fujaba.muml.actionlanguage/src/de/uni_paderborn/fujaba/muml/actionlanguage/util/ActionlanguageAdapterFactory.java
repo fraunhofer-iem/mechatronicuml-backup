@@ -148,6 +148,10 @@ public class ActionlanguageAdapterFactory extends AdapterFactoryImpl {
 				return createArrayInitializeExpressionAdapter();
 			}
 			@Override
+			public Adapter caseNondeterministicChoiceExpression(NondeterministicChoiceExpression object) {
+				return createNondeterministicChoiceExpressionAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -386,6 +390,20 @@ public class ActionlanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createArrayInitializeExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression <em>Nondeterministic Choice Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression
+	 * @generated
+	 */
+	public Adapter createNondeterministicChoiceExpressionAdapter() {
 		return null;
 	}
 

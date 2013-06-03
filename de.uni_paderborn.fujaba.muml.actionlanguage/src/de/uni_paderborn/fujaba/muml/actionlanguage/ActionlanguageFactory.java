@@ -152,6 +152,15 @@ public interface ActionlanguageFactory extends EFactory {
 	ArrayInitializeExpression createArrayInitializeExpression();
 
 	/**
+	 * Returns a new object of class '<em>Nondeterministic Choice Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Nondeterministic Choice Expression</em>'.
+	 * @generated
+	 */
+	NondeterministicChoiceExpression createNondeterministicChoiceExpression();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

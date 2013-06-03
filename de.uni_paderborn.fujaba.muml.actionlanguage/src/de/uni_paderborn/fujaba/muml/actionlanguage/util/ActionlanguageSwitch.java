@@ -229,6 +229,15 @@ public class ActionlanguageSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ActionlanguagePackage.NONDETERMINISTIC_CHOICE_EXPRESSION: {
+				NondeterministicChoiceExpression nondeterministicChoiceExpression = (NondeterministicChoiceExpression)theEObject;
+				T result = caseNondeterministicChoiceExpression(nondeterministicChoiceExpression);
+				if (result == null) result = caseExpression(nondeterministicChoiceExpression);
+				if (result == null) result = caseCommentableElement(nondeterministicChoiceExpression);
+				if (result == null) result = caseExtendableElement(nondeterministicChoiceExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -455,6 +464,21 @@ public class ActionlanguageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseArrayInitializeExpression(ArrayInitializeExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Nondeterministic Choice Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Nondeterministic Choice Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNondeterministicChoiceExpression(NondeterministicChoiceExpression object) {
 		return null;
 	}
 
