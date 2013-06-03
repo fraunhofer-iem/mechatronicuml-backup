@@ -45,28 +45,8 @@
             key="org.storydriven.storydiagrams.category"
             name="storydiagrams">
          <child
-               class="InitialNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-         <child
-               class="ActivityFinalNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-         <child
-               class="JunctionNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-         <child
-               class="StatementNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-         <child
-               class="StructuredNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
-         </child>
-         <child
-               class="ModifyingStoryNode"
-               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.0">
+               class="Activity"
+               packageNsUri="http://www.storydriven.org/storydiagrams/activities/0.2.1">
          </child>
       </category>
    </extension>
