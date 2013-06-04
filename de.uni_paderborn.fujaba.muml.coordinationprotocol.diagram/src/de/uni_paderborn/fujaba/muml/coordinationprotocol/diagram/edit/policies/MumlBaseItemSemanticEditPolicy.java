@@ -324,23 +324,25 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateRoleCoordinationProtocol_4007(
-				de.uni_paderborn.fujaba.muml.protocol.Role source,
-				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification target,
+		public boolean canCreateAbstractCoordinationSpecificationRoles_4007(
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
+				de.uni_paderborn.fujaba.muml.protocol.Role target,
 				View sourceView, View targetView) {
 			if (source != null) {
-				if (source.getCoordinationProtocol() != null) {
+				if (source.getRoles().size() >= 2
+						|| source.getRoles().contains(target)) {
+					return false;
+				}
+				if (source == target) {
 					return false;
 				}
 			}
-			if (target != null
-					&& (target.getRoles().size() >= 2 || target.getRoles()
-							.contains(target))) {
+			if (target != null && (target.getCoordinationProtocol() != null)) {
 				return false;
 			}
 
-			return canExistRoleCoordinationProtocol_4007(source, target,
-					sourceView, targetView);
+			return canExistAbstractCoordinationSpecificationRoles_4007(source,
+					target, sourceView, targetView);
 		}
 
 		/**
@@ -363,9 +365,9 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistRoleCoordinationProtocol_4007(
-				de.uni_paderborn.fujaba.muml.protocol.Role source,
-				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification target,
+		public boolean canExistAbstractCoordinationSpecificationRoles_4007(
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
+				de.uni_paderborn.fujaba.muml.protocol.Role target,
 				View sourceView, View targetView) {
 			return true;
 		}
@@ -373,9 +375,9 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public java.lang.String getErrorRoleCoordinationProtocol_4007(
-				de.uni_paderborn.fujaba.muml.protocol.Role source,
-				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification target,
+		public java.lang.String getErrorAbstractCoordinationSpecificationRoles_4007(
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
+				de.uni_paderborn.fujaba.muml.protocol.Role target,
 				View sourceView, View targetView) {
 			return null;
 		}

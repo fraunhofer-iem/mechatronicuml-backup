@@ -345,8 +345,8 @@
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.3.19">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.RoleCoordinationProtocol_4007"
-               name="%metatype.name.RoleCoordinationProtocol_4007"
+               id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.AbstractCoordinationSpecificationRoles_4007"
+               name="%metatype.name.AbstractCoordinationSpecificationRoles_4007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
             <param name="semanticHint" value="4007"/>
@@ -378,7 +378,7 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol_2005"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol_3005"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.Role_3006"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.RoleCoordinationProtocol_4007"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.AbstractCoordinationSpecificationRoles_4007"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.RoleConnector_4006"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>

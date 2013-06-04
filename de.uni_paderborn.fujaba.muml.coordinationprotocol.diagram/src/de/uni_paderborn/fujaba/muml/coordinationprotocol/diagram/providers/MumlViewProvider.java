@@ -238,9 +238,9 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
 		switch (de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
 				.getVisualID(elementTypeHint)) {
-		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleCoordinationProtocolEditPart.VISUAL_ID:
-			return createRoleCoordinationProtocol_4007(containerView, index,
-					persisted, preferencesHint);
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
+			return createAbstractCoordinationSpecificationRoles_4007(
+					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
 			return createRoleConnector_4006(
 					getSemanticElement(semanticAdapter), containerView, index,
@@ -400,8 +400,9 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Edge createRoleCoordinationProtocol_4007(View containerView,
-			int index, boolean persisted, PreferencesHint preferencesHint) {
+	public Edge createAbstractCoordinationSpecificationRoles_4007(
+			View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
@@ -414,7 +415,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
 		edge.setType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleCoordinationProtocolEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID));
 		edge.setElement(null);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint

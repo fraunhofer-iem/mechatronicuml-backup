@@ -12,6 +12,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -21,6 +22,7 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -270,18 +272,30 @@ public class CoordinationProtocol2EditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMARelTypesOnTarget() {
+	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.RoleCoordinationProtocol_4007);
+		types.add(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4007);
 		return types;
 	}
 
 	/**
 	 * @generated
 	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
+	public List<IElementType> getMARelTypesOnSourceAndTarget(
+			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.RoleCoordinationProtocol_4007) {
+		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart) {
+			types.add(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4007);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
+		if (relationshipType == de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4007) {
 			types.add(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.Role_3006);
 		}
 		return types;
@@ -340,6 +354,27 @@ public class CoordinationProtocol2EditPart extends ShapeNodeEditPart {
 			return fFigureCoordinationProtocolNameFigure;
 		}
 
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void handleNotificationEvent(Notification event) {
+		boolean update = false;
+
+		if (event.getFeature() == de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+				.getAbstractCoordinationSpecification_Roles()) {
+			update = true;
+		}
+
+		if (update) {
+			List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
+					.getRegisteredEditPolicies(getDiagramView().getElement());
+			for (CanonicalEditPolicy editPolicy : editPolicies) {
+				editPolicy.refresh();
+			}
+		}
+		super.handleNotificationEvent(event);
 	}
 
 }

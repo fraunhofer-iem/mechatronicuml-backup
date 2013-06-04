@@ -50,18 +50,22 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType CoordinationProtocol_2005 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol_2005"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType CoordinationProtocol_3005 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol_3005"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
 	public static final IElementType Role_3006 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.Role_3006"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
-	public static final IElementType RoleCoordinationProtocol_4007 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.RoleCoordinationProtocol_4007"); //$NON-NLS-1$
+	public static final IElementType AbstractCoordinationSpecificationRoles_4007 = getElementType("de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.AbstractCoordinationSpecificationRoles_4007"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -199,9 +203,9 @@ public class MumlElementTypes {
 							.getRole());
 
 			elements.put(
-					RoleCoordinationProtocol_4007,
+					AbstractCoordinationSpecificationRoles_4007,
 					de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-							.getRole_CoordinationProtocol());
+							.getAbstractCoordinationSpecification_Roles());
 
 			elements.put(
 					RoleConnector_4006,
@@ -228,7 +232,8 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(CoordinationProtocol_2005);
 			KNOWN_ELEMENT_TYPES.add(CoordinationProtocol_3005);
 			KNOWN_ELEMENT_TYPES.add(Role_3006);
-			KNOWN_ELEMENT_TYPES.add(RoleCoordinationProtocol_4007);
+			KNOWN_ELEMENT_TYPES
+					.add(AbstractCoordinationSpecificationRoles_4007);
 			KNOWN_ELEMENT_TYPES.add(RoleConnector_4006);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -247,8 +252,8 @@ public class MumlElementTypes {
 			return CoordinationProtocol_3005;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleEditPart.VISUAL_ID:
 			return Role_3006;
-		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleCoordinationProtocolEditPart.VISUAL_ID:
-			return RoleCoordinationProtocol_4007;
+		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
+			return AbstractCoordinationSpecificationRoles_4007;
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleConnectorEditPart.VISUAL_ID:
 			return RoleConnector_4006;
 		}

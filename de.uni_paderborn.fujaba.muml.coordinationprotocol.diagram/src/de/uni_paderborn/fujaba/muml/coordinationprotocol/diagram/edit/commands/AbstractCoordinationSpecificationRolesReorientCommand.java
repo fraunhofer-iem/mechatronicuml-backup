@@ -13,7 +13,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class RoleCoordinationProtocolReorientCommand extends EditElementCommand {
+public class AbstractCoordinationSpecificationRolesReorientCommand extends
+		EditElementCommand {
 
 	/**
 	 * @generated
@@ -38,7 +39,7 @@ public class RoleCoordinationProtocolReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
-	public RoleCoordinationProtocolReorientCommand(
+	public AbstractCoordinationSpecificationRolesReorientCommand(
 			ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
@@ -51,7 +52,7 @@ public class RoleCoordinationProtocolReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof de.uni_paderborn.fujaba.muml.protocol.Role) {
+		if (false == referenceOwner instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -67,7 +68,7 @@ public class RoleCoordinationProtocolReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification && newEnd instanceof de.uni_paderborn.fujaba.muml.protocol.Role)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.protocol.Role && newEnd instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification)) {
 			return false;
 		}
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
@@ -75,12 +76,14 @@ public class RoleCoordinationProtocolReorientCommand extends EditElementCommand 
 		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistRoleCoordinationProtocol_4007(
+				.getLinkConstraints()
+				.canExistAbstractCoordinationSpecificationRoles_4007(
 						getNewSource(), getOldTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorRoleCoordinationProtocol_4007(getNewSource(),
-							getOldTarget(), sourceView, targetView);
+					.getErrorAbstractCoordinationSpecificationRoles_4007(
+							getNewSource(), getOldTarget(), sourceView,
+							targetView);
 			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(sourceView, errorMessage);
 			return false;
@@ -92,7 +95,7 @@ public class RoleCoordinationProtocolReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification && newEnd instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.protocol.Role && newEnd instanceof de.uni_paderborn.fujaba.muml.protocol.Role)) {
 			return false;
 		}
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
@@ -100,12 +103,14 @@ public class RoleCoordinationProtocolReorientCommand extends EditElementCommand 
 		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistRoleCoordinationProtocol_4007(
+				.getLinkConstraints()
+				.canExistAbstractCoordinationSpecificationRoles_4007(
 						getOldSource(), getNewTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorRoleCoordinationProtocol_4007(getOldSource(),
-							getNewTarget(), sourceView, targetView);
+					.getErrorAbstractCoordinationSpecificationRoles_4007(
+							getOldSource(), getNewTarget(), sourceView,
+							targetView);
 			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(targetView, errorMessage);
 			return false;
@@ -136,8 +141,11 @@ public class RoleCoordinationProtocolReorientCommand extends EditElementCommand 
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
 
-		getOldSource().setCoordinationProtocol(null);
-		getNewSource().setCoordinationProtocol(getOldTarget());
+		// Enhancement for MUML-BUG #446
+		if (getOldSource().getRoles().size() > 1) {
+			getOldSource().getRoles().remove(getOldTarget());
+		}
+		getNewSource().getRoles().add(getOldTarget());
 
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
@@ -147,7 +155,11 @@ public class RoleCoordinationProtocolReorientCommand extends EditElementCommand 
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
 
-		getOldSource().setCoordinationProtocol(getNewTarget());
+		// Enhancement for MUML-BUG #446
+		if (getOldSource().getRoles().size() > 1) {
+			getOldSource().getRoles().remove(getOldTarget());
+		}
+		getOldSource().getRoles().add(getNewTarget());
 
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
@@ -155,29 +167,29 @@ public class RoleCoordinationProtocolReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.protocol.Role getOldSource() {
-		return (de.uni_paderborn.fujaba.muml.protocol.Role) referenceOwner;
+	protected de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) referenceOwner;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.protocol.Role getNewSource() {
-		return (de.uni_paderborn.fujaba.muml.protocol.Role) newEnd;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification getOldTarget() {
-		return (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) oldEnd;
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification getNewTarget() {
+	protected de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification getNewSource() {
 		return (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) newEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.muml.protocol.Role getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.protocol.Role) oldEnd;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.muml.protocol.Role getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.protocol.Role) newEnd;
 	}
 
 	/**

@@ -12,8 +12,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class RoleCoordinationProtocolEditPart extends ConnectionNodeEditPart
-		implements ITreeBranchEditPart {
+public class AbstractCoordinationSpecificationRolesEditPart extends
+		ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -23,7 +23,7 @@ public class RoleCoordinationProtocolEditPart extends ConnectionNodeEditPart
 	/**
 	 * @generated
 	 */
-	public RoleCoordinationProtocolEditPart(View view) {
+	public AbstractCoordinationSpecificationRolesEditPart(View view) {
 		super(view);
 	}
 
@@ -34,7 +34,7 @@ public class RoleCoordinationProtocolEditPart extends ConnectionNodeEditPart
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.RoleCoordinationProtocolItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.AbstractCoordinationSpecificationRolesItemSemanticEditPolicy());
 	}
 
 	/**

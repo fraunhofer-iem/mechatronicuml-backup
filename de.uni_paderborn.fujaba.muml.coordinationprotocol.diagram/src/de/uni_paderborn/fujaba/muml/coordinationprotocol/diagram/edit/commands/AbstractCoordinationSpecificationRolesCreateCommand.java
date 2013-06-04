@@ -12,7 +12,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class RoleCoordinationProtocolCreateCommand extends EditElementCommand {
+public class AbstractCoordinationSpecificationRolesCreateCommand extends
+		EditElementCommand {
 
 	/**
 	 * @generated
@@ -27,7 +28,7 @@ public class RoleCoordinationProtocolCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public RoleCoordinationProtocolCreateCommand(
+	public AbstractCoordinationSpecificationRolesCreateCommand(
 			CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
@@ -42,11 +43,11 @@ public class RoleCoordinationProtocolCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.protocol.Role) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) {
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.protocol.Role) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -58,12 +59,13 @@ public class RoleCoordinationProtocolCreateCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateRoleCoordinationProtocol_4007(
+				.getLinkConstraints()
+				.canCreateAbstractCoordinationSpecificationRoles_4007(
 						getSource(), getTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorRoleCoordinationProtocol_4007(getSource(),
-							getTarget(), sourceView, targetView);
+					.getErrorAbstractCoordinationSpecificationRoles_4007(
+							getSource(), getTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(targetView != null ? targetView : sourceView,
 							errorMessage);
@@ -83,7 +85,7 @@ public class RoleCoordinationProtocolCreateCommand extends EditElementCommand {
 		}
 
 		if (getSource() != null && getTarget() != null) {
-			getSource().setCoordinationProtocol(getTarget());
+			getSource().getRoles().add(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
 
@@ -99,14 +101,14 @@ public class RoleCoordinationProtocolCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.protocol.Role getSource() {
-		return (de.uni_paderborn.fujaba.muml.protocol.Role) source;
+	protected de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification getSource() {
+		return (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) source;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification getTarget() {
-		return (de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification) target;
+	protected de.uni_paderborn.fujaba.muml.protocol.Role getTarget() {
+		return (de.uni_paderborn.fujaba.muml.protocol.Role) target;
 	}
 }

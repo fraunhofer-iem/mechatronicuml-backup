@@ -5,7 +5,7 @@
     <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ModelElementCategoryEditHelper"/>
     <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
-    <childNodes visualID="3005" editPartClassName="CoordinationProtocol2EditPart" itemSemanticEditPolicyClassName="CoordinationProtocol2ItemSemanticEditPolicy" canonicalEditPolicyClassName="CoordinationProtocol2CanonicalEditPolicy" graphicalNodeEditPolicyClassName="CoordinationProtocol2GraphicalNodeEditPolicy" createCommandClassName="CoordinationProtocol2CreateCommand" containers="//@diagram/@compartments.0">
+    <childNodes visualID="3005" editPartClassName="CoordinationProtocol2EditPart" itemSemanticEditPolicyClassName="CoordinationProtocol2ItemSemanticEditPolicy" notationViewFactoryClassName="CoordinationProtocolViewFactory" canonicalEditPolicyClassName="CoordinationProtocol2CanonicalEditPolicy" graphicalNodeEditPolicyClassName="CoordinationProtocol2GraphicalNodeEditPolicy" createCommandClassName="CoordinationProtocol2CreateCommand" containers="//@diagram/@compartments.0">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:SpecializationType" metamodelType="//@diagram/@topLevelNodes.0/@elementType"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="CoordinationProtocolFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CoordinationProtocolFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCoordinationProtocolNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CoordinationProtocolFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCoordinationProtocolNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCoordinationProtocolNameFigure.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureCoordinationProtocolNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureCoordinationProtocolNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalIndent = 0;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalSpan = 1;&#xA;constraintFFigureCoordinationProtocolNameFigure.verticalSpan = 1;&#xA;constraintFFigureCoordinationProtocolNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureCoordinationProtocolNameFigure.grabExcessVerticalSpace = true;&#xA;this.add(fFigureCoordinationProtocolNameFigure, constraintFFigureCoordinationProtocolNameFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCoordinationProtocolNameFigure() {&#xA;&#x9;&#x9;return fFigureCoordinationProtocolNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
@@ -14,7 +14,7 @@
         <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
         <childMetaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
       </modelFacet>
-      <labels visualID="5005" editPartClassName="CoordinationProtocolNameEditPart" itemSemanticEditPolicyClassName="CoordinationProtocolNameItemSemanticEditPolicy">
+      <labels visualID="5005" editPartClassName="CoordinationProtocolNameEditPart" itemSemanticEditPolicyClassName="CoordinationProtocolNameItemSemanticEditPolicy" notationViewFactoryClassName="CoordinationProtocolNameViewFactory">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureCoordinationProtocolNameFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="" editorPattern="" editPattern="">
@@ -22,7 +22,7 @@
         </modelFacet>
       </labels>
     </childNodes>
-    <childNodes visualID="3006" editPartClassName="RoleEditPart" itemSemanticEditPolicyClassName="RoleItemSemanticEditPolicy" canonicalEditPolicyClassName="RoleCanonicalEditPolicy" graphicalNodeEditPolicyClassName="RoleGraphicalNodeEditPolicy" createCommandClassName="RoleCreateCommand" containers="//@diagram/@compartments.0">
+    <childNodes visualID="3006" editPartClassName="RoleEditPart" itemSemanticEditPolicyClassName="RoleItemSemanticEditPolicy" notationViewFactoryClassName="RoleViewFactory" canonicalEditPolicyClassName="RoleCanonicalEditPolicy" graphicalNodeEditPolicyClassName="RoleGraphicalNodeEditPolicy" createCommandClassName="RoleCreateCommand" containers="//@diagram/@compartments.0">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="RoleEditHelper"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure">
@@ -63,7 +63,7 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
-      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5006" editPartClassName="RoleNameEditPart" itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy">
+      <labels xsi:type="gmfgen:GenExternalNodeLabel" visualID="5006" editPartClassName="RoleNameEditPart" itemSemanticEditPolicyClassName="RoleNameItemSemanticEditPolicy" notationViewFactoryClassName="RoleNameViewFactory">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
@@ -71,7 +71,7 @@
         </modelFacet>
       </labels>
     </childNodes>
-    <topLevelNodes visualID="2005" editPartClassName="CoordinationProtocolEditPart" itemSemanticEditPolicyClassName="CoordinationProtocolItemSemanticEditPolicy" canonicalEditPolicyClassName="CoordinationProtocolCanonicalEditPolicy" compartments="//@diagram/@compartments.0" graphicalNodeEditPolicyClassName="CoordinationProtocolGraphicalNodeEditPolicy" createCommandClassName="CoordinationProtocolCreateCommand">
+    <topLevelNodes visualID="2005" editPartClassName="CoordinationProtocolEditPart" itemSemanticEditPolicyClassName="CoordinationProtocolItemSemanticEditPolicy" notationViewFactoryClassName="CoordinationProtocolViewFactory" canonicalEditPolicyClassName="CoordinationProtocolCanonicalEditPolicy" compartments="//@diagram/@compartments.0" graphicalNodeEditPolicyClassName="CoordinationProtocolGraphicalNodeEditPolicy" createCommandClassName="CoordinationProtocolCreateCommand">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="CoordinationProtocolEditHelper"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
@@ -161,15 +161,15 @@
         </modelElementInitializer>
       </modelFacet>
     </topLevelNodes>
-    <links visualID="4007" editPartClassName="RoleCoordinationProtocolEditPart" itemSemanticEditPolicyClassName="RoleCoordinationProtocolItemSemanticEditPolicy" createCommandClassName="RoleCoordinationProtocolCreateCommand" reorientCommandClassName="RoleCoordinationProtocolReorientCommand">
+    <links visualID="4007" editPartClassName="AbstractCoordinationSpecificationRolesEditPart" itemSemanticEditPolicyClassName="AbstractCoordinationSpecificationRolesItemSemanticEditPolicy" notationViewFactoryClassName="AbstractCoordinationSpecificationRolesViewFactory" createCommandClassName="AbstractCoordinationSpecificationRolesCreateCommand" reorientCommandClassName="AbstractCoordinationSpecificationRolesReorientCommand">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:SpecializationType"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="RolePatternFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RolePatternFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureRolePatternLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RolePatternFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureRolePatternLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureRolePatternLabel.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureRolePatternLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureRolePatternLabel() {&#xA;&#x9;&#x9;return fFigureRolePatternLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/Role/coordinationProtocol"/>
+        <metaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
       </modelFacet>
     </links>
-    <links visualID="4006" editPartClassName="RoleConnectorEditPart" itemSemanticEditPolicyClassName="RoleConnectorItemSemanticEditPolicy" createCommandClassName="RoleConnectorCreateCommand" reorientCommandClassName="RoleConnectorReorientCommand">
+    <links visualID="4006" editPartClassName="RoleConnectorEditPart" itemSemanticEditPolicyClassName="RoleConnectorItemSemanticEditPolicy" notationViewFactoryClassName="RoleConnectorViewFactory" createCommandClassName="RoleConnectorCreateCommand" reorientCommandClassName="RoleConnectorReorientCommand">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="RoleConnectorEditHelper"/>
       <viewmap xsi:type="gmfgen:FigureViewmap" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
@@ -192,7 +192,7 @@
       </modelFacet>
       <creationConstraints targetEnd="//@expressionProviders/@providers.0/@expressions.13"/>
     </links>
-    <compartments visualID="7005" editPartClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart" itemSemanticEditPolicyClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentItemSemanticEditPolicy" canonicalEditPolicyClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1" title="CoordinationProtocolContainerCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@topLevelNodes.0" listLayout="false">
+    <compartments visualID="7005" editPartClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentEditPart" itemSemanticEditPolicyClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentItemSemanticEditPolicy" notationViewFactoryClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentViewFactory" canonicalEditPolicyClassName="CoordinationProtocolCoordinationProtocolContainerCompartmentCanonicalEditPolicy" childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1" title="CoordinationProtocolContainerCompartment" canCollapse="false" needsTitle="false" node="//@diagram/@topLevelNodes.0" listLayout="false">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="CoordinationProtocolContainerCompartmentFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CoordinationProtocolContainerCompartmentFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CoordinationProtocolContainerCompartmentFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
     </compartments>
@@ -232,12 +232,12 @@
     <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@childNodes.1"/>
     <childReferences parent="//@diagram" child="//@diagram/@topLevelNodes.0"/>
     <childReferences parent="//@diagram" child="//@diagram/@links.0" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.0" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@links.0" child="//@diagram/@childNodes.0" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@childNodes.0" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@links.0" child="//@diagram/@childNodes.1" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@childNodes.1" child="//@diagram/@links.0" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.0" child="//@diagram/@childNodes.1" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.1" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.0" child="//@diagram/@topLevelNodes.0" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@topLevelNodes.0" child="//@diagram/@links.0" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.0" child="//@diagram/@childNodes.0" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.0" child="//@diagram/@links.0" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram" child="//@diagram/@links.1" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.1" child="//@diagram/@childNodes.1" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@childNodes.1" child="//@diagram/@links.1" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
