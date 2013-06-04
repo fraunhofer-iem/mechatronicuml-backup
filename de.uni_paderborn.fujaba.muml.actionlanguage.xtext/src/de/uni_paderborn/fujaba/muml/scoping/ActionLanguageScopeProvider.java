@@ -187,7 +187,10 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	
 	private void addHybridPorts(RealtimeStatechart rtsc) {
 		AtomicComponent atomicComponent = null;
-		if (rtsc.getBehavioralElement() instanceof AtomicComponent) {
+		if (rtsc.getBehavioralElement() == null && rtsc.isEmbedded()) {
+			addHybridPorts(rtsc.getParentRegion().getParentState().getParentStatechart());
+			return;
+		} else if (rtsc.getBehavioralElement() instanceof AtomicComponent) {
 			atomicComponent = (AtomicComponent) rtsc.getBehavioralElement();
 		} else if (rtsc.getBehavioralElement() instanceof Port
 				&& ((Port) rtsc.getBehavioralElement()).getComponent() instanceof AtomicComponent) {
