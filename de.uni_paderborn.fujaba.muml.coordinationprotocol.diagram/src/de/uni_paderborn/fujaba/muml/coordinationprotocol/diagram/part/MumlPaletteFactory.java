@@ -46,10 +46,10 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.CoordinationProtocol1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.CoordinationProtocol1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_2006));
+						.singletonList(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_2005));
 		entry.setId("createCoordinationProtocol1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_2006));
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.CoordinationProtocol_2005));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -62,10 +62,10 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.Role2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.Role2CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.Role_3008));
+						.singletonList(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.Role_3006));
 		entry.setId("createRole2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.Role_3008));
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.Role_3006));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -78,10 +78,10 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.RoleConnector3CreationTool_title,
 				de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.Messages.RoleConnector3CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.RoleConnector_4009));
+						.singletonList(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.RoleConnector_4006));
 		entry.setId("createRoleConnector3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes
-				.getImageDescriptor(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.RoleConnector_4009));
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.RoleConnector_4006));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

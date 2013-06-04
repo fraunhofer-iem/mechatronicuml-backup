@@ -80,11 +80,11 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistRoleConnector_4009(container,
+				.getLinkConstraints().canExistRoleConnector_4006(container,
 						getLink(), getNewSource(), target, sourceView,
 						targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorRoleConnector_4009(container,
+					.getLinkConstraints().getErrorRoleConnector_4006(container,
 							getNewSource(), target, sourceView, targetView);
 			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(sourceView, errorMessage);
@@ -118,11 +118,11 @@ public class RoleConnectorReorientCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistRoleConnector_4009(container,
+				.getLinkConstraints().canExistRoleConnector_4006(container,
 						getLink(), source, getNewTarget(), sourceView,
 						targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorRoleConnector_4009(container,
+					.getLinkConstraints().getErrorRoleConnector_4006(container,
 							source, getNewTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(sourceView, errorMessage);

@@ -57,7 +57,7 @@ public class CoordinationProtocolCreateCommand extends EditElementCommand {
 		owner.getModelElements().add(newElement);
 
 		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.ElementInitializers
-				.getInstance().init_CoordinationProtocol_2006(newElement);
+				.getInstance().init_CoordinationProtocol_2005(newElement);
 
 		doConfigure(newElement, monitor, info);
 

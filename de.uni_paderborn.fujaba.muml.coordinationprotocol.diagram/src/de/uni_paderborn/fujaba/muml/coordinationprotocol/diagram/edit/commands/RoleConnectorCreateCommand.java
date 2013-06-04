@@ -81,11 +81,11 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateRoleConnector_4009(
+				.getLinkConstraints().canCreateRoleConnector_4006(
 						getContainer(), getSource(), getTarget(), sourceView,
 						targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
-					.getLinkConstraints().getErrorRoleConnector_4009(
+					.getLinkConstraints().getErrorRoleConnector_4006(
 							getContainer(), getSource(), getTarget(),
 							sourceView, targetView);
 			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
@@ -112,7 +112,7 @@ public class RoleConnectorCreateCommand extends EditElementCommand {
 		newElement.getConnectorEndpoints().add(getSource());
 		newElement.getConnectorEndpoints().add(getTarget());
 		de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.ElementInitializers
-				.getInstance().init_RoleConnector_4009(newElement);
+				.getInstance().init_RoleConnector_4006(newElement);
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);

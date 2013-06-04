@@ -118,7 +118,7 @@ public class CoordinationProtocolCoordinationProtocolContainerCompartmentCanonic
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.part.MumlDiagramUpdater
-				.getCoordinationProtocolCoordinationProtocolContainerCompartment_7006SemanticChildren(viewObject);
+				.getCoordinationProtocolCoordinationProtocolContainerCompartment_7005SemanticChildren(viewObject);
 
 	}
 

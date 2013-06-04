@@ -23,39 +23,39 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser coordinationProtocolName_5007Parser;
+	private IParser coordinationProtocolName_5005Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getCoordinationProtocolName_5007Parser() {
-		if (coordinationProtocolName_5007Parser == null) {
+	private IParser getCoordinationProtocolName_5005Parser() {
+		if (coordinationProtocolName_5005Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser(
 					features);
-			coordinationProtocolName_5007Parser = parser;
+			coordinationProtocolName_5005Parser = parser;
 		}
-		return coordinationProtocolName_5007Parser;
+		return coordinationProtocolName_5005Parser;
 	}
 
 	/**
 	 * @generated
 	 */
-	private IParser roleName_5008Parser;
+	private IParser roleName_5006Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getRoleName_5008Parser() {
-		if (roleName_5008Parser == null) {
+	private IParser getRoleName_5006Parser() {
+		if (roleName_5006Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.parsers.MessageFormatParser(
 					features);
-			roleName_5008Parser = parser;
+			roleName_5006Parser = parser;
 		}
-		return roleName_5008Parser;
+		return roleName_5006Parser;
 	}
 
 	/**
@@ -64,9 +64,9 @@ public class MumlParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID:
-			return getCoordinationProtocolName_5007Parser();
+			return getCoordinationProtocolName_5005Parser();
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.RoleNameEditPart.VISUAL_ID:
-			return getRoleName_5008Parser();
+			return getRoleName_5006Parser();
 		}
 		return null;
 	}

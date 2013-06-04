@@ -16,7 +16,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_CoordinationProtocol_2006(
+	public void init_CoordinationProtocol_2005(
 			de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
@@ -153,7 +153,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_Role_3008(
+	public void init_Role_3006(
 			de.uni_paderborn.fujaba.muml.protocol.Role instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.expressions.MumlOCLFactory
@@ -204,7 +204,7 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_RoleConnector_4009(
+	public void init_RoleConnector_4006(
 			de.uni_paderborn.fujaba.muml.protocol.RoleConnector instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions newInstance_0_0 = de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory.eINSTANCE

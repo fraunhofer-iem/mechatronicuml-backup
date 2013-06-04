@@ -324,31 +324,29 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateAbstractCoordinationSpecificationRoles_4008(
-				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
-				de.uni_paderborn.fujaba.muml.protocol.Role target,
+		public boolean canCreateRoleCoordinationProtocol_4007(
+				de.uni_paderborn.fujaba.muml.protocol.Role source,
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification target,
 				View sourceView, View targetView) {
 			if (source != null) {
-				if (source.getRoles().size() >= 2
-						|| source.getRoles().contains(target)) {
-					return false;
-				}
-				if (source == target) {
+				if (source.getCoordinationProtocol() != null) {
 					return false;
 				}
 			}
-			if (target != null && (target.getCoordinationProtocol() != null)) {
+			if (target != null
+					&& (target.getRoles().size() >= 2 || target.getRoles()
+							.contains(target))) {
 				return false;
 			}
 
-			return canExistAbstractCoordinationSpecificationRoles_4008(source,
-					target, sourceView, targetView);
+			return canExistRoleCoordinationProtocol_4007(source, target,
+					sourceView, targetView);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateRoleConnector_4009(
+		public boolean canCreateRoleConnector_4006(
 				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
@@ -358,16 +356,16 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					return false;
 				}
 			}
-			return canExistRoleConnector_4009(container, null, source, target,
+			return canExistRoleConnector_4006(container, null, source, target,
 					sourceView, targetView);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistAbstractCoordinationSpecificationRoles_4008(
-				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
-				de.uni_paderborn.fujaba.muml.protocol.Role target,
+		public boolean canExistRoleCoordinationProtocol_4007(
+				de.uni_paderborn.fujaba.muml.protocol.Role source,
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification target,
 				View sourceView, View targetView) {
 			return true;
 		}
@@ -375,9 +373,9 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public java.lang.String getErrorAbstractCoordinationSpecificationRoles_4008(
-				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification source,
-				de.uni_paderborn.fujaba.muml.protocol.Role target,
+		public java.lang.String getErrorRoleCoordinationProtocol_4007(
+				de.uni_paderborn.fujaba.muml.protocol.Role source,
+				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification target,
 				View sourceView, View targetView) {
 			return null;
 		}
@@ -385,7 +383,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistRoleConnector_4009(
+		public boolean canExistRoleConnector_4006(
 				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container,
 				de.uni_paderborn.fujaba.muml.protocol.RoleConnector linkInstance,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
@@ -429,7 +427,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public java.lang.String getErrorRoleConnector_4009(
+		public java.lang.String getErrorRoleConnector_4006(
 				de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification container,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint source,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint target,
