@@ -12,13 +12,6 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.activities.expressions.provider.ActivitiesExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.activities.provider.ActivitiesItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.calls.expressions.provider.CallsExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.calls.provider.CallsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.provider.StorydiagramsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAdapterFactory;
 
 import de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.protocol.provider.ProtocolItemProviderAdapterFactory;
@@ -109,14 +102,7 @@ public class MumlCommonPlugin implements BundleActivator {
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new EcoreItemProviderAdapterFactory());
 		factories.add(new ModelinstanceItemProviderAdapterFactory());
-		factories.add(new StorydiagramsItemProviderAdapterFactory());
-		factories.add(new ActivitiesItemProviderAdapterFactory());
-		factories.add(new ActivitiesExpressionsItemProviderAdapterFactory());
-		factories.add(new CallsItemProviderAdapterFactory());
-		factories.add(new CallsExpressionsItemProviderAdapterFactory());
 		factories.add(new ProtocolItemProviderAdapterFactory());
-		factories.add(new PatternsExpressionsItemProviderAdapterFactory());
-		factories.add(new TemplatesItemProviderAdapterFactory());
 
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
