@@ -29,6 +29,8 @@
         <attributes xsi:type="gmfgen:ResizeConstraints"/>
         <attributes xsi:type="gmfgen:DefaultSizeAttributes" width="20" height="20"/>
       </viewmap>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.ports.RoleEditPolicy"/>
+      <behaviour xsi:type="gmfgen:CustomBehaviour" key="org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.OPEN_ROLE" editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy"/>
       <modelFacet>
         <metaClass href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/Role"/>
         <containmentMetaFeature href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
