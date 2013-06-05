@@ -46,7 +46,7 @@ main() {
 		// Create CoordinationProtocolParts (was occurrence) and associate PortParts
 		part.portParts->forEach(p) {
 			if (p.portType.oclIsKindOf(DiscretePort) and p.coordinationProtocolOccurence.oclIsUndefined()) then {
-				var coordinationProtocol : CoordinationProtocol := p.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol;
+				var coordinationProtocol : CoordinationProtocol := p.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol);
 				if (not coordinationProtocol.oclIsUndefined()) then {
 					// Try to find an existing protocol part (was occurrence) for this protocol
 					p.coordinationProtocolOccurence := part.parentComponent.coordinationProtocolOccurences->any(c | c.coordinationProtocol = coordinationProtocol);
