@@ -545,12 +545,6 @@
             <input type="de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification"/>
          </propertySection>
          <propertySection
-            id="Role.port" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.protocol.section.RolePortSection">
-            <input type="de.uni_paderborn.fujaba.muml.protocol.Role"/>
-         </propertySection>
-         <propertySection
             id="Role.receiverMessageBuffer" 
             tab="base"
             class="de.uni_paderborn.fujaba.muml.properties.protocol.section.RoleReceiverMessageBufferSection">
