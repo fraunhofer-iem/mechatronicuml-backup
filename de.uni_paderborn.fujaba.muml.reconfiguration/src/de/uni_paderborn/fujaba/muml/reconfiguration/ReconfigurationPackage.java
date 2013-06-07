@@ -368,6 +368,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT__CARDINALITY = ComponentPackage.DISCRETE_PORT__CARDINALITY;
 
 	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER = ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER;
+
+	/**
 	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -402,15 +411,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_PORT__IS_DISCRETE_IN_OUT_PORT = ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER = ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER;
 
 	/**
 	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
@@ -1081,6 +1081,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__CARDINALITY = RECONFIGURATION_PORT__CARDINALITY;
 
 	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER;
+
+	/**
 	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1115,15 +1124,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_MESSAGE_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_PORT__IS_DISCRETE_IN_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER;
 
 	/**
 	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
@@ -1298,6 +1298,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__CARDINALITY = RECONFIGURATION_PORT__CARDINALITY;
 
 	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER;
+
+	/**
 	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1332,15 +1341,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_PORT__IS_DISCRETE_IN_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_EXECUTION_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER;
 
 	/**
 	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
@@ -2124,6 +2124,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__CARDINALITY = RECONFIGURATION_PORT__CARDINALITY;
 
 	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER;
+
+	/**
 	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2158,15 +2167,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_PORT__IS_DISCRETE_IN_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__RECEIVER_MESSAGE_BUFFER = RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER;
 
 	/**
 	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.fujaba.muml.component.util.ComponentValidator;
+import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
 import de.uni_paderborn.fujaba.muml.reconfiguration.*;
 
 /**
@@ -68,6 +69,14 @@ public class ReconfigurationValidator extends EObjectValidator {
 	protected ComponentValidator componentValidator;
 
 	/**
+	 * The cached base package validator.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConnectorValidator connectorValidator;
+
+	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,6 +85,7 @@ public class ReconfigurationValidator extends EObjectValidator {
 	public ReconfigurationValidator() {
 		super();
 		componentValidator = ComponentValidator.INSTANCE;
+		connectorValidator = ConnectorValidator.INSTANCE;
 	}
 
 	/**
@@ -188,12 +198,15 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(reconfigurationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresMessageTypes(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAndRoleSameMessageTypes(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresBehavior(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresRole(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortMustRefineMultiRole(reconfigurationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_ReceiverPortRequiresMessageBuffer(reconfigurationPort, diagnostics, context);
 		return result;
 	}
 
@@ -275,12 +288,15 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(internalReconfigurationCommunicationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(internalReconfigurationCommunicationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(internalReconfigurationCommunicationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresMessageTypes(internalReconfigurationCommunicationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAndRoleSameMessageTypes(internalReconfigurationCommunicationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresBehavior(internalReconfigurationCommunicationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(internalReconfigurationCommunicationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresRole(internalReconfigurationCommunicationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortMustRefineMultiRole(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_ReceiverPortRequiresMessageBuffer(internalReconfigurationCommunicationPort, diagnostics, context);
 		return result;
 	}
 
@@ -381,12 +397,15 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurationMessagePort, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(reconfigurationMessagePort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresMessageTypes(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAndRoleSameMessageTypes(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresBehavior(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresRole(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortMustRefineMultiRole(reconfigurationMessagePort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_ReceiverPortRequiresMessageBuffer(reconfigurationMessagePort, diagnostics, context);
 		return result;
 	}
 
@@ -405,12 +424,15 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurationExecutionPort, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(reconfigurationExecutionPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresMessageTypes(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAndRoleSameMessageTypes(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresBehavior(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresRole(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortMustRefineMultiRole(reconfigurationExecutionPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_ReceiverPortRequiresMessageBuffer(reconfigurationExecutionPort, diagnostics, context);
 		return result;
 	}
 
