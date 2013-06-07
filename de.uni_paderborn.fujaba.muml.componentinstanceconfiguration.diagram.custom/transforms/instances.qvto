@@ -19,22 +19,29 @@ main() {
 	
 	// process StructuredComponentInstances
 	instance.rootObjects()[StructuredComponentInstance]->forEach(ci) {
+		// Remove old port instances from resource
+		ci.portInstances->forEach(pi) {
+			instance.removeElement(pi);
+		};
 		ci.portInstances := ci.componentType.createPortInstances(NULL_COMPONENT_PART_HELPER); // using helper instead of "null", because of QVTO-Bug
+		
+		// Remove old embedded cic from resource
+		instance.removeElement(ci.embeddedCIC);
 		ci.embeddedCIC := new ComponentInstanceConfiguration(ci.componentType.oclAsType(StructuredComponent));
 		
-		// Create ConnectorInstances after PortInstance.component and ComponentInstance.componentPart is set (see above)
-		// This makes sure that the derivation of the PortInstance.portPart reference can work,
-		// Which is necessary for the creation of the connector instances.
-		ci.portInstances->forEach(i) {
-			var part : ComponentPart := NULL_COMPONENT_PART_HELPER;
-			if (not ci.componentPart.oclIsUndefined()) then {
-				part := ci.componentPart;
-			} endif;
-			i.createConnectorInstances(part);
-		};
-		// make sure all created connectors are contained
 		if (ci.container().oclIsKindOf(ComponentInstanceConfiguration)) then {
-			ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances := ci.portInstances.portConnectorInstances;
+			// Remove old connector instances from resource
+			ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances->forEach(pci) {
+				instance.removeElement(pci);
+			};
+			ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances := Set { };
+			
+			// Add new connector instances
+			ci.componentType[StructuredComponent].connectors->forEach(portConnector) {
+				ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
+					portConnector.connectorEndpoints.resolveIn(ConnectorEndpoint::single, PortInstance)->asSet()
+				)[PortConnectorInstance];
+			};
 		} endif;
 		
 	};
@@ -103,27 +110,6 @@ query ConnectorEndpoint::createInstance(part : ComponentPart) : ConnectorEndpoin
 query Connector::otherEnd(thisEnd : ConnectorEndpoint) : ConnectorEndpoint {
 	return self.connectorEndpoints->select(e | e != thisEnd)->first();
 }
-query ConnectorEndpointInstance::createConnectorInstances(part : ComponentPart) : Set(ConnectorInstance) {
-	var connectorInstances : Set(ConnectorInstance);
-	
-	var connectorEndpoint := self.type;
-	if (self.oclIsKindOf(PortInstance) and not self.oclAsType(PortInstance).portPart.oclIsUndefined()) then {
-		connectorEndpoint := self.oclAsType(PortInstance).portPart;
-	} endif;
-
-	connectorEndpoint.connectors		
-	//->reject(c | self.connectorInstances.type->includes(c))[PortConnector]
-		
-	[PortConnector]->forEach(portConnector) {
-		var otherEnd : ConnectorEndpoint := portConnector.otherEnd(self.type);
-		otherEnd.resolveIn(ConnectorEndpoint::single, PortInstance)->forEach(otherEndInstance) {
-			if (not otherEndInstance.oclIsUndefined() and otherEndInstance != self and Set { self, otherEndInstance}.connectorInstances.type->excludes(portConnector)) then {
-				connectorInstances += portConnector.createConnectorInstance(Set { self, otherEndInstance });
-			} endif;
-		}
-	};
-	return connectorInstances;
-}
 query Connector::createConnectorInstance(endpoints : Set(ConnectorEndpointInstance)) : ConnectorInstance {
 	var connectorInstance : ConnectorInstance := self.primCreateConnectorInstance();
 	connectorInstance.connectorEndpointInstances := endpoints;
@@ -153,10 +139,7 @@ constructor ComponentInstanceConfiguration::ComponentInstanceConfiguration(compo
 	component.embeddedComponentParts->select(p | p.componentType.oclIsKindOf(StructuredComponent))->forEach(part) {
 		componentInstances += new StructuredComponentInstance(part.componentType.oclAsType(StructuredComponent), part);
 	};
-	// make sure all created connectors are contained
-	portConnectorInstances->forEach(pci) {
-		instance.removeElement(pci);
-	};
+
 	portConnectorInstances := componentInstances.portInstances.portConnectorInstances;
 }
 
@@ -176,13 +159,7 @@ constructor AtomicComponentInstance::AtomicComponentInstance(type : AtomicCompon
 		// Creating Port Instances also sets the opposite feature PortInstance.component
 		portInstances := componentType.createPortInstances(part);
 	} endif;
-	
-	// Create ConnectorInstances after PortInstance.component and ComponentInstance.componentPart is set (see above)
-	// This makes sure that the derivation of the PortInstance.portPart reference can work,
-	// Which is necessary for the creation of the connector instances.
-	portInstances->forEach(i) {
-		i.connectorInstances := i.createConnectorInstances(part);
-	};
+
 }
 
 // TODO: Same code as above
@@ -202,12 +179,14 @@ constructor StructuredComponentInstance::StructuredComponentInstance(type : Stru
 		portInstances := componentType.createPortInstances(part);
 	} endif;
 	
-	// Create ConnectorInstances after PortInstance.component and ComponentInstance.componentPart is set (see above)
-	// This makes sure that the derivation of the PortInstance.portPart reference can work,
-	// Which is necessary for the creation of the connector instances.
-	portInstances->forEach(i) {
-		i.connectorInstances := i.createConnectorInstances(part);
-	};
+	// Create ConnectorInstances
+	if (container().oclIsKindOf(ComponentInstanceConfiguration)) then {
+		componentType[StructuredComponent].connectors->forEach(portConnector) {
+			container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
+				portConnector.connectorEndpoints.resolveIn(ConnectorEndpoint::single, PortInstance)->asSet()
+			)[PortConnectorInstance];
+		};
+	} endif;
 	
 	embeddedCIC := new ComponentInstanceConfiguration(type);
 }
