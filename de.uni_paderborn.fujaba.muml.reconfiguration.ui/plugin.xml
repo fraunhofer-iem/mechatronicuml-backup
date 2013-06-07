@@ -79,7 +79,7 @@
          </child>
       </category>
    </extension>
-   <extension
+ <!--  <extension
          point="org.eclipse.gmf.runtime.diagram.ui.paletteProviders">
       <paletteProvider
             class="org.eclipse.gmf.runtime.diagram.ui.providers.internal.DefaultPaletteProvider">
@@ -101,8 +101,9 @@
             </entry>
          </contribution>
       </paletteProvider>
+
    </extension>
-   <extension
+ -->   <extension
          point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
       <editpartProvider
             class="de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.CustomReconfigurationEditPartProvider">
