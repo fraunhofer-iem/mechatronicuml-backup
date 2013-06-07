@@ -159,14 +159,14 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	protected EStructuralFeature.Internal.SettingDelegate IS_DISCRETE_IN_OUT_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT).getSettingDelegate();
 
 	/**
-	 * The cached setting delegate for the '{@link #getReceiverMessageBuffer() <em>Receiver Message Buffer</em>}' reference list.
+	 * The cached value of the '{@link #getReceiverMessageBuffer() <em>Receiver Message Buffer</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReceiverMessageBuffer()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate RECEIVER_MESSAGE_BUFFER__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER).getSettingDelegate();
+	protected EList<MessageBuffer> receiverMessageBuffer;
 
 	/**
 	 * The cached setting delegate for the '{@link #isMultiPort() <em>Multi Port</em>}' attribute.
@@ -441,33 +441,11 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRefinedRole(Role newRefinedRole, NotificationChain msgs) {
+	public void setRefinedRole(Role newRefinedRole) {
 		Role oldRefinedRole = refinedRole;
 		refinedRole = newRefinedRole;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__REFINED_ROLE, oldRefinedRole, newRefinedRole);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRefinedRole(Role newRefinedRole) {
-		if (newRefinedRole != refinedRole) {
-			NotificationChain msgs = null;
-			if (refinedRole != null)
-				msgs = ((InternalEObject)refinedRole).eInverseRemove(this, ProtocolPackage.ROLE__PORT, Role.class, msgs);
-			if (newRefinedRole != null)
-				msgs = ((InternalEObject)newRefinedRole).eInverseAdd(this, ProtocolPackage.ROLE__PORT, Role.class, msgs);
-			msgs = basicSetRefinedRole(newRefinedRole, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__REFINED_ROLE, newRefinedRole, newRefinedRole));
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DISCRETE_PORT__REFINED_ROLE, oldRefinedRole, refinedRole));
 	}
 
 	/**
@@ -504,7 +482,10 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 */
 	@SuppressWarnings("unchecked")
 	public EList<MessageBuffer> getReceiverMessageBuffer() {
-		return (EList<MessageBuffer>)RECEIVER_MESSAGE_BUFFER__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+		if (receiverMessageBuffer == null) {
+			receiverMessageBuffer = new EObjectResolvingEList<MessageBuffer>(MessageBuffer.class, this, ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER);
+		}
+		return receiverMessageBuffer;
 	}
 
 	/**
@@ -547,10 +528,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				if (behavior != null)
 					msgs = ((InternalEObject)behavior).eInverseRemove(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
 				return basicSetBehavior((Behavior)otherEnd, msgs);
-			case ComponentPackage.DISCRETE_PORT__REFINED_ROLE:
-				if (refinedRole != null)
-					msgs = ((InternalEObject)refinedRole).eInverseRemove(this, ProtocolPackage.ROLE__PORT, Role.class, msgs);
-				return basicSetRefinedRole((Role)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -567,8 +544,6 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return basicSetBehavior(null, msgs);
 			case ComponentPackage.DISCRETE_PORT__CARDINALITY:
 				return basicSetCardinality(null, msgs);
-			case ComponentPackage.DISCRETE_PORT__REFINED_ROLE:
-				return basicSetRefinedRole(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -648,6 +623,10 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__REFINED_ROLE:
 				setRefinedRole((Role)newValue);
 				return;
+			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER:
+				getReceiverMessageBuffer().clear();
+				getReceiverMessageBuffer().addAll((Collection<? extends MessageBuffer>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -680,6 +659,9 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return;
 			case ComponentPackage.DISCRETE_PORT__REFINED_ROLE:
 				setRefinedRole((Role)null);
+				return;
+			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER:
+				getReceiverMessageBuffer().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -714,7 +696,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT:
 				return IS_DISCRETE_IN_OUT_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER:
-				return RECEIVER_MESSAGE_BUFFER__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return receiverMessageBuffer != null && !receiverMessageBuffer.isEmpty();
 			case ComponentPackage.DISCRETE_PORT__MULTI_PORT:
 				return MULTI_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.DISCRETE_PORT__COORDINATION_PROTOCOL:

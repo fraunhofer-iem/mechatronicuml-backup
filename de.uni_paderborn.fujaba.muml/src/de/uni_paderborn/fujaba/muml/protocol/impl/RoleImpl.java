@@ -38,7 +38,6 @@ import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl#getPort <em>Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl#isMultiRole <em>Multi Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
@@ -48,16 +47,6 @@ import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
  * @generated
  */
 public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
-	/**
-	 * The cached value of the '{@link #getPort() <em>Port</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPort()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<DiscretePort> port;
-
 	/**
 	 * The cached setting delegate for the '{@link #getRoleConnector() <em>Role Connector</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -153,18 +142,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DiscretePort> getPort() {
-		if (port == null) {
-			port = new EObjectWithInverseResolvingEList<DiscretePort>(DiscretePort.class, this, ProtocolPackage.ROLE__PORT, ComponentPackage.DISCRETE_PORT__REFINED_ROLE);
-		}
-		return port;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public RoleConnector getRoleConnector() {
 		return (RoleConnector)ROLE_CONNECTOR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -212,8 +189,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetCoordinationProtocol((AbstractCoordinationSpecification)otherEnd, msgs);
-			case ProtocolPackage.ROLE__PORT:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPort()).basicAdd(otherEnd, msgs);
 			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReceiverMessageBuffer()).basicAdd(otherEnd, msgs);
 		}
@@ -230,8 +205,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 		switch (featureID) {
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				return basicSetCoordinationProtocol(null, msgs);
-			case ProtocolPackage.ROLE__PORT:
-				return ((InternalEList<?>)getPort()).basicRemove(otherEnd, msgs);
 			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
 				return ((InternalEList<?>)getReceiverMessageBuffer()).basicRemove(otherEnd, msgs);
 		}
@@ -262,8 +235,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 		switch (featureID) {
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				return getCoordinationProtocol();
-			case ProtocolPackage.ROLE__PORT:
-				return getPort();
 			case ProtocolPackage.ROLE__ROLE_CONNECTOR:
 				if (resolve) return getRoleConnector();
 				return basicGetRoleConnector();
@@ -287,10 +258,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((AbstractCoordinationSpecification)newValue);
 				return;
-			case ProtocolPackage.ROLE__PORT:
-				getPort().clear();
-				getPort().addAll((Collection<? extends DiscretePort>)newValue);
-				return;
 			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
 				getReceiverMessageBuffer().clear();
 				getReceiverMessageBuffer().addAll((Collection<? extends MessageBuffer>)newValue);
@@ -310,9 +277,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((AbstractCoordinationSpecification)null);
 				return;
-			case ProtocolPackage.ROLE__PORT:
-				getPort().clear();
-				return;
 			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
 				getReceiverMessageBuffer().clear();
 				return;
@@ -330,8 +294,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 		switch (featureID) {
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				return getCoordinationProtocol() != null;
-			case ProtocolPackage.ROLE__PORT:
-				return port != null && !port.isEmpty();
 			case ProtocolPackage.ROLE__ROLE_CONNECTOR:
 				return ROLE_CONNECTOR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ProtocolPackage.ROLE__MULTI_ROLE:

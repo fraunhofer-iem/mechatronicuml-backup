@@ -206,7 +206,7 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 				sb.append('h');
 				break;
 			case MINUTES:
-				sb.append('m');
+				sb.append("min");
 				break;
 			case SECONDS:
 				sb.append('s');

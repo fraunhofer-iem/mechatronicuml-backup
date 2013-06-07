@@ -45,7 +45,7 @@ public interface ProtocolPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/protocol/0.3.18";
+	String eNS_URI = "http://www.fujaba.de/muml/protocol/0.3.20";
 
 	/**
 	 * The package namespace name.
@@ -734,22 +734,13 @@ public interface ProtocolPackage extends EPackage {
 	int ROLE__COORDINATION_PROTOCOL = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Port</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__PORT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Role Connector</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ROLE_CONNECTOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 2;
+	int ROLE__ROLE_CONNECTOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Multi Role</b></em>' attribute.
@@ -758,7 +749,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__MULTI_ROLE = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 3;
+	int ROLE__MULTI_ROLE = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
@@ -767,7 +758,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__RECEIVER_MESSAGE_BUFFER = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 4;
+	int ROLE__RECEIVER_MESSAGE_BUFFER = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -776,7 +767,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 5;
+	int ROLE_FEATURE_COUNT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1845,17 +1836,6 @@ public interface ProtocolPackage extends EPackage {
 	EReference getRole_CoordinationProtocol();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.protocol.Role#getPort <em>Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.protocol.Role#getPort()
-	 * @see #getRole()
-	 * @generated
-	 */
-	EReference getRole_Port();
-
-	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.protocol.Role#getRoleConnector <em>Role Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2091,14 +2071,6 @@ public interface ProtocolPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROLE__COORDINATION_PROTOCOL = eINSTANCE.getRole_CoordinationProtocol();
-
-		/**
-		 * The meta object literal for the '<em><b>Port</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROLE__PORT = eINSTANCE.getRole_Port();
 
 		/**
 		 * The meta object literal for the '<em><b>Role Connector</b></em>' reference feature.

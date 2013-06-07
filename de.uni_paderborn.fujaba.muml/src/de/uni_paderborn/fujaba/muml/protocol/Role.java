@@ -25,7 +25,6 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getPort <em>Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#isMultiRole <em>Multi Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
@@ -64,23 +63,6 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	 * @generated
 	 */
 	void setCoordinationProtocol(AbstractCoordinationSpecification value);
-
-	/**
-	 * Returns the value of the '<em><b>Port</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.DiscretePort}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getRefinedRole <em>Refined Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The ports this role is assigned to.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Port</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRole_Port()
-	 * @see de.uni_paderborn.fujaba.muml.component.DiscretePort#getRefinedRole
-	 * @model opposite="refinedRole"
-	 * @generated
-	 */
-	EList<DiscretePort> getPort();
 
 	/**
 	 * Returns the value of the '<em><b>Role Connector</b></em>' reference.

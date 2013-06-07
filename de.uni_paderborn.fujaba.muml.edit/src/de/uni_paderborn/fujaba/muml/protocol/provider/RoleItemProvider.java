@@ -66,7 +66,6 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCoordinationProtocolPropertyDescriptor(object);
-			addPortPropertyDescriptor(object);
 			addRoleConnectorPropertyDescriptor(object);
 			addMultiRolePropertyDescriptor(object);
 			addReceiverMessageBufferPropertyDescriptor(object);
@@ -91,28 +90,6 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 				 false,
 				 false,
 				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Port feature.
-	 * <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPortPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_port_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_port_feature", "_UI_Role_type"),
-				 ProtocolPackage.Literals.ROLE__PORT,
-				 true,
-				 false,
-				 true,
 				 null,
 				 null,
 				 null));

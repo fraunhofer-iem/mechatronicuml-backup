@@ -191,8 +191,6 @@
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//protocol/Role">
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/Role/coordinationProtocol"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//protocol/Role/port"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//protocol/Role/roleConnector"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//protocol/Role/multiRole"/>
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//protocol/Role/receiverMessageBuffer"/>

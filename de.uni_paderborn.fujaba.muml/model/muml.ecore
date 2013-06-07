@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="muml" nsURI="http://www.fujaba.de/muml/0.2.2" nsPrefix="muml">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel"/>
-  <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/component/0.3.18"
+  <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/component/0.3.20"
       nsPrefix="component">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -62,7 +62,7 @@
         <details key="documentation" value="This class represents a concrete port specification which provides the discrete functionality of a port."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole"/>
+        <details key="constraints" value="DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole ReceiverPortRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="DiscretePortRequiresMessageTypes" value="self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
@@ -71,9 +71,10 @@
         <details key="DiscretePortRequiresRole" value="self.oclIsTypeOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()"/>
         <details key="DiscretePortAndRoleSameMessageTypes" value="not self.refinedRole.oclIsUndefined() implies&#xD;&#xA;&#x9;(self.senderMessageTypes = self.refinedRole.senderMessageTypes&#xD;&#xA;&#x9; and&#xD;&#xA;&#x9; self.receiverMessageTypes = self.refinedRole.receiverMessageTypes&#xD;&#xA;&#x9;)"/>
         <details key="MultiPortMustRefineMultiRole" value="if not (self.refinedRole.oclIsUndefined() and self.refinedRole.cardinality.oclIsUndefined() and self.refinedRole.cardinality.upperBound.oclIsUndefined()) then&#xD;&#xA;       self.multiPort implies self.refinedRole.multiRole&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
+        <details key="ReceiverPortRequiresMessageBuffer" value="self.receiverMessageTypes->notEmpty() &#xD;&#xA;implies &#xD;&#xA;self.receiverMessageBuffer->notEmpty()"/>
+        <details key="ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer" value="-- Each receiver message type should be assigned to exactly one buffer&#xD;&#xA;self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="refinedRole" eType="#//protocol/Role"
-          eOpposite="#//protocol/Role/port">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="refinedRole" eType="#//protocol/Role">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The role of a coordination protocol that this port refines."/>
         </eAnnotations>
@@ -110,13 +111,9 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageBuffer"
-          upperBound="-1" eType="#//protocol/MessageBuffer" changeable="false" volatile="true"
-          transient="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if not self.refinedRole.oclIsUndefined() then&#xD;&#xA;self.refinedRole.receiverMessageBuffer&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif"/>
-        </eAnnotations>
+          upperBound="-1" eType="#//protocol/MessageBuffer">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The derived properties of the refined role regarding the receiver message buffers."/>
+          <details key="documentation" value="A discrete port contains message buffers to store received messages. If this port can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this port may receive."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiPort" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
@@ -840,7 +837,7 @@
       </eAnnotations>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="protocol" nsURI="http://www.fujaba.de/muml/protocol/0.3.19"
+  <eSubpackages name="protocol" nsURI="http://www.fujaba.de/muml/protocol/0.3.20"
       nsPrefix="protocol">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -910,12 +907,6 @@
           lowerBound="1" eType="#//protocol/AbstractCoordinationSpecification" eOpposite="#//protocol/AbstractCoordinationSpecification/roles">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The coordination protocol this role belongs to."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="port" upperBound="-1"
-          eType="#//component/DiscretePort" eOpposite="#//component/DiscretePort/refinedRole">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The ports this role is assigned to."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="roleConnector" lowerBound="1"
@@ -2178,7 +2169,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="TimeValue" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
       <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="// Return value concatenated with abbreviated unit.&#xD;&#xA;StringBuffer sb = new StringBuffer();&#xD;&#xA;if (value == null) {&#xD;&#xA;&#x9;sb.append(&quot;null&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;sb.append(value.toString());&#xD;&#xA;}&#xD;&#xA;if (unit != null) {&#xD;&#xA;&#x9;sb.append(' ');&#xD;&#xA;&#x9;switch (unit) {&#xD;&#xA;&#x9;case DAYS:&#xD;&#xA;&#x9;&#x9;sb.append('d');&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case HOURS:&#xD;&#xA;&#x9;&#x9;sb.append('h');&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case MINUTES:&#xD;&#xA;&#x9;&#x9;sb.append('m');&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case SECONDS:&#xD;&#xA;&#x9;&#x9;sb.append('s');&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case MILLISECONDS:&#xD;&#xA;&#x9;&#x9;sb.append(&quot;ms&quot;);&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case MICROSECONDS:&#xD;&#xA;&#x9;&#x9;sb.append('\u03BC' + &quot;s&quot;); // \u03BC = μ&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case NANOSECONDS:&#xD;&#xA;&#x9;&#x9;sb.append(&quot;ns&quot;);&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return sb.toString();"/>
+          <details key="body" value="// Return value concatenated with abbreviated unit.&#xD;&#xA;StringBuffer sb = new StringBuffer();&#xD;&#xA;if (value == null) {&#xD;&#xA;&#x9;sb.append(&quot;null&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;sb.append(value.toString());&#xD;&#xA;}&#xD;&#xA;if (unit != null) {&#xD;&#xA;&#x9;sb.append(' ');&#xD;&#xA;&#x9;switch (unit) {&#xD;&#xA;&#x9;case DAYS:&#xD;&#xA;&#x9;&#x9;sb.append('d');&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case HOURS:&#xD;&#xA;&#x9;&#x9;sb.append('h');&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case MINUTES:&#xD;&#xA;&#x9;&#x9;sb.append(&quot;min&quot;);&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case SECONDS:&#xD;&#xA;&#x9;&#x9;sb.append('s');&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case MILLISECONDS:&#xD;&#xA;&#x9;&#x9;sb.append(&quot;ms&quot;);&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case MICROSECONDS:&#xD;&#xA;&#x9;&#x9;sb.append('\u03BC' + &quot;s&quot;); // \u03BC = μ&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;case NANOSECONDS:&#xD;&#xA;&#x9;&#x9;sb.append(&quot;ns&quot;);&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return sb.toString();"/>
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"

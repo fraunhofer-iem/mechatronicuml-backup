@@ -36,14 +36,13 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDiscretePort()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL DiscretePortRequiresMessageTypes='self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()' DiscretePortRequiresBehavior='-- A discrete port of an atomic component must have a Behavior Specification\r\n(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))\r\n\timplies not self.behavior.oclIsUndefined()' DiscretePortAtStructuredComponentHasNoBehavior='(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\n\timplies self.behavior.oclIsUndefined()' DiscretePortRequiresRole='self.oclIsTypeOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()' DiscretePortAndRoleSameMessageTypes='not self.refinedRole.oclIsUndefined() implies\r\n\t(self.senderMessageTypes = self.refinedRole.senderMessageTypes\r\n\t and\r\n\t self.receiverMessageTypes = self.refinedRole.receiverMessageTypes\r\n\t)' MultiPortMustRefineMultiRole='if not (self.refinedRole.oclIsUndefined() and self.refinedRole.cardinality.oclIsUndefined() and self.refinedRole.cardinality.upperBound.oclIsUndefined()) then\r\n       self.multiPort implies self.refinedRole.multiRole\r\nelse\r\n\ttrue\r\nendif'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole ReceiverPortRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL DiscretePortRequiresMessageTypes='self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()' DiscretePortRequiresBehavior='-- A discrete port of an atomic component must have a Behavior Specification\r\n(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))\r\n\timplies not self.behavior.oclIsUndefined()' DiscretePortAtStructuredComponentHasNoBehavior='(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\n\timplies self.behavior.oclIsUndefined()' DiscretePortRequiresRole='self.oclIsTypeOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()' DiscretePortAndRoleSameMessageTypes='not self.refinedRole.oclIsUndefined() implies\r\n\t(self.senderMessageTypes = self.refinedRole.senderMessageTypes\r\n\t and\r\n\t self.receiverMessageTypes = self.refinedRole.receiverMessageTypes\r\n\t)' MultiPortMustRefineMultiRole='if not (self.refinedRole.oclIsUndefined() and self.refinedRole.cardinality.oclIsUndefined() and self.refinedRole.cardinality.upperBound.oclIsUndefined()) then\r\n       self.multiPort implies self.refinedRole.multiRole\r\nelse\r\n\ttrue\r\nendif' ReceiverPortRequiresMessageBuffer='self.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()' ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer='-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))'"
  * @generated
  */
 public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 	/**
 	 * Returns the value of the '<em><b>Refined Role</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.protocol.Role#getPort <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -52,8 +51,7 @@ public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 	 * @return the value of the '<em>Refined Role</em>' reference.
 	 * @see #setRefinedRole(Role)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDiscretePort_RefinedRole()
-	 * @see de.uni_paderborn.fujaba.muml.protocol.Role#getPort
-	 * @model opposite="port"
+	 * @model
 	 * @generated
 	 */
 	Role getRefinedRole();
@@ -122,12 +120,11 @@ public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The derived properties of the refined role regarding the receiver message buffers.
+	 * A discrete port contains message buffers to store received messages. If this port can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this port may receive.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Receiver Message Buffer</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDiscretePort_ReceiverMessageBuffer()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.refinedRole.oclIsUndefined() then\r\nself.refinedRole.receiverMessageBuffer\r\nelse\r\nnull\r\nendif'"
+	 * @model
 	 * @generated
 	 */
 	EList<MessageBuffer> getReceiverMessageBuffer();

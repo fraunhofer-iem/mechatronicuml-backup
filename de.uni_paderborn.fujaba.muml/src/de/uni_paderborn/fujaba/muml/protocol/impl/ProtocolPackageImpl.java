@@ -304,7 +304,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_Port() {
+	public EReference getRole_RoleConnector() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -313,17 +313,8 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRole_RoleConnector() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getRole_MultiRole() {
-		return (EAttribute)roleEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)roleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -332,7 +323,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 	 * @generated
 	 */
 	public EReference getRole_ReceiverMessageBuffer() {
-		return (EReference)roleEClass.getEStructuralFeatures().get(4);
+		return (EReference)roleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -444,7 +435,6 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 
 		roleEClass = createEClass(ROLE);
 		createEReference(roleEClass, ROLE__COORDINATION_PROTOCOL);
-		createEReference(roleEClass, ROLE__PORT);
 		createEReference(roleEClass, ROLE__ROLE_CONNECTOR);
 		createEAttribute(roleEClass, ROLE__MULTI_ROLE);
 		createEReference(roleEClass, ROLE__RECEIVER_MESSAGE_BUFFER);
@@ -493,7 +483,6 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
-		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
@@ -524,7 +513,6 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRole_CoordinationProtocol(), this.getAbstractCoordinationSpecification(), this.getAbstractCoordinationSpecification_Roles(), "coordinationProtocol", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRole_Port(), theComponentPackage.getDiscretePort(), theComponentPackage.getDiscretePort_RefinedRole(), "port", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_RoleConnector(), this.getRoleConnector(), this.getRoleConnector_Roles(), "roleConnector", null, 1, 1, Role.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRole_MultiRole(), theEcorePackage.getEBoolean(), "multiRole", "", 1, 1, Role.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_ReceiverMessageBuffer(), this.getMessageBuffer(), this.getMessageBuffer_Role(), "receiverMessageBuffer", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -587,7 +575,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		   source, 
 		   new String[] {
 			 "constraints", "RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"
-		   });											
+		   });										
 		addAnnotation
 		  (roleConnectorEClass, 
 		   source, 
@@ -631,7 +619,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 			 "RoleRequiresMessageTypes", "self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()",
 			 "ReceiverRoleRequiresMessageBuffer", "self.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()",
 			 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", "-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"
-		   });				
+		   });			
 		addAnnotation
 		  (getRole_RoleConnector(), 
 		   source, 
