@@ -23,7 +23,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MessageBuffer" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="RuntimeMessageBuffer" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufferSize" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
         eType="#//RuntimeMessage" containment="true"/>
@@ -79,8 +79,8 @@
       eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statechartInstance" eType="#//RealtimeStatechartInstance"
         eOpposite="#//RealtimeStatechartInstance/runtimeBehavioralElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="messageBuffer" eType="#//MessageBuffer"
-        containment="true" eOpposite="#//MessageBuffer/runtimeBehavioralElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageBuffer" eType="#//RuntimeMessageBuffer"
+        containment="true" eOpposite="#//RuntimeMessageBuffer/runtimeBehavioralElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="JavaObject" instanceClassName="java.lang.Object"
       serializable="false"/>

@@ -13,10 +13,10 @@
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RoleInstance/role"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RoleInstance/assembly"/>
     </genClasses>
-    <genClasses ecoreClass="RuntimeModel.ecore#//MessageBuffer">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RuntimeModel.ecore#//MessageBuffer/bufferSize"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageBuffer/messages"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//MessageBuffer/runtimeBehavioralElement"/>
+    <genClasses ecoreClass="RuntimeModel.ecore#//RuntimeMessageBuffer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RuntimeModel.ecore#//RuntimeMessageBuffer/bufferSize"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeMessageBuffer/messages"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RuntimeMessageBuffer/runtimeBehavioralElement"/>
     </genClasses>
     <genClasses ecoreClass="RuntimeModel.ecore#//RealtimeStatechartInstance">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RuntimeModel.ecore#//RealtimeStatechartInstance/runtimeBehavioralElement"/>

@@ -24,7 +24,6 @@ import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.MessageOnConnector;
 import de.uni_paderborn.fujaba.muml.runtime.MultiRoleInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
@@ -39,6 +38,7 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeParameter;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeRoleConnectorInstance;
@@ -80,7 +80,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass messageBufferEClass = null;
+	private EClass runtimeMessageBufferEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -311,8 +311,8 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getMessageBuffer() {
-		return messageBufferEClass;
+	public EClass getRuntimeMessageBuffer() {
+		return runtimeMessageBufferEClass;
 	}
 
 	/**
@@ -320,8 +320,8 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getMessageBuffer_BufferSize() {
-		return (EAttribute)messageBufferEClass.getEStructuralFeatures().get(0);
+	public EAttribute getRuntimeMessageBuffer_BufferSize() {
+		return (EAttribute)runtimeMessageBufferEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -329,8 +329,8 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMessageBuffer_Messages() {
-		return (EReference)messageBufferEClass.getEStructuralFeatures().get(1);
+	public EReference getRuntimeMessageBuffer_Messages() {
+		return (EReference)runtimeMessageBufferEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -338,8 +338,8 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMessageBuffer_RuntimeBehavioralElement() {
-		return (EReference)messageBufferEClass.getEStructuralFeatures().get(2);
+	public EReference getRuntimeMessageBuffer_RuntimeBehavioralElement() {
+		return (EReference)runtimeMessageBufferEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -702,10 +702,10 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		createEReference(roleInstanceEClass, ROLE_INSTANCE__ROLE);
 		createEReference(roleInstanceEClass, ROLE_INSTANCE__ASSEMBLY);
 
-		messageBufferEClass = createEClass(MESSAGE_BUFFER);
-		createEAttribute(messageBufferEClass, MESSAGE_BUFFER__BUFFER_SIZE);
-		createEReference(messageBufferEClass, MESSAGE_BUFFER__MESSAGES);
-		createEReference(messageBufferEClass, MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT);
+		runtimeMessageBufferEClass = createEClass(RUNTIME_MESSAGE_BUFFER);
+		createEAttribute(runtimeMessageBufferEClass, RUNTIME_MESSAGE_BUFFER__BUFFER_SIZE);
+		createEReference(runtimeMessageBufferEClass, RUNTIME_MESSAGE_BUFFER__MESSAGES);
+		createEReference(runtimeMessageBufferEClass, RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT);
 
 		realtimeStatechartInstanceEClass = createEClass(REALTIME_STATECHART_INSTANCE);
 		createEReference(realtimeStatechartInstanceEClass, REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT);
@@ -804,7 +804,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		runtimeDiscretePortInstanceEClass.getESuperTypes().add(theInstancePackage.getDiscretePortInstance());
 		runtimeDiscretePortInstanceEClass.getESuperTypes().add(this.getRuntimeDiscreteInteractionEndpointInstance());
 		roleInstanceEClass.getESuperTypes().add(this.getRuntimeDiscreteInteractionEndpointInstance());
-		messageBufferEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
+		runtimeMessageBufferEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 		realtimeStatechartInstanceEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 		runtimeMessageEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		runtimeParameterEClass.getESuperTypes().add(theCorePackage.getNamedElement());
@@ -836,10 +836,10 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		initEReference(getRoleInstance_Role(), theProtocolPackage.getRole(), null, "role", null, 1, 1, RoleInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getRoleInstance_Assembly(), this.getRuntimeRoleConnectorInstance(), null, "assembly", null, 0, 1, RoleInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		initEClass(messageBufferEClass, MessageBuffer.class, "MessageBuffer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMessageBuffer_BufferSize(), theEcorePackage.getEInt(), "bufferSize", null, 0, 1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessageBuffer_Messages(), this.getRuntimeMessage(), null, "messages", null, 0, -1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessageBuffer_RuntimeBehavioralElement(), this.getRuntimeBehavioralElement(), this.getRuntimeBehavioralElement_MessageBuffer(), "runtimeBehavioralElement", null, 1, 1, MessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(runtimeMessageBufferEClass, RuntimeMessageBuffer.class, "RuntimeMessageBuffer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRuntimeMessageBuffer_BufferSize(), theEcorePackage.getEInt(), "bufferSize", null, 0, 1, RuntimeMessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuntimeMessageBuffer_Messages(), this.getRuntimeMessage(), null, "messages", null, 0, -1, RuntimeMessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuntimeMessageBuffer_RuntimeBehavioralElement(), this.getRuntimeBehavioralElement(), this.getRuntimeBehavioralElement_MessageBuffer(), "runtimeBehavioralElement", null, 1, 1, RuntimeMessageBuffer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(realtimeStatechartInstanceEClass, RealtimeStatechartInstance.class, "RealtimeStatechartInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRealtimeStatechartInstance_RuntimeBehavioralElement(), this.getRuntimeBehavioralElement(), this.getRuntimeBehavioralElement_StatechartInstance(), "runtimeBehavioralElement", null, 0, 1, RealtimeStatechartInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -866,7 +866,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 
 		initEClass(runtimeBehavioralElementEClass, RuntimeBehavioralElement.class, "RuntimeBehavioralElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRuntimeBehavioralElement_StatechartInstance(), this.getRealtimeStatechartInstance(), this.getRealtimeStatechartInstance_RuntimeBehavioralElement(), "statechartInstance", null, 0, 1, RuntimeBehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRuntimeBehavioralElement_MessageBuffer(), this.getMessageBuffer(), this.getMessageBuffer_RuntimeBehavioralElement(), "messageBuffer", null, 0, 1, RuntimeBehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuntimeBehavioralElement_MessageBuffer(), this.getRuntimeMessageBuffer(), this.getRuntimeMessageBuffer_RuntimeBehavioralElement(), "messageBuffer", null, 0, 1, RuntimeBehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(singleRoleInstanceEClass, SingleRoleInstance.class, "SingleRoleInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

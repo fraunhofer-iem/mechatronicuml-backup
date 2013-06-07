@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.runtime;
 
 import org.storydriven.core.ExtendableElement;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

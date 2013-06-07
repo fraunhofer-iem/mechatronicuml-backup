@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.uni_paderborn.fujaba.muml.runtime.impl;
 
@@ -19,9 +15,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.ExtendableElementImpl;
 
-import de.uni_paderborn.fujaba.muml.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
 
 /**
@@ -31,15 +27,15 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.MessageBufferImpl#getBufferSize <em>Buffer Size</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.MessageBufferImpl#getMessages <em>Messages</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.MessageBufferImpl#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeMessageBufferImpl#getBufferSize <em>Buffer Size</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeMessageBufferImpl#getMessages <em>Messages</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeMessageBufferImpl#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MessageBufferImpl extends ExtendableElementImpl implements MessageBuffer {
+public class RuntimeMessageBufferImpl extends ExtendableElementImpl implements RuntimeMessageBuffer {
 	/**
 	 * The default value of the '{@link #getBufferSize() <em>Buffer Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -75,7 +71,7 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MessageBufferImpl() {
+	protected RuntimeMessageBufferImpl() {
 		super();
 	}
 
@@ -86,7 +82,7 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RuntimePackage.Literals.MESSAGE_BUFFER;
+		return RuntimePackage.Literals.RUNTIME_MESSAGE_BUFFER;
 	}
 
 	/**
@@ -107,7 +103,7 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 		int oldBufferSize = bufferSize;
 		bufferSize = newBufferSize;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.MESSAGE_BUFFER__BUFFER_SIZE, oldBufferSize, bufferSize));
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.RUNTIME_MESSAGE_BUFFER__BUFFER_SIZE, oldBufferSize, bufferSize));
 	}
 
 	/**
@@ -117,7 +113,7 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	 */
 	public EList<RuntimeMessage> getMessages() {
 		if (messages == null) {
-			messages = new EObjectContainmentEList<RuntimeMessage>(RuntimeMessage.class, this, RuntimePackage.MESSAGE_BUFFER__MESSAGES);
+			messages = new EObjectContainmentEList<RuntimeMessage>(RuntimeMessage.class, this, RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGES);
 		}
 		return messages;
 	}
@@ -128,7 +124,7 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	 * @generated
 	 */
 	public RuntimeBehavioralElement getRuntimeBehavioralElement() {
-		if (eContainerFeatureID() != RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT) return null;
+		if (eContainerFeatureID() != RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT) return null;
 		return (RuntimeBehavioralElement)eContainer();
 	}
 
@@ -138,7 +134,7 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	 * @generated
 	 */
 	public NotificationChain basicSetRuntimeBehavioralElement(RuntimeBehavioralElement newRuntimeBehavioralElement, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newRuntimeBehavioralElement, RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newRuntimeBehavioralElement, RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, msgs);
 		return msgs;
 	}
 
@@ -148,7 +144,7 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	 * @generated
 	 */
 	public void setRuntimeBehavioralElement(RuntimeBehavioralElement newRuntimeBehavioralElement) {
-		if (newRuntimeBehavioralElement != eInternalContainer() || (eContainerFeatureID() != RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT && newRuntimeBehavioralElement != null)) {
+		if (newRuntimeBehavioralElement != eInternalContainer() || (eContainerFeatureID() != RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT && newRuntimeBehavioralElement != null)) {
 			if (EcoreUtil.isAncestor(this, newRuntimeBehavioralElement))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -160,7 +156,7 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, newRuntimeBehavioralElement, newRuntimeBehavioralElement));
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, newRuntimeBehavioralElement, newRuntimeBehavioralElement));
 	}
 
 	/**
@@ -171,7 +167,7 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetRuntimeBehavioralElement((RuntimeBehavioralElement)otherEnd, msgs);
@@ -187,9 +183,9 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_BUFFER__MESSAGES:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGES:
 				return ((InternalEList<?>)getMessages()).basicRemove(otherEnd, msgs);
-			case RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
 				return basicSetRuntimeBehavioralElement(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -203,7 +199,7 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
 				return eInternalContainer().eInverseRemove(this, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER, RuntimeBehavioralElement.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -217,11 +213,11 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_BUFFER__BUFFER_SIZE:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__BUFFER_SIZE:
 				return getBufferSize();
-			case RuntimePackage.MESSAGE_BUFFER__MESSAGES:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGES:
 				return getMessages();
-			case RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
 				return getRuntimeBehavioralElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -236,14 +232,14 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_BUFFER__BUFFER_SIZE:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__BUFFER_SIZE:
 				setBufferSize((Integer)newValue);
 				return;
-			case RuntimePackage.MESSAGE_BUFFER__MESSAGES:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGES:
 				getMessages().clear();
 				getMessages().addAll((Collection<? extends RuntimeMessage>)newValue);
 				return;
-			case RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
 				setRuntimeBehavioralElement((RuntimeBehavioralElement)newValue);
 				return;
 		}
@@ -258,13 +254,13 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_BUFFER__BUFFER_SIZE:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__BUFFER_SIZE:
 				setBufferSize(BUFFER_SIZE_EDEFAULT);
 				return;
-			case RuntimePackage.MESSAGE_BUFFER__MESSAGES:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGES:
 				getMessages().clear();
 				return;
-			case RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
 				setRuntimeBehavioralElement((RuntimeBehavioralElement)null);
 				return;
 		}
@@ -279,11 +275,11 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RuntimePackage.MESSAGE_BUFFER__BUFFER_SIZE:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__BUFFER_SIZE:
 				return bufferSize != BUFFER_SIZE_EDEFAULT;
-			case RuntimePackage.MESSAGE_BUFFER__MESSAGES:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__MESSAGES:
 				return messages != null && !messages.isEmpty();
-			case RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT:
 				return getRuntimeBehavioralElement() != null;
 		}
 		return super.eIsSet(featureID);
@@ -305,4 +301,4 @@ public class MessageBufferImpl extends ExtendableElementImpl implements MessageB
 		return result.toString();
 	}
 
-} //MessageBufferImpl
+} //RuntimeMessageBufferImpl

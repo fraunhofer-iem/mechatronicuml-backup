@@ -6,9 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime;
 
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 
 /**
  * <!-- begin-user-doc -->

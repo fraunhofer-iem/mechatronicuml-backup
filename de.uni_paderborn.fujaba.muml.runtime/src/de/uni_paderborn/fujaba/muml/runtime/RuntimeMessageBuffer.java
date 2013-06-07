@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.uni_paderborn.fujaba.muml.runtime;
 
@@ -17,17 +13,17 @@ import org.storydriven.core.ExtendableElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.MessageBuffer#getBufferSize <em>Buffer Size</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.MessageBuffer#getMessages <em>Messages</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.MessageBuffer#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getBufferSize <em>Buffer Size</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getMessages <em>Messages</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getMessageBuffer()
+ * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRuntimeMessageBuffer()
  * @model
  * @generated
  */
-public interface MessageBuffer extends ExtendableElement {
+public interface RuntimeMessageBuffer extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Buffer Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -38,14 +34,14 @@ public interface MessageBuffer extends ExtendableElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Buffer Size</em>' attribute.
 	 * @see #setBufferSize(int)
-	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getMessageBuffer_BufferSize()
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRuntimeMessageBuffer_BufferSize()
 	 * @model
 	 * @generated
 	 */
 	int getBufferSize();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.MessageBuffer#getBufferSize <em>Buffer Size</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getBufferSize <em>Buffer Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Buffer Size</em>' attribute.
@@ -64,7 +60,7 @@ public interface MessageBuffer extends ExtendableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Messages</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getMessageBuffer_Messages()
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRuntimeMessageBuffer_Messages()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -81,7 +77,7 @@ public interface MessageBuffer extends ExtendableElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Runtime Behavioral Element</em>' container reference.
 	 * @see #setRuntimeBehavioralElement(RuntimeBehavioralElement)
-	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getMessageBuffer_RuntimeBehavioralElement()
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRuntimeMessageBuffer_RuntimeBehavioralElement()
 	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement#getMessageBuffer
 	 * @model opposite="messageBuffer" required="true" transient="false"
 	 * @generated
@@ -89,7 +85,7 @@ public interface MessageBuffer extends ExtendableElement {
 	RuntimeBehavioralElement getRuntimeBehavioralElement();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.MessageBuffer#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}' container reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Runtime Behavioral Element</em>' container reference.
@@ -98,4 +94,4 @@ public interface MessageBuffer extends ExtendableElement {
 	 */
 	void setRuntimeBehavioralElement(RuntimeBehavioralElement value);
 
-} // MessageBuffer
+} // RuntimeMessageBuffer

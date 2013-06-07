@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime.impl;
 
-import de.uni_paderborn.fujaba.muml.runtime.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -14,15 +13,16 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.fujaba.muml.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.MessageOnConnector;
 import de.uni_paderborn.fujaba.muml.runtime.MultiRoleInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeAssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeComponentInstance;
-import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscretePortInstance;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteMultiPortInstance;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeFactory;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeParameter;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeRoleConnectorInstance;
@@ -74,7 +74,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case RuntimePackage.RUNTIME_COMPONENT_INSTANCE: return createRuntimeComponentInstance();
-			case RuntimePackage.MESSAGE_BUFFER: return createMessageBuffer();
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER: return createRuntimeMessageBuffer();
 			case RuntimePackage.REALTIME_STATECHART_INSTANCE: return createRealtimeStatechartInstance();
 			case RuntimePackage.RUNTIME_MESSAGE: return createRuntimeMessage();
 			case RuntimePackage.RUNTIME_PARAMETER: return createRuntimeParameter();
@@ -132,9 +132,9 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageBuffer createMessageBuffer() {
-		MessageBufferImpl messageBuffer = new MessageBufferImpl();
-		return messageBuffer;
+	public RuntimeMessageBuffer createRuntimeMessageBuffer() {
+		RuntimeMessageBufferImpl runtimeMessageBuffer = new RuntimeMessageBufferImpl();
+		return runtimeMessageBuffer;
 	}
 
 	/**

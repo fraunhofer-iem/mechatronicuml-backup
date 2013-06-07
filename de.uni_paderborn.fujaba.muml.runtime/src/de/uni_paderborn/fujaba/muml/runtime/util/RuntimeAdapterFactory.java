@@ -26,9 +26,6 @@ import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
-import de.uni_paderborn.fujaba.muml.runtime.*;
-import de.uni_paderborn.fujaba.muml.types.DataType;
-import de.uni_paderborn.fujaba.muml.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.MessageOnConnector;
 import de.uni_paderborn.fujaba.muml.runtime.MultiRoleInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
@@ -37,13 +34,18 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeAssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeComponentInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeConnectorInstance;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscretePortInstance;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeParameter;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeRoleConnectorInstance;
 import de.uni_paderborn.fujaba.muml.runtime.SingleRoleInstance;
 import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,8 +116,8 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 				return createRoleInstanceAdapter();
 			}
 			@Override
-			public Adapter caseMessageBuffer(MessageBuffer object) {
-				return createMessageBufferAdapter();
+			public Adapter caseRuntimeMessageBuffer(RuntimeMessageBuffer object) {
+				return createRuntimeMessageBufferAdapter();
 			}
 			@Override
 			public Adapter caseRealtimeStatechartInstance(RealtimeStatechartInstance object) {
@@ -300,16 +302,16 @@ public class RuntimeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.runtime.MessageBuffer <em>Message Buffer</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer <em>Message Buffer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.runtime.MessageBuffer
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer
 	 * @generated
 	 */
-	public Adapter createMessageBufferAdapter() {
+	public Adapter createRuntimeMessageBufferAdapter() {
 		return null;
 	}
 

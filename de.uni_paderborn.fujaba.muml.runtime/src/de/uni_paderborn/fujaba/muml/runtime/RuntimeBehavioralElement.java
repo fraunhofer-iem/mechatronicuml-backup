@@ -56,7 +56,7 @@ public interface RuntimeBehavioralElement extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Message Buffer</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.runtime.MessageBuffer#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Message Buffer</em>' containment reference isn't clear,
@@ -64,13 +64,13 @@ public interface RuntimeBehavioralElement extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Message Buffer</em>' containment reference.
-	 * @see #setMessageBuffer(MessageBuffer)
+	 * @see #setMessageBuffer(RuntimeMessageBuffer)
 	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRuntimeBehavioralElement_MessageBuffer()
-	 * @see de.uni_paderborn.fujaba.muml.runtime.MessageBuffer#getRuntimeBehavioralElement
+	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer#getRuntimeBehavioralElement
 	 * @model opposite="runtimeBehavioralElement" containment="true"
 	 * @generated
 	 */
-	MessageBuffer getMessageBuffer();
+	RuntimeMessageBuffer getMessageBuffer();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement#getMessageBuffer <em>Message Buffer</em>}' containment reference.
@@ -80,6 +80,6 @@ public interface RuntimeBehavioralElement extends NamedElement {
 	 * @see #getMessageBuffer()
 	 * @generated
 	 */
-	void setMessageBuffer(MessageBuffer value);
+	void setMessageBuffer(RuntimeMessageBuffer value);
 
 } // RuntimeBehavioralElement

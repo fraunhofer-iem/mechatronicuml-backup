@@ -6,8 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime;
 
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 
 /**
  * <!-- begin-user-doc -->

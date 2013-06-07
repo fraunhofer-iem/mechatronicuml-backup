@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.impl.NamedElementImpl;
 
-import de.uni_paderborn.fujaba.muml.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
 
 /**
@@ -51,7 +51,7 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 	 * @generated
 	 * @ordered
 	 */
-	protected MessageBuffer messageBuffer;
+	protected RuntimeMessageBuffer messageBuffer;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,7 +137,7 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MessageBuffer getMessageBuffer() {
+	public RuntimeMessageBuffer getMessageBuffer() {
 		return messageBuffer;
 	}
 
@@ -146,8 +146,8 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMessageBuffer(MessageBuffer newMessageBuffer, NotificationChain msgs) {
-		MessageBuffer oldMessageBuffer = messageBuffer;
+	public NotificationChain basicSetMessageBuffer(RuntimeMessageBuffer newMessageBuffer, NotificationChain msgs) {
+		RuntimeMessageBuffer oldMessageBuffer = messageBuffer;
 		messageBuffer = newMessageBuffer;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER, oldMessageBuffer, newMessageBuffer);
@@ -161,13 +161,13 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMessageBuffer(MessageBuffer newMessageBuffer) {
+	public void setMessageBuffer(RuntimeMessageBuffer newMessageBuffer) {
 		if (newMessageBuffer != messageBuffer) {
 			NotificationChain msgs = null;
 			if (messageBuffer != null)
-				msgs = ((InternalEObject)messageBuffer).eInverseRemove(this, RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, MessageBuffer.class, msgs);
+				msgs = ((InternalEObject)messageBuffer).eInverseRemove(this, RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, RuntimeMessageBuffer.class, msgs);
 			if (newMessageBuffer != null)
-				msgs = ((InternalEObject)newMessageBuffer).eInverseAdd(this, RuntimePackage.MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, MessageBuffer.class, msgs);
+				msgs = ((InternalEObject)newMessageBuffer).eInverseAdd(this, RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT, RuntimeMessageBuffer.class, msgs);
 			msgs = basicSetMessageBuffer(newMessageBuffer, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -190,7 +190,7 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER:
 				if (messageBuffer != null)
 					msgs = ((InternalEObject)messageBuffer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER, null, msgs);
-				return basicSetMessageBuffer((MessageBuffer)otherEnd, msgs);
+				return basicSetMessageBuffer((RuntimeMessageBuffer)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -240,7 +240,7 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 				setStatechartInstance((RealtimeStatechartInstance)newValue);
 				return;
 			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER:
-				setMessageBuffer((MessageBuffer)newValue);
+				setMessageBuffer((RuntimeMessageBuffer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -258,7 +258,7 @@ public abstract class RuntimeBehavioralElementImpl extends NamedElementImpl impl
 				setStatechartInstance((RealtimeStatechartInstance)null);
 				return;
 			case RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__MESSAGE_BUFFER:
-				setMessageBuffer((MessageBuffer)null);
+				setMessageBuffer((RuntimeMessageBuffer)null);
 				return;
 		}
 		super.eUnset(featureID);

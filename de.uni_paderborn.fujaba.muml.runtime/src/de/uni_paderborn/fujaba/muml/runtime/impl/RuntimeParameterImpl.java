@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime.impl;
 
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -15,6 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.storydriven.core.impl.NamedElementImpl;
 
+import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeParameter;

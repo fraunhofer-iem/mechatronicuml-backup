@@ -41,7 +41,7 @@ public interface RuntimeFactory extends EFactory {
 	 * @return a new object of class '<em>Message Buffer</em>'.
 	 * @generated
 	 */
-	MessageBuffer createMessageBuffer();
+	RuntimeMessageBuffer createRuntimeMessageBuffer();
 
 	/**
 	 * Returns a new object of class '<em>Realtime Statechart Instance</em>'.

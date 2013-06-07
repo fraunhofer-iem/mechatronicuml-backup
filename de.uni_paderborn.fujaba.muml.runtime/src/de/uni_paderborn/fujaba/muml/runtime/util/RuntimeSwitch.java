@@ -25,9 +25,6 @@ import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
-import de.uni_paderborn.fujaba.muml.runtime.*;
-import de.uni_paderborn.fujaba.muml.types.DataType;
-import de.uni_paderborn.fujaba.muml.runtime.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.MessageOnConnector;
 import de.uni_paderborn.fujaba.muml.runtime.MultiRoleInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
@@ -36,13 +33,18 @@ import de.uni_paderborn.fujaba.muml.runtime.RuntimeAssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeComponentInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeConnectorInstance;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteMultiPortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscretePortInstance;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeDiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessage;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeMessageBuffer;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeParameter;
 import de.uni_paderborn.fujaba.muml.runtime.RuntimeRoleConnectorInstance;
 import de.uni_paderborn.fujaba.muml.runtime.SingleRoleInstance;
 import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -141,10 +143,10 @@ public class RuntimeSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RuntimePackage.MESSAGE_BUFFER: {
-				MessageBuffer messageBuffer = (MessageBuffer)theEObject;
-				T result = caseMessageBuffer(messageBuffer);
-				if (result == null) result = caseExtendableElement(messageBuffer);
+			case RuntimePackage.RUNTIME_MESSAGE_BUFFER: {
+				RuntimeMessageBuffer runtimeMessageBuffer = (RuntimeMessageBuffer)theEObject;
+				T result = caseRuntimeMessageBuffer(runtimeMessageBuffer);
+				if (result == null) result = caseExtendableElement(runtimeMessageBuffer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -367,7 +369,7 @@ public class RuntimeSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMessageBuffer(MessageBuffer object) {
+	public T caseRuntimeMessageBuffer(RuntimeMessageBuffer object) {
 		return null;
 	}
 
