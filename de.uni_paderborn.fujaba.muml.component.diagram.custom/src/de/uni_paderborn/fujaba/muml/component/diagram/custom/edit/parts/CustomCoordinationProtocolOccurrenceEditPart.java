@@ -3,32 +3,16 @@ package de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.parts;
 import org.eclipse.draw2d.ConnectionAnchor;
 import org.eclipse.draw2d.EllipseAnchor;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.gef.EditPolicy;
-import org.eclipse.gef.Request;
-import org.eclipse.gef.commands.Command;
-import org.eclipse.gef.commands.UnexecutableCommand;
-import org.eclipse.gef.requests.CreateConnectionRequest;
-import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
-import org.eclipse.gmf.runtime.diagram.core.commands.SetPropertyCommand;
-import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ComponentEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.requests.GroupRequestViaKeyboard;
-import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
-import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest;
-import org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart;
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.CoordinationProtocolItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart;
 
-public class CustomCoordinationProtocolEditPart extends
-		CoordinationProtocolEditPart {
+public class CustomCoordinationProtocolOccurrenceEditPart extends
+		CoordinationProtocolOccurrenceEditPart {
 
-	public CustomCoordinationProtocolEditPart(View view) {
+	public CustomCoordinationProtocolOccurrenceEditPart(View view) {
 		super(view);
 	}
 

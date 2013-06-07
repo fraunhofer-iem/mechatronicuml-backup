@@ -21,8 +21,8 @@ public class CustomStructuredcomponentEditPartFactory extends
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
-			case CustomCoordinationProtocolEditPart.VISUAL_ID:
-				return new CustomCoordinationProtocolEditPart(view);
+			case CustomCoordinationProtocolOccurrenceEditPart.VISUAL_ID:
+				return new CustomCoordinationProtocolOccurrenceEditPart(view);
 			case CustomModelElementCategoryEditPart.VISUAL_ID:
 				return new CustomModelElementCategoryEditPart(view);
 //			case CustomRolePatternEditPart.VISUAL_ID:
