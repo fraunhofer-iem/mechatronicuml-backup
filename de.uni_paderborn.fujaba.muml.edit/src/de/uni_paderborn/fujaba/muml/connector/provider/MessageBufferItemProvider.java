@@ -68,6 +68,7 @@ public class MessageBufferItemProvider
 			addCommentPropertyDescriptor(object);
 			addBufferSizePropertyDescriptor(object);
 			addMessageTypePropertyDescriptor(object);
+			addDiscreteInteractionEndpointPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -147,6 +148,28 @@ public class MessageBufferItemProvider
 				return Collections.emptyList();
 			}
 		});
+	}
+
+	/**
+	 * This adds a property descriptor for the Discrete Interaction Endpoint feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDiscreteInteractionEndpointPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_MessageBuffer_discreteInteractionEndpoint_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_MessageBuffer_discreteInteractionEndpoint_feature", "_UI_MessageBuffer_type"),
+				 ConnectorPackage.Literals.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
