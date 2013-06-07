@@ -144,7 +144,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID:
 					if (domainElement == null
 							|| visualID != de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 									.getNodeVisualID(op.getContainerView(),
@@ -164,7 +164,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 				|| de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID == visualID
-				|| de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID == visualID;
+				|| de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -245,7 +245,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID:
 			return createPortPart_3022(domainElement, containerView, index,
 					persisted, preferencesHint);
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID:
 			return createCoordinationProtocolOccurrence_3016(domainElement,
 					containerView, index, persisted, preferencesHint);
 		}
@@ -652,7 +652,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		// initializeFromPreferences 
@@ -686,7 +686,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		Node label5026 = createLabel(
 				node,
 				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID));
+						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
 		return node;
 	}
 

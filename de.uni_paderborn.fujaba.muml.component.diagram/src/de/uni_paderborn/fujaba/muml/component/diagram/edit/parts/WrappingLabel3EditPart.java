@@ -50,8 +50,8 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class CoordinationProtocolNameEditPart extends CompartmentEditPart
-		implements ITextAwareEditPart {
+public class WrappingLabel3EditPart extends CompartmentEditPart implements
+		ITextAwareEditPart {
 
 	/**
 	 * @generated
@@ -86,7 +86,7 @@ public class CoordinationProtocolNameEditPart extends CompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolNameEditPart(View view) {
+	public WrappingLabel3EditPart(View view) {
 		super(view);
 	}
 
@@ -307,7 +307,7 @@ public class CoordinationProtocolNameEditPart extends CompartmentEditPart
 							de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.CoordinationProtocolOccurrence_3016,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
 		}
 		return parser;
 	}

@@ -198,7 +198,7 @@ public class MumlDiagramUpdater {
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID) {
+			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID) {
 				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;
@@ -231,7 +231,7 @@ public class MumlDiagramUpdater {
 			return getComponentPart_3012ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID:
 			return getPortPart_3022ContainedLinks(view);
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID:
 			return getCoordinationProtocolOccurrence_3016ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID:
 			return getAssemblyConnector_4001ContainedLinks(view);
@@ -262,7 +262,7 @@ public class MumlDiagramUpdater {
 			return getComponentPart_3012IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID:
 			return getPortPart_3022IncomingLinks(view);
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID:
 			return getCoordinationProtocolOccurrence_3016IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID:
 			return getAssemblyConnector_4001IncomingLinks(view);
@@ -293,7 +293,7 @@ public class MumlDiagramUpdater {
 			return getComponentPart_3012OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID:
 			return getPortPart_3022OutgoingLinks(view);
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID:
 			return getCoordinationProtocolOccurrence_3016OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID:
 			return getAssemblyConnector_4001OutgoingLinks(view);

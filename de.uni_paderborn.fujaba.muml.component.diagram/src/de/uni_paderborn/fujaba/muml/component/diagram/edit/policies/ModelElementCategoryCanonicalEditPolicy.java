@@ -353,7 +353,7 @@ public class ModelElementCategoryCanonicalEditPolicy extends
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID: {
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
 						.getCoordinationProtocolOccurrence_3016ContainedLinks(view));

@@ -86,7 +86,6 @@ public class MumlElementTypes {
 	 * @generated
 	 */
 	public static final IElementType DelegationConnector_4002 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.DelegationConnector_4002"); //$NON-NLS-1$
-
 	/**
 	 * @generated
 	 */
@@ -316,7 +315,7 @@ public class MumlElementTypes {
 			return ComponentPart_3012;
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID:
 			return PortPart_3022;
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID:
 			return CoordinationProtocolOccurrence_3016;
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID:
 			return AssemblyConnector_4001;

@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.muml.component.diagram.edit.policies;
 
 import java.util.Iterator;
+
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
@@ -17,14 +18,14 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CoordinationProtocolItemSemanticEditPolicy
+public class CoordinationProtocolOccurrenceItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolItemSemanticEditPolicy() {
+	public CoordinationProtocolOccurrenceItemSemanticEditPolicy() {
 		super(
 				de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.CoordinationProtocolOccurrence_3016);
 	}

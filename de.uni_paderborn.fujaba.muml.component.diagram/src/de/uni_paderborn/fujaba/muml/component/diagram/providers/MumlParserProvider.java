@@ -176,7 +176,7 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getComponentPartLabel_5017Parser();
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartNameEditPart.VISUAL_ID:
 			return getPortPartName_5034Parser();
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
 			return getCoordinationProtocolOccurrenceLabel_5026Parser();
 		}
 		return null;

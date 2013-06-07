@@ -85,12 +85,12 @@ public class MumlEditPartFactory implements EditPartFactory {
 				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartNameEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart(
+			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart(
 						view);
 
-			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolNameEditPart(
+			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart(
 						view);
 
 			case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart.VISUAL_ID:

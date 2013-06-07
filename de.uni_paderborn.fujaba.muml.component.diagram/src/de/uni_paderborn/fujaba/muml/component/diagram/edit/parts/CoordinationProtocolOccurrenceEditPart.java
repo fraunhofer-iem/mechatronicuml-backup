@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.component.diagram.edit.parts;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
 import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.GridData;
@@ -32,7 +33,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class CoordinationProtocolEditPart extends ShapeNodeEditPart {
+public class CoordinationProtocolOccurrenceEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
@@ -52,7 +53,7 @@ public class CoordinationProtocolEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolEditPart(View view) {
+	public CoordinationProtocolOccurrenceEditPart(View view) {
 		super(view);
 	}
 
@@ -63,7 +64,7 @@ public class CoordinationProtocolEditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.CoordinationProtocolItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.CoordinationProtocolOccurrenceItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -122,8 +123,8 @@ public class CoordinationProtocolEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolNameEditPart) {
-			((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolNameEditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart) {
+			((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureCoordinationProtocolNameFigure());
 			return true;
@@ -135,7 +136,7 @@ public class CoordinationProtocolEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolNameEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart) {
 			return true;
 		}
 		return false;
@@ -263,7 +264,7 @@ public class CoordinationProtocolEditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolNameEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID));
 	}
 
 	/**

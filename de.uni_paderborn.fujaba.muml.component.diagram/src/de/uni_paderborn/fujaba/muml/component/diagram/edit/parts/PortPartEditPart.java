@@ -278,7 +278,7 @@ public class PortPartEditPart extends BorderedBorderItemEditPart {
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) {
 			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
 		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolEditPart) {
+		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart) {
 			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolOccurence_4003);
 		}
 		return types;

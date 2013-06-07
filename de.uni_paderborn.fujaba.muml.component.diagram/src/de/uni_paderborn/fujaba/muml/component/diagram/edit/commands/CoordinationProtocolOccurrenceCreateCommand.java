@@ -15,12 +15,13 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CoordinationProtocolCreateCommand extends EditElementCommand {
+public class CoordinationProtocolOccurrenceCreateCommand extends
+		EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolCreateCommand(CreateElementRequest req) {
+	public CoordinationProtocolOccurrenceCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
