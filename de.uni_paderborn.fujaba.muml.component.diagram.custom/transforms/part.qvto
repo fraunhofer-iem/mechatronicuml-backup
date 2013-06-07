@@ -43,7 +43,7 @@ main() {
 		// Replace existing portParts with newly created portParts
 		createPortParts(part);
 		
-		// Create CoordinationProtocolParts (was occurrence) and associate PortParts
+		// Create CoordinationProtocolOccurrences a.k.a CoordinationProtocolParts and associate PortParts
 		part.portParts->forEach(p) {
 			if (p.portType.oclIsKindOf(DiscretePort) and p.coordinationProtocolOccurence.oclIsUndefined()) then {
 				var coordinationProtocol : CoordinationProtocol := p.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol);
