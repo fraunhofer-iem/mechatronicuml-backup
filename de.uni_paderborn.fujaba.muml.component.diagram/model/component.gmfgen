@@ -33,7 +33,7 @@
         href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3010"
+        visualID="3023"
         editPartClassName="DiscretePortEditPart"
         itemSemanticEditPolicyClassName="DiscretePortItemSemanticEditPolicy"
         notationViewFactoryClassName="DiscretePortViewFactory"
@@ -115,7 +115,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5012"
+          visualID="5035"
           editPartClassName="DiscretePortNameEditPart"
           itemSemanticEditPolicyClassName="DiscretePortNameItemSemanticEditPolicy"
           notationViewFactoryClassName="DiscretePortNameViewFactory">
@@ -133,7 +133,7 @@
       </labels>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5025"
+          visualID="5036"
           editPartClassName="WrappingLabelEditPart"
           itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
           notationViewFactoryClassName="DiscretePortLabelViewFactory">
@@ -153,7 +153,7 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3011"
+        visualID="3024"
         editPartClassName="ContinuousPortEditPart"
         itemSemanticEditPolicyClassName="ContinuousPortItemSemanticEditPolicy"
         notationViewFactoryClassName="ContinuousPortViewFactory"
@@ -198,7 +198,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5013"
+          visualID="5037"
           editPartClassName="ContinuousPortNameEditPart"
           itemSemanticEditPolicyClassName="ContinuousPortNameItemSemanticEditPolicy"
           notationViewFactoryClassName="ContinuousPortNameViewFactory">
@@ -217,7 +217,7 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3013"
+        visualID="3025"
         editPartClassName="HybridPortEditPart"
         itemSemanticEditPolicyClassName="HybridPortItemSemanticEditPolicy"
         notationViewFactoryClassName="HybridPortViewFactory"
@@ -262,7 +262,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5024"
+          visualID="5038"
           editPartClassName="HybridPortNameEditPart"
           itemSemanticEditPolicyClassName="HybridPortNameItemSemanticEditPolicy"
           notationViewFactoryClassName="HybridPortNameViewFactory">
@@ -280,7 +280,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3012"
+        visualID="3026"
         editPartClassName="ComponentPartEditPart"
         itemSemanticEditPolicyClassName="ComponentPartItemSemanticEditPolicy"
         notationViewFactoryClassName="ComponentPartViewFactory"
@@ -348,7 +348,7 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5017"
+          visualID="5041"
           editPartClassName="WrappingLabel2EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
           notationViewFactoryClassName="ComponentPartLabelViewFactory"
@@ -370,7 +370,7 @@
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3022"
+        visualID="3027"
         editPartClassName="PortPartEditPart"
         itemSemanticEditPolicyClassName="PortPartItemSemanticEditPolicy"
         notationViewFactoryClassName="PortPartViewFactory"
@@ -406,7 +406,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5034"
+          visualID="5040"
           editPartClassName="PortPartNameEditPart"
           itemSemanticEditPolicyClassName="PortPartNameItemSemanticEditPolicy"
           notationViewFactoryClassName="PortPartNameViewFactory">
@@ -424,7 +424,7 @@
       </labels>
     </childNodes>
     <childNodes
-        visualID="3016"
+        visualID="3028"
         editPartClassName="CoordinationProtocolEditPart"
         itemSemanticEditPolicyClassName="CoordinationProtocolItemSemanticEditPolicy"
         notationViewFactoryClassName="CoordinationProtocolViewFactory"
@@ -450,7 +450,7 @@
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StructuredComponent/coordinationProtocolOccurences"/>
       </modelFacet>
       <labels
-          visualID="5026"
+          visualID="5042"
           editPartClassName="CoordinationProtocolNameEditPart"
           itemSemanticEditPolicyClassName="CoordinationProtocolNameItemSemanticEditPolicy"
           notationViewFactoryClassName="CoordinationProtocolNameViewFactory"
@@ -467,7 +467,7 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2006"
+        visualID="2007"
         editPartClassName="AtomicComponentEditPart"
         itemSemanticEditPolicyClassName="AtomicComponentItemSemanticEditPolicy"
         notationViewFactoryClassName="AtomicComponentViewFactory"
@@ -507,7 +507,7 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5028"
+          visualID="5039"
           editPartClassName="AtomicComponentNameEditPart"
           itemSemanticEditPolicyClassName="AtomicComponentNameItemSemanticEditPolicy"
           notationViewFactoryClassName="AtomicComponentNameViewFactory">
@@ -530,7 +530,7 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2005"
+        visualID="2008"
         editPartClassName="StaticStructuredComponentEditPart"
         itemSemanticEditPolicyClassName="StaticStructuredComponentItemSemanticEditPolicy"
         notationViewFactoryClassName="StaticStructuredComponentViewFactory"
@@ -562,7 +562,7 @@
             href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
       </modelFacet>
       <labels
-          visualID="5021"
+          visualID="5043"
           editPartClassName="StaticStructuredComponentNameEditPart"
           itemSemanticEditPolicyClassName="StaticStructuredComponentNameItemSemanticEditPolicy"
           notationViewFactoryClassName="StaticStructuredComponentNameViewFactory">
@@ -585,7 +585,7 @@
       </labels>
     </topLevelNodes>
     <links
-        visualID="4001"
+        visualID="4004"
         editPartClassName="AssemblyConnectorEditPart"
         itemSemanticEditPolicyClassName="AssemblyConnectorItemSemanticEditPolicy"
         notationViewFactoryClassName="AssemblyConnectorViewFactory"
@@ -617,7 +617,7 @@
           targetEnd="//@expressionProviders/@providers.0/@expressions.12"/>
     </links>
     <links
-        visualID="4002"
+        visualID="4005"
         editPartClassName="DelegationConnectorEditPart"
         itemSemanticEditPolicyClassName="DelegationConnectorItemSemanticEditPolicy"
         notationViewFactoryClassName="DelegationConnectorViewFactory"
@@ -649,7 +649,7 @@
           targetEnd="//@expressionProviders/@providers.0/@expressions.14"/>
     </links>
     <links
-        visualID="4003"
+        visualID="4006"
         editPartClassName="PortPartCoordinationProtocolOccurenceEditPart"
         itemSemanticEditPolicyClassName="PortPartCoordinationProtocolOccurenceItemSemanticEditPolicy"
         notationViewFactoryClassName="PortPartCoordinationProtocolOccurenceViewFactory"
@@ -670,7 +670,7 @@
       </modelFacet>
     </links>
     <compartments
-        visualID="7005"
+        visualID="7006"
         editPartClassName="StaticStructuredComponentComponentCompartmentEditPart"
         itemSemanticEditPolicyClassName="StaticStructuredComponentComponentCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="StaticStructuredComponentComponentCompartmentViewFactory"
@@ -862,7 +862,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.0/@labels.1/@modelFacet"
-        className="DiscretePortLabelExpressionLabelParser5025"
+        className="DiscretePortLabelExpressionLabelParser5036"
         viewExpression="//@expressionProviders/@providers.0/@expressions.4">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/DiscretePort"/>
@@ -870,7 +870,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.0/@modelFacet"
-        className="ComponentPartLabelExpressionLabelParser5017"
+        className="ComponentPartLabelExpressionLabelParser5041"
         viewExpression="//@expressionProviders/@providers.0/@expressions.9">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/ComponentPart"/>
@@ -878,7 +878,7 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.0/@modelFacet"
-        className="CoordinationProtocolOccurrenceLabelExpressionLabelParser5026"
+        className="CoordinationProtocolOccurrenceLabelExpressionLabelParser5042"
         viewExpression="//@expressionProviders/@providers.0/@expressions.10">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/CoordinationProtocolOccurrence"/>
