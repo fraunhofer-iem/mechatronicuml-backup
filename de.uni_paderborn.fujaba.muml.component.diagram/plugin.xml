@@ -486,12 +486,12 @@
          
          <child
                class="AtomicComponent"
-               packageNsUri="http://www.fujaba.de/muml/component/0.3.18">
+               packageNsUri="http://www.fujaba.de/muml/component/0.3.20">
          </child>
          
          <child
                class="StaticStructuredComponent"
-               packageNsUri="http://www.fujaba.de/muml/component/0.3.18">
+               packageNsUri="http://www.fujaba.de/muml/component/0.3.20">
          </child>
          
          
