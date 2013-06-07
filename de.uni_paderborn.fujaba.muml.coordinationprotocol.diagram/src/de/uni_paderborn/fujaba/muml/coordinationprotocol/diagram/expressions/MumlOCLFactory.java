@@ -50,20 +50,20 @@ public class MumlOCLFactory {
 		}
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
-					"--\'proto\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'role1\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'role2\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'role\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\'\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"\'proto\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"\'role1\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"\'role2\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"\'\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"\'role\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"\'\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

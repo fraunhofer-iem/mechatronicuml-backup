@@ -99,7 +99,7 @@
          
          <child
                class="CoordinationProtocol"
-               packageNsUri="http://www.fujaba.de/muml/protocol/0.3.19">
+               packageNsUri="http://www.fujaba.de/muml/protocol/0.3.20">
          </child>
          
          
@@ -314,7 +314,7 @@
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.3.19">
+      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.3.20">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol_2005"
                name="%metatype.name.CoordinationProtocol_2005"
@@ -324,7 +324,7 @@
             <param name="semanticHint" value="2005"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.3.19">
+      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.3.20">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.CoordinationProtocol_3005"
                name="%metatype.name.CoordinationProtocol_3005"
@@ -333,7 +333,7 @@
             <param name="semanticHint" value="3005"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.3.19">
+      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.3.20">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.Role_3006"
                name="%metatype.name.Role_3006"
@@ -343,7 +343,7 @@
             <param name="semanticHint" value="3006"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.3.19">
+      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.3.20">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.AbstractCoordinationSpecificationRoles_4007"
                name="%metatype.name.AbstractCoordinationSpecificationRoles_4007"
@@ -352,7 +352,7 @@
             <param name="semanticHint" value="4007"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.3.19">
+      <metamodel nsURI="http://www.fujaba.de/muml/protocol/0.3.20">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.RoleConnector_4006"
                name="%metatype.name.RoleConnector_4006"
@@ -547,6 +547,89 @@
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram"
+            labelProvider="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.sheet.MumlSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="Advanced"/>
+
+      </propertyTabs>
+   </extension>
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.sheet.MumlPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.navigator.MumlAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+<extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <?gmfgen generated="true"?>
+      <propertyTabs
+            contributorId="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram">
+         <propertyTab
+               label="Base"
+               category="domain"
+               id="Base">
+         </propertyTab>
+         <propertyTab
+               label="Documentation"
+               category="extra"
+               id="Documentation"
+               afterTab="Documentation">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+
 
    <!-- optionally, specify keybindings -->
 </plugin>
