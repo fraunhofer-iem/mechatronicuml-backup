@@ -179,32 +179,44 @@ public class ConnectorValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the ReceivingInteractionEndpointRequiresMessageBuffer constraint of '<em>Discrete Interaction Endpoint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_INTERACTION_ENDPOINT__RECEIVING_INTERACTION_ENDPOINT_REQUIRES_MESSAGE_BUFFER__EEXPRESSION = "self.receiverMessageTypes->notEmpty() \r\n" +
+		"implies \r\n" +
+		"self.receiverMessageBuffer->notEmpty()";
+
+	/**
 	 * Validates the ReceivingInteractionEndpointRequiresMessageBuffer constraint of '<em>Discrete Interaction Endpoint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(DiscreteInteractionEndpoint discreteInteractionEndpoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "ReceivingInteractionEndpointRequiresMessageBuffer", getObjectLabel(discreteInteractionEndpoint, context) },
-						 new Object[] { discreteInteractionEndpoint },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT,
+				 discreteInteractionEndpoint,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ReceivingInteractionEndpointRequiresMessageBuffer",
+				 DISCRETE_INTERACTION_ENDPOINT__RECEIVING_INTERACTION_ENDPOINT_REQUIRES_MESSAGE_BUFFER__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
+
+	/**
+	 * The cached validation expression for the ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer constraint of '<em>Discrete Interaction Endpoint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPE_MUST_BE_ASSIGNED_TO_EXACTLY_ONE_BUFFER__EEXPRESSION = "-- Each receiver message type should be assigned to exactly one buffer\r\n" +
+		"self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))";
 
 	/**
 	 * Validates the ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer constraint of '<em>Discrete Interaction Endpoint</em>'.
@@ -213,25 +225,18 @@ public class ConnectorValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDiscreteInteractionEndpoint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(DiscreteInteractionEndpoint discreteInteractionEndpoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", getObjectLabel(discreteInteractionEndpoint, context) },
-						 new Object[] { discreteInteractionEndpoint },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT,
+				 discreteInteractionEndpoint,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer",
+				 DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPE_MUST_BE_ASSIGNED_TO_EXACTLY_ONE_BUFFER__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

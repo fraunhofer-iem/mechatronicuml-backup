@@ -2017,6 +2017,11 @@
   </eSubpackages>
   <eSubpackages name="connector" nsURI="http://www.fujaba.de/muml/connector/0.3.15"
       nsPrefix="connector">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ConnectorEndpoint" abstract="true"
         eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"

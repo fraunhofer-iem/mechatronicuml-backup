@@ -22306,5 +22306,31 @@
     <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="ReceivingInteractionEndpointRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"
         oldDataValue="RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//connector" referenceName="eAnnotations"
+        element="muml.ecore#//connector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
+      <changes xsi:type="history:Set" element="muml.ecore#//connector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//connector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        referenceName="details" element="muml.ecore#//connector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//connector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+          featureName="key" dataValue="invocationDelegates"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//connector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+          featureName="value" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//connector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        referenceName="details" element="muml.ecore#//connector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1">
+      <changes xsi:type="history:Set" element="muml.ecore#//connector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1"
+          featureName="key" dataValue="settingDelegates"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//connector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1"
+          featureName="value" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//connector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        referenceName="details" element="muml.ecore#//connector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2">
+      <changes xsi:type="history:Set" element="muml.ecore#//connector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2"
+          featureName="key" dataValue="validationDelegates"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//connector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2"
+          featureName="value" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
   </releases>
 </history:History>
