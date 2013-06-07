@@ -6,22 +6,14 @@
  */
 package de.uni_paderborn.fujaba.muml.component.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
 import de.uni_paderborn.fujaba.muml.component.PortPart;
-import de.uni_paderborn.fujaba.muml.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 
 /**
  * <!-- begin-user-doc -->

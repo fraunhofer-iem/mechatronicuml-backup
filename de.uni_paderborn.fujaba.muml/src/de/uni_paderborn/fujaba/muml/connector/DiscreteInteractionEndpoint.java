@@ -31,11 +31,14 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteInteractionEndpoint()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ReceivingInteractionEndpointRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ReceivingInteractionEndpointRequiresMessageBuffer='self.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()' ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer='-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))'"
  * @generated
  */
 public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, BehavioralElement, ConstrainableElement {
@@ -150,5 +153,22 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * @generated
 	 */
 	void setCardinality(Cardinality value);
+
+	/**
+	 * Returns the value of the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer#getDiscreteInteractionEndpoint <em>Discrete Interaction Endpoint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Receiver Message Buffer</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteInteractionEndpoint_ReceiverMessageBuffer()
+	 * @see de.uni_paderborn.fujaba.muml.connector.MessageBuffer#getDiscreteInteractionEndpoint
+	 * @model opposite="discreteInteractionEndpoint" containment="true"
+	 * @generated
+	 */
+	EList<MessageBuffer> getReceiverMessageBuffer();
 
 } // DiscreteInteractionEndpoint

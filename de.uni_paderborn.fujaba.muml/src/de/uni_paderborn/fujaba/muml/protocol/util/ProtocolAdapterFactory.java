@@ -20,9 +20,9 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.protocol.*;
+import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
@@ -99,10 +99,6 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseRoleConnector(RoleConnector object) {
 				return createRoleConnectorAdapter();
-			}
-			@Override
-			public Adapter caseMessageBuffer(MessageBuffer object) {
-				return createMessageBufferAdapter();
 			}
 			@Override
 			public Adapter caseConnectorQualityOfServiceAssumptions(ConnectorQualityOfServiceAssumptions object) {
@@ -217,20 +213,6 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRoleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.protocol.MessageBuffer <em>Message Buffer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.protocol.MessageBuffer
-	 * @generated
-	 */
-	public Adapter createMessageBufferAdapter() {
 		return null;
 	}
 

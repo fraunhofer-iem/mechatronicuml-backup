@@ -68,7 +68,6 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 			addCoordinationProtocolPropertyDescriptor(object);
 			addRoleConnectorPropertyDescriptor(object);
 			addMultiRolePropertyDescriptor(object);
-			addReceiverMessageBufferPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -140,57 +139,6 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Receiver Message Buffer feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReceiverMessageBufferPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Role_receiverMessageBuffer_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Role_receiverMessageBuffer_feature", "_UI_Role_type"),
-				 ProtocolPackage.Literals.ROLE__RECEIVER_MESSAGE_BUFFER,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(ProtocolPackage.Literals.ROLE__RECEIVER_MESSAGE_BUFFER);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
 	 * This returns Role.gif.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -244,9 +192,6 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 			case ProtocolPackage.ROLE__MULTI_ROLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -262,11 +207,6 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 	protected void collectNewChildDescriptors(
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ProtocolPackage.Literals.ROLE__RECEIVER_MESSAGE_BUFFER,
-				 ProtocolFactory.eINSTANCE.createMessageBuffer()));
 	}
 
 	/**

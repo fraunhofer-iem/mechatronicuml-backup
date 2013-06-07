@@ -1,10 +1,6 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package de.uni_paderborn.fujaba.muml.protocol.impl;
+package de.uni_paderborn.fujaba.muml.connector.impl;
 
 import java.util.Collection;
 
@@ -20,10 +16,10 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
-import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
-import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
 
 /**
@@ -33,10 +29,10 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.MessageBufferImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.MessageBufferImpl#getBufferSize <em>Buffer Size</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.MessageBufferImpl#getMessageType <em>Message Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.MessageBufferImpl#getRole <em>Role</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getBufferSize <em>Buffer Size</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getMessageType <em>Message Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getDiscreteInteractionEndpoint <em>Discrete Interaction Endpoint</em>}</li>
  * </ul>
  * </p>
  *
@@ -99,7 +95,7 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ProtocolPackage.Literals.MESSAGE_BUFFER;
+		return ConnectorPackage.Literals.MESSAGE_BUFFER;
 	}
 
 	/**
@@ -120,7 +116,7 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 		String oldComment = comment;
 		comment = newComment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.MESSAGE_BUFFER__COMMENT, oldComment, comment));
+			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.MESSAGE_BUFFER__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -141,7 +137,7 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 		NaturalNumber oldBufferSize = bufferSize;
 		bufferSize = newBufferSize;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProtocolPackage.MESSAGE_BUFFER__BUFFER_SIZE, oldBufferSize, newBufferSize);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE, oldBufferSize, newBufferSize);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -156,14 +152,14 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 		if (newBufferSize != bufferSize) {
 			NotificationChain msgs = null;
 			if (bufferSize != null)
-				msgs = ((InternalEObject)bufferSize).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProtocolPackage.MESSAGE_BUFFER__BUFFER_SIZE, null, msgs);
+				msgs = ((InternalEObject)bufferSize).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE, null, msgs);
 			if (newBufferSize != null)
-				msgs = ((InternalEObject)newBufferSize).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProtocolPackage.MESSAGE_BUFFER__BUFFER_SIZE, null, msgs);
+				msgs = ((InternalEObject)newBufferSize).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE, null, msgs);
 			msgs = basicSetBufferSize(newBufferSize, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.MESSAGE_BUFFER__BUFFER_SIZE, newBufferSize, newBufferSize));
+			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE, newBufferSize, newBufferSize));
 	}
 
 	/**
@@ -173,7 +169,7 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	 */
 	public EList<MessageType> getMessageType() {
 		if (messageType == null) {
-			messageType = new EObjectResolvingEList<MessageType>(MessageType.class, this, ProtocolPackage.MESSAGE_BUFFER__MESSAGE_TYPE);
+			messageType = new EObjectResolvingEList<MessageType>(MessageType.class, this, ConnectorPackage.MESSAGE_BUFFER__MESSAGE_TYPE);
 		}
 		return messageType;
 	}
@@ -183,9 +179,9 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Role getRole() {
-		if (eContainerFeatureID() != ProtocolPackage.MESSAGE_BUFFER__ROLE) return null;
-		return (Role)eContainer();
+	public DiscreteInteractionEndpoint getDiscreteInteractionEndpoint() {
+		if (eContainerFeatureID() != ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT) return null;
+		return (DiscreteInteractionEndpoint)eContainer();
 	}
 
 	/**
@@ -193,8 +189,8 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRole(Role newRole, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newRole, ProtocolPackage.MESSAGE_BUFFER__ROLE, msgs);
+	public NotificationChain basicSetDiscreteInteractionEndpoint(DiscreteInteractionEndpoint newDiscreteInteractionEndpoint, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newDiscreteInteractionEndpoint, ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT, msgs);
 		return msgs;
 	}
 
@@ -203,20 +199,20 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRole(Role newRole) {
-		if (newRole != eInternalContainer() || (eContainerFeatureID() != ProtocolPackage.MESSAGE_BUFFER__ROLE && newRole != null)) {
-			if (EcoreUtil.isAncestor(this, newRole))
+	public void setDiscreteInteractionEndpoint(DiscreteInteractionEndpoint newDiscreteInteractionEndpoint) {
+		if (newDiscreteInteractionEndpoint != eInternalContainer() || (eContainerFeatureID() != ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT && newDiscreteInteractionEndpoint != null)) {
+			if (EcoreUtil.isAncestor(this, newDiscreteInteractionEndpoint))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newRole != null)
-				msgs = ((InternalEObject)newRole).eInverseAdd(this, ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER, Role.class, msgs);
-			msgs = basicSetRole(newRole, msgs);
+			if (newDiscreteInteractionEndpoint != null)
+				msgs = ((InternalEObject)newDiscreteInteractionEndpoint).eInverseAdd(this, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER, DiscreteInteractionEndpoint.class, msgs);
+			msgs = basicSetDiscreteInteractionEndpoint(newDiscreteInteractionEndpoint, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.MESSAGE_BUFFER__ROLE, newRole, newRole));
+			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT, newDiscreteInteractionEndpoint, newDiscreteInteractionEndpoint));
 	}
 
 	/**
@@ -227,10 +223,10 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProtocolPackage.MESSAGE_BUFFER__ROLE:
+			case ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetRole((Role)otherEnd, msgs);
+				return basicSetDiscreteInteractionEndpoint((DiscreteInteractionEndpoint)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -243,10 +239,10 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProtocolPackage.MESSAGE_BUFFER__BUFFER_SIZE:
+			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE:
 				return basicSetBufferSize(null, msgs);
-			case ProtocolPackage.MESSAGE_BUFFER__ROLE:
-				return basicSetRole(null, msgs);
+			case ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT:
+				return basicSetDiscreteInteractionEndpoint(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -259,8 +255,8 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case ProtocolPackage.MESSAGE_BUFFER__ROLE:
-				return eInternalContainer().eInverseRemove(this, ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER, Role.class, msgs);
+			case ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT:
+				return eInternalContainer().eInverseRemove(this, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER, DiscreteInteractionEndpoint.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -273,14 +269,14 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProtocolPackage.MESSAGE_BUFFER__COMMENT:
+			case ConnectorPackage.MESSAGE_BUFFER__COMMENT:
 				return getComment();
-			case ProtocolPackage.MESSAGE_BUFFER__BUFFER_SIZE:
+			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE:
 				return getBufferSize();
-			case ProtocolPackage.MESSAGE_BUFFER__MESSAGE_TYPE:
+			case ConnectorPackage.MESSAGE_BUFFER__MESSAGE_TYPE:
 				return getMessageType();
-			case ProtocolPackage.MESSAGE_BUFFER__ROLE:
-				return getRole();
+			case ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT:
+				return getDiscreteInteractionEndpoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -294,18 +290,18 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProtocolPackage.MESSAGE_BUFFER__COMMENT:
+			case ConnectorPackage.MESSAGE_BUFFER__COMMENT:
 				setComment((String)newValue);
 				return;
-			case ProtocolPackage.MESSAGE_BUFFER__BUFFER_SIZE:
+			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE:
 				setBufferSize((NaturalNumber)newValue);
 				return;
-			case ProtocolPackage.MESSAGE_BUFFER__MESSAGE_TYPE:
+			case ConnectorPackage.MESSAGE_BUFFER__MESSAGE_TYPE:
 				getMessageType().clear();
 				getMessageType().addAll((Collection<? extends MessageType>)newValue);
 				return;
-			case ProtocolPackage.MESSAGE_BUFFER__ROLE:
-				setRole((Role)newValue);
+			case ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT:
+				setDiscreteInteractionEndpoint((DiscreteInteractionEndpoint)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -319,17 +315,17 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProtocolPackage.MESSAGE_BUFFER__COMMENT:
+			case ConnectorPackage.MESSAGE_BUFFER__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case ProtocolPackage.MESSAGE_BUFFER__BUFFER_SIZE:
+			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE:
 				setBufferSize((NaturalNumber)null);
 				return;
-			case ProtocolPackage.MESSAGE_BUFFER__MESSAGE_TYPE:
+			case ConnectorPackage.MESSAGE_BUFFER__MESSAGE_TYPE:
 				getMessageType().clear();
 				return;
-			case ProtocolPackage.MESSAGE_BUFFER__ROLE:
-				setRole((Role)null);
+			case ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT:
+				setDiscreteInteractionEndpoint((DiscreteInteractionEndpoint)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -343,14 +339,14 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProtocolPackage.MESSAGE_BUFFER__COMMENT:
+			case ConnectorPackage.MESSAGE_BUFFER__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case ProtocolPackage.MESSAGE_BUFFER__BUFFER_SIZE:
+			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE:
 				return bufferSize != null;
-			case ProtocolPackage.MESSAGE_BUFFER__MESSAGE_TYPE:
+			case ConnectorPackage.MESSAGE_BUFFER__MESSAGE_TYPE:
 				return messageType != null && !messageType.isEmpty();
-			case ProtocolPackage.MESSAGE_BUFFER__ROLE:
-				return getRole() != null;
+			case ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT:
+				return getDiscreteInteractionEndpoint() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -364,7 +360,7 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
-				case ProtocolPackage.MESSAGE_BUFFER__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+				case ConnectorPackage.MESSAGE_BUFFER__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 				default: return -1;
 			}
 		}
@@ -380,7 +376,7 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
-				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return ProtocolPackage.MESSAGE_BUFFER__COMMENT;
+				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return ConnectorPackage.MESSAGE_BUFFER__COMMENT;
 				default: return -1;
 			}
 		}

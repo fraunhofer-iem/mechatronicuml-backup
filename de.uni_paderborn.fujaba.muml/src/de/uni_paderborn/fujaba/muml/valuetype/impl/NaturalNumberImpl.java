@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.valuetype.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -15,7 +17,6 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->

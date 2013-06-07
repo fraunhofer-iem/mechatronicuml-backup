@@ -1371,13 +1371,22 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__CARDINALITY = PORT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER = PORT_FEATURE_COUNT + 6;
+
+	/**
 	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__REFINED_ROLE = PORT_FEATURE_COUNT + 6;
+	int DISCRETE_PORT__REFINED_ROLE = PORT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
@@ -1386,7 +1395,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__IS_DISCRETE_IN_PORT = PORT_FEATURE_COUNT + 7;
+	int DISCRETE_PORT__IS_DISCRETE_IN_PORT = PORT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Is Discrete Out Port</b></em>' attribute.
@@ -1395,7 +1404,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__IS_DISCRETE_OUT_PORT = PORT_FEATURE_COUNT + 8;
+	int DISCRETE_PORT__IS_DISCRETE_OUT_PORT = PORT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Is Discrete In Out Port</b></em>' attribute.
@@ -1404,16 +1413,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT = PORT_FEATURE_COUNT + 9;
-
-	/**
-	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER = PORT_FEATURE_COUNT + 10;
+	int DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT = PORT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
@@ -4580,17 +4580,6 @@ public interface ComponentPackage extends EPackage {
 	EAttribute getDiscretePort_IsDiscreteInOutPort();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Receiver Message Buffer</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.component.DiscretePort#getReceiverMessageBuffer()
-	 * @see #getDiscretePort()
-	 * @generated
-	 */
-	EReference getDiscretePort_ReceiverMessageBuffer();
-
-	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isMultiPort <em>Multi Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5173,14 +5162,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT = eINSTANCE.getDiscretePort_IsDiscreteInOutPort();
-
-		/**
-		 * The meta object literal for the '<em><b>Receiver Message Buffer</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER = eINSTANCE.getDiscretePort_ReceiverMessageBuffer();
 
 		/**
 		 * The meta object literal for the '<em><b>Multi Port</b></em>' attribute feature.

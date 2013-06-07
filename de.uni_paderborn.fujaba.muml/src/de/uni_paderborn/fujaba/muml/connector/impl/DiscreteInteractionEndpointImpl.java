@@ -23,6 +23,7 @@ import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
@@ -43,6 +44,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  * </ul>
  * </p>
  *
@@ -118,6 +120,16 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	 * @ordered
 	 */
 	protected Cardinality cardinality;
+
+	/**
+	 * The cached value of the '{@link #getReceiverMessageBuffer() <em>Receiver Message Buffer</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReceiverMessageBuffer()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MessageBuffer> receiverMessageBuffer;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -358,6 +370,18 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<MessageBuffer> getReceiverMessageBuffer() {
+		if (receiverMessageBuffer == null) {
+			receiverMessageBuffer = new EObjectContainmentWithInverseEList<MessageBuffer>(MessageBuffer.class, this, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER, ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT);
+		}
+		return receiverMessageBuffer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -368,6 +392,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 				return basicSetBehavior((Behavior)otherEnd, msgs);
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReceiverMessageBuffer()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -386,6 +412,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 				return basicSetCardinality(null, msgs);
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER:
+				return ((InternalEList<?>)getReceiverMessageBuffer()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -415,6 +443,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 				return basicGetRoleAndAdaptationBehavior();
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 				return getCardinality();
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER:
+				return getReceiverMessageBuffer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -452,6 +482,10 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 				setCardinality((Cardinality)newValue);
 				return;
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER:
+				getReceiverMessageBuffer().clear();
+				getReceiverMessageBuffer().addAll((Collection<? extends MessageBuffer>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -485,6 +519,9 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 				setCardinality((Cardinality)null);
 				return;
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER:
+				getReceiverMessageBuffer().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -511,6 +548,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 				return roleAndAdaptationBehavior != null;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 				return cardinality != null;
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER:
+				return receiverMessageBuffer != null && !receiverMessageBuffer.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

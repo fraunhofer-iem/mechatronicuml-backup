@@ -6,9 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.protocol;
 
-import org.eclipse.emf.common.util.EList;
-
-import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 
@@ -27,7 +24,6 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#isMultiRole <em>Multi Role</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,22 +96,5 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	 * @generated
 	 */
 	boolean isMultiRole();
-
-	/**
-	 * Returns the value of the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.protocol.MessageBuffer}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.protocol.MessageBuffer#getRole <em>Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Receiver Message Buffer</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRole_ReceiverMessageBuffer()
-	 * @see de.uni_paderborn.fujaba.muml.protocol.MessageBuffer#getRole
-	 * @model opposite="role" containment="true"
-	 * @generated
-	 */
-	EList<MessageBuffer> getReceiverMessageBuffer();
 
 } // Role

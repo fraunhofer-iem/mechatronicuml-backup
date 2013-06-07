@@ -23,7 +23,6 @@ import de.uni_paderborn.fujaba.muml.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.ContinuousPort;
-import de.uni_paderborn.fujaba.muml.component.ContinuousPortDirectionKind;
 import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
 import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
 import de.uni_paderborn.fujaba.muml.component.DirectedTypedPort;
@@ -31,8 +30,11 @@ import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.component.PortConnector;
+import de.uni_paderborn.fujaba.muml.component.PortDirectionKind;
+import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
 
 
 /**
@@ -77,6 +79,14 @@ public class ComponentValidator extends MumlValidator {
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
+	 * The cached base package validator.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConnectorValidator connectorValidator;
+
+	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -84,6 +94,7 @@ public class ComponentValidator extends MumlValidator {
 	 */
 	public ComponentValidator() {
 		super();
+		connectorValidator = ConnectorValidator.INSTANCE;
 	}
 
 	/**
@@ -226,6 +237,8 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresMessageTypes(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAndRoleSameMessageTypes(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresBehavior(discretePort, diagnostics, context);
@@ -233,7 +246,6 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresRole(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_MultiPortMustRefineMultiRole(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_ReceiverPortRequiresMessageBuffer(discretePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDiscretePort_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(discretePort, diagnostics, context);
 		return result;
 	}
 
@@ -423,44 +435,32 @@ public class ComponentValidator extends MumlValidator {
 	}
 
 	/**
-	 * The cached validation expression for the ReceiverPortRequiresMessageBuffer constraint of '<em>Discrete Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DISCRETE_PORT__RECEIVER_PORT_REQUIRES_MESSAGE_BUFFER__EEXPRESSION = "self.receiverMessageTypes->notEmpty() \r\n" +
-		"implies \r\n" +
-		"self.receiverMessageBuffer->notEmpty()";
-
-	/**
 	 * Validates the ReceiverPortRequiresMessageBuffer constraint of '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateDiscretePort_ReceiverPortRequiresMessageBuffer(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DISCRETE_PORT,
-				 discretePort,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ReceiverPortRequiresMessageBuffer",
-				 DISCRETE_PORT__RECEIVER_PORT_REQUIRES_MESSAGE_BUFFER__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "ReceiverPortRequiresMessageBuffer", getObjectLabel(discretePort, context) },
+						 new Object[] { discretePort },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
-
-	/**
-	 * The cached validation expression for the ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer constraint of '<em>Discrete Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DISCRETE_PORT__RECEIVER_MESSAGE_TYPE_MUST_BE_ASSIGNED_TO_EXACTLY_ONE_BUFFER__EEXPRESSION = "-- Each receiver message type should be assigned to exactly one buffer\r\n" +
-		"self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))";
 
 	/**
 	 * Validates the ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer constraint of '<em>Discrete Port</em>'.
@@ -469,18 +469,26 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateDiscretePort_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DISCRETE_PORT,
-				 discretePort,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer",
-				 DISCRETE_PORT__RECEIVER_MESSAGE_TYPE_MUST_BE_ASSIGNED_TO_EXACTLY_ONE_BUFFER__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", getObjectLabel(discretePort, context) },
+						 new Object[] { discretePort },
+						 context));
+			}
+			return false;
+		}
+		return connectorValidator.validateDiscreteInteractionEndpoint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(discretePort, diagnostics, context);
 	}
 
 	/**

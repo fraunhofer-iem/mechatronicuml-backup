@@ -17,6 +17,7 @@ import org.storydriven.core.NamedElement;
 import de.uni_paderborn.fujaba.muml.types.ArrayDataType;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
+import de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 
 /**

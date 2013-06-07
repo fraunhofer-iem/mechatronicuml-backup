@@ -6,11 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.protocol;
 
-import org.eclipse.emf.common.util.EList;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.NamedElement;
-
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 
 /**
  * <!-- begin-user-doc -->

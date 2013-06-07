@@ -75,6 +75,29 @@ public class ConnectorItemProviderAdapterFactory extends ConnectorAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MessageBufferItemProvider messageBufferItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMessageBufferAdapter() {
+		if (messageBufferItemProvider == null) {
+			messageBufferItemProvider = new MessageBufferItemProvider(this);
+		}
+
+		return messageBufferItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,6 +196,7 @@ public class ConnectorItemProviderAdapterFactory extends ConnectorAdapterFactory
 	 * @generated
 	 */
 	public void dispose() {
+		if (messageBufferItemProvider != null) messageBufferItemProvider.dispose();
 	}
 
 }

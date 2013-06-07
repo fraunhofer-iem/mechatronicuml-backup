@@ -26,6 +26,15 @@ public interface ConnectorFactory extends EFactory {
 	ConnectorFactory eINSTANCE = de.uni_paderborn.fujaba.muml.connector.impl.ConnectorFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Message Buffer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message Buffer</em>'.
+	 * @generated
+	 */
+	MessageBuffer createMessageBuffer();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

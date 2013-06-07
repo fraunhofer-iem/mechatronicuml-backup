@@ -6,14 +6,15 @@
  */
 package de.uni_paderborn.fujaba.muml.connector.util;
 
+import de.uni_paderborn.fujaba.muml.connector.*;
 import java.util.Map;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.fujaba.muml.behavior.util.BehaviorValidator;
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
@@ -23,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 
 /**
  * <!-- begin-user-doc -->
@@ -67,14 +69,6 @@ public class ConnectorValidator extends EObjectValidator {
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
-	 * The cached base package validator.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BehaviorValidator behaviorValidator;
-
-	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,7 +76,6 @@ public class ConnectorValidator extends EObjectValidator {
 	 */
 	public ConnectorValidator() {
 		super();
-		behaviorValidator = BehaviorValidator.INSTANCE;
 	}
 
 	/**
@@ -121,6 +114,8 @@ public class ConnectorValidator extends EObjectValidator {
 				return validateDiscreteSingleInteractionEndpointInstance((DiscreteSingleInteractionEndpointInstance)value, diagnostics, context);
 			case ConnectorPackage.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE:
 				return validateDiscreteMultiInteractionEndpointInstance((DiscreteMultiInteractionEndpointInstance)value, diagnostics, context);
+			case ConnectorPackage.MESSAGE_BUFFER:
+				return validateMessageBuffer((MessageBuffer)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -132,16 +127,7 @@ public class ConnectorValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateConnectorEndpoint(ConnectorEndpoint connectorEndpoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(connectorEndpoint, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(connectorEndpoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(connectorEndpoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(connectorEndpoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(connectorEndpoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(connectorEndpoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(connectorEndpoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(connectorEndpoint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(connectorEndpoint, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(connectorEndpoint, diagnostics, context);
 	}
 
 
@@ -187,7 +173,65 @@ public class ConnectorValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(discreteInteractionEndpoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discreteInteractionEndpoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discreteInteractionEndpoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(discreteInteractionEndpoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscreteInteractionEndpoint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(discreteInteractionEndpoint, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the ReceivingInteractionEndpointRequiresMessageBuffer constraint of '<em>Discrete Interaction Endpoint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(DiscreteInteractionEndpoint discreteInteractionEndpoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "ReceivingInteractionEndpointRequiresMessageBuffer", getObjectLabel(discreteInteractionEndpoint, context) },
+						 new Object[] { discreteInteractionEndpoint },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Validates the ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer constraint of '<em>Discrete Interaction Endpoint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscreteInteractionEndpoint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(DiscreteInteractionEndpoint discreteInteractionEndpoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", getObjectLabel(discreteInteractionEndpoint, context) },
+						 new Object[] { discreteInteractionEndpoint },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -215,6 +259,15 @@ public class ConnectorValidator extends EObjectValidator {
 	 */
 	public boolean validateDiscreteMultiInteractionEndpointInstance(DiscreteMultiInteractionEndpointInstance discreteMultiInteractionEndpointInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(discreteMultiInteractionEndpointInstance, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMessageBuffer(MessageBuffer messageBuffer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(messageBuffer, diagnostics, context);
 	}
 
 	/**

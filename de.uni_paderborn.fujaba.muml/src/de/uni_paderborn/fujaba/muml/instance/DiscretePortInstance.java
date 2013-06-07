@@ -9,8 +9,8 @@ package de.uni_paderborn.fujaba.muml.instance;
 import org.eclipse.emf.common.util.EList;
 
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 
 
@@ -79,7 +79,7 @@ public interface DiscretePortInstance extends PortInstance, DiscreteInteractionE
 
 	/**
 	 * Returns the value of the '<em><b>Receiver Message Buffer</b></em>' reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.protocol.MessageBuffer}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->

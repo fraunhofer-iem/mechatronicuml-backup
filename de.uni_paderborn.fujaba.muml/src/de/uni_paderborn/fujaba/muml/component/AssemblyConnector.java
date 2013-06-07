@@ -8,8 +8,6 @@ package de.uni_paderborn.fujaba.muml.component;
 
 import org.eclipse.emf.common.util.EList;
 
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Assembly Connector</b></em>'.

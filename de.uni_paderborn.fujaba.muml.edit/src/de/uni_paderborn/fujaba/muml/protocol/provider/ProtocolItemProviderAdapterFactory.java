@@ -144,29 +144,6 @@ public class ProtocolItemProviderAdapterFactory extends ProtocolAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.protocol.MessageBuffer} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MessageBufferItemProvider messageBufferItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.protocol.MessageBuffer}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMessageBufferAdapter() {
-		if (messageBufferItemProvider == null) {
-			messageBufferItemProvider = new MessageBufferItemProvider(this);
-		}
-
-		return messageBufferItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -291,7 +268,6 @@ public class ProtocolItemProviderAdapterFactory extends ProtocolAdapterFactory i
 		if (coordinationProtocolItemProvider != null) coordinationProtocolItemProvider.dispose();
 		if (roleItemProvider != null) roleItemProvider.dispose();
 		if (roleConnectorItemProvider != null) roleConnectorItemProvider.dispose();
-		if (messageBufferItemProvider != null) messageBufferItemProvider.dispose();
 		if (connectorQualityOfServiceAssumptionsItemProvider != null) connectorQualityOfServiceAssumptionsItemProvider.dispose();
 	}
 

@@ -6,26 +6,16 @@
  */
 package de.uni_paderborn.fujaba.muml.protocol.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
 
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl;
 import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
-import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
@@ -40,7 +30,6 @@ import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl#getRoleConnector <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl#isMultiRole <em>Multi Role</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.RoleImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,16 +55,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate MULTI_ROLE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ProtocolPackage.Literals.ROLE__MULTI_ROLE).getSettingDelegate();
-
-	/**
-	 * The cached value of the '{@link #getReceiverMessageBuffer() <em>Receiver Message Buffer</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReceiverMessageBuffer()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<MessageBuffer> receiverMessageBuffer;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,18 +148,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<MessageBuffer> getReceiverMessageBuffer() {
-		if (receiverMessageBuffer == null) {
-			receiverMessageBuffer = new EObjectContainmentWithInverseEList<MessageBuffer>(MessageBuffer.class, this, ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER, ProtocolPackage.MESSAGE_BUFFER__ROLE);
-		}
-		return receiverMessageBuffer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -189,8 +156,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetCoordinationProtocol((AbstractCoordinationSpecification)otherEnd, msgs);
-			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReceiverMessageBuffer()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -205,8 +170,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 		switch (featureID) {
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				return basicSetCoordinationProtocol(null, msgs);
-			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
-				return ((InternalEList<?>)getReceiverMessageBuffer()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -240,8 +203,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 				return basicGetRoleConnector();
 			case ProtocolPackage.ROLE__MULTI_ROLE:
 				return isMultiRole();
-			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
-				return getReceiverMessageBuffer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -258,10 +219,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((AbstractCoordinationSpecification)newValue);
 				return;
-			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
-				getReceiverMessageBuffer().clear();
-				getReceiverMessageBuffer().addAll((Collection<? extends MessageBuffer>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -276,9 +233,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 		switch (featureID) {
 			case ProtocolPackage.ROLE__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((AbstractCoordinationSpecification)null);
-				return;
-			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
-				getReceiverMessageBuffer().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -298,8 +252,6 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 				return ROLE_CONNECTOR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ProtocolPackage.ROLE__MULTI_ROLE:
 				return MULTI_ROLE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-			case ProtocolPackage.ROLE__RECEIVER_MESSAGE_BUFFER:
-				return receiverMessageBuffer != null && !receiverMessageBuffer.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

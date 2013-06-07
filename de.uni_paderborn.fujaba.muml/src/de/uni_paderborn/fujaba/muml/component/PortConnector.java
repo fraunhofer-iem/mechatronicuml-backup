@@ -6,8 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.component;
 
-import org.eclipse.emf.common.util.EList;
-
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 
 /**

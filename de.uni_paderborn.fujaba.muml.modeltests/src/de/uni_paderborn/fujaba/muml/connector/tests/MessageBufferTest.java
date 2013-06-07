@@ -4,12 +4,12 @@
  *
  * $Id$
  */
-package de.uni_paderborn.fujaba.muml.protocol.tests;
+package de.uni_paderborn.fujaba.muml.connector.tests;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
-import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
-import de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory;
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public class MessageBufferTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(ProtocolFactory.eINSTANCE.createMessageBuffer());
+		setFixture(ConnectorFactory.eINSTANCE.createMessageBuffer());
 	}
 
 	/**

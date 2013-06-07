@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.protocol.util;
 
-import de.uni_paderborn.fujaba.muml.protocol.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -16,9 +15,11 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
+import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
+import de.uni_paderborn.fujaba.muml.protocol.*;
+import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
@@ -65,6 +66,14 @@ public class ProtocolValidator extends MumlValidator {
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
+	 * The cached base package validator.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConnectorValidator connectorValidator;
+
+	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -72,6 +81,7 @@ public class ProtocolValidator extends MumlValidator {
 	 */
 	public ProtocolValidator() {
 		super();
+		connectorValidator = ConnectorValidator.INSTANCE;
 	}
 
 	/**
@@ -102,8 +112,6 @@ public class ProtocolValidator extends MumlValidator {
 				return validateRole((Role)value, diagnostics, context);
 			case ProtocolPackage.ROLE_CONNECTOR:
 				return validateRoleConnector((RoleConnector)value, diagnostics, context);
-			case ProtocolPackage.MESSAGE_BUFFER:
-				return validateMessageBuffer((MessageBuffer)value, diagnostics, context);
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS:
 				return validateConnectorQualityOfServiceAssumptions((ConnectorQualityOfServiceAssumptions)value, diagnostics, context);
 			default:
@@ -311,10 +319,11 @@ public class ProtocolValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(role, diagnostics, context);
+		if (result || diagnostics != null) result &= connectorValidator.validateDiscreteInteractionEndpoint_ReceivingInteractionEndpointRequiresMessageBuffer(role, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRole_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresBehavior(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresMessageTypes(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_ReceiverRoleRequiresMessageBuffer(role, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRole_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(role, diagnostics, context);
 		return result;
 	}
 
@@ -423,27 +432,26 @@ public class ProtocolValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateRole_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ProtocolPackage.Literals.ROLE,
-				 role,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer",
-				 ROLE__RECEIVER_MESSAGE_TYPE_MUST_BE_ASSIGNED_TO_EXACTLY_ONE_BUFFER__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMessageBuffer(MessageBuffer messageBuffer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(messageBuffer, diagnostics, context);
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", getObjectLabel(role, context) },
+						 new Object[] { role },
+						 context));
+			}
+			return false;
+		}
+		return connectorValidator.validateDiscreteInteractionEndpoint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(role, diagnostics, context);
 	}
 
 	/**

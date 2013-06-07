@@ -24,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 
 /**
@@ -161,6 +162,15 @@ public class ConnectorSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ConnectorPackage.MESSAGE_BUFFER: {
+				MessageBuffer messageBuffer = (MessageBuffer)theEObject;
+				T result = caseMessageBuffer(messageBuffer);
+				if (result == null) result = caseNamedElement(messageBuffer);
+				if (result == null) result = caseCommentableElement(messageBuffer);
+				if (result == null) result = caseExtendableElement(messageBuffer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -282,6 +292,21 @@ public class ConnectorSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDiscreteMultiInteractionEndpointInstance(DiscreteMultiInteractionEndpointInstance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Message Buffer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Message Buffer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMessageBuffer(MessageBuffer object) {
 		return null;
 	}
 

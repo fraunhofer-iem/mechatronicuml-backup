@@ -71,8 +71,6 @@
         <details key="DiscretePortRequiresRole" value="self.oclIsTypeOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()"/>
         <details key="DiscretePortAndRoleSameMessageTypes" value="not self.refinedRole.oclIsUndefined() implies&#xD;&#xA;&#x9;(self.senderMessageTypes = self.refinedRole.senderMessageTypes&#xD;&#xA;&#x9; and&#xD;&#xA;&#x9; self.receiverMessageTypes = self.refinedRole.receiverMessageTypes&#xD;&#xA;&#x9;)"/>
         <details key="MultiPortMustRefineMultiRole" value="if not (self.refinedRole.oclIsUndefined() and self.refinedRole.cardinality.oclIsUndefined() and self.refinedRole.cardinality.upperBound.oclIsUndefined()) then&#xD;&#xA;       self.multiPort implies self.refinedRole.multiRole&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
-        <details key="ReceiverPortRequiresMessageBuffer" value="self.receiverMessageTypes->notEmpty() &#xD;&#xA;implies &#xD;&#xA;self.receiverMessageBuffer->notEmpty()"/>
-        <details key="ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer" value="-- Each receiver message type should be assigned to exactly one buffer&#xD;&#xA;self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="refinedRole" eType="#//protocol/Role">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -108,12 +106,6 @@
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.receiverMessageTypes ->size() >= 1 and self.senderMessageTypes ->size() >= 1"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageBuffer"
-          upperBound="-1" eType="#//protocol/MessageBuffer">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A discrete port contains message buffers to store received messages. If this port can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this port may receive."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiPort" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
@@ -764,7 +756,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageBuffer"
-          upperBound="-1" eType="#//protocol/MessageBuffer" changeable="false" volatile="true"
+          upperBound="-1" eType="#//connector/MessageBuffer" changeable="false" volatile="true"
           transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="if self.refinedRole.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;self.refinedRole.receiverMessageBuffer&#xD;&#xA;endif"/>
@@ -930,12 +922,6 @@
           <details key="derivation" value="if not (self.cardinality.oclIsUndefined()) then&#xD;&#xA;&#x9;(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity&#xD;&#xA;else&#xD;&#xA;&#x9;false&#xD;&#xA;endif"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageBuffer"
-          upperBound="-1" eType="#//protocol/MessageBuffer" containment="true" eOpposite="#//protocol/MessageBuffer/role">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive."/>
-        </eAnnotations>
-      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RoleConnector" eSuperTypes="#//connector/Connector">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -999,29 +985,6 @@
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The two roles that are connected."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MessageBuffer" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A message buffer may contains message types. A message buffer has a specified size and is associtated to a role of a coordination protocol. Message types are always stored in FIFO order."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="bufferSize" lowerBound="1"
-          eType="#//valuetype/NaturalNumber" containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The size of the message buffer. "/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
-          upperBound="-1" eType="#//msgtype/MessageType">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The message types this message buffer can store."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1"
-          eType="#//protocol/Role" eOpposite="#//protocol/Role/receiverMessageBuffer">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The role that contains this message buffer."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -2082,6 +2045,13 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An interaction point for discrete communication via asynchronous messages. This class generalizes concepts of classes DiscretePort and Role."/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="ReceivingInteractionEndpointRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="ReceivingInteractionEndpointRequiresMessageBuffer" value="self.receiverMessageTypes->notEmpty() &#xD;&#xA;implies &#xD;&#xA;self.receiverMessageBuffer->notEmpty()"/>
+        <details key="ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer" value="-- Each receiver message type should be assigned to exactly one buffer&#xD;&#xA;self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageTypes" upperBound="-1"
           eType="#//msgtype/MessageType">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2111,6 +2081,12 @@
           <details key="documentation" value="The cardinality of a port specifies how many instances of a port are allowed to exist at runtime."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageBuffer"
+          upperBound="-1" eType="#//connector/MessageBuffer" containment="true" eOpposite="#//connector/MessageBuffer/discreteInteractionEndpoint">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpointInstance"
         abstract="true" eSuperTypes="#//connector/ConnectorEndpointInstance"/>
@@ -2134,6 +2110,29 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="first" eType="#//connector/DiscreteSingleInteractionEndpointInstance"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="last" eType="#//connector/DiscreteSingleInteractionEndpointInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageBuffer" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A message buffer may contains message types. A message buffer has a specified size and is associtated to a role of a coordination protocol. Message types are always stored in FIFO order."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bufferSize" lowerBound="1"
+          eType="#//valuetype/NaturalNumber" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The size of the message buffer. "/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="messageType" lowerBound="1"
+          upperBound="-1" eType="#//msgtype/MessageType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The message types this message buffer can store."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="discreteInteractionEndpoint"
+          lowerBound="1" eType="#//connector/DiscreteInteractionEndpoint" eOpposite="#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The role that contains this message buffer."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="valuetype" nsURI="http://www.fujaba.de/muml/valuetype/0.3.18"

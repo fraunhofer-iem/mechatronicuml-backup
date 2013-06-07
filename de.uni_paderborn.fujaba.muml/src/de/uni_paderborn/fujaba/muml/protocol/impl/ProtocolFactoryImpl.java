@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
@@ -68,7 +67,6 @@ public class ProtocolFactoryImpl extends EFactoryImpl implements ProtocolFactory
 			case ProtocolPackage.COORDINATION_PROTOCOL: return createCoordinationProtocol();
 			case ProtocolPackage.ROLE: return createRole();
 			case ProtocolPackage.ROLE_CONNECTOR: return createRoleConnector();
-			case ProtocolPackage.MESSAGE_BUFFER: return createMessageBuffer();
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS: return createConnectorQualityOfServiceAssumptions();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -103,16 +101,6 @@ public class ProtocolFactoryImpl extends EFactoryImpl implements ProtocolFactory
 	public Role createRole() {
 		RoleImpl role = new RoleImpl();
 		return role;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MessageBuffer createMessageBuffer() {
-		MessageBufferImpl messageBuffer = new MessageBufferImpl();
-		return messageBuffer;
 	}
 
 	/**

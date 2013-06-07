@@ -1,10 +1,6 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package de.uni_paderborn.fujaba.muml.protocol.provider;
+package de.uni_paderborn.fujaba.muml.connector.provider;
 
 
 import java.util.Collection;
@@ -30,13 +26,12 @@ import org.storydriven.core.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
-import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.protocol.MessageBuffer} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -73,7 +68,6 @@ public class MessageBufferItemProvider
 			addCommentPropertyDescriptor(object);
 			addBufferSizePropertyDescriptor(object);
 			addMessageTypePropertyDescriptor(object);
-			addRolePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -100,6 +94,7 @@ public class MessageBufferItemProvider
 				 null));
 	}
 
+
 	/**
 	 * This adds a property descriptor for the Buffer Size feature.
 	 * <!-- begin-user-doc -->
@@ -113,7 +108,7 @@ public class MessageBufferItemProvider
 				 getResourceLocator(),
 				 getString("_UI_MessageBuffer_bufferSize_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MessageBuffer_bufferSize_feature", "_UI_MessageBuffer_type"),
-				 ProtocolPackage.Literals.MESSAGE_BUFFER__BUFFER_SIZE,
+				 ConnectorPackage.Literals.MESSAGE_BUFFER__BUFFER_SIZE,
 				 false,
 				 false,
 				 false,
@@ -135,7 +130,7 @@ public class MessageBufferItemProvider
 				 getResourceLocator(),
 				 getString("_UI_MessageBuffer_messageType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_MessageBuffer_messageType_feature", "_UI_MessageBuffer_type"),
-				 ProtocolPackage.Literals.MESSAGE_BUFFER__MESSAGE_TYPE,
+				 ConnectorPackage.Literals.MESSAGE_BUFFER__MESSAGE_TYPE,
 				 true,
 				 false,
 				 true,
@@ -145,35 +140,13 @@ public class MessageBufferItemProvider
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
 				EObject role = (EObject) ((EObject) object)
-						.eGet(ProtocolPackage.Literals.MESSAGE_BUFFER__ROLE);
+						.eGet(ConnectorPackage.Literals.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT);
 				if (role != null) {
 					return (Collection<?>) role.eGet(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES);
 				}
 				return Collections.emptyList();
 			}
 		});
-	}
-
-	/**
-	 * This adds a property descriptor for the Role feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRolePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MessageBuffer_role_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MessageBuffer_role_feature", "_UI_MessageBuffer_type"),
-				 ProtocolPackage.Literals.MESSAGE_BUFFER__ROLE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -188,7 +161,7 @@ public class MessageBufferItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ProtocolPackage.Literals.MESSAGE_BUFFER__BUFFER_SIZE);
+			childrenFeatures.add(ConnectorPackage.Literals.MESSAGE_BUFFER__BUFFER_SIZE);
 		}
 		return childrenFeatures;
 	}
@@ -243,10 +216,10 @@ public class MessageBufferItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(MessageBuffer.class)) {
-			case ProtocolPackage.MESSAGE_BUFFER__COMMENT:
+			case ConnectorPackage.MESSAGE_BUFFER__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ProtocolPackage.MESSAGE_BUFFER__BUFFER_SIZE:
+			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -266,7 +239,7 @@ public class MessageBufferItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ProtocolPackage.Literals.MESSAGE_BUFFER__BUFFER_SIZE,
+				(ConnectorPackage.Literals.MESSAGE_BUFFER__BUFFER_SIZE,
 				 ValuetypeFactory.eINSTANCE.createNaturalNumber()));
 	}
 

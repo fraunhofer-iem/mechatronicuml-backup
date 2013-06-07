@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import de.uni_paderborn.fujaba.muml.types.ArrayDataType;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.types.PrimitiveTypes;
+import de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType;
 import de.uni_paderborn.fujaba.muml.types.TypesFactory;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 

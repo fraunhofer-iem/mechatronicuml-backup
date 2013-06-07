@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.uni_paderborn.fujaba.muml.connector.ConnectorFactory;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 
 
 /**
@@ -61,9 +62,20 @@ public class ConnectorFactoryImpl extends EFactoryImpl implements ConnectorFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case ConnectorPackage.MESSAGE_BUFFER: return createMessageBuffer();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageBuffer createMessageBuffer() {
+		MessageBufferImpl messageBuffer = new MessageBufferImpl();
+		return messageBuffer;
 	}
 
 	/**

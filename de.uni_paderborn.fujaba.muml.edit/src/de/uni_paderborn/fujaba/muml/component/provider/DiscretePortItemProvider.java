@@ -28,7 +28,9 @@ import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorFactory;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;
@@ -74,11 +76,11 @@ public class DiscretePortItemProvider
 			addAdaptationBehaviorPropertyDescriptor(object);
 			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
+			addReceiverMessageBufferPropertyDescriptor(object);
 			addRefinedRolePropertyDescriptor(object);
 			addIsDiscreteInPortPropertyDescriptor(object);
 			addIsDiscreteOutPortPropertyDescriptor(object);
 			addIsDiscreteInOutPortPropertyDescriptor(object);
-			addReceiverMessageBufferPropertyDescriptor(object);
 			addMultiPortPropertyDescriptor(object);
 			addCoordinationProtocolPropertyDescriptor(object);
 		}
@@ -345,9 +347,9 @@ public class DiscretePortItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DiscretePort_receiverMessageBuffer_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DiscretePort_receiverMessageBuffer_feature", "_UI_DiscretePort_type"),
-				 ComponentPackage.Literals.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER,
+				 getString("_UI_DiscreteInteractionEndpoint_receiverMessageBuffer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_receiverMessageBuffer_feature", "_UI_DiscreteInteractionEndpoint_type"),
+				 ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER,
 				 false,
 				 false,
 				 false,
@@ -413,6 +415,7 @@ public class DiscretePortItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY);
+			childrenFeatures.add(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER);
 		}
 		return childrenFeatures;
 	}
@@ -470,12 +473,12 @@ public class DiscretePortItemProvider
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_PORT:
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_OUT_PORT:
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT:
-			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER:
 			case ComponentPackage.DISCRETE_PORT__MULTI_PORT:
 			case ComponentPackage.DISCRETE_PORT__COORDINATION_PROTOCOL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.DISCRETE_PORT__CARDINALITY:
+			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -497,6 +500,11 @@ public class DiscretePortItemProvider
 			(createChildParameter
 				(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY,
 				 ValuetypeFactory.eINSTANCE.createCardinality()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER,
+				 ConnectorFactory.eINSTANCE.createMessageBuffer()));
 	}
 
 }

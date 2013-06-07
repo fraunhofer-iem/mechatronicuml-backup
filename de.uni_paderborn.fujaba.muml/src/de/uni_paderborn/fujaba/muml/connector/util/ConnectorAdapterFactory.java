@@ -25,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 
 /**
@@ -114,6 +115,10 @@ public class ConnectorAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDiscreteMultiInteractionEndpointInstance(DiscreteMultiInteractionEndpointInstance object) {
 				return createDiscreteMultiInteractionEndpointInstanceAdapter();
+			}
+			@Override
+			public Adapter caseMessageBuffer(MessageBuffer object) {
+				return createMessageBufferAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -264,6 +269,20 @@ public class ConnectorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiscreteMultiInteractionEndpointInstanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.connector.MessageBuffer <em>Message Buffer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.connector.MessageBuffer
+	 * @generated
+	 */
+	public Adapter createMessageBufferAdapter() {
 		return null;
 	}
 

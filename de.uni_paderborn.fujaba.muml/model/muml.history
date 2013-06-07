@@ -6576,95 +6576,95 @@
             featureName="value" dataValue="if not (self.cardinality.oclIsUndefined()) then&#xD;&#xA;&#x9;(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity&#xD;&#xA;else&#xD;&#xA;&#x9;false&#xD;&#xA;endif"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//protocol" referenceName="eClassifiers"
-          element="muml.ecore#//protocol/MessageBuffer">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer"
+          element="muml.ecore#//connector/MessageBuffer">
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer"
             featureName="name" dataValue="MessageBuffer"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//protocol/MessageBuffer"
+        <changes xsi:type="history:Add" element="muml.ecore#//connector/MessageBuffer"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//protocol/MessageBuffer"
+        <changes xsi:type="history:Add" element="muml.ecore#//connector/MessageBuffer"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//protocol/Role" referenceName="eStructuralFeatures"
-          element="muml.ecore#//protocol/Role/receiverMessageBuffer">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/receiverMessageBuffer"
+          element="muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer">
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"
             featureName="name" dataValue="receiverMessageBuffer"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/receiverMessageBuffer"
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/receiverMessageBuffer"
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/receiverMessageBuffer"
-            featureName="eType" referenceValue="muml.ecore#//protocol/MessageBuffer"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"
+            featureName="eType" referenceValue="muml.ecore#//connector/MessageBuffer"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//protocol/Role/receiverMessageBuffer"
-          referenceName="eAnnotations" element="muml.ecore#//protocol/Role/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"
+          referenceName="eAnnotations" element="muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//protocol/Role/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//protocol/Role/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//protocol/MessageBuffer"
-          referenceName="eAnnotations" element="muml.ecore#//protocol/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//connector/MessageBuffer"
+          referenceName="eAnnotations" element="muml.ecore#//connector/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//protocol/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//protocol/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//connector/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//connector/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="A message buffer may contains message types. A message buffer has a specified size and is associtated to a role of a coordination pattern. Message types are always stored in FIFO order."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//protocol/MessageBuffer"
-          referenceName="eStructuralFeatures" element="muml.ecore#//protocol/MessageBuffer/bufferSize">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/bufferSize"
+      <changes xsi:type="history:Create" target="muml.ecore#//connector/MessageBuffer"
+          referenceName="eStructuralFeatures" element="muml.ecore#//connector/MessageBuffer/bufferSize">
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/bufferSize"
             featureName="name" dataValue="bufferSize"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/bufferSize"
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/bufferSize"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/bufferSize"
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/bufferSize"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/bufferSize"
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/bufferSize"
             featureName="eType" referenceValue="muml.ecore#//valuetype/NaturalNumber"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//protocol/MessageBuffer/bufferSize"
-          referenceName="eAnnotations" element="muml.ecore#//protocol/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//connector/MessageBuffer/bufferSize"
+          referenceName="eAnnotations" element="muml.ecore#//connector/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//protocol/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//protocol/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//connector/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//connector/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/bufferSize/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The size of the message buffer. "/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//protocol/MessageBuffer"
-          referenceName="eStructuralFeatures" element="muml.ecore#//protocol/MessageBuffer/role">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/role"
+      <changes xsi:type="history:Create" target="muml.ecore#//connector/MessageBuffer"
+          referenceName="eStructuralFeatures" element="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint">
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint"
             featureName="name" dataValue="role"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/role"
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/role"
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint"
             featureName="eType" referenceValue="muml.ecore#//protocol/Role"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/role"
-            featureName="eOpposite" referenceValue="muml.ecore#//protocol/Role/receiverMessageBuffer"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/receiverMessageBuffer"
-            featureName="eOpposite" referenceValue="muml.ecore#//protocol/MessageBuffer/role"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint"
+            featureName="eOpposite" referenceValue="muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"
+            featureName="eOpposite" referenceValue="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//protocol/MessageBuffer/role"
-          referenceName="eAnnotations" element="muml.ecore#//protocol/MessageBuffer/role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint"
+          referenceName="eAnnotations" element="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//protocol/MessageBuffer/role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//protocol/MessageBuffer/role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The role that contains this message buffer."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//protocol" referenceName="eClassifiers"
@@ -8852,27 +8852,27 @@
         <changes xsi:type="history:Set" element="#//@releases.1/@changes.4/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The receiver message interface defines which messages this port receives."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//protocol/MessageBuffer"
-          referenceName="eStructuralFeatures" element="muml.ecore#//protocol/MessageBuffer/messageType">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/messageType"
+      <changes xsi:type="history:Create" target="muml.ecore#//connector/MessageBuffer"
+          referenceName="eStructuralFeatures" element="muml.ecore#//connector/MessageBuffer/messageType">
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/messageType"
             featureName="name" dataValue="messageType"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/messageType"
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/messageType"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/messageType"
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/messageType"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/messageType"
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/messageType"
             featureName="eType" referenceValue="muml.ecore#//msgtype/MessageType"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//protocol/MessageBuffer/messageType"
-          referenceName="eAnnotations" element="muml.ecore#//protocol/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="muml.ecore#//connector/MessageBuffer/messageType"
+          referenceName="eAnnotations" element="muml.ecore#//connector/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//protocol/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//protocol/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="muml.ecore#//connector/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="muml.ecore#//connector/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/messageType/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The message types this message buffer can store."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//realtimestatechart/Message"
@@ -15385,13 +15385,13 @@
     </changes>
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Create" target="muml.ecore#//component/DiscretePort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer"
+          referenceName="eStructuralFeatures" element="#//@releases.16/@changes.283/@element">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.283/@element"
             featureName="name" dataValue="receiverMessageBuffer"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.283/@element"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer"
-            featureName="eType" referenceValue="muml.ecore#//protocol/MessageBuffer"/>
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.283/@element"
+            featureName="eType" referenceValue="muml.ecore#//connector/MessageBuffer"/>
       </changes>
       <operation name="newReference">
         <parameters name="eClass">
@@ -15401,7 +15401,7 @@
           <dataValue>receiverMessageBuffer</dataValue>
         </parameters>
         <parameters name="type">
-          <referenceValue element="muml.ecore#//protocol/MessageBuffer"/>
+          <referenceValue element="muml.ecore#//connector/MessageBuffer"/>
         </parameters>
         <parameters name="lowerBound">
           <dataValue>0</dataValue>
@@ -15416,17 +15416,17 @@
       </operation>
     </changes>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer"
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.283/@element"
           featureName="volatile" dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer"
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.283/@element"
           featureName="transient" dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer"
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.283/@element"
           featureName="derived" dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer"
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.283/@element"
           featureName="changeable" dataValue="false" oldDataValue="true"/>
       <operation name="makeFeatureVolatile">
         <parameters name="feature">
-          <referenceValue element="muml.ecore#//component/DiscretePort/receiverMessageBuffer"/>
+          <referenceValue element="#//@releases.16/@changes.283/@element"/>
         </parameters>
         <parameters name="trans">
           <dataValue>true</dataValue>
@@ -15439,7 +15439,7 @@
         </parameters>
       </operation>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//component/DiscretePort/receiverMessageBuffer"
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.283/@element"
         referenceName="eAnnotations" element="#//@releases.16/@changes.268/@element">
       <changes xsi:type="history:Set" element="#//@releases.16/@changes.268/@element"
           featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -15501,7 +15501,7 @@
         <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/receiverMessageBuffer"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
         <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/receiverMessageBuffer"
-            featureName="eType" referenceValue="muml.ecore#//protocol/MessageBuffer"/>
+            featureName="eType" referenceValue="muml.ecore#//connector/MessageBuffer"/>
       </changes>
       <operation name="newReference">
         <parameters name="eClass">
@@ -15511,7 +15511,7 @@
           <dataValue>receiverMessageBuffer</dataValue>
         </parameters>
         <parameters name="type">
-          <referenceValue element="muml.ecore#//protocol/MessageBuffer"/>
+          <referenceValue element="muml.ecore#//connector/MessageBuffer"/>
         </parameters>
         <parameters name="lowerBound">
           <dataValue>0</dataValue>
@@ -15647,16 +15647,16 @@
     <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="The derived properties of the refined role regarding the receiver message buffers."
         oldDataValue="A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive."/>
-    <changes xsi:type="history:Create" target="muml.ecore#//component/DiscretePort/receiverMessageBuffer"
-        referenceName="eAnnotations" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-      <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.283/@element"
+        referenceName="eAnnotations" element="#//@releases.16/@changes.283/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.283/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
           featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//component/DiscretePort/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-        referenceName="details" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-      <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.283/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+        referenceName="details" element="#//@releases.16/@changes.283/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.283/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="key" dataValue="documentation"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.283/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="value" dataValue="The derived properties of the refined role regarding the receiver message buffers."/>
     </changes>
     <changes xsi:type="history:Create" target="muml.ecore#//instance/DiscretePortInstance/refinedRole"
@@ -19786,7 +19786,7 @@
     <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="This class represents a role of a coordination protocol."
         oldDataValue="This class represents a role of a coordination pattern."/>
-    <changes xsi:type="history:Set" element="muml.ecore#//protocol/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="A message buffer may contains message types. A message buffer has a specified size and is associtated to a role of a coordination protocol. Message types are always stored in FIFO order."
         oldDataValue="A message buffer may contains message types. A message buffer has a specified size and is associtated to a role of a coordination pattern. Message types are always stored in FIFO order."/>
     <changes xsi:type="history:Set" element="muml.ecore#//%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
@@ -22165,38 +22165,38 @@
         </eAnnotations>
       </element>
     </changes>
-    <changes xsi:type="history:Delete" target="muml.ecore#//component/DiscretePort/receiverMessageBuffer"
+    <changes xsi:type="history:Delete" target="#//@releases.16/@changes.283/@element"
         referenceName="eAnnotations">
       <element xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="derivation" value="if not self.refinedRole.oclIsUndefined() then&#xD;&#xA;self.refinedRole.receiverMessageBuffer&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif"/>
       </element>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.283/@element"
         featureName="changeable" dataValue="true" oldDataValue="false"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.283/@element"
         featureName="derived" dataValue="false" oldDataValue="true"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.283/@element"
         featureName="volatile" dataValue="false" oldDataValue="true"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.283/@element"
         featureName="transient" dataValue="false" oldDataValue="true"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/receiverMessageBuffer/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.283/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="A discrete port contains message buffers to store received messages. If this port can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this port may receive."
         oldDataValue="The derived properties of the refined role regarding the receiver message buffers."/>
     <changes xsi:type="history:Create" target="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6">
-      <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+        referenceName="details" element="#//@releases.16/@changes.290/@element">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.290/@element"
           featureName="key" dataValue="ReceiverRoleRequiresMessageBuffer"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.290/@element"
           featureName="value" dataValue="self.receiverMessageTypes->notEmpty() &#xD;&#xA;implies &#xD;&#xA;self.receiverMessageBuffer->notEmpty()"/>
     </changes>
     <changes xsi:type="history:Create" target="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7">
-      <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        referenceName="details" element="#//@releases.16/@changes.289/@element">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.289/@element"
           featureName="key" dataValue="ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.289/@element"
           featureName="value" dataValue="-- Each receiver message type should be assigned to exactly one buffer&#xD;&#xA;self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.290/@element"
         featureName="key" dataValue="ReceiverPortRequiresMessageBuffer" oldDataValue="ReceiverRoleRequiresMessageBuffer"/>
     <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole ReceiverPortRequiresMessageBuffer "
@@ -22214,5 +22214,97 @@
         dataValue="http://www.fujaba.de/muml/protocol/0.3.20" oldDataValue="http://www.fujaba.de/muml/protocol/0.3.19"/>
     <changes xsi:type="history:Set" element="muml.ecore#//component" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/component/0.3.20" oldDataValue="http://www.fujaba.de/muml/component/0.3.18"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//component/DiscretePort"
+        referenceName="eStructuralFeatures">
+      <element xsi:type="ecore:EReference" name="receiverMessageBuffer" upperBound="-1"
+          eType="ecore:EClass muml.ecore#//connector/MessageBuffer">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A discrete port contains message buffers to store received messages. If this port can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this port may receive."/>
+        </eAnnotations>
+      </element>
+    </changes>
+    <changes xsi:type="history:Move" target="muml.ecore#//connector" referenceName="eClassifiers"
+        element="muml.ecore#//connector/MessageBuffer" source="muml.ecore#//protocol"/>
+    <changes xsi:type="history:Move" target="muml.ecore#//connector/DiscreteInteractionEndpoint"
+        referenceName="eStructuralFeatures" element="muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"
+        source="muml.ecore#//protocol/Role"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint"
+        featureName="eType" referenceValue="muml.ecore#//connector/DiscreteInteractionEndpoint"
+        oldReferenceValue="muml.ecore#//protocol/Role"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint"
+        featureName="name" dataValue="interactionEndpoint" oldDataValue="role"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//connector/MessageBuffer/discreteInteractionEndpoint"
+        featureName="name" dataValue="discreteInteractionEndpoint" oldDataValue="interactionEndpoint"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"
+          value="-- Each receiver message type should be assigned to exactly one buffer&#xD;&#xA;self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="ReceiverPortRequiresMessageBuffer"
+          value="self.receiverMessageTypes->notEmpty() &#xD;&#xA;implies &#xD;&#xA;self.receiverMessageBuffer->notEmpty()"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//connector/DiscreteInteractionEndpoint"
+        referenceName="eAnnotations" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
+      <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+        referenceName="details" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+          featureName="key" dataValue="constraints"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+          featureName="value" dataValue="RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//connector/DiscreteInteractionEndpoint"
+        referenceName="eAnnotations" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="#//@releases.16/@changes.299/@element">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.299/@element"
+          featureName="key" dataValue="RoleRequiresBehavior"/>
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.299/@element"
+          featureName="value" dataValue="not self.behavior.oclIsUndefined()"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="#//@releases.16/@changes.298/@element">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.298/@element"
+          featureName="key" dataValue="RoleRequiresMessageTypes"/>
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.298/@element"
+          featureName="value" dataValue="self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="key" dataValue="ReceiverRoleRequiresMessageBuffer"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          featureName="value" dataValue="self.receiverMessageTypes->notEmpty() &#xD;&#xA;implies &#xD;&#xA;self.receiverMessageBuffer->notEmpty()"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
+      <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+          featureName="key" dataValue="ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+          featureName="value" dataValue="-- Each receiver message type should be assigned to exactly one buffer&#xD;&#xA;self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="RoleRequiresMessageTypes"
+          value="self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="RoleRequiresBehavior"
+          value="not self.behavior.oclIsUndefined()"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        featureName="key" dataValue="ReceivingInteractionEndpointRequiresMessageBuffer"
+        oldDataValue="ReceiverRoleRequiresMessageBuffer"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//connector/DiscreteInteractionEndpoint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="ReceivingInteractionEndpointRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"
+        oldDataValue="RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"/>
   </releases>
 </history:History>

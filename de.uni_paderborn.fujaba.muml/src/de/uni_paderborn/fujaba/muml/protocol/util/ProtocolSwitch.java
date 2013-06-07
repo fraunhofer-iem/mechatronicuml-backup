@@ -19,9 +19,9 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.protocol.*;
+import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
-import de.uni_paderborn.fujaba.muml.protocol.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
@@ -128,15 +128,6 @@ public class ProtocolSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ProtocolPackage.MESSAGE_BUFFER: {
-				MessageBuffer messageBuffer = (MessageBuffer)theEObject;
-				T result = caseMessageBuffer(messageBuffer);
-				if (result == null) result = caseNamedElement(messageBuffer);
-				if (result == null) result = caseCommentableElement(messageBuffer);
-				if (result == null) result = caseExtendableElement(messageBuffer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ProtocolPackage.CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS: {
 				ConnectorQualityOfServiceAssumptions connectorQualityOfServiceAssumptions = (ConnectorQualityOfServiceAssumptions)theEObject;
 				T result = caseConnectorQualityOfServiceAssumptions(connectorQualityOfServiceAssumptions);
@@ -206,21 +197,6 @@ public class ProtocolSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRole(Role object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Message Buffer</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Message Buffer</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMessageBuffer(MessageBuffer object) {
 		return null;
 	}
 
