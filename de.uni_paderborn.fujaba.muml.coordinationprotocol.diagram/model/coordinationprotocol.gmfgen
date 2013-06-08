@@ -587,59 +587,40 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
-  <propertySheet>
-    <tabs
-        xsi:type="gmfgen:GenStandardPropertyTab"
-        iD="appearance"/>
-    <tabs
-        xsi:type="gmfgen:GenStandardPropertyTab"
-        iD="diagram"/>
-    <tabs
-        xsi:type="gmfgen:GenCustomPropertyTab"
-        iD="domain"
-        label="Core">
-      <filter
-          xsi:type="gmfgen:TypeTabFilter">
-        <types>org.eclipse.gmf.runtime.notation.View</types>
-        <types>org.eclipse.gef.EditPart</types>
-        <generatedTypes>abstractNavigatorItem</generatedTypes>
-      </filter>
-    </tabs>
-  </propertySheet>
   <domainGenModel
       href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#/"/>
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="'proto'"/>
+          body="--'proto'"/>
       <expressions
-          body="'role1'"/>
+          body="--'role1'"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="'role2'"/>
+          body="--'role2'"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }"/>
+          body="--OrderedSet { self.coordinationProtocol.roles->first(), self.coordinationProtocol.roles->last() }"/>
       <expressions
-          body="''"/>
+          body="--''"/>
       <expressions
-          body="'role'"/>
+          body="--'role'"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="1"/>
+          body="--1"/>
       <expressions
-          body="''"/>
+          body="--''"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol"/>
+          body="--self.oclAsType(protocol::Role).coordinationProtocol = oppositeEnd.oclAsType(protocol::Role).coordinationProtocol"/>
     </providers>
   </expressionProviders>
   <labelParsers

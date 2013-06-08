@@ -104,6 +104,10 @@ public class CoordinationProtocolDiagramEditor extends DiagramDocumentEditor
 	@SuppressWarnings("rawtypes")
 	public Object getAdapter(Class type) {
 
+		// Deactivated, see MUML #459
+		//if (type == org.eclipse.ui.views.properties.IPropertySheetPage.class) {
+		//	return null;
+		//}
 		if (type == IShowInTargetList.class) {
 			return new IShowInTargetList() {
 				public String[] getShowInTargetIds() {
