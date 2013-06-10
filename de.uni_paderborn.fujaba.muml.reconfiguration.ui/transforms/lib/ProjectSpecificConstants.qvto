@@ -2,7 +2,7 @@ library ProjectSpecificConstants;
 
 -- name of the message type repository that is generated for the reconfiguration messages
 -- that are NOT user defined
-property reconfigurationMessageTypeRepositoryName : String = '_ReconfigurationMessageTypeRepo';
+property reconfigurationMessageTypeRepositoryName : String = '_BaseReconfigurationMessageTypeRepo';
 
 -- name of the struct type used by the executor
 property genTypeAffectedComponents : String = 'AffectedComponents';
@@ -37,6 +37,8 @@ property genSyncChanReply : String = 'reply';
 property genSyncChanParentReply : String = 'parentReply';
 property genSyncChanExecuted : String = 'executed';
 property genSyncChanExecuteReconf : String = 'executeReconf';
+
+property genSyncChanPrefix : String = 'sync';
 
 --names of embedded statecharts in the manager RTSC
 property genEmbeddedRTSCManager_Parent : String = 'parent';

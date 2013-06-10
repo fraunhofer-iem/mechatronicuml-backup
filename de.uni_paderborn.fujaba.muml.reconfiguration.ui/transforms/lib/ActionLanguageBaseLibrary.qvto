@@ -10,7 +10,7 @@ modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.2.2");
 modeltype types uses muml::types("http://www.fujaba.de/muml/0.2.2");
 modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.2.2");
 
-modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.3.16');
+modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.3.19');
 
 library ActionLanguageBaseLibrary;
 
