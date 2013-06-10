@@ -38,9 +38,17 @@ main() {
 			
 			// Add new connector instances
 			ci.componentType[StructuredComponent].connectors->forEach(portConnector) {
-				ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
-					portConnector.connectorEndpoints.resolveIn(ConnectorEndpoint::single, PortInstance)->asSet()
-				)[PortConnectorInstance];
+				var endpoint1 : ConnectorEndpoint := portConnector.connectorEndpoints->first();
+				var endpoint2 : ConnectorEndpoint := portConnector.connectorEndpoints->last();
+				if (endpoint1 != endpoint2) then {
+					endpoint1.resolveIn(ConnectorEndpoint::single, PortInstance)->forEach(endpointInstance1) {
+						endpoint2.resolveIn(ConnectorEndpoint::single, PortInstance)->forEach(endpointInstance2) {
+							ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
+								Set { endpointInstance1, endpointInstance2 }
+							)[PortConnectorInstance];
+						};
+					};
+				} endif;
 			};
 		} endif;
 		
@@ -80,6 +88,12 @@ query ComponentPart::createPortInstances() : Set(PortInstance) {
 // Creating multiple Port Instances for multi ports and one Port Instance for single ports.
 query ConnectorEndpoint::createInstances(part : ComponentPart) : Set(ConnectorEndpointInstance) {
 	return Set { self.createInstance(part) }
+}
+query DirectedTypedPort::createInstances(part : ComponentPart) : Set(ConnectorEndpointInstance) {
+	if (self.optional) then {
+		return Set { };
+ 	} endif;
+	return Set { self.createInstance(part) };
 }
 query DiscretePort::createInstances(part : ComponentPart) : Set(ConnectorEndpointInstance) {
 	if (self.multiPort) then {
@@ -182,9 +196,17 @@ constructor StructuredComponentInstance::StructuredComponentInstance(type : Stru
 	// Create ConnectorInstances
 	if (container().oclIsKindOf(ComponentInstanceConfiguration)) then {
 		componentType[StructuredComponent].connectors->forEach(portConnector) {
-			container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
-				portConnector.connectorEndpoints.resolveIn(ConnectorEndpoint::single, PortInstance)->asSet()
-			)[PortConnectorInstance];
+			var endpoint1 : ConnectorEndpoint := portConnector.connectorEndpoints->first();
+			var endpoint2 : ConnectorEndpoint := portConnector.connectorEndpoints->last();
+			if (endpoint1 != endpoint2) then {
+				endpoint1.resolveIn(ConnectorEndpoint::single, PortInstance)->forEach(endpointInstance1) {
+					endpoint2.resolveIn(ConnectorEndpoint::single, PortInstance)->forEach(endpointInstance2) {
+						container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
+							Set { endpointInstance1, endpointInstance2 }
+						)[PortConnectorInstance];
+					};
+				};
+			} endif;
 		};
 	} endif;
 	
