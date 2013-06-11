@@ -10,7 +10,6 @@ Require-Bundle: org.eclipse.ui,
  de.uni_paderborn.fujaba.muml.edit;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.common;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.modelinstance.ui;bundle-version="0.3.1",
- org.storydriven.storydiagrams.edit;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.muml.common;bundle-version="0.3.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

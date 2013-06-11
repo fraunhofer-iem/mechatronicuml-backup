@@ -4,23 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
-import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
-import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.activities.provider.ActivitiesItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.calls.expressions.provider.CallsExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.calls.provider.CallsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.patterns.expressions.provider.PatternsExpressionsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.patterns.provider.PatternsItemProviderAdapterFactory;
-import org.storydriven.storydiagrams.templates.provider.TemplatesItemProviderAdapterFactory;
 
-import de.uni_paderborn.fujaba.common.FujabaCommonPlugin;
-import de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory;
 import de.uni_paderborn.fujaba.muml.common.MumlCommonPlugin;
 
 /**
