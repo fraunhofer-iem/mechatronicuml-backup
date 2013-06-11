@@ -28,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
+import de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TriggerMessageExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
@@ -38,6 +39,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.StateEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.types.DataType;
+import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 
 /**
  * This class contains custom scoping description.
@@ -54,6 +56,8 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	
 	// TODO: make this string public in class TypeCategoryInitializer
 	private static final String TYPES_CATEGORY_KEY = "de.uni_paderborn.fujaba.muml.types.category";
+	
+	private static final String INT_ID = "INT";
 	
 	public ActionLanguageScopeProvider() {
 		super();
@@ -73,6 +77,17 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	
 	IScope scope_DataType(Variable variable, EReference ref) {
 		return createScope(typeList);
+	}
+	
+	IScope scope_NondeterministicChoiceExpression_dataType(NondeterministicChoiceExpression expression, EReference ref) {
+		List<PrimitiveDataType> scopeList = new ArrayList<PrimitiveDataType>();
+		for (DataType dataType : typeList) {
+			if (dataType.getName().equals(INT_ID) && dataType instanceof PrimitiveDataType) {
+				scopeList.add((PrimitiveDataType)dataType);
+				break;
+			}
+		}
+		return createScope(scopeList);
 	}
 	
 	IScope scope_Operation(Object object, EReference ref) {

@@ -943,11 +943,21 @@ ruleInitializeExpression returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getInitializeExpressionAccess().getExpressionParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getInitializeExpressionAccess().getNondeterministicChoiceExpressionParserRuleCall_1()); 
     }
-    this_Expression_1=ruleExpression
+    this_NondeterministicChoiceExpression_1=ruleNondeterministicChoiceExpression
     { 
-        $current = $this_Expression_1.current; 
+        $current = $this_NondeterministicChoiceExpression_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getInitializeExpressionAccess().getExpressionParserRuleCall_2()); 
+    }
+    this_Expression_2=ruleExpression
+    { 
+        $current = $this_Expression_2.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -1140,6 +1150,155 @@ ruleLocalVariableDeclaration returns [EObject current=null]
     }
 )
 ;
+
+
+
+
+
+// Entry rule entryRuleNondeterministicChoiceExpression
+entryRuleNondeterministicChoiceExpression returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getNondeterministicChoiceExpressionRule()); }
+	 iv_ruleNondeterministicChoiceExpression=ruleNondeterministicChoiceExpression 
+	 { $current=$iv_ruleNondeterministicChoiceExpression.current; } 
+	 EOF 
+;
+
+// Rule NondeterministicChoiceExpression
+ruleNondeterministicChoiceExpression returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getNondeterministicChoiceExpressionRule());
+	        }
+        }
+	otherlv_0=RULE_ID
+	{
+		newLeafNode(otherlv_0, grammarAccess.getNondeterministicChoiceExpressionAccess().getDataTypePrimitiveDataTypeCrossReference_0_0()); 
+	}
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNondeterministicChoiceExpressionAccess().getRangeRangeParserRuleCall_1_0()); 
+	    }
+		lv_range_1_0=ruleRange		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNondeterministicChoiceExpressionRule());
+	        }
+       		set(
+       			$current, 
+       			"range",
+        		lv_range_1_0, 
+        		"Range");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleRange
+entryRuleRange returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getRangeRule()); }
+	 iv_ruleRange=ruleRange 
+	 { $current=$iv_ruleRange.current; } 
+	 EOF 
+;
+
+// Rule Range
+ruleRange returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='<' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getRangeAccess().getLessThanSignKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRangeAccess().getLowerBoundLONGParserRuleCall_1_0()); 
+	    }
+		lv_lowerBound_1_0=ruleLONG		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRangeRule());
+	        }
+       		set(
+       			$current, 
+       			"lowerBound",
+        		lv_lowerBound_1_0, 
+        		"LONG");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_2=',' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getRangeAccess().getCommaKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRangeAccess().getUpperBoundLONGParserRuleCall_3_0()); 
+	    }
+		lv_upperBound_3_0=ruleLONG		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRangeRule());
+	        }
+       		set(
+       			$current, 
+       			"upperBound",
+        		lv_upperBound_3_0, 
+        		"LONG");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_4='>' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getRangeAccess().getGreaterThanSignKeyword_4());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleLONG
+entryRuleLONG returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getLONGRule()); } 
+	 iv_ruleLONG=ruleLONG 
+	 { $current=$iv_ruleLONG.current.getText(); }  
+	 EOF 
+;
+
+// Rule LONG
+ruleLONG returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+    this_INT_0=RULE_INT    {
+		$current.merge(this_INT_0);
+    }
+
+    { 
+    newLeafNode(this_INT_0, grammarAccess.getLONGAccess().getINTTerminalRuleCall()); 
+    }
+
+    ;
 
 
 

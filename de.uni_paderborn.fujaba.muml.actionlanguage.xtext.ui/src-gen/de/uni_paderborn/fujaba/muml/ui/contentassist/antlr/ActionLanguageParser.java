@@ -70,6 +70,8 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getArrayInitializeExpressionAccess().getGroup_2(), "rule__ArrayInitializeExpression__Group_2__0");
 					put(grammarAccess.getLocalVariableDeclarationAccess().getGroup(), "rule__LocalVariableDeclaration__Group__0");
 					put(grammarAccess.getLocalVariableDeclarationAccess().getGroup_2(), "rule__LocalVariableDeclaration__Group_2__0");
+					put(grammarAccess.getNondeterministicChoiceExpressionAccess().getGroup(), "rule__NondeterministicChoiceExpression__Group__0");
+					put(grammarAccess.getRangeAccess().getGroup(), "rule__Range__Group__0");
 					put(grammarAccess.getLogicalOrExpressionAccess().getGroup(), "rule__LogicalOrExpression__Group__0");
 					put(grammarAccess.getLogicalOrExpressionAccess().getGroup_1(), "rule__LogicalOrExpression__Group_1__0");
 					put(grammarAccess.getLogicalAndExpressionAccess().getGroup(), "rule__LogicalAndExpression__Group__0");
@@ -128,6 +130,10 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLocalVariableDeclarationAccess().getDataTypeAssignment_0(), "rule__LocalVariableDeclaration__DataTypeAssignment_0");
 					put(grammarAccess.getLocalVariableDeclarationAccess().getNameAssignment_1(), "rule__LocalVariableDeclaration__NameAssignment_1");
 					put(grammarAccess.getLocalVariableDeclarationAccess().getInitializeExpressionAssignment_2_1(), "rule__LocalVariableDeclaration__InitializeExpressionAssignment_2_1");
+					put(grammarAccess.getNondeterministicChoiceExpressionAccess().getDataTypeAssignment_0(), "rule__NondeterministicChoiceExpression__DataTypeAssignment_0");
+					put(grammarAccess.getNondeterministicChoiceExpressionAccess().getRangeAssignment_1(), "rule__NondeterministicChoiceExpression__RangeAssignment_1");
+					put(grammarAccess.getRangeAccess().getLowerBoundAssignment_1(), "rule__Range__LowerBoundAssignment_1");
+					put(grammarAccess.getRangeAccess().getUpperBoundAssignment_3(), "rule__Range__UpperBoundAssignment_3");
 					put(grammarAccess.getLogicalOrExpressionAccess().getOperatorAssignment_1_1(), "rule__LogicalOrExpression__OperatorAssignment_1_1");
 					put(grammarAccess.getLogicalOrExpressionAccess().getRightExpressionAssignment_1_2(), "rule__LogicalOrExpression__RightExpressionAssignment_1_2");
 					put(grammarAccess.getLogicalAndExpressionAccess().getOperatorAssignment_1_1(), "rule__LogicalAndExpression__OperatorAssignment_1_1");

@@ -15,6 +15,8 @@ import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types
 
 import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype" as msgtype
 
+import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype" as valuetype
+
 import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions" as expressions
 
 import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions/common" as commonExpressions
@@ -101,7 +103,7 @@ enum AssignOperator returns actionlanguage::AssignOperator:
 // initialize expression
 
 InitializeExpression returns expressions::Expression:
-	ArrayInitializeExpression | Expression
+	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression
 ;
 
 // end of initialize expression
@@ -127,6 +129,22 @@ LocalVariableDeclaration returns behavior::Variable:
 ;
 
 // end of local variable declaration
+
+// nondeterministic choice expression
+
+NondeterministicChoiceExpression returns actionlanguage::NondeterministicChoiceExpression:
+	dataType=[types::PrimitiveDataType] range=Range
+;
+
+Range returns valuetype::Range:
+	'<' lowerBound=LONG ',' upperBound=LONG '>'
+;
+
+LONG returns ecore::ELong:
+	INT
+;
+
+// end of nondeterministic choice expression
 
 Expression returns expressions::Expression:
 	LogicalExpression

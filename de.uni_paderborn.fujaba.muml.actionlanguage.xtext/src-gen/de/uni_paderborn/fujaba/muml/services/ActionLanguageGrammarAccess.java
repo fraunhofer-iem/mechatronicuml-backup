@@ -508,22 +508,26 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InitializeExpression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cArrayInitializeExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cNondeterministicChoiceExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//// end of assignment
 		//// initialize expression
 		//InitializeExpression returns expressions::Expression:
-		//	ArrayInitializeExpression | Expression;
+		//	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression;
 		public ParserRule getRule() { return rule; }
 
-		//ArrayInitializeExpression | Expression
+		//ArrayInitializeExpression | NondeterministicChoiceExpression | Expression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//ArrayInitializeExpression
 		public RuleCall getArrayInitializeExpressionParserRuleCall_0() { return cArrayInitializeExpressionParserRuleCall_0; }
 
+		//NondeterministicChoiceExpression
+		public RuleCall getNondeterministicChoiceExpressionParserRuleCall_1() { return cNondeterministicChoiceExpressionParserRuleCall_1; }
+
 		//Expression
-		public RuleCall getExpressionParserRuleCall_1() { return cExpressionParserRuleCall_1; }
+		public RuleCall getExpressionParserRuleCall_2() { return cExpressionParserRuleCall_2; }
 	}
 
 	public class ArrayInitializeExpressionElements extends AbstractParserRuleElementFinder {
@@ -642,11 +646,97 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 
+	public class NondeterministicChoiceExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NondeterministicChoiceExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cDataTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cDataTypePrimitiveDataTypeCrossReference_0_0 = (CrossReference)cDataTypeAssignment_0.eContents().get(0);
+		private final RuleCall cDataTypePrimitiveDataTypeIDTerminalRuleCall_0_0_1 = (RuleCall)cDataTypePrimitiveDataTypeCrossReference_0_0.eContents().get(1);
+		private final Assignment cRangeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cRangeRangeParserRuleCall_1_0 = (RuleCall)cRangeAssignment_1.eContents().get(0);
+		
+		//// end of local variable declaration
+		//// nondeterministic choice expression
+		//NondeterministicChoiceExpression returns actionlanguage::NondeterministicChoiceExpression:
+		//	dataType=[types::PrimitiveDataType] range=Range;
+		public ParserRule getRule() { return rule; }
+
+		//dataType=[types::PrimitiveDataType] range=Range
+		public Group getGroup() { return cGroup; }
+
+		//dataType=[types::PrimitiveDataType]
+		public Assignment getDataTypeAssignment_0() { return cDataTypeAssignment_0; }
+
+		//[types::PrimitiveDataType]
+		public CrossReference getDataTypePrimitiveDataTypeCrossReference_0_0() { return cDataTypePrimitiveDataTypeCrossReference_0_0; }
+
+		//ID
+		public RuleCall getDataTypePrimitiveDataTypeIDTerminalRuleCall_0_0_1() { return cDataTypePrimitiveDataTypeIDTerminalRuleCall_0_0_1; }
+
+		//range=Range
+		public Assignment getRangeAssignment_1() { return cRangeAssignment_1; }
+
+		//Range
+		public RuleCall getRangeRangeParserRuleCall_1_0() { return cRangeRangeParserRuleCall_1_0; }
+	}
+
+	public class RangeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Range");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLessThanSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cLowerBoundAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLowerBoundLONGParserRuleCall_1_0 = (RuleCall)cLowerBoundAssignment_1.eContents().get(0);
+		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cUpperBoundAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cUpperBoundLONGParserRuleCall_3_0 = (RuleCall)cUpperBoundAssignment_3.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//Range returns valuetype::Range:
+		//	"<" lowerBound=LONG "," upperBound=LONG ">";
+		public ParserRule getRule() { return rule; }
+
+		//"<" lowerBound=LONG "," upperBound=LONG ">"
+		public Group getGroup() { return cGroup; }
+
+		//"<"
+		public Keyword getLessThanSignKeyword_0() { return cLessThanSignKeyword_0; }
+
+		//lowerBound=LONG
+		public Assignment getLowerBoundAssignment_1() { return cLowerBoundAssignment_1; }
+
+		//LONG
+		public RuleCall getLowerBoundLONGParserRuleCall_1_0() { return cLowerBoundLONGParserRuleCall_1_0; }
+
+		//","
+		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+
+		//upperBound=LONG
+		public Assignment getUpperBoundAssignment_3() { return cUpperBoundAssignment_3; }
+
+		//LONG
+		public RuleCall getUpperBoundLONGParserRuleCall_3_0() { return cUpperBoundLONGParserRuleCall_3_0; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_4() { return cGreaterThanSignKeyword_4; }
+	}
+
+	public class LONGElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LONG");
+		private final RuleCall cINTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//LONG returns ecore::ELong:
+		//	INT;
+		public ParserRule getRule() { return rule; }
+
+		//INT
+		public RuleCall getINTTerminalRuleCall() { return cINTTerminalRuleCall; }
+	}
+
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expression");
 		private final RuleCall cLogicalExpressionParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//// end of local variable declaration
+		//// end of nondeterministic choice expression
 		//Expression returns expressions::Expression:
 		//	LogicalExpression;
 		public ParserRule getRule() { return rule; }
@@ -1816,6 +1906,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private ArrayInitializeExpressionElements pArrayInitializeExpression;
 	private LocalVariableDeclarationStatementElements pLocalVariableDeclarationStatement;
 	private LocalVariableDeclarationElements pLocalVariableDeclaration;
+	private NondeterministicChoiceExpressionElements pNondeterministicChoiceExpression;
+	private RangeElements pRange;
+	private LONGElements pLONG;
 	private ExpressionElements pExpression;
 	private LogicalExpressionElements pLogicalExpression;
 	private LogicalOrExpressionElements pLogicalOrExpression;
@@ -2030,7 +2123,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	//// end of assignment
 	//// initialize expression
 	//InitializeExpression returns expressions::Expression:
-	//	ArrayInitializeExpression | Expression;
+	//	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression;
 	public InitializeExpressionElements getInitializeExpressionAccess() {
 		return (pInitializeExpression != null) ? pInitializeExpression : (pInitializeExpression = new InitializeExpressionElements());
 	}
@@ -2074,6 +2167,38 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// end of local variable declaration
+	//// nondeterministic choice expression
+	//NondeterministicChoiceExpression returns actionlanguage::NondeterministicChoiceExpression:
+	//	dataType=[types::PrimitiveDataType] range=Range;
+	public NondeterministicChoiceExpressionElements getNondeterministicChoiceExpressionAccess() {
+		return (pNondeterministicChoiceExpression != null) ? pNondeterministicChoiceExpression : (pNondeterministicChoiceExpression = new NondeterministicChoiceExpressionElements());
+	}
+	
+	public ParserRule getNondeterministicChoiceExpressionRule() {
+		return getNondeterministicChoiceExpressionAccess().getRule();
+	}
+
+	//Range returns valuetype::Range:
+	//	"<" lowerBound=LONG "," upperBound=LONG ">";
+	public RangeElements getRangeAccess() {
+		return (pRange != null) ? pRange : (pRange = new RangeElements());
+	}
+	
+	public ParserRule getRangeRule() {
+		return getRangeAccess().getRule();
+	}
+
+	//LONG returns ecore::ELong:
+	//	INT;
+	public LONGElements getLONGAccess() {
+		return (pLONG != null) ? pLONG : (pLONG = new LONGElements());
+	}
+	
+	public ParserRule getLONGRule() {
+		return getLONGAccess().getRule();
+	}
+
+	//// end of nondeterministic choice expression
 	//Expression returns expressions::Expression:
 	//	LogicalExpression;
 	public ExpressionElements getExpressionAccess() {

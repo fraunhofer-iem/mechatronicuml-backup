@@ -46,26 +46,28 @@ protected class ThisRootNode extends RootToken {
 			case 12: return new ArrayInitializeExpression_Group(this, this, 12, inst);
 			case 13: return new LocalVariableDeclarationStatement_VariableAssignment(this, this, 13, inst);
 			case 14: return new LocalVariableDeclaration_Group(this, this, 14, inst);
-			case 15: return new Expression_LogicalExpressionParserRuleCall(this, this, 15, inst);
-			case 16: return new LogicalExpression_LogicalOrExpressionParserRuleCall(this, this, 16, inst);
-			case 17: return new LogicalOrExpression_Group(this, this, 17, inst);
-			case 18: return new LogicalAndExpression_Group(this, this, 18, inst);
-			case 19: return new ComparisonExpression_Group(this, this, 19, inst);
-			case 20: return new ComparisonHigherOpExpression_Group(this, this, 20, inst);
-			case 21: return new ArithmeticExpression_AdditionExpressionParserRuleCall(this, this, 21, inst);
-			case 22: return new AdditionExpression_Group(this, this, 22, inst);
-			case 23: return new MultiplicationExpression_Alternatives(this, this, 23, inst);
-			case 24: return new UnaryPreExpression_Group(this, this, 24, inst);
-			case 25: return new UnaryPostExpression_Group(this, this, 25, inst);
-			case 26: return new Operand_Alternatives(this, this, 26, inst);
-			case 27: return new LiteralExpression_Group(this, this, 27, inst);
-			case 28: return new ExtendedTypedNamedElementExpression_Group(this, this, 28, inst);
-			case 29: return new TypedNamedElementExpression_Group(this, this, 29, inst);
-			case 30: return new NoAttributeSelectorExpression_PositionAssignment(this, this, 30, inst);
-			case 31: return new PositionSelectorExpression_Group(this, this, 31, inst);
-			case 32: return new OperationCall_Group(this, this, 32, inst);
-			case 33: return new ParamaterBinding_Group(this, this, 33, inst);
-			case 34: return new TriggerMessageExpression_Group(this, this, 34, inst);
+			case 15: return new NondeterministicChoiceExpression_Group(this, this, 15, inst);
+			case 16: return new Range_Group(this, this, 16, inst);
+			case 17: return new Expression_LogicalExpressionParserRuleCall(this, this, 17, inst);
+			case 18: return new LogicalExpression_LogicalOrExpressionParserRuleCall(this, this, 18, inst);
+			case 19: return new LogicalOrExpression_Group(this, this, 19, inst);
+			case 20: return new LogicalAndExpression_Group(this, this, 20, inst);
+			case 21: return new ComparisonExpression_Group(this, this, 21, inst);
+			case 22: return new ComparisonHigherOpExpression_Group(this, this, 22, inst);
+			case 23: return new ArithmeticExpression_AdditionExpressionParserRuleCall(this, this, 23, inst);
+			case 24: return new AdditionExpression_Group(this, this, 24, inst);
+			case 25: return new MultiplicationExpression_Alternatives(this, this, 25, inst);
+			case 26: return new UnaryPreExpression_Group(this, this, 26, inst);
+			case 27: return new UnaryPostExpression_Group(this, this, 27, inst);
+			case 28: return new Operand_Alternatives(this, this, 28, inst);
+			case 29: return new LiteralExpression_Group(this, this, 29, inst);
+			case 30: return new ExtendedTypedNamedElementExpression_Group(this, this, 30, inst);
+			case 31: return new TypedNamedElementExpression_Group(this, this, 31, inst);
+			case 32: return new NoAttributeSelectorExpression_PositionAssignment(this, this, 32, inst);
+			case 33: return new PositionSelectorExpression_Group(this, this, 33, inst);
+			case 34: return new OperationCall_Group(this, this, 34, inst);
+			case 35: return new ParamaterBinding_Group(this, this, 35, inst);
+			case 36: return new TriggerMessageExpression_Group(this, this, 36, inst);
 			default: return null;
 		}	
 	}	
@@ -2605,11 +2607,11 @@ protected class Assignment_SemicolonKeyword_3 extends KeywordToken  {
  * // end of assignment
  * // initialize expression
  * InitializeExpression returns expressions::Expression:
- * 	ArrayInitializeExpression | Expression;
+ * 	ArrayInitializeExpression | NondeterministicChoiceExpression | Expression;
  *
  **/
 
-// ArrayInitializeExpression | Expression
+// ArrayInitializeExpression | NondeterministicChoiceExpression | Expression
 protected class InitializeExpression_Alternatives extends AlternativesToken {
 
 	public InitializeExpression_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2625,7 +2627,8 @@ protected class InitializeExpression_Alternatives extends AlternativesToken {
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new InitializeExpression_ArrayInitializeExpressionParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new InitializeExpression_ExpressionParserRuleCall_1(lastRuleCallOrigin, this, 1, inst);
+			case 1: return new InitializeExpression_NondeterministicChoiceExpressionParserRuleCall_1(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new InitializeExpression_ExpressionParserRuleCall_2(lastRuleCallOrigin, this, 2, inst);
 			default: return null;
 		}	
 	}
@@ -2638,6 +2641,7 @@ protected class InitializeExpression_Alternatives extends AlternativesToken {
 		   getEObject().eClass() != grammarAccess.getNoAttributeSelectorExpressionRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLiteralExpressionAccess().getLiteralExpressionAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLogicalAndExpressionAccess().getLogicalExpressionLeftExpressionAction_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getNondeterministicChoiceExpressionRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOperationCallRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTriggerMessageExpressionRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTypedNamedElementExpressionRule().getType().getClassifier() && 
@@ -2684,16 +2688,52 @@ protected class InitializeExpression_ArrayInitializeExpressionParserRuleCall_0 e
 	}	
 }
 
-// Expression
-protected class InitializeExpression_ExpressionParserRuleCall_1 extends RuleCallToken {
+// NondeterministicChoiceExpression
+protected class InitializeExpression_NondeterministicChoiceExpressionParserRuleCall_1 extends RuleCallToken {
 	
-	public InitializeExpression_ExpressionParserRuleCall_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public InitializeExpression_NondeterministicChoiceExpressionParserRuleCall_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getInitializeExpressionAccess().getExpressionParserRuleCall_1();
+		return grammarAccess.getInitializeExpressionAccess().getNondeterministicChoiceExpressionParserRuleCall_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new NondeterministicChoiceExpression_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getNondeterministicChoiceExpressionRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(NondeterministicChoiceExpression_Group.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+// Expression
+protected class InitializeExpression_ExpressionParserRuleCall_2 extends RuleCallToken {
+	
+	public InitializeExpression_ExpressionParserRuleCall_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getInitializeExpressionAccess().getExpressionParserRuleCall_2();
 	}
 
     @Override
@@ -3239,9 +3279,307 @@ protected class LocalVariableDeclaration_SemicolonKeyword_3 extends KeywordToken
 /************ end Rule LocalVariableDeclaration ****************/
 
 
-/************ begin Rule Expression ****************
+/************ begin Rule NondeterministicChoiceExpression ****************
  *
  * // end of local variable declaration
+ * // nondeterministic choice expression
+ * NondeterministicChoiceExpression returns actionlanguage::NondeterministicChoiceExpression:
+ * 	dataType=[types::PrimitiveDataType] range=Range;
+ *
+ **/
+
+// dataType=[types::PrimitiveDataType] range=Range
+protected class NondeterministicChoiceExpression_Group extends GroupToken {
+	
+	public NondeterministicChoiceExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getNondeterministicChoiceExpressionAccess().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new NondeterministicChoiceExpression_RangeAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getNondeterministicChoiceExpressionRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// dataType=[types::PrimitiveDataType]
+protected class NondeterministicChoiceExpression_DataTypeAssignment_0 extends AssignmentToken  {
+	
+	public NondeterministicChoiceExpression_DataTypeAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getNondeterministicChoiceExpressionAccess().getDataTypeAssignment_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("dataType",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("dataType");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getNondeterministicChoiceExpressionAccess().getDataTypePrimitiveDataTypeCrossReference_0_0().getType().getClassifier())) {
+				type = AssignmentType.CROSS_REFERENCE;
+				element = grammarAccess.getNondeterministicChoiceExpressionAccess().getDataTypePrimitiveDataTypeCrossReference_0_0(); 
+				return obj;
+			}
+		}
+		return null;
+	}
+
+}
+
+// range=Range
+protected class NondeterministicChoiceExpression_RangeAssignment_1 extends AssignmentToken  {
+	
+	public NondeterministicChoiceExpression_RangeAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getNondeterministicChoiceExpressionAccess().getRangeAssignment_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Range_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("range",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("range");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getRangeRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getNondeterministicChoiceExpressionAccess().getRangeRangeParserRuleCall_1_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new NondeterministicChoiceExpression_DataTypeAssignment_0(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+
+/************ end Rule NondeterministicChoiceExpression ****************/
+
+
+/************ begin Rule Range ****************
+ *
+ * Range returns valuetype::Range:
+ * 	"<" lowerBound=LONG "," upperBound=LONG ">";
+ *
+ **/
+
+// "<" lowerBound=LONG "," upperBound=LONG ">"
+protected class Range_Group extends GroupToken {
+	
+	public Range_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getRangeAccess().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Range_GreaterThanSignKeyword_4(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getRangeRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// "<"
+protected class Range_LessThanSignKeyword_0 extends KeywordToken  {
+	
+	public Range_LessThanSignKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getRangeAccess().getLessThanSignKeyword_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+}
+
+// lowerBound=LONG
+protected class Range_LowerBoundAssignment_1 extends AssignmentToken  {
+	
+	public Range_LowerBoundAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getRangeAccess().getLowerBoundAssignment_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Range_LessThanSignKeyword_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("lowerBound",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("lowerBound");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getRangeAccess().getLowerBoundLONGParserRuleCall_1_0(), value, null)) {
+			type = AssignmentType.DATATYPE_RULE_CALL;
+			element = grammarAccess.getRangeAccess().getLowerBoundLONGParserRuleCall_1_0();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+// ","
+protected class Range_CommaKeyword_2 extends KeywordToken  {
+	
+	public Range_CommaKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getRangeAccess().getCommaKeyword_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Range_LowerBoundAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// upperBound=LONG
+protected class Range_UpperBoundAssignment_3 extends AssignmentToken  {
+	
+	public Range_UpperBoundAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getRangeAccess().getUpperBoundAssignment_3();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Range_CommaKeyword_2(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("upperBound",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("upperBound");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getRangeAccess().getUpperBoundLONGParserRuleCall_3_0(), value, null)) {
+			type = AssignmentType.DATATYPE_RULE_CALL;
+			element = grammarAccess.getRangeAccess().getUpperBoundLONGParserRuleCall_3_0();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+// ">"
+protected class Range_GreaterThanSignKeyword_4 extends KeywordToken  {
+	
+	public Range_GreaterThanSignKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getRangeAccess().getGreaterThanSignKeyword_4();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Range_UpperBoundAssignment_3(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+/************ end Rule Range ****************/
+
+
+
+/************ begin Rule Expression ****************
+ *
+ * // end of nondeterministic choice expression
  * Expression returns expressions::Expression:
  * 	LogicalExpression;
  *
