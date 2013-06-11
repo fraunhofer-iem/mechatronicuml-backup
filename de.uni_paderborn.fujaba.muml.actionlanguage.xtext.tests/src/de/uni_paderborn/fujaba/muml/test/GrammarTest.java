@@ -41,6 +41,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator;
 import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
+import de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TriggerMessageExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.TypedNamedElementExpression;
@@ -526,6 +527,24 @@ public class GrammarTest {
 		loadFromString("bar + 7 < 42");
 		assertFalse(loadResult.hasError());
 		assertTrue(loadResult.getEObject() instanceof ComparisonExpression);
+	}
+	
+	@Test
+	public void testNondeterministicChoiceExpression() {
+		NondeterministicChoiceExpression expression = (NondeterministicChoiceExpression) getAssignmentRHS("{ foo := INT<2,4>; }");
+		assertNotNull(expression.getDataType());
+		assertEquals("INT", expression.getDataType().getName());
+		assertNotNull(expression.getRange());
+		assertEquals(2, expression.getRange().getLowerBound());
+		assertEquals(4, expression.getRange().getUpperBound());	
+	}
+	
+	@Test
+	public void testNondeterministicChoiceExpressionInvalidType() {
+		// only INT datatype is supported
+		loadFromString("{ foo := DOUBLE<2,4>; }");
+		assertTrue(loadResult.hasError());
+		assertNull(loadResult.getEObject());
 	}
 	
 	protected static void assertValidEObject(EObject object) {
