@@ -14,7 +14,7 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
 
   -- prevent validation of OCL Constraints before code generation.
   -- we deactivate it by adding "--" in front of all expressions; the templates are adapted to remove it afterwards.
-  -- see /de.uni_paderborn.fujaba.common/gmf-templates/aspects/xpt/expressions/OCLExpressionFactory.xpt
+  -- see /de.uni_paderborn.fujaba.muml.common/gmf-templates/aspects/xpt/expressions/OCLExpressionFactory.xpt
   gmfgenModel.objectsOfType(ValueExpression)->forEach(expression) {
     expression.body := '--'.concat(expression.body.replace('\n','\n--'));
     

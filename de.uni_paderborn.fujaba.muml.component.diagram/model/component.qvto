@@ -18,7 +18,7 @@ mapping inout GenEditorGenerator::settings() {
 -- TODO: (bingo) Externalize this into a common settings.qvto, because it is the same among all editors. 
 mapping inout GenEditorGenerator::general() {
 	self.dynamicTemplates := true;
-    self.templateDirectory := "/de.uni_paderborn.fujaba.common/gmf-templates";
+    self.templateDirectory := "/de.uni_paderborn.fujaba.muml.common/gmf-templates";
     self.sameFileForDiagramAndModel := false;
 }
 
