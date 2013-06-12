@@ -56,11 +56,16 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 	}
 
 	private String getSynchronizationExpression(Synchronization context, Expression expression) {
+		String serialization = null;
 		if (context != null && expression != null) {
-			String serialization = LanguageResource.serializeEObject(expression, context);
-			if (serialization != null) {
-				return "[" + serialization + "]";
+			if (expression instanceof TextualExpression) {
+				serialization = ((TextualExpression) expression).getExpressionText();
+			} else {
+				serialization = LanguageResource.serializeEObjectSafe(expression, context);
 			}
+		}
+		if (serialization != null) {
+			return "[" + serialization + "]";
 		}
 		return "";
 	}
@@ -68,16 +73,15 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 	private String getGuardExpression(Transition transition) {
 		Expression guard = transition.getGuard();
 		if (guard != null) {
-			String text = LanguageResource.serializeEObject(guard, transition);
-			if (text == null) {
-				// Xtext was not able to create a string for this kind of Model
-				// Element.
-				if (guard instanceof TextualExpression) {
-					// Textual Expressions are not part of the Action Language,
-					// so we process them separately here.
-					text = ((TextualExpression) guard).getExpressionText();
-				}
+			String text = null;
+			if (guard instanceof TextualExpression) {
+				// Textual Expressions are not part of the Action Language,
+				// so we process them separately here.
+				text = ((TextualExpression) guard).getExpressionText();
+			} else {
+				text = LanguageResource.serializeEObjectSafe(guard, transition);
 			}
+		
 			if (text != null && text.length() > 0) {
 				// remove some from the beginning...
 				char c = text.charAt(0);
@@ -93,13 +97,8 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 
 	private String getParameterBindingExpression(Transition transition,
 			ParameterBinding parameterBinding) {
-		String value = LanguageResource.serializeEObject(
+		String value = LanguageResource.serializeEObjectSafe(
 				parameterBinding.getValue(), transition);
-		if (value == null
-				&& (parameterBinding.getValue() instanceof LiteralExpression)) {
-			// just keep the LiteralExpression
-			return ((LiteralExpression) parameterBinding.getValue()).getValue();
-		}
 		return value;
 	}
 
