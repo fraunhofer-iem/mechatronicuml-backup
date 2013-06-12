@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.deployment.diagram; singleton:=true
 Bundle-Version: 0.3.1.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.deployment.diagram.part.MumlDiagramEditorPlugin
+Bundle-Activator: de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts,
@@ -51,6 +51,8 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.common,
  de.uni_paderborn.fujaba.modelinstance.ui,
  org.eclipse.ocl.ecore;visibility:=reexport,
- org.eclipse.gmf.tooling.runtime;visibility:=reexport
+ org.eclipse.gmf.tooling.runtime;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.psm.allocation;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.psm.allocation.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

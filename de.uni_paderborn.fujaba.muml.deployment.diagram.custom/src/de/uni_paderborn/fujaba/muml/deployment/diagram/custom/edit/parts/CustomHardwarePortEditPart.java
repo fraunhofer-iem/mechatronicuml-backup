@@ -4,9 +4,9 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage;
-import de.uni_paderborn.fujaba.muml.deployment.HardwarePort;
-import de.uni_paderborn.fujaba.muml.deployment.HardwarePortDirectionKind;
+import de.uni_paderborn.fujaba.muml.psm.deployment.DeploymentPackage;
+import de.uni_paderborn.fujaba.muml.psm.deployment.HardwarePort;
+import de.uni_paderborn.fujaba.muml.psm.deployment.HardwarePortDirectionKind;
 import de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart;
 
 public class CustomHardwarePortEditPart extends HardwarePortEditPart {

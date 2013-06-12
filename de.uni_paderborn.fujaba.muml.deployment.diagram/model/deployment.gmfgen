@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgen:GenEditorGenerator xmi:version="2.0"
+<gmfgen:GenEditorGenerator
+    xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" packageNamePrefix="de.uni_paderborn.fujaba.muml.deployment.diagram"
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
+    packageNamePrefix="de.uni_paderborn.fujaba.muml.deployment.diagram"
     modelID="Deployment"
     diagramFileExtension="deployment_diagram"
     domainFileExtension="fujaba"
@@ -28,10 +30,10 @@
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
     <domainDiagramElement
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/deployment/Deployment"/>
+        href="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.genmodel#//psm/deployment/Deployment"/>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
-        visualID="3001"
+        visualID="3003"
         editPartClassName="HardwarePortEditPart"
         itemSemanticEditPolicyClassName="HardwarePortItemSemanticEditPolicy"
         notationViewFactoryClassName="HardwarePortViewFactory"
@@ -56,11 +58,11 @@
       </viewmap>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/deployment/HardwarePort"/>
+            href="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.genmodel#//psm/deployment/HardwarePort"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/deployment/HardwareNode/hardwarePorts"/>
+            href="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.genmodel#//psm/deployment/HardwareNode/hardwarePorts"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/deployment/HardwareNode/hardwarePorts"/>
+            href="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.genmodel#//psm/deployment/HardwareNode/hardwarePorts"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -73,7 +75,7 @@
       </modelFacet>
       <labels
           xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5002"
+          visualID="5005"
           editPartClassName="HardwarePortNameEditPart"
           itemSemanticEditPolicyClassName="HardwarePortNameItemSemanticEditPolicy"
           notationViewFactoryClassName="HardwarePortNameViewFactory">
@@ -93,7 +95,7 @@
       </labels>
     </childNodes>
     <topLevelNodes
-        visualID="2001"
+        visualID="2003"
         editPartClassName="HardwareNodeEditPart"
         itemSemanticEditPolicyClassName="HardwareNodeItemSemanticEditPolicy"
         notationViewFactoryClassName="HardwareNodeViewFactory"
@@ -112,11 +114,11 @@
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class HardwareNodeFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureComponentNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public HardwareNodeFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure upperShadow0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;upperShadow0.setFill(false);&#xA;upperShadow0.setOutline(false);&#xA;&#xA;this.add(upperShadow0);&#xA;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutUpperShadow0 = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;upperShadow0.setLayoutManager(layoutUpperShadow0);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure upperLeftRectangle1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;upperLeftRectangle1.setFill(false);&#xA;upperLeftRectangle1.setOutline(false);&#xA;upperLeftRectangle1.setSize(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;);&#xA;&#xA;upperShadow0.add(upperLeftRectangle1, org.eclipse.draw2d.BorderLayout.LEFT);&#xA;upperLeftRectangle1.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.PolygonShape leftPolygon2 = new org.eclipse.draw2d.PolygonShape();&#xA;&#xA;leftPolygon2.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;leftPolygon2.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;leftPolygon2.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;leftPolygon2.setFill(true);&#xA;leftPolygon2.setOutline(false);&#xA;&#x9;leftPolygon2.setForegroundColor(LEFTPOLYGON2_FORE&#xA;);&#xA;&#x9;leftPolygon2.setBackgroundColor(LEFTPOLYGON2_BACK&#xA;);&#xA;leftPolygon2.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;leftPolygon2.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;leftPolygon2.setSize(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;);&#xA;&#xA;upperLeftRectangle1.add(leftPolygon2);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.PolylineShape leftLine2 = new org.eclipse.draw2d.PolylineShape();&#xA;&#xA;leftLine2.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;leftLine2.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#x9;leftLine2.setForegroundColor(LEFTLINE2_FORE&#xA;);&#xA;&#xA;upperLeftRectangle1.add(leftLine2);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure upperMiddleRectangle1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;upperMiddleRectangle1.setOutline(false);&#xA;upperMiddleRectangle1.setLineWidth(0);&#xA;&#x9;upperMiddleRectangle1.setBackgroundColor(UPPERMIDDLERECTANGLE1_BACK&#xA;);&#xA;&#xA;upperShadow0.add(upperMiddleRectangle1, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutUpperMiddleRectangle1 = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;upperMiddleRectangle1.setLayoutManager(layoutUpperMiddleRectangle1);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure upperLine2 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#x9;upperLine2.setForegroundColor(UPPERLINE2_FORE&#xA;);&#xA;&#x9;upperLine2.setBackgroundColor(UPPERLINE2_BACK&#xA;);&#xA;upperLine2.setSize(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(1)&#xA;);&#xA;&#xA;upperMiddleRectangle1.add(upperLine2, org.eclipse.draw2d.BorderLayout.TOP);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure rightShadow1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;rightShadow1.setFill(false);&#xA;rightShadow1.setOutline(false);&#xA;rightShadow1.setLineWidth(0);&#xA;&#xA;upperShadow0.add(rightShadow1, org.eclipse.draw2d.BorderLayout.RIGHT);&#xA;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutRightShadow1 = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;rightShadow1.setLayoutManager(layoutRightShadow1);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure upperRightRectangle2 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;upperRightRectangle2.setFill(false);&#xA;upperRightRectangle2.setOutline(false);&#xA;upperRightRectangle2.setLineWidth(0);&#xA;upperRightRectangle2.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;upperRightRectangle2.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;upperRightRectangle2.setSize(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;);&#xA;&#xA;rightShadow1.add(upperRightRectangle2, org.eclipse.draw2d.BorderLayout.TOP);&#xA;upperRightRectangle2.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure upperRightFilledRectangle3 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;upperRightFilledRectangle3.setOutline(false);&#xA;upperRightFilledRectangle3.setLineWidth(0);&#xA;&#x9;upperRightFilledRectangle3.setBackgroundColor(UPPERRIGHTFILLEDRECTANGLE3_BACK&#xA;);&#xA;upperRightFilledRectangle3.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;upperRightFilledRectangle3.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;upperRightFilledRectangle3.setSize(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;);&#xA;&#xA;upperRightRectangle2.add(upperRightFilledRectangle3);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.PolylineShape diagonalLine3 = new org.eclipse.draw2d.PolylineShape();&#xA;&#xA;diagonalLine3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;diagonalLine3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;&#x9;diagonalLine3.setForegroundColor(DIAGONALLINE3_FORE&#xA;);&#xA;&#xA;upperRightRectangle2.add(diagonalLine3);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.PolylineShape upperRightLine3 = new org.eclipse.draw2d.PolylineShape();&#xA;&#xA;upperRightLine3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;upperRightLine3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#x9;upperRightLine3.setForegroundColor(UPPERRIGHTLINE3_FORE&#xA;);&#xA;&#xA;upperRightRectangle2.add(upperRightLine3);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.PolylineShape rightUpperLine3 = new org.eclipse.draw2d.PolylineShape();&#xA;&#xA;rightUpperLine3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(1)&#xA;));&#xA;rightUpperLine3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;&#x9;rightUpperLine3.setForegroundColor(RIGHTUPPERLINE3_FORE&#xA;);&#xA;&#xA;upperRightRectangle2.add(rightUpperLine3);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure middleRightRectangle2 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;middleRightRectangle2.setOutline(false);&#xA;middleRightRectangle2.setLineWidth(0);&#xA;&#x9;middleRightRectangle2.setBackgroundColor(MIDDLERIGHTRECTANGLE2_BACK&#xA;);&#xA;&#xA;rightShadow1.add(middleRightRectangle2, org.eclipse.draw2d.BorderLayout.CENTER);&#xA;&#xA;&#x9;org.eclipse.draw2d.BorderLayout layoutMiddleRightRectangle2 = new org.eclipse.draw2d.BorderLayout();&#xA;&#x9;middleRightRectangle2.setLayoutManager(layoutMiddleRightRectangle2);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure rightLine3 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#x9;rightLine3.setBackgroundColor(RIGHTLINE3_BACK&#xA;);&#xA;rightLine3.setSize(getMapMode().DPtoLP(1)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;&#xA;middleRightRectangle2.add(rightLine3, org.eclipse.draw2d.BorderLayout.RIGHT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure lowerRightRectangle2 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;lowerRightRectangle2.setFill(false);&#xA;lowerRightRectangle2.setOutline(false);&#xA;lowerRightRectangle2.setLineWidth(0);&#xA;&#xA;rightShadow1.add(lowerRightRectangle2, org.eclipse.draw2d.BorderLayout.BOTTOM);&#xA;lowerRightRectangle2.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.PolygonShape rightPolygon3 = new org.eclipse.draw2d.PolygonShape();&#xA;&#xA;rightPolygon3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;rightPolygon3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;rightPolygon3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;rightPolygon3.setFill(true);&#xA;rightPolygon3.setOutline(false);&#xA;rightPolygon3.setLineWidth(0);&#xA;&#x9;rightPolygon3.setBackgroundColor(RIGHTPOLYGON3_BACK&#xA;);&#xA;rightPolygon3.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;rightPolygon3.setMinimumSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;rightPolygon3.setSize(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(16)&#xA;);&#xA;&#xA;lowerRightRectangle2.add(rightPolygon3);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.PolylineShape lowerRightLine3 = new org.eclipse.draw2d.PolylineShape();&#xA;&#xA;lowerRightLine3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(15)&#xA;));&#xA;lowerRightLine3.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(15)&#xA;, getMapMode().DPtoLP(0)&#xA;));&#xA;&#x9;lowerRightLine3.setForegroundColor(LOWERRIGHTLINE3_FORE&#xA;);&#xA;&#xA;lowerRightRectangle2.add(lowerRightLine3);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure innerRectangleHelper0 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;innerRectangleHelper0.setFill(false);&#xA;innerRectangleHelper0.setOutline(false);&#xA;innerRectangleHelper0.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(16)&#xA;));&#xA;&#xA;this.add(innerRectangleHelper0);&#xA;innerRectangleHelper0.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure innerHardwareNode1 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#x9;innerHardwareNode1.setForegroundColor(INNERHARDWARENODE1_FORE&#xA;);&#xA;innerHardwareNode1.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#xA;innerRectangleHelper0.add(innerHardwareNode1);&#xA;innerHardwareNode1.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconRectangle2 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconRectangle2.setFill(false);&#xA;componentIconRectangle2.setOutline(false);&#xA;&#xA;innerHardwareNode1.add(componentIconRectangle2);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutComponentIconRectangle2 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutComponentIconRectangle2.numColumns = 1;&#xA;&#x9;layoutComponentIconRectangle2.makeColumnsEqualWidth = false;&#xA;&#x9;componentIconRectangle2.setLayoutManager(layoutComponentIconRectangle2);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconFigure3 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconFigure3.setFill(false);&#xA;componentIconFigure3.setOutline(false);&#xA;componentIconFigure3.setPreferredSize(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintComponentIconFigure3 = new org.eclipse.draw2d.GridData();&#xA;constraintComponentIconFigure3.verticalAlignment = org.eclipse.draw2d.GridData.BEGINNING;&#xA;constraintComponentIconFigure3.horizontalAlignment = org.eclipse.draw2d.GridData.END;&#xA;constraintComponentIconFigure3.horizontalIndent = 0;&#xA;constraintComponentIconFigure3.horizontalSpan = 1;&#xA;constraintComponentIconFigure3.verticalSpan = 1;&#xA;constraintComponentIconFigure3.grabExcessHorizontalSpace = true;&#xA;constraintComponentIconFigure3.grabExcessVerticalSpace = false;&#xA;componentIconRectangle2.add(componentIconFigure3, constraintComponentIconFigure3);&#xA;&#xA;componentIconFigure3.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconOuter4 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconOuter4.setFill(false);&#xA;componentIconOuter4.setOutline(false);&#xA;&#xA;componentIconFigure3.add(componentIconOuter4);&#xA;componentIconOuter4.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure b15 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#x9;b15.setForegroundColor(B15_FORE&#xA;);&#xA;&#xA;componentIconOuter4.add(b15, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(4)&#xA;, getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(16)&#xA;, getMapMode().DPtoLP(20)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner14 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner14.setFill(false);&#xA;componentIconInner14.setOutline(false);&#xA;&#xA;componentIconFigure3.add(componentIconInner14);&#xA;componentIconInner14.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure c15 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#x9;c15.setForegroundColor(C15_FORE&#xA;);&#xA;&#xA;componentIconInner14.add(c15, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(2)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentIconInner24 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentIconInner24.setFill(false);&#xA;componentIconInner24.setOutline(false);&#xA;&#xA;componentIconFigure3.add(componentIconInner24);&#xA;componentIconInner24.setLayoutManager(new org.eclipse.draw2d.XYLayout());&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure d15 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;&#x9;d15.setForegroundColor(D15_FORE&#xA;);&#xA;&#xA;componentIconInner24.add(d15, &#xA;new org.eclipse.draw2d.geometry.Rectangle(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(12)&#xA;, getMapMode().DPtoLP(6)&#xA;)&#xA;);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.RectangleFigure componentNameRectangle2 = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;componentNameRectangle2.setFill(false);&#xA;componentNameRectangle2.setOutline(false);&#xA;&#xA;innerHardwareNode1.add(componentNameRectangle2);&#xA;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutComponentNameRectangle2 = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutComponentNameRectangle2.numColumns = 1;&#xA;&#x9;layoutComponentNameRectangle2.makeColumnsEqualWidth = false;&#xA;&#x9;componentNameRectangle2.setLayoutManager(layoutComponentNameRectangle2);&#xA;&#xA;&#xA;&#xA;fFigureComponentNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureComponentNameFigure.setText(&quot;&quot;);&#xA;&#x9;fFigureComponentNameFigure.setForegroundColor(FFIGURECOMPONENTNAMEFIGURE_FORE&#xA;);&#xA;&#xA;fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureComponentNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureComponentNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureComponentNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureComponentNameFigure.horizontalIndent = 0;&#xA;constraintFFigureComponentNameFigure.horizontalSpan = 1;&#xA;constraintFFigureComponentNameFigure.verticalSpan = 1;&#xA;constraintFFigureComponentNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureComponentNameFigure.grabExcessVerticalSpace = true;&#xA;componentNameRectangle2.add(fFigureComponentNameFigure, constraintFFigureComponentNameFigure);&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureComponentNameFigure() {&#xA;&#x9;&#x9;return fFigureComponentNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color LEFTPOLYGON2_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color LEFTPOLYGON2_BACK = new org.eclipse.swt.graphics.Color(null, 140, 140, 140);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color LEFTLINE2_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color UPPERMIDDLERECTANGLE1_BACK = new org.eclipse.swt.graphics.Color(null, 140, 140, 140);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color UPPERLINE2_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color UPPERLINE2_BACK = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color UPPERRIGHTFILLEDRECTANGLE3_BACK = new org.eclipse.swt.graphics.Color(null, 140, 140, 140);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color DIAGONALLINE3_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color UPPERRIGHTLINE3_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color RIGHTUPPERLINE3_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color MIDDLERIGHTRECTANGLE2_BACK = new org.eclipse.swt.graphics.Color(null, 140, 140, 140);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color RIGHTLINE3_BACK = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color RIGHTPOLYGON3_BACK = new org.eclipse.swt.graphics.Color(null, 140, 140, 140);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color LOWERRIGHTLINE3_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color INNERHARDWARENODE1_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color B15_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color C15_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color D15_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color FFIGURECOMPONENTNAMEFIGURE_FORE = new org.eclipse.swt.graphics.Color(null, 0, 0, 0);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGURECOMPONENTNAMEFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 9, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/deployment/HardwareNode"/>
+            href="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.genmodel#//psm/deployment/HardwareNode"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/deployment/Deployment/hardwareNodes"/>
+            href="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.genmodel#//psm/deployment/Deployment/hardwareNodes"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/deployment/Deployment/hardwareNodes"/>
+            href="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.genmodel#//psm/deployment/Deployment/hardwareNodes"/>
         <modelElementInitializer
             xsi:type="gmfgen:GenFeatureSeqInitializer">
           <initializers
@@ -128,7 +130,7 @@
         </modelElementInitializer>
       </modelFacet>
       <labels
-          visualID="5001"
+          visualID="5006"
           editPartClassName="HardwareNodeNameEditPart"
           itemSemanticEditPolicyClassName="HardwareNodeNameItemSemanticEditPolicy"
           notationViewFactoryClassName="HardwareNodeNameViewFactory">
@@ -154,7 +156,7 @@
       </labels>
     </topLevelNodes>
     <links
-        visualID="4001"
+        visualID="4003"
         editPartClassName="CommunicationLinkEditPart"
         itemSemanticEditPolicyClassName="CommunicationLinkItemSemanticEditPolicy"
         notationViewFactoryClassName="CommunicationLinkViewFactory"
@@ -171,11 +173,11 @@
       <modelFacet
           xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/deployment/CommunicationLink"/>
+            href="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.genmodel#//psm/deployment/CommunicationLink"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/deployment/Deployment/communicationLinks"/>
+            href="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.genmodel#//psm/deployment/Deployment/communicationLinks"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/deployment/Deployment/communicationLinks"/>
+            href="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.genmodel#//psm/deployment/Deployment/communicationLinks"/>
         <sourceMetaFeature
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
         <targetMetaFeature
@@ -304,21 +306,40 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
+  <propertySheet>
+    <tabs
+        xsi:type="gmfgen:GenStandardPropertyTab"
+        iD="appearance"/>
+    <tabs
+        xsi:type="gmfgen:GenStandardPropertyTab"
+        iD="diagram"/>
+    <tabs
+        xsi:type="gmfgen:GenCustomPropertyTab"
+        iD="domain"
+        label="Core">
+      <filter
+          xsi:type="gmfgen:TypeTabFilter">
+        <types>org.eclipse.gmf.runtime.notation.View</types>
+        <types>org.eclipse.gef.EditPart</types>
+        <generatedTypes>abstractNavigatorItem</generatedTypes>
+      </filter>
+    </tabs>
+  </propertySheet>
   <domainGenModel
-      href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#/"/>
+      href="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.genmodel#/"/>
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="--'hardwareNode'"/>
+          body="'hardwareNode'"/>
       <expressions
-          body="--'hardwarePort'"/>
-      <expressions
-          xsi:type="gmfgen:GenConstraint"
-          body="--self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::OUT or self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT"/>
+          body="'hardwarePort'"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="--if oppositeEnd.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT then self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN_OUT else self.oclAsType(deployment::HardwarePort).kind = deployment::HardwarePortDirectionKind::IN endif"/>
+          body="self.oclAsType(_'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePort).kind = HardwarePortDirectionKind::OUT or self.oclAsType(_'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePort).kind = _'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePortDirectionKind::IN_OUT "/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="if oppositeEnd.oclAsType(_'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePort).kind = _'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePortDirectionKind::IN_OUT then self.oclAsType(_'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePort).kind = _'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePortDirectionKind::IN_OUT else self.oclAsType(_'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePort).kind = _'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePortDirectionKind::IN endif"/>
     </providers>
   </expressionProviders>
   <labelParsers
